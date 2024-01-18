@@ -58,9 +58,9 @@ import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
 public class MrsMeta {
 
     public static final HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTags =
-        genForbatchCreateClusterTags();
+        genForBatchCreateClusterTags();
 
-    private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForbatchCreateClusterTags() {
+    private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForBatchCreateClusterTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateClusterTagsRequest.class, BatchCreateClusterTagsResponse.class)
@@ -73,16 +73,13 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getClusterId,
+                BatchCreateClusterTagsRequest::setClusterId));
         builder.<BatchCreateClusterTagsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateClusterTagsReq.class),
-            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, BatchCreateClusterTagsRequest::setBody));
 
         // response
 
@@ -90,9 +87,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTags =
-        genForbatchDeleteClusterTags();
+        genForBatchDeleteClusterTags();
 
-    private static HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> genForbatchDeleteClusterTags() {
+    private static HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> genForBatchDeleteClusterTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteClusterTagsRequest.class, BatchDeleteClusterTagsResponse.class)
@@ -105,16 +102,13 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getClusterId,
+                BatchDeleteClusterTagsRequest::setClusterId));
         builder.<BatchDeleteClusterTagsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteClusterTagsReq.class),
-            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, BatchDeleteClusterTagsRequest::setBody));
 
         // response
 
@@ -122,9 +116,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJob =
-        genForcreateAndExecuteJob();
+        genForCreateAndExecuteJob();
 
-    private static HttpRequestDef<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> genForcreateAndExecuteJob() {
+    private static HttpRequestDef<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> genForCreateAndExecuteJob() {
         // basic
         HttpRequestDef.Builder<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAndExecuteJobRequest.class, CreateAndExecuteJobResponse.class)
@@ -137,9 +131,7 @@ public class MrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubmitJobReqV11.class),
-            f -> f.withMarshaller(CreateAndExecuteJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAndExecuteJobRequest::getBody, CreateAndExecuteJobRequest::setBody));
 
         // response
 
@@ -147,9 +139,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
-        genForcreateCluster();
+        genForCreateCluster();
 
-    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
+    private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForCreateCluster() {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
@@ -162,9 +154,7 @@ public class MrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateClusterReqV11.class),
-            f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterRequest::getBody, CreateClusterRequest::setBody));
 
         // response
 
@@ -172,9 +162,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<CreateClusterTagRequest, CreateClusterTagResponse> createClusterTag =
-        genForcreateClusterTag();
+        genForCreateClusterTag();
 
-    private static HttpRequestDef<CreateClusterTagRequest, CreateClusterTagResponse> genForcreateClusterTag() {
+    private static HttpRequestDef<CreateClusterTagRequest, CreateClusterTagResponse> genForCreateClusterTag() {
         // basic
         HttpRequestDef.Builder<CreateClusterTagRequest, CreateClusterTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterTagRequest.class, CreateClusterTagResponse.class)
@@ -187,16 +177,12 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateClusterTagRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateClusterTagRequest::getClusterId, CreateClusterTagRequest::setClusterId));
         builder.<CreateTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateTagReq.class),
-            f -> f.withMarshaller(CreateClusterTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateClusterTagRequest::getBody, CreateClusterTagRequest::setBody));
 
         // response
 
@@ -204,9 +190,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicy =
-        genForcreateScalingPolicy();
+        genForCreateScalingPolicy();
 
-    private static HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> genForcreateScalingPolicy() {
+    private static HttpRequestDef<CreateScalingPolicyRequest, CreateScalingPolicyResponse> genForCreateScalingPolicy() {
         // basic
         HttpRequestDef.Builder<CreateScalingPolicyRequest, CreateScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingPolicyRequest.class, CreateScalingPolicyResponse.class)
@@ -219,33 +205,27 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScalingPolicyRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(CreateScalingPolicyRequest::getClusterId, CreateScalingPolicyRequest::setClusterId));
         builder.<AutoScalingPolicyReqV11>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AutoScalingPolicyReqV11.class),
-            f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, CreateScalingPolicyRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateScalingPolicyResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(CreateScalingPolicyResponse::getBody, CreateScalingPolicyResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
-        genFordeleteCluster();
+        genForDeleteCluster();
 
-    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
+    private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genForDeleteCluster() {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
@@ -258,26 +238,22 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterRequest::getClusterId, DeleteClusterRequest::setClusterId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteClusterResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteClusterResponse::getBody, DeleteClusterResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteClusterTagRequest, DeleteClusterTagResponse> deleteClusterTag =
-        genFordeleteClusterTag();
+        genForDeleteClusterTag();
 
-    private static HttpRequestDef<DeleteClusterTagRequest, DeleteClusterTagResponse> genFordeleteClusterTag() {
+    private static HttpRequestDef<DeleteClusterTagRequest, DeleteClusterTagResponse> genForDeleteClusterTag() {
         // basic
         HttpRequestDef.Builder<DeleteClusterTagRequest, DeleteClusterTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterTagRequest.class, DeleteClusterTagResponse.class)
@@ -290,16 +266,12 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterTagRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterTagRequest::getClusterId, DeleteClusterTagRequest::setClusterId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteClusterTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteClusterTagRequest::getKey, DeleteClusterTagRequest::setKey));
 
         // response
 
@@ -307,9 +279,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecution =
-        genFordeleteJobExecution();
+        genForDeleteJobExecution();
 
-    private static HttpRequestDef<DeleteJobExecutionRequest, DeleteJobExecutionResponse> genFordeleteJobExecution() {
+    private static HttpRequestDef<DeleteJobExecutionRequest, DeleteJobExecutionResponse> genForDeleteJobExecution() {
         // basic
         HttpRequestDef.Builder<DeleteJobExecutionRequest, DeleteJobExecutionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobExecutionRequest.class, DeleteJobExecutionResponse.class)
@@ -322,18 +294,17 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteJobExecutionRequest::getJobExecutionId, (req, v) -> {
-                req.setJobExecutionId(v);
-            }));
+            f -> f.withMarshaller(DeleteJobExecutionRequest::getJobExecutionId,
+                DeleteJobExecutionRequest::setJobExecutionId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForlistAllTags();
+    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForListAllTags();
 
-    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForlistAllTags() {
+    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForListAllTags() {
         // basic
         HttpRequestDef.Builder<ListAllTagsRequest, ListAllTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllTagsRequest.class, ListAllTagsResponse.class)
@@ -349,9 +320,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTags =
-        genForlistClusterTags();
+        genForListClusterTags();
 
-    private static HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> genForlistClusterTags() {
+    private static HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> genForListClusterTags() {
         // basic
         HttpRequestDef.Builder<ListClusterTagsRequest, ListClusterTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClusterTagsRequest.class, ListClusterTagsResponse.class)
@@ -364,18 +335,16 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClusterTagsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListClusterTagsRequest::getClusterId, ListClusterTagsRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForListClusters();
 
-    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForListClusters() {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
@@ -388,44 +357,33 @@ public class MrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getTags, ListClustersRequest::setTags));
         builder.<String>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getPageSize, ListClustersRequest::setPageSize));
         builder.<String>withRequestField("currentPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getCurrentPage, ListClustersRequest::setCurrentPage));
         builder.<String>withRequestField("clusterName",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getClusterName, (req, v) -> {
-                req.setClusterName(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getClusterName, ListClustersRequest::setClusterName));
         builder.<String>withRequestField("clusterState",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getClusterState, (req, v) -> {
-                req.setClusterState(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getClusterState, ListClustersRequest::setClusterState));
         builder.<String>withRequestField("enterpriseProjectId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListClustersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListClustersRequest::getEnterpriseProjectId,
+                ListClustersRequest::setEnterpriseProjectId));
 
         // response
 
@@ -433,9 +391,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTags =
-        genForlistClustersByTags();
+        genForListClustersByTags();
 
-    private static HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> genForlistClustersByTags() {
+    private static HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> genForListClustersByTags() {
         // basic
         HttpRequestDef.Builder<ListClustersByTagsRequest, ListClustersByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListClustersByTagsRequest.class, ListClustersByTagsResponse.class)
@@ -448,9 +406,7 @@ public class MrsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceReq.class),
-            f -> f.withMarshaller(ListClustersByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListClustersByTagsRequest::getBody, ListClustersByTagsRequest::setBody));
 
         // response
 
@@ -458,9 +414,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJob =
-        genForlistExecuteJob();
+        genForListExecuteJob();
 
-    private static HttpRequestDef<ListExecuteJobRequest, ListExecuteJobResponse> genForlistExecuteJob() {
+    private static HttpRequestDef<ListExecuteJobRequest, ListExecuteJobResponse> genForListExecuteJob() {
         // basic
         HttpRequestDef.Builder<ListExecuteJobRequest, ListExecuteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExecuteJobRequest.class, ListExecuteJobResponse.class)
@@ -473,53 +429,41 @@ public class MrsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getPageSize, ListExecuteJobRequest::setPageSize));
         builder.<String>withRequestField("current_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getCurrentPage, ListExecuteJobRequest::setCurrentPage));
         builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getJobName, ListExecuteJobRequest::setJobName));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getClusterId, ListExecuteJobRequest::setClusterId));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getState, (req, v) -> {
-                req.setState(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getState, ListExecuteJobRequest::setState));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecuteJobRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListExecuteJobRequest::getId, ListExecuteJobRequest::setId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHostsRequest, ListHostsResponse> listHosts = genForlistHosts();
+    public static final HttpRequestDef<ListHostsRequest, ListHostsResponse> listHosts = genForListHosts();
 
-    private static HttpRequestDef<ListHostsRequest, ListHostsResponse> genForlistHosts() {
+    private static HttpRequestDef<ListHostsRequest, ListHostsResponse> genForListHosts() {
         // basic
         HttpRequestDef.Builder<ListHostsRequest, ListHostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHostsRequest.class, ListHostsResponse.class)
@@ -532,23 +476,17 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHostsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ListHostsRequest::getClusterId, ListHostsRequest::setClusterId));
         builder.<String>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHostsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListHostsRequest::getPageSize, ListHostsRequest::setPageSize));
         builder.<String>withRequestField("currentPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHostsRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
+            f -> f.withMarshaller(ListHostsRequest::getCurrentPage, ListHostsRequest::setCurrentPage));
 
         // response
 
@@ -556,9 +494,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ShowClusterDetailsRequest, ShowClusterDetailsResponse> showClusterDetails =
-        genForshowClusterDetails();
+        genForShowClusterDetails();
 
-    private static HttpRequestDef<ShowClusterDetailsRequest, ShowClusterDetailsResponse> genForshowClusterDetails() {
+    private static HttpRequestDef<ShowClusterDetailsRequest, ShowClusterDetailsResponse> genForShowClusterDetails() {
         // basic
         HttpRequestDef.Builder<ShowClusterDetailsRequest, ShowClusterDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterDetailsRequest.class, ShowClusterDetailsResponse.class)
@@ -571,18 +509,16 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterDetailsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowClusterDetailsRequest::getClusterId, ShowClusterDetailsRequest::setClusterId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobExesRequest, ShowJobExesResponse> showJobExes = genForshowJobExes();
+    public static final HttpRequestDef<ShowJobExesRequest, ShowJobExesResponse> showJobExes = genForShowJobExes();
 
-    private static HttpRequestDef<ShowJobExesRequest, ShowJobExesResponse> genForshowJobExes() {
+    private static HttpRequestDef<ShowJobExesRequest, ShowJobExesResponse> genForShowJobExes() {
         // basic
         HttpRequestDef.Builder<ShowJobExesRequest, ShowJobExesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobExesRequest.class, ShowJobExesResponse.class)
@@ -595,9 +531,7 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobExesRequest::getJobExeId, (req, v) -> {
-                req.setJobExeId(v);
-            }));
+            f -> f.withMarshaller(ShowJobExesRequest::getJobExeId, ShowJobExesRequest::setJobExeId));
 
         // response
 
@@ -605,9 +539,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<UpdateClusterScalingRequest, UpdateClusterScalingResponse> updateClusterScaling =
-        genForupdateClusterScaling();
+        genForUpdateClusterScaling();
 
-    private static HttpRequestDef<UpdateClusterScalingRequest, UpdateClusterScalingResponse> genForupdateClusterScaling() {
+    private static HttpRequestDef<UpdateClusterScalingRequest, UpdateClusterScalingResponse> genForUpdateClusterScaling() {
         // basic
         HttpRequestDef.Builder<UpdateClusterScalingRequest, UpdateClusterScalingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateClusterScalingRequest.class, UpdateClusterScalingResponse.class)
@@ -620,16 +554,13 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterScalingRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterScalingRequest::getClusterId,
+                UpdateClusterScalingRequest::setClusterId));
         builder.<ClusterScalingReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterScalingReq.class),
-            f -> f.withMarshaller(UpdateClusterScalingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateClusterScalingRequest::getBody, UpdateClusterScalingRequest::setBody));
 
         // response
 
@@ -637,9 +568,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
-        genForlistAvailableZones();
+        genForListAvailableZones();
 
-    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
+    private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForListAvailableZones() {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
@@ -652,16 +583,12 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailableZonesRequest::getRegionId, (req, v) -> {
-                req.setRegionId(v);
-            }));
+            f -> f.withMarshaller(ListAvailableZonesRequest::getRegionId, ListAvailableZonesRequest::setRegionId));
         builder.<ListAvailableZonesRequest.ScopeEnum>withRequestField("scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAvailableZonesRequest.ScopeEnum.class),
-            f -> f.withMarshaller(ListAvailableZonesRequest::getScope, (req, v) -> {
-                req.setScope(v);
-            }));
+            f -> f.withMarshaller(ListAvailableZonesRequest::getScope, ListAvailableZonesRequest::setScope));
 
         // response
 
@@ -669,9 +596,9 @@ public class MrsMeta {
     }
 
     public static final HttpRequestDef<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> showMrsVersionMetadata =
-        genForshowMrsVersionMetadata();
+        genForShowMrsVersionMetadata();
 
-    private static HttpRequestDef<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> genForshowMrsVersionMetadata() {
+    private static HttpRequestDef<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> genForShowMrsVersionMetadata() {
         // basic
         HttpRequestDef.Builder<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowMrsVersionMetadataRequest.class, ShowMrsVersionMetadataResponse.class)
@@ -684,16 +611,14 @@ public class MrsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getVersionName, (req, v) -> {
-                req.setVersionName(v);
-            }));
+            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getVersionName,
+                ShowMrsVersionMetadataRequest::setVersionName));
         builder.<String>withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
+            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getClusterId,
+                ShowMrsVersionMetadataRequest::setClusterId));
 
         // response
 

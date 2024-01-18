@@ -48,7 +48,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelContractRequest 请求对象
+     * @param request CancelContractRequest 请求对象
      * @return CompletableFuture<CancelContractResponse>
      */
     public CompletableFuture<CancelContractResponse> cancelContractAsync(CancelContractRequest request) {
@@ -62,13 +62,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelContractRequest 请求对象
+     * @param request CancelContractRequest 请求对象
      * @return AsyncInvoker<CancelContractRequest, CancelContractResponse>
      */
     public AsyncInvoker<CancelContractRequest, CancelContractResponse> cancelContractAsyncInvoker(
         CancelContractRequest request) {
-        return new AsyncInvoker<CancelContractRequest, CancelContractResponse>(request, EdsMeta.cancelContract,
-            hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.cancelContract, hcClient);
     }
 
     /**
@@ -78,7 +77,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitContractRequest 请求对象
+     * @param request CommitContractRequest 请求对象
      * @return CompletableFuture<CommitContractResponse>
      */
     public CompletableFuture<CommitContractResponse> commitContractAsync(CommitContractRequest request) {
@@ -92,13 +91,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitContractRequest 请求对象
+     * @param request CommitContractRequest 请求对象
      * @return AsyncInvoker<CommitContractRequest, CommitContractResponse>
      */
     public AsyncInvoker<CommitContractRequest, CommitContractResponse> commitContractAsyncInvoker(
         CommitContractRequest request) {
-        return new AsyncInvoker<CommitContractRequest, CommitContractResponse>(request, EdsMeta.commitContract,
-            hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.commitContract, hcClient);
     }
 
     /**
@@ -108,7 +106,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectorsByInstanceMangerRequest 请求对象
+     * @param request ListConnectorsByInstanceMangerRequest 请求对象
      * @return CompletableFuture<ListConnectorsByInstanceMangerResponse>
      */
     public CompletableFuture<ListConnectorsByInstanceMangerResponse> listConnectorsByInstanceMangerAsync(
@@ -123,13 +121,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectorsByInstanceMangerRequest 请求对象
+     * @param request ListConnectorsByInstanceMangerRequest 请求对象
      * @return AsyncInvoker<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse>
      */
     public AsyncInvoker<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse> listConnectorsByInstanceMangerAsyncInvoker(
         ListConnectorsByInstanceMangerRequest request) {
-        return new AsyncInvoker<ListConnectorsByInstanceMangerRequest, ListConnectorsByInstanceMangerResponse>(request,
-            EdsMeta.listConnectorsByInstanceManger, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.listConnectorsByInstanceManger, hcClient);
     }
 
     /**
@@ -139,7 +136,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectorsByInstanceUserRequest 请求对象
+     * @param request ListConnectorsByInstanceUserRequest 请求对象
      * @return CompletableFuture<ListConnectorsByInstanceUserResponse>
      */
     public CompletableFuture<ListConnectorsByInstanceUserResponse> listConnectorsByInstanceUserAsync(
@@ -154,13 +151,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectorsByInstanceUserRequest 请求对象
+     * @param request ListConnectorsByInstanceUserRequest 请求对象
      * @return AsyncInvoker<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse>
      */
     public AsyncInvoker<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse> listConnectorsByInstanceUserAsyncInvoker(
         ListConnectorsByInstanceUserRequest request) {
-        return new AsyncInvoker<ListConnectorsByInstanceUserRequest, ListConnectorsByInstanceUserResponse>(request,
-            EdsMeta.listConnectorsByInstanceUser, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.listConnectorsByInstanceUser, hcClient);
     }
 
     /**
@@ -170,7 +166,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditLogRequest 请求对象
+     * @param request ShowAuditLogRequest 请求对象
      * @return CompletableFuture<ShowAuditLogResponse>
      */
     public CompletableFuture<ShowAuditLogResponse> showAuditLogAsync(ShowAuditLogRequest request) {
@@ -184,12 +180,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAuditLogRequest 请求对象
+     * @param request ShowAuditLogRequest 请求对象
      * @return AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>
      */
     public AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogAsyncInvoker(
         ShowAuditLogRequest request) {
-        return new AsyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse>(request, EdsMeta.showAuditLog, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.showAuditLog, hcClient);
     }
 
     /**
@@ -199,7 +195,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorRequest 请求对象
+     * @param request ShowConnectorRequest 请求对象
      * @return CompletableFuture<ShowConnectorResponse>
      */
     public CompletableFuture<ShowConnectorResponse> showConnectorAsync(ShowConnectorRequest request) {
@@ -213,12 +209,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectorRequest 请求对象
+     * @param request ShowConnectorRequest 请求对象
      * @return AsyncInvoker<ShowConnectorRequest, ShowConnectorResponse>
      */
     public AsyncInvoker<ShowConnectorRequest, ShowConnectorResponse> showConnectorAsyncInvoker(
         ShowConnectorRequest request) {
-        return new AsyncInvoker<ShowConnectorRequest, ShowConnectorResponse>(request, EdsMeta.showConnector, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.showConnector, hcClient);
     }
 
     /**
@@ -228,7 +224,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowContractRequest 请求对象
+     * @param request ShowContractRequest 请求对象
      * @return CompletableFuture<ShowContractResponse>
      */
     public CompletableFuture<ShowContractResponse> showContractAsync(ShowContractRequest request) {
@@ -242,12 +238,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowContractRequest 请求对象
+     * @param request ShowContractRequest 请求对象
      * @return AsyncInvoker<ShowContractRequest, ShowContractResponse>
      */
     public AsyncInvoker<ShowContractRequest, ShowContractResponse> showContractAsyncInvoker(
         ShowContractRequest request) {
-        return new AsyncInvoker<ShowContractRequest, ShowContractResponse>(request, EdsMeta.showContract, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.showContract, hcClient);
     }
 
     /**
@@ -257,7 +253,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOffersRequest 请求对象
+     * @param request ListOffersRequest 请求对象
      * @return CompletableFuture<ListOffersResponse>
      */
     public CompletableFuture<ListOffersResponse> listOffersAsync(ListOffersRequest request) {
@@ -271,11 +267,11 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOffersRequest 请求对象
+     * @param request ListOffersRequest 请求对象
      * @return AsyncInvoker<ListOffersRequest, ListOffersResponse>
      */
     public AsyncInvoker<ListOffersRequest, ListOffersResponse> listOffersAsyncInvoker(ListOffersRequest request) {
-        return new AsyncInvoker<ListOffersRequest, ListOffersResponse>(request, EdsMeta.listOffers, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.listOffers, hcClient);
     }
 
     /**
@@ -285,7 +281,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOfferRequest 请求对象
+     * @param request ShowOfferRequest 请求对象
      * @return CompletableFuture<ShowOfferResponse>
      */
     public CompletableFuture<ShowOfferResponse> showOfferAsync(ShowOfferRequest request) {
@@ -299,11 +295,11 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOfferRequest 请求对象
+     * @param request ShowOfferRequest 请求对象
      * @return AsyncInvoker<ShowOfferRequest, ShowOfferResponse>
      */
     public AsyncInvoker<ShowOfferRequest, ShowOfferResponse> showOfferAsyncInvoker(ShowOfferRequest request) {
-        return new AsyncInvoker<ShowOfferRequest, ShowOfferResponse>(request, EdsMeta.showOffer, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.showOffer, hcClient);
     }
 
     /**
@@ -313,7 +309,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddConnectorUserRequest 请求对象
+     * @param request AddConnectorUserRequest 请求对象
      * @return CompletableFuture<AddConnectorUserResponse>
      */
     public CompletableFuture<AddConnectorUserResponse> addConnectorUserAsync(AddConnectorUserRequest request) {
@@ -327,13 +323,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AddConnectorUserRequest 请求对象
+     * @param request AddConnectorUserRequest 请求对象
      * @return AsyncInvoker<AddConnectorUserRequest, AddConnectorUserResponse>
      */
     public AsyncInvoker<AddConnectorUserRequest, AddConnectorUserResponse> addConnectorUserAsyncInvoker(
         AddConnectorUserRequest request) {
-        return new AsyncInvoker<AddConnectorUserRequest, AddConnectorUserResponse>(request, EdsMeta.addConnectorUser,
-            hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.addConnectorUser, hcClient);
     }
 
     /**
@@ -343,7 +338,7 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorUserRequest 请求对象
+     * @param request DeleteConnectorUserRequest 请求对象
      * @return CompletableFuture<DeleteConnectorUserResponse>
      */
     public CompletableFuture<DeleteConnectorUserResponse> deleteConnectorUserAsync(DeleteConnectorUserRequest request) {
@@ -357,13 +352,12 @@ public class EdsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnectorUserRequest 请求对象
+     * @param request DeleteConnectorUserRequest 请求对象
      * @return AsyncInvoker<DeleteConnectorUserRequest, DeleteConnectorUserResponse>
      */
     public AsyncInvoker<DeleteConnectorUserRequest, DeleteConnectorUserResponse> deleteConnectorUserAsyncInvoker(
         DeleteConnectorUserRequest request) {
-        return new AsyncInvoker<DeleteConnectorUserRequest, DeleteConnectorUserResponse>(request,
-            EdsMeta.deleteConnectorUser, hcClient);
+        return new AsyncInvoker<>(request, EdsMeta.deleteConnectorUser, hcClient);
     }
 
 }

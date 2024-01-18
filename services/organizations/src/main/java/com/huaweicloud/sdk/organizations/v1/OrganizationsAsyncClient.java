@@ -135,7 +135,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteAccountRequest 请求对象
+     * @param request InviteAccountRequest 请求对象
      * @return CompletableFuture<InviteAccountResponse>
      */
     public CompletableFuture<InviteAccountResponse> inviteAccountAsync(InviteAccountRequest request) {
@@ -149,13 +149,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InviteAccountRequest 请求对象
+     * @param request InviteAccountRequest 请求对象
      * @return AsyncInvoker<InviteAccountRequest, InviteAccountResponse>
      */
     public AsyncInvoker<InviteAccountRequest, InviteAccountResponse> inviteAccountAsyncInvoker(
         InviteAccountRequest request) {
-        return new AsyncInvoker<InviteAccountRequest, InviteAccountResponse>(request, OrganizationsMeta.inviteAccount,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.inviteAccount, hcClient);
     }
 
     /**
@@ -165,7 +164,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountsRequest 请求对象
+     * @param request ListAccountsRequest 请求对象
      * @return CompletableFuture<ListAccountsResponse>
      */
     public CompletableFuture<ListAccountsResponse> listAccountsAsync(ListAccountsRequest request) {
@@ -179,13 +178,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAccountsRequest 请求对象
+     * @param request ListAccountsRequest 请求对象
      * @return AsyncInvoker<ListAccountsRequest, ListAccountsResponse>
      */
     public AsyncInvoker<ListAccountsRequest, ListAccountsResponse> listAccountsAsyncInvoker(
         ListAccountsRequest request) {
-        return new AsyncInvoker<ListAccountsRequest, ListAccountsResponse>(request, OrganizationsMeta.listAccounts,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listAccounts, hcClient);
     }
 
     /**
@@ -195,7 +193,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCreateAccountStatusesRequest 请求对象
+     * @param request ListCreateAccountStatusesRequest 请求对象
      * @return CompletableFuture<ListCreateAccountStatusesResponse>
      */
     public CompletableFuture<ListCreateAccountStatusesResponse> listCreateAccountStatusesAsync(
@@ -210,13 +208,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCreateAccountStatusesRequest 请求对象
+     * @param request ListCreateAccountStatusesRequest 请求对象
      * @return AsyncInvoker<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse>
      */
     public AsyncInvoker<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse> listCreateAccountStatusesAsyncInvoker(
         ListCreateAccountStatusesRequest request) {
-        return new AsyncInvoker<ListCreateAccountStatusesRequest, ListCreateAccountStatusesResponse>(request,
-            OrganizationsMeta.listCreateAccountStatuses, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listCreateAccountStatuses, hcClient);
     }
 
     /**
@@ -226,7 +223,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveAccountRequest 请求对象
+     * @param request MoveAccountRequest 请求对象
      * @return CompletableFuture<MoveAccountResponse>
      */
     public CompletableFuture<MoveAccountResponse> moveAccountAsync(MoveAccountRequest request) {
@@ -240,12 +237,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param MoveAccountRequest 请求对象
+     * @param request MoveAccountRequest 请求对象
      * @return AsyncInvoker<MoveAccountRequest, MoveAccountResponse>
      */
     public AsyncInvoker<MoveAccountRequest, MoveAccountResponse> moveAccountAsyncInvoker(MoveAccountRequest request) {
-        return new AsyncInvoker<MoveAccountRequest, MoveAccountResponse>(request, OrganizationsMeta.moveAccount,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.moveAccount, hcClient);
     }
 
     /**
@@ -255,7 +251,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAccountRequest 请求对象
+     * @param request RemoveAccountRequest 请求对象
      * @return CompletableFuture<RemoveAccountResponse>
      */
     public CompletableFuture<RemoveAccountResponse> removeAccountAsync(RemoveAccountRequest request) {
@@ -269,13 +265,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RemoveAccountRequest 请求对象
+     * @param request RemoveAccountRequest 请求对象
      * @return AsyncInvoker<RemoveAccountRequest, RemoveAccountResponse>
      */
     public AsyncInvoker<RemoveAccountRequest, RemoveAccountResponse> removeAccountAsyncInvoker(
         RemoveAccountRequest request) {
-        return new AsyncInvoker<RemoveAccountRequest, RemoveAccountResponse>(request, OrganizationsMeta.removeAccount,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.removeAccount, hcClient);
     }
 
     /**
@@ -285,7 +280,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountRequest 请求对象
+     * @param request ShowAccountRequest 请求对象
      * @return CompletableFuture<ShowAccountResponse>
      */
     public CompletableFuture<ShowAccountResponse> showAccountAsync(ShowAccountRequest request) {
@@ -299,12 +294,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAccountRequest 请求对象
+     * @param request ShowAccountRequest 请求对象
      * @return AsyncInvoker<ShowAccountRequest, ShowAccountResponse>
      */
     public AsyncInvoker<ShowAccountRequest, ShowAccountResponse> showAccountAsyncInvoker(ShowAccountRequest request) {
-        return new AsyncInvoker<ShowAccountRequest, ShowAccountResponse>(request, OrganizationsMeta.showAccount,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showAccount, hcClient);
     }
 
     /**
@@ -314,7 +308,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCreateAccountStatusRequest 请求对象
+     * @param request ShowCreateAccountStatusRequest 请求对象
      * @return CompletableFuture<ShowCreateAccountStatusResponse>
      */
     public CompletableFuture<ShowCreateAccountStatusResponse> showCreateAccountStatusAsync(
@@ -329,13 +323,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCreateAccountStatusRequest 请求对象
+     * @param request ShowCreateAccountStatusRequest 请求对象
      * @return AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>
      */
     public AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatusAsyncInvoker(
         ShowCreateAccountStatusRequest request) {
-        return new AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>(request,
-            OrganizationsMeta.showCreateAccountStatus, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showCreateAccountStatus, hcClient);
     }
 
     /**
@@ -345,7 +338,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterDelegatedAdministratorRequest 请求对象
+     * @param request DeregisterDelegatedAdministratorRequest 请求对象
      * @return CompletableFuture<DeregisterDelegatedAdministratorResponse>
      */
     public CompletableFuture<DeregisterDelegatedAdministratorResponse> deregisterDelegatedAdministratorAsync(
@@ -360,13 +353,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeregisterDelegatedAdministratorRequest 请求对象
+     * @param request DeregisterDelegatedAdministratorRequest 请求对象
      * @return AsyncInvoker<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse>
      */
     public AsyncInvoker<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> deregisterDelegatedAdministratorAsyncInvoker(
         DeregisterDelegatedAdministratorRequest request) {
-        return new AsyncInvoker<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse>(
-            request, OrganizationsMeta.deregisterDelegatedAdministrator, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.deregisterDelegatedAdministrator, hcClient);
     }
 
     /**
@@ -376,7 +368,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelegatedAdministratorsRequest 请求对象
+     * @param request ListDelegatedAdministratorsRequest 请求对象
      * @return CompletableFuture<ListDelegatedAdministratorsResponse>
      */
     public CompletableFuture<ListDelegatedAdministratorsResponse> listDelegatedAdministratorsAsync(
@@ -391,13 +383,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelegatedAdministratorsRequest 请求对象
+     * @param request ListDelegatedAdministratorsRequest 请求对象
      * @return AsyncInvoker<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse>
      */
     public AsyncInvoker<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse> listDelegatedAdministratorsAsyncInvoker(
         ListDelegatedAdministratorsRequest request) {
-        return new AsyncInvoker<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResponse>(request,
-            OrganizationsMeta.listDelegatedAdministrators, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listDelegatedAdministrators, hcClient);
     }
 
     /**
@@ -407,7 +398,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelegatedServicesRequest 请求对象
+     * @param request ListDelegatedServicesRequest 请求对象
      * @return CompletableFuture<ListDelegatedServicesResponse>
      */
     public CompletableFuture<ListDelegatedServicesResponse> listDelegatedServicesAsync(
@@ -422,13 +413,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDelegatedServicesRequest 请求对象
+     * @param request ListDelegatedServicesRequest 请求对象
      * @return AsyncInvoker<ListDelegatedServicesRequest, ListDelegatedServicesResponse>
      */
     public AsyncInvoker<ListDelegatedServicesRequest, ListDelegatedServicesResponse> listDelegatedServicesAsyncInvoker(
         ListDelegatedServicesRequest request) {
-        return new AsyncInvoker<ListDelegatedServicesRequest, ListDelegatedServicesResponse>(request,
-            OrganizationsMeta.listDelegatedServices, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listDelegatedServices, hcClient);
     }
 
     /**
@@ -438,7 +428,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDelegatedAdministratorRequest 请求对象
+     * @param request RegisterDelegatedAdministratorRequest 请求对象
      * @return CompletableFuture<RegisterDelegatedAdministratorResponse>
      */
     public CompletableFuture<RegisterDelegatedAdministratorResponse> registerDelegatedAdministratorAsync(
@@ -453,13 +443,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RegisterDelegatedAdministratorRequest 请求对象
+     * @param request RegisterDelegatedAdministratorRequest 请求对象
      * @return AsyncInvoker<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse>
      */
     public AsyncInvoker<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> registerDelegatedAdministratorAsyncInvoker(
         RegisterDelegatedAdministratorRequest request) {
-        return new AsyncInvoker<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse>(request,
-            OrganizationsMeta.registerDelegatedAdministrator, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.registerDelegatedAdministrator, hcClient);
     }
 
     /**
@@ -469,7 +458,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptHandshakeRequest 请求对象
+     * @param request AcceptHandshakeRequest 请求对象
      * @return CompletableFuture<AcceptHandshakeResponse>
      */
     public CompletableFuture<AcceptHandshakeResponse> acceptHandshakeAsync(AcceptHandshakeRequest request) {
@@ -483,13 +472,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AcceptHandshakeRequest 请求对象
+     * @param request AcceptHandshakeRequest 请求对象
      * @return AsyncInvoker<AcceptHandshakeRequest, AcceptHandshakeResponse>
      */
     public AsyncInvoker<AcceptHandshakeRequest, AcceptHandshakeResponse> acceptHandshakeAsyncInvoker(
         AcceptHandshakeRequest request) {
-        return new AsyncInvoker<AcceptHandshakeRequest, AcceptHandshakeResponse>(request,
-            OrganizationsMeta.acceptHandshake, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.acceptHandshake, hcClient);
     }
 
     /**
@@ -499,7 +487,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelHandshakeRequest 请求对象
+     * @param request CancelHandshakeRequest 请求对象
      * @return CompletableFuture<CancelHandshakeResponse>
      */
     public CompletableFuture<CancelHandshakeResponse> cancelHandshakeAsync(CancelHandshakeRequest request) {
@@ -513,13 +501,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelHandshakeRequest 请求对象
+     * @param request CancelHandshakeRequest 请求对象
      * @return AsyncInvoker<CancelHandshakeRequest, CancelHandshakeResponse>
      */
     public AsyncInvoker<CancelHandshakeRequest, CancelHandshakeResponse> cancelHandshakeAsyncInvoker(
         CancelHandshakeRequest request) {
-        return new AsyncInvoker<CancelHandshakeRequest, CancelHandshakeResponse>(request,
-            OrganizationsMeta.cancelHandshake, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.cancelHandshake, hcClient);
     }
 
     /**
@@ -529,7 +516,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeclineHandshakeRequest 请求对象
+     * @param request DeclineHandshakeRequest 请求对象
      * @return CompletableFuture<DeclineHandshakeResponse>
      */
     public CompletableFuture<DeclineHandshakeResponse> declineHandshakeAsync(DeclineHandshakeRequest request) {
@@ -543,13 +530,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeclineHandshakeRequest 请求对象
+     * @param request DeclineHandshakeRequest 请求对象
      * @return AsyncInvoker<DeclineHandshakeRequest, DeclineHandshakeResponse>
      */
     public AsyncInvoker<DeclineHandshakeRequest, DeclineHandshakeResponse> declineHandshakeAsyncInvoker(
         DeclineHandshakeRequest request) {
-        return new AsyncInvoker<DeclineHandshakeRequest, DeclineHandshakeResponse>(request,
-            OrganizationsMeta.declineHandshake, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.declineHandshake, hcClient);
     }
 
     /**
@@ -559,7 +545,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHandshakesRequest 请求对象
+     * @param request ListHandshakesRequest 请求对象
      * @return CompletableFuture<ListHandshakesResponse>
      */
     public CompletableFuture<ListHandshakesResponse> listHandshakesAsync(ListHandshakesRequest request) {
@@ -573,13 +559,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHandshakesRequest 请求对象
+     * @param request ListHandshakesRequest 请求对象
      * @return AsyncInvoker<ListHandshakesRequest, ListHandshakesResponse>
      */
     public AsyncInvoker<ListHandshakesRequest, ListHandshakesResponse> listHandshakesAsyncInvoker(
         ListHandshakesRequest request) {
-        return new AsyncInvoker<ListHandshakesRequest, ListHandshakesResponse>(request,
-            OrganizationsMeta.listHandshakes, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listHandshakes, hcClient);
     }
 
     /**
@@ -589,7 +574,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReceivedHandshakesRequest 请求对象
+     * @param request ListReceivedHandshakesRequest 请求对象
      * @return CompletableFuture<ListReceivedHandshakesResponse>
      */
     public CompletableFuture<ListReceivedHandshakesResponse> listReceivedHandshakesAsync(
@@ -604,13 +589,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReceivedHandshakesRequest 请求对象
+     * @param request ListReceivedHandshakesRequest 请求对象
      * @return AsyncInvoker<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse>
      */
     public AsyncInvoker<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse> listReceivedHandshakesAsyncInvoker(
         ListReceivedHandshakesRequest request) {
-        return new AsyncInvoker<ListReceivedHandshakesRequest, ListReceivedHandshakesResponse>(request,
-            OrganizationsMeta.listReceivedHandshakes, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listReceivedHandshakes, hcClient);
     }
 
     /**
@@ -620,7 +604,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHandshakeRequest 请求对象
+     * @param request ShowHandshakeRequest 请求对象
      * @return CompletableFuture<ShowHandshakeResponse>
      */
     public CompletableFuture<ShowHandshakeResponse> showHandshakeAsync(ShowHandshakeRequest request) {
@@ -634,13 +618,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHandshakeRequest 请求对象
+     * @param request ShowHandshakeRequest 请求对象
      * @return AsyncInvoker<ShowHandshakeRequest, ShowHandshakeResponse>
      */
     public AsyncInvoker<ShowHandshakeRequest, ShowHandshakeResponse> showHandshakeAsyncInvoker(
         ShowHandshakeRequest request) {
-        return new AsyncInvoker<ShowHandshakeRequest, ShowHandshakeResponse>(request, OrganizationsMeta.showHandshake,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showHandshake, hcClient);
     }
 
     /**
@@ -650,7 +633,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntitiesRequest 请求对象
+     * @param request ListEntitiesRequest 请求对象
      * @return CompletableFuture<ListEntitiesResponse>
      */
     public CompletableFuture<ListEntitiesResponse> listEntitiesAsync(ListEntitiesRequest request) {
@@ -664,13 +647,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntitiesRequest 请求对象
+     * @param request ListEntitiesRequest 请求对象
      * @return AsyncInvoker<ListEntitiesRequest, ListEntitiesResponse>
      */
     public AsyncInvoker<ListEntitiesRequest, ListEntitiesResponse> listEntitiesAsyncInvoker(
         ListEntitiesRequest request) {
-        return new AsyncInvoker<ListEntitiesRequest, ListEntitiesResponse>(request, OrganizationsMeta.listEntities,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listEntities, hcClient);
     }
 
     /**
@@ -680,7 +662,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
      */
     public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
@@ -694,11 +676,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQuotasRequest 请求对象
+     * @param request ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
-        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, OrganizationsMeta.listQuotas, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listQuotas, hcClient);
     }
 
     /**
@@ -708,7 +690,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicesRequest 请求对象
+     * @param request ListServicesRequest 请求对象
      * @return CompletableFuture<ListServicesResponse>
      */
     public CompletableFuture<ListServicesResponse> listServicesAsync(ListServicesRequest request) {
@@ -722,13 +704,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListServicesRequest 请求对象
+     * @param request ListServicesRequest 请求对象
      * @return AsyncInvoker<ListServicesRequest, ListServicesResponse>
      */
     public AsyncInvoker<ListServicesRequest, ListServicesResponse> listServicesAsyncInvoker(
         ListServicesRequest request) {
-        return new AsyncInvoker<ListServicesRequest, ListServicesResponse>(request, OrganizationsMeta.listServices,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listServices, hcClient);
     }
 
     /**
@@ -738,7 +719,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagPolicyServicesRequest 请求对象
+     * @param request ListTagPolicyServicesRequest 请求对象
      * @return CompletableFuture<ListTagPolicyServicesResponse>
      */
     public CompletableFuture<ListTagPolicyServicesResponse> listTagPolicyServicesAsync(
@@ -753,13 +734,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagPolicyServicesRequest 请求对象
+     * @param request ListTagPolicyServicesRequest 请求对象
      * @return AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>
      */
     public AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> listTagPolicyServicesAsyncInvoker(
         ListTagPolicyServicesRequest request) {
-        return new AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>(request,
-            OrganizationsMeta.listTagPolicyServices, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listTagPolicyServices, hcClient);
     }
 
     /**
@@ -769,7 +749,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEffectivePoliciesRequest 请求对象
+     * @param request ShowEffectivePoliciesRequest 请求对象
      * @return CompletableFuture<ShowEffectivePoliciesResponse>
      */
     public CompletableFuture<ShowEffectivePoliciesResponse> showEffectivePoliciesAsync(
@@ -784,13 +764,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowEffectivePoliciesRequest 请求对象
+     * @param request ShowEffectivePoliciesRequest 请求对象
      * @return AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>
      */
     public AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> showEffectivePoliciesAsyncInvoker(
         ShowEffectivePoliciesRequest request) {
-        return new AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>(request,
-            OrganizationsMeta.showEffectivePolicies, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showEffectivePolicies, hcClient);
     }
 
     /**
@@ -800,7 +779,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationRequest 请求对象
+     * @param request CreateOrganizationRequest 请求对象
      * @return CompletableFuture<CreateOrganizationResponse>
      */
     public CompletableFuture<CreateOrganizationResponse> createOrganizationAsync(CreateOrganizationRequest request) {
@@ -814,13 +793,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationRequest 请求对象
+     * @param request CreateOrganizationRequest 请求对象
      * @return AsyncInvoker<CreateOrganizationRequest, CreateOrganizationResponse>
      */
     public AsyncInvoker<CreateOrganizationRequest, CreateOrganizationResponse> createOrganizationAsyncInvoker(
         CreateOrganizationRequest request) {
-        return new AsyncInvoker<CreateOrganizationRequest, CreateOrganizationResponse>(request,
-            OrganizationsMeta.createOrganization, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.createOrganization, hcClient);
     }
 
     /**
@@ -830,7 +808,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationRequest 请求对象
+     * @param request DeleteOrganizationRequest 请求对象
      * @return CompletableFuture<DeleteOrganizationResponse>
      */
     public CompletableFuture<DeleteOrganizationResponse> deleteOrganizationAsync(DeleteOrganizationRequest request) {
@@ -844,13 +822,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationRequest 请求对象
+     * @param request DeleteOrganizationRequest 请求对象
      * @return AsyncInvoker<DeleteOrganizationRequest, DeleteOrganizationResponse>
      */
     public AsyncInvoker<DeleteOrganizationRequest, DeleteOrganizationResponse> deleteOrganizationAsyncInvoker(
         DeleteOrganizationRequest request) {
-        return new AsyncInvoker<DeleteOrganizationRequest, DeleteOrganizationResponse>(request,
-            OrganizationsMeta.deleteOrganization, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.deleteOrganization, hcClient);
     }
 
     /**
@@ -860,7 +837,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LeaveOrganizationRequest 请求对象
+     * @param request LeaveOrganizationRequest 请求对象
      * @return CompletableFuture<LeaveOrganizationResponse>
      */
     public CompletableFuture<LeaveOrganizationResponse> leaveOrganizationAsync(LeaveOrganizationRequest request) {
@@ -874,13 +851,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LeaveOrganizationRequest 请求对象
+     * @param request LeaveOrganizationRequest 请求对象
      * @return AsyncInvoker<LeaveOrganizationRequest, LeaveOrganizationResponse>
      */
     public AsyncInvoker<LeaveOrganizationRequest, LeaveOrganizationResponse> leaveOrganizationAsyncInvoker(
         LeaveOrganizationRequest request) {
-        return new AsyncInvoker<LeaveOrganizationRequest, LeaveOrganizationResponse>(request,
-            OrganizationsMeta.leaveOrganization, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.leaveOrganization, hcClient);
     }
 
     /**
@@ -890,7 +866,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRootsRequest 请求对象
+     * @param request ListRootsRequest 请求对象
      * @return CompletableFuture<ListRootsResponse>
      */
     public CompletableFuture<ListRootsResponse> listRootsAsync(ListRootsRequest request) {
@@ -904,11 +880,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRootsRequest 请求对象
+     * @param request ListRootsRequest 请求对象
      * @return AsyncInvoker<ListRootsRequest, ListRootsResponse>
      */
     public AsyncInvoker<ListRootsRequest, ListRootsResponse> listRootsAsyncInvoker(ListRootsRequest request) {
-        return new AsyncInvoker<ListRootsRequest, ListRootsResponse>(request, OrganizationsMeta.listRoots, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listRoots, hcClient);
     }
 
     /**
@@ -918,7 +894,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationRequest 请求对象
+     * @param request ShowOrganizationRequest 请求对象
      * @return CompletableFuture<ShowOrganizationResponse>
      */
     public CompletableFuture<ShowOrganizationResponse> showOrganizationAsync(ShowOrganizationRequest request) {
@@ -932,13 +908,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationRequest 请求对象
+     * @param request ShowOrganizationRequest 请求对象
      * @return AsyncInvoker<ShowOrganizationRequest, ShowOrganizationResponse>
      */
     public AsyncInvoker<ShowOrganizationRequest, ShowOrganizationResponse> showOrganizationAsyncInvoker(
         ShowOrganizationRequest request) {
-        return new AsyncInvoker<ShowOrganizationRequest, ShowOrganizationResponse>(request,
-            OrganizationsMeta.showOrganization, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showOrganization, hcClient);
     }
 
     /**
@@ -948,7 +923,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationalUnitRequest 请求对象
+     * @param request CreateOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<CreateOrganizationalUnitResponse>
      */
     public CompletableFuture<CreateOrganizationalUnitResponse> createOrganizationalUnitAsync(
@@ -963,13 +938,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOrganizationalUnitRequest 请求对象
+     * @param request CreateOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse>
      */
     public AsyncInvoker<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse> createOrganizationalUnitAsyncInvoker(
         CreateOrganizationalUnitRequest request) {
-        return new AsyncInvoker<CreateOrganizationalUnitRequest, CreateOrganizationalUnitResponse>(request,
-            OrganizationsMeta.createOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.createOrganizationalUnit, hcClient);
     }
 
     /**
@@ -979,7 +953,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationalUnitRequest 请求对象
+     * @param request DeleteOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<DeleteOrganizationalUnitResponse>
      */
     public CompletableFuture<DeleteOrganizationalUnitResponse> deleteOrganizationalUnitAsync(
@@ -994,13 +968,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteOrganizationalUnitRequest 请求对象
+     * @param request DeleteOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse>
      */
     public AsyncInvoker<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse> deleteOrganizationalUnitAsyncInvoker(
         DeleteOrganizationalUnitRequest request) {
-        return new AsyncInvoker<DeleteOrganizationalUnitRequest, DeleteOrganizationalUnitResponse>(request,
-            OrganizationsMeta.deleteOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.deleteOrganizationalUnit, hcClient);
     }
 
     /**
@@ -1010,7 +983,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrganizationalUnitsRequest 请求对象
+     * @param request ListOrganizationalUnitsRequest 请求对象
      * @return CompletableFuture<ListOrganizationalUnitsResponse>
      */
     public CompletableFuture<ListOrganizationalUnitsResponse> listOrganizationalUnitsAsync(
@@ -1025,13 +998,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListOrganizationalUnitsRequest 请求对象
+     * @param request ListOrganizationalUnitsRequest 请求对象
      * @return AsyncInvoker<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse>
      */
     public AsyncInvoker<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse> listOrganizationalUnitsAsyncInvoker(
         ListOrganizationalUnitsRequest request) {
-        return new AsyncInvoker<ListOrganizationalUnitsRequest, ListOrganizationalUnitsResponse>(request,
-            OrganizationsMeta.listOrganizationalUnits, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listOrganizationalUnits, hcClient);
     }
 
     /**
@@ -1041,7 +1013,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationalUnitRequest 请求对象
+     * @param request ShowOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<ShowOrganizationalUnitResponse>
      */
     public CompletableFuture<ShowOrganizationalUnitResponse> showOrganizationalUnitAsync(
@@ -1056,13 +1028,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowOrganizationalUnitRequest 请求对象
+     * @param request ShowOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse>
      */
     public AsyncInvoker<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse> showOrganizationalUnitAsyncInvoker(
         ShowOrganizationalUnitRequest request) {
-        return new AsyncInvoker<ShowOrganizationalUnitRequest, ShowOrganizationalUnitResponse>(request,
-            OrganizationsMeta.showOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showOrganizationalUnit, hcClient);
     }
 
     /**
@@ -1072,7 +1043,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOrganizationalUnitRequest 请求对象
+     * @param request UpdateOrganizationalUnitRequest 请求对象
      * @return CompletableFuture<UpdateOrganizationalUnitResponse>
      */
     public CompletableFuture<UpdateOrganizationalUnitResponse> updateOrganizationalUnitAsync(
@@ -1087,13 +1058,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateOrganizationalUnitRequest 请求对象
+     * @param request UpdateOrganizationalUnitRequest 请求对象
      * @return AsyncInvoker<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse>
      */
     public AsyncInvoker<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse> updateOrganizationalUnitAsyncInvoker(
         UpdateOrganizationalUnitRequest request) {
-        return new AsyncInvoker<UpdateOrganizationalUnitRequest, UpdateOrganizationalUnitResponse>(request,
-            OrganizationsMeta.updateOrganizationalUnit, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.updateOrganizationalUnit, hcClient);
     }
 
     /**
@@ -1103,7 +1073,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPolicyRequest 请求对象
+     * @param request AttachPolicyRequest 请求对象
      * @return CompletableFuture<AttachPolicyResponse>
      */
     public CompletableFuture<AttachPolicyResponse> attachPolicyAsync(AttachPolicyRequest request) {
@@ -1117,13 +1087,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AttachPolicyRequest 请求对象
+     * @param request AttachPolicyRequest 请求对象
      * @return AsyncInvoker<AttachPolicyRequest, AttachPolicyResponse>
      */
     public AsyncInvoker<AttachPolicyRequest, AttachPolicyResponse> attachPolicyAsyncInvoker(
         AttachPolicyRequest request) {
-        return new AsyncInvoker<AttachPolicyRequest, AttachPolicyResponse>(request, OrganizationsMeta.attachPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.attachPolicy, hcClient);
     }
 
     /**
@@ -1133,7 +1102,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
      */
     public CompletableFuture<CreatePolicyResponse> createPolicyAsync(CreatePolicyRequest request) {
@@ -1147,13 +1116,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreatePolicyRequest 请求对象
+     * @param request CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
      */
     public AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyAsyncInvoker(
         CreatePolicyRequest request) {
-        return new AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, OrganizationsMeta.createPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.createPolicy, hcClient);
     }
 
     /**
@@ -1163,7 +1131,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
      */
     public CompletableFuture<DeletePolicyResponse> deletePolicyAsync(DeletePolicyRequest request) {
@@ -1177,13 +1145,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeletePolicyRequest 请求对象
+     * @param request DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
      */
     public AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyAsyncInvoker(
         DeletePolicyRequest request) {
-        return new AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>(request, OrganizationsMeta.deletePolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.deletePolicy, hcClient);
     }
 
     /**
@@ -1193,7 +1160,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPolicyRequest 请求对象
+     * @param request DetachPolicyRequest 请求对象
      * @return CompletableFuture<DetachPolicyResponse>
      */
     public CompletableFuture<DetachPolicyResponse> detachPolicyAsync(DetachPolicyRequest request) {
@@ -1207,13 +1174,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DetachPolicyRequest 请求对象
+     * @param request DetachPolicyRequest 请求对象
      * @return AsyncInvoker<DetachPolicyRequest, DetachPolicyResponse>
      */
     public AsyncInvoker<DetachPolicyRequest, DetachPolicyResponse> detachPolicyAsyncInvoker(
         DetachPolicyRequest request) {
-        return new AsyncInvoker<DetachPolicyRequest, DetachPolicyResponse>(request, OrganizationsMeta.detachPolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.detachPolicy, hcClient);
     }
 
     /**
@@ -1223,7 +1189,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePolicyTypeRequest 请求对象
+     * @param request DisablePolicyTypeRequest 请求对象
      * @return CompletableFuture<DisablePolicyTypeResponse>
      */
     public CompletableFuture<DisablePolicyTypeResponse> disablePolicyTypeAsync(DisablePolicyTypeRequest request) {
@@ -1237,13 +1203,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisablePolicyTypeRequest 请求对象
+     * @param request DisablePolicyTypeRequest 请求对象
      * @return AsyncInvoker<DisablePolicyTypeRequest, DisablePolicyTypeResponse>
      */
     public AsyncInvoker<DisablePolicyTypeRequest, DisablePolicyTypeResponse> disablePolicyTypeAsyncInvoker(
         DisablePolicyTypeRequest request) {
-        return new AsyncInvoker<DisablePolicyTypeRequest, DisablePolicyTypeResponse>(request,
-            OrganizationsMeta.disablePolicyType, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.disablePolicyType, hcClient);
     }
 
     /**
@@ -1253,7 +1218,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePolicyTypeRequest 请求对象
+     * @param request EnablePolicyTypeRequest 请求对象
      * @return CompletableFuture<EnablePolicyTypeResponse>
      */
     public CompletableFuture<EnablePolicyTypeResponse> enablePolicyTypeAsync(EnablePolicyTypeRequest request) {
@@ -1267,13 +1232,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnablePolicyTypeRequest 请求对象
+     * @param request EnablePolicyTypeRequest 请求对象
      * @return AsyncInvoker<EnablePolicyTypeRequest, EnablePolicyTypeResponse>
      */
     public AsyncInvoker<EnablePolicyTypeRequest, EnablePolicyTypeResponse> enablePolicyTypeAsyncInvoker(
         EnablePolicyTypeRequest request) {
-        return new AsyncInvoker<EnablePolicyTypeRequest, EnablePolicyTypeResponse>(request,
-            OrganizationsMeta.enablePolicyType, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.enablePolicyType, hcClient);
     }
 
     /**
@@ -1283,7 +1247,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntitiesForPolicyRequest 请求对象
+     * @param request ListEntitiesForPolicyRequest 请求对象
      * @return CompletableFuture<ListEntitiesForPolicyResponse>
      */
     public CompletableFuture<ListEntitiesForPolicyResponse> listEntitiesForPolicyAsync(
@@ -1298,13 +1262,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEntitiesForPolicyRequest 请求对象
+     * @param request ListEntitiesForPolicyRequest 请求对象
      * @return AsyncInvoker<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse>
      */
     public AsyncInvoker<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> listEntitiesForPolicyAsyncInvoker(
         ListEntitiesForPolicyRequest request) {
-        return new AsyncInvoker<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse>(request,
-            OrganizationsMeta.listEntitiesForPolicy, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listEntitiesForPolicy, hcClient);
     }
 
     /**
@@ -1314,7 +1277,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return CompletableFuture<ListPoliciesResponse>
      */
     public CompletableFuture<ListPoliciesResponse> listPoliciesAsync(ListPoliciesRequest request) {
@@ -1328,13 +1291,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
      */
     public AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse> listPoliciesAsyncInvoker(
         ListPoliciesRequest request) {
-        return new AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse>(request, OrganizationsMeta.listPolicies,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listPolicies, hcClient);
     }
 
     /**
@@ -1344,7 +1306,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return CompletableFuture<ShowPolicyResponse>
      */
     public CompletableFuture<ShowPolicyResponse> showPolicyAsync(ShowPolicyRequest request) {
@@ -1358,11 +1320,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPolicyRequest 请求对象
+     * @param request ShowPolicyRequest 请求对象
      * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
      */
     public AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyAsyncInvoker(ShowPolicyRequest request) {
-        return new AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, OrganizationsMeta.showPolicy, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1372,7 +1334,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return CompletableFuture<UpdatePolicyResponse>
      */
     public CompletableFuture<UpdatePolicyResponse> updatePolicyAsync(UpdatePolicyRequest request) {
@@ -1386,13 +1348,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePolicyRequest 请求对象
+     * @param request UpdatePolicyRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
     public AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyAsyncInvoker(
         UpdatePolicyRequest request) {
-        return new AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, OrganizationsMeta.updatePolicy,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.updatePolicy, hcClient);
     }
 
     /**
@@ -1402,7 +1363,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagResourceRequest 请求对象
+     * @param request CreateTagResourceRequest 请求对象
      * @return CompletableFuture<CreateTagResourceResponse>
      */
     public CompletableFuture<CreateTagResourceResponse> createTagResourceAsync(CreateTagResourceRequest request) {
@@ -1416,13 +1377,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagResourceRequest 请求对象
+     * @param request CreateTagResourceRequest 请求对象
      * @return AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>
      */
     public AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse> createTagResourceAsyncInvoker(
         CreateTagResourceRequest request) {
-        return new AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>(request,
-            OrganizationsMeta.createTagResource, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.createTagResource, hcClient);
     }
 
     /**
@@ -1432,7 +1392,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagResourceRequest 请求对象
+     * @param request DeleteTagResourceRequest 请求对象
      * @return CompletableFuture<DeleteTagResourceResponse>
      */
     public CompletableFuture<DeleteTagResourceResponse> deleteTagResourceAsync(DeleteTagResourceRequest request) {
@@ -1446,13 +1406,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagResourceRequest 请求对象
+     * @param request DeleteTagResourceRequest 请求对象
      * @return AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>
      */
     public AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse> deleteTagResourceAsyncInvoker(
         DeleteTagResourceRequest request) {
-        return new AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>(request,
-            OrganizationsMeta.deleteTagResource, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.deleteTagResource, hcClient);
     }
 
     /**
@@ -1462,7 +1421,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
      */
     public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
@@ -1477,13 +1436,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceInstancesRequest 请求对象
+     * @param request ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
      */
     public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
         ListResourceInstancesRequest request) {
-        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
-            OrganizationsMeta.listResourceInstances, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listResourceInstances, hcClient);
     }
 
     /**
@@ -1493,7 +1451,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return CompletableFuture<ListResourceTagsResponse>
      */
     public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
@@ -1507,13 +1465,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourceTagsRequest 请求对象
+     * @param request ListResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
      */
     public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
         ListResourceTagsRequest request) {
-        return new AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request,
-            OrganizationsMeta.listResourceTags, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -1523,7 +1480,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourcesRequest 请求对象
+     * @param request ListTagResourcesRequest 请求对象
      * @return CompletableFuture<ListTagResourcesResponse>
      */
     public CompletableFuture<ListTagResourcesResponse> listTagResourcesAsync(ListTagResourcesRequest request) {
@@ -1537,13 +1494,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagResourcesRequest 请求对象
+     * @param request ListTagResourcesRequest 请求对象
      * @return AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>
      */
     public AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse> listTagResourcesAsyncInvoker(
         ListTagResourcesRequest request) {
-        return new AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>(request,
-            OrganizationsMeta.listTagResources, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listTagResources, hcClient);
     }
 
     /**
@@ -1553,7 +1509,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsForResourceRequest 请求对象
+     * @param request ListTagsForResourceRequest 请求对象
      * @return CompletableFuture<ListTagsForResourceResponse>
      */
     public CompletableFuture<ListTagsForResourceResponse> listTagsForResourceAsync(ListTagsForResourceRequest request) {
@@ -1567,13 +1523,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsForResourceRequest 请求对象
+     * @param request ListTagsForResourceRequest 请求对象
      * @return AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse>
      */
     public AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse> listTagsForResourceAsyncInvoker(
         ListTagsForResourceRequest request) {
-        return new AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse>(request,
-            OrganizationsMeta.listTagsForResource, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listTagsForResource, hcClient);
     }
 
     /**
@@ -1583,7 +1538,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceInstancesCountRequest 请求对象
+     * @param request ShowResourceInstancesCountRequest 请求对象
      * @return CompletableFuture<ShowResourceInstancesCountResponse>
      */
     public CompletableFuture<ShowResourceInstancesCountResponse> showResourceInstancesCountAsync(
@@ -1598,13 +1553,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceInstancesCountRequest 请求对象
+     * @param request ShowResourceInstancesCountRequest 请求对象
      * @return AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>
      */
     public AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> showResourceInstancesCountAsyncInvoker(
         ShowResourceInstancesCountRequest request) {
-        return new AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>(request,
-            OrganizationsMeta.showResourceInstancesCount, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.showResourceInstancesCount, hcClient);
     }
 
     /**
@@ -1614,7 +1568,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagResourceRequest 请求对象
+     * @param request TagResourceRequest 请求对象
      * @return CompletableFuture<TagResourceResponse>
      */
     public CompletableFuture<TagResourceResponse> tagResourceAsync(TagResourceRequest request) {
@@ -1628,12 +1582,11 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param TagResourceRequest 请求对象
+     * @param request TagResourceRequest 请求对象
      * @return AsyncInvoker<TagResourceRequest, TagResourceResponse>
      */
     public AsyncInvoker<TagResourceRequest, TagResourceResponse> tagResourceAsyncInvoker(TagResourceRequest request) {
-        return new AsyncInvoker<TagResourceRequest, TagResourceResponse>(request, OrganizationsMeta.tagResource,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.tagResource, hcClient);
     }
 
     /**
@@ -1643,7 +1596,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UntagResourceRequest 请求对象
+     * @param request UntagResourceRequest 请求对象
      * @return CompletableFuture<UntagResourceResponse>
      */
     public CompletableFuture<UntagResourceResponse> untagResourceAsync(UntagResourceRequest request) {
@@ -1657,13 +1610,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UntagResourceRequest 请求对象
+     * @param request UntagResourceRequest 请求对象
      * @return AsyncInvoker<UntagResourceRequest, UntagResourceResponse>
      */
     public AsyncInvoker<UntagResourceRequest, UntagResourceResponse> untagResourceAsyncInvoker(
         UntagResourceRequest request) {
-        return new AsyncInvoker<UntagResourceRequest, UntagResourceResponse>(request, OrganizationsMeta.untagResource,
-            hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.untagResource, hcClient);
     }
 
     /**
@@ -1673,7 +1625,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableTrustedServiceRequest 请求对象
+     * @param request DisableTrustedServiceRequest 请求对象
      * @return CompletableFuture<DisableTrustedServiceResponse>
      */
     public CompletableFuture<DisableTrustedServiceResponse> disableTrustedServiceAsync(
@@ -1688,13 +1640,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisableTrustedServiceRequest 请求对象
+     * @param request DisableTrustedServiceRequest 请求对象
      * @return AsyncInvoker<DisableTrustedServiceRequest, DisableTrustedServiceResponse>
      */
     public AsyncInvoker<DisableTrustedServiceRequest, DisableTrustedServiceResponse> disableTrustedServiceAsyncInvoker(
         DisableTrustedServiceRequest request) {
-        return new AsyncInvoker<DisableTrustedServiceRequest, DisableTrustedServiceResponse>(request,
-            OrganizationsMeta.disableTrustedService, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.disableTrustedService, hcClient);
     }
 
     /**
@@ -1704,7 +1655,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableTrustedServiceRequest 请求对象
+     * @param request EnableTrustedServiceRequest 请求对象
      * @return CompletableFuture<EnableTrustedServiceResponse>
      */
     public CompletableFuture<EnableTrustedServiceResponse> enableTrustedServiceAsync(
@@ -1719,13 +1670,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableTrustedServiceRequest 请求对象
+     * @param request EnableTrustedServiceRequest 请求对象
      * @return AsyncInvoker<EnableTrustedServiceRequest, EnableTrustedServiceResponse>
      */
     public AsyncInvoker<EnableTrustedServiceRequest, EnableTrustedServiceResponse> enableTrustedServiceAsyncInvoker(
         EnableTrustedServiceRequest request) {
-        return new AsyncInvoker<EnableTrustedServiceRequest, EnableTrustedServiceResponse>(request,
-            OrganizationsMeta.enableTrustedService, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.enableTrustedService, hcClient);
     }
 
     /**
@@ -1735,7 +1685,7 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrustedServicesRequest 请求对象
+     * @param request ListTrustedServicesRequest 请求对象
      * @return CompletableFuture<ListTrustedServicesResponse>
      */
     public CompletableFuture<ListTrustedServicesResponse> listTrustedServicesAsync(ListTrustedServicesRequest request) {
@@ -1749,13 +1699,12 @@ public class OrganizationsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTrustedServicesRequest 请求对象
+     * @param request ListTrustedServicesRequest 请求对象
      * @return AsyncInvoker<ListTrustedServicesRequest, ListTrustedServicesResponse>
      */
     public AsyncInvoker<ListTrustedServicesRequest, ListTrustedServicesResponse> listTrustedServicesAsyncInvoker(
         ListTrustedServicesRequest request) {
-        return new AsyncInvoker<ListTrustedServicesRequest, ListTrustedServicesResponse>(request,
-            OrganizationsMeta.listTrustedServices, hcClient);
+        return new AsyncInvoker<>(request, OrganizationsMeta.listTrustedServices, hcClient);
     }
 
 }

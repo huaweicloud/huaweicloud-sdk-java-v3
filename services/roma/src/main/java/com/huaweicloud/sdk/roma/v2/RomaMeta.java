@@ -780,9 +780,9 @@ import java.util.List;
 public class RomaMeta {
 
     public static final HttpRequestDef<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> addSubsetsToGateway =
-        genForaddSubsetsToGateway();
+        genForAddSubsetsToGateway();
 
-    private static HttpRequestDef<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> genForaddSubsetsToGateway() {
+    private static HttpRequestDef<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> genForAddSubsetsToGateway() {
         // basic
         HttpRequestDef.Builder<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddSubsetsToGatewayRequest.class, AddSubsetsToGatewayResponse.class)
@@ -795,40 +795,34 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getInstanceId,
+                AddSubsetsToGatewayRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getDeviceId, AddSubsetsToGatewayRequest::setDeviceId));
         builder.<AddSubsetsToGatewayRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddSubsetsToGatewayRequestBody.class),
-            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddSubsetsToGatewayRequest::getBody, AddSubsetsToGatewayRequest::setBody));
 
         // response
         builder.<List<AddSubsetsToGatewayResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(AddSubsetsToGatewayResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AddSubsetsToGatewayResponseBody.class));
+            f -> f.withMarshaller(AddSubsetsToGatewayResponse::getBody, AddSubsetsToGatewayResponse::setBody)
+                .withInnerContainerType(AddSubsetsToGatewayResponseBody.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuota =
-        genForassociateAppsForAppQuota();
+        genForAssociateAppsForAppQuota();
 
-    private static HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> genForassociateAppsForAppQuota() {
+    private static HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> genForAssociateAppsForAppQuota() {
         // basic
         HttpRequestDef.Builder<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> builder =
             HttpRequestDef
@@ -842,23 +836,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getInstanceId,
+                AssociateAppsForAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getAppQuotaId,
+                AssociateAppsForAppQuotaRequest::setAppQuotaId));
         builder.<CreateAppQuotaBindingApp>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppQuotaBindingApp.class),
-            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getBody, AssociateAppsForAppQuotaRequest::setBody));
 
         // response
 
@@ -866,9 +856,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2 =
-        genForassociateCertificateV2();
+        genForAssociateCertificateV2();
 
-    private static HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> genForassociateCertificateV2() {
+    private static HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> genForAssociateCertificateV2() {
         // basic
         HttpRequestDef.Builder<AssociateCertificateV2Request, AssociateCertificateV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateCertificateV2Request.class, AssociateCertificateV2Response.class)
@@ -882,30 +872,25 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getInstanceId,
+                AssociateCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getGroupId,
+                AssociateCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getDomainId,
+                AssociateCertificateV2Request::setDomainId));
         builder.<CertForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertForm.class),
-            f -> f.withMarshaller(AssociateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateCertificateV2Request::getBody, AssociateCertificateV2Request::setBody));
 
         // response
 
@@ -913,9 +898,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> associateDomainV2 =
-        genForassociateDomainV2();
+        genForAssociateDomainV2();
 
-    private static HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> genForassociateDomainV2() {
+    private static HttpRequestDef<AssociateDomainV2Request, AssociateDomainV2Response> genForAssociateDomainV2() {
         // basic
         HttpRequestDef.Builder<AssociateDomainV2Request, AssociateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateDomainV2Request.class, AssociateDomainV2Response.class)
@@ -928,23 +913,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getInstanceId, AssociateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getGroupId, AssociateDomainV2Request::setGroupId));
         builder.<UrlDomainCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UrlDomainCreate.class),
-            f -> f.withMarshaller(AssociateDomainV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateDomainV2Request::getBody, AssociateDomainV2Request::setBody));
 
         // response
 
@@ -952,9 +931,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> associateSignatureKeyV2 =
-        genForassociateSignatureKeyV2();
+        genForAssociateSignatureKeyV2();
 
-    private static HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> genForassociateSignatureKeyV2() {
+    private static HttpRequestDef<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> genForAssociateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateSignatureKeyV2Request.class, AssociateSignatureKeyV2Response.class)
@@ -967,16 +946,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getInstanceId,
+                AssociateSignatureKeyV2Request::setInstanceId));
         builder.<SignApiBinding>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SignApiBinding.class),
-            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, AssociateSignatureKeyV2Request::setBody));
 
         // response
 
@@ -984,9 +960,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPlugin =
-        genForattachApiToPlugin();
+        genForAttachApiToPlugin();
 
-    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForattachApiToPlugin() {
+    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForAttachApiToPlugin() {
         // basic
         HttpRequestDef.Builder<AttachApiToPluginRequest, AttachApiToPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachApiToPluginRequest.class, AttachApiToPluginResponse.class)
@@ -999,23 +975,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, AttachApiToPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, AttachApiToPluginRequest::setPluginId));
         builder.<PluginOperApiInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
-            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, AttachApiToPluginRequest::setBody));
 
         // response
 
@@ -1023,9 +993,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApi =
-        genForattachPluginToApi();
+        genForAttachPluginToApi();
 
-    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForattachPluginToApi() {
+    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForAttachPluginToApi() {
         // basic
         HttpRequestDef.Builder<AttachPluginToApiRequest, AttachPluginToApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachPluginToApiRequest.class, AttachPluginToApiResponse.class)
@@ -1038,23 +1008,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, AttachPluginToApiRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, AttachPluginToApiRequest::setApiId));
         builder.<ApiOperPluginInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
-            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, AttachPluginToApiRequest::setBody));
 
         // response
 
@@ -1062,9 +1026,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> batchAddDeviceToGroup =
-        genForbatchAddDeviceToGroup();
+        genForBatchAddDeviceToGroup();
 
-    private static HttpRequestDef<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> genForbatchAddDeviceToGroup() {
+    private static HttpRequestDef<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> genForBatchAddDeviceToGroup() {
         // basic
         HttpRequestDef.Builder<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAddDeviceToGroupRequest.class, BatchAddDeviceToGroupResponse.class)
@@ -1077,23 +1041,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getInstanceId,
+                BatchAddDeviceToGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getGroupId, BatchAddDeviceToGroupRequest::setGroupId));
         builder.<BatchAddDeviceToGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchAddDeviceToGroupRequestBody.class),
-            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getBody, BatchAddDeviceToGroupRequest::setBody));
 
         // response
 
@@ -1101,9 +1060,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevices =
-        genForbatchDeleteDevices();
+        genForBatchDeleteDevices();
 
-    private static HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> genForbatchDeleteDevices() {
+    private static HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> genForBatchDeleteDevices() {
         // basic
         HttpRequestDef.Builder<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDevicesRequest.class, BatchDeleteDevicesResponse.class)
@@ -1116,16 +1075,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDevicesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getInstanceId, BatchDeleteDevicesRequest::setInstanceId));
         builder.<BatchDeleteDevicesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteDevicesRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, BatchDeleteDevicesRequest::setBody));
 
         // response
 
@@ -1133,9 +1088,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> batchDeleteMqsInstanceTopic =
-        genForbatchDeleteMqsInstanceTopic();
+        genForBatchDeleteMqsInstanceTopic();
 
-    private static HttpRequestDef<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> genForbatchDeleteMqsInstanceTopic() {
+    private static HttpRequestDef<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> genForBatchDeleteMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> builder =
             HttpRequestDef
@@ -1151,16 +1106,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteMqsInstanceTopicRequest::getInstanceId,
+                BatchDeleteMqsInstanceTopicRequest::setInstanceId));
         builder.<BatchDeleteMqsInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteMqsInstanceTopicReq.class),
-            f -> f.withMarshaller(BatchDeleteMqsInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteMqsInstanceTopicRequest::getBody,
+                BatchDeleteMqsInstanceTopicRequest::setBody));
 
         // response
 
@@ -1168,9 +1121,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteRulesRequest, BatchDeleteRulesResponse> batchDeleteRules =
-        genForbatchDeleteRules();
+        genForBatchDeleteRules();
 
-    private static HttpRequestDef<BatchDeleteRulesRequest, BatchDeleteRulesResponse> genForbatchDeleteRules() {
+    private static HttpRequestDef<BatchDeleteRulesRequest, BatchDeleteRulesResponse> genForBatchDeleteRules() {
         // basic
         HttpRequestDef.Builder<BatchDeleteRulesRequest, BatchDeleteRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteRulesRequest.class, BatchDeleteRulesResponse.class)
@@ -1183,16 +1136,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteRulesRequest::getInstanceId, BatchDeleteRulesRequest::setInstanceId));
         builder.<BatchDeleteRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteRulesRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteRulesRequest::getBody, BatchDeleteRulesRequest::setBody));
 
         // response
 
@@ -1200,9 +1149,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> batchFreezeDevices =
-        genForbatchFreezeDevices();
+        genForBatchFreezeDevices();
 
-    private static HttpRequestDef<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> genForbatchFreezeDevices() {
+    private static HttpRequestDef<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> genForBatchFreezeDevices() {
         // basic
         HttpRequestDef.Builder<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchFreezeDevicesRequest.class, BatchFreezeDevicesResponse.class)
@@ -1215,16 +1164,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchFreezeDevicesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchFreezeDevicesRequest::getInstanceId, BatchFreezeDevicesRequest::setInstanceId));
         builder.<BatchFreezeDevicesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchFreezeDevicesRequestBody.class),
-            f -> f.withMarshaller(BatchFreezeDevicesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchFreezeDevicesRequest::getBody, BatchFreezeDevicesRequest::setBody));
 
         // response
 
@@ -1232,9 +1177,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> batchStartOrStopTasks =
-        genForbatchStartOrStopTasks();
+        genForBatchStartOrStopTasks();
 
-    private static HttpRequestDef<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> genForbatchStartOrStopTasks() {
+    private static HttpRequestDef<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> genForBatchStartOrStopTasks() {
         // basic
         HttpRequestDef.Builder<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchStartOrStopTasksRequest.class, BatchStartOrStopTasksResponse.class)
@@ -1247,16 +1192,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getInstanceId,
+                BatchStartOrStopTasksRequest::setInstanceId));
         builder.<OperateTasksBean>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateTasksBean.class),
-            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchStartOrStopTasksRequest::getBody, BatchStartOrStopTasksRequest::setBody));
 
         // response
 
@@ -1264,9 +1206,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckLivedataApisV2Request, CheckLivedataApisV2Response> checkLivedataApisV2 =
-        genForcheckLivedataApisV2();
+        genForCheckLivedataApisV2();
 
-    private static HttpRequestDef<CheckLivedataApisV2Request, CheckLivedataApisV2Response> genForcheckLivedataApisV2() {
+    private static HttpRequestDef<CheckLivedataApisV2Request, CheckLivedataApisV2Response> genForCheckLivedataApisV2() {
         // basic
         HttpRequestDef.Builder<CheckLivedataApisV2Request, CheckLivedataApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckLivedataApisV2Request.class, CheckLivedataApisV2Response.class)
@@ -1279,25 +1221,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckLivedataApisV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckLivedataApisV2Request::getInstanceId,
+                CheckLivedataApisV2Request::setInstanceId));
         builder.<LdApiCheckInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LdApiCheckInfo.class),
-            f -> f.withMarshaller(CheckLivedataApisV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckLivedataApisV2Request::getBody, CheckLivedataApisV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CountDevicesRequest, CountDevicesResponse> countDevices = genForcountDevices();
+    public static final HttpRequestDef<CountDevicesRequest, CountDevicesResponse> countDevices = genForCountDevices();
 
-    private static HttpRequestDef<CountDevicesRequest, CountDevicesResponse> genForcountDevices() {
+    private static HttpRequestDef<CountDevicesRequest, CountDevicesResponse> genForCountDevices() {
         // basic
         HttpRequestDef.Builder<CountDevicesRequest, CountDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountDevicesRequest.class, CountDevicesResponse.class)
@@ -1310,18 +1249,16 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountDevicesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CountDevicesRequest::getInstanceId, CountDevicesRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CountTasksRequest, CountTasksResponse> countTasks = genForcountTasks();
+    public static final HttpRequestDef<CountTasksRequest, CountTasksResponse> countTasks = genForCountTasks();
 
-    private static HttpRequestDef<CountTasksRequest, CountTasksResponse> genForcountTasks() {
+    private static HttpRequestDef<CountTasksRequest, CountTasksResponse> genForCountTasks() {
         // basic
         HttpRequestDef.Builder<CountTasksRequest, CountTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountTasksRequest.class, CountTasksResponse.class)
@@ -1334,9 +1271,7 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CountTasksRequest::getInstanceId, CountTasksRequest::setInstanceId));
 
         // response
 
@@ -1344,9 +1279,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
-        genForcreateAppCodeAutoV2();
+        genForCreateAppCodeAutoV2();
 
-    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForcreateAppCodeAutoV2() {
+    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForCreateAppCodeAutoV2() {
         // basic
         HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
@@ -1359,16 +1294,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId,
+                CreateAppCodeAutoV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, CreateAppCodeAutoV2Request::setAppId));
 
         // response
 
@@ -1376,9 +1308,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2 =
-        genForcreateAppCodeV2();
+        genForCreateAppCodeV2();
 
-    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForcreateAppCodeV2() {
+    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForCreateAppCodeV2() {
         // basic
         HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
@@ -1391,23 +1323,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, CreateAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, CreateAppCodeV2Request::setAppId));
         builder.<AppCodeCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppCodeCreate.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, CreateAppCodeV2Request::setBody));
 
         // response
 
@@ -1415,9 +1341,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAppConfigV2Request, CreateAppConfigV2Response> createAppConfigV2 =
-        genForcreateAppConfigV2();
+        genForCreateAppConfigV2();
 
-    private static HttpRequestDef<CreateAppConfigV2Request, CreateAppConfigV2Response> genForcreateAppConfigV2() {
+    private static HttpRequestDef<CreateAppConfigV2Request, CreateAppConfigV2Response> genForCreateAppConfigV2() {
         // basic
         HttpRequestDef.Builder<CreateAppConfigV2Request, CreateAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppConfigV2Request.class, CreateAppConfigV2Response.class)
@@ -1430,23 +1356,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppConfigV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppConfigV2Request::getInstanceId, CreateAppConfigV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppConfigV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CreateAppConfigV2Request::getAppId, CreateAppConfigV2Request::setAppId));
         builder.<AppConfigCreateRequestV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppConfigCreateRequestV2.class),
-            f -> f.withMarshaller(CreateAppConfigV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppConfigV2Request::getBody, CreateAppConfigV2Request::setBody));
 
         // response
 
@@ -1454,9 +1374,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuota =
-        genForcreateAppQuota();
+        genForCreateAppQuota();
 
-    private static HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> genForcreateAppQuota() {
+    private static HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> genForCreateAppQuota() {
         // basic
         HttpRequestDef.Builder<CreateAppQuotaRequest, CreateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppQuotaRequest.class, CreateAppQuotaResponse.class)
@@ -1469,16 +1389,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAppQuotaRequest::getInstanceId, CreateAppQuotaRequest::setInstanceId));
         builder.<AppQuotaCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppQuotaCreate.class),
-            f -> f.withMarshaller(CreateAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAppQuotaRequest::getBody, CreateAppQuotaRequest::setBody));
 
         // response
 
@@ -1486,9 +1402,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateCommandRequest, CreateCommandResponse> createCommand =
-        genForcreateCommand();
+        genForCreateCommand();
 
-    private static HttpRequestDef<CreateCommandRequest, CreateCommandResponse> genForcreateCommand() {
+    private static HttpRequestDef<CreateCommandRequest, CreateCommandResponse> genForCreateCommand() {
         // basic
         HttpRequestDef.Builder<CreateCommandRequest, CreateCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCommandRequest.class, CreateCommandResponse.class)
@@ -1501,23 +1417,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCommandRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateCommandRequest::getInstanceId, CreateCommandRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCommandRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(CreateCommandRequest::getServiceId, CreateCommandRequest::setServiceId));
         builder.<CreateCommandRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCommandRequestBody.class),
-            f -> f.withMarshaller(CreateCommandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCommandRequest::getBody, CreateCommandRequest::setBody));
 
         // response
 
@@ -1525,9 +1435,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateCommonTaskRequest, CreateCommonTaskResponse> createCommonTask =
-        genForcreateCommonTask();
+        genForCreateCommonTask();
 
-    private static HttpRequestDef<CreateCommonTaskRequest, CreateCommonTaskResponse> genForcreateCommonTask() {
+    private static HttpRequestDef<CreateCommonTaskRequest, CreateCommonTaskResponse> genForCreateCommonTask() {
         // basic
         HttpRequestDef.Builder<CreateCommonTaskRequest, CreateCommonTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCommonTaskRequest.class, CreateCommonTaskResponse.class)
@@ -1540,16 +1450,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCommonTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateCommonTaskRequest::getInstanceId, CreateCommonTaskRequest::setInstanceId));
         builder.<CreateCommonTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCommonTaskRequestBody.class),
-            f -> f.withMarshaller(CreateCommonTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCommonTaskRequest::getBody, CreateCommonTaskRequest::setBody));
 
         // response
 
@@ -1557,9 +1463,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
-        genForcreateCustomAuthorizerV2();
+        genForCreateCustomAuthorizerV2();
 
-    private static HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> genForcreateCustomAuthorizerV2() {
+    private static HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> genForCreateCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -1573,16 +1479,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getInstanceId,
+                CreateCustomAuthorizerV2Request::setInstanceId));
         builder.<AuthorizerCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizerCreate.class),
-            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCustomAuthorizerV2Request::getBody, CreateCustomAuthorizerV2Request::setBody));
 
         // response
 
@@ -1590,9 +1493,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> createDatasourceInfo =
-        genForcreateDatasourceInfo();
+        genForCreateDatasourceInfo();
 
-    private static HttpRequestDef<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> genForcreateDatasourceInfo() {
+    private static HttpRequestDef<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> genForCreateDatasourceInfo() {
         // basic
         HttpRequestDef.Builder<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDatasourceInfoRequest.class, CreateDatasourceInfoResponse.class)
@@ -1605,16 +1508,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDatasourceInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDatasourceInfoRequest::getInstanceId,
+                CreateDatasourceInfoRequest::setInstanceId));
         builder.<DatasourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatasourceInfo.class),
-            f -> f.withMarshaller(CreateDatasourceInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDatasourceInfoRequest::getBody, CreateDatasourceInfoRequest::setBody));
 
         // response
 
@@ -1622,9 +1522,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateDestinationRequest, CreateDestinationResponse> createDestination =
-        genForcreateDestination();
+        genForCreateDestination();
 
-    private static HttpRequestDef<CreateDestinationRequest, CreateDestinationResponse> genForcreateDestination() {
+    private static HttpRequestDef<CreateDestinationRequest, CreateDestinationResponse> genForCreateDestination() {
         // basic
         HttpRequestDef.Builder<CreateDestinationRequest, CreateDestinationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDestinationRequest.class, CreateDestinationResponse.class)
@@ -1637,32 +1537,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDestinationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDestinationRequest::getInstanceId, CreateDestinationRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDestinationRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(CreateDestinationRequest::getRuleId, CreateDestinationRequest::setRuleId));
         builder.<CreateDestinationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDestinationRequestBody.class),
-            f -> f.withMarshaller(CreateDestinationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDestinationRequest::getBody, CreateDestinationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> createDevice = genForcreateDevice();
+    public static final HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> createDevice = genForCreateDevice();
 
-    private static HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> genForcreateDevice() {
+    private static HttpRequestDef<CreateDeviceRequest, CreateDeviceResponse> genForCreateDevice() {
         // basic
         HttpRequestDef.Builder<CreateDeviceRequest, CreateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeviceRequest.class, CreateDeviceResponse.class)
@@ -1675,16 +1569,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeviceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceRequest::getInstanceId, CreateDeviceRequest::setInstanceId));
         builder.<CreateDeviceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDeviceRequestBody.class),
-            f -> f.withMarshaller(CreateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceRequest::getBody, CreateDeviceRequest::setBody));
 
         // response
 
@@ -1692,9 +1582,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateDeviceGroupRequest, CreateDeviceGroupResponse> createDeviceGroup =
-        genForcreateDeviceGroup();
+        genForCreateDeviceGroup();
 
-    private static HttpRequestDef<CreateDeviceGroupRequest, CreateDeviceGroupResponse> genForcreateDeviceGroup() {
+    private static HttpRequestDef<CreateDeviceGroupRequest, CreateDeviceGroupResponse> genForCreateDeviceGroup() {
         // basic
         HttpRequestDef.Builder<CreateDeviceGroupRequest, CreateDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeviceGroupRequest.class, CreateDeviceGroupResponse.class)
@@ -1707,16 +1597,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeviceGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceGroupRequest::getInstanceId, CreateDeviceGroupRequest::setInstanceId));
         builder.<CreateDeviceGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDeviceGroupRequestBody.class),
-            f -> f.withMarshaller(CreateDeviceGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDeviceGroupRequest::getBody, CreateDeviceGroupRequest::setBody));
 
         // response
 
@@ -1724,9 +1610,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateDispatchesRequest, CreateDispatchesResponse> createDispatches =
-        genForcreateDispatches();
+        genForCreateDispatches();
 
-    private static HttpRequestDef<CreateDispatchesRequest, CreateDispatchesResponse> genForcreateDispatches() {
+    private static HttpRequestDef<CreateDispatchesRequest, CreateDispatchesResponse> genForCreateDispatches() {
         // basic
         HttpRequestDef.Builder<CreateDispatchesRequest, CreateDispatchesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDispatchesRequest.class, CreateDispatchesResponse.class)
@@ -1739,23 +1625,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDispatchesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDispatchesRequest::getInstanceId, CreateDispatchesRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDispatchesRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CreateDispatchesRequest::getTaskId, CreateDispatchesRequest::setTaskId));
         builder.<TaskDispatch>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskDispatch.class),
-            f -> f.withMarshaller(CreateDispatchesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDispatchesRequest::getBody, CreateDispatchesRequest::setBody));
 
         // response
 
@@ -1763,9 +1643,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> createEnvironmentV2 =
-        genForcreateEnvironmentV2();
+        genForCreateEnvironmentV2();
 
-    private static HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> genForcreateEnvironmentV2() {
+    private static HttpRequestDef<CreateEnvironmentV2Request, CreateEnvironmentV2Response> genForCreateEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentV2Request, CreateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentV2Request.class, CreateEnvironmentV2Response.class)
@@ -1778,16 +1658,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentV2Request::getInstanceId,
+                CreateEnvironmentV2Request::setInstanceId));
         builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentV2Request::getBody, CreateEnvironmentV2Request::setBody));
 
         // response
 
@@ -1795,9 +1672,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> createEnvironmentVariableV2 =
-        genForcreateEnvironmentVariableV2();
+        genForCreateEnvironmentVariableV2();
 
-    private static HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> genForcreateEnvironmentVariableV2() {
+    private static HttpRequestDef<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> genForCreateEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -1813,16 +1690,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getInstanceId,
+                CreateEnvironmentVariableV2Request::setInstanceId));
         builder.<EnvVariableCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvVariableCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEnvironmentVariableV2Request::getBody,
+                CreateEnvironmentVariableV2Request::setBody));
 
         // response
 
@@ -1830,9 +1705,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> createFeatureV2 =
-        genForcreateFeatureV2();
+        genForCreateFeatureV2();
 
-    private static HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> genForcreateFeatureV2() {
+    private static HttpRequestDef<CreateFeatureV2Request, CreateFeatureV2Response> genForCreateFeatureV2() {
         // basic
         HttpRequestDef.Builder<CreateFeatureV2Request, CreateFeatureV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFeatureV2Request.class, CreateFeatureV2Response.class)
@@ -1845,16 +1720,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFeatureV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateFeatureV2Request::getInstanceId, CreateFeatureV2Request::setInstanceId));
         builder.<FeatureToggleV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(FeatureToggleV2.class),
-            f -> f.withMarshaller(CreateFeatureV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFeatureV2Request::getBody, CreateFeatureV2Request::setBody));
 
         // response
 
@@ -1862,9 +1733,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> createLiveDataApiScriptV2 =
-        genForcreateLiveDataApiScriptV2();
+        genForCreateLiveDataApiScriptV2();
 
-    private static HttpRequestDef<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> genForcreateLiveDataApiScriptV2() {
+    private static HttpRequestDef<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> genForCreateLiveDataApiScriptV2() {
         // basic
         HttpRequestDef.Builder<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> builder =
             HttpRequestDef
@@ -1880,23 +1751,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getInstanceId,
+                CreateLiveDataApiScriptV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getLdApiId,
+                CreateLiveDataApiScriptV2Request::setLdApiId));
         builder.<LdApiScriptCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LdApiScriptCreate.class),
-            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLiveDataApiScriptV2Request::getBody,
+                CreateLiveDataApiScriptV2Request::setBody));
 
         // response
 
@@ -1904,9 +1772,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> createLiveDataApiV2 =
-        genForcreateLiveDataApiV2();
+        genForCreateLiveDataApiV2();
 
-    private static HttpRequestDef<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> genForcreateLiveDataApiV2() {
+    private static HttpRequestDef<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> genForCreateLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLiveDataApiV2Request.class, CreateLiveDataApiV2Response.class)
@@ -1919,16 +1787,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateLiveDataApiV2Request::getInstanceId,
+                CreateLiveDataApiV2Request::setInstanceId));
         builder.<LdApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LdApiCreate.class),
-            f -> f.withMarshaller(CreateLiveDataApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLiveDataApiV2Request::getBody, CreateLiveDataApiV2Request::setBody));
 
         // response
 
@@ -1936,9 +1801,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> createMqsInstanceTopic =
-        genForcreateMqsInstanceTopic();
+        genForCreateMqsInstanceTopic();
 
-    private static HttpRequestDef<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> genForcreateMqsInstanceTopic() {
+    private static HttpRequestDef<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> genForCreateMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMqsInstanceTopicRequest.class, CreateMqsInstanceTopicResponse.class)
@@ -1951,16 +1816,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateMqsInstanceTopicRequest::getInstanceId,
+                CreateMqsInstanceTopicRequest::setInstanceId));
         builder.<CreateMqsInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMqsInstanceTopicReq.class),
-            f -> f.withMarshaller(CreateMqsInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMqsInstanceTopicRequest::getBody, CreateMqsInstanceTopicRequest::setBody));
 
         // response
 
@@ -1968,9 +1830,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> createMultiTaskMappings =
-        genForcreateMultiTaskMappings();
+        genForCreateMultiTaskMappings();
 
-    private static HttpRequestDef<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> genForcreateMultiTaskMappings() {
+    private static HttpRequestDef<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> genForCreateMultiTaskMappings() {
         // basic
         HttpRequestDef.Builder<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateMultiTaskMappingsRequest.class, CreateMultiTaskMappingsResponse.class)
@@ -1983,23 +1845,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getInstanceId,
+                CreateMultiTaskMappingsRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getTaskId,
+                CreateMultiTaskMappingsRequest::setTaskId));
         builder.<MultiTaskMappingCreateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MultiTaskMappingCreateBody.class),
-            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMultiTaskMappingsRequest::getBody, CreateMultiTaskMappingsRequest::setBody));
 
         // response
 
@@ -2007,9 +1865,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateMultiTasksRequest, CreateMultiTasksResponse> createMultiTasks =
-        genForcreateMultiTasks();
+        genForCreateMultiTasks();
 
-    private static HttpRequestDef<CreateMultiTasksRequest, CreateMultiTasksResponse> genForcreateMultiTasks() {
+    private static HttpRequestDef<CreateMultiTasksRequest, CreateMultiTasksResponse> genForCreateMultiTasks() {
         // basic
         HttpRequestDef.Builder<CreateMultiTasksRequest, CreateMultiTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMultiTasksRequest.class, CreateMultiTasksResponse.class)
@@ -2022,16 +1880,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMultiTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateMultiTasksRequest::getInstanceId, CreateMultiTasksRequest::setInstanceId));
         builder.<MultiTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MultiTaskRequestBody.class),
-            f -> f.withMarshaller(CreateMultiTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMultiTasksRequest::getBody, CreateMultiTasksRequest::setBody));
 
         // response
 
@@ -2039,9 +1893,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> createNotification =
-        genForcreateNotification();
+        genForCreateNotification();
 
-    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForcreateNotification() {
+    private static HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> genForCreateNotification() {
         // basic
         HttpRequestDef.Builder<CreateNotificationRequest, CreateNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNotificationRequest.class, CreateNotificationResponse.class)
@@ -2054,25 +1908,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNotificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateNotificationRequest::getInstanceId, CreateNotificationRequest::setInstanceId));
         builder.<CreateNotificationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationRequestBody.class),
-            f -> f.withMarshaller(CreateNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateNotificationRequest::getBody, CreateNotificationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForcreatePlugin();
+    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForCreatePlugin();
 
-    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForcreatePlugin() {
+    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForCreatePlugin() {
         // basic
         HttpRequestDef.Builder<CreatePluginRequest, CreatePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePluginRequest.class, CreatePluginResponse.class)
@@ -2085,16 +1935,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, CreatePluginRequest::setInstanceId));
         builder.<PluginCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginCreate.class),
-            f -> f.withMarshaller(CreatePluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePluginRequest::getBody, CreatePluginRequest::setBody));
 
         // response
 
@@ -2102,9 +1948,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
-        genForcreateProduct();
+        genForCreateProduct();
 
-    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForcreateProduct() {
+    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForCreateProduct() {
         // basic
         HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
@@ -2117,16 +1963,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateProductRequest::getInstanceId, CreateProductRequest::setInstanceId));
         builder.<CreateProductRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProductRequestBody.class),
-            f -> f.withMarshaller(CreateProductRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProductRequest::getBody, CreateProductRequest::setBody));
 
         // response
 
@@ -2134,9 +1976,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateProductTemplateRequest, CreateProductTemplateResponse> createProductTemplate =
-        genForcreateProductTemplate();
+        genForCreateProductTemplate();
 
-    private static HttpRequestDef<CreateProductTemplateRequest, CreateProductTemplateResponse> genForcreateProductTemplate() {
+    private static HttpRequestDef<CreateProductTemplateRequest, CreateProductTemplateResponse> genForCreateProductTemplate() {
         // basic
         HttpRequestDef.Builder<CreateProductTemplateRequest, CreateProductTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateProductTemplateRequest.class, CreateProductTemplateResponse.class)
@@ -2149,16 +1991,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateProductTemplateRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateProductTemplateRequest::getInstanceId,
+                CreateProductTemplateRequest::setInstanceId));
         builder.<CreateProductTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProductTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateProductTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProductTemplateRequest::getBody, CreateProductTemplateRequest::setBody));
 
         // response
 
@@ -2166,9 +2005,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateProductTopicRequest, CreateProductTopicResponse> createProductTopic =
-        genForcreateProductTopic();
+        genForCreateProductTopic();
 
-    private static HttpRequestDef<CreateProductTopicRequest, CreateProductTopicResponse> genForcreateProductTopic() {
+    private static HttpRequestDef<CreateProductTopicRequest, CreateProductTopicResponse> genForCreateProductTopic() {
         // basic
         HttpRequestDef.Builder<CreateProductTopicRequest, CreateProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductTopicRequest.class, CreateProductTopicResponse.class)
@@ -2181,23 +2020,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateProductTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateProductTopicRequest::getInstanceId, CreateProductTopicRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateProductTopicRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(CreateProductTopicRequest::getProductId, CreateProductTopicRequest::setProductId));
         builder.<CreateProductTopicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateProductTopicRequestBody.class),
-            f -> f.withMarshaller(CreateProductTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProductTopicRequest::getBody, CreateProductTopicRequest::setBody));
 
         // response
 
@@ -2205,9 +2038,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreatePropertyRequest, CreatePropertyResponse> createProperty =
-        genForcreateProperty();
+        genForCreateProperty();
 
-    private static HttpRequestDef<CreatePropertyRequest, CreatePropertyResponse> genForcreateProperty() {
+    private static HttpRequestDef<CreatePropertyRequest, CreatePropertyResponse> genForCreateProperty() {
         // basic
         HttpRequestDef.Builder<CreatePropertyRequest, CreatePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePropertyRequest.class, CreatePropertyResponse.class)
@@ -2220,23 +2053,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreatePropertyRequest::getInstanceId, CreatePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(CreatePropertyRequest::getServiceId, CreatePropertyRequest::setServiceId));
         builder.<CreatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePropertyRequestBody.class),
-            f -> f.withMarshaller(CreatePropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePropertyRequest::getBody, CreatePropertyRequest::setBody));
 
         // response
 
@@ -2244,9 +2071,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateRequestPropertyRequest, CreateRequestPropertyResponse> createRequestProperty =
-        genForcreateRequestProperty();
+        genForCreateRequestProperty();
 
-    private static HttpRequestDef<CreateRequestPropertyRequest, CreateRequestPropertyResponse> genForcreateRequestProperty() {
+    private static HttpRequestDef<CreateRequestPropertyRequest, CreateRequestPropertyResponse> genForCreateRequestProperty() {
         // basic
         HttpRequestDef.Builder<CreateRequestPropertyRequest, CreateRequestPropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateRequestPropertyRequest.class, CreateRequestPropertyResponse.class)
@@ -2260,30 +2087,25 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestPropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestPropertyRequest::getInstanceId,
+                CreateRequestPropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestPropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestPropertyRequest::getServiceId,
+                CreateRequestPropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateRequestPropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestPropertyRequest::getCommandId,
+                CreateRequestPropertyRequest::setCommandId));
         builder.<CreatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePropertyRequestBody.class),
-            f -> f.withMarshaller(CreateRequestPropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRequestPropertyRequest::getBody, CreateRequestPropertyRequest::setBody));
 
         // response
 
@@ -2291,9 +2113,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> createRequestThrottlingPolicyV2 =
-        genForcreateRequestThrottlingPolicyV2();
+        genForCreateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> genForcreateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> genForCreateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -2309,16 +2131,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getInstanceId,
+                CreateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
-            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody,
+                CreateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -2326,9 +2146,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateResponsePropertyRequest, CreateResponsePropertyResponse> createResponseProperty =
-        genForcreateResponseProperty();
+        genForCreateResponseProperty();
 
-    private static HttpRequestDef<CreateResponsePropertyRequest, CreateResponsePropertyResponse> genForcreateResponseProperty() {
+    private static HttpRequestDef<CreateResponsePropertyRequest, CreateResponsePropertyResponse> genForCreateResponseProperty() {
         // basic
         HttpRequestDef.Builder<CreateResponsePropertyRequest, CreateResponsePropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateResponsePropertyRequest.class, CreateResponsePropertyResponse.class)
@@ -2342,39 +2162,34 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResponsePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateResponsePropertyRequest::getInstanceId,
+                CreateResponsePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateResponsePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(CreateResponsePropertyRequest::getServiceId,
+                CreateResponsePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateResponsePropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(CreateResponsePropertyRequest::getCommandId,
+                CreateResponsePropertyRequest::setCommandId));
         builder.<CreatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePropertyRequestBody.class),
-            f -> f.withMarshaller(CreateResponsePropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateResponsePropertyRequest::getBody, CreateResponsePropertyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForcreateRule();
+    public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForCreateRule();
 
-    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForcreateRule() {
+    private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForCreateRule() {
         // basic
         HttpRequestDef.Builder<CreateRuleRequest, CreateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleRequest.class, CreateRuleResponse.class)
@@ -2387,16 +2202,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getInstanceId, CreateRuleRequest::setInstanceId));
         builder.<CreateRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRuleRequestBody.class),
-            f -> f.withMarshaller(CreateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRuleRequest::getBody, CreateRuleRequest::setBody));
 
         // response
 
@@ -2404,9 +2215,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateServiceRequest, CreateServiceResponse> createService =
-        genForcreateService();
+        genForCreateService();
 
-    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForcreateService() {
+    private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForCreateService() {
         // basic
         HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
@@ -2419,16 +2230,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateServiceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateServiceRequest::getInstanceId, CreateServiceRequest::setInstanceId));
         builder.<CreateServiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateServiceRequestBody.class),
-            f -> f.withMarshaller(CreateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateServiceRequest::getBody, CreateServiceRequest::setBody));
 
         // response
 
@@ -2436,9 +2243,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> createSignatureKeyV2 =
-        genForcreateSignatureKeyV2();
+        genForCreateSignatureKeyV2();
 
-    private static HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> genForcreateSignatureKeyV2() {
+    private static HttpRequestDef<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> genForCreateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateSignatureKeyV2Request.class, CreateSignatureKeyV2Response.class)
@@ -2451,25 +2258,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSignatureKeyV2Request::getInstanceId,
+                CreateSignatureKeyV2Request::setInstanceId));
         builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BaseSignature.class),
-            f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, CreateSignatureKeyV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSourceRequest, CreateSourceResponse> createSource = genForcreateSource();
+    public static final HttpRequestDef<CreateSourceRequest, CreateSourceResponse> createSource = genForCreateSource();
 
-    private static HttpRequestDef<CreateSourceRequest, CreateSourceResponse> genForcreateSource() {
+    private static HttpRequestDef<CreateSourceRequest, CreateSourceResponse> genForCreateSource() {
         // basic
         HttpRequestDef.Builder<CreateSourceRequest, CreateSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSourceRequest.class, CreateSourceResponse.class)
@@ -2482,23 +2286,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSourceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSourceRequest::getInstanceId, CreateSourceRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSourceRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(CreateSourceRequest::getRuleId, CreateSourceRequest::setRuleId));
         builder.<CreateSourceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSourceRequestBody.class),
-            f -> f.withMarshaller(CreateSourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSourceRequest::getBody, CreateSourceRequest::setBody));
 
         // response
 
@@ -2506,9 +2304,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> createSpecialThrottlingConfigurationV2 =
-        genForcreateSpecialThrottlingConfigurationV2();
+        genForCreateSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> genForcreateSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> genForCreateSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -2524,23 +2322,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getInstanceId,
+                CreateSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId,
+                CreateSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<ThrottleSpecialCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleSpecialCreate.class),
-            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody,
+                CreateSpecialThrottlingConfigurationV2Request::setBody));
 
         // response
 
@@ -2548,9 +2343,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> debugLiveDataApiV2 =
-        genFordebugLiveDataApiV2();
+        genForDebugLiveDataApiV2();
 
-    private static HttpRequestDef<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> genFordebugLiveDataApiV2() {
+    private static HttpRequestDef<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> genForDebugLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugLiveDataApiV2Request.class, DebugLiveDataApiV2Response.class)
@@ -2563,32 +2358,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DebugLiveDataApiV2Request::getInstanceId, DebugLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(DebugLiveDataApiV2Request::getLdApiId, DebugLiveDataApiV2Request::setLdApiId));
         builder.<LdApiTest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(LdApiTest.class),
-            f -> f.withMarshaller(DebugLiveDataApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugLiveDataApiV2Request::getBody, DebugLiveDataApiV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DebugRuleRequest, DebugRuleResponse> debugRule = genFordebugRule();
+    public static final HttpRequestDef<DebugRuleRequest, DebugRuleResponse> debugRule = genForDebugRule();
 
-    private static HttpRequestDef<DebugRuleRequest, DebugRuleResponse> genFordebugRule() {
+    private static HttpRequestDef<DebugRuleRequest, DebugRuleResponse> genForDebugRule() {
         // basic
         HttpRequestDef.Builder<DebugRuleRequest, DebugRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugRuleRequest.class, DebugRuleResponse.class)
@@ -2601,25 +2390,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DebugRuleRequest::getInstanceId, DebugRuleRequest::setInstanceId));
         builder.<DebugRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DebugRuleRequestBody.class),
-            f -> f.withMarshaller(DebugRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugRuleRequest::getBody, DebugRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAcl = genFordeleteAppAcl();
+    public static final HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAcl = genForDeleteAppAcl();
 
-    private static HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> genFordeleteAppAcl() {
+    private static HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> genForDeleteAppAcl() {
         // basic
         HttpRequestDef.Builder<DeleteAppAclRequest, DeleteAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppAclRequest.class, DeleteAppAclResponse.class)
@@ -2632,16 +2417,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppAclRequest::getInstanceId, DeleteAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppAclRequest::getAppId, DeleteAppAclRequest::setAppId));
 
         // response
 
@@ -2649,9 +2430,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2 =
-        genFordeleteAppCodeV2();
+        genForDeleteAppCodeV2();
 
-    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genFordeleteAppCodeV2() {
+    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genForDeleteAppCodeV2() {
         // basic
         HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
@@ -2664,23 +2445,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, DeleteAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, DeleteAppCodeV2Request::setAppId));
         builder.<String>withRequestField("app_code_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, DeleteAppCodeV2Request::setAppCodeId));
 
         // response
 
@@ -2688,9 +2463,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteAppConfigV2Request, DeleteAppConfigV2Response> deleteAppConfigV2 =
-        genFordeleteAppConfigV2();
+        genForDeleteAppConfigV2();
 
-    private static HttpRequestDef<DeleteAppConfigV2Request, DeleteAppConfigV2Response> genFordeleteAppConfigV2() {
+    private static HttpRequestDef<DeleteAppConfigV2Request, DeleteAppConfigV2Response> genForDeleteAppConfigV2() {
         // basic
         HttpRequestDef.Builder<DeleteAppConfigV2Request, DeleteAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppConfigV2Request.class, DeleteAppConfigV2Response.class)
@@ -2703,23 +2478,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppConfigV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppConfigV2Request::getInstanceId, DeleteAppConfigV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppConfigV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppConfigV2Request::getAppId, DeleteAppConfigV2Request::setAppId));
         builder.<String>withRequestField("app_config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppConfigV2Request::getAppConfigId, (req, v) -> {
-                req.setAppConfigId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppConfigV2Request::getAppConfigId, DeleteAppConfigV2Request::setAppConfigId));
 
         // response
 
@@ -2727,9 +2496,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuota =
-        genFordeleteAppQuota();
+        genForDeleteAppQuota();
 
-    private static HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> genFordeleteAppQuota() {
+    private static HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> genForDeleteAppQuota() {
         // basic
         HttpRequestDef.Builder<DeleteAppQuotaRequest, DeleteAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppQuotaRequest.class, DeleteAppQuotaResponse.class)
@@ -2742,16 +2511,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getInstanceId, DeleteAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getAppQuotaId, DeleteAppQuotaRequest::setAppQuotaId));
 
         // response
 
@@ -2759,9 +2524,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteCommandRequest, DeleteCommandResponse> deleteCommand =
-        genFordeleteCommand();
+        genForDeleteCommand();
 
-    private static HttpRequestDef<DeleteCommandRequest, DeleteCommandResponse> genFordeleteCommand() {
+    private static HttpRequestDef<DeleteCommandRequest, DeleteCommandResponse> genForDeleteCommand() {
         // basic
         HttpRequestDef.Builder<DeleteCommandRequest, DeleteCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCommandRequest.class, DeleteCommandResponse.class)
@@ -2774,23 +2539,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCommandRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCommandRequest::getInstanceId, DeleteCommandRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCommandRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCommandRequest::getServiceId, DeleteCommandRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteCommandRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(DeleteCommandRequest::getCommandId, DeleteCommandRequest::setCommandId));
 
         // response
 
@@ -2798,9 +2557,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> deleteCustomAuthorizerV2 =
-        genFordeleteCustomAuthorizerV2();
+        genForDeleteCustomAuthorizerV2();
 
-    private static HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> genFordeleteCustomAuthorizerV2() {
+    private static HttpRequestDef<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> genForDeleteCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -2816,16 +2575,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getInstanceId,
+                DeleteCustomAuthorizerV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId,
+                DeleteCustomAuthorizerV2Request::setAuthorizerId));
 
         // response
 
@@ -2833,9 +2590,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> deleteDatasourceInfoById =
-        genFordeleteDatasourceInfoById();
+        genForDeleteDatasourceInfoById();
 
-    private static HttpRequestDef<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> genFordeleteDatasourceInfoById() {
+    private static HttpRequestDef<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> genForDeleteDatasourceInfoById() {
         // basic
         HttpRequestDef.Builder<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse> builder =
             HttpRequestDef
@@ -2851,33 +2608,30 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getInstanceId,
+                DeleteDatasourceInfoByIdRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdRequest::getDatasourceId,
+                DeleteDatasourceInfoByIdRequest::setDatasourceId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDatasourceInfoByIdResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteDatasourceInfoByIdResponse::getBody,
+                DeleteDatasourceInfoByIdResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteDestinationRequest, DeleteDestinationResponse> deleteDestination =
-        genFordeleteDestination();
+        genForDeleteDestination();
 
-    private static HttpRequestDef<DeleteDestinationRequest, DeleteDestinationResponse> genFordeleteDestination() {
+    private static HttpRequestDef<DeleteDestinationRequest, DeleteDestinationResponse> genForDeleteDestination() {
         // basic
         HttpRequestDef.Builder<DeleteDestinationRequest, DeleteDestinationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDestinationRequest.class, DeleteDestinationResponse.class)
@@ -2890,32 +2644,27 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDestinationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDestinationRequest::getInstanceId, DeleteDestinationRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDestinationRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteDestinationRequest::getRuleId, DeleteDestinationRequest::setRuleId));
         builder.<Integer>withRequestField("destination_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDestinationRequest::getDestinationId, (req, v) -> {
-                req.setDestinationId(v);
-            }));
+            f -> f.withMarshaller(DeleteDestinationRequest::getDestinationId,
+                DeleteDestinationRequest::setDestinationId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genFordeleteDevice();
+    public static final HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> deleteDevice = genForDeleteDevice();
 
-    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genFordeleteDevice() {
+    private static HttpRequestDef<DeleteDeviceRequest, DeleteDeviceResponse> genForDeleteDevice() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceRequest, DeleteDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceRequest.class, DeleteDeviceResponse.class)
@@ -2928,16 +2677,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getInstanceId, DeleteDeviceRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, DeleteDeviceRequest::setDeviceId));
 
         // response
 
@@ -2945,9 +2690,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> deleteDeviceFromGroup =
-        genFordeleteDeviceFromGroup();
+        genForDeleteDeviceFromGroup();
 
-    private static HttpRequestDef<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> genFordeleteDeviceFromGroup() {
+    private static HttpRequestDef<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> genForDeleteDeviceFromGroup() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteDeviceFromGroupRequest.class, DeleteDeviceFromGroupResponse.class)
@@ -2960,23 +2705,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getInstanceId,
+                DeleteDeviceFromGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getDeviceId,
+                DeleteDeviceFromGroupRequest::setDeviceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceFromGroupRequest::getGroupId, DeleteDeviceFromGroupRequest::setGroupId));
 
         // response
 
@@ -2984,9 +2725,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> deleteDeviceGroup =
-        genFordeleteDeviceGroup();
+        genForDeleteDeviceGroup();
 
-    private static HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> genFordeleteDeviceGroup() {
+    private static HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> genForDeleteDeviceGroup() {
         // basic
         HttpRequestDef.Builder<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceGroupRequest.class, DeleteDeviceGroupResponse.class)
@@ -2999,16 +2740,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDeviceGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceGroupRequest::getInstanceId, DeleteDeviceGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteDeviceGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteDeviceGroupRequest::getGroupId, DeleteDeviceGroupRequest::setGroupId));
 
         // response
 
@@ -3016,9 +2753,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> deleteEnvironmentV2 =
-        genFordeleteEnvironmentV2();
+        genForDeleteEnvironmentV2();
 
-    private static HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> genFordeleteEnvironmentV2() {
+    private static HttpRequestDef<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> genForDeleteEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEnvironmentV2Request.class, DeleteEnvironmentV2Response.class)
@@ -3031,16 +2768,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentV2Request::getInstanceId,
+                DeleteEnvironmentV2Request::setInstanceId));
         builder.<String>withRequestField("env_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentV2Request::getEnvId, DeleteEnvironmentV2Request::setEnvId));
 
         // response
 
@@ -3048,9 +2782,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> deleteEnvironmentVariableV2 =
-        genFordeleteEnvironmentVariableV2();
+        genForDeleteEnvironmentVariableV2();
 
-    private static HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> genFordeleteEnvironmentVariableV2() {
+    private static HttpRequestDef<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> genForDeleteEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -3066,16 +2800,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getInstanceId,
+                DeleteEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(DeleteEnvironmentVariableV2Request::getEnvVariableId,
+                DeleteEnvironmentVariableV2Request::setEnvVariableId));
 
         // response
 
@@ -3083,9 +2815,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> deleteLiveDataApiV2 =
-        genFordeleteLiveDataApiV2();
+        genForDeleteLiveDataApiV2();
 
-    private static HttpRequestDef<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> genFordeleteLiveDataApiV2() {
+    private static HttpRequestDef<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> genForDeleteLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteLiveDataApiV2Request.class, DeleteLiveDataApiV2Response.class)
@@ -3098,16 +2830,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteLiveDataApiV2Request::getInstanceId,
+                DeleteLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(DeleteLiveDataApiV2Request::getLdApiId, DeleteLiveDataApiV2Request::setLdApiId));
 
         // response
 
@@ -3115,9 +2844,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> deleteMqsInstanceTopic =
-        genFordeleteMqsInstanceTopic();
+        genForDeleteMqsInstanceTopic();
 
-    private static HttpRequestDef<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> genFordeleteMqsInstanceTopic() {
+    private static HttpRequestDef<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> genForDeleteMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMqsInstanceTopicRequest.class, DeleteMqsInstanceTopicResponse.class)
@@ -3130,16 +2859,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteMqsInstanceTopicRequest::getInstanceId,
+                DeleteMqsInstanceTopicRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMqsInstanceTopicRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(DeleteMqsInstanceTopicRequest::getName, DeleteMqsInstanceTopicRequest::setName));
 
         // response
 
@@ -3147,9 +2873,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> deleteMultiTaskMapping =
-        genFordeleteMultiTaskMapping();
+        genForDeleteMultiTaskMapping();
 
-    private static HttpRequestDef<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> genFordeleteMultiTaskMapping() {
+    private static HttpRequestDef<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> genForDeleteMultiTaskMapping() {
         // basic
         HttpRequestDef.Builder<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMultiTaskMappingRequest.class, DeleteMultiTaskMappingResponse.class)
@@ -3162,23 +2888,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getInstanceId,
+                DeleteMultiTaskMappingRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getTaskId, DeleteMultiTaskMappingRequest::setTaskId));
         builder.<String>withRequestField("mapping_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getMappingId, (req, v) -> {
-                req.setMappingId(v);
-            }));
+            f -> f.withMarshaller(DeleteMultiTaskMappingRequest::getMappingId,
+                DeleteMultiTaskMappingRequest::setMappingId));
 
         // response
 
@@ -3186,9 +2908,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> deleteNotification =
-        genFordeleteNotification();
+        genForDeleteNotification();
 
-    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genFordeleteNotification() {
+    private static HttpRequestDef<DeleteNotificationRequest, DeleteNotificationResponse> genForDeleteNotification() {
         // basic
         HttpRequestDef.Builder<DeleteNotificationRequest, DeleteNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotificationRequest.class, DeleteNotificationResponse.class)
@@ -3201,25 +2923,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNotificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteNotificationRequest::getInstanceId, DeleteNotificationRequest::setInstanceId));
         builder.<Long>withRequestField("notification_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId, (req, v) -> {
-                req.setNotificationId(v);
-            }));
+            f -> f.withMarshaller(DeleteNotificationRequest::getNotificationId,
+                DeleteNotificationRequest::setNotificationId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genFordeletePlugin();
+    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genForDeletePlugin();
 
-    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genFordeletePlugin() {
+    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genForDeletePlugin() {
         // basic
         HttpRequestDef.Builder<DeletePluginRequest, DeletePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginRequest.class, DeletePluginResponse.class)
@@ -3232,16 +2951,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, DeletePluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(DeletePluginRequest::getPluginId, DeletePluginRequest::setPluginId));
 
         // response
 
@@ -3249,9 +2964,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
-        genFordeleteProduct();
+        genForDeleteProduct();
 
-    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genFordeleteProduct() {
+    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genForDeleteProduct() {
         // basic
         HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
@@ -3264,16 +2979,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductRequest::getInstanceId, DeleteProductRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductRequest::getProductId, DeleteProductRequest::setProductId));
 
         // response
 
@@ -3281,9 +2992,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteProductTemplateRequest, DeleteProductTemplateResponse> deleteProductTemplate =
-        genFordeleteProductTemplate();
+        genForDeleteProductTemplate();
 
-    private static HttpRequestDef<DeleteProductTemplateRequest, DeleteProductTemplateResponse> genFordeleteProductTemplate() {
+    private static HttpRequestDef<DeleteProductTemplateRequest, DeleteProductTemplateResponse> genForDeleteProductTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteProductTemplateRequest, DeleteProductTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteProductTemplateRequest.class, DeleteProductTemplateResponse.class)
@@ -3296,16 +3007,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProductTemplateRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductTemplateRequest::getInstanceId,
+                DeleteProductTemplateRequest::setInstanceId));
         builder.<Integer>withRequestField("product_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProductTemplateRequest::getProductTemplateId, (req, v) -> {
-                req.setProductTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductTemplateRequest::getProductTemplateId,
+                DeleteProductTemplateRequest::setProductTemplateId));
 
         // response
 
@@ -3313,9 +3022,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteProductTopicRequest, DeleteProductTopicResponse> deleteProductTopic =
-        genFordeleteProductTopic();
+        genForDeleteProductTopic();
 
-    private static HttpRequestDef<DeleteProductTopicRequest, DeleteProductTopicResponse> genFordeleteProductTopic() {
+    private static HttpRequestDef<DeleteProductTopicRequest, DeleteProductTopicResponse> genForDeleteProductTopic() {
         // basic
         HttpRequestDef.Builder<DeleteProductTopicRequest, DeleteProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductTopicRequest.class, DeleteProductTopicResponse.class)
@@ -3328,23 +3037,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProductTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductTopicRequest::getInstanceId, DeleteProductTopicRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProductTopicRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductTopicRequest::getProductId, DeleteProductTopicRequest::setProductId));
         builder.<Integer>withRequestField("topic_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProductTopicRequest::getTopicId, (req, v) -> {
-                req.setTopicId(v);
-            }));
+            f -> f.withMarshaller(DeleteProductTopicRequest::getTopicId, DeleteProductTopicRequest::setTopicId));
 
         // response
 
@@ -3352,9 +3055,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeletePropertyRequest, DeletePropertyResponse> deleteProperty =
-        genFordeleteProperty();
+        genForDeleteProperty();
 
-    private static HttpRequestDef<DeletePropertyRequest, DeletePropertyResponse> genFordeleteProperty() {
+    private static HttpRequestDef<DeletePropertyRequest, DeletePropertyResponse> genForDeleteProperty() {
         // basic
         HttpRequestDef.Builder<DeletePropertyRequest, DeletePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePropertyRequest.class, DeletePropertyResponse.class)
@@ -3367,23 +3070,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeletePropertyRequest::getInstanceId, DeletePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeletePropertyRequest::getServiceId, DeletePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeletePropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(DeletePropertyRequest::getPropertyId, DeletePropertyRequest::setPropertyId));
 
         // response
 
@@ -3391,9 +3088,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> deleteRequestProperty =
-        genFordeleteRequestProperty();
+        genForDeleteRequestProperty();
 
-    private static HttpRequestDef<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> genFordeleteRequestProperty() {
+    private static HttpRequestDef<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> genForDeleteRequestProperty() {
         // basic
         HttpRequestDef.Builder<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteRequestPropertyRequest.class, DeleteRequestPropertyResponse.class)
@@ -3407,30 +3104,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestPropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestPropertyRequest::getInstanceId,
+                DeleteRequestPropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestPropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestPropertyRequest::getServiceId,
+                DeleteRequestPropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteRequestPropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestPropertyRequest::getCommandId,
+                DeleteRequestPropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteRequestPropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestPropertyRequest::getPropertyId,
+                DeleteRequestPropertyRequest::setPropertyId));
 
         // response
 
@@ -3438,9 +3131,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> deleteRequestThrottlingPolicyV2 =
-        genFordeleteRequestThrottlingPolicyV2();
+        genForDeleteRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> genFordeleteRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> genForDeleteRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -3456,16 +3149,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getInstanceId,
+                DeleteRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRequestThrottlingPolicyV2Request::getThrottleId,
+                DeleteRequestThrottlingPolicyV2Request::setThrottleId));
 
         // response
 
@@ -3473,9 +3164,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> deleteResponseProperty =
-        genFordeleteResponseProperty();
+        genForDeleteResponseProperty();
 
-    private static HttpRequestDef<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> genFordeleteResponseProperty() {
+    private static HttpRequestDef<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> genForDeleteResponseProperty() {
         // basic
         HttpRequestDef.Builder<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteResponsePropertyRequest.class, DeleteResponsePropertyResponse.class)
@@ -3489,39 +3180,35 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResponsePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResponsePropertyRequest::getInstanceId,
+                DeleteResponsePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResponsePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteResponsePropertyRequest::getServiceId,
+                DeleteResponsePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteResponsePropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(DeleteResponsePropertyRequest::getCommandId,
+                DeleteResponsePropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteResponsePropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(DeleteResponsePropertyRequest::getPropertyId,
+                DeleteResponsePropertyRequest::setPropertyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genFordeleteRule();
+    public static final HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> deleteRule = genForDeleteRule();
 
-    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genFordeleteRule() {
+    private static HttpRequestDef<DeleteRuleRequest, DeleteRuleResponse> genForDeleteRule() {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
@@ -3534,16 +3221,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getInstanceId, DeleteRuleRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteRuleRequest::getRuleId, DeleteRuleRequest::setRuleId));
 
         // response
 
@@ -3551,9 +3234,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> deleteService =
-        genFordeleteService();
+        genForDeleteService();
 
-    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genFordeleteService() {
+    private static HttpRequestDef<DeleteServiceRequest, DeleteServiceResponse> genForDeleteService() {
         // basic
         HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
@@ -3566,16 +3249,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceRequest::getInstanceId, DeleteServiceRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceRequest::getServiceId, DeleteServiceRequest::setServiceId));
 
         // response
 
@@ -3583,9 +3262,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> deleteSignatureKeyV2 =
-        genFordeleteSignatureKeyV2();
+        genForDeleteSignatureKeyV2();
 
-    private static HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> genFordeleteSignatureKeyV2() {
+    private static HttpRequestDef<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> genForDeleteSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteSignatureKeyV2Request.class, DeleteSignatureKeyV2Response.class)
@@ -3598,25 +3277,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getInstanceId,
+                DeleteSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(DeleteSignatureKeyV2Request::getSignId, DeleteSignatureKeyV2Request::setSignId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSourceRequest, DeleteSourceResponse> deleteSource = genFordeleteSource();
+    public static final HttpRequestDef<DeleteSourceRequest, DeleteSourceResponse> deleteSource = genForDeleteSource();
 
-    private static HttpRequestDef<DeleteSourceRequest, DeleteSourceResponse> genFordeleteSource() {
+    private static HttpRequestDef<DeleteSourceRequest, DeleteSourceResponse> genForDeleteSource() {
         // basic
         HttpRequestDef.Builder<DeleteSourceRequest, DeleteSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSourceRequest.class, DeleteSourceResponse.class)
@@ -3629,23 +3305,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSourceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSourceRequest::getInstanceId, DeleteSourceRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSourceRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteSourceRequest::getRuleId, DeleteSourceRequest::setRuleId));
         builder.<Integer>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteSourceRequest::getSourceId, (req, v) -> {
-                req.setSourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSourceRequest::getSourceId, DeleteSourceRequest::setSourceId));
 
         // response
 
@@ -3653,9 +3323,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> deleteSpecialThrottlingConfigurationV2 =
-        genFordeleteSpecialThrottlingConfigurationV2();
+        genForDeleteSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> genFordeleteSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> genForDeleteSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -3672,32 +3342,29 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getInstanceId,
+                DeleteSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getThrottleId,
+                DeleteSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<String>withRequestField("strategy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
-                req.setStrategyId(v);
-            }));
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getStrategyId,
+                DeleteSpecialThrottlingConfigurationV2Request::setStrategyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genFordeleteTask();
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
-    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genFordeleteTask() {
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
@@ -3710,16 +3377,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getInstanceId, DeleteTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
 
@@ -3727,9 +3390,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPlugin =
-        genFordetachApiFromPlugin();
+        genForDetachApiFromPlugin();
 
-    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genFordetachApiFromPlugin() {
+    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genForDetachApiFromPlugin() {
         // basic
         HttpRequestDef.Builder<DetachApiFromPluginRequest, DetachApiFromPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DetachApiFromPluginRequest.class, DetachApiFromPluginResponse.class)
@@ -3742,23 +3405,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId,
+                DetachApiFromPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, DetachApiFromPluginRequest::setPluginId));
         builder.<PluginOperApiInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
-            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, DetachApiFromPluginRequest::setBody));
 
         // response
 
@@ -3766,9 +3424,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApi =
-        genFordetachPluginFromApi();
+        genForDetachPluginFromApi();
 
-    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genFordetachPluginFromApi() {
+    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genForDetachPluginFromApi() {
         // basic
         HttpRequestDef.Builder<DetachPluginFromApiRequest, DetachPluginFromApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DetachPluginFromApiRequest.class, DetachPluginFromApiResponse.class)
@@ -3781,23 +3439,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId,
+                DetachPluginFromApiRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, DetachPluginFromApiRequest::setApiId));
         builder.<ApiOperPluginInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
-            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, DetachPluginFromApiRequest::setBody));
 
         // response
 
@@ -3805,9 +3458,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithApp =
-        genFordisassociateAppQuotaWithApp();
+        genForDisassociateAppQuotaWithApp();
 
-    private static HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> genFordisassociateAppQuotaWithApp() {
+    private static HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> genForDisassociateAppQuotaWithApp() {
         // basic
         HttpRequestDef.Builder<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> builder =
             HttpRequestDef
@@ -3823,23 +3476,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getInstanceId,
+                DisassociateAppQuotaWithAppRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppQuotaId,
+                DisassociateAppQuotaWithAppRequest::setAppQuotaId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppId,
+                DisassociateAppQuotaWithAppRequest::setAppId));
 
         // response
 
@@ -3847,9 +3497,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> disassociateCertificateV2 =
-        genFordisassociateCertificateV2();
+        genForDisassociateCertificateV2();
 
-    private static HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> genFordisassociateCertificateV2() {
+    private static HttpRequestDef<DisassociateCertificateV2Request, DisassociateCertificateV2Response> genForDisassociateCertificateV2() {
         // basic
         HttpRequestDef.Builder<DisassociateCertificateV2Request, DisassociateCertificateV2Response> builder =
             HttpRequestDef
@@ -3866,30 +3516,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getInstanceId,
+                DisassociateCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getGroupId,
+                DisassociateCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getDomainId,
+                DisassociateCertificateV2Request::setDomainId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DisassociateCertificateV2Request::getCertificateId,
+                DisassociateCertificateV2Request::setCertificateId));
 
         // response
 
@@ -3897,9 +3543,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> disassociateDomainV2 =
-        genFordisassociateDomainV2();
+        genForDisassociateDomainV2();
 
-    private static HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> genFordisassociateDomainV2() {
+    private static HttpRequestDef<DisassociateDomainV2Request, DisassociateDomainV2Response> genForDisassociateDomainV2() {
         // basic
         HttpRequestDef.Builder<DisassociateDomainV2Request, DisassociateDomainV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DisassociateDomainV2Request.class, DisassociateDomainV2Response.class)
@@ -3912,23 +3558,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getInstanceId,
+                DisassociateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getGroupId, DisassociateDomainV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(DisassociateDomainV2Request::getDomainId, DisassociateDomainV2Request::setDomainId));
 
         // response
 
@@ -3936,9 +3577,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> disassociateSignatureKeyV2 =
-        genFordisassociateSignatureKeyV2();
+        genForDisassociateSignatureKeyV2();
 
-    private static HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> genFordisassociateSignatureKeyV2() {
+    private static HttpRequestDef<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> genForDisassociateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -3954,16 +3595,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getInstanceId,
+                DisassociateSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_bindings_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getSignBindingsId, (req, v) -> {
-                req.setSignBindingsId(v);
-            }));
+            f -> f.withMarshaller(DisassociateSignatureKeyV2Request::getSignBindingsId,
+                DisassociateSignatureKeyV2Request::setSignBindingsId));
 
         // response
 
@@ -3971,9 +3610,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DownloadProductsRequest, DownloadProductsResponse> downloadProducts =
-        genFordownloadProducts();
+        genForDownloadProducts();
 
-    private static HttpRequestDef<DownloadProductsRequest, DownloadProductsResponse> genFordownloadProducts() {
+    private static HttpRequestDef<DownloadProductsRequest, DownloadProductsResponse> genForDownloadProducts() {
         // basic
         HttpRequestDef.Builder<DownloadProductsRequest, DownloadProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadProductsRequest.class, DownloadProductsResponse.class)
@@ -3986,16 +3625,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadProductsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DownloadProductsRequest::getInstanceId, DownloadProductsRequest::setInstanceId));
         builder.<List<Integer>>withRequestField("product_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DownloadProductsRequest::getProductIds, (req, v) -> {
-                req.setProductIds(v);
-            }));
+            f -> f.withMarshaller(DownloadProductsRequest::getProductIds, DownloadProductsRequest::setProductIds));
 
         // response
 
@@ -4003,9 +3638,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> exportMqsInstanceTopic =
-        genForexportMqsInstanceTopic();
+        genForExportMqsInstanceTopic();
 
-    private static HttpRequestDef<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> genForexportMqsInstanceTopic() {
+    private static HttpRequestDef<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> genForExportMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ExportMqsInstanceTopicRequest.class, ExportMqsInstanceTopicResponse.class)
@@ -4018,16 +3653,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportMqsInstanceTopicRequest::getInstanceId,
+                ExportMqsInstanceTopicRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportMqsInstanceTopicRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ExportMqsInstanceTopicRequest::getName, ExportMqsInstanceTopicRequest::setName));
 
         // response
 
@@ -4035,9 +3667,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> importMqsInstanceTopic =
-        genForimportMqsInstanceTopic();
+        genForImportMqsInstanceTopic();
 
-    private static HttpRequestDef<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> genForimportMqsInstanceTopic() {
+    private static HttpRequestDef<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> genForImportMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ImportMqsInstanceTopicRequest.class, ImportMqsInstanceTopicResponse.class)
@@ -4050,30 +3682,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getInstanceId,
+                ImportMqsInstanceTopicRequest::setInstanceId));
         builder.<ImportMqsInstanceTopicRequest.ModeEnum>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ImportMqsInstanceTopicRequest.ModeEnum.class),
-            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            }));
+            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getMode, ImportMqsInstanceTopicRequest::setMode));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getPrefix, ImportMqsInstanceTopicRequest::setPrefix));
         builder.<ImportMqsInstanceTopicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportMqsInstanceTopicRequestBody.class),
-            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getBody, ImportMqsInstanceTopicRequest::setBody));
 
         // response
 
@@ -4081,9 +3706,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<InstallMultiTasksRequest, InstallMultiTasksResponse> installMultiTasks =
-        genForinstallMultiTasks();
+        genForInstallMultiTasks();
 
-    private static HttpRequestDef<InstallMultiTasksRequest, InstallMultiTasksResponse> genForinstallMultiTasks() {
+    private static HttpRequestDef<InstallMultiTasksRequest, InstallMultiTasksResponse> genForInstallMultiTasks() {
         // basic
         HttpRequestDef.Builder<InstallMultiTasksRequest, InstallMultiTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InstallMultiTasksRequest.class, InstallMultiTasksResponse.class)
@@ -4096,33 +3721,28 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InstallMultiTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(InstallMultiTasksRequest::getInstanceId, InstallMultiTasksRequest::setInstanceId));
         builder.<MultiTaskInitBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MultiTaskInitBody.class),
-            f -> f.withMarshaller(InstallMultiTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(InstallMultiTasksRequest::getBody, InstallMultiTasksRequest::setBody));
 
         // response
         builder.<List<MultiTaskInitElement>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(InstallMultiTasksResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(MultiTaskInitElement.class));
+            f -> f.withMarshaller(InstallMultiTasksResponse::getBody, InstallMultiTasksResponse::setBody)
+                .withInnerContainerType(MultiTaskInitElement.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePlugins =
-        genForlistApiAttachablePlugins();
+        genForListApiAttachablePlugins();
 
-    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForlistApiAttachablePlugins() {
+    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForListApiAttachablePlugins() {
         // basic
         HttpRequestDef.Builder<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> builder =
             HttpRequestDef
@@ -4136,72 +3756,62 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId,
+                ListApiAttachablePluginsRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId,
+                ListApiAttachablePluginsRequest::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset,
+                ListApiAttachablePluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit,
+                ListApiAttachablePluginsRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId,
+                ListApiAttachablePluginsRequest::setEnvId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName,
+                ListApiAttachablePluginsRequest::setPluginName));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType,
+                ListApiAttachablePluginsRequest::setPluginType));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId,
+                ListApiAttachablePluginsRequest::setPluginId));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppId,
+                ListApiAttachablePluginsRequest::setRomaAppId));
         builder.<String>withRequestField("roma_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppName, (req, v) -> {
-                req.setRomaAppName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppName,
+                ListApiAttachablePluginsRequest::setRomaAppName));
 
         // response
 
@@ -4209,9 +3819,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPlugins =
-        genForlistApiAttachedPlugins();
+        genForListApiAttachedPlugins();
 
-    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForlistApiAttachedPlugins() {
+    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForListApiAttachedPlugins() {
         // basic
         HttpRequestDef.Builder<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApiAttachedPluginsRequest.class, ListApiAttachedPluginsResponse.class)
@@ -4224,79 +3834,64 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId,
+                ListApiAttachedPluginsRequest::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, ListApiAttachedPluginsRequest::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, ListApiAttachedPluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, ListApiAttachedPluginsRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, ListApiAttachedPluginsRequest::setEnvId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName,
+                ListApiAttachedPluginsRequest::setPluginName));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId,
+                ListApiAttachedPluginsRequest::setPluginId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName,
+                ListApiAttachedPluginsRequest::setEnvName));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType,
+                ListApiAttachedPluginsRequest::setPluginType));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppId,
+                ListApiAttachedPluginsRequest::setRomaAppId));
         builder.<String>withRequestField("roma_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppName, (req, v) -> {
-                req.setRomaAppName(v);
-            }));
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppName,
+                ListApiAttachedPluginsRequest::setRomaAppName));
 
         // response
 
@@ -4304,9 +3899,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> listApisBindedToSignatureKeyV2 =
-        genForlistApisBindedToSignatureKeyV2();
+        genForListApisBindedToSignatureKeyV2();
 
-    private static HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> genForlistApisBindedToSignatureKeyV2() {
+    private static HttpRequestDef<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> genForListApisBindedToSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -4322,58 +3917,50 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getInstanceId,
+                ListApisBindedToSignatureKeyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getOffset,
+                ListApisBindedToSignatureKeyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getLimit,
+                ListApisBindedToSignatureKeyV2Request::setLimit));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getSignId,
+                ListApisBindedToSignatureKeyV2Request::setSignId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getEnvId,
+                ListApisBindedToSignatureKeyV2Request::setEnvId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiId,
+                ListApisBindedToSignatureKeyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getApiName,
+                ListApisBindedToSignatureKeyV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId,
+                ListApisBindedToSignatureKeyV2Request::setGroupId));
 
         // response
 
@@ -4381,9 +3968,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> listApisNotBoundWithSignatureKeyV2 =
-        genForlistApisNotBoundWithSignatureKeyV2();
+        genForListApisNotBoundWithSignatureKeyV2();
 
-    private static HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> genForlistApisNotBoundWithSignatureKeyV2() {
+    private static HttpRequestDef<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> genForListApisNotBoundWithSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> builder =
             HttpRequestDef
@@ -4399,58 +3986,50 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getInstanceId,
+                ListApisNotBoundWithSignatureKeyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getOffset,
+                ListApisNotBoundWithSignatureKeyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getLimit,
+                ListApisNotBoundWithSignatureKeyV2Request::setLimit));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getSignId,
+                ListApisNotBoundWithSignatureKeyV2Request::setSignId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getEnvId,
+                ListApisNotBoundWithSignatureKeyV2Request::setEnvId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiId,
+                ListApisNotBoundWithSignatureKeyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getApiName,
+                ListApisNotBoundWithSignatureKeyV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId,
+                ListApisNotBoundWithSignatureKeyV2Request::setGroupId));
 
         // response
 
@@ -4458,9 +4037,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2 =
-        genForlistAppCodesV2();
+        genForListAppCodesV2();
 
-    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForlistAppCodesV2() {
+    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForListAppCodesV2() {
         // basic
         HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
@@ -4473,30 +4052,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, ListAppCodesV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, ListAppCodesV2Request::setAppId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, ListAppCodesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, ListAppCodesV2Request::setLimit));
 
         // response
 
@@ -4504,9 +4075,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppConfigsV2Request, ListAppConfigsV2Response> listAppConfigsV2 =
-        genForlistAppConfigsV2();
+        genForListAppConfigsV2();
 
-    private static HttpRequestDef<ListAppConfigsV2Request, ListAppConfigsV2Response> genForlistAppConfigsV2() {
+    private static HttpRequestDef<ListAppConfigsV2Request, ListAppConfigsV2Response> genForListAppConfigsV2() {
         // basic
         HttpRequestDef.Builder<ListAppConfigsV2Request, ListAppConfigsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppConfigsV2Request.class, ListAppConfigsV2Response.class)
@@ -4519,44 +4090,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getInstanceId, ListAppConfigsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getOffset, ListAppConfigsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getLimit, ListAppConfigsV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getAppId, ListAppConfigsV2Request::setAppId));
         builder.<String>withRequestField("config_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getConfigName, (req, v) -> {
-                req.setConfigName(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getConfigName, ListAppConfigsV2Request::setConfigName));
         builder.<String>withRequestField("roma_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppConfigsV2Request::getRomaAppName, (req, v) -> {
-                req.setRomaAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppConfigsV2Request::getRomaAppName, ListAppConfigsV2Request::setRomaAppName));
 
         // response
 
@@ -4564,9 +4123,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableApps =
-        genForlistAppQuotaBindableApps();
+        genForListAppQuotaBindableApps();
 
-    private static HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> genForlistAppQuotaBindableApps() {
+    private static HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> genForListAppQuotaBindableApps() {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> builder =
             HttpRequestDef
@@ -4580,37 +4139,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getInstanceId,
+                ListAppQuotaBindableAppsRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppQuotaId,
+                ListAppQuotaBindableAppsRequest::setAppQuotaId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getOffset,
+                ListAppQuotaBindableAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getLimit,
+                ListAppQuotaBindableAppsRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppName,
+                ListAppQuotaBindableAppsRequest::setAppName));
 
         // response
 
@@ -4618,9 +4172,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundApps =
-        genForlistAppQuotaBoundApps();
+        genForListAppQuotaBoundApps();
 
-    private static HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> genForlistAppQuotaBoundApps() {
+    private static HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> genForListAppQuotaBoundApps() {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppQuotaBoundAppsRequest.class, ListAppQuotaBoundAppsResponse.class)
@@ -4633,37 +4187,29 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getInstanceId,
+                ListAppQuotaBoundAppsRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppQuotaId,
+                ListAppQuotaBoundAppsRequest::setAppQuotaId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getOffset, ListAppQuotaBoundAppsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getLimit, ListAppQuotaBoundAppsRequest::setLimit));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppName, ListAppQuotaBoundAppsRequest::setAppName));
 
         // response
 
@@ -4671,9 +4217,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotas =
-        genForlistAppQuotas();
+        genForListAppQuotas();
 
-    private static HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> genForlistAppQuotas() {
+    private static HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> genForListAppQuotas() {
         // basic
         HttpRequestDef.Builder<ListAppQuotasRequest, ListAppQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuotasRequest.class, ListAppQuotasResponse.class)
@@ -4686,39 +4232,31 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getInstanceId, ListAppQuotasRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getOffset, ListAppQuotasRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getLimit, ListAppQuotasRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppQuotasRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppQuotasRequest::getName, ListAppQuotasRequest::setName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForlistAppsV2();
+    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForListAppsV2();
 
-    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForlistAppsV2() {
+    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForListAppsV2() {
         // basic
         HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
@@ -4731,67 +4269,51 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, ListAppsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getOffset, ListAppsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getLimit, ListAppsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getId, ListAppsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getName, ListAppsV2Request::setName));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getStatus, ListAppsV2Request::setStatus));
         builder.<String>withRequestField("app_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getAppKey, ListAppsV2Request::setAppKey));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, ListAppsV2Request::setPreciseSearch));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCommandsRequest, ListCommandsResponse> listCommands = genForlistCommands();
+    public static final HttpRequestDef<ListCommandsRequest, ListCommandsResponse> listCommands = genForListCommands();
 
-    private static HttpRequestDef<ListCommandsRequest, ListCommandsResponse> genForlistCommands() {
+    private static HttpRequestDef<ListCommandsRequest, ListCommandsResponse> genForListCommands() {
         // basic
         HttpRequestDef.Builder<ListCommandsRequest, ListCommandsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCommandsRequest.class, ListCommandsResponse.class)
@@ -4804,44 +4326,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommandsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getInstanceId, ListCommandsRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommandsRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getServiceId, ListCommandsRequest::setServiceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommandsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getLimit, ListCommandsRequest::setLimit));
         builder.<Integer>withRequestField("command_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommandsRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getCommandId, ListCommandsRequest::setCommandId));
         builder.<String>withRequestField("command_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommandsRequest::getCommandName, (req, v) -> {
-                req.setCommandName(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getCommandName, ListCommandsRequest::setCommandName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommandsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCommandsRequest::getOffset, ListCommandsRequest::setOffset));
 
         // response
 
@@ -4849,9 +4359,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2 =
-        genForlistCustomAuthorizersV2();
+        genForListCustomAuthorizersV2();
 
-    private static HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> genForlistCustomAuthorizersV2() {
+    private static HttpRequestDef<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> genForListCustomAuthorizersV2() {
         // basic
         HttpRequestDef.Builder<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCustomAuthorizersV2Request.class, ListCustomAuthorizersV2Response.class)
@@ -4864,44 +4374,34 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getInstanceId,
+                ListCustomAuthorizersV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getOffset,
+                ListCustomAuthorizersV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getLimit, ListCustomAuthorizersV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getId, ListCustomAuthorizersV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, ListCustomAuthorizersV2Request::setName));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, ListCustomAuthorizersV2Request::setType));
 
         // response
 
@@ -4909,9 +4409,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> listDatasourceColumns =
-        genForlistDatasourceColumns();
+        genForListDatasourceColumns();
 
-    private static HttpRequestDef<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> genForlistDatasourceColumns() {
+    private static HttpRequestDef<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> genForListDatasourceColumns() {
         // basic
         HttpRequestDef.Builder<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDatasourceColumnsRequest.class, ListDatasourceColumnsResponse.class)
@@ -4924,37 +4424,31 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceColumnsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getInstanceId,
+                ListDatasourceColumnsRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDatasourceId,
+                ListDatasourceColumnsRequest::setDatasourceId));
         builder.<ListDatasourceColumnsRequest.PositionEnum>withRequestField("position",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListDatasourceColumnsRequest.PositionEnum.class),
-            f -> f.withMarshaller(ListDatasourceColumnsRequest::getPosition, (req, v) -> {
-                req.setPosition(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getPosition,
+                ListDatasourceColumnsRequest::setPosition));
         builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDbName, (req, v) -> {
-                req.setDbName(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getDbName, ListDatasourceColumnsRequest::setDbName));
         builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceColumnsRequest::getTableName, (req, v) -> {
-                req.setTableName(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceColumnsRequest::getTableName,
+                ListDatasourceColumnsRequest::setTableName));
 
         // response
 
@@ -4962,9 +4456,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDatasourceTablesRequest, ListDatasourceTablesResponse> listDatasourceTables =
-        genForlistDatasourceTables();
+        genForListDatasourceTables();
 
-    private static HttpRequestDef<ListDatasourceTablesRequest, ListDatasourceTablesResponse> genForlistDatasourceTables() {
+    private static HttpRequestDef<ListDatasourceTablesRequest, ListDatasourceTablesResponse> genForListDatasourceTables() {
         // basic
         HttpRequestDef.Builder<ListDatasourceTablesRequest, ListDatasourceTablesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDatasourceTablesRequest.class, ListDatasourceTablesResponse.class)
@@ -4977,44 +4471,34 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getInstanceId,
+                ListDatasourceTablesRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDatasourceId,
+                ListDatasourceTablesRequest::setDatasourceId));
         builder.<ListDatasourceTablesRequest.PositionEnum>withRequestField("position",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListDatasourceTablesRequest.PositionEnum.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getPosition, (req, v) -> {
-                req.setPosition(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getPosition, ListDatasourceTablesRequest::setPosition));
         builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbName, (req, v) -> {
-                req.setDbName(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbName, ListDatasourceTablesRequest::setDbName));
         builder.<String>withRequestField("db_schema",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbSchema, (req, v) -> {
-                req.setDbSchema(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getDbSchema, ListDatasourceTablesRequest::setDbSchema));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourceTablesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListDatasourceTablesRequest::getFilter, ListDatasourceTablesRequest::setFilter));
 
         // response
 
@@ -5022,9 +4506,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDatasourcesRequest, ListDatasourcesResponse> listDatasources =
-        genForlistDatasources();
+        genForListDatasources();
 
-    private static HttpRequestDef<ListDatasourcesRequest, ListDatasourcesResponse> genForlistDatasources() {
+    private static HttpRequestDef<ListDatasourcesRequest, ListDatasourcesResponse> genForListDatasources() {
         // basic
         HttpRequestDef.Builder<ListDatasourcesRequest, ListDatasourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatasourcesRequest.class, ListDatasourcesResponse.class)
@@ -5037,65 +4521,49 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getInstanceId, ListDatasourcesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getLimit, ListDatasourcesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getOffset, ListDatasourcesRequest::setOffset));
         builder.<ListDatasourcesRequest.DatasourceTypeEnum>withRequestField("datasource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDatasourcesRequest.DatasourceTypeEnum.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getDatasourceType, (req, v) -> {
-                req.setDatasourceType(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getDatasourceType,
+                ListDatasourcesRequest::setDatasourceType));
         builder.<String>withRequestField("sort_field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getSortField, (req, v) -> {
-                req.setSortField(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getSortField, ListDatasourcesRequest::setSortField));
         builder.<ListDatasourcesRequest.SortTypeEnum>withRequestField("sort_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDatasourcesRequest.SortTypeEnum.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getSortType, ListDatasourcesRequest::setSortType));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getName, ListDatasourcesRequest::setName));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getAppId, ListDatasourcesRequest::setAppId));
         builder.<String>withRequestField("custom_plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatasourcesRequest::getCustomPluginId, (req, v) -> {
-                req.setCustomPluginId(v);
-            }));
+            f -> f.withMarshaller(ListDatasourcesRequest::getCustomPluginId,
+                ListDatasourcesRequest::setCustomPluginId));
 
         // response
 
@@ -5103,9 +4571,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDestinationsRequest, ListDestinationsResponse> listDestinations =
-        genForlistDestinations();
+        genForListDestinations();
 
-    private static HttpRequestDef<ListDestinationsRequest, ListDestinationsResponse> genForlistDestinations() {
+    private static HttpRequestDef<ListDestinationsRequest, ListDestinationsResponse> genForListDestinations() {
         // basic
         HttpRequestDef.Builder<ListDestinationsRequest, ListDestinationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDestinationsRequest.class, ListDestinationsResponse.class)
@@ -5118,39 +4586,31 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDestinationsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDestinationsRequest::getInstanceId, ListDestinationsRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDestinationsRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ListDestinationsRequest::getRuleId, ListDestinationsRequest::setRuleId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDestinationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDestinationsRequest::getLimit, ListDestinationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDestinationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDestinationsRequest::getOffset, ListDestinationsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForlistDevices();
+    public static final HttpRequestDef<ListDevicesRequest, ListDevicesResponse> listDevices = genForListDevices();
 
-    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForlistDevices() {
+    private static HttpRequestDef<ListDevicesRequest, ListDevicesResponse> genForListDevices() {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
@@ -5163,100 +4623,72 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getInstanceId, ListDevicesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getLimit, ListDevicesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getOffset, ListDevicesRequest::setOffset));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getAppId, ListDevicesRequest::setAppId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getProductId, ListDevicesRequest::setProductId));
         builder.<String>withRequestField("product_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getProductName, (req, v) -> {
-                req.setProductName(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getProductName, ListDevicesRequest::setProductName));
         builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getDeviceName, (req, v) -> {
-                req.setDeviceName(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getDeviceName, ListDevicesRequest::setDeviceName));
         builder.<String>withRequestField("client_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getClientId, (req, v) -> {
-                req.setClientId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getClientId, ListDevicesRequest::setClientId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getNodeId, ListDevicesRequest::setNodeId));
         builder.<Integer>withRequestField("node_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesRequest::getNodeType, (req, v) -> {
-                req.setNodeType(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getNodeType, ListDevicesRequest::setNodeType));
         builder.<String>withRequestField("online_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getOnlineStatus, (req, v) -> {
-                req.setOnlineStatus(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getOnlineStatus, ListDevicesRequest::setOnlineStatus));
         builder.<Long>withRequestField("created_date_start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDevicesRequest::getCreatedDateStart, (req, v) -> {
-                req.setCreatedDateStart(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getCreatedDateStart, ListDevicesRequest::setCreatedDateStart));
         builder.<Long>withRequestField("created_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListDevicesRequest::getCreatedDateEnd, (req, v) -> {
-                req.setCreatedDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getCreatedDateEnd, ListDevicesRequest::setCreatedDateEnd));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ListDevicesRequest::getTag, ListDevicesRequest::setTag));
 
         // response
 
@@ -5264,9 +4696,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDevicesInProductRequest, ListDevicesInProductResponse> listDevicesInProduct =
-        genForlistDevicesInProduct();
+        genForListDevicesInProduct();
 
-    private static HttpRequestDef<ListDevicesInProductRequest, ListDevicesInProductResponse> genForlistDevicesInProduct() {
+    private static HttpRequestDef<ListDevicesInProductRequest, ListDevicesInProductResponse> genForListDevicesInProduct() {
         // basic
         HttpRequestDef.Builder<ListDevicesInProductRequest, ListDevicesInProductResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDevicesInProductRequest.class, ListDevicesInProductResponse.class)
@@ -5279,16 +4711,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDevicesInProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesInProductRequest::getInstanceId,
+                ListDevicesInProductRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDevicesInProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListDevicesInProductRequest::getProductId,
+                ListDevicesInProductRequest::setProductId));
 
         // response
 
@@ -5296,9 +4726,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> listEnvironmentVariablesV2 =
-        genForlistEnvironmentVariablesV2();
+        genForListEnvironmentVariablesV2();
 
-    private static HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> genForlistEnvironmentVariablesV2() {
+    private static HttpRequestDef<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> genForListEnvironmentVariablesV2() {
         // basic
         HttpRequestDef.Builder<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> builder =
             HttpRequestDef
@@ -5314,51 +4744,44 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getInstanceId,
+                ListEnvironmentVariablesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getOffset,
+                ListEnvironmentVariablesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getLimit,
+                ListEnvironmentVariablesV2Request::setLimit));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getGroupId,
+                ListEnvironmentVariablesV2Request::setGroupId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getEnvId,
+                ListEnvironmentVariablesV2Request::setEnvId));
         builder.<String>withRequestField("variable_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getVariableName, (req, v) -> {
-                req.setVariableName(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getVariableName,
+                ListEnvironmentVariablesV2Request::setVariableName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentVariablesV2Request::getPreciseSearch,
+                ListEnvironmentVariablesV2Request::setPreciseSearch));
 
         // response
 
@@ -5366,9 +4789,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> listEnvironmentsV2 =
-        genForlistEnvironmentsV2();
+        genForListEnvironmentsV2();
 
-    private static HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> genForlistEnvironmentsV2() {
+    private static HttpRequestDef<ListEnvironmentsV2Request, ListEnvironmentsV2Response> genForListEnvironmentsV2() {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsV2Request, ListEnvironmentsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsV2Request.class, ListEnvironmentsV2Response.class)
@@ -5381,30 +4804,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getInstanceId, ListEnvironmentsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getOffset, ListEnvironmentsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getLimit, ListEnvironmentsV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListEnvironmentsV2Request::getName, ListEnvironmentsV2Request::setName));
 
         // response
 
@@ -5412,9 +4827,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> listFeaturesV2 =
-        genForlistFeaturesV2();
+        genForListFeaturesV2();
 
-    private static HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> genForlistFeaturesV2() {
+    private static HttpRequestDef<ListFeaturesV2Request, ListFeaturesV2Response> genForListFeaturesV2() {
         // basic
         HttpRequestDef.Builder<ListFeaturesV2Request, ListFeaturesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFeaturesV2Request.class, ListFeaturesV2Response.class)
@@ -5427,23 +4842,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getInstanceId, ListFeaturesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getOffset, ListFeaturesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFeaturesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFeaturesV2Request::getLimit, ListFeaturesV2Request::setLimit));
 
         // response
 
@@ -5451,9 +4860,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> listLatelyApiStatisticsV2 =
-        genForlistLatelyApiStatisticsV2();
+        genForListLatelyApiStatisticsV2();
 
-    private static HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> genForlistLatelyApiStatisticsV2() {
+    private static HttpRequestDef<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> genForListLatelyApiStatisticsV2() {
         // basic
         HttpRequestDef.Builder<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> builder =
             HttpRequestDef
@@ -5469,23 +4878,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getInstanceId,
+                ListLatelyApiStatisticsV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getApiId,
+                ListLatelyApiStatisticsV2Request::setApiId));
         builder.<String>withRequestField("duration",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getDuration, (req, v) -> {
-                req.setDuration(v);
-            }));
+            f -> f.withMarshaller(ListLatelyApiStatisticsV2Request::getDuration,
+                ListLatelyApiStatisticsV2Request::setDuration));
 
         // response
 
@@ -5493,9 +4899,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> listLiveDataApiDeploymentHistoryV2 =
-        genForlistLiveDataApiDeploymentHistoryV2();
+        genForListLiveDataApiDeploymentHistoryV2();
 
-    private static HttpRequestDef<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> genForlistLiveDataApiDeploymentHistoryV2() {
+    private static HttpRequestDef<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> genForListLiveDataApiDeploymentHistoryV2() {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> builder =
             HttpRequestDef
@@ -5511,16 +4917,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiDeploymentHistoryV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiDeploymentHistoryV2Request::getInstanceId,
+                ListLiveDataApiDeploymentHistoryV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiDeploymentHistoryV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiDeploymentHistoryV2Request::getLdApiId,
+                ListLiveDataApiDeploymentHistoryV2Request::setLdApiId));
 
         // response
 
@@ -5528,9 +4932,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> listLiveDataApiTestHistoryV2 =
-        genForlistLiveDataApiTestHistoryV2();
+        genForListLiveDataApiTestHistoryV2();
 
-    private static HttpRequestDef<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> genForlistLiveDataApiTestHistoryV2() {
+    private static HttpRequestDef<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> genForListLiveDataApiTestHistoryV2() {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> builder =
             HttpRequestDef
@@ -5546,30 +4950,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getInstanceId,
+                ListLiveDataApiTestHistoryV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getLdApiId,
+                ListLiveDataApiTestHistoryV2Request::setLdApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getOffset,
+                ListLiveDataApiTestHistoryV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiTestHistoryV2Request::getLimit,
+                ListLiveDataApiTestHistoryV2Request::setLimit));
 
         // response
 
@@ -5577,9 +4977,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLiveDataApiV2Request, ListLiveDataApiV2Response> listLiveDataApiV2 =
-        genForlistLiveDataApiV2();
+        genForListLiveDataApiV2();
 
-    private static HttpRequestDef<ListLiveDataApiV2Request, ListLiveDataApiV2Response> genForlistLiveDataApiV2() {
+    private static HttpRequestDef<ListLiveDataApiV2Request, ListLiveDataApiV2Response> genForListLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiV2Request, ListLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataApiV2Request.class, ListLiveDataApiV2Response.class)
@@ -5592,65 +4992,48 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getInstanceId, ListLiveDataApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getOffset, ListLiveDataApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getLimit, ListLiveDataApiV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getAppId, ListLiveDataApiV2Request::setAppId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getAppName, ListLiveDataApiV2Request::setAppName));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getName, ListLiveDataApiV2Request::setName));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getStatus, ListLiveDataApiV2Request::setStatus));
         builder.<String>withRequestField("path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getPath, (req, v) -> {
-                req.setPath(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getPath, ListLiveDataApiV2Request::setPath));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataApiV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataApiV2Request::getPreciseSearch,
+                ListLiveDataApiV2Request::setPreciseSearch));
 
         // response
 
@@ -5658,9 +5041,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> listLiveDataDataSourcesV2 =
-        genForlistLiveDataDataSourcesV2();
+        genForListLiveDataDataSourcesV2();
 
-    private static HttpRequestDef<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> genForlistLiveDataDataSourcesV2() {
+    private static HttpRequestDef<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> genForListLiveDataDataSourcesV2() {
         // basic
         HttpRequestDef.Builder<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> builder =
             HttpRequestDef
@@ -5676,37 +5059,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getInstanceId,
+                ListLiveDataDataSourcesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getOffset,
+                ListLiveDataDataSourcesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getLimit,
+                ListLiveDataDataSourcesV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getAppId,
+                ListLiveDataDataSourcesV2Request::setAppId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataDataSourcesV2Request::getName,
+                ListLiveDataDataSourcesV2Request::setName));
 
         // response
 
@@ -5714,9 +5092,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> listLiveDataQuotaV2 =
-        genForlistLiveDataQuotaV2();
+        genForListLiveDataQuotaV2();
 
-    private static HttpRequestDef<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> genForlistLiveDataQuotaV2() {
+    private static HttpRequestDef<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> genForListLiveDataQuotaV2() {
         // basic
         HttpRequestDef.Builder<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataQuotaV2Request.class, ListLiveDataQuotaV2Response.class)
@@ -5729,9 +5107,8 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLiveDataQuotaV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLiveDataQuotaV2Request::getInstanceId,
+                ListLiveDataQuotaV2Request::setInstanceId));
 
         // response
 
@@ -5739,9 +5116,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListMonitorInfosRequest, ListMonitorInfosResponse> listMonitorInfos =
-        genForlistMonitorInfos();
+        genForListMonitorInfos();
 
-    private static HttpRequestDef<ListMonitorInfosRequest, ListMonitorInfosResponse> genForlistMonitorInfos() {
+    private static HttpRequestDef<ListMonitorInfosRequest, ListMonitorInfosResponse> genForListMonitorInfos() {
         // basic
         HttpRequestDef.Builder<ListMonitorInfosRequest, ListMonitorInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitorInfosRequest.class, ListMonitorInfosResponse.class)
@@ -5754,37 +5131,28 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitorInfosRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMonitorInfosRequest::getInstanceId, ListMonitorInfosRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitorInfosRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMonitorInfosRequest::getOffset, ListMonitorInfosRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitorInfosRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMonitorInfosRequest::getLimit, ListMonitorInfosRequest::setLimit));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitorInfosRequest::getTaskName, (req, v) -> {
-                req.setTaskName(v);
-            }));
+            f -> f.withMarshaller(ListMonitorInfosRequest::getTaskName, ListMonitorInfosRequest::setTaskName));
         builder.<ListMonitorInfosRequest.ExecuteStatusEnum>withRequestField("execute_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMonitorInfosRequest.ExecuteStatusEnum.class),
-            f -> f.withMarshaller(ListMonitorInfosRequest::getExecuteStatus, (req, v) -> {
-                req.setExecuteStatus(v);
-            }));
+            f -> f.withMarshaller(ListMonitorInfosRequest::getExecuteStatus,
+                ListMonitorInfosRequest::setExecuteStatus));
 
         // response
 
@@ -5792,9 +5160,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListMonitorLogRequest, ListMonitorLogResponse> listMonitorLog =
-        genForlistMonitorLog();
+        genForListMonitorLog();
 
-    private static HttpRequestDef<ListMonitorLogRequest, ListMonitorLogResponse> genForlistMonitorLog() {
+    private static HttpRequestDef<ListMonitorLogRequest, ListMonitorLogResponse> genForListMonitorLog() {
         // basic
         HttpRequestDef.Builder<ListMonitorLogRequest, ListMonitorLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitorLogRequest.class, ListMonitorLogResponse.class)
@@ -5807,44 +5175,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getInstanceId, ListMonitorLogRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getTaskId, ListMonitorLogRequest::setTaskId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getOffset, ListMonitorLogRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getLimit, ListMonitorLogRequest::setLimit));
         builder.<Long>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getBeginTime, (req, v) -> {
-                req.setBeginTime(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getBeginTime, ListMonitorLogRequest::setBeginTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListMonitorLogRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListMonitorLogRequest::getEndTime, ListMonitorLogRequest::setEndTime));
 
         // response
 
@@ -5852,9 +5208,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> listMqsInstanceTopics =
-        genForlistMqsInstanceTopics();
+        genForListMqsInstanceTopics();
 
-    private static HttpRequestDef<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> genForlistMqsInstanceTopics() {
+    private static HttpRequestDef<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> genForListMqsInstanceTopics() {
         // basic
         HttpRequestDef.Builder<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMqsInstanceTopicsRequest.class, ListMqsInstanceTopicsResponse.class)
@@ -5867,44 +5223,34 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getInstanceId,
+                ListMqsInstanceTopicsRequest::setInstanceId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getAppName, ListMqsInstanceTopicsRequest::setAppName));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getName, ListMqsInstanceTopicsRequest::setName));
         builder.<ListMqsInstanceTopicsRequest.AccessPolicyEnum>withRequestField("access_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMqsInstanceTopicsRequest.AccessPolicyEnum.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getAccessPolicy, (req, v) -> {
-                req.setAccessPolicy(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getAccessPolicy,
+                ListMqsInstanceTopicsRequest::setAccessPolicy));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getLimit, ListMqsInstanceTopicsRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceTopicsRequest::getOffset, ListMqsInstanceTopicsRequest::setOffset));
 
         // response
 
@@ -5912,9 +5258,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListNotificationRequest, ListNotificationResponse> listNotification =
-        genForlistNotification();
+        genForListNotification();
 
-    private static HttpRequestDef<ListNotificationRequest, ListNotificationResponse> genForlistNotification() {
+    private static HttpRequestDef<ListNotificationRequest, ListNotificationResponse> genForListNotification() {
         // basic
         HttpRequestDef.Builder<ListNotificationRequest, ListNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNotificationRequest.class, ListNotificationResponse.class)
@@ -5927,30 +5273,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRequest::getInstanceId, ListNotificationRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRequest::getLimit, ListNotificationRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNotificationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRequest::getOffset, ListNotificationRequest::setOffset));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListNotificationRequest::getAppId, ListNotificationRequest::setAppId));
 
         // response
 
@@ -5958,9 +5296,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApis =
-        genForlistPluginAttachableApis();
+        genForListPluginAttachableApis();
 
-    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForlistPluginAttachableApis() {
+    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForListPluginAttachableApis() {
         // basic
         HttpRequestDef.Builder<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> builder =
             HttpRequestDef
@@ -5974,72 +5312,62 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId,
+                ListPluginAttachableApisRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId,
+                ListPluginAttachableApisRequest::setPluginId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset,
+                ListPluginAttachableApisRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit,
+                ListPluginAttachableApisRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId,
+                ListPluginAttachableApisRequest::setEnvId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName,
+                ListPluginAttachableApisRequest::setApiName));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId,
+                ListPluginAttachableApisRequest::setApiId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId,
+                ListPluginAttachableApisRequest::setGroupId));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod,
+                ListPluginAttachableApisRequest::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri,
+                ListPluginAttachableApisRequest::setReqUri));
 
         // response
 
@@ -6047,9 +5375,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApis =
-        genForlistPluginAttachedApis();
+        genForListPluginAttachedApis();
 
-    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForlistPluginAttachedApis() {
+    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForListPluginAttachedApis() {
         // basic
         HttpRequestDef.Builder<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListPluginAttachedApisRequest.class, ListPluginAttachedApisResponse.class)
@@ -6062,81 +5390,66 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId,
+                ListPluginAttachedApisRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId,
+                ListPluginAttachedApisRequest::setPluginId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, ListPluginAttachedApisRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, ListPluginAttachedApisRequest::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, ListPluginAttachedApisRequest::setEnvId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName,
+                ListPluginAttachedApisRequest::setApiName));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, ListPluginAttachedApisRequest::setApiId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId,
+                ListPluginAttachedApisRequest::setGroupId));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod,
+                ListPluginAttachedApisRequest::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, ListPluginAttachedApisRequest::setReqUri));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForListPlugins();
 
-    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForListPlugins() {
         // basic
         HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
@@ -6149,72 +5462,52 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, ListPluginsRequest::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPluginsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, ListPluginsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPluginsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, ListPluginsRequest::setLimit));
         builder.<String>withRequestField("plugin_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginType, (req, v) -> {
-                req.setPluginType(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginType, ListPluginsRequest::setPluginType));
         builder.<String>withRequestField("plugin_scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, (req, v) -> {
-                req.setPluginScope(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, ListPluginsRequest::setPluginScope));
         builder.<String>withRequestField("plugin_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginId, ListPluginsRequest::setPluginId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPluginName, (req, v) -> {
-                req.setPluginName(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPluginName, ListPluginsRequest::setPluginName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, ListPluginsRequest::setPreciseSearch));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getRomaAppId, ListPluginsRequest::setRomaAppId));
         builder.<String>withRequestField("roma_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPluginsRequest::getRomaAppName, (req, v) -> {
-                req.setRomaAppName(v);
-            }));
+            f -> f.withMarshaller(ListPluginsRequest::getRomaAppName, ListPluginsRequest::setRomaAppName));
 
         // response
 
@@ -6222,9 +5515,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListProductTemplatesRequest, ListProductTemplatesResponse> listProductTemplates =
-        genForlistProductTemplates();
+        genForListProductTemplates();
 
-    private static HttpRequestDef<ListProductTemplatesRequest, ListProductTemplatesResponse> genForlistProductTemplates() {
+    private static HttpRequestDef<ListProductTemplatesRequest, ListProductTemplatesResponse> genForListProductTemplates() {
         // basic
         HttpRequestDef.Builder<ListProductTemplatesRequest, ListProductTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProductTemplatesRequest.class, ListProductTemplatesResponse.class)
@@ -6237,65 +5530,51 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getInstanceId,
+                ListProductTemplatesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getLimit, ListProductTemplatesRequest::setLimit));
         builder.<Integer>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getId, ListProductTemplatesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getName, ListProductTemplatesRequest::setName));
         builder.<ListProductTemplatesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProductTemplatesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getStatus, ListProductTemplatesRequest::setStatus));
         builder.<String>withRequestField("created_user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedUserName, (req, v) -> {
-                req.setCreatedUserName(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedUserName,
+                ListProductTemplatesRequest::setCreatedUserName));
         builder.<Long>withRequestField("created_date_start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedDateStart, (req, v) -> {
-                req.setCreatedDateStart(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedDateStart,
+                ListProductTemplatesRequest::setCreatedDateStart));
         builder.<Long>withRequestField("created_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedDateEnd, (req, v) -> {
-                req.setCreatedDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getCreatedDateEnd,
+                ListProductTemplatesRequest::setCreatedDateEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProductTemplatesRequest::getOffset, ListProductTemplatesRequest::setOffset));
 
         // response
 
@@ -6303,9 +5582,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListProductTopicsRequest, ListProductTopicsResponse> listProductTopics =
-        genForlistProductTopics();
+        genForListProductTopics();
 
-    private static HttpRequestDef<ListProductTopicsRequest, ListProductTopicsResponse> genForlistProductTopics() {
+    private static HttpRequestDef<ListProductTopicsRequest, ListProductTopicsResponse> genForListProductTopics() {
         // basic
         HttpRequestDef.Builder<ListProductTopicsRequest, ListProductTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductTopicsRequest.class, ListProductTopicsResponse.class)
@@ -6318,39 +5597,31 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductTopicsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProductTopicsRequest::getInstanceId, ListProductTopicsRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTopicsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListProductTopicsRequest::getProductId, ListProductTopicsRequest::setProductId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProductTopicsRequest::getLimit, ListProductTopicsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProductTopicsRequest::getOffset, ListProductTopicsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForListProducts();
 
-    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForListProducts() {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
@@ -6363,121 +5634,87 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getInstanceId, ListProductsRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getLimit, ListProductsRequest::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getAppId, ListProductsRequest::setAppId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getId, ListProductsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getName, ListProductsRequest::setName));
         builder.<String>withRequestField("manufacturer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getManufacturerId, (req, v) -> {
-                req.setManufacturerId(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getManufacturerId, ListProductsRequest::setManufacturerId));
         builder.<String>withRequestField("manufacturer_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getManufacturerName, (req, v) -> {
-                req.setManufacturerName(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getManufacturerName, ListProductsRequest::setManufacturerName));
         builder.<String>withRequestField("model",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getModel, (req, v) -> {
-                req.setModel(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getModel, ListProductsRequest::setModel));
         builder.<String>withRequestField("device_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getDeviceType, (req, v) -> {
-                req.setDeviceType(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getDeviceType, ListProductsRequest::setDeviceType));
         builder.<ListProductsRequest.ProductTypeEnum>withRequestField("product_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProductsRequest.ProductTypeEnum.class),
-            f -> f.withMarshaller(ListProductsRequest::getProductType, (req, v) -> {
-                req.setProductType(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getProductType, ListProductsRequest::setProductType));
         builder.<ListProductsRequest.ProtocolTypeEnum>withRequestField("protocol_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProductsRequest.ProtocolTypeEnum.class),
-            f -> f.withMarshaller(ListProductsRequest::getProtocolType, (req, v) -> {
-                req.setProtocolType(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getProtocolType, ListProductsRequest::setProtocolType));
         builder.<String>withRequestField("created_user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getCreatedUserName, (req, v) -> {
-                req.setCreatedUserName(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getCreatedUserName, ListProductsRequest::setCreatedUserName));
         builder.<Long>withRequestField("created_date_start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProductsRequest::getCreatedDateStart, (req, v) -> {
-                req.setCreatedDateStart(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getCreatedDateStart, ListProductsRequest::setCreatedDateStart));
         builder.<Long>withRequestField("created_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProductsRequest::getCreatedDateEnd, (req, v) -> {
-                req.setCreatedDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getCreatedDateEnd, ListProductsRequest::setCreatedDateEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getOffset, ListProductsRequest::setOffset));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getAppName, ListProductsRequest::setAppName));
         builder.<String>withRequestField("product_serial",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getProductSerial, (req, v) -> {
-                req.setProductSerial(v);
-            }));
+            f -> f.withMarshaller(ListProductsRequest::getProductSerial, ListProductsRequest::setProductSerial));
 
         // response
 
@@ -6485,9 +5722,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> listProjectCofigsV2 =
-        genForlistProjectCofigsV2();
+        genForListProjectCofigsV2();
 
-    private static HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> genForlistProjectCofigsV2() {
+    private static HttpRequestDef<ListProjectCofigsV2Request, ListProjectCofigsV2Response> genForListProjectCofigsV2() {
         // basic
         HttpRequestDef.Builder<ListProjectCofigsV2Request, ListProjectCofigsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectCofigsV2Request.class, ListProjectCofigsV2Response.class)
@@ -6500,23 +5737,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getInstanceId,
+                ListProjectCofigsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getOffset, ListProjectCofigsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, ListProjectCofigsV2Request::setLimit));
 
         // response
 
@@ -6524,9 +5756,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> listProperties =
-        genForlistProperties();
+        genForListProperties();
 
-    private static HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> genForlistProperties() {
+    private static HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> genForListProperties() {
         // basic
         HttpRequestDef.Builder<ListPropertiesRequest, ListPropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPropertiesRequest.class, ListPropertiesResponse.class)
@@ -6539,44 +5771,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getInstanceId, ListPropertiesRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getServiceId, ListPropertiesRequest::setServiceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getLimit, ListPropertiesRequest::setLimit));
         builder.<Integer>withRequestField("property_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getPropertyId, ListPropertiesRequest::setPropertyId));
         builder.<String>withRequestField("property_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getPropertyName, (req, v) -> {
-                req.setPropertyName(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getPropertyName, ListPropertiesRequest::setPropertyName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPropertiesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListPropertiesRequest::getOffset, ListPropertiesRequest::setOffset));
 
         // response
 
@@ -6584,9 +5804,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListRequestPropertiesRequest, ListRequestPropertiesResponse> listRequestProperties =
-        genForlistRequestProperties();
+        genForListRequestProperties();
 
-    private static HttpRequestDef<ListRequestPropertiesRequest, ListRequestPropertiesResponse> genForlistRequestProperties() {
+    private static HttpRequestDef<ListRequestPropertiesRequest, ListRequestPropertiesResponse> genForListRequestProperties() {
         // basic
         HttpRequestDef.Builder<ListRequestPropertiesRequest, ListRequestPropertiesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListRequestPropertiesRequest.class, ListRequestPropertiesResponse.class)
@@ -6600,51 +5820,42 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getInstanceId,
+                ListRequestPropertiesRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getServiceId,
+                ListRequestPropertiesRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getCommandId,
+                ListRequestPropertiesRequest::setCommandId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getLimit, ListRequestPropertiesRequest::setLimit));
         builder.<Integer>withRequestField("request_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getRequestId,
+                ListRequestPropertiesRequest::setRequestId));
         builder.<String>withRequestField("request_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getRequestName, (req, v) -> {
-                req.setRequestName(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getRequestName,
+                ListRequestPropertiesRequest::setRequestName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestPropertiesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRequestPropertiesRequest::getOffset, ListRequestPropertiesRequest::setOffset));
 
         // response
 
@@ -6652,9 +5863,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> listRequestThrottlingPolicyV2 =
-        genForlistRequestThrottlingPolicyV2();
+        genForListRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> genForlistRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> genForListRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -6670,44 +5881,38 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getInstanceId,
+                ListRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getOffset,
+                ListRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getLimit,
+                ListRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getId,
+                ListRequestThrottlingPolicyV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getName,
+                ListRequestThrottlingPolicyV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPolicyV2Request::getPreciseSearch,
+                ListRequestThrottlingPolicyV2Request::setPreciseSearch));
 
         // response
 
@@ -6715,9 +5920,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListResponsePropertiesRequest, ListResponsePropertiesResponse> listResponseProperties =
-        genForlistResponseProperties();
+        genForListResponseProperties();
 
-    private static HttpRequestDef<ListResponsePropertiesRequest, ListResponsePropertiesResponse> genForlistResponseProperties() {
+    private static HttpRequestDef<ListResponsePropertiesRequest, ListResponsePropertiesResponse> genForListResponseProperties() {
         // basic
         HttpRequestDef.Builder<ListResponsePropertiesRequest, ListResponsePropertiesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListResponsePropertiesRequest.class, ListResponsePropertiesResponse.class)
@@ -6731,60 +5936,51 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getInstanceId,
+                ListResponsePropertiesRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getServiceId,
+                ListResponsePropertiesRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getCommandId,
+                ListResponsePropertiesRequest::setCommandId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getLimit, ListResponsePropertiesRequest::setLimit));
         builder.<Integer>withRequestField("response_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getResponseId, (req, v) -> {
-                req.setResponseId(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getResponseId,
+                ListResponsePropertiesRequest::setResponseId));
         builder.<String>withRequestField("response_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getResponseName, (req, v) -> {
-                req.setResponseName(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getResponseName,
+                ListResponsePropertiesRequest::setResponseName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResponsePropertiesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListResponsePropertiesRequest::getOffset, ListResponsePropertiesRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForlistRules();
+    public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForListRules();
 
-    private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForlistRules() {
+    private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForListRules() {
         // basic
         HttpRequestDef.Builder<ListRulesRequest, ListRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRulesRequest.class, ListRulesResponse.class)
@@ -6797,46 +5993,36 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRulesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getInstanceId, ListRulesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getLimit, ListRulesRequest::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRulesRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getAppId, ListRulesRequest::setAppId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRulesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getName, ListRulesRequest::setName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRulesRequest::getOffset, ListRulesRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForlistServices();
+    public static final HttpRequestDef<ListServicesRequest, ListServicesResponse> listServices = genForListServices();
 
-    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForlistServices() {
+    private static HttpRequestDef<ListServicesRequest, ListServicesResponse> genForListServices() {
         // basic
         HttpRequestDef.Builder<ListServicesRequest, ListServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServicesRequest.class, ListServicesResponse.class)
@@ -6849,81 +6035,62 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getInstanceId, ListServicesRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getLimit, ListServicesRequest::setLimit));
         builder.<Integer>withRequestField("service_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicesRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getServiceId, ListServicesRequest::setServiceId));
         builder.<String>withRequestField("service_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getServiceName, (req, v) -> {
-                req.setServiceName(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getServiceName, ListServicesRequest::setServiceName));
         builder.<Integer>withRequestField("product_template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicesRequest::getProductTemplateId, (req, v) -> {
-                req.setProductTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getProductTemplateId,
+                ListServicesRequest::setProductTemplateId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicesRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getProductId, ListServicesRequest::setProductId));
         builder.<String>withRequestField("created_user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicesRequest::getCreatedUserName, (req, v) -> {
-                req.setCreatedUserName(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getCreatedUserName, ListServicesRequest::setCreatedUserName));
         builder.<Long>withRequestField("created_date_start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListServicesRequest::getCreatedDateStart, (req, v) -> {
-                req.setCreatedDateStart(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getCreatedDateStart, ListServicesRequest::setCreatedDateStart));
         builder.<Long>withRequestField("created_date_end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListServicesRequest::getCreatedDateEnd, (req, v) -> {
-                req.setCreatedDateEnd(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getCreatedDateEnd, ListServicesRequest::setCreatedDateEnd));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServicesRequest::getOffset, ListServicesRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListShadowsRequest, ListShadowsResponse> listShadows = genForlistShadows();
+    public static final HttpRequestDef<ListShadowsRequest, ListShadowsResponse> listShadows = genForListShadows();
 
-    private static HttpRequestDef<ListShadowsRequest, ListShadowsResponse> genForlistShadows() {
+    private static HttpRequestDef<ListShadowsRequest, ListShadowsResponse> genForListShadows() {
         // basic
         HttpRequestDef.Builder<ListShadowsRequest, ListShadowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListShadowsRequest.class, ListShadowsResponse.class)
@@ -6936,33 +6103,28 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShadowsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListShadowsRequest::getInstanceId, ListShadowsRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShadowsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListShadowsRequest::getDeviceId, ListShadowsRequest::setDeviceId));
 
         // response
         builder.<List<ShadowService>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListShadowsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(ShadowService.class));
+            f -> f.withMarshaller(ListShadowsResponse::getBody, ListShadowsResponse::setBody)
+                .withInnerContainerType(ShadowService.class));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> listSignatureKeysBindedToApiV2 =
-        genForlistSignatureKeysBindedToApiV2();
+        genForListSignatureKeysBindedToApiV2();
 
-    private static HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> genForlistSignatureKeysBindedToApiV2() {
+    private static HttpRequestDef<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> genForListSignatureKeysBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> builder =
             HttpRequestDef
@@ -6978,51 +6140,44 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getInstanceId,
+                ListSignatureKeysBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getOffset,
+                ListSignatureKeysBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getLimit,
+                ListSignatureKeysBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getApiId,
+                ListSignatureKeysBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("sign_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignId,
+                ListSignatureKeysBindedToApiV2Request::setSignId));
         builder.<String>withRequestField("sign_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignName, (req, v) -> {
-                req.setSignName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getSignName,
+                ListSignatureKeysBindedToApiV2Request::setSignName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysBindedToApiV2Request::getEnvId,
+                ListSignatureKeysBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -7030,9 +6185,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> listSignatureKeysV2 =
-        genForlistSignatureKeysV2();
+        genForListSignatureKeysV2();
 
-    private static HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> genForlistSignatureKeysV2() {
+    private static HttpRequestDef<ListSignatureKeysV2Request, ListSignatureKeysV2Response> genForListSignatureKeysV2() {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysV2Request, ListSignatureKeysV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysV2Request.class, ListSignatureKeysV2Response.class)
@@ -7045,53 +6200,43 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getInstanceId,
+                ListSignatureKeysV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getOffset, ListSignatureKeysV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getLimit, ListSignatureKeysV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getId, ListSignatureKeysV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getName, ListSignatureKeysV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSignatureKeysV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListSignatureKeysV2Request::getPreciseSearch,
+                ListSignatureKeysV2Request::setPreciseSearch));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSourcesRequest, ListSourcesResponse> listSources = genForlistSources();
+    public static final HttpRequestDef<ListSourcesRequest, ListSourcesResponse> listSources = genForListSources();
 
-    private static HttpRequestDef<ListSourcesRequest, ListSourcesResponse> genForlistSources() {
+    private static HttpRequestDef<ListSourcesRequest, ListSourcesResponse> genForListSources() {
         // basic
         HttpRequestDef.Builder<ListSourcesRequest, ListSourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSourcesRequest.class, ListSourcesResponse.class)
@@ -7104,30 +6249,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSourcesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSourcesRequest::getInstanceId, ListSourcesRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSourcesRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ListSourcesRequest::getRuleId, ListSourcesRequest::setRuleId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSourcesRequest::getLimit, ListSourcesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSourcesRequest::getOffset, ListSourcesRequest::setOffset));
 
         // response
 
@@ -7135,9 +6272,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> listSpecialThrottlingConfigurationsV2 =
-        genForlistSpecialThrottlingConfigurationsV2();
+        genForListSpecialThrottlingConfigurationsV2();
 
-    private static HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> genForlistSpecialThrottlingConfigurationsV2() {
+    private static HttpRequestDef<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> genForListSpecialThrottlingConfigurationsV2() {
         // basic
         HttpRequestDef.Builder<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> builder =
             HttpRequestDef
@@ -7153,44 +6290,38 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getInstanceId,
+                ListSpecialThrottlingConfigurationsV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId,
+                ListSpecialThrottlingConfigurationsV2Request::setThrottleId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getOffset,
+                ListSpecialThrottlingConfigurationsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getLimit,
+                ListSpecialThrottlingConfigurationsV2Request::setLimit));
         builder.<String>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getObjectType, (req, v) -> {
-                req.setObjectType(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getObjectType,
+                ListSpecialThrottlingConfigurationsV2Request::setObjectType));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getAppName,
+                ListSpecialThrottlingConfigurationsV2Request::setAppName));
 
         // response
 
@@ -7198,9 +6329,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListStatisticsApiRequest, ListStatisticsApiResponse> listStatisticsApi =
-        genForlistStatisticsApi();
+        genForListStatisticsApi();
 
-    private static HttpRequestDef<ListStatisticsApiRequest, ListStatisticsApiResponse> genForlistStatisticsApi() {
+    private static HttpRequestDef<ListStatisticsApiRequest, ListStatisticsApiResponse> genForListStatisticsApi() {
         // basic
         HttpRequestDef.Builder<ListStatisticsApiRequest, ListStatisticsApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsApiRequest.class, ListStatisticsApiResponse.class)
@@ -7213,67 +6344,51 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getInstanceId, ListStatisticsApiRequest::setInstanceId));
         builder.<ListStatisticsApiRequest.ModeEnum>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListStatisticsApiRequest.ModeEnum.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getMode, ListStatisticsApiRequest::setMode));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getRomaAppId, ListStatisticsApiRequest::setRomaAppId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getApiId, ListStatisticsApiRequest::setApiId));
         builder.<ListStatisticsApiRequest.CycleEnum>withRequestField("cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListStatisticsApiRequest.CycleEnum.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getCycle, ListStatisticsApiRequest::setCycle));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getStartTime, ListStatisticsApiRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getEndTime, ListStatisticsApiRequest::setEndTime));
         builder.<String>withRequestField("duration",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStatisticsApiRequest::getDuration, (req, v) -> {
-                req.setDuration(v);
-            }));
+            f -> f.withMarshaller(ListStatisticsApiRequest::getDuration, ListStatisticsApiRequest::setDuration));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> listSubsets = genForlistSubsets();
+    public static final HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> listSubsets = genForListSubsets();
 
-    private static HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> genForlistSubsets() {
+    private static HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> genForListSubsets() {
         // basic
         HttpRequestDef.Builder<ListSubsetsRequest, ListSubsetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubsetsRequest.class, ListSubsetsResponse.class)
@@ -7286,60 +6401,46 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getInstanceId, ListSubsetsRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getDeviceId, ListSubsetsRequest::setDeviceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getLimit, ListSubsetsRequest::setLimit));
         builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getDeviceName, (req, v) -> {
-                req.setDeviceName(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getDeviceName, ListSubsetsRequest::setDeviceName));
         builder.<ListSubsetsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSubsetsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getStatus, ListSubsetsRequest::setStatus));
         builder.<ListSubsetsRequest.OnlineStatusEnum>withRequestField("online_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSubsetsRequest.OnlineStatusEnum.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getOnlineStatus, (req, v) -> {
-                req.setOnlineStatus(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getOnlineStatus, ListSubsetsRequest::setOnlineStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubsetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListSubsetsRequest::getOffset, ListSubsetsRequest::setOffset));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsV2Request, ListTagsV2Response> listTagsV2 = genForlistTagsV2();
+    public static final HttpRequestDef<ListTagsV2Request, ListTagsV2Response> listTagsV2 = genForListTagsV2();
 
-    private static HttpRequestDef<ListTagsV2Request, ListTagsV2Response> genForlistTagsV2() {
+    private static HttpRequestDef<ListTagsV2Request, ListTagsV2Response> genForListTagsV2() {
         // basic
         HttpRequestDef.Builder<ListTagsV2Request, ListTagsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsV2Request.class, ListTagsV2Response.class)
@@ -7352,32 +6453,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getInstanceId, ListTagsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTagsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getOffset, ListTagsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTagsV2Request::getLimit, ListTagsV2Request::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForlistTasks();
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
 
-    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForlistTasks() {
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
@@ -7390,116 +6485,86 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getInstanceId, ListTasksRequest::setInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
         builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getTaskId, ListTasksRequest::setTaskId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getName, ListTasksRequest::setName));
         builder.<ListTasksRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getStatus, ListTasksRequest::setStatus));
         builder.<ListTasksRequest.TaskTypeEnum>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.TaskTypeEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getTaskType, (req, v) -> {
-                req.setTaskType(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getTaskType, ListTasksRequest::setTaskType));
         builder.<String>withRequestField("source_datasource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getSourceDatasourceId, (req, v) -> {
-                req.setSourceDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getSourceDatasourceId, ListTasksRequest::setSourceDatasourceId));
         builder.<String>withRequestField("target_datasource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getTargetDatasourceId, (req, v) -> {
-                req.setTargetDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getTargetDatasourceId, ListTasksRequest::setTargetDatasourceId));
         builder.<ListTasksRequest.SortFieldEnum>withRequestField("sort_field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.SortFieldEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getSortField, (req, v) -> {
-                req.setSortField(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getSortField, ListTasksRequest::setSortField));
         builder.<ListTasksRequest.SortTypeEnum>withRequestField("sort_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTasksRequest.SortTypeEnum.class),
-            f -> f.withMarshaller(ListTasksRequest::getSortType, (req, v) -> {
-                req.setSortType(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getSortType, ListTasksRequest::setSortType));
         builder.<String>withRequestField("execute_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getExecuteStatus, (req, v) -> {
-                req.setExecuteStatus(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getExecuteStatus, ListTasksRequest::setExecuteStatus));
         builder.<String>withRequestField("source_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getSourceAppId, (req, v) -> {
-                req.setSourceAppId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getSourceAppId, ListTasksRequest::setSourceAppId));
         builder.<String>withRequestField("target_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getTargetAppId, (req, v) -> {
-                req.setTargetAppId(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getTargetAppId, ListTasksRequest::setTargetAppId));
         builder.<String>withRequestField("task_tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTasksRequest::getTaskTag, (req, v) -> {
-                req.setTaskTag(v);
-            }));
+            f -> f.withMarshaller(ListTasksRequest::getTaskTag, ListTasksRequest::setTaskTag));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTopicsRequest, ListTopicsResponse> listTopics = genForlistTopics();
+    public static final HttpRequestDef<ListTopicsRequest, ListTopicsResponse> listTopics = genForListTopics();
 
-    private static HttpRequestDef<ListTopicsRequest, ListTopicsResponse> genForlistTopics() {
+    private static HttpRequestDef<ListTopicsRequest, ListTopicsResponse> genForListTopics() {
         // basic
         HttpRequestDef.Builder<ListTopicsRequest, ListTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicsRequest.class, ListTopicsResponse.class)
@@ -7512,58 +6577,42 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getInstanceId, ListTopicsRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getDeviceId, ListTopicsRequest::setDeviceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getLimit, ListTopicsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getOffset, ListTopicsRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopicsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getName, ListTopicsRequest::setName));
         builder.<Integer>withRequestField("topic_permission",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getTopicPermission, (req, v) -> {
-                req.setTopicPermission(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getTopicPermission, ListTopicsRequest::setTopicPermission));
         builder.<Integer>withRequestField("topic_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getTopicType, (req, v) -> {
-                req.setTopicType(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getTopicType, ListTopicsRequest::setTopicType));
         builder.<Integer>withRequestField("is_private",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopicsRequest::getIsPrivate, (req, v) -> {
-                req.setIsPrivate(v);
-            }));
+            f -> f.withMarshaller(ListTopicsRequest::getIsPrivate, ListTopicsRequest::setIsPrivate));
 
         // response
 
@@ -7571,9 +6620,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> publishLiveDataApiV2 =
-        genForpublishLiveDataApiV2();
+        genForPublishLiveDataApiV2();
 
-    private static HttpRequestDef<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> genForpublishLiveDataApiV2() {
+    private static HttpRequestDef<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> genForPublishLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, PublishLiveDataApiV2Request.class, PublishLiveDataApiV2Response.class)
@@ -7586,23 +6635,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(PublishLiveDataApiV2Request::getInstanceId,
+                PublishLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(PublishLiveDataApiV2Request::getLdApiId, PublishLiveDataApiV2Request::setLdApiId));
         builder.<LdApiDeploy>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LdApiDeploy.class),
-            f -> f.withMarshaller(PublishLiveDataApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(PublishLiveDataApiV2Request::getBody, PublishLiveDataApiV2Request::setBody));
 
         // response
 
@@ -7610,9 +6654,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ResetAuthenticationRequest, ResetAuthenticationResponse> resetAuthentication =
-        genForresetAuthentication();
+        genForResetAuthentication();
 
-    private static HttpRequestDef<ResetAuthenticationRequest, ResetAuthenticationResponse> genForresetAuthentication() {
+    private static HttpRequestDef<ResetAuthenticationRequest, ResetAuthenticationResponse> genForResetAuthentication() {
         // basic
         HttpRequestDef.Builder<ResetAuthenticationRequest, ResetAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetAuthenticationRequest.class, ResetAuthenticationResponse.class)
@@ -7625,23 +6669,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetAuthenticationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetAuthenticationRequest::getInstanceId,
+                ResetAuthenticationRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ResetAuthenticationRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ResetAuthenticationRequest::getDeviceId, ResetAuthenticationRequest::setDeviceId));
         builder.<ResetAuthenticationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResetAuthenticationRequestBody.class),
-            f -> f.withMarshaller(ResetAuthenticationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetAuthenticationRequest::getBody, ResetAuthenticationRequest::setBody));
 
         // response
 
@@ -7649,9 +6688,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ResetMessagesRequest, ResetMessagesResponse> resetMessages =
-        genForresetMessages();
+        genForResetMessages();
 
-    private static HttpRequestDef<ResetMessagesRequest, ResetMessagesResponse> genForresetMessages() {
+    private static HttpRequestDef<ResetMessagesRequest, ResetMessagesResponse> genForResetMessages() {
         // basic
         HttpRequestDef.Builder<ResetMessagesRequest, ResetMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetMessagesRequest.class, ResetMessagesResponse.class)
@@ -7664,23 +6703,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMessagesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetMessagesRequest::getInstanceId, ResetMessagesRequest::setInstanceId));
         builder.<ResetMessagesRequest.ActionIdEnum>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetMessagesRequest.ActionIdEnum.class),
-            f -> f.withMarshaller(ResetMessagesRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(ResetMessagesRequest::getActionId, ResetMessagesRequest::setActionId));
         builder.<ResetMessagesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetMessagesReq.class),
-            f -> f.withMarshaller(ResetMessagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetMessagesRequest::getBody, ResetMessagesRequest::setBody));
 
         // response
 
@@ -7688,9 +6721,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> resetMultiTaskOffset =
-        genForresetMultiTaskOffset();
+        genForResetMultiTaskOffset();
 
-    private static HttpRequestDef<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> genForresetMultiTaskOffset() {
+    private static HttpRequestDef<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> genForResetMultiTaskOffset() {
         // basic
         HttpRequestDef.Builder<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ResetMultiTaskOffsetRequest.class, ResetMultiTaskOffsetResponse.class)
@@ -7703,23 +6736,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getInstanceId,
+                ResetMultiTaskOffsetRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getTaskId, ResetMultiTaskOffsetRequest::setTaskId));
         builder.<MultiTaskResetBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(MultiTaskResetBody.class),
-            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetMultiTaskOffsetRequest::getBody, ResetMultiTaskOffsetRequest::setBody));
 
         // response
 
@@ -7727,9 +6755,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> resetProductAuthentication =
-        genForresetProductAuthentication();
+        genForResetProductAuthentication();
 
-    private static HttpRequestDef<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> genForresetProductAuthentication() {
+    private static HttpRequestDef<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> genForResetProductAuthentication() {
         // basic
         HttpRequestDef.Builder<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> builder =
             HttpRequestDef
@@ -7745,32 +6773,29 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetProductAuthenticationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetProductAuthenticationRequest::getInstanceId,
+                ResetProductAuthenticationRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ResetProductAuthenticationRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ResetProductAuthenticationRequest::getProductId,
+                ResetProductAuthenticationRequest::setProductId));
         builder.<ResetProductAuthenticationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResetProductAuthenticationRequestBody.class),
-            f -> f.withMarshaller(ResetProductAuthenticationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetProductAuthenticationRequest::getBody,
+                ResetProductAuthenticationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunTaskRequest, RunTaskResponse> runTask = genForrunTask();
+    public static final HttpRequestDef<RunTaskRequest, RunTaskResponse> runTask = genForRunTask();
 
-    private static HttpRequestDef<RunTaskRequest, RunTaskResponse> genForrunTask() {
+    private static HttpRequestDef<RunTaskRequest, RunTaskResponse> genForRunTask() {
         // basic
         HttpRequestDef.Builder<RunTaskRequest, RunTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTaskRequest.class, RunTaskResponse.class)
@@ -7783,25 +6808,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(RunTaskRequest::getInstanceId, RunTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(RunTaskRequest::getTaskId, RunTaskRequest::setTaskId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SendCommandRequest, SendCommandResponse> sendCommand = genForsendCommand();
+    public static final HttpRequestDef<SendCommandRequest, SendCommandResponse> sendCommand = genForSendCommand();
 
-    private static HttpRequestDef<SendCommandRequest, SendCommandResponse> genForsendCommand() {
+    private static HttpRequestDef<SendCommandRequest, SendCommandResponse> genForSendCommand() {
         // basic
         HttpRequestDef.Builder<SendCommandRequest, SendCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendCommandRequest.class, SendCommandResponse.class)
@@ -7814,23 +6835,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendCommandRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(SendCommandRequest::getInstanceId, SendCommandRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SendCommandRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(SendCommandRequest::getDeviceId, SendCommandRequest::setDeviceId));
         builder.<SendCommandRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendCommandRequestBody.class),
-            f -> f.withMarshaller(SendCommandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendCommandRequest::getBody, SendCommandRequest::setBody));
 
         // response
 
@@ -7838,9 +6853,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuota =
-        genForshowAppBoundAppQuota();
+        genForShowAppBoundAppQuota();
 
-    private static HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> genForshowAppBoundAppQuota() {
+    private static HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> genForShowAppBoundAppQuota() {
         // basic
         HttpRequestDef.Builder<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAppBoundAppQuotaRequest.class, ShowAppBoundAppQuotaResponse.class)
@@ -7853,25 +6868,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getInstanceId,
+                ShowAppBoundAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getAppId, ShowAppBoundAppQuotaRequest::setAppId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuota = genForshowAppQuota();
+    public static final HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuota = genForShowAppQuota();
 
-    private static HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> genForshowAppQuota() {
+    private static HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> genForShowAppQuota() {
         // basic
         HttpRequestDef.Builder<ShowAppQuotaRequest, ShowAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppQuotaRequest.class, ShowAppQuotaResponse.class)
@@ -7884,16 +6896,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAppQuotaRequest::getInstanceId, ShowAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, ShowAppQuotaRequest::setAppQuotaId));
 
         // response
 
@@ -7901,9 +6909,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowAuthenticationRequest, ShowAuthenticationResponse> showAuthentication =
-        genForshowAuthentication();
+        genForShowAuthentication();
 
-    private static HttpRequestDef<ShowAuthenticationRequest, ShowAuthenticationResponse> genForshowAuthentication() {
+    private static HttpRequestDef<ShowAuthenticationRequest, ShowAuthenticationResponse> genForShowAuthentication() {
         // basic
         HttpRequestDef.Builder<ShowAuthenticationRequest, ShowAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuthenticationRequest.class, ShowAuthenticationResponse.class)
@@ -7916,25 +6924,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuthenticationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuthenticationRequest::getInstanceId, ShowAuthenticationRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuthenticationRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ShowAuthenticationRequest::getDeviceId, ShowAuthenticationRequest::setDeviceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCommandRequest, ShowCommandResponse> showCommand = genForshowCommand();
+    public static final HttpRequestDef<ShowCommandRequest, ShowCommandResponse> showCommand = genForShowCommand();
 
-    private static HttpRequestDef<ShowCommandRequest, ShowCommandResponse> genForshowCommand() {
+    private static HttpRequestDef<ShowCommandRequest, ShowCommandResponse> genForShowCommand() {
         // basic
         HttpRequestDef.Builder<ShowCommandRequest, ShowCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCommandRequest.class, ShowCommandResponse.class)
@@ -7947,23 +6951,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommandRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowCommandRequest::getInstanceId, ShowCommandRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCommandRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowCommandRequest::getServiceId, ShowCommandRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCommandRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ShowCommandRequest::getCommandId, ShowCommandRequest::setCommandId));
 
         // response
 
@@ -7971,9 +6969,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDataourceDetailRequest, ShowDataourceDetailResponse> showDataourceDetail =
-        genForshowDataourceDetail();
+        genForShowDataourceDetail();
 
-    private static HttpRequestDef<ShowDataourceDetailRequest, ShowDataourceDetailResponse> genForshowDataourceDetail() {
+    private static HttpRequestDef<ShowDataourceDetailRequest, ShowDataourceDetailResponse> genForShowDataourceDetail() {
         // basic
         HttpRequestDef.Builder<ShowDataourceDetailRequest, ShowDataourceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDataourceDetailRequest.class, ShowDataourceDetailResponse.class)
@@ -7986,16 +6984,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataourceDetailRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDataourceDetailRequest::getInstanceId,
+                ShowDataourceDetailRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDataourceDetailRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(ShowDataourceDetailRequest::getDatasourceId,
+                ShowDataourceDetailRequest::setDatasourceId));
 
         // response
 
@@ -8003,9 +6999,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAcl =
-        genForshowDetailsOfAppAcl();
+        genForShowDetailsOfAppAcl();
 
-    private static HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> genForshowDetailsOfAppAcl() {
+    private static HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> genForShowDetailsOfAppAcl() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppAclRequest.class, ShowDetailsOfAppAclResponse.class)
@@ -8018,16 +7014,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getInstanceId,
+                ShowDetailsOfAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getAppId, ShowDetailsOfAppAclRequest::setAppId));
 
         // response
 
@@ -8035,9 +7028,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2 =
-        genForshowDetailsOfAppCodeV2();
+        genForShowDetailsOfAppCodeV2();
 
-    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForshowDetailsOfAppCodeV2() {
+    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForShowDetailsOfAppCodeV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
@@ -8050,23 +7043,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId,
+                ShowDetailsOfAppCodeV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, ShowDetailsOfAppCodeV2Request::setAppId));
         builder.<String>withRequestField("app_code_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId,
+                ShowDetailsOfAppCodeV2Request::setAppCodeId));
 
         // response
 
@@ -8074,9 +7063,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> showDetailsOfAppConfigV2 =
-        genForshowDetailsOfAppConfigV2();
+        genForShowDetailsOfAppConfigV2();
 
-    private static HttpRequestDef<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> genForshowDetailsOfAppConfigV2() {
+    private static HttpRequestDef<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> genForShowDetailsOfAppConfigV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> builder =
             HttpRequestDef
@@ -8090,23 +7079,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getInstanceId,
+                ShowDetailsOfAppConfigV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getAppId,
+                ShowDetailsOfAppConfigV2Request::setAppId));
         builder.<String>withRequestField("app_config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getAppConfigId, (req, v) -> {
-                req.setAppConfigId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppConfigV2Request::getAppConfigId,
+                ShowDetailsOfAppConfigV2Request::setAppConfigId));
 
         // response
 
@@ -8114,9 +7100,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2 =
-        genForshowDetailsOfAppV2();
+        genForShowDetailsOfAppV2();
 
-    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForshowDetailsOfAppV2() {
+    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForShowDetailsOfAppV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
@@ -8129,16 +7115,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, ShowDetailsOfAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, ShowDetailsOfAppV2Request::setAppId));
 
         // response
 
@@ -8146,9 +7128,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2 =
-        genForshowDetailsOfCustomAuthorizersV2();
+        genForShowDetailsOfCustomAuthorizersV2();
 
-    private static HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> genForshowDetailsOfCustomAuthorizersV2() {
+    private static HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> genForShowDetailsOfCustomAuthorizersV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> builder =
             HttpRequestDef
@@ -8164,16 +7146,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getInstanceId,
+                ShowDetailsOfCustomAuthorizersV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCustomAuthorizersV2Request::getAuthorizerId,
+                ShowDetailsOfCustomAuthorizersV2Request::setAuthorizerId));
 
         // response
 
@@ -8181,9 +7161,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> showDetailsOfDomainNameCertificateV2 =
-        genForshowDetailsOfDomainNameCertificateV2();
+        genForShowDetailsOfDomainNameCertificateV2();
 
-    private static HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> genForshowDetailsOfDomainNameCertificateV2() {
+    private static HttpRequestDef<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> genForShowDetailsOfDomainNameCertificateV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> builder =
             HttpRequestDef
@@ -8200,30 +7180,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getInstanceId,
+                ShowDetailsOfDomainNameCertificateV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getGroupId,
+                ShowDetailsOfDomainNameCertificateV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getDomainId,
+                ShowDetailsOfDomainNameCertificateV2Request::setDomainId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfDomainNameCertificateV2Request::getCertificateId,
+                ShowDetailsOfDomainNameCertificateV2Request::setCertificateId));
 
         // response
 
@@ -8231,9 +7207,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> showDetailsOfEnvironmentVariableV2 =
-        genForshowDetailsOfEnvironmentVariableV2();
+        genForShowDetailsOfEnvironmentVariableV2();
 
-    private static HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> genForshowDetailsOfEnvironmentVariableV2() {
+    private static HttpRequestDef<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> genForShowDetailsOfEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -8249,16 +7225,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getInstanceId,
+                ShowDetailsOfEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfEnvironmentVariableV2Request::getEnvVariableId,
+                ShowDetailsOfEnvironmentVariableV2Request::setEnvVariableId));
 
         // response
 
@@ -8266,9 +7240,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2 =
-        genForshowDetailsOfInstanceV2();
+        genForShowDetailsOfInstanceV2();
 
-    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForshowDetailsOfInstanceV2() {
+    private static HttpRequestDef<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> genForShowDetailsOfInstanceV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfInstanceV2Request.class, ShowDetailsOfInstanceV2Response.class)
@@ -8281,9 +7255,8 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfInstanceV2Request::getInstanceId,
+                ShowDetailsOfInstanceV2Request::setInstanceId));
 
         // response
 
@@ -8291,9 +7264,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2 =
-        genForshowDetailsOfRequestThrottlingPolicyV2();
+        genForShowDetailsOfRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> genForshowDetailsOfRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> genForShowDetailsOfRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -8309,25 +7282,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getInstanceId,
+                ShowDetailsOfRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId,
+                ShowDetailsOfRequestThrottlingPolicyV2Request::setThrottleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForshowDevice();
+    public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForShowDevice();
 
-    private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForshowDevice() {
+    private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForShowDevice() {
         // basic
         HttpRequestDef.Builder<ShowDeviceRequest, ShowDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceRequest.class, ShowDeviceResponse.class)
@@ -8340,16 +7311,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceRequest::getInstanceId, ShowDeviceRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceRequest::getDeviceId, ShowDeviceRequest::setDeviceId));
 
         // response
 
@@ -8357,9 +7324,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> showDeviceGroup =
-        genForshowDeviceGroup();
+        genForShowDeviceGroup();
 
-    private static HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> genForshowDeviceGroup() {
+    private static HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> genForShowDeviceGroup() {
         // basic
         HttpRequestDef.Builder<ShowDeviceGroupRequest, ShowDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceGroupRequest.class, ShowDeviceGroupResponse.class)
@@ -8372,16 +7339,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceGroupRequest::getInstanceId, ShowDeviceGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDeviceGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceGroupRequest::getGroupId, ShowDeviceGroupRequest::setGroupId));
 
         // response
 
@@ -8389,9 +7352,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> showDeviceGroupTree =
-        genForshowDeviceGroupTree();
+        genForShowDeviceGroupTree();
 
-    private static HttpRequestDef<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> genForshowDeviceGroupTree() {
+    private static HttpRequestDef<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> genForShowDeviceGroupTree() {
         // basic
         HttpRequestDef.Builder<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceGroupTreeRequest.class, ShowDeviceGroupTreeResponse.class)
@@ -8404,16 +7367,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceGroupTreeRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceGroupTreeRequest::getInstanceId,
+                ShowDeviceGroupTreeRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDeviceGroupTreeRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ShowDeviceGroupTreeRequest::getAppId, ShowDeviceGroupTreeRequest::setAppId));
 
         // response
 
@@ -8421,9 +7381,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroup =
-        genForshowDevicesInGroup();
+        genForShowDevicesInGroup();
 
-    private static HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> genForshowDevicesInGroup() {
+    private static HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> genForShowDevicesInGroup() {
         // basic
         HttpRequestDef.Builder<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDevicesInGroupRequest.class, ShowDevicesInGroupResponse.class)
@@ -8436,44 +7396,33 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getInstanceId, ShowDevicesInGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getGroupId, ShowDevicesInGroupRequest::setGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getLimit, ShowDevicesInGroupRequest::setLimit));
         builder.<String>withRequestField("product_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getProductName, (req, v) -> {
-                req.setProductName(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getProductName,
+                ShowDevicesInGroupRequest::setProductName));
         builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getDeviceName, (req, v) -> {
-                req.setDeviceName(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getDeviceName, ShowDevicesInGroupRequest::setDeviceName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDevicesInGroupRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getOffset, ShowDevicesInGroupRequest::setOffset));
 
         // response
 
@@ -8481,9 +7430,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDispatchesRequest, ShowDispatchesResponse> showDispatches =
-        genForshowDispatches();
+        genForShowDispatches();
 
-    private static HttpRequestDef<ShowDispatchesRequest, ShowDispatchesResponse> genForshowDispatches() {
+    private static HttpRequestDef<ShowDispatchesRequest, ShowDispatchesResponse> genForShowDispatches() {
         // basic
         HttpRequestDef.Builder<ShowDispatchesRequest, ShowDispatchesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDispatchesRequest.class, ShowDispatchesResponse.class)
@@ -8496,16 +7445,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDispatchesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDispatchesRequest::getInstanceId, ShowDispatchesRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDispatchesRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowDispatchesRequest::getTaskId, ShowDispatchesRequest::setTaskId));
 
         // response
 
@@ -8513,9 +7458,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> showLiveDataApiV2 =
-        genForshowLiveDataApiV2();
+        genForShowLiveDataApiV2();
 
-    private static HttpRequestDef<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> genForshowLiveDataApiV2() {
+    private static HttpRequestDef<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> genForShowLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLiveDataApiV2Request.class, ShowLiveDataApiV2Response.class)
@@ -8528,16 +7473,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowLiveDataApiV2Request::getInstanceId, ShowLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(ShowLiveDataApiV2Request::getLdApiId, ShowLiveDataApiV2Request::setLdApiId));
 
         // response
 
@@ -8545,9 +7486,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> showMqsInstanceMessages =
-        genForshowMqsInstanceMessages();
+        genForShowMqsInstanceMessages();
 
-    private static HttpRequestDef<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> genForshowMqsInstanceMessages() {
+    private static HttpRequestDef<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> genForShowMqsInstanceMessages() {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowMqsInstanceMessagesRequest.class, ShowMqsInstanceMessagesResponse.class)
@@ -8560,93 +7501,75 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getInstanceId,
+                ShowMqsInstanceMessagesRequest::setInstanceId));
         builder.<String>withRequestField("topic",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getTopic, ShowMqsInstanceMessagesRequest::setTopic));
         builder.<Boolean>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getAsc, (req, v) -> {
-                req.setAsc(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getAsc, ShowMqsInstanceMessagesRequest::setAsc));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getStartTime,
+                ShowMqsInstanceMessagesRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getEndTime,
+                ShowMqsInstanceMessagesRequest::setEndTime));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getLimit, ShowMqsInstanceMessagesRequest::setLimit));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getOffset,
+                ShowMqsInstanceMessagesRequest::setOffset));
         builder.<Boolean>withRequestField("download",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getDownload, (req, v) -> {
-                req.setDownload(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getDownload,
+                ShowMqsInstanceMessagesRequest::setDownload));
         builder.<String>withRequestField("message_offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getMessageOffset, (req, v) -> {
-                req.setMessageOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getMessageOffset,
+                ShowMqsInstanceMessagesRequest::setMessageOffset));
         builder.<String>withRequestField("partition",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getPartition, (req, v) -> {
-                req.setPartition(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getPartition,
+                ShowMqsInstanceMessagesRequest::setPartition));
         builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getKey, ShowMqsInstanceMessagesRequest::setKey));
         builder.<String>withRequestField("message_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getMessageId, (req, v) -> {
-                req.setMessageId(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getMessageId,
+                ShowMqsInstanceMessagesRequest::setMessageId));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceMessagesRequest::getTag, ShowMqsInstanceMessagesRequest::setTag));
 
         // response
 
@@ -8654,9 +7577,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> showMqsInstanceTopicAccessPolicy =
-        genForshowMqsInstanceTopicAccessPolicy();
+        genForShowMqsInstanceTopicAccessPolicy();
 
-    private static HttpRequestDef<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> genForshowMqsInstanceTopicAccessPolicy() {
+    private static HttpRequestDef<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> genForShowMqsInstanceTopicAccessPolicy() {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> builder =
             HttpRequestDef
@@ -8672,39 +7595,35 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getInstanceId,
+                ShowMqsInstanceTopicAccessPolicyRequest::setInstanceId));
         builder.<String>withRequestField("topic_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getTopicName, (req, v) -> {
-                req.setTopicName(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getTopicName,
+                ShowMqsInstanceTopicAccessPolicyRequest::setTopicName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getOffset,
+                ShowMqsInstanceTopicAccessPolicyRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceTopicAccessPolicyRequest::getLimit,
+                ShowMqsInstanceTopicAccessPolicyRequest::setLimit));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForshowPlugin();
+    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForShowPlugin();
 
-    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForshowPlugin() {
+    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForShowPlugin() {
         // basic
         HttpRequestDef.Builder<ShowPluginRequest, ShowPluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPluginRequest.class, ShowPluginResponse.class)
@@ -8717,25 +7636,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, ShowPluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(ShowPluginRequest::getPluginId, ShowPluginRequest::setPluginId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProductRequest, ShowProductResponse> showProduct = genForshowProduct();
+    public static final HttpRequestDef<ShowProductRequest, ShowProductResponse> showProduct = genForShowProduct();
 
-    private static HttpRequestDef<ShowProductRequest, ShowProductResponse> genForshowProduct() {
+    private static HttpRequestDef<ShowProductRequest, ShowProductResponse> genForShowProduct() {
         // basic
         HttpRequestDef.Builder<ShowProductRequest, ShowProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductRequest.class, ShowProductResponse.class)
@@ -8748,16 +7663,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProductRequest::getInstanceId, ShowProductRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ShowProductRequest::getProductId, ShowProductRequest::setProductId));
 
         // response
 
@@ -8765,9 +7676,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> showProductAuthentication =
-        genForshowProductAuthentication();
+        genForShowProductAuthentication();
 
-    private static HttpRequestDef<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> genForshowProductAuthentication() {
+    private static HttpRequestDef<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> genForShowProductAuthentication() {
         // basic
         HttpRequestDef.Builder<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> builder =
             HttpRequestDef
@@ -8783,16 +7694,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductAuthenticationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProductAuthenticationRequest::getInstanceId,
+                ShowProductAuthenticationRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProductAuthenticationRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ShowProductAuthenticationRequest::getProductId,
+                ShowProductAuthenticationRequest::setProductId));
 
         // response
 
@@ -8800,9 +7709,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowProductTemplateRequest, ShowProductTemplateResponse> showProductTemplate =
-        genForshowProductTemplate();
+        genForShowProductTemplate();
 
-    private static HttpRequestDef<ShowProductTemplateRequest, ShowProductTemplateResponse> genForshowProductTemplate() {
+    private static HttpRequestDef<ShowProductTemplateRequest, ShowProductTemplateResponse> genForShowProductTemplate() {
         // basic
         HttpRequestDef.Builder<ShowProductTemplateRequest, ShowProductTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductTemplateRequest.class, ShowProductTemplateResponse.class)
@@ -8815,25 +7724,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProductTemplateRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowProductTemplateRequest::getInstanceId,
+                ShowProductTemplateRequest::setInstanceId));
         builder.<Integer>withRequestField("product_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProductTemplateRequest::getProductTemplateId, (req, v) -> {
-                req.setProductTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowProductTemplateRequest::getProductTemplateId,
+                ShowProductTemplateRequest::setProductTemplateId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> showProperty = genForshowProperty();
+    public static final HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> showProperty = genForShowProperty();
 
-    private static HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> genForshowProperty() {
+    private static HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> genForShowProperty() {
         // basic
         HttpRequestDef.Builder<ShowPropertyRequest, ShowPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPropertyRequest.class, ShowPropertyResponse.class)
@@ -8846,23 +7753,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyRequest::getInstanceId, ShowPropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyRequest::getServiceId, ShowPropertyRequest::setServiceId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(ShowPropertyRequest::getPropertyId, ShowPropertyRequest::setPropertyId));
 
         // response
 
@@ -8870,9 +7771,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowRequestPropertyRequest, ShowRequestPropertyResponse> showRequestProperty =
-        genForshowRequestProperty();
+        genForShowRequestProperty();
 
-    private static HttpRequestDef<ShowRequestPropertyRequest, ShowRequestPropertyResponse> genForshowRequestProperty() {
+    private static HttpRequestDef<ShowRequestPropertyRequest, ShowRequestPropertyResponse> genForShowRequestProperty() {
         // basic
         HttpRequestDef.Builder<ShowRequestPropertyRequest, ShowRequestPropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowRequestPropertyRequest.class, ShowRequestPropertyResponse.class)
@@ -8886,30 +7787,24 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRequestPropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getInstanceId,
+                ShowRequestPropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRequestPropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getServiceId, ShowRequestPropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRequestPropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getCommandId, ShowRequestPropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRequestPropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getPropertyId,
+                ShowRequestPropertyRequest::setPropertyId));
 
         // response
 
@@ -8917,9 +7812,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowResponsePropertyRequest, ShowResponsePropertyResponse> showResponseProperty =
-        genForshowResponseProperty();
+        genForShowResponseProperty();
 
-    private static HttpRequestDef<ShowResponsePropertyRequest, ShowResponsePropertyResponse> genForshowResponseProperty() {
+    private static HttpRequestDef<ShowResponsePropertyRequest, ShowResponsePropertyResponse> genForShowResponseProperty() {
         // basic
         HttpRequestDef.Builder<ShowResponsePropertyRequest, ShowResponsePropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowResponsePropertyRequest.class, ShowResponsePropertyResponse.class)
@@ -8933,30 +7828,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResponsePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowResponsePropertyRequest::getInstanceId,
+                ShowResponsePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResponsePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowResponsePropertyRequest::getServiceId,
+                ShowResponsePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResponsePropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(ShowResponsePropertyRequest::getCommandId,
+                ShowResponsePropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResponsePropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(ShowResponsePropertyRequest::getPropertyId,
+                ShowResponsePropertyRequest::setPropertyId));
 
         // response
 
@@ -8964,9 +7855,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 =
-        genForshowRestrictionOfInstanceV2();
+        genForShowRestrictionOfInstanceV2();
 
-    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
+    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForShowRestrictionOfInstanceV2() {
         // basic
         HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
             HttpRequestDef
@@ -8982,18 +7873,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId,
+                ShowRestrictionOfInstanceV2Request::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForshowRule();
+    public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForShowRule();
 
-    private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForshowRule() {
+    private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForShowRule() {
         // basic
         HttpRequestDef.Builder<ShowRuleRequest, ShowRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleRequest.class, ShowRuleResponse.class)
@@ -9006,25 +7896,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleRequest::getInstanceId, ShowRuleRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ShowRuleRequest::getRuleId, ShowRuleRequest::setRuleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServiceRequest, ShowServiceResponse> showService = genForshowService();
+    public static final HttpRequestDef<ShowServiceRequest, ShowServiceResponse> showService = genForShowService();
 
-    private static HttpRequestDef<ShowServiceRequest, ShowServiceResponse> genForshowService() {
+    private static HttpRequestDef<ShowServiceRequest, ShowServiceResponse> genForShowService() {
         // basic
         HttpRequestDef.Builder<ShowServiceRequest, ShowServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServiceRequest.class, ShowServiceResponse.class)
@@ -9037,25 +7923,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServiceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowServiceRequest::getInstanceId, ShowServiceRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(ShowServiceRequest::getServiceId, ShowServiceRequest::setServiceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForshowTask();
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
 
-    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForshowTask() {
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
@@ -9068,16 +7950,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getInstanceId, ShowTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 
@@ -9085,9 +7963,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<StartTestDatasourceRequest, StartTestDatasourceResponse> startTestDatasource =
-        genForstartTestDatasource();
+        genForStartTestDatasource();
 
-    private static HttpRequestDef<StartTestDatasourceRequest, StartTestDatasourceResponse> genForstartTestDatasource() {
+    private static HttpRequestDef<StartTestDatasourceRequest, StartTestDatasourceResponse> genForStartTestDatasource() {
         // basic
         HttpRequestDef.Builder<StartTestDatasourceRequest, StartTestDatasourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartTestDatasourceRequest.class, StartTestDatasourceResponse.class)
@@ -9100,32 +7978,28 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartTestDatasourceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StartTestDatasourceRequest::getInstanceId,
+                StartTestDatasourceRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartTestDatasourceRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(StartTestDatasourceRequest::getDatasourceId,
+                StartTestDatasourceRequest::setDatasourceId));
         builder.<DatasourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatasourceInfo.class),
-            f -> f.withMarshaller(StartTestDatasourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartTestDatasourceRequest::getBody, StartTestDatasourceRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForstopTask();
+    public static final HttpRequestDef<StopTaskRequest, StopTaskResponse> stopTask = genForStopTask();
 
-    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForstopTask() {
+    private static HttpRequestDef<StopTaskRequest, StopTaskResponse> genForStopTask() {
         // basic
         HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
@@ -9138,16 +8012,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(StopTaskRequest::getInstanceId, StopTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(StopTaskRequest::getTaskId, StopTaskRequest::setTaskId));
 
         // response
 
@@ -9155,9 +8025,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> unpublishLiveDataApiV2 =
-        genForunpublishLiveDataApiV2();
+        genForUnpublishLiveDataApiV2();
 
-    private static HttpRequestDef<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> genForunpublishLiveDataApiV2() {
+    private static HttpRequestDef<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> genForUnpublishLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, UnpublishLiveDataApiV2Request.class, UnpublishLiveDataApiV2Response.class)
@@ -9170,25 +8040,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnpublishLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UnpublishLiveDataApiV2Request::getInstanceId,
+                UnpublishLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnpublishLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(UnpublishLiveDataApiV2Request::getLdApiId,
+                UnpublishLiveDataApiV2Request::setLdApiId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAcl = genForupdateAppAcl();
+    public static final HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAcl = genForUpdateAppAcl();
 
-    private static HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> genForupdateAppAcl() {
+    private static HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> genForUpdateAppAcl() {
         // basic
         HttpRequestDef.Builder<UpdateAppAclRequest, UpdateAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppAclRequest.class, UpdateAppAclResponse.class)
@@ -9201,23 +8069,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getInstanceId, UpdateAppAclRequest::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getAppId, UpdateAppAclRequest::setAppId));
         builder.<AppAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppAclCreate.class),
-            f -> f.withMarshaller(UpdateAppAclRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppAclRequest::getBody, UpdateAppAclRequest::setBody));
 
         // response
 
@@ -9225,9 +8087,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateAppConfigV2Request, UpdateAppConfigV2Response> updateAppConfigV2 =
-        genForupdateAppConfigV2();
+        genForUpdateAppConfigV2();
 
-    private static HttpRequestDef<UpdateAppConfigV2Request, UpdateAppConfigV2Response> genForupdateAppConfigV2() {
+    private static HttpRequestDef<UpdateAppConfigV2Request, UpdateAppConfigV2Response> genForUpdateAppConfigV2() {
         // basic
         HttpRequestDef.Builder<UpdateAppConfigV2Request, UpdateAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppConfigV2Request.class, UpdateAppConfigV2Response.class)
@@ -9240,30 +8102,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppConfigV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppConfigV2Request::getInstanceId, UpdateAppConfigV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppConfigV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppConfigV2Request::getAppId, UpdateAppConfigV2Request::setAppId));
         builder.<String>withRequestField("app_config_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppConfigV2Request::getAppConfigId, (req, v) -> {
-                req.setAppConfigId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppConfigV2Request::getAppConfigId, UpdateAppConfigV2Request::setAppConfigId));
         builder.<AppConfigModifyRequestV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppConfigModifyRequestV2.class),
-            f -> f.withMarshaller(UpdateAppConfigV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppConfigV2Request::getBody, UpdateAppConfigV2Request::setBody));
 
         // response
 
@@ -9271,9 +8125,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuota =
-        genForupdateAppQuota();
+        genForUpdateAppQuota();
 
-    private static HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> genForupdateAppQuota() {
+    private static HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> genForUpdateAppQuota() {
         // basic
         HttpRequestDef.Builder<UpdateAppQuotaRequest, UpdateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppQuotaRequest.class, UpdateAppQuotaResponse.class)
@@ -9286,23 +8140,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getInstanceId, UpdateAppQuotaRequest::setInstanceId));
         builder.<String>withRequestField("app_quota_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getAppQuotaId, (req, v) -> {
-                req.setAppQuotaId(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getAppQuotaId, UpdateAppQuotaRequest::setAppQuotaId));
         builder.<AppQuotaCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppQuotaCreate.class),
-            f -> f.withMarshaller(UpdateAppQuotaRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getBody, UpdateAppQuotaRequest::setBody));
 
         // response
 
@@ -9310,9 +8158,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateCommandRequest, UpdateCommandResponse> updateCommand =
-        genForupdateCommand();
+        genForUpdateCommand();
 
-    private static HttpRequestDef<UpdateCommandRequest, UpdateCommandResponse> genForupdateCommand() {
+    private static HttpRequestDef<UpdateCommandRequest, UpdateCommandResponse> genForUpdateCommand() {
         // basic
         HttpRequestDef.Builder<UpdateCommandRequest, UpdateCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCommandRequest.class, UpdateCommandResponse.class)
@@ -9325,30 +8173,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCommandRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCommandRequest::getInstanceId, UpdateCommandRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCommandRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCommandRequest::getServiceId, UpdateCommandRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateCommandRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(UpdateCommandRequest::getCommandId, UpdateCommandRequest::setCommandId));
         builder.<UpdateCommandRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCommandRequestBody.class),
-            f -> f.withMarshaller(UpdateCommandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCommandRequest::getBody, UpdateCommandRequest::setBody));
 
         // response
 
@@ -9356,9 +8196,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2 =
-        genForupdateCustomAuthorizerV2();
+        genForUpdateCustomAuthorizerV2();
 
-    private static HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> genForupdateCustomAuthorizerV2() {
+    private static HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> genForUpdateCustomAuthorizerV2() {
         // basic
         HttpRequestDef.Builder<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> builder =
             HttpRequestDef
@@ -9372,23 +8212,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getInstanceId,
+                UpdateCustomAuthorizerV2Request::setInstanceId));
         builder.<String>withRequestField("authorizer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getAuthorizerId, (req, v) -> {
-                req.setAuthorizerId(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getAuthorizerId,
+                UpdateCustomAuthorizerV2Request::setAuthorizerId));
         builder.<AuthorizerCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizerCreate.class),
-            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCustomAuthorizerV2Request::getBody, UpdateCustomAuthorizerV2Request::setBody));
 
         // response
 
@@ -9396,9 +8232,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> updateDatasourceInfo =
-        genForupdateDatasourceInfo();
+        genForUpdateDatasourceInfo();
 
-    private static HttpRequestDef<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> genForupdateDatasourceInfo() {
+    private static HttpRequestDef<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> genForUpdateDatasourceInfo() {
         // basic
         HttpRequestDef.Builder<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateDatasourceInfoRequest.class, UpdateDatasourceInfoResponse.class)
@@ -9411,32 +8247,28 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getInstanceId,
+                UpdateDatasourceInfoRequest::setInstanceId));
         builder.<String>withRequestField("datasource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getDatasourceId, (req, v) -> {
-                req.setDatasourceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getDatasourceId,
+                UpdateDatasourceInfoRequest::setDatasourceId));
         builder.<DatasourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatasourceInfo.class),
-            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDatasourceInfoRequest::getBody, UpdateDatasourceInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForupdateDevice();
+    public static final HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> updateDevice = genForUpdateDevice();
 
-    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForupdateDevice() {
+    private static HttpRequestDef<UpdateDeviceRequest, UpdateDeviceResponse> genForUpdateDevice() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
@@ -9449,23 +8281,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getInstanceId, UpdateDeviceRequest::setInstanceId));
         builder.<Integer>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, UpdateDeviceRequest::setDeviceId));
         builder.<UpdateDeviceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDeviceRequestBody.class),
-            f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceRequest::getBody, UpdateDeviceRequest::setBody));
 
         // response
 
@@ -9473,9 +8299,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroup =
-        genForupdateDeviceGroup();
+        genForUpdateDeviceGroup();
 
-    private static HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> genForupdateDeviceGroup() {
+    private static HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> genForUpdateDeviceGroup() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceGroupRequest.class, UpdateDeviceGroupResponse.class)
@@ -9488,23 +8314,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDeviceGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceGroupRequest::getInstanceId, UpdateDeviceGroupRequest::setInstanceId));
         builder.<Integer>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateDeviceGroupRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceGroupRequest::getGroupId, UpdateDeviceGroupRequest::setGroupId));
         builder.<UpdateDeviceGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDeviceGroupRequestBody.class),
-            f -> f.withMarshaller(UpdateDeviceGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDeviceGroupRequest::getBody, UpdateDeviceGroupRequest::setBody));
 
         // response
 
@@ -9512,9 +8332,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateDispatchesRequest, UpdateDispatchesResponse> updateDispatches =
-        genForupdateDispatches();
+        genForUpdateDispatches();
 
-    private static HttpRequestDef<UpdateDispatchesRequest, UpdateDispatchesResponse> genForupdateDispatches() {
+    private static HttpRequestDef<UpdateDispatchesRequest, UpdateDispatchesResponse> genForUpdateDispatches() {
         // basic
         HttpRequestDef.Builder<UpdateDispatchesRequest, UpdateDispatchesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDispatchesRequest.class, UpdateDispatchesResponse.class)
@@ -9527,30 +8347,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDispatchesRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDispatchesRequest::getInstanceId, UpdateDispatchesRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDispatchesRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateDispatchesRequest::getTaskId, UpdateDispatchesRequest::setTaskId));
         builder.<String>withRequestField("dispatch_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDispatchesRequest::getDispatchId, (req, v) -> {
-                req.setDispatchId(v);
-            }));
+            f -> f.withMarshaller(UpdateDispatchesRequest::getDispatchId, UpdateDispatchesRequest::setDispatchId));
         builder.<TaskDispatch>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaskDispatch.class),
-            f -> f.withMarshaller(UpdateDispatchesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDispatchesRequest::getBody, UpdateDispatchesRequest::setBody));
 
         // response
 
@@ -9558,9 +8370,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2 =
-        genForupdateDomainV2();
+        genForUpdateDomainV2();
 
-    private static HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> genForupdateDomainV2() {
+    private static HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> genForUpdateDomainV2() {
         // basic
         HttpRequestDef.Builder<UpdateDomainV2Request, UpdateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainV2Request.class, UpdateDomainV2Response.class)
@@ -9573,30 +8385,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getInstanceId, UpdateDomainV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getGroupId, UpdateDomainV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getDomainId, UpdateDomainV2Request::setDomainId));
         builder.<UrlDomainModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UrlDomainModify.class),
-            f -> f.withMarshaller(UpdateDomainV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainV2Request::getBody, UpdateDomainV2Request::setBody));
 
         // response
 
@@ -9604,9 +8408,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> updateEnvironmentV2 =
-        genForupdateEnvironmentV2();
+        genForUpdateEnvironmentV2();
 
-    private static HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> genForupdateEnvironmentV2() {
+    private static HttpRequestDef<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> genForUpdateEnvironmentV2() {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvironmentV2Request.class, UpdateEnvironmentV2Response.class)
@@ -9619,23 +8423,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getInstanceId,
+                UpdateEnvironmentV2Request::setInstanceId));
         builder.<String>withRequestField("env_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getEnvId, UpdateEnvironmentV2Request::setEnvId));
         builder.<EnvCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvCreate.class),
-            f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, UpdateEnvironmentV2Request::setBody));
 
         // response
 
@@ -9643,9 +8442,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2 =
-        genForupdateEnvironmentVariableV2();
+        genForUpdateEnvironmentVariableV2();
 
-    private static HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> genForupdateEnvironmentVariableV2() {
+    private static HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> genForUpdateEnvironmentVariableV2() {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> builder =
             HttpRequestDef
@@ -9661,23 +8460,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getInstanceId,
+                UpdateEnvironmentVariableV2Request::setInstanceId));
         builder.<String>withRequestField("env_variable_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
-                req.setEnvVariableId(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getEnvVariableId,
+                UpdateEnvironmentVariableV2Request::setEnvVariableId));
         builder.<EnvVariableBase>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvVariableBase.class),
-            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getBody,
+                UpdateEnvironmentVariableV2Request::setBody));
 
         // response
 
@@ -9685,9 +8481,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> updateLiveDataApiV2 =
-        genForupdateLiveDataApiV2();
+        genForUpdateLiveDataApiV2();
 
-    private static HttpRequestDef<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> genForupdateLiveDataApiV2() {
+    private static HttpRequestDef<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> genForUpdateLiveDataApiV2() {
         // basic
         HttpRequestDef.Builder<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLiveDataApiV2Request.class, UpdateLiveDataApiV2Response.class)
@@ -9700,23 +8496,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getInstanceId,
+                UpdateLiveDataApiV2Request::setInstanceId));
         builder.<String>withRequestField("ld_api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getLdApiId, (req, v) -> {
-                req.setLdApiId(v);
-            }));
+            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getLdApiId, UpdateLiveDataApiV2Request::setLdApiId));
         builder.<LdApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LdApiCreate.class),
-            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLiveDataApiV2Request::getBody, UpdateLiveDataApiV2Request::setBody));
 
         // response
 
@@ -9724,9 +8515,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> updateMqsInstanceTopic =
-        genForupdateMqsInstanceTopic();
+        genForUpdateMqsInstanceTopic();
 
-    private static HttpRequestDef<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> genForupdateMqsInstanceTopic() {
+    private static HttpRequestDef<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> genForUpdateMqsInstanceTopic() {
         // basic
         HttpRequestDef.Builder<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateMqsInstanceTopicRequest.class, UpdateMqsInstanceTopicResponse.class)
@@ -9739,16 +8530,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getInstanceId,
+                UpdateMqsInstanceTopicRequest::setInstanceId));
         builder.<UpdateMqsInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMqsInstanceTopicReq.class),
-            f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMqsInstanceTopicRequest::getBody, UpdateMqsInstanceTopicRequest::setBody));
 
         // response
 
@@ -9756,9 +8544,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateMultiTasksRequest, UpdateMultiTasksResponse> updateMultiTasks =
-        genForupdateMultiTasks();
+        genForUpdateMultiTasks();
 
-    private static HttpRequestDef<UpdateMultiTasksRequest, UpdateMultiTasksResponse> genForupdateMultiTasks() {
+    private static HttpRequestDef<UpdateMultiTasksRequest, UpdateMultiTasksResponse> genForUpdateMultiTasks() {
         // basic
         HttpRequestDef.Builder<UpdateMultiTasksRequest, UpdateMultiTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMultiTasksRequest.class, UpdateMultiTasksResponse.class)
@@ -9771,23 +8559,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMultiTasksRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getInstanceId, UpdateMultiTasksRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMultiTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getTaskId, UpdateMultiTasksRequest::setTaskId));
         builder.<MultiTaskUpdateBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MultiTaskUpdateBody.class),
-            f -> f.withMarshaller(UpdateMultiTasksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMultiTasksRequest::getBody, UpdateMultiTasksRequest::setBody));
 
         // response
 
@@ -9795,9 +8577,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> updateNotification =
-        genForupdateNotification();
+        genForUpdateNotification();
 
-    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForupdateNotification() {
+    private static HttpRequestDef<UpdateNotificationRequest, UpdateNotificationResponse> genForUpdateNotification() {
         // basic
         HttpRequestDef.Builder<UpdateNotificationRequest, UpdateNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNotificationRequest.class, UpdateNotificationResponse.class)
@@ -9810,32 +8592,27 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNotificationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationRequest::getInstanceId, UpdateNotificationRequest::setInstanceId));
         builder.<Long>withRequestField("notification_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(UpdateNotificationRequest::getNotificationId, (req, v) -> {
-                req.setNotificationId(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationRequest::getNotificationId,
+                UpdateNotificationRequest::setNotificationId));
         builder.<UpdateNotificationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotificationRequestBody.class),
-            f -> f.withMarshaller(UpdateNotificationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNotificationRequest::getBody, UpdateNotificationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForupdatePlugin();
+    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForUpdatePlugin();
 
-    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForupdatePlugin() {
+    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForUpdatePlugin() {
         // basic
         HttpRequestDef.Builder<UpdatePluginRequest, UpdatePluginResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginRequest.class, UpdatePluginResponse.class)
@@ -9848,23 +8625,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, UpdatePluginRequest::setInstanceId));
         builder.<String>withRequestField("plugin_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, (req, v) -> {
-                req.setPluginId(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, UpdatePluginRequest::setPluginId));
         builder.<PluginCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginCreate.class),
-            f -> f.withMarshaller(UpdatePluginRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePluginRequest::getBody, UpdatePluginRequest::setBody));
 
         // response
 
@@ -9872,9 +8643,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateProductRequest, UpdateProductResponse> updateProduct =
-        genForupdateProduct();
+        genForUpdateProduct();
 
-    private static HttpRequestDef<UpdateProductRequest, UpdateProductResponse> genForupdateProduct() {
+    private static HttpRequestDef<UpdateProductRequest, UpdateProductResponse> genForUpdateProduct() {
         // basic
         HttpRequestDef.Builder<UpdateProductRequest, UpdateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductRequest.class, UpdateProductResponse.class)
@@ -9887,23 +8658,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductRequest::getInstanceId, UpdateProductRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProductRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductRequest::getProductId, UpdateProductRequest::setProductId));
         builder.<UpdateProductRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProductRequestBody.class),
-            f -> f.withMarshaller(UpdateProductRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProductRequest::getBody, UpdateProductRequest::setBody));
 
         // response
 
@@ -9911,9 +8676,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateProductTemplateRequest, UpdateProductTemplateResponse> updateProductTemplate =
-        genForupdateProductTemplate();
+        genForUpdateProductTemplate();
 
-    private static HttpRequestDef<UpdateProductTemplateRequest, UpdateProductTemplateResponse> genForupdateProductTemplate() {
+    private static HttpRequestDef<UpdateProductTemplateRequest, UpdateProductTemplateResponse> genForUpdateProductTemplate() {
         // basic
         HttpRequestDef.Builder<UpdateProductTemplateRequest, UpdateProductTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateProductTemplateRequest.class, UpdateProductTemplateResponse.class)
@@ -9926,23 +8691,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProductTemplateRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTemplateRequest::getInstanceId,
+                UpdateProductTemplateRequest::setInstanceId));
         builder.<Integer>withRequestField("product_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProductTemplateRequest::getProductTemplateId, (req, v) -> {
-                req.setProductTemplateId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTemplateRequest::getProductTemplateId,
+                UpdateProductTemplateRequest::setProductTemplateId));
         builder.<UpdateProductTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProductTemplateRequestBody.class),
-            f -> f.withMarshaller(UpdateProductTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTemplateRequest::getBody, UpdateProductTemplateRequest::setBody));
 
         // response
 
@@ -9950,9 +8711,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateProductTopicRequest, UpdateProductTopicResponse> updateProductTopic =
-        genForupdateProductTopic();
+        genForUpdateProductTopic();
 
-    private static HttpRequestDef<UpdateProductTopicRequest, UpdateProductTopicResponse> genForupdateProductTopic() {
+    private static HttpRequestDef<UpdateProductTopicRequest, UpdateProductTopicResponse> genForUpdateProductTopic() {
         // basic
         HttpRequestDef.Builder<UpdateProductTopicRequest, UpdateProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductTopicRequest.class, UpdateProductTopicResponse.class)
@@ -9965,30 +8726,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProductTopicRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTopicRequest::getInstanceId, UpdateProductTopicRequest::setInstanceId));
         builder.<Integer>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProductTopicRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTopicRequest::getProductId, UpdateProductTopicRequest::setProductId));
         builder.<Integer>withRequestField("topic_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProductTopicRequest::getTopicId, (req, v) -> {
-                req.setTopicId(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTopicRequest::getTopicId, UpdateProductTopicRequest::setTopicId));
         builder.<UpdateProductTopicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateProductTopicRequestBody.class),
-            f -> f.withMarshaller(UpdateProductTopicRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProductTopicRequest::getBody, UpdateProductTopicRequest::setBody));
 
         // response
 
@@ -9996,9 +8749,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdatePropertyRequest, UpdatePropertyResponse> updateProperty =
-        genForupdateProperty();
+        genForUpdateProperty();
 
-    private static HttpRequestDef<UpdatePropertyRequest, UpdatePropertyResponse> genForupdateProperty() {
+    private static HttpRequestDef<UpdatePropertyRequest, UpdatePropertyResponse> genForUpdateProperty() {
         // basic
         HttpRequestDef.Builder<UpdatePropertyRequest, UpdatePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePropertyRequest.class, UpdatePropertyResponse.class)
@@ -10011,30 +8764,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePropertyRequest::getInstanceId, UpdatePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdatePropertyRequest::getServiceId, UpdatePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdatePropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(UpdatePropertyRequest::getPropertyId, UpdatePropertyRequest::setPropertyId));
         builder.<UpdatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePropertyRequestBody.class),
-            f -> f.withMarshaller(UpdatePropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePropertyRequest::getBody, UpdatePropertyRequest::setBody));
 
         // response
 
@@ -10042,9 +8787,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> updateRequestProperty =
-        genForupdateRequestProperty();
+        genForUpdateRequestProperty();
 
-    private static HttpRequestDef<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> genForupdateRequestProperty() {
+    private static HttpRequestDef<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> genForUpdateRequestProperty() {
         // basic
         HttpRequestDef.Builder<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateRequestPropertyRequest.class, UpdateRequestPropertyResponse.class)
@@ -10058,37 +8803,31 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestPropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestPropertyRequest::getInstanceId,
+                UpdateRequestPropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestPropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestPropertyRequest::getServiceId,
+                UpdateRequestPropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateRequestPropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestPropertyRequest::getCommandId,
+                UpdateRequestPropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateRequestPropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestPropertyRequest::getPropertyId,
+                UpdateRequestPropertyRequest::setPropertyId));
         builder.<UpdatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePropertyRequestBody.class),
-            f -> f.withMarshaller(UpdateRequestPropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestPropertyRequest::getBody, UpdateRequestPropertyRequest::setBody));
 
         // response
 
@@ -10096,9 +8835,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> updateRequestThrottlingPolicyV2 =
-        genForupdateRequestThrottlingPolicyV2();
+        genForUpdateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> genForupdateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> genForUpdateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -10114,23 +8853,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getInstanceId,
+                UpdateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getThrottleId,
+                UpdateRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<ThrottleBaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBaseInfo.class),
-            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody,
+                UpdateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -10138,9 +8874,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> updateResponseProperty =
-        genForupdateResponseProperty();
+        genForUpdateResponseProperty();
 
-    private static HttpRequestDef<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> genForupdateResponseProperty() {
+    private static HttpRequestDef<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> genForUpdateResponseProperty() {
         // basic
         HttpRequestDef.Builder<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateResponsePropertyRequest.class, UpdateResponsePropertyResponse.class)
@@ -10154,46 +8890,40 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResponsePropertyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponsePropertyRequest::getInstanceId,
+                UpdateResponsePropertyRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateResponsePropertyRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponsePropertyRequest::getServiceId,
+                UpdateResponsePropertyRequest::setServiceId));
         builder.<Integer>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateResponsePropertyRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponsePropertyRequest::getCommandId,
+                UpdateResponsePropertyRequest::setCommandId));
         builder.<Integer>withRequestField("property_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateResponsePropertyRequest::getPropertyId, (req, v) -> {
-                req.setPropertyId(v);
-            }));
+            f -> f.withMarshaller(UpdateResponsePropertyRequest::getPropertyId,
+                UpdateResponsePropertyRequest::setPropertyId));
         builder.<UpdatePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdatePropertyRequestBody.class),
-            f -> f.withMarshaller(UpdateResponsePropertyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateResponsePropertyRequest::getBody, UpdateResponsePropertyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> updateRule = genForupdateRule();
+    public static final HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> updateRule = genForUpdateRule();
 
-    private static HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> genForupdateRule() {
+    private static HttpRequestDef<UpdateRuleRequest, UpdateRuleResponse> genForUpdateRule() {
         // basic
         HttpRequestDef.Builder<UpdateRuleRequest, UpdateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleRequest.class, UpdateRuleResponse.class)
@@ -10206,23 +8936,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getInstanceId, UpdateRuleRequest::setInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getRuleId, UpdateRuleRequest::setRuleId));
         builder.<UpdateRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRuleRequestBody.class),
-            f -> f.withMarshaller(UpdateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRuleRequest::getBody, UpdateRuleRequest::setBody));
 
         // response
 
@@ -10230,9 +8954,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> updateService =
-        genForupdateService();
+        genForUpdateService();
 
-    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForupdateService() {
+    private static HttpRequestDef<UpdateServiceRequest, UpdateServiceResponse> genForUpdateService() {
         // basic
         HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
@@ -10245,23 +8969,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getInstanceId, UpdateServiceRequest::setInstanceId));
         builder.<String>withRequestField("service_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, (req, v) -> {
-                req.setServiceId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getServiceId, UpdateServiceRequest::setServiceId));
         builder.<UpdateServiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServiceRequestBody.class),
-            f -> f.withMarshaller(UpdateServiceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceRequest::getBody, UpdateServiceRequest::setBody));
 
         // response
 
@@ -10269,9 +8987,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2 =
-        genForupdateSignatureKeyV2();
+        genForUpdateSignatureKeyV2();
 
-    private static HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> genForupdateSignatureKeyV2() {
+    private static HttpRequestDef<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> genForUpdateSignatureKeyV2() {
         // basic
         HttpRequestDef.Builder<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateSignatureKeyV2Request.class, UpdateSignatureKeyV2Response.class)
@@ -10284,23 +9002,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getInstanceId,
+                UpdateSignatureKeyV2Request::setInstanceId));
         builder.<String>withRequestField("sign_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getSignId, (req, v) -> {
-                req.setSignId(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getSignId, UpdateSignatureKeyV2Request::setSignId));
         builder.<BaseSignature>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BaseSignature.class),
-            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, UpdateSignatureKeyV2Request::setBody));
 
         // response
 
@@ -10308,9 +9021,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> updateSpecialThrottlingConfigurationV2 =
-        genForupdateSpecialThrottlingConfigurationV2();
+        genForUpdateSpecialThrottlingConfigurationV2();
 
-    private static HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> genForupdateSpecialThrottlingConfigurationV2() {
+    private static HttpRequestDef<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> genForUpdateSpecialThrottlingConfigurationV2() {
         // basic
         HttpRequestDef.Builder<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef
@@ -10327,39 +9040,35 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getInstanceId,
+                UpdateSpecialThrottlingConfigurationV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getThrottleId,
+                UpdateSpecialThrottlingConfigurationV2Request::setThrottleId));
         builder.<String>withRequestField("strategy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getStrategyId, (req, v) -> {
-                req.setStrategyId(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getStrategyId,
+                UpdateSpecialThrottlingConfigurationV2Request::setStrategyId));
         builder.<ThrottleSpecialUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleSpecialUpdate.class),
-            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getBody,
+                UpdateSpecialThrottlingConfigurationV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForupdateTask();
+    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForUpdateTask();
 
-    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForupdateTask() {
+    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForUpdateTask() {
         // basic
         HttpRequestDef.Builder<UpdateTaskRequest, UpdateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskRequest.class, UpdateTaskResponse.class)
@@ -10372,23 +9081,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getInstanceId, UpdateTaskRequest::setInstanceId));
         builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, UpdateTaskRequest::setTaskId));
         builder.<CreateCommonTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCommonTaskRequestBody.class),
-            f -> f.withMarshaller(UpdateTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTaskRequest::getBody, UpdateTaskRequest::setBody));
 
         // response
 
@@ -10396,9 +9099,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy =
-        genForupdateTopicAccessPolicy();
+        genForUpdateTopicAccessPolicy();
 
-    private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForupdateTopicAccessPolicy() {
+    private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForUpdateTopicAccessPolicy() {
         // basic
         HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
@@ -10411,16 +9114,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId,
+                UpdateTopicAccessPolicyRequest::setInstanceId));
         builder.<UpdateTopicAccessPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTopicAccessPolicyReq.class),
-            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, UpdateTopicAccessPolicyRequest::setBody));
 
         // response
 
@@ -10428,9 +9128,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UploadProductRequest, UploadProductResponse> uploadProduct =
-        genForuploadProduct();
+        genForUploadProduct();
 
-    private static HttpRequestDef<UploadProductRequest, UploadProductResponse> genForuploadProduct() {
+    private static HttpRequestDef<UploadProductRequest, UploadProductResponse> genForUploadProduct() {
         // basic
         HttpRequestDef.Builder<UploadProductRequest, UploadProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadProductRequest.class, UploadProductResponse.class)
@@ -10443,16 +9143,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadProductRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UploadProductRequest::getInstanceId, UploadProductRequest::setInstanceId));
         builder.<UploadProductRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadProductRequestBody.class),
-            f -> f.withMarshaller(UploadProductRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadProductRequest::getBody, UploadProductRequest::setBody));
 
         // response
 
@@ -10460,9 +9156,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> batchDeleteAclV2 =
-        genForbatchDeleteAclV2();
+        genForBatchDeleteAclV2();
 
-    private static HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> genForbatchDeleteAclV2() {
+    private static HttpRequestDef<BatchDeleteAclV2Request, BatchDeleteAclV2Response> genForBatchDeleteAclV2() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAclV2Request, BatchDeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteAclV2Request.class, BatchDeleteAclV2Response.class)
@@ -10475,23 +9171,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getInstanceId, BatchDeleteAclV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getAction, BatchDeleteAclV2Request::setAction));
         builder.<AclBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclBatchDelete.class),
-            f -> f.withMarshaller(BatchDeleteAclV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclV2Request::getBody, BatchDeleteAclV2Request::setBody));
 
         // response
 
@@ -10499,9 +9189,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> createAclStrategyV2 =
-        genForcreateAclStrategyV2();
+        genForCreateAclStrategyV2();
 
-    private static HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> genForcreateAclStrategyV2() {
+    private static HttpRequestDef<CreateAclStrategyV2Request, CreateAclStrategyV2Response> genForCreateAclStrategyV2() {
         // basic
         HttpRequestDef.Builder<CreateAclStrategyV2Request, CreateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAclStrategyV2Request.class, CreateAclStrategyV2Response.class)
@@ -10514,25 +9204,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAclStrategyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getInstanceId,
+                CreateAclStrategyV2Request::setInstanceId));
         builder.<ApiAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAclCreate.class),
-            f -> f.withMarshaller(CreateAclStrategyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAclStrategyV2Request::getBody, CreateAclStrategyV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2 = genFordeleteAclV2();
+    public static final HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> deleteAclV2 = genForDeleteAclV2();
 
-    private static HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> genFordeleteAclV2() {
+    private static HttpRequestDef<DeleteAclV2Request, DeleteAclV2Response> genForDeleteAclV2() {
         // basic
         HttpRequestDef.Builder<DeleteAclV2Request, DeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclV2Request.class, DeleteAclV2Response.class)
@@ -10545,16 +9232,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclV2Request::getInstanceId, DeleteAclV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclV2Request::getAclId, DeleteAclV2Request::setAclId));
 
         // response
 
@@ -10562,9 +9245,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> listAclStrategiesV2 =
-        genForlistAclStrategiesV2();
+        genForListAclStrategiesV2();
 
-    private static HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> genForlistAclStrategiesV2() {
+    private static HttpRequestDef<ListAclStrategiesV2Request, ListAclStrategiesV2Response> genForListAclStrategiesV2() {
         // basic
         HttpRequestDef.Builder<ListAclStrategiesV2Request, ListAclStrategiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclStrategiesV2Request.class, ListAclStrategiesV2Response.class)
@@ -10577,58 +9260,45 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getInstanceId,
+                ListAclStrategiesV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getOffset, ListAclStrategiesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getLimit, ListAclStrategiesV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getId, ListAclStrategiesV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getName, ListAclStrategiesV2Request::setName));
         builder.<String>withRequestField("acl_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, (req, v) -> {
-                req.setAclType(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, ListAclStrategiesV2Request::setAclType));
         builder.<String>withRequestField("entity_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getEntityType, (req, v) -> {
-                req.setEntityType(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getEntityType,
+                ListAclStrategiesV2Request::setEntityType));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclStrategiesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListAclStrategiesV2Request::getPreciseSearch,
+                ListAclStrategiesV2Request::setPreciseSearch));
 
         // response
 
@@ -10636,9 +9306,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> showDetailsOfAclPolicyV2 =
-        genForshowDetailsOfAclPolicyV2();
+        genForShowDetailsOfAclPolicyV2();
 
-    private static HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> genForshowDetailsOfAclPolicyV2() {
+    private static HttpRequestDef<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> genForShowDetailsOfAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> builder =
             HttpRequestDef
@@ -10652,16 +9322,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getInstanceId,
+                ShowDetailsOfAclPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfAclPolicyV2Request::getAclId,
+                ShowDetailsOfAclPolicyV2Request::setAclId));
 
         // response
 
@@ -10669,9 +9337,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> updateAclStrategyV2 =
-        genForupdateAclStrategyV2();
+        genForUpdateAclStrategyV2();
 
-    private static HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> genForupdateAclStrategyV2() {
+    private static HttpRequestDef<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> genForUpdateAclStrategyV2() {
         // basic
         HttpRequestDef.Builder<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclStrategyV2Request.class, UpdateAclStrategyV2Response.class)
@@ -10684,23 +9352,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getInstanceId,
+                UpdateAclStrategyV2Request::setInstanceId));
         builder.<String>withRequestField("acl_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getAclId, UpdateAclStrategyV2Request::setAclId));
         builder.<ApiAclCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAclCreate.class),
-            f -> f.withMarshaller(UpdateAclStrategyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclStrategyV2Request::getBody, UpdateAclStrategyV2Request::setBody));
 
         // response
 
@@ -10708,9 +9371,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> associateRequestThrottlingPolicyV2 =
-        genForassociateRequestThrottlingPolicyV2();
+        genForAssociateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> genForassociateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> genForAssociateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -10726,16 +9389,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getInstanceId,
+                AssociateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<ThrottleApiBindingCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleApiBindingCreate.class),
-            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AssociateRequestThrottlingPolicyV2Request::getBody,
+                AssociateRequestThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -10743,9 +9404,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> batchDisassociateThrottlingPolicyV2 =
-        genForbatchDisassociateThrottlingPolicyV2();
+        genForBatchDisassociateThrottlingPolicyV2();
 
-    private static HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> genForbatchDisassociateThrottlingPolicyV2() {
+    private static HttpRequestDef<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> genForBatchDisassociateThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -10761,23 +9422,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getInstanceId,
+                BatchDisassociateThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getAction,
+                BatchDisassociateThrottlingPolicyV2Request::setAction));
         builder.<ThrottleBindingBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ThrottleBindingBatchDelete.class),
-            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateThrottlingPolicyV2Request::getBody,
+                BatchDisassociateThrottlingPolicyV2Request::setBody));
 
         // response
 
@@ -10785,9 +9443,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> batchPublishOrOfflineApiV2 =
-        genForbatchPublishOrOfflineApiV2();
+        genForBatchPublishOrOfflineApiV2();
 
-    private static HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> genForbatchPublishOrOfflineApiV2() {
+    private static HttpRequestDef<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> genForBatchPublishOrOfflineApiV2() {
         // basic
         HttpRequestDef.Builder<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> builder =
             HttpRequestDef
@@ -10803,23 +9461,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getInstanceId,
+                BatchPublishOrOfflineApiV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getAction,
+                BatchPublishOrOfflineApiV2Request::setAction));
         builder.<ApiBatchPublish>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiBatchPublish.class),
-            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchPublishOrOfflineApiV2Request::getBody,
+                BatchPublishOrOfflineApiV2Request::setBody));
 
         // response
 
@@ -10827,9 +9482,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> changeApiVersionV2 =
-        genForchangeApiVersionV2();
+        genForChangeApiVersionV2();
 
-    private static HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> genForchangeApiVersionV2() {
+    private static HttpRequestDef<ChangeApiVersionV2Request, ChangeApiVersionV2Response> genForChangeApiVersionV2() {
         // basic
         HttpRequestDef.Builder<ChangeApiVersionV2Request, ChangeApiVersionV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeApiVersionV2Request.class, ChangeApiVersionV2Response.class)
@@ -10842,23 +9497,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getInstanceId, ChangeApiVersionV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getApiId, ChangeApiVersionV2Request::setApiId));
         builder.<ApiVersion>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiVersion.class),
-            f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, ChangeApiVersionV2Request::setBody));
 
         // response
 
@@ -10866,9 +9515,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2 =
-        genForcheckApiGroupsV2();
+        genForCheckApiGroupsV2();
 
-    private static HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> genForcheckApiGroupsV2() {
+    private static HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> genForCheckApiGroupsV2() {
         // basic
         HttpRequestDef.Builder<CheckApiGroupsV2Request, CheckApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApiGroupsV2Request.class, CheckApiGroupsV2Response.class)
@@ -10881,25 +9530,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckApiGroupsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getInstanceId, CheckApiGroupsV2Request::setInstanceId));
         builder.<ApiGroupCheck>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupCheck.class),
-            f -> f.withMarshaller(CheckApiGroupsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getBody, CheckApiGroupsV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForcheckApisV2();
+    public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForCheckApisV2();
 
-    private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForcheckApisV2() {
+    private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForCheckApisV2() {
         // basic
         HttpRequestDef.Builder<CheckApisV2Request, CheckApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApisV2Request.class, CheckApisV2Response.class)
@@ -10912,16 +9557,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckApisV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckApisV2Request::getInstanceId, CheckApisV2Request::setInstanceId));
         builder.<ApiCheckInfoV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCheckInfoV2.class),
-            f -> f.withMarshaller(CheckApisV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckApisV2Request::getBody, CheckApisV2Request::setBody));
 
         // response
 
@@ -10929,9 +9570,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> createApiGroupV2 =
-        genForcreateApiGroupV2();
+        genForCreateApiGroupV2();
 
-    private static HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> genForcreateApiGroupV2() {
+    private static HttpRequestDef<CreateApiGroupV2Request, CreateApiGroupV2Response> genForCreateApiGroupV2() {
         // basic
         HttpRequestDef.Builder<CreateApiGroupV2Request, CreateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiGroupV2Request.class, CreateApiGroupV2Response.class)
@@ -10944,25 +9585,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiGroupV2Request::getInstanceId, CreateApiGroupV2Request::setInstanceId));
         builder.<ApiGroupCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupCreate.class),
-            f -> f.withMarshaller(CreateApiGroupV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiGroupV2Request::getBody, CreateApiGroupV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApiV2Request, CreateApiV2Response> createApiV2 = genForcreateApiV2();
+    public static final HttpRequestDef<CreateApiV2Request, CreateApiV2Response> createApiV2 = genForCreateApiV2();
 
-    private static HttpRequestDef<CreateApiV2Request, CreateApiV2Response> genForcreateApiV2() {
+    private static HttpRequestDef<CreateApiV2Request, CreateApiV2Response> genForCreateApiV2() {
         // basic
         HttpRequestDef.Builder<CreateApiV2Request, CreateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiV2Request.class, CreateApiV2Response.class)
@@ -10975,16 +9612,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiV2Request::getInstanceId, CreateApiV2Request::setInstanceId));
         builder.<ApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCreate.class),
-            f -> f.withMarshaller(CreateApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiV2Request::getBody, CreateApiV2Request::setBody));
 
         // response
 
@@ -10992,9 +9625,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> createOrDeletePublishRecordForApiV2 =
-        genForcreateOrDeletePublishRecordForApiV2();
+        genForCreateOrDeletePublishRecordForApiV2();
 
-    private static HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> genForcreateOrDeletePublishRecordForApiV2() {
+    private static HttpRequestDef<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> genForCreateOrDeletePublishRecordForApiV2() {
         // basic
         HttpRequestDef.Builder<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> builder =
             HttpRequestDef
@@ -11010,25 +9643,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getInstanceId,
+                CreateOrDeletePublishRecordForApiV2Request::setInstanceId));
         builder.<ApiActionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiActionInfo.class),
-            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateOrDeletePublishRecordForApiV2Request::getBody,
+                CreateOrDeletePublishRecordForApiV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DebugApiV2Request, DebugApiV2Response> debugApiV2 = genFordebugApiV2();
+    public static final HttpRequestDef<DebugApiV2Request, DebugApiV2Response> debugApiV2 = genForDebugApiV2();
 
-    private static HttpRequestDef<DebugApiV2Request, DebugApiV2Response> genFordebugApiV2() {
+    private static HttpRequestDef<DebugApiV2Request, DebugApiV2Response> genForDebugApiV2() {
         // basic
         HttpRequestDef.Builder<DebugApiV2Request, DebugApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugApiV2Request.class, DebugApiV2Response.class)
@@ -11041,23 +9672,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getInstanceId, DebugApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DebugApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getApiId, DebugApiV2Request::setApiId));
         builder.<ApiDebugInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiDebugInfo.class),
-            f -> f.withMarshaller(DebugApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DebugApiV2Request::getBody, DebugApiV2Request::setBody));
 
         // response
 
@@ -11065,9 +9690,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> deleteApiByVersionIdV2 =
-        genFordeleteApiByVersionIdV2();
+        genForDeleteApiByVersionIdV2();
 
-    private static HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> genFordeleteApiByVersionIdV2() {
+    private static HttpRequestDef<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> genForDeleteApiByVersionIdV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteApiByVersionIdV2Request.class, DeleteApiByVersionIdV2Response.class)
@@ -11080,16 +9705,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getInstanceId,
+                DeleteApiByVersionIdV2Request::setInstanceId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiByVersionIdV2Request::getVersionId,
+                DeleteApiByVersionIdV2Request::setVersionId));
 
         // response
 
@@ -11097,9 +9720,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> deleteApiGroupV2 =
-        genFordeleteApiGroupV2();
+        genForDeleteApiGroupV2();
 
-    private static HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> genFordeleteApiGroupV2() {
+    private static HttpRequestDef<DeleteApiGroupV2Request, DeleteApiGroupV2Response> genForDeleteApiGroupV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiGroupV2Request, DeleteApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiGroupV2Request.class, DeleteApiGroupV2Response.class)
@@ -11112,25 +9735,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiGroupV2Request::getInstanceId, DeleteApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiGroupV2Request::getGroupId, DeleteApiGroupV2Request::setGroupId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2 = genFordeleteApiV2();
+    public static final HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> deleteApiV2 = genForDeleteApiV2();
 
-    private static HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> genFordeleteApiV2() {
+    private static HttpRequestDef<DeleteApiV2Request, DeleteApiV2Response> genForDeleteApiV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiV2Request, DeleteApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiV2Request.class, DeleteApiV2Response.class)
@@ -11143,16 +9762,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiV2Request::getInstanceId, DeleteApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiV2Request::getApiId, DeleteApiV2Request::setApiId));
 
         // response
 
@@ -11160,9 +9775,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> disassociateRequestThrottlingPolicyV2 =
-        genFordisassociateRequestThrottlingPolicyV2();
+        genForDisassociateRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> genFordisassociateRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> genForDisassociateRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -11178,16 +9793,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getInstanceId,
+                DisassociateRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<String>withRequestField("throttle_binding_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getThrottleBindingId, (req, v) -> {
-                req.setThrottleBindingId(v);
-            }));
+            f -> f.withMarshaller(DisassociateRequestThrottlingPolicyV2Request::getThrottleBindingId,
+                DisassociateRequestThrottlingPolicyV2Request::setThrottleBindingId));
 
         // response
 
@@ -11195,9 +9808,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> listApiGroupsV2 =
-        genForlistApiGroupsV2();
+        genForListApiGroupsV2();
 
-    private static HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> genForlistApiGroupsV2() {
+    private static HttpRequestDef<ListApiGroupsV2Request, ListApiGroupsV2Response> genForListApiGroupsV2() {
         // basic
         HttpRequestDef.Builder<ListApiGroupsV2Request, ListApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiGroupsV2Request.class, ListApiGroupsV2Response.class)
@@ -11210,58 +9823,42 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getInstanceId, ListApiGroupsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getOffset, ListApiGroupsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getLimit, ListApiGroupsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getId, ListApiGroupsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getName, ListApiGroupsV2Request::setName));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getRomaAppId, ListApiGroupsV2Request::setRomaAppId));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getPreciseSearch, ListApiGroupsV2Request::setPreciseSearch));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiGroupsV2Request::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListApiGroupsV2Request::getDomainName, ListApiGroupsV2Request::setDomainName));
 
         // response
 
@@ -11269,9 +9866,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> listApiRuntimeDefinitionV2 =
-        genForlistApiRuntimeDefinitionV2();
+        genForListApiRuntimeDefinitionV2();
 
-    private static HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> genForlistApiRuntimeDefinitionV2() {
+    private static HttpRequestDef<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> genForListApiRuntimeDefinitionV2() {
         // basic
         HttpRequestDef.Builder<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> builder =
             HttpRequestDef
@@ -11287,23 +9884,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getInstanceId,
+                ListApiRuntimeDefinitionV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getApiId,
+                ListApiRuntimeDefinitionV2Request::setApiId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiRuntimeDefinitionV2Request::getEnvId,
+                ListApiRuntimeDefinitionV2Request::setEnvId));
 
         // response
 
@@ -11311,9 +9905,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> listApiVersionDetailV2 =
-        genForlistApiVersionDetailV2();
+        genForListApiVersionDetailV2();
 
-    private static HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> genForlistApiVersionDetailV2() {
+    private static HttpRequestDef<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> genForListApiVersionDetailV2() {
         // basic
         HttpRequestDef.Builder<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApiVersionDetailV2Request.class, ListApiVersionDetailV2Response.class)
@@ -11326,16 +9920,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionDetailV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getInstanceId,
+                ListApiVersionDetailV2Request::setInstanceId));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionDetailV2Request::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionDetailV2Request::getVersionId,
+                ListApiVersionDetailV2Request::setVersionId));
 
         // response
 
@@ -11343,9 +9935,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> listApiVersionsV2 =
-        genForlistApiVersionsV2();
+        genForListApiVersionsV2();
 
-    private static HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> genForlistApiVersionsV2() {
+    private static HttpRequestDef<ListApiVersionsV2Request, ListApiVersionsV2Response> genForListApiVersionsV2() {
         // basic
         HttpRequestDef.Builder<ListApiVersionsV2Request, ListApiVersionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsV2Request.class, ListApiVersionsV2Response.class)
@@ -11358,44 +9950,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getInstanceId, ListApiVersionsV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getApiId, ListApiVersionsV2Request::setApiId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getOffset, ListApiVersionsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getLimit, ListApiVersionsV2Request::setLimit));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvId, ListApiVersionsV2Request::setEnvId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListApiVersionsV2Request::getEnvName, ListApiVersionsV2Request::setEnvName));
 
         // response
 
@@ -11403,9 +9983,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> listApisBindedToRequestThrottlingPolicyV2 =
-        genForlistApisBindedToRequestThrottlingPolicyV2();
+        genForListApisBindedToRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> genForlistApisBindedToRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> genForListApisBindedToRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -11421,58 +10001,50 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getInstanceId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getOffset,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getLimit,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getThrottleId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getEnvId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getGroupId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiId,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setApiName));
 
         // response
 
@@ -11480,9 +10052,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> listApisUnbindedToRequestThrottlingPolicyV2 =
-        genForlistApisUnbindedToRequestThrottlingPolicyV2();
+        genForListApisUnbindedToRequestThrottlingPolicyV2();
 
-    private static HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> genForlistApisUnbindedToRequestThrottlingPolicyV2() {
+    private static HttpRequestDef<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> genForListApisUnbindedToRequestThrottlingPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef
@@ -11498,67 +10070,59 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getInstanceId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getOffset,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getLimit,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setLimit));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getThrottleId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setThrottleId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getEnvId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getGroupId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiId,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setApiName));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApisV2Request, ListApisV2Response> listApisV2 = genForlistApisV2();
+    public static final HttpRequestDef<ListApisV2Request, ListApisV2Response> listApisV2 = genForListApisV2();
 
-    private static HttpRequestDef<ListApisV2Request, ListApisV2Response> genForlistApisV2() {
+    private static HttpRequestDef<ListApisV2Request, ListApisV2Response> genForListApisV2() {
         // basic
         HttpRequestDef.Builder<ListApisV2Request, ListApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisV2Request.class, ListApisV2Response.class)
@@ -11571,121 +10135,87 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getInstanceId, ListApisV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getOffset, ListApisV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getLimit, ListApisV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getId, ListApisV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getName, ListApisV2Request::setName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getGroupId, ListApisV2Request::setGroupId));
         builder.<String>withRequestField("req_protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqProtocol, (req, v) -> {
-                req.setReqProtocol(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqProtocol, ListApisV2Request::setReqProtocol));
         builder.<String>withRequestField("req_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqMethod, (req, v) -> {
-                req.setReqMethod(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqMethod, ListApisV2Request::setReqMethod));
         builder.<String>withRequestField("req_uri",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getReqUri, (req, v) -> {
-                req.setReqUri(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getReqUri, ListApisV2Request::setReqUri));
         builder.<String>withRequestField("auth_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getAuthType, (req, v) -> {
-                req.setAuthType(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getAuthType, ListApisV2Request::setAuthType));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getEnvId, ListApisV2Request::setEnvId));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getType, ListApisV2Request::setType));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, ListApisV2Request::setPreciseSearch));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelId, ListApisV2Request::setVpcChannelId));
         builder.<String>withRequestField("vpc_channel_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
-                req.setVpcChannelName(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, ListApisV2Request::setVpcChannelName));
         builder.<String>withRequestField("roma_app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getRomaAppName, (req, v) -> {
-                req.setRomaAppName(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getRomaAppName, ListApisV2Request::setRomaAppName));
         builder.<String>withRequestField("roma_app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisV2Request::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            }));
+            f -> f.withMarshaller(ListApisV2Request::getRomaAppId, ListApisV2Request::setRomaAppId));
 
         // response
 
@@ -11693,9 +10223,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> listRequestThrottlingPoliciesBindedToApiV2 =
-        genForlistRequestThrottlingPoliciesBindedToApiV2();
+        genForListRequestThrottlingPoliciesBindedToApiV2();
 
-    private static HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> genForlistRequestThrottlingPoliciesBindedToApiV2() {
+    private static HttpRequestDef<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> genForListRequestThrottlingPoliciesBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> builder =
             HttpRequestDef
@@ -11711,51 +10241,44 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getInstanceId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getOffset,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getLimit,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getApiId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("throttle_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleId, (req, v) -> {
-                req.setThrottleId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setThrottleId));
         builder.<String>withRequestField("throttle_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleName, (req, v) -> {
-                req.setThrottleName(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getThrottleName,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setThrottleName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListRequestThrottlingPoliciesBindedToApiV2Request::getEnvId,
+                ListRequestThrottlingPoliciesBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -11763,9 +10286,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> showDetailsOfApiGroupV2 =
-        genForshowDetailsOfApiGroupV2();
+        genForShowDetailsOfApiGroupV2();
 
-    private static HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> genForshowDetailsOfApiGroupV2() {
+    private static HttpRequestDef<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> genForShowDetailsOfApiGroupV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDetailsOfApiGroupV2Request.class, ShowDetailsOfApiGroupV2Response.class)
@@ -11778,16 +10301,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getInstanceId,
+                ShowDetailsOfApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiGroupV2Request::getGroupId,
+                ShowDetailsOfApiGroupV2Request::setGroupId));
 
         // response
 
@@ -11795,9 +10316,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> showDetailsOfApiV2 =
-        genForshowDetailsOfApiV2();
+        genForShowDetailsOfApiV2();
 
-    private static HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> genForshowDetailsOfApiV2() {
+    private static HttpRequestDef<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> genForShowDetailsOfApiV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiV2Request.class, ShowDetailsOfApiV2Response.class)
@@ -11810,16 +10331,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getInstanceId, ShowDetailsOfApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfApiV2Request::getApiId, ShowDetailsOfApiV2Request::setApiId));
 
         // response
 
@@ -11827,9 +10344,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> updateApiGroupV2 =
-        genForupdateApiGroupV2();
+        genForUpdateApiGroupV2();
 
-    private static HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> genForupdateApiGroupV2() {
+    private static HttpRequestDef<UpdateApiGroupV2Request, UpdateApiGroupV2Response> genForUpdateApiGroupV2() {
         // basic
         HttpRequestDef.Builder<UpdateApiGroupV2Request, UpdateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiGroupV2Request.class, UpdateApiGroupV2Response.class)
@@ -11842,32 +10359,26 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getInstanceId, UpdateApiGroupV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getGroupId, UpdateApiGroupV2Request::setGroupId));
         builder.<ApiGroupBase>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiGroupBase.class),
-            f -> f.withMarshaller(UpdateApiGroupV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateApiGroupV2Request::getBody, UpdateApiGroupV2Request::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> updateApiV2 = genForupdateApiV2();
+    public static final HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> updateApiV2 = genForUpdateApiV2();
 
-    private static HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> genForupdateApiV2() {
+    private static HttpRequestDef<UpdateApiV2Request, UpdateApiV2Response> genForUpdateApiV2() {
         // basic
         HttpRequestDef.Builder<UpdateApiV2Request, UpdateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiV2Request.class, UpdateApiV2Response.class)
@@ -11880,23 +10391,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getInstanceId, UpdateApiV2Request::setInstanceId));
         builder.<String>withRequestField("api_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getApiId, UpdateApiV2Request::setApiId));
         builder.<ApiCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiCreate.class),
-            f -> f.withMarshaller(UpdateApiV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateApiV2Request::getBody, UpdateApiV2Request::setBody));
 
         // response
 
@@ -11904,9 +10409,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> batchDeleteApiAclBindingV2 =
-        genForbatchDeleteApiAclBindingV2();
+        genForBatchDeleteApiAclBindingV2();
 
-    private static HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> genForbatchDeleteApiAclBindingV2() {
+    private static HttpRequestDef<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> genForBatchDeleteApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> builder =
             HttpRequestDef
@@ -11922,23 +10427,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getInstanceId,
+                BatchDeleteApiAclBindingV2Request::setInstanceId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getAction,
+                BatchDeleteApiAclBindingV2Request::setAction));
         builder.<AclBindingBatchDelete>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclBindingBatchDelete.class),
-            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteApiAclBindingV2Request::getBody,
+                BatchDeleteApiAclBindingV2Request::setBody));
 
         // response
 
@@ -11946,9 +10448,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> createApiAclBindingV2 =
-        genForcreateApiAclBindingV2();
+        genForCreateApiAclBindingV2();
 
-    private static HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> genForcreateApiAclBindingV2() {
+    private static HttpRequestDef<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> genForCreateApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateApiAclBindingV2Request.class, CreateApiAclBindingV2Response.class)
@@ -11961,16 +10463,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getInstanceId,
+                CreateApiAclBindingV2Request::setInstanceId));
         builder.<AclApiBindingCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AclApiBindingCreate.class),
-            f -> f.withMarshaller(CreateApiAclBindingV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateApiAclBindingV2Request::getBody, CreateApiAclBindingV2Request::setBody));
 
         // response
 
@@ -11978,9 +10477,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> deleteApiAclBindingV2 =
-        genFordeleteApiAclBindingV2();
+        genForDeleteApiAclBindingV2();
 
-    private static HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> genFordeleteApiAclBindingV2() {
+    private static HttpRequestDef<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> genForDeleteApiAclBindingV2() {
         // basic
         HttpRequestDef.Builder<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteApiAclBindingV2Request.class, DeleteApiAclBindingV2Response.class)
@@ -11993,16 +10492,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getInstanceId,
+                DeleteApiAclBindingV2Request::setInstanceId));
         builder.<String>withRequestField("acl_bindings_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getAclBindingsId, (req, v) -> {
-                req.setAclBindingsId(v);
-            }));
+            f -> f.withMarshaller(DeleteApiAclBindingV2Request::getAclBindingsId,
+                DeleteApiAclBindingV2Request::setAclBindingsId));
 
         // response
 
@@ -12010,9 +10507,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> listAclPolicyBindedToApiV2 =
-        genForlistAclPolicyBindedToApiV2();
+        genForListAclPolicyBindedToApiV2();
 
-    private static HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> genForlistAclPolicyBindedToApiV2() {
+    private static HttpRequestDef<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> genForListAclPolicyBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> builder =
             HttpRequestDef
@@ -12028,58 +10525,50 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getInstanceId,
+                ListAclPolicyBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getOffset,
+                ListAclPolicyBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getLimit,
+                ListAclPolicyBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getApiId,
+                ListAclPolicyBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvId,
+                ListAclPolicyBindedToApiV2Request::setEnvId));
         builder.<String>withRequestField("env_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvName, (req, v) -> {
-                req.setEnvName(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getEnvName,
+                ListAclPolicyBindedToApiV2Request::setEnvName));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclId,
+                ListAclPolicyBindedToApiV2Request::setAclId));
         builder.<String>withRequestField("acl_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName, (req, v) -> {
-                req.setAclName(v);
-            }));
+            f -> f.withMarshaller(ListAclPolicyBindedToApiV2Request::getAclName,
+                ListAclPolicyBindedToApiV2Request::setAclName));
 
         // response
 
@@ -12087,9 +10576,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> listApisBindedToAclPolicyV2 =
-        genForlistApisBindedToAclPolicyV2();
+        genForListApisBindedToAclPolicyV2();
 
-    private static HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> genForlistApisBindedToAclPolicyV2() {
+    private static HttpRequestDef<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> genForListApisBindedToAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> builder =
             HttpRequestDef
@@ -12105,51 +10594,44 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getInstanceId,
+                ListApisBindedToAclPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getOffset,
+                ListApisBindedToAclPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getLimit,
+                ListApisBindedToAclPolicyV2Request::setLimit));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getAclId,
+                ListApisBindedToAclPolicyV2Request::setAclId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getApiName,
+                ListApisBindedToAclPolicyV2Request::setApiName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getEnvId,
+                ListApisBindedToAclPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId,
+                ListApisBindedToAclPolicyV2Request::setGroupId));
 
         // response
 
@@ -12157,9 +10639,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> listApisUnbindedToAclPolicyV2 =
-        genForlistApisUnbindedToAclPolicyV2();
+        genForListApisUnbindedToAclPolicyV2();
 
-    private static HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> genForlistApisUnbindedToAclPolicyV2() {
+    private static HttpRequestDef<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> genForListApisUnbindedToAclPolicyV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> builder =
             HttpRequestDef
@@ -12175,58 +10657,50 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getInstanceId,
+                ListApisUnbindedToAclPolicyV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getOffset,
+                ListApisUnbindedToAclPolicyV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getLimit,
+                ListApisUnbindedToAclPolicyV2Request::setLimit));
         builder.<String>withRequestField("acl_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getAclId, (req, v) -> {
-                req.setAclId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getAclId,
+                ListApisUnbindedToAclPolicyV2Request::setAclId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiId,
+                ListApisUnbindedToAclPolicyV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getApiName,
+                ListApisUnbindedToAclPolicyV2Request::setApiName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getEnvId,
+                ListApisUnbindedToAclPolicyV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId,
+                ListApisUnbindedToAclPolicyV2Request::setGroupId));
 
         // response
 
@@ -12234,9 +10708,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> cancelingAuthorizationV2 =
-        genForcancelingAuthorizationV2();
+        genForCancelingAuthorizationV2();
 
-    private static HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> genForcancelingAuthorizationV2() {
+    private static HttpRequestDef<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> genForCancelingAuthorizationV2() {
         // basic
         HttpRequestDef.Builder<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> builder =
             HttpRequestDef
@@ -12252,16 +10726,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelingAuthorizationV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CancelingAuthorizationV2Request::getInstanceId,
+                CancelingAuthorizationV2Request::setInstanceId));
         builder.<String>withRequestField("app_auth_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelingAuthorizationV2Request::getAppAuthId, (req, v) -> {
-                req.setAppAuthId(v);
-            }));
+            f -> f.withMarshaller(CancelingAuthorizationV2Request::getAppAuthId,
+                CancelingAuthorizationV2Request::setAppAuthId));
 
         // response
 
@@ -12269,9 +10741,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2 =
-        genForcreateAuthorizingAppsV2();
+        genForCreateAuthorizingAppsV2();
 
-    private static HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> genForcreateAuthorizingAppsV2() {
+    private static HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> genForCreateAuthorizingAppsV2() {
         // basic
         HttpRequestDef.Builder<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateAuthorizingAppsV2Request.class, CreateAuthorizingAppsV2Response.class)
@@ -12284,16 +10756,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getInstanceId,
+                CreateAuthorizingAppsV2Request::setInstanceId));
         builder.<ApiAuthCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiAuthCreate.class),
-            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, CreateAuthorizingAppsV2Request::setBody));
 
         // response
 
@@ -12301,9 +10770,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> listApisBindedToAppV2 =
-        genForlistApisBindedToAppV2();
+        genForListApisBindedToAppV2();
 
-    private static HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> genForlistApisBindedToAppV2() {
+    private static HttpRequestDef<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> genForListApisBindedToAppV2() {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApisBindedToAppV2Request.class, ListApisBindedToAppV2Response.class)
@@ -12316,65 +10785,49 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getInstanceId,
+                ListApisBindedToAppV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getOffset, ListApisBindedToAppV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getLimit, ListApisBindedToAppV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getAppId, ListApisBindedToAppV2Request::setAppId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiId, ListApisBindedToAppV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getApiName, ListApisBindedToAppV2Request::setApiName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupId, ListApisBindedToAppV2Request::setGroupId));
         builder.<String>withRequestField("group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupName, (req, v) -> {
-                req.setGroupName(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getGroupName,
+                ListApisBindedToAppV2Request::setGroupName));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, ListApisBindedToAppV2Request::setEnvId));
 
         // response
 
@@ -12382,9 +10835,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> listApisUnbindedToAppV2 =
-        genForlistApisUnbindedToAppV2();
+        genForListApisUnbindedToAppV2();
 
-    private static HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> genForlistApisUnbindedToAppV2() {
+    private static HttpRequestDef<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> genForListApisUnbindedToAppV2() {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListApisUnbindedToAppV2Request.class, ListApisUnbindedToAppV2Response.class)
@@ -12397,58 +10850,46 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getInstanceId,
+                ListApisUnbindedToAppV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getOffset,
+                ListApisUnbindedToAppV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getLimit, ListApisUnbindedToAppV2Request::setLimit));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getAppId, ListApisUnbindedToAppV2Request::setAppId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getEnvId, ListApisUnbindedToAppV2Request::setEnvId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getGroupId,
+                ListApisUnbindedToAppV2Request::setGroupId));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiId, ListApisUnbindedToAppV2Request::setApiId));
         builder.<String>withRequestField("api_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName, (req, v) -> {
-                req.setApiName(v);
-            }));
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName,
+                ListApisUnbindedToAppV2Request::setApiName));
 
         // response
 
@@ -12456,9 +10897,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2 =
-        genForlistAppsBindedToApiV2();
+        genForListAppsBindedToApiV2();
 
-    private static HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> genForlistAppsBindedToApiV2() {
+    private static HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> genForListAppsBindedToApiV2() {
         // basic
         HttpRequestDef.Builder<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAppsBindedToApiV2Request.class, ListAppsBindedToApiV2Response.class)
@@ -12471,51 +10912,38 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getInstanceId,
+                ListAppsBindedToApiV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getOffset, ListAppsBindedToApiV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getLimit, ListAppsBindedToApiV2Request::setLimit));
         builder.<String>withRequestField("api_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getApiId, (req, v) -> {
-                req.setApiId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getApiId, ListAppsBindedToApiV2Request::setApiId));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppName, (req, v) -> {
-                req.setAppName(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppName, ListAppsBindedToApiV2Request::setAppName));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getAppId, ListAppsBindedToApiV2Request::setAppId));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, (req, v) -> {
-                req.setEnvId(v);
-            }));
+            f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, ListAppsBindedToApiV2Request::setEnvId));
 
         // response
 
@@ -12523,9 +10951,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> listDuplicateApisForAppV2 =
-        genForlistDuplicateApisForAppV2();
+        genForListDuplicateApisForAppV2();
 
-    private static HttpRequestDef<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> genForlistDuplicateApisForAppV2() {
+    private static HttpRequestDef<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> genForListDuplicateApisForAppV2() {
         // basic
         HttpRequestDef.Builder<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> builder =
             HttpRequestDef
@@ -12541,25 +10969,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDuplicateApisForAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDuplicateApisForAppV2Request::getInstanceId,
+                ListDuplicateApisForAppV2Request::setInstanceId));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDuplicateApisForAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ListDuplicateApisForAppV2Request::getAppId,
+                ListDuplicateApisForAppV2Request::setAppId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> addUserToApp = genForaddUserToApp();
+    public static final HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> addUserToApp = genForAddUserToApp();
 
-    private static HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> genForaddUserToApp() {
+    private static HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> genForAddUserToApp() {
         // basic
         HttpRequestDef.Builder<AddUserToAppRequest, AddUserToAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddUserToAppRequest.class, AddUserToAppResponse.class)
@@ -12572,23 +10998,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddUserToAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(AddUserToAppRequest::getAppId, AddUserToAppRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddUserToAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddUserToAppRequest::getInstanceId, AddUserToAppRequest::setInstanceId));
         builder.<AddUserToApp>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddUserToApp.class),
-            f -> f.withMarshaller(AddUserToAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddUserToAppRequest::getBody, AddUserToAppRequest::setBody));
 
         // response
 
@@ -12596,9 +11016,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> checkAuthUsersOfApp =
-        genForcheckAuthUsersOfApp();
+        genForCheckAuthUsersOfApp();
 
-    private static HttpRequestDef<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> genForcheckAuthUsersOfApp() {
+    private static HttpRequestDef<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> genForCheckAuthUsersOfApp() {
         // basic
         HttpRequestDef.Builder<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAuthUsersOfAppRequest.class, CheckAuthUsersOfAppResponse.class)
@@ -12611,23 +11031,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getAppId, CheckAuthUsersOfAppRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getInstanceId,
+                CheckAuthUsersOfAppRequest::setInstanceId));
         builder.<String>withRequestField("user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getUserName, CheckAuthUsersOfAppRequest::setUserName));
 
         // response
 
@@ -12635,9 +11050,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> checkCanAuthUsersOfApp =
-        genForcheckCanAuthUsersOfApp();
+        genForCheckCanAuthUsersOfApp();
 
-    private static HttpRequestDef<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> genForcheckCanAuthUsersOfApp() {
+    private static HttpRequestDef<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> genForCheckCanAuthUsersOfApp() {
         // basic
         HttpRequestDef.Builder<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, CheckCanAuthUsersOfAppRequest.class, CheckCanAuthUsersOfAppResponse.class)
@@ -12650,23 +11065,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getAppId, CheckCanAuthUsersOfAppRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getInstanceId,
+                CheckCanAuthUsersOfAppRequest::setInstanceId));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getFilter, CheckCanAuthUsersOfAppRequest::setFilter));
 
         // response
 
@@ -12674,9 +11084,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> checkRomaAppDetails =
-        genForcheckRomaAppDetails();
+        genForCheckRomaAppDetails();
 
-    private static HttpRequestDef<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> genForcheckRomaAppDetails() {
+    private static HttpRequestDef<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> genForCheckRomaAppDetails() {
         // basic
         HttpRequestDef.Builder<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppDetailsRequest.class, CheckRomaAppDetailsResponse.class)
@@ -12689,16 +11099,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getAppId, CheckRomaAppDetailsRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getInstanceId,
+                CheckRomaAppDetailsRequest::setInstanceId));
 
         // response
 
@@ -12706,9 +11113,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> checkRomaAppSecret =
-        genForcheckRomaAppSecret();
+        genForCheckRomaAppSecret();
 
-    private static HttpRequestDef<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> genForcheckRomaAppSecret() {
+    private static HttpRequestDef<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> genForCheckRomaAppSecret() {
         // basic
         HttpRequestDef.Builder<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppSecretRequest.class, CheckRomaAppSecretResponse.class)
@@ -12721,16 +11128,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckRomaAppSecretRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(CheckRomaAppSecretRequest::getAppId, CheckRomaAppSecretRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckRomaAppSecretRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckRomaAppSecretRequest::getInstanceId, CheckRomaAppSecretRequest::setInstanceId));
 
         // response
 
@@ -12738,9 +11141,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateRomaAppRequest, CreateRomaAppResponse> createRomaApp =
-        genForcreateRomaApp();
+        genForCreateRomaApp();
 
-    private static HttpRequestDef<CreateRomaAppRequest, CreateRomaAppResponse> genForcreateRomaApp() {
+    private static HttpRequestDef<CreateRomaAppRequest, CreateRomaAppResponse> genForCreateRomaApp() {
         // basic
         HttpRequestDef.Builder<CreateRomaAppRequest, CreateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRomaAppRequest.class, CreateRomaAppResponse.class)
@@ -12753,16 +11156,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateRomaAppRequest::getInstanceId, CreateRomaAppRequest::setInstanceId));
         builder.<CreateAppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppReq.class),
-            f -> f.withMarshaller(CreateRomaAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRomaAppRequest::getBody, CreateRomaAppRequest::setBody));
 
         // response
 
@@ -12770,9 +11169,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteRomaAppRequest, DeleteRomaAppResponse> deleteRomaApp =
-        genFordeleteRomaApp();
+        genForDeleteRomaApp();
 
-    private static HttpRequestDef<DeleteRomaAppRequest, DeleteRomaAppResponse> genFordeleteRomaApp() {
+    private static HttpRequestDef<DeleteRomaAppRequest, DeleteRomaAppResponse> genForDeleteRomaApp() {
         // basic
         HttpRequestDef.Builder<DeleteRomaAppRequest, DeleteRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRomaAppRequest.class, DeleteRomaAppResponse.class)
@@ -12785,25 +11184,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRomaAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(DeleteRomaAppRequest::getAppId, DeleteRomaAppRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteRomaAppRequest::getInstanceId, DeleteRomaAppRequest::setInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> listRomaApp = genForlistRomaApp();
+    public static final HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> listRomaApp = genForListRomaApp();
 
-    private static HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> genForlistRomaApp() {
+    private static HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> genForListRomaApp() {
         // basic
         HttpRequestDef.Builder<ListRomaAppRequest, ListRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRomaAppRequest.class, ListRomaAppResponse.class)
@@ -12816,58 +11211,42 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getInstanceId, ListRomaAppRequest::setInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getOffset, ListRomaAppRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getLimit, ListRomaAppRequest::setLimit));
         builder.<Boolean>withRequestField("favorite",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getFavorite, (req, v) -> {
-                req.setFavorite(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getFavorite, ListRomaAppRequest::setFavorite));
         builder.<String>withRequestField("auth_role",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getAuthRole, (req, v) -> {
-                req.setAuthRole(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getAuthRole, ListRomaAppRequest::setAuthRole));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getName, ListRomaAppRequest::setName));
         builder.<Boolean>withRequestField("owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getOwner, (req, v) -> {
-                req.setOwner(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getOwner, ListRomaAppRequest::setOwner));
         builder.<String>withRequestField("user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRomaAppRequest::getUserName, (req, v) -> {
-                req.setUserName(v);
-            }));
+            f -> f.withMarshaller(ListRomaAppRequest::getUserName, ListRomaAppRequest::setUserName));
 
         // response
 
@@ -12875,9 +11254,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> resetRomaAppSecret =
-        genForresetRomaAppSecret();
+        genForResetRomaAppSecret();
 
-    private static HttpRequestDef<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> genForresetRomaAppSecret() {
+    private static HttpRequestDef<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> genForResetRomaAppSecret() {
         // basic
         HttpRequestDef.Builder<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetRomaAppSecretRequest.class, ResetRomaAppSecretResponse.class)
@@ -12890,23 +11269,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetRomaAppSecretRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getAppId, ResetRomaAppSecretRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetRomaAppSecretRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getInstanceId, ResetRomaAppSecretRequest::setInstanceId));
         builder.<UpdateAppSecretReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppSecretReq.class),
-            f -> f.withMarshaller(ResetRomaAppSecretRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getBody, ResetRomaAppSecretRequest::setBody));
 
         // response
 
@@ -12914,9 +11287,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateRomaAppRequest, UpdateRomaAppResponse> updateRomaApp =
-        genForupdateRomaApp();
+        genForUpdateRomaApp();
 
-    private static HttpRequestDef<UpdateRomaAppRequest, UpdateRomaAppResponse> genForupdateRomaApp() {
+    private static HttpRequestDef<UpdateRomaAppRequest, UpdateRomaAppResponse> genForUpdateRomaApp() {
         // basic
         HttpRequestDef.Builder<UpdateRomaAppRequest, UpdateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRomaAppRequest.class, UpdateRomaAppResponse.class)
@@ -12929,23 +11302,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRomaAppRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
+            f -> f.withMarshaller(UpdateRomaAppRequest::getAppId, UpdateRomaAppRequest::setAppId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateRomaAppRequest::getInstanceId, UpdateRomaAppRequest::setInstanceId));
         builder.<UpdateAppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppReq.class),
-            f -> f.withMarshaller(UpdateRomaAppRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateRomaAppRequest::getBody, UpdateRomaAppRequest::setBody));
 
         // response
 
@@ -12953,9 +11320,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ValidateRomaAppRequest, ValidateRomaAppResponse> validateRomaApp =
-        genForvalidateRomaApp();
+        genForValidateRomaApp();
 
-    private static HttpRequestDef<ValidateRomaAppRequest, ValidateRomaAppResponse> genForvalidateRomaApp() {
+    private static HttpRequestDef<ValidateRomaAppRequest, ValidateRomaAppResponse> genForValidateRomaApp() {
         // basic
         HttpRequestDef.Builder<ValidateRomaAppRequest, ValidateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ValidateRomaAppRequest.class, ValidateRomaAppResponse.class)
@@ -12968,30 +11335,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ValidateRomaAppRequest::getInstanceId, ValidateRomaAppRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateRomaAppRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ValidateRomaAppRequest::getName, ValidateRomaAppRequest::setName));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateRomaAppRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ValidateRomaAppRequest::getId, ValidateRomaAppRequest::setId));
         builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateRomaAppRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ValidateRomaAppRequest::getKey, ValidateRomaAppRequest::setKey));
 
         // response
 
@@ -12999,9 +11358,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> checkAssetJobStatus =
-        genForcheckAssetJobStatus();
+        genForCheckAssetJobStatus();
 
-    private static HttpRequestDef<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> genForcheckAssetJobStatus() {
+    private static HttpRequestDef<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> genForCheckAssetJobStatus() {
         // basic
         HttpRequestDef.Builder<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAssetJobStatusRequest.class, CheckAssetJobStatusResponse.class)
@@ -13014,25 +11373,22 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAssetJobStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckAssetJobStatusRequest::getInstanceId,
+                CheckAssetJobStatusRequest::setInstanceId));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAssetJobStatusRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(CheckAssetJobStatusRequest::getJobId, CheckAssetJobStatusRequest::setJobId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genFordeleteAsset();
+    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genForDeleteAsset();
 
-    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genFordeleteAsset() {
+    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genForDeleteAsset() {
         // basic
         HttpRequestDef.Builder<DeleteAssetRequest, DeleteAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteAssetRequest.class, DeleteAssetResponse.class)
@@ -13045,16 +11401,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAssetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetRequest::getInstanceId, DeleteAssetRequest::setInstanceId));
         builder.<AssetOperateRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetOperateRequest.class),
-            f -> f.withMarshaller(DeleteAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAssetRequest::getBody, DeleteAssetRequest::setBody));
 
         // response
 
@@ -13062,9 +11414,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> downloadAssetArchive =
-        genFordownloadAssetArchive();
+        genForDownloadAssetArchive();
 
-    private static HttpRequestDef<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> genFordownloadAssetArchive() {
+    private static HttpRequestDef<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> genForDownloadAssetArchive() {
         // basic
         HttpRequestDef.Builder<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, DownloadAssetArchiveRequest.class, DownloadAssetArchiveResponse.class)
@@ -13077,25 +11429,23 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAssetArchiveRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DownloadAssetArchiveRequest::getInstanceId,
+                DownloadAssetArchiveRequest::setInstanceId));
         builder.<String>withRequestField("archive_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAssetArchiveRequest::getArchiveId, (req, v) -> {
-                req.setArchiveId(v);
-            }));
+            f -> f.withMarshaller(DownloadAssetArchiveRequest::getArchiveId,
+                DownloadAssetArchiveRequest::setArchiveId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportAssetRequest, ExportAssetResponse> exportAsset = genForexportAsset();
+    public static final HttpRequestDef<ExportAssetRequest, ExportAssetResponse> exportAsset = genForExportAsset();
 
-    private static HttpRequestDef<ExportAssetRequest, ExportAssetResponse> genForexportAsset() {
+    private static HttpRequestDef<ExportAssetRequest, ExportAssetResponse> genForExportAsset() {
         // basic
         HttpRequestDef.Builder<ExportAssetRequest, ExportAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportAssetRequest.class, ExportAssetResponse.class)
@@ -13108,25 +11458,21 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportAssetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportAssetRequest::getInstanceId, ExportAssetRequest::setInstanceId));
         builder.<AssetExportRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssetExportRequest.class),
-            f -> f.withMarshaller(ExportAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportAssetRequest::getBody, ExportAssetRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportAssetRequest, ImportAssetResponse> importAsset = genForimportAsset();
+    public static final HttpRequestDef<ImportAssetRequest, ImportAssetResponse> importAsset = genForImportAsset();
 
-    private static HttpRequestDef<ImportAssetRequest, ImportAssetResponse> genForimportAsset() {
+    private static HttpRequestDef<ImportAssetRequest, ImportAssetResponse> genForImportAsset() {
         // basic
         HttpRequestDef.Builder<ImportAssetRequest, ImportAssetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportAssetRequest.class, ImportAssetResponse.class)
@@ -13139,16 +11485,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportAssetRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportAssetRequest::getInstanceId, ImportAssetRequest::setInstanceId));
         builder.<ImportAssetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportAssetRequestBody.class),
-            f -> f.withMarshaller(ImportAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportAssetRequest::getBody, ImportAssetRequest::setBody));
 
         // response
 
@@ -13156,9 +11498,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> checkDictionary =
-        genForcheckDictionary();
+        genForCheckDictionary();
 
-    private static HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> genForcheckDictionary() {
+    private static HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> genForCheckDictionary() {
         // basic
         HttpRequestDef.Builder<CheckDictionaryRequest, CheckDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckDictionaryRequest.class, CheckDictionaryResponse.class)
@@ -13171,16 +11513,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDictionaryRequest::getDictId, (req, v) -> {
-                req.setDictId(v);
-            }));
+            f -> f.withMarshaller(CheckDictionaryRequest::getDictId, CheckDictionaryRequest::setDictId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CheckDictionaryRequest::getInstanceId, CheckDictionaryRequest::setInstanceId));
 
         // response
 
@@ -13188,9 +11526,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateDictionaryRequest, CreateDictionaryResponse> createDictionary =
-        genForcreateDictionary();
+        genForCreateDictionary();
 
-    private static HttpRequestDef<CreateDictionaryRequest, CreateDictionaryResponse> genForcreateDictionary() {
+    private static HttpRequestDef<CreateDictionaryRequest, CreateDictionaryResponse> genForCreateDictionary() {
         // basic
         HttpRequestDef.Builder<CreateDictionaryRequest, CreateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDictionaryRequest.class, CreateDictionaryResponse.class)
@@ -13203,16 +11541,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateDictionaryRequest::getInstanceId, CreateDictionaryRequest::setInstanceId));
         builder.<CreateDictionary>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDictionary.class),
-            f -> f.withMarshaller(CreateDictionaryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDictionaryRequest::getBody, CreateDictionaryRequest::setBody));
 
         // response
 
@@ -13220,9 +11554,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteDictionaryRequest, DeleteDictionaryResponse> deleteDictionary =
-        genFordeleteDictionary();
+        genForDeleteDictionary();
 
-    private static HttpRequestDef<DeleteDictionaryRequest, DeleteDictionaryResponse> genFordeleteDictionary() {
+    private static HttpRequestDef<DeleteDictionaryRequest, DeleteDictionaryResponse> genForDeleteDictionary() {
         // basic
         HttpRequestDef.Builder<DeleteDictionaryRequest, DeleteDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDictionaryRequest.class, DeleteDictionaryResponse.class)
@@ -13235,16 +11569,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDictionaryRequest::getDictId, (req, v) -> {
-                req.setDictId(v);
-            }));
+            f -> f.withMarshaller(DeleteDictionaryRequest::getDictId, DeleteDictionaryRequest::setDictId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDictionaryRequest::getInstanceId, DeleteDictionaryRequest::setInstanceId));
 
         // response
 
@@ -13252,9 +11582,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListDictionaryRequest, ListDictionaryResponse> listDictionary =
-        genForlistDictionary();
+        genForListDictionary();
 
-    private static HttpRequestDef<ListDictionaryRequest, ListDictionaryResponse> genForlistDictionary() {
+    private static HttpRequestDef<ListDictionaryRequest, ListDictionaryResponse> genForListDictionary() {
         // basic
         HttpRequestDef.Builder<ListDictionaryRequest, ListDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDictionaryRequest.class, ListDictionaryResponse.class)
@@ -13267,44 +11597,32 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getInstanceId, ListDictionaryRequest::setInstanceId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getOffset, ListDictionaryRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getLimit, ListDictionaryRequest::setLimit));
         builder.<String>withRequestField("parent_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getParentCode, (req, v) -> {
-                req.setParentCode(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getParentCode, ListDictionaryRequest::setParentCode));
         builder.<String>withRequestField("code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getCode, (req, v) -> {
-                req.setCode(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getCode, ListDictionaryRequest::setCode));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDictionaryRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListDictionaryRequest::getName, ListDictionaryRequest::setName));
 
         // response
 
@@ -13312,9 +11630,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateDictionaryRequest, UpdateDictionaryResponse> updateDictionary =
-        genForupdateDictionary();
+        genForUpdateDictionary();
 
-    private static HttpRequestDef<UpdateDictionaryRequest, UpdateDictionaryResponse> genForupdateDictionary() {
+    private static HttpRequestDef<UpdateDictionaryRequest, UpdateDictionaryResponse> genForUpdateDictionary() {
         // basic
         HttpRequestDef.Builder<UpdateDictionaryRequest, UpdateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDictionaryRequest.class, UpdateDictionaryResponse.class)
@@ -13327,23 +11645,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDictionaryRequest::getDictId, (req, v) -> {
-                req.setDictId(v);
-            }));
+            f -> f.withMarshaller(UpdateDictionaryRequest::getDictId, UpdateDictionaryRequest::setDictId));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDictionaryRequest::getInstanceId, UpdateDictionaryRequest::setInstanceId));
         builder.<UpdateDictionary>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDictionary.class),
-            f -> f.withMarshaller(UpdateDictionaryRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDictionaryRequest::getBody, UpdateDictionaryRequest::setBody));
 
         // response
 
@@ -13351,9 +11663,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ValidateDictionaryRequest, ValidateDictionaryResponse> validateDictionary =
-        genForvalidateDictionary();
+        genForValidateDictionary();
 
-    private static HttpRequestDef<ValidateDictionaryRequest, ValidateDictionaryResponse> genForvalidateDictionary() {
+    private static HttpRequestDef<ValidateDictionaryRequest, ValidateDictionaryResponse> genForValidateDictionary() {
         // basic
         HttpRequestDef.Builder<ValidateDictionaryRequest, ValidateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ValidateDictionaryRequest.class, ValidateDictionaryResponse.class)
@@ -13366,23 +11678,17 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateDictionaryRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ValidateDictionaryRequest::getInstanceId, ValidateDictionaryRequest::setInstanceId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateDictionaryRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ValidateDictionaryRequest::getName, ValidateDictionaryRequest::setName));
         builder.<String>withRequestField("code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ValidateDictionaryRequest::getCode, (req, v) -> {
-                req.setCode(v);
-            }));
+            f -> f.withMarshaller(ValidateDictionaryRequest::getCode, ValidateDictionaryRequest::setCode));
 
         // response
 
@@ -13390,9 +11696,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> checkRomaInstanceListV2 =
-        genForcheckRomaInstanceListV2();
+        genForCheckRomaInstanceListV2();
 
-    private static HttpRequestDef<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> genForcheckRomaInstanceListV2() {
+    private static HttpRequestDef<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> genForCheckRomaInstanceListV2() {
         // basic
         HttpRequestDef.Builder<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, CheckRomaInstanceListV2Request.class, CheckRomaInstanceListV2Response.class)
@@ -13405,23 +11711,19 @@ public class RomaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getStatus,
+                CheckRomaInstanceListV2Request::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getOffset,
+                CheckRomaInstanceListV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(CheckRomaInstanceListV2Request::getLimit, CheckRomaInstanceListV2Request::setLimit));
 
         // response
 
@@ -13429,9 +11731,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListMqsInstanceRequest, ListMqsInstanceResponse> listMqsInstance =
-        genForlistMqsInstance();
+        genForListMqsInstance();
 
-    private static HttpRequestDef<ListMqsInstanceRequest, ListMqsInstanceResponse> genForlistMqsInstance() {
+    private static HttpRequestDef<ListMqsInstanceRequest, ListMqsInstanceResponse> genForListMqsInstance() {
         // basic
         HttpRequestDef.Builder<ListMqsInstanceRequest, ListMqsInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMqsInstanceRequest.class, ListMqsInstanceResponse.class)
@@ -13444,9 +11746,8 @@ public class RomaMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMqsInstanceRequest.IncludeInternalEnum.class),
-            f -> f.withMarshaller(ListMqsInstanceRequest::getIncludeInternal, (req, v) -> {
-                req.setIncludeInternal(v);
-            }));
+            f -> f.withMarshaller(ListMqsInstanceRequest::getIncludeInternal,
+                ListMqsInstanceRequest::setIncludeInternal));
 
         // response
 
@@ -13454,9 +11755,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowMqsInstanceRequest, ShowMqsInstanceResponse> showMqsInstance =
-        genForshowMqsInstance();
+        genForShowMqsInstance();
 
-    private static HttpRequestDef<ShowMqsInstanceRequest, ShowMqsInstanceResponse> genForshowMqsInstance() {
+    private static HttpRequestDef<ShowMqsInstanceRequest, ShowMqsInstanceResponse> genForShowMqsInstance() {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceRequest, ShowMqsInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMqsInstanceRequest.class, ShowMqsInstanceResponse.class)
@@ -13469,9 +11770,7 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMqsInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowMqsInstanceRequest::getInstanceId, ShowMqsInstanceRequest::setInstanceId));
 
         // response
 
@@ -13479,9 +11778,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> exportApiDefinitionsV2 =
-        genForexportApiDefinitionsV2();
+        genForExportApiDefinitionsV2();
 
-    private static HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> genForexportApiDefinitionsV2() {
+    private static HttpRequestDef<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> genForExportApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExportApiDefinitionsV2Request.class, ExportApiDefinitionsV2Response.class)
@@ -13494,16 +11793,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId,
+                ExportApiDefinitionsV2Request::setInstanceId));
         builder.<ExportOpenApiReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportOpenApiReq.class),
-            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getBody, ExportApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -13511,9 +11807,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> exportLiveDataApiDefinitionsV2 =
-        genForexportLiveDataApiDefinitionsV2();
+        genForExportLiveDataApiDefinitionsV2();
 
-    private static HttpRequestDef<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> genForexportLiveDataApiDefinitionsV2() {
+    private static HttpRequestDef<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> genForExportLiveDataApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> builder =
             HttpRequestDef
@@ -13529,16 +11825,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportLiveDataApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ExportLiveDataApiDefinitionsV2Request::getInstanceId,
+                ExportLiveDataApiDefinitionsV2Request::setInstanceId));
         builder.<LiveDataExportReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDataExportReq.class),
-            f -> f.withMarshaller(ExportLiveDataApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ExportLiveDataApiDefinitionsV2Request::getBody,
+                ExportLiveDataApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -13546,9 +11840,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> importApiDefinitionsV2 =
-        genForimportApiDefinitionsV2();
+        genForImportApiDefinitionsV2();
 
-    private static HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> genForimportApiDefinitionsV2() {
+    private static HttpRequestDef<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> genForImportApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, ImportApiDefinitionsV2Request.class, ImportApiDefinitionsV2Response.class)
@@ -13561,16 +11855,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getInstanceId,
+                ImportApiDefinitionsV2Request::setInstanceId));
         builder.<ImportApiDefinitionsV2RequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportApiDefinitionsV2RequestBody.class),
-            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, ImportApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -13578,9 +11869,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> importLiveDataApiDefinitionsV2 =
-        genForimportLiveDataApiDefinitionsV2();
+        genForImportLiveDataApiDefinitionsV2();
 
-    private static HttpRequestDef<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> genForimportLiveDataApiDefinitionsV2() {
+    private static HttpRequestDef<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> genForImportLiveDataApiDefinitionsV2() {
         // basic
         HttpRequestDef.Builder<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> builder =
             HttpRequestDef
@@ -13596,16 +11887,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getInstanceId,
+                ImportLiveDataApiDefinitionsV2Request::setInstanceId));
         builder.<ImportLiveDataApiDefinitionsV2RequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportLiveDataApiDefinitionsV2RequestBody.class),
-            f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getBody,
+                ImportLiveDataApiDefinitionsV2Request::setBody));
 
         // response
 
@@ -13613,9 +11902,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2 =
-        genForbatchAssociateCertsV2();
+        genForBatchAssociateCertsV2();
 
-    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForbatchAssociateCertsV2() {
+    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForBatchAssociateCertsV2() {
         // basic
         HttpRequestDef.Builder<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateCertsV2Request.class, BatchAssociateCertsV2Response.class)
@@ -13629,30 +11918,24 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId,
+                BatchAssociateCertsV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, BatchAssociateCertsV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId,
+                BatchAssociateCertsV2Request::setDomainId));
         builder.<AttachOrDetachCertsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
-            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, BatchAssociateCertsV2Request::setBody));
 
         // response
 
@@ -13660,9 +11943,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2 =
-        genForbatchAssociateDomainsV2();
+        genForBatchAssociateDomainsV2();
 
-    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForbatchAssociateDomainsV2() {
+    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForBatchAssociateDomainsV2() {
         // basic
         HttpRequestDef.Builder<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchAssociateDomainsV2Request.class, BatchAssociateDomainsV2Response.class)
@@ -13675,16 +11958,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId,
+                BatchAssociateDomainsV2Request::setCertificateId));
         builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
-            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, BatchAssociateDomainsV2Request::setBody));
 
         // response
 
@@ -13692,9 +11972,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2 =
-        genForbatchDisassociateCertsV2();
+        genForBatchDisassociateCertsV2();
 
-    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForbatchDisassociateCertsV2() {
+    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForBatchDisassociateCertsV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> builder =
             HttpRequestDef
@@ -13709,30 +11989,25 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId,
+                BatchDisassociateCertsV2Request::setInstanceId));
         builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId,
+                BatchDisassociateCertsV2Request::setGroupId));
         builder.<String>withRequestField("domain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId,
+                BatchDisassociateCertsV2Request::setDomainId));
         builder.<AttachOrDetachCertsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
-            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, BatchDisassociateCertsV2Request::setBody));
 
         // response
 
@@ -13740,9 +12015,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2 =
-        genForbatchDisassociateDomainsV2();
+        genForBatchDisassociateDomainsV2();
 
-    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForbatchDisassociateDomainsV2() {
+    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForBatchDisassociateDomainsV2() {
         // basic
         HttpRequestDef.Builder<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> builder =
             HttpRequestDef
@@ -13758,16 +12033,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId,
+                BatchDisassociateDomainsV2Request::setCertificateId));
         builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
-            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody,
+                BatchDisassociateDomainsV2Request::setBody));
 
         // response
 
@@ -13775,9 +12048,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2 =
-        genForcreateCertificateV2();
+        genForCreateCertificateV2();
 
-    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForcreateCertificateV2() {
+    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForCreateCertificateV2() {
         // basic
         HttpRequestDef.Builder<CreateCertificateV2Request, CreateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateV2Request.class, CreateCertificateV2Response.class)
@@ -13790,9 +12063,7 @@ public class RomaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertificateForm.class),
-            f -> f.withMarshaller(CreateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateV2Request::getBody, CreateCertificateV2Request::setBody));
 
         // response
 
@@ -13800,9 +12071,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2 =
-        genFordeleteCertificateV2();
+        genForDeleteCertificateV2();
 
-    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genFordeleteCertificateV2() {
+    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genForDeleteCertificateV2() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateV2Request, DeleteCertificateV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteCertificateV2Request.class, DeleteCertificateV2Response.class)
@@ -13815,9 +12086,8 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId,
+                DeleteCertificateV2Request::setCertificateId));
 
         // response
 
@@ -13825,9 +12095,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2 =
-        genForlistAttachedDomainsV2();
+        genForListAttachedDomainsV2();
 
-    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForlistAttachedDomainsV2() {
+    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForListAttachedDomainsV2() {
         // basic
         HttpRequestDef.Builder<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAttachedDomainsV2Request.class, ListAttachedDomainsV2Response.class)
@@ -13840,30 +12110,24 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId,
+                ListAttachedDomainsV2Request::setCertificateId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, ListAttachedDomainsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, ListAttachedDomainsV2Request::setLimit));
         builder.<String>withRequestField("url_domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain, (req, v) -> {
-                req.setUrlDomain(v);
-            }));
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain,
+                ListAttachedDomainsV2Request::setUrlDomain));
 
         // response
 
@@ -13871,9 +12135,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2 =
-        genForlistCertificatesV2();
+        genForListCertificatesV2();
 
-    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForlistCertificatesV2() {
+    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForListCertificatesV2() {
         // basic
         HttpRequestDef.Builder<ListCertificatesV2Request, ListCertificatesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesV2Request.class, ListCertificatesV2Response.class)
@@ -13886,58 +12150,44 @@ public class RomaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, ListCertificatesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, ListCertificatesV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getName, ListCertificatesV2Request::setName));
         builder.<String>withRequestField("common_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, (req, v) -> {
-                req.setCommonName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, ListCertificatesV2Request::setCommonName));
         builder.<String>withRequestField("signature_algorithm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm, (req, v) -> {
-                req.setSignatureAlgorithm(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm,
+                ListCertificatesV2Request::setSignatureAlgorithm));
         builder.<ListCertificatesV2Request.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCertificatesV2Request.TypeEnum.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getType, ListCertificatesV2Request::setType));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, ListCertificatesV2Request::setInstanceId));
         builder.<ListCertificatesV2Request.AlgorithmTypeEnum>withRequestField("algorithm_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCertificatesV2Request.AlgorithmTypeEnum.class),
-            f -> f.withMarshaller(ListCertificatesV2Request::getAlgorithmType, (req, v) -> {
-                req.setAlgorithmType(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesV2Request::getAlgorithmType,
+                ListCertificatesV2Request::setAlgorithmType));
 
         // response
 
@@ -13945,9 +12195,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2 =
-        genForshowDetailsOfCertificateV2();
+        genForShowDetailsOfCertificateV2();
 
-    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForshowDetailsOfCertificateV2() {
+    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForShowDetailsOfCertificateV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> builder =
             HttpRequestDef
@@ -13963,9 +12213,8 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId,
+                ShowDetailsOfCertificateV2Request::setCertificateId));
 
         // response
 
@@ -13973,9 +12222,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2 =
-        genForupdateCertificateV2();
+        genForUpdateCertificateV2();
 
-    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForupdateCertificateV2() {
+    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForUpdateCertificateV2() {
         // basic
         HttpRequestDef.Builder<UpdateCertificateV2Request, UpdateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateV2Request.class, UpdateCertificateV2Response.class)
@@ -13988,16 +12237,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId,
+                UpdateCertificateV2Request::setCertificateId));
         builder.<CertificateForm>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CertificateForm.class),
-            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, UpdateCertificateV2Request::setBody));
 
         // response
 
@@ -14005,9 +12251,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> addingBackendInstancesV2 =
-        genForaddingBackendInstancesV2();
+        genForAddingBackendInstancesV2();
 
-    private static HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> genForaddingBackendInstancesV2() {
+    private static HttpRequestDef<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> genForAddingBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> builder =
             HttpRequestDef
@@ -14021,23 +12267,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getInstanceId,
+                AddingBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getVpcChannelId,
+                AddingBackendInstancesV2Request::setVpcChannelId));
         builder.<VpcMemberCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcMemberCreate.class),
-            f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddingBackendInstancesV2Request::getBody, AddingBackendInstancesV2Request::setBody));
 
         // response
 
@@ -14045,9 +12287,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> batchDisableMembers =
-        genForbatchDisableMembers();
+        genForBatchDisableMembers();
 
-    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForbatchDisableMembers() {
+    private static HttpRequestDef<BatchDisableMembersRequest, BatchDisableMembersResponse> genForBatchDisableMembers() {
         // basic
         HttpRequestDef.Builder<BatchDisableMembersRequest, BatchDisableMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDisableMembersRequest.class, BatchDisableMembersResponse.class)
@@ -14061,23 +12303,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getInstanceId,
+                BatchDisableMembersRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getVpcChannelId,
+                BatchDisableMembersRequest::setVpcChannelId));
         builder.<MembersBatchEnableOrDisable>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
-            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDisableMembersRequest::getBody, BatchDisableMembersRequest::setBody));
 
         // response
 
@@ -14085,9 +12323,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> batchEnableMembers =
-        genForbatchEnableMembers();
+        genForBatchEnableMembers();
 
-    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForbatchEnableMembers() {
+    private static HttpRequestDef<BatchEnableMembersRequest, BatchEnableMembersResponse> genForBatchEnableMembers() {
         // basic
         HttpRequestDef.Builder<BatchEnableMembersRequest, BatchEnableMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchEnableMembersRequest.class, BatchEnableMembersResponse.class)
@@ -14101,23 +12339,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getInstanceId, BatchEnableMembersRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getVpcChannelId,
+                BatchEnableMembersRequest::setVpcChannelId));
         builder.<MembersBatchEnableOrDisable>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MembersBatchEnableOrDisable.class),
-            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchEnableMembersRequest::getBody, BatchEnableMembersRequest::setBody));
 
         // response
 
@@ -14125,9 +12358,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> createMemberGroup =
-        genForcreateMemberGroup();
+        genForCreateMemberGroup();
 
-    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForcreateMemberGroup() {
+    private static HttpRequestDef<CreateMemberGroupRequest, CreateMemberGroupResponse> genForCreateMemberGroup() {
         // basic
         HttpRequestDef.Builder<CreateMemberGroupRequest, CreateMemberGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMemberGroupRequest.class, CreateMemberGroupResponse.class)
@@ -14140,23 +12373,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getInstanceId, CreateMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getVpcChannelId,
+                CreateMemberGroupRequest::setVpcChannelId));
         builder.<MemberGroupCreateBatch>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MemberGroupCreateBatch.class),
-            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMemberGroupRequest::getBody, CreateMemberGroupRequest::setBody));
 
         // response
 
@@ -14164,9 +12392,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> createProjectVpcChannel =
-        genForcreateProjectVpcChannel();
+        genForCreateProjectVpcChannel();
 
-    private static HttpRequestDef<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> genForcreateProjectVpcChannel() {
+    private static HttpRequestDef<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> genForCreateProjectVpcChannel() {
         // basic
         HttpRequestDef.Builder<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateProjectVpcChannelRequest.class, CreateProjectVpcChannelResponse.class)
@@ -14179,9 +12407,7 @@ public class RomaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProjectVpcCreate.class),
-            f -> f.withMarshaller(CreateProjectVpcChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectVpcChannelRequest::getBody, CreateProjectVpcChannelRequest::setBody));
 
         // response
 
@@ -14189,9 +12415,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> createProjectVpcChannelSyncs =
-        genForcreateProjectVpcChannelSyncs();
+        genForCreateProjectVpcChannelSyncs();
 
-    private static HttpRequestDef<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> genForcreateProjectVpcChannelSyncs() {
+    private static HttpRequestDef<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> genForCreateProjectVpcChannelSyncs() {
         // basic
         HttpRequestDef.Builder<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse> builder =
             HttpRequestDef
@@ -14207,9 +12433,8 @@ public class RomaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProjectVpcSync.class),
-            f -> f.withMarshaller(CreateProjectVpcChannelSyncsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateProjectVpcChannelSyncsRequest::getBody,
+                CreateProjectVpcChannelSyncsRequest::setBody));
 
         // response
 
@@ -14217,9 +12442,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> createVpcChannelV2 =
-        genForcreateVpcChannelV2();
+        genForCreateVpcChannelV2();
 
-    private static HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> genForcreateVpcChannelV2() {
+    private static HttpRequestDef<CreateVpcChannelV2Request, CreateVpcChannelV2Response> genForCreateVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<CreateVpcChannelV2Request, CreateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpcChannelV2Request.class, CreateVpcChannelV2Response.class)
@@ -14232,16 +12457,12 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getInstanceId, CreateVpcChannelV2Request::setInstanceId));
         builder.<VpcCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcCreate.class),
-            f -> f.withMarshaller(CreateVpcChannelV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVpcChannelV2Request::getBody, CreateVpcChannelV2Request::setBody));
 
         // response
 
@@ -14249,9 +12470,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> deleteBackendInstanceV2 =
-        genFordeleteBackendInstanceV2();
+        genForDeleteBackendInstanceV2();
 
-    private static HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> genFordeleteBackendInstanceV2() {
+    private static HttpRequestDef<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> genForDeleteBackendInstanceV2() {
         // basic
         HttpRequestDef.Builder<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBackendInstanceV2Request.class, DeleteBackendInstanceV2Response.class)
@@ -14264,23 +12485,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getInstanceId,
+                DeleteBackendInstanceV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getVpcChannelId,
+                DeleteBackendInstanceV2Request::setVpcChannelId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(DeleteBackendInstanceV2Request::getMemberId,
+                DeleteBackendInstanceV2Request::setMemberId));
 
         // response
 
@@ -14288,9 +12506,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> deleteMemberGroup =
-        genFordeleteMemberGroup();
+        genForDeleteMemberGroup();
 
-    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genFordeleteMemberGroup() {
+    private static HttpRequestDef<DeleteMemberGroupRequest, DeleteMemberGroupResponse> genForDeleteMemberGroup() {
         // basic
         HttpRequestDef.Builder<DeleteMemberGroupRequest, DeleteMemberGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteMemberGroupRequest.class, DeleteMemberGroupResponse.class)
@@ -14304,23 +12522,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getInstanceId, DeleteMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getVpcChannelId,
+                DeleteMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberGroupRequest::getMemberGroupId,
+                DeleteMemberGroupRequest::setMemberGroupId));
 
         // response
 
@@ -14328,9 +12542,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> deleteVpcChannelV2 =
-        genFordeleteVpcChannelV2();
+        genForDeleteVpcChannelV2();
 
-    private static HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> genFordeleteVpcChannelV2() {
+    private static HttpRequestDef<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> genForDeleteVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcChannelV2Request.class, DeleteVpcChannelV2Response.class)
@@ -14343,16 +12557,13 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getInstanceId, DeleteVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpcChannelV2Request::getVpcChannelId,
+                DeleteVpcChannelV2Request::setVpcChannelId));
 
         // response
 
@@ -14360,9 +12571,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> listBackendInstancesV2 =
-        genForlistBackendInstancesV2();
+        genForListBackendInstancesV2();
 
-    private static HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> genForlistBackendInstancesV2() {
+    private static HttpRequestDef<ListBackendInstancesV2Request, ListBackendInstancesV2Response> genForListBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<ListBackendInstancesV2Request, ListBackendInstancesV2Response> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListBackendInstancesV2Request.class, ListBackendInstancesV2Response.class)
@@ -14375,58 +12586,47 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getInstanceId,
+                ListBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getVpcChannelId,
+                ListBackendInstancesV2Request::setVpcChannelId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getOffset, ListBackendInstancesV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getLimit, ListBackendInstancesV2Request::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getName, ListBackendInstancesV2Request::setName));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupName,
+                ListBackendInstancesV2Request::setMemberGroupName));
         builder.<String>withRequestField("member_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getMemberGroupId,
+                ListBackendInstancesV2Request::setMemberGroupId));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListBackendInstancesV2Request::getPreciseSearch,
+                ListBackendInstancesV2Request::setPreciseSearch));
 
         // response
 
@@ -14434,9 +12634,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> listMemberGroups =
-        genForlistMemberGroups();
+        genForListMemberGroups();
 
-    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForlistMemberGroups() {
+    private static HttpRequestDef<ListMemberGroupsRequest, ListMemberGroupsResponse> genForListMemberGroups() {
         // basic
         HttpRequestDef.Builder<ListMemberGroupsRequest, ListMemberGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMemberGroupsRequest.class, ListMemberGroupsResponse.class)
@@ -14449,51 +12649,39 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getInstanceId, ListMemberGroupsRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getVpcChannelId, ListMemberGroupsRequest::setVpcChannelId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getOffset, ListMemberGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getLimit, ListMemberGroupsRequest::setLimit));
         builder.<String>withRequestField("dict_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, (req, v) -> {
-                req.setDictCode(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getDictCode, ListMemberGroupsRequest::setDictCode));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getMemberGroupName,
+                ListMemberGroupsRequest::setMemberGroupName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListMemberGroupsRequest::getPreciseSearch,
+                ListMemberGroupsRequest::setPreciseSearch));
 
         // response
 
@@ -14501,9 +12689,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> listProjectVpcChannelsV2 =
-        genForlistProjectVpcChannelsV2();
+        genForListProjectVpcChannelsV2();
 
-    private static HttpRequestDef<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> genForlistProjectVpcChannelsV2() {
+    private static HttpRequestDef<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> genForListProjectVpcChannelsV2() {
         // basic
         HttpRequestDef.Builder<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response> builder =
             HttpRequestDef
@@ -14517,72 +12705,60 @@ public class RomaMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getOffset,
+                ListProjectVpcChannelsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getLimit,
+                ListProjectVpcChannelsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getId, ListProjectVpcChannelsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getName, ListProjectVpcChannelsV2Request::setName));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getPreciseSearch,
+                ListProjectVpcChannelsV2Request::setPreciseSearch));
         builder.<String>withRequestField("member_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberHost, (req, v) -> {
-                req.setMemberHost(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberHost,
+                ListProjectVpcChannelsV2Request::setMemberHost));
         builder.<Integer>withRequestField("member_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberPort, (req, v) -> {
-                req.setMemberPort(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberPort,
+                ListProjectVpcChannelsV2Request::setMemberPort));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupName,
+                ListProjectVpcChannelsV2Request::setMemberGroupName));
         builder.<String>withRequestField("member_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMemberGroupId,
+                ListProjectVpcChannelsV2Request::setMemberGroupId));
         builder.<Boolean>withRequestField("members_return",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMembersReturn, (req, v) -> {
-                req.setMembersReturn(v);
-            }));
+            f -> f.withMarshaller(ListProjectVpcChannelsV2Request::getMembersReturn,
+                ListProjectVpcChannelsV2Request::setMembersReturn));
 
         // response
 
@@ -14590,9 +12766,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> listVpcChannelsV2 =
-        genForlistVpcChannelsV2();
+        genForListVpcChannelsV2();
 
-    private static HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> genForlistVpcChannelsV2() {
+    private static HttpRequestDef<ListVpcChannelsV2Request, ListVpcChannelsV2Response> genForListVpcChannelsV2() {
         // basic
         HttpRequestDef.Builder<ListVpcChannelsV2Request, ListVpcChannelsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcChannelsV2Request.class, ListVpcChannelsV2Response.class)
@@ -14605,79 +12781,60 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getInstanceId, ListVpcChannelsV2Request::setInstanceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getOffset, ListVpcChannelsV2Request::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getLimit, ListVpcChannelsV2Request::setLimit));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getId, ListVpcChannelsV2Request::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getName, ListVpcChannelsV2Request::setName));
         builder.<String>withRequestField("dict_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, (req, v) -> {
-                req.setDictCode(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getDictCode, ListVpcChannelsV2Request::setDictCode));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getPreciseSearch,
+                ListVpcChannelsV2Request::setPreciseSearch));
         builder.<String>withRequestField("member_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, (req, v) -> {
-                req.setMemberHost(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberHost, ListVpcChannelsV2Request::setMemberHost));
         builder.<Integer>withRequestField("member_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, (req, v) -> {
-                req.setMemberPort(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberPort, ListVpcChannelsV2Request::setMemberPort));
         builder.<String>withRequestField("member_group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName, (req, v) -> {
-                req.setMemberGroupName(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupName,
+                ListVpcChannelsV2Request::setMemberGroupName));
         builder.<String>withRequestField("member_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId,
+                ListVpcChannelsV2Request::setMemberGroupId));
 
         // response
 
@@ -14685,9 +12842,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> showDetailsOfMemberGroup =
-        genForshowDetailsOfMemberGroup();
+        genForShowDetailsOfMemberGroup();
 
-    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForshowDetailsOfMemberGroup() {
+    private static HttpRequestDef<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> genForShowDetailsOfMemberGroup() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse> builder =
             HttpRequestDef
@@ -14702,23 +12859,20 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getInstanceId,
+                ShowDetailsOfMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getVpcChannelId,
+                ShowDetailsOfMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfMemberGroupRequest::getMemberGroupId,
+                ShowDetailsOfMemberGroupRequest::setMemberGroupId));
 
         // response
 
@@ -14726,9 +12880,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> showDetailsOfVpcChannelV2 =
-        genForshowDetailsOfVpcChannelV2();
+        genForShowDetailsOfVpcChannelV2();
 
-    private static HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> genForshowDetailsOfVpcChannelV2() {
+    private static HttpRequestDef<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> genForShowDetailsOfVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> builder =
             HttpRequestDef
@@ -14744,16 +12898,14 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getInstanceId,
+                ShowDetailsOfVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(ShowDetailsOfVpcChannelV2Request::getVpcChannelId,
+                ShowDetailsOfVpcChannelV2Request::setVpcChannelId));
 
         // response
 
@@ -14761,9 +12913,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> updateBackendInstancesV2 =
-        genForupdateBackendInstancesV2();
+        genForUpdateBackendInstancesV2();
 
-    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForupdateBackendInstancesV2() {
+    private static HttpRequestDef<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> genForUpdateBackendInstancesV2() {
         // basic
         HttpRequestDef.Builder<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response> builder =
             HttpRequestDef
@@ -14777,23 +12929,19 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getInstanceId,
+                UpdateBackendInstancesV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getVpcChannelId,
+                UpdateBackendInstancesV2Request::setVpcChannelId));
         builder.<VpcMemberModify>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcMemberModify.class),
-            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBackendInstancesV2Request::getBody, UpdateBackendInstancesV2Request::setBody));
 
         // response
 
@@ -14801,9 +12949,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> updateHealthCheck =
-        genForupdateHealthCheck();
+        genForUpdateHealthCheck();
 
-    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForupdateHealthCheck() {
+    private static HttpRequestDef<UpdateHealthCheckRequest, UpdateHealthCheckResponse> genForUpdateHealthCheck() {
         // basic
         HttpRequestDef.Builder<UpdateHealthCheckRequest, UpdateHealthCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthCheckRequest.class, UpdateHealthCheckResponse.class)
@@ -14816,23 +12964,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getInstanceId, UpdateHealthCheckRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getVpcChannelId,
+                UpdateHealthCheckRequest::setVpcChannelId));
         builder.<VpcHealthConfig>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcHealthConfig.class),
-            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthCheckRequest::getBody, UpdateHealthCheckRequest::setBody));
 
         // response
 
@@ -14840,9 +12983,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> updateMemberGroup =
-        genForupdateMemberGroup();
+        genForUpdateMemberGroup();
 
-    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForupdateMemberGroup() {
+    private static HttpRequestDef<UpdateMemberGroupRequest, UpdateMemberGroupResponse> genForUpdateMemberGroup() {
         // basic
         HttpRequestDef.Builder<UpdateMemberGroupRequest, UpdateMemberGroupResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateMemberGroupRequest.class, UpdateMemberGroupResponse.class)
@@ -14856,30 +12999,24 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getInstanceId, UpdateMemberGroupRequest::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getVpcChannelId,
+                UpdateMemberGroupRequest::setVpcChannelId));
         builder.<String>withRequestField("member_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId, (req, v) -> {
-                req.setMemberGroupId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getMemberGroupId,
+                UpdateMemberGroupRequest::setMemberGroupId));
         builder.<MemberGroupCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MemberGroupCreate.class),
-            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberGroupRequest::getBody, UpdateMemberGroupRequest::setBody));
 
         // response
 
@@ -14887,9 +13024,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> updateProjectVpcChannel =
-        genForupdateProjectVpcChannel();
+        genForUpdateProjectVpcChannel();
 
-    private static HttpRequestDef<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> genForupdateProjectVpcChannel() {
+    private static HttpRequestDef<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> genForUpdateProjectVpcChannel() {
         // basic
         HttpRequestDef.Builder<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateProjectVpcChannelRequest.class, UpdateProjectVpcChannelResponse.class)
@@ -14902,9 +13039,7 @@ public class RomaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProjectVpcCreate.class),
-            f -> f.withMarshaller(UpdateProjectVpcChannelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateProjectVpcChannelRequest::getBody, UpdateProjectVpcChannelRequest::setBody));
 
         // response
 
@@ -14912,9 +13047,9 @@ public class RomaMeta {
     }
 
     public static final HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> updateVpcChannelV2 =
-        genForupdateVpcChannelV2();
+        genForUpdateVpcChannelV2();
 
-    private static HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> genForupdateVpcChannelV2() {
+    private static HttpRequestDef<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> genForUpdateVpcChannelV2() {
         // basic
         HttpRequestDef.Builder<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcChannelV2Request.class, UpdateVpcChannelV2Response.class)
@@ -14927,23 +13062,18 @@ public class RomaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getInstanceId, UpdateVpcChannelV2Request::setInstanceId));
         builder.<String>withRequestField("vpc_channel_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getVpcChannelId, (req, v) -> {
-                req.setVpcChannelId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getVpcChannelId,
+                UpdateVpcChannelV2Request::setVpcChannelId));
         builder.<VpcCreate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpcCreate.class),
-            f -> f.withMarshaller(UpdateVpcChannelV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVpcChannelV2Request::getBody, UpdateVpcChannelV2Request::setBody));
 
         // response
 

@@ -168,9 +168,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CfwMeta {
 
     public static final HttpRequestDef<AddAddressItemRequest, AddAddressItemResponse> addAddressItem =
-        genForaddAddressItem();
+        genForAddAddressItem();
 
-    private static HttpRequestDef<AddAddressItemRequest, AddAddressItemResponse> genForaddAddressItem() {
+    private static HttpRequestDef<AddAddressItemRequest, AddAddressItemResponse> genForAddAddressItem() {
         // basic
         HttpRequestDef.Builder<AddAddressItemRequest, AddAddressItemResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAddressItemRequest.class, AddAddressItemResponse.class)
@@ -183,23 +183,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAddressItemRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddAddressItemRequest::getEnterpriseProjectId,
+                AddAddressItemRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAddressItemRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddAddressItemRequest::getFwInstanceId, AddAddressItemRequest::setFwInstanceId));
         builder.<AddAddressItemsInfoDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddAddressItemsInfoDto.class),
-            f -> f.withMarshaller(AddAddressItemRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAddressItemRequest::getBody, AddAddressItemRequest::setBody));
 
         // response
 
@@ -207,9 +202,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<AddAddressSetRequest, AddAddressSetResponse> addAddressSet =
-        genForaddAddressSet();
+        genForAddAddressSet();
 
-    private static HttpRequestDef<AddAddressSetRequest, AddAddressSetResponse> genForaddAddressSet() {
+    private static HttpRequestDef<AddAddressSetRequest, AddAddressSetResponse> genForAddAddressSet() {
         // basic
         HttpRequestDef.Builder<AddAddressSetRequest, AddAddressSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAddressSetRequest.class, AddAddressSetResponse.class)
@@ -222,23 +217,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAddressSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddAddressSetRequest::getEnterpriseProjectId,
+                AddAddressSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAddressSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddAddressSetRequest::getFwInstanceId, AddAddressSetRequest::setFwInstanceId));
         builder.<AddAddressSetDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddAddressSetDto.class),
-            f -> f.withMarshaller(AddAddressSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAddressSetRequest::getBody, AddAddressSetRequest::setBody));
 
         // response
 
@@ -246,9 +236,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<AddBlackWhiteListRequest, AddBlackWhiteListResponse> addBlackWhiteList =
-        genForaddBlackWhiteList();
+        genForAddBlackWhiteList();
 
-    private static HttpRequestDef<AddBlackWhiteListRequest, AddBlackWhiteListResponse> genForaddBlackWhiteList() {
+    private static HttpRequestDef<AddBlackWhiteListRequest, AddBlackWhiteListResponse> genForAddBlackWhiteList() {
         // basic
         HttpRequestDef.Builder<AddBlackWhiteListRequest, AddBlackWhiteListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddBlackWhiteListRequest.class, AddBlackWhiteListResponse.class)
@@ -261,32 +251,28 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddBlackWhiteListRequest::getEnterpriseProjectId,
+                AddBlackWhiteListRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddBlackWhiteListRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddBlackWhiteListRequest::getFwInstanceId,
+                AddBlackWhiteListRequest::setFwInstanceId));
         builder.<AddBlackWhiteListDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddBlackWhiteListDto.class),
-            f -> f.withMarshaller(AddBlackWhiteListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddBlackWhiteListRequest::getBody, AddBlackWhiteListRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDomainSetRequest, AddDomainSetResponse> addDomainSet = genForaddDomainSet();
+    public static final HttpRequestDef<AddDomainSetRequest, AddDomainSetResponse> addDomainSet = genForAddDomainSet();
 
-    private static HttpRequestDef<AddDomainSetRequest, AddDomainSetResponse> genForaddDomainSet() {
+    private static HttpRequestDef<AddDomainSetRequest, AddDomainSetResponse> genForAddDomainSet() {
         // basic
         HttpRequestDef.Builder<AddDomainSetRequest, AddDomainSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDomainSetRequest.class, AddDomainSetResponse.class)
@@ -299,32 +285,27 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDomainSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddDomainSetRequest::getEnterpriseProjectId,
+                AddDomainSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDomainSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddDomainSetRequest::getFwInstanceId, AddDomainSetRequest::setFwInstanceId));
         builder.<AddDomainSetInfoDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDomainSetInfoDto.class),
-            f -> f.withMarshaller(AddDomainSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDomainSetRequest::getBody, AddDomainSetRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDomainsRequest, AddDomainsResponse> addDomains = genForaddDomains();
+    public static final HttpRequestDef<AddDomainsRequest, AddDomainsResponse> addDomains = genForAddDomains();
 
-    private static HttpRequestDef<AddDomainsRequest, AddDomainsResponse> genForaddDomains() {
+    private static HttpRequestDef<AddDomainsRequest, AddDomainsResponse> genForAddDomains() {
         // basic
         HttpRequestDef.Builder<AddDomainsRequest, AddDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDomainsRequest.class, AddDomainsResponse.class)
@@ -337,39 +318,32 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDomainsRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(AddDomainsRequest::getSetId, AddDomainsRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddDomainsRequest::getEnterpriseProjectId,
+                AddDomainsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDomainsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddDomainsRequest::getFwInstanceId, AddDomainsRequest::setFwInstanceId));
         builder.<AddDomainListDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDomainListDto.class),
-            f -> f.withMarshaller(AddDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddDomainsRequest::getBody, AddDomainsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> addLogConfig = genForaddLogConfig();
+    public static final HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> addLogConfig = genForAddLogConfig();
 
-    private static HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> genForaddLogConfig() {
+    private static HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> genForAddLogConfig() {
         // basic
         HttpRequestDef.Builder<AddLogConfigRequest, AddLogConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddLogConfigRequest.class, AddLogConfigResponse.class)
@@ -382,23 +356,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddLogConfigRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddLogConfigRequest::getFwInstanceId, AddLogConfigRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddLogConfigRequest::getEnterpriseProjectId,
+                AddLogConfigRequest::setEnterpriseProjectId));
         builder.<LogConfigDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogConfigDto.class),
-            f -> f.withMarshaller(AddLogConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddLogConfigRequest::getBody, AddLogConfigRequest::setBody));
 
         // response
 
@@ -406,9 +375,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<AddServiceItemsRequest, AddServiceItemsResponse> addServiceItems =
-        genForaddServiceItems();
+        genForAddServiceItems();
 
-    private static HttpRequestDef<AddServiceItemsRequest, AddServiceItemsResponse> genForaddServiceItems() {
+    private static HttpRequestDef<AddServiceItemsRequest, AddServiceItemsResponse> genForAddServiceItems() {
         // basic
         HttpRequestDef.Builder<AddServiceItemsRequest, AddServiceItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddServiceItemsRequest.class, AddServiceItemsResponse.class)
@@ -421,23 +390,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServiceItemsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddServiceItemsRequest::getEnterpriseProjectId,
+                AddServiceItemsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServiceItemsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddServiceItemsRequest::getFwInstanceId, AddServiceItemsRequest::setFwInstanceId));
         builder.<AddServiceItemsUsingPOSTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddServiceItemsUsingPOSTRequestBody.class),
-            f -> f.withMarshaller(AddServiceItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddServiceItemsRequest::getBody, AddServiceItemsRequest::setBody));
 
         // response
 
@@ -445,9 +409,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<AddServiceSetRequest, AddServiceSetResponse> addServiceSet =
-        genForaddServiceSet();
+        genForAddServiceSet();
 
-    private static HttpRequestDef<AddServiceSetRequest, AddServiceSetResponse> genForaddServiceSet() {
+    private static HttpRequestDef<AddServiceSetRequest, AddServiceSetResponse> genForAddServiceSet() {
         // basic
         HttpRequestDef.Builder<AddServiceSetRequest, AddServiceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddServiceSetRequest.class, AddServiceSetResponse.class)
@@ -460,23 +424,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServiceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddServiceSetRequest::getEnterpriseProjectId,
+                AddServiceSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddServiceSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddServiceSetRequest::getFwInstanceId, AddServiceSetRequest::setFwInstanceId));
         builder.<AddServiceSetUsingPOSTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddServiceSetUsingPOSTRequestBody.class),
-            f -> f.withMarshaller(AddServiceSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddServiceSetRequest::getBody, AddServiceSetRequest::setBody));
 
         // response
 
@@ -484,9 +443,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> batchDeleteAddressItems =
-        genForbatchDeleteAddressItems();
+        genForBatchDeleteAddressItems();
 
-    private static HttpRequestDef<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> genForbatchDeleteAddressItems() {
+    private static HttpRequestDef<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> genForBatchDeleteAddressItems() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteAddressItemsRequest.class, BatchDeleteAddressItemsResponse.class)
@@ -499,23 +458,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getEnterpriseProjectId,
+                BatchDeleteAddressItemsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getFwInstanceId,
+                BatchDeleteAddressItemsRequest::setFwInstanceId));
         builder.<DeleteAddressItemsInfoDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAddressItemsInfoDto.class),
-            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAddressItemsRequest::getBody, BatchDeleteAddressItemsRequest::setBody));
 
         // response
 
@@ -523,9 +478,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> batchDeleteServiceItems =
-        genForbatchDeleteServiceItems();
+        genForBatchDeleteServiceItems();
 
-    private static HttpRequestDef<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> genForbatchDeleteServiceItems() {
+    private static HttpRequestDef<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> genForBatchDeleteServiceItems() {
         // basic
         HttpRequestDef.Builder<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteServiceItemsRequest.class, BatchDeleteServiceItemsResponse.class)
@@ -538,23 +493,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getEnterpriseProjectId,
+                BatchDeleteServiceItemsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getFwInstanceId,
+                BatchDeleteServiceItemsRequest::setFwInstanceId));
         builder.<DeleteServiceItemDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteServiceItemDto.class),
-            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteServiceItemsRequest::getBody, BatchDeleteServiceItemsRequest::setBody));
 
         // response
 
@@ -562,9 +513,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus =
-        genForchangeEastWestFirewallStatus();
+        genForChangeEastWestFirewallStatus();
 
-    private static HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> genForchangeEastWestFirewallStatus() {
+    private static HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> genForChangeEastWestFirewallStatus() {
         // basic
         HttpRequestDef.Builder<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> builder =
             HttpRequestDef
@@ -580,23 +531,20 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getEnterpriseProjectId,
+                ChangeEastWestFirewallStatusRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getFwInstanceId,
+                ChangeEastWestFirewallStatusRequest::setFwInstanceId));
         builder.<ChangeProtectStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeProtectStatusRequestBody.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody,
+                ChangeEastWestFirewallStatusRequest::setBody));
 
         // response
 
@@ -604,9 +552,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> createEastWestFirewall =
-        genForcreateEastWestFirewall();
+        genForCreateEastWestFirewall();
 
-    private static HttpRequestDef<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> genForcreateEastWestFirewall() {
+    private static HttpRequestDef<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> genForCreateEastWestFirewall() {
         // basic
         HttpRequestDef.Builder<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEastWestFirewallRequest.class, CreateEastWestFirewallResponse.class)
@@ -619,23 +567,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEastWestFirewallRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getEnterpriseProjectId,
+                CreateEastWestFirewallRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEastWestFirewallRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getFwInstanceId,
+                CreateEastWestFirewallRequest::setFwInstanceId));
         builder.<CreateEastWestFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateEastWestFirewallRequestBody.class),
-            f -> f.withMarshaller(CreateEastWestFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getBody, CreateEastWestFirewallRequest::setBody));
 
         // response
 
@@ -643,9 +587,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
-        genForcreateFirewall();
+        genForCreateFirewall();
 
-    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForcreateFirewall() {
+    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForCreateFirewall() {
         // basic
         HttpRequestDef.Builder<CreateFirewallRequest, CreateFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFirewallRequest.class, CreateFirewallResponse.class)
@@ -658,23 +602,17 @@ public class CfwMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFirewallRequest::getXClientToken, (req, v) -> {
-                req.setXClientToken(v);
-            }));
+            f -> f.withMarshaller(CreateFirewallRequest::getXClientToken, CreateFirewallRequest::setXClientToken));
         builder.<String>withRequestField("X-Trace-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFirewallRequest::getXTraceId, (req, v) -> {
-                req.setXTraceId(v);
-            }));
+            f -> f.withMarshaller(CreateFirewallRequest::getXTraceId, CreateFirewallRequest::setXTraceId));
         builder.<CreateFirewallReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFirewallReq.class),
-            f -> f.withMarshaller(CreateFirewallRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFirewallRequest::getBody, CreateFirewallRequest::setBody));
 
         // response
 
@@ -682,9 +620,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteAddressItemRequest, DeleteAddressItemResponse> deleteAddressItem =
-        genFordeleteAddressItem();
+        genForDeleteAddressItem();
 
-    private static HttpRequestDef<DeleteAddressItemRequest, DeleteAddressItemResponse> genFordeleteAddressItem() {
+    private static HttpRequestDef<DeleteAddressItemRequest, DeleteAddressItemResponse> genForDeleteAddressItem() {
         // basic
         HttpRequestDef.Builder<DeleteAddressItemRequest, DeleteAddressItemResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddressItemRequest.class, DeleteAddressItemResponse.class)
@@ -697,23 +635,19 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressItemRequest::getItemId, (req, v) -> {
-                req.setItemId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressItemRequest::getItemId, DeleteAddressItemRequest::setItemId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressItemRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressItemRequest::getEnterpriseProjectId,
+                DeleteAddressItemRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressItemRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressItemRequest::getFwInstanceId,
+                DeleteAddressItemRequest::setFwInstanceId));
 
         // response
 
@@ -721,9 +655,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteAddressSetRequest, DeleteAddressSetResponse> deleteAddressSet =
-        genFordeleteAddressSet();
+        genForDeleteAddressSet();
 
-    private static HttpRequestDef<DeleteAddressSetRequest, DeleteAddressSetResponse> genFordeleteAddressSet() {
+    private static HttpRequestDef<DeleteAddressSetRequest, DeleteAddressSetResponse> genForDeleteAddressSet() {
         // basic
         HttpRequestDef.Builder<DeleteAddressSetRequest, DeleteAddressSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddressSetRequest.class, DeleteAddressSetResponse.class)
@@ -736,23 +670,18 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressSetRequest::getSetId, DeleteAddressSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressSetRequest::getEnterpriseProjectId,
+                DeleteAddressSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAddressSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAddressSetRequest::getFwInstanceId, DeleteAddressSetRequest::setFwInstanceId));
 
         // response
 
@@ -760,9 +689,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> deleteBlackWhiteList =
-        genFordeleteBlackWhiteList();
+        genForDeleteBlackWhiteList();
 
-    private static HttpRequestDef<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> genFordeleteBlackWhiteList() {
+    private static HttpRequestDef<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> genForDeleteBlackWhiteList() {
         // basic
         HttpRequestDef.Builder<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteBlackWhiteListRequest.class, DeleteBlackWhiteListResponse.class)
@@ -775,23 +704,19 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getListId, (req, v) -> {
-                req.setListId(v);
-            }));
+            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getListId, DeleteBlackWhiteListRequest::setListId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getEnterpriseProjectId,
+                DeleteBlackWhiteListRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteBlackWhiteListRequest::getFwInstanceId,
+                DeleteBlackWhiteListRequest::setFwInstanceId));
 
         // response
 
@@ -799,9 +724,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainSetRequest, DeleteDomainSetResponse> deleteDomainSet =
-        genFordeleteDomainSet();
+        genForDeleteDomainSet();
 
-    private static HttpRequestDef<DeleteDomainSetRequest, DeleteDomainSetResponse> genFordeleteDomainSet() {
+    private static HttpRequestDef<DeleteDomainSetRequest, DeleteDomainSetResponse> genForDeleteDomainSet() {
         // basic
         HttpRequestDef.Builder<DeleteDomainSetRequest, DeleteDomainSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainSetRequest.class, DeleteDomainSetResponse.class)
@@ -814,23 +739,18 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainSetRequest::getSetId, DeleteDomainSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainSetRequest::getEnterpriseProjectId,
+                DeleteDomainSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainSetRequest::getFwInstanceId, DeleteDomainSetRequest::setFwInstanceId));
 
         // response
 
@@ -838,9 +758,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomains =
-        genFordeleteDomains();
+        genForDeleteDomains();
 
-    private static HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> genFordeleteDomains() {
+    private static HttpRequestDef<DeleteDomainsRequest, DeleteDomainsResponse> genForDeleteDomains() {
         // basic
         HttpRequestDef.Builder<DeleteDomainsRequest, DeleteDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainsRequest.class, DeleteDomainsResponse.class)
@@ -853,23 +773,18 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainsRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainsRequest::getSetId, DeleteDomainsRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainsRequest::getEnterpriseProjectId,
+                DeleteDomainsRequest::setEnterpriseProjectId));
         builder.<DeleteDomainDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDomainDto.class),
-            f -> f.withMarshaller(DeleteDomainsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteDomainsRequest::getBody, DeleteDomainsRequest::setBody));
 
         // response
 
@@ -877,9 +792,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
-        genFordeleteFirewall();
+        genForDeleteFirewall();
 
-    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genFordeleteFirewall() {
+    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genForDeleteFirewall() {
         // basic
         HttpRequestDef.Builder<DeleteFirewallRequest, DeleteFirewallResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFirewallRequest.class, DeleteFirewallResponse.class)
@@ -892,9 +807,7 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFirewallRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteFirewallRequest::getResourceId, DeleteFirewallRequest::setResourceId));
 
         // response
 
@@ -902,9 +815,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteServiceItemRequest, DeleteServiceItemResponse> deleteServiceItem =
-        genFordeleteServiceItem();
+        genForDeleteServiceItem();
 
-    private static HttpRequestDef<DeleteServiceItemRequest, DeleteServiceItemResponse> genFordeleteServiceItem() {
+    private static HttpRequestDef<DeleteServiceItemRequest, DeleteServiceItemResponse> genForDeleteServiceItem() {
         // basic
         HttpRequestDef.Builder<DeleteServiceItemRequest, DeleteServiceItemResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceItemRequest.class, DeleteServiceItemResponse.class)
@@ -917,23 +830,19 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceItemRequest::getItemId, (req, v) -> {
-                req.setItemId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceItemRequest::getItemId, DeleteServiceItemRequest::setItemId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceItemRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceItemRequest::getEnterpriseProjectId,
+                DeleteServiceItemRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceItemRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceItemRequest::getFwInstanceId,
+                DeleteServiceItemRequest::setFwInstanceId));
 
         // response
 
@@ -941,9 +850,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteServiceSetRequest, DeleteServiceSetResponse> deleteServiceSet =
-        genFordeleteServiceSet();
+        genForDeleteServiceSet();
 
-    private static HttpRequestDef<DeleteServiceSetRequest, DeleteServiceSetResponse> genFordeleteServiceSet() {
+    private static HttpRequestDef<DeleteServiceSetRequest, DeleteServiceSetResponse> genForDeleteServiceSet() {
         // basic
         HttpRequestDef.Builder<DeleteServiceSetRequest, DeleteServiceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceSetRequest.class, DeleteServiceSetResponse.class)
@@ -956,23 +865,18 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceSetRequest::getSetId, DeleteServiceSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceSetRequest::getEnterpriseProjectId,
+                DeleteServiceSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteServiceSetRequest::getFwInstanceId, DeleteServiceSetRequest::setFwInstanceId));
 
         // response
 
@@ -980,9 +884,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListAccessControlLogsRequest, ListAccessControlLogsResponse> listAccessControlLogs =
-        genForlistAccessControlLogs();
+        genForListAccessControlLogs();
 
-    private static HttpRequestDef<ListAccessControlLogsRequest, ListAccessControlLogsResponse> genForlistAccessControlLogs() {
+    private static HttpRequestDef<ListAccessControlLogsRequest, ListAccessControlLogsResponse> genForListAccessControlLogs() {
         // basic
         HttpRequestDef.Builder<ListAccessControlLogsRequest, ListAccessControlLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAccessControlLogsRequest.class, ListAccessControlLogsResponse.class)
@@ -995,135 +899,103 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getFwInstanceId,
+                ListAccessControlLogsRequest::setFwInstanceId));
         builder.<String>withRequestField("rule_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getRuleId, (req, v) -> {
-                req.setRuleId(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getRuleId, ListAccessControlLogsRequest::setRuleId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getStartTime,
+                ListAccessControlLogsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getEndTime, ListAccessControlLogsRequest::setEndTime));
         builder.<String>withRequestField("src_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcIp, (req, v) -> {
-                req.setSrcIp(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcIp, ListAccessControlLogsRequest::setSrcIp));
         builder.<Integer>withRequestField("src_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcPort, (req, v) -> {
-                req.setSrcPort(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcPort, ListAccessControlLogsRequest::setSrcPort));
         builder.<String>withRequestField("dst_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstIp, (req, v) -> {
-                req.setDstIp(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstIp, ListAccessControlLogsRequest::setDstIp));
         builder.<Integer>withRequestField("dst_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstPort, (req, v) -> {
-                req.setDstPort(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstPort, ListAccessControlLogsRequest::setDstPort));
         builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getProtocol,
+                ListAccessControlLogsRequest::setProtocol));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getApp, ListAccessControlLogsRequest::setApp));
         builder.<String>withRequestField("log_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getLogId, (req, v) -> {
-                req.setLogId(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getLogId, ListAccessControlLogsRequest::setLogId));
         builder.<Integer>withRequestField("next_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getNextDate, (req, v) -> {
-                req.setNextDate(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getNextDate,
+                ListAccessControlLogsRequest::setNextDate));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getOffset, ListAccessControlLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getLimit, ListAccessControlLogsRequest::setLimit));
         builder.<ListAccessControlLogsRequest.LogTypeEnum>withRequestField("log_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAccessControlLogsRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getLogType, (req, v) -> {
-                req.setLogType(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getLogType, ListAccessControlLogsRequest::setLogType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getEnterpriseProjectId,
+                ListAccessControlLogsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("dst_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstHost, (req, v) -> {
-                req.setDstHost(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstHost, ListAccessControlLogsRequest::setDstHost));
         builder.<String>withRequestField("rule_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getRuleName, (req, v) -> {
-                req.setRuleName(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getRuleName,
+                ListAccessControlLogsRequest::setRuleName));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessControlLogsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getAction, ListAccessControlLogsRequest::setAction));
 
         // response
 
@@ -1131,9 +1003,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListAddressItemsRequest, ListAddressItemsResponse> listAddressItems =
-        genForlistAddressItems();
+        genForListAddressItems();
 
-    private static HttpRequestDef<ListAddressItemsRequest, ListAddressItemsResponse> genForlistAddressItems() {
+    private static HttpRequestDef<ListAddressItemsRequest, ListAddressItemsResponse> genForListAddressItems() {
         // basic
         HttpRequestDef.Builder<ListAddressItemsRequest, ListAddressItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddressItemsRequest.class, ListAddressItemsResponse.class)
@@ -1146,51 +1018,38 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getSetId, ListAddressItemsRequest::setSetId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getKeyWord, ListAddressItemsRequest::setKeyWord));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getLimit, ListAddressItemsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getOffset, ListAddressItemsRequest::setOffset));
         builder.<String>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getAddress, (req, v) -> {
-                req.setAddress(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getAddress, ListAddressItemsRequest::setAddress));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getEnterpriseProjectId,
+                ListAddressItemsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressItemsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAddressItemsRequest::getFwInstanceId, ListAddressItemsRequest::setFwInstanceId));
 
         // response
 
@@ -1198,9 +1057,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListAddressSetDetailRequest, ListAddressSetDetailResponse> listAddressSetDetail =
-        genForlistAddressSetDetail();
+        genForListAddressSetDetail();
 
-    private static HttpRequestDef<ListAddressSetDetailRequest, ListAddressSetDetailResponse> genForlistAddressSetDetail() {
+    private static HttpRequestDef<ListAddressSetDetailRequest, ListAddressSetDetailResponse> genForListAddressSetDetail() {
         // basic
         HttpRequestDef.Builder<ListAddressSetDetailRequest, ListAddressSetDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAddressSetDetailRequest.class, ListAddressSetDetailResponse.class)
@@ -1213,23 +1072,19 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetDetailRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetDetailRequest::getSetId, ListAddressSetDetailRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetDetailRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetDetailRequest::getEnterpriseProjectId,
+                ListAddressSetDetailRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetDetailRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetDetailRequest::getFwInstanceId,
+                ListAddressSetDetailRequest::setFwInstanceId));
 
         // response
 
@@ -1237,9 +1092,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListAddressSetsRequest, ListAddressSetsResponse> listAddressSets =
-        genForlistAddressSets();
+        genForListAddressSets();
 
-    private static HttpRequestDef<ListAddressSetsRequest, ListAddressSetsResponse> genForlistAddressSets() {
+    private static HttpRequestDef<ListAddressSetsRequest, ListAddressSetsResponse> genForListAddressSets() {
         // basic
         HttpRequestDef.Builder<ListAddressSetsRequest, ListAddressSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddressSetsRequest.class, ListAddressSetsResponse.class)
@@ -1252,58 +1107,43 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getObjectId, ListAddressSetsRequest::setObjectId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getKeyWord, ListAddressSetsRequest::setKeyWord));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getLimit, ListAddressSetsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getOffset, ListAddressSetsRequest::setOffset));
         builder.<String>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getAddress, (req, v) -> {
-                req.setAddress(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getAddress, ListAddressSetsRequest::setAddress));
         builder.<ListAddressSetsRequest.AddressTypeEnum>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAddressSetsRequest.AddressTypeEnum.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getAddressType, (req, v) -> {
-                req.setAddressType(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getAddressType, ListAddressSetsRequest::setAddressType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getEnterpriseProjectId,
+                ListAddressSetsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAddressSetsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAddressSetsRequest::getFwInstanceId, ListAddressSetsRequest::setFwInstanceId));
 
         // response
 
@@ -1311,9 +1151,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListAttackLogsRequest, ListAttackLogsResponse> listAttackLogs =
-        genForlistAttackLogs();
+        genForListAttackLogs();
 
-    private static HttpRequestDef<ListAttackLogsRequest, ListAttackLogsResponse> genForlistAttackLogs() {
+    private static HttpRequestDef<ListAttackLogsRequest, ListAttackLogsResponse> genForListAttackLogs() {
         // basic
         HttpRequestDef.Builder<ListAttackLogsRequest, ListAttackLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAttackLogsRequest.class, ListAttackLogsResponse.class)
@@ -1326,156 +1166,113 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getStartTime, ListAttackLogsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getEndTime, ListAttackLogsRequest::setEndTime));
         builder.<String>withRequestField("src_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getSrcIp, (req, v) -> {
-                req.setSrcIp(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getSrcIp, ListAttackLogsRequest::setSrcIp));
         builder.<Integer>withRequestField("src_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getSrcPort, (req, v) -> {
-                req.setSrcPort(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getSrcPort, ListAttackLogsRequest::setSrcPort));
         builder.<String>withRequestField("dst_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getDstIp, (req, v) -> {
-                req.setDstIp(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstIp, ListAttackLogsRequest::setDstIp));
         builder.<Integer>withRequestField("dst_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getDstPort, (req, v) -> {
-                req.setDstPort(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstPort, ListAttackLogsRequest::setDstPort));
         builder.<ListAttackLogsRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAttackLogsRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getProtocol, ListAttackLogsRequest::setProtocol));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getApp, ListAttackLogsRequest::setApp));
         builder.<String>withRequestField("log_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getLogId, (req, v) -> {
-                req.setLogId(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getLogId, ListAttackLogsRequest::setLogId));
         builder.<Long>withRequestField("next_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getNextDate, (req, v) -> {
-                req.setNextDate(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getNextDate, ListAttackLogsRequest::setNextDate));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getOffset, ListAttackLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getLimit, ListAttackLogsRequest::setLimit));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getFwInstanceId, ListAttackLogsRequest::setFwInstanceId));
         builder.<ListAttackLogsRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAttackLogsRequest.ActionEnum.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getAction, ListAttackLogsRequest::setAction));
         builder.<ListAttackLogsRequest.DirectionEnum>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAttackLogsRequest.DirectionEnum.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getDirection, ListAttackLogsRequest::setDirection));
         builder.<String>withRequestField("attack_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getAttackType, (req, v) -> {
-                req.setAttackType(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getAttackType, ListAttackLogsRequest::setAttackType));
         builder.<String>withRequestField("attack_rule",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getAttackRule, (req, v) -> {
-                req.setAttackRule(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getAttackRule, ListAttackLogsRequest::setAttackRule));
         builder.<String>withRequestField("level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getLevel, (req, v) -> {
-                req.setLevel(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getLevel, ListAttackLogsRequest::setLevel));
         builder.<String>withRequestField("source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getSource, (req, v) -> {
-                req.setSource(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getSource, ListAttackLogsRequest::setSource));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getEnterpriseProjectId,
+                ListAttackLogsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("dst_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getDstHost, (req, v) -> {
-                req.setDstHost(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstHost, ListAttackLogsRequest::setDstHost));
         builder.<ListAttackLogsRequest.LogTypeEnum>withRequestField("log_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAttackLogsRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getLogType, (req, v) -> {
-                req.setLogType(v);
-            }));
+            f -> f.withMarshaller(ListAttackLogsRequest::getLogType, ListAttackLogsRequest::setLogType));
 
         // response
 
@@ -1483,9 +1280,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> listBlackWhiteLists =
-        genForlistBlackWhiteLists();
+        genForListBlackWhiteLists();
 
-    private static HttpRequestDef<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> genForlistBlackWhiteLists() {
+    private static HttpRequestDef<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> genForListBlackWhiteLists() {
         // basic
         HttpRequestDef.Builder<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBlackWhiteListsRequest.class, ListBlackWhiteListsResponse.class)
@@ -1498,65 +1295,50 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getObjectId, ListBlackWhiteListsRequest::setObjectId));
         builder.<ListBlackWhiteListsRequest.ListTypeEnum>withRequestField("list_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBlackWhiteListsRequest.ListTypeEnum.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getListType, (req, v) -> {
-                req.setListType(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getListType, ListBlackWhiteListsRequest::setListType));
         builder.<ListBlackWhiteListsRequest.AddressTypeEnum>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBlackWhiteListsRequest.AddressTypeEnum.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getAddressType, (req, v) -> {
-                req.setAddressType(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getAddressType,
+                ListBlackWhiteListsRequest::setAddressType));
         builder.<String>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getAddress, (req, v) -> {
-                req.setAddress(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getAddress, ListBlackWhiteListsRequest::setAddress));
         builder.<String>withRequestField("port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getPort, (req, v) -> {
-                req.setPort(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getPort, ListBlackWhiteListsRequest::setPort));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getLimit, ListBlackWhiteListsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getOffset, ListBlackWhiteListsRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getEnterpriseProjectId,
+                ListBlackWhiteListsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBlackWhiteListsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListBlackWhiteListsRequest::getFwInstanceId,
+                ListBlackWhiteListsRequest::setFwInstanceId));
 
         // response
 
@@ -1564,9 +1346,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListDnsServersRequest, ListDnsServersResponse> listDnsServers =
-        genForlistDnsServers();
+        genForListDnsServers();
 
-    private static HttpRequestDef<ListDnsServersRequest, ListDnsServersResponse> genForlistDnsServers() {
+    private static HttpRequestDef<ListDnsServersRequest, ListDnsServersResponse> genForListDnsServers() {
         // basic
         HttpRequestDef.Builder<ListDnsServersRequest, ListDnsServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDnsServersRequest.class, ListDnsServersResponse.class)
@@ -1579,30 +1361,23 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDnsServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDnsServersRequest::getLimit, ListDnsServersRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDnsServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDnsServersRequest::getOffset, ListDnsServersRequest::setOffset));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDnsServersRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDnsServersRequest::getFwInstanceId, ListDnsServersRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDnsServersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDnsServersRequest::getEnterpriseProjectId,
+                ListDnsServersRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1610,9 +1385,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListDomainParseDetailRequest, ListDomainParseDetailResponse> listDomainParseDetail =
-        genForlistDomainParseDetail();
+        genForListDomainParseDetail();
 
-    private static HttpRequestDef<ListDomainParseDetailRequest, ListDomainParseDetailResponse> genForlistDomainParseDetail() {
+    private static HttpRequestDef<ListDomainParseDetailRequest, ListDomainParseDetailResponse> genForListDomainParseDetail() {
         // basic
         HttpRequestDef.Builder<ListDomainParseDetailRequest, ListDomainParseDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListDomainParseDetailRequest.class, ListDomainParseDetailResponse.class)
@@ -1625,30 +1400,26 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainParseDetailRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListDomainParseDetailRequest::getDomainName,
+                ListDomainParseDetailRequest::setDomainName));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainParseDetailRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainParseDetailRequest::getEnterpriseProjectId,
+                ListDomainParseDetailRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainParseDetailRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDomainParseDetailRequest::getFwInstanceId,
+                ListDomainParseDetailRequest::setFwInstanceId));
         builder.<String>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainParseDetailRequest::getAddressType, (req, v) -> {
-                req.setAddressType(v);
-            }));
+            f -> f.withMarshaller(ListDomainParseDetailRequest::getAddressType,
+                ListDomainParseDetailRequest::setAddressType));
 
         // response
 
@@ -1656,9 +1427,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListDomainSetsRequest, ListDomainSetsResponse> listDomainSets =
-        genForlistDomainSets();
+        genForListDomainSets();
 
-    private static HttpRequestDef<ListDomainSetsRequest, ListDomainSetsResponse> genForlistDomainSets() {
+    private static HttpRequestDef<ListDomainSetsRequest, ListDomainSetsResponse> genForListDomainSets() {
         // basic
         HttpRequestDef.Builder<ListDomainSetsRequest, ListDomainSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainSetsRequest.class, ListDomainSetsResponse.class)
@@ -1671,67 +1442,52 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getEnterpriseProjectId,
+                ListDomainSetsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getFwInstanceId, ListDomainSetsRequest::setFwInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getLimit, ListDomainSetsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getOffset, ListDomainSetsRequest::setOffset));
         builder.<String>withRequestField("object_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getObjectId, ListDomainSetsRequest::setObjectId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getKeyWord, ListDomainSetsRequest::setKeyWord));
         builder.<Integer>withRequestField("domain_set_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getDomainSetType, (req, v) -> {
-                req.setDomainSetType(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getDomainSetType, ListDomainSetsRequest::setDomainSetType));
         builder.<Integer>withRequestField("config_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainSetsRequest::getConfigStatus, (req, v) -> {
-                req.setConfigStatus(v);
-            }));
+            f -> f.withMarshaller(ListDomainSetsRequest::getConfigStatus, ListDomainSetsRequest::setConfigStatus));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForlistDomains();
+    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForListDomains();
 
-    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForlistDomains() {
+    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForListDomains() {
         // basic
         HttpRequestDef.Builder<ListDomainsRequest, ListDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainsRequest.class, ListDomainsResponse.class)
@@ -1744,65 +1500,48 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDomainSetId, (req, v) -> {
-                req.setDomainSetId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDomainSetId, ListDomainsRequest::setDomainSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getEnterpriseProjectId,
+                ListDomainsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getFwInstanceId, ListDomainsRequest::setFwInstanceId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getLimit, ListDomainsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDomainsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getOffset, ListDomainsRequest::setOffset));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDomainName, ListDomainsRequest::setDomainName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getDescription, ListDomainsRequest::setDescription));
         builder.<String>withRequestField("set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getSetId, ListDomainsRequest::setSetId));
         builder.<String>withRequestField("object_Id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListDomainsRequest::getObjectId, ListDomainsRequest::setObjectId));
 
         // response
 
@@ -1810,9 +1549,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListEastWestFirewallRequest, ListEastWestFirewallResponse> listEastWestFirewall =
-        genForlistEastWestFirewall();
+        genForListEastWestFirewall();
 
-    private static HttpRequestDef<ListEastWestFirewallRequest, ListEastWestFirewallResponse> genForlistEastWestFirewall() {
+    private static HttpRequestDef<ListEastWestFirewallRequest, ListEastWestFirewallResponse> genForListEastWestFirewall() {
         // basic
         HttpRequestDef.Builder<ListEastWestFirewallRequest, ListEastWestFirewallResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEastWestFirewallRequest.class, ListEastWestFirewallResponse.class)
@@ -1825,30 +1564,24 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEastWestFirewallRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getLimit, ListEastWestFirewallRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEastWestFirewallRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getOffset, ListEastWestFirewallRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEastWestFirewallRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getEnterpriseProjectId,
+                ListEastWestFirewallRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEastWestFirewallRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getFwInstanceId,
+                ListEastWestFirewallRequest::setFwInstanceId));
 
         // response
 
@@ -1856,9 +1589,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListFirewallDetailRequest, ListFirewallDetailResponse> listFirewallDetail =
-        genForlistFirewallDetail();
+        genForListFirewallDetail();
 
-    private static HttpRequestDef<ListFirewallDetailRequest, ListFirewallDetailResponse> genForlistFirewallDetail() {
+    private static HttpRequestDef<ListFirewallDetailRequest, ListFirewallDetailResponse> genForListFirewallDetail() {
         // basic
         HttpRequestDef.Builder<ListFirewallDetailRequest, ListFirewallDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFirewallDetailRequest.class, ListFirewallDetailResponse.class)
@@ -1871,37 +1604,30 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFirewallDetailRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFirewallDetailRequest::getOffset, ListFirewallDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFirewallDetailRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFirewallDetailRequest::getLimit, ListFirewallDetailRequest::setLimit));
         builder.<ListFirewallDetailRequest.ServiceTypeEnum>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListFirewallDetailRequest.ServiceTypeEnum.class),
-            f -> f.withMarshaller(ListFirewallDetailRequest::getServiceType, (req, v) -> {
-                req.setServiceType(v);
-            }));
+            f -> f.withMarshaller(ListFirewallDetailRequest::getServiceType,
+                ListFirewallDetailRequest::setServiceType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirewallDetailRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListFirewallDetailRequest::getEnterpriseProjectId,
+                ListFirewallDetailRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirewallDetailRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFirewallDetailRequest::getFwInstanceId,
+                ListFirewallDetailRequest::setFwInstanceId));
 
         // response
 
@@ -1909,9 +1635,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListFirewallListRequest, ListFirewallListResponse> listFirewallList =
-        genForlistFirewallList();
+        genForListFirewallList();
 
-    private static HttpRequestDef<ListFirewallListRequest, ListFirewallListResponse> genForlistFirewallList() {
+    private static HttpRequestDef<ListFirewallListRequest, ListFirewallListResponse> genForListFirewallList() {
         // basic
         HttpRequestDef.Builder<ListFirewallListRequest, ListFirewallListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListFirewallListRequest.class, ListFirewallListResponse.class)
@@ -1924,25 +1650,22 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFirewallListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListFirewallListRequest::getEnterpriseProjectId,
+                ListFirewallListRequest::setEnterpriseProjectId));
         builder.<QueryFireWallInstanceDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryFireWallInstanceDto.class),
-            f -> f.withMarshaller(ListFirewallListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListFirewallListRequest::getBody, ListFirewallListRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForlistFlowLogs();
+    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForListFlowLogs();
 
-    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForlistFlowLogs() {
+    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForListFlowLogs() {
         // basic
         HttpRequestDef.Builder<ListFlowLogsRequest, ListFlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlowLogsRequest.class, ListFlowLogsResponse.class)
@@ -1955,130 +1678,97 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getFwInstanceId, ListFlowLogsRequest::setFwInstanceId));
         builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getDirection, ListFlowLogsRequest::setDirection));
         builder.<ListFlowLogsRequest.LogTypeEnum>withRequestField("log_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlowLogsRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getLogType, (req, v) -> {
-                req.setLogType(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getLogType, ListFlowLogsRequest::setLogType));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getStartTime, ListFlowLogsRequest::setStartTime));
         builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getEndTime, ListFlowLogsRequest::setEndTime));
         builder.<String>withRequestField("src_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getSrcIp, (req, v) -> {
-                req.setSrcIp(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getSrcIp, ListFlowLogsRequest::setSrcIp));
         builder.<Integer>withRequestField("src_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getSrcPort, (req, v) -> {
-                req.setSrcPort(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getSrcPort, ListFlowLogsRequest::setSrcPort));
         builder.<String>withRequestField("dst_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getDstIp, (req, v) -> {
-                req.setDstIp(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstIp, ListFlowLogsRequest::setDstIp));
         builder.<Integer>withRequestField("dst_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getDstPort, (req, v) -> {
-                req.setDstPort(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstPort, ListFlowLogsRequest::setDstPort));
         builder.<ListFlowLogsRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFlowLogsRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getProtocol, ListFlowLogsRequest::setProtocol));
         builder.<String>withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getApp, (req, v) -> {
-                req.setApp(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getApp, ListFlowLogsRequest::setApp));
         builder.<String>withRequestField("log_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getLogId, (req, v) -> {
-                req.setLogId(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getLogId, ListFlowLogsRequest::setLogId));
         builder.<Long>withRequestField("next_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getNextDate, (req, v) -> {
-                req.setNextDate(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getNextDate, ListFlowLogsRequest::setNextDate));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getOffset, ListFlowLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, ListFlowLogsRequest::setLimit));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getEnterpriseProjectId,
+                ListFlowLogsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("dst_host",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlowLogsRequest::getDstHost, (req, v) -> {
-                req.setDstHost(v);
-            }));
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstHost, ListFlowLogsRequest::setDstHost));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobRequest, ListJobResponse> listJob = genForlistJob();
+    public static final HttpRequestDef<ListJobRequest, ListJobResponse> listJob = genForListJob();
 
-    private static HttpRequestDef<ListJobRequest, ListJobResponse> genForlistJob() {
+    private static HttpRequestDef<ListJobRequest, ListJobResponse> genForListJob() {
         // basic
         HttpRequestDef.Builder<ListJobRequest, ListJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobRequest.class, ListJobResponse.class)
@@ -2091,9 +1781,7 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListJobRequest::getJobId, ListJobRequest::setJobId));
 
         // response
 
@@ -2101,9 +1789,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListLogConfigRequest, ListLogConfigResponse> listLogConfig =
-        genForlistLogConfig();
+        genForListLogConfig();
 
-    private static HttpRequestDef<ListLogConfigRequest, ListLogConfigResponse> genForlistLogConfig() {
+    private static HttpRequestDef<ListLogConfigRequest, ListLogConfigResponse> genForListLogConfig() {
         // basic
         HttpRequestDef.Builder<ListLogConfigRequest, ListLogConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLogConfigRequest.class, ListLogConfigResponse.class)
@@ -2116,16 +1804,13 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogConfigRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListLogConfigRequest::getFwInstanceId, ListLogConfigRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListLogConfigRequest::getEnterpriseProjectId,
+                ListLogConfigRequest::setEnterpriseProjectId));
 
         // response
 
@@ -2133,9 +1818,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListProtectedVpcsRequest, ListProtectedVpcsResponse> listProtectedVpcs =
-        genForlistProtectedVpcs();
+        genForListProtectedVpcs();
 
-    private static HttpRequestDef<ListProtectedVpcsRequest, ListProtectedVpcsResponse> genForlistProtectedVpcs() {
+    private static HttpRequestDef<ListProtectedVpcsRequest, ListProtectedVpcsResponse> genForListProtectedVpcs() {
         // basic
         HttpRequestDef.Builder<ListProtectedVpcsRequest, ListProtectedVpcsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProtectedVpcsRequest.class, ListProtectedVpcsResponse.class)
@@ -2148,23 +1833,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedVpcsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedVpcsRequest::getObjectId, ListProtectedVpcsRequest::setObjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedVpcsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedVpcsRequest::getEnterpriseProjectId,
+                ListProtectedVpcsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProtectedVpcsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListProtectedVpcsRequest::getFwInstanceId,
+                ListProtectedVpcsRequest::setFwInstanceId));
 
         // response
 
@@ -2172,9 +1853,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListServiceItemsRequest, ListServiceItemsResponse> listServiceItems =
-        genForlistServiceItems();
+        genForListServiceItems();
 
-    private static HttpRequestDef<ListServiceItemsRequest, ListServiceItemsResponse> genForlistServiceItems() {
+    private static HttpRequestDef<ListServiceItemsRequest, ListServiceItemsResponse> genForListServiceItems() {
         // basic
         HttpRequestDef.Builder<ListServiceItemsRequest, ListServiceItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceItemsRequest.class, ListServiceItemsResponse.class)
@@ -2187,44 +1868,33 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getSetId, ListServiceItemsRequest::setSetId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getKeyWord, ListServiceItemsRequest::setKeyWord));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getLimit, ListServiceItemsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getOffset, ListServiceItemsRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getEnterpriseProjectId,
+                ListServiceItemsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceItemsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListServiceItemsRequest::getFwInstanceId, ListServiceItemsRequest::setFwInstanceId));
 
         // response
 
@@ -2232,9 +1902,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListServiceSetDetailRequest, ListServiceSetDetailResponse> listServiceSetDetail =
-        genForlistServiceSetDetail();
+        genForListServiceSetDetail();
 
-    private static HttpRequestDef<ListServiceSetDetailRequest, ListServiceSetDetailResponse> genForlistServiceSetDetail() {
+    private static HttpRequestDef<ListServiceSetDetailRequest, ListServiceSetDetailResponse> genForListServiceSetDetail() {
         // basic
         HttpRequestDef.Builder<ListServiceSetDetailRequest, ListServiceSetDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServiceSetDetailRequest.class, ListServiceSetDetailResponse.class)
@@ -2247,23 +1917,19 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetDetailRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetDetailRequest::getSetId, ListServiceSetDetailRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetDetailRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetDetailRequest::getEnterpriseProjectId,
+                ListServiceSetDetailRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetDetailRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetDetailRequest::getFwInstanceId,
+                ListServiceSetDetailRequest::setFwInstanceId));
 
         // response
 
@@ -2271,9 +1937,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListServiceSetsRequest, ListServiceSetsResponse> listServiceSets =
-        genForlistServiceSets();
+        genForListServiceSets();
 
-    private static HttpRequestDef<ListServiceSetsRequest, ListServiceSetsResponse> genForlistServiceSets() {
+    private static HttpRequestDef<ListServiceSetsRequest, ListServiceSetsResponse> genForListServiceSets() {
         // basic
         HttpRequestDef.Builder<ListServiceSetsRequest, ListServiceSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceSetsRequest.class, ListServiceSetsResponse.class)
@@ -2286,44 +1952,33 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getObjectId, ListServiceSetsRequest::setObjectId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getKeyWord, ListServiceSetsRequest::setKeyWord));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getLimit, ListServiceSetsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getOffset, ListServiceSetsRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getEnterpriseProjectId,
+                ListServiceSetsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServiceSetsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListServiceSetsRequest::getFwInstanceId, ListServiceSetsRequest::setFwInstanceId));
 
         // response
 
@@ -2331,9 +1986,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateAddressSetRequest, UpdateAddressSetResponse> updateAddressSet =
-        genForupdateAddressSet();
+        genForUpdateAddressSet();
 
-    private static HttpRequestDef<UpdateAddressSetRequest, UpdateAddressSetResponse> genForupdateAddressSet() {
+    private static HttpRequestDef<UpdateAddressSetRequest, UpdateAddressSetResponse> genForUpdateAddressSet() {
         // basic
         HttpRequestDef.Builder<UpdateAddressSetRequest, UpdateAddressSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAddressSetRequest.class, UpdateAddressSetResponse.class)
@@ -2346,30 +2001,23 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAddressSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressSetRequest::getSetId, UpdateAddressSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAddressSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressSetRequest::getEnterpriseProjectId,
+                UpdateAddressSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAddressSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressSetRequest::getFwInstanceId, UpdateAddressSetRequest::setFwInstanceId));
         builder.<UpdateAddressSetDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAddressSetDto.class),
-            f -> f.withMarshaller(UpdateAddressSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAddressSetRequest::getBody, UpdateAddressSetRequest::setBody));
 
         // response
 
@@ -2377,9 +2025,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteList =
-        genForupdateBlackWhiteList();
+        genForUpdateBlackWhiteList();
 
-    private static HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> genForupdateBlackWhiteList() {
+    private static HttpRequestDef<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> genForUpdateBlackWhiteList() {
         // basic
         HttpRequestDef.Builder<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateBlackWhiteListRequest.class, UpdateBlackWhiteListResponse.class)
@@ -2392,30 +2040,24 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getListId, (req, v) -> {
-                req.setListId(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getListId, UpdateBlackWhiteListRequest::setListId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getEnterpriseProjectId,
+                UpdateBlackWhiteListRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getFwInstanceId,
+                UpdateBlackWhiteListRequest::setFwInstanceId));
         builder.<UpdateBlackWhiteListDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBlackWhiteListDto.class),
-            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateBlackWhiteListRequest::getBody, UpdateBlackWhiteListRequest::setBody));
 
         // response
 
@@ -2423,9 +2065,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateDnsServersRequest, UpdateDnsServersResponse> updateDnsServers =
-        genForupdateDnsServers();
+        genForUpdateDnsServers();
 
-    private static HttpRequestDef<UpdateDnsServersRequest, UpdateDnsServersResponse> genForupdateDnsServers() {
+    private static HttpRequestDef<UpdateDnsServersRequest, UpdateDnsServersResponse> genForUpdateDnsServers() {
         // basic
         HttpRequestDef.Builder<UpdateDnsServersRequest, UpdateDnsServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDnsServersRequest.class, UpdateDnsServersResponse.class)
@@ -2438,23 +2080,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDnsServersRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDnsServersRequest::getFwInstanceId, UpdateDnsServersRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDnsServersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDnsServersRequest::getEnterpriseProjectId,
+                UpdateDnsServersRequest::setEnterpriseProjectId));
         builder.<UpdateDnsServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDnsServersRequestBody.class),
-            f -> f.withMarshaller(UpdateDnsServersRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDnsServersRequest::getBody, UpdateDnsServersRequest::setBody));
 
         // response
 
@@ -2462,9 +2099,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateDomainSetRequest, UpdateDomainSetResponse> updateDomainSet =
-        genForupdateDomainSet();
+        genForUpdateDomainSet();
 
-    private static HttpRequestDef<UpdateDomainSetRequest, UpdateDomainSetResponse> genForupdateDomainSet() {
+    private static HttpRequestDef<UpdateDomainSetRequest, UpdateDomainSetResponse> genForUpdateDomainSet() {
         // basic
         HttpRequestDef.Builder<UpdateDomainSetRequest, UpdateDomainSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainSetRequest.class, UpdateDomainSetResponse.class)
@@ -2477,30 +2114,23 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainSetRequest::getSetId, UpdateDomainSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainSetRequest::getEnterpriseProjectId,
+                UpdateDomainSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDomainSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainSetRequest::getFwInstanceId, UpdateDomainSetRequest::setFwInstanceId));
         builder.<UpdateDomainSetInfoDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainSetInfoDto.class),
-            f -> f.withMarshaller(UpdateDomainSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateDomainSetRequest::getBody, UpdateDomainSetRequest::setBody));
 
         // response
 
@@ -2508,9 +2138,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfig =
-        genForupdateLogConfig();
+        genForUpdateLogConfig();
 
-    private static HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> genForupdateLogConfig() {
+    private static HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> genForUpdateLogConfig() {
         // basic
         HttpRequestDef.Builder<UpdateLogConfigRequest, UpdateLogConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLogConfigRequest.class, UpdateLogConfigResponse.class)
@@ -2523,23 +2153,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLogConfigRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateLogConfigRequest::getFwInstanceId, UpdateLogConfigRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateLogConfigRequest::getEnterpriseProjectId,
+                UpdateLogConfigRequest::setEnterpriseProjectId));
         builder.<LogConfigDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogConfigDto.class),
-            f -> f.withMarshaller(UpdateLogConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLogConfigRequest::getBody, UpdateLogConfigRequest::setBody));
 
         // response
 
@@ -2547,9 +2172,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateServiceSetRequest, UpdateServiceSetResponse> updateServiceSet =
-        genForupdateServiceSet();
+        genForUpdateServiceSet();
 
-    private static HttpRequestDef<UpdateServiceSetRequest, UpdateServiceSetResponse> genForupdateServiceSet() {
+    private static HttpRequestDef<UpdateServiceSetRequest, UpdateServiceSetResponse> genForUpdateServiceSet() {
         // basic
         HttpRequestDef.Builder<UpdateServiceSetRequest, UpdateServiceSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceSetRequest.class, UpdateServiceSetResponse.class)
@@ -2562,39 +2187,32 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceSetRequest::getSetId, (req, v) -> {
-                req.setSetId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceSetRequest::getSetId, UpdateServiceSetRequest::setSetId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceSetRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceSetRequest::getEnterpriseProjectId,
+                UpdateServiceSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServiceSetRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceSetRequest::getFwInstanceId, UpdateServiceSetRequest::setFwInstanceId));
         builder.<UpdateServiceSetUsingPUTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServiceSetUsingPUTRequestBody.class),
-            f -> f.withMarshaller(UpdateServiceSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateServiceSetRequest::getBody, UpdateServiceSetRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddAclRuleRequest, AddAclRuleResponse> addAclRule = genForaddAclRule();
+    public static final HttpRequestDef<AddAclRuleRequest, AddAclRuleResponse> addAclRule = genForAddAclRule();
 
-    private static HttpRequestDef<AddAclRuleRequest, AddAclRuleResponse> genForaddAclRule() {
+    private static HttpRequestDef<AddAclRuleRequest, AddAclRuleResponse> genForAddAclRule() {
         // basic
         HttpRequestDef.Builder<AddAclRuleRequest, AddAclRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddAclRuleRequest.class, AddAclRuleResponse.class)
@@ -2607,23 +2225,18 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAclRuleRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(AddAclRuleRequest::getEnterpriseProjectId,
+                AddAclRuleRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddAclRuleRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(AddAclRuleRequest::getFwInstanceId, AddAclRuleRequest::setFwInstanceId));
         builder.<AddRuleAclDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddRuleAclDto.class),
-            f -> f.withMarshaller(AddAclRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddAclRuleRequest::getBody, AddAclRuleRequest::setBody));
 
         // response
 
@@ -2631,9 +2244,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteAclRulesRequest, BatchDeleteAclRulesResponse> batchDeleteAclRules =
-        genForbatchDeleteAclRules();
+        genForBatchDeleteAclRules();
 
-    private static HttpRequestDef<BatchDeleteAclRulesRequest, BatchDeleteAclRulesResponse> genForbatchDeleteAclRules() {
+    private static HttpRequestDef<BatchDeleteAclRulesRequest, BatchDeleteAclRulesResponse> genForBatchDeleteAclRules() {
         // basic
         HttpRequestDef.Builder<BatchDeleteAclRulesRequest, BatchDeleteAclRulesResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, BatchDeleteAclRulesRequest.class, BatchDeleteAclRulesResponse.class)
@@ -2646,23 +2259,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getEnterpriseProjectId,
+                BatchDeleteAclRulesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getFwInstanceId,
+                BatchDeleteAclRulesRequest::setFwInstanceId));
         builder.<DeleteRuleAclDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteRuleAclDto.class),
-            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteAclRulesRequest::getBody, BatchDeleteAclRulesRequest::setBody));
 
         // response
 
@@ -2670,9 +2279,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<BatchUpdateAclRuleActionsRequest, BatchUpdateAclRuleActionsResponse> batchUpdateAclRuleActions =
-        genForbatchUpdateAclRuleActions();
+        genForBatchUpdateAclRuleActions();
 
-    private static HttpRequestDef<BatchUpdateAclRuleActionsRequest, BatchUpdateAclRuleActionsResponse> genForbatchUpdateAclRuleActions() {
+    private static HttpRequestDef<BatchUpdateAclRuleActionsRequest, BatchUpdateAclRuleActionsResponse> genForBatchUpdateAclRuleActions() {
         // basic
         HttpRequestDef.Builder<BatchUpdateAclRuleActionsRequest, BatchUpdateAclRuleActionsResponse> builder =
             HttpRequestDef
@@ -2688,16 +2297,14 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getEnterpriseProjectId,
+                BatchUpdateAclRuleActionsRequest::setEnterpriseProjectId));
         builder.<UpdateSecurityPolciesActionDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecurityPolciesActionDto.class),
-            f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getBody,
+                BatchUpdateAclRuleActionsRequest::setBody));
 
         // response
 
@@ -2705,9 +2312,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteAclRuleRequest, DeleteAclRuleResponse> deleteAclRule =
-        genFordeleteAclRule();
+        genForDeleteAclRule();
 
-    private static HttpRequestDef<DeleteAclRuleRequest, DeleteAclRuleResponse> genFordeleteAclRule() {
+    private static HttpRequestDef<DeleteAclRuleRequest, DeleteAclRuleResponse> genForDeleteAclRule() {
         // basic
         HttpRequestDef.Builder<DeleteAclRuleRequest, DeleteAclRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclRuleRequest.class, DeleteAclRuleResponse.class)
@@ -2720,23 +2327,18 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclRuleRequest::getAclRuleId, (req, v) -> {
-                req.setAclRuleId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleRequest::getAclRuleId, DeleteAclRuleRequest::setAclRuleId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclRuleRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleRequest::getEnterpriseProjectId,
+                DeleteAclRuleRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclRuleRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleRequest::getFwInstanceId, DeleteAclRuleRequest::setFwInstanceId));
 
         // response
 
@@ -2744,9 +2346,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<DeleteAclRuleHitCountRequest, DeleteAclRuleHitCountResponse> deleteAclRuleHitCount =
-        genFordeleteAclRuleHitCount();
+        genForDeleteAclRuleHitCount();
 
-    private static HttpRequestDef<DeleteAclRuleHitCountRequest, DeleteAclRuleHitCountResponse> genFordeleteAclRuleHitCount() {
+    private static HttpRequestDef<DeleteAclRuleHitCountRequest, DeleteAclRuleHitCountResponse> genForDeleteAclRuleHitCount() {
         // basic
         HttpRequestDef.Builder<DeleteAclRuleHitCountRequest, DeleteAclRuleHitCountResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAclRuleHitCountRequest.class, DeleteAclRuleHitCountResponse.class)
@@ -2759,40 +2361,34 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getEnterpriseProjectId,
+                DeleteAclRuleHitCountRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getFwInstanceId,
+                DeleteAclRuleHitCountRequest::setFwInstanceId));
         builder.<ClearAccessLogRuleHitCountsDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClearAccessLogRuleHitCountsDto.class),
-            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleHitCountRequest::getBody, DeleteAclRuleHitCountRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAclRuleHitCountResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteAclRuleHitCountResponse::getBody, DeleteAclRuleHitCountResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListAclRuleHitCountRequest, ListAclRuleHitCountResponse> listAclRuleHitCount =
-        genForlistAclRuleHitCount();
+        genForListAclRuleHitCount();
 
-    private static HttpRequestDef<ListAclRuleHitCountRequest, ListAclRuleHitCountResponse> genForlistAclRuleHitCount() {
+    private static HttpRequestDef<ListAclRuleHitCountRequest, ListAclRuleHitCountResponse> genForListAclRuleHitCount() {
         // basic
         HttpRequestDef.Builder<ListAclRuleHitCountRequest, ListAclRuleHitCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListAclRuleHitCountRequest.class, ListAclRuleHitCountResponse.class)
@@ -2805,32 +2401,28 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRuleHitCountRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAclRuleHitCountRequest::getEnterpriseProjectId,
+                ListAclRuleHitCountRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRuleHitCountRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclRuleHitCountRequest::getFwInstanceId,
+                ListAclRuleHitCountRequest::setFwInstanceId));
         builder.<ListRuleHitCountDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListRuleHitCountDto.class),
-            f -> f.withMarshaller(ListAclRuleHitCountRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListAclRuleHitCountRequest::getBody, ListAclRuleHitCountRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAclRulesRequest, ListAclRulesResponse> listAclRules = genForlistAclRules();
+    public static final HttpRequestDef<ListAclRulesRequest, ListAclRulesResponse> listAclRules = genForListAclRules();
 
-    private static HttpRequestDef<ListAclRulesRequest, ListAclRulesResponse> genForlistAclRules() {
+    private static HttpRequestDef<ListAclRulesRequest, ListAclRulesResponse> genForListAclRules() {
         // basic
         HttpRequestDef.Builder<ListAclRulesRequest, ListAclRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclRulesRequest.class, ListAclRulesResponse.class)
@@ -2843,121 +2435,88 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getObjectId, ListAclRulesRequest::setObjectId));
         builder.<ListAclRulesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.TypeEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getType, ListAclRulesRequest::setType));
         builder.<ListAclRulesRequest.ProtocolEnum>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getProtocol, ListAclRulesRequest::setProtocol));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getIp, (req, v) -> {
-                req.setIp(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getIp, ListAclRulesRequest::setIp));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getName, ListAclRulesRequest::setName));
         builder.<Integer>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getDirection, (req, v) -> {
-                req.setDirection(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getDirection, ListAclRulesRequest::setDirection));
         builder.<ListAclRulesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getStatus, ListAclRulesRequest::setStatus));
         builder.<ListAclRulesRequest.ActionTypeEnum>withRequestField("action_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.ActionTypeEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getActionType, (req, v) -> {
-                req.setActionType(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getActionType, ListAclRulesRequest::setActionType));
         builder.<ListAclRulesRequest.AddressTypeEnum>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.AddressTypeEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getAddressType, (req, v) -> {
-                req.setAddressType(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getAddressType, ListAclRulesRequest::setAddressType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getLimit, ListAclRulesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getOffset, ListAclRulesRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getEnterpriseProjectId,
+                ListAclRulesRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getFwInstanceId, ListAclRulesRequest::setFwInstanceId));
         builder.<String>withRequestField("tags_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getTagsId, (req, v) -> {
-                req.setTagsId(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getTagsId, ListAclRulesRequest::setTagsId));
         builder.<String>withRequestField("source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getSource, (req, v) -> {
-                req.setSource(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getSource, ListAclRulesRequest::setSource));
         builder.<String>withRequestField("destination",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getDestination, (req, v) -> {
-                req.setDestination(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getDestination, ListAclRulesRequest::setDestination));
         builder.<String>withRequestField("service",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getService, (req, v) -> {
-                req.setService(v);
-            }));
+            f -> f.withMarshaller(ListAclRulesRequest::getService, ListAclRulesRequest::setService));
 
         // response
 
@@ -2965,9 +2524,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListRuleAclTagsRequest, ListRuleAclTagsResponse> listRuleAclTags =
-        genForlistRuleAclTags();
+        genForListRuleAclTags();
 
-    private static HttpRequestDef<ListRuleAclTagsRequest, ListRuleAclTagsResponse> genForlistRuleAclTags() {
+    private static HttpRequestDef<ListRuleAclTagsRequest, ListRuleAclTagsResponse> genForListRuleAclTags() {
         // basic
         HttpRequestDef.Builder<ListRuleAclTagsRequest, ListRuleAclTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuleAclTagsRequest.class, ListRuleAclTagsResponse.class)
@@ -2980,30 +2539,23 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleAclTagsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListRuleAclTagsRequest::getEnterpriseProjectId,
+                ListRuleAclTagsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRuleAclTagsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListRuleAclTagsRequest::getFwInstanceId, ListRuleAclTagsRequest::setFwInstanceId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleAclTagsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListRuleAclTagsRequest::getOffset, ListRuleAclTagsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRuleAclTagsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListRuleAclTagsRequest::getLimit, ListRuleAclTagsRequest::setLimit));
 
         // response
 
@@ -3011,9 +2563,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateAclRuleRequest, UpdateAclRuleResponse> updateAclRule =
-        genForupdateAclRule();
+        genForUpdateAclRule();
 
-    private static HttpRequestDef<UpdateAclRuleRequest, UpdateAclRuleResponse> genForupdateAclRule() {
+    private static HttpRequestDef<UpdateAclRuleRequest, UpdateAclRuleResponse> genForUpdateAclRule() {
         // basic
         HttpRequestDef.Builder<UpdateAclRuleRequest, UpdateAclRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclRuleRequest.class, UpdateAclRuleResponse.class)
@@ -3026,30 +2578,23 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleRequest::getAclRuleId, (req, v) -> {
-                req.setAclRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleRequest::getAclRuleId, UpdateAclRuleRequest::setAclRuleId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleRequest::getEnterpriseProjectId,
+                UpdateAclRuleRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleRequest::getFwInstanceId, UpdateAclRuleRequest::setFwInstanceId));
         builder.<UpdateRuleAclDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRuleAclDto.class),
-            f -> f.withMarshaller(UpdateAclRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleRequest::getBody, UpdateAclRuleRequest::setBody));
 
         // response
 
@@ -3057,9 +2602,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<UpdateAclRuleOrderRequest, UpdateAclRuleOrderResponse> updateAclRuleOrder =
-        genForupdateAclRuleOrder();
+        genForUpdateAclRuleOrder();
 
-    private static HttpRequestDef<UpdateAclRuleOrderRequest, UpdateAclRuleOrderResponse> genForupdateAclRuleOrder() {
+    private static HttpRequestDef<UpdateAclRuleOrderRequest, UpdateAclRuleOrderResponse> genForUpdateAclRuleOrder() {
         // basic
         HttpRequestDef.Builder<UpdateAclRuleOrderRequest, UpdateAclRuleOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclRuleOrderRequest.class, UpdateAclRuleOrderResponse.class)
@@ -3072,30 +2617,24 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getAclRuleId, (req, v) -> {
-                req.setAclRuleId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getAclRuleId, UpdateAclRuleOrderRequest::setAclRuleId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getEnterpriseProjectId,
+                UpdateAclRuleOrderRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getFwInstanceId,
+                UpdateAclRuleOrderRequest::setFwInstanceId));
         builder.<OrderRuleAclDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OrderRuleAclDto.class),
-            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAclRuleOrderRequest::getBody, UpdateAclRuleOrderRequest::setBody));
 
         // response
 
@@ -3103,9 +2642,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ChangeEipStatusRequest, ChangeEipStatusResponse> changeEipStatus =
-        genForchangeEipStatus();
+        genForChangeEipStatus();
 
-    private static HttpRequestDef<ChangeEipStatusRequest, ChangeEipStatusResponse> genForchangeEipStatus() {
+    private static HttpRequestDef<ChangeEipStatusRequest, ChangeEipStatusResponse> genForChangeEipStatus() {
         // basic
         HttpRequestDef.Builder<ChangeEipStatusRequest, ChangeEipStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeEipStatusRequest.class, ChangeEipStatusResponse.class)
@@ -3118,32 +2657,27 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEipStatusRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ChangeEipStatusRequest::getEnterpriseProjectId,
+                ChangeEipStatusRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEipStatusRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeEipStatusRequest::getFwInstanceId, ChangeEipStatusRequest::setFwInstanceId));
         builder.<EipOperateProtectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EipOperateProtectReq.class),
-            f -> f.withMarshaller(ChangeEipStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeEipStatusRequest::getBody, ChangeEipStatusRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEipCountRequest, ListEipCountResponse> listEipCount = genForlistEipCount();
+    public static final HttpRequestDef<ListEipCountRequest, ListEipCountResponse> listEipCount = genForListEipCount();
 
-    private static HttpRequestDef<ListEipCountRequest, ListEipCountResponse> genForlistEipCount() {
+    private static HttpRequestDef<ListEipCountRequest, ListEipCountResponse> genForListEipCount() {
         // basic
         HttpRequestDef.Builder<ListEipCountRequest, ListEipCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEipCountRequest.class, ListEipCountResponse.class)
@@ -3156,32 +2690,27 @@ public class CfwMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipCountRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListEipCountRequest::getObjectId, ListEipCountRequest::setObjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipCountRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEipCountRequest::getEnterpriseProjectId,
+                ListEipCountRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipCountRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEipCountRequest::getFwInstanceId, ListEipCountRequest::setFwInstanceId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEipsRequest, ListEipsResponse> listEips = genForlistEips();
+    public static final HttpRequestDef<ListEipsRequest, ListEipsResponse> listEips = genForListEips();
 
-    private static HttpRequestDef<ListEipsRequest, ListEipsResponse> genForlistEips() {
+    private static HttpRequestDef<ListEipsRequest, ListEipsResponse> genForListEips() {
         // basic
         HttpRequestDef.Builder<ListEipsRequest, ListEipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEipsRequest.class, ListEipsResponse.class)
@@ -3194,93 +2723,67 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getObjectId, ListEipsRequest::setObjectId));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getKeyWord, (req, v) -> {
-                req.setKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getKeyWord, ListEipsRequest::setKeyWord));
         builder.<ListEipsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEipsRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEipsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getStatus, ListEipsRequest::setStatus));
         builder.<ListEipsRequest.SyncEnum>withRequestField("sync",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEipsRequest.SyncEnum.class),
-            f -> f.withMarshaller(ListEipsRequest::getSync, (req, v) -> {
-                req.setSync(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getSync, ListEipsRequest::setSync));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEipsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getLimit, ListEipsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEipsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getOffset, ListEipsRequest::setOffset));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getEnterpriseProjectId, ListEipsRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("device_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getDeviceKey, (req, v) -> {
-                req.setDeviceKey(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getDeviceKey, ListEipsRequest::setDeviceKey));
         builder.<Integer>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEipsRequest::getAddressType, (req, v) -> {
-                req.setAddressType(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getAddressType, ListEipsRequest::setAddressType));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getFwInstanceId, ListEipsRequest::setFwInstanceId));
         builder.<String>withRequestField("fw_key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getFwKeyWord, (req, v) -> {
-                req.setFwKeyWord(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getFwKeyWord, ListEipsRequest::setFwKeyWord));
         builder.<String>withRequestField("eps_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getEpsId, (req, v) -> {
-                req.setEpsId(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getEpsId, ListEipsRequest::setEpsId));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEipsRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            }));
+            f -> f.withMarshaller(ListEipsRequest::getTags, ListEipsRequest::setTags));
 
         // response
 
@@ -3288,9 +2791,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ChangeIpsProtectModeRequest, ChangeIpsProtectModeResponse> changeIpsProtectMode =
-        genForchangeIpsProtectMode();
+        genForChangeIpsProtectMode();
 
-    private static HttpRequestDef<ChangeIpsProtectModeRequest, ChangeIpsProtectModeResponse> genForchangeIpsProtectMode() {
+    private static HttpRequestDef<ChangeIpsProtectModeRequest, ChangeIpsProtectModeResponse> genForChangeIpsProtectMode() {
         // basic
         HttpRequestDef.Builder<ChangeIpsProtectModeRequest, ChangeIpsProtectModeResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeIpsProtectModeRequest.class, ChangeIpsProtectModeResponse.class)
@@ -3303,23 +2806,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getEnterpriseProjectId,
+                ChangeIpsProtectModeRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getFwInstanceId,
+                ChangeIpsProtectModeRequest::setFwInstanceId));
         builder.<IpsProtectDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IpsProtectDTO.class),
-            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsProtectModeRequest::getBody, ChangeIpsProtectModeRequest::setBody));
 
         // response
 
@@ -3327,9 +2826,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ChangeIpsSwitchStatusRequest, ChangeIpsSwitchStatusResponse> changeIpsSwitchStatus =
-        genForchangeIpsSwitchStatus();
+        genForChangeIpsSwitchStatus();
 
-    private static HttpRequestDef<ChangeIpsSwitchStatusRequest, ChangeIpsSwitchStatusResponse> genForchangeIpsSwitchStatus() {
+    private static HttpRequestDef<ChangeIpsSwitchStatusRequest, ChangeIpsSwitchStatusResponse> genForChangeIpsSwitchStatus() {
         // basic
         HttpRequestDef.Builder<ChangeIpsSwitchStatusRequest, ChangeIpsSwitchStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ChangeIpsSwitchStatusRequest.class, ChangeIpsSwitchStatusResponse.class)
@@ -3342,30 +2841,25 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getEnterpriseProjectId,
+                ChangeIpsSwitchStatusRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getFwInstanceId,
+                ChangeIpsSwitchStatusRequest::setFwInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getXLanguage,
+                ChangeIpsSwitchStatusRequest::setXLanguage));
         builder.<IpsSwitchDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IpsSwitchDTO.class),
-            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getBody, ChangeIpsSwitchStatusRequest::setBody));
 
         // response
 
@@ -3373,9 +2867,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListIpsProtectModeRequest, ListIpsProtectModeResponse> listIpsProtectMode =
-        genForlistIpsProtectMode();
+        genForListIpsProtectMode();
 
-    private static HttpRequestDef<ListIpsProtectModeRequest, ListIpsProtectModeResponse> genForlistIpsProtectMode() {
+    private static HttpRequestDef<ListIpsProtectModeRequest, ListIpsProtectModeResponse> genForListIpsProtectMode() {
         // basic
         HttpRequestDef.Builder<ListIpsProtectModeRequest, ListIpsProtectModeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIpsProtectModeRequest.class, ListIpsProtectModeResponse.class)
@@ -3388,23 +2882,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsProtectModeRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListIpsProtectModeRequest::getObjectId, ListIpsProtectModeRequest::setObjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsProtectModeRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListIpsProtectModeRequest::getEnterpriseProjectId,
+                ListIpsProtectModeRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsProtectModeRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListIpsProtectModeRequest::getFwInstanceId,
+                ListIpsProtectModeRequest::setFwInstanceId));
 
         // response
 
@@ -3412,9 +2902,9 @@ public class CfwMeta {
     }
 
     public static final HttpRequestDef<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> listIpsSwitchStatus =
-        genForlistIpsSwitchStatus();
+        genForListIpsSwitchStatus();
 
-    private static HttpRequestDef<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> genForlistIpsSwitchStatus() {
+    private static HttpRequestDef<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> genForListIpsSwitchStatus() {
         // basic
         HttpRequestDef.Builder<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIpsSwitchStatusRequest.class, ListIpsSwitchStatusResponse.class)
@@ -3427,23 +2917,19 @@ public class CfwMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getObjectId, (req, v) -> {
-                req.setObjectId(v);
-            }));
+            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getObjectId, ListIpsSwitchStatusRequest::setObjectId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getEnterpriseProjectId,
+                ListIpsSwitchStatusRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getFwInstanceId, (req, v) -> {
-                req.setFwInstanceId(v);
-            }));
+            f -> f.withMarshaller(ListIpsSwitchStatusRequest::getFwInstanceId,
+                ListIpsSwitchStatusRequest::setFwInstanceId));
 
         // response
 

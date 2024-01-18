@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 请求应用使用记录响应体
+ * 请求应用使用记录响应体。
  */
 public class ListAppConnectionReq {
 
@@ -112,7 +112,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 主键
+     * 主键。
      * @return id
      */
     public String getId() {
@@ -129,7 +129,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用服务器sid
+     * 应用服务器sid。
      * @return sid
      */
     public String getSid() {
@@ -146,7 +146,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用服务器名称
+     * 应用服务器名称。
      * @return machineName
      */
     public String getMachineName() {
@@ -163,7 +163,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 登录用户，模糊查询
+     * 登录用户，模糊查询。
      * @return userName
      */
     public String getUserName() {
@@ -180,7 +180,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用组名称
+     * 应用组名称。
      * @return appGroupName
      */
     public String getAppGroupName() {
@@ -197,7 +197,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用组id
+     * 应用组id。
      * @return appGroupId
      */
     public String getAppGroupId() {
@@ -214,7 +214,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用名称，模糊查询
+     * 应用名称，模糊查询。
      * @return appName
      */
     public String getAppName() {
@@ -231,7 +231,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 连接失败状态码
+     * 连接失败状态码。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -248,7 +248,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 连接失败原因
+     * 连接失败原因。
      * @return connectionFailureReason
      */
     public String getConnectionFailureReason() {
@@ -265,7 +265,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 客户端名称
+     * 客户端名称。
      * @return clientName
      */
     public String getClientName() {
@@ -282,7 +282,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return clientVersion
      */
     public String getClientVersion() {
@@ -299,7 +299,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 客户端操作系统类型
+     * 客户端操作系统类型。
      * @return clientType
      */
     public String getClientType() {
@@ -316,7 +316,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * aps hda版本
+     * aps hda版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -333,7 +333,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 应用服务器ip
+     * 应用服务器ip。
      * @return vmIp
      */
     public String getVmIp() {
@@ -350,7 +350,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 连接IP
+     * 连接IP。
      * @return wiIp
      */
     public String getWiIp() {
@@ -367,7 +367,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 租户id
+     * 租户id。
      * @return tenantId
      */
     public String getTenantId() {
@@ -384,7 +384,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31 08:07:39
+     * 登录应用开始时间，格式 2022-10-31 08:07:39。
      * @return brokeringStartTime
      */
     public OffsetDateTime getBrokeringStartTime() {
@@ -401,7 +401,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 登录应用结束时间，格式 2022-10-31 08:07:39
+     * 登录应用结束时间，格式 2022-10-31 08:07:39。
      * @return brokeringEndTime
      */
     public OffsetDateTime getBrokeringEndTime() {
@@ -418,7 +418,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 会话虚拟ip
+     * 会话虚拟ip。
      * @return virtualIp
      */
     public String getVirtualIp() {

@@ -156,9 +156,9 @@ import com.huaweicloud.sdk.elb.v2.model.UpdateWhitelistResponse;
 public class ElbMeta {
 
     public static final HttpRequestDef<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> batchCreateListenerTags =
-        genForbatchCreateListenerTags();
+        genForBatchCreateListenerTags();
 
-    private static HttpRequestDef<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> genForbatchCreateListenerTags() {
+    private static HttpRequestDef<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> genForBatchCreateListenerTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateListenerTagsRequest.class, BatchCreateListenerTagsResponse.class)
@@ -171,16 +171,13 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getListenerId,
+                BatchCreateListenerTagsRequest::setListenerId));
         builder.<BatchCreateListenerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateListenerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getBody, BatchCreateListenerTagsRequest::setBody));
 
         // response
 
@@ -188,9 +185,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> batchCreateLoadbalancerTags =
-        genForbatchCreateLoadbalancerTags();
+        genForBatchCreateLoadbalancerTags();
 
-    private static HttpRequestDef<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> genForbatchCreateLoadbalancerTags() {
+    private static HttpRequestDef<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> genForBatchCreateLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> builder =
             HttpRequestDef
@@ -206,16 +203,14 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getLoadbalancerId,
+                BatchCreateLoadbalancerTagsRequest::setLoadbalancerId));
         builder.<BatchCreateLoadbalancerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateLoadbalancerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getBody,
+                BatchCreateLoadbalancerTagsRequest::setBody));
 
         // response
 
@@ -223,9 +218,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> batchDeleteListenerTags =
-        genForbatchDeleteListenerTags();
+        genForBatchDeleteListenerTags();
 
-    private static HttpRequestDef<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> genForbatchDeleteListenerTags() {
+    private static HttpRequestDef<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> genForBatchDeleteListenerTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteListenerTagsRequest.class, BatchDeleteListenerTagsResponse.class)
@@ -238,16 +233,13 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getListenerId,
+                BatchDeleteListenerTagsRequest::setListenerId));
         builder.<BatchDeleteListenerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteListenerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getBody, BatchDeleteListenerTagsRequest::setBody));
 
         // response
 
@@ -255,9 +247,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> batchDeleteLoadbalancerTags =
-        genForbatchDeleteLoadbalancerTags();
+        genForBatchDeleteLoadbalancerTags();
 
-    private static HttpRequestDef<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> genForbatchDeleteLoadbalancerTags() {
+    private static HttpRequestDef<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> genForBatchDeleteLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> builder =
             HttpRequestDef
@@ -273,16 +265,14 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getLoadbalancerId,
+                BatchDeleteLoadbalancerTagsRequest::setLoadbalancerId));
         builder.<BatchDeleteLoadbalancerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteLoadbalancerTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getBody,
+                BatchDeleteLoadbalancerTagsRequest::setBody));
 
         // response
 
@@ -290,9 +280,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateHealthmonitorRequest, CreateHealthmonitorResponse> createHealthmonitor =
-        genForcreateHealthmonitor();
+        genForCreateHealthmonitor();
 
-    private static HttpRequestDef<CreateHealthmonitorRequest, CreateHealthmonitorResponse> genForcreateHealthmonitor() {
+    private static HttpRequestDef<CreateHealthmonitorRequest, CreateHealthmonitorResponse> genForCreateHealthmonitor() {
         // basic
         HttpRequestDef.Builder<CreateHealthmonitorRequest, CreateHealthmonitorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateHealthmonitorRequest.class, CreateHealthmonitorResponse.class)
@@ -305,9 +295,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHealthmonitorRequestBody.class),
-            f -> f.withMarshaller(CreateHealthmonitorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateHealthmonitorRequest::getBody, CreateHealthmonitorRequest::setBody));
 
         // response
 
@@ -315,9 +303,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateL7policyRequest, CreateL7policyResponse> createL7policy =
-        genForcreateL7policy();
+        genForCreateL7policy();
 
-    private static HttpRequestDef<CreateL7policyRequest, CreateL7policyResponse> genForcreateL7policy() {
+    private static HttpRequestDef<CreateL7policyRequest, CreateL7policyResponse> genForCreateL7policy() {
         // basic
         HttpRequestDef.Builder<CreateL7policyRequest, CreateL7policyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateL7policyRequest.class, CreateL7policyResponse.class)
@@ -330,18 +318,16 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateL7policyRequestBody.class),
-            f -> f.withMarshaller(CreateL7policyRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateL7policyRequest::getBody, CreateL7policyRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateL7ruleRequest, CreateL7ruleResponse> createL7rule = genForcreateL7rule();
+    public static final HttpRequestDef<CreateL7ruleRequest, CreateL7ruleResponse> createL7rule = genForCreateL7rule();
 
-    private static HttpRequestDef<CreateL7ruleRequest, CreateL7ruleResponse> genForcreateL7rule() {
+    private static HttpRequestDef<CreateL7ruleRequest, CreateL7ruleResponse> genForCreateL7rule() {
         // basic
         HttpRequestDef.Builder<CreateL7ruleRequest, CreateL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateL7ruleRequest.class, CreateL7ruleResponse.class)
@@ -354,16 +340,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateL7ruleRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(CreateL7ruleRequest::getL7policyId, CreateL7ruleRequest::setL7policyId));
         builder.<CreateL7ruleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateL7ruleRequestBody.class),
-            f -> f.withMarshaller(CreateL7ruleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateL7ruleRequest::getBody, CreateL7ruleRequest::setBody));
 
         // response
 
@@ -371,9 +353,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateListenerRequest, CreateListenerResponse> createListener =
-        genForcreateListener();
+        genForCreateListener();
 
-    private static HttpRequestDef<CreateListenerRequest, CreateListenerResponse> genForcreateListener() {
+    private static HttpRequestDef<CreateListenerRequest, CreateListenerResponse> genForCreateListener() {
         // basic
         HttpRequestDef.Builder<CreateListenerRequest, CreateListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateListenerRequest.class, CreateListenerResponse.class)
@@ -386,9 +368,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateListenerRequestBody.class),
-            f -> f.withMarshaller(CreateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateListenerRequest::getBody, CreateListenerRequest::setBody));
 
         // response
 
@@ -396,9 +376,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateListenerTagsRequest, CreateListenerTagsResponse> createListenerTags =
-        genForcreateListenerTags();
+        genForCreateListenerTags();
 
-    private static HttpRequestDef<CreateListenerTagsRequest, CreateListenerTagsResponse> genForcreateListenerTags() {
+    private static HttpRequestDef<CreateListenerTagsRequest, CreateListenerTagsResponse> genForCreateListenerTags() {
         // basic
         HttpRequestDef.Builder<CreateListenerTagsRequest, CreateListenerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateListenerTagsRequest.class, CreateListenerTagsResponse.class)
@@ -411,16 +391,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateListenerTagsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(CreateListenerTagsRequest::getListenerId, CreateListenerTagsRequest::setListenerId));
         builder.<CreateListenerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateListenerTagsRequestBody.class),
-            f -> f.withMarshaller(CreateListenerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateListenerTagsRequest::getBody, CreateListenerTagsRequest::setBody));
 
         // response
 
@@ -428,9 +404,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateLoadbalancerRequest, CreateLoadbalancerResponse> createLoadbalancer =
-        genForcreateLoadbalancer();
+        genForCreateLoadbalancer();
 
-    private static HttpRequestDef<CreateLoadbalancerRequest, CreateLoadbalancerResponse> genForcreateLoadbalancer() {
+    private static HttpRequestDef<CreateLoadbalancerRequest, CreateLoadbalancerResponse> genForCreateLoadbalancer() {
         // basic
         HttpRequestDef.Builder<CreateLoadbalancerRequest, CreateLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLoadbalancerRequest.class, CreateLoadbalancerResponse.class)
@@ -443,9 +419,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLoadbalancerRequestBody.class),
-            f -> f.withMarshaller(CreateLoadbalancerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLoadbalancerRequest::getBody, CreateLoadbalancerRequest::setBody));
 
         // response
 
@@ -453,9 +427,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> createLoadbalancerTags =
-        genForcreateLoadbalancerTags();
+        genForCreateLoadbalancerTags();
 
-    private static HttpRequestDef<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> genForcreateLoadbalancerTags() {
+    private static HttpRequestDef<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> genForCreateLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateLoadbalancerTagsRequest.class, CreateLoadbalancerTagsResponse.class)
@@ -468,25 +442,22 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getLoadbalancerId,
+                CreateLoadbalancerTagsRequest::setLoadbalancerId));
         builder.<CreateLoadbalancerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateLoadbalancerTagsRequestBody.class),
-            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getBody, CreateLoadbalancerTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMemberRequest, CreateMemberResponse> createMember = genForcreateMember();
+    public static final HttpRequestDef<CreateMemberRequest, CreateMemberResponse> createMember = genForCreateMember();
 
-    private static HttpRequestDef<CreateMemberRequest, CreateMemberResponse> genForcreateMember() {
+    private static HttpRequestDef<CreateMemberRequest, CreateMemberResponse> genForCreateMember() {
         // basic
         HttpRequestDef.Builder<CreateMemberRequest, CreateMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMemberRequest.class, CreateMemberResponse.class)
@@ -499,25 +470,21 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMemberRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(CreateMemberRequest::getPoolId, CreateMemberRequest::setPoolId));
         builder.<CreateMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMemberRequestBody.class),
-            f -> f.withMarshaller(CreateMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMemberRequest::getBody, CreateMemberRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePoolRequest, CreatePoolResponse> createPool = genForcreatePool();
+    public static final HttpRequestDef<CreatePoolRequest, CreatePoolResponse> createPool = genForCreatePool();
 
-    private static HttpRequestDef<CreatePoolRequest, CreatePoolResponse> genForcreatePool() {
+    private static HttpRequestDef<CreatePoolRequest, CreatePoolResponse> genForCreatePool() {
         // basic
         HttpRequestDef.Builder<CreatePoolRequest, CreatePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePoolRequest.class, CreatePoolResponse.class)
@@ -530,9 +497,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePoolRequestBody.class),
-            f -> f.withMarshaller(CreatePoolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePoolRequest::getBody, CreatePoolRequest::setBody));
 
         // response
 
@@ -540,9 +505,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateWhitelistRequest, CreateWhitelistResponse> createWhitelist =
-        genForcreateWhitelist();
+        genForCreateWhitelist();
 
-    private static HttpRequestDef<CreateWhitelistRequest, CreateWhitelistResponse> genForcreateWhitelist() {
+    private static HttpRequestDef<CreateWhitelistRequest, CreateWhitelistResponse> genForCreateWhitelist() {
         // basic
         HttpRequestDef.Builder<CreateWhitelistRequest, CreateWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWhitelistRequest.class, CreateWhitelistResponse.class)
@@ -555,9 +520,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWhitelistRequestBody.class),
-            f -> f.withMarshaller(CreateWhitelistRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateWhitelistRequest::getBody, CreateWhitelistRequest::setBody));
 
         // response
 
@@ -565,9 +528,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteHealthmonitorRequest, DeleteHealthmonitorResponse> deleteHealthmonitor =
-        genFordeleteHealthmonitor();
+        genForDeleteHealthmonitor();
 
-    private static HttpRequestDef<DeleteHealthmonitorRequest, DeleteHealthmonitorResponse> genFordeleteHealthmonitor() {
+    private static HttpRequestDef<DeleteHealthmonitorRequest, DeleteHealthmonitorResponse> genForDeleteHealthmonitor() {
         // basic
         HttpRequestDef.Builder<DeleteHealthmonitorRequest, DeleteHealthmonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteHealthmonitorRequest.class, DeleteHealthmonitorResponse.class)
@@ -580,9 +543,8 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteHealthmonitorRequest::getHealthmonitorId, (req, v) -> {
-                req.setHealthmonitorId(v);
-            }));
+            f -> f.withMarshaller(DeleteHealthmonitorRequest::getHealthmonitorId,
+                DeleteHealthmonitorRequest::setHealthmonitorId));
 
         // response
 
@@ -590,9 +552,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteL7policyRequest, DeleteL7policyResponse> deleteL7policy =
-        genFordeleteL7policy();
+        genForDeleteL7policy();
 
-    private static HttpRequestDef<DeleteL7policyRequest, DeleteL7policyResponse> genFordeleteL7policy() {
+    private static HttpRequestDef<DeleteL7policyRequest, DeleteL7policyResponse> genForDeleteL7policy() {
         // basic
         HttpRequestDef.Builder<DeleteL7policyRequest, DeleteL7policyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteL7policyRequest.class, DeleteL7policyResponse.class)
@@ -605,18 +567,16 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteL7policyRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(DeleteL7policyRequest::getL7policyId, DeleteL7policyRequest::setL7policyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteL7ruleRequest, DeleteL7ruleResponse> deleteL7rule = genFordeleteL7rule();
+    public static final HttpRequestDef<DeleteL7ruleRequest, DeleteL7ruleResponse> deleteL7rule = genForDeleteL7rule();
 
-    private static HttpRequestDef<DeleteL7ruleRequest, DeleteL7ruleResponse> genFordeleteL7rule() {
+    private static HttpRequestDef<DeleteL7ruleRequest, DeleteL7ruleResponse> genForDeleteL7rule() {
         // basic
         HttpRequestDef.Builder<DeleteL7ruleRequest, DeleteL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteL7ruleRequest.class, DeleteL7ruleResponse.class)
@@ -629,16 +589,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteL7ruleRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(DeleteL7ruleRequest::getL7policyId, DeleteL7ruleRequest::setL7policyId));
         builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteL7ruleRequest::getL7ruleId, (req, v) -> {
-                req.setL7ruleId(v);
-            }));
+            f -> f.withMarshaller(DeleteL7ruleRequest::getL7ruleId, DeleteL7ruleRequest::setL7ruleId));
 
         // response
 
@@ -646,9 +602,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> deleteListener =
-        genFordeleteListener();
+        genForDeleteListener();
 
-    private static HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> genFordeleteListener() {
+    private static HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> genForDeleteListener() {
         // basic
         HttpRequestDef.Builder<DeleteListenerRequest, DeleteListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteListenerRequest.class, DeleteListenerResponse.class)
@@ -661,9 +617,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(DeleteListenerRequest::getListenerId, DeleteListenerRequest::setListenerId));
 
         // response
 
@@ -671,9 +625,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteListenerTagsRequest, DeleteListenerTagsResponse> deleteListenerTags =
-        genFordeleteListenerTags();
+        genForDeleteListenerTags();
 
-    private static HttpRequestDef<DeleteListenerTagsRequest, DeleteListenerTagsResponse> genFordeleteListenerTags() {
+    private static HttpRequestDef<DeleteListenerTagsRequest, DeleteListenerTagsResponse> genForDeleteListenerTags() {
         // basic
         HttpRequestDef.Builder<DeleteListenerTagsRequest, DeleteListenerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteListenerTagsRequest.class, DeleteListenerTagsResponse.class)
@@ -686,16 +640,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteListenerTagsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(DeleteListenerTagsRequest::getListenerId, DeleteListenerTagsRequest::setListenerId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteListenerTagsRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteListenerTagsRequest::getKey, DeleteListenerTagsRequest::setKey));
 
         // response
 
@@ -703,9 +653,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> deleteLoadbalancer =
-        genFordeleteLoadbalancer();
+        genForDeleteLoadbalancer();
 
-    private static HttpRequestDef<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> genFordeleteLoadbalancer() {
+    private static HttpRequestDef<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> genForDeleteLoadbalancer() {
         // basic
         HttpRequestDef.Builder<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLoadbalancerRequest.class, DeleteLoadbalancerResponse.class)
@@ -718,9 +668,8 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLoadbalancerRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(DeleteLoadbalancerRequest::getLoadbalancerId,
+                DeleteLoadbalancerRequest::setLoadbalancerId));
 
         // response
 
@@ -728,9 +677,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> deleteLoadbalancerTags =
-        genFordeleteLoadbalancerTags();
+        genForDeleteLoadbalancerTags();
 
-    private static HttpRequestDef<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> genFordeleteLoadbalancerTags() {
+    private static HttpRequestDef<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> genForDeleteLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteLoadbalancerTagsRequest.class, DeleteLoadbalancerTagsResponse.class)
@@ -743,25 +692,22 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getLoadbalancerId,
+                DeleteLoadbalancerTagsRequest::setLoadbalancerId));
         builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getKey, DeleteLoadbalancerTagsRequest::setKey));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> deleteMember = genFordeleteMember();
+    public static final HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> deleteMember = genForDeleteMember();
 
-    private static HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> genFordeleteMember() {
+    private static HttpRequestDef<DeleteMemberRequest, DeleteMemberResponse> genForDeleteMember() {
         // basic
         HttpRequestDef.Builder<DeleteMemberRequest, DeleteMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberRequest.class, DeleteMemberResponse.class)
@@ -774,25 +720,21 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberRequest::getPoolId, DeleteMemberRequest::setPoolId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMemberRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(DeleteMemberRequest::getMemberId, DeleteMemberRequest::setMemberId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePoolRequest, DeletePoolResponse> deletePool = genFordeletePool();
+    public static final HttpRequestDef<DeletePoolRequest, DeletePoolResponse> deletePool = genForDeletePool();
 
-    private static HttpRequestDef<DeletePoolRequest, DeletePoolResponse> genFordeletePool() {
+    private static HttpRequestDef<DeletePoolRequest, DeletePoolResponse> genForDeletePool() {
         // basic
         HttpRequestDef.Builder<DeletePoolRequest, DeletePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePoolRequest.class, DeletePoolResponse.class)
@@ -805,9 +747,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePoolRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(DeletePoolRequest::getPoolId, DeletePoolRequest::setPoolId));
 
         // response
 
@@ -815,9 +755,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteWhitelistRequest, DeleteWhitelistResponse> deleteWhitelist =
-        genFordeleteWhitelist();
+        genForDeleteWhitelist();
 
-    private static HttpRequestDef<DeleteWhitelistRequest, DeleteWhitelistResponse> genFordeleteWhitelist() {
+    private static HttpRequestDef<DeleteWhitelistRequest, DeleteWhitelistResponse> genForDeleteWhitelist() {
         // basic
         HttpRequestDef.Builder<DeleteWhitelistRequest, DeleteWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWhitelistRequest.class, DeleteWhitelistResponse.class)
@@ -830,9 +770,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWhitelistRequest::getWhitelistId, (req, v) -> {
-                req.setWhitelistId(v);
-            }));
+            f -> f.withMarshaller(DeleteWhitelistRequest::getWhitelistId, DeleteWhitelistRequest::setWhitelistId));
 
         // response
 
@@ -840,9 +778,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListHealthmonitorsRequest, ListHealthmonitorsResponse> listHealthmonitors =
-        genForlistHealthmonitors();
+        genForListHealthmonitors();
 
-    private static HttpRequestDef<ListHealthmonitorsRequest, ListHealthmonitorsResponse> genForlistHealthmonitors() {
+    private static HttpRequestDef<ListHealthmonitorsRequest, ListHealthmonitorsResponse> genForListHealthmonitors() {
         // basic
         HttpRequestDef.Builder<ListHealthmonitorsRequest, ListHealthmonitorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHealthmonitorsRequest.class, ListHealthmonitorsResponse.class)
@@ -855,107 +793,81 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getLimit, ListHealthmonitorsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getMarker, ListHealthmonitorsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getPageReverse,
+                ListHealthmonitorsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getId, ListHealthmonitorsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getName, ListHealthmonitorsRequest::setName));
         builder.<Integer>withRequestField("delay",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getDelay, (req, v) -> {
-                req.setDelay(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getDelay, ListHealthmonitorsRequest::setDelay));
         builder.<Integer>withRequestField("max_retries",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getMaxRetries, (req, v) -> {
-                req.setMaxRetries(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getMaxRetries, ListHealthmonitorsRequest::setMaxRetries));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getAdminStateUp,
+                ListHealthmonitorsRequest::setAdminStateUp));
         builder.<Integer>withRequestField("timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getTimeout, (req, v) -> {
-                req.setTimeout(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getTimeout, ListHealthmonitorsRequest::setTimeout));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getType, ListHealthmonitorsRequest::setType));
         builder.<Integer>withRequestField("monitor_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getMonitorPort, (req, v) -> {
-                req.setMonitorPort(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getMonitorPort,
+                ListHealthmonitorsRequest::setMonitorPort));
         builder.<String>withRequestField("expected_codes",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getExpectedCodes, (req, v) -> {
-                req.setExpectedCodes(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getExpectedCodes,
+                ListHealthmonitorsRequest::setExpectedCodes));
         builder.<String>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getDomainName, (req, v) -> {
-                req.setDomainName(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getDomainName, ListHealthmonitorsRequest::setDomainName));
         builder.<String>withRequestField("url_path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getUrlPath, (req, v) -> {
-                req.setUrlPath(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getUrlPath, ListHealthmonitorsRequest::setUrlPath));
         builder.<String>withRequestField("http_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHealthmonitorsRequest::getHttpMethod, (req, v) -> {
-                req.setHttpMethod(v);
-            }));
+            f -> f.withMarshaller(ListHealthmonitorsRequest::getHttpMethod, ListHealthmonitorsRequest::setHttpMethod));
 
         // response
 
@@ -963,9 +875,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListL7policiesRequest, ListL7policiesResponse> listL7policies =
-        genForlistL7policies();
+        genForListL7policies();
 
-    private static HttpRequestDef<ListL7policiesRequest, ListL7policiesResponse> genForlistL7policies() {
+    private static HttpRequestDef<ListL7policiesRequest, ListL7policiesResponse> genForListL7policies() {
         // basic
         HttpRequestDef.Builder<ListL7policiesRequest, ListL7policiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListL7policiesRequest.class, ListL7policiesResponse.class)
@@ -978,123 +890,95 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getLimit, ListL7policiesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getMarker, ListL7policiesRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getPageReverse, ListL7policiesRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getId, ListL7policiesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getName, ListL7policiesRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getDescription, ListL7policiesRequest::setDescription));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getAdminStateUp, ListL7policiesRequest::setAdminStateUp));
         builder.<String>withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getListenerId, ListL7policiesRequest::setListenerId));
         builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getAction, (req, v) -> {
-                req.setAction(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getAction, ListL7policiesRequest::setAction));
         builder.<String>withRequestField("redirect_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getRedirectPoolId, (req, v) -> {
-                req.setRedirectPoolId(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getRedirectPoolId, ListL7policiesRequest::setRedirectPoolId));
         builder.<String>withRequestField("redirect_listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getRedirectListenerId, (req, v) -> {
-                req.setRedirectListenerId(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getRedirectListenerId,
+                ListL7policiesRequest::setRedirectListenerId));
         builder.<String>withRequestField("redirect_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getRedirectUrl, (req, v) -> {
-                req.setRedirectUrl(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getRedirectUrl, ListL7policiesRequest::setRedirectUrl));
         builder.<Integer>withRequestField("position",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getPosition, (req, v) -> {
-                req.setPosition(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getPosition, ListL7policiesRequest::setPosition));
         builder.<String>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getProvisioningStatus, (req, v) -> {
-                req.setProvisioningStatus(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getProvisioningStatus,
+                ListL7policiesRequest::setProvisioningStatus));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getEnterpriseProjectId,
+                ListL7policiesRequest::setEnterpriseProjectId));
         builder.<Boolean>withRequestField("display_all_rules",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7policiesRequest::getDisplayAllRules, (req, v) -> {
-                req.setDisplayAllRules(v);
-            }));
+            f -> f.withMarshaller(ListL7policiesRequest::getDisplayAllRules,
+                ListL7policiesRequest::setDisplayAllRules));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListL7rulesRequest, ListL7rulesResponse> listL7rules = genForlistL7rules();
+    public static final HttpRequestDef<ListL7rulesRequest, ListL7rulesResponse> listL7rules = genForListL7rules();
 
-    private static HttpRequestDef<ListL7rulesRequest, ListL7rulesResponse> genForlistL7rules() {
+    private static HttpRequestDef<ListL7rulesRequest, ListL7rulesResponse> genForListL7rules() {
         // basic
         HttpRequestDef.Builder<ListL7rulesRequest, ListL7rulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListL7rulesRequest.class, ListL7rulesResponse.class)
@@ -1107,86 +991,63 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getL7policyId, ListL7rulesRequest::setL7policyId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getLimit, ListL7rulesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getMarker, ListL7rulesRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getPageReverse, ListL7rulesRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getId, ListL7rulesRequest::setId));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getAdminStateUp, ListL7rulesRequest::setAdminStateUp));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getType, ListL7rulesRequest::setType));
         builder.<String>withRequestField("compare_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getCompareType, (req, v) -> {
-                req.setCompareType(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getCompareType, ListL7rulesRequest::setCompareType));
         builder.<Boolean>withRequestField("invert",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getInvert, (req, v) -> {
-                req.setInvert(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getInvert, ListL7rulesRequest::setInvert));
         builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getKey, ListL7rulesRequest::setKey));
         builder.<String>withRequestField("value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getValue, (req, v) -> {
-                req.setValue(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getValue, ListL7rulesRequest::setValue));
         builder.<String>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListL7rulesRequest::getProvisioningStatus, (req, v) -> {
-                req.setProvisioningStatus(v);
-            }));
+            f -> f.withMarshaller(ListL7rulesRequest::getProvisioningStatus,
+                ListL7rulesRequest::setProvisioningStatus));
 
         // response
 
@@ -1194,9 +1055,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListListenerTagsRequest, ListListenerTagsResponse> listListenerTags =
-        genForlistListenerTags();
+        genForListListenerTags();
 
-    private static HttpRequestDef<ListListenerTagsRequest, ListListenerTagsResponse> genForlistListenerTags() {
+    private static HttpRequestDef<ListListenerTagsRequest, ListListenerTagsResponse> genForListListenerTags() {
         // basic
         HttpRequestDef.Builder<ListListenerTagsRequest, ListListenerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListListenerTagsRequest.class, ListListenerTagsResponse.class)
@@ -1212,9 +1073,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListListenersRequest, ListListenersResponse> listListeners =
-        genForlistListeners();
+        genForListListeners();
 
-    private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForlistListeners() {
+    private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForListListeners() {
         // basic
         HttpRequestDef.Builder<ListListenersRequest, ListListenersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListListenersRequest.class, ListListenersResponse.class)
@@ -1227,128 +1088,96 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getLimit, ListListenersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getMarker, ListListenersRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListListenersRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getPageReverse, ListListenersRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getId, ListListenersRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getName, ListListenersRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getDescription, ListListenersRequest::setDescription));
         builder.<String>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getLoadbalancerId, ListListenersRequest::setLoadbalancerId));
         builder.<Integer>withRequestField("connection_limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getConnectionLimit, (req, v) -> {
-                req.setConnectionLimit(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getConnectionLimit, ListListenersRequest::setConnectionLimit));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListListenersRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getAdminStateUp, ListListenersRequest::setAdminStateUp));
         builder.<String>withRequestField("default_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getDefaultPoolId, (req, v) -> {
-                req.setDefaultPoolId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getDefaultPoolId, ListListenersRequest::setDefaultPoolId));
         builder.<String>withRequestField("default_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getDefaultTlsContainerRef, (req, v) -> {
-                req.setDefaultTlsContainerRef(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getDefaultTlsContainerRef,
+                ListListenersRequest::setDefaultTlsContainerRef));
         builder.<String>withRequestField("client_ca_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getClientCaTlsContainerRef, (req, v) -> {
-                req.setClientCaTlsContainerRef(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getClientCaTlsContainerRef,
+                ListListenersRequest::setClientCaTlsContainerRef));
         builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getProtocol, ListListenersRequest::setProtocol));
         builder.<Integer>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListListenersRequest::getProtocolPort, (req, v) -> {
-                req.setProtocolPort(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getProtocolPort, ListListenersRequest::setProtocolPort));
         builder.<String>withRequestField("tls_ciphers_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getTlsCiphersPolicy, (req, v) -> {
-                req.setTlsCiphersPolicy(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getTlsCiphersPolicy,
+                ListListenersRequest::setTlsCiphersPolicy));
         builder.<String>withRequestField("tls_container_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getTlsContainerId, (req, v) -> {
-                req.setTlsContainerId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getTlsContainerId, ListListenersRequest::setTlsContainerId));
         builder.<Boolean>withRequestField("http2_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListListenersRequest::getHttp2Enable, (req, v) -> {
-                req.setHttp2Enable(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getHttp2Enable, ListListenersRequest::setHttp2Enable));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListListenersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListListenersRequest::getEnterpriseProjectId,
+                ListListenersRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1356,9 +1185,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListListenersByTagsRequest, ListListenersByTagsResponse> listListenersByTags =
-        genForlistListenersByTags();
+        genForListListenersByTags();
 
-    private static HttpRequestDef<ListListenersByTagsRequest, ListListenersByTagsResponse> genForlistListenersByTags() {
+    private static HttpRequestDef<ListListenersByTagsRequest, ListListenersByTagsResponse> genForListListenersByTags() {
         // basic
         HttpRequestDef.Builder<ListListenersByTagsRequest, ListListenersByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListListenersByTagsRequest.class, ListListenersByTagsResponse.class)
@@ -1371,9 +1200,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListListenersByTagsRequestBody.class),
-            f -> f.withMarshaller(ListListenersByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListListenersByTagsRequest::getBody, ListListenersByTagsRequest::setBody));
 
         // response
 
@@ -1381,9 +1208,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> listLoadbalancerTags =
-        genForlistLoadbalancerTags();
+        genForListLoadbalancerTags();
 
-    private static HttpRequestDef<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> genForlistLoadbalancerTags() {
+    private static HttpRequestDef<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> genForListLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListLoadbalancerTagsRequest.class, ListLoadbalancerTagsResponse.class)
@@ -1399,9 +1226,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListLoadbalancersRequest, ListLoadbalancersResponse> listLoadbalancers =
-        genForlistLoadbalancers();
+        genForListLoadbalancers();
 
-    private static HttpRequestDef<ListLoadbalancersRequest, ListLoadbalancersResponse> genForlistLoadbalancers() {
+    private static HttpRequestDef<ListLoadbalancersRequest, ListLoadbalancersResponse> genForListLoadbalancers() {
         // basic
         HttpRequestDef.Builder<ListLoadbalancersRequest, ListLoadbalancersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLoadbalancersRequest.class, ListLoadbalancersResponse.class)
@@ -1414,114 +1241,88 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getLimit, ListLoadbalancersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getMarker, ListLoadbalancersRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getPageReverse, ListLoadbalancersRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getId, ListLoadbalancersRequest::setId));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getDescription, ListLoadbalancersRequest::setDescription));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getName, ListLoadbalancersRequest::setName));
         builder.<String>withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getOperatingStatus, (req, v) -> {
-                req.setOperatingStatus(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getOperatingStatus,
+                ListLoadbalancersRequest::setOperatingStatus));
         builder.<String>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getProvisioningStatus, (req, v) -> {
-                req.setProvisioningStatus(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getProvisioningStatus,
+                ListLoadbalancersRequest::setProvisioningStatus));
         builder.<String>withRequestField("vip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getVipAddress, (req, v) -> {
-                req.setVipAddress(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getVipAddress, ListLoadbalancersRequest::setVipAddress));
         builder.<String>withRequestField("vip_port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getVipPortId, (req, v) -> {
-                req.setVipPortId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getVipPortId, ListLoadbalancersRequest::setVipPortId));
         builder.<String>withRequestField("vip_subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getVipSubnetId, (req, v) -> {
-                req.setVipSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getVipSubnetId, ListLoadbalancersRequest::setVipSubnetId));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getVpcId, (req, v) -> {
-                req.setVpcId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getVpcId, ListLoadbalancersRequest::setVpcId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getEnterpriseProjectId,
+                ListLoadbalancersRequest::setEnterpriseProjectId));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getAdminStateUp,
+                ListLoadbalancersRequest::setAdminStateUp));
         builder.<String>withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getMemberAddress, (req, v) -> {
-                req.setMemberAddress(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getMemberAddress,
+                ListLoadbalancersRequest::setMemberAddress));
         builder.<String>withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLoadbalancersRequest::getMemberDeviceId, (req, v) -> {
-                req.setMemberDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersRequest::getMemberDeviceId,
+                ListLoadbalancersRequest::setMemberDeviceId));
 
         // response
 
@@ -1529,9 +1330,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> listLoadbalancersByTags =
-        genForlistLoadbalancersByTags();
+        genForListLoadbalancersByTags();
 
-    private static HttpRequestDef<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> genForlistLoadbalancersByTags() {
+    private static HttpRequestDef<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> genForListLoadbalancersByTags() {
         // basic
         HttpRequestDef.Builder<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListLoadbalancersByTagsRequest.class, ListLoadbalancersByTagsResponse.class)
@@ -1544,18 +1345,16 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListLoadbalancersByTagsRequestBody.class),
-            f -> f.withMarshaller(ListLoadbalancersByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListLoadbalancersByTagsRequest::getBody, ListLoadbalancersByTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMembersRequest, ListMembersResponse> listMembers = genForlistMembers();
+    public static final HttpRequestDef<ListMembersRequest, ListMembersResponse> listMembers = genForListMembers();
 
-    private static HttpRequestDef<ListMembersRequest, ListMembersResponse> genForlistMembers() {
+    private static HttpRequestDef<ListMembersRequest, ListMembersResponse> genForListMembers() {
         // basic
         HttpRequestDef.Builder<ListMembersRequest, ListMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMembersRequest.class, ListMembersResponse.class)
@@ -1568,88 +1367,66 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getPoolId, ListMembersRequest::setPoolId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getLimit, ListMembersRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getMarker, ListMembersRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListMembersRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getPageReverse, ListMembersRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getId, ListMembersRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getName, ListMembersRequest::setName));
         builder.<String>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getAddress, (req, v) -> {
-                req.setAddress(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getAddress, ListMembersRequest::setAddress));
         builder.<Integer>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMembersRequest::getProtocolPort, (req, v) -> {
-                req.setProtocolPort(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getProtocolPort, ListMembersRequest::setProtocolPort));
         builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMembersRequest::getSubnetId, (req, v) -> {
-                req.setSubnetId(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getSubnetId, ListMembersRequest::setSubnetId));
         builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListMembersRequest::getAdminStateUp, (req, v) -> {
-                req.setAdminStateUp(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getAdminStateUp, ListMembersRequest::setAdminStateUp));
         builder.<Integer>withRequestField("weight",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMembersRequest::getWeight, (req, v) -> {
-                req.setWeight(v);
-            }));
+            f -> f.withMarshaller(ListMembersRequest::getWeight, ListMembersRequest::setWeight));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPoolsRequest, ListPoolsResponse> listPools = genForlistPools();
+    public static final HttpRequestDef<ListPoolsRequest, ListPoolsResponse> listPools = genForListPools();
 
-    private static HttpRequestDef<ListPoolsRequest, ListPoolsResponse> genForlistPools() {
+    private static HttpRequestDef<ListPoolsRequest, ListPoolsResponse> genForListPools() {
         // basic
         HttpRequestDef.Builder<ListPoolsRequest, ListPoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoolsRequest.class, ListPoolsResponse.class)
@@ -1662,93 +1439,67 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getLimit, ListPoolsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getMarker, ListPoolsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPoolsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getPageReverse, ListPoolsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getId, ListPoolsRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getName, ListPoolsRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getDescription, ListPoolsRequest::setDescription));
         builder.<String>withRequestField("healthmonitor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getHealthmonitorId, (req, v) -> {
-                req.setHealthmonitorId(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getHealthmonitorId, ListPoolsRequest::setHealthmonitorId));
         builder.<String>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getLoadbalancerId, ListPoolsRequest::setLoadbalancerId));
         builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getProtocol, (req, v) -> {
-                req.setProtocol(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getProtocol, ListPoolsRequest::setProtocol));
         builder.<String>withRequestField("lb_algorithm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getLbAlgorithm, (req, v) -> {
-                req.setLbAlgorithm(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getLbAlgorithm, ListPoolsRequest::setLbAlgorithm));
         builder.<String>withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getMemberAddress, (req, v) -> {
-                req.setMemberAddress(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getMemberAddress, ListPoolsRequest::setMemberAddress));
         builder.<String>withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getMemberDeviceId, (req, v) -> {
-                req.setMemberDeviceId(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getMemberDeviceId, ListPoolsRequest::setMemberDeviceId));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPoolsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListPoolsRequest::getEnterpriseProjectId, ListPoolsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1756,9 +1507,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListWhitelistsRequest, ListWhitelistsResponse> listWhitelists =
-        genForlistWhitelists();
+        genForListWhitelists();
 
-    private static HttpRequestDef<ListWhitelistsRequest, ListWhitelistsResponse> genForlistWhitelists() {
+    private static HttpRequestDef<ListWhitelistsRequest, ListWhitelistsResponse> genForListWhitelists() {
         // basic
         HttpRequestDef.Builder<ListWhitelistsRequest, ListWhitelistsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWhitelistsRequest.class, ListWhitelistsResponse.class)
@@ -1771,51 +1522,38 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getLimit, ListWhitelistsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getMarker, ListWhitelistsRequest::setMarker));
         builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getPageReverse, ListWhitelistsRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getId, ListWhitelistsRequest::setId));
         builder.<Boolean>withRequestField("enable_whitelist",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getEnableWhitelist, (req, v) -> {
-                req.setEnableWhitelist(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getEnableWhitelist,
+                ListWhitelistsRequest::setEnableWhitelist));
         builder.<String>withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getListenerId, ListWhitelistsRequest::setListenerId));
         builder.<String>withRequestField("whitelist",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWhitelistsRequest::getWhitelist, (req, v) -> {
-                req.setWhitelist(v);
-            }));
+            f -> f.withMarshaller(ListWhitelistsRequest::getWhitelist, ListWhitelistsRequest::setWhitelist));
 
         // response
 
@@ -1823,9 +1561,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowHealthmonitorsRequest, ShowHealthmonitorsResponse> showHealthmonitors =
-        genForshowHealthmonitors();
+        genForShowHealthmonitors();
 
-    private static HttpRequestDef<ShowHealthmonitorsRequest, ShowHealthmonitorsResponse> genForshowHealthmonitors() {
+    private static HttpRequestDef<ShowHealthmonitorsRequest, ShowHealthmonitorsResponse> genForShowHealthmonitors() {
         // basic
         HttpRequestDef.Builder<ShowHealthmonitorsRequest, ShowHealthmonitorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHealthmonitorsRequest.class, ShowHealthmonitorsResponse.class)
@@ -1838,18 +1576,17 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowHealthmonitorsRequest::getHealthmonitorId, (req, v) -> {
-                req.setHealthmonitorId(v);
-            }));
+            f -> f.withMarshaller(ShowHealthmonitorsRequest::getHealthmonitorId,
+                ShowHealthmonitorsRequest::setHealthmonitorId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowL7policyRequest, ShowL7policyResponse> showL7policy = genForshowL7policy();
+    public static final HttpRequestDef<ShowL7policyRequest, ShowL7policyResponse> showL7policy = genForShowL7policy();
 
-    private static HttpRequestDef<ShowL7policyRequest, ShowL7policyResponse> genForshowL7policy() {
+    private static HttpRequestDef<ShowL7policyRequest, ShowL7policyResponse> genForShowL7policy() {
         // basic
         HttpRequestDef.Builder<ShowL7policyRequest, ShowL7policyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowL7policyRequest.class, ShowL7policyResponse.class)
@@ -1862,18 +1599,16 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowL7policyRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(ShowL7policyRequest::getL7policyId, ShowL7policyRequest::setL7policyId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowL7ruleRequest, ShowL7ruleResponse> showL7rule = genForshowL7rule();
+    public static final HttpRequestDef<ShowL7ruleRequest, ShowL7ruleResponse> showL7rule = genForShowL7rule();
 
-    private static HttpRequestDef<ShowL7ruleRequest, ShowL7ruleResponse> genForshowL7rule() {
+    private static HttpRequestDef<ShowL7ruleRequest, ShowL7ruleResponse> genForShowL7rule() {
         // basic
         HttpRequestDef.Builder<ShowL7ruleRequest, ShowL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowL7ruleRequest.class, ShowL7ruleResponse.class)
@@ -1886,25 +1621,21 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowL7ruleRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(ShowL7ruleRequest::getL7policyId, ShowL7ruleRequest::setL7policyId));
         builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowL7ruleRequest::getL7ruleId, (req, v) -> {
-                req.setL7ruleId(v);
-            }));
+            f -> f.withMarshaller(ShowL7ruleRequest::getL7ruleId, ShowL7ruleRequest::setL7ruleId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowListenerRequest, ShowListenerResponse> showListener = genForshowListener();
+    public static final HttpRequestDef<ShowListenerRequest, ShowListenerResponse> showListener = genForShowListener();
 
-    private static HttpRequestDef<ShowListenerRequest, ShowListenerResponse> genForshowListener() {
+    private static HttpRequestDef<ShowListenerRequest, ShowListenerResponse> genForShowListener() {
         // basic
         HttpRequestDef.Builder<ShowListenerRequest, ShowListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListenerRequest.class, ShowListenerResponse.class)
@@ -1917,9 +1648,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ShowListenerRequest::getListenerId, ShowListenerRequest::setListenerId));
 
         // response
 
@@ -1927,9 +1656,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowListenerTagsRequest, ShowListenerTagsResponse> showListenerTags =
-        genForshowListenerTags();
+        genForShowListenerTags();
 
-    private static HttpRequestDef<ShowListenerTagsRequest, ShowListenerTagsResponse> genForshowListenerTags() {
+    private static HttpRequestDef<ShowListenerTagsRequest, ShowListenerTagsResponse> genForShowListenerTags() {
         // basic
         HttpRequestDef.Builder<ShowListenerTagsRequest, ShowListenerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListenerTagsRequest.class, ShowListenerTagsResponse.class)
@@ -1942,9 +1671,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowListenerTagsRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(ShowListenerTagsRequest::getListenerId, ShowListenerTagsRequest::setListenerId));
 
         // response
 
@@ -1952,9 +1679,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowLoadbalancerRequest, ShowLoadbalancerResponse> showLoadbalancer =
-        genForshowLoadbalancer();
+        genForShowLoadbalancer();
 
-    private static HttpRequestDef<ShowLoadbalancerRequest, ShowLoadbalancerResponse> genForshowLoadbalancer() {
+    private static HttpRequestDef<ShowLoadbalancerRequest, ShowLoadbalancerResponse> genForShowLoadbalancer() {
         // basic
         HttpRequestDef.Builder<ShowLoadbalancerRequest, ShowLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLoadbalancerRequest.class, ShowLoadbalancerResponse.class)
@@ -1967,9 +1694,8 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLoadbalancerRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(ShowLoadbalancerRequest::getLoadbalancerId,
+                ShowLoadbalancerRequest::setLoadbalancerId));
 
         // response
 
@@ -1977,9 +1703,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> showLoadbalancerTags =
-        genForshowLoadbalancerTags();
+        genForShowLoadbalancerTags();
 
-    private static HttpRequestDef<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> genForshowLoadbalancerTags() {
+    private static HttpRequestDef<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> genForShowLoadbalancerTags() {
         // basic
         HttpRequestDef.Builder<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowLoadbalancerTagsRequest.class, ShowLoadbalancerTagsResponse.class)
@@ -1992,9 +1718,8 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(ShowLoadbalancerTagsRequest::getLoadbalancerId,
+                ShowLoadbalancerTagsRequest::setLoadbalancerId));
 
         // response
 
@@ -2002,9 +1727,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowLoadbalancersStatusRequest, ShowLoadbalancersStatusResponse> showLoadbalancersStatus =
-        genForshowLoadbalancersStatus();
+        genForShowLoadbalancersStatus();
 
-    private static HttpRequestDef<ShowLoadbalancersStatusRequest, ShowLoadbalancersStatusResponse> genForshowLoadbalancersStatus() {
+    private static HttpRequestDef<ShowLoadbalancersStatusRequest, ShowLoadbalancersStatusResponse> genForShowLoadbalancersStatus() {
         // basic
         HttpRequestDef.Builder<ShowLoadbalancersStatusRequest, ShowLoadbalancersStatusResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowLoadbalancersStatusRequest.class, ShowLoadbalancersStatusResponse.class)
@@ -2017,18 +1742,17 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLoadbalancersStatusRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(ShowLoadbalancersStatusRequest::getLoadbalancerId,
+                ShowLoadbalancersStatusRequest::setLoadbalancerId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMemberRequest, ShowMemberResponse> showMember = genForshowMember();
+    public static final HttpRequestDef<ShowMemberRequest, ShowMemberResponse> showMember = genForShowMember();
 
-    private static HttpRequestDef<ShowMemberRequest, ShowMemberResponse> genForshowMember() {
+    private static HttpRequestDef<ShowMemberRequest, ShowMemberResponse> genForShowMember() {
         // basic
         HttpRequestDef.Builder<ShowMemberRequest, ShowMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMemberRequest.class, ShowMemberResponse.class)
@@ -2041,25 +1765,21 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMemberRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(ShowMemberRequest::getPoolId, ShowMemberRequest::setPoolId));
         builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMemberRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(ShowMemberRequest::getMemberId, ShowMemberRequest::setMemberId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForshowPool();
+    public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForShowPool();
 
-    private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForshowPool() {
+    private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForShowPool() {
         // basic
         HttpRequestDef.Builder<ShowPoolRequest, ShowPoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPoolRequest.class, ShowPoolResponse.class)
@@ -2072,9 +1792,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPoolRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(ShowPoolRequest::getPoolId, ShowPoolRequest::setPoolId));
 
         // response
 
@@ -2082,9 +1800,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowWhitelistRequest, ShowWhitelistResponse> showWhitelist =
-        genForshowWhitelist();
+        genForShowWhitelist();
 
-    private static HttpRequestDef<ShowWhitelistRequest, ShowWhitelistResponse> genForshowWhitelist() {
+    private static HttpRequestDef<ShowWhitelistRequest, ShowWhitelistResponse> genForShowWhitelist() {
         // basic
         HttpRequestDef.Builder<ShowWhitelistRequest, ShowWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWhitelistRequest.class, ShowWhitelistResponse.class)
@@ -2097,9 +1815,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWhitelistRequest::getWhitelistId, (req, v) -> {
-                req.setWhitelistId(v);
-            }));
+            f -> f.withMarshaller(ShowWhitelistRequest::getWhitelistId, ShowWhitelistRequest::setWhitelistId));
 
         // response
 
@@ -2107,9 +1823,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateHealthmonitorRequest, UpdateHealthmonitorResponse> updateHealthmonitor =
-        genForupdateHealthmonitor();
+        genForUpdateHealthmonitor();
 
-    private static HttpRequestDef<UpdateHealthmonitorRequest, UpdateHealthmonitorResponse> genForupdateHealthmonitor() {
+    private static HttpRequestDef<UpdateHealthmonitorRequest, UpdateHealthmonitorResponse> genForUpdateHealthmonitor() {
         // basic
         HttpRequestDef.Builder<UpdateHealthmonitorRequest, UpdateHealthmonitorResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthmonitorRequest.class, UpdateHealthmonitorResponse.class)
@@ -2122,16 +1838,13 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHealthmonitorRequest::getHealthmonitorId, (req, v) -> {
-                req.setHealthmonitorId(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthmonitorRequest::getHealthmonitorId,
+                UpdateHealthmonitorRequest::setHealthmonitorId));
         builder.<UpdateHealthmonitorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateHealthmonitorRequestBody.class),
-            f -> f.withMarshaller(UpdateHealthmonitorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateHealthmonitorRequest::getBody, UpdateHealthmonitorRequest::setBody));
 
         // response
 
@@ -2139,9 +1852,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateL7policiesRequest, UpdateL7policiesResponse> updateL7policies =
-        genForupdateL7policies();
+        genForUpdateL7policies();
 
-    private static HttpRequestDef<UpdateL7policiesRequest, UpdateL7policiesResponse> genForupdateL7policies() {
+    private static HttpRequestDef<UpdateL7policiesRequest, UpdateL7policiesResponse> genForUpdateL7policies() {
         // basic
         HttpRequestDef.Builder<UpdateL7policiesRequest, UpdateL7policiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateL7policiesRequest.class, UpdateL7policiesResponse.class)
@@ -2154,25 +1867,21 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateL7policiesRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(UpdateL7policiesRequest::getL7policyId, UpdateL7policiesRequest::setL7policyId));
         builder.<UpdateL7policiesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateL7policiesRequestBody.class),
-            f -> f.withMarshaller(UpdateL7policiesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateL7policiesRequest::getBody, UpdateL7policiesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateL7ruleRequest, UpdateL7ruleResponse> updateL7rule = genForupdateL7rule();
+    public static final HttpRequestDef<UpdateL7ruleRequest, UpdateL7ruleResponse> updateL7rule = genForUpdateL7rule();
 
-    private static HttpRequestDef<UpdateL7ruleRequest, UpdateL7ruleResponse> genForupdateL7rule() {
+    private static HttpRequestDef<UpdateL7ruleRequest, UpdateL7ruleResponse> genForUpdateL7rule() {
         // basic
         HttpRequestDef.Builder<UpdateL7ruleRequest, UpdateL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateL7ruleRequest.class, UpdateL7ruleResponse.class)
@@ -2185,23 +1894,17 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateL7ruleRequest::getL7policyId, (req, v) -> {
-                req.setL7policyId(v);
-            }));
+            f -> f.withMarshaller(UpdateL7ruleRequest::getL7policyId, UpdateL7ruleRequest::setL7policyId));
         builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateL7ruleRequest::getL7ruleId, (req, v) -> {
-                req.setL7ruleId(v);
-            }));
+            f -> f.withMarshaller(UpdateL7ruleRequest::getL7ruleId, UpdateL7ruleRequest::setL7ruleId));
         builder.<UpdateL7ruleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateL7ruleRequestBody.class),
-            f -> f.withMarshaller(UpdateL7ruleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateL7ruleRequest::getBody, UpdateL7ruleRequest::setBody));
 
         // response
 
@@ -2209,9 +1912,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> updateListener =
-        genForupdateListener();
+        genForUpdateListener();
 
-    private static HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> genForupdateListener() {
+    private static HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> genForUpdateListener() {
         // basic
         HttpRequestDef.Builder<UpdateListenerRequest, UpdateListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateListenerRequest.class, UpdateListenerResponse.class)
@@ -2224,16 +1927,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateListenerRequest::getListenerId, (req, v) -> {
-                req.setListenerId(v);
-            }));
+            f -> f.withMarshaller(UpdateListenerRequest::getListenerId, UpdateListenerRequest::setListenerId));
         builder.<UpdateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateListenerRequestBody.class),
-            f -> f.withMarshaller(UpdateListenerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateListenerRequest::getBody, UpdateListenerRequest::setBody));
 
         // response
 
@@ -2241,9 +1940,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateLoadbalancerRequest, UpdateLoadbalancerResponse> updateLoadbalancer =
-        genForupdateLoadbalancer();
+        genForUpdateLoadbalancer();
 
-    private static HttpRequestDef<UpdateLoadbalancerRequest, UpdateLoadbalancerResponse> genForupdateLoadbalancer() {
+    private static HttpRequestDef<UpdateLoadbalancerRequest, UpdateLoadbalancerResponse> genForUpdateLoadbalancer() {
         // basic
         HttpRequestDef.Builder<UpdateLoadbalancerRequest, UpdateLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLoadbalancerRequest.class, UpdateLoadbalancerResponse.class)
@@ -2256,25 +1955,22 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLoadbalancerRequest::getLoadbalancerId, (req, v) -> {
-                req.setLoadbalancerId(v);
-            }));
+            f -> f.withMarshaller(UpdateLoadbalancerRequest::getLoadbalancerId,
+                UpdateLoadbalancerRequest::setLoadbalancerId));
         builder.<UpdateLoadbalancerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLoadbalancerRequestBody.class),
-            f -> f.withMarshaller(UpdateLoadbalancerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLoadbalancerRequest::getBody, UpdateLoadbalancerRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMemberRequest, UpdateMemberResponse> updateMember = genForupdateMember();
+    public static final HttpRequestDef<UpdateMemberRequest, UpdateMemberResponse> updateMember = genForUpdateMember();
 
-    private static HttpRequestDef<UpdateMemberRequest, UpdateMemberResponse> genForupdateMember() {
+    private static HttpRequestDef<UpdateMemberRequest, UpdateMemberResponse> genForUpdateMember() {
         // basic
         HttpRequestDef.Builder<UpdateMemberRequest, UpdateMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberRequest.class, UpdateMemberResponse.class)
@@ -2287,32 +1983,26 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberRequest::getMemberId, (req, v) -> {
-                req.setMemberId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberRequest::getMemberId, UpdateMemberRequest::setMemberId));
         builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateMemberRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberRequest::getPoolId, UpdateMemberRequest::setPoolId));
         builder.<UpdateMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMemberRequestBody.class),
-            f -> f.withMarshaller(UpdateMemberRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateMemberRequest::getBody, UpdateMemberRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePoolRequest, UpdatePoolResponse> updatePool = genForupdatePool();
+    public static final HttpRequestDef<UpdatePoolRequest, UpdatePoolResponse> updatePool = genForUpdatePool();
 
-    private static HttpRequestDef<UpdatePoolRequest, UpdatePoolResponse> genForupdatePool() {
+    private static HttpRequestDef<UpdatePoolRequest, UpdatePoolResponse> genForUpdatePool() {
         // basic
         HttpRequestDef.Builder<UpdatePoolRequest, UpdatePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePoolRequest.class, UpdatePoolResponse.class)
@@ -2325,16 +2015,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePoolRequest::getPoolId, (req, v) -> {
-                req.setPoolId(v);
-            }));
+            f -> f.withMarshaller(UpdatePoolRequest::getPoolId, UpdatePoolRequest::setPoolId));
         builder.<UpdatePoolRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePoolRequestBody.class),
-            f -> f.withMarshaller(UpdatePoolRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdatePoolRequest::getBody, UpdatePoolRequest::setBody));
 
         // response
 
@@ -2342,9 +2028,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateWhitelistRequest, UpdateWhitelistResponse> updateWhitelist =
-        genForupdateWhitelist();
+        genForUpdateWhitelist();
 
-    private static HttpRequestDef<UpdateWhitelistRequest, UpdateWhitelistResponse> genForupdateWhitelist() {
+    private static HttpRequestDef<UpdateWhitelistRequest, UpdateWhitelistResponse> genForUpdateWhitelist() {
         // basic
         HttpRequestDef.Builder<UpdateWhitelistRequest, UpdateWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWhitelistRequest.class, UpdateWhitelistResponse.class)
@@ -2357,16 +2043,12 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWhitelistRequest::getWhitelistId, (req, v) -> {
-                req.setWhitelistId(v);
-            }));
+            f -> f.withMarshaller(UpdateWhitelistRequest::getWhitelistId, UpdateWhitelistRequest::setWhitelistId));
         builder.<UpdateWhitelistRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWhitelistRequestBody.class),
-            f -> f.withMarshaller(UpdateWhitelistRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateWhitelistRequest::getBody, UpdateWhitelistRequest::setBody));
 
         // response
 
@@ -2374,9 +2056,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForcreateCertificate();
+        genForCreateCertificate();
 
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
         // basic
         HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
@@ -2389,9 +2071,7 @@ public class ElbMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
@@ -2399,9 +2079,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
-        genFordeleteCertificate();
+        genForDeleteCertificate();
 
-    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genForDeleteCertificate() {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
@@ -2414,9 +2094,8 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId,
+                DeleteCertificateRequest::setCertificateId));
 
         // response
 
@@ -2424,9 +2103,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
-        genForlistCertificates();
+        genForListCertificates();
 
-    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
+    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForListCertificates() {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
@@ -2439,72 +2118,52 @@ public class ElbMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getLimit, ListCertificatesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getMarker, ListCertificatesRequest::setMarker));
         builder.<String>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getPageReverse, (req, v) -> {
-                req.setPageReverse(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getPageReverse, ListCertificatesRequest::setPageReverse));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getId, ListCertificatesRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getName, ListCertificatesRequest::setName));
         builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getDescription, (req, v) -> {
-                req.setDescription(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getDescription, ListCertificatesRequest::setDescription));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getType, ListCertificatesRequest::setType));
         builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getDomain, ListCertificatesRequest::setDomain));
         builder.<String>withRequestField("private_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getPrivateKey, (req, v) -> {
-                req.setPrivateKey(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getPrivateKey, ListCertificatesRequest::setPrivateKey));
         builder.<String>withRequestField("certificate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertificatesRequest::getCertificate, (req, v) -> {
-                req.setCertificate(v);
-            }));
+            f -> f.withMarshaller(ListCertificatesRequest::getCertificate, ListCertificatesRequest::setCertificate));
 
         // response
 
@@ -2512,9 +2171,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
-        genForshowCertificate();
+        genForShowCertificate();
 
-    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForShowCertificate() {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
@@ -2527,9 +2186,7 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
 
         // response
 
@@ -2537,9 +2194,9 @@ public class ElbMeta {
     }
 
     public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
-        genForupdateCertificate();
+        genForUpdateCertificate();
 
-    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForupdateCertificate() {
+    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForUpdateCertificate() {
         // basic
         HttpRequestDef.Builder<UpdateCertificateRequest, UpdateCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
@@ -2552,16 +2209,13 @@ public class ElbMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId,
+                UpdateCertificateRequest::setCertificateId));
         builder.<UpdateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCertificateRequestBody.class),
-            f -> f.withMarshaller(UpdateCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCertificateRequest::getBody, UpdateCertificateRequest::setBody));
 
         // response
 

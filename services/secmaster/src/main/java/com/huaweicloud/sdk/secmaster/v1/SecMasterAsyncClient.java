@@ -30,7 +30,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProductHealthyRequest 请求对象
+     * @param request CheckProductHealthyRequest 请求对象
      * @return CompletableFuture<CheckProductHealthyResponse>
      */
     public CompletableFuture<CheckProductHealthyResponse> checkProductHealthyAsync(CheckProductHealthyRequest request) {
@@ -44,13 +44,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CheckProductHealthyRequest 请求对象
+     * @param request CheckProductHealthyRequest 请求对象
      * @return AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>
      */
     public AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse> checkProductHealthyAsyncInvoker(
         CheckProductHealthyRequest request) {
-        return new AsyncInvoker<CheckProductHealthyRequest, CheckProductHealthyResponse>(request,
-            SecMasterMeta.checkProductHealthy, hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.checkProductHealthy, hcClient);
     }
 
     /**
@@ -60,7 +59,7 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportEventsRequest 请求对象
+     * @param request ImportEventsRequest 请求对象
      * @return CompletableFuture<ImportEventsResponse>
      */
     public CompletableFuture<ImportEventsResponse> importEventsAsync(ImportEventsRequest request) {
@@ -74,13 +73,12 @@ public class SecMasterAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportEventsRequest 请求对象
+     * @param request ImportEventsRequest 请求对象
      * @return AsyncInvoker<ImportEventsRequest, ImportEventsResponse>
      */
     public AsyncInvoker<ImportEventsRequest, ImportEventsResponse> importEventsAsyncInvoker(
         ImportEventsRequest request) {
-        return new AsyncInvoker<ImportEventsRequest, ImportEventsResponse>(request, SecMasterMeta.importEvents,
-            hcClient);
+        return new AsyncInvoker<>(request, SecMasterMeta.importEvents, hcClient);
     }
 
 }

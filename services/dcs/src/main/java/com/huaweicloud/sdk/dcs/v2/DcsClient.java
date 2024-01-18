@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
@@ -248,7 +250,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return BatchCreateOrDeleteTagsResponse
      */
     public BatchCreateOrDeleteTagsResponse batchCreateOrDeleteTags(BatchCreateOrDeleteTagsRequest request) {
@@ -262,13 +264,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
      */
     public SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsInvoker(
         BatchCreateOrDeleteTagsRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request,
-            DcsMeta.batchCreateOrDeleteTags, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.batchCreateOrDeleteTags, hcClient);
     }
 
     /**
@@ -278,7 +279,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstancesRequest 请求对象
+     * @param request BatchDeleteInstancesRequest 请求对象
      * @return BatchDeleteInstancesResponse
      */
     public BatchDeleteInstancesResponse batchDeleteInstances(BatchDeleteInstancesRequest request) {
@@ -292,13 +293,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteInstancesRequest 请求对象
+     * @param request BatchDeleteInstancesRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>
      */
     public SyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstancesInvoker(
         BatchDeleteInstancesRequest request) {
-        return new SyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>(request,
-            DcsMeta.batchDeleteInstances, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.batchDeleteInstances, hcClient);
     }
 
     /**
@@ -310,7 +310,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowNodesInformationRequest 请求对象
+     * @param request BatchShowNodesInformationRequest 请求对象
      * @return BatchShowNodesInformationResponse
      */
     public BatchShowNodesInformationResponse batchShowNodesInformation(BatchShowNodesInformationRequest request) {
@@ -326,13 +326,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchShowNodesInformationRequest 请求对象
+     * @param request BatchShowNodesInformationRequest 请求对象
      * @return SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse>
      */
     public SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse> batchShowNodesInformationInvoker(
         BatchShowNodesInformationRequest request) {
-        return new SyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse>(request,
-            DcsMeta.batchShowNodesInformation, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.batchShowNodesInformation, hcClient);
     }
 
     /**
@@ -342,7 +341,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopMigrationTasksRequest 请求对象
+     * @param request BatchStopMigrationTasksRequest 请求对象
      * @return BatchStopMigrationTasksResponse
      */
     public BatchStopMigrationTasksResponse batchStopMigrationTasks(BatchStopMigrationTasksRequest request) {
@@ -356,13 +355,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopMigrationTasksRequest 请求对象
+     * @param request BatchStopMigrationTasksRequest 请求对象
      * @return SyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse>
      */
     public SyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse> batchStopMigrationTasksInvoker(
         BatchStopMigrationTasksRequest request) {
-        return new SyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse>(request,
-            DcsMeta.batchStopMigrationTasks, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.batchStopMigrationTasks, hcClient);
     }
 
     /**
@@ -372,7 +370,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeMasterStandbyRequest 请求对象
+     * @param request ChangeMasterStandbyRequest 请求对象
      * @return ChangeMasterStandbyResponse
      */
     public ChangeMasterStandbyResponse changeMasterStandby(ChangeMasterStandbyRequest request) {
@@ -386,13 +384,41 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ChangeMasterStandbyRequest 请求对象
+     * @param request ChangeMasterStandbyRequest 请求对象
      * @return SyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>
      */
     public SyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> changeMasterStandbyInvoker(
         ChangeMasterStandbyRequest request) {
-        return new SyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>(request,
-            DcsMeta.changeMasterStandby, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.changeMasterStandby, hcClient);
+    }
+
+    /**
+     * 异步交换实例主备节点
+     *
+     * 异步交换实例主备节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeMasterStandbyAsyncRequest 请求对象
+     * @return ChangeMasterStandbyAsyncResponse
+     */
+    public ChangeMasterStandbyAsyncResponse changeMasterStandbyAsync(ChangeMasterStandbyAsyncRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.changeMasterStandbyAsync);
+    }
+
+    /**
+     * 异步交换实例主备节点
+     *
+     * 异步交换实例主备节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeMasterStandbyAsyncRequest 请求对象
+     * @return SyncInvoker<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse>
+     */
+    public SyncInvoker<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse> changeMasterStandbyAsyncInvoker(
+        ChangeMasterStandbyAsyncRequest request) {
+        return new SyncInvoker<>(request, DcsMeta.changeMasterStandbyAsync, hcClient);
     }
 
     /**
@@ -403,7 +429,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyInstanceRequest 请求对象
+     * @param request CopyInstanceRequest 请求对象
      * @return CopyInstanceResponse
      */
     public CopyInstanceResponse copyInstance(CopyInstanceRequest request) {
@@ -418,11 +444,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CopyInstanceRequest 请求对象
+     * @param request CopyInstanceRequest 请求对象
      * @return SyncInvoker<CopyInstanceRequest, CopyInstanceResponse>
      */
     public SyncInvoker<CopyInstanceRequest, CopyInstanceResponse> copyInstanceInvoker(CopyInstanceRequest request) {
-        return new SyncInvoker<CopyInstanceRequest, CopyInstanceResponse>(request, DcsMeta.copyInstance, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.copyInstance, hcClient);
     }
 
     /**
@@ -434,7 +460,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclAccountRequest 请求对象
+     * @param request CreateAclAccountRequest 请求对象
      * @return CreateAclAccountResponse
      */
     public CreateAclAccountResponse createAclAccount(CreateAclAccountRequest request) {
@@ -450,13 +476,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAclAccountRequest 请求对象
+     * @param request CreateAclAccountRequest 请求对象
      * @return SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse>
      */
     public SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse> createAclAccountInvoker(
         CreateAclAccountRequest request) {
-        return new SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse>(request, DcsMeta.createAclAccount,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createAclAccount, hcClient);
     }
 
     /**
@@ -468,7 +493,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoExpireScanTaskRequest 请求对象
+     * @param request CreateAutoExpireScanTaskRequest 请求对象
      * @return CreateAutoExpireScanTaskResponse
      */
     public CreateAutoExpireScanTaskResponse createAutoExpireScanTask(CreateAutoExpireScanTaskRequest request) {
@@ -484,13 +509,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAutoExpireScanTaskRequest 请求对象
+     * @param request CreateAutoExpireScanTaskRequest 请求对象
      * @return SyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse>
      */
     public SyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> createAutoExpireScanTaskInvoker(
         CreateAutoExpireScanTaskRequest request) {
-        return new SyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse>(request,
-            DcsMeta.createAutoExpireScanTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createAutoExpireScanTask, hcClient);
     }
 
     /**
@@ -500,7 +524,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBigkeyScanTaskRequest 请求对象
+     * @param request CreateBigkeyScanTaskRequest 请求对象
      * @return CreateBigkeyScanTaskResponse
      */
     public CreateBigkeyScanTaskResponse createBigkeyScanTask(CreateBigkeyScanTaskRequest request) {
@@ -514,13 +538,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateBigkeyScanTaskRequest 请求对象
+     * @param request CreateBigkeyScanTaskRequest 请求对象
      * @return SyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>
      */
     public SyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> createBigkeyScanTaskInvoker(
         CreateBigkeyScanTaskRequest request) {
-        return new SyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>(request,
-            DcsMeta.createBigkeyScanTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createBigkeyScanTask, hcClient);
     }
 
     /**
@@ -530,7 +553,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomTemplateRequest 请求对象
+     * @param request CreateCustomTemplateRequest 请求对象
      * @return CreateCustomTemplateResponse
      */
     public CreateCustomTemplateResponse createCustomTemplate(CreateCustomTemplateRequest request) {
@@ -544,13 +567,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCustomTemplateRequest 请求对象
+     * @param request CreateCustomTemplateRequest 请求对象
      * @return SyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse>
      */
     public SyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse> createCustomTemplateInvoker(
         CreateCustomTemplateRequest request) {
-        return new SyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse>(request,
-            DcsMeta.createCustomTemplate, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createCustomTemplate, hcClient);
     }
 
     /**
@@ -560,7 +582,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnosisTaskRequest 请求对象
+     * @param request CreateDiagnosisTaskRequest 请求对象
      * @return CreateDiagnosisTaskResponse
      */
     public CreateDiagnosisTaskResponse createDiagnosisTask(CreateDiagnosisTaskRequest request) {
@@ -574,13 +596,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDiagnosisTaskRequest 请求对象
+     * @param request CreateDiagnosisTaskRequest 请求对象
      * @return SyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>
      */
     public SyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTaskInvoker(
         CreateDiagnosisTaskRequest request) {
-        return new SyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>(request,
-            DcsMeta.createDiagnosisTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createDiagnosisTask, hcClient);
     }
 
     /**
@@ -592,7 +613,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHotkeyScanTaskRequest 请求对象
+     * @param request CreateHotkeyScanTaskRequest 请求对象
      * @return CreateHotkeyScanTaskResponse
      */
     public CreateHotkeyScanTaskResponse createHotkeyScanTask(CreateHotkeyScanTaskRequest request) {
@@ -608,13 +629,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateHotkeyScanTaskRequest 请求对象
+     * @param request CreateHotkeyScanTaskRequest 请求对象
      * @return SyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse>
      */
     public SyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTaskInvoker(
         CreateHotkeyScanTaskRequest request) {
-        return new SyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse>(request,
-            DcsMeta.createHotkeyScanTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createHotkeyScanTask, hcClient);
     }
 
     /**
@@ -624,7 +644,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
@@ -638,13 +658,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, DcsMeta.createInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createInstance, hcClient);
     }
 
     /**
@@ -654,7 +673,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMigrationTaskRequest 请求对象
+     * @param request CreateMigrationTaskRequest 请求对象
      * @return CreateMigrationTaskResponse
      */
     public CreateMigrationTaskResponse createMigrationTask(CreateMigrationTaskRequest request) {
@@ -668,13 +687,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMigrationTaskRequest 请求对象
+     * @param request CreateMigrationTaskRequest 请求对象
      * @return SyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>
      */
     public SyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse> createMigrationTaskInvoker(
         CreateMigrationTaskRequest request) {
-        return new SyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>(request,
-            DcsMeta.createMigrationTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createMigrationTask, hcClient);
     }
 
     /**
@@ -684,7 +702,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOnlineMigrationTaskRequest 请求对象
+     * @param request CreateOnlineMigrationTaskRequest 请求对象
      * @return CreateOnlineMigrationTaskResponse
      */
     public CreateOnlineMigrationTaskResponse createOnlineMigrationTask(CreateOnlineMigrationTaskRequest request) {
@@ -698,13 +716,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateOnlineMigrationTaskRequest 请求对象
+     * @param request CreateOnlineMigrationTaskRequest 请求对象
      * @return SyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse>
      */
     public SyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse> createOnlineMigrationTaskInvoker(
         CreateOnlineMigrationTaskRequest request) {
-        return new SyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse>(request,
-            DcsMeta.createOnlineMigrationTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createOnlineMigrationTask, hcClient);
     }
 
     /**
@@ -714,7 +731,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRedislogRequest 请求对象
+     * @param request CreateRedislogRequest 请求对象
      * @return CreateRedislogResponse
      */
     public CreateRedislogResponse createRedislog(CreateRedislogRequest request) {
@@ -728,13 +745,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRedislogRequest 请求对象
+     * @param request CreateRedislogRequest 请求对象
      * @return SyncInvoker<CreateRedislogRequest, CreateRedislogResponse>
      */
     public SyncInvoker<CreateRedislogRequest, CreateRedislogResponse> createRedislogInvoker(
         CreateRedislogRequest request) {
-        return new SyncInvoker<CreateRedislogRequest, CreateRedislogResponse>(request, DcsMeta.createRedislog,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createRedislog, hcClient);
     }
 
     /**
@@ -744,7 +760,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRedislogDownloadLinkRequest 请求对象
+     * @param request CreateRedislogDownloadLinkRequest 请求对象
      * @return CreateRedislogDownloadLinkResponse
      */
     public CreateRedislogDownloadLinkResponse createRedislogDownloadLink(CreateRedislogDownloadLinkRequest request) {
@@ -758,13 +774,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRedislogDownloadLinkRequest 请求对象
+     * @param request CreateRedislogDownloadLinkRequest 请求对象
      * @return SyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>
      */
     public SyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> createRedislogDownloadLinkInvoker(
         CreateRedislogDownloadLinkRequest request) {
-        return new SyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>(request,
-            DcsMeta.createRedislogDownloadLink, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createRedislogDownloadLink, hcClient);
     }
 
     /**
@@ -774,7 +789,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResizeOrderRequest 请求对象
+     * @param request CreateResizeOrderRequest 请求对象
      * @return CreateResizeOrderResponse
      */
     public CreateResizeOrderResponse createResizeOrder(CreateResizeOrderRequest request) {
@@ -788,13 +803,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResizeOrderRequest 请求对象
+     * @param request CreateResizeOrderRequest 请求对象
      * @return SyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse>
      */
     public SyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse> createResizeOrderInvoker(
         CreateResizeOrderRequest request) {
-        return new SyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse>(request, DcsMeta.createResizeOrder,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.createResizeOrder, hcClient);
     }
 
     /**
@@ -804,7 +818,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclAccountRequest 请求对象
+     * @param request DeleteAclAccountRequest 请求对象
      * @return DeleteAclAccountResponse
      */
     public DeleteAclAccountResponse deleteAclAccount(DeleteAclAccountRequest request) {
@@ -818,13 +832,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAclAccountRequest 请求对象
+     * @param request DeleteAclAccountRequest 请求对象
      * @return SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse>
      */
     public SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse> deleteAclAccountInvoker(
         DeleteAclAccountRequest request) {
-        return new SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse>(request, DcsMeta.deleteAclAccount,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteAclAccount, hcClient);
     }
 
     /**
@@ -834,7 +847,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
      */
     public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
@@ -848,13 +861,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackgroundTaskRequest 请求对象
+     * @param request DeleteBackgroundTaskRequest 请求对象
      * @return SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
      */
     public SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskInvoker(
         DeleteBackgroundTaskRequest request) {
-        return new SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request,
-            DcsMeta.deleteBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteBackgroundTask, hcClient);
     }
 
     /**
@@ -864,7 +876,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupFileRequest 请求对象
+     * @param request DeleteBackupFileRequest 请求对象
      * @return DeleteBackupFileResponse
      */
     public DeleteBackupFileResponse deleteBackupFile(DeleteBackupFileRequest request) {
@@ -878,13 +890,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBackupFileRequest 请求对象
+     * @param request DeleteBackupFileRequest 请求对象
      * @return SyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse>
      */
     public SyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse> deleteBackupFileInvoker(
         DeleteBackupFileRequest request) {
-        return new SyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse>(request, DcsMeta.deleteBackupFile,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteBackupFile, hcClient);
     }
 
     /**
@@ -894,7 +905,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBigkeyScanTaskRequest 请求对象
+     * @param request DeleteBigkeyScanTaskRequest 请求对象
      * @return DeleteBigkeyScanTaskResponse
      */
     public DeleteBigkeyScanTaskResponse deleteBigkeyScanTask(DeleteBigkeyScanTaskRequest request) {
@@ -908,13 +919,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteBigkeyScanTaskRequest 请求对象
+     * @param request DeleteBigkeyScanTaskRequest 请求对象
      * @return SyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>
      */
     public SyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> deleteBigkeyScanTaskInvoker(
         DeleteBigkeyScanTaskRequest request) {
-        return new SyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>(request,
-            DcsMeta.deleteBigkeyScanTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteBigkeyScanTask, hcClient);
     }
 
     /**
@@ -924,7 +934,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCenterTaskRequest 请求对象
+     * @param request DeleteCenterTaskRequest 请求对象
      * @return DeleteCenterTaskResponse
      */
     public DeleteCenterTaskResponse deleteCenterTask(DeleteCenterTaskRequest request) {
@@ -938,13 +948,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCenterTaskRequest 请求对象
+     * @param request DeleteCenterTaskRequest 请求对象
      * @return SyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse>
      */
     public SyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse> deleteCenterTaskInvoker(
         DeleteCenterTaskRequest request) {
-        return new SyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse>(request, DcsMeta.deleteCenterTask,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteCenterTask, hcClient);
     }
 
     /**
@@ -954,7 +963,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigTemplateRequest 请求对象
+     * @param request DeleteConfigTemplateRequest 请求对象
      * @return DeleteConfigTemplateResponse
      */
     public DeleteConfigTemplateResponse deleteConfigTemplate(DeleteConfigTemplateRequest request) {
@@ -968,13 +977,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConfigTemplateRequest 请求对象
+     * @param request DeleteConfigTemplateRequest 请求对象
      * @return SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse>
      */
     public SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> deleteConfigTemplateInvoker(
         DeleteConfigTemplateRequest request) {
-        return new SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse>(request,
-            DcsMeta.deleteConfigTemplate, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteConfigTemplate, hcClient);
     }
 
     /**
@@ -984,7 +992,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDiagnosisTaskRequest 请求对象
+     * @param request DeleteDiagnosisTaskRequest 请求对象
      * @return DeleteDiagnosisTaskResponse
      */
     public DeleteDiagnosisTaskResponse deleteDiagnosisTask(DeleteDiagnosisTaskRequest request) {
@@ -998,13 +1006,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDiagnosisTaskRequest 请求对象
+     * @param request DeleteDiagnosisTaskRequest 请求对象
      * @return SyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse>
      */
     public SyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> deleteDiagnosisTaskInvoker(
         DeleteDiagnosisTaskRequest request) {
-        return new SyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse>(request,
-            DcsMeta.deleteDiagnosisTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteDiagnosisTask, hcClient);
     }
 
     /**
@@ -1014,7 +1021,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHotkeyScanTaskRequest 请求对象
+     * @param request DeleteHotkeyScanTaskRequest 请求对象
      * @return DeleteHotkeyScanTaskResponse
      */
     public DeleteHotkeyScanTaskResponse deleteHotkeyScanTask(DeleteHotkeyScanTaskRequest request) {
@@ -1028,13 +1035,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteHotkeyScanTaskRequest 请求对象
+     * @param request DeleteHotkeyScanTaskRequest 请求对象
      * @return SyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse>
      */
     public SyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> deleteHotkeyScanTaskInvoker(
         DeleteHotkeyScanTaskRequest request) {
-        return new SyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse>(request,
-            DcsMeta.deleteHotkeyScanTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteHotkeyScanTask, hcClient);
     }
 
     /**
@@ -1044,7 +1050,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpFromDomainNameRequest 请求对象
+     * @param request DeleteIpFromDomainNameRequest 请求对象
      * @return DeleteIpFromDomainNameResponse
      */
     public DeleteIpFromDomainNameResponse deleteIpFromDomainName(DeleteIpFromDomainNameRequest request) {
@@ -1058,13 +1064,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteIpFromDomainNameRequest 请求对象
+     * @param request DeleteIpFromDomainNameRequest 请求对象
      * @return SyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse>
      */
     public SyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> deleteIpFromDomainNameInvoker(
         DeleteIpFromDomainNameRequest request) {
-        return new SyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse>(request,
-            DcsMeta.deleteIpFromDomainName, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteIpFromDomainName, hcClient);
     }
 
     /**
@@ -1074,7 +1079,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMigrationTaskRequest 请求对象
+     * @param request DeleteMigrationTaskRequest 请求对象
      * @return DeleteMigrationTaskResponse
      */
     public DeleteMigrationTaskResponse deleteMigrationTask(DeleteMigrationTaskRequest request) {
@@ -1088,13 +1093,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMigrationTaskRequest 请求对象
+     * @param request DeleteMigrationTaskRequest 请求对象
      * @return SyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse>
      */
     public SyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> deleteMigrationTaskInvoker(
         DeleteMigrationTaskRequest request) {
-        return new SyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse>(request,
-            DcsMeta.deleteMigrationTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteMigrationTask, hcClient);
     }
 
     /**
@@ -1106,7 +1110,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSingleInstanceRequest 请求对象
+     * @param request DeleteSingleInstanceRequest 请求对象
      * @return DeleteSingleInstanceResponse
      */
     public DeleteSingleInstanceResponse deleteSingleInstance(DeleteSingleInstanceRequest request) {
@@ -1122,13 +1126,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteSingleInstanceRequest 请求对象
+     * @param request DeleteSingleInstanceRequest 请求对象
      * @return SyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>
      */
     public SyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> deleteSingleInstanceInvoker(
         DeleteSingleInstanceRequest request) {
-        return new SyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>(request,
-            DcsMeta.deleteSingleInstance, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.deleteSingleInstance, hcClient);
     }
 
     /**
@@ -1138,7 +1141,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSslCertRequest 请求对象
+     * @param request DownloadSslCertRequest 请求对象
      * @return DownloadSslCertResponse
      */
     public DownloadSslCertResponse downloadSslCert(DownloadSslCertRequest request) {
@@ -1152,13 +1155,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadSslCertRequest 请求对象
+     * @param request DownloadSslCertRequest 请求对象
      * @return SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse>
      */
     public SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse> downloadSslCertInvoker(
         DownloadSslCertRequest request) {
-        return new SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse>(request, DcsMeta.downloadSslCert,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.downloadSslCert, hcClient);
     }
 
     /**
@@ -1168,7 +1170,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExchangeInstanceIpRequest 请求对象
+     * @param request ExchangeInstanceIpRequest 请求对象
      * @return ExchangeInstanceIpResponse
      */
     public ExchangeInstanceIpResponse exchangeInstanceIp(ExchangeInstanceIpRequest request) {
@@ -1182,13 +1184,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExchangeInstanceIpRequest 请求对象
+     * @param request ExchangeInstanceIpRequest 请求对象
      * @return SyncInvoker<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse>
      */
     public SyncInvoker<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse> exchangeInstanceIpInvoker(
         ExchangeInstanceIpRequest request) {
-        return new SyncInvoker<ExchangeInstanceIpRequest, ExchangeInstanceIpResponse>(request,
-            DcsMeta.exchangeInstanceIp, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.exchangeInstanceIp, hcClient);
     }
 
     /**
@@ -1198,7 +1199,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @param request ExecuteClusterSwitchoverRequest 请求对象
      * @return ExecuteClusterSwitchoverResponse
      */
     public ExecuteClusterSwitchoverResponse executeClusterSwitchover(ExecuteClusterSwitchoverRequest request) {
@@ -1212,13 +1213,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @param request ExecuteClusterSwitchoverRequest 请求对象
      * @return SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>
      */
     public SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> executeClusterSwitchoverInvoker(
         ExecuteClusterSwitchoverRequest request) {
-        return new SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>(request,
-            DcsMeta.executeClusterSwitchover, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.executeClusterSwitchover, hcClient);
     }
 
     /**
@@ -1228,7 +1228,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCommandMobilizationRequest 请求对象
+     * @param request ExecuteCommandMobilizationRequest 请求对象
      * @return ExecuteCommandMobilizationResponse
      */
     public ExecuteCommandMobilizationResponse executeCommandMobilization(ExecuteCommandMobilizationRequest request) {
@@ -1242,13 +1242,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteCommandMobilizationRequest 请求对象
+     * @param request ExecuteCommandMobilizationRequest 请求对象
      * @return SyncInvoker<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse>
      */
     public SyncInvoker<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse> executeCommandMobilizationInvoker(
         ExecuteCommandMobilizationRequest request) {
-        return new SyncInvoker<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse>(request,
-            DcsMeta.executeCommandMobilization, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.executeCommandMobilization, hcClient);
     }
 
     /**
@@ -1258,7 +1257,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportExcelJobRequest 请求对象
+     * @param request ExportExcelJobRequest 请求对象
      * @return ExportExcelJobResponse
      */
     public ExportExcelJobResponse exportExcelJob(ExportExcelJobRequest request) {
@@ -1272,13 +1271,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportExcelJobRequest 请求对象
+     * @param request ExportExcelJobRequest 请求对象
      * @return SyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse>
      */
     public SyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse> exportExcelJobInvoker(
         ExportExcelJobRequest request) {
-        return new SyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse>(request, DcsMeta.exportExcelJob,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.exportExcelJob, hcClient);
     }
 
     /**
@@ -1288,7 +1286,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportInstancesTaskRequest 请求对象
+     * @param request ExportInstancesTaskRequest 请求对象
      * @return ExportInstancesTaskResponse
      */
     public ExportInstancesTaskResponse exportInstancesTask(ExportInstancesTaskRequest request) {
@@ -1302,13 +1300,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportInstancesTaskRequest 请求对象
+     * @param request ExportInstancesTaskRequest 请求对象
      * @return SyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse>
      */
     public SyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse> exportInstancesTaskInvoker(
         ExportInstancesTaskRequest request) {
-        return new SyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse>(request,
-            DcsMeta.exportInstancesTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.exportInstancesTask, hcClient);
     }
 
     /**
@@ -1318,7 +1315,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclAccountsRequest 请求对象
+     * @param request ListAclAccountsRequest 请求对象
      * @return ListAclAccountsResponse
      */
     public ListAclAccountsResponse listAclAccounts(ListAclAccountsRequest request) {
@@ -1332,13 +1329,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAclAccountsRequest 请求对象
+     * @param request ListAclAccountsRequest 请求对象
      * @return SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse>
      */
     public SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse> listAclAccountsInvoker(
         ListAclAccountsRequest request) {
-        return new SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse>(request, DcsMeta.listAclAccounts,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listAclAccounts, hcClient);
     }
 
     /**
@@ -1348,7 +1344,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
      */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
@@ -1362,13 +1358,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableZonesRequest 请求对象
+     * @param request ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
     public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(
         ListAvailableZonesRequest request) {
-        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
-            DcsMeta.listAvailableZones, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -1378,7 +1373,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTaskRequest 请求对象
+     * @param request ListBackgroundTaskRequest 请求对象
      * @return ListBackgroundTaskResponse
      */
     public ListBackgroundTaskResponse listBackgroundTask(ListBackgroundTaskRequest request) {
@@ -1392,13 +1387,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackgroundTaskRequest 请求对象
+     * @param request ListBackgroundTaskRequest 请求对象
      * @return SyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse>
      */
     public SyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse> listBackgroundTaskInvoker(
         ListBackgroundTaskRequest request) {
-        return new SyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse>(request,
-            DcsMeta.listBackgroundTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listBackgroundTask, hcClient);
     }
 
     /**
@@ -1408,7 +1402,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupFileLinksRequest 请求对象
+     * @param request ListBackupFileLinksRequest 请求对象
      * @return ListBackupFileLinksResponse
      */
     public ListBackupFileLinksResponse listBackupFileLinks(ListBackupFileLinksRequest request) {
@@ -1422,13 +1416,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupFileLinksRequest 请求对象
+     * @param request ListBackupFileLinksRequest 请求对象
      * @return SyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse>
      */
     public SyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse> listBackupFileLinksInvoker(
         ListBackupFileLinksRequest request) {
-        return new SyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse>(request,
-            DcsMeta.listBackupFileLinks, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listBackupFileLinks, hcClient);
     }
 
     /**
@@ -1438,7 +1431,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRecordsRequest 请求对象
+     * @param request ListBackupRecordsRequest 请求对象
      * @return ListBackupRecordsResponse
      */
     public ListBackupRecordsResponse listBackupRecords(ListBackupRecordsRequest request) {
@@ -1452,13 +1445,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBackupRecordsRequest 请求对象
+     * @param request ListBackupRecordsRequest 请求对象
      * @return SyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse>
      */
     public SyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse> listBackupRecordsInvoker(
         ListBackupRecordsRequest request) {
-        return new SyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse>(request, DcsMeta.listBackupRecords,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listBackupRecords, hcClient);
     }
 
     /**
@@ -1468,7 +1460,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBigkeyScanTasksRequest 请求对象
+     * @param request ListBigkeyScanTasksRequest 请求对象
      * @return ListBigkeyScanTasksResponse
      */
     public ListBigkeyScanTasksResponse listBigkeyScanTasks(ListBigkeyScanTasksRequest request) {
@@ -1482,13 +1474,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListBigkeyScanTasksRequest 请求对象
+     * @param request ListBigkeyScanTasksRequest 请求对象
      * @return SyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse>
      */
     public SyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> listBigkeyScanTasksInvoker(
         ListBigkeyScanTasksRequest request) {
-        return new SyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse>(request,
-            DcsMeta.listBigkeyScanTasks, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listBigkeyScanTasks, hcClient);
     }
 
     /**
@@ -1498,7 +1489,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCenterTaskRequest 请求对象
+     * @param request ListCenterTaskRequest 请求对象
      * @return ListCenterTaskResponse
      */
     public ListCenterTaskResponse listCenterTask(ListCenterTaskRequest request) {
@@ -1512,13 +1503,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListCenterTaskRequest 请求对象
+     * @param request ListCenterTaskRequest 请求对象
      * @return SyncInvoker<ListCenterTaskRequest, ListCenterTaskResponse>
      */
     public SyncInvoker<ListCenterTaskRequest, ListCenterTaskResponse> listCenterTaskInvoker(
         ListCenterTaskRequest request) {
-        return new SyncInvoker<ListCenterTaskRequest, ListCenterTaskResponse>(request, DcsMeta.listCenterTask,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listCenterTask, hcClient);
     }
 
     /**
@@ -1528,7 +1518,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigHistoriesRequest 请求对象
+     * @param request ListConfigHistoriesRequest 请求对象
      * @return ListConfigHistoriesResponse
      */
     public ListConfigHistoriesResponse listConfigHistories(ListConfigHistoriesRequest request) {
@@ -1542,13 +1532,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigHistoriesRequest 请求对象
+     * @param request ListConfigHistoriesRequest 请求对象
      * @return SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>
      */
     public SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse> listConfigHistoriesInvoker(
         ListConfigHistoriesRequest request) {
-        return new SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>(request,
-            DcsMeta.listConfigHistories, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listConfigHistories, hcClient);
     }
 
     /**
@@ -1558,7 +1547,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigTemplatesRequest 请求对象
+     * @param request ListConfigTemplatesRequest 请求对象
      * @return ListConfigTemplatesResponse
      */
     public ListConfigTemplatesResponse listConfigTemplates(ListConfigTemplatesRequest request) {
@@ -1572,13 +1561,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigTemplatesRequest 请求对象
+     * @param request ListConfigTemplatesRequest 请求对象
      * @return SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse>
      */
     public SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse> listConfigTemplatesInvoker(
         ListConfigTemplatesRequest request) {
-        return new SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse>(request,
-            DcsMeta.listConfigTemplates, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listConfigTemplates, hcClient);
     }
 
     /**
@@ -1588,7 +1576,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
      */
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
@@ -1602,13 +1590,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
+     * @param request ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
      */
     public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
         ListConfigurationsRequest request) {
-        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
-            DcsMeta.listConfigurations, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -1618,7 +1605,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnosisTasksRequest 请求对象
+     * @param request ListDiagnosisTasksRequest 请求对象
      * @return ListDiagnosisTasksResponse
      */
     public ListDiagnosisTasksResponse listDiagnosisTasks(ListDiagnosisTasksRequest request) {
@@ -1632,13 +1619,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDiagnosisTasksRequest 请求对象
+     * @param request ListDiagnosisTasksRequest 请求对象
      * @return SyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>
      */
     public SyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasksInvoker(
         ListDiagnosisTasksRequest request) {
-        return new SyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>(request,
-            DcsMeta.listDiagnosisTasks, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listDiagnosisTasks, hcClient);
     }
 
     /**
@@ -1648,7 +1634,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
      */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
@@ -1662,11 +1648,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, DcsMeta.listFlavors, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listFlavors, hcClient);
     }
 
     /**
@@ -1676,7 +1662,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupReplicationInfoRequest 请求对象
+     * @param request ListGroupReplicationInfoRequest 请求对象
      * @return ListGroupReplicationInfoResponse
      */
     public ListGroupReplicationInfoResponse listGroupReplicationInfo(ListGroupReplicationInfoRequest request) {
@@ -1690,13 +1676,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListGroupReplicationInfoRequest 请求对象
+     * @param request ListGroupReplicationInfoRequest 请求对象
      * @return SyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse>
      */
     public SyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> listGroupReplicationInfoInvoker(
         ListGroupReplicationInfoRequest request) {
-        return new SyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse>(request,
-            DcsMeta.listGroupReplicationInfo, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listGroupReplicationInfo, hcClient);
     }
 
     /**
@@ -1706,7 +1691,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHotKeyScanTasksRequest 请求对象
+     * @param request ListHotKeyScanTasksRequest 请求对象
      * @return ListHotKeyScanTasksResponse
      */
     public ListHotKeyScanTasksResponse listHotKeyScanTasks(ListHotKeyScanTasksRequest request) {
@@ -1720,13 +1705,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListHotKeyScanTasksRequest 请求对象
+     * @param request ListHotKeyScanTasksRequest 请求对象
      * @return SyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>
      */
     public SyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> listHotKeyScanTasksInvoker(
         ListHotKeyScanTasksRequest request) {
-        return new SyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>(request,
-            DcsMeta.listHotKeyScanTasks, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listHotKeyScanTasks, hcClient);
     }
 
     /**
@@ -1736,7 +1720,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceOperationsRequest 请求对象
+     * @param request ListInstanceOperationsRequest 请求对象
      * @return ListInstanceOperationsResponse
      */
     public ListInstanceOperationsResponse listInstanceOperations(ListInstanceOperationsRequest request) {
@@ -1750,13 +1734,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstanceOperationsRequest 请求对象
+     * @param request ListInstanceOperationsRequest 请求对象
      * @return SyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse>
      */
     public SyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse> listInstanceOperationsInvoker(
         ListInstanceOperationsRequest request) {
-        return new SyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse>(request,
-            DcsMeta.listInstanceOperations, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listInstanceOperations, hcClient);
     }
 
     /**
@@ -1766,7 +1749,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return ListInstancesResponse
      */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
@@ -1780,11 +1763,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, DcsMeta.listInstances, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listInstances, hcClient);
     }
 
     /**
@@ -1794,7 +1777,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMaintenanceWindowsRequest 请求对象
+     * @param request ListMaintenanceWindowsRequest 请求对象
      * @return ListMaintenanceWindowsResponse
      */
     public ListMaintenanceWindowsResponse listMaintenanceWindows(ListMaintenanceWindowsRequest request) {
@@ -1808,13 +1791,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMaintenanceWindowsRequest 请求对象
+     * @param request ListMaintenanceWindowsRequest 请求对象
      * @return SyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>
      */
     public SyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> listMaintenanceWindowsInvoker(
         ListMaintenanceWindowsRequest request) {
-        return new SyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>(request,
-            DcsMeta.listMaintenanceWindows, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listMaintenanceWindows, hcClient);
     }
 
     /**
@@ -1824,7 +1806,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationTaskRequest 请求对象
+     * @param request ListMigrationTaskRequest 请求对象
      * @return ListMigrationTaskResponse
      */
     public ListMigrationTaskResponse listMigrationTask(ListMigrationTaskRequest request) {
@@ -1838,13 +1820,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationTaskRequest 请求对象
+     * @param request ListMigrationTaskRequest 请求对象
      * @return SyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse>
      */
     public SyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse> listMigrationTaskInvoker(
         ListMigrationTaskRequest request) {
-        return new SyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse>(request, DcsMeta.listMigrationTask,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listMigrationTask, hcClient);
     }
 
     /**
@@ -1854,7 +1835,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationTaskLogsRequest 请求对象
+     * @param request ListMigrationTaskLogsRequest 请求对象
      * @return ListMigrationTaskLogsResponse
      */
     public ListMigrationTaskLogsResponse listMigrationTaskLogs(ListMigrationTaskLogsRequest request) {
@@ -1868,13 +1849,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMigrationTaskLogsRequest 请求对象
+     * @param request ListMigrationTaskLogsRequest 请求对象
      * @return SyncInvoker<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse>
      */
     public SyncInvoker<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse> listMigrationTaskLogsInvoker(
         ListMigrationTaskLogsRequest request) {
-        return new SyncInvoker<ListMigrationTaskLogsRequest, ListMigrationTaskLogsResponse>(request,
-            DcsMeta.listMigrationTaskLogs, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listMigrationTaskLogs, hcClient);
     }
 
     /**
@@ -1885,7 +1865,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitoredObjectsRequest 请求对象
+     * @param request ListMonitoredObjectsRequest 请求对象
      * @return ListMonitoredObjectsResponse
      */
     public ListMonitoredObjectsResponse listMonitoredObjects(ListMonitoredObjectsRequest request) {
@@ -1900,13 +1880,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitoredObjectsRequest 请求对象
+     * @param request ListMonitoredObjectsRequest 请求对象
      * @return SyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse>
      */
     public SyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> listMonitoredObjectsInvoker(
         ListMonitoredObjectsRequest request) {
-        return new SyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse>(request,
-            DcsMeta.listMonitoredObjects, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listMonitoredObjects, hcClient);
     }
 
     /**
@@ -1917,7 +1896,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitoredObjectsOfInstanceRequest 请求对象
+     * @param request ListMonitoredObjectsOfInstanceRequest 请求对象
      * @return ListMonitoredObjectsOfInstanceResponse
      */
     public ListMonitoredObjectsOfInstanceResponse listMonitoredObjectsOfInstance(
@@ -1933,13 +1912,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMonitoredObjectsOfInstanceRequest 请求对象
+     * @param request ListMonitoredObjectsOfInstanceRequest 请求对象
      * @return SyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse>
      */
     public SyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> listMonitoredObjectsOfInstanceInvoker(
         ListMonitoredObjectsOfInstanceRequest request) {
-        return new SyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse>(request,
-            DcsMeta.listMonitoredObjectsOfInstance, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listMonitoredObjectsOfInstance, hcClient);
     }
 
     /**
@@ -1949,7 +1927,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
+     * @param request ListNumberOfInstancesInDifferentStatusRequest 请求对象
      * @return ListNumberOfInstancesInDifferentStatusResponse
      */
     public ListNumberOfInstancesInDifferentStatusResponse listNumberOfInstancesInDifferentStatus(
@@ -1964,13 +1942,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
+     * @param request ListNumberOfInstancesInDifferentStatusRequest 请求对象
      * @return SyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse>
      */
     public SyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> listNumberOfInstancesInDifferentStatusInvoker(
         ListNumberOfInstancesInDifferentStatusRequest request) {
-        return new SyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse>(
-            request, DcsMeta.listNumberOfInstancesInDifferentStatus, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listNumberOfInstancesInDifferentStatus, hcClient);
     }
 
     /**
@@ -1980,7 +1957,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedislogRequest 请求对象
+     * @param request ListRedislogRequest 请求对象
      * @return ListRedislogResponse
      */
     public ListRedislogResponse listRedislog(ListRedislogRequest request) {
@@ -1994,11 +1971,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRedislogRequest 请求对象
+     * @param request ListRedislogRequest 请求对象
      * @return SyncInvoker<ListRedislogRequest, ListRedislogResponse>
      */
     public SyncInvoker<ListRedislogRequest, ListRedislogResponse> listRedislogInvoker(ListRedislogRequest request) {
-        return new SyncInvoker<ListRedislogRequest, ListRedislogResponse>(request, DcsMeta.listRedislog, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listRedislog, hcClient);
     }
 
     /**
@@ -2008,7 +1985,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreRecordsRequest 请求对象
+     * @param request ListRestoreRecordsRequest 请求对象
      * @return ListRestoreRecordsResponse
      */
     public ListRestoreRecordsResponse listRestoreRecords(ListRestoreRecordsRequest request) {
@@ -2022,13 +1999,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRestoreRecordsRequest 请求对象
+     * @param request ListRestoreRecordsRequest 请求对象
      * @return SyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse>
      */
     public SyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse> listRestoreRecordsInvoker(
         ListRestoreRecordsRequest request) {
-        return new SyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse>(request,
-            DcsMeta.listRestoreRecords, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listRestoreRecords, hcClient);
     }
 
     /**
@@ -2038,7 +2014,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowlogRequest 请求对象
+     * @param request ListSlowlogRequest 请求对象
      * @return ListSlowlogResponse
      */
     public ListSlowlogResponse listSlowlog(ListSlowlogRequest request) {
@@ -2052,11 +2028,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowlogRequest 请求对象
+     * @param request ListSlowlogRequest 请求对象
      * @return SyncInvoker<ListSlowlogRequest, ListSlowlogResponse>
      */
     public SyncInvoker<ListSlowlogRequest, ListSlowlogResponse> listSlowlogInvoker(ListSlowlogRequest request) {
-        return new SyncInvoker<ListSlowlogRequest, ListSlowlogResponse>(request, DcsMeta.listSlowlog, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listSlowlog, hcClient);
     }
 
     /**
@@ -2066,7 +2042,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsOfRunningInstancesRequest 请求对象
+     * @param request ListStatisticsOfRunningInstancesRequest 请求对象
      * @return ListStatisticsOfRunningInstancesResponse
      */
     public ListStatisticsOfRunningInstancesResponse listStatisticsOfRunningInstances(
@@ -2081,13 +2057,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatisticsOfRunningInstancesRequest 请求对象
+     * @param request ListStatisticsOfRunningInstancesRequest 请求对象
      * @return SyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse>
      */
     public SyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> listStatisticsOfRunningInstancesInvoker(
         ListStatisticsOfRunningInstancesRequest request) {
-        return new SyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse>(
-            request, DcsMeta.listStatisticsOfRunningInstances, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listStatisticsOfRunningInstances, hcClient);
     }
 
     /**
@@ -2097,7 +2072,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsOfTenantRequest 请求对象
+     * @param request ListTagsOfTenantRequest 请求对象
      * @return ListTagsOfTenantResponse
      */
     public ListTagsOfTenantResponse listTagsOfTenant(ListTagsOfTenantRequest request) {
@@ -2111,13 +2086,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsOfTenantRequest 请求对象
+     * @param request ListTagsOfTenantRequest 请求对象
      * @return SyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>
      */
     public SyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse> listTagsOfTenantInvoker(
         ListTagsOfTenantRequest request) {
-        return new SyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>(request, DcsMeta.listTagsOfTenant,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.listTagsOfTenant, hcClient);
     }
 
     /**
@@ -2127,7 +2101,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LoginWebCliRequest 请求对象
+     * @param request LoginWebCliRequest 请求对象
      * @return LoginWebCliResponse
      */
     public LoginWebCliResponse loginWebCli(LoginWebCliRequest request) {
@@ -2141,11 +2115,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LoginWebCliRequest 请求对象
+     * @param request LoginWebCliRequest 请求对象
      * @return SyncInvoker<LoginWebCliRequest, LoginWebCliResponse>
      */
     public SyncInvoker<LoginWebCliRequest, LoginWebCliResponse> loginWebCliInvoker(LoginWebCliRequest request) {
-        return new SyncInvoker<LoginWebCliRequest, LoginWebCliResponse>(request, DcsMeta.loginWebCli, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.loginWebCli, hcClient);
     }
 
     /**
@@ -2155,7 +2129,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LogoffWebCliRequest 请求对象
+     * @param request LogoffWebCliRequest 请求对象
      * @return LogoffWebCliResponse
      */
     public LogoffWebCliResponse logoffWebCli(LogoffWebCliRequest request) {
@@ -2169,11 +2143,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param LogoffWebCliRequest 请求对象
+     * @param request LogoffWebCliRequest 请求对象
      * @return SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse>
      */
     public SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse> logoffWebCliInvoker(LogoffWebCliRequest request) {
-        return new SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse>(request, DcsMeta.logoffWebCli, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.logoffWebCli, hcClient);
     }
 
     /**
@@ -2183,7 +2157,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAclAccountPassWordRequest 请求对象
+     * @param request ResetAclAccountPassWordRequest 请求对象
      * @return ResetAclAccountPassWordResponse
      */
     public ResetAclAccountPassWordResponse resetAclAccountPassWord(ResetAclAccountPassWordRequest request) {
@@ -2197,13 +2171,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAclAccountPassWordRequest 请求对象
+     * @param request ResetAclAccountPassWordRequest 请求对象
      * @return SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse>
      */
     public SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> resetAclAccountPassWordInvoker(
         ResetAclAccountPassWordRequest request) {
-        return new SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse>(request,
-            DcsMeta.resetAclAccountPassWord, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.resetAclAccountPassWord, hcClient);
     }
 
     /**
@@ -2213,7 +2186,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
@@ -2227,11 +2200,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetPasswordRequest 请求对象
+     * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, DcsMeta.resetPassword, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.resetPassword, hcClient);
     }
 
     /**
@@ -2241,7 +2214,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
      */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
@@ -2255,13 +2228,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeInstanceRequest 请求对象
+     * @param request ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
      */
     public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(
         ResizeInstanceRequest request) {
-        return new SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, DcsMeta.resizeInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.resizeInstance, hcClient);
     }
 
     /**
@@ -2273,7 +2245,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartOrFlushInstancesRequest 请求对象
+     * @param request RestartOrFlushInstancesRequest 请求对象
      * @return RestartOrFlushInstancesResponse
      */
     public RestartOrFlushInstancesResponse restartOrFlushInstances(RestartOrFlushInstancesRequest request) {
@@ -2289,13 +2261,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartOrFlushInstancesRequest 请求对象
+     * @param request RestartOrFlushInstancesRequest 请求对象
      * @return SyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse>
      */
     public SyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> restartOrFlushInstancesInvoker(
         RestartOrFlushInstancesRequest request) {
-        return new SyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse>(request,
-            DcsMeta.restartOrFlushInstances, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.restartOrFlushInstances, hcClient);
     }
 
     /**
@@ -2306,7 +2277,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreInstanceRequest 请求对象
+     * @param request RestoreInstanceRequest 请求对象
      * @return RestoreInstanceResponse
      */
     public RestoreInstanceResponse restoreInstance(RestoreInstanceRequest request) {
@@ -2321,13 +2292,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreInstanceRequest 请求对象
+     * @param request RestoreInstanceRequest 请求对象
      * @return SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
      */
     public SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceInvoker(
         RestoreInstanceRequest request) {
-        return new SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>(request, DcsMeta.restoreInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.restoreInstance, hcClient);
     }
 
     /**
@@ -2337,7 +2307,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanExpireKeyRequest 请求对象
+     * @param request ScanExpireKeyRequest 请求对象
      * @return ScanExpireKeyResponse
      */
     public ScanExpireKeyResponse scanExpireKey(ScanExpireKeyRequest request) {
@@ -2351,11 +2321,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ScanExpireKeyRequest 请求对象
+     * @param request ScanExpireKeyRequest 请求对象
      * @return SyncInvoker<ScanExpireKeyRequest, ScanExpireKeyResponse>
      */
     public SyncInvoker<ScanExpireKeyRequest, ScanExpireKeyResponse> scanExpireKeyInvoker(ScanExpireKeyRequest request) {
-        return new SyncInvoker<ScanExpireKeyRequest, ScanExpireKeyResponse>(request, DcsMeta.scanExpireKey, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.scanExpireKey, hcClient);
     }
 
     /**
@@ -2365,7 +2335,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetOnlineMigrationTaskRequest 请求对象
+     * @param request SetOnlineMigrationTaskRequest 请求对象
      * @return SetOnlineMigrationTaskResponse
      */
     public SetOnlineMigrationTaskResponse setOnlineMigrationTask(SetOnlineMigrationTaskRequest request) {
@@ -2379,13 +2349,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SetOnlineMigrationTaskRequest 请求对象
+     * @param request SetOnlineMigrationTaskRequest 请求对象
      * @return SyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse>
      */
     public SyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse> setOnlineMigrationTaskInvoker(
         SetOnlineMigrationTaskRequest request) {
-        return new SyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse>(request,
-            DcsMeta.setOnlineMigrationTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.setOnlineMigrationTask, hcClient);
     }
 
     /**
@@ -2395,7 +2364,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskProgressRequest 请求对象
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
      * @return ShowBackgroundTaskProgressResponse
      */
     public ShowBackgroundTaskProgressResponse showBackgroundTaskProgress(ShowBackgroundTaskProgressRequest request) {
@@ -2409,13 +2378,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBackgroundTaskProgressRequest 请求对象
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
      * @return SyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse>
      */
     public SyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgressInvoker(
         ShowBackgroundTaskProgressRequest request) {
-        return new SyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse>(request,
-            DcsMeta.showBackgroundTaskProgress, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showBackgroundTaskProgress, hcClient);
     }
 
     /**
@@ -2425,7 +2393,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBigkeyAutoscanConfigRequest 请求对象
+     * @param request ShowBigkeyAutoscanConfigRequest 请求对象
      * @return ShowBigkeyAutoscanConfigResponse
      */
     public ShowBigkeyAutoscanConfigResponse showBigkeyAutoscanConfig(ShowBigkeyAutoscanConfigRequest request) {
@@ -2439,13 +2407,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBigkeyAutoscanConfigRequest 请求对象
+     * @param request ShowBigkeyAutoscanConfigRequest 请求对象
      * @return SyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse>
      */
     public SyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfigInvoker(
         ShowBigkeyAutoscanConfigRequest request) {
-        return new SyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse>(request,
-            DcsMeta.showBigkeyAutoscanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showBigkeyAutoscanConfig, hcClient);
     }
 
     /**
@@ -2455,7 +2422,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBigkeyScanTaskDetailsRequest 请求对象
+     * @param request ShowBigkeyScanTaskDetailsRequest 请求对象
      * @return ShowBigkeyScanTaskDetailsResponse
      */
     public ShowBigkeyScanTaskDetailsResponse showBigkeyScanTaskDetails(ShowBigkeyScanTaskDetailsRequest request) {
@@ -2469,13 +2436,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowBigkeyScanTaskDetailsRequest 请求对象
+     * @param request ShowBigkeyScanTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>
      */
     public SyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetailsInvoker(
         ShowBigkeyScanTaskDetailsRequest request) {
-        return new SyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>(request,
-            DcsMeta.showBigkeyScanTaskDetails, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showBigkeyScanTaskDetails, hcClient);
     }
 
     /**
@@ -2485,7 +2451,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigHistoryDetailRequest 请求对象
+     * @param request ShowConfigHistoryDetailRequest 请求对象
      * @return ShowConfigHistoryDetailResponse
      */
     public ShowConfigHistoryDetailResponse showConfigHistoryDetail(ShowConfigHistoryDetailRequest request) {
@@ -2499,13 +2465,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigHistoryDetailRequest 请求对象
+     * @param request ShowConfigHistoryDetailRequest 请求对象
      * @return SyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse>
      */
     public SyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> showConfigHistoryDetailInvoker(
         ShowConfigHistoryDetailRequest request) {
-        return new SyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse>(request,
-            DcsMeta.showConfigHistoryDetail, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showConfigHistoryDetail, hcClient);
     }
 
     /**
@@ -2515,7 +2480,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigTemplateRequest 请求对象
+     * @param request ShowConfigTemplateRequest 请求对象
      * @return ShowConfigTemplateResponse
      */
     public ShowConfigTemplateResponse showConfigTemplate(ShowConfigTemplateRequest request) {
@@ -2529,13 +2494,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConfigTemplateRequest 请求对象
+     * @param request ShowConfigTemplateRequest 请求对象
      * @return SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse>
      */
     public SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse> showConfigTemplateInvoker(
         ShowConfigTemplateRequest request) {
-        return new SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse>(request,
-            DcsMeta.showConfigTemplate, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showConfigTemplate, hcClient);
     }
 
     /**
@@ -2545,7 +2509,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDiagnosisTaskDetailsRequest 请求对象
+     * @param request ShowDiagnosisTaskDetailsRequest 请求对象
      * @return ShowDiagnosisTaskDetailsResponse
      */
     public ShowDiagnosisTaskDetailsResponse showDiagnosisTaskDetails(ShowDiagnosisTaskDetailsRequest request) {
@@ -2559,13 +2523,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDiagnosisTaskDetailsRequest 请求对象
+     * @param request ShowDiagnosisTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>
      */
     public SyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> showDiagnosisTaskDetailsInvoker(
         ShowDiagnosisTaskDetailsRequest request) {
-        return new SyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>(request,
-            DcsMeta.showDiagnosisTaskDetails, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showDiagnosisTaskDetails, hcClient);
     }
 
     /**
@@ -2575,7 +2538,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExpireAutoScanConfigRequest 请求对象
+     * @param request ShowExpireAutoScanConfigRequest 请求对象
      * @return ShowExpireAutoScanConfigResponse
      */
     public ShowExpireAutoScanConfigResponse showExpireAutoScanConfig(ShowExpireAutoScanConfigRequest request) {
@@ -2589,13 +2552,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExpireAutoScanConfigRequest 请求对象
+     * @param request ShowExpireAutoScanConfigRequest 请求对象
      * @return SyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse>
      */
     public SyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> showExpireAutoScanConfigInvoker(
         ShowExpireAutoScanConfigRequest request) {
-        return new SyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse>(request,
-            DcsMeta.showExpireAutoScanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showExpireAutoScanConfig, hcClient);
     }
 
     /**
@@ -2605,7 +2567,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExpireKeyScanInfoRequest 请求对象
+     * @param request ShowExpireKeyScanInfoRequest 请求对象
      * @return ShowExpireKeyScanInfoResponse
      */
     public ShowExpireKeyScanInfoResponse showExpireKeyScanInfo(ShowExpireKeyScanInfoRequest request) {
@@ -2619,13 +2581,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowExpireKeyScanInfoRequest 请求对象
+     * @param request ShowExpireKeyScanInfoRequest 请求对象
      * @return SyncInvoker<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse>
      */
     public SyncInvoker<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse> showExpireKeyScanInfoInvoker(
         ShowExpireKeyScanInfoRequest request) {
-        return new SyncInvoker<ShowExpireKeyScanInfoRequest, ShowExpireKeyScanInfoResponse>(request,
-            DcsMeta.showExpireKeyScanInfo, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showExpireKeyScanInfo, hcClient);
     }
 
     /**
@@ -2635,7 +2596,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHotkeyAutoscanConfigRequest 请求对象
+     * @param request ShowHotkeyAutoscanConfigRequest 请求对象
      * @return ShowHotkeyAutoscanConfigResponse
      */
     public ShowHotkeyAutoscanConfigResponse showHotkeyAutoscanConfig(ShowHotkeyAutoscanConfigRequest request) {
@@ -2649,13 +2610,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHotkeyAutoscanConfigRequest 请求对象
+     * @param request ShowHotkeyAutoscanConfigRequest 请求对象
      * @return SyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse>
      */
     public SyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> showHotkeyAutoscanConfigInvoker(
         ShowHotkeyAutoscanConfigRequest request) {
-        return new SyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse>(request,
-            DcsMeta.showHotkeyAutoscanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showHotkeyAutoscanConfig, hcClient);
     }
 
     /**
@@ -2665,7 +2625,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHotkeyTaskDetailsRequest 请求对象
+     * @param request ShowHotkeyTaskDetailsRequest 请求对象
      * @return ShowHotkeyTaskDetailsResponse
      */
     public ShowHotkeyTaskDetailsResponse showHotkeyTaskDetails(ShowHotkeyTaskDetailsRequest request) {
@@ -2679,13 +2639,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowHotkeyTaskDetailsRequest 请求对象
+     * @param request ShowHotkeyTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse>
      */
     public SyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetailsInvoker(
         ShowHotkeyTaskDetailsRequest request) {
-        return new SyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse>(request,
-            DcsMeta.showHotkeyTaskDetails, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showHotkeyTaskDetails, hcClient);
     }
 
     /**
@@ -2695,7 +2654,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
      */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
@@ -2709,11 +2668,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DcsMeta.showInstance, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showInstance, hcClient);
     }
 
     /**
@@ -2723,7 +2682,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceSslDetailRequest 请求对象
+     * @param request ShowInstanceSslDetailRequest 请求对象
      * @return ShowInstanceSslDetailResponse
      */
     public ShowInstanceSslDetailResponse showInstanceSslDetail(ShowInstanceSslDetailRequest request) {
@@ -2737,13 +2696,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceSslDetailRequest 请求对象
+     * @param request ShowInstanceSslDetailRequest 请求对象
      * @return SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse>
      */
     public SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetailInvoker(
         ShowInstanceSslDetailRequest request) {
-        return new SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse>(request,
-            DcsMeta.showInstanceSslDetail, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showInstanceSslDetail, hcClient);
     }
 
     /**
@@ -2753,7 +2711,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfoRequest 请求对象
+     * @param request ShowJobInfoRequest 请求对象
      * @return ShowJobInfoResponse
      */
     public ShowJobInfoResponse showJobInfo(ShowJobInfoRequest request) {
@@ -2767,11 +2725,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInfoRequest 请求对象
+     * @param request ShowJobInfoRequest 请求对象
      * @return SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
      */
     public SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoInvoker(ShowJobInfoRequest request) {
-        return new SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, DcsMeta.showJobInfo, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showJobInfo, hcClient);
     }
 
     /**
@@ -2781,7 +2739,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationTaskRequest 请求对象
+     * @param request ShowMigrationTaskRequest 请求对象
      * @return ShowMigrationTaskResponse
      */
     public ShowMigrationTaskResponse showMigrationTask(ShowMigrationTaskRequest request) {
@@ -2795,13 +2753,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationTaskRequest 请求对象
+     * @param request ShowMigrationTaskRequest 请求对象
      * @return SyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse>
      */
     public SyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse> showMigrationTaskInvoker(
         ShowMigrationTaskRequest request) {
-        return new SyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse>(request, DcsMeta.showMigrationTask,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showMigrationTask, hcClient);
     }
 
     /**
@@ -2811,7 +2768,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationTaskStatsRequest 请求对象
+     * @param request ShowMigrationTaskStatsRequest 请求对象
      * @return ShowMigrationTaskStatsResponse
      */
     public ShowMigrationTaskStatsResponse showMigrationTaskStats(ShowMigrationTaskStatsRequest request) {
@@ -2825,13 +2782,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowMigrationTaskStatsRequest 请求对象
+     * @param request ShowMigrationTaskStatsRequest 请求对象
      * @return SyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>
      */
     public SyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> showMigrationTaskStatsInvoker(
         ShowMigrationTaskStatsRequest request) {
-        return new SyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>(request,
-            DcsMeta.showMigrationTaskStats, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showMigrationTaskStats, hcClient);
     }
 
     /**
@@ -2843,7 +2799,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodesInformationRequest 请求对象
+     * @param request ShowNodesInformationRequest 请求对象
      * @return ShowNodesInformationResponse
      */
     public ShowNodesInformationResponse showNodesInformation(ShowNodesInformationRequest request) {
@@ -2859,13 +2815,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodesInformationRequest 请求对象
+     * @param request ShowNodesInformationRequest 请求对象
      * @return SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>
      */
     public SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformationInvoker(
         ShowNodesInformationRequest request) {
-        return new SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>(request,
-            DcsMeta.showNodesInformation, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showNodesInformation, hcClient);
     }
 
     /**
@@ -2875,7 +2830,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaOfTenantRequest 请求对象
+     * @param request ShowQuotaOfTenantRequest 请求对象
      * @return ShowQuotaOfTenantResponse
      */
     public ShowQuotaOfTenantResponse showQuotaOfTenant(ShowQuotaOfTenantRequest request) {
@@ -2889,13 +2844,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowQuotaOfTenantRequest 请求对象
+     * @param request ShowQuotaOfTenantRequest 请求对象
      * @return SyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse>
      */
     public SyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> showQuotaOfTenantInvoker(
         ShowQuotaOfTenantRequest request) {
-        return new SyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse>(request, DcsMeta.showQuotaOfTenant,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showQuotaOfTenant, hcClient);
     }
 
     /**
@@ -2905,7 +2859,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReplicationStatesRequest 请求对象
+     * @param request ShowReplicationStatesRequest 请求对象
      * @return ShowReplicationStatesResponse
      */
     public ShowReplicationStatesResponse showReplicationStates(ShowReplicationStatesRequest request) {
@@ -2919,13 +2873,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowReplicationStatesRequest 请求对象
+     * @param request ShowReplicationStatesRequest 请求对象
      * @return SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse>
      */
     public SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse> showReplicationStatesInvoker(
         ShowReplicationStatesRequest request) {
-        return new SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse>(request,
-            DcsMeta.showReplicationStates, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showReplicationStates, hcClient);
     }
 
     /**
@@ -2935,7 +2888,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTagsRequest 请求对象
+     * @param request ShowTagsRequest 请求对象
      * @return ShowTagsResponse
      */
     public ShowTagsResponse showTags(ShowTagsRequest request) {
@@ -2949,11 +2902,11 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTagsRequest 请求对象
+     * @param request ShowTagsRequest 请求对象
      * @return SyncInvoker<ShowTagsRequest, ShowTagsResponse>
      */
     public SyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsInvoker(ShowTagsRequest request) {
-        return new SyncInvoker<ShowTagsRequest, ShowTagsResponse>(request, DcsMeta.showTags, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showTags, hcClient);
     }
 
     /**
@@ -2963,7 +2916,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceResizeCheckJobRequest 请求对象
+     * @param request StartInstanceResizeCheckJobRequest 请求对象
      * @return StartInstanceResizeCheckJobResponse
      */
     public StartInstanceResizeCheckJobResponse startInstanceResizeCheckJob(StartInstanceResizeCheckJobRequest request) {
@@ -2977,13 +2930,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartInstanceResizeCheckJobRequest 请求对象
+     * @param request StartInstanceResizeCheckJobRequest 请求对象
      * @return SyncInvoker<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse>
      */
     public SyncInvoker<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse> startInstanceResizeCheckJobInvoker(
         StartInstanceResizeCheckJobRequest request) {
-        return new SyncInvoker<StartInstanceResizeCheckJobRequest, StartInstanceResizeCheckJobResponse>(request,
-            DcsMeta.startInstanceResizeCheckJob, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.startInstanceResizeCheckJob, hcClient);
     }
 
     /**
@@ -2993,7 +2945,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMigrationTaskRequest 请求对象
+     * @param request StopMigrationTaskRequest 请求对象
      * @return StopMigrationTaskResponse
      */
     public StopMigrationTaskResponse stopMigrationTask(StopMigrationTaskRequest request) {
@@ -3007,13 +2959,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMigrationTaskRequest 请求对象
+     * @param request StopMigrationTaskRequest 请求对象
      * @return SyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>
      */
     public SyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse> stopMigrationTaskInvoker(
         StopMigrationTaskRequest request) {
-        return new SyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>(request, DcsMeta.stopMigrationTask,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.stopMigrationTask, hcClient);
     }
 
     /**
@@ -3023,7 +2974,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMigrationTaskSyncRequest 请求对象
+     * @param request StopMigrationTaskSyncRequest 请求对象
      * @return StopMigrationTaskSyncResponse
      */
     public StopMigrationTaskSyncResponse stopMigrationTaskSync(StopMigrationTaskSyncRequest request) {
@@ -3037,13 +2988,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopMigrationTaskSyncRequest 请求对象
+     * @param request StopMigrationTaskSyncRequest 请求对象
      * @return SyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse>
      */
     public SyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse> stopMigrationTaskSyncInvoker(
         StopMigrationTaskSyncRequest request) {
-        return new SyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse>(request,
-            DcsMeta.stopMigrationTaskSync, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.stopMigrationTaskSync, hcClient);
     }
 
     /**
@@ -3053,7 +3003,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountRequest 请求对象
+     * @param request UpdateAclAccountRequest 请求对象
      * @return UpdateAclAccountResponse
      */
     public UpdateAclAccountResponse updateAclAccount(UpdateAclAccountRequest request) {
@@ -3067,13 +3017,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountRequest 请求对象
+     * @param request UpdateAclAccountRequest 请求对象
      * @return SyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse>
      */
     public SyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse> updateAclAccountInvoker(
         UpdateAclAccountRequest request) {
-        return new SyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse>(request, DcsMeta.updateAclAccount,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateAclAccount, hcClient);
     }
 
     /**
@@ -3083,7 +3032,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountPassWordRequest 请求对象
+     * @param request UpdateAclAccountPassWordRequest 请求对象
      * @return UpdateAclAccountPassWordResponse
      */
     public UpdateAclAccountPassWordResponse updateAclAccountPassWord(UpdateAclAccountPassWordRequest request) {
@@ -3097,13 +3046,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountPassWordRequest 请求对象
+     * @param request UpdateAclAccountPassWordRequest 请求对象
      * @return SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse>
      */
     public SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> updateAclAccountPassWordInvoker(
         UpdateAclAccountPassWordRequest request) {
-        return new SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse>(request,
-            DcsMeta.updateAclAccountPassWord, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateAclAccountPassWord, hcClient);
     }
 
     /**
@@ -3113,7 +3061,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountRemarkRequest 请求对象
+     * @param request UpdateAclAccountRemarkRequest 请求对象
      * @return UpdateAclAccountRemarkResponse
      */
     public UpdateAclAccountRemarkResponse updateAclAccountRemark(UpdateAclAccountRemarkRequest request) {
@@ -3127,13 +3075,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateAclAccountRemarkRequest 请求对象
+     * @param request UpdateAclAccountRemarkRequest 请求对象
      * @return SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse>
      */
     public SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> updateAclAccountRemarkInvoker(
         UpdateAclAccountRemarkRequest request) {
-        return new SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse>(request,
-            DcsMeta.updateAclAccountRemark, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateAclAccountRemark, hcClient);
     }
 
     /**
@@ -3143,7 +3090,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBigkeyAutoscanConfigRequest 请求对象
+     * @param request UpdateBigkeyAutoscanConfigRequest 请求对象
      * @return UpdateBigkeyAutoscanConfigResponse
      */
     public UpdateBigkeyAutoscanConfigResponse updateBigkeyAutoscanConfig(UpdateBigkeyAutoscanConfigRequest request) {
@@ -3157,13 +3104,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBigkeyAutoscanConfigRequest 请求对象
+     * @param request UpdateBigkeyAutoscanConfigRequest 请求对象
      * @return SyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>
      */
     public SyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfigInvoker(
         UpdateBigkeyAutoscanConfigRequest request) {
-        return new SyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>(request,
-            DcsMeta.updateBigkeyAutoscanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateBigkeyAutoscanConfig, hcClient);
     }
 
     /**
@@ -3173,7 +3119,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientIpTransparentTransmissionRequest 请求对象
+     * @param request UpdateClientIpTransparentTransmissionRequest 请求对象
      * @return UpdateClientIpTransparentTransmissionResponse
      */
     public UpdateClientIpTransparentTransmissionResponse updateClientIpTransparentTransmission(
@@ -3188,13 +3134,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClientIpTransparentTransmissionRequest 请求对象
+     * @param request UpdateClientIpTransparentTransmissionRequest 请求对象
      * @return SyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse>
      */
     public SyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> updateClientIpTransparentTransmissionInvoker(
         UpdateClientIpTransparentTransmissionRequest request) {
-        return new SyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse>(
-            request, DcsMeta.updateClientIpTransparentTransmission, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateClientIpTransparentTransmission, hcClient);
     }
 
     /**
@@ -3204,7 +3149,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigTemplateRequest 请求对象
+     * @param request UpdateConfigTemplateRequest 请求对象
      * @return UpdateConfigTemplateResponse
      */
     public UpdateConfigTemplateResponse updateConfigTemplate(UpdateConfigTemplateRequest request) {
@@ -3218,13 +3163,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigTemplateRequest 请求对象
+     * @param request UpdateConfigTemplateRequest 请求对象
      * @return SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse>
      */
     public SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> updateConfigTemplateInvoker(
         UpdateConfigTemplateRequest request) {
-        return new SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse>(request,
-            DcsMeta.updateConfigTemplate, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateConfigTemplate, hcClient);
     }
 
     /**
@@ -3234,7 +3178,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationsRequest 请求对象
+     * @param request UpdateConfigurationsRequest 请求对象
      * @return UpdateConfigurationsResponse
      */
     public UpdateConfigurationsResponse updateConfigurations(UpdateConfigurationsRequest request) {
@@ -3248,13 +3192,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConfigurationsRequest 请求对象
+     * @param request UpdateConfigurationsRequest 请求对象
      * @return SyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>
      */
     public SyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse> updateConfigurationsInvoker(
         UpdateConfigurationsRequest request) {
-        return new SyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>(request,
-            DcsMeta.updateConfigurations, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateConfigurations, hcClient);
     }
 
     /**
@@ -3264,7 +3207,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateExpireAutoScanConfigRequest 请求对象
+     * @param request UpdateExpireAutoScanConfigRequest 请求对象
      * @return UpdateExpireAutoScanConfigResponse
      */
     public UpdateExpireAutoScanConfigResponse updateExpireAutoScanConfig(UpdateExpireAutoScanConfigRequest request) {
@@ -3278,13 +3221,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateExpireAutoScanConfigRequest 请求对象
+     * @param request UpdateExpireAutoScanConfigRequest 请求对象
      * @return SyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse>
      */
     public SyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> updateExpireAutoScanConfigInvoker(
         UpdateExpireAutoScanConfigRequest request) {
-        return new SyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse>(request,
-            DcsMeta.updateExpireAutoScanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateExpireAutoScanConfig, hcClient);
     }
 
     /**
@@ -3294,7 +3236,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHotkeyAutoScanConfigRequest 请求对象
+     * @param request UpdateHotkeyAutoScanConfigRequest 请求对象
      * @return UpdateHotkeyAutoScanConfigResponse
      */
     public UpdateHotkeyAutoScanConfigResponse updateHotkeyAutoScanConfig(UpdateHotkeyAutoScanConfigRequest request) {
@@ -3308,13 +3250,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateHotkeyAutoScanConfigRequest 请求对象
+     * @param request UpdateHotkeyAutoScanConfigRequest 请求对象
      * @return SyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse>
      */
     public SyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfigInvoker(
         UpdateHotkeyAutoScanConfigRequest request) {
-        return new SyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse>(request,
-            DcsMeta.updateHotkeyAutoScanConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateHotkeyAutoScanConfig, hcClient);
     }
 
     /**
@@ -3324,7 +3265,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
      */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
@@ -3338,13 +3279,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceRequest 请求对象
+     * @param request UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
      */
     public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(
         UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, DcsMeta.updateInstance,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateInstance, hcClient);
     }
 
     /**
@@ -3354,7 +3294,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceBandwidthRequest 请求对象
+     * @param request UpdateInstanceBandwidthRequest 请求对象
      * @return UpdateInstanceBandwidthResponse
      */
     public UpdateInstanceBandwidthResponse updateInstanceBandwidth(UpdateInstanceBandwidthRequest request) {
@@ -3368,13 +3308,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceBandwidthRequest 请求对象
+     * @param request UpdateInstanceBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse>
      */
     public SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> updateInstanceBandwidthInvoker(
         UpdateInstanceBandwidthRequest request) {
-        return new SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse>(request,
-            DcsMeta.updateInstanceBandwidth, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateInstanceBandwidth, hcClient);
     }
 
     /**
@@ -3384,7 +3323,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigRequest 请求对象
+     * @param request UpdateInstanceConfigRequest 请求对象
      * @return UpdateInstanceConfigResponse
      */
     public UpdateInstanceConfigResponse updateInstanceConfig(UpdateInstanceConfigRequest request) {
@@ -3398,13 +3337,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceConfigRequest 请求对象
+     * @param request UpdateInstanceConfigRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse>
      */
     public SyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> updateInstanceConfigInvoker(
         UpdateInstanceConfigRequest request) {
-        return new SyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse>(request,
-            DcsMeta.updateInstanceConfig, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateInstanceConfig, hcClient);
     }
 
     /**
@@ -3414,7 +3352,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMigrationTaskRequest 请求对象
+     * @param request UpdateMigrationTaskRequest 请求对象
      * @return UpdateMigrationTaskResponse
      */
     public UpdateMigrationTaskResponse updateMigrationTask(UpdateMigrationTaskRequest request) {
@@ -3428,13 +3366,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMigrationTaskRequest 请求对象
+     * @param request UpdateMigrationTaskRequest 请求对象
      * @return SyncInvoker<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse>
      */
     public SyncInvoker<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> updateMigrationTaskInvoker(
         UpdateMigrationTaskRequest request) {
-        return new SyncInvoker<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse>(request,
-            DcsMeta.updateMigrationTask, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateMigrationTask, hcClient);
     }
 
     /**
@@ -3444,7 +3381,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePasswordRequest 请求对象
+     * @param request UpdatePasswordRequest 请求对象
      * @return UpdatePasswordResponse
      */
     public UpdatePasswordResponse updatePassword(UpdatePasswordRequest request) {
@@ -3458,13 +3395,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePasswordRequest 请求对象
+     * @param request UpdatePasswordRequest 请求对象
      * @return SyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>
      */
     public SyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse> updatePasswordInvoker(
         UpdatePasswordRequest request) {
-        return new SyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>(request, DcsMeta.updatePassword,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updatePassword, hcClient);
     }
 
     /**
@@ -3474,7 +3410,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSlavePriorityRequest 请求对象
+     * @param request UpdateSlavePriorityRequest 请求对象
      * @return UpdateSlavePriorityResponse
      */
     public UpdateSlavePriorityResponse updateSlavePriority(UpdateSlavePriorityRequest request) {
@@ -3488,13 +3424,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSlavePriorityRequest 请求对象
+     * @param request UpdateSlavePriorityRequest 请求对象
      * @return SyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>
      */
     public SyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> updateSlavePriorityInvoker(
         UpdateSlavePriorityRequest request) {
-        return new SyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>(request,
-            DcsMeta.updateSlavePriority, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateSlavePriority, hcClient);
     }
 
     /**
@@ -3504,7 +3439,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSslSwitchRequest 请求对象
+     * @param request UpdateSslSwitchRequest 请求对象
      * @return UpdateSslSwitchResponse
      */
     public UpdateSslSwitchResponse updateSslSwitch(UpdateSslSwitchRequest request) {
@@ -3518,13 +3453,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateSslSwitchRequest 请求对象
+     * @param request UpdateSslSwitchRequest 请求对象
      * @return SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse>
      */
     public SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse> updateSslSwitchInvoker(
         UpdateSslSwitchRequest request) {
-        return new SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse>(request, DcsMeta.updateSslSwitch,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateSslSwitch, hcClient);
     }
 
     /**
@@ -3534,7 +3468,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateDeletableReplicaRequest 请求对象
+     * @param request ValidateDeletableReplicaRequest 请求对象
      * @return ValidateDeletableReplicaResponse
      */
     public ValidateDeletableReplicaResponse validateDeletableReplica(ValidateDeletableReplicaRequest request) {
@@ -3548,13 +3482,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateDeletableReplicaRequest 请求对象
+     * @param request ValidateDeletableReplicaRequest 请求对象
      * @return SyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse>
      */
     public SyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> validateDeletableReplicaInvoker(
         ValidateDeletableReplicaRequest request) {
-        return new SyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse>(request,
-            DcsMeta.validateDeletableReplica, hcClient);
+        return new SyncInvoker<>(request, DcsMeta.validateDeletableReplica, hcClient);
     }
 
     /**
@@ -3564,7 +3497,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpWhitelistRequest 请求对象
+     * @param request ShowIpWhitelistRequest 请求对象
      * @return ShowIpWhitelistResponse
      */
     public ShowIpWhitelistResponse showIpWhitelist(ShowIpWhitelistRequest request) {
@@ -3578,13 +3511,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowIpWhitelistRequest 请求对象
+     * @param request ShowIpWhitelistRequest 请求对象
      * @return SyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse>
      */
     public SyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse> showIpWhitelistInvoker(
         ShowIpWhitelistRequest request) {
-        return new SyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse>(request, DcsMeta.showIpWhitelist,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.showIpWhitelist, hcClient);
     }
 
     /**
@@ -3594,7 +3526,7 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpWhitelistRequest 请求对象
+     * @param request UpdateIpWhitelistRequest 请求对象
      * @return UpdateIpWhitelistResponse
      */
     public UpdateIpWhitelistResponse updateIpWhitelist(UpdateIpWhitelistRequest request) {
@@ -3608,13 +3540,12 @@ public class DcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateIpWhitelistRequest 请求对象
+     * @param request UpdateIpWhitelistRequest 请求对象
      * @return SyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse>
      */
     public SyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> updateIpWhitelistInvoker(
         UpdateIpWhitelistRequest request) {
-        return new SyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse>(request, DcsMeta.updateIpWhitelist,
-            hcClient);
+        return new SyncInvoker<>(request, DcsMeta.updateIpWhitelist, hcClient);
     }
 
 }

@@ -49,7 +49,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return CreateClusterResponse
      */
     public CreateClusterResponse createCluster(CreateClusterRequest request) {
@@ -68,12 +68,11 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateClusterRequest 请求对象
+     * @param request CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
-        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, CloudTableMeta.createCluster,
-            hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.createCluster, hcClient);
     }
 
     /**
@@ -86,7 +85,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
      */
     public DeleteClusterResponse deleteCluster(DeleteClusterRequest request) {
@@ -103,12 +102,11 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteClusterRequest 请求对象
+     * @param request DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public SyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterInvoker(DeleteClusterRequest request) {
-        return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, CloudTableMeta.deleteCluster,
-            hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.deleteCluster, hcClient);
     }
 
     /**
@@ -118,7 +116,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableComponentRequest 请求对象
+     * @param request EnableComponentRequest 请求对象
      * @return EnableComponentResponse
      */
     public EnableComponentResponse enableComponent(EnableComponentRequest request) {
@@ -132,13 +130,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param EnableComponentRequest 请求对象
+     * @param request EnableComponentRequest 请求对象
      * @return SyncInvoker<EnableComponentRequest, EnableComponentResponse>
      */
     public SyncInvoker<EnableComponentRequest, EnableComponentResponse> enableComponentInvoker(
         EnableComponentRequest request) {
-        return new SyncInvoker<EnableComponentRequest, EnableComponentResponse>(request, CloudTableMeta.enableComponent,
-            hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.enableComponent, hcClient);
     }
 
     /**
@@ -148,7 +145,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandClusterComponentRequest 请求对象
+     * @param request ExpandClusterComponentRequest 请求对象
      * @return ExpandClusterComponentResponse
      */
     public ExpandClusterComponentResponse expandClusterComponent(ExpandClusterComponentRequest request) {
@@ -162,13 +159,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandClusterComponentRequest 请求对象
+     * @param request ExpandClusterComponentRequest 请求对象
      * @return SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse>
      */
     public SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse> expandClusterComponentInvoker(
         ExpandClusterComponentRequest request) {
-        return new SyncInvoker<ExpandClusterComponentRequest, ExpandClusterComponentResponse>(request,
-            CloudTableMeta.expandClusterComponent, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.expandClusterComponent, hcClient);
     }
 
     /**
@@ -178,7 +174,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return ListClustersResponse
      */
     public ListClustersResponse listClusters(ListClustersRequest request) {
@@ -192,12 +188,11 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListClustersRequest 请求对象
+     * @param request ListClustersRequest 请求对象
      * @return SyncInvoker<ListClustersRequest, ListClustersResponse>
      */
     public SyncInvoker<ListClustersRequest, ListClustersResponse> listClustersInvoker(ListClustersRequest request) {
-        return new SyncInvoker<ListClustersRequest, ListClustersResponse>(request, CloudTableMeta.listClusters,
-            hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.listClusters, hcClient);
     }
 
     /**
@@ -207,7 +202,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootCloudTableClusterRequest 请求对象
+     * @param request RebootCloudTableClusterRequest 请求对象
      * @return RebootCloudTableClusterResponse
      */
     public RebootCloudTableClusterResponse rebootCloudTableCluster(RebootCloudTableClusterRequest request) {
@@ -221,13 +216,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebootCloudTableClusterRequest 请求对象
+     * @param request RebootCloudTableClusterRequest 请求对象
      * @return SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse>
      */
     public SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> rebootCloudTableClusterInvoker(
         RebootCloudTableClusterRequest request) {
-        return new SyncInvoker<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse>(request,
-            CloudTableMeta.rebootCloudTableCluster, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.rebootCloudTableCluster, hcClient);
     }
 
     /**
@@ -237,7 +231,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailRequest 请求对象
+     * @param request ShowClusterDetailRequest 请求对象
      * @return ShowClusterDetailResponse
      */
     public ShowClusterDetailResponse showClusterDetail(ShowClusterDetailRequest request) {
@@ -251,13 +245,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterDetailRequest 请求对象
+     * @param request ShowClusterDetailRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>
      */
     public SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetailInvoker(
         ShowClusterDetailRequest request) {
-        return new SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>(request,
-            CloudTableMeta.showClusterDetail, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.showClusterDetail, hcClient);
     }
 
     /**
@@ -267,7 +260,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterSettingRequest 请求对象
+     * @param request ShowClusterSettingRequest 请求对象
      * @return ShowClusterSettingResponse
      */
     public ShowClusterSettingResponse showClusterSetting(ShowClusterSettingRequest request) {
@@ -281,13 +274,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowClusterSettingRequest 请求对象
+     * @param request ShowClusterSettingRequest 请求对象
      * @return SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse>
      */
     public SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse> showClusterSettingInvoker(
         ShowClusterSettingRequest request) {
-        return new SyncInvoker<ShowClusterSettingRequest, ShowClusterSettingResponse>(request,
-            CloudTableMeta.showClusterSetting, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.showClusterSetting, hcClient);
     }
 
     /**
@@ -297,7 +289,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterSettingRequest 请求对象
+     * @param request UpdateClusterSettingRequest 请求对象
      * @return UpdateClusterSettingResponse
      */
     public UpdateClusterSettingResponse updateClusterSetting(UpdateClusterSettingRequest request) {
@@ -311,13 +303,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateClusterSettingRequest 请求对象
+     * @param request UpdateClusterSettingRequest 请求对象
      * @return SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse>
      */
     public SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse> updateClusterSettingInvoker(
         UpdateClusterSettingRequest request) {
-        return new SyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse>(request,
-            CloudTableMeta.updateClusterSetting, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.updateClusterSetting, hcClient);
     }
 
     /**
@@ -332,7 +323,7 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudTableClusterRequest 请求对象
+     * @param request CreateCloudTableClusterRequest 请求对象
      * @return CreateCloudTableClusterResponse
      */
     public CreateCloudTableClusterResponse createCloudTableCluster(CreateCloudTableClusterRequest request) {
@@ -351,13 +342,12 @@ public class CloudTableClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateCloudTableClusterRequest 请求对象
+     * @param request CreateCloudTableClusterRequest 请求对象
      * @return SyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse>
      */
     public SyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> createCloudTableClusterInvoker(
         CreateCloudTableClusterRequest request) {
-        return new SyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse>(request,
-            CloudTableMeta.createCloudTableCluster, hcClient);
+        return new SyncInvoker<>(request, CloudTableMeta.createCloudTableCluster, hcClient);
     }
 
 }

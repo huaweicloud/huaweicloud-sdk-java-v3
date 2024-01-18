@@ -17,9 +17,9 @@ import com.huaweicloud.sdk.oa.v3.model.StartItemCheckResponse;
 public class OaMeta {
 
     public static final HttpRequestDef<ShowCheckItemListRequest, ShowCheckItemListResponse> showCheckItemList =
-        genForshowCheckItemList();
+        genForShowCheckItemList();
 
-    private static HttpRequestDef<ShowCheckItemListRequest, ShowCheckItemListResponse> genForshowCheckItemList() {
+    private static HttpRequestDef<ShowCheckItemListRequest, ShowCheckItemListResponse> genForShowCheckItemList() {
         // basic
         HttpRequestDef.Builder<ShowCheckItemListRequest, ShowCheckItemListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCheckItemListRequest.class, ShowCheckItemListResponse.class)
@@ -32,9 +32,7 @@ public class OaMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckItemListRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemListRequest::getXLanguage, ShowCheckItemListRequest::setXLanguage));
 
         // response
 
@@ -42,9 +40,9 @@ public class OaMeta {
     }
 
     public static final HttpRequestDef<ShowCheckItemResultRequest, ShowCheckItemResultResponse> showCheckItemResult =
-        genForshowCheckItemResult();
+        genForShowCheckItemResult();
 
-    private static HttpRequestDef<ShowCheckItemResultRequest, ShowCheckItemResultResponse> genForshowCheckItemResult() {
+    private static HttpRequestDef<ShowCheckItemResultRequest, ShowCheckItemResultResponse> genForShowCheckItemResult() {
         // basic
         HttpRequestDef.Builder<ShowCheckItemResultRequest, ShowCheckItemResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCheckItemResultRequest.class, ShowCheckItemResultResponse.class)
@@ -57,37 +55,28 @@ public class OaMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckItemResultRequest::getCheckItemId, (req, v) -> {
-                req.setCheckItemId(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemResultRequest::getCheckItemId,
+                ShowCheckItemResultRequest::setCheckItemId));
         builder.<String>withRequestField("check_num",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckItemResultRequest::getCheckNum, (req, v) -> {
-                req.setCheckNum(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemResultRequest::getCheckNum, ShowCheckItemResultRequest::setCheckNum));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCheckItemResultRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemResultRequest::getPageNo, ShowCheckItemResultRequest::setPageNo));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCheckItemResultRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemResultRequest::getPageSize, ShowCheckItemResultRequest::setPageSize));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCheckItemResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCheckItemResultRequest::getXLanguage, ShowCheckItemResultRequest::setXLanguage));
 
         // response
 
@@ -95,9 +84,9 @@ public class OaMeta {
     }
 
     public static final HttpRequestDef<StartItemCheckRequest, StartItemCheckResponse> startItemCheck =
-        genForstartItemCheck();
+        genForStartItemCheck();
 
-    private static HttpRequestDef<StartItemCheckRequest, StartItemCheckResponse> genForstartItemCheck() {
+    private static HttpRequestDef<StartItemCheckRequest, StartItemCheckResponse> genForStartItemCheck() {
         // basic
         HttpRequestDef.Builder<StartItemCheckRequest, StartItemCheckResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartItemCheckRequest.class, StartItemCheckResponse.class)
@@ -110,9 +99,7 @@ public class OaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ItemCheckStartReq.class),
-            f -> f.withMarshaller(StartItemCheckRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(StartItemCheckRequest::getBody, StartItemCheckRequest::setBody));
 
         // response
 

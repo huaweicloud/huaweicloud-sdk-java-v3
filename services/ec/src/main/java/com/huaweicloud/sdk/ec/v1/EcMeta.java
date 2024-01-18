@@ -141,9 +141,9 @@ import java.util.List;
 public class EcMeta {
 
     public static final HttpRequestDef<CreateEcnAccessPointRequest, CreateEcnAccessPointResponse> createEcnAccessPoint =
-        genForcreateEcnAccessPoint();
+        genForCreateEcnAccessPoint();
 
-    private static HttpRequestDef<CreateEcnAccessPointRequest, CreateEcnAccessPointResponse> genForcreateEcnAccessPoint() {
+    private static HttpRequestDef<CreateEcnAccessPointRequest, CreateEcnAccessPointResponse> genForCreateEcnAccessPoint() {
         // basic
         HttpRequestDef.Builder<CreateEcnAccessPointRequest, CreateEcnAccessPointResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateEcnAccessPointRequest.class, CreateEcnAccessPointResponse.class)
@@ -156,16 +156,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEcnAccessPointRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(CreateEcnAccessPointRequest::getEcnId, CreateEcnAccessPointRequest::setEcnId));
         builder.<CreateAccessPointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateAccessPointRequestBody.class),
-            f -> f.withMarshaller(CreateEcnAccessPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEcnAccessPointRequest::getBody, CreateEcnAccessPointRequest::setBody));
 
         // response
 
@@ -173,9 +169,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEcnAccessPointRequest, DeleteEcnAccessPointResponse> deleteEcnAccessPoint =
-        genFordeleteEcnAccessPoint();
+        genForDeleteEcnAccessPoint();
 
-    private static HttpRequestDef<DeleteEcnAccessPointRequest, DeleteEcnAccessPointResponse> genFordeleteEcnAccessPoint() {
+    private static HttpRequestDef<DeleteEcnAccessPointRequest, DeleteEcnAccessPointResponse> genForDeleteEcnAccessPoint() {
         // basic
         HttpRequestDef.Builder<DeleteEcnAccessPointRequest, DeleteEcnAccessPointResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEcnAccessPointRequest.class, DeleteEcnAccessPointResponse.class)
@@ -189,16 +185,13 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnAccessPointRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnAccessPointRequest::getEcnId, DeleteEcnAccessPointRequest::setEcnId));
         builder.<String>withRequestField("access_point_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnAccessPointRequest::getAccessPointId, (req, v) -> {
-                req.setAccessPointId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnAccessPointRequest::getAccessPointId,
+                DeleteEcnAccessPointRequest::setAccessPointId));
 
         // response
 
@@ -206,9 +199,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEcnAccessPointByEcnIdRequest, ListEcnAccessPointByEcnIdResponse> listEcnAccessPointByEcnId =
-        genForlistEcnAccessPointByEcnId();
+        genForListEcnAccessPointByEcnId();
 
-    private static HttpRequestDef<ListEcnAccessPointByEcnIdRequest, ListEcnAccessPointByEcnIdResponse> genForlistEcnAccessPointByEcnId() {
+    private static HttpRequestDef<ListEcnAccessPointByEcnIdRequest, ListEcnAccessPointByEcnIdResponse> genForListEcnAccessPointByEcnId() {
         // basic
         HttpRequestDef.Builder<ListEcnAccessPointByEcnIdRequest, ListEcnAccessPointByEcnIdResponse> builder =
             HttpRequestDef
@@ -224,9 +217,8 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnAccessPointByEcnIdRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ListEcnAccessPointByEcnIdRequest::getEcnId,
+                ListEcnAccessPointByEcnIdRequest::setEcnId));
 
         // response
 
@@ -234,9 +226,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEcnAccessPointRequest, UpdateEcnAccessPointResponse> updateEcnAccessPoint =
-        genForupdateEcnAccessPoint();
+        genForUpdateEcnAccessPoint();
 
-    private static HttpRequestDef<UpdateEcnAccessPointRequest, UpdateEcnAccessPointResponse> genForupdateEcnAccessPoint() {
+    private static HttpRequestDef<UpdateEcnAccessPointRequest, UpdateEcnAccessPointResponse> genForUpdateEcnAccessPoint() {
         // basic
         HttpRequestDef.Builder<UpdateEcnAccessPointRequest, UpdateEcnAccessPointResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEcnAccessPointRequest.class, UpdateEcnAccessPointResponse.class)
@@ -250,23 +242,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getEcnId, UpdateEcnAccessPointRequest::setEcnId));
         builder.<String>withRequestField("access_point_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getAccessPointId, (req, v) -> {
-                req.setAccessPointId(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getAccessPointId,
+                UpdateEcnAccessPointRequest::setAccessPointId));
         builder.<UpdateAccessPointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAccessPointRequestBody.class),
-            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnAccessPointRequest::getBody, UpdateEcnAccessPointRequest::setBody));
 
         // response
 
@@ -274,9 +261,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<AddEcnWithIegRequest, AddEcnWithIegResponse> addEcnWithIeg =
-        genForaddEcnWithIeg();
+        genForAddEcnWithIeg();
 
-    private static HttpRequestDef<AddEcnWithIegRequest, AddEcnWithIegResponse> genForaddEcnWithIeg() {
+    private static HttpRequestDef<AddEcnWithIegRequest, AddEcnWithIegResponse> genForAddEcnWithIeg() {
         // basic
         HttpRequestDef.Builder<AddEcnWithIegRequest, AddEcnWithIegResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddEcnWithIegRequest.class, AddEcnWithIegResponse.class)
@@ -290,16 +277,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEcnWithIegRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithIegRequest::getEcnId, AddEcnWithIegRequest::setEcnId));
         builder.<EcnWithIegRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EcnWithIegRequest.class),
-            f -> f.withMarshaller(AddEcnWithIegRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithIegRequest::getBody, AddEcnWithIegRequest::setBody));
 
         // response
 
@@ -307,9 +290,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEcnWithIegRequest, DeleteEcnWithIegResponse> deleteEcnWithIeg =
-        genFordeleteEcnWithIeg();
+        genForDeleteEcnWithIeg();
 
-    private static HttpRequestDef<DeleteEcnWithIegRequest, DeleteEcnWithIegResponse> genFordeleteEcnWithIeg() {
+    private static HttpRequestDef<DeleteEcnWithIegRequest, DeleteEcnWithIegResponse> genForDeleteEcnWithIeg() {
         // basic
         HttpRequestDef.Builder<DeleteEcnWithIegRequest, DeleteEcnWithIegResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEcnWithIegRequest.class, DeleteEcnWithIegResponse.class)
@@ -323,25 +306,21 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithIegRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithIegRequest::getEcnId, DeleteEcnWithIegRequest::setEcnId));
         builder.<String>withRequestField("relation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithIegRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithIegRequest::getRelationId, DeleteEcnWithIegRequest::setRelationId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEcnRequest, ListEcnResponse> listEcn = genForlistEcn();
+    public static final HttpRequestDef<ListEcnRequest, ListEcnResponse> listEcn = genForListEcn();
 
-    private static HttpRequestDef<ListEcnRequest, ListEcnResponse> genForlistEcn() {
+    private static HttpRequestDef<ListEcnRequest, ListEcnResponse> genForListEcn() {
         // basic
         HttpRequestDef.Builder<ListEcnRequest, ListEcnResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEcnRequest.class, ListEcnResponse.class)
@@ -354,23 +333,17 @@ public class EcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEcnRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListEcnRequest::getLimit, ListEcnRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListEcnRequest::getMarker, ListEcnRequest::setMarker));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEcnRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListEcnRequest::getEnterpriseProjectId, ListEcnRequest::setEnterpriseProjectId));
 
         // response
 
@@ -378,9 +351,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEcnWithIegRequest, ListEcnWithIegResponse> listEcnWithIeg =
-        genForlistEcnWithIeg();
+        genForListEcnWithIeg();
 
-    private static HttpRequestDef<ListEcnWithIegRequest, ListEcnWithIegResponse> genForlistEcnWithIeg() {
+    private static HttpRequestDef<ListEcnWithIegRequest, ListEcnWithIegResponse> genForListEcnWithIeg() {
         // basic
         HttpRequestDef.Builder<ListEcnWithIegRequest, ListEcnWithIegResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEcnWithIegRequest.class, ListEcnWithIegResponse.class)
@@ -394,25 +367,21 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnWithIegRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ListEcnWithIegRequest::getEcnId, ListEcnWithIegRequest::setEcnId));
         builder.<String>withRequestField("ieg_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnWithIegRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ListEcnWithIegRequest::getIegId, ListEcnWithIegRequest::setIegId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEcnInfoRequest, ShowEcnInfoResponse> showEcnInfo = genForshowEcnInfo();
+    public static final HttpRequestDef<ShowEcnInfoRequest, ShowEcnInfoResponse> showEcnInfo = genForShowEcnInfo();
 
-    private static HttpRequestDef<ShowEcnInfoRequest, ShowEcnInfoResponse> genForshowEcnInfo() {
+    private static HttpRequestDef<ShowEcnInfoRequest, ShowEcnInfoResponse> genForShowEcnInfo() {
         // basic
         HttpRequestDef.Builder<ShowEcnInfoRequest, ShowEcnInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEcnInfoRequest.class, ShowEcnInfoResponse.class)
@@ -425,9 +394,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEcnInfoRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ShowEcnInfoRequest::getEcnId, ShowEcnInfoRequest::setEcnId));
 
         // response
 
@@ -435,9 +402,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEcnWithIegRequest, ShowEcnWithIegResponse> showEcnWithIeg =
-        genForshowEcnWithIeg();
+        genForShowEcnWithIeg();
 
-    private static HttpRequestDef<ShowEcnWithIegRequest, ShowEcnWithIegResponse> genForshowEcnWithIeg() {
+    private static HttpRequestDef<ShowEcnWithIegRequest, ShowEcnWithIegResponse> genForShowEcnWithIeg() {
         // basic
         HttpRequestDef.Builder<ShowEcnWithIegRequest, ShowEcnWithIegResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEcnWithIegRequest.class, ShowEcnWithIegResponse.class)
@@ -451,25 +418,21 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEcnWithIegRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ShowEcnWithIegRequest::getEcnId, ShowEcnWithIegRequest::setEcnId));
         builder.<String>withRequestField("relation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEcnWithIegRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(ShowEcnWithIegRequest::getRelationId, ShowEcnWithIegRequest::setRelationId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateEcnRequest, UpdateEcnResponse> updateEcn = genForupdateEcn();
+    public static final HttpRequestDef<UpdateEcnRequest, UpdateEcnResponse> updateEcn = genForUpdateEcn();
 
-    private static HttpRequestDef<UpdateEcnRequest, UpdateEcnResponse> genForupdateEcn() {
+    private static HttpRequestDef<UpdateEcnRequest, UpdateEcnResponse> genForUpdateEcn() {
         // basic
         HttpRequestDef.Builder<UpdateEcnRequest, UpdateEcnResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEcnRequest.class, UpdateEcnResponse.class)
@@ -482,16 +445,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEcnRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnRequest::getEcnId, UpdateEcnRequest::setEcnId));
         builder.<UpdateEcnRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateEcnRequestBody.class),
-            f -> f.withMarshaller(UpdateEcnRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnRequest::getBody, UpdateEcnRequest::setBody));
 
         // response
 
@@ -499,9 +458,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<CreateEquipmentRequest, CreateEquipmentResponse> createEquipment =
-        genForcreateEquipment();
+        genForCreateEquipment();
 
-    private static HttpRequestDef<CreateEquipmentRequest, CreateEquipmentResponse> genForcreateEquipment() {
+    private static HttpRequestDef<CreateEquipmentRequest, CreateEquipmentResponse> genForCreateEquipment() {
         // basic
         HttpRequestDef.Builder<CreateEquipmentRequest, CreateEquipmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEquipmentRequest.class, CreateEquipmentResponse.class)
@@ -514,16 +473,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEquipmentRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentRequest::getIegId, CreateEquipmentRequest::setIegId));
         builder.<EquipmentActivate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EquipmentActivate.class),
-            f -> f.withMarshaller(CreateEquipmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentRequest::getBody, CreateEquipmentRequest::setBody));
 
         // response
 
@@ -531,9 +486,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEquipmentRequest, DeleteEquipmentResponse> deleteEquipment =
-        genFordeleteEquipment();
+        genForDeleteEquipment();
 
-    private static HttpRequestDef<DeleteEquipmentRequest, DeleteEquipmentResponse> genFordeleteEquipment() {
+    private static HttpRequestDef<DeleteEquipmentRequest, DeleteEquipmentResponse> genForDeleteEquipment() {
         // basic
         HttpRequestDef.Builder<DeleteEquipmentRequest, DeleteEquipmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEquipmentRequest.class, DeleteEquipmentResponse.class)
@@ -547,16 +502,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentRequest::getIegId, DeleteEquipmentRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentRequest::getEquipmentId, DeleteEquipmentRequest::setEquipmentId));
 
         // response
 
@@ -564,9 +515,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<GenerateInitialConfigurationRequest, GenerateInitialConfigurationResponse> generateInitialConfiguration =
-        genForgenerateInitialConfiguration();
+        genForGenerateInitialConfiguration();
 
-    private static HttpRequestDef<GenerateInitialConfigurationRequest, GenerateInitialConfigurationResponse> genForgenerateInitialConfiguration() {
+    private static HttpRequestDef<GenerateInitialConfigurationRequest, GenerateInitialConfigurationResponse> genForGenerateInitialConfiguration() {
         // basic
         HttpRequestDef.Builder<GenerateInitialConfigurationRequest, GenerateInitialConfigurationResponse> builder =
             HttpRequestDef
@@ -583,23 +534,20 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getIegId,
+                GenerateInitialConfigurationRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getEquipmentId,
+                GenerateInitialConfigurationRequest::setEquipmentId));
         builder.<InitialConfigurationReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InitialConfigurationReq.class),
-            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(GenerateInitialConfigurationRequest::getBody,
+                GenerateInitialConfigurationRequest::setBody));
 
         // response
 
@@ -607,9 +555,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEquipmentsRequest, ListEquipmentsResponse> listEquipments =
-        genForlistEquipments();
+        genForListEquipments();
 
-    private static HttpRequestDef<ListEquipmentsRequest, ListEquipmentsResponse> genForlistEquipments() {
+    private static HttpRequestDef<ListEquipmentsRequest, ListEquipmentsResponse> genForListEquipments() {
         // basic
         HttpRequestDef.Builder<ListEquipmentsRequest, ListEquipmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEquipmentsRequest.class, ListEquipmentsResponse.class)
@@ -622,9 +570,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEquipmentsRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ListEquipmentsRequest::getIegId, ListEquipmentsRequest::setIegId));
 
         // response
 
@@ -632,9 +578,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<RebootEquipmentRequest, RebootEquipmentResponse> rebootEquipment =
-        genForrebootEquipment();
+        genForRebootEquipment();
 
-    private static HttpRequestDef<RebootEquipmentRequest, RebootEquipmentResponse> genForrebootEquipment() {
+    private static HttpRequestDef<RebootEquipmentRequest, RebootEquipmentResponse> genForRebootEquipment() {
         // basic
         HttpRequestDef.Builder<RebootEquipmentRequest, RebootEquipmentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RebootEquipmentRequest.class, RebootEquipmentResponse.class)
@@ -648,16 +594,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebootEquipmentRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(RebootEquipmentRequest::getIegId, RebootEquipmentRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebootEquipmentRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(RebootEquipmentRequest::getEquipmentId, RebootEquipmentRequest::setEquipmentId));
 
         // response
 
@@ -665,9 +607,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentInfoRequest, ShowEquipmentInfoResponse> showEquipmentInfo =
-        genForshowEquipmentInfo();
+        genForShowEquipmentInfo();
 
-    private static HttpRequestDef<ShowEquipmentInfoRequest, ShowEquipmentInfoResponse> genForshowEquipmentInfo() {
+    private static HttpRequestDef<ShowEquipmentInfoRequest, ShowEquipmentInfoResponse> genForShowEquipmentInfo() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentInfoRequest, ShowEquipmentInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentInfoRequest.class, ShowEquipmentInfoResponse.class)
@@ -681,16 +623,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentInfoRequest::getIegId, ShowEquipmentInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentInfoRequest::getEquipmentId, ShowEquipmentInfoRequest::setEquipmentId));
 
         // response
 
@@ -698,9 +636,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentSpecificConfigRequest, ShowEquipmentSpecificConfigResponse> showEquipmentSpecificConfig =
-        genForshowEquipmentSpecificConfig();
+        genForShowEquipmentSpecificConfig();
 
-    private static HttpRequestDef<ShowEquipmentSpecificConfigRequest, ShowEquipmentSpecificConfigResponse> genForshowEquipmentSpecificConfig() {
+    private static HttpRequestDef<ShowEquipmentSpecificConfigRequest, ShowEquipmentSpecificConfigResponse> genForShowEquipmentSpecificConfig() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentSpecificConfigRequest, ShowEquipmentSpecificConfigResponse> builder =
             HttpRequestDef
@@ -716,9 +654,8 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentSpecificConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentSpecificConfigRequest::getEquipmentId,
+                ShowEquipmentSpecificConfigRequest::setEquipmentId));
 
         // response
 
@@ -726,9 +663,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentEsnRequest, UpdateEquipmentEsnResponse> updateEquipmentEsn =
-        genForupdateEquipmentEsn();
+        genForUpdateEquipmentEsn();
 
-    private static HttpRequestDef<UpdateEquipmentEsnRequest, UpdateEquipmentEsnResponse> genForupdateEquipmentEsn() {
+    private static HttpRequestDef<UpdateEquipmentEsnRequest, UpdateEquipmentEsnResponse> genForUpdateEquipmentEsn() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentEsnRequest, UpdateEquipmentEsnResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEquipmentEsnRequest.class, UpdateEquipmentEsnResponse.class)
@@ -742,23 +679,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getIegId, UpdateEquipmentEsnRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getEquipmentId,
+                UpdateEquipmentEsnRequest::setEquipmentId));
         builder.<EquipmentEsn>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EquipmentEsn.class),
-            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentEsnRequest::getBody, UpdateEquipmentEsnRequest::setBody));
 
         // response
 
@@ -766,9 +698,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentInfoRequest, UpdateEquipmentInfoResponse> updateEquipmentInfo =
-        genForupdateEquipmentInfo();
+        genForUpdateEquipmentInfo();
 
-    private static HttpRequestDef<UpdateEquipmentInfoRequest, UpdateEquipmentInfoResponse> genForupdateEquipmentInfo() {
+    private static HttpRequestDef<UpdateEquipmentInfoRequest, UpdateEquipmentInfoResponse> genForUpdateEquipmentInfo() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentInfoRequest, UpdateEquipmentInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEquipmentInfoRequest.class, UpdateEquipmentInfoResponse.class)
@@ -782,23 +714,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getIegId, UpdateEquipmentInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getEquipmentId,
+                UpdateEquipmentInfoRequest::setEquipmentId));
         builder.<UpdateEquipmentInfoBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEquipmentInfoBody.class),
-            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentInfoRequest::getBody, UpdateEquipmentInfoRequest::setBody));
 
         // response
 
@@ -806,9 +733,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<CreateEquipmentLanConfigRequest, CreateEquipmentLanConfigResponse> createEquipmentLanConfig =
-        genForcreateEquipmentLanConfig();
+        genForCreateEquipmentLanConfig();
 
-    private static HttpRequestDef<CreateEquipmentLanConfigRequest, CreateEquipmentLanConfigResponse> genForcreateEquipmentLanConfig() {
+    private static HttpRequestDef<CreateEquipmentLanConfigRequest, CreateEquipmentLanConfigResponse> genForCreateEquipmentLanConfig() {
         // basic
         HttpRequestDef.Builder<CreateEquipmentLanConfigRequest, CreateEquipmentLanConfigResponse> builder =
             HttpRequestDef
@@ -823,23 +750,19 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getIegId,
+                CreateEquipmentLanConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getEquipmentId,
+                CreateEquipmentLanConfigRequest::setEquipmentId));
         builder.<EquipmentLanItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EquipmentLanItem.class),
-            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentLanConfigRequest::getBody, CreateEquipmentLanConfigRequest::setBody));
 
         // response
 
@@ -847,9 +770,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEquipmentLanConfigRequest, DeleteEquipmentLanConfigResponse> deleteEquipmentLanConfig =
-        genFordeleteEquipmentLanConfig();
+        genForDeleteEquipmentLanConfig();
 
-    private static HttpRequestDef<DeleteEquipmentLanConfigRequest, DeleteEquipmentLanConfigResponse> genFordeleteEquipmentLanConfig() {
+    private static HttpRequestDef<DeleteEquipmentLanConfigRequest, DeleteEquipmentLanConfigResponse> genForDeleteEquipmentLanConfig() {
         // basic
         HttpRequestDef.Builder<DeleteEquipmentLanConfigRequest, DeleteEquipmentLanConfigResponse> builder =
             HttpRequestDef
@@ -866,30 +789,26 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getIegId,
+                DeleteEquipmentLanConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getEquipmentId,
+                DeleteEquipmentLanConfigRequest::setEquipmentId));
         builder.<String>withRequestField("interface_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getInterfaceName, (req, v) -> {
-                req.setInterfaceName(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getInterfaceName,
+                DeleteEquipmentLanConfigRequest::setInterfaceName));
         builder.<String>withRequestField("vlan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getVlanId, (req, v) -> {
-                req.setVlanId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentLanConfigRequest::getVlanId,
+                DeleteEquipmentLanConfigRequest::setVlanId));
 
         // response
 
@@ -897,9 +816,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEquipmentInterfaceNameRequest, ListEquipmentInterfaceNameResponse> listEquipmentInterfaceName =
-        genForlistEquipmentInterfaceName();
+        genForListEquipmentInterfaceName();
 
-    private static HttpRequestDef<ListEquipmentInterfaceNameRequest, ListEquipmentInterfaceNameResponse> genForlistEquipmentInterfaceName() {
+    private static HttpRequestDef<ListEquipmentInterfaceNameRequest, ListEquipmentInterfaceNameResponse> genForListEquipmentInterfaceName() {
         // basic
         HttpRequestDef.Builder<ListEquipmentInterfaceNameRequest, ListEquipmentInterfaceNameResponse> builder =
             HttpRequestDef
@@ -916,16 +835,14 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEquipmentInterfaceNameRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ListEquipmentInterfaceNameRequest::getIegId,
+                ListEquipmentInterfaceNameRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEquipmentInterfaceNameRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ListEquipmentInterfaceNameRequest::getEquipmentId,
+                ListEquipmentInterfaceNameRequest::setEquipmentId));
 
         // response
 
@@ -933,9 +850,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentDnsInfoRequest, ShowEquipmentDnsInfoResponse> showEquipmentDnsInfo =
-        genForshowEquipmentDnsInfo();
+        genForShowEquipmentDnsInfo();
 
-    private static HttpRequestDef<ShowEquipmentDnsInfoRequest, ShowEquipmentDnsInfoResponse> genForshowEquipmentDnsInfo() {
+    private static HttpRequestDef<ShowEquipmentDnsInfoRequest, ShowEquipmentDnsInfoResponse> genForShowEquipmentDnsInfo() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentDnsInfoRequest, ShowEquipmentDnsInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentDnsInfoRequest.class, ShowEquipmentDnsInfoResponse.class)
@@ -949,16 +866,13 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentDnsInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentDnsInfoRequest::getIegId, ShowEquipmentDnsInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentDnsInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentDnsInfoRequest::getEquipmentId,
+                ShowEquipmentDnsInfoRequest::setEquipmentId));
 
         // response
 
@@ -966,9 +880,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentLanInfoRequest, ShowEquipmentLanInfoResponse> showEquipmentLanInfo =
-        genForshowEquipmentLanInfo();
+        genForShowEquipmentLanInfo();
 
-    private static HttpRequestDef<ShowEquipmentLanInfoRequest, ShowEquipmentLanInfoResponse> genForshowEquipmentLanInfo() {
+    private static HttpRequestDef<ShowEquipmentLanInfoRequest, ShowEquipmentLanInfoResponse> genForShowEquipmentLanInfo() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentLanInfoRequest, ShowEquipmentLanInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentLanInfoRequest.class, ShowEquipmentLanInfoResponse.class)
@@ -982,16 +896,13 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentLanInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentLanInfoRequest::getIegId, ShowEquipmentLanInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentLanInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentLanInfoRequest::getEquipmentId,
+                ShowEquipmentLanInfoRequest::setEquipmentId));
 
         // response
 
@@ -999,9 +910,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentDnsInfoRequest, UpdateEquipmentDnsInfoResponse> updateEquipmentDnsInfo =
-        genForupdateEquipmentDnsInfo();
+        genForUpdateEquipmentDnsInfo();
 
-    private static HttpRequestDef<UpdateEquipmentDnsInfoRequest, UpdateEquipmentDnsInfoResponse> genForupdateEquipmentDnsInfo() {
+    private static HttpRequestDef<UpdateEquipmentDnsInfoRequest, UpdateEquipmentDnsInfoResponse> genForUpdateEquipmentDnsInfo() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentDnsInfoRequest, UpdateEquipmentDnsInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEquipmentDnsInfoRequest.class, UpdateEquipmentDnsInfoResponse.class)
@@ -1015,23 +926,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getIegId, UpdateEquipmentDnsInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getEquipmentId,
+                UpdateEquipmentDnsInfoRequest::setEquipmentId));
         builder.<EquipmentDnsItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EquipmentDnsItem.class),
-            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentDnsInfoRequest::getBody, UpdateEquipmentDnsInfoRequest::setBody));
 
         // response
 
@@ -1039,9 +945,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentLanConfigRequest, UpdateEquipmentLanConfigResponse> updateEquipmentLanConfig =
-        genForupdateEquipmentLanConfig();
+        genForUpdateEquipmentLanConfig();
 
-    private static HttpRequestDef<UpdateEquipmentLanConfigRequest, UpdateEquipmentLanConfigResponse> genForupdateEquipmentLanConfig() {
+    private static HttpRequestDef<UpdateEquipmentLanConfigRequest, UpdateEquipmentLanConfigResponse> genForUpdateEquipmentLanConfig() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentLanConfigRequest, UpdateEquipmentLanConfigResponse> builder =
             HttpRequestDef
@@ -1056,23 +962,19 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getIegId,
+                UpdateEquipmentLanConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getEquipmentId,
+                UpdateEquipmentLanConfigRequest::setEquipmentId));
         builder.<EquipmentLanItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EquipmentLanItem.class),
-            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentLanConfigRequest::getBody, UpdateEquipmentLanConfigRequest::setBody));
 
         // response
 
@@ -1080,9 +982,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentOspfRequest, ShowEquipmentOspfResponse> showEquipmentOspf =
-        genForshowEquipmentOspf();
+        genForShowEquipmentOspf();
 
-    private static HttpRequestDef<ShowEquipmentOspfRequest, ShowEquipmentOspfResponse> genForshowEquipmentOspf() {
+    private static HttpRequestDef<ShowEquipmentOspfRequest, ShowEquipmentOspfResponse> genForShowEquipmentOspf() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentOspfRequest, ShowEquipmentOspfResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentOspfRequest.class, ShowEquipmentOspfResponse.class)
@@ -1096,16 +998,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentOspfRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentOspfRequest::getIegId, ShowEquipmentOspfRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentOspfRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentOspfRequest::getEquipmentId, ShowEquipmentOspfRequest::setEquipmentId));
 
         // response
 
@@ -1113,9 +1011,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentOspfRequest, UpdateEquipmentOspfResponse> updateEquipmentOspf =
-        genForupdateEquipmentOspf();
+        genForUpdateEquipmentOspf();
 
-    private static HttpRequestDef<UpdateEquipmentOspfRequest, UpdateEquipmentOspfResponse> genForupdateEquipmentOspf() {
+    private static HttpRequestDef<UpdateEquipmentOspfRequest, UpdateEquipmentOspfResponse> genForUpdateEquipmentOspf() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentOspfRequest, UpdateEquipmentOspfResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateEquipmentOspfRequest.class, UpdateEquipmentOspfResponse.class)
@@ -1129,23 +1027,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getIegId, UpdateEquipmentOspfRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getEquipmentId,
+                UpdateEquipmentOspfRequest::setEquipmentId));
         builder.<EquipmentOspfItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EquipmentOspfItem.class),
-            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentOspfRequest::getBody, UpdateEquipmentOspfRequest::setBody));
 
         // response
 
@@ -1153,9 +1046,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<CreateEquipmentStaticRouteConfigRequest, CreateEquipmentStaticRouteConfigResponse> createEquipmentStaticRouteConfig =
-        genForcreateEquipmentStaticRouteConfig();
+        genForCreateEquipmentStaticRouteConfig();
 
-    private static HttpRequestDef<CreateEquipmentStaticRouteConfigRequest, CreateEquipmentStaticRouteConfigResponse> genForcreateEquipmentStaticRouteConfig() {
+    private static HttpRequestDef<CreateEquipmentStaticRouteConfigRequest, CreateEquipmentStaticRouteConfigResponse> genForCreateEquipmentStaticRouteConfig() {
         // basic
         HttpRequestDef.Builder<CreateEquipmentStaticRouteConfigRequest, CreateEquipmentStaticRouteConfigResponse> builder =
             HttpRequestDef
@@ -1172,23 +1065,20 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getIegId,
+                CreateEquipmentStaticRouteConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getEquipmentId,
+                CreateEquipmentStaticRouteConfigRequest::setEquipmentId));
         builder.<StaticRouteItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StaticRouteItem.class),
-            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEquipmentStaticRouteConfigRequest::getBody,
+                CreateEquipmentStaticRouteConfigRequest::setBody));
 
         // response
 
@@ -1196,9 +1086,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEquipmentStaticRouteConfigRequest, DeleteEquipmentStaticRouteConfigResponse> deleteEquipmentStaticRouteConfig =
-        genFordeleteEquipmentStaticRouteConfig();
+        genForDeleteEquipmentStaticRouteConfig();
 
-    private static HttpRequestDef<DeleteEquipmentStaticRouteConfigRequest, DeleteEquipmentStaticRouteConfigResponse> genFordeleteEquipmentStaticRouteConfig() {
+    private static HttpRequestDef<DeleteEquipmentStaticRouteConfigRequest, DeleteEquipmentStaticRouteConfigResponse> genForDeleteEquipmentStaticRouteConfig() {
         // basic
         HttpRequestDef.Builder<DeleteEquipmentStaticRouteConfigRequest, DeleteEquipmentStaticRouteConfigResponse> builder =
             HttpRequestDef
@@ -1215,37 +1105,32 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getIegId,
+                DeleteEquipmentStaticRouteConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getEquipmentId,
+                DeleteEquipmentStaticRouteConfigRequest::setEquipmentId));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getPrefix, (req, v) -> {
-                req.setPrefix(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getPrefix,
+                DeleteEquipmentStaticRouteConfigRequest::setPrefix));
         builder.<String>withRequestField("next_hop",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getNextHop, (req, v) -> {
-                req.setNextHop(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getNextHop,
+                DeleteEquipmentStaticRouteConfigRequest::setNextHop));
         builder.<String>withRequestField("interface_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getInterfaceName, (req, v) -> {
-                req.setInterfaceName(v);
-            }));
+            f -> f.withMarshaller(DeleteEquipmentStaticRouteConfigRequest::getInterfaceName,
+                DeleteEquipmentStaticRouteConfigRequest::setInterfaceName));
 
         // response
 
@@ -1253,9 +1138,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentStaticRouteInfoRequest, ShowEquipmentStaticRouteInfoResponse> showEquipmentStaticRouteInfo =
-        genForshowEquipmentStaticRouteInfo();
+        genForShowEquipmentStaticRouteInfo();
 
-    private static HttpRequestDef<ShowEquipmentStaticRouteInfoRequest, ShowEquipmentStaticRouteInfoResponse> genForshowEquipmentStaticRouteInfo() {
+    private static HttpRequestDef<ShowEquipmentStaticRouteInfoRequest, ShowEquipmentStaticRouteInfoResponse> genForShowEquipmentStaticRouteInfo() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentStaticRouteInfoRequest, ShowEquipmentStaticRouteInfoResponse> builder =
             HttpRequestDef
@@ -1272,16 +1157,14 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentStaticRouteInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentStaticRouteInfoRequest::getIegId,
+                ShowEquipmentStaticRouteInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentStaticRouteInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentStaticRouteInfoRequest::getEquipmentId,
+                ShowEquipmentStaticRouteInfoRequest::setEquipmentId));
 
         // response
 
@@ -1289,9 +1172,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentStaticRouteConfigRequest, UpdateEquipmentStaticRouteConfigResponse> updateEquipmentStaticRouteConfig =
-        genForupdateEquipmentStaticRouteConfig();
+        genForUpdateEquipmentStaticRouteConfig();
 
-    private static HttpRequestDef<UpdateEquipmentStaticRouteConfigRequest, UpdateEquipmentStaticRouteConfigResponse> genForupdateEquipmentStaticRouteConfig() {
+    private static HttpRequestDef<UpdateEquipmentStaticRouteConfigRequest, UpdateEquipmentStaticRouteConfigResponse> genForUpdateEquipmentStaticRouteConfig() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentStaticRouteConfigRequest, UpdateEquipmentStaticRouteConfigResponse> builder =
             HttpRequestDef
@@ -1308,23 +1191,20 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getIegId,
+                UpdateEquipmentStaticRouteConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getEquipmentId,
+                UpdateEquipmentStaticRouteConfigRequest::setEquipmentId));
         builder.<StaticRouteItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StaticRouteItem.class),
-            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentStaticRouteConfigRequest::getBody,
+                UpdateEquipmentStaticRouteConfigRequest::setBody));
 
         // response
 
@@ -1332,9 +1212,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentWanInfoRequest, ShowEquipmentWanInfoResponse> showEquipmentWanInfo =
-        genForshowEquipmentWanInfo();
+        genForShowEquipmentWanInfo();
 
-    private static HttpRequestDef<ShowEquipmentWanInfoRequest, ShowEquipmentWanInfoResponse> genForshowEquipmentWanInfo() {
+    private static HttpRequestDef<ShowEquipmentWanInfoRequest, ShowEquipmentWanInfoResponse> genForShowEquipmentWanInfo() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentWanInfoRequest, ShowEquipmentWanInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentWanInfoRequest.class, ShowEquipmentWanInfoResponse.class)
@@ -1348,16 +1228,13 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentWanInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentWanInfoRequest::getIegId, ShowEquipmentWanInfoRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentWanInfoRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentWanInfoRequest::getEquipmentId,
+                ShowEquipmentWanInfoRequest::setEquipmentId));
 
         // response
 
@@ -1365,9 +1242,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentWanConfigRequest, UpdateEquipmentWanConfigResponse> updateEquipmentWanConfig =
-        genForupdateEquipmentWanConfig();
+        genForUpdateEquipmentWanConfig();
 
-    private static HttpRequestDef<UpdateEquipmentWanConfigRequest, UpdateEquipmentWanConfigResponse> genForupdateEquipmentWanConfig() {
+    private static HttpRequestDef<UpdateEquipmentWanConfigRequest, UpdateEquipmentWanConfigResponse> genForUpdateEquipmentWanConfig() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentWanConfigRequest, UpdateEquipmentWanConfigResponse> builder =
             HttpRequestDef
@@ -1382,23 +1259,19 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getIegId,
+                UpdateEquipmentWanConfigRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getEquipmentId,
+                UpdateEquipmentWanConfigRequest::setEquipmentId));
         builder.<EquipmentWanItemList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EquipmentWanItemList.class),
-            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getBody, UpdateEquipmentWanConfigRequest::setBody));
 
         // response
 
@@ -1406,9 +1279,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> showEquipmentWlan =
-        genForshowEquipmentWlan();
+        genForShowEquipmentWlan();
 
-    private static HttpRequestDef<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> genForshowEquipmentWlan() {
+    private static HttpRequestDef<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> genForShowEquipmentWlan() {
         // basic
         HttpRequestDef.Builder<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowEquipmentWlanRequest.class, ShowEquipmentWlanResponse.class)
@@ -1422,16 +1295,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentWlanRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentWlanRequest::getIegId, ShowEquipmentWlanRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEquipmentWlanRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(ShowEquipmentWlanRequest::getEquipmentId, ShowEquipmentWlanRequest::setEquipmentId));
 
         // response
 
@@ -1439,9 +1308,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> updateEquipmentWlan =
-        genForupdateEquipmentWlan();
+        genForUpdateEquipmentWlan();
 
-    private static HttpRequestDef<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> genForupdateEquipmentWlan() {
+    private static HttpRequestDef<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> genForUpdateEquipmentWlan() {
         // basic
         HttpRequestDef.Builder<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UpdateEquipmentWlanRequest.class, UpdateEquipmentWlanResponse.class)
@@ -1455,32 +1324,27 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getIegId, UpdateEquipmentWlanRequest::setIegId));
         builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getEquipmentId, (req, v) -> {
-                req.setEquipmentId(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getEquipmentId,
+                UpdateEquipmentWlanRequest::setEquipmentId));
         builder.<EquipmentWlanItem>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EquipmentWlanItem.class),
-            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getBody, UpdateEquipmentWlanRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddEcnWithErRequest, AddEcnWithErResponse> addEcnWithEr = genForaddEcnWithEr();
+    public static final HttpRequestDef<AddEcnWithErRequest, AddEcnWithErResponse> addEcnWithEr = genForAddEcnWithEr();
 
-    private static HttpRequestDef<AddEcnWithErRequest, AddEcnWithErResponse> genForaddEcnWithEr() {
+    private static HttpRequestDef<AddEcnWithErRequest, AddEcnWithErResponse> genForAddEcnWithEr() {
         // basic
         HttpRequestDef.Builder<AddEcnWithErRequest, AddEcnWithErResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AddEcnWithErRequest.class, AddEcnWithErResponse.class)
@@ -1494,16 +1358,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEcnWithErRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithErRequest::getEcnId, AddEcnWithErRequest::setEcnId));
         builder.<EcnWithErRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EcnWithErRequest.class),
-            f -> f.withMarshaller(AddEcnWithErRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithErRequest::getBody, AddEcnWithErRequest::setBody));
 
         // response
 
@@ -1511,9 +1371,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEcnWithErRequest, DeleteEcnWithErResponse> deleteEcnWithEr =
-        genFordeleteEcnWithEr();
+        genForDeleteEcnWithEr();
 
-    private static HttpRequestDef<DeleteEcnWithErRequest, DeleteEcnWithErResponse> genFordeleteEcnWithEr() {
+    private static HttpRequestDef<DeleteEcnWithErRequest, DeleteEcnWithErResponse> genForDeleteEcnWithEr() {
         // basic
         HttpRequestDef.Builder<DeleteEcnWithErRequest, DeleteEcnWithErResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEcnWithErRequest.class, DeleteEcnWithErResponse.class)
@@ -1527,16 +1387,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithErRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithErRequest::getEcnId, DeleteEcnWithErRequest::setEcnId));
         builder.<String>withRequestField("relation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithErRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithErRequest::getRelationId, DeleteEcnWithErRequest::setRelationId));
 
         // response
 
@@ -1544,9 +1400,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEcnWithErRequest, ListEcnWithErResponse> listEcnWithEr =
-        genForlistEcnWithEr();
+        genForListEcnWithEr();
 
-    private static HttpRequestDef<ListEcnWithErRequest, ListEcnWithErResponse> genForlistEcnWithEr() {
+    private static HttpRequestDef<ListEcnWithErRequest, ListEcnWithErResponse> genForListEcnWithEr() {
         // basic
         HttpRequestDef.Builder<ListEcnWithErRequest, ListEcnWithErResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListEcnWithErRequest.class, ListEcnWithErResponse.class)
@@ -1560,9 +1416,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnWithErRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ListEcnWithErRequest::getEcnId, ListEcnWithErRequest::setEcnId));
 
         // response
 
@@ -1570,9 +1424,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ChangeIegPasswordRequest, ChangeIegPasswordResponse> changeIegPassword =
-        genForchangeIegPassword();
+        genForChangeIegPassword();
 
-    private static HttpRequestDef<ChangeIegPasswordRequest, ChangeIegPasswordResponse> genForchangeIegPassword() {
+    private static HttpRequestDef<ChangeIegPasswordRequest, ChangeIegPasswordResponse> genForChangeIegPassword() {
         // basic
         HttpRequestDef.Builder<ChangeIegPasswordRequest, ChangeIegPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeIegPasswordRequest.class, ChangeIegPasswordResponse.class)
@@ -1585,25 +1439,21 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIegPasswordRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ChangeIegPasswordRequest::getIegId, ChangeIegPasswordRequest::setIegId));
         builder.<ChangePasswordBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangePasswordBody.class),
-            f -> f.withMarshaller(ChangeIegPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ChangeIegPasswordRequest::getBody, ChangeIegPasswordRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListIegRequest, ListIegResponse> listIeg = genForlistIeg();
+    public static final HttpRequestDef<ListIegRequest, ListIegResponse> listIeg = genForListIeg();
 
-    private static HttpRequestDef<ListIegRequest, ListIegResponse> genForlistIeg() {
+    private static HttpRequestDef<ListIegRequest, ListIegResponse> genForListIeg() {
         // basic
         HttpRequestDef.Builder<ListIegRequest, ListIegResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIegRequest.class, ListIegResponse.class)
@@ -1616,32 +1466,26 @@ public class EcMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIegRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListIegRequest::getLimit, ListIegRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIegRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListIegRequest::getMarker, ListIegRequest::setMarker));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListIegRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListIegRequest::getEnterpriseProjectId, ListIegRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIegInfoRequest, ShowIegInfoResponse> showIegInfo = genForshowIegInfo();
+    public static final HttpRequestDef<ShowIegInfoRequest, ShowIegInfoResponse> showIegInfo = genForShowIegInfo();
 
-    private static HttpRequestDef<ShowIegInfoRequest, ShowIegInfoResponse> genForshowIegInfo() {
+    private static HttpRequestDef<ShowIegInfoRequest, ShowIegInfoResponse> genForShowIegInfo() {
         // basic
         HttpRequestDef.Builder<ShowIegInfoRequest, ShowIegInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIegInfoRequest.class, ShowIegInfoResponse.class)
@@ -1654,9 +1498,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIegInfoRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowIegInfoRequest::getIegId, ShowIegInfoRequest::setIegId));
 
         // response
 
@@ -1664,9 +1506,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<SwitchEquipmentHaTypeRequest, SwitchEquipmentHaTypeResponse> switchEquipmentHaType =
-        genForswitchEquipmentHaType();
+        genForSwitchEquipmentHaType();
 
-    private static HttpRequestDef<SwitchEquipmentHaTypeRequest, SwitchEquipmentHaTypeResponse> genForswitchEquipmentHaType() {
+    private static HttpRequestDef<SwitchEquipmentHaTypeRequest, SwitchEquipmentHaTypeResponse> genForSwitchEquipmentHaType() {
         // basic
         HttpRequestDef.Builder<SwitchEquipmentHaTypeRequest, SwitchEquipmentHaTypeResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, SwitchEquipmentHaTypeRequest.class, SwitchEquipmentHaTypeResponse.class)
@@ -1679,25 +1521,21 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SwitchEquipmentHaTypeRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(SwitchEquipmentHaTypeRequest::getIegId, SwitchEquipmentHaTypeRequest::setIegId));
         builder.<SwitchHaTypeBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchHaTypeBody.class),
-            f -> f.withMarshaller(SwitchEquipmentHaTypeRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SwitchEquipmentHaTypeRequest::getBody, SwitchEquipmentHaTypeRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateIegRequest, UpdateIegResponse> updateIeg = genForupdateIeg();
+    public static final HttpRequestDef<UpdateIegRequest, UpdateIegResponse> updateIeg = genForUpdateIeg();
 
-    private static HttpRequestDef<UpdateIegRequest, UpdateIegResponse> genForupdateIeg() {
+    private static HttpRequestDef<UpdateIegRequest, UpdateIegResponse> genForUpdateIeg() {
         // basic
         HttpRequestDef.Builder<UpdateIegRequest, UpdateIegResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIegRequest.class, UpdateIegResponse.class)
@@ -1710,16 +1548,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIegRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateIegRequest::getIegId, UpdateIegRequest::setIegId));
         builder.<UpdateIegRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateIegRequestBody.class),
-            f -> f.withMarshaller(UpdateIegRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateIegRequest::getBody, UpdateIegRequest::setBody));
 
         // response
 
@@ -1727,9 +1561,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> showQuotasInfo =
-        genForshowQuotasInfo();
+        genForShowQuotasInfo();
 
-    private static HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> genForshowQuotasInfo() {
+    private static HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> genForShowQuotasInfo() {
         // basic
         HttpRequestDef.Builder<ShowQuotasInfoRequest, ShowQuotasInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasInfoRequest.class, ShowQuotasInfoResponse.class)
@@ -1745,9 +1579,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<AddEcnWithVpcRequest, AddEcnWithVpcResponse> addEcnWithVpc =
-        genForaddEcnWithVpc();
+        genForAddEcnWithVpc();
 
-    private static HttpRequestDef<AddEcnWithVpcRequest, AddEcnWithVpcResponse> genForaddEcnWithVpc() {
+    private static HttpRequestDef<AddEcnWithVpcRequest, AddEcnWithVpcResponse> genForAddEcnWithVpc() {
         // basic
         HttpRequestDef.Builder<AddEcnWithVpcRequest, AddEcnWithVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddEcnWithVpcRequest.class, AddEcnWithVpcResponse.class)
@@ -1760,16 +1594,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddEcnWithVpcRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithVpcRequest::getEcnId, AddEcnWithVpcRequest::setEcnId));
         builder.<AddEcnWithVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AddEcnWithVpcRequestBody.class),
-            f -> f.withMarshaller(AddEcnWithVpcRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddEcnWithVpcRequest::getBody, AddEcnWithVpcRequest::setBody));
 
         // response
 
@@ -1777,9 +1607,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> deleteEcnWithVpc =
-        genFordeleteEcnWithVpc();
+        genForDeleteEcnWithVpc();
 
-    private static HttpRequestDef<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> genFordeleteEcnWithVpc() {
+    private static HttpRequestDef<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> genForDeleteEcnWithVpc() {
         // basic
         HttpRequestDef.Builder<DeleteEcnWithVpcRequest, DeleteEcnWithVpcResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteEcnWithVpcRequest.class, DeleteEcnWithVpcResponse.class)
@@ -1793,16 +1623,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getEcnId, DeleteEcnWithVpcRequest::setEcnId));
         builder.<String>withRequestField("relation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(DeleteEcnWithVpcRequest::getRelationId, DeleteEcnWithVpcRequest::setRelationId));
 
         // response
 
@@ -1810,9 +1636,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ListEcnWithVpcRequest, ListEcnWithVpcResponse> listEcnWithVpc =
-        genForlistEcnWithVpc();
+        genForListEcnWithVpc();
 
-    private static HttpRequestDef<ListEcnWithVpcRequest, ListEcnWithVpcResponse> genForlistEcnWithVpc() {
+    private static HttpRequestDef<ListEcnWithVpcRequest, ListEcnWithVpcResponse> genForListEcnWithVpc() {
         // basic
         HttpRequestDef.Builder<ListEcnWithVpcRequest, ListEcnWithVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEcnWithVpcRequest.class, ListEcnWithVpcResponse.class)
@@ -1825,9 +1651,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEcnWithVpcRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(ListEcnWithVpcRequest::getEcnId, ListEcnWithVpcRequest::setEcnId));
 
         // response
 
@@ -1835,9 +1659,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> updateEcnWithVpc =
-        genForupdateEcnWithVpc();
+        genForUpdateEcnWithVpc();
 
-    private static HttpRequestDef<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> genForupdateEcnWithVpc() {
+    private static HttpRequestDef<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> genForUpdateEcnWithVpc() {
         // basic
         HttpRequestDef.Builder<UpdateEcnWithVpcRequest, UpdateEcnWithVpcResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateEcnWithVpcRequest.class, UpdateEcnWithVpcResponse.class)
@@ -1851,23 +1675,17 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getEcnId, (req, v) -> {
-                req.setEcnId(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getEcnId, UpdateEcnWithVpcRequest::setEcnId));
         builder.<String>withRequestField("relation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getRelationId, UpdateEcnWithVpcRequest::setRelationId));
         builder.<UpdateEcnWithVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateEcnWithVpcRequestBody.class),
-            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateEcnWithVpcRequest::getBody, UpdateEcnWithVpcRequest::setBody));
 
         // response
 
@@ -1875,9 +1693,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<AddVrrpConfigRequest, AddVrrpConfigResponse> addVrrpConfig =
-        genForaddVrrpConfig();
+        genForAddVrrpConfig();
 
-    private static HttpRequestDef<AddVrrpConfigRequest, AddVrrpConfigResponse> genForaddVrrpConfig() {
+    private static HttpRequestDef<AddVrrpConfigRequest, AddVrrpConfigResponse> genForAddVrrpConfig() {
         // basic
         HttpRequestDef.Builder<AddVrrpConfigRequest, AddVrrpConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddVrrpConfigRequest.class, AddVrrpConfigResponse.class)
@@ -1890,16 +1708,12 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddVrrpConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(AddVrrpConfigRequest::getIegId, AddVrrpConfigRequest::setIegId));
         builder.<CreateUpdateVrrpConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateUpdateVrrpConfigRequestBody.class),
-            f -> f.withMarshaller(AddVrrpConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(AddVrrpConfigRequest::getBody, AddVrrpConfigRequest::setBody));
 
         // response
 
@@ -1907,9 +1721,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<DeleteVrrpConfigRequest, DeleteVrrpConfigResponse> deleteVrrpConfig =
-        genFordeleteVrrpConfig();
+        genForDeleteVrrpConfig();
 
-    private static HttpRequestDef<DeleteVrrpConfigRequest, DeleteVrrpConfigResponse> genFordeleteVrrpConfig() {
+    private static HttpRequestDef<DeleteVrrpConfigRequest, DeleteVrrpConfigResponse> genForDeleteVrrpConfig() {
         // basic
         HttpRequestDef.Builder<DeleteVrrpConfigRequest, DeleteVrrpConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVrrpConfigRequest.class, DeleteVrrpConfigResponse.class)
@@ -1923,16 +1737,13 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVrrpConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(DeleteVrrpConfigRequest::getIegId, DeleteVrrpConfigRequest::setIegId));
         builder.<Integer>withRequestField("virtual_router_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteVrrpConfigRequest::getVirtualRouterId, (req, v) -> {
-                req.setVirtualRouterId(v);
-            }));
+            f -> f.withMarshaller(DeleteVrrpConfigRequest::getVirtualRouterId,
+                DeleteVrrpConfigRequest::setVirtualRouterId));
 
         // response
 
@@ -1940,9 +1751,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<ShowVrrpConfigRequest, ShowVrrpConfigResponse> showVrrpConfig =
-        genForshowVrrpConfig();
+        genForShowVrrpConfig();
 
-    private static HttpRequestDef<ShowVrrpConfigRequest, ShowVrrpConfigResponse> genForshowVrrpConfig() {
+    private static HttpRequestDef<ShowVrrpConfigRequest, ShowVrrpConfigResponse> genForShowVrrpConfig() {
         // basic
         HttpRequestDef.Builder<ShowVrrpConfigRequest, ShowVrrpConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVrrpConfigRequest.class, ShowVrrpConfigResponse.class)
@@ -1955,9 +1766,7 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVrrpConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(ShowVrrpConfigRequest::getIegId, ShowVrrpConfigRequest::setIegId));
 
         // response
 
@@ -1965,9 +1774,9 @@ public class EcMeta {
     }
 
     public static final HttpRequestDef<UpdateVrrpConfigRequest, UpdateVrrpConfigResponse> updateVrrpConfig =
-        genForupdateVrrpConfig();
+        genForUpdateVrrpConfig();
 
-    private static HttpRequestDef<UpdateVrrpConfigRequest, UpdateVrrpConfigResponse> genForupdateVrrpConfig() {
+    private static HttpRequestDef<UpdateVrrpConfigRequest, UpdateVrrpConfigResponse> genForUpdateVrrpConfig() {
         // basic
         HttpRequestDef.Builder<UpdateVrrpConfigRequest, UpdateVrrpConfigResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateVrrpConfigRequest.class, UpdateVrrpConfigResponse.class)
@@ -1981,23 +1790,18 @@ public class EcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVrrpConfigRequest::getIegId, (req, v) -> {
-                req.setIegId(v);
-            }));
+            f -> f.withMarshaller(UpdateVrrpConfigRequest::getIegId, UpdateVrrpConfigRequest::setIegId));
         builder.<Integer>withRequestField("virtual_router_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateVrrpConfigRequest::getVirtualRouterId, (req, v) -> {
-                req.setVirtualRouterId(v);
-            }));
+            f -> f.withMarshaller(UpdateVrrpConfigRequest::getVirtualRouterId,
+                UpdateVrrpConfigRequest::setVirtualRouterId));
         builder.<CreateUpdateVrrpConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateUpdateVrrpConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateVrrpConfigRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVrrpConfigRequest::getBody, UpdateVrrpConfigRequest::setBody));
 
         // response
 

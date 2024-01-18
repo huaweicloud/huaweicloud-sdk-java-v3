@@ -26,7 +26,7 @@ public class CgsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return ListContainerNodesResponse
      */
     public ListContainerNodesResponse listContainerNodes(ListContainerNodesRequest request) {
@@ -40,13 +40,12 @@ public class CgsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListContainerNodesRequest 请求对象
+     * @param request ListContainerNodesRequest 请求对象
      * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>
      */
     public SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse> listContainerNodesInvoker(
         ListContainerNodesRequest request) {
-        return new SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>(request,
-            CgsMeta.listContainerNodes, hcClient);
+        return new SyncInvoker<>(request, CgsMeta.listContainerNodes, hcClient);
     }
 
 }

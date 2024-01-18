@@ -21,7 +21,7 @@ public class DeletePersistentStorageRequest {
     }
 
     /**
-     * WKS存储ID
+     * WKS存储ID。
      * @return storageId
      */
     public String getStorageId() {

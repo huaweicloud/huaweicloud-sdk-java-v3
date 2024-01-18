@@ -151,7 +151,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnimatedGraphicsTaskRequest 请求对象
+     * @param request CreateAnimatedGraphicsTaskRequest 请求对象
      * @return CreateAnimatedGraphicsTaskResponse
      */
     public CreateAnimatedGraphicsTaskResponse createAnimatedGraphicsTask(CreateAnimatedGraphicsTaskRequest request) {
@@ -166,13 +166,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAnimatedGraphicsTaskRequest 请求对象
+     * @param request CreateAnimatedGraphicsTaskRequest 请求对象
      * @return SyncInvoker<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse>
      */
     public SyncInvoker<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse> createAnimatedGraphicsTaskInvoker(
         CreateAnimatedGraphicsTaskRequest request) {
-        return new SyncInvoker<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse>(request,
-            MpcMeta.createAnimatedGraphicsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createAnimatedGraphicsTask, hcClient);
     }
 
     /**
@@ -182,7 +181,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAnimatedGraphicsTaskRequest 请求对象
+     * @param request DeleteAnimatedGraphicsTaskRequest 请求对象
      * @return DeleteAnimatedGraphicsTaskResponse
      */
     public DeleteAnimatedGraphicsTaskResponse deleteAnimatedGraphicsTask(DeleteAnimatedGraphicsTaskRequest request) {
@@ -196,13 +195,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAnimatedGraphicsTaskRequest 请求对象
+     * @param request DeleteAnimatedGraphicsTaskRequest 请求对象
      * @return SyncInvoker<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse>
      */
     public SyncInvoker<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> deleteAnimatedGraphicsTaskInvoker(
         DeleteAnimatedGraphicsTaskRequest request) {
-        return new SyncInvoker<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse>(request,
-            MpcMeta.deleteAnimatedGraphicsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteAnimatedGraphicsTask, hcClient);
     }
 
     /**
@@ -212,7 +210,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAnimatedGraphicsTaskRequest 请求对象
+     * @param request ListAnimatedGraphicsTaskRequest 请求对象
      * @return ListAnimatedGraphicsTaskResponse
      */
     public ListAnimatedGraphicsTaskResponse listAnimatedGraphicsTask(ListAnimatedGraphicsTaskRequest request) {
@@ -226,13 +224,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAnimatedGraphicsTaskRequest 请求对象
+     * @param request ListAnimatedGraphicsTaskRequest 请求对象
      * @return SyncInvoker<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse>
      */
     public SyncInvoker<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> listAnimatedGraphicsTaskInvoker(
         ListAnimatedGraphicsTaskRequest request) {
-        return new SyncInvoker<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse>(request,
-            MpcMeta.listAnimatedGraphicsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listAnimatedGraphicsTask, hcClient);
     }
 
     /**
@@ -242,7 +239,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesTaskRequest 请求对象
+     * @param request CreateAgenciesTaskRequest 请求对象
      * @return CreateAgenciesTaskResponse
      */
     public CreateAgenciesTaskResponse createAgenciesTask(CreateAgenciesTaskRequest request) {
@@ -256,13 +253,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAgenciesTaskRequest 请求对象
+     * @param request CreateAgenciesTaskRequest 请求对象
      * @return SyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse>
      */
     public SyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> createAgenciesTaskInvoker(
         CreateAgenciesTaskRequest request) {
-        return new SyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse>(request,
-            MpcMeta.createAgenciesTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createAgenciesTask, hcClient);
     }
 
     /**
@@ -272,7 +268,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllBucketsRequest 请求对象
+     * @param request ListAllBucketsRequest 请求对象
      * @return ListAllBucketsResponse
      */
     public ListAllBucketsResponse listAllBuckets(ListAllBucketsRequest request) {
@@ -286,13 +282,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllBucketsRequest 请求对象
+     * @param request ListAllBucketsRequest 请求对象
      * @return SyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse>
      */
     public SyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse> listAllBucketsInvoker(
         ListAllBucketsRequest request) {
-        return new SyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse>(request, MpcMeta.listAllBuckets,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listAllBuckets, hcClient);
     }
 
     /**
@@ -302,7 +297,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllObsObjListRequest 请求对象
+     * @param request ListAllObsObjListRequest 请求对象
      * @return ListAllObsObjListResponse
      */
     public ListAllObsObjListResponse listAllObsObjList(ListAllObsObjListRequest request) {
@@ -316,13 +311,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAllObsObjListRequest 请求对象
+     * @param request ListAllObsObjListRequest 请求对象
      * @return SyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse>
      */
     public SyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse> listAllObsObjListInvoker(
         ListAllObsObjListRequest request) {
-        return new SyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse>(request, MpcMeta.listAllObsObjList,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listAllObsObjList, hcClient);
     }
 
     /**
@@ -332,7 +326,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifyEventRequest 请求对象
+     * @param request ListNotifyEventRequest 请求对象
      * @return ListNotifyEventResponse
      */
     public ListNotifyEventResponse listNotifyEvent(ListNotifyEventRequest request) {
@@ -346,13 +340,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifyEventRequest 请求对象
+     * @param request ListNotifyEventRequest 请求对象
      * @return SyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse>
      */
     public SyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse> listNotifyEventInvoker(
         ListNotifyEventRequest request) {
-        return new SyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse>(request, MpcMeta.listNotifyEvent,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listNotifyEvent, hcClient);
     }
 
     /**
@@ -362,7 +355,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifySmnTopicConfigRequest 请求对象
+     * @param request ListNotifySmnTopicConfigRequest 请求对象
      * @return ListNotifySmnTopicConfigResponse
      */
     public ListNotifySmnTopicConfigResponse listNotifySmnTopicConfig(ListNotifySmnTopicConfigRequest request) {
@@ -376,13 +369,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNotifySmnTopicConfigRequest 请求对象
+     * @param request ListNotifySmnTopicConfigRequest 请求对象
      * @return SyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse>
      */
     public SyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfigInvoker(
         ListNotifySmnTopicConfigRequest request) {
-        return new SyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse>(request,
-            MpcMeta.listNotifySmnTopicConfig, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listNotifySmnTopicConfig, hcClient);
     }
 
     /**
@@ -392,7 +384,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NotifySmnTopicConfigRequest 请求对象
+     * @param request NotifySmnTopicConfigRequest 请求对象
      * @return NotifySmnTopicConfigResponse
      */
     public NotifySmnTopicConfigResponse notifySmnTopicConfig(NotifySmnTopicConfigRequest request) {
@@ -406,13 +398,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param NotifySmnTopicConfigRequest 请求对象
+     * @param request NotifySmnTopicConfigRequest 请求对象
      * @return SyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse>
      */
     public SyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> notifySmnTopicConfigInvoker(
         NotifySmnTopicConfigRequest request) {
-        return new SyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse>(request,
-            MpcMeta.notifySmnTopicConfig, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.notifySmnTopicConfig, hcClient);
     }
 
     /**
@@ -422,7 +413,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgenciesTaskRequest 请求对象
+     * @param request ShowAgenciesTaskRequest 请求对象
      * @return ShowAgenciesTaskResponse
      */
     public ShowAgenciesTaskResponse showAgenciesTask(ShowAgenciesTaskRequest request) {
@@ -436,13 +427,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgenciesTaskRequest 请求对象
+     * @param request ShowAgenciesTaskRequest 请求对象
      * @return SyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse>
      */
     public SyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> showAgenciesTaskInvoker(
         ShowAgenciesTaskRequest request) {
-        return new SyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse>(request, MpcMeta.showAgenciesTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.showAgenciesTask, hcClient);
     }
 
     /**
@@ -452,7 +442,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @param request UpdateBucketAuthorizedRequest 请求对象
      * @return UpdateBucketAuthorizedResponse
      */
     public UpdateBucketAuthorizedResponse updateBucketAuthorized(UpdateBucketAuthorizedRequest request) {
@@ -466,13 +456,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @param request UpdateBucketAuthorizedRequest 请求对象
      * @return SyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>
      */
     public SyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorizedInvoker(
         UpdateBucketAuthorizedRequest request) {
-        return new SyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>(request,
-            MpcMeta.updateBucketAuthorized, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateBucketAuthorized, hcClient);
     }
 
     /**
@@ -483,7 +472,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEditingJobRequest 请求对象
+     * @param request CreateEditingJobRequest 请求对象
      * @return CreateEditingJobResponse
      */
     public CreateEditingJobResponse createEditingJob(CreateEditingJobRequest request) {
@@ -498,13 +487,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEditingJobRequest 请求对象
+     * @param request CreateEditingJobRequest 请求对象
      * @return SyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse>
      */
     public SyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse> createEditingJobInvoker(
         CreateEditingJobRequest request) {
-        return new SyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse>(request, MpcMeta.createEditingJob,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createEditingJob, hcClient);
     }
 
     /**
@@ -514,7 +502,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEditingJobRequest 请求对象
+     * @param request DeleteEditingJobRequest 请求对象
      * @return DeleteEditingJobResponse
      */
     public DeleteEditingJobResponse deleteEditingJob(DeleteEditingJobRequest request) {
@@ -528,13 +516,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEditingJobRequest 请求对象
+     * @param request DeleteEditingJobRequest 请求对象
      * @return SyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse>
      */
     public SyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse> deleteEditingJobInvoker(
         DeleteEditingJobRequest request) {
-        return new SyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse>(request, MpcMeta.deleteEditingJob,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteEditingJob, hcClient);
     }
 
     /**
@@ -544,7 +531,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEditingJobRequest 请求对象
+     * @param request ListEditingJobRequest 请求对象
      * @return ListEditingJobResponse
      */
     public ListEditingJobResponse listEditingJob(ListEditingJobRequest request) {
@@ -558,13 +545,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEditingJobRequest 请求对象
+     * @param request ListEditingJobRequest 请求对象
      * @return SyncInvoker<ListEditingJobRequest, ListEditingJobResponse>
      */
     public SyncInvoker<ListEditingJobRequest, ListEditingJobResponse> listEditingJobInvoker(
         ListEditingJobRequest request) {
-        return new SyncInvoker<ListEditingJobRequest, ListEditingJobResponse>(request, MpcMeta.listEditingJob,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listEditingJob, hcClient);
     }
 
     /**
@@ -578,7 +564,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEncryptTaskRequest 请求对象
+     * @param request CreateEncryptTaskRequest 请求对象
      * @return CreateEncryptTaskResponse
      */
     public CreateEncryptTaskResponse createEncryptTask(CreateEncryptTaskRequest request) {
@@ -596,13 +582,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateEncryptTaskRequest 请求对象
+     * @param request CreateEncryptTaskRequest 请求对象
      * @return SyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse>
      */
     public SyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse> createEncryptTaskInvoker(
         CreateEncryptTaskRequest request) {
-        return new SyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse>(request, MpcMeta.createEncryptTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createEncryptTask, hcClient);
     }
 
     /**
@@ -616,7 +601,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEncryptTaskRequest 请求对象
+     * @param request DeleteEncryptTaskRequest 请求对象
      * @return DeleteEncryptTaskResponse
      */
     public DeleteEncryptTaskResponse deleteEncryptTask(DeleteEncryptTaskRequest request) {
@@ -634,13 +619,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteEncryptTaskRequest 请求对象
+     * @param request DeleteEncryptTaskRequest 请求对象
      * @return SyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse>
      */
     public SyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> deleteEncryptTaskInvoker(
         DeleteEncryptTaskRequest request) {
-        return new SyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse>(request, MpcMeta.deleteEncryptTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteEncryptTask, hcClient);
     }
 
     /**
@@ -650,7 +634,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncryptTaskRequest 请求对象
+     * @param request ListEncryptTaskRequest 请求对象
      * @return ListEncryptTaskResponse
      */
     public ListEncryptTaskResponse listEncryptTask(ListEncryptTaskRequest request) {
@@ -664,13 +648,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEncryptTaskRequest 请求对象
+     * @param request ListEncryptTaskRequest 请求对象
      * @return SyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse>
      */
     public SyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse> listEncryptTaskInvoker(
         ListEncryptTaskRequest request) {
-        return new SyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse>(request, MpcMeta.listEncryptTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listEncryptTask, hcClient);
     }
 
     /**
@@ -680,7 +663,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtractTaskRequest 请求对象
+     * @param request CreateExtractTaskRequest 请求对象
      * @return CreateExtractTaskResponse
      */
     public CreateExtractTaskResponse createExtractTask(CreateExtractTaskRequest request) {
@@ -694,13 +677,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateExtractTaskRequest 请求对象
+     * @param request CreateExtractTaskRequest 请求对象
      * @return SyncInvoker<CreateExtractTaskRequest, CreateExtractTaskResponse>
      */
     public SyncInvoker<CreateExtractTaskRequest, CreateExtractTaskResponse> createExtractTaskInvoker(
         CreateExtractTaskRequest request) {
-        return new SyncInvoker<CreateExtractTaskRequest, CreateExtractTaskResponse>(request, MpcMeta.createExtractTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createExtractTask, hcClient);
     }
 
     /**
@@ -710,7 +692,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExtractTaskRequest 请求对象
+     * @param request DeleteExtractTaskRequest 请求对象
      * @return DeleteExtractTaskResponse
      */
     public DeleteExtractTaskResponse deleteExtractTask(DeleteExtractTaskRequest request) {
@@ -724,13 +706,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteExtractTaskRequest 请求对象
+     * @param request DeleteExtractTaskRequest 请求对象
      * @return SyncInvoker<DeleteExtractTaskRequest, DeleteExtractTaskResponse>
      */
     public SyncInvoker<DeleteExtractTaskRequest, DeleteExtractTaskResponse> deleteExtractTaskInvoker(
         DeleteExtractTaskRequest request) {
-        return new SyncInvoker<DeleteExtractTaskRequest, DeleteExtractTaskResponse>(request, MpcMeta.deleteExtractTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteExtractTask, hcClient);
     }
 
     /**
@@ -740,7 +721,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtractTaskRequest 请求对象
+     * @param request ListExtractTaskRequest 请求对象
      * @return ListExtractTaskResponse
      */
     public ListExtractTaskResponse listExtractTask(ListExtractTaskRequest request) {
@@ -754,13 +735,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListExtractTaskRequest 请求对象
+     * @param request ListExtractTaskRequest 请求对象
      * @return SyncInvoker<ListExtractTaskRequest, ListExtractTaskResponse>
      */
     public SyncInvoker<ListExtractTaskRequest, ListExtractTaskResponse> listExtractTaskInvoker(
         ListExtractTaskRequest request) {
-        return new SyncInvoker<ListExtractTaskRequest, ListExtractTaskResponse>(request, MpcMeta.listExtractTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listExtractTask, hcClient);
     }
 
     /**
@@ -775,7 +755,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMbTasksReportRequest 请求对象
+     * @param request CreateMbTasksReportRequest 请求对象
      * @return CreateMbTasksReportResponse
      */
     public CreateMbTasksReportResponse createMbTasksReport(CreateMbTasksReportRequest request) {
@@ -794,13 +774,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMbTasksReportRequest 请求对象
+     * @param request CreateMbTasksReportRequest 请求对象
      * @return SyncInvoker<CreateMbTasksReportRequest, CreateMbTasksReportResponse>
      */
     public SyncInvoker<CreateMbTasksReportRequest, CreateMbTasksReportResponse> createMbTasksReportInvoker(
         CreateMbTasksReportRequest request) {
-        return new SyncInvoker<CreateMbTasksReportRequest, CreateMbTasksReportResponse>(request,
-            MpcMeta.createMbTasksReport, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createMbTasksReport, hcClient);
     }
 
     /**
@@ -811,7 +790,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeChannelsTaskRequest 请求对象
+     * @param request CreateMergeChannelsTaskRequest 请求对象
      * @return CreateMergeChannelsTaskResponse
      */
     public CreateMergeChannelsTaskResponse createMergeChannelsTask(CreateMergeChannelsTaskRequest request) {
@@ -826,13 +805,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMergeChannelsTaskRequest 请求对象
+     * @param request CreateMergeChannelsTaskRequest 请求对象
      * @return SyncInvoker<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse>
      */
     public SyncInvoker<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> createMergeChannelsTaskInvoker(
         CreateMergeChannelsTaskRequest request) {
-        return new SyncInvoker<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse>(request,
-            MpcMeta.createMergeChannelsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createMergeChannelsTask, hcClient);
     }
 
     /**
@@ -843,7 +821,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResetTracksTaskRequest 请求对象
+     * @param request CreateResetTracksTaskRequest 请求对象
      * @return CreateResetTracksTaskResponse
      */
     public CreateResetTracksTaskResponse createResetTracksTask(CreateResetTracksTaskRequest request) {
@@ -858,13 +836,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResetTracksTaskRequest 请求对象
+     * @param request CreateResetTracksTaskRequest 请求对象
      * @return SyncInvoker<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse>
      */
     public SyncInvoker<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> createResetTracksTaskInvoker(
         CreateResetTracksTaskRequest request) {
-        return new SyncInvoker<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse>(request,
-            MpcMeta.createResetTracksTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createResetTracksTask, hcClient);
     }
 
     /**
@@ -874,7 +851,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMergeChannelsTaskRequest 请求对象
+     * @param request DeleteMergeChannelsTaskRequest 请求对象
      * @return DeleteMergeChannelsTaskResponse
      */
     public DeleteMergeChannelsTaskResponse deleteMergeChannelsTask(DeleteMergeChannelsTaskRequest request) {
@@ -888,13 +865,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMergeChannelsTaskRequest 请求对象
+     * @param request DeleteMergeChannelsTaskRequest 请求对象
      * @return SyncInvoker<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse>
      */
     public SyncInvoker<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> deleteMergeChannelsTaskInvoker(
         DeleteMergeChannelsTaskRequest request) {
-        return new SyncInvoker<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse>(request,
-            MpcMeta.deleteMergeChannelsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteMergeChannelsTask, hcClient);
     }
 
     /**
@@ -904,7 +880,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResetTracksTaskRequest 请求对象
+     * @param request DeleteResetTracksTaskRequest 请求对象
      * @return DeleteResetTracksTaskResponse
      */
     public DeleteResetTracksTaskResponse deleteResetTracksTask(DeleteResetTracksTaskRequest request) {
@@ -918,13 +894,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResetTracksTaskRequest 请求对象
+     * @param request DeleteResetTracksTaskRequest 请求对象
      * @return SyncInvoker<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse>
      */
     public SyncInvoker<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> deleteResetTracksTaskInvoker(
         DeleteResetTracksTaskRequest request) {
-        return new SyncInvoker<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse>(request,
-            MpcMeta.deleteResetTracksTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteResetTracksTask, hcClient);
     }
 
     /**
@@ -934,7 +909,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMergeChannelsTaskRequest 请求对象
+     * @param request ListMergeChannelsTaskRequest 请求对象
      * @return ListMergeChannelsTaskResponse
      */
     public ListMergeChannelsTaskResponse listMergeChannelsTask(ListMergeChannelsTaskRequest request) {
@@ -948,13 +923,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMergeChannelsTaskRequest 请求对象
+     * @param request ListMergeChannelsTaskRequest 请求对象
      * @return SyncInvoker<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse>
      */
     public SyncInvoker<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> listMergeChannelsTaskInvoker(
         ListMergeChannelsTaskRequest request) {
-        return new SyncInvoker<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse>(request,
-            MpcMeta.listMergeChannelsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listMergeChannelsTask, hcClient);
     }
 
     /**
@@ -964,7 +938,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResetTracksTaskRequest 请求对象
+     * @param request ListResetTracksTaskRequest 请求对象
      * @return ListResetTracksTaskResponse
      */
     public ListResetTracksTaskResponse listResetTracksTask(ListResetTracksTaskRequest request) {
@@ -978,13 +952,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResetTracksTaskRequest 请求对象
+     * @param request ListResetTracksTaskRequest 请求对象
      * @return SyncInvoker<ListResetTracksTaskRequest, ListResetTracksTaskResponse>
      */
     public SyncInvoker<ListResetTracksTaskRequest, ListResetTracksTaskResponse> listResetTracksTaskInvoker(
         ListResetTracksTaskRequest request) {
-        return new SyncInvoker<ListResetTracksTaskRequest, ListResetTracksTaskResponse>(request,
-            MpcMeta.listResetTracksTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listResetTracksTask, hcClient);
     }
 
     /**
@@ -1001,7 +974,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMediaProcessTaskRequest 请求对象
+     * @param request CreateMediaProcessTaskRequest 请求对象
      * @return CreateMediaProcessTaskResponse
      */
     public CreateMediaProcessTaskResponse createMediaProcessTask(CreateMediaProcessTaskRequest request) {
@@ -1022,13 +995,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMediaProcessTaskRequest 请求对象
+     * @param request CreateMediaProcessTaskRequest 请求对象
      * @return SyncInvoker<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse>
      */
     public SyncInvoker<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> createMediaProcessTaskInvoker(
         CreateMediaProcessTaskRequest request) {
-        return new SyncInvoker<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse>(request,
-            MpcMeta.createMediaProcessTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createMediaProcessTask, hcClient);
     }
 
     /**
@@ -1045,7 +1017,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMediaProcessTaskRequest 请求对象
+     * @param request DeleteMediaProcessTaskRequest 请求对象
      * @return DeleteMediaProcessTaskResponse
      */
     public DeleteMediaProcessTaskResponse deleteMediaProcessTask(DeleteMediaProcessTaskRequest request) {
@@ -1066,13 +1038,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteMediaProcessTaskRequest 请求对象
+     * @param request DeleteMediaProcessTaskRequest 请求对象
      * @return SyncInvoker<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse>
      */
     public SyncInvoker<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> deleteMediaProcessTaskInvoker(
         DeleteMediaProcessTaskRequest request) {
-        return new SyncInvoker<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse>(request,
-            MpcMeta.deleteMediaProcessTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteMediaProcessTask, hcClient);
     }
 
     /**
@@ -1089,7 +1060,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMediaProcessTaskRequest 请求对象
+     * @param request ListMediaProcessTaskRequest 请求对象
      * @return ListMediaProcessTaskResponse
      */
     public ListMediaProcessTaskResponse listMediaProcessTask(ListMediaProcessTaskRequest request) {
@@ -1110,13 +1081,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListMediaProcessTaskRequest 请求对象
+     * @param request ListMediaProcessTaskRequest 请求对象
      * @return SyncInvoker<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse>
      */
     public SyncInvoker<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> listMediaProcessTaskInvoker(
         ListMediaProcessTaskRequest request) {
-        return new SyncInvoker<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse>(request,
-            MpcMeta.listMediaProcessTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listMediaProcessTask, hcClient);
     }
 
     /**
@@ -1131,7 +1101,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMpeCallBackRequest 请求对象
+     * @param request CreateMpeCallBackRequest 请求对象
      * @return CreateMpeCallBackResponse
      */
     public CreateMpeCallBackResponse createMpeCallBack(CreateMpeCallBackRequest request) {
@@ -1150,13 +1120,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateMpeCallBackRequest 请求对象
+     * @param request CreateMpeCallBackRequest 请求对象
      * @return SyncInvoker<CreateMpeCallBackRequest, CreateMpeCallBackResponse>
      */
     public SyncInvoker<CreateMpeCallBackRequest, CreateMpeCallBackResponse> createMpeCallBackInvoker(
         CreateMpeCallBackRequest request) {
-        return new SyncInvoker<CreateMpeCallBackRequest, CreateMpeCallBackResponse>(request, MpcMeta.createMpeCallBack,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createMpeCallBack, hcClient);
     }
 
     /**
@@ -1166,7 +1135,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQualityEnhanceTemplateRequest 请求对象
+     * @param request CreateQualityEnhanceTemplateRequest 请求对象
      * @return CreateQualityEnhanceTemplateResponse
      */
     public CreateQualityEnhanceTemplateResponse createQualityEnhanceTemplate(
@@ -1181,13 +1150,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateQualityEnhanceTemplateRequest 请求对象
+     * @param request CreateQualityEnhanceTemplateRequest 请求对象
      * @return SyncInvoker<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse>
      */
     public SyncInvoker<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> createQualityEnhanceTemplateInvoker(
         CreateQualityEnhanceTemplateRequest request) {
-        return new SyncInvoker<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse>(request,
-            MpcMeta.createQualityEnhanceTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createQualityEnhanceTemplate, hcClient);
     }
 
     /**
@@ -1197,7 +1165,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQualityEnhanceTemplateRequest 请求对象
+     * @param request DeleteQualityEnhanceTemplateRequest 请求对象
      * @return DeleteQualityEnhanceTemplateResponse
      */
     public DeleteQualityEnhanceTemplateResponse deleteQualityEnhanceTemplate(
@@ -1212,13 +1180,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteQualityEnhanceTemplateRequest 请求对象
+     * @param request DeleteQualityEnhanceTemplateRequest 请求对象
      * @return SyncInvoker<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse>
      */
     public SyncInvoker<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> deleteQualityEnhanceTemplateInvoker(
         DeleteQualityEnhanceTemplateRequest request) {
-        return new SyncInvoker<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse>(request,
-            MpcMeta.deleteQualityEnhanceTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteQualityEnhanceTemplate, hcClient);
     }
 
     /**
@@ -1228,7 +1195,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
+     * @param request ListQualityEnhanceDefaultTemplateRequest 请求对象
      * @return ListQualityEnhanceDefaultTemplateResponse
      */
     public ListQualityEnhanceDefaultTemplateResponse listQualityEnhanceDefaultTemplate(
@@ -1243,13 +1210,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
+     * @param request ListQualityEnhanceDefaultTemplateRequest 请求对象
      * @return SyncInvoker<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse>
      */
     public SyncInvoker<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> listQualityEnhanceDefaultTemplateInvoker(
         ListQualityEnhanceDefaultTemplateRequest request) {
-        return new SyncInvoker<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse>(
-            request, MpcMeta.listQualityEnhanceDefaultTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listQualityEnhanceDefaultTemplate, hcClient);
     }
 
     /**
@@ -1259,7 +1225,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQualityEnhanceTemplateRequest 请求对象
+     * @param request UpdateQualityEnhanceTemplateRequest 请求对象
      * @return UpdateQualityEnhanceTemplateResponse
      */
     public UpdateQualityEnhanceTemplateResponse updateQualityEnhanceTemplate(
@@ -1274,13 +1240,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateQualityEnhanceTemplateRequest 请求对象
+     * @param request UpdateQualityEnhanceTemplateRequest 请求对象
      * @return SyncInvoker<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse>
      */
     public SyncInvoker<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> updateQualityEnhanceTemplateInvoker(
         UpdateQualityEnhanceTemplateRequest request) {
-        return new SyncInvoker<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse>(request,
-            MpcMeta.updateQualityEnhanceTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateQualityEnhanceTemplate, hcClient);
     }
 
     /**
@@ -1290,7 +1255,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDetailRequest 请求对象
+     * @param request ListTranscodeDetailRequest 请求对象
      * @return ListTranscodeDetailResponse
      */
     public ListTranscodeDetailResponse listTranscodeDetail(ListTranscodeDetailRequest request) {
@@ -1304,13 +1269,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodeDetailRequest 请求对象
+     * @param request ListTranscodeDetailRequest 请求对象
      * @return SyncInvoker<ListTranscodeDetailRequest, ListTranscodeDetailResponse>
      */
     public SyncInvoker<ListTranscodeDetailRequest, ListTranscodeDetailResponse> listTranscodeDetailInvoker(
         ListTranscodeDetailRequest request) {
-        return new SyncInvoker<ListTranscodeDetailRequest, ListTranscodeDetailResponse>(request,
-            MpcMeta.listTranscodeDetail, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listTranscodeDetail, hcClient);
     }
 
     /**
@@ -1320,7 +1284,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRemuxTaskRequest 请求对象
+     * @param request CancelRemuxTaskRequest 请求对象
      * @return CancelRemuxTaskResponse
      */
     public CancelRemuxTaskResponse cancelRemuxTask(CancelRemuxTaskRequest request) {
@@ -1334,13 +1298,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelRemuxTaskRequest 请求对象
+     * @param request CancelRemuxTaskRequest 请求对象
      * @return SyncInvoker<CancelRemuxTaskRequest, CancelRemuxTaskResponse>
      */
     public SyncInvoker<CancelRemuxTaskRequest, CancelRemuxTaskResponse> cancelRemuxTaskInvoker(
         CancelRemuxTaskRequest request) {
-        return new SyncInvoker<CancelRemuxTaskRequest, CancelRemuxTaskResponse>(request, MpcMeta.cancelRemuxTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.cancelRemuxTask, hcClient);
     }
 
     /**
@@ -1351,7 +1314,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRemuxTaskRequest 请求对象
+     * @param request CreateRemuxTaskRequest 请求对象
      * @return CreateRemuxTaskResponse
      */
     public CreateRemuxTaskResponse createRemuxTask(CreateRemuxTaskRequest request) {
@@ -1366,13 +1329,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRemuxTaskRequest 请求对象
+     * @param request CreateRemuxTaskRequest 请求对象
      * @return SyncInvoker<CreateRemuxTaskRequest, CreateRemuxTaskResponse>
      */
     public SyncInvoker<CreateRemuxTaskRequest, CreateRemuxTaskResponse> createRemuxTaskInvoker(
         CreateRemuxTaskRequest request) {
-        return new SyncInvoker<CreateRemuxTaskRequest, CreateRemuxTaskResponse>(request, MpcMeta.createRemuxTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createRemuxTask, hcClient);
     }
 
     /**
@@ -1382,7 +1344,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRetryRemuxTaskRequest 请求对象
+     * @param request CreateRetryRemuxTaskRequest 请求对象
      * @return CreateRetryRemuxTaskResponse
      */
     public CreateRetryRemuxTaskResponse createRetryRemuxTask(CreateRetryRemuxTaskRequest request) {
@@ -1396,13 +1358,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateRetryRemuxTaskRequest 请求对象
+     * @param request CreateRetryRemuxTaskRequest 请求对象
      * @return SyncInvoker<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse>
      */
     public SyncInvoker<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse> createRetryRemuxTaskInvoker(
         CreateRetryRemuxTaskRequest request) {
-        return new SyncInvoker<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse>(request,
-            MpcMeta.createRetryRemuxTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createRetryRemuxTask, hcClient);
     }
 
     /**
@@ -1412,7 +1373,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRemuxTaskRequest 请求对象
+     * @param request DeleteRemuxTaskRequest 请求对象
      * @return DeleteRemuxTaskResponse
      */
     public DeleteRemuxTaskResponse deleteRemuxTask(DeleteRemuxTaskRequest request) {
@@ -1426,13 +1387,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteRemuxTaskRequest 请求对象
+     * @param request DeleteRemuxTaskRequest 请求对象
      * @return SyncInvoker<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse>
      */
     public SyncInvoker<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> deleteRemuxTaskInvoker(
         DeleteRemuxTaskRequest request) {
-        return new SyncInvoker<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse>(request, MpcMeta.deleteRemuxTask,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteRemuxTask, hcClient);
     }
 
     /**
@@ -1442,7 +1402,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRemuxTaskRequest 请求对象
+     * @param request ListRemuxTaskRequest 请求对象
      * @return ListRemuxTaskResponse
      */
     public ListRemuxTaskResponse listRemuxTask(ListRemuxTaskRequest request) {
@@ -1456,11 +1416,11 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRemuxTaskRequest 请求对象
+     * @param request ListRemuxTaskRequest 请求对象
      * @return SyncInvoker<ListRemuxTaskRequest, ListRemuxTaskResponse>
      */
     public SyncInvoker<ListRemuxTaskRequest, ListRemuxTaskResponse> listRemuxTaskInvoker(ListRemuxTaskRequest request) {
-        return new SyncInvoker<ListRemuxTaskRequest, ListRemuxTaskResponse>(request, MpcMeta.listRemuxTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listRemuxTask, hcClient);
     }
 
     /**
@@ -1470,7 +1430,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupRequest 请求对象
+     * @param request CreateTemplateGroupRequest 请求对象
      * @return CreateTemplateGroupResponse
      */
     public CreateTemplateGroupResponse createTemplateGroup(CreateTemplateGroupRequest request) {
@@ -1484,13 +1444,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTemplateGroupRequest 请求对象
+     * @param request CreateTemplateGroupRequest 请求对象
      * @return SyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>
      */
     public SyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroupInvoker(
         CreateTemplateGroupRequest request) {
-        return new SyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>(request,
-            MpcMeta.createTemplateGroup, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createTemplateGroup, hcClient);
     }
 
     /**
@@ -1500,7 +1459,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupRequest 请求对象
+     * @param request DeleteTemplateGroupRequest 请求对象
      * @return DeleteTemplateGroupResponse
      */
     public DeleteTemplateGroupResponse deleteTemplateGroup(DeleteTemplateGroupRequest request) {
@@ -1514,13 +1473,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateGroupRequest 请求对象
+     * @param request DeleteTemplateGroupRequest 请求对象
      * @return SyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>
      */
     public SyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroupInvoker(
         DeleteTemplateGroupRequest request) {
-        return new SyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>(request,
-            MpcMeta.deleteTemplateGroup, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteTemplateGroup, hcClient);
     }
 
     /**
@@ -1530,7 +1488,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupRequest 请求对象
+     * @param request ListTemplateGroupRequest 请求对象
      * @return ListTemplateGroupResponse
      */
     public ListTemplateGroupResponse listTemplateGroup(ListTemplateGroupRequest request) {
@@ -1544,13 +1502,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateGroupRequest 请求对象
+     * @param request ListTemplateGroupRequest 请求对象
      * @return SyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>
      */
     public SyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroupInvoker(
         ListTemplateGroupRequest request) {
-        return new SyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>(request, MpcMeta.listTemplateGroup,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listTemplateGroup, hcClient);
     }
 
     /**
@@ -1560,7 +1517,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupRequest 请求对象
+     * @param request UpdateTemplateGroupRequest 请求对象
      * @return UpdateTemplateGroupResponse
      */
     public UpdateTemplateGroupResponse updateTemplateGroup(UpdateTemplateGroupRequest request) {
@@ -1574,13 +1531,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTemplateGroupRequest 请求对象
+     * @param request UpdateTemplateGroupRequest 请求对象
      * @return SyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>
      */
     public SyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroupInvoker(
         UpdateTemplateGroupRequest request) {
-        return new SyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>(request,
-            MpcMeta.updateTemplateGroup, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateTemplateGroup, hcClient);
     }
 
     /**
@@ -1590,7 +1546,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantAccessInfoRequest 请求对象
+     * @param request ShowTenantAccessInfoRequest 请求对象
      * @return ShowTenantAccessInfoResponse
      */
     public ShowTenantAccessInfoResponse showTenantAccessInfo(ShowTenantAccessInfoRequest request) {
@@ -1604,13 +1560,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTenantAccessInfoRequest 请求对象
+     * @param request ShowTenantAccessInfoRequest 请求对象
      * @return SyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse>
      */
     public SyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse> showTenantAccessInfoInvoker(
         ShowTenantAccessInfoRequest request) {
-        return new SyncInvoker<ShowTenantAccessInfoRequest, ShowTenantAccessInfoResponse>(request,
-            MpcMeta.showTenantAccessInfo, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.showTenantAccessInfo, hcClient);
     }
 
     /**
@@ -1620,7 +1575,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTenantAccessInfoRequest 请求对象
+     * @param request UpdateTenantAccessInfoRequest 请求对象
      * @return UpdateTenantAccessInfoResponse
      */
     public UpdateTenantAccessInfoResponse updateTenantAccessInfo(UpdateTenantAccessInfoRequest request) {
@@ -1634,13 +1589,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTenantAccessInfoRequest 请求对象
+     * @param request UpdateTenantAccessInfoRequest 请求对象
      * @return SyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse>
      */
     public SyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse> updateTenantAccessInfoInvoker(
         UpdateTenantAccessInfoRequest request) {
-        return new SyncInvoker<UpdateTenantAccessInfoRequest, UpdateTenantAccessInfoResponse>(request,
-            MpcMeta.updateTenantAccessInfo, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateTenantAccessInfo, hcClient);
     }
 
     /**
@@ -1654,7 +1608,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateThumbnailsTaskRequest 请求对象
+     * @param request CreateThumbnailsTaskRequest 请求对象
      * @return CreateThumbnailsTaskResponse
      */
     public CreateThumbnailsTaskResponse createThumbnailsTask(CreateThumbnailsTaskRequest request) {
@@ -1672,13 +1626,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateThumbnailsTaskRequest 请求对象
+     * @param request CreateThumbnailsTaskRequest 请求对象
      * @return SyncInvoker<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse>
      */
     public SyncInvoker<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse> createThumbnailsTaskInvoker(
         CreateThumbnailsTaskRequest request) {
-        return new SyncInvoker<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse>(request,
-            MpcMeta.createThumbnailsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createThumbnailsTask, hcClient);
     }
 
     /**
@@ -1689,7 +1642,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteThumbnailsTaskRequest 请求对象
+     * @param request DeleteThumbnailsTaskRequest 请求对象
      * @return DeleteThumbnailsTaskResponse
      */
     public DeleteThumbnailsTaskResponse deleteThumbnailsTask(DeleteThumbnailsTaskRequest request) {
@@ -1704,13 +1657,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteThumbnailsTaskRequest 请求对象
+     * @param request DeleteThumbnailsTaskRequest 请求对象
      * @return SyncInvoker<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse>
      */
     public SyncInvoker<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> deleteThumbnailsTaskInvoker(
         DeleteThumbnailsTaskRequest request) {
-        return new SyncInvoker<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse>(request,
-            MpcMeta.deleteThumbnailsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteThumbnailsTask, hcClient);
     }
 
     /**
@@ -1720,7 +1672,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListThumbnailsTaskRequest 请求对象
+     * @param request ListThumbnailsTaskRequest 请求对象
      * @return ListThumbnailsTaskResponse
      */
     public ListThumbnailsTaskResponse listThumbnailsTask(ListThumbnailsTaskRequest request) {
@@ -1734,13 +1686,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListThumbnailsTaskRequest 请求对象
+     * @param request ListThumbnailsTaskRequest 请求对象
      * @return SyncInvoker<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse>
      */
     public SyncInvoker<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> listThumbnailsTaskInvoker(
         ListThumbnailsTaskRequest request) {
-        return new SyncInvoker<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse>(request,
-            MpcMeta.listThumbnailsTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listThumbnailsTask, hcClient);
     }
 
     /**
@@ -1751,7 +1702,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodingTaskRequest 请求对象
+     * @param request CreateTranscodingTaskRequest 请求对象
      * @return CreateTranscodingTaskResponse
      */
     public CreateTranscodingTaskResponse createTranscodingTask(CreateTranscodingTaskRequest request) {
@@ -1766,13 +1717,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTranscodingTaskRequest 请求对象
+     * @param request CreateTranscodingTaskRequest 请求对象
      * @return SyncInvoker<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse>
      */
     public SyncInvoker<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse> createTranscodingTaskInvoker(
         CreateTranscodingTaskRequest request) {
-        return new SyncInvoker<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse>(request,
-            MpcMeta.createTranscodingTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createTranscodingTask, hcClient);
     }
 
     /**
@@ -1783,7 +1733,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingTaskRequest 请求对象
+     * @param request DeleteTranscodingTaskRequest 请求对象
      * @return DeleteTranscodingTaskResponse
      */
     public DeleteTranscodingTaskResponse deleteTranscodingTask(DeleteTranscodingTaskRequest request) {
@@ -1798,13 +1748,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingTaskRequest 请求对象
+     * @param request DeleteTranscodingTaskRequest 请求对象
      * @return SyncInvoker<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse>
      */
     public SyncInvoker<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> deleteTranscodingTaskInvoker(
         DeleteTranscodingTaskRequest request) {
-        return new SyncInvoker<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse>(request,
-            MpcMeta.deleteTranscodingTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteTranscodingTask, hcClient);
     }
 
     /**
@@ -1814,7 +1763,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingTaskByConsoleRequest 请求对象
+     * @param request DeleteTranscodingTaskByConsoleRequest 请求对象
      * @return DeleteTranscodingTaskByConsoleResponse
      */
     public DeleteTranscodingTaskByConsoleResponse deleteTranscodingTaskByConsole(
@@ -1829,13 +1778,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTranscodingTaskByConsoleRequest 请求对象
+     * @param request DeleteTranscodingTaskByConsoleRequest 请求对象
      * @return SyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse>
      */
     public SyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsoleInvoker(
         DeleteTranscodingTaskByConsoleRequest request) {
-        return new SyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse>(request,
-            MpcMeta.deleteTranscodingTaskByConsole, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteTranscodingTaskByConsole, hcClient);
     }
 
     /**
@@ -1845,7 +1793,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatSummaryRequest 请求对象
+     * @param request ListStatSummaryRequest 请求对象
      * @return ListStatSummaryResponse
      */
     public ListStatSummaryResponse listStatSummary(ListStatSummaryRequest request) {
@@ -1859,13 +1807,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStatSummaryRequest 请求对象
+     * @param request ListStatSummaryRequest 请求对象
      * @return SyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse>
      */
     public SyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse> listStatSummaryInvoker(
         ListStatSummaryRequest request) {
-        return new SyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse>(request, MpcMeta.listStatSummary,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listStatSummary, hcClient);
     }
 
     /**
@@ -1875,7 +1822,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodingTaskRequest 请求对象
+     * @param request ListTranscodingTaskRequest 请求对象
      * @return ListTranscodingTaskResponse
      */
     public ListTranscodingTaskResponse listTranscodingTask(ListTranscodingTaskRequest request) {
@@ -1889,13 +1836,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTranscodingTaskRequest 请求对象
+     * @param request ListTranscodingTaskRequest 请求对象
      * @return SyncInvoker<ListTranscodingTaskRequest, ListTranscodingTaskResponse>
      */
     public SyncInvoker<ListTranscodingTaskRequest, ListTranscodingTaskResponse> listTranscodingTaskInvoker(
         ListTranscodingTaskRequest request) {
-        return new SyncInvoker<ListTranscodingTaskRequest, ListTranscodingTaskResponse>(request,
-            MpcMeta.listTranscodingTask, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listTranscodingTask, hcClient);
     }
 
     /**
@@ -1905,7 +1851,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransTemplateRequest 请求对象
+     * @param request CreateTransTemplateRequest 请求对象
      * @return CreateTransTemplateResponse
      */
     public CreateTransTemplateResponse createTransTemplate(CreateTransTemplateRequest request) {
@@ -1919,13 +1865,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTransTemplateRequest 请求对象
+     * @param request CreateTransTemplateRequest 请求对象
      * @return SyncInvoker<CreateTransTemplateRequest, CreateTransTemplateResponse>
      */
     public SyncInvoker<CreateTransTemplateRequest, CreateTransTemplateResponse> createTransTemplateInvoker(
         CreateTransTemplateRequest request) {
-        return new SyncInvoker<CreateTransTemplateRequest, CreateTransTemplateResponse>(request,
-            MpcMeta.createTransTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createTransTemplate, hcClient);
     }
 
     /**
@@ -1935,7 +1880,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return DeleteTemplateResponse
      */
     public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
@@ -1949,13 +1894,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTemplateRequest 请求对象
+     * @param request DeleteTemplateRequest 请求对象
      * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
     public SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateInvoker(
         DeleteTemplateRequest request) {
-        return new SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, MpcMeta.deleteTemplate,
-            hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteTemplate, hcClient);
     }
 
     /**
@@ -1966,7 +1910,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return ListTemplateResponse
      */
     public ListTemplateResponse listTemplate(ListTemplateRequest request) {
@@ -1981,11 +1925,11 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTemplateRequest 请求对象
+     * @param request ListTemplateRequest 请求对象
      * @return SyncInvoker<ListTemplateRequest, ListTemplateResponse>
      */
     public SyncInvoker<ListTemplateRequest, ListTemplateResponse> listTemplateInvoker(ListTemplateRequest request) {
-        return new SyncInvoker<ListTemplateRequest, ListTemplateResponse>(request, MpcMeta.listTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listTemplate, hcClient);
     }
 
     /**
@@ -1995,7 +1939,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransTemplateRequest 请求对象
+     * @param request UpdateTransTemplateRequest 请求对象
      * @return UpdateTransTemplateResponse
      */
     public UpdateTransTemplateResponse updateTransTemplate(UpdateTransTemplateRequest request) {
@@ -2009,13 +1953,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateTransTemplateRequest 请求对象
+     * @param request UpdateTransTemplateRequest 请求对象
      * @return SyncInvoker<UpdateTransTemplateRequest, UpdateTransTemplateResponse>
      */
     public SyncInvoker<UpdateTransTemplateRequest, UpdateTransTemplateResponse> updateTransTemplateInvoker(
         UpdateTransTemplateRequest request) {
-        return new SyncInvoker<UpdateTransTemplateRequest, UpdateTransTemplateResponse>(request,
-            MpcMeta.updateTransTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateTransTemplate, hcClient);
     }
 
     /**
@@ -2025,7 +1968,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWatermarkTemplateRequest 请求对象
+     * @param request CreateWatermarkTemplateRequest 请求对象
      * @return CreateWatermarkTemplateResponse
      */
     public CreateWatermarkTemplateResponse createWatermarkTemplate(CreateWatermarkTemplateRequest request) {
@@ -2039,13 +1982,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateWatermarkTemplateRequest 请求对象
+     * @param request CreateWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>
      */
     public SyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplateInvoker(
         CreateWatermarkTemplateRequest request) {
-        return new SyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>(request,
-            MpcMeta.createWatermarkTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.createWatermarkTemplate, hcClient);
     }
 
     /**
@@ -2055,7 +1997,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWatermarkTemplateRequest 请求对象
+     * @param request DeleteWatermarkTemplateRequest 请求对象
      * @return DeleteWatermarkTemplateResponse
      */
     public DeleteWatermarkTemplateResponse deleteWatermarkTemplate(DeleteWatermarkTemplateRequest request) {
@@ -2069,13 +2011,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteWatermarkTemplateRequest 请求对象
+     * @param request DeleteWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>
      */
     public SyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplateInvoker(
         DeleteWatermarkTemplateRequest request) {
-        return new SyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>(request,
-            MpcMeta.deleteWatermarkTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.deleteWatermarkTemplate, hcClient);
     }
 
     /**
@@ -2085,7 +2026,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWatermarkTemplateRequest 请求对象
+     * @param request ListWatermarkTemplateRequest 请求对象
      * @return ListWatermarkTemplateResponse
      */
     public ListWatermarkTemplateResponse listWatermarkTemplate(ListWatermarkTemplateRequest request) {
@@ -2099,13 +2040,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListWatermarkTemplateRequest 请求对象
+     * @param request ListWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>
      */
     public SyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplateInvoker(
         ListWatermarkTemplateRequest request) {
-        return new SyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>(request,
-            MpcMeta.listWatermarkTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.listWatermarkTemplate, hcClient);
     }
 
     /**
@@ -2115,7 +2055,7 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWatermarkTemplateRequest 请求对象
+     * @param request UpdateWatermarkTemplateRequest 请求对象
      * @return UpdateWatermarkTemplateResponse
      */
     public UpdateWatermarkTemplateResponse updateWatermarkTemplate(UpdateWatermarkTemplateRequest request) {
@@ -2129,13 +2069,12 @@ public class MpcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateWatermarkTemplateRequest 请求对象
+     * @param request UpdateWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>
      */
     public SyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplateInvoker(
         UpdateWatermarkTemplateRequest request) {
-        return new SyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>(request,
-            MpcMeta.updateWatermarkTemplate, hcClient);
+        return new SyncInvoker<>(request, MpcMeta.updateWatermarkTemplate, hcClient);
     }
 
 }

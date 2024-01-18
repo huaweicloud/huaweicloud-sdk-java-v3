@@ -58,7 +58,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateKeypairRequest 请求对象
+     * @param request AssociateKeypairRequest 请求对象
      * @return CompletableFuture<AssociateKeypairResponse>
      */
     public CompletableFuture<AssociateKeypairResponse> associateKeypairAsync(AssociateKeypairRequest request) {
@@ -72,13 +72,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param AssociateKeypairRequest 请求对象
+     * @param request AssociateKeypairRequest 请求对象
      * @return AsyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse>
      */
     public AsyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse> associateKeypairAsyncInvoker(
         AssociateKeypairRequest request) {
-        return new AsyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse>(request, KpsMeta.associateKeypair,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.associateKeypair, hcClient);
     }
 
     /**
@@ -88,7 +87,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateKeypairRequest 请求对象
+     * @param request BatchAssociateKeypairRequest 请求对象
      * @return CompletableFuture<BatchAssociateKeypairResponse>
      */
     public CompletableFuture<BatchAssociateKeypairResponse> batchAssociateKeypairAsync(
@@ -103,13 +102,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchAssociateKeypairRequest 请求对象
+     * @param request BatchAssociateKeypairRequest 请求对象
      * @return AsyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse>
      */
     public AsyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> batchAssociateKeypairAsyncInvoker(
         BatchAssociateKeypairRequest request) {
-        return new AsyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse>(request,
-            KpsMeta.batchAssociateKeypair, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.batchAssociateKeypair, hcClient);
     }
 
     /**
@@ -119,7 +117,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearPrivateKeyRequest 请求对象
+     * @param request ClearPrivateKeyRequest 请求对象
      * @return CompletableFuture<ClearPrivateKeyResponse>
      */
     public CompletableFuture<ClearPrivateKeyResponse> clearPrivateKeyAsync(ClearPrivateKeyRequest request) {
@@ -133,13 +131,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ClearPrivateKeyRequest 请求对象
+     * @param request ClearPrivateKeyRequest 请求对象
      * @return AsyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse>
      */
     public AsyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse> clearPrivateKeyAsyncInvoker(
         ClearPrivateKeyRequest request) {
-        return new AsyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse>(request, KpsMeta.clearPrivateKey,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.clearPrivateKey, hcClient);
     }
 
     /**
@@ -149,7 +146,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeypairRequest 请求对象
+     * @param request CreateKeypairRequest 请求对象
      * @return CompletableFuture<CreateKeypairResponse>
      */
     public CompletableFuture<CreateKeypairResponse> createKeypairAsync(CreateKeypairRequest request) {
@@ -163,12 +160,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateKeypairRequest 请求对象
+     * @param request CreateKeypairRequest 请求对象
      * @return AsyncInvoker<CreateKeypairRequest, CreateKeypairResponse>
      */
     public AsyncInvoker<CreateKeypairRequest, CreateKeypairResponse> createKeypairAsyncInvoker(
         CreateKeypairRequest request) {
-        return new AsyncInvoker<CreateKeypairRequest, CreateKeypairResponse>(request, KpsMeta.createKeypair, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.createKeypair, hcClient);
     }
 
     /**
@@ -178,7 +175,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAllFailedTaskRequest 请求对象
+     * @param request DeleteAllFailedTaskRequest 请求对象
      * @return CompletableFuture<DeleteAllFailedTaskResponse>
      */
     public CompletableFuture<DeleteAllFailedTaskResponse> deleteAllFailedTaskAsync(DeleteAllFailedTaskRequest request) {
@@ -192,13 +189,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAllFailedTaskRequest 请求对象
+     * @param request DeleteAllFailedTaskRequest 请求对象
      * @return AsyncInvoker<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse>
      */
     public AsyncInvoker<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse> deleteAllFailedTaskAsyncInvoker(
         DeleteAllFailedTaskRequest request) {
-        return new AsyncInvoker<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse>(request,
-            KpsMeta.deleteAllFailedTask, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.deleteAllFailedTask, hcClient);
     }
 
     /**
@@ -208,7 +204,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFailedTaskRequest 请求对象
+     * @param request DeleteFailedTaskRequest 请求对象
      * @return CompletableFuture<DeleteFailedTaskResponse>
      */
     public CompletableFuture<DeleteFailedTaskResponse> deleteFailedTaskAsync(DeleteFailedTaskRequest request) {
@@ -222,13 +218,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteFailedTaskRequest 请求对象
+     * @param request DeleteFailedTaskRequest 请求对象
      * @return AsyncInvoker<DeleteFailedTaskRequest, DeleteFailedTaskResponse>
      */
     public AsyncInvoker<DeleteFailedTaskRequest, DeleteFailedTaskResponse> deleteFailedTaskAsyncInvoker(
         DeleteFailedTaskRequest request) {
-        return new AsyncInvoker<DeleteFailedTaskRequest, DeleteFailedTaskResponse>(request, KpsMeta.deleteFailedTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.deleteFailedTask, hcClient);
     }
 
     /**
@@ -238,7 +233,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeypairRequest 请求对象
+     * @param request DeleteKeypairRequest 请求对象
      * @return CompletableFuture<DeleteKeypairResponse>
      */
     public CompletableFuture<DeleteKeypairResponse> deleteKeypairAsync(DeleteKeypairRequest request) {
@@ -252,12 +247,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteKeypairRequest 请求对象
+     * @param request DeleteKeypairRequest 请求对象
      * @return AsyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>
      */
     public AsyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse> deleteKeypairAsyncInvoker(
         DeleteKeypairRequest request) {
-        return new AsyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>(request, KpsMeta.deleteKeypair, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.deleteKeypair, hcClient);
     }
 
     /**
@@ -267,7 +262,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateKeypairRequest 请求对象
+     * @param request DisassociateKeypairRequest 请求对象
      * @return CompletableFuture<DisassociateKeypairResponse>
      */
     public CompletableFuture<DisassociateKeypairResponse> disassociateKeypairAsync(DisassociateKeypairRequest request) {
@@ -281,13 +276,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DisassociateKeypairRequest 请求对象
+     * @param request DisassociateKeypairRequest 请求对象
      * @return AsyncInvoker<DisassociateKeypairRequest, DisassociateKeypairResponse>
      */
     public AsyncInvoker<DisassociateKeypairRequest, DisassociateKeypairResponse> disassociateKeypairAsyncInvoker(
         DisassociateKeypairRequest request) {
-        return new AsyncInvoker<DisassociateKeypairRequest, DisassociateKeypairResponse>(request,
-            KpsMeta.disassociateKeypair, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.disassociateKeypair, hcClient);
     }
 
     /**
@@ -297,7 +291,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportPrivateKeyRequest 请求对象
+     * @param request ExportPrivateKeyRequest 请求对象
      * @return CompletableFuture<ExportPrivateKeyResponse>
      */
     public CompletableFuture<ExportPrivateKeyResponse> exportPrivateKeyAsync(ExportPrivateKeyRequest request) {
@@ -311,13 +305,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportPrivateKeyRequest 请求对象
+     * @param request ExportPrivateKeyRequest 请求对象
      * @return AsyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse>
      */
     public AsyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse> exportPrivateKeyAsyncInvoker(
         ExportPrivateKeyRequest request) {
-        return new AsyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse>(request, KpsMeta.exportPrivateKey,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.exportPrivateKey, hcClient);
     }
 
     /**
@@ -327,7 +320,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportPrivateKeyRequest 请求对象
+     * @param request ImportPrivateKeyRequest 请求对象
      * @return CompletableFuture<ImportPrivateKeyResponse>
      */
     public CompletableFuture<ImportPrivateKeyResponse> importPrivateKeyAsync(ImportPrivateKeyRequest request) {
@@ -341,13 +334,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportPrivateKeyRequest 请求对象
+     * @param request ImportPrivateKeyRequest 请求对象
      * @return AsyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse>
      */
     public AsyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse> importPrivateKeyAsyncInvoker(
         ImportPrivateKeyRequest request) {
-        return new AsyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse>(request, KpsMeta.importPrivateKey,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.importPrivateKey, hcClient);
     }
 
     /**
@@ -357,7 +349,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFailedTaskRequest 请求对象
+     * @param request ListFailedTaskRequest 请求对象
      * @return CompletableFuture<ListFailedTaskResponse>
      */
     public CompletableFuture<ListFailedTaskResponse> listFailedTaskAsync(ListFailedTaskRequest request) {
@@ -371,13 +363,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFailedTaskRequest 请求对象
+     * @param request ListFailedTaskRequest 请求对象
      * @return AsyncInvoker<ListFailedTaskRequest, ListFailedTaskResponse>
      */
     public AsyncInvoker<ListFailedTaskRequest, ListFailedTaskResponse> listFailedTaskAsyncInvoker(
         ListFailedTaskRequest request) {
-        return new AsyncInvoker<ListFailedTaskRequest, ListFailedTaskResponse>(request, KpsMeta.listFailedTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.listFailedTask, hcClient);
     }
 
     /**
@@ -387,7 +378,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairDetailRequest 请求对象
+     * @param request ListKeypairDetailRequest 请求对象
      * @return CompletableFuture<ListKeypairDetailResponse>
      */
     public CompletableFuture<ListKeypairDetailResponse> listKeypairDetailAsync(ListKeypairDetailRequest request) {
@@ -401,13 +392,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairDetailRequest 请求对象
+     * @param request ListKeypairDetailRequest 请求对象
      * @return AsyncInvoker<ListKeypairDetailRequest, ListKeypairDetailResponse>
      */
     public AsyncInvoker<ListKeypairDetailRequest, ListKeypairDetailResponse> listKeypairDetailAsyncInvoker(
         ListKeypairDetailRequest request) {
-        return new AsyncInvoker<ListKeypairDetailRequest, ListKeypairDetailResponse>(request, KpsMeta.listKeypairDetail,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.listKeypairDetail, hcClient);
     }
 
     /**
@@ -417,7 +407,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairTaskRequest 请求对象
+     * @param request ListKeypairTaskRequest 请求对象
      * @return CompletableFuture<ListKeypairTaskResponse>
      */
     public CompletableFuture<ListKeypairTaskResponse> listKeypairTaskAsync(ListKeypairTaskRequest request) {
@@ -431,13 +421,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairTaskRequest 请求对象
+     * @param request ListKeypairTaskRequest 请求对象
      * @return AsyncInvoker<ListKeypairTaskRequest, ListKeypairTaskResponse>
      */
     public AsyncInvoker<ListKeypairTaskRequest, ListKeypairTaskResponse> listKeypairTaskAsyncInvoker(
         ListKeypairTaskRequest request) {
-        return new AsyncInvoker<ListKeypairTaskRequest, ListKeypairTaskResponse>(request, KpsMeta.listKeypairTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.listKeypairTask, hcClient);
     }
 
     /**
@@ -447,7 +436,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairsRequest 请求对象
+     * @param request ListKeypairsRequest 请求对象
      * @return CompletableFuture<ListKeypairsResponse>
      */
     public CompletableFuture<ListKeypairsResponse> listKeypairsAsync(ListKeypairsRequest request) {
@@ -461,12 +450,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListKeypairsRequest 请求对象
+     * @param request ListKeypairsRequest 请求对象
      * @return AsyncInvoker<ListKeypairsRequest, ListKeypairsResponse>
      */
     public AsyncInvoker<ListKeypairsRequest, ListKeypairsResponse> listKeypairsAsyncInvoker(
         ListKeypairsRequest request) {
-        return new AsyncInvoker<ListKeypairsRequest, ListKeypairsResponse>(request, KpsMeta.listKeypairs, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.listKeypairs, hcClient);
     }
 
     /**
@@ -476,7 +465,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRunningTaskRequest 请求对象
+     * @param request ListRunningTaskRequest 请求对象
      * @return CompletableFuture<ListRunningTaskResponse>
      */
     public CompletableFuture<ListRunningTaskResponse> listRunningTaskAsync(ListRunningTaskRequest request) {
@@ -490,13 +479,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListRunningTaskRequest 请求对象
+     * @param request ListRunningTaskRequest 请求对象
      * @return AsyncInvoker<ListRunningTaskRequest, ListRunningTaskResponse>
      */
     public AsyncInvoker<ListRunningTaskRequest, ListRunningTaskResponse> listRunningTaskAsyncInvoker(
         ListRunningTaskRequest request) {
-        return new AsyncInvoker<ListRunningTaskRequest, ListRunningTaskResponse>(request, KpsMeta.listRunningTask,
-            hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.listRunningTask, hcClient);
     }
 
     /**
@@ -506,7 +494,7 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairDescriptionRequest 请求对象
+     * @param request UpdateKeypairDescriptionRequest 请求对象
      * @return CompletableFuture<UpdateKeypairDescriptionResponse>
      */
     public CompletableFuture<UpdateKeypairDescriptionResponse> updateKeypairDescriptionAsync(
@@ -521,13 +509,12 @@ public class KpsAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateKeypairDescriptionRequest 请求对象
+     * @param request UpdateKeypairDescriptionRequest 请求对象
      * @return AsyncInvoker<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse>
      */
     public AsyncInvoker<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse> updateKeypairDescriptionAsyncInvoker(
         UpdateKeypairDescriptionRequest request) {
-        return new AsyncInvoker<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse>(request,
-            KpsMeta.updateKeypairDescription, hcClient);
+        return new AsyncInvoker<>(request, KpsMeta.updateKeypairDescription, hcClient);
     }
 
 }

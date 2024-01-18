@@ -90,7 +90,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return BatchCreateTagsResponse
      */
     public BatchCreateTagsResponse batchCreateTags(BatchCreateTagsRequest request) {
@@ -104,13 +104,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchCreateTagsRequest 请求对象
+     * @param request BatchCreateTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
      */
     public SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsInvoker(
         BatchCreateTagsRequest request) {
-        return new SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, DisMeta.batchCreateTags,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.batchCreateTags, hcClient);
     }
 
     /**
@@ -120,7 +119,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return BatchDeleteTagsResponse
      */
     public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
@@ -134,13 +133,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchDeleteTagsRequest 请求对象
+     * @param request BatchDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
     public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
         BatchDeleteTagsRequest request) {
-        return new SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, DisMeta.batchDeleteTags,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.batchDeleteTags, hcClient);
     }
 
     /**
@@ -150,7 +148,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartTransferTaskRequest 请求对象
+     * @param request BatchStartTransferTaskRequest 请求对象
      * @return BatchStartTransferTaskResponse
      */
     public BatchStartTransferTaskResponse batchStartTransferTask(BatchStartTransferTaskRequest request) {
@@ -164,13 +162,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStartTransferTaskRequest 请求对象
+     * @param request BatchStartTransferTaskRequest 请求对象
      * @return SyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse>
      */
     public SyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse> batchStartTransferTaskInvoker(
         BatchStartTransferTaskRequest request) {
-        return new SyncInvoker<BatchStartTransferTaskRequest, BatchStartTransferTaskResponse>(request,
-            DisMeta.batchStartTransferTask, hcClient);
+        return new SyncInvoker<>(request, DisMeta.batchStartTransferTask, hcClient);
     }
 
     /**
@@ -180,7 +177,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopTransferTaskRequest 请求对象
+     * @param request BatchStopTransferTaskRequest 请求对象
      * @return BatchStopTransferTaskResponse
      */
     public BatchStopTransferTaskResponse batchStopTransferTask(BatchStopTransferTaskRequest request) {
@@ -194,13 +191,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param BatchStopTransferTaskRequest 请求对象
+     * @param request BatchStopTransferTaskRequest 请求对象
      * @return SyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse>
      */
     public SyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse> batchStopTransferTaskInvoker(
         BatchStopTransferTaskRequest request) {
-        return new SyncInvoker<BatchStopTransferTaskRequest, BatchStopTransferTaskResponse>(request,
-            DisMeta.batchStopTransferTask, hcClient);
+        return new SyncInvoker<>(request, DisMeta.batchStopTransferTask, hcClient);
     }
 
     /**
@@ -210,7 +206,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConsumeRecordsRequest 请求对象
+     * @param request ConsumeRecordsRequest 请求对象
      * @return ConsumeRecordsResponse
      */
     public ConsumeRecordsResponse consumeRecords(ConsumeRecordsRequest request) {
@@ -224,13 +220,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ConsumeRecordsRequest 请求对象
+     * @param request ConsumeRecordsRequest 请求对象
      * @return SyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse>
      */
     public SyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse> consumeRecordsInvoker(
         ConsumeRecordsRequest request) {
-        return new SyncInvoker<ConsumeRecordsRequest, ConsumeRecordsResponse>(request, DisMeta.consumeRecords,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.consumeRecords, hcClient);
     }
 
     /**
@@ -240,7 +235,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateObsTransferTaskRequest 请求对象
+     * @param request CreateObsTransferTaskRequest 请求对象
      * @return CreateObsTransferTaskResponse
      */
     public CreateObsTransferTaskResponse createObsTransferTask(CreateObsTransferTaskRequest request) {
@@ -254,13 +249,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateObsTransferTaskRequest 请求对象
+     * @param request CreateObsTransferTaskRequest 请求对象
      * @return SyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse>
      */
     public SyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse> createObsTransferTaskInvoker(
         CreateObsTransferTaskRequest request) {
-        return new SyncInvoker<CreateObsTransferTaskRequest, CreateObsTransferTaskResponse>(request,
-            DisMeta.createObsTransferTask, hcClient);
+        return new SyncInvoker<>(request, DisMeta.createObsTransferTask, hcClient);
     }
 
     /**
@@ -273,7 +267,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamRequest 请求对象
+     * @param request CreateStreamRequest 请求对象
      * @return CreateStreamResponse
      */
     public CreateStreamResponse createStream(CreateStreamRequest request) {
@@ -290,11 +284,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateStreamRequest 请求对象
+     * @param request CreateStreamRequest 请求对象
      * @return SyncInvoker<CreateStreamRequest, CreateStreamResponse>
      */
     public SyncInvoker<CreateStreamRequest, CreateStreamResponse> createStreamInvoker(CreateStreamRequest request) {
-        return new SyncInvoker<CreateStreamRequest, CreateStreamResponse>(request, DisMeta.createStream, hcClient);
+        return new SyncInvoker<>(request, DisMeta.createStream, hcClient);
     }
 
     /**
@@ -304,7 +298,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return CreateTagResponse
      */
     public CreateTagResponse createTag(CreateTagRequest request) {
@@ -318,11 +312,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTagRequest 请求对象
+     * @param request CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
      */
     public SyncInvoker<CreateTagRequest, CreateTagResponse> createTagInvoker(CreateTagRequest request) {
-        return new SyncInvoker<CreateTagRequest, CreateTagResponse>(request, DisMeta.createTag, hcClient);
+        return new SyncInvoker<>(request, DisMeta.createTag, hcClient);
     }
 
     /**
@@ -332,7 +326,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamRequest 请求对象
+     * @param request DeleteStreamRequest 请求对象
      * @return DeleteStreamResponse
      */
     public DeleteStreamResponse deleteStream(DeleteStreamRequest request) {
@@ -346,11 +340,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteStreamRequest 请求对象
+     * @param request DeleteStreamRequest 请求对象
      * @return SyncInvoker<DeleteStreamRequest, DeleteStreamResponse>
      */
     public SyncInvoker<DeleteStreamRequest, DeleteStreamResponse> deleteStreamInvoker(DeleteStreamRequest request) {
-        return new SyncInvoker<DeleteStreamRequest, DeleteStreamResponse>(request, DisMeta.deleteStream, hcClient);
+        return new SyncInvoker<>(request, DisMeta.deleteStream, hcClient);
     }
 
     /**
@@ -360,7 +354,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return DeleteTagResponse
      */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
@@ -374,11 +368,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTagRequest 请求对象
+     * @param request DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
      */
     public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
-        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, DisMeta.deleteTag, hcClient);
+        return new SyncInvoker<>(request, DisMeta.deleteTag, hcClient);
     }
 
     /**
@@ -388,7 +382,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferTaskRequest 请求对象
+     * @param request DeleteTransferTaskRequest 请求对象
      * @return DeleteTransferTaskResponse
      */
     public DeleteTransferTaskResponse deleteTransferTask(DeleteTransferTaskRequest request) {
@@ -402,13 +396,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTransferTaskRequest 请求对象
+     * @param request DeleteTransferTaskRequest 请求对象
      * @return SyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse>
      */
     public SyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse> deleteTransferTaskInvoker(
         DeleteTransferTaskRequest request) {
-        return new SyncInvoker<DeleteTransferTaskRequest, DeleteTransferTaskResponse>(request,
-            DisMeta.deleteTransferTask, hcClient);
+        return new SyncInvoker<>(request, DisMeta.deleteTransferTask, hcClient);
     }
 
     /**
@@ -418,7 +411,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return ListPoliciesResponse
      */
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
@@ -432,11 +425,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListPoliciesRequest 请求对象
+     * @param request ListPoliciesRequest 请求对象
      * @return SyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
      */
     public SyncInvoker<ListPoliciesRequest, ListPoliciesResponse> listPoliciesInvoker(ListPoliciesRequest request) {
-        return new SyncInvoker<ListPoliciesRequest, ListPoliciesResponse>(request, DisMeta.listPolicies, hcClient);
+        return new SyncInvoker<>(request, DisMeta.listPolicies, hcClient);
     }
 
     /**
@@ -446,7 +439,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return ListResourcesByTagsResponse
      */
     public ListResourcesByTagsResponse listResourcesByTags(ListResourcesByTagsRequest request) {
@@ -460,13 +453,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesByTagsRequest 请求对象
+     * @param request ListResourcesByTagsRequest 请求对象
      * @return SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>
      */
     public SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTagsInvoker(
         ListResourcesByTagsRequest request) {
-        return new SyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>(request,
-            DisMeta.listResourcesByTags, hcClient);
+        return new SyncInvoker<>(request, DisMeta.listResourcesByTags, hcClient);
     }
 
     /**
@@ -478,7 +470,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamsRequest 请求对象
+     * @param request ListStreamsRequest 请求对象
      * @return ListStreamsResponse
      */
     public ListStreamsResponse listStreams(ListStreamsRequest request) {
@@ -494,11 +486,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListStreamsRequest 请求对象
+     * @param request ListStreamsRequest 请求对象
      * @return SyncInvoker<ListStreamsRequest, ListStreamsResponse>
      */
     public SyncInvoker<ListStreamsRequest, ListStreamsResponse> listStreamsInvoker(ListStreamsRequest request) {
-        return new SyncInvoker<ListStreamsRequest, ListStreamsResponse>(request, DisMeta.listStreams, hcClient);
+        return new SyncInvoker<>(request, DisMeta.listStreams, hcClient);
     }
 
     /**
@@ -508,7 +500,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return ListTagsResponse
      */
     public ListTagsResponse listTags(ListTagsRequest request) {
@@ -522,11 +514,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTagsRequest 请求对象
+     * @param request ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
-        return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, DisMeta.listTags, hcClient);
+        return new SyncInvoker<>(request, DisMeta.listTags, hcClient);
     }
 
     /**
@@ -536,7 +528,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransferTasksRequest 请求对象
+     * @param request ListTransferTasksRequest 请求对象
      * @return ListTransferTasksResponse
      */
     public ListTransferTasksResponse listTransferTasks(ListTransferTasksRequest request) {
@@ -550,13 +542,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTransferTasksRequest 请求对象
+     * @param request ListTransferTasksRequest 请求对象
      * @return SyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse>
      */
     public SyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse> listTransferTasksInvoker(
         ListTransferTasksRequest request) {
-        return new SyncInvoker<ListTransferTasksRequest, ListTransferTasksResponse>(request, DisMeta.listTransferTasks,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.listTransferTasks, hcClient);
     }
 
     /**
@@ -566,7 +557,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRecordsRequest 请求对象
+     * @param request SendRecordsRequest 请求对象
      * @return SendRecordsResponse
      */
     public SendRecordsResponse sendRecords(SendRecordsRequest request) {
@@ -580,11 +571,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param SendRecordsRequest 请求对象
+     * @param request SendRecordsRequest 请求对象
      * @return SyncInvoker<SendRecordsRequest, SendRecordsResponse>
      */
     public SyncInvoker<SendRecordsRequest, SendRecordsResponse> sendRecordsInvoker(SendRecordsRequest request) {
-        return new SyncInvoker<SendRecordsRequest, SendRecordsResponse>(request, DisMeta.sendRecords, hcClient);
+        return new SyncInvoker<>(request, DisMeta.sendRecords, hcClient);
     }
 
     /**
@@ -594,7 +585,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCursorRequest 请求对象
+     * @param request ShowCursorRequest 请求对象
      * @return ShowCursorResponse
      */
     public ShowCursorResponse showCursor(ShowCursorRequest request) {
@@ -608,11 +599,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCursorRequest 请求对象
+     * @param request ShowCursorRequest 请求对象
      * @return SyncInvoker<ShowCursorRequest, ShowCursorResponse>
      */
     public SyncInvoker<ShowCursorRequest, ShowCursorResponse> showCursorInvoker(ShowCursorRequest request) {
-        return new SyncInvoker<ShowCursorRequest, ShowCursorResponse>(request, DisMeta.showCursor, hcClient);
+        return new SyncInvoker<>(request, DisMeta.showCursor, hcClient);
     }
 
     /**
@@ -622,7 +613,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMetricsRequest 请求对象
+     * @param request ShowPartitionMetricsRequest 请求对象
      * @return ShowPartitionMetricsResponse
      */
     public ShowPartitionMetricsResponse showPartitionMetrics(ShowPartitionMetricsRequest request) {
@@ -636,13 +627,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowPartitionMetricsRequest 请求对象
+     * @param request ShowPartitionMetricsRequest 请求对象
      * @return SyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse>
      */
     public SyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse> showPartitionMetricsInvoker(
         ShowPartitionMetricsRequest request) {
-        return new SyncInvoker<ShowPartitionMetricsRequest, ShowPartitionMetricsResponse>(request,
-            DisMeta.showPartitionMetrics, hcClient);
+        return new SyncInvoker<>(request, DisMeta.showPartitionMetrics, hcClient);
     }
 
     /**
@@ -652,7 +642,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamRequest 请求对象
+     * @param request ShowStreamRequest 请求对象
      * @return ShowStreamResponse
      */
     public ShowStreamResponse showStream(ShowStreamRequest request) {
@@ -666,11 +656,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamRequest 请求对象
+     * @param request ShowStreamRequest 请求对象
      * @return SyncInvoker<ShowStreamRequest, ShowStreamResponse>
      */
     public SyncInvoker<ShowStreamRequest, ShowStreamResponse> showStreamInvoker(ShowStreamRequest request) {
-        return new SyncInvoker<ShowStreamRequest, ShowStreamResponse>(request, DisMeta.showStream, hcClient);
+        return new SyncInvoker<>(request, DisMeta.showStream, hcClient);
     }
 
     /**
@@ -680,7 +670,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamMetricsRequest 请求对象
+     * @param request ShowStreamMetricsRequest 请求对象
      * @return ShowStreamMetricsResponse
      */
     public ShowStreamMetricsResponse showStreamMetrics(ShowStreamMetricsRequest request) {
@@ -694,13 +684,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamMetricsRequest 请求对象
+     * @param request ShowStreamMetricsRequest 请求对象
      * @return SyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse>
      */
     public SyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse> showStreamMetricsInvoker(
         ShowStreamMetricsRequest request) {
-        return new SyncInvoker<ShowStreamMetricsRequest, ShowStreamMetricsResponse>(request, DisMeta.showStreamMetrics,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.showStreamMetrics, hcClient);
     }
 
     /**
@@ -710,7 +699,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamTagsRequest 请求对象
+     * @param request ShowStreamTagsRequest 请求对象
      * @return ShowStreamTagsResponse
      */
     public ShowStreamTagsResponse showStreamTags(ShowStreamTagsRequest request) {
@@ -724,13 +713,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowStreamTagsRequest 请求对象
+     * @param request ShowStreamTagsRequest 请求对象
      * @return SyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse>
      */
     public SyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse> showStreamTagsInvoker(
         ShowStreamTagsRequest request) {
-        return new SyncInvoker<ShowStreamTagsRequest, ShowStreamTagsResponse>(request, DisMeta.showStreamTags,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.showStreamTags, hcClient);
     }
 
     /**
@@ -740,7 +728,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransferTaskRequest 请求对象
+     * @param request ShowTransferTaskRequest 请求对象
      * @return ShowTransferTaskResponse
      */
     public ShowTransferTaskResponse showTransferTask(ShowTransferTaskRequest request) {
@@ -754,13 +742,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTransferTaskRequest 请求对象
+     * @param request ShowTransferTaskRequest 请求对象
      * @return SyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse>
      */
     public SyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse> showTransferTaskInvoker(
         ShowTransferTaskRequest request) {
-        return new SyncInvoker<ShowTransferTaskRequest, ShowTransferTaskResponse>(request, DisMeta.showTransferTask,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.showTransferTask, hcClient);
     }
 
     /**
@@ -770,7 +757,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionCountRequest 请求对象
+     * @param request UpdatePartitionCountRequest 请求对象
      * @return UpdatePartitionCountResponse
      */
     public UpdatePartitionCountResponse updatePartitionCount(UpdatePartitionCountRequest request) {
@@ -784,13 +771,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdatePartitionCountRequest 请求对象
+     * @param request UpdatePartitionCountRequest 请求对象
      * @return SyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse>
      */
     public SyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse> updatePartitionCountInvoker(
         UpdatePartitionCountRequest request) {
-        return new SyncInvoker<UpdatePartitionCountRequest, UpdatePartitionCountResponse>(request,
-            DisMeta.updatePartitionCount, hcClient);
+        return new SyncInvoker<>(request, DisMeta.updatePartitionCount, hcClient);
     }
 
     /**
@@ -800,7 +786,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamRequest 请求对象
+     * @param request UpdateStreamRequest 请求对象
      * @return UpdateStreamResponse
      */
     public UpdateStreamResponse updateStream(UpdateStreamRequest request) {
@@ -814,11 +800,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateStreamRequest 请求对象
+     * @param request UpdateStreamRequest 请求对象
      * @return SyncInvoker<UpdateStreamRequest, UpdateStreamResponse>
      */
     public SyncInvoker<UpdateStreamRequest, UpdateStreamResponse> updateStreamInvoker(UpdateStreamRequest request) {
-        return new SyncInvoker<UpdateStreamRequest, UpdateStreamResponse>(request, DisMeta.updateStream, hcClient);
+        return new SyncInvoker<>(request, DisMeta.updateStream, hcClient);
     }
 
     /**
@@ -828,7 +814,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return CreateAppResponse
      */
     public CreateAppResponse createApp(CreateAppRequest request) {
@@ -842,11 +828,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateAppRequest 请求对象
+     * @param request CreateAppRequest 请求对象
      * @return SyncInvoker<CreateAppRequest, CreateAppResponse>
      */
     public SyncInvoker<CreateAppRequest, CreateAppResponse> createAppInvoker(CreateAppRequest request) {
-        return new SyncInvoker<CreateAppRequest, CreateAppResponse>(request, DisMeta.createApp, hcClient);
+        return new SyncInvoker<>(request, DisMeta.createApp, hcClient);
     }
 
     /**
@@ -856,7 +842,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return DeleteAppResponse
      */
     public DeleteAppResponse deleteApp(DeleteAppRequest request) {
@@ -870,11 +856,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteAppRequest 请求对象
+     * @param request DeleteAppRequest 请求对象
      * @return SyncInvoker<DeleteAppRequest, DeleteAppResponse>
      */
     public SyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppInvoker(DeleteAppRequest request) {
-        return new SyncInvoker<DeleteAppRequest, DeleteAppResponse>(request, DisMeta.deleteApp, hcClient);
+        return new SyncInvoker<>(request, DisMeta.deleteApp, hcClient);
     }
 
     /**
@@ -884,7 +870,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return ListAppResponse
      */
     public ListAppResponse listApp(ListAppRequest request) {
@@ -898,11 +884,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAppRequest 请求对象
+     * @param request ListAppRequest 请求对象
      * @return SyncInvoker<ListAppRequest, ListAppResponse>
      */
     public SyncInvoker<ListAppRequest, ListAppResponse> listAppInvoker(ListAppRequest request) {
-        return new SyncInvoker<ListAppRequest, ListAppResponse>(request, DisMeta.listApp, hcClient);
+        return new SyncInvoker<>(request, DisMeta.listApp, hcClient);
     }
 
     /**
@@ -912,7 +898,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return ShowAppResponse
      */
     public ShowAppResponse showApp(ShowAppRequest request) {
@@ -926,11 +912,11 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAppRequest 请求对象
+     * @param request ShowAppRequest 请求对象
      * @return SyncInvoker<ShowAppRequest, ShowAppResponse>
      */
     public SyncInvoker<ShowAppRequest, ShowAppResponse> showAppInvoker(ShowAppRequest request) {
-        return new SyncInvoker<ShowAppRequest, ShowAppResponse>(request, DisMeta.showApp, hcClient);
+        return new SyncInvoker<>(request, DisMeta.showApp, hcClient);
     }
 
     /**
@@ -940,7 +926,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerStateRequest 请求对象
+     * @param request ShowConsumerStateRequest 请求对象
      * @return ShowConsumerStateResponse
      */
     public ShowConsumerStateResponse showConsumerState(ShowConsumerStateRequest request) {
@@ -954,13 +940,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConsumerStateRequest 请求对象
+     * @param request ShowConsumerStateRequest 请求对象
      * @return SyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse>
      */
     public SyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse> showConsumerStateInvoker(
         ShowConsumerStateRequest request) {
-        return new SyncInvoker<ShowConsumerStateRequest, ShowConsumerStateResponse>(request, DisMeta.showConsumerState,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.showConsumerState, hcClient);
     }
 
     /**
@@ -970,7 +955,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitCheckpointRequest 请求对象
+     * @param request CommitCheckpointRequest 请求对象
      * @return CommitCheckpointResponse
      */
     public CommitCheckpointResponse commitCheckpoint(CommitCheckpointRequest request) {
@@ -984,13 +969,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CommitCheckpointRequest 请求对象
+     * @param request CommitCheckpointRequest 请求对象
      * @return SyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse>
      */
     public SyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse> commitCheckpointInvoker(
         CommitCheckpointRequest request) {
-        return new SyncInvoker<CommitCheckpointRequest, CommitCheckpointResponse>(request, DisMeta.commitCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.commitCheckpoint, hcClient);
     }
 
     /**
@@ -1000,7 +984,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCheckpointRequest 请求对象
+     * @param request DeleteCheckpointRequest 请求对象
      * @return DeleteCheckpointResponse
      */
     public DeleteCheckpointResponse deleteCheckpoint(DeleteCheckpointRequest request) {
@@ -1014,13 +998,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteCheckpointRequest 请求对象
+     * @param request DeleteCheckpointRequest 请求对象
      * @return SyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse>
      */
     public SyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse> deleteCheckpointInvoker(
         DeleteCheckpointRequest request) {
-        return new SyncInvoker<DeleteCheckpointRequest, DeleteCheckpointResponse>(request, DisMeta.deleteCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.deleteCheckpoint, hcClient);
     }
 
     /**
@@ -1030,7 +1013,7 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return ShowCheckpointResponse
      */
     public ShowCheckpointResponse showCheckpoint(ShowCheckpointRequest request) {
@@ -1044,13 +1027,12 @@ public class DisClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowCheckpointRequest 请求对象
+     * @param request ShowCheckpointRequest 请求对象
      * @return SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>
      */
     public SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse> showCheckpointInvoker(
         ShowCheckpointRequest request) {
-        return new SyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>(request, DisMeta.showCheckpoint,
-            hcClient);
+        return new SyncInvoker<>(request, DisMeta.showCheckpoint, hcClient);
     }
 
 }

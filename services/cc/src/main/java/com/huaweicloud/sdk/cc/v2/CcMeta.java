@@ -25,9 +25,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CcMeta {
 
     public static final HttpRequestDef<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> batchCreateDeleteTags =
-        genForbatchCreateDeleteTags();
+        genForBatchCreateDeleteTags();
 
-    private static HttpRequestDef<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> genForbatchCreateDeleteTags() {
+    private static HttpRequestDef<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> genForBatchCreateDeleteTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateDeleteTagsRequest.class, BatchCreateDeleteTagsResponse.class)
@@ -40,32 +40,28 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getResourceId,
+                BatchCreateDeleteTagsRequest::setResourceId));
         builder.<BatchCreateDeleteTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateDeleteTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getResourceType,
+                BatchCreateDeleteTagsRequest::setResourceType));
         builder.<ResourceTags>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ResourceTags.class),
-            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(BatchCreateDeleteTagsRequest::getBody, BatchCreateDeleteTagsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
 
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
         // basic
         HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
@@ -78,32 +74,26 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceId, CreateTagRequest::setResourceId));
         builder.<CreateTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getResourceType, CreateTagRequest::setResourceType));
         builder.<CreateTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateTagRequestBody.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
 
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
@@ -116,23 +106,17 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getResourceId, DeleteTagRequest::setResourceId));
         builder.<String>withRequestField("tag_key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getTagKey, (req, v) -> {
-                req.setTagKey(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getTagKey, DeleteTagRequest::setTagKey));
         builder.<DeleteTagRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(DeleteTagRequest::getResourceType, DeleteTagRequest::setResourceType));
 
         // response
 
@@ -140,9 +124,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListDomainTagsRequest, ListDomainTagsResponse> listDomainTags =
-        genForlistDomainTags();
+        genForListDomainTags();
 
-    private static HttpRequestDef<ListDomainTagsRequest, ListDomainTagsResponse> genForlistDomainTags() {
+    private static HttpRequestDef<ListDomainTagsRequest, ListDomainTagsResponse> genForListDomainTags() {
         // basic
         HttpRequestDef.Builder<ListDomainTagsRequest, ListDomainTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainTagsRequest.class, ListDomainTagsResponse.class)
@@ -155,9 +139,7 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListDomainTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListDomainTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListDomainTagsRequest::getResourceType, ListDomainTagsRequest::setResourceType));
 
         // response
 
@@ -165,9 +147,9 @@ public class CcMeta {
     }
 
     public static final HttpRequestDef<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> listResourceByFilterTag =
-        genForlistResourceByFilterTag();
+        genForListResourceByFilterTag();
 
-    private static HttpRequestDef<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> genForlistResourceByFilterTag() {
+    private static HttpRequestDef<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> genForListResourceByFilterTag() {
         // basic
         HttpRequestDef.Builder<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListResourceByFilterTagRequest.class, ListResourceByFilterTagResponse.class)
@@ -180,25 +162,22 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceByFilterTagRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListResourceByFilterTagRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListResourceByFilterTagRequest::getResourceType,
+                ListResourceByFilterTagRequest::setResourceType));
         builder.<ListResourceByFilterTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListResourceByFilterTagRequestBody.class),
-            f -> f.withMarshaller(ListResourceByFilterTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListResourceByFilterTagRequest::getBody, ListResourceByFilterTagRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
@@ -211,16 +190,12 @@ public class CcMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagsRequest.ResourceTypeEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceType, (req, v) -> {
-                req.setResourceType(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            }));
+            f -> f.withMarshaller(ListTagsRequest::getResourceId, ListTagsRequest::setResourceId));
 
         // response
 

@@ -26,7 +26,7 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetWithCustomPropsRequest 请求对象
+     * @param request ShowAdmetWithCustomPropsRequest 请求对象
      * @return ShowAdmetWithCustomPropsResponse
      */
     public ShowAdmetWithCustomPropsResponse showAdmetWithCustomProps(ShowAdmetWithCustomPropsRequest request) {
@@ -40,13 +40,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAdmetWithCustomPropsRequest 请求对象
+     * @param request ShowAdmetWithCustomPropsRequest 请求对象
      * @return SyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse>
      */
     public SyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse> showAdmetWithCustomPropsInvoker(
         ShowAdmetWithCustomPropsRequest request) {
-        return new SyncInvoker<ShowAdmetWithCustomPropsRequest, ShowAdmetWithCustomPropsResponse>(request,
-            EiHealthMeta.showAdmetWithCustomProps, hcClient);
+        return new SyncInvoker<>(request, EiHealthMeta.showAdmetWithCustomProps, hcClient);
     }
 
 }

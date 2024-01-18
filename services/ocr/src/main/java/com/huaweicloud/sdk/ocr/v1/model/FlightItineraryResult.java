@@ -99,6 +99,41 @@ public class FlightItineraryResult {
     private String issueDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tax")
+
+    private String tax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tax_rate")
+
+    private String taxRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buyer_name")
+
+    private String buyerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buyer_id")
+
+    private String buyerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "number")
+
+    private String number;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "international_flag")
+
+    private String internationalFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "issue_status")
+
+    private String issueStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "itinerary_list")
 
     private List<ItineraryList> itineraryList = null;
@@ -399,6 +434,125 @@ public class FlightItineraryResult {
         this.issueDate = issueDate;
     }
 
+    public FlightItineraryResult withTax(String tax) {
+        this.tax = tax;
+        return this;
+    }
+
+    /**
+     * 增值税税额 
+     * @return tax
+     */
+    public String getTax() {
+        return tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
+
+    public FlightItineraryResult withTaxRate(String taxRate) {
+        this.taxRate = taxRate;
+        return this;
+    }
+
+    /**
+     * 增值税税率 
+     * @return taxRate
+     */
+    public String getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(String taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public FlightItineraryResult withBuyerName(String buyerName) {
+        this.buyerName = buyerName;
+        return this;
+    }
+
+    /**
+     * 购买方名称 
+     * @return buyerName
+     */
+    public String getBuyerName() {
+        return buyerName;
+    }
+
+    public void setBuyerName(String buyerName) {
+        this.buyerName = buyerName;
+    }
+
+    public FlightItineraryResult withBuyerId(String buyerId) {
+        this.buyerId = buyerId;
+        return this;
+    }
+
+    /**
+     * 购买方纳税人识别号 
+     * @return buyerId
+     */
+    public String getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(String buyerId) {
+        this.buyerId = buyerId;
+    }
+
+    public FlightItineraryResult withNumber(String number) {
+        this.number = number;
+        return this;
+    }
+
+    /**
+     * 发票号码 
+     * @return number
+     */
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public FlightItineraryResult withInternationalFlag(String internationalFlag) {
+        this.internationalFlag = internationalFlag;
+        return this;
+    }
+
+    /**
+     * 国内国际标签 
+     * @return internationalFlag
+     */
+    public String getInternationalFlag() {
+        return internationalFlag;
+    }
+
+    public void setInternationalFlag(String internationalFlag) {
+        this.internationalFlag = internationalFlag;
+    }
+
+    public FlightItineraryResult withIssueStatus(String issueStatus) {
+        this.issueStatus = issueStatus;
+        return this;
+    }
+
+    /**
+     * 开具状态 
+     * @return issueStatus
+     */
+    public String getIssueStatus() {
+        return issueStatus;
+    }
+
+    public void setIssueStatus(String issueStatus) {
+        this.issueStatus = issueStatus;
+    }
+
     public FlightItineraryResult withItineraryList(List<ItineraryList> itineraryList) {
         this.itineraryList = itineraryList;
         return this;
@@ -469,7 +623,12 @@ public class FlightItineraryResult {
             && Objects.equals(this.referenceInformation, that.referenceInformation)
             && Objects.equals(this.insurance, that.insurance) && Objects.equals(this.agentCode, that.agentCode)
             && Objects.equals(this.issueOrganization, that.issueOrganization)
-            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.itineraryList, that.itineraryList)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.tax, that.tax)
+            && Objects.equals(this.taxRate, that.taxRate) && Objects.equals(this.buyerName, that.buyerName)
+            && Objects.equals(this.buyerId, that.buyerId) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.internationalFlag, that.internationalFlag)
+            && Objects.equals(this.issueStatus, that.issueStatus)
+            && Objects.equals(this.itineraryList, that.itineraryList)
             && Objects.equals(this.confidence, that.confidence);
     }
 
@@ -492,6 +651,13 @@ public class FlightItineraryResult {
             agentCode,
             issueOrganization,
             issueDate,
+            tax,
+            taxRate,
+            buyerName,
+            buyerId,
+            number,
+            internationalFlag,
+            issueStatus,
             itineraryList,
             confidence);
     }
@@ -517,6 +683,13 @@ public class FlightItineraryResult {
         sb.append("    agentCode: ").append(toIndentedString(agentCode)).append("\n");
         sb.append("    issueOrganization: ").append(toIndentedString(issueOrganization)).append("\n");
         sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+        sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
+        sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+        sb.append("    buyerName: ").append(toIndentedString(buyerName)).append("\n");
+        sb.append("    buyerId: ").append(toIndentedString(buyerId)).append("\n");
+        sb.append("    number: ").append(toIndentedString(number)).append("\n");
+        sb.append("    internationalFlag: ").append(toIndentedString(internationalFlag)).append("\n");
+        sb.append("    issueStatus: ").append(toIndentedString(issueStatus)).append("\n");
         sb.append("    itineraryList: ").append(toIndentedString(itineraryList)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");

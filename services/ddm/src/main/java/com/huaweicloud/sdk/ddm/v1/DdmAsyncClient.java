@@ -92,7 +92,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseRequest 请求对象
+     * @param request CreateDatabaseRequest 请求对象
      * @return CompletableFuture<CreateDatabaseResponse>
      */
     public CompletableFuture<CreateDatabaseResponse> createDatabaseAsync(CreateDatabaseRequest request) {
@@ -106,13 +106,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDatabaseRequest 请求对象
+     * @param request CreateDatabaseRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
      */
     public AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseAsyncInvoker(
         CreateDatabaseRequest request) {
-        return new AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, DdmMeta.createDatabase,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.createDatabase, hcClient);
     }
 
     /**
@@ -124,7 +123,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
@@ -140,13 +139,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
+     * @param request CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
-        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, DdmMeta.createInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.createInstance, hcClient);
     }
 
     /**
@@ -156,7 +154,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUsersRequest 请求对象
+     * @param request CreateUsersRequest 请求对象
      * @return CompletableFuture<CreateUsersResponse>
      */
     public CompletableFuture<CreateUsersResponse> createUsersAsync(CreateUsersRequest request) {
@@ -170,11 +168,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateUsersRequest 请求对象
+     * @param request CreateUsersRequest 请求对象
      * @return AsyncInvoker<CreateUsersRequest, CreateUsersResponse>
      */
     public AsyncInvoker<CreateUsersRequest, CreateUsersResponse> createUsersAsyncInvoker(CreateUsersRequest request) {
-        return new AsyncInvoker<CreateUsersRequest, CreateUsersResponse>(request, DdmMeta.createUsers, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.createUsers, hcClient);
     }
 
     /**
@@ -184,7 +182,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseRequest 请求对象
+     * @param request DeleteDatabaseRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseResponse>
      */
     public CompletableFuture<DeleteDatabaseResponse> deleteDatabaseAsync(DeleteDatabaseRequest request) {
@@ -198,13 +196,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDatabaseRequest 请求对象
+     * @param request DeleteDatabaseRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
      */
     public AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseAsyncInvoker(
         DeleteDatabaseRequest request) {
-        return new AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request, DdmMeta.deleteDatabase,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.deleteDatabase, hcClient);
     }
 
     /**
@@ -214,7 +211,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
@@ -228,13 +225,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteInstanceRequest 请求对象
+     * @param request DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
-        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, DdmMeta.deleteInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -244,7 +240,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
      */
     public CompletableFuture<DeleteUserResponse> deleteUserAsync(DeleteUserRequest request) {
@@ -258,11 +254,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteUserRequest 请求对象
+     * @param request DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
-        return new AsyncInvoker<DeleteUserRequest, DeleteUserResponse>(request, DdmMeta.deleteUser, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.deleteUser, hcClient);
     }
 
     /**
@@ -272,7 +268,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodesRequest 请求对象
+     * @param request ExpandInstanceNodesRequest 请求对象
      * @return CompletableFuture<ExpandInstanceNodesResponse>
      */
     public CompletableFuture<ExpandInstanceNodesResponse> expandInstanceNodesAsync(ExpandInstanceNodesRequest request) {
@@ -286,13 +282,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExpandInstanceNodesRequest 请求对象
+     * @param request ExpandInstanceNodesRequest 请求对象
      * @return AsyncInvoker<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse>
      */
     public AsyncInvoker<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> expandInstanceNodesAsyncInvoker(
         ExpandInstanceNodesRequest request) {
-        return new AsyncInvoker<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse>(request,
-            DdmMeta.expandInstanceNodes, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.expandInstanceNodes, hcClient);
     }
 
     /**
@@ -302,7 +297,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableRdsListRequest 请求对象
+     * @param request ListAvailableRdsListRequest 请求对象
      * @return CompletableFuture<ListAvailableRdsListResponse>
      */
     public CompletableFuture<ListAvailableRdsListResponse> listAvailableRdsListAsync(
@@ -317,13 +312,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListAvailableRdsListRequest 请求对象
+     * @param request ListAvailableRdsListRequest 请求对象
      * @return AsyncInvoker<ListAvailableRdsListRequest, ListAvailableRdsListResponse>
      */
     public AsyncInvoker<ListAvailableRdsListRequest, ListAvailableRdsListResponse> listAvailableRdsListAsyncInvoker(
         ListAvailableRdsListRequest request) {
-        return new AsyncInvoker<ListAvailableRdsListRequest, ListAvailableRdsListResponse>(request,
-            DdmMeta.listAvailableRdsList, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listAvailableRdsList, hcClient);
     }
 
     /**
@@ -333,7 +327,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabasesRequest 请求对象
+     * @param request ListDatabasesRequest 请求对象
      * @return CompletableFuture<ListDatabasesResponse>
      */
     public CompletableFuture<ListDatabasesResponse> listDatabasesAsync(ListDatabasesRequest request) {
@@ -347,12 +341,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDatabasesRequest 请求对象
+     * @param request ListDatabasesRequest 请求对象
      * @return AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
      */
     public AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesAsyncInvoker(
         ListDatabasesRequest request) {
-        return new AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, DdmMeta.listDatabases, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listDatabases, hcClient);
     }
 
     /**
@@ -362,7 +356,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnginesRequest 请求对象
+     * @param request ListEnginesRequest 请求对象
      * @return CompletableFuture<ListEnginesResponse>
      */
     public CompletableFuture<ListEnginesResponse> listEnginesAsync(ListEnginesRequest request) {
@@ -376,11 +370,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListEnginesRequest 请求对象
+     * @param request ListEnginesRequest 请求对象
      * @return AsyncInvoker<ListEnginesRequest, ListEnginesResponse>
      */
     public AsyncInvoker<ListEnginesRequest, ListEnginesResponse> listEnginesAsyncInvoker(ListEnginesRequest request) {
-        return new AsyncInvoker<ListEnginesRequest, ListEnginesResponse>(request, DdmMeta.listEngines, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listEngines, hcClient);
     }
 
     /**
@@ -390,7 +384,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
      */
     public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
@@ -404,11 +398,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListFlavorsRequest 请求对象
+     * @param request ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
-        return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, DdmMeta.listFlavors, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listFlavors, hcClient);
     }
 
     /**
@@ -418,7 +412,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
      */
     public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
@@ -432,12 +426,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListInstancesRequest 请求对象
+     * @param request ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
-        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, DdmMeta.listInstances, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listInstances, hcClient);
     }
 
     /**
@@ -447,7 +441,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return CompletableFuture<ListNodesResponse>
      */
     public CompletableFuture<ListNodesResponse> listNodesAsync(ListNodesRequest request) {
@@ -461,11 +455,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListNodesRequest 请求对象
+     * @param request ListNodesRequest 请求对象
      * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
      */
     public AsyncInvoker<ListNodesRequest, ListNodesResponse> listNodesAsyncInvoker(ListNodesRequest request) {
-        return new AsyncInvoker<ListNodesRequest, ListNodesResponse>(request, DdmMeta.listNodes, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listNodes, hcClient);
     }
 
     /**
@@ -475,7 +469,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReadWriteRatioRequest 请求对象
+     * @param request ListReadWriteRatioRequest 请求对象
      * @return CompletableFuture<ListReadWriteRatioResponse>
      */
     public CompletableFuture<ListReadWriteRatioResponse> listReadWriteRatioAsync(ListReadWriteRatioRequest request) {
@@ -489,13 +483,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListReadWriteRatioRequest 请求对象
+     * @param request ListReadWriteRatioRequest 请求对象
      * @return AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse>
      */
     public AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse> listReadWriteRatioAsyncInvoker(
         ListReadWriteRatioRequest request) {
-        return new AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse>(request,
-            DdmMeta.listReadWriteRatio, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listReadWriteRatio, hcClient);
     }
 
     /**
@@ -505,7 +498,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogRequest 请求对象
+     * @param request ListSlowLogRequest 请求对象
      * @return CompletableFuture<ListSlowLogResponse>
      */
     public CompletableFuture<ListSlowLogResponse> listSlowLogAsync(ListSlowLogRequest request) {
@@ -519,11 +512,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSlowLogRequest 请求对象
+     * @param request ListSlowLogRequest 请求对象
      * @return AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse>
      */
     public AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse> listSlowLogAsyncInvoker(ListSlowLogRequest request) {
-        return new AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse>(request, DdmMeta.listSlowLog, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listSlowLog, hcClient);
     }
 
     /**
@@ -533,7 +526,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return CompletableFuture<ListUsersResponse>
      */
     public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
@@ -547,11 +540,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListUsersRequest 请求对象
+     * @param request ListUsersRequest 请求对象
      * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
      */
     public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
-        return new AsyncInvoker<ListUsersRequest, ListUsersResponse>(request, DdmMeta.listUsers, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.listUsers, hcClient);
     }
 
     /**
@@ -561,7 +554,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebuildConfigRequest 请求对象
+     * @param request RebuildConfigRequest 请求对象
      * @return CompletableFuture<RebuildConfigResponse>
      */
     public CompletableFuture<RebuildConfigResponse> rebuildConfigAsync(RebuildConfigRequest request) {
@@ -575,12 +568,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RebuildConfigRequest 请求对象
+     * @param request RebuildConfigRequest 请求对象
      * @return AsyncInvoker<RebuildConfigRequest, RebuildConfigResponse>
      */
     public AsyncInvoker<RebuildConfigRequest, RebuildConfigResponse> rebuildConfigAsyncInvoker(
         RebuildConfigRequest request) {
-        return new AsyncInvoker<RebuildConfigRequest, RebuildConfigResponse>(request, DdmMeta.rebuildConfig, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.rebuildConfig, hcClient);
     }
 
     /**
@@ -590,7 +583,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAdministratorRequest 请求对象
+     * @param request ResetAdministratorRequest 请求对象
      * @return CompletableFuture<ResetAdministratorResponse>
      */
     public CompletableFuture<ResetAdministratorResponse> resetAdministratorAsync(ResetAdministratorRequest request) {
@@ -604,13 +597,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetAdministratorRequest 请求对象
+     * @param request ResetAdministratorRequest 请求对象
      * @return AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse>
      */
     public AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse> resetAdministratorAsyncInvoker(
         ResetAdministratorRequest request) {
-        return new AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse>(request,
-            DdmMeta.resetAdministrator, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.resetAdministrator, hcClient);
     }
 
     /**
@@ -620,7 +612,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswordRequest 请求对象
+     * @param request ResetUserPasswordRequest 请求对象
      * @return CompletableFuture<ResetUserPasswordResponse>
      */
     public CompletableFuture<ResetUserPasswordResponse> resetUserPasswordAsync(ResetUserPasswordRequest request) {
@@ -634,13 +626,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResetUserPasswordRequest 请求对象
+     * @param request ResetUserPasswordRequest 请求对象
      * @return AsyncInvoker<ResetUserPasswordRequest, ResetUserPasswordResponse>
      */
     public AsyncInvoker<ResetUserPasswordRequest, ResetUserPasswordResponse> resetUserPasswordAsyncInvoker(
         ResetUserPasswordRequest request) {
-        return new AsyncInvoker<ResetUserPasswordRequest, ResetUserPasswordResponse>(request, DdmMeta.resetUserPassword,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.resetUserPassword, hcClient);
     }
 
     /**
@@ -650,7 +641,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeFlavorRequest 请求对象
+     * @param request ResizeFlavorRequest 请求对象
      * @return CompletableFuture<ResizeFlavorResponse>
      */
     public CompletableFuture<ResizeFlavorResponse> resizeFlavorAsync(ResizeFlavorRequest request) {
@@ -664,12 +655,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResizeFlavorRequest 请求对象
+     * @param request ResizeFlavorRequest 请求对象
      * @return AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse>
      */
     public AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse> resizeFlavorAsyncInvoker(
         ResizeFlavorRequest request) {
-        return new AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse>(request, DdmMeta.resizeFlavor, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.resizeFlavor, hcClient);
     }
 
     /**
@@ -679,7 +670,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return CompletableFuture<RestartInstanceResponse>
      */
     public CompletableFuture<RestartInstanceResponse> restartInstanceAsync(RestartInstanceRequest request) {
@@ -693,13 +684,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestartInstanceRequest 请求对象
+     * @param request RestartInstanceRequest 请求对象
      * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
      */
     public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(
         RestartInstanceRequest request) {
-        return new AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request, DdmMeta.restartInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.restartInstance, hcClient);
     }
 
     /**
@@ -709,7 +699,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseRequest 请求对象
+     * @param request ShowDatabaseRequest 请求对象
      * @return CompletableFuture<ShowDatabaseResponse>
      */
     public CompletableFuture<ShowDatabaseResponse> showDatabaseAsync(ShowDatabaseRequest request) {
@@ -723,12 +713,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDatabaseRequest 请求对象
+     * @param request ShowDatabaseRequest 请求对象
      * @return AsyncInvoker<ShowDatabaseRequest, ShowDatabaseResponse>
      */
     public AsyncInvoker<ShowDatabaseRequest, ShowDatabaseResponse> showDatabaseAsyncInvoker(
         ShowDatabaseRequest request) {
-        return new AsyncInvoker<ShowDatabaseRequest, ShowDatabaseResponse>(request, DdmMeta.showDatabase, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.showDatabase, hcClient);
     }
 
     /**
@@ -738,7 +728,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
      */
     public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
@@ -752,12 +742,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceRequest 请求对象
+     * @param request ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
      */
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DdmMeta.showInstance, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.showInstance, hcClient);
     }
 
     /**
@@ -767,7 +757,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceParamRequest 请求对象
+     * @param request ShowInstanceParamRequest 请求对象
      * @return CompletableFuture<ShowInstanceParamResponse>
      */
     public CompletableFuture<ShowInstanceParamResponse> showInstanceParamAsync(ShowInstanceParamRequest request) {
@@ -781,13 +771,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowInstanceParamRequest 请求对象
+     * @param request ShowInstanceParamRequest 请求对象
      * @return AsyncInvoker<ShowInstanceParamRequest, ShowInstanceParamResponse>
      */
     public AsyncInvoker<ShowInstanceParamRequest, ShowInstanceParamResponse> showInstanceParamAsyncInvoker(
         ShowInstanceParamRequest request) {
-        return new AsyncInvoker<ShowInstanceParamRequest, ShowInstanceParamResponse>(request, DdmMeta.showInstanceParam,
-            hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.showInstanceParam, hcClient);
     }
 
     /**
@@ -797,7 +786,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return CompletableFuture<ShowNodeResponse>
      */
     public CompletableFuture<ShowNodeResponse> showNodeAsync(ShowNodeRequest request) {
@@ -811,11 +800,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowNodeRequest 请求对象
+     * @param request ShowNodeRequest 请求对象
      * @return AsyncInvoker<ShowNodeRequest, ShowNodeResponse>
      */
     public AsyncInvoker<ShowNodeRequest, ShowNodeResponse> showNodeAsyncInvoker(ShowNodeRequest request) {
-        return new AsyncInvoker<ShowNodeRequest, ShowNodeResponse>(request, DdmMeta.showNode, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.showNode, hcClient);
     }
 
     /**
@@ -825,7 +814,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodesRequest 请求对象
+     * @param request ShrinkInstanceNodesRequest 请求对象
      * @return CompletableFuture<ShrinkInstanceNodesResponse>
      */
     public CompletableFuture<ShrinkInstanceNodesResponse> shrinkInstanceNodesAsync(ShrinkInstanceNodesRequest request) {
@@ -839,13 +828,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShrinkInstanceNodesRequest 请求对象
+     * @param request ShrinkInstanceNodesRequest 请求对象
      * @return AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>
      */
     public AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesAsyncInvoker(
         ShrinkInstanceNodesRequest request) {
-        return new AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>(request,
-            DdmMeta.shrinkInstanceNodes, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.shrinkInstanceNodes, hcClient);
     }
 
     /**
@@ -855,7 +843,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseInfoRequest 请求对象
+     * @param request UpdateDatabaseInfoRequest 请求对象
      * @return CompletableFuture<UpdateDatabaseInfoResponse>
      */
     public CompletableFuture<UpdateDatabaseInfoResponse> updateDatabaseInfoAsync(UpdateDatabaseInfoRequest request) {
@@ -869,13 +857,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateDatabaseInfoRequest 请求对象
+     * @param request UpdateDatabaseInfoRequest 请求对象
      * @return AsyncInvoker<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse>
      */
     public AsyncInvoker<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> updateDatabaseInfoAsyncInvoker(
         UpdateDatabaseInfoRequest request) {
-        return new AsyncInvoker<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse>(request,
-            DdmMeta.updateDatabaseInfo, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateDatabaseInfo, hcClient);
     }
 
     /**
@@ -885,7 +872,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateInstanceNameResponse>
      */
     public CompletableFuture<UpdateInstanceNameResponse> updateInstanceNameAsync(UpdateInstanceNameRequest request) {
@@ -899,13 +886,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceNameRequest 请求对象
+     * @param request UpdateInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
      */
     public AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameAsyncInvoker(
         UpdateInstanceNameRequest request) {
-        return new AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request,
-            DdmMeta.updateInstanceName, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateInstanceName, hcClient);
     }
 
     /**
@@ -915,7 +901,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceParamRequest 请求对象
+     * @param request UpdateInstanceParamRequest 请求对象
      * @return CompletableFuture<UpdateInstanceParamResponse>
      */
     public CompletableFuture<UpdateInstanceParamResponse> updateInstanceParamAsync(UpdateInstanceParamRequest request) {
@@ -929,13 +915,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceParamRequest 请求对象
+     * @param request UpdateInstanceParamRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceParamRequest, UpdateInstanceParamResponse>
      */
     public AsyncInvoker<UpdateInstanceParamRequest, UpdateInstanceParamResponse> updateInstanceParamAsyncInvoker(
         UpdateInstanceParamRequest request) {
-        return new AsyncInvoker<UpdateInstanceParamRequest, UpdateInstanceParamResponse>(request,
-            DdmMeta.updateInstanceParam, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateInstanceParam, hcClient);
     }
 
     /**
@@ -945,7 +930,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceSecurityGroupRequest 请求对象
+     * @param request UpdateInstanceSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateInstanceSecurityGroupResponse>
      */
     public CompletableFuture<UpdateInstanceSecurityGroupResponse> updateInstanceSecurityGroupAsync(
@@ -960,13 +945,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateInstanceSecurityGroupRequest 请求对象
+     * @param request UpdateInstanceSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse>
      */
     public AsyncInvoker<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse> updateInstanceSecurityGroupAsyncInvoker(
         UpdateInstanceSecurityGroupRequest request) {
-        return new AsyncInvoker<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse>(request,
-            DdmMeta.updateInstanceSecurityGroup, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateInstanceSecurityGroup, hcClient);
     }
 
     /**
@@ -976,7 +960,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReadAndWriteStrategyRequest 请求对象
+     * @param request UpdateReadAndWriteStrategyRequest 请求对象
      * @return CompletableFuture<UpdateReadAndWriteStrategyResponse>
      */
     public CompletableFuture<UpdateReadAndWriteStrategyResponse> updateReadAndWriteStrategyAsync(
@@ -991,13 +975,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateReadAndWriteStrategyRequest 请求对象
+     * @param request UpdateReadAndWriteStrategyRequest 请求对象
      * @return AsyncInvoker<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse>
      */
     public AsyncInvoker<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse> updateReadAndWriteStrategyAsyncInvoker(
         UpdateReadAndWriteStrategyRequest request) {
-        return new AsyncInvoker<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse>(request,
-            DdmMeta.updateReadAndWriteStrategy, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateReadAndWriteStrategy, hcClient);
     }
 
     /**
@@ -1007,7 +990,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
      */
     public CompletableFuture<UpdateUserResponse> updateUserAsync(UpdateUserRequest request) {
@@ -1021,11 +1004,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateUserRequest 请求对象
+     * @param request UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
-        return new AsyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, DdmMeta.updateUser, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.updateUser, hcClient);
     }
 
     /**
@@ -1035,7 +1018,7 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateWeakPasswordRequest 请求对象
+     * @param request ValidateWeakPasswordRequest 请求对象
      * @return CompletableFuture<ValidateWeakPasswordResponse>
      */
     public CompletableFuture<ValidateWeakPasswordResponse> validateWeakPasswordAsync(
@@ -1050,13 +1033,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ValidateWeakPasswordRequest 请求对象
+     * @param request ValidateWeakPasswordRequest 请求对象
      * @return AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>
      */
     public AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordAsyncInvoker(
         ValidateWeakPasswordRequest request) {
-        return new AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>(request,
-            DdmMeta.validateWeakPassword, hcClient);
+        return new AsyncInvoker<>(request, DdmMeta.validateWeakPassword, hcClient);
     }
 
 }

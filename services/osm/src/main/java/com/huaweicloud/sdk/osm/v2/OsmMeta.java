@@ -237,9 +237,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class OsmMeta {
 
-    public static final HttpRequestDef<CheckHostsRequest, CheckHostsResponse> checkHosts = genForcheckHosts();
+    public static final HttpRequestDef<CheckHostsRequest, CheckHostsResponse> checkHosts = genForCheckHosts();
 
-    private static HttpRequestDef<CheckHostsRequest, CheckHostsResponse> genForcheckHosts() {
+    private static HttpRequestDef<CheckHostsRequest, CheckHostsResponse> genForCheckHosts() {
         // basic
         HttpRequestDef.Builder<CheckHostsRequest, CheckHostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckHostsRequest.class, CheckHostsResponse.class)
@@ -253,37 +253,28 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(CheckHostsRequest::getAuthorizationDetailId, (req, v) -> {
-                req.setAuthorizationDetailId(v);
-            }));
+            f -> f.withMarshaller(CheckHostsRequest::getAuthorizationDetailId,
+                CheckHostsRequest::setAuthorizationDetailId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckHostsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CheckHostsRequest::getXSite, CheckHostsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckHostsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckHostsRequest::getXLanguage, CheckHostsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckHostsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CheckHostsRequest::getXTimeZone, CheckHostsRequest::setXTimeZone));
         builder.<VerifyHostV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(VerifyHostV2Req.class),
-            f -> f.withMarshaller(CheckHostsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckHostsRequest::getBody, CheckHostsRequest::setBody));
 
         // response
 
@@ -291,9 +282,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CheckNeedVerifyRequest, CheckNeedVerifyResponse> checkNeedVerify =
-        genForcheckNeedVerify();
+        genForCheckNeedVerify();
 
-    private static HttpRequestDef<CheckNeedVerifyRequest, CheckNeedVerifyResponse> genForcheckNeedVerify() {
+    private static HttpRequestDef<CheckNeedVerifyRequest, CheckNeedVerifyResponse> genForCheckNeedVerify() {
         // basic
         HttpRequestDef.Builder<CheckNeedVerifyRequest, CheckNeedVerifyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckNeedVerifyRequest.class, CheckNeedVerifyResponse.class)
@@ -306,44 +297,32 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactValue, (req, v) -> {
-                req.setContactValue(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactValue, CheckNeedVerifyRequest::setContactValue));
         builder.<Integer>withRequestField("contact_way",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactWay, (req, v) -> {
-                req.setContactWay(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactWay, CheckNeedVerifyRequest::setContactWay));
         builder.<String>withRequestField("area_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getAreaCode, (req, v) -> {
-                req.setAreaCode(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getAreaCode, CheckNeedVerifyRequest::setAreaCode));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXSite, CheckNeedVerifyRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXLanguage, CheckNeedVerifyRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNeedVerifyRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXTimeZone, CheckNeedVerifyRequest::setXTimeZone));
 
         // response
 
@@ -351,9 +330,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CheckVerifyCodesRequest, CheckVerifyCodesResponse> checkVerifyCodes =
-        genForcheckVerifyCodes();
+        genForCheckVerifyCodes();
 
-    private static HttpRequestDef<CheckVerifyCodesRequest, CheckVerifyCodesResponse> genForcheckVerifyCodes() {
+    private static HttpRequestDef<CheckVerifyCodesRequest, CheckVerifyCodesResponse> genForCheckVerifyCodes() {
         // basic
         HttpRequestDef.Builder<CheckVerifyCodesRequest, CheckVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckVerifyCodesRequest.class, CheckVerifyCodesResponse.class)
@@ -366,30 +345,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CheckVerifyCodesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXSite, CheckVerifyCodesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVerifyCodesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXLanguage, CheckVerifyCodesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckVerifyCodesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXTimeZone, CheckVerifyCodesRequest::setXTimeZone));
         builder.<VerifyVerifyCodeV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(VerifyVerifyCodeV2Req.class),
-            f -> f.withMarshaller(CheckVerifyCodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getBody, CheckVerifyCodesRequest::setBody));
 
         // response
 
@@ -397,9 +368,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> confirmAuthorizations =
-        genForconfirmAuthorizations();
+        genForConfirmAuthorizations();
 
-    private static HttpRequestDef<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> genForconfirmAuthorizations() {
+    private static HttpRequestDef<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> genForConfirmAuthorizations() {
         // basic
         HttpRequestDef.Builder<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, ConfirmAuthorizationsRequest.class, ConfirmAuthorizationsResponse.class)
@@ -412,37 +383,30 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getAuthorizationId,
+                ConfirmAuthorizationsRequest::setAuthorizationId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXSite, ConfirmAuthorizationsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXLanguage,
+                ConfirmAuthorizationsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getXTimeZone,
+                ConfirmAuthorizationsRequest::setXTimeZone));
         builder.<AgreeTenantAuthorizationV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AgreeTenantAuthorizationV2Req.class),
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getBody, ConfirmAuthorizationsRequest::setBody));
 
         // response
 
@@ -450,9 +414,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateAskQuestionRequest, CreateAskQuestionResponse> createAskQuestion =
-        genForcreateAskQuestion();
+        genForCreateAskQuestion();
 
-    private static HttpRequestDef<CreateAskQuestionRequest, CreateAskQuestionResponse> genForcreateAskQuestion() {
+    private static HttpRequestDef<CreateAskQuestionRequest, CreateAskQuestionResponse> genForCreateAskQuestion() {
         // basic
         HttpRequestDef.Builder<CreateAskQuestionRequest, CreateAskQuestionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAskQuestionRequest.class, CreateAskQuestionResponse.class)
@@ -465,30 +429,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateAskQuestionRequest::getXServiceKey, CreateAskQuestionRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateAskQuestionRequest::getXSite, CreateAskQuestionRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateAskQuestionRequest::getXLanguage, CreateAskQuestionRequest::setXLanguage));
         builder.<AskQuestionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AskQuestionReq.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateAskQuestionRequest::getBody, CreateAskQuestionRequest::setBody));
 
         // response
 
@@ -496,9 +452,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> createCaseExtendsParam =
-        genForcreateCaseExtendsParam();
+        genForCreateCaseExtendsParam();
 
-    private static HttpRequestDef<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> genForcreateCaseExtendsParam() {
+    private static HttpRequestDef<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> genForCreateCaseExtendsParam() {
         // basic
         HttpRequestDef.Builder<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateCaseExtendsParamRequest.class, CreateCaseExtendsParamResponse.class)
@@ -511,37 +467,29 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getCaseId, CreateCaseExtendsParamRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXSite, CreateCaseExtendsParamRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXLanguage,
+                CreateCaseExtendsParamRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getXTimeZone,
+                CreateCaseExtendsParamRequest::setXTimeZone));
         builder.<PutCaseExtParamReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PutCaseExtParamReq.class),
-            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCaseExtendsParamRequest::getBody, CreateCaseExtendsParamRequest::setBody));
 
         // response
 
@@ -549,9 +497,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateCaseLabelsRequest, CreateCaseLabelsResponse> createCaseLabels =
-        genForcreateCaseLabels();
+        genForCreateCaseLabels();
 
-    private static HttpRequestDef<CreateCaseLabelsRequest, CreateCaseLabelsResponse> genForcreateCaseLabels() {
+    private static HttpRequestDef<CreateCaseLabelsRequest, CreateCaseLabelsResponse> genForCreateCaseLabels() {
         // basic
         HttpRequestDef.Builder<CreateCaseLabelsRequest, CreateCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCaseLabelsRequest.class, CreateCaseLabelsResponse.class)
@@ -564,46 +512,36 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseLabelsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(CreateCaseLabelsRequest::getCaseId, CreateCaseLabelsRequest::setCaseId));
         builder.<List<Integer>>withRequestField("label_ids",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateCaseLabelsRequest::getLabelIds, (req, v) -> {
-                req.setLabelIds(v);
-            }));
+            f -> f.withMarshaller(CreateCaseLabelsRequest::getLabelIds, CreateCaseLabelsRequest::setLabelIds));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateCaseLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateCaseLabelsRequest::getXSite, CreateCaseLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateCaseLabelsRequest::getXLanguage, CreateCaseLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCaseLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateCaseLabelsRequest::getXTimeZone, CreateCaseLabelsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCasesRequest, CreateCasesResponse> createCases = genForcreateCases();
+    public static final HttpRequestDef<CreateCasesRequest, CreateCasesResponse> createCases = genForCreateCases();
 
-    private static HttpRequestDef<CreateCasesRequest, CreateCasesResponse> genForcreateCases() {
+    private static HttpRequestDef<CreateCasesRequest, CreateCasesResponse> genForCreateCases() {
         // basic
         HttpRequestDef.Builder<CreateCasesRequest, CreateCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCasesRequest.class, CreateCasesResponse.class)
@@ -616,44 +554,32 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateCasesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getXSite, CreateCasesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCasesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getXLanguage, CreateCasesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCasesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getXTimeZone, CreateCasesRequest::setXTimeZone));
         builder.<String>withRequestField("x-phone-verifiedid",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCasesRequest::getXPhoneVerifiedid, (req, v) -> {
-                req.setXPhoneVerifiedid(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getXPhoneVerifiedid, CreateCasesRequest::setXPhoneVerifiedid));
         builder.<String>withRequestField("x-email-verifiedid",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateCasesRequest::getXEmailVerifiedid, (req, v) -> {
-                req.setXEmailVerifiedid(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getXEmailVerifiedid, CreateCasesRequest::setXEmailVerifiedid));
         builder.<CreateOrderIncidentV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateOrderIncidentV2Req.class),
-            f -> f.withMarshaller(CreateCasesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCasesRequest::getBody, CreateCasesRequest::setBody));
 
         // response
 
@@ -661,9 +587,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> createDiagnoseFeedback =
-        genForcreateDiagnoseFeedback();
+        genForCreateDiagnoseFeedback();
 
-    private static HttpRequestDef<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> genForcreateDiagnoseFeedback() {
+    private static HttpRequestDef<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> genForCreateDiagnoseFeedback() {
         // basic
         HttpRequestDef.Builder<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateDiagnoseFeedbackRequest.class, CreateDiagnoseFeedbackResponse.class)
@@ -676,9 +602,7 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateFeedbackReq.class),
-            f -> f.withMarshaller(CreateDiagnoseFeedbackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDiagnoseFeedbackRequest::getBody, CreateDiagnoseFeedbackRequest::setBody));
 
         // response
 
@@ -686,9 +610,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> createDiagnoseJob =
-        genForcreateDiagnoseJob();
+        genForCreateDiagnoseJob();
 
-    private static HttpRequestDef<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> genForcreateDiagnoseJob() {
+    private static HttpRequestDef<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> genForCreateDiagnoseJob() {
         // basic
         HttpRequestDef.Builder<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDiagnoseJobRequest.class, CreateDiagnoseJobResponse.class)
@@ -701,9 +625,7 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SubmitDiagnoseJobReq.class),
-            f -> f.withMarshaller(CreateDiagnoseJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateDiagnoseJobRequest::getBody, CreateDiagnoseJobRequest::setBody));
 
         // response
 
@@ -711,9 +633,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateEvaluateRequest, CreateEvaluateResponse> createEvaluate =
-        genForcreateEvaluate();
+        genForCreateEvaluate();
 
-    private static HttpRequestDef<CreateEvaluateRequest, CreateEvaluateResponse> genForcreateEvaluate() {
+    private static HttpRequestDef<CreateEvaluateRequest, CreateEvaluateResponse> genForCreateEvaluate() {
         // basic
         HttpRequestDef.Builder<CreateEvaluateRequest, CreateEvaluateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEvaluateRequest.class, CreateEvaluateResponse.class)
@@ -726,44 +648,32 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getSessionId, (req, v) -> {
-                req.setSessionId(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getSessionId, CreateEvaluateRequest::setSessionId));
         builder.<String>withRequestField("request_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getRequestId, (req, v) -> {
-                req.setRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getRequestId, CreateEvaluateRequest::setRequestId));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getXServiceKey, CreateEvaluateRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getXSite, CreateEvaluateRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getXLanguage, CreateEvaluateRequest::setXLanguage));
         builder.<EvaluateRequestReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EvaluateRequestReq.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateEvaluateRequest::getBody, CreateEvaluateRequest::setBody));
 
         // response
 
@@ -771,9 +681,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateFeedbackRequest, CreateFeedbackResponse> createFeedback =
-        genForcreateFeedback();
+        genForCreateFeedback();
 
-    private static HttpRequestDef<CreateFeedbackRequest, CreateFeedbackResponse> genForcreateFeedback() {
+    private static HttpRequestDef<CreateFeedbackRequest, CreateFeedbackResponse> genForCreateFeedback() {
         // basic
         HttpRequestDef.Builder<CreateFeedbackRequest, CreateFeedbackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFeedbackRequest.class, CreateFeedbackResponse.class)
@@ -786,18 +696,16 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateFeedbackV2Req.class),
-            f -> f.withMarshaller(CreateFeedbackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateFeedbackRequest::getBody, CreateFeedbackRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLabelsRequest, CreateLabelsResponse> createLabels = genForcreateLabels();
+    public static final HttpRequestDef<CreateLabelsRequest, CreateLabelsResponse> createLabels = genForCreateLabels();
 
-    private static HttpRequestDef<CreateLabelsRequest, CreateLabelsResponse> genForcreateLabels() {
+    private static HttpRequestDef<CreateLabelsRequest, CreateLabelsResponse> genForCreateLabels() {
         // basic
         HttpRequestDef.Builder<CreateLabelsRequest, CreateLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLabelsRequest.class, CreateLabelsResponse.class)
@@ -810,30 +718,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateLabelsRequest::getXSite, CreateLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateLabelsRequest::getXLanguage, CreateLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateLabelsRequest::getXTimeZone, CreateLabelsRequest::setXTimeZone));
         builder.<CreateLabelsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLabelsReq.class),
-            f -> f.withMarshaller(CreateLabelsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateLabelsRequest::getBody, CreateLabelsRequest::setBody));
 
         // response
 
@@ -841,9 +741,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateMessagesRequest, CreateMessagesResponse> createMessages =
-        genForcreateMessages();
+        genForCreateMessages();
 
-    private static HttpRequestDef<CreateMessagesRequest, CreateMessagesResponse> genForcreateMessages() {
+    private static HttpRequestDef<CreateMessagesRequest, CreateMessagesResponse> genForCreateMessages() {
         // basic
         HttpRequestDef.Builder<CreateMessagesRequest, CreateMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMessagesRequest.class, CreateMessagesResponse.class)
@@ -856,37 +756,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMessagesRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(CreateMessagesRequest::getCaseId, CreateMessagesRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateMessagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateMessagesRequest::getXSite, CreateMessagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMessagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateMessagesRequest::getXLanguage, CreateMessagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMessagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateMessagesRequest::getXTimeZone, CreateMessagesRequest::setXTimeZone));
         builder.<CreateMessageV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateMessageV2Req.class),
-            f -> f.withMarshaller(CreateMessagesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateMessagesRequest::getBody, CreateMessagesRequest::setBody));
 
         // response
 
@@ -894,9 +784,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreatePrivilegesRequest, CreatePrivilegesResponse> createPrivileges =
-        genForcreatePrivileges();
+        genForCreatePrivileges();
 
-    private static HttpRequestDef<CreatePrivilegesRequest, CreatePrivilegesResponse> genForcreatePrivileges() {
+    private static HttpRequestDef<CreatePrivilegesRequest, CreatePrivilegesResponse> genForCreatePrivileges() {
         // basic
         HttpRequestDef.Builder<CreatePrivilegesRequest, CreatePrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivilegesRequest.class, CreatePrivilegesResponse.class)
@@ -909,39 +799,31 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreatePrivilegesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreatePrivilegesRequest::getXSite, CreatePrivilegesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePrivilegesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreatePrivilegesRequest::getXLanguage, CreatePrivilegesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePrivilegesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreatePrivilegesRequest::getXTimeZone, CreatePrivilegesRequest::setXTimeZone));
         builder.<CreateAndDeletePrivilegeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateAndDeletePrivilegeReq.class),
-            f -> f.withMarshaller(CreatePrivilegesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreatePrivilegesRequest::getBody, CreatePrivilegesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> createQaAsk = genForcreateQaAsk();
+    public static final HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> createQaAsk = genForCreateQaAsk();
 
-    private static HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> genForcreateQaAsk() {
+    private static HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> genForCreateQaAsk() {
         // basic
         HttpRequestDef.Builder<CreateQaAskRequest, CreateQaAskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateQaAskRequest.class, CreateQaAskResponse.class)
@@ -954,30 +836,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateQaAskRequest::getXServiceKey, CreateQaAskRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateQaAskRequest::getXSite, CreateQaAskRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateQaAskRequest::getXLanguage, CreateQaAskRequest::setXLanguage));
         builder.<QaAskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QaAskReq.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateQaAskRequest::getBody, CreateQaAskRequest::setBody));
 
         // response
 
@@ -985,9 +859,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> createQaFeedbacks =
-        genForcreateQaFeedbacks();
+        genForCreateQaFeedbacks();
 
-    private static HttpRequestDef<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> genForcreateQaFeedbacks() {
+    private static HttpRequestDef<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> genForCreateQaFeedbacks() {
         // basic
         HttpRequestDef.Builder<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateQaFeedbacksRequest.class, CreateQaFeedbacksResponse.class)
@@ -1000,37 +874,28 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateQaFeedbacksRequest.FeedbackTypeEnum.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getFeedbackType, (req, v) -> {
-                req.setFeedbackType(v);
-            }));
+            f -> f.withMarshaller(CreateQaFeedbacksRequest::getFeedbackType,
+                CreateQaFeedbacksRequest::setFeedbackType));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXServiceKey, CreateQaFeedbacksRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXSite, CreateQaFeedbacksRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXLanguage, CreateQaFeedbacksRequest::setXLanguage));
         builder.<QaFeedbackReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QaFeedbackReq.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateQaFeedbacksRequest::getBody, CreateQaFeedbacksRequest::setBody));
 
         // response
 
@@ -1038,9 +903,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> createQuestionInSession =
-        genForcreateQuestionInSession();
+        genForCreateQuestionInSession();
 
-    private static HttpRequestDef<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> genForcreateQuestionInSession() {
+    private static HttpRequestDef<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> genForCreateQuestionInSession() {
         // basic
         HttpRequestDef.Builder<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateQuestionInSessionRequest.class, CreateQuestionInSessionResponse.class)
@@ -1053,37 +918,30 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getSessionId, (req, v) -> {
-                req.setSessionId(v);
-            }));
+            f -> f.withMarshaller(CreateQuestionInSessionRequest::getSessionId,
+                CreateQuestionInSessionRequest::setSessionId));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXServiceKey,
+                CreateQuestionInSessionRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXSite, CreateQuestionInSessionRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXLanguage,
+                CreateQuestionInSessionRequest::setXLanguage));
         builder.<SessionAskQuestionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SessionAskQuestionReq.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateQuestionInSessionRequest::getBody, CreateQuestionInSessionRequest::setBody));
 
         // response
 
@@ -1091,9 +949,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateRelationsRequest, CreateRelationsResponse> createRelations =
-        genForcreateRelations();
+        genForCreateRelations();
 
-    private static HttpRequestDef<CreateRelationsRequest, CreateRelationsResponse> genForcreateRelations() {
+    private static HttpRequestDef<CreateRelationsRequest, CreateRelationsResponse> genForCreateRelations() {
         // basic
         HttpRequestDef.Builder<CreateRelationsRequest, CreateRelationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRelationsRequest.class, CreateRelationsResponse.class)
@@ -1106,46 +964,36 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRelationsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(CreateRelationsRequest::getCaseId, CreateRelationsRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateRelationsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateRelationsRequest::getXSite, CreateRelationsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRelationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateRelationsRequest::getXLanguage, CreateRelationsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRelationsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateRelationsRequest::getXTimeZone, CreateRelationsRequest::setXTimeZone));
         builder.<CreateRelationsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRelationsReq.class),
-            f -> f.withMarshaller(CreateRelationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateRelationsRequest::getBody, CreateRelationsRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateScoresRequest, CreateScoresResponse> createScores = genForcreateScores();
+    public static final HttpRequestDef<CreateScoresRequest, CreateScoresResponse> createScores = genForCreateScores();
 
-    private static HttpRequestDef<CreateScoresRequest, CreateScoresResponse> genForcreateScores() {
+    private static HttpRequestDef<CreateScoresRequest, CreateScoresResponse> genForCreateScores() {
         // basic
         HttpRequestDef.Builder<CreateScoresRequest, CreateScoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScoresRequest.class, CreateScoresResponse.class)
@@ -1158,37 +1006,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScoresRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(CreateScoresRequest::getCaseId, CreateScoresRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateScoresRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateScoresRequest::getXSite, CreateScoresRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScoresRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateScoresRequest::getXLanguage, CreateScoresRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateScoresRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(CreateScoresRequest::getXTimeZone, CreateScoresRequest::setXTimeZone));
         builder.<CreateScoreV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateScoreV2Req.class),
-            f -> f.withMarshaller(CreateScoresRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateScoresRequest::getBody, CreateScoresRequest::setBody));
 
         // response
 
@@ -1196,9 +1034,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<CreateSessionRequest, CreateSessionResponse> createSession =
-        genForcreateSession();
+        genForCreateSession();
 
-    private static HttpRequestDef<CreateSessionRequest, CreateSessionResponse> genForcreateSession() {
+    private static HttpRequestDef<CreateSessionRequest, CreateSessionResponse> genForCreateSession() {
         // basic
         HttpRequestDef.Builder<CreateSessionRequest, CreateSessionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSessionRequest.class, CreateSessionResponse.class)
@@ -1211,23 +1049,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(CreateSessionRequest::getXServiceKey, CreateSessionRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(CreateSessionRequest::getXSite, CreateSessionRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(CreateSessionRequest::getXLanguage, CreateSessionRequest::setXLanguage));
 
         // response
 
@@ -1235,9 +1067,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DeleteAccessoriesRequest, DeleteAccessoriesResponse> deleteAccessories =
-        genFordeleteAccessories();
+        genForDeleteAccessories();
 
-    private static HttpRequestDef<DeleteAccessoriesRequest, DeleteAccessoriesResponse> genFordeleteAccessories() {
+    private static HttpRequestDef<DeleteAccessoriesRequest, DeleteAccessoriesResponse> genForDeleteAccessories() {
         // basic
         HttpRequestDef.Builder<DeleteAccessoriesRequest, DeleteAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessoriesRequest.class, DeleteAccessoriesResponse.class)
@@ -1250,30 +1082,22 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccessoriesRequest::getAccessoryId, (req, v) -> {
-                req.setAccessoryId(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessoriesRequest::getAccessoryId, DeleteAccessoriesRequest::setAccessoryId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteAccessoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessoriesRequest::getXSite, DeleteAccessoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccessoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessoriesRequest::getXLanguage, DeleteAccessoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccessoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DeleteAccessoriesRequest::getXTimeZone, DeleteAccessoriesRequest::setXTimeZone));
 
         // response
 
@@ -1281,9 +1105,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> deleteCaseLabels =
-        genFordeleteCaseLabels();
+        genForDeleteCaseLabels();
 
-    private static HttpRequestDef<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> genFordeleteCaseLabels() {
+    private static HttpRequestDef<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> genForDeleteCaseLabels() {
         // basic
         HttpRequestDef.Builder<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCaseLabelsRequest.class, DeleteCaseLabelsResponse.class)
@@ -1296,46 +1120,36 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCaseLabelsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseLabelsRequest::getCaseId, DeleteCaseLabelsRequest::setCaseId));
         builder.<List<Integer>>withRequestField("label_ids",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteCaseLabelsRequest::getLabelIds, (req, v) -> {
-                req.setLabelIds(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseLabelsRequest::getLabelIds, DeleteCaseLabelsRequest::setLabelIds));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXSite, DeleteCaseLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXLanguage, DeleteCaseLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DeleteCaseLabelsRequest::getXTimeZone, DeleteCaseLabelsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLabelsRequest, DeleteLabelsResponse> deleteLabels = genFordeleteLabels();
+    public static final HttpRequestDef<DeleteLabelsRequest, DeleteLabelsResponse> deleteLabels = genForDeleteLabels();
 
-    private static HttpRequestDef<DeleteLabelsRequest, DeleteLabelsResponse> genFordeleteLabels() {
+    private static HttpRequestDef<DeleteLabelsRequest, DeleteLabelsResponse> genForDeleteLabels() {
         // basic
         HttpRequestDef.Builder<DeleteLabelsRequest, DeleteLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLabelsRequest.class, DeleteLabelsResponse.class)
@@ -1348,30 +1162,22 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteLabelsRequest::getLabelId, (req, v) -> {
-                req.setLabelId(v);
-            }));
+            f -> f.withMarshaller(DeleteLabelsRequest::getLabelId, DeleteLabelsRequest::setLabelId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DeleteLabelsRequest::getXSite, DeleteLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteLabelsRequest::getXLanguage, DeleteLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DeleteLabelsRequest::getXTimeZone, DeleteLabelsRequest::setXTimeZone));
 
         // response
 
@@ -1379,9 +1185,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DeleteRelationRequest, DeleteRelationResponse> deleteRelation =
-        genFordeleteRelation();
+        genForDeleteRelation();
 
-    private static HttpRequestDef<DeleteRelationRequest, DeleteRelationResponse> genFordeleteRelation() {
+    private static HttpRequestDef<DeleteRelationRequest, DeleteRelationResponse> genForDeleteRelation() {
         // basic
         HttpRequestDef.Builder<DeleteRelationRequest, DeleteRelationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRelationRequest.class, DeleteRelationResponse.class)
@@ -1394,37 +1200,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRelationRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(DeleteRelationRequest::getCaseId, DeleteRelationRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteRelationRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DeleteRelationRequest::getXSite, DeleteRelationRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRelationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DeleteRelationRequest::getXLanguage, DeleteRelationRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRelationRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DeleteRelationRequest::getXTimeZone, DeleteRelationRequest::setXTimeZone));
         builder.<DeleteRelationsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteRelationsReq.class),
-            f -> f.withMarshaller(DeleteRelationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteRelationRequest::getBody, DeleteRelationRequest::setBody));
 
         // response
 
@@ -1432,9 +1228,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DownloadAccessoriesRequest, DownloadAccessoriesResponse> downloadAccessories =
-        genFordownloadAccessories();
+        genForDownloadAccessories();
 
-    private static HttpRequestDef<DownloadAccessoriesRequest, DownloadAccessoriesResponse> genFordownloadAccessories() {
+    private static HttpRequestDef<DownloadAccessoriesRequest, DownloadAccessoriesResponse> genForDownloadAccessories() {
         // basic
         HttpRequestDef.Builder<DownloadAccessoriesRequest, DownloadAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadAccessoriesRequest.class, DownloadAccessoriesResponse.class)
@@ -1447,37 +1243,28 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAccessoriesRequest::getAccessoryId, (req, v) -> {
-                req.setAccessoryId(v);
-            }));
+            f -> f.withMarshaller(DownloadAccessoriesRequest::getAccessoryId,
+                DownloadAccessoriesRequest::setAccessoryId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAccessoriesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DownloadAccessoriesRequest::getGroupId, DownloadAccessoriesRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadAccessoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DownloadAccessoriesRequest::getXSite, DownloadAccessoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAccessoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadAccessoriesRequest::getXLanguage, DownloadAccessoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadAccessoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DownloadAccessoriesRequest::getXTimeZone, DownloadAccessoriesRequest::setXTimeZone));
 
         // response
 
@@ -1485,9 +1272,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DownloadCasesRequest, DownloadCasesResponse> downloadCases =
-        genFordownloadCases();
+        genForDownloadCases();
 
-    private static HttpRequestDef<DownloadCasesRequest, DownloadCasesResponse> genFordownloadCases() {
+    private static HttpRequestDef<DownloadCasesRequest, DownloadCasesResponse> genForDownloadCases() {
         // basic
         HttpRequestDef.Builder<DownloadCasesRequest, DownloadCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadCasesRequest.class, DownloadCasesResponse.class)
@@ -1500,114 +1287,83 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getLanguage, (req, v) -> {
-                req.setLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getLanguage, DownloadCasesRequest::setLanguage));
         builder.<String>withRequestField("timezone",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getTimezone, (req, v) -> {
-                req.setTimezone(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getTimezone, DownloadCasesRequest::setTimezone));
         builder.<String>withRequestField("incident_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getIncidentId, (req, v) -> {
-                req.setIncidentId(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getIncidentId, DownloadCasesRequest::setIncidentId));
         builder.<String>withRequestField("query_start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getQueryStartTime, (req, v) -> {
-                req.setQueryStartTime(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getQueryStartTime, DownloadCasesRequest::setQueryStartTime));
         builder.<String>withRequestField("query_end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getQueryEndTime, (req, v) -> {
-                req.setQueryEndTime(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getQueryEndTime, DownloadCasesRequest::setQueryEndTime));
         builder.<String>withRequestField("x_customer_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getXCustomerName, (req, v) -> {
-                req.setXCustomerName(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getXCustomerName, DownloadCasesRequest::setXCustomerName));
         builder.<String>withRequestField("search_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getSearchKey, DownloadCasesRequest::setSearchKey));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getStatus, DownloadCasesRequest::setStatus));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getCustomerId, DownloadCasesRequest::setCustomerId));
         builder.<List<String>>withRequestField("tenant_source_id_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getTenantSourceIdList, (req, v) -> {
-                req.setTenantSourceIdList(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getTenantSourceIdList,
+                DownloadCasesRequest::setTenantSourceIdList));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getSubCustomerId, DownloadCasesRequest::setSubCustomerId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getOffset, DownloadCasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getLimit, DownloadCasesRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getXSite, DownloadCasesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getXLanguage, DownloadCasesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadCasesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DownloadCasesRequest::getXTimeZone, DownloadCasesRequest::setXTimeZone));
 
         // response
 
@@ -1615,9 +1371,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<DownloadImagesRequest, DownloadImagesResponse> downloadImages =
-        genFordownloadImages();
+        genForDownloadImages();
 
-    private static HttpRequestDef<DownloadImagesRequest, DownloadImagesResponse> genFordownloadImages() {
+    private static HttpRequestDef<DownloadImagesRequest, DownloadImagesResponse> genForDownloadImages() {
         // basic
         HttpRequestDef.Builder<DownloadImagesRequest, DownloadImagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadImagesRequest.class, DownloadImagesResponse.class)
@@ -1630,37 +1386,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadImagesRequest::getAccessoryId, (req, v) -> {
-                req.setAccessoryId(v);
-            }));
+            f -> f.withMarshaller(DownloadImagesRequest::getAccessoryId, DownloadImagesRequest::setAccessoryId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadImagesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(DownloadImagesRequest::getGroupId, DownloadImagesRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DownloadImagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(DownloadImagesRequest::getXSite, DownloadImagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadImagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(DownloadImagesRequest::getXLanguage, DownloadImagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DownloadImagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(DownloadImagesRequest::getXTimeZone, DownloadImagesRequest::setXTimeZone));
 
         // response
 
@@ -1668,9 +1414,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> listAccessoryAccessUrls =
-        genForlistAccessoryAccessUrls();
+        genForListAccessoryAccessUrls();
 
-    private static HttpRequestDef<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> genForlistAccessoryAccessUrls() {
+    private static HttpRequestDef<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> genForListAccessoryAccessUrls() {
         // basic
         HttpRequestDef.Builder<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAccessoryAccessUrlsRequest.class, ListAccessoryAccessUrlsResponse.class)
@@ -1683,46 +1429,40 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getGroupId,
+                ListAccessoryAccessUrlsRequest::setGroupId));
         builder.<List<String>>withRequestField("accessory_ids",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getAccessoryIds, (req, v) -> {
-                req.setAccessoryIds(v);
-            }));
+            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getAccessoryIds,
+                ListAccessoryAccessUrlsRequest::setAccessoryIds));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXSite, ListAccessoryAccessUrlsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXLanguage,
+                ListAccessoryAccessUrlsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getXTimeZone,
+                ListAccessoryAccessUrlsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForListAgencies();
 
-    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForlistAgencies() {
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForListAgencies() {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
@@ -1735,23 +1475,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getXSite, ListAgenciesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getXLanguage, ListAgenciesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgenciesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListAgenciesRequest::getXTimeZone, ListAgenciesRequest::setXTimeZone));
 
         // response
 
@@ -1759,9 +1493,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListAreaCodesRequest, ListAreaCodesResponse> listAreaCodes =
-        genForlistAreaCodes();
+        genForListAreaCodes();
 
-    private static HttpRequestDef<ListAreaCodesRequest, ListAreaCodesResponse> genForlistAreaCodes() {
+    private static HttpRequestDef<ListAreaCodesRequest, ListAreaCodesResponse> genForListAreaCodes() {
         // basic
         HttpRequestDef.Builder<ListAreaCodesRequest, ListAreaCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAreaCodesRequest.class, ListAreaCodesResponse.class)
@@ -1774,32 +1508,26 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAreaCodesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListAreaCodesRequest::getXSite, ListAreaCodesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaCodesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAreaCodesRequest::getXLanguage, ListAreaCodesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAreaCodesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListAreaCodesRequest::getXTimeZone, ListAreaCodesRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListArticlesRequest, ListArticlesResponse> listArticles = genForlistArticles();
+    public static final HttpRequestDef<ListArticlesRequest, ListArticlesResponse> listArticles = genForListArticles();
 
-    private static HttpRequestDef<ListArticlesRequest, ListArticlesResponse> genForlistArticles() {
+    private static HttpRequestDef<ListArticlesRequest, ListArticlesResponse> genForListArticles() {
         // basic
         HttpRequestDef.Builder<ListArticlesRequest, ListArticlesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListArticlesRequest.class, ListArticlesResponse.class)
@@ -1812,37 +1540,27 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getSearchType, (req, v) -> {
-                req.setSearchType(v);
-            }));
+            f -> f.withMarshaller(ListArticlesRequest::getSearchType, ListArticlesRequest::setSearchType));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ListArticlesRequest::getXServiceKey, ListArticlesRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListArticlesRequest::getXSite, ListArticlesRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListArticlesRequest::getXLanguage, ListArticlesRequest::setXLanguage));
         builder.<SearchArticlesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchArticlesReq.class),
-            f -> f.withMarshaller(ListArticlesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListArticlesRequest::getBody, ListArticlesRequest::setBody));
 
         // response
 
@@ -1850,9 +1568,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListAuthorizationsRequest, ListAuthorizationsResponse> listAuthorizations =
-        genForlistAuthorizations();
+        genForListAuthorizations();
 
-    private static HttpRequestDef<ListAuthorizationsRequest, ListAuthorizationsResponse> genForlistAuthorizations() {
+    private static HttpRequestDef<ListAuthorizationsRequest, ListAuthorizationsResponse> genForListAuthorizations() {
         // basic
         HttpRequestDef.Builder<ListAuthorizationsRequest, ListAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizationsRequest.class, ListAuthorizationsResponse.class)
@@ -1865,72 +1583,54 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getSubCustomerName, (req, v) -> {
-                req.setSubCustomerName(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getSubCustomerName,
+                ListAuthorizationsRequest::setSubCustomerName));
         builder.<String>withRequestField("incident_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getIncidentId, (req, v) -> {
-                req.setIncidentId(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getIncidentId, ListAuthorizationsRequest::setIncidentId));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getStatus, ListAuthorizationsRequest::setStatus));
         builder.<String>withRequestField("simple_description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getSimpleDescription, (req, v) -> {
-                req.setSimpleDescription(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getSimpleDescription,
+                ListAuthorizationsRequest::setSimpleDescription));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getOffset, ListAuthorizationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getLimit, ListAuthorizationsRequest::setLimit));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getGroupId, ListAuthorizationsRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getXSite, ListAuthorizationsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getXLanguage, ListAuthorizationsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAuthorizationsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListAuthorizationsRequest::getXTimeZone, ListAuthorizationsRequest::setXTimeZone));
 
         // response
 
@@ -1938,9 +1638,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> listCaseCategories =
-        genForlistCaseCategories();
+        genForListCaseCategories();
 
-    private static HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> genForlistCaseCategories() {
+    private static HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> genForListCaseCategories() {
         // basic
         HttpRequestDef.Builder<ListCaseCategoriesRequest, ListCaseCategoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCategoriesRequest.class, ListCaseCategoriesResponse.class)
@@ -1953,23 +1653,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseCategoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseCategoriesRequest::getXSite, ListCaseCategoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCategoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseCategoriesRequest::getXLanguage, ListCaseCategoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCategoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseCategoriesRequest::getXTimeZone, ListCaseCategoriesRequest::setXTimeZone));
 
         // response
 
@@ -1977,9 +1671,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> listCaseCcEmails =
-        genForlistCaseCcEmails();
+        genForListCaseCcEmails();
 
-    private static HttpRequestDef<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> genForlistCaseCcEmails() {
+    private static HttpRequestDef<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> genForListCaseCcEmails() {
         // basic
         HttpRequestDef.Builder<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCcEmailsRequest.class, ListCaseCcEmailsResponse.class)
@@ -1992,23 +1686,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXSite, ListCaseCcEmailsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXLanguage, ListCaseCcEmailsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXTimeZone, ListCaseCcEmailsRequest::setXTimeZone));
 
         // response
 
@@ -2016,9 +1704,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseCountsRequest, ListCaseCountsResponse> listCaseCounts =
-        genForlistCaseCounts();
+        genForListCaseCounts();
 
-    private static HttpRequestDef<ListCaseCountsRequest, ListCaseCountsResponse> genForlistCaseCounts() {
+    private static HttpRequestDef<ListCaseCountsRequest, ListCaseCountsResponse> genForListCaseCounts() {
         // basic
         HttpRequestDef.Builder<ListCaseCountsRequest, ListCaseCountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCountsRequest.class, ListCaseCountsResponse.class)
@@ -2031,30 +1719,22 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseCountsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCaseCountsRequest::getStatus, ListCaseCountsRequest::setStatus));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseCountsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseCountsRequest::getXSite, ListCaseCountsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCountsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseCountsRequest::getXLanguage, ListCaseCountsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseCountsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseCountsRequest::getXTimeZone, ListCaseCountsRequest::setXTimeZone));
 
         // response
 
@@ -2062,9 +1742,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseLabelsRequest, ListCaseLabelsResponse> listCaseLabels =
-        genForlistCaseLabels();
+        genForListCaseLabels();
 
-    private static HttpRequestDef<ListCaseLabelsRequest, ListCaseLabelsResponse> genForlistCaseLabels() {
+    private static HttpRequestDef<ListCaseLabelsRequest, ListCaseLabelsResponse> genForListCaseLabels() {
         // basic
         HttpRequestDef.Builder<ListCaseLabelsRequest, ListCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLabelsRequest.class, ListCaseLabelsResponse.class)
@@ -2077,30 +1757,22 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseLabelsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ListCaseLabelsRequest::getCaseId, ListCaseLabelsRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseLabelsRequest::getXSite, ListCaseLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseLabelsRequest::getXLanguage, ListCaseLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseLabelsRequest::getXTimeZone, ListCaseLabelsRequest::setXTimeZone));
 
         // response
 
@@ -2108,9 +1780,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseLimitsRequest, ListCaseLimitsResponse> listCaseLimits =
-        genForlistCaseLimits();
+        genForListCaseLimits();
 
-    private static HttpRequestDef<ListCaseLimitsRequest, ListCaseLimitsResponse> genForlistCaseLimits() {
+    private static HttpRequestDef<ListCaseLimitsRequest, ListCaseLimitsResponse> genForListCaseLimits() {
         // basic
         HttpRequestDef.Builder<ListCaseLimitsRequest, ListCaseLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLimitsRequest.class, ListCaseLimitsResponse.class)
@@ -2123,23 +1795,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseLimitsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseLimitsRequest::getXSite, ListCaseLimitsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseLimitsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseLimitsRequest::getXLanguage, ListCaseLimitsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseLimitsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseLimitsRequest::getXTimeZone, ListCaseLimitsRequest::setXTimeZone));
 
         // response
 
@@ -2147,9 +1813,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> listCaseOperateLogs =
-        genForlistCaseOperateLogs();
+        genForListCaseOperateLogs();
 
-    private static HttpRequestDef<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> genForlistCaseOperateLogs() {
+    private static HttpRequestDef<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> genForListCaseOperateLogs() {
         // basic
         HttpRequestDef.Builder<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseOperateLogsRequest.class, ListCaseOperateLogsResponse.class)
@@ -2162,51 +1828,37 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getCaseId, ListCaseOperateLogsRequest::setCaseId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getGroupId, ListCaseOperateLogsRequest::setGroupId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getOffset, ListCaseOperateLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getLimit, ListCaseOperateLogsRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXSite, ListCaseOperateLogsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXLanguage, ListCaseOperateLogsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXTimeZone, ListCaseOperateLogsRequest::setXTimeZone));
 
         // response
 
@@ -2214,9 +1866,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseQuotasRequest, ListCaseQuotasResponse> listCaseQuotas =
-        genForlistCaseQuotas();
+        genForListCaseQuotas();
 
-    private static HttpRequestDef<ListCaseQuotasRequest, ListCaseQuotasResponse> genForlistCaseQuotas() {
+    private static HttpRequestDef<ListCaseQuotasRequest, ListCaseQuotasResponse> genForListCaseQuotas() {
         // basic
         HttpRequestDef.Builder<ListCaseQuotasRequest, ListCaseQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseQuotasRequest.class, ListCaseQuotasResponse.class)
@@ -2229,37 +1881,28 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseQuotasRequest::getProductCategoryId, (req, v) -> {
-                req.setProductCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListCaseQuotasRequest::getProductCategoryId,
+                ListCaseQuotasRequest::setProductCategoryId));
         builder.<String>withRequestField("business_type_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseQuotasRequest::getBusinessTypeId, (req, v) -> {
-                req.setBusinessTypeId(v);
-            }));
+            f -> f.withMarshaller(ListCaseQuotasRequest::getBusinessTypeId, ListCaseQuotasRequest::setBusinessTypeId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseQuotasRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseQuotasRequest::getXSite, ListCaseQuotasRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseQuotasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseQuotasRequest::getXLanguage, ListCaseQuotasRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseQuotasRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseQuotasRequest::getXTimeZone, ListCaseQuotasRequest::setXTimeZone));
 
         // response
 
@@ -2267,9 +1910,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCaseTemplatesRequest, ListCaseTemplatesResponse> listCaseTemplates =
-        genForlistCaseTemplates();
+        genForListCaseTemplates();
 
-    private static HttpRequestDef<ListCaseTemplatesRequest, ListCaseTemplatesResponse> genForlistCaseTemplates() {
+    private static HttpRequestDef<ListCaseTemplatesRequest, ListCaseTemplatesResponse> genForListCaseTemplates() {
         // basic
         HttpRequestDef.Builder<ListCaseTemplatesRequest, ListCaseTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseTemplatesRequest.class, ListCaseTemplatesResponse.class)
@@ -2282,39 +1925,32 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseTemplatesRequest::getBusinessTypeId, (req, v) -> {
-                req.setBusinessTypeId(v);
-            }));
+            f -> f.withMarshaller(ListCaseTemplatesRequest::getBusinessTypeId,
+                ListCaseTemplatesRequest::setBusinessTypeId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCaseTemplatesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCaseTemplatesRequest::getXSite, ListCaseTemplatesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseTemplatesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCaseTemplatesRequest::getXLanguage, ListCaseTemplatesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCaseTemplatesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCaseTemplatesRequest::getXTimeZone, ListCaseTemplatesRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCasesRequest, ListCasesResponse> listCases = genForlistCases();
+    public static final HttpRequestDef<ListCasesRequest, ListCasesResponse> listCases = genForListCases();
 
-    private static HttpRequestDef<ListCasesRequest, ListCasesResponse> genForlistCases() {
+    private static HttpRequestDef<ListCasesRequest, ListCasesResponse> genForListCases() {
         // basic
         HttpRequestDef.Builder<ListCasesRequest, ListCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCasesRequest.class, ListCasesResponse.class)
@@ -2327,114 +1963,82 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCasesRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getSearchKey, ListCasesRequest::setSearchKey));
         builder.<List<String>>withRequestField("label_id_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListCasesRequest::getLabelIdList, (req, v) -> {
-                req.setLabelIdList(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getLabelIdList, ListCasesRequest::setLabelIdList));
         builder.<String>withRequestField("app_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getAppKey, ListCasesRequest::setAppKey));
         builder.<String>withRequestField("incident_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getIncidentId, (req, v) -> {
-                req.setIncidentId(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getIncidentId, ListCasesRequest::setIncidentId));
         builder.<String>withRequestField("query_start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getQueryStartTime, (req, v) -> {
-                req.setQueryStartTime(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getQueryStartTime, ListCasesRequest::setQueryStartTime));
         builder.<String>withRequestField("query_end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getQueryEndTime, (req, v) -> {
-                req.setQueryEndTime(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getQueryEndTime, ListCasesRequest::setQueryEndTime));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCasesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getStatus, ListCasesRequest::setStatus));
         builder.<String>withRequestField("incident_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getIncidentStatus, (req, v) -> {
-                req.setIncidentStatus(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getIncidentStatus, ListCasesRequest::setIncidentStatus));
         builder.<String>withRequestField("x_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getXCustomerId, (req, v) -> {
-                req.setXCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getXCustomerId, ListCasesRequest::setXCustomerId));
         builder.<String>withRequestField("x_customer_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getXCustomerName, (req, v) -> {
-                req.setXCustomerName(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getXCustomerName, ListCasesRequest::setXCustomerName));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getGroupId, ListCasesRequest::setGroupId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCasesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getOffset, ListCasesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCasesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getLimit, ListCasesRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCasesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getXSite, ListCasesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getXLanguage, ListCasesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCasesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCasesRequest::getXTimeZone, ListCasesRequest::setXTimeZone));
 
         // response
 
@@ -2442,9 +2046,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListCustomersRegionsRequest, ListCustomersRegionsResponse> listCustomersRegions =
-        genForlistCustomersRegions();
+        genForListCustomersRegions();
 
-    private static HttpRequestDef<ListCustomersRegionsRequest, ListCustomersRegionsResponse> genForlistCustomersRegions() {
+    private static HttpRequestDef<ListCustomersRegionsRequest, ListCustomersRegionsResponse> genForListCustomersRegions() {
         // basic
         HttpRequestDef.Builder<ListCustomersRegionsRequest, ListCustomersRegionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListCustomersRegionsRequest.class, ListCustomersRegionsResponse.class)
@@ -2457,23 +2061,19 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomersRegionsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListCustomersRegionsRequest::getXSite, ListCustomersRegionsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomersRegionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListCustomersRegionsRequest::getXLanguage,
+                ListCustomersRegionsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomersRegionsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListCustomersRegionsRequest::getXTimeZone,
+                ListCustomersRegionsRequest::setXTimeZone));
 
         // response
 
@@ -2481,9 +2081,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> listDiagnoseItems =
-        genForlistDiagnoseItems();
+        genForListDiagnoseItems();
 
-    private static HttpRequestDef<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> genForlistDiagnoseItems() {
+    private static HttpRequestDef<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> genForListDiagnoseItems() {
         // basic
         HttpRequestDef.Builder<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListDiagnoseItemsRequest.class, ListDiagnoseItemsResponse.class)
@@ -2496,9 +2096,7 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QueryDiagnoseItemsReq.class),
-            f -> f.withMarshaller(ListDiagnoseItemsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseItemsRequest::getBody, ListDiagnoseItemsRequest::setBody));
 
         // response
 
@@ -2506,9 +2104,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListDiagnoseJobRequest, ListDiagnoseJobResponse> listDiagnoseJob =
-        genForlistDiagnoseJob();
+        genForListDiagnoseJob();
 
-    private static HttpRequestDef<ListDiagnoseJobRequest, ListDiagnoseJobResponse> genForlistDiagnoseJob() {
+    private static HttpRequestDef<ListDiagnoseJobRequest, ListDiagnoseJobResponse> genForListDiagnoseJob() {
         // basic
         HttpRequestDef.Builder<ListDiagnoseJobRequest, ListDiagnoseJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDiagnoseJobRequest.class, ListDiagnoseJobResponse.class)
@@ -2521,9 +2119,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDiagnoseJobRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseJobRequest::getJobId, ListDiagnoseJobRequest::setJobId));
 
         // response
 
@@ -2531,9 +2127,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> listDiagnoseRecords =
-        genForlistDiagnoseRecords();
+        genForListDiagnoseRecords();
 
-    private static HttpRequestDef<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> genForlistDiagnoseRecords() {
+    private static HttpRequestDef<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> genForListDiagnoseRecords() {
         // basic
         HttpRequestDef.Builder<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDiagnoseRecordsRequest.class, ListDiagnoseRecordsResponse.class)
@@ -2546,23 +2142,17 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getPageSize, ListDiagnoseRecordsRequest::setPageSize));
         builder.<Integer>withRequestField("page_no",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getPageNo, ListDiagnoseRecordsRequest::setPageNo));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseRecordsRequest::getType, ListDiagnoseRecordsRequest::setType));
 
         // response
 
@@ -2570,9 +2160,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> listDiagnoseResources =
-        genForlistDiagnoseResources();
+        genForListDiagnoseResources();
 
-    private static HttpRequestDef<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> genForlistDiagnoseResources() {
+    private static HttpRequestDef<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> genForListDiagnoseResources() {
         // basic
         HttpRequestDef.Builder<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListDiagnoseResourcesRequest.class, ListDiagnoseResourcesResponse.class)
@@ -2585,9 +2175,7 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QueryTscDiagnoseResourcesReq.class),
-            f -> f.withMarshaller(ListDiagnoseResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListDiagnoseResourcesRequest::getBody, ListDiagnoseResourcesRequest::setBody));
 
         // response
 
@@ -2595,9 +2183,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListExtendsParamsRequest, ListExtendsParamsResponse> listExtendsParams =
-        genForlistExtendsParams();
+        genForListExtendsParams();
 
-    private static HttpRequestDef<ListExtendsParamsRequest, ListExtendsParamsResponse> genForlistExtendsParams() {
+    private static HttpRequestDef<ListExtendsParamsRequest, ListExtendsParamsResponse> genForListExtendsParams() {
         // basic
         HttpRequestDef.Builder<ListExtendsParamsRequest, ListExtendsParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExtendsParamsRequest.class, ListExtendsParamsResponse.class)
@@ -2610,44 +2198,35 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getBusinessTypeId, (req, v) -> {
-                req.setBusinessTypeId(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getBusinessTypeId,
+                ListExtendsParamsRequest::setBusinessTypeId));
         builder.<String>withRequestField("incident_sub_type_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getIncidentSubTypeId, (req, v) -> {
-                req.setIncidentSubTypeId(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getIncidentSubTypeId,
+                ListExtendsParamsRequest::setIncidentSubTypeId));
         builder.<String>withRequestField("product_category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getProductCategoryId, (req, v) -> {
-                req.setProductCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getProductCategoryId,
+                ListExtendsParamsRequest::setProductCategoryId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getXSite, ListExtendsParamsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getXLanguage, ListExtendsParamsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExtendsParamsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListExtendsParamsRequest::getXTimeZone, ListExtendsParamsRequest::setXTimeZone));
 
         // response
 
@@ -2655,9 +2234,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListFeedbackOptionRequest, ListFeedbackOptionResponse> listFeedbackOption =
-        genForlistFeedbackOption();
+        genForListFeedbackOption();
 
-    private static HttpRequestDef<ListFeedbackOptionRequest, ListFeedbackOptionResponse> genForlistFeedbackOption() {
+    private static HttpRequestDef<ListFeedbackOptionRequest, ListFeedbackOptionResponse> genForListFeedbackOption() {
         // basic
         HttpRequestDef.Builder<ListFeedbackOptionRequest, ListFeedbackOptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFeedbackOptionRequest.class, ListFeedbackOptionResponse.class)
@@ -2670,37 +2249,29 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListFeedbackOptionRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListFeedbackOptionRequest::getStatus, ListFeedbackOptionRequest::setStatus));
         builder.<ListFeedbackOptionRequest.FeedbackSourceEnum>withRequestField("feedback_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListFeedbackOptionRequest.FeedbackSourceEnum.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getFeedbackSource, (req, v) -> {
-                req.setFeedbackSource(v);
-            }));
+            f -> f.withMarshaller(ListFeedbackOptionRequest::getFeedbackSource,
+                ListFeedbackOptionRequest::setFeedbackSource));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ListFeedbackOptionRequest::getXServiceKey,
+                ListFeedbackOptionRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListFeedbackOptionRequest::getXSite, ListFeedbackOptionRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListFeedbackOptionRequest::getXLanguage, ListFeedbackOptionRequest::setXLanguage));
 
         // response
 
@@ -2708,9 +2279,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> listHasVerifiedContacts =
-        genForlistHasVerifiedContacts();
+        genForListHasVerifiedContacts();
 
-    private static HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> genForlistHasVerifiedContacts() {
+    private static HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> genForListHasVerifiedContacts() {
         // basic
         HttpRequestDef.Builder<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListHasVerifiedContactsRequest.class, ListHasVerifiedContactsResponse.class)
@@ -2723,86 +2294,72 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactWay, (req, v) -> {
-                req.setContactWay(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactWay,
+                ListHasVerifiedContactsRequest::setContactWay));
         builder.<String>withRequestField("customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getCustomerId, (req, v) -> {
-                req.setCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getCustomerId,
+                ListHasVerifiedContactsRequest::setCustomerId));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getSubCustomerId,
+                ListHasVerifiedContactsRequest::setSubCustomerId));
         builder.<String>withRequestField("expired_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getExpiredTime, (req, v) -> {
-                req.setExpiredTime(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getExpiredTime,
+                ListHasVerifiedContactsRequest::setExpiredTime));
         builder.<String>withRequestField("verified_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getVerifiedId, (req, v) -> {
-                req.setVerifiedId(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getVerifiedId,
+                ListHasVerifiedContactsRequest::setVerifiedId));
         builder.<String>withRequestField("contact_value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactValue, (req, v) -> {
-                req.setContactValue(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactValue,
+                ListHasVerifiedContactsRequest::setContactValue));
         builder.<String>withRequestField("area_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getAreaCode, (req, v) -> {
-                req.setAreaCode(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getAreaCode,
+                ListHasVerifiedContactsRequest::setAreaCode));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getOffset,
+                ListHasVerifiedContactsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getLimit, ListHasVerifiedContactsRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXSite, ListHasVerifiedContactsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXLanguage,
+                ListHasVerifiedContactsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXTimeZone,
+                ListHasVerifiedContactsRequest::setXTimeZone));
 
         // response
 
@@ -2810,9 +2367,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> listHistoryOperateLogs =
-        genForlistHistoryOperateLogs();
+        genForListHistoryOperateLogs();
 
-    private static HttpRequestDef<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> genForlistHistoryOperateLogs() {
+    private static HttpRequestDef<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> genForListHistoryOperateLogs() {
         // basic
         HttpRequestDef.Builder<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListHistoryOperateLogsRequest.class, ListHistoryOperateLogsResponse.class)
@@ -2826,72 +2383,58 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getAuthorizationId,
+                ListHistoryOperateLogsRequest::setAuthorizationId));
         builder.<Long>withRequestField("authorization_detail_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getAuthorizationDetailId, (req, v) -> {
-                req.setAuthorizationDetailId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getAuthorizationDetailId,
+                ListHistoryOperateLogsRequest::setAuthorizationDetailId));
         builder.<Long>withRequestField("session_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getSessionId, (req, v) -> {
-                req.setSessionId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getSessionId,
+                ListHistoryOperateLogsRequest::setSessionId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getGroupId,
+                ListHistoryOperateLogsRequest::setGroupId));
         builder.<Integer>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getSort, ListHistoryOperateLogsRequest::setSort));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getOffset, ListHistoryOperateLogsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getLimit, ListHistoryOperateLogsRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXSite, ListHistoryOperateLogsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXLanguage,
+                ListHistoryOperateLogsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListHistoryOperateLogsRequest::getXTimeZone,
+                ListHistoryOperateLogsRequest::setXTimeZone));
 
         // response
 
@@ -2899,9 +2442,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListHistorySessionsRequest, ListHistorySessionsResponse> listHistorySessions =
-        genForlistHistorySessions();
+        genForListHistorySessions();
 
-    private static HttpRequestDef<ListHistorySessionsRequest, ListHistorySessionsResponse> genForlistHistorySessions() {
+    private static HttpRequestDef<ListHistorySessionsRequest, ListHistorySessionsResponse> genForListHistorySessions() {
         // basic
         HttpRequestDef.Builder<ListHistorySessionsRequest, ListHistorySessionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListHistorySessionsRequest.class, ListHistorySessionsResponse.class)
@@ -2915,67 +2458,53 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getAuthorizationId,
+                ListHistorySessionsRequest::setAuthorizationId));
         builder.<Long>withRequestField("authorization_detail_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getAuthorizationDetailId, (req, v) -> {
-                req.setAuthorizationDetailId(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getAuthorizationDetailId,
+                ListHistorySessionsRequest::setAuthorizationDetailId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getGroupId, ListHistorySessionsRequest::setGroupId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getOffset, ListHistorySessionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getLimit, ListHistorySessionsRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getXSite, ListHistorySessionsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getXLanguage, ListHistorySessionsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistorySessionsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListHistorySessionsRequest::getXTimeZone, ListHistorySessionsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLabelsRequest, ListLabelsResponse> listLabels = genForlistLabels();
+    public static final HttpRequestDef<ListLabelsRequest, ListLabelsResponse> listLabels = genForListLabels();
 
-    private static HttpRequestDef<ListLabelsRequest, ListLabelsResponse> genForlistLabels() {
+    private static HttpRequestDef<ListLabelsRequest, ListLabelsResponse> genForListLabels() {
         // basic
         HttpRequestDef.Builder<ListLabelsRequest, ListLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLabelsRequest.class, ListLabelsResponse.class)
@@ -2988,60 +2517,46 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLabelsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getOffset, ListLabelsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLabelsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getLimit, ListLabelsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLabelsRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getName, ListLabelsRequest::setName));
         builder.<Integer>withRequestField("label_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLabelsRequest::getLabelId, (req, v) -> {
-                req.setLabelId(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getLabelId, ListLabelsRequest::setLabelId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getXSite, ListLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getXLanguage, ListLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListLabelsRequest::getXTimeZone, ListLabelsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMessagesRequest, ListMessagesResponse> listMessages = genForlistMessages();
+    public static final HttpRequestDef<ListMessagesRequest, ListMessagesResponse> listMessages = genForListMessages();
 
-    private static HttpRequestDef<ListMessagesRequest, ListMessagesResponse> genForlistMessages() {
+    private static HttpRequestDef<ListMessagesRequest, ListMessagesResponse> genForListMessages() {
         // basic
         HttpRequestDef.Builder<ListMessagesRequest, ListMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessagesRequest.class, ListMessagesResponse.class)
@@ -3054,51 +2569,37 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getCaseId, ListMessagesRequest::setCaseId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getGroupId, ListMessagesRequest::setGroupId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMessagesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getOffset, ListMessagesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getLimit, ListMessagesRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMessagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getXSite, ListMessagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getXLanguage, ListMessagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMessagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListMessagesRequest::getXTimeZone, ListMessagesRequest::setXTimeZone));
 
         // response
 
@@ -3106,9 +2607,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> listMoreInstantMessages =
-        genForlistMoreInstantMessages();
+        genForListMoreInstantMessages();
 
-    private static HttpRequestDef<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> genForlistMoreInstantMessages() {
+    private static HttpRequestDef<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> genForListMoreInstantMessages() {
         // basic
         HttpRequestDef.Builder<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListMoreInstantMessagesRequest.class, ListMoreInstantMessagesResponse.class)
@@ -3121,58 +2622,47 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getCaseId,
+                ListMoreInstantMessagesRequest::setCaseId));
         builder.<String>withRequestField("create_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getCreateTime, (req, v) -> {
-                req.setCreateTime(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getCreateTime,
+                ListMoreInstantMessagesRequest::setCreateTime));
         builder.<Integer>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getType, ListMoreInstantMessagesRequest::setType));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getGroupId,
+                ListMoreInstantMessagesRequest::setGroupId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getLimit, ListMoreInstantMessagesRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXSite, ListMoreInstantMessagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXLanguage,
+                ListMoreInstantMessagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListMoreInstantMessagesRequest::getXTimeZone,
+                ListMoreInstantMessagesRequest::setXTimeZone));
 
         // response
 
@@ -3180,9 +2670,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> listNewInstantMessages =
-        genForlistNewInstantMessages();
+        genForListNewInstantMessages();
 
-    private static HttpRequestDef<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> genForlistNewInstantMessages() {
+    private static HttpRequestDef<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> genForListNewInstantMessages() {
         // basic
         HttpRequestDef.Builder<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListNewInstantMessagesRequest.class, ListNewInstantMessagesResponse.class)
@@ -3195,53 +2685,46 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getCaseIds, (req, v) -> {
-                req.setCaseIds(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getCaseIds,
+                ListNewInstantMessagesRequest::setCaseIds));
         builder.<String>withRequestField("last_message_time_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getLastMessageTimeId, (req, v) -> {
-                req.setLastMessageTimeId(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getLastMessageTimeId,
+                ListNewInstantMessagesRequest::setLastMessageTimeId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getGroupId,
+                ListNewInstantMessagesRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXSite, ListNewInstantMessagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXLanguage,
+                ListNewInstantMessagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListNewInstantMessagesRequest::getXTimeZone,
+                ListNewInstantMessagesRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNoticesRequest, ListNoticesResponse> listNotices = genForlistNotices();
+    public static final HttpRequestDef<ListNoticesRequest, ListNoticesResponse> listNotices = genForListNotices();
 
-    private static HttpRequestDef<ListNoticesRequest, ListNoticesResponse> genForlistNotices() {
+    private static HttpRequestDef<ListNoticesRequest, ListNoticesResponse> genForListNotices() {
         // basic
         HttpRequestDef.Builder<ListNoticesRequest, ListNoticesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListNoticesRequest.class, ListNoticesResponse.class)
@@ -3254,30 +2737,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getXServiceKey, ListNoticesRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getXSite, ListNoticesRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getXLanguage, ListNoticesRequest::setXLanguage));
         builder.<SearchNoticesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchNoticesReq.class),
-            f -> f.withMarshaller(ListNoticesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListNoticesRequest::getBody, ListNoticesRequest::setBody));
 
         // response
 
@@ -3285,9 +2760,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncident =
-        genForlistOrderIncident();
+        genForListOrderIncident();
 
-    private static HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> genForlistOrderIncident() {
+    private static HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> genForListOrderIncident() {
         // basic
         HttpRequestDef.Builder<ListOrderIncidentRequest, ListOrderIncidentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrderIncidentRequest.class, ListOrderIncidentResponse.class)
@@ -3300,114 +2775,88 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getVersion, ListOrderIncidentRequest::setVersion));
         builder.<List<String>>withRequestField("searchKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getSearchKey, (req, v) -> {
-                req.setSearchKey(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getSearchKey, ListOrderIncidentRequest::setSearchKey));
         builder.<List<Integer>>withRequestField("labelIdList",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getLabelIdList, (req, v) -> {
-                req.setLabelIdList(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getLabelIdList, ListOrderIncidentRequest::setLabelIdList));
         builder.<String>withRequestField("appKey",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getAppKey, ListOrderIncidentRequest::setAppKey));
         builder.<String>withRequestField("incidentId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentId, (req, v) -> {
-                req.setIncidentId(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentId, ListOrderIncidentRequest::setIncidentId));
         builder.<String>withRequestField("queryStartTime",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryStartTime, (req, v) -> {
-                req.setQueryStartTime(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryStartTime,
+                ListOrderIncidentRequest::setQueryStartTime));
         builder.<String>withRequestField("queryEndTime",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryEndTime, (req, v) -> {
-                req.setQueryEndTime(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryEndTime,
+                ListOrderIncidentRequest::setQueryEndTime));
         builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getStatus, ListOrderIncidentRequest::setStatus));
         builder.<String>withRequestField("incidentStatus",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentStatus, (req, v) -> {
-                req.setIncidentStatus(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentStatus,
+                ListOrderIncidentRequest::setIncidentStatus));
         builder.<String>withRequestField("xCustomerName",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerName, (req, v) -> {
-                req.setXCustomerName(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerName,
+                ListOrderIncidentRequest::setXCustomerName));
         builder.<String>withRequestField("groupId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getGroupId, ListOrderIncidentRequest::setGroupId));
         builder.<String>withRequestField("productCategoryId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getProductCategoryId, (req, v) -> {
-                req.setProductCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getProductCategoryId,
+                ListOrderIncidentRequest::setProductCategoryId));
         builder.<String>withRequestField("businessTypeId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getBusinessTypeId, (req, v) -> {
-                req.setBusinessTypeId(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getBusinessTypeId,
+                ListOrderIncidentRequest::setBusinessTypeId));
         builder.<Integer>withRequestField("pageNo",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getPageNo, (req, v) -> {
-                req.setPageNo(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getPageNo, ListOrderIncidentRequest::setPageNo));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getPageSize, ListOrderIncidentRequest::setPageSize));
         builder.<String>withRequestField("xCustomerId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerId, (req, v) -> {
-                req.setXCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerId, ListOrderIncidentRequest::setXCustomerId));
 
         // response
 
@@ -3415,9 +2864,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListPrivilegesRequest, ListPrivilegesResponse> listPrivileges =
-        genForlistPrivileges();
+        genForListPrivileges();
 
-    private static HttpRequestDef<ListPrivilegesRequest, ListPrivilegesResponse> genForlistPrivileges() {
+    private static HttpRequestDef<ListPrivilegesRequest, ListPrivilegesResponse> genForListPrivileges() {
         // basic
         HttpRequestDef.Builder<ListPrivilegesRequest, ListPrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivilegesRequest.class, ListPrivilegesResponse.class)
@@ -3430,30 +2879,22 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivilegesRequest::getPrivilege, (req, v) -> {
-                req.setPrivilege(v);
-            }));
+            f -> f.withMarshaller(ListPrivilegesRequest::getPrivilege, ListPrivilegesRequest::setPrivilege));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivilegesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListPrivilegesRequest::getXSite, ListPrivilegesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivilegesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListPrivilegesRequest::getXLanguage, ListPrivilegesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivilegesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListPrivilegesRequest::getXTimeZone, ListPrivilegesRequest::setXTimeZone));
 
         // response
 
@@ -3461,9 +2902,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListProblemTypesRequest, ListProblemTypesResponse> listProblemTypes =
-        genForlistProblemTypes();
+        genForListProblemTypes();
 
-    private static HttpRequestDef<ListProblemTypesRequest, ListProblemTypesResponse> genForlistProblemTypes() {
+    private static HttpRequestDef<ListProblemTypesRequest, ListProblemTypesResponse> genForListProblemTypes() {
         // basic
         HttpRequestDef.Builder<ListProblemTypesRequest, ListProblemTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProblemTypesRequest.class, ListProblemTypesResponse.class)
@@ -3476,30 +2917,23 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProblemTypesRequest::getProductCategoryId, (req, v) -> {
-                req.setProductCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListProblemTypesRequest::getProductCategoryId,
+                ListProblemTypesRequest::setProductCategoryId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProblemTypesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListProblemTypesRequest::getXSite, ListProblemTypesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProblemTypesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProblemTypesRequest::getXLanguage, ListProblemTypesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProblemTypesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListProblemTypesRequest::getXTimeZone, ListProblemTypesRequest::setXTimeZone));
 
         // response
 
@@ -3507,9 +2941,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListProductCategoriesRequest, ListProductCategoriesResponse> listProductCategories =
-        genForlistProductCategories();
+        genForListProductCategories();
 
-    private static HttpRequestDef<ListProductCategoriesRequest, ListProductCategoriesResponse> genForlistProductCategories() {
+    private static HttpRequestDef<ListProductCategoriesRequest, ListProductCategoriesResponse> genForListProductCategories() {
         // basic
         HttpRequestDef.Builder<ListProductCategoriesRequest, ListProductCategoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListProductCategoriesRequest.class, ListProductCategoriesResponse.class)
@@ -3522,30 +2956,25 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductCategoriesRequest::getProductCategoryName, (req, v) -> {
-                req.setProductCategoryName(v);
-            }));
+            f -> f.withMarshaller(ListProductCategoriesRequest::getProductCategoryName,
+                ListProductCategoriesRequest::setProductCategoryName));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductCategoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListProductCategoriesRequest::getXSite, ListProductCategoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductCategoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListProductCategoriesRequest::getXLanguage,
+                ListProductCategoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductCategoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListProductCategoriesRequest::getXTimeZone,
+                ListProductCategoriesRequest::setXTimeZone));
 
         // response
 
@@ -3553,9 +2982,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListRecommendWordsRequest, ListRecommendWordsResponse> listRecommendWords =
-        genForlistRecommendWords();
+        genForListRecommendWords();
 
-    private static HttpRequestDef<ListRecommendWordsRequest, ListRecommendWordsResponse> genForlistRecommendWords() {
+    private static HttpRequestDef<ListRecommendWordsRequest, ListRecommendWordsResponse> genForListRecommendWords() {
         // basic
         HttpRequestDef.Builder<ListRecommendWordsRequest, ListRecommendWordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecommendWordsRequest.class, ListRecommendWordsResponse.class)
@@ -3568,53 +2997,43 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getRecommendWordId, (req, v) -> {
-                req.setRecommendWordId(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getRecommendWordId,
+                ListRecommendWordsRequest::setRecommendWordId));
         builder.<Integer>withRequestField("level_value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getLevelValue, (req, v) -> {
-                req.setLevelValue(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getLevelValue, ListRecommendWordsRequest::setLevelValue));
         builder.<String>withRequestField("theme_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getThemeName, (req, v) -> {
-                req.setThemeName(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getThemeName, ListRecommendWordsRequest::setThemeName));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getXServiceKey,
+                ListRecommendWordsRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getXSite, ListRecommendWordsRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRecommendWordsRequest::getXLanguage, ListRecommendWordsRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForlistRegions();
+    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForListRegions();
 
-    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForlistRegions() {
+    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForListRegions() {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
@@ -3627,32 +3046,26 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRegionsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListRegionsRequest::getXSite, ListRegionsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRegionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRegionsRequest::getXLanguage, ListRegionsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRegionsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListRegionsRequest::getXTimeZone, ListRegionsRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRelationRequest, ListRelationResponse> listRelation = genForlistRelation();
+    public static final HttpRequestDef<ListRelationRequest, ListRelationResponse> listRelation = genForListRelation();
 
-    private static HttpRequestDef<ListRelationRequest, ListRelationResponse> genForlistRelation() {
+    private static HttpRequestDef<ListRelationRequest, ListRelationResponse> genForListRelation() {
         // basic
         HttpRequestDef.Builder<ListRelationRequest, ListRelationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationRequest.class, ListRelationResponse.class)
@@ -3665,30 +3078,22 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ListRelationRequest::getCaseId, ListRelationRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRelationRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListRelationRequest::getXSite, ListRelationRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListRelationRequest::getXLanguage, ListRelationRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRelationRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListRelationRequest::getXTimeZone, ListRelationRequest::setXTimeZone));
 
         // response
 
@@ -3696,9 +3101,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> listSatisfactionDimensions =
-        genForlistSatisfactionDimensions();
+        genForListSatisfactionDimensions();
 
-    private static HttpRequestDef<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> genForlistSatisfactionDimensions() {
+    private static HttpRequestDef<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> genForListSatisfactionDimensions() {
         // basic
         HttpRequestDef.Builder<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> builder =
             HttpRequestDef
@@ -3714,23 +3119,20 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXSite,
+                ListSatisfactionDimensionsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXLanguage,
+                ListSatisfactionDimensionsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListSatisfactionDimensionsRequest::getXTimeZone,
+                ListSatisfactionDimensionsRequest::setXTimeZone));
 
         // response
 
@@ -3738,9 +3140,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListSeveritiesRequest, ListSeveritiesResponse> listSeverities =
-        genForlistSeverities();
+        genForListSeverities();
 
-    private static HttpRequestDef<ListSeveritiesRequest, ListSeveritiesResponse> genForlistSeverities() {
+    private static HttpRequestDef<ListSeveritiesRequest, ListSeveritiesResponse> genForListSeverities() {
         // basic
         HttpRequestDef.Builder<ListSeveritiesRequest, ListSeveritiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSeveritiesRequest.class, ListSeveritiesResponse.class)
@@ -3753,37 +3155,28 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeveritiesRequest::getProductCategoryId, (req, v) -> {
-                req.setProductCategoryId(v);
-            }));
+            f -> f.withMarshaller(ListSeveritiesRequest::getProductCategoryId,
+                ListSeveritiesRequest::setProductCategoryId));
         builder.<String>withRequestField("business_type_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeveritiesRequest::getBusinessTypeId, (req, v) -> {
-                req.setBusinessTypeId(v);
-            }));
+            f -> f.withMarshaller(ListSeveritiesRequest::getBusinessTypeId, ListSeveritiesRequest::setBusinessTypeId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSeveritiesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListSeveritiesRequest::getXSite, ListSeveritiesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeveritiesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSeveritiesRequest::getXLanguage, ListSeveritiesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSeveritiesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListSeveritiesRequest::getXTimeZone, ListSeveritiesRequest::setXTimeZone));
 
         // response
 
@@ -3791,9 +3184,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomers =
-        genForlistSubCustomers();
+        genForListSubCustomers();
 
-    private static HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> genForlistSubCustomers() {
+    private static HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> genForListSubCustomers() {
         // basic
         HttpRequestDef.Builder<ListSubCustomersRequest, ListSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomersRequest.class, ListSubCustomersResponse.class)
@@ -3806,46 +3199,38 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getSubCustomerName, (req, v) -> {
-                req.setSubCustomerName(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getSubCustomerName,
+                ListSubCustomersRequest::setSubCustomerName));
         builder.<String>withRequestField("sub_customer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getSubCustomerId,
+                ListSubCustomersRequest::setSubCustomerId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getXSite, ListSubCustomersRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getXLanguage, ListSubCustomersRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSubCustomersRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListSubCustomersRequest::getXTimeZone, ListSubCustomersRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListToolsRequest, ListToolsResponse> listTools = genForlistTools();
+    public static final HttpRequestDef<ListToolsRequest, ListToolsResponse> listTools = genForListTools();
 
-    private static HttpRequestDef<ListToolsRequest, ListToolsResponse> genForlistTools() {
+    private static HttpRequestDef<ListToolsRequest, ListToolsResponse> genForListTools() {
         // basic
         HttpRequestDef.Builder<ListToolsRequest, ListToolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListToolsRequest.class, ListToolsResponse.class)
@@ -3858,30 +3243,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ListToolsRequest::getXServiceKey, ListToolsRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListToolsRequest::getXSite, ListToolsRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListToolsRequest::getXLanguage, ListToolsRequest::setXLanguage));
         builder.<SearchToolsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchToolsReq.class),
-            f -> f.withMarshaller(ListToolsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ListToolsRequest::getBody, ListToolsRequest::setBody));
 
         // response
 
@@ -3889,9 +3266,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListTransportHistoriesRequest, ListTransportHistoriesResponse> listTransportHistories =
-        genForlistTransportHistories();
+        genForListTransportHistories();
 
-    private static HttpRequestDef<ListTransportHistoriesRequest, ListTransportHistoriesResponse> genForlistTransportHistories() {
+    private static HttpRequestDef<ListTransportHistoriesRequest, ListTransportHistoriesResponse> genForListTransportHistories() {
         // basic
         HttpRequestDef.Builder<ListTransportHistoriesRequest, ListTransportHistoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTransportHistoriesRequest.class, ListTransportHistoriesResponse.class)
@@ -3905,72 +3282,58 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getAuthorizationId,
+                ListTransportHistoriesRequest::setAuthorizationId));
         builder.<Long>withRequestField("authorization_detail_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getAuthorizationDetailId, (req, v) -> {
-                req.setAuthorizationDetailId(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getAuthorizationDetailId,
+                ListTransportHistoriesRequest::setAuthorizationDetailId));
         builder.<Long>withRequestField("session_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getSessionId, (req, v) -> {
-                req.setSessionId(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getSessionId,
+                ListTransportHistoriesRequest::setSessionId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getGroupId,
+                ListTransportHistoriesRequest::setGroupId));
         builder.<Integer>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getSort, (req, v) -> {
-                req.setSort(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getSort, ListTransportHistoriesRequest::setSort));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getOffset, ListTransportHistoriesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getLimit, ListTransportHistoriesRequest::setLimit));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getXSite, ListTransportHistoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getXLanguage,
+                ListTransportHistoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTransportHistoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListTransportHistoriesRequest::getXTimeZone,
+                ListTransportHistoriesRequest::setXTimeZone));
 
         // response
 
@@ -3978,9 +3341,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> listUnreadNewInstantMessages =
-        genForlistUnreadNewInstantMessages();
+        genForListUnreadNewInstantMessages();
 
-    private static HttpRequestDef<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> genForlistUnreadNewInstantMessages() {
+    private static HttpRequestDef<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> genForListUnreadNewInstantMessages() {
         // basic
         HttpRequestDef.Builder<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> builder =
             HttpRequestDef
@@ -3996,37 +3359,32 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getCaseIds, (req, v) -> {
-                req.setCaseIds(v);
-            }));
+            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getCaseIds,
+                ListUnreadNewInstantMessagesRequest::setCaseIds));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getGroupId,
+                ListUnreadNewInstantMessagesRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXSite,
+                ListUnreadNewInstantMessagesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXLanguage,
+                ListUnreadNewInstantMessagesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ListUnreadNewInstantMessagesRequest::getXTimeZone,
+                ListUnreadNewInstantMessagesRequest::setXTimeZone));
 
         // response
 
@@ -4034,9 +3392,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<RevokeMessageRequest, RevokeMessageResponse> revokeMessage =
-        genForrevokeMessage();
+        genForRevokeMessage();
 
-    private static HttpRequestDef<RevokeMessageRequest, RevokeMessageResponse> genForrevokeMessage() {
+    private static HttpRequestDef<RevokeMessageRequest, RevokeMessageResponse> genForRevokeMessage() {
         // basic
         HttpRequestDef.Builder<RevokeMessageRequest, RevokeMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RevokeMessageRequest.class, RevokeMessageResponse.class)
@@ -4049,37 +3407,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeMessageRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(RevokeMessageRequest::getCaseId, RevokeMessageRequest::setCaseId));
         builder.<String>withRequestField("message_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeMessageRequest::getMessageId, (req, v) -> {
-                req.setMessageId(v);
-            }));
+            f -> f.withMarshaller(RevokeMessageRequest::getMessageId, RevokeMessageRequest::setMessageId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(RevokeMessageRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(RevokeMessageRequest::getXSite, RevokeMessageRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeMessageRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(RevokeMessageRequest::getXLanguage, RevokeMessageRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RevokeMessageRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(RevokeMessageRequest::getXTimeZone, RevokeMessageRequest::setXTimeZone));
 
         // response
 
@@ -4087,9 +3435,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> sendVerifyCodes =
-        genForsendVerifyCodes();
+        genForSendVerifyCodes();
 
-    private static HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> genForsendVerifyCodes() {
+    private static HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> genForSendVerifyCodes() {
         // basic
         HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
@@ -4102,30 +3450,22 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXSite, SendVerifyCodesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXLanguage, SendVerifyCodesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXTimeZone, SendVerifyCodesRequest::setXTimeZone));
         builder.<SendVerifyCodeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SendVerifyCodeReq.class),
-            f -> f.withMarshaller(SendVerifyCodesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SendVerifyCodesRequest::getBody, SendVerifyCodesRequest::setBody));
 
         // response
 
@@ -4133,9 +3473,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> showAccessoryLimits =
-        genForshowAccessoryLimits();
+        genForShowAccessoryLimits();
 
-    private static HttpRequestDef<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> genForshowAccessoryLimits() {
+    private static HttpRequestDef<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> genForShowAccessoryLimits() {
         // basic
         HttpRequestDef.Builder<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessoryLimitsRequest.class, ShowAccessoryLimitsResponse.class)
@@ -4148,23 +3488,17 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXSite, ShowAccessoryLimitsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXLanguage, ShowAccessoryLimitsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXTimeZone, ShowAccessoryLimitsRequest::setXTimeZone));
 
         // response
 
@@ -4172,9 +3506,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> showAssociatedQuestions =
-        genForshowAssociatedQuestions();
+        genForShowAssociatedQuestions();
 
-    private static HttpRequestDef<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> genForshowAssociatedQuestions() {
+    private static HttpRequestDef<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> genForShowAssociatedQuestions() {
         // basic
         HttpRequestDef.Builder<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ShowAssociatedQuestionsRequest.class, ShowAssociatedQuestionsResponse.class)
@@ -4187,30 +3521,24 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXServiceKey,
+                ShowAssociatedQuestionsRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXSite, ShowAssociatedQuestionsRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXLanguage,
+                ShowAssociatedQuestionsRequest::setXLanguage));
         builder.<QueryAssociatedQuestionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(QueryAssociatedQuestionReq.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getBody, ShowAssociatedQuestionsRequest::setBody));
 
         // response
 
@@ -4218,9 +3546,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> showAuthorizationDetail =
-        genForshowAuthorizationDetail();
+        genForShowAuthorizationDetail();
 
-    private static HttpRequestDef<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> genForshowAuthorizationDetail() {
+    private static HttpRequestDef<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> genForShowAuthorizationDetail() {
         // basic
         HttpRequestDef.Builder<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAuthorizationDetailRequest.class, ShowAuthorizationDetailResponse.class)
@@ -4233,37 +3561,31 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getAuthorizationId,
+                ShowAuthorizationDetailRequest::setAuthorizationId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getGroupId,
+                ShowAuthorizationDetailRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXSite, ShowAuthorizationDetailRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXLanguage,
+                ShowAuthorizationDetailRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowAuthorizationDetailRequest::getXTimeZone,
+                ShowAuthorizationDetailRequest::setXTimeZone));
 
         // response
 
@@ -4271,9 +3593,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowCaseDetailRequest, ShowCaseDetailResponse> showCaseDetail =
-        genForshowCaseDetail();
+        genForShowCaseDetail();
 
-    private static HttpRequestDef<ShowCaseDetailRequest, ShowCaseDetailResponse> genForshowCaseDetail() {
+    private static HttpRequestDef<ShowCaseDetailRequest, ShowCaseDetailResponse> genForShowCaseDetail() {
         // basic
         HttpRequestDef.Builder<ShowCaseDetailRequest, ShowCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseDetailRequest.class, ShowCaseDetailResponse.class)
@@ -4286,37 +3608,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseDetailRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseDetailRequest::getCaseId, ShowCaseDetailRequest::setCaseId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseDetailRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseDetailRequest::getGroupId, ShowCaseDetailRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCaseDetailRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXSite, ShowCaseDetailRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXLanguage, ShowCaseDetailRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseDetailRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXTimeZone, ShowCaseDetailRequest::setXTimeZone));
 
         // response
 
@@ -4324,9 +3636,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> showCaseExtendsParam =
-        genForshowCaseExtendsParam();
+        genForShowCaseExtendsParam();
 
-    private static HttpRequestDef<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> genForshowCaseExtendsParam() {
+    private static HttpRequestDef<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> genForShowCaseExtendsParam() {
         // basic
         HttpRequestDef.Builder<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowCaseExtendsParamRequest.class, ShowCaseExtendsParamResponse.class)
@@ -4339,37 +3651,29 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getCaseId, ShowCaseExtendsParamRequest::setCaseId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getGroupId, ShowCaseExtendsParamRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXSite, ShowCaseExtendsParamRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXLanguage,
+                ShowCaseExtendsParamRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowCaseExtendsParamRequest::getXTimeZone,
+                ShowCaseExtendsParamRequest::setXTimeZone));
 
         // response
 
@@ -4377,9 +3681,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowCaseStatusRequest, ShowCaseStatusResponse> showCaseStatus =
-        genForshowCaseStatus();
+        genForShowCaseStatus();
 
-    private static HttpRequestDef<ShowCaseStatusRequest, ShowCaseStatusResponse> genForshowCaseStatus() {
+    private static HttpRequestDef<ShowCaseStatusRequest, ShowCaseStatusResponse> genForShowCaseStatus() {
         // basic
         HttpRequestDef.Builder<ShowCaseStatusRequest, ShowCaseStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseStatusRequest.class, ShowCaseStatusResponse.class)
@@ -4392,30 +3696,22 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseStatusRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(ShowCaseStatusRequest::getCaseId, ShowCaseStatusRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCaseStatusRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowCaseStatusRequest::getXSite, ShowCaseStatusRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCaseStatusRequest::getXLanguage, ShowCaseStatusRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCaseStatusRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowCaseStatusRequest::getXTimeZone, ShowCaseStatusRequest::setXTimeZone));
 
         // response
 
@@ -4423,9 +3719,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowConfigurationRequest, ShowConfigurationResponse> showConfiguration =
-        genForshowConfiguration();
+        genForShowConfiguration();
 
-    private static HttpRequestDef<ShowConfigurationRequest, ShowConfigurationResponse> genForshowConfiguration() {
+    private static HttpRequestDef<ShowConfigurationRequest, ShowConfigurationResponse> genForShowConfiguration() {
         // basic
         HttpRequestDef.Builder<ShowConfigurationRequest, ShowConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigurationRequest.class, ShowConfigurationResponse.class)
@@ -4438,9 +3734,7 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConfigurationRequest::getConfigKey, (req, v) -> {
-                req.setConfigKey(v);
-            }));
+            f -> f.withMarshaller(ShowConfigurationRequest::getConfigKey, ShowConfigurationRequest::setConfigKey));
 
         // response
 
@@ -4448,9 +3742,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicy =
-        genForshowCustomerPrivilegePolicy();
+        genForShowCustomerPrivilegePolicy();
 
-    private static HttpRequestDef<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> genForshowCustomerPrivilegePolicy() {
+    private static HttpRequestDef<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> genForShowCustomerPrivilegePolicy() {
         // basic
         HttpRequestDef.Builder<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> builder =
             HttpRequestDef
@@ -4466,23 +3760,20 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXSite,
+                ShowCustomerPrivilegePolicyRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXLanguage,
+                ShowCustomerPrivilegePolicyRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowCustomerPrivilegePolicyRequest::getXTimeZone,
+                ShowCustomerPrivilegePolicyRequest::setXTimeZone));
 
         // response
 
@@ -4490,9 +3781,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> showDownloadAccessoryUrl =
-        genForshowDownloadAccessoryUrl();
+        genForShowDownloadAccessoryUrl();
 
-    private static HttpRequestDef<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> genForshowDownloadAccessoryUrl() {
+    private static HttpRequestDef<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> genForShowDownloadAccessoryUrl() {
         // basic
         HttpRequestDef.Builder<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> builder =
             HttpRequestDef
@@ -4506,30 +3797,26 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getAccessoryId, (req, v) -> {
-                req.setAccessoryId(v);
-            }));
+            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getAccessoryId,
+                ShowDownloadAccessoryUrlRequest::setAccessoryId));
         builder.<ShowDownloadAccessoryUrlRequest.RelationTypeEnum>withRequestField("relation_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDownloadAccessoryUrlRequest.RelationTypeEnum.class),
-            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getRelationType, (req, v) -> {
-                req.setRelationType(v);
-            }));
+            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getRelationType,
+                ShowDownloadAccessoryUrlRequest::setRelationType));
         builder.<String>withRequestField("relation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getRelationId, (req, v) -> {
-                req.setRelationId(v);
-            }));
+            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getRelationId,
+                ShowDownloadAccessoryUrlRequest::setRelationId));
         builder.<String>withRequestField("incident_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getIncidentId, (req, v) -> {
-                req.setIncidentId(v);
-            }));
+            f -> f.withMarshaller(ShowDownloadAccessoryUrlRequest::getIncidentId,
+                ShowDownloadAccessoryUrlRequest::setIncidentId));
 
         // response
 
@@ -4537,9 +3824,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> showLatestPublishedAgreement =
-        genForshowLatestPublishedAgreement();
+        genForShowLatestPublishedAgreement();
 
-    private static HttpRequestDef<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> genForshowLatestPublishedAgreement() {
+    private static HttpRequestDef<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> genForShowLatestPublishedAgreement() {
         // basic
         HttpRequestDef.Builder<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse> builder =
             HttpRequestDef
@@ -4555,30 +3842,26 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getAgreementType, (req, v) -> {
-                req.setAgreementType(v);
-            }));
+            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getAgreementType,
+                ShowLatestPublishedAgreementRequest::setAgreementType));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXSite,
+                ShowLatestPublishedAgreementRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXLanguage,
+                ShowLatestPublishedAgreementRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXTimeZone,
+                ShowLatestPublishedAgreementRequest::setXTimeZone));
 
         // response
 
@@ -4586,9 +3869,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowLoginTypeRequest, ShowLoginTypeResponse> showLoginType =
-        genForshowLoginType();
+        genForShowLoginType();
 
-    private static HttpRequestDef<ShowLoginTypeRequest, ShowLoginTypeResponse> genForshowLoginType() {
+    private static HttpRequestDef<ShowLoginTypeRequest, ShowLoginTypeResponse> genForShowLoginType() {
         // basic
         HttpRequestDef.Builder<ShowLoginTypeRequest, ShowLoginTypeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLoginTypeRequest.class, ShowLoginTypeResponse.class)
@@ -4601,16 +3884,12 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLoginTypeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowLoginTypeRequest::getXLanguage, ShowLoginTypeRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLoginTypeRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowLoginTypeRequest::getXTimeZone, ShowLoginTypeRequest::setXTimeZone));
 
         // response
 
@@ -4618,9 +3897,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> showPartnersCasesPrivilege =
-        genForshowPartnersCasesPrivilege();
+        genForShowPartnersCasesPrivilege();
 
-    private static HttpRequestDef<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> genForshowPartnersCasesPrivilege() {
+    private static HttpRequestDef<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> genForShowPartnersCasesPrivilege() {
         // basic
         HttpRequestDef.Builder<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> builder =
             HttpRequestDef
@@ -4636,23 +3915,20 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXSite,
+                ShowPartnersCasesPrivilegeRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXLanguage,
+                ShowPartnersCasesPrivilegeRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXTimeZone,
+                ShowPartnersCasesPrivilegeRequest::setXTimeZone));
 
         // response
 
@@ -4660,9 +3936,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> showPartnersServiceInfo =
-        genForshowPartnersServiceInfo();
+        genForShowPartnersServiceInfo();
 
-    private static HttpRequestDef<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> genForshowPartnersServiceInfo() {
+    private static HttpRequestDef<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> genForShowPartnersServiceInfo() {
         // basic
         HttpRequestDef.Builder<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowPartnersServiceInfoRequest.class, ShowPartnersServiceInfoResponse.class)
@@ -4675,37 +3951,31 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getCaseSubTypeId, (req, v) -> {
-                req.setCaseSubTypeId(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getCaseSubTypeId,
+                ShowPartnersServiceInfoRequest::setCaseSubTypeId));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getProductId,
+                ShowPartnersServiceInfoRequest::setProductId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXSite, ShowPartnersServiceInfoRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXLanguage,
+                ShowPartnersServiceInfoRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowPartnersServiceInfoRequest::getXTimeZone,
+                ShowPartnersServiceInfoRequest::setXTimeZone));
 
         // response
 
@@ -4713,9 +3983,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowQaPairDetailRequest, ShowQaPairDetailResponse> showQaPairDetail =
-        genForshowQaPairDetail();
+        genForShowQaPairDetail();
 
-    private static HttpRequestDef<ShowQaPairDetailRequest, ShowQaPairDetailResponse> genForshowQaPairDetail() {
+    private static HttpRequestDef<ShowQaPairDetailRequest, ShowQaPairDetailResponse> genForShowQaPairDetail() {
         // basic
         HttpRequestDef.Builder<ShowQaPairDetailRequest, ShowQaPairDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQaPairDetailRequest.class, ShowQaPairDetailResponse.class)
@@ -4728,39 +3998,31 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getQaPairId, (req, v) -> {
-                req.setQaPairId(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairDetailRequest::getQaPairId, ShowQaPairDetailRequest::setQaPairId));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairDetailRequest::getXServiceKey, ShowQaPairDetailRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairDetailRequest::getXSite, ShowQaPairDetailRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairDetailRequest::getXLanguage, ShowQaPairDetailRequest::setXLanguage));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> showQaPairs = genForshowQaPairs();
+    public static final HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> showQaPairs = genForShowQaPairs();
 
-    private static HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> genForshowQaPairs() {
+    private static HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> genForShowQaPairs() {
         // basic
         HttpRequestDef.Builder<ShowQaPairsRequest, ShowQaPairsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowQaPairsRequest.class, ShowQaPairsResponse.class)
@@ -4773,37 +4035,27 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowQaPairsRequest.SearchTypeEnum.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getSearchType, (req, v) -> {
-                req.setSearchType(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairsRequest::getSearchType, ShowQaPairsRequest::setSearchType));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairsRequest::getXServiceKey, ShowQaPairsRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairsRequest::getXSite, ShowQaPairsRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairsRequest::getXLanguage, ShowQaPairsRequest::setXLanguage));
         builder.<SearchQaPairsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchQaPairsReq.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ShowQaPairsRequest::getBody, ShowQaPairsRequest::setBody));
 
         // response
 
@@ -4811,9 +4063,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreement =
-        genForshowSignedLatestPublishedAgreement();
+        genForShowSignedLatestPublishedAgreement();
 
-    private static HttpRequestDef<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> genForshowSignedLatestPublishedAgreement() {
+    private static HttpRequestDef<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> genForShowSignedLatestPublishedAgreement() {
         // basic
         HttpRequestDef.Builder<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> builder =
             HttpRequestDef
@@ -4829,39 +4081,35 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getAgreementType, (req, v) -> {
-                req.setAgreementType(v);
-            }));
+            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getAgreementType,
+                ShowSignedLatestPublishedAgreementRequest::setAgreementType));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXSite,
+                ShowSignedLatestPublishedAgreementRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXLanguage,
+                ShowSignedLatestPublishedAgreementRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXTimeZone,
+                ShowSignedLatestPublishedAgreementRequest::setXTimeZone));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowThemeRequest, ShowThemeResponse> showTheme = genForshowTheme();
+    public static final HttpRequestDef<ShowThemeRequest, ShowThemeResponse> showTheme = genForShowTheme();
 
-    private static HttpRequestDef<ShowThemeRequest, ShowThemeResponse> genForshowTheme() {
+    private static HttpRequestDef<ShowThemeRequest, ShowThemeResponse> genForShowTheme() {
         // basic
         HttpRequestDef.Builder<ShowThemeRequest, ShowThemeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowThemeRequest.class, ShowThemeResponse.class)
@@ -4874,44 +4122,33 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeId, (req, v) -> {
-                req.setProductTypeId(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getProductTypeId, ShowThemeRequest::setProductTypeId));
         builder.<String>withRequestField("product_type_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeName, (req, v) -> {
-                req.setProductTypeName(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getProductTypeName, ShowThemeRequest::setProductTypeName));
         builder.<String>withRequestField("product_type_short_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeShortName, (req, v) -> {
-                req.setProductTypeShortName(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getProductTypeShortName,
+                ShowThemeRequest::setProductTypeShortName));
         builder.<String>withRequestField("x-service-key",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXServiceKey, (req, v) -> {
-                req.setXServiceKey(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getXServiceKey, ShowThemeRequest::setXServiceKey));
         builder.<String>withRequestField("x-site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getXSite, ShowThemeRequest::setXSite));
         builder.<String>withRequestField("x-language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(ShowThemeRequest::getXLanguage, ShowThemeRequest::setXLanguage));
 
         // response
 
@@ -4919,9 +4156,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<SignPublishedAgreementRequest, SignPublishedAgreementResponse> signPublishedAgreement =
-        genForsignPublishedAgreement();
+        genForSignPublishedAgreement();
 
-    private static HttpRequestDef<SignPublishedAgreementRequest, SignPublishedAgreementResponse> genForsignPublishedAgreement() {
+    private static HttpRequestDef<SignPublishedAgreementRequest, SignPublishedAgreementResponse> genForSignPublishedAgreement() {
         // basic
         HttpRequestDef.Builder<SignPublishedAgreementRequest, SignPublishedAgreementResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, SignPublishedAgreementRequest.class, SignPublishedAgreementResponse.class)
@@ -4934,37 +4171,29 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SignPublishedAgreementRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
+            f -> f.withMarshaller(SignPublishedAgreementRequest::getId, SignPublishedAgreementRequest::setId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(SignPublishedAgreementRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(SignPublishedAgreementRequest::getXSite, SignPublishedAgreementRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SignPublishedAgreementRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(SignPublishedAgreementRequest::getXLanguage,
+                SignPublishedAgreementRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SignPublishedAgreementRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(SignPublishedAgreementRequest::getXTimeZone,
+                SignPublishedAgreementRequest::setXTimeZone));
         builder.<SignAgreementReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SignAgreementReq.class),
-            f -> f.withMarshaller(SignPublishedAgreementRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(SignPublishedAgreementRequest::getBody, SignPublishedAgreementRequest::setBody));
 
         // response
 
@@ -4972,9 +4201,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> updateAuthorizations =
-        genForupdateAuthorizations();
+        genForUpdateAuthorizations();
 
-    private static HttpRequestDef<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> genForupdateAuthorizations() {
+    private static HttpRequestDef<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> genForUpdateAuthorizations() {
         // basic
         HttpRequestDef.Builder<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateAuthorizationsRequest.class, UpdateAuthorizationsResponse.class)
@@ -4987,44 +4216,35 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getAuthorizationId, (req, v) -> {
-                req.setAuthorizationId(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getAuthorizationId,
+                UpdateAuthorizationsRequest::setAuthorizationId));
         builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getActionId, UpdateAuthorizationsRequest::setActionId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXSite, UpdateAuthorizationsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXLanguage,
+                UpdateAuthorizationsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getXTimeZone,
+                UpdateAuthorizationsRequest::setXTimeZone));
         builder.<OperateAuthorizationV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(OperateAuthorizationV2Req.class),
-            f -> f.withMarshaller(UpdateAuthorizationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateAuthorizationsRequest::getBody, UpdateAuthorizationsRequest::setBody));
 
         // response
 
@@ -5032,9 +4252,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> updateCaseContactInfo =
-        genForupdateCaseContactInfo();
+        genForUpdateCaseContactInfo();
 
-    private static HttpRequestDef<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> genForupdateCaseContactInfo() {
+    private static HttpRequestDef<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> genForUpdateCaseContactInfo() {
         // basic
         HttpRequestDef.Builder<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateCaseContactInfoRequest.class, UpdateCaseContactInfoResponse.class)
@@ -5047,46 +4267,38 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getCaseId, UpdateCaseContactInfoRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXSite, UpdateCaseContactInfoRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXLanguage,
+                UpdateCaseContactInfoRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getXTimeZone,
+                UpdateCaseContactInfoRequest::setXTimeZone));
         builder.<UpdateCaseContactInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCaseContactInfoReq.class),
-            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCaseContactInfoRequest::getBody, UpdateCaseContactInfoRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCasesRequest, UpdateCasesResponse> updateCases = genForupdateCases();
+    public static final HttpRequestDef<UpdateCasesRequest, UpdateCasesResponse> updateCases = genForUpdateCases();
 
-    private static HttpRequestDef<UpdateCasesRequest, UpdateCasesResponse> genForupdateCases() {
+    private static HttpRequestDef<UpdateCasesRequest, UpdateCasesResponse> genForUpdateCases() {
         // basic
         HttpRequestDef.Builder<UpdateCasesRequest, UpdateCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCasesRequest.class, UpdateCasesResponse.class)
@@ -5099,53 +4311,41 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getCaseId, UpdateCasesRequest::setCaseId));
         builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getActionId, (req, v) -> {
-                req.setActionId(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getActionId, UpdateCasesRequest::setActionId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getXSite, UpdateCasesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getXLanguage, UpdateCasesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getXTimeZone, UpdateCasesRequest::setXTimeZone));
         builder.<WorkOrderOperateV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(WorkOrderOperateV2Req.class),
-            f -> f.withMarshaller(UpdateCasesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCasesRequest::getBody, UpdateCasesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLabelsRequest, UpdateLabelsResponse> updateLabels = genForupdateLabels();
+    public static final HttpRequestDef<UpdateLabelsRequest, UpdateLabelsResponse> updateLabels = genForUpdateLabels();
 
-    private static HttpRequestDef<UpdateLabelsRequest, UpdateLabelsResponse> genForupdateLabels() {
+    private static HttpRequestDef<UpdateLabelsRequest, UpdateLabelsResponse> genForUpdateLabels() {
         // basic
         HttpRequestDef.Builder<UpdateLabelsRequest, UpdateLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLabelsRequest.class, UpdateLabelsResponse.class)
@@ -5158,37 +4358,27 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateLabelsRequest::getLabelId, (req, v) -> {
-                req.setLabelId(v);
-            }));
+            f -> f.withMarshaller(UpdateLabelsRequest::getLabelId, UpdateLabelsRequest::setLabelId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateLabelsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UpdateLabelsRequest::getXSite, UpdateLabelsRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLabelsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateLabelsRequest::getXLanguage, UpdateLabelsRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLabelsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UpdateLabelsRequest::getXTimeZone, UpdateLabelsRequest::setXTimeZone));
         builder.<UpdateLabelsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLabelsReq.class),
-            f -> f.withMarshaller(UpdateLabelsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateLabelsRequest::getBody, UpdateLabelsRequest::setBody));
 
         // response
 
@@ -5196,9 +4386,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> updateNewInstantMessagesRead =
-        genForupdateNewInstantMessagesRead();
+        genForUpdateNewInstantMessagesRead();
 
-    private static HttpRequestDef<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> genForupdateNewInstantMessagesRead() {
+    private static HttpRequestDef<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> genForUpdateNewInstantMessagesRead() {
         // basic
         HttpRequestDef.Builder<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> builder =
             HttpRequestDef
@@ -5214,37 +4404,32 @@ public class OsmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
+            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getCaseId,
+                UpdateNewInstantMessagesReadRequest::setCaseId));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXSite,
+                UpdateNewInstantMessagesReadRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXLanguage,
+                UpdateNewInstantMessagesReadRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getXTimeZone,
+                UpdateNewInstantMessagesReadRequest::setXTimeZone));
         builder.<UpdateUnreadNewInstantMsgV2Req>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateUnreadNewInstantMsgV2Req.class),
-            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getBody,
+                UpdateNewInstantMessagesReadRequest::setBody));
 
         // response
 
@@ -5252,9 +4437,9 @@ public class OsmMeta {
     }
 
     public static final HttpRequestDef<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> uploadJsonAccessories =
-        genForuploadJsonAccessories();
+        genForUploadJsonAccessories();
 
-    private static HttpRequestDef<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> genForuploadJsonAccessories() {
+    private static HttpRequestDef<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> genForUploadJsonAccessories() {
         // basic
         HttpRequestDef.Builder<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, UploadJsonAccessoriesRequest.class, UploadJsonAccessoriesResponse.class)
@@ -5267,30 +4452,24 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            }));
+            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXSite, UploadJsonAccessoriesRequest::setXSite));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
+            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXLanguage,
+                UploadJsonAccessoriesRequest::setXLanguage));
         builder.<String>withRequestField("X-Time-Zone",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            }));
+            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getXTimeZone,
+                UploadJsonAccessoriesRequest::setXTimeZone));
         builder.<AccessoryJsonFormatReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AccessoryJsonFormatReq.class),
-            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UploadJsonAccessoriesRequest::getBody, UploadJsonAccessoriesRequest::setBody));
 
         // response
 

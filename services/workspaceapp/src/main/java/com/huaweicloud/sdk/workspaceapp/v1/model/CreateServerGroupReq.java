@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建服务器组请求
+ * 创建服务器组请求。
  */
 public class CreateServerGroupReq {
 
@@ -117,7 +117,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 服务器组名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成，不能有空格 2. 长度范围1~64个字符
+     * 服务器组名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成，不能有空格。 2. 长度范围1~64个字符。
      * @return name
      */
     public String getName() {
@@ -134,7 +134,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 服务器组关联的镜像ID，用于创建对应组下的云服务器
+     * 服务器组关联的镜像ID，用于创建对应组下的云服务器。
      * @return imageId
      */
     public String getImageId() {
@@ -202,7 +202,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 服务器组描述
+     * 服务器组描述。
      * @return description
      */
     public String getDescription() {
@@ -262,7 +262,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 虚拟私有云ID
+     * 虚拟私有云ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -279,7 +279,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 网卡对应的子网ID
+     * 网卡对应的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -313,7 +313,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 磁盘容量，单位GB
+     * 磁盘容量，单位GB。
      * minimum: 10
      * maximum: 32768
      * @return systemDiskSize
@@ -332,7 +332,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 默认组织名称
+     * 默认组织名称。
      * @return ouName
      */
     public String getOuName() {
@@ -349,7 +349,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 云服务器系统盘对应的存储池的ID
+     * 云服务器系统盘对应的存储池的ID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -409,7 +409,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 是否为vdi单会话模式
+     * 是否为vdi单会话模式。
      * @return isVdi
      */
     public Boolean getIsVdi() {
@@ -460,7 +460,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 付费会话数，单位/个
+     * 付费会话数，单位/个。
      * minimum: 1
      * @return extraSessionSize
      */

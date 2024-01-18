@@ -49,7 +49,7 @@ public class ListManagedOrganizationalUnitsResponse extends SdkResponse {
     }
 
     /**
-     * 纳管的OU。
+     * 注册OU信息。
      * @return managedOrganizationUnits
      */
     public List<ManagedOrganizationUnit> getManagedOrganizationUnits() {

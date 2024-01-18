@@ -12,9 +12,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 public class CgsMeta {
 
     public static final HttpRequestDef<ListContainerNodesRequest, ListContainerNodesResponse> listContainerNodes =
-        genForlistContainerNodes();
+        genForListContainerNodes();
 
-    private static HttpRequestDef<ListContainerNodesRequest, ListContainerNodesResponse> genForlistContainerNodes() {
+    private static HttpRequestDef<ListContainerNodesRequest, ListContainerNodesResponse> genForListContainerNodes() {
         // basic
         HttpRequestDef.Builder<ListContainerNodesRequest, ListContainerNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListContainerNodesRequest.class, ListContainerNodesResponse.class)
@@ -27,30 +27,23 @@ public class CgsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListContainerNodesRequest::getHostName, (req, v) -> {
-                req.setHostName(v);
-            }));
+            f -> f.withMarshaller(ListContainerNodesRequest::getHostName, ListContainerNodesRequest::setHostName));
         builder.<String>withRequestField("agent_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListContainerNodesRequest::getAgentStatus, (req, v) -> {
-                req.setAgentStatus(v);
-            }));
+            f -> f.withMarshaller(ListContainerNodesRequest::getAgentStatus,
+                ListContainerNodesRequest::setAgentStatus));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListContainerNodesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListContainerNodesRequest::getLimit, ListContainerNodesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListContainerNodesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
+            f -> f.withMarshaller(ListContainerNodesRequest::getOffset, ListContainerNodesRequest::setOffset));
 
         // response
 

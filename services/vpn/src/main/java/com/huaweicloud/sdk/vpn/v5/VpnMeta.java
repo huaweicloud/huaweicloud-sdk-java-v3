@@ -5,12 +5,19 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CreateResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwRequest;
@@ -23,6 +30,7 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionRequest;
@@ -33,16 +41,23 @@ import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.QueryResourcesRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ShowCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowConnectionMonitorResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowQuotasInfoRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowQuotasInfoResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionRequest;
@@ -68,9 +83,9 @@ import java.util.List;
 public class VpnMeta {
 
     public static final HttpRequestDef<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse> createConnectionMonitor =
-        genForcreateConnectionMonitor();
+        genForCreateConnectionMonitor();
 
-    private static HttpRequestDef<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse> genForcreateConnectionMonitor() {
+    private static HttpRequestDef<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse> genForCreateConnectionMonitor() {
         // basic
         HttpRequestDef.Builder<CreateConnectionMonitorRequest, CreateConnectionMonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateConnectionMonitorRequest.class, CreateConnectionMonitorResponse.class)
@@ -83,9 +98,7 @@ public class VpnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConnectionMonitorRequestBody.class),
-            f -> f.withMarshaller(CreateConnectionMonitorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateConnectionMonitorRequest::getBody, CreateConnectionMonitorRequest::setBody));
 
         // response
 
@@ -99,9 +112,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse> deleteConnectionMonitor =
-        genFordeleteConnectionMonitor();
+        genForDeleteConnectionMonitor();
 
-    private static HttpRequestDef<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse> genFordeleteConnectionMonitor() {
+    private static HttpRequestDef<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse> genForDeleteConnectionMonitor() {
         // basic
         HttpRequestDef.Builder<DeleteConnectionMonitorRequest, DeleteConnectionMonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteConnectionMonitorRequest.class, DeleteConnectionMonitorResponse.class)
@@ -114,9 +127,8 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectionMonitorRequest::getConnectionMonitorId, (req, v) -> {
-                req.setConnectionMonitorId(v);
-            }));
+            f -> f.withMarshaller(DeleteConnectionMonitorRequest::getConnectionMonitorId,
+                DeleteConnectionMonitorRequest::setConnectionMonitorId));
 
         // response
 
@@ -124,9 +136,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse> listConnectionMonitors =
-        genForlistConnectionMonitors();
+        genForListConnectionMonitors();
 
-    private static HttpRequestDef<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse> genForlistConnectionMonitors() {
+    private static HttpRequestDef<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse> genForListConnectionMonitors() {
         // basic
         HttpRequestDef.Builder<ListConnectionMonitorsRequest, ListConnectionMonitorsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListConnectionMonitorsRequest.class, ListConnectionMonitorsResponse.class)
@@ -139,16 +151,14 @@ public class VpnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionMonitorsRequest::getVpnConnectionId, (req, v) -> {
-                req.setVpnConnectionId(v);
-            }));
+            f -> f.withMarshaller(ListConnectionMonitorsRequest::getVpnConnectionId,
+                ListConnectionMonitorsRequest::setVpnConnectionId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListConnectionMonitorsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListConnectionMonitorsRequest::getEnterpriseProjectId,
+                ListConnectionMonitorsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -156,9 +166,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse> showConnectionMonitor =
-        genForshowConnectionMonitor();
+        genForShowConnectionMonitor();
 
-    private static HttpRequestDef<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse> genForshowConnectionMonitor() {
+    private static HttpRequestDef<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse> genForShowConnectionMonitor() {
         // basic
         HttpRequestDef.Builder<ShowConnectionMonitorRequest, ShowConnectionMonitorResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowConnectionMonitorRequest.class, ShowConnectionMonitorResponse.class)
@@ -171,18 +181,17 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectionMonitorRequest::getConnectionMonitorId, (req, v) -> {
-                req.setConnectionMonitorId(v);
-            }));
+            f -> f.withMarshaller(ShowConnectionMonitorRequest::getConnectionMonitorId,
+                ShowConnectionMonitorRequest::setConnectionMonitorId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCgwRequest, CreateCgwResponse> createCgw = genForcreateCgw();
+    public static final HttpRequestDef<CreateCgwRequest, CreateCgwResponse> createCgw = genForCreateCgw();
 
-    private static HttpRequestDef<CreateCgwRequest, CreateCgwResponse> genForcreateCgw() {
+    private static HttpRequestDef<CreateCgwRequest, CreateCgwResponse> genForCreateCgw() {
         // basic
         HttpRequestDef.Builder<CreateCgwRequest, CreateCgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCgwRequest.class, CreateCgwResponse.class)
@@ -195,9 +204,7 @@ public class VpnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCgwRequestBody.class),
-            f -> f.withMarshaller(CreateCgwRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateCgwRequest::getBody, CreateCgwRequest::setBody));
 
         // response
 
@@ -210,9 +217,9 @@ public class VpnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCgwRequest, DeleteCgwResponse> deleteCgw = genFordeleteCgw();
+    public static final HttpRequestDef<DeleteCgwRequest, DeleteCgwResponse> deleteCgw = genForDeleteCgw();
 
-    private static HttpRequestDef<DeleteCgwRequest, DeleteCgwResponse> genFordeleteCgw() {
+    private static HttpRequestDef<DeleteCgwRequest, DeleteCgwResponse> genForDeleteCgw() {
         // basic
         HttpRequestDef.Builder<DeleteCgwRequest, DeleteCgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCgwRequest.class, DeleteCgwResponse.class)
@@ -225,18 +232,16 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCgwRequest::getCustomerGatewayId, (req, v) -> {
-                req.setCustomerGatewayId(v);
-            }));
+            f -> f.withMarshaller(DeleteCgwRequest::getCustomerGatewayId, DeleteCgwRequest::setCustomerGatewayId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCgwsRequest, ListCgwsResponse> listCgws = genForlistCgws();
+    public static final HttpRequestDef<ListCgwsRequest, ListCgwsResponse> listCgws = genForListCgws();
 
-    private static HttpRequestDef<ListCgwsRequest, ListCgwsResponse> genForlistCgws() {
+    private static HttpRequestDef<ListCgwsRequest, ListCgwsResponse> genForListCgws() {
         // basic
         HttpRequestDef.Builder<ListCgwsRequest, ListCgwsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCgwsRequest.class, ListCgwsResponse.class)
@@ -249,32 +254,26 @@ public class VpnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCgwsRequest::getCgwId, (req, v) -> {
-                req.setCgwId(v);
-            }));
+            f -> f.withMarshaller(ListCgwsRequest::getCgwId, ListCgwsRequest::setCgwId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCgwsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListCgwsRequest::getLimit, ListCgwsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCgwsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListCgwsRequest::getMarker, ListCgwsRequest::setMarker));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCgwRequest, ShowCgwResponse> showCgw = genForshowCgw();
+    public static final HttpRequestDef<ShowCgwRequest, ShowCgwResponse> showCgw = genForShowCgw();
 
-    private static HttpRequestDef<ShowCgwRequest, ShowCgwResponse> genForshowCgw() {
+    private static HttpRequestDef<ShowCgwRequest, ShowCgwResponse> genForShowCgw() {
         // basic
         HttpRequestDef.Builder<ShowCgwRequest, ShowCgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCgwRequest.class, ShowCgwResponse.class)
@@ -287,18 +286,16 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCgwRequest::getCustomerGatewayId, (req, v) -> {
-                req.setCustomerGatewayId(v);
-            }));
+            f -> f.withMarshaller(ShowCgwRequest::getCustomerGatewayId, ShowCgwRequest::setCustomerGatewayId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCgwRequest, UpdateCgwResponse> updateCgw = genForupdateCgw();
+    public static final HttpRequestDef<UpdateCgwRequest, UpdateCgwResponse> updateCgw = genForUpdateCgw();
 
-    private static HttpRequestDef<UpdateCgwRequest, UpdateCgwResponse> genForupdateCgw() {
+    private static HttpRequestDef<UpdateCgwRequest, UpdateCgwResponse> genForUpdateCgw() {
         // basic
         HttpRequestDef.Builder<UpdateCgwRequest, UpdateCgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCgwRequest.class, UpdateCgwResponse.class)
@@ -311,16 +308,201 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCgwRequest::getCustomerGatewayId, (req, v) -> {
-                req.setCustomerGatewayId(v);
-            }));
+            f -> f.withMarshaller(UpdateCgwRequest::getCustomerGatewayId, UpdateCgwRequest::setCustomerGatewayId));
         builder.<UpdateCgwRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCgwRequestBody.class),
-            f -> f.withMarshaller(UpdateCgwRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateCgwRequest::getBody, UpdateCgwRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
+        genForBatchCreateResourceTags();
+
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForBatchCreateResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
+            .withName("BatchCreateResourceTags")
+            .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType,
+                BatchCreateResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId,
+                BatchCreateResourceTagsRequest::setResourceId));
+        builder.<CreateResourcesTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResourcesTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTags =
+        genForBatchDeleteResourceTags();
+
+    private static HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> genForBatchDeleteResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteResourceTagsRequest.class, BatchDeleteResourceTagsResponse.class)
+            .withName("BatchDeleteResourceTags")
+            .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceType,
+                BatchDeleteResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceId,
+                BatchDeleteResourceTagsRequest::setResourceId));
+        builder.<DeleteResourcesTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteResourcesTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getBody, BatchDeleteResourceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountResourcesByTagsRequest, CountResourcesByTagsResponse> countResourcesByTags =
+        genForCountResourcesByTags();
+
+    private static HttpRequestDef<CountResourcesByTagsRequest, CountResourcesByTagsResponse> genForCountResourcesByTags() {
+        // basic
+        HttpRequestDef.Builder<CountResourcesByTagsRequest, CountResourcesByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CountResourcesByTagsRequest.class, CountResourcesByTagsResponse.class)
+            .withName("CountResourcesByTags")
+            .withUri("/v5/{project_id}/{resource_type}/resource-instances/count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CountResourcesByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CountResourcesByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(CountResourcesByTagsRequest::getResourceType,
+                CountResourcesByTagsRequest::setResourceType));
+        builder.<QueryResourcesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryResourcesRequestBody.class),
+            f -> f.withMarshaller(CountResourcesByTagsRequest::getBody, CountResourcesByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForListProjectTags();
+
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForListProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
+                .withUri("/v5/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListProjectTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTags =
+        genForListResourcesByTags();
+
+    private static HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> genForListResourcesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourcesByTagsRequest, ListResourcesByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagsRequest.class, ListResourcesByTagsResponse.class)
+                .withName("ListResourcesByTags")
+                .withUri("/v5/{project_id}/{resource_type}/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourcesByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getResourceType,
+                ListResourcesByTagsRequest::setResourceType));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getLimit, ListResourcesByTagsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getOffset, ListResourcesByTagsRequest::setOffset));
+        builder.<QueryResourcesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryResourcesRequestBody.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, ListResourcesByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
+        genForShowResourceTags();
+
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
+                .withName("ShowResourceTags")
+                .withUri("/v5/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
 
         // response
 
@@ -328,9 +510,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<CreateVpnConnectionRequest, CreateVpnConnectionResponse> createVpnConnection =
-        genForcreateVpnConnection();
+        genForCreateVpnConnection();
 
-    private static HttpRequestDef<CreateVpnConnectionRequest, CreateVpnConnectionResponse> genForcreateVpnConnection() {
+    private static HttpRequestDef<CreateVpnConnectionRequest, CreateVpnConnectionResponse> genForCreateVpnConnection() {
         // basic
         HttpRequestDef.Builder<CreateVpnConnectionRequest, CreateVpnConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpnConnectionRequest.class, CreateVpnConnectionResponse.class)
@@ -343,9 +525,7 @@ public class VpnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVpnConnectionRequestBody.class),
-            f -> f.withMarshaller(CreateVpnConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVpnConnectionRequest::getBody, CreateVpnConnectionRequest::setBody));
 
         // response
 
@@ -359,9 +539,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse> deleteVpnConnection =
-        genFordeleteVpnConnection();
+        genForDeleteVpnConnection();
 
-    private static HttpRequestDef<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse> genFordeleteVpnConnection() {
+    private static HttpRequestDef<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse> genForDeleteVpnConnection() {
         // basic
         HttpRequestDef.Builder<DeleteVpnConnectionRequest, DeleteVpnConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteVpnConnectionRequest.class, DeleteVpnConnectionResponse.class)
@@ -374,9 +554,8 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVpnConnectionRequest::getVpnConnectionId, (req, v) -> {
-                req.setVpnConnectionId(v);
-            }));
+            f -> f.withMarshaller(DeleteVpnConnectionRequest::getVpnConnectionId,
+                DeleteVpnConnectionRequest::setVpnConnectionId));
 
         // response
 
@@ -384,9 +563,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ListVpnConnectionsRequest, ListVpnConnectionsResponse> listVpnConnections =
-        genForlistVpnConnections();
+        genForListVpnConnections();
 
-    private static HttpRequestDef<ListVpnConnectionsRequest, ListVpnConnectionsResponse> genForlistVpnConnections() {
+    private static HttpRequestDef<ListVpnConnectionsRequest, ListVpnConnectionsResponse> genForListVpnConnections() {
         // basic
         HttpRequestDef.Builder<ListVpnConnectionsRequest, ListVpnConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpnConnectionsRequest.class, ListVpnConnectionsResponse.class)
@@ -399,51 +578,38 @@ public class VpnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getVpnId, (req, v) -> {
-                req.setVpnId(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getVpnId, ListVpnConnectionsRequest::setVpnId));
         builder.<String>withRequestField("eip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getEipId, (req, v) -> {
-                req.setEipId(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getEipId, ListVpnConnectionsRequest::setEipId));
         builder.<String>withRequestField("vgw_ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getVgwIp, (req, v) -> {
-                req.setVgwIp(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getVgwIp, ListVpnConnectionsRequest::setVgwIp));
         builder.<String>withRequestField("vgw_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getVgwId, ListVpnConnectionsRequest::setVgwId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getEnterpriseProjectId,
+                ListVpnConnectionsRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getLimit, ListVpnConnectionsRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVpnConnectionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
+            f -> f.withMarshaller(ListVpnConnectionsRequest::getMarker, ListVpnConnectionsRequest::setMarker));
 
         // response
 
@@ -457,9 +623,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ShowVpnConnectionRequest, ShowVpnConnectionResponse> showVpnConnection =
-        genForshowVpnConnection();
+        genForShowVpnConnection();
 
-    private static HttpRequestDef<ShowVpnConnectionRequest, ShowVpnConnectionResponse> genForshowVpnConnection() {
+    private static HttpRequestDef<ShowVpnConnectionRequest, ShowVpnConnectionResponse> genForShowVpnConnection() {
         // basic
         HttpRequestDef.Builder<ShowVpnConnectionRequest, ShowVpnConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpnConnectionRequest.class, ShowVpnConnectionResponse.class)
@@ -472,9 +638,8 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVpnConnectionRequest::getVpnConnectionId, (req, v) -> {
-                req.setVpnConnectionId(v);
-            }));
+            f -> f.withMarshaller(ShowVpnConnectionRequest::getVpnConnectionId,
+                ShowVpnConnectionRequest::setVpnConnectionId));
 
         // response
 
@@ -488,9 +653,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> updateVpnConnection =
-        genForupdateVpnConnection();
+        genForUpdateVpnConnection();
 
-    private static HttpRequestDef<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> genForupdateVpnConnection() {
+    private static HttpRequestDef<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> genForUpdateVpnConnection() {
         // basic
         HttpRequestDef.Builder<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpnConnectionRequest.class, UpdateVpnConnectionResponse.class)
@@ -503,16 +668,13 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVpnConnectionRequest::getVpnConnectionId, (req, v) -> {
-                req.setVpnConnectionId(v);
-            }));
+            f -> f.withMarshaller(UpdateVpnConnectionRequest::getVpnConnectionId,
+                UpdateVpnConnectionRequest::setVpnConnectionId));
         builder.<UpdateVpnConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVpnConnectionRequestBody.class),
-            f -> f.withMarshaller(UpdateVpnConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVpnConnectionRequest::getBody, UpdateVpnConnectionRequest::setBody));
 
         // response
 
@@ -525,9 +687,9 @@ public class VpnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVgwRequest, CreateVgwResponse> createVgw = genForcreateVgw();
+    public static final HttpRequestDef<CreateVgwRequest, CreateVgwResponse> createVgw = genForCreateVgw();
 
-    private static HttpRequestDef<CreateVgwRequest, CreateVgwResponse> genForcreateVgw() {
+    private static HttpRequestDef<CreateVgwRequest, CreateVgwResponse> genForCreateVgw() {
         // basic
         HttpRequestDef.Builder<CreateVgwRequest, CreateVgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVgwRequest.class, CreateVgwResponse.class)
@@ -540,9 +702,7 @@ public class VpnMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateVgwRequestBody.class),
-            f -> f.withMarshaller(CreateVgwRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVgwRequest::getBody, CreateVgwRequest::setBody));
 
         // response
 
@@ -555,9 +715,9 @@ public class VpnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVgwRequest, DeleteVgwResponse> deleteVgw = genFordeleteVgw();
+    public static final HttpRequestDef<DeleteVgwRequest, DeleteVgwResponse> deleteVgw = genForDeleteVgw();
 
-    private static HttpRequestDef<DeleteVgwRequest, DeleteVgwResponse> genFordeleteVgw() {
+    private static HttpRequestDef<DeleteVgwRequest, DeleteVgwResponse> genForDeleteVgw() {
         // basic
         HttpRequestDef.Builder<DeleteVgwRequest, DeleteVgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVgwRequest.class, DeleteVgwResponse.class)
@@ -570,9 +730,7 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteVgwRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(DeleteVgwRequest::getVgwId, DeleteVgwRequest::setVgwId));
 
         // response
 
@@ -580,9 +738,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones =
-        genForlistAvailabilityZones();
+        genForListAvailabilityZones();
 
-    private static HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> genForlistAvailabilityZones() {
+    private static HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> genForListAvailabilityZones() {
         // basic
         HttpRequestDef.Builder<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAvailabilityZonesRequest.class, ListAvailabilityZonesResponse.class)
@@ -597,9 +755,9 @@ public class VpnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVgwsRequest, ListVgwsResponse> listVgws = genForlistVgws();
+    public static final HttpRequestDef<ListVgwsRequest, ListVgwsResponse> listVgws = genForListVgws();
 
-    private static HttpRequestDef<ListVgwsRequest, ListVgwsResponse> genForlistVgws() {
+    private static HttpRequestDef<ListVgwsRequest, ListVgwsResponse> genForListVgws() {
         // basic
         HttpRequestDef.Builder<ListVgwsRequest, ListVgwsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVgwsRequest.class, ListVgwsResponse.class)
@@ -612,25 +770,21 @@ public class VpnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVgwsRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(ListVgwsRequest::getVgwId, ListVgwsRequest::setVgwId));
         builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListVgwsRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            }));
+            f -> f.withMarshaller(ListVgwsRequest::getEnterpriseProjectId, ListVgwsRequest::setEnterpriseProjectId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVgwRequest, ShowVgwResponse> showVgw = genForshowVgw();
+    public static final HttpRequestDef<ShowVgwRequest, ShowVgwResponse> showVgw = genForShowVgw();
 
-    private static HttpRequestDef<ShowVgwRequest, ShowVgwResponse> genForshowVgw() {
+    private static HttpRequestDef<ShowVgwRequest, ShowVgwResponse> genForShowVgw() {
         // basic
         HttpRequestDef.Builder<ShowVgwRequest, ShowVgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVgwRequest.class, ShowVgwResponse.class)
@@ -643,18 +797,16 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVgwRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(ShowVgwRequest::getVgwId, ShowVgwRequest::setVgwId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateVgwRequest, UpdateVgwResponse> updateVgw = genForupdateVgw();
+    public static final HttpRequestDef<UpdateVgwRequest, UpdateVgwResponse> updateVgw = genForUpdateVgw();
 
-    private static HttpRequestDef<UpdateVgwRequest, UpdateVgwResponse> genForupdateVgw() {
+    private static HttpRequestDef<UpdateVgwRequest, UpdateVgwResponse> genForUpdateVgw() {
         // basic
         HttpRequestDef.Builder<UpdateVgwRequest, UpdateVgwResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVgwRequest.class, UpdateVgwResponse.class)
@@ -667,16 +819,12 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVgwRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(UpdateVgwRequest::getVgwId, UpdateVgwRequest::setVgwId));
         builder.<UpdateVgwRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVgwRequestBody.class),
-            f -> f.withMarshaller(UpdateVgwRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVgwRequest::getBody, UpdateVgwRequest::setBody));
 
         // response
 
@@ -690,9 +838,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<CreateVgwCertificateRequest, CreateVgwCertificateResponse> createVgwCertificate =
-        genForcreateVgwCertificate();
+        genForCreateVgwCertificate();
 
-    private static HttpRequestDef<CreateVgwCertificateRequest, CreateVgwCertificateResponse> genForcreateVgwCertificate() {
+    private static HttpRequestDef<CreateVgwCertificateRequest, CreateVgwCertificateResponse> genForCreateVgwCertificate() {
         // basic
         HttpRequestDef.Builder<CreateVgwCertificateRequest, CreateVgwCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateVgwCertificateRequest.class, CreateVgwCertificateResponse.class)
@@ -705,16 +853,12 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVgwCertificateRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(CreateVgwCertificateRequest::getVgwId, CreateVgwCertificateRequest::setVgwId));
         builder.<VpnGatewayCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpnGatewayCertificateRequestBody.class),
-            f -> f.withMarshaller(CreateVgwCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateVgwCertificateRequest::getBody, CreateVgwCertificateRequest::setBody));
 
         // response
 
@@ -728,9 +872,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse> showVpnGatewayCertificate =
-        genForshowVpnGatewayCertificate();
+        genForShowVpnGatewayCertificate();
 
-    private static HttpRequestDef<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse> genForshowVpnGatewayCertificate() {
+    private static HttpRequestDef<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse> genForShowVpnGatewayCertificate() {
         // basic
         HttpRequestDef.Builder<ShowVpnGatewayCertificateRequest, ShowVpnGatewayCertificateResponse> builder =
             HttpRequestDef
@@ -746,9 +890,8 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVpnGatewayCertificateRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(ShowVpnGatewayCertificateRequest::getVgwId,
+                ShowVpnGatewayCertificateRequest::setVgwId));
 
         // response
 
@@ -756,9 +899,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse> updateVgwCertificate =
-        genForupdateVgwCertificate();
+        genForUpdateVgwCertificate();
 
-    private static HttpRequestDef<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse> genForupdateVgwCertificate() {
+    private static HttpRequestDef<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse> genForUpdateVgwCertificate() {
         // basic
         HttpRequestDef.Builder<UpdateVgwCertificateRequest, UpdateVgwCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateVgwCertificateRequest.class, UpdateVgwCertificateResponse.class)
@@ -771,23 +914,18 @@ public class VpnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVgwCertificateRequest::getVgwId, (req, v) -> {
-                req.setVgwId(v);
-            }));
+            f -> f.withMarshaller(UpdateVgwCertificateRequest::getVgwId, UpdateVgwCertificateRequest::setVgwId));
         builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateVgwCertificateRequest::getCertificateId, (req, v) -> {
-                req.setCertificateId(v);
-            }));
+            f -> f.withMarshaller(UpdateVgwCertificateRequest::getCertificateId,
+                UpdateVgwCertificateRequest::setCertificateId));
         builder.<VpnGatewayCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VpnGatewayCertificateRequestBody.class),
-            f -> f.withMarshaller(UpdateVgwCertificateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateVgwCertificateRequest::getBody, UpdateVgwCertificateRequest::setBody));
 
         // response
 
@@ -801,9 +939,9 @@ public class VpnMeta {
     }
 
     public static final HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> showQuotasInfo =
-        genForshowQuotasInfo();
+        genForShowQuotasInfo();
 
-    private static HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> genForshowQuotasInfo() {
+    private static HttpRequestDef<ShowQuotasInfoRequest, ShowQuotasInfoResponse> genForShowQuotasInfo() {
         // basic
         HttpRequestDef.Builder<ShowQuotasInfoRequest, ShowQuotasInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasInfoRequest.class, ShowQuotasInfoResponse.class)

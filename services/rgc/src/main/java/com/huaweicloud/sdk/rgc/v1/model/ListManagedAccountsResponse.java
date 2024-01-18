@@ -46,7 +46,7 @@ public class ListManagedAccountsResponse extends SdkResponse {
     }
 
     /**
-     * 纳管的Account。
+     * 纳管的账号信息。
      * @return managedAccounts
      */
     public List<ManagedAccount> getManagedAccounts() {

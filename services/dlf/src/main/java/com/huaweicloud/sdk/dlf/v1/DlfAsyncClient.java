@@ -103,7 +103,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScriptRequest 请求对象
+     * @param request CancelScriptRequest 请求对象
      * @return CompletableFuture<CancelScriptResponse>
      */
     public CompletableFuture<CancelScriptResponse> cancelScriptAsync(CancelScriptRequest request) {
@@ -116,12 +116,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CancelScriptRequest 请求对象
+     * @param request CancelScriptRequest 请求对象
      * @return AsyncInvoker<CancelScriptRequest, CancelScriptResponse>
      */
     public AsyncInvoker<CancelScriptRequest, CancelScriptResponse> cancelScriptAsyncInvoker(
         CancelScriptRequest request) {
-        return new AsyncInvoker<CancelScriptRequest, CancelScriptResponse>(request, DlfMeta.cancelScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.cancelScript, hcClient);
     }
 
     /**
@@ -130,7 +130,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return CompletableFuture<CreateConnectionResponse>
      */
     public CompletableFuture<CreateConnectionResponse> createConnectionAsync(CreateConnectionRequest request) {
@@ -143,13 +143,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateConnectionRequest 请求对象
+     * @param request CreateConnectionRequest 请求对象
      * @return AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
      */
     public AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionAsyncInvoker(
         CreateConnectionRequest request) {
-        return new AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, DlfMeta.createConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.createConnection, hcClient);
     }
 
     /**
@@ -158,7 +157,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return CompletableFuture<CreateJobResponse>
      */
     public CompletableFuture<CreateJobResponse> createJobAsync(CreateJobRequest request) {
@@ -171,11 +170,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateJobRequest 请求对象
+     * @param request CreateJobRequest 请求对象
      * @return AsyncInvoker<CreateJobRequest, CreateJobResponse>
      */
     public AsyncInvoker<CreateJobRequest, CreateJobResponse> createJobAsyncInvoker(CreateJobRequest request) {
-        return new AsyncInvoker<CreateJobRequest, CreateJobResponse>(request, DlfMeta.createJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.createJob, hcClient);
     }
 
     /**
@@ -184,7 +183,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceRequest 请求对象
+     * @param request CreateResourceRequest 请求对象
      * @return CompletableFuture<CreateResourceResponse>
      */
     public CompletableFuture<CreateResourceResponse> createResourceAsync(CreateResourceRequest request) {
@@ -197,13 +196,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateResourceRequest 请求对象
+     * @param request CreateResourceRequest 请求对象
      * @return AsyncInvoker<CreateResourceRequest, CreateResourceResponse>
      */
     public AsyncInvoker<CreateResourceRequest, CreateResourceResponse> createResourceAsyncInvoker(
         CreateResourceRequest request) {
-        return new AsyncInvoker<CreateResourceRequest, CreateResourceResponse>(request, DlfMeta.createResource,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.createResource, hcClient);
     }
 
     /**
@@ -212,7 +210,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScriptRequest 请求对象
+     * @param request CreateScriptRequest 请求对象
      * @return CompletableFuture<CreateScriptResponse>
      */
     public CompletableFuture<CreateScriptResponse> createScriptAsync(CreateScriptRequest request) {
@@ -225,12 +223,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateScriptRequest 请求对象
+     * @param request CreateScriptRequest 请求对象
      * @return AsyncInvoker<CreateScriptRequest, CreateScriptResponse>
      */
     public AsyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptAsyncInvoker(
         CreateScriptRequest request) {
-        return new AsyncInvoker<CreateScriptRequest, CreateScriptResponse>(request, DlfMeta.createScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.createScript, hcClient);
     }
 
     /**
@@ -239,7 +237,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnctionRequest 请求对象
+     * @param request DeleteConnctionRequest 请求对象
      * @return CompletableFuture<DeleteConnctionResponse>
      */
     public CompletableFuture<DeleteConnctionResponse> deleteConnctionAsync(DeleteConnctionRequest request) {
@@ -252,13 +250,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteConnctionRequest 请求对象
+     * @param request DeleteConnctionRequest 请求对象
      * @return AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
      */
     public AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnctionAsyncInvoker(
         DeleteConnctionRequest request) {
-        return new AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>(request, DlfMeta.deleteConnction,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.deleteConnction, hcClient);
     }
 
     /**
@@ -267,7 +264,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return CompletableFuture<DeleteJobResponse>
      */
     public CompletableFuture<DeleteJobResponse> deleteJobAsync(DeleteJobRequest request) {
@@ -280,11 +277,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteJobRequest 请求对象
+     * @param request DeleteJobRequest 请求对象
      * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public AsyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobAsyncInvoker(DeleteJobRequest request) {
-        return new AsyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, DlfMeta.deleteJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.deleteJob, hcClient);
     }
 
     /**
@@ -293,7 +290,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return CompletableFuture<DeleteResourceResponse>
      */
     public CompletableFuture<DeleteResourceResponse> deleteResourceAsync(DeleteResourceRequest request) {
@@ -306,13 +303,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteResourceRequest 请求对象
+     * @param request DeleteResourceRequest 请求对象
      * @return AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
     public AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceAsyncInvoker(
         DeleteResourceRequest request) {
-        return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DlfMeta.deleteResource,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.deleteResource, hcClient);
     }
 
     /**
@@ -321,7 +317,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScriptRequest 请求对象
+     * @param request DeleteScriptRequest 请求对象
      * @return CompletableFuture<DeleteScriptResponse>
      */
     public CompletableFuture<DeleteScriptResponse> deleteScriptAsync(DeleteScriptRequest request) {
@@ -334,12 +330,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteScriptRequest 请求对象
+     * @param request DeleteScriptRequest 请求对象
      * @return AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
      */
     public AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse> deleteScriptAsyncInvoker(
         DeleteScriptRequest request) {
-        return new AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse>(request, DlfMeta.deleteScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.deleteScript, hcClient);
     }
 
     /**
@@ -348,7 +344,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScriptRequest 请求对象
+     * @param request ExecuteScriptRequest 请求对象
      * @return CompletableFuture<ExecuteScriptResponse>
      */
     public CompletableFuture<ExecuteScriptResponse> executeScriptAsync(ExecuteScriptRequest request) {
@@ -361,12 +357,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExecuteScriptRequest 请求对象
+     * @param request ExecuteScriptRequest 请求对象
      * @return AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>
      */
     public AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse> executeScriptAsyncInvoker(
         ExecuteScriptRequest request) {
-        return new AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>(request, DlfMeta.executeScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.executeScript, hcClient);
     }
 
     /**
@@ -375,7 +371,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportConnectionsRequest 请求对象
+     * @param request ExportConnectionsRequest 请求对象
      * @return CompletableFuture<ExportConnectionsResponse>
      */
     public CompletableFuture<ExportConnectionsResponse> exportConnectionsAsync(ExportConnectionsRequest request) {
@@ -388,13 +384,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportConnectionsRequest 请求对象
+     * @param request ExportConnectionsRequest 请求对象
      * @return AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
      */
     public AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> exportConnectionsAsyncInvoker(
         ExportConnectionsRequest request) {
-        return new AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>(request, DlfMeta.exportConnections,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.exportConnections, hcClient);
     }
 
     /**
@@ -403,7 +398,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobRequest 请求对象
+     * @param request ExportJobRequest 请求对象
      * @return CompletableFuture<ExportJobResponse>
      */
     public CompletableFuture<ExportJobResponse> exportJobAsync(ExportJobRequest request) {
@@ -416,11 +411,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobRequest 请求对象
+     * @param request ExportJobRequest 请求对象
      * @return AsyncInvoker<ExportJobRequest, ExportJobResponse>
      */
     public AsyncInvoker<ExportJobRequest, ExportJobResponse> exportJobAsyncInvoker(ExportJobRequest request) {
-        return new AsyncInvoker<ExportJobRequest, ExportJobResponse>(request, DlfMeta.exportJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.exportJob, hcClient);
     }
 
     /**
@@ -429,7 +424,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobListRequest 请求对象
+     * @param request ExportJobListRequest 请求对象
      * @return CompletableFuture<ExportJobListResponse>
      */
     public CompletableFuture<ExportJobListResponse> exportJobListAsync(ExportJobListRequest request) {
@@ -442,12 +437,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ExportJobListRequest 请求对象
+     * @param request ExportJobListRequest 请求对象
      * @return AsyncInvoker<ExportJobListRequest, ExportJobListResponse>
      */
     public AsyncInvoker<ExportJobListRequest, ExportJobListResponse> exportJobListAsyncInvoker(
         ExportJobListRequest request) {
-        return new AsyncInvoker<ExportJobListRequest, ExportJobListResponse>(request, DlfMeta.exportJobList, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.exportJobList, hcClient);
     }
 
     /**
@@ -456,7 +451,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportConnectionsRequest 请求对象
+     * @param request ImportConnectionsRequest 请求对象
      * @return CompletableFuture<ImportConnectionsResponse>
      */
     public CompletableFuture<ImportConnectionsResponse> importConnectionsAsync(ImportConnectionsRequest request) {
@@ -469,13 +464,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportConnectionsRequest 请求对象
+     * @param request ImportConnectionsRequest 请求对象
      * @return AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
      */
     public AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> importConnectionsAsyncInvoker(
         ImportConnectionsRequest request) {
-        return new AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>(request, DlfMeta.importConnections,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.importConnections, hcClient);
     }
 
     /**
@@ -484,7 +478,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportJobRequest 请求对象
+     * @param request ImportJobRequest 请求对象
      * @return CompletableFuture<ImportJobResponse>
      */
     public CompletableFuture<ImportJobResponse> importJobAsync(ImportJobRequest request) {
@@ -497,11 +491,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ImportJobRequest 请求对象
+     * @param request ImportJobRequest 请求对象
      * @return AsyncInvoker<ImportJobRequest, ImportJobResponse>
      */
     public AsyncInvoker<ImportJobRequest, ImportJobResponse> importJobAsyncInvoker(ImportJobRequest request) {
-        return new AsyncInvoker<ImportJobRequest, ImportJobResponse>(request, DlfMeta.importJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.importJob, hcClient);
     }
 
     /**
@@ -510,7 +504,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return CompletableFuture<ListConnectionsResponse>
      */
     public CompletableFuture<ListConnectionsResponse> listConnectionsAsync(ListConnectionsRequest request) {
@@ -523,13 +517,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConnectionsRequest 请求对象
+     * @param request ListConnectionsRequest 请求对象
      * @return AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
      */
     public AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsAsyncInvoker(
         ListConnectionsRequest request) {
-        return new AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, DlfMeta.listConnections,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listConnections, hcClient);
     }
 
     /**
@@ -538,7 +531,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobInstancesRequest 请求对象
+     * @param request ListJobInstancesRequest 请求对象
      * @return CompletableFuture<ListJobInstancesResponse>
      */
     public CompletableFuture<ListJobInstancesResponse> listJobInstancesAsync(ListJobInstancesRequest request) {
@@ -551,13 +544,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobInstancesRequest 请求对象
+     * @param request ListJobInstancesRequest 请求对象
      * @return AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>
      */
     public AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstancesAsyncInvoker(
         ListJobInstancesRequest request) {
-        return new AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>(request, DlfMeta.listJobInstances,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listJobInstances, hcClient);
     }
 
     /**
@@ -566,7 +558,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return CompletableFuture<ListJobsResponse>
      */
     public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
@@ -579,11 +571,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListJobsRequest 请求对象
+     * @param request ListJobsRequest 请求对象
      * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
      */
     public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
-        return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, DlfMeta.listJobs, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listJobs, hcClient);
     }
 
     /**
@@ -592,7 +584,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return CompletableFuture<ListResourcesResponse>
      */
     public CompletableFuture<ListResourcesResponse> listResourcesAsync(ListResourcesRequest request) {
@@ -605,12 +597,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListResourcesRequest 请求对象
+     * @param request ListResourcesRequest 请求对象
      * @return AsyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
     public AsyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesAsyncInvoker(
         ListResourcesRequest request) {
-        return new AsyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DlfMeta.listResources, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listResources, hcClient);
     }
 
     /**
@@ -619,7 +611,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptResultsRequest 请求对象
+     * @param request ListScriptResultsRequest 请求对象
      * @return CompletableFuture<ListScriptResultsResponse>
      */
     public CompletableFuture<ListScriptResultsResponse> listScriptResultsAsync(ListScriptResultsRequest request) {
@@ -632,13 +624,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptResultsRequest 请求对象
+     * @param request ListScriptResultsRequest 请求对象
      * @return AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>
      */
     public AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResultsAsyncInvoker(
         ListScriptResultsRequest request) {
-        return new AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>(request, DlfMeta.listScriptResults,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listScriptResults, hcClient);
     }
 
     /**
@@ -647,7 +638,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptsRequest 请求对象
+     * @param request ListScriptsRequest 请求对象
      * @return CompletableFuture<ListScriptsResponse>
      */
     public CompletableFuture<ListScriptsResponse> listScriptsAsync(ListScriptsRequest request) {
@@ -660,11 +651,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListScriptsRequest 请求对象
+     * @param request ListScriptsRequest 请求对象
      * @return AsyncInvoker<ListScriptsRequest, ListScriptsResponse>
      */
     public AsyncInvoker<ListScriptsRequest, ListScriptsResponse> listScriptsAsyncInvoker(ListScriptsRequest request) {
-        return new AsyncInvoker<ListScriptsRequest, ListScriptsResponse>(request, DlfMeta.listScripts, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listScripts, hcClient);
     }
 
     /**
@@ -673,7 +664,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTasksRequest 请求对象
+     * @param request ListSystemTasksRequest 请求对象
      * @return CompletableFuture<ListSystemTasksResponse>
      */
     public CompletableFuture<ListSystemTasksResponse> listSystemTasksAsync(ListSystemTasksRequest request) {
@@ -686,13 +677,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListSystemTasksRequest 请求对象
+     * @param request ListSystemTasksRequest 请求对象
      * @return AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>
      */
     public AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasksAsyncInvoker(
         ListSystemTasksRequest request) {
-        return new AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>(request, DlfMeta.listSystemTasks,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.listSystemTasks, hcClient);
     }
 
     /**
@@ -701,7 +691,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreJobInstanceRequest 请求对象
+     * @param request RestoreJobInstanceRequest 请求对象
      * @return CompletableFuture<RestoreJobInstanceResponse>
      */
     public CompletableFuture<RestoreJobInstanceResponse> restoreJobInstanceAsync(RestoreJobInstanceRequest request) {
@@ -714,13 +704,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RestoreJobInstanceRequest 请求对象
+     * @param request RestoreJobInstanceRequest 请求对象
      * @return AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>
      */
     public AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstanceAsyncInvoker(
         RestoreJobInstanceRequest request) {
-        return new AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>(request,
-            DlfMeta.restoreJobInstance, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.restoreJobInstance, hcClient);
     }
 
     /**
@@ -729,7 +718,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunOnceRequest 请求对象
+     * @param request RunOnceRequest 请求对象
      * @return CompletableFuture<RunOnceResponse>
      */
     public CompletableFuture<RunOnceResponse> runOnceAsync(RunOnceRequest request) {
@@ -742,11 +731,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param RunOnceRequest 请求对象
+     * @param request RunOnceRequest 请求对象
      * @return AsyncInvoker<RunOnceRequest, RunOnceResponse>
      */
     public AsyncInvoker<RunOnceRequest, RunOnceResponse> runOnceAsyncInvoker(RunOnceRequest request) {
-        return new AsyncInvoker<RunOnceRequest, RunOnceResponse>(request, DlfMeta.runOnce, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.runOnce, hcClient);
     }
 
     /**
@@ -755,7 +744,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionRequest 请求对象
+     * @param request ShowConnectionRequest 请求对象
      * @return CompletableFuture<ShowConnectionResponse>
      */
     public CompletableFuture<ShowConnectionResponse> showConnectionAsync(ShowConnectionRequest request) {
@@ -768,13 +757,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowConnectionRequest 请求对象
+     * @param request ShowConnectionRequest 请求对象
      * @return AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
      */
     public AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse> showConnectionAsyncInvoker(
         ShowConnectionRequest request) {
-        return new AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse>(request, DlfMeta.showConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showConnection, hcClient);
     }
 
     /**
@@ -783,7 +771,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectoryTreeRequest 请求对象
+     * @param request ShowDirectoryTreeRequest 请求对象
      * @return CompletableFuture<ShowDirectoryTreeResponse>
      */
     public CompletableFuture<ShowDirectoryTreeResponse> showDirectoryTreeAsync(ShowDirectoryTreeRequest request) {
@@ -796,13 +784,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowDirectoryTreeRequest 请求对象
+     * @param request ShowDirectoryTreeRequest 请求对象
      * @return AsyncInvoker<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse>
      */
     public AsyncInvoker<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse> showDirectoryTreeAsyncInvoker(
         ShowDirectoryTreeRequest request) {
-        return new AsyncInvoker<ShowDirectoryTreeRequest, ShowDirectoryTreeResponse>(request, DlfMeta.showDirectoryTree,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showDirectoryTree, hcClient);
     }
 
     /**
@@ -811,7 +798,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileInfoRequest 请求对象
+     * @param request ShowFileInfoRequest 请求对象
      * @return CompletableFuture<ShowFileInfoResponse>
      */
     public CompletableFuture<ShowFileInfoResponse> showFileInfoAsync(ShowFileInfoRequest request) {
@@ -824,12 +811,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowFileInfoRequest 请求对象
+     * @param request ShowFileInfoRequest 请求对象
      * @return AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>
      */
     public AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfoAsyncInvoker(
         ShowFileInfoRequest request) {
-        return new AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>(request, DlfMeta.showFileInfo, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showFileInfo, hcClient);
     }
 
     /**
@@ -838,7 +825,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
@@ -851,11 +838,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobRequest 请求对象
+     * @param request ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
-        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, DlfMeta.showJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showJob, hcClient);
     }
 
     /**
@@ -864,7 +851,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceRequest 请求对象
+     * @param request ShowJobInstanceRequest 请求对象
      * @return CompletableFuture<ShowJobInstanceResponse>
      */
     public CompletableFuture<ShowJobInstanceResponse> showJobInstanceAsync(ShowJobInstanceRequest request) {
@@ -877,13 +864,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobInstanceRequest 请求对象
+     * @param request ShowJobInstanceRequest 请求对象
      * @return AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>
      */
     public AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstanceAsyncInvoker(
         ShowJobInstanceRequest request) {
-        return new AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>(request, DlfMeta.showJobInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showJobInstance, hcClient);
     }
 
     /**
@@ -892,7 +878,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return CompletableFuture<ShowJobStatusResponse>
      */
     public CompletableFuture<ShowJobStatusResponse> showJobStatusAsync(ShowJobStatusRequest request) {
@@ -905,12 +891,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowJobStatusRequest 请求对象
+     * @param request ShowJobStatusRequest 请求对象
      * @return AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
      */
     public AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatusAsyncInvoker(
         ShowJobStatusRequest request) {
-        return new AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>(request, DlfMeta.showJobStatus, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showJobStatus, hcClient);
     }
 
     /**
@@ -919,7 +905,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRequest 请求对象
+     * @param request ShowResourceRequest 请求对象
      * @return CompletableFuture<ShowResourceResponse>
      */
     public CompletableFuture<ShowResourceResponse> showResourceAsync(ShowResourceRequest request) {
@@ -932,12 +918,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowResourceRequest 请求对象
+     * @param request ShowResourceRequest 请求对象
      * @return AsyncInvoker<ShowResourceRequest, ShowResourceResponse>
      */
     public AsyncInvoker<ShowResourceRequest, ShowResourceResponse> showResourceAsyncInvoker(
         ShowResourceRequest request) {
-        return new AsyncInvoker<ShowResourceRequest, ShowResourceResponse>(request, DlfMeta.showResource, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showResource, hcClient);
     }
 
     /**
@@ -946,7 +932,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScriptRequest 请求对象
+     * @param request ShowScriptRequest 请求对象
      * @return CompletableFuture<ShowScriptResponse>
      */
     public CompletableFuture<ShowScriptResponse> showScriptAsync(ShowScriptRequest request) {
@@ -959,11 +945,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowScriptRequest 请求对象
+     * @param request ShowScriptRequest 请求对象
      * @return AsyncInvoker<ShowScriptRequest, ShowScriptResponse>
      */
     public AsyncInvoker<ShowScriptRequest, ShowScriptResponse> showScriptAsyncInvoker(ShowScriptRequest request) {
-        return new AsyncInvoker<ShowScriptRequest, ShowScriptResponse>(request, DlfMeta.showScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.showScript, hcClient);
     }
 
     /**
@@ -972,7 +958,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return CompletableFuture<StartJobResponse>
      */
     public CompletableFuture<StartJobResponse> startJobAsync(StartJobRequest request) {
@@ -985,11 +971,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StartJobRequest 请求对象
+     * @param request StartJobRequest 请求对象
      * @return AsyncInvoker<StartJobRequest, StartJobResponse>
      */
     public AsyncInvoker<StartJobRequest, StartJobResponse> startJobAsyncInvoker(StartJobRequest request) {
-        return new AsyncInvoker<StartJobRequest, StartJobResponse>(request, DlfMeta.startJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.startJob, hcClient);
     }
 
     /**
@@ -998,7 +984,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return CompletableFuture<StopJobResponse>
      */
     public CompletableFuture<StopJobResponse> stopJobAsync(StopJobRequest request) {
@@ -1011,11 +997,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobRequest 请求对象
+     * @param request StopJobRequest 请求对象
      * @return AsyncInvoker<StopJobRequest, StopJobResponse>
      */
     public AsyncInvoker<StopJobRequest, StopJobResponse> stopJobAsyncInvoker(StopJobRequest request) {
-        return new AsyncInvoker<StopJobRequest, StopJobResponse>(request, DlfMeta.stopJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.stopJob, hcClient);
     }
 
     /**
@@ -1024,7 +1010,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobInstanceRequest 请求对象
+     * @param request StopJobInstanceRequest 请求对象
      * @return CompletableFuture<StopJobInstanceResponse>
      */
     public CompletableFuture<StopJobInstanceResponse> stopJobInstanceAsync(StopJobInstanceRequest request) {
@@ -1037,13 +1023,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param StopJobInstanceRequest 请求对象
+     * @param request StopJobInstanceRequest 请求对象
      * @return AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>
      */
     public AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstanceAsyncInvoker(
         StopJobInstanceRequest request) {
-        return new AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>(request, DlfMeta.stopJobInstance,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.stopJobInstance, hcClient);
     }
 
     /**
@@ -1052,7 +1037,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return CompletableFuture<UpdateConnectionResponse>
      */
     public CompletableFuture<UpdateConnectionResponse> updateConnectionAsync(UpdateConnectionRequest request) {
@@ -1065,13 +1050,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateConnectionRequest 请求对象
+     * @param request UpdateConnectionRequest 请求对象
      * @return AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
      */
     public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(
         UpdateConnectionRequest request) {
-        return new AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DlfMeta.updateConnection,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.updateConnection, hcClient);
     }
 
     /**
@@ -1080,7 +1064,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return CompletableFuture<UpdateJobResponse>
      */
     public CompletableFuture<UpdateJobResponse> updateJobAsync(UpdateJobRequest request) {
@@ -1093,11 +1077,11 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateJobRequest 请求对象
+     * @param request UpdateJobRequest 请求对象
      * @return AsyncInvoker<UpdateJobRequest, UpdateJobResponse>
      */
     public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
-        return new AsyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DlfMeta.updateJob, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.updateJob, hcClient);
     }
 
     /**
@@ -1106,7 +1090,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return CompletableFuture<UpdateResourceResponse>
      */
     public CompletableFuture<UpdateResourceResponse> updateResourceAsync(UpdateResourceRequest request) {
@@ -1119,13 +1103,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateResourceRequest 请求对象
+     * @param request UpdateResourceRequest 请求对象
      * @return AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
      */
     public AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceAsyncInvoker(
         UpdateResourceRequest request) {
-        return new AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, DlfMeta.updateResource,
-            hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.updateResource, hcClient);
     }
 
     /**
@@ -1134,7 +1117,7 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScriptRequest 请求对象
+     * @param request UpdateScriptRequest 请求对象
      * @return CompletableFuture<UpdateScriptResponse>
      */
     public CompletableFuture<UpdateScriptResponse> updateScriptAsync(UpdateScriptRequest request) {
@@ -1147,12 +1130,12 @@ public class DlfAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateScriptRequest 请求对象
+     * @param request UpdateScriptRequest 请求对象
      * @return AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
      */
     public AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptAsyncInvoker(
         UpdateScriptRequest request) {
-        return new AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse>(request, DlfMeta.updateScript, hcClient);
+        return new AsyncInvoker<>(request, DlfMeta.updateScript, hcClient);
     }
 
 }

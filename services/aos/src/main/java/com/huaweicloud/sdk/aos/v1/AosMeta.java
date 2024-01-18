@@ -116,9 +116,9 @@ import java.util.List;
 public class AosMeta {
 
     public static final HttpRequestDef<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> applyExecutionPlan =
-        genForapplyExecutionPlan();
+        genForApplyExecutionPlan();
 
-    private static HttpRequestDef<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> genForapplyExecutionPlan() {
+    private static HttpRequestDef<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> genForApplyExecutionPlan() {
         // basic
         HttpRequestDef.Builder<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ApplyExecutionPlanRequest.class, ApplyExecutionPlanResponse.class)
@@ -131,30 +131,24 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyExecutionPlanRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ApplyExecutionPlanRequest::getStackName, ApplyExecutionPlanRequest::setStackName));
         builder.<String>withRequestField("execution_plan_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            }));
+            f -> f.withMarshaller(ApplyExecutionPlanRequest::getExecutionPlanName,
+                ApplyExecutionPlanRequest::setExecutionPlanName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyExecutionPlanRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ApplyExecutionPlanRequest::getClientRequestId,
+                ApplyExecutionPlanRequest::setClientRequestId));
         builder.<ApplyExecutionPlanRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplyExecutionPlanRequestBody.class),
-            f -> f.withMarshaller(ApplyExecutionPlanRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ApplyExecutionPlanRequest::getBody, ApplyExecutionPlanRequest::setBody));
 
         // response
 
@@ -162,9 +156,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<CreateExecutionPlanRequest, CreateExecutionPlanResponse> createExecutionPlan =
-        genForcreateExecutionPlan();
+        genForCreateExecutionPlan();
 
-    private static HttpRequestDef<CreateExecutionPlanRequest, CreateExecutionPlanResponse> genForcreateExecutionPlan() {
+    private static HttpRequestDef<CreateExecutionPlanRequest, CreateExecutionPlanResponse> genForCreateExecutionPlan() {
         // basic
         HttpRequestDef.Builder<CreateExecutionPlanRequest, CreateExecutionPlanResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateExecutionPlanRequest.class, CreateExecutionPlanResponse.class)
@@ -177,23 +171,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExecutionPlanRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(CreateExecutionPlanRequest::getStackName, CreateExecutionPlanRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateExecutionPlanRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateExecutionPlanRequest::getClientRequestId,
+                CreateExecutionPlanRequest::setClientRequestId));
         builder.<CreateExecutionPlanRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateExecutionPlanRequestBody.class),
-            f -> f.withMarshaller(CreateExecutionPlanRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateExecutionPlanRequest::getBody, CreateExecutionPlanRequest::setBody));
 
         // response
 
@@ -201,9 +190,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlan =
-        genFordeleteExecutionPlan();
+        genForDeleteExecutionPlan();
 
-    private static HttpRequestDef<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> genFordeleteExecutionPlan() {
+    private static HttpRequestDef<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> genForDeleteExecutionPlan() {
         // basic
         HttpRequestDef.Builder<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteExecutionPlanRequest.class, DeleteExecutionPlanResponse.class)
@@ -216,37 +205,30 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackName, DeleteExecutionPlanRequest::setStackName));
         builder.<String>withRequestField("execution_plan_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            }));
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanName,
+                DeleteExecutionPlanRequest::setExecutionPlanName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackId, DeleteExecutionPlanRequest::setStackId));
         builder.<String>withRequestField("execution_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
-                req.setExecutionPlanId(v);
-            }));
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanId,
+                DeleteExecutionPlanRequest::setExecutionPlanId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteExecutionPlanRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getClientRequestId,
+                DeleteExecutionPlanRequest::setClientRequestId));
 
         // response
 
@@ -254,9 +236,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> estimateExecutionPlanPrice =
-        genForestimateExecutionPlanPrice();
+        genForEstimateExecutionPlanPrice();
 
-    private static HttpRequestDef<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> genForestimateExecutionPlanPrice() {
+    private static HttpRequestDef<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> genForEstimateExecutionPlanPrice() {
         // basic
         HttpRequestDef.Builder<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> builder =
             HttpRequestDef
@@ -272,37 +254,32 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getStackName,
+                EstimateExecutionPlanPriceRequest::setStackName));
         builder.<String>withRequestField("execution_plan_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            }));
+            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getExecutionPlanName,
+                EstimateExecutionPlanPriceRequest::setExecutionPlanName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getStackId,
+                EstimateExecutionPlanPriceRequest::setStackId));
         builder.<String>withRequestField("execution_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getExecutionPlanId, (req, v) -> {
-                req.setExecutionPlanId(v);
-            }));
+            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getExecutionPlanId,
+                EstimateExecutionPlanPriceRequest::setExecutionPlanId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(EstimateExecutionPlanPriceRequest::getClientRequestId,
+                EstimateExecutionPlanPriceRequest::setClientRequestId));
 
         // response
 
@@ -310,9 +287,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlan =
-        genForgetExecutionPlan();
+        genForGetExecutionPlan();
 
-    private static HttpRequestDef<GetExecutionPlanRequest, GetExecutionPlanResponse> genForgetExecutionPlan() {
+    private static HttpRequestDef<GetExecutionPlanRequest, GetExecutionPlanResponse> genForGetExecutionPlan() {
         // basic
         HttpRequestDef.Builder<GetExecutionPlanRequest, GetExecutionPlanResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GetExecutionPlanRequest.class, GetExecutionPlanResponse.class)
@@ -325,37 +302,30 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanRequest::getStackName, GetExecutionPlanRequest::setStackName));
         builder.<String>withRequestField("execution_plan_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanName,
+                GetExecutionPlanRequest::setExecutionPlanName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanRequest::getStackId, GetExecutionPlanRequest::setStackId));
         builder.<String>withRequestField("execution_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
-                req.setExecutionPlanId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanId,
+                GetExecutionPlanRequest::setExecutionPlanId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanRequest::getClientRequestId,
+                GetExecutionPlanRequest::setClientRequestId));
 
         // response
 
@@ -363,9 +333,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> getExecutionPlanMetadata =
-        genForgetExecutionPlanMetadata();
+        genForGetExecutionPlanMetadata();
 
-    private static HttpRequestDef<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> genForgetExecutionPlanMetadata() {
+    private static HttpRequestDef<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> genForGetExecutionPlanMetadata() {
         // basic
         HttpRequestDef.Builder<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> builder =
             HttpRequestDef
@@ -379,37 +349,32 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackName,
+                GetExecutionPlanMetadataRequest::setStackName));
         builder.<String>withRequestField("execution_plan_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanName,
+                GetExecutionPlanMetadataRequest::setExecutionPlanName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackId,
+                GetExecutionPlanMetadataRequest::setStackId));
         builder.<String>withRequestField("execution_plan_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanId, (req, v) -> {
-                req.setExecutionPlanId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanId,
+                GetExecutionPlanMetadataRequest::setExecutionPlanId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getClientRequestId,
+                GetExecutionPlanMetadataRequest::setClientRequestId));
 
         // response
 
@@ -417,9 +382,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlans =
-        genForlistExecutionPlans();
+        genForListExecutionPlans();
 
-    private static HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> genForlistExecutionPlans() {
+    private static HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> genForListExecutionPlans() {
         // basic
         HttpRequestDef.Builder<ListExecutionPlansRequest, ListExecutionPlansResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExecutionPlansRequest.class, ListExecutionPlansResponse.class)
@@ -432,23 +397,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ListExecutionPlansRequest::getStackName, ListExecutionPlansRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(ListExecutionPlansRequest::getStackId, ListExecutionPlansRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListExecutionPlansRequest::getClientRequestId,
+                ListExecutionPlansRequest::setClientRequestId));
 
         // response
 
@@ -456,9 +416,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStack =
-        genForcontinueDeployStack();
+        genForContinueDeployStack();
 
-    private static HttpRequestDef<ContinueDeployStackRequest, ContinueDeployStackResponse> genForcontinueDeployStack() {
+    private static HttpRequestDef<ContinueDeployStackRequest, ContinueDeployStackResponse> genForContinueDeployStack() {
         // basic
         HttpRequestDef.Builder<ContinueDeployStackRequest, ContinueDeployStackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ContinueDeployStackRequest.class, ContinueDeployStackResponse.class)
@@ -471,23 +431,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueDeployStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ContinueDeployStackRequest::getStackName, ContinueDeployStackRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueDeployStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ContinueDeployStackRequest::getClientRequestId,
+                ContinueDeployStackRequest::setClientRequestId));
         builder.<ContinueDeployStackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ContinueDeployStackRequestBody.class),
-            f -> f.withMarshaller(ContinueDeployStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ContinueDeployStackRequest::getBody, ContinueDeployStackRequest::setBody));
 
         // response
 
@@ -495,9 +450,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStack =
-        genForcontinueRollbackStack();
+        genForContinueRollbackStack();
 
-    private static HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> genForcontinueRollbackStack() {
+    private static HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> genForContinueRollbackStack() {
         // basic
         HttpRequestDef.Builder<ContinueRollbackStackRequest, ContinueRollbackStackResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ContinueRollbackStackRequest.class, ContinueRollbackStackResponse.class)
@@ -510,32 +465,28 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getStackName,
+                ContinueRollbackStackRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getClientRequestId,
+                ContinueRollbackStackRequest::setClientRequestId));
         builder.<ContinueRollbackStackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ContinueRollbackStackRequestBody.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getBody, ContinueRollbackStackRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateStackRequest, CreateStackResponse> createStack = genForcreateStack();
+    public static final HttpRequestDef<CreateStackRequest, CreateStackResponse> createStack = genForCreateStack();
 
-    private static HttpRequestDef<CreateStackRequest, CreateStackResponse> genForcreateStack() {
+    private static HttpRequestDef<CreateStackRequest, CreateStackResponse> genForCreateStack() {
         // basic
         HttpRequestDef.Builder<CreateStackRequest, CreateStackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStackRequest.class, CreateStackResponse.class)
@@ -548,25 +499,21 @@ public class AosMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateStackRequest::getClientRequestId, CreateStackRequest::setClientRequestId));
         builder.<CreateStackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateStackRequestBody.class),
-            f -> f.withMarshaller(CreateStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStackRequest::getBody, CreateStackRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteStackRequest, DeleteStackResponse> deleteStack = genFordeleteStack();
+    public static final HttpRequestDef<DeleteStackRequest, DeleteStackResponse> deleteStack = genForDeleteStack();
 
-    private static HttpRequestDef<DeleteStackRequest, DeleteStackResponse> genFordeleteStack() {
+    private static HttpRequestDef<DeleteStackRequest, DeleteStackResponse> genForDeleteStack() {
         // basic
         HttpRequestDef.Builder<DeleteStackRequest, DeleteStackResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStackRequest.class, DeleteStackResponse.class)
@@ -579,23 +526,17 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(DeleteStackRequest::getStackName, DeleteStackRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackRequest::getStackId, DeleteStackRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, DeleteStackRequest::setClientRequestId));
 
         // response
 
@@ -603,9 +544,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> deleteStackEnhanced =
-        genFordeleteStackEnhanced();
+        genForDeleteStackEnhanced();
 
-    private static HttpRequestDef<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> genFordeleteStackEnhanced() {
+    private static HttpRequestDef<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> genForDeleteStackEnhanced() {
         // basic
         HttpRequestDef.Builder<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteStackEnhancedRequest.class, DeleteStackEnhancedResponse.class)
@@ -618,32 +559,27 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackEnhancedRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getStackName, DeleteStackEnhancedRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackEnhancedRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getClientRequestId,
+                DeleteStackEnhancedRequest::setClientRequestId));
         builder.<DeleteStackEnhancedRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteStackEnhancedRequestBody.class),
-            f -> f.withMarshaller(DeleteStackEnhancedRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getBody, DeleteStackEnhancedRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeployStackRequest, DeployStackResponse> deployStack = genFordeployStack();
+    public static final HttpRequestDef<DeployStackRequest, DeployStackResponse> deployStack = genForDeployStack();
 
-    private static HttpRequestDef<DeployStackRequest, DeployStackResponse> genFordeployStack() {
+    private static HttpRequestDef<DeployStackRequest, DeployStackResponse> genForDeployStack() {
         // basic
         HttpRequestDef.Builder<DeployStackRequest, DeployStackResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeployStackRequest.class, DeployStackResponse.class)
@@ -656,23 +592,17 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(DeployStackRequest::getStackName, DeployStackRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeployStackRequest::getClientRequestId, DeployStackRequest::setClientRequestId));
         builder.<DeployStackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeployStackRequestBody.class),
-            f -> f.withMarshaller(DeployStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeployStackRequest::getBody, DeployStackRequest::setBody));
 
         // response
 
@@ -680,9 +610,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadata =
-        genForgetStackMetadata();
+        genForGetStackMetadata();
 
-    private static HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> genForgetStackMetadata() {
+    private static HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> genForGetStackMetadata() {
         // basic
         HttpRequestDef.Builder<GetStackMetadataRequest, GetStackMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GetStackMetadataRequest.class, GetStackMetadataResponse.class)
@@ -695,23 +625,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackMetadataRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(GetStackMetadataRequest::getStackName, GetStackMetadataRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackMetadataRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(GetStackMetadataRequest::getStackId, GetStackMetadataRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(GetStackMetadataRequest::getClientRequestId,
+                GetStackMetadataRequest::setClientRequestId));
 
         // response
 
@@ -719,9 +644,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplate =
-        genForgetStackTemplate();
+        genForGetStackTemplate();
 
-    private static HttpRequestDef<GetStackTemplateRequest, GetStackTemplateResponse> genForgetStackTemplate() {
+    private static HttpRequestDef<GetStackTemplateRequest, GetStackTemplateResponse> genForGetStackTemplate() {
         // basic
         HttpRequestDef.Builder<GetStackTemplateRequest, GetStackTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GetStackTemplateRequest.class, GetStackTemplateResponse.class)
@@ -734,23 +659,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackTemplateRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(GetStackTemplateRequest::getStackName, GetStackTemplateRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackTemplateRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(GetStackTemplateRequest::getStackId, GetStackTemplateRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackTemplateRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(GetStackTemplateRequest::getClientRequestId,
+                GetStackTemplateRequest::setClientRequestId));
 
         // response
 
@@ -763,9 +683,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackEventsRequest, ListStackEventsResponse> listStackEvents =
-        genForlistStackEvents();
+        genForListStackEvents();
 
-    private static HttpRequestDef<ListStackEventsRequest, ListStackEventsResponse> genForlistStackEvents() {
+    private static HttpRequestDef<ListStackEventsRequest, ListStackEventsResponse> genForListStackEvents() {
         // basic
         HttpRequestDef.Builder<ListStackEventsRequest, ListStackEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStackEventsRequest.class, ListStackEventsResponse.class)
@@ -778,44 +698,33 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getStackName, ListStackEventsRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getStackId, ListStackEventsRequest::setStackId));
         builder.<String>withRequestField("deployment_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getDeploymentId, (req, v) -> {
-                req.setDeploymentId(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getDeploymentId, ListStackEventsRequest::setDeploymentId));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getFilter, ListStackEventsRequest::setFilter));
         builder.<String>withRequestField("field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getField, (req, v) -> {
-                req.setField(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getField, ListStackEventsRequest::setField));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackEventsRequest::getClientRequestId,
+                ListStackEventsRequest::setClientRequestId));
 
         // response
 
@@ -823,9 +732,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackOutputsRequest, ListStackOutputsResponse> listStackOutputs =
-        genForlistStackOutputs();
+        genForListStackOutputs();
 
-    private static HttpRequestDef<ListStackOutputsRequest, ListStackOutputsResponse> genForlistStackOutputs() {
+    private static HttpRequestDef<ListStackOutputsRequest, ListStackOutputsResponse> genForListStackOutputs() {
         // basic
         HttpRequestDef.Builder<ListStackOutputsRequest, ListStackOutputsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStackOutputsRequest.class, ListStackOutputsResponse.class)
@@ -838,23 +747,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ListStackOutputsRequest::getStackName, ListStackOutputsRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(ListStackOutputsRequest::getStackId, ListStackOutputsRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackOutputsRequest::getClientRequestId,
+                ListStackOutputsRequest::setClientRequestId));
 
         // response
 
@@ -862,9 +766,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackResourcesRequest, ListStackResourcesResponse> listStackResources =
-        genForlistStackResources();
+        genForListStackResources();
 
-    private static HttpRequestDef<ListStackResourcesRequest, ListStackResourcesResponse> genForlistStackResources() {
+    private static HttpRequestDef<ListStackResourcesRequest, ListStackResourcesResponse> genForListStackResources() {
         // basic
         HttpRequestDef.Builder<ListStackResourcesRequest, ListStackResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStackResourcesRequest.class, ListStackResourcesResponse.class)
@@ -877,32 +781,27 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackResourcesRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(ListStackResourcesRequest::getStackName, ListStackResourcesRequest::setStackName));
         builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackResourcesRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            }));
+            f -> f.withMarshaller(ListStackResourcesRequest::getStackId, ListStackResourcesRequest::setStackId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackResourcesRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackResourcesRequest::getClientRequestId,
+                ListStackResourcesRequest::setClientRequestId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
+    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForListStacks();
 
-    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
+    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForListStacks() {
         // basic
         HttpRequestDef.Builder<ListStacksRequest, ListStacksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStacksRequest.class, ListStacksResponse.class)
@@ -915,18 +814,16 @@ public class AosMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStacksRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStacksRequest::getClientRequestId, ListStacksRequest::setClientRequestId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateStackRequest, UpdateStackResponse> updateStack = genForupdateStack();
+    public static final HttpRequestDef<UpdateStackRequest, UpdateStackResponse> updateStack = genForUpdateStack();
 
-    private static HttpRequestDef<UpdateStackRequest, UpdateStackResponse> genForupdateStack() {
+    private static HttpRequestDef<UpdateStackRequest, UpdateStackResponse> genForUpdateStack() {
         // basic
         HttpRequestDef.Builder<UpdateStackRequest, UpdateStackResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateStackRequest.class, UpdateStackResponse.class)
@@ -939,23 +836,17 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            }));
+            f -> f.withMarshaller(UpdateStackRequest::getStackName, UpdateStackRequest::setStackName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateStackRequest::getClientRequestId, UpdateStackRequest::setClientRequestId));
         builder.<UpdateStackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStackRequestBody.class),
-            f -> f.withMarshaller(UpdateStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStackRequest::getBody, UpdateStackRequest::setBody));
 
         // response
 
@@ -963,9 +854,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<CreateStackInstanceRequest, CreateStackInstanceResponse> createStackInstance =
-        genForcreateStackInstance();
+        genForCreateStackInstance();
 
-    private static HttpRequestDef<CreateStackInstanceRequest, CreateStackInstanceResponse> genForcreateStackInstance() {
+    private static HttpRequestDef<CreateStackInstanceRequest, CreateStackInstanceResponse> genForCreateStackInstance() {
         // basic
         HttpRequestDef.Builder<CreateStackInstanceRequest, CreateStackInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStackInstanceRequest.class, CreateStackInstanceResponse.class)
@@ -978,23 +869,19 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStackInstanceRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(CreateStackInstanceRequest::getStackSetName,
+                CreateStackInstanceRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStackInstanceRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateStackInstanceRequest::getClientRequestId,
+                CreateStackInstanceRequest::setClientRequestId));
         builder.<CreateStackInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateStackInstanceRequestBody.class),
-            f -> f.withMarshaller(CreateStackInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStackInstanceRequest::getBody, CreateStackInstanceRequest::setBody));
 
         // response
 
@@ -1002,9 +889,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<CreateStackSetRequest, CreateStackSetResponse> createStackSet =
-        genForcreateStackSet();
+        genForCreateStackSet();
 
-    private static HttpRequestDef<CreateStackSetRequest, CreateStackSetResponse> genForcreateStackSet() {
+    private static HttpRequestDef<CreateStackSetRequest, CreateStackSetResponse> genForCreateStackSet() {
         // basic
         HttpRequestDef.Builder<CreateStackSetRequest, CreateStackSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStackSetRequest.class, CreateStackSetResponse.class)
@@ -1017,16 +904,13 @@ public class AosMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStackSetRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(CreateStackSetRequest::getClientRequestId,
+                CreateStackSetRequest::setClientRequestId));
         builder.<CreateStackSetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateStackSetRequestBody.class),
-            f -> f.withMarshaller(CreateStackSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(CreateStackSetRequest::getBody, CreateStackSetRequest::setBody));
 
         // response
 
@@ -1034,9 +918,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteStackInstanceRequest, DeleteStackInstanceResponse> deleteStackInstance =
-        genFordeleteStackInstance();
+        genForDeleteStackInstance();
 
-    private static HttpRequestDef<DeleteStackInstanceRequest, DeleteStackInstanceResponse> genFordeleteStackInstance() {
+    private static HttpRequestDef<DeleteStackInstanceRequest, DeleteStackInstanceResponse> genForDeleteStackInstance() {
         // basic
         HttpRequestDef.Builder<DeleteStackInstanceRequest, DeleteStackInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteStackInstanceRequest.class, DeleteStackInstanceResponse.class)
@@ -1049,23 +933,19 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackInstanceRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceRequest::getStackSetName,
+                DeleteStackInstanceRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackInstanceRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceRequest::getClientRequestId,
+                DeleteStackInstanceRequest::setClientRequestId));
         builder.<DeleteStackInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteStackInstanceRequestBody.class),
-            f -> f.withMarshaller(DeleteStackInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceRequest::getBody, DeleteStackInstanceRequest::setBody));
 
         // response
 
@@ -1073,9 +953,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> deleteStackInstanceDeprecated =
-        genFordeleteStackInstanceDeprecated();
+        genForDeleteStackInstanceDeprecated();
 
-    private static HttpRequestDef<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> genFordeleteStackInstanceDeprecated() {
+    private static HttpRequestDef<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> genForDeleteStackInstanceDeprecated() {
         // basic
         HttpRequestDef.Builder<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> builder =
             HttpRequestDef
@@ -1091,23 +971,20 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getStackSetName,
+                DeleteStackInstanceDeprecatedRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getClientRequestId,
+                DeleteStackInstanceDeprecatedRequest::setClientRequestId));
         builder.<DeleteStackInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteStackInstanceRequestBody.class),
-            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getBody,
+                DeleteStackInstanceDeprecatedRequest::setBody));
 
         // response
 
@@ -1115,9 +992,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteStackSetRequest, DeleteStackSetResponse> deleteStackSet =
-        genFordeleteStackSet();
+        genForDeleteStackSet();
 
-    private static HttpRequestDef<DeleteStackSetRequest, DeleteStackSetResponse> genFordeleteStackSet() {
+    private static HttpRequestDef<DeleteStackSetRequest, DeleteStackSetResponse> genForDeleteStackSet() {
         // basic
         HttpRequestDef.Builder<DeleteStackSetRequest, DeleteStackSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStackSetRequest.class, DeleteStackSetResponse.class)
@@ -1130,23 +1007,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackSetRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(DeleteStackSetRequest::getStackSetName, DeleteStackSetRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackSetRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackSetRequest::getStackSetId, DeleteStackSetRequest::setStackSetId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackSetRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteStackSetRequest::getClientRequestId,
+                DeleteStackSetRequest::setClientRequestId));
 
         // response
 
@@ -1154,9 +1026,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeployStackSetRequest, DeployStackSetResponse> deployStackSet =
-        genFordeployStackSet();
+        genForDeployStackSet();
 
-    private static HttpRequestDef<DeployStackSetRequest, DeployStackSetResponse> genFordeployStackSet() {
+    private static HttpRequestDef<DeployStackSetRequest, DeployStackSetResponse> genForDeployStackSet() {
         // basic
         HttpRequestDef.Builder<DeployStackSetRequest, DeployStackSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeployStackSetRequest.class, DeployStackSetResponse.class)
@@ -1169,23 +1041,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackSetRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(DeployStackSetRequest::getStackSetName, DeployStackSetRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackSetRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeployStackSetRequest::getClientRequestId,
+                DeployStackSetRequest::setClientRequestId));
         builder.<DeployStackSetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeployStackSetRequestBody.class),
-            f -> f.withMarshaller(DeployStackSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(DeployStackSetRequest::getBody, DeployStackSetRequest::setBody));
 
         // response
 
@@ -1193,9 +1060,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackInstancesRequest, ListStackInstancesResponse> listStackInstances =
-        genForlistStackInstances();
+        genForListStackInstances();
 
-    private static HttpRequestDef<ListStackInstancesRequest, ListStackInstancesResponse> genForlistStackInstances() {
+    private static HttpRequestDef<ListStackInstancesRequest, ListStackInstancesResponse> genForListStackInstances() {
         // basic
         HttpRequestDef.Builder<ListStackInstancesRequest, ListStackInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStackInstancesRequest.class, ListStackInstancesResponse.class)
@@ -1208,44 +1075,34 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getStackSetName,
+                ListStackInstancesRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getStackSetId, ListStackInstancesRequest::setStackSetId));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getFilter, ListStackInstancesRequest::setFilter));
         builder.<List<ListStackInstancesRequest.SortKeyEnum>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getSortKey, ListStackInstancesRequest::setSortKey));
         builder.<List<ListStackInstancesRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getSortDir, ListStackInstancesRequest::setSortDir));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackInstancesRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackInstancesRequest::getClientRequestId,
+                ListStackInstancesRequest::setClientRequestId));
 
         // response
 
@@ -1253,9 +1110,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackSetOperationsRequest, ListStackSetOperationsResponse> listStackSetOperations =
-        genForlistStackSetOperations();
+        genForListStackSetOperations();
 
-    private static HttpRequestDef<ListStackSetOperationsRequest, ListStackSetOperationsResponse> genForlistStackSetOperations() {
+    private static HttpRequestDef<ListStackSetOperationsRequest, ListStackSetOperationsResponse> genForListStackSetOperations() {
         // basic
         HttpRequestDef.Builder<ListStackSetOperationsRequest, ListStackSetOperationsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListStackSetOperationsRequest.class, ListStackSetOperationsResponse.class)
@@ -1268,44 +1125,37 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getStackSetName,
+                ListStackSetOperationsRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getStackSetId,
+                ListStackSetOperationsRequest::setStackSetId));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getFilter, ListStackSetOperationsRequest::setFilter));
         builder.<List<ListStackSetOperationsRequest.SortKeyEnum>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getSortKey,
+                ListStackSetOperationsRequest::setSortKey));
         builder.<List<ListStackSetOperationsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getSortDir,
+                ListStackSetOperationsRequest::setSortDir));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetOperationsRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getClientRequestId,
+                ListStackSetOperationsRequest::setClientRequestId));
 
         // response
 
@@ -1313,9 +1163,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListStackSetsRequest, ListStackSetsResponse> listStackSets =
-        genForlistStackSets();
+        genForListStackSets();
 
-    private static HttpRequestDef<ListStackSetsRequest, ListStackSetsResponse> genForlistStackSets() {
+    private static HttpRequestDef<ListStackSetsRequest, ListStackSetsResponse> genForListStackSets() {
         // basic
         HttpRequestDef.Builder<ListStackSetsRequest, ListStackSetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStackSetsRequest.class, ListStackSetsResponse.class)
@@ -1328,30 +1178,22 @@ public class AosMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetsRequest::getFilter, (req, v) -> {
-                req.setFilter(v);
-            }));
+            f -> f.withMarshaller(ListStackSetsRequest::getFilter, ListStackSetsRequest::setFilter));
         builder.<List<ListStackSetsRequest.SortKeyEnum>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackSetsRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
+            f -> f.withMarshaller(ListStackSetsRequest::getSortKey, ListStackSetsRequest::setSortKey));
         builder.<List<ListStackSetsRequest.SortDirEnum>>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListStackSetsRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
+            f -> f.withMarshaller(ListStackSetsRequest::getSortDir, ListStackSetsRequest::setSortDir));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackSetsRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListStackSetsRequest::getClientRequestId, ListStackSetsRequest::setClientRequestId));
 
         // response
 
@@ -1359,9 +1201,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowStackInstanceRequest, ShowStackInstanceResponse> showStackInstance =
-        genForshowStackInstance();
+        genForShowStackInstance();
 
-    private static HttpRequestDef<ShowStackInstanceRequest, ShowStackInstanceResponse> genForshowStackInstance() {
+    private static HttpRequestDef<ShowStackInstanceRequest, ShowStackInstanceResponse> genForShowStackInstance() {
         // basic
         HttpRequestDef.Builder<ShowStackInstanceRequest, ShowStackInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStackInstanceRequest.class, ShowStackInstanceResponse.class)
@@ -1374,30 +1216,25 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetName,
+                ShowStackInstanceRequest::setStackSetName));
         builder.<String>withRequestField("stack_instance_addr",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackInstanceRequest::getStackInstanceAddr, (req, v) -> {
-                req.setStackInstanceAddr(v);
-            }));
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackInstanceAddr,
+                ShowStackInstanceRequest::setStackInstanceAddr));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetId, ShowStackInstanceRequest::setStackSetId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackInstanceRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowStackInstanceRequest::getClientRequestId,
+                ShowStackInstanceRequest::setClientRequestId));
 
         // response
 
@@ -1405,9 +1242,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> showStackSetMetadata =
-        genForshowStackSetMetadata();
+        genForShowStackSetMetadata();
 
-    private static HttpRequestDef<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> genForshowStackSetMetadata() {
+    private static HttpRequestDef<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> genForShowStackSetMetadata() {
         // basic
         HttpRequestDef.Builder<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowStackSetMetadataRequest.class, ShowStackSetMetadataResponse.class)
@@ -1420,23 +1257,20 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetMetadataRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetMetadataRequest::getStackSetName,
+                ShowStackSetMetadataRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetMetadataRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetMetadataRequest::getStackSetId,
+                ShowStackSetMetadataRequest::setStackSetId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetMetadataRequest::getClientRequestId,
+                ShowStackSetMetadataRequest::setClientRequestId));
 
         // response
 
@@ -1444,9 +1278,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse> showStackSetOperationMetadata =
-        genForshowStackSetOperationMetadata();
+        genForShowStackSetOperationMetadata();
 
-    private static HttpRequestDef<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse> genForshowStackSetOperationMetadata() {
+    private static HttpRequestDef<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse> genForShowStackSetOperationMetadata() {
         // basic
         HttpRequestDef.Builder<ShowStackSetOperationMetadataRequest, ShowStackSetOperationMetadataResponse> builder =
             HttpRequestDef
@@ -1462,30 +1296,26 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetName,
+                ShowStackSetOperationMetadataRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_operation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetOperationId, (req, v) -> {
-                req.setStackSetOperationId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetOperationId,
+                ShowStackSetOperationMetadataRequest::setStackSetOperationId));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetId,
+                ShowStackSetOperationMetadataRequest::setStackSetId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getClientRequestId,
+                ShowStackSetOperationMetadataRequest::setClientRequestId));
 
         // response
 
@@ -1493,9 +1323,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse> showStackSetTemplate =
-        genForshowStackSetTemplate();
+        genForShowStackSetTemplate();
 
-    private static HttpRequestDef<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse> genForshowStackSetTemplate() {
+    private static HttpRequestDef<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse> genForShowStackSetTemplate() {
         // basic
         HttpRequestDef.Builder<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowStackSetTemplateRequest.class, ShowStackSetTemplateResponse.class)
@@ -1508,23 +1338,20 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetTemplateRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getStackSetName,
+                ShowStackSetTemplateRequest::setStackSetName));
         builder.<String>withRequestField("stack_set_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetTemplateRequest::getStackSetId, (req, v) -> {
-                req.setStackSetId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getStackSetId,
+                ShowStackSetTemplateRequest::setStackSetId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowStackSetTemplateRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getClientRequestId,
+                ShowStackSetTemplateRequest::setClientRequestId));
 
         // response
 
@@ -1538,9 +1365,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<UpdateStackInstancesRequest, UpdateStackInstancesResponse> updateStackInstances =
-        genForupdateStackInstances();
+        genForUpdateStackInstances();
 
-    private static HttpRequestDef<UpdateStackInstancesRequest, UpdateStackInstancesResponse> genForupdateStackInstances() {
+    private static HttpRequestDef<UpdateStackInstancesRequest, UpdateStackInstancesResponse> genForUpdateStackInstances() {
         // basic
         HttpRequestDef.Builder<UpdateStackInstancesRequest, UpdateStackInstancesResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, UpdateStackInstancesRequest.class, UpdateStackInstancesResponse.class)
@@ -1553,23 +1380,19 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackInstancesRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getStackSetName,
+                UpdateStackInstancesRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackInstancesRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getClientRequestId,
+                UpdateStackInstancesRequest::setClientRequestId));
         builder.<UpdateStackInstancesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStackInstancesRequestBody.class),
-            f -> f.withMarshaller(UpdateStackInstancesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getBody, UpdateStackInstancesRequest::setBody));
 
         // response
 
@@ -1577,9 +1400,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<UpdateStackSetRequest, UpdateStackSetResponse> updateStackSet =
-        genForupdateStackSet();
+        genForUpdateStackSet();
 
-    private static HttpRequestDef<UpdateStackSetRequest, UpdateStackSetResponse> genForupdateStackSet() {
+    private static HttpRequestDef<UpdateStackSetRequest, UpdateStackSetResponse> genForUpdateStackSet() {
         // basic
         HttpRequestDef.Builder<UpdateStackSetRequest, UpdateStackSetResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateStackSetRequest.class, UpdateStackSetResponse.class)
@@ -1592,23 +1415,18 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackSetRequest::getStackSetName, (req, v) -> {
-                req.setStackSetName(v);
-            }));
+            f -> f.withMarshaller(UpdateStackSetRequest::getStackSetName, UpdateStackSetRequest::setStackSetName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateStackSetRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateStackSetRequest::getClientRequestId,
+                UpdateStackSetRequest::setClientRequestId));
         builder.<UpdateStackSetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStackSetRequestBody.class),
-            f -> f.withMarshaller(UpdateStackSetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateStackSetRequest::getBody, UpdateStackSetRequest::setBody));
 
         // response
 
@@ -1616,9 +1434,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariables =
-        genForparseTemplateVariables();
+        genForParseTemplateVariables();
 
-    private static HttpRequestDef<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> genForparseTemplateVariables() {
+    private static HttpRequestDef<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> genForParseTemplateVariables() {
         // basic
         HttpRequestDef.Builder<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ParseTemplateVariablesRequest.class, ParseTemplateVariablesResponse.class)
@@ -1631,16 +1449,13 @@ public class AosMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ParseTemplateVariablesRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ParseTemplateVariablesRequest::getClientRequestId,
+                ParseTemplateVariablesRequest::setClientRequestId));
         builder.<ParseTemplateVariablesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParseTemplateVariablesRequestBody.class),
-            f -> f.withMarshaller(ParseTemplateVariablesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(ParseTemplateVariablesRequest::getBody, ParseTemplateVariablesRequest::setBody));
 
         // response
 
@@ -1648,9 +1463,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
-        genFordeleteTemplate();
+        genForDeleteTemplate();
 
-    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genForDeleteTemplate() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
@@ -1663,40 +1478,33 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateName, DeleteTemplateRequest::setTemplateName));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, DeleteTemplateRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateRequest::getClientRequestId,
+                DeleteTemplateRequest::setClientRequestId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTemplateResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTemplateResponse::getBody, DeleteTemplateResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> deleteTemplateVersion =
-        genFordeleteTemplateVersion();
+        genForDeleteTemplateVersion();
 
-    private static HttpRequestDef<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> genFordeleteTemplateVersion() {
+    private static HttpRequestDef<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> genForDeleteTemplateVersion() {
         // basic
         HttpRequestDef.Builder<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteTemplateVersionRequest.class, DeleteTemplateVersionResponse.class)
@@ -1709,47 +1517,41 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateName,
+                DeleteTemplateVersionRequest::setTemplateName));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateVersionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getVersionId,
+                DeleteTemplateVersionRequest::setVersionId));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateId,
+                DeleteTemplateVersionRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateVersionRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getClientRequestId,
+                DeleteTemplateVersionRequest::setClientRequestId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteTemplateVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(DeleteTemplateVersionResponse::getBody, DeleteTemplateVersionResponse::setBody));
 
         return builder.build();
     }
 
     public static final HttpRequestDef<ListTemplateVersionsRequest, ListTemplateVersionsResponse> listTemplateVersions =
-        genForlistTemplateVersions();
+        genForListTemplateVersions();
 
-    private static HttpRequestDef<ListTemplateVersionsRequest, ListTemplateVersionsResponse> genForlistTemplateVersions() {
+    private static HttpRequestDef<ListTemplateVersionsRequest, ListTemplateVersionsResponse> genForListTemplateVersions() {
         // basic
         HttpRequestDef.Builder<ListTemplateVersionsRequest, ListTemplateVersionsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListTemplateVersionsRequest.class, ListTemplateVersionsResponse.class)
@@ -1762,23 +1564,20 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateVersionsRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ListTemplateVersionsRequest::getTemplateName,
+                ListTemplateVersionsRequest::setTemplateName));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateVersionsRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateVersionsRequest::getTemplateId,
+                ListTemplateVersionsRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplateVersionsRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListTemplateVersionsRequest::getClientRequestId,
+                ListTemplateVersionsRequest::setClientRequestId));
 
         // response
 
@@ -1786,9 +1585,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
-        genForlistTemplates();
+        genForListTemplates();
 
-    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForListTemplates() {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
@@ -1801,9 +1600,7 @@ public class AosMeta {
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTemplatesRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ListTemplatesRequest::getClientRequestId, ListTemplatesRequest::setClientRequestId));
 
         // response
 
@@ -1811,9 +1608,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> showTemplateMetadata =
-        genForshowTemplateMetadata();
+        genForShowTemplateMetadata();
 
-    private static HttpRequestDef<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> genForshowTemplateMetadata() {
+    private static HttpRequestDef<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> genForShowTemplateMetadata() {
         // basic
         HttpRequestDef.Builder<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowTemplateMetadataRequest.class, ShowTemplateMetadataResponse.class)
@@ -1826,23 +1623,20 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateName,
+                ShowTemplateMetadataRequest::setTemplateName));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateId,
+                ShowTemplateMetadataRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getClientRequestId,
+                ShowTemplateMetadataRequest::setClientRequestId));
 
         // response
 
@@ -1850,9 +1644,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> showTemplateVersionContent =
-        genForshowTemplateVersionContent();
+        genForShowTemplateVersionContent();
 
-    private static HttpRequestDef<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> genForshowTemplateVersionContent() {
+    private static HttpRequestDef<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> genForShowTemplateVersionContent() {
         // basic
         HttpRequestDef.Builder<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> builder =
             HttpRequestDef
@@ -1868,39 +1662,34 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateName,
+                ShowTemplateVersionContentRequest::setTemplateName));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getVersionId,
+                ShowTemplateVersionContentRequest::setVersionId));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateId,
+                ShowTemplateVersionContentRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getClientRequestId,
+                ShowTemplateVersionContentRequest::setClientRequestId));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowTemplateVersionContentResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionContentResponse::getBody,
+                ShowTemplateVersionContentResponse::setBody));
 
         builder.<String>withResponseField("Location",
             LocationType.Header,
@@ -1912,9 +1701,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> showTemplateVersionMetadata =
-        genForshowTemplateVersionMetadata();
+        genForShowTemplateVersionMetadata();
 
-    private static HttpRequestDef<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> genForshowTemplateVersionMetadata() {
+    private static HttpRequestDef<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> genForShowTemplateVersionMetadata() {
         // basic
         HttpRequestDef.Builder<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> builder =
             HttpRequestDef
@@ -1930,30 +1719,26 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateName,
+                ShowTemplateVersionMetadataRequest::setTemplateName));
         builder.<String>withRequestField("version_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getVersionId,
+                ShowTemplateVersionMetadataRequest::setVersionId));
         builder.<String>withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateId,
+                ShowTemplateVersionMetadataRequest::setTemplateId));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getClientRequestId,
+                ShowTemplateVersionMetadataRequest::setClientRequestId));
 
         // response
 
@@ -1961,9 +1746,9 @@ public class AosMeta {
     }
 
     public static final HttpRequestDef<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> updateTemplateMetadata =
-        genForupdateTemplateMetadata();
+        genForUpdateTemplateMetadata();
 
-    private static HttpRequestDef<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> genForupdateTemplateMetadata() {
+    private static HttpRequestDef<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> genForUpdateTemplateMetadata() {
         // basic
         HttpRequestDef.Builder<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> builder = HttpRequestDef
             .builder(HttpMethod.PATCH, UpdateTemplateMetadataRequest.class, UpdateTemplateMetadataResponse.class)
@@ -1976,32 +1761,26 @@ public class AosMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getTemplateName, (req, v) -> {
-                req.setTemplateName(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getTemplateName,
+                UpdateTemplateMetadataRequest::setTemplateName));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getClientRequestId,
+                UpdateTemplateMetadataRequest::setClientRequestId));
         builder.<UpdateTemplateMetadataRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTemplateMetadataRequestBody.class),
-            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getBody, UpdateTemplateMetadataRequest::setBody));
 
         // response
         builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateTemplateMetadataResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
+            f -> f.withMarshaller(UpdateTemplateMetadataResponse::getBody, UpdateTemplateMetadataResponse::setBody));
 
         return builder.build();
     }

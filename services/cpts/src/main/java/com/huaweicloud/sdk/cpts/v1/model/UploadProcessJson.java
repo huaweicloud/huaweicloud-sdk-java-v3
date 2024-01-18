@@ -45,7 +45,7 @@ public class UploadProcessJson {
     }
 
     /**
-     * details
+     * 工程导入进度明细信息
      * @return details
      */
     public List<UploadProcessJsonDetail> getDetails() {
@@ -62,7 +62,7 @@ public class UploadProcessJson {
     }
 
     /**
-     * process_status
+     * 总状态（0：导入中；1：导入完成）
      * minimum: 0
      * maximum: 2147483647
      * @return processStatus

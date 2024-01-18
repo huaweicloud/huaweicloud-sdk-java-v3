@@ -49,7 +49,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * id
+     * 工程id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -68,7 +68,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * name
+     * 工程名称
      * @return name
      */
     public String getName() {
@@ -85,7 +85,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * description
+     * 工程描述
      * @return description
      */
     public String getDescription() {
@@ -118,7 +118,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * variables_no_file
+     * 导入工程时，缺失的存在于变量文件中的变量
      * @return variablesNoFile
      */
     public List<String> getVariablesNoFile() {
@@ -135,7 +135,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * source
+     * 来源（0-PerfTest；2-CloudTest）
      * minimum: 0
      * maximum: 2147483647
      * @return source
@@ -154,7 +154,7 @@ public class UpdateProjectRequestBody {
     }
 
     /**
-     * external_params
+     * 扩展参数
      * @return externalParams
      */
     public Object getExternalParams() {

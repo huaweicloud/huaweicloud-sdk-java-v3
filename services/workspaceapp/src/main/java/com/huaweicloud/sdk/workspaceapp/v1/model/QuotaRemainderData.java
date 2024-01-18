@@ -48,7 +48,7 @@ public class QuotaRemainderData {
     }
 
     /**
-     * 剩余配额
+     * 剩余配额。
      * minimum: 0
      * maximum: 2147483647
      * @return remainder
@@ -67,7 +67,7 @@ public class QuotaRemainderData {
     }
 
     /**
-     * 所需配额
+     * 所需配额。
      * minimum: 0
      * maximum: 2147483647
      * @return need

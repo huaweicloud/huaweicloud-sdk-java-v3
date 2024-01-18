@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -101,6 +103,8 @@ public class ObsSigner {
 
     private String date = "";
 
+    private static final Logger logger = LoggerFactory.getLogger(ObsSigner.class);
+
     public ObsSigner(ObsCredentials credentials) {
         this.credentials = credentials;
     }
@@ -113,7 +117,14 @@ public class ObsSigner {
         bucketName = "obs".equals(bucketName) ? "" : bucketName;
         String objectName = url.getPath();
         objectName = "/".equals(objectName) ? "" : objectName.substring(1);
-
+        try {
+            String encodedObjName = this.urlEncode(objectName);
+            builder.withPath("/" + encodedObjName);
+            logger.info("urlEncode objectName is " + encodedObjName);
+        } catch (UnsupportedEncodingException e) {
+            logger.error("urlEncode objectName failed!");
+            logger.error(e.toString());
+        }
 
         Map<String, List<String>> headers = httpRequest.getHeaders().entrySet().stream().filter(
                 entry -> entry.getKey().startsWith(X_OBS_PREFIX)
@@ -300,6 +311,7 @@ public class ObsSigner {
             throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         // 1. stringToSign
         String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
+        logger.info("stringToSign:" + stringToSign);
         // 2. signature
         return String.format("OBS %s:%s", this.credentials.getAk(), this.hmacSha1(stringToSign));
     }

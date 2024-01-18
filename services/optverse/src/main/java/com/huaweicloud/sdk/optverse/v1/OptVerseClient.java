@@ -32,7 +32,7 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return CreateTaskResponse
      */
     public CreateTaskResponse createTask(CreateTaskRequest request) {
@@ -46,11 +46,11 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateTaskRequest 请求对象
+     * @param request CreateTaskRequest 请求对象
      * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
      */
     public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
-        return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, OptVerseMeta.createTask, hcClient);
+        return new SyncInvoker<>(request, OptVerseMeta.createTask, hcClient);
     }
 
     /**
@@ -60,7 +60,7 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
@@ -74,11 +74,11 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteTaskRequest 请求对象
+     * @param request DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
      */
     public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
-        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, OptVerseMeta.deleteTask, hcClient);
+        return new SyncInvoker<>(request, OptVerseMeta.deleteTask, hcClient);
     }
 
     /**
@@ -88,7 +88,7 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRequest 请求对象
+     * @param request ListTaskRequest 请求对象
      * @return ListTaskResponse
      */
     public ListTaskResponse listTask(ListTaskRequest request) {
@@ -102,11 +102,11 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListTaskRequest 请求对象
+     * @param request ListTaskRequest 请求对象
      * @return SyncInvoker<ListTaskRequest, ListTaskResponse>
      */
     public SyncInvoker<ListTaskRequest, ListTaskResponse> listTaskInvoker(ListTaskRequest request) {
-        return new SyncInvoker<ListTaskRequest, ListTaskResponse>(request, OptVerseMeta.listTask, hcClient);
+        return new SyncInvoker<>(request, OptVerseMeta.listTask, hcClient);
     }
 
     /**
@@ -116,7 +116,7 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return ShowTaskResponse
      */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
@@ -130,11 +130,11 @@ public class OptVerseClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowTaskRequest 请求对象
+     * @param request ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
      */
     public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
-        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, OptVerseMeta.showTask, hcClient);
+        return new SyncInvoker<>(request, OptVerseMeta.showTask, hcClient);
     }
 
 }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 存储定义
+ * 存储定义。
  */
 public class StorageMetadata {
 
@@ -41,7 +41,7 @@ public class StorageMetadata {
     }
 
     /**
-     * SFS文件系统名称
+     * SFS文件系统名称。
      * @return storageHandle
      */
     public String getStorageHandle() {
@@ -58,7 +58,7 @@ public class StorageMetadata {
     }
 
     /**
-     * 存储类型 * `sfs` - sfs3.0存储
+     * 存储类型： * `sfs` - sfs3.0存储。
      * @return storageClass
      */
     public String getStorageClass() {
@@ -75,7 +75,7 @@ public class StorageMetadata {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -92,7 +92,7 @@ public class StorageMetadata {
     }
 
     /**
-     * 所在区域
+     * 所在区域。
      * @return region
      */
     public String getRegion() {
@@ -109,7 +109,7 @@ public class StorageMetadata {
     }
 
     /**
-     * 访问地址:protocol://[bucket-name].sfs3.[region-name].myhuaweicloud.com:port
+     * 访问地址:protocol://[bucket-name].sfs3.[region-name].myhuaweicloud.com:port。
      * @return exportLocation
      */
     public String getExportLocation() {

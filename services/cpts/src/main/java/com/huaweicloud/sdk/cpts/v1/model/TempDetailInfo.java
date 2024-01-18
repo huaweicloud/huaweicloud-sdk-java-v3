@@ -46,7 +46,7 @@ public class TempDetailInfo {
     }
 
     /**
-     * description
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -63,7 +63,7 @@ public class TempDetailInfo {
     }
 
     /**
-     * id
+     * 事务id
      * minimum: 0
      * maximum: 2147483647
      * @return id
@@ -99,7 +99,7 @@ public class TempDetailInfo {
     }
 
     /**
-     * name
+     * 事务名称
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class TempDetailInfo {
     }
 
     /**
-     * temp_type
+     * 事务类型（已弃用，兼容性保留）
      * minimum: 0
      * maximum: 2147483647
      * @return tempType
@@ -135,7 +135,7 @@ public class TempDetailInfo {
     }
 
     /**
-     * update_time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {

@@ -26,7 +26,7 @@ public class LandingZoneErrorMessage {
     }
 
     /**
-     * Landing Zone的错误级别。包括致命fatal和错误error。
+     * Landing Zone的错误级别。
      * @return level
      */
     public String getLevel() {
