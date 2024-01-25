@@ -429,11 +429,6 @@ public class MetaData {
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "duration_ms")
-
-    private Long durationMs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_size")
 
     private Long videoSize;
@@ -517,23 +512,6 @@ public class MetaData {
 
     public void setDuration(Long duration) {
         this.duration = duration;
-    }
-
-    public MetaData withDurationMs(Long durationMs) {
-        this.durationMs = durationMs;
-        return this;
-    }
-
-    /**
-     * 视频时长，单位毫秒。
-     * @return durationMs
-     */
-    public Long getDurationMs() {
-        return durationMs;
-    }
-
-    public void setDurationMs(Long durationMs) {
-        this.durationMs = durationMs;
     }
 
     public MetaData withVideoSize(Long videoSize) {
@@ -665,26 +643,16 @@ public class MetaData {
         }
         MetaData that = (MetaData) obj;
         return Objects.equals(this.packType, that.packType) && Objects.equals(this.codec, that.codec)
-            && Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
-            && Objects.equals(this.videoSize, that.videoSize) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.hight, that.hight) && Objects.equals(this.bitRate, that.bitRate)
-            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.quality, that.quality)
-            && Objects.equals(this.audioChannels, that.audioChannels);
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.videoSize, that.videoSize)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.hight, that.hight)
+            && Objects.equals(this.bitRate, that.bitRate) && Objects.equals(this.frameRate, that.frameRate)
+            && Objects.equals(this.quality, that.quality) && Objects.equals(this.audioChannels, that.audioChannels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(packType,
-            codec,
-            duration,
-            durationMs,
-            videoSize,
-            width,
-            hight,
-            bitRate,
-            frameRate,
-            quality,
-            audioChannels);
+        return Objects
+            .hash(packType, codec, duration, videoSize, width, hight, bitRate, frameRate, quality, audioChannels);
     }
 
     @Override
@@ -694,7 +662,6 @@ public class MetaData {
         sb.append("    packType: ").append(toIndentedString(packType)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    videoSize: ").append(toIndentedString(videoSize)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    hight: ").append(toIndentedString(hight)).append("\n");

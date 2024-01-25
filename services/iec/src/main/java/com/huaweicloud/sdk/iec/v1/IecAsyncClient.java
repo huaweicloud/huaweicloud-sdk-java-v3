@@ -123,6 +123,8 @@ import com.huaweicloud.sdk.iec.v1.model.ListSitesRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListSitesResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListSubnetsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.iec.v1.model.ListVolumeRequest;
+import com.huaweicloud.sdk.iec.v1.model.ListVolumeResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListVpcsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListVpcsResponse;
 import com.huaweicloud.sdk.iec.v1.model.RebuildImageRequest;
@@ -1692,6 +1694,34 @@ public class IecAsyncClient {
      */
     public AsyncInvoker<ListSubnetsRequest, ListSubnetsResponse> listSubnetsAsyncInvoker(ListSubnetsRequest request) {
         return new AsyncInvoker<>(request, IecMeta.listSubnets, hcClient);
+    }
+
+    /**
+     * 查询硬盘列表
+     *
+     * 查询硬盘列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeRequest 请求对象
+     * @return CompletableFuture<ListVolumeResponse>
+     */
+    public CompletableFuture<ListVolumeResponse> listVolumeAsync(ListVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.listVolume);
+    }
+
+    /**
+     * 查询硬盘列表
+     *
+     * 查询硬盘列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeRequest 请求对象
+     * @return AsyncInvoker<ListVolumeRequest, ListVolumeResponse>
+     */
+    public AsyncInvoker<ListVolumeRequest, ListVolumeResponse> listVolumeAsyncInvoker(ListVolumeRequest request) {
+        return new AsyncInvoker<>(request, IecMeta.listVolume, hcClient);
     }
 
     /**

@@ -12,8 +12,6 @@ import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
-import com.huaweicloud.sdk.aad.v1.model.CreateCertificateRequest;
-import com.huaweicloud.sdk.aad.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigRequest;
@@ -54,6 +52,8 @@ import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpResponse;
 import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchRequest;
 import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchResponse;
+import com.huaweicloud.sdk.aad.v1.model.SetCertForDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.SetCertForDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
@@ -410,35 +410,6 @@ public class AadClient {
     public SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainInvoker(
         CreateAadDomainRequest request) {
         return new SyncInvoker<>(request, AadMeta.createAadDomain, hcClient);
-    }
-
-    /**
-     * 上传/修改域名对应证书
-     *
-     * 上传/修改域名对应证书
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateCertificateRequest 请求对象
-     * @return CreateCertificateResponse
-     */
-    public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
-        return hcClient.syncInvokeHttp(request, AadMeta.createCertificate);
-    }
-
-    /**
-     * 上传/修改域名对应证书
-     *
-     * 上传/修改域名对应证书
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateCertificateRequest 请求对象
-     * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
-     */
-    public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
-        CreateCertificateRequest request) {
-        return new SyncInvoker<>(request, AadMeta.createCertificate, hcClient);
     }
 
     /**
@@ -925,6 +896,35 @@ public class AadClient {
     public SyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitchInvoker(
         ModifyDomainWebSwitchRequest request) {
         return new SyncInvoker<>(request, AadMeta.modifyDomainWebSwitch, hcClient);
+    }
+
+    /**
+     * 上传/修改域名对应证书
+     *
+     * 上传/修改域名对应证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetCertForDomainRequest 请求对象
+     * @return SetCertForDomainResponse
+     */
+    public SetCertForDomainResponse setCertForDomain(SetCertForDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, AadMeta.setCertForDomain);
+    }
+
+    /**
+     * 上传/修改域名对应证书
+     *
+     * 上传/修改域名对应证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetCertForDomainRequest 请求对象
+     * @return SyncInvoker<SetCertForDomainRequest, SetCertForDomainResponse>
+     */
+    public SyncInvoker<SetCertForDomainRequest, SetCertForDomainResponse> setCertForDomainInvoker(
+        SetCertForDomainRequest request) {
+        return new SyncInvoker<>(request, AadMeta.setCertForDomain, hcClient);
     }
 
     /**

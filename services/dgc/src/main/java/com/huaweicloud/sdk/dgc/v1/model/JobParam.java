@@ -106,7 +106,7 @@ public class JobParam {
     }
 
     /**
-     * Get name
+     * 参数名称，只能包含英文字母、数字、中划线和下划线。
      * @return name
      */
     public String getName() {
@@ -123,7 +123,7 @@ public class JobParam {
     }
 
     /**
-     * Get value
+     * 参数值
      * @return value
      */
     public String getValue() {

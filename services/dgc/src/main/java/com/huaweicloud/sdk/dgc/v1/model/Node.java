@@ -114,6 +114,11 @@ public class Node {
         public static final TypeEnum MRSFLINK = new TypeEnum("MRSFlink");
 
         /**
+         * Enum MRSFLINKJOB for value: "MRSFlinkJob"
+         */
+        public static final TypeEnum MRSFLINKJOB = new TypeEnum("MRSFlinkJob");
+
+        /**
          * Enum MRSHETUENGINE for value: "MRSHetuEngine"
          */
         public static final TypeEnum MRSHETUENGINE = new TypeEnum("MRSHetuEngine");
@@ -144,6 +149,7 @@ public class Node {
             map.put("MapReduce", MAPREDUCE);
             map.put("DLISpark", DLISPARK);
             map.put("MRSFlink", MRSFLINK);
+            map.put("MRSFlinkJob", MRSFLINKJOB);
             map.put("MRSHetuEngine", MRSHETUENGINE);
             map.put("RDS SQL", RDS_SQL);
             return Collections.unmodifiableMap(map);

@@ -149,6 +149,8 @@ import com.huaweicloud.sdk.iec.v1.model.ListSitesRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListSitesResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListSubnetsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.iec.v1.model.ListVolumeRequest;
+import com.huaweicloud.sdk.iec.v1.model.ListVolumeResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListVpcsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListVpcsResponse;
 import com.huaweicloud.sdk.iec.v1.model.RebuildImageRequest;
@@ -1919,6 +1921,43 @@ public class IecMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubnetsRequest::getSiteId, ListSubnetsRequest::setSiteId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVolumeRequest, ListVolumeResponse> listVolume = genForListVolume();
+
+    private static HttpRequestDef<ListVolumeRequest, ListVolumeResponse> genForListVolume() {
+        // basic
+        HttpRequestDef.Builder<ListVolumeRequest, ListVolumeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVolumeRequest.class, ListVolumeResponse.class)
+                .withName("ListVolume")
+                .withUri("/v1/cloudvolumes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVolumeRequest::getLimit, ListVolumeRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumeRequest::getName, ListVolumeRequest::setName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVolumeRequest::getOffset, ListVolumeRequest::setOffset));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumeRequest::getStatus, ListVolumeRequest::setStatus));
 
         // response
 

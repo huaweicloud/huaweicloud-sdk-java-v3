@@ -148,6 +148,11 @@ public class InstanceRequest {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverless_info")
+
+    private ServerlessInfo serverlessInfo;
+
     public InstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -686,6 +691,32 @@ public class InstanceRequest {
         this.count = count;
     }
 
+    public InstanceRequest withServerlessInfo(ServerlessInfo serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+        return this;
+    }
+
+    public InstanceRequest withServerlessInfo(Consumer<ServerlessInfo> serverlessInfoSetter) {
+        if (this.serverlessInfo == null) {
+            this.serverlessInfo = new ServerlessInfo();
+            serverlessInfoSetter.accept(this.serverlessInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverlessInfo
+     * @return serverlessInfo
+     */
+    public ServerlessInfo getServerlessInfo() {
+        return serverlessInfo;
+    }
+
+    public void setServerlessInfo(ServerlessInfo serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -709,7 +740,8 @@ public class InstanceRequest {
             && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.replicaOfId, that.replicaOfId)
             && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
-            && Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.count, that.count);
+            && Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.serverlessInfo, that.serverlessInfo);
     }
 
     @Override
@@ -740,7 +772,8 @@ public class InstanceRequest {
             tags,
             unchangeableParam,
             dryRun,
-            count);
+            count,
+            serverlessInfo);
     }
 
     @Override
@@ -774,6 +807,7 @@ public class InstanceRequest {
         sb.append("    unchangeableParam: ").append(toIndentedString(unchangeableParam)).append("\n");
         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

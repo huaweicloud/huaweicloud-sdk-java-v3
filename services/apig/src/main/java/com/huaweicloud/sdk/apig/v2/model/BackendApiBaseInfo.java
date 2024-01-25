@@ -26,7 +26,7 @@ public class BackendApiBaseInfo {
     private String urlDomain;
 
     /**
-     * 请求协议，后端类型为GRPC时请求协议可选GRPCS
+     * 请求协议，后端类型为GRPC时请求协议可选GRPC、GRPCS
      */
     public static final class ReqProtocolEnum {
 
@@ -41,6 +41,11 @@ public class BackendApiBaseInfo {
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
         /**
+         * Enum GRPC for value: "GRPC"
+         */
+        public static final ReqProtocolEnum GRPC = new ReqProtocolEnum("GRPC");
+
+        /**
          * Enum GRPCS for value: "GRPCS"
          */
         public static final ReqProtocolEnum GRPCS = new ReqProtocolEnum("GRPCS");
@@ -51,6 +56,7 @@ public class BackendApiBaseInfo {
             Map<String, ReqProtocolEnum> map = new HashMap<>();
             map.put("HTTP", HTTP);
             map.put("HTTPS", HTTPS);
+            map.put("GRPC", GRPC);
             map.put("GRPCS", GRPCS);
             return Collections.unmodifiableMap(map);
         }
@@ -253,7 +259,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 后端自定义认证对象的ID，后端类型为GRPC时不支持后端自定义认证
+     * 后端自定义认证对象的ID
      * @return authorizerId
      */
     public String getAuthorizerId() {
@@ -287,7 +293,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 请求协议，后端类型为GRPC时请求协议可选GRPCS
+     * 请求协议，后端类型为GRPC时请求协议可选GRPC、GRPCS
      * @return reqProtocol
      */
     public ReqProtocolEnum getReqProtocol() {

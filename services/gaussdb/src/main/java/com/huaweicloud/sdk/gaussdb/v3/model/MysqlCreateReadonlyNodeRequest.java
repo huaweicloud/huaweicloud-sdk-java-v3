@@ -23,6 +23,11 @@ public class MysqlCreateReadonlyNodeRequest {
 
     private String isAutoPay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zones")
+
+    private List<String> availabilityZones = null;
+
     public MysqlCreateReadonlyNodeRequest withPriorities(List<Integer> priorities) {
         this.priorities = priorities;
         return this;
@@ -73,6 +78,39 @@ public class MysqlCreateReadonlyNodeRequest {
         this.isAutoPay = isAutoPay;
     }
 
+    public MysqlCreateReadonlyNodeRequest withAvailabilityZones(List<String> availabilityZones) {
+        this.availabilityZones = availabilityZones;
+        return this;
+    }
+
+    public MysqlCreateReadonlyNodeRequest addAvailabilityZonesItem(String availabilityZonesItem) {
+        if (this.availabilityZones == null) {
+            this.availabilityZones = new ArrayList<>();
+        }
+        this.availabilityZones.add(availabilityZonesItem);
+        return this;
+    }
+
+    public MysqlCreateReadonlyNodeRequest withAvailabilityZones(Consumer<List<String>> availabilityZonesSetter) {
+        if (this.availabilityZones == null) {
+            this.availabilityZones = new ArrayList<>();
+        }
+        availabilityZonesSetter.accept(this.availabilityZones);
+        return this;
+    }
+
+    /**
+     * 可用区。可指定可用区创建只读节点，不传该参数时默认为自动选择可用区。  调用[查询数据库规格](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlFlavors.html)获取，其中az_status中的key为availability_zone。  注：指定可用区创建只读节点，可能由于资源不足创建失败。
+     * @return availabilityZones
+     */
+    public List<String> getAvailabilityZones() {
+        return availabilityZones;
+    }
+
+    public void setAvailabilityZones(List<String> availabilityZones) {
+        this.availabilityZones = availabilityZones;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +120,13 @@ public class MysqlCreateReadonlyNodeRequest {
             return false;
         }
         MysqlCreateReadonlyNodeRequest that = (MysqlCreateReadonlyNodeRequest) obj;
-        return Objects.equals(this.priorities, that.priorities) && Objects.equals(this.isAutoPay, that.isAutoPay);
+        return Objects.equals(this.priorities, that.priorities) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.availabilityZones, that.availabilityZones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(priorities, isAutoPay);
+        return Objects.hash(priorities, isAutoPay, availabilityZones);
     }
 
     @Override
@@ -96,6 +135,7 @@ public class MysqlCreateReadonlyNodeRequest {
         sb.append("class MysqlCreateReadonlyNodeRequest {\n");
         sb.append("    priorities: ").append(toIndentedString(priorities)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
         sb.append("}");
         return sb.toString();
     }

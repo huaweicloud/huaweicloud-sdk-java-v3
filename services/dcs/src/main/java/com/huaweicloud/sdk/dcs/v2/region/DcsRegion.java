@@ -68,6 +68,8 @@ public class DcsRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://dcs.eu-west-0.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://dcs.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DCS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -98,6 +100,7 @@ public class DcsRegion {
         map.put("eu-west-101", EU_WEST_101);
         map.put("me-east-1", ME_EAST_1);
         map.put("eu-west-0", EU_WEST_0);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

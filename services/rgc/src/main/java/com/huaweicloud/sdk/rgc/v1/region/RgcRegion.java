@@ -18,6 +18,12 @@ public class RgcRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://rgc.cn-east-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://rgc.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://rgc.ap-southeast-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("RGC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -26,6 +32,8 @@ public class RgcRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-east-3", CN_EAST_3);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

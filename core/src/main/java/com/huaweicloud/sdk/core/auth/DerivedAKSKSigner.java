@@ -49,23 +49,14 @@ import java.util.Map;
  */
 public class DerivedAKSKSigner extends AKSKSigner {
     private static final String V_11_HMAC_SHA_256 = "V11-HMAC-SHA256";
-    private static volatile DerivedAKSKSigner instance;
+    private final static DerivedAKSKSigner SINGLETON = new DerivedAKSKSigner();
 
     protected DerivedAKSKSigner() {
 
     }
 
     public static DerivedAKSKSigner getInstance() {
-        if (instance != null) {
-            return instance;
-        }
-
-        synchronized (DerivedAKSKSigner.class) {
-            if (instance == null) {
-                instance = new DerivedAKSKSigner();
-            }
-            return instance;
-        }
+        return SINGLETON;
     }
 
     @Override
@@ -79,6 +70,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         }
     }
 
+    @Override
     public <T extends AbstractCredentials<T>> Map<String, String> sign(HttpRequest request, T credentials) {
         checkRequired(credentials);
 

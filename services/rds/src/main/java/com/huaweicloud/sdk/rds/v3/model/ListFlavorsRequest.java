@@ -117,6 +117,11 @@ public class ListFlavorsRequest {
 
     private String specCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_serverless")
+
+    private String isServerless;
+
     public ListFlavorsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -187,6 +192,23 @@ public class ListFlavorsRequest {
         this.specCode = specCode;
     }
 
+    public ListFlavorsRequest withIsServerless(String isServerless) {
+        this.isServerless = isServerless;
+        return this;
+    }
+
+    /**
+     * 是否查询serverless规格。取值范围如下，区分大小写： true：查询serverless规格 false：查询非serverless规格 默认值 false。
+     * @return isServerless
+     */
+    public String getIsServerless() {
+        return isServerless;
+    }
+
+    public void setIsServerless(String isServerless) {
+        this.isServerless = isServerless;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,12 +219,13 @@ public class ListFlavorsRequest {
         }
         ListFlavorsRequest that = (ListFlavorsRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.databaseName, that.databaseName)
-            && Objects.equals(this.versionName, that.versionName) && Objects.equals(this.specCode, that.specCode);
+            && Objects.equals(this.versionName, that.versionName) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.isServerless, that.isServerless);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, databaseName, versionName, specCode);
+        return Objects.hash(xLanguage, databaseName, versionName, specCode, isServerless);
     }
 
     @Override
@@ -213,6 +236,7 @@ public class ListFlavorsRequest {
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    isServerless: ").append(toIndentedString(isServerless)).append("\n");
         sb.append("}");
         return sb.toString();
     }

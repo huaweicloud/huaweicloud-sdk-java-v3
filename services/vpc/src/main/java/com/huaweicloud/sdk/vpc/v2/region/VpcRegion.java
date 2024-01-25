@@ -65,6 +65,9 @@ public class VpcRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://vpc.eu-west-0.myhuaweicloud.com");
 
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://vpc.ru-northwest-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("VPC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -94,6 +97,7 @@ public class VpcRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-0", EU_WEST_0);
+        map.put("ru-northwest-2", RU_NORTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

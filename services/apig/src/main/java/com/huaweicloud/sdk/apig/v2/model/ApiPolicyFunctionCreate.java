@@ -492,7 +492,7 @@ public class ApiPolicyFunctionCreate {
     }
 
     /**
-     * 后端自定义认证对象的ID，后端类型为GRPC时不支持后端自定义认证
+     * 后端自定义认证对象的ID
      * @return authorizerId
      */
     public String getAuthorizerId() {

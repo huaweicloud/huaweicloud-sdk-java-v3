@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListOverviewsClassificationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -39,6 +44,25 @@ public class ListOverviewsClassificationRequest {
     @JsonProperty(value = "instances")
 
     private String instances;
+
+    public ListOverviewsClassificationRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 语言，默认值为en-us。zh-cn（中文）/en-us（英文）
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListOverviewsClassificationRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -151,7 +175,8 @@ public class ListOverviewsClassificationRequest {
             return false;
         }
         ListOverviewsClassificationRequest that = (ListOverviewsClassificationRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
             && Objects.equals(this.top, that.top) && Objects.equals(this.hosts, that.hosts)
             && Objects.equals(this.instances, that.instances);
@@ -159,13 +184,14 @@ public class ListOverviewsClassificationRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, from, to, top, hosts, instances);
+        return Objects.hash(xLanguage, enterpriseProjectId, from, to, top, hosts, instances);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOverviewsClassificationRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");

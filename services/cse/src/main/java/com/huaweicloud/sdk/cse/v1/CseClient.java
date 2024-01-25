@@ -7,18 +7,26 @@ import com.huaweicloud.sdk.cse.v1.model.CreateEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateGovernancePolicyResponse;
+import com.huaweicloud.sdk.cse.v1.model.CreateHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.CreateHttp2RpcResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.CreatePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.CreatePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteGovernancePolicyResponse;
+import com.huaweicloud.sdk.cse.v1.model.DeleteHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.DeleteHttp2RpcResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.DeletePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.DeletePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.DownloadKieRequest;
 import com.huaweicloud.sdk.cse.v1.model.DownloadKieResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListEnginesRequest;
@@ -35,6 +43,10 @@ import com.huaweicloud.sdk.cse.v1.model.ListMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.ModifyHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.ModifyHttp2RpcResponse;
+import com.huaweicloud.sdk.cse.v1.model.ModifyPluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.ModifyPluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.ResizeEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ResizeEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.RetryEngineRequest;
@@ -45,6 +57,12 @@ import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowHttp2RpcsRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowHttp2RpcsResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowPluginsRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowPluginsResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowSinglePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowSinglePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateNacosNamespacesRequest;
@@ -695,6 +713,262 @@ public class CseClient {
      */
     public SyncInvoker<UploadKieRequest, UploadKieResponse> uploadKieInvoker(UploadKieRequest request) {
         return new SyncInvoker<>(request, CseMeta.uploadKie, hcClient);
+    }
+
+    /**
+     * 创建http转rpc方法
+     *
+     * 创建http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHttp2RpcRequest 请求对象
+     * @return CreateHttp2RpcResponse
+     */
+    public CreateHttp2RpcResponse createHttp2Rpc(CreateHttp2RpcRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.createHttp2Rpc);
+    }
+
+    /**
+     * 创建http转rpc方法
+     *
+     * 创建http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHttp2RpcRequest 请求对象
+     * @return SyncInvoker<CreateHttp2RpcRequest, CreateHttp2RpcResponse>
+     */
+    public SyncInvoker<CreateHttp2RpcRequest, CreateHttp2RpcResponse> createHttp2RpcInvoker(
+        CreateHttp2RpcRequest request) {
+        return new SyncInvoker<>(request, CseMeta.createHttp2Rpc, hcClient);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePluginRequest 请求对象
+     * @return CreatePluginResponse
+     */
+    public CreatePluginResponse createPlugin(CreatePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.createPlugin);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePluginRequest 请求对象
+     * @return SyncInvoker<CreatePluginRequest, CreatePluginResponse>
+     */
+    public SyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginInvoker(CreatePluginRequest request) {
+        return new SyncInvoker<>(request, CseMeta.createPlugin, hcClient);
+    }
+
+    /**
+     * 删除http转rpc方法
+     *
+     * 删除http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHttp2RpcRequest 请求对象
+     * @return DeleteHttp2RpcResponse
+     */
+    public DeleteHttp2RpcResponse deleteHttp2Rpc(DeleteHttp2RpcRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.deleteHttp2Rpc);
+    }
+
+    /**
+     * 删除http转rpc方法
+     *
+     * 删除http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHttp2RpcRequest 请求对象
+     * @return SyncInvoker<DeleteHttp2RpcRequest, DeleteHttp2RpcResponse>
+     */
+    public SyncInvoker<DeleteHttp2RpcRequest, DeleteHttp2RpcResponse> deleteHttp2RpcInvoker(
+        DeleteHttp2RpcRequest request) {
+        return new SyncInvoker<>(request, CseMeta.deleteHttp2Rpc, hcClient);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 删除插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePluginRequest 请求对象
+     * @return DeletePluginResponse
+     */
+    public DeletePluginResponse deletePlugin(DeletePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.deletePlugin);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 删除插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePluginRequest 请求对象
+     * @return SyncInvoker<DeletePluginRequest, DeletePluginResponse>
+     */
+    public SyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginInvoker(DeletePluginRequest request) {
+        return new SyncInvoker<>(request, CseMeta.deletePlugin, hcClient);
+    }
+
+    /**
+     * 修改http转rpc方法
+     *
+     * 修改http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHttp2RpcRequest 请求对象
+     * @return ModifyHttp2RpcResponse
+     */
+    public ModifyHttp2RpcResponse modifyHttp2Rpc(ModifyHttp2RpcRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.modifyHttp2Rpc);
+    }
+
+    /**
+     * 修改http转rpc方法
+     *
+     * 修改http转rpc方法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHttp2RpcRequest 请求对象
+     * @return SyncInvoker<ModifyHttp2RpcRequest, ModifyHttp2RpcResponse>
+     */
+    public SyncInvoker<ModifyHttp2RpcRequest, ModifyHttp2RpcResponse> modifyHttp2RpcInvoker(
+        ModifyHttp2RpcRequest request) {
+        return new SyncInvoker<>(request, CseMeta.modifyHttp2Rpc, hcClient);
+    }
+
+    /**
+     * 修改插件
+     *
+     * 修改插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPluginRequest 请求对象
+     * @return ModifyPluginResponse
+     */
+    public ModifyPluginResponse modifyPlugin(ModifyPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.modifyPlugin);
+    }
+
+    /**
+     * 修改插件
+     *
+     * 修改插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPluginRequest 请求对象
+     * @return SyncInvoker<ModifyPluginRequest, ModifyPluginResponse>
+     */
+    public SyncInvoker<ModifyPluginRequest, ModifyPluginResponse> modifyPluginInvoker(ModifyPluginRequest request) {
+        return new SyncInvoker<>(request, CseMeta.modifyPlugin, hcClient);
+    }
+
+    /**
+     * 查询http2rpc资源列表
+     *
+     * 查询http转rpc资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHttp2RpcsRequest 请求对象
+     * @return ShowHttp2RpcsResponse
+     */
+    public ShowHttp2RpcsResponse showHttp2Rpcs(ShowHttp2RpcsRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.showHttp2Rpcs);
+    }
+
+    /**
+     * 查询http2rpc资源列表
+     *
+     * 查询http转rpc资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHttp2RpcsRequest 请求对象
+     * @return SyncInvoker<ShowHttp2RpcsRequest, ShowHttp2RpcsResponse>
+     */
+    public SyncInvoker<ShowHttp2RpcsRequest, ShowHttp2RpcsResponse> showHttp2RpcsInvoker(ShowHttp2RpcsRequest request) {
+        return new SyncInvoker<>(request, CseMeta.showHttp2Rpcs, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPluginsRequest 请求对象
+     * @return ShowPluginsResponse
+     */
+    public ShowPluginsResponse showPlugins(ShowPluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.showPlugins);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPluginsRequest 请求对象
+     * @return SyncInvoker<ShowPluginsRequest, ShowPluginsResponse>
+     */
+    public SyncInvoker<ShowPluginsRequest, ShowPluginsResponse> showPluginsInvoker(ShowPluginsRequest request) {
+        return new SyncInvoker<>(request, CseMeta.showPlugins, hcClient);
+    }
+
+    /**
+     * 查询单个插件
+     *
+     * 查询单个插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSinglePluginRequest 请求对象
+     * @return ShowSinglePluginResponse
+     */
+    public ShowSinglePluginResponse showSinglePlugin(ShowSinglePluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CseMeta.showSinglePlugin);
+    }
+
+    /**
+     * 查询单个插件
+     *
+     * 查询单个插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSinglePluginRequest 请求对象
+     * @return SyncInvoker<ShowSinglePluginRequest, ShowSinglePluginResponse>
+     */
+    public SyncInvoker<ShowSinglePluginRequest, ShowSinglePluginResponse> showSinglePluginInvoker(
+        ShowSinglePluginRequest request) {
+        return new SyncInvoker<>(request, CseMeta.showSinglePlugin, hcClient);
     }
 
     /**

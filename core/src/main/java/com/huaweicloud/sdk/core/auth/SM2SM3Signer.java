@@ -28,14 +28,11 @@ import org.bouncycastle.crypto.params.ECPrivateKeyParameters;
 import org.bouncycastle.crypto.params.ECPublicKeyParameters;
 import org.bouncycastle.crypto.signers.SM2Signer;
 import org.bouncycastle.jce.ECNamedCurveTable;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.math.BigInteger;
-import java.security.Security;
-import java.util.Objects;
 
 public class SM2SM3Signer extends P256SHA256Signer {
-    private static volatile SM2SM3Signer instance;
+    private final static SM2SM3Signer SINGLETON = new SM2SM3Signer();
 
     protected SM2SM3Signer() {
         super();
@@ -48,17 +45,7 @@ public class SM2SM3Signer extends P256SHA256Signer {
     }
 
     public static SM2SM3Signer getInstance() {
-        if (Objects.nonNull(instance)) {
-            return instance;
-        }
-
-        synchronized (SM2SM3Signer.class) {
-            if (instance == null) {
-                Security.addProvider(new BouncyCastleProvider());
-                instance = new SM2SM3Signer();
-            }
-            return instance;
-        }
+        return SINGLETON;
     }
 
     @Override

@@ -10,19 +10,27 @@ import com.huaweicloud.sdk.cse.v1.model.CreateEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateGovPolicy;
 import com.huaweicloud.sdk.cse.v1.model.CreateGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateGovernancePolicyResponse;
+import com.huaweicloud.sdk.cse.v1.model.CreateHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.CreateHttp2RpcResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.CreateNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.CreatePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.CreatePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.CreateRules;
 import com.huaweicloud.sdk.cse.v1.model.DeleteEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteGovernancePolicyResponse;
+import com.huaweicloud.sdk.cse.v1.model.DeleteHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.DeleteHttp2RpcResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.DeleteNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.DeleteNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.DeletePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.DeletePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.DownloadKieReqBody;
 import com.huaweicloud.sdk.cse.v1.model.DownloadKieRequest;
 import com.huaweicloud.sdk.cse.v1.model.DownloadKieResponse;
@@ -32,6 +40,7 @@ import com.huaweicloud.sdk.cse.v1.model.EngineCreateReq;
 import com.huaweicloud.sdk.cse.v1.model.EngineModifyReq;
 import com.huaweicloud.sdk.cse.v1.model.EngineUpdateReq;
 import com.huaweicloud.sdk.cse.v1.model.GovPolicyDetail;
+import com.huaweicloud.sdk.cse.v1.model.Http2Rpc;
 import com.huaweicloud.sdk.cse.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListFlavorsRequest;
@@ -46,6 +55,10 @@ import com.huaweicloud.sdk.cse.v1.model.ListMicroserviceRouteRuleRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListMicroserviceRouteRuleResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListNacosNamespacesRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListNacosNamespacesResponse;
+import com.huaweicloud.sdk.cse.v1.model.ModifyHttp2RpcRequest;
+import com.huaweicloud.sdk.cse.v1.model.ModifyHttp2RpcResponse;
+import com.huaweicloud.sdk.cse.v1.model.ModifyPluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.ModifyPluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.ResizeEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ResizeEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.RetryEngineRequest;
@@ -56,6 +69,12 @@ import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineQuotasResponse;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineRequest;
 import com.huaweicloud.sdk.cse.v1.model.ShowEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowHttp2RpcsRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowHttp2RpcsResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowPluginsRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowPluginsResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowSinglePluginRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowSinglePluginResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.UpdateGovernancePolicyResponse;
 import com.huaweicloud.sdk.cse.v1.model.UpdateNacosNamespacesRequest;
@@ -67,6 +86,7 @@ import com.huaweicloud.sdk.cse.v1.model.UpgradeEngineResponse;
 import com.huaweicloud.sdk.cse.v1.model.UploadKieRequest;
 import com.huaweicloud.sdk.cse.v1.model.UploadKieRequestBody;
 import com.huaweicloud.sdk.cse.v1.model.UploadKieResponse;
+import com.huaweicloud.sdk.cse.v1.model.WasmPlugin;
 
 import java.util.List;
 
@@ -928,6 +948,299 @@ public class CseMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadKieRequestBody.class),
             f -> f.withMarshaller(UploadKieRequest::getBody, UploadKieRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHttp2RpcRequest, CreateHttp2RpcResponse> createHttp2Rpc =
+        genForCreateHttp2Rpc();
+
+    private static HttpRequestDef<CreateHttp2RpcRequest, CreateHttp2RpcResponse> genForCreateHttp2Rpc() {
+        // basic
+        HttpRequestDef.Builder<CreateHttp2RpcRequest, CreateHttp2RpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHttp2RpcRequest.class, CreateHttp2RpcResponse.class)
+                .withName("CreateHttp2Rpc")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/http2Rpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHttp2RpcRequest::getGatewayId, CreateHttp2RpcRequest::setGatewayId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHttp2RpcRequest::getAccept, CreateHttp2RpcRequest::setAccept));
+        builder.<Http2Rpc>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Http2Rpc.class),
+            f -> f.withMarshaller(CreateHttp2RpcRequest::getBody, CreateHttp2RpcRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForCreatePlugin();
+
+    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForCreatePlugin() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginRequest, CreatePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginRequest.class, CreatePluginResponse.class)
+                .withName("CreatePlugin")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginRequest::getGatewayId, CreatePluginRequest::setGatewayId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginRequest::getAccept, CreatePluginRequest::setAccept));
+        builder.<WasmPlugin>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WasmPlugin.class),
+            f -> f.withMarshaller(CreatePluginRequest::getBody, CreatePluginRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHttp2RpcRequest, DeleteHttp2RpcResponse> deleteHttp2Rpc =
+        genForDeleteHttp2Rpc();
+
+    private static HttpRequestDef<DeleteHttp2RpcRequest, DeleteHttp2RpcResponse> genForDeleteHttp2Rpc() {
+        // basic
+        HttpRequestDef.Builder<DeleteHttp2RpcRequest, DeleteHttp2RpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHttp2RpcRequest.class, DeleteHttp2RpcResponse.class)
+                .withName("DeleteHttp2Rpc")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/http2Rpcs/{http2Rpc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHttp2RpcRequest::getGatewayId, DeleteHttp2RpcRequest::setGatewayId));
+        builder.<String>withRequestField("http2Rpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHttp2RpcRequest::getHttp2RpcId, DeleteHttp2RpcRequest::setHttp2RpcId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHttp2RpcRequest::getAccept, DeleteHttp2RpcRequest::setAccept));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genForDeletePlugin();
+
+    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genForDeletePlugin() {
+        // basic
+        HttpRequestDef.Builder<DeletePluginRequest, DeletePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginRequest.class, DeletePluginResponse.class)
+                .withName("DeletePlugin")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getGatewayId, DeletePluginRequest::setGatewayId));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getPluginId, DeletePluginRequest::setPluginId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getAccept, DeletePluginRequest::setAccept));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyHttp2RpcRequest, ModifyHttp2RpcResponse> modifyHttp2Rpc =
+        genForModifyHttp2Rpc();
+
+    private static HttpRequestDef<ModifyHttp2RpcRequest, ModifyHttp2RpcResponse> genForModifyHttp2Rpc() {
+        // basic
+        HttpRequestDef.Builder<ModifyHttp2RpcRequest, ModifyHttp2RpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyHttp2RpcRequest.class, ModifyHttp2RpcResponse.class)
+                .withName("ModifyHttp2Rpc")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/http2Rpcs/{http2Rpc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyHttp2RpcRequest::getGatewayId, ModifyHttp2RpcRequest::setGatewayId));
+        builder.<String>withRequestField("http2Rpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyHttp2RpcRequest::getHttp2RpcId, ModifyHttp2RpcRequest::setHttp2RpcId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyHttp2RpcRequest::getAccept, ModifyHttp2RpcRequest::setAccept));
+        builder.<Http2Rpc>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Http2Rpc.class),
+            f -> f.withMarshaller(ModifyHttp2RpcRequest::getBody, ModifyHttp2RpcRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyPluginRequest, ModifyPluginResponse> modifyPlugin = genForModifyPlugin();
+
+    private static HttpRequestDef<ModifyPluginRequest, ModifyPluginResponse> genForModifyPlugin() {
+        // basic
+        HttpRequestDef.Builder<ModifyPluginRequest, ModifyPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyPluginRequest.class, ModifyPluginResponse.class)
+                .withName("ModifyPlugin")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyPluginRequest::getGatewayId, ModifyPluginRequest::setGatewayId));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyPluginRequest::getPluginId, ModifyPluginRequest::setPluginId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyPluginRequest::getAccept, ModifyPluginRequest::setAccept));
+        builder.<WasmPlugin>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WasmPlugin.class),
+            f -> f.withMarshaller(ModifyPluginRequest::getBody, ModifyPluginRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHttp2RpcsRequest, ShowHttp2RpcsResponse> showHttp2Rpcs =
+        genForShowHttp2Rpcs();
+
+    private static HttpRequestDef<ShowHttp2RpcsRequest, ShowHttp2RpcsResponse> genForShowHttp2Rpcs() {
+        // basic
+        HttpRequestDef.Builder<ShowHttp2RpcsRequest, ShowHttp2RpcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHttp2RpcsRequest.class, ShowHttp2RpcsResponse.class)
+                .withName("ShowHttp2Rpcs")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/http2Rpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttp2RpcsRequest::getGatewayId, ShowHttp2RpcsRequest::setGatewayId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttp2RpcsRequest::getAccept, ShowHttp2RpcsRequest::setAccept));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPluginsRequest, ShowPluginsResponse> showPlugins = genForShowPlugins();
+
+    private static HttpRequestDef<ShowPluginsRequest, ShowPluginsResponse> genForShowPlugins() {
+        // basic
+        HttpRequestDef.Builder<ShowPluginsRequest, ShowPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPluginsRequest.class, ShowPluginsResponse.class)
+                .withName("ShowPlugins")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginsRequest::getGatewayId, ShowPluginsRequest::setGatewayId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginsRequest::getAccept, ShowPluginsRequest::setAccept));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSinglePluginRequest, ShowSinglePluginResponse> showSinglePlugin =
+        genForShowSinglePlugin();
+
+    private static HttpRequestDef<ShowSinglePluginRequest, ShowSinglePluginResponse> genForShowSinglePlugin() {
+        // basic
+        HttpRequestDef.Builder<ShowSinglePluginRequest, ShowSinglePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSinglePluginRequest.class, ShowSinglePluginResponse.class)
+                .withName("ShowSinglePlugin")
+                .withUri("/v2/{project_id}/enginemgr/gateways/{gateway_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSinglePluginRequest::getGatewayId, ShowSinglePluginRequest::setGatewayId));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSinglePluginRequest::getPluginId, ShowSinglePluginRequest::setPluginId));
+        builder.<String>withRequestField("Accept",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSinglePluginRequest::getAccept, ShowSinglePluginRequest::setAccept));
 
         // response
 

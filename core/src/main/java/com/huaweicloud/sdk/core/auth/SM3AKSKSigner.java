@@ -22,12 +22,9 @@
 package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.Constants;
-import org.openeuler.BGMProvider;
-
-import java.security.Security;
 
 public class SM3AKSKSigner extends AKSKSigner {
-    private static volatile SM3AKSKSigner instance;
+    private static final SM3AKSKSigner SINGLETON = new SM3AKSKSigner();
 
     protected SM3AKSKSigner() {
         super();
@@ -38,16 +35,6 @@ public class SM3AKSKSigner extends AKSKSigner {
     }
 
     public static SM3AKSKSigner getInstance() {
-        if (instance != null) {
-            return instance;
-        }
-
-        synchronized (SM3AKSKSigner.class) {
-            if (instance == null) {
-                Security.addProvider(new BGMProvider());
-                instance = new SM3AKSKSigner();
-            }
-            return instance;
-        }
+        return SINGLETON;
     }
 }

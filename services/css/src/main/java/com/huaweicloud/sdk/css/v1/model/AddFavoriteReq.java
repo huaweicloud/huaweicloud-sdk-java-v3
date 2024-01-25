@@ -27,7 +27,7 @@ public class AddFavoriteReq {
     }
 
     /**
-     * 自定义模板名称。
+     * 配置文件名称。4～32个字符，只能包含数字、字母、中划线和下划线，且必须以字母开头。
      * @return name
      */
     public String getName() {

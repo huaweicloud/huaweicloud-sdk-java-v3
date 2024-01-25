@@ -184,6 +184,16 @@ public class VatInvoiceResult {
     private List<ItemList> itemList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "province")
+
+    private String province;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "city")
+
+    private String city;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -192,6 +202,86 @@ public class VatInvoiceResult {
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_buyer_name")
+
+    private String belongBuyerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_seller_name")
+
+    private String belongSellerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_vat_code")
+
+    private String belongVatCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_number")
+
+    private String belongNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_pages")
+
+    private String belongPages;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_current_page")
+
+    private String belongCurrentPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_remarks")
+
+    private String belongRemarks;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_issue_date")
+
+    private String belongIssueDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sales_mark")
+
+    private Boolean salesMark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_sum_amount")
+
+    private String belongSumAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_sum_tax")
+
+    private String belongSumTax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_subtotal_amount")
+
+    private String belongSubtotalAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_subtotal_tax")
+
+    private String belongSubtotalTax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_discount_amount")
+
+    private String belongDiscountAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_discount_tax")
+
+    private String belongDiscountTax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "belong_item_list")
+
+    private List<BelongItemList> belongItemList = null;
 
     public VatInvoiceResult withTitle(String title) {
         this.title = title;
@@ -819,6 +909,40 @@ public class VatInvoiceResult {
         this.itemList = itemList;
     }
 
+    public VatInvoiceResult withProvince(String province) {
+        this.province = province;
+        return this;
+    }
+
+    /**
+     * 省。 
+     * @return province
+     */
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public VatInvoiceResult withCity(String city) {
+        this.city = city;
+        return this;
+    }
+
+    /**
+     * 市。 
+     * @return city
+     */
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public VatInvoiceResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
@@ -853,6 +977,294 @@ public class VatInvoiceResult {
         this.textLocation = textLocation;
     }
 
+    public VatInvoiceResult withBelongBuyerName(String belongBuyerName) {
+        this.belongBuyerName = belongBuyerName;
+        return this;
+    }
+
+    /**
+     * 销货清单的购买方名称。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongBuyerName
+     */
+    public String getBelongBuyerName() {
+        return belongBuyerName;
+    }
+
+    public void setBelongBuyerName(String belongBuyerName) {
+        this.belongBuyerName = belongBuyerName;
+    }
+
+    public VatInvoiceResult withBelongSellerName(String belongSellerName) {
+        this.belongSellerName = belongSellerName;
+        return this;
+    }
+
+    /**
+     * 销货清单的销售方名称。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongSellerName
+     */
+    public String getBelongSellerName() {
+        return belongSellerName;
+    }
+
+    public void setBelongSellerName(String belongSellerName) {
+        this.belongSellerName = belongSellerName;
+    }
+
+    public VatInvoiceResult withBelongVatCode(String belongVatCode) {
+        this.belongVatCode = belongVatCode;
+        return this;
+    }
+
+    /**
+     * 所属的增值税发票代码。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongVatCode
+     */
+    public String getBelongVatCode() {
+        return belongVatCode;
+    }
+
+    public void setBelongVatCode(String belongVatCode) {
+        this.belongVatCode = belongVatCode;
+    }
+
+    public VatInvoiceResult withBelongNumber(String belongNumber) {
+        this.belongNumber = belongNumber;
+        return this;
+    }
+
+    /**
+     * 销货清单的开票号码。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongNumber
+     */
+    public String getBelongNumber() {
+        return belongNumber;
+    }
+
+    public void setBelongNumber(String belongNumber) {
+        this.belongNumber = belongNumber;
+    }
+
+    public VatInvoiceResult withBelongPages(String belongPages) {
+        this.belongPages = belongPages;
+        return this;
+    }
+
+    /**
+     * 销货清单的总页码数。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongPages
+     */
+    public String getBelongPages() {
+        return belongPages;
+    }
+
+    public void setBelongPages(String belongPages) {
+        this.belongPages = belongPages;
+    }
+
+    public VatInvoiceResult withBelongCurrentPage(String belongCurrentPage) {
+        this.belongCurrentPage = belongCurrentPage;
+        return this;
+    }
+
+    /**
+     * 销货清单的当前页码。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongCurrentPage
+     */
+    public String getBelongCurrentPage() {
+        return belongCurrentPage;
+    }
+
+    public void setBelongCurrentPage(String belongCurrentPage) {
+        this.belongCurrentPage = belongCurrentPage;
+    }
+
+    public VatInvoiceResult withBelongRemarks(String belongRemarks) {
+        this.belongRemarks = belongRemarks;
+        return this;
+    }
+
+    /**
+     * 销货清单的备注。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongRemarks
+     */
+    public String getBelongRemarks() {
+        return belongRemarks;
+    }
+
+    public void setBelongRemarks(String belongRemarks) {
+        this.belongRemarks = belongRemarks;
+    }
+
+    public VatInvoiceResult withBelongIssueDate(String belongIssueDate) {
+        this.belongIssueDate = belongIssueDate;
+        return this;
+    }
+
+    /**
+     * 销货清单的填开日期。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongIssueDate
+     */
+    public String getBelongIssueDate() {
+        return belongIssueDate;
+    }
+
+    public void setBelongIssueDate(String belongIssueDate) {
+        this.belongIssueDate = belongIssueDate;
+    }
+
+    public VatInvoiceResult withSalesMark(Boolean salesMark) {
+        this.salesMark = salesMark;
+        return this;
+    }
+
+    /**
+     * 是否是销货清单，可选值为： - true：输入图片是销货清单。 - false：输入图片不是销货清单。 
+     * @return salesMark
+     */
+    public Boolean getSalesMark() {
+        return salesMark;
+    }
+
+    public void setSalesMark(Boolean salesMark) {
+        this.salesMark = salesMark;
+    }
+
+    public VatInvoiceResult withBelongSumAmount(String belongSumAmount) {
+        this.belongSumAmount = belongSumAmount;
+        return this;
+    }
+
+    /**
+     * 销货清单的小计金额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongSumAmount
+     */
+    public String getBelongSumAmount() {
+        return belongSumAmount;
+    }
+
+    public void setBelongSumAmount(String belongSumAmount) {
+        this.belongSumAmount = belongSumAmount;
+    }
+
+    public VatInvoiceResult withBelongSumTax(String belongSumTax) {
+        this.belongSumTax = belongSumTax;
+        return this;
+    }
+
+    /**
+     * 销货清单的小计税额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongSumTax
+     */
+    public String getBelongSumTax() {
+        return belongSumTax;
+    }
+
+    public void setBelongSumTax(String belongSumTax) {
+        this.belongSumTax = belongSumTax;
+    }
+
+    public VatInvoiceResult withBelongSubtotalAmount(String belongSubtotalAmount) {
+        this.belongSubtotalAmount = belongSubtotalAmount;
+        return this;
+    }
+
+    /**
+     * 销货清单的总计或者合计金额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongSubtotalAmount
+     */
+    public String getBelongSubtotalAmount() {
+        return belongSubtotalAmount;
+    }
+
+    public void setBelongSubtotalAmount(String belongSubtotalAmount) {
+        this.belongSubtotalAmount = belongSubtotalAmount;
+    }
+
+    public VatInvoiceResult withBelongSubtotalTax(String belongSubtotalTax) {
+        this.belongSubtotalTax = belongSubtotalTax;
+        return this;
+    }
+
+    /**
+     * 销货清单的总计税额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongSubtotalTax
+     */
+    public String getBelongSubtotalTax() {
+        return belongSubtotalTax;
+    }
+
+    public void setBelongSubtotalTax(String belongSubtotalTax) {
+        this.belongSubtotalTax = belongSubtotalTax;
+    }
+
+    public VatInvoiceResult withBelongDiscountAmount(String belongDiscountAmount) {
+        this.belongDiscountAmount = belongDiscountAmount;
+        return this;
+    }
+
+    /**
+     * 销货清单的折扣金额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongDiscountAmount
+     */
+    public String getBelongDiscountAmount() {
+        return belongDiscountAmount;
+    }
+
+    public void setBelongDiscountAmount(String belongDiscountAmount) {
+        this.belongDiscountAmount = belongDiscountAmount;
+    }
+
+    public VatInvoiceResult withBelongDiscountTax(String belongDiscountTax) {
+        this.belongDiscountTax = belongDiscountTax;
+        return this;
+    }
+
+    /**
+     * 销货清单的折扣税额。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongDiscountTax
+     */
+    public String getBelongDiscountTax() {
+        return belongDiscountTax;
+    }
+
+    public void setBelongDiscountTax(String belongDiscountTax) {
+        this.belongDiscountTax = belongDiscountTax;
+    }
+
+    public VatInvoiceResult withBelongItemList(List<BelongItemList> belongItemList) {
+        this.belongItemList = belongItemList;
+        return this;
+    }
+
+    public VatInvoiceResult addBelongItemListItem(BelongItemList belongItemListItem) {
+        if (this.belongItemList == null) {
+            this.belongItemList = new ArrayList<>();
+        }
+        this.belongItemList.add(belongItemListItem);
+        return this;
+    }
+
+    public VatInvoiceResult withBelongItemList(Consumer<List<BelongItemList>> belongItemListSetter) {
+        if (this.belongItemList == null) {
+            this.belongItemList = new ArrayList<>();
+        }
+        belongItemListSetter.accept(this.belongItemList);
+        return this;
+    }
+
+    /**
+     * 销货清单的货物（劳务）名称列表。 当传入图片为发票销货清单时返回此字段。 
+     * @return belongItemList
+     */
+    public List<BelongItemList> getBelongItemList() {
+        return belongItemList;
+    }
+
+    public void setBelongItemList(List<BelongItemList> belongItemList) {
+        this.belongItemList = belongItemList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -881,8 +1293,25 @@ public class VatInvoiceResult {
             && Objects.equals(this.totalInWords, that.totalInWords) && Objects.equals(this.remarks, that.remarks)
             && Objects.equals(this.receiver, that.receiver) && Objects.equals(this.reviewer, that.reviewer)
             && Objects.equals(this.issuer, that.issuer) && Objects.equals(this.sellerSeal, that.sellerSeal)
-            && Objects.equals(this.itemList, that.itemList) && Objects.equals(this.confidence, that.confidence)
-            && Objects.equals(this.textLocation, that.textLocation);
+            && Objects.equals(this.itemList, that.itemList) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.belongBuyerName, that.belongBuyerName)
+            && Objects.equals(this.belongSellerName, that.belongSellerName)
+            && Objects.equals(this.belongVatCode, that.belongVatCode)
+            && Objects.equals(this.belongNumber, that.belongNumber)
+            && Objects.equals(this.belongPages, that.belongPages)
+            && Objects.equals(this.belongCurrentPage, that.belongCurrentPage)
+            && Objects.equals(this.belongRemarks, that.belongRemarks)
+            && Objects.equals(this.belongIssueDate, that.belongIssueDate)
+            && Objects.equals(this.salesMark, that.salesMark)
+            && Objects.equals(this.belongSumAmount, that.belongSumAmount)
+            && Objects.equals(this.belongSumTax, that.belongSumTax)
+            && Objects.equals(this.belongSubtotalAmount, that.belongSubtotalAmount)
+            && Objects.equals(this.belongSubtotalTax, that.belongSubtotalTax)
+            && Objects.equals(this.belongDiscountAmount, that.belongDiscountAmount)
+            && Objects.equals(this.belongDiscountTax, that.belongDiscountTax)
+            && Objects.equals(this.belongItemList, that.belongItemList);
     }
 
     @Override
@@ -921,8 +1350,26 @@ public class VatInvoiceResult {
             issuer,
             sellerSeal,
             itemList,
+            province,
+            city,
             confidence,
-            textLocation);
+            textLocation,
+            belongBuyerName,
+            belongSellerName,
+            belongVatCode,
+            belongNumber,
+            belongPages,
+            belongCurrentPage,
+            belongRemarks,
+            belongIssueDate,
+            salesMark,
+            belongSumAmount,
+            belongSumTax,
+            belongSubtotalAmount,
+            belongSubtotalTax,
+            belongDiscountAmount,
+            belongDiscountTax,
+            belongItemList);
     }
 
     @Override
@@ -963,8 +1410,26 @@ public class VatInvoiceResult {
         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
         sb.append("    sellerSeal: ").append(toIndentedString(sellerSeal)).append("\n");
         sb.append("    itemList: ").append(toIndentedString(itemList)).append("\n");
+        sb.append("    province: ").append(toIndentedString(province)).append("\n");
+        sb.append("    city: ").append(toIndentedString(city)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    belongBuyerName: ").append(toIndentedString(belongBuyerName)).append("\n");
+        sb.append("    belongSellerName: ").append(toIndentedString(belongSellerName)).append("\n");
+        sb.append("    belongVatCode: ").append(toIndentedString(belongVatCode)).append("\n");
+        sb.append("    belongNumber: ").append(toIndentedString(belongNumber)).append("\n");
+        sb.append("    belongPages: ").append(toIndentedString(belongPages)).append("\n");
+        sb.append("    belongCurrentPage: ").append(toIndentedString(belongCurrentPage)).append("\n");
+        sb.append("    belongRemarks: ").append(toIndentedString(belongRemarks)).append("\n");
+        sb.append("    belongIssueDate: ").append(toIndentedString(belongIssueDate)).append("\n");
+        sb.append("    salesMark: ").append(toIndentedString(salesMark)).append("\n");
+        sb.append("    belongSumAmount: ").append(toIndentedString(belongSumAmount)).append("\n");
+        sb.append("    belongSumTax: ").append(toIndentedString(belongSumTax)).append("\n");
+        sb.append("    belongSubtotalAmount: ").append(toIndentedString(belongSubtotalAmount)).append("\n");
+        sb.append("    belongSubtotalTax: ").append(toIndentedString(belongSubtotalTax)).append("\n");
+        sb.append("    belongDiscountAmount: ").append(toIndentedString(belongDiscountAmount)).append("\n");
+        sb.append("    belongDiscountTax: ").append(toIndentedString(belongDiscountTax)).append("\n");
+        sb.append("    belongItemList: ").append(toIndentedString(belongItemList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

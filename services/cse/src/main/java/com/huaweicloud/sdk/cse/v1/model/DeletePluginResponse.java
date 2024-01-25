@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.aad.v1.model;
+package com.huaweicloud.sdk.cse.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class CreateCertificateResponse extends SdkResponse {
+public class DeletePluginResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -28,7 +28,7 @@ public class CreateCertificateResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateCertificateResponse {\n");
+        sb.append("class DeletePluginResponse {\n");
         sb.append("}");
         return sb.toString();
     }

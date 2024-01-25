@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dgc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * BasicConfig
@@ -44,6 +47,11 @@ public class BasicConfig {
     @JsonProperty(value = "customFields")
 
     private Object customFields;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public BasicConfig withOwner(String owner) {
         this.owner = owner;
@@ -164,6 +172,39 @@ public class BasicConfig {
         this.customFields = customFields;
     }
 
+    public BasicConfig withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public BasicConfig addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public BasicConfig withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 作业标签列表
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +218,12 @@ public class BasicConfig {
             && Objects.equals(this.isIgnoreWaiting, that.isIgnoreWaiting)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.executeUser, that.executeUser)
             && Objects.equals(this.instanceTimeout, that.instanceTimeout)
-            && Objects.equals(this.customFields, that.customFields);
+            && Objects.equals(this.customFields, that.customFields) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(owner, agency, isIgnoreWaiting, priority, executeUser, instanceTimeout, customFields);
+        return Objects.hash(owner, agency, isIgnoreWaiting, priority, executeUser, instanceTimeout, customFields, tags);
     }
 
     @Override
@@ -196,6 +237,7 @@ public class BasicConfig {
         sb.append("    executeUser: ").append(toIndentedString(executeUser)).append("\n");
         sb.append("    instanceTimeout: ").append(toIndentedString(instanceTimeout)).append("\n");
         sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

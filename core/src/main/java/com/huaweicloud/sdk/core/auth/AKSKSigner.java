@@ -52,7 +52,7 @@ import java.util.stream.Collectors;
  * @author HuaweiCloud_SDK
  */
 public class AKSKSigner implements IAKSKSigner {
-    private static volatile AKSKSigner instance;
+    private static final AKSKSigner SINGLETON = new AKSKSigner();
     protected AbstractHasher hasher = new SHA256Hasher();
     protected String algorithm = Constants.SDK_HMAC_SHA256;
     protected String contentHeader = Constants.X_SDK_CONTENT_SHA256;
@@ -62,16 +62,7 @@ public class AKSKSigner implements IAKSKSigner {
     }
 
     public static AKSKSigner getInstance() {
-        if (Objects.nonNull(instance)) {
-            return instance;
-        }
-
-        synchronized (AKSKSigner.class) {
-            if (instance == null) {
-                instance = new AKSKSigner();
-            }
-            return instance;
-        }
+        return SINGLETON;
     }
 
     protected <T extends AbstractCredentials<T>> void checkRequired(T credential) {
@@ -87,6 +78,7 @@ public class AKSKSigner implements IAKSKSigner {
         }
     }
 
+    @Override
     public <T extends AbstractCredentials<T>> Map<String, String> sign(HttpRequest request, T credentials) {
         checkRequired(credentials);
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************

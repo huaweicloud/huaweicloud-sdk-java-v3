@@ -35,7 +35,6 @@ import org.bouncycastle.crypto.params.ECPublicKeyParameters;
 import org.bouncycastle.crypto.signers.ECDSASigner;
 import org.bouncycastle.crypto.signers.HMacDSAKCalculator;
 import org.bouncycastle.jce.ECNamedCurveTable;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 import org.bouncycastle.jce.spec.ECParameterSpec;
 import org.bouncycastle.math.ec.ECPoint;
@@ -44,11 +43,9 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
-import java.security.Security;
-import java.util.Objects;
 
 public class P256SHA256Signer extends AKSKSigner {
-    private static volatile P256SHA256Signer instance;
+    private final static P256SHA256Signer SINGLETON = new P256SHA256Signer();
     protected ECNamedCurveParameterSpec ecSpec = ECNamedCurveTable.getParameterSpec("P-256");
     protected BigInteger nMinusTwo = ecSpec.getN().subtract(BigInteger.valueOf(2L));
 
@@ -58,19 +55,10 @@ public class P256SHA256Signer extends AKSKSigner {
     }
 
     public static P256SHA256Signer getInstance() {
-        if (Objects.nonNull(instance)) {
-            return instance;
-        }
-
-        synchronized (P256SHA256Signer.class) {
-            if (instance == null) {
-                Security.addProvider(new BouncyCastleProvider());
-                instance = new P256SHA256Signer();
-            }
-            return instance;
-        }
+        return SINGLETON;
     }
 
+    @Override
     public <T extends AbstractCredentials<T>> ISigningKey getSigningKey(T credentials) {
         BigInteger privateInt = derivePrivateInt(credentials);
         return generateSigningKey(privateInt);

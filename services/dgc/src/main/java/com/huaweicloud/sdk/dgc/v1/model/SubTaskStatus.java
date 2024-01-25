@@ -26,22 +26,12 @@ public class SubTaskStatus {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "startTime")
-
-    private String startTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endTime")
-
-    private String endTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdate")
 
-    private String lastUpdate;
+    private Long lastUpdate;
 
     /**
-     * Gets or Sets status
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
      */
     public static final class StatusEnum {
 
@@ -121,13 +111,18 @@ public class SubTaskStatus {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
     public SubTaskStatus withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * Get id
+     * 作业ID
      * @return id
      */
     public String getId() {
@@ -144,7 +139,7 @@ public class SubTaskStatus {
     }
 
     /**
-     * Get name
+     * 作业名称
      * @return name
      */
     public String getName() {
@@ -155,54 +150,20 @@ public class SubTaskStatus {
         this.name = name;
     }
 
-    public SubTaskStatus withStartTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-
-    /**
-     * Get startTime
-     * @return startTime
-     */
-    public String getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    public SubTaskStatus withEndTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-
-    /**
-     * Get endTime
-     * @return endTime
-     */
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public SubTaskStatus withLastUpdate(String lastUpdate) {
+    public SubTaskStatus withLastUpdate(Long lastUpdate) {
         this.lastUpdate = lastUpdate;
         return this;
     }
 
     /**
-     * Get lastUpdate
+     * 作业最后更新日期
      * @return lastUpdate
      */
-    public String getLastUpdate() {
+    public Long getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Long lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -212,7 +173,7 @@ public class SubTaskStatus {
     }
 
     /**
-     * Get status
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
      * @return status
      */
     public StatusEnum getStatus() {
@@ -221,6 +182,23 @@ public class SubTaskStatus {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public SubTaskStatus withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 作业消息
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -233,13 +211,13 @@ public class SubTaskStatus {
         }
         SubTaskStatus that = (SubTaskStatus) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.lastUpdate, that.lastUpdate) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.lastUpdate, that.lastUpdate) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, startTime, endTime, lastUpdate, status);
+        return Objects.hash(id, name, lastUpdate, status, message);
     }
 
     @Override
@@ -248,10 +226,9 @@ public class SubTaskStatus {
         sb.append("class SubTaskStatus {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

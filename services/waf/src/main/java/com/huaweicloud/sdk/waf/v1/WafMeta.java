@@ -2269,6 +2269,12 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getInstances,
                 ListOverviewsClassificationRequest::setInstances));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOverviewsClassificationRequest::getXLanguage,
+                ListOverviewsClassificationRequest::setXLanguage));
 
         // response
 

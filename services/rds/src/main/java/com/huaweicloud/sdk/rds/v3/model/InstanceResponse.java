@@ -218,6 +218,11 @@ public class InstanceResponse {
 
     private String expirationTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverless_info")
+
+    private ServerlessInfoResponse serverlessInfo;
+
     public InstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -1072,6 +1077,32 @@ public class InstanceResponse {
         this.expirationTime = expirationTime;
     }
 
+    public InstanceResponse withServerlessInfo(ServerlessInfoResponse serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+        return this;
+    }
+
+    public InstanceResponse withServerlessInfo(Consumer<ServerlessInfoResponse> serverlessInfoSetter) {
+        if (this.serverlessInfo == null) {
+            this.serverlessInfo = new ServerlessInfoResponse();
+            serverlessInfoSetter.accept(this.serverlessInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverlessInfo
+     * @return serverlessInfo
+     */
+    public ServerlessInfoResponse getServerlessInfo() {
+        return serverlessInfo;
+    }
+
+    public void setServerlessInfo(ServerlessInfoResponse serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1106,7 +1137,8 @@ public class InstanceResponse {
             && Objects.equals(this.storageUsedSpace, that.storageUsedSpace)
             && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.associatedWithDdm, that.associatedWithDdm) && Objects.equals(this.alias, that.alias)
-            && Objects.equals(this.maxIops, that.maxIops) && Objects.equals(this.expirationTime, that.expirationTime);
+            && Objects.equals(this.maxIops, that.maxIops) && Objects.equals(this.expirationTime, that.expirationTime)
+            && Objects.equals(this.serverlessInfo, that.serverlessInfo);
     }
 
     @Override
@@ -1151,7 +1183,8 @@ public class InstanceResponse {
             associatedWithDdm,
             alias,
             maxIops,
-            expirationTime);
+            expirationTime,
+            serverlessInfo);
     }
 
     @Override
@@ -1199,6 +1232,7 @@ public class InstanceResponse {
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    maxIops: ").append(toIndentedString(maxIops)).append("\n");
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
+        sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

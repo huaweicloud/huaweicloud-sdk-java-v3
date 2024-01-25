@@ -80,7 +80,7 @@ public class CreateVariableRequestBody {
     }
 
     /**
-     * 变量类型（1：整数；2：枚举；3：文件；5：文本（hcs暂无此类型））
+     * 变量类型（1：整数；2：枚举；3：文件[；5：文本](tag:hws,hws_hk)
      * minimum: 0
      * maximum: 2147483647
      * @return variableType

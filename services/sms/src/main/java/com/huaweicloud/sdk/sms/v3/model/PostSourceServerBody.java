@@ -597,6 +597,87 @@ public class PostSourceServerBody {
 
     private Boolean oemSystem;
 
+    /**
+     * 启动方式，可以取值MANUAL、MGC或者空。
+     */
+    public static final class StartTypeEnum {
+
+        /**
+         * Enum MANUAL for value: "MANUAL"
+         */
+        public static final StartTypeEnum MANUAL = new StartTypeEnum("MANUAL");
+
+        /**
+         * Enum MGC for value: "MGC"
+         */
+        public static final StartTypeEnum MGC = new StartTypeEnum("MGC");
+
+        /**
+         * Enum EMPTY for value: ""
+         */
+        public static final StartTypeEnum EMPTY = new StartTypeEnum("");
+
+        private static final Map<String, StartTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StartTypeEnum> createStaticFields() {
+            Map<String, StartTypeEnum> map = new HashMap<>();
+            map.put("MANUAL", MANUAL);
+            map.put("MGC", MGC);
+            map.put("", EMPTY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StartTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StartTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StartTypeEnum(value));
+        }
+
+        public static StartTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StartTypeEnum) {
+                return this.value.equals(((StartTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_type")
+
+    private StartTypeEnum startType;
+
     public PostSourceServerBody withId(String id) {
         this.id = id;
         return this;
@@ -1158,6 +1239,23 @@ public class PostSourceServerBody {
         this.oemSystem = oemSystem;
     }
 
+    public PostSourceServerBody withStartType(StartTypeEnum startType) {
+        this.startType = startType;
+        return this;
+    }
+
+    /**
+     * 启动方式，可以取值MANUAL、MGC或者空。
+     * @return startType
+     */
+    public StartTypeEnum getStartType() {
+        return startType;
+    }
+
+    public void setStartType(StartTypeEnum startType) {
+        this.startType = startType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1185,7 +1283,7 @@ public class PostSourceServerBody {
             && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.kernelVersion, that.kernelVersion)
             && Objects.equals(this.migrationCycle, that.migrationCycle) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.oemSystem, that.oemSystem);
+            && Objects.equals(this.oemSystem, that.oemSystem) && Objects.equals(this.startType, that.startType);
     }
 
     @Override
@@ -1218,7 +1316,8 @@ public class PostSourceServerBody {
             kernelVersion,
             migrationCycle,
             state,
-            oemSystem);
+            oemSystem,
+            startType);
     }
 
     @Override
@@ -1254,6 +1353,7 @@ public class PostSourceServerBody {
         sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    oemSystem: ").append(toIndentedString(oemSystem)).append("\n");
+        sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

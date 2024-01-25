@@ -57,7 +57,7 @@ public class CronTrigger {
     }
 
     /**
-     * Get startTime
+     * 调度开始时间，采用ISO 8601时间表示方法，格式为yyyy-MM-dd'T'HH:mm:ssZ，例如2018-10-22T23:59:59+08表示的时间为2018年10月22日23时59分59秒，在正8区，即北京时区。
      * @return startTime
      */
     public String getStartTime() {
@@ -74,7 +74,7 @@ public class CronTrigger {
     }
 
     /**
-     * Get endTime
+     * 调度结束时间，采用ISO 8601时间表示方法，格式为yyyy-MM-dd'T'HH:mm:ssZ，例如2018-10-22T23:59:59+08表示的时间为2018年10月22日23时59分59秒，在正8区，即北京时区。如果结束时间不配置，作业会按照调度周期一直执行下去。
      * @return endTime
      */
     public String getEndTime() {
@@ -125,7 +125,7 @@ public class CronTrigger {
     }
 
     /**
-     * Get period
+     * 用于描述运行的间隔时间，格式为时间+时间单位。需要与expression中的表达式对应
      * @return period
      */
     public String getPeriod() {

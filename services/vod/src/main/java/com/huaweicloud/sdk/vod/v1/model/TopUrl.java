@@ -31,11 +31,6 @@ public class TopUrl {
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "duration_ms")
-
-    private Long durationMs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Long size;
@@ -108,23 +103,6 @@ public class TopUrl {
         this.duration = duration;
     }
 
-    public TopUrl withDurationMs(Long durationMs) {
-        this.durationMs = durationMs;
-        return this;
-    }
-
-    /**
-     * 视频时长，单位毫秒。
-     * @return durationMs
-     */
-    public Long getDurationMs() {
-        return durationMs;
-    }
-
-    public void setDurationMs(Long durationMs) {
-        this.durationMs = durationMs;
-    }
-
     public TopUrl withSize(Long size) {
         this.size = size;
         return this;
@@ -153,12 +131,12 @@ public class TopUrl {
         TopUrl that = (TopUrl) obj;
         return Objects.equals(this.value, that.value) && Objects.equals(this.assetId, that.assetId)
             && Objects.equals(this.title, that.title) && Objects.equals(this.duration, that.duration)
-            && Objects.equals(this.durationMs, that.durationMs) && Objects.equals(this.size, that.size);
+            && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, assetId, title, duration, durationMs, size);
+        return Objects.hash(value, assetId, title, duration, size);
     }
 
     @Override
@@ -169,7 +147,6 @@ public class TopUrl {
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();

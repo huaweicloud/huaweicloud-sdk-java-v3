@@ -32,20 +32,20 @@ public class ListSystemTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    private String startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    private String endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdate")
 
-    private String lastUpdate;
+    private Long lastUpdate;
 
     /**
-     * Gets or Sets status
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
      */
     public static final class StatusEnum {
 
@@ -131,9 +131,9 @@ public class ListSystemTasksResponse extends SdkResponse {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subTasks")
+    @JsonProperty(value = "subtasks")
 
-    private List<SubTaskStatus> subTasks = null;
+    private List<SubTaskStatus> subtasks = null;
 
     public ListSystemTasksResponse withId(String id) {
         this.id = id;
@@ -141,7 +141,7 @@ public class ListSystemTasksResponse extends SdkResponse {
     }
 
     /**
-     * Get id
+     * 作业ID
      * @return id
      */
     public String getId() {
@@ -158,7 +158,7 @@ public class ListSystemTasksResponse extends SdkResponse {
     }
 
     /**
-     * Get name
+     * 作业名称
      * @return name
      */
     public String getName() {
@@ -169,54 +169,54 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ListSystemTasksResponse withStartTime(String startTime) {
+    public ListSystemTasksResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * Get startTime
+     * 作业开始日期 13位时间戳
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListSystemTasksResponse withEndTime(String endTime) {
+    public ListSystemTasksResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
-     * Get endTime
+     * 作业结束日期 13位时间戳
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public ListSystemTasksResponse withLastUpdate(String lastUpdate) {
+    public ListSystemTasksResponse withLastUpdate(Long lastUpdate) {
         this.lastUpdate = lastUpdate;
         return this;
     }
 
     /**
-     * Get lastUpdate
+     * 作业最后更新日期 13位时间戳
      * @return lastUpdate
      */
-    public String getLastUpdate() {
+    public Long getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Long lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -226,7 +226,7 @@ public class ListSystemTasksResponse extends SdkResponse {
     }
 
     /**
-     * Get status
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
      * @return status
      */
     public StatusEnum getStatus() {
@@ -243,7 +243,7 @@ public class ListSystemTasksResponse extends SdkResponse {
     }
 
     /**
-     * Get message
+     * 作业消息
      * @return message
      */
     public String getMessage() {
@@ -254,37 +254,37 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListSystemTasksResponse withSubTasks(List<SubTaskStatus> subTasks) {
-        this.subTasks = subTasks;
+    public ListSystemTasksResponse withSubtasks(List<SubTaskStatus> subtasks) {
+        this.subtasks = subtasks;
         return this;
     }
 
-    public ListSystemTasksResponse addSubTasksItem(SubTaskStatus subTasksItem) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
+    public ListSystemTasksResponse addSubtasksItem(SubTaskStatus subtasksItem) {
+        if (this.subtasks == null) {
+            this.subtasks = new ArrayList<>();
         }
-        this.subTasks.add(subTasksItem);
+        this.subtasks.add(subtasksItem);
         return this;
     }
 
-    public ListSystemTasksResponse withSubTasks(Consumer<List<SubTaskStatus>> subTasksSetter) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
+    public ListSystemTasksResponse withSubtasks(Consumer<List<SubTaskStatus>> subtasksSetter) {
+        if (this.subtasks == null) {
+            this.subtasks = new ArrayList<>();
         }
-        subTasksSetter.accept(this.subTasks);
+        subtasksSetter.accept(this.subtasks);
         return this;
     }
 
     /**
-     * Get subTasks
-     * @return subTasks
+     * 当前作业包含的子作业
+     * @return subtasks
      */
-    public List<SubTaskStatus> getSubTasks() {
-        return subTasks;
+    public List<SubTaskStatus> getSubtasks() {
+        return subtasks;
     }
 
-    public void setSubTasks(List<SubTaskStatus> subTasks) {
-        this.subTasks = subTasks;
+    public void setSubtasks(List<SubTaskStatus> subtasks) {
+        this.subtasks = subtasks;
     }
 
     @Override
@@ -299,12 +299,12 @@ public class ListSystemTasksResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.lastUpdate, that.lastUpdate) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.subTasks, that.subTasks);
+            && Objects.equals(this.message, that.message) && Objects.equals(this.subtasks, that.subtasks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, startTime, endTime, lastUpdate, status, message, subTasks);
+        return Objects.hash(id, name, startTime, endTime, lastUpdate, status, message, subtasks);
     }
 
     @Override
@@ -318,7 +318,7 @@ public class ListSystemTasksResponse extends SdkResponse {
         sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
+        sb.append("    subtasks: ").append(toIndentedString(subtasks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

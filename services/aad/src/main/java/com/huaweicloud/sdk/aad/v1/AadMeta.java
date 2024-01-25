@@ -19,8 +19,6 @@ import com.huaweicloud.sdk.aad.v1.model.CadDomainSwitchRequest;
 import com.huaweicloud.sdk.aad.v1.model.CertificateBody;
 import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
-import com.huaweicloud.sdk.aad.v1.model.CreateCertificateRequest;
-import com.huaweicloud.sdk.aad.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
@@ -66,6 +64,8 @@ import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpResponse;
 import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchRequest;
 import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchResponse;
+import com.huaweicloud.sdk.aad.v1.model.SetCertForDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.SetCertForDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
@@ -412,29 +412,6 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HostBody.class),
             f -> f.withMarshaller(CreateAadDomainRequest::getBody, CreateAadDomainRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
-        genForCreateCertificate();
-
-    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForCreateCertificate() {
-        // basic
-        HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
-                .withName("CreateCertificate")
-                .withUri("/v1/{project_id}/aad/external/domains/certificate")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CertificateBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CertificateBody.class),
-            f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
 
         // response
 
@@ -877,6 +854,29 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CadDomainSwitchRequest.class),
             f -> f.withMarshaller(ModifyDomainWebSwitchRequest::getBody, ModifyDomainWebSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetCertForDomainRequest, SetCertForDomainResponse> setCertForDomain =
+        genForSetCertForDomain();
+
+    private static HttpRequestDef<SetCertForDomainRequest, SetCertForDomainResponse> genForSetCertForDomain() {
+        // basic
+        HttpRequestDef.Builder<SetCertForDomainRequest, SetCertForDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetCertForDomainRequest.class, SetCertForDomainResponse.class)
+                .withName("SetCertForDomain")
+                .withUri("/v1/{project_id}/aad/external/domains/certificate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CertificateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateBody.class),
+            f -> f.withMarshaller(SetCertForDomainRequest::getBody, SetCertForDomainRequest::setBody));
 
         // response
 

@@ -33,6 +33,11 @@ public class AutoClassificationResult {
 
     private List<List<Integer>> location = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "seal_mark")
+
+    private Boolean sealMark;
+
     public AutoClassificationResult withStatus(AutoClassificationResultStatus status) {
         this.status = status;
         return this;
@@ -126,6 +131,23 @@ public class AutoClassificationResult {
         this.location = location;
     }
 
+    public AutoClassificationResult withSealMark(Boolean sealMark) {
+        this.sealMark = sealMark;
+        return this;
+    }
+
+    /**
+     * 对应票证中是否含有印章。可选值包括： -  true：该票证中含有印章。 -  false：该票证中不含有印章。 
+     * @return sealMark
+     */
+    public Boolean getSealMark() {
+        return sealMark;
+    }
+
+    public void setSealMark(Boolean sealMark) {
+        this.sealMark = sealMark;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +158,13 @@ public class AutoClassificationResult {
         }
         AutoClassificationResult that = (AutoClassificationResult) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.content, that.content)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.location, that.location);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.sealMark, that.sealMark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, content, type, location);
+        return Objects.hash(status, content, type, location, sealMark);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class AutoClassificationResult {
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    sealMark: ").append(toIndentedString(sealMark)).append("\n");
         sb.append("}");
         return sb.toString();
     }

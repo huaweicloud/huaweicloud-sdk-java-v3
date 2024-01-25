@@ -41,7 +41,7 @@ public class CreateAssetByFileUploadReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_id")
 
-    private String categoryId;
+    private Integer categoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_md5")
@@ -311,7 +311,7 @@ public class CreateAssetByFileUploadReq {
         this.videoType = videoType;
     }
 
-    public CreateAssetByFileUploadReq withCategoryId(String categoryId) {
+    public CreateAssetByFileUploadReq withCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
         return this;
     }
@@ -320,11 +320,11 @@ public class CreateAssetByFileUploadReq {
      * 媒资分类ID。  您可以调用[创建媒资分类](https://support.huaweicloud.com/api-vod/vod_04_0028.html)接口或在点播控制台的[分类设置](https://support.huaweicloud.com/usermanual-vod/vod010006.html)中创建对应的媒资分类，并获取分类ID。  > 若不设置或者设置为-1，则上传的音视频归类到系统预置的“其它”分类中。
      * @return categoryId
      */
-    public String getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

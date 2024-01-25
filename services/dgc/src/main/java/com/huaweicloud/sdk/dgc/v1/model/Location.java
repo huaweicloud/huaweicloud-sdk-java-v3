@@ -26,7 +26,7 @@ public class Location {
     }
 
     /**
-     * Get x
+     * 节点在作业画布上的横轴位置
      * @return x
      */
     public String getX() {
@@ -43,7 +43,7 @@ public class Location {
     }
 
     /**
-     * Get y
+     * 节点在作业画布上的纵轴位置
      * @return y
      */
     public String getY() {

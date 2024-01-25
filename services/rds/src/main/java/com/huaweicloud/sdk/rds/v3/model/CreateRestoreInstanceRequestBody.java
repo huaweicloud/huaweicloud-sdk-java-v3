@@ -139,6 +139,11 @@ public class CreateRestoreInstanceRequestBody {
     private UnchangeableParam unchangeableParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverless_info")
+
+    private ServerlessInfo serverlessInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dry_run")
 
     private Boolean dryRun;
@@ -647,6 +652,32 @@ public class CreateRestoreInstanceRequestBody {
         this.unchangeableParam = unchangeableParam;
     }
 
+    public CreateRestoreInstanceRequestBody withServerlessInfo(ServerlessInfo serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+        return this;
+    }
+
+    public CreateRestoreInstanceRequestBody withServerlessInfo(Consumer<ServerlessInfo> serverlessInfoSetter) {
+        if (this.serverlessInfo == null) {
+            this.serverlessInfo = new ServerlessInfo();
+            serverlessInfoSetter.accept(this.serverlessInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverlessInfo
+     * @return serverlessInfo
+     */
+    public ServerlessInfo getServerlessInfo() {
+        return serverlessInfo;
+    }
+
+    public void setServerlessInfo(ServerlessInfo serverlessInfo) {
+        this.serverlessInfo = serverlessInfo;
+    }
+
     public CreateRestoreInstanceRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
         return this;
@@ -687,7 +718,7 @@ public class CreateRestoreInstanceRequestBody {
             && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.replicaOfId, that.replicaOfId)
             && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
-            && Objects.equals(this.dryRun, that.dryRun);
+            && Objects.equals(this.serverlessInfo, that.serverlessInfo) && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override
@@ -717,6 +748,7 @@ public class CreateRestoreInstanceRequestBody {
             collation,
             tags,
             unchangeableParam,
+            serverlessInfo,
             dryRun);
     }
 
@@ -749,6 +781,7 @@ public class CreateRestoreInstanceRequestBody {
         sb.append("    collation: ").append(toIndentedString(collation)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    unchangeableParam: ").append(toIndentedString(unchangeableParam)).append("\n");
+        sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("}");
         return sb.toString();

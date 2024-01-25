@@ -9,19 +9,19 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class CreateCertificateRequest {
+public class SetCertForDomainRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CertificateBody body;
 
-    public CreateCertificateRequest withBody(CertificateBody body) {
+    public SetCertForDomainRequest withBody(CertificateBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateCertificateRequest withBody(Consumer<CertificateBody> bodySetter) {
+    public SetCertForDomainRequest withBody(Consumer<CertificateBody> bodySetter) {
         if (this.body == null) {
             this.body = new CertificateBody();
             bodySetter.accept(this.body);
@@ -50,7 +50,7 @@ public class CreateCertificateRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateRequest that = (CreateCertificateRequest) obj;
+        SetCertForDomainRequest that = (SetCertForDomainRequest) obj;
         return Objects.equals(this.body, that.body);
     }
 
@@ -62,7 +62,7 @@ public class CreateCertificateRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateCertificateRequest {\n");
+        sb.append("class SetCertForDomainRequest {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

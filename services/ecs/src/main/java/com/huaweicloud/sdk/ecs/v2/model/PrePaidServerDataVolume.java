@@ -427,7 +427,7 @@ public class PrePaidServerDataVolume {
     }
 
     /**
-     * 数据镜像的ID，UUID格式。
+     * 云服务器数据盘对应的存储池的ID。
      * @return clusterId
      */
     public String getClusterId() {
