@@ -76,6 +76,8 @@ public class ListAlertRspProcess {
 
     /**
      * Id value
+     * minimum: 0
+     * maximum: 65535
      * @return processPid
      */
     public Integer getProcessPid() {
@@ -93,6 +95,8 @@ public class ListAlertRspProcess {
 
     /**
      * Id value
+     * minimum: 0
+     * maximum: 65535
      * @return processUid
      */
     public Integer getProcessUid() {

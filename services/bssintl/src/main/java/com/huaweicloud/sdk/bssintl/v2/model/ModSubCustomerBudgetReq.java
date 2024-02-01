@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -29,6 +34,81 @@ public class ModSubCustomerBudgetReq {
     @JsonProperty(value = "indirect_partner_id")
 
     private String indirectPartnerId;
+
+    /**
+     * |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算 ，此参数不携带或携带值为null时，默认值为MONTHLY。|
+     */
+    public static final class BudgetTypeEnum {
+
+        /**
+         * Enum MONTHLY for value: "MONTHLY"
+         */
+        public static final BudgetTypeEnum MONTHLY = new BudgetTypeEnum("MONTHLY");
+
+        /**
+         * Enum PACKAGE for value: "PACKAGE"
+         */
+        public static final BudgetTypeEnum PACKAGE = new BudgetTypeEnum("PACKAGE");
+
+        private static final Map<String, BudgetTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BudgetTypeEnum> createStaticFields() {
+            Map<String, BudgetTypeEnum> map = new HashMap<>();
+            map.put("MONTHLY", MONTHLY);
+            map.put("PACKAGE", PACKAGE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BudgetTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BudgetTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BudgetTypeEnum(value));
+        }
+
+        public static BudgetTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BudgetTypeEnum) {
+                return this.value.equals(((BudgetTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "budget_type")
+
+    private BudgetTypeEnum budgetType;
 
     public ModSubCustomerBudgetReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -100,6 +180,23 @@ public class ModSubCustomerBudgetReq {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    public ModSubCustomerBudgetReq withBudgetType(BudgetTypeEnum budgetType) {
+        this.budgetType = budgetType;
+        return this;
+    }
+
+    /**
+     * |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算 ，此参数不携带或携带值为null时，默认值为MONTHLY。|
+     * @return budgetType
+     */
+    public BudgetTypeEnum getBudgetType() {
+        return budgetType;
+    }
+
+    public void setBudgetType(BudgetTypeEnum budgetType) {
+        this.budgetType = budgetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -111,12 +208,13 @@ public class ModSubCustomerBudgetReq {
         ModSubCustomerBudgetReq that = (ModSubCustomerBudgetReq) obj;
         return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.budgetAmount, that.budgetAmount)
             && Objects.equals(this.cancelPartnerFrozen, that.cancelPartnerFrozen)
-            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.budgetType, that.budgetType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen, indirectPartnerId);
+        return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen, indirectPartnerId, budgetType);
     }
 
     @Override
@@ -127,6 +225,7 @@ public class ModSubCustomerBudgetReq {
         sb.append("    budgetAmount: ").append(toIndentedString(budgetAmount)).append("\n");
         sb.append("    cancelPartnerFrozen: ").append(toIndentedString(cancelPartnerFrozen)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    budgetType: ").append(toIndentedString(budgetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

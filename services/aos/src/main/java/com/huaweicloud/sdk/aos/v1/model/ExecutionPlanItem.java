@@ -223,6 +223,11 @@ public class ExecutionPlanItem {
     private Boolean drifted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "imported")
+
+    private Boolean imported;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -368,6 +373,23 @@ public class ExecutionPlanItem {
         this.drifted = drifted;
     }
 
+    public ExecutionPlanItem withImported(Boolean imported) {
+        this.imported = imported;
+        return this;
+    }
+
+    /**
+     * 当前资源的变更是否是导入的。
+     * @return imported
+     */
+    public Boolean getImported() {
+        return imported;
+    }
+
+    public void setImported(Boolean imported) {
+        this.imported = imported;
+    }
+
     public ExecutionPlanItem withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -431,8 +453,8 @@ public class ExecutionPlanItem {
             && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.index, that.index)
             && Objects.equals(this.action, that.action) && Objects.equals(this.actionReason, that.actionReason)
             && Objects.equals(this.providerName, that.providerName) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.drifted, that.drifted) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.attributes, that.attributes);
+            && Objects.equals(this.drifted, that.drifted) && Objects.equals(this.imported, that.imported)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override
@@ -445,6 +467,7 @@ public class ExecutionPlanItem {
             providerName,
             mode,
             drifted,
+            imported,
             resourceId,
             attributes);
     }
@@ -461,6 +484,7 @@ public class ExecutionPlanItem {
         sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    drifted: ").append(toIndentedString(drifted)).append("\n");
+        sb.append("    imported: ").append(toIndentedString(imported)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
         sb.append("}");

@@ -50,6 +50,6 @@ public class AsyncInvoker<R, S> extends BaseInvoker<R, S, AsyncInvoker<R, S>> {
      * @return CompletableFuture
      */
     public CompletableFuture<S> invoke() {
-        return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange));
+        return retry(() -> this.hcClient.asyncInvokeHttp(req, meta, exchange, extraHeaders));
     }
 }

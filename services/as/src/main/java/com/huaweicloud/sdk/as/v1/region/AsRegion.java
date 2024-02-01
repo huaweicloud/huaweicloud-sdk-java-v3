@@ -60,6 +60,8 @@ public class AsRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://as.ap-southeast-4.myhuaweicloud.com");
 
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://as.eu-west-0.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -86,6 +88,7 @@ public class AsRegion {
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("tr-west-1", TR_WEST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 

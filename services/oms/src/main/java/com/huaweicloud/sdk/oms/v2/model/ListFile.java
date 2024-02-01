@@ -20,6 +20,11 @@ public class ListFile {
 
     private String obsBucket;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "list_file_num")
+
+    private String listFileNum;
+
     public ListFile withListFileKey(String listFileKey) {
         this.listFileKey = listFileKey;
         return this;
@@ -54,6 +59,23 @@ public class ListFile {
         this.obsBucket = obsBucket;
     }
 
+    public ListFile withListFileNum(String listFileNum) {
+        this.listFileNum = listFileNum;
+        return this;
+    }
+
+    /**
+     * 存放对象列表文件的数量
+     * @return listFileNum
+     */
+    public String getListFileNum() {
+        return listFileNum;
+    }
+
+    public void setListFileNum(String listFileNum) {
+        this.listFileNum = listFileNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ListFile {
             return false;
         }
         ListFile that = (ListFile) obj;
-        return Objects.equals(this.listFileKey, that.listFileKey) && Objects.equals(this.obsBucket, that.obsBucket);
+        return Objects.equals(this.listFileKey, that.listFileKey) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.listFileNum, that.listFileNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listFileKey, obsBucket);
+        return Objects.hash(listFileKey, obsBucket, listFileNum);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ListFile {
         sb.append("class ListFile {\n");
         sb.append("    listFileKey: ").append(toIndentedString(listFileKey)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
+        sb.append("    listFileNum: ").append(toIndentedString(listFileNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

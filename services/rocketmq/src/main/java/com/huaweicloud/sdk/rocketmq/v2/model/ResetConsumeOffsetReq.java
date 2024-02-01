@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -19,7 +18,7 @@ public class ResetConsumeOffsetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private BigDecimal timestamp;
+    private String timestamp;
 
     public ResetConsumeOffsetReq withTopic(String topic) {
         this.topic = topic;
@@ -38,7 +37,7 @@ public class ResetConsumeOffsetReq {
         this.topic = topic;
     }
 
-    public ResetConsumeOffsetReq withTimestamp(BigDecimal timestamp) {
+    public ResetConsumeOffsetReq withTimestamp(String timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -47,11 +46,11 @@ public class ResetConsumeOffsetReq {
      * 重置的时间。
      * @return timestamp
      */
-    public BigDecimal getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(BigDecimal timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class LiveAudioConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_id")
+
+    private String assetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_url")
 
     private String audioUrl;
@@ -19,6 +24,23 @@ public class LiveAudioConfig {
     @JsonProperty(value = "subtitle_url")
 
     private String subtitleUrl;
+
+    public LiveAudioConfig withAssetId(String assetId) {
+        this.assetId = assetId;
+        return this;
+    }
+
+    /**
+     * 插入音频资产的资产id，外部资产信息无需填写
+     * @return assetId
+     */
+    public String getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
 
     public LiveAudioConfig withAudioUrl(String audioUrl) {
         this.audioUrl = audioUrl;
@@ -63,18 +85,20 @@ public class LiveAudioConfig {
             return false;
         }
         LiveAudioConfig that = (LiveAudioConfig) obj;
-        return Objects.equals(this.audioUrl, that.audioUrl) && Objects.equals(this.subtitleUrl, that.subtitleUrl);
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.audioUrl, that.audioUrl)
+            && Objects.equals(this.subtitleUrl, that.subtitleUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(audioUrl, subtitleUrl);
+        return Objects.hash(assetId, audioUrl, subtitleUrl);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LiveAudioConfig {\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    audioUrl: ").append(toIndentedString(audioUrl)).append("\n");
         sb.append("    subtitleUrl: ").append(toIndentedString(subtitleUrl)).append("\n");
         sb.append("}");

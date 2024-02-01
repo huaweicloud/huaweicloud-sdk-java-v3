@@ -2266,12 +2266,12 @@ public class KooMessageMeta {
             f -> f.withMarshaller(ListVmsTemplateStatusRequest::getEndTime, ListVmsTemplateStatusRequest::setEndTime));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVmsTemplateStatusRequest::getOffset, ListVmsTemplateStatusRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVmsTemplateStatusRequest::getLimit, ListVmsTemplateStatusRequest::setLimit));
 

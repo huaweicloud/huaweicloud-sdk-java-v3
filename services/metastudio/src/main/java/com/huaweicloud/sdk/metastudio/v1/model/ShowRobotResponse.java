@@ -37,6 +37,11 @@ public class ShowRobotResponse extends SdkResponse {
     private Integer concurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -55,6 +60,21 @@ public class ShowRobotResponse extends SdkResponse {
     @JsonProperty(value = "cbs_project_id")
 
     private String cbsProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "llm_url")
+
+    private String llmUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stream")
+
+    private Boolean isStream;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_rounds")
+
+    private Integer chatRounds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -118,7 +138,7 @@ public class ShowRobotResponse extends SdkResponse {
     }
 
     /**
-     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动
+     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型
      * minimum: 0
      * maximum: 32
      * @return appType
@@ -148,6 +168,23 @@ public class ShowRobotResponse extends SdkResponse {
 
     public void setConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
+    }
+
+    public ShowRobotResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     public ShowRobotResponse withCreateTime(String createTime) {
@@ -220,6 +257,59 @@ public class ShowRobotResponse extends SdkResponse {
         this.cbsProjectId = cbsProjectId;
     }
 
+    public ShowRobotResponse withLlmUrl(String llmUrl) {
+        this.llmUrl = llmUrl;
+        return this;
+    }
+
+    /**
+     * 第三方语言模型地址。
+     * @return llmUrl
+     */
+    public String getLlmUrl() {
+        return llmUrl;
+    }
+
+    public void setLlmUrl(String llmUrl) {
+        this.llmUrl = llmUrl;
+    }
+
+    public ShowRobotResponse withIsStream(Boolean isStream) {
+        this.isStream = isStream;
+        return this;
+    }
+
+    /**
+     * 是否采用流式响应。
+     * @return isStream
+     */
+    public Boolean getIsStream() {
+        return isStream;
+    }
+
+    public void setIsStream(Boolean isStream) {
+        this.isStream = isStream;
+    }
+
+    public ShowRobotResponse withChatRounds(Integer chatRounds) {
+        this.chatRounds = chatRounds;
+        return this;
+    }
+
+    /**
+     * 支持的多轮对话数量，取值大于1时，请求第三方语言模型时将携带历史对话信息。
+     * minimum: 1
+     * maximum: 10
+     * @return chatRounds
+     */
+    public Integer getChatRounds() {
+        return chatRounds;
+    }
+
+    public void setChatRounds(Integer chatRounds) {
+        this.chatRounds = chatRounds;
+    }
+
     public ShowRobotResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -250,15 +340,29 @@ public class ShowRobotResponse extends SdkResponse {
         ShowRobotResponse that = (ShowRobotResponse) obj;
         return Objects.equals(this.robotId, that.robotId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.appId, that.appId) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.concurrency, that.concurrency) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.concurrency, that.concurrency) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.cbsProjectId, that.cbsProjectId)
+            && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
+            && Objects.equals(this.chatRounds, that.chatRounds) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(robotId, name, appId, appType, concurrency, createTime, updateTime, region, cbsProjectId, xRequestId);
+        return Objects.hash(robotId,
+            name,
+            appId,
+            appType,
+            concurrency,
+            language,
+            createTime,
+            updateTime,
+            region,
+            cbsProjectId,
+            llmUrl,
+            isStream,
+            chatRounds,
+            xRequestId);
     }
 
     @Override
@@ -270,10 +374,14 @@ public class ShowRobotResponse extends SdkResponse {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    cbsProjectId: ").append(toIndentedString(cbsProjectId)).append("\n");
+        sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
+        sb.append("    isStream: ").append(toIndentedString(isStream)).append("\n");
+        sb.append("    chatRounds: ").append(toIndentedString(chatRounds)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +42,7 @@ public class ShowGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
-    private BigDecimal retryMaxTime;
+    private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
@@ -161,7 +160,7 @@ public class ShowGroupResponse extends SdkResponse {
         this.groupDesc = groupDesc;
     }
 
-    public ShowGroupResponse withRetryMaxTime(BigDecimal retryMaxTime) {
+    public ShowGroupResponse withRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
     }
@@ -170,11 +169,11 @@ public class ShowGroupResponse extends SdkResponse {
      * 最大重试次数。
      * @return retryMaxTime
      */
-    public BigDecimal getRetryMaxTime() {
+    public Integer getRetryMaxTime() {
         return retryMaxTime;
     }
 
-    public void setRetryMaxTime(BigDecimal retryMaxTime) {
+    public void setRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
     }
 

@@ -12,31 +12,9 @@ import java.util.Objects;
 public class CreateInstanceTopicResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
-
-    public CreateInstanceTopicResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * topic名称。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public CreateInstanceTopicResponse withName(String name) {
         this.name = name;
@@ -64,19 +42,18 @@ public class CreateInstanceTopicResponse extends SdkResponse {
             return false;
         }
         CreateInstanceTopicResponse that = (CreateInstanceTopicResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceTopicResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

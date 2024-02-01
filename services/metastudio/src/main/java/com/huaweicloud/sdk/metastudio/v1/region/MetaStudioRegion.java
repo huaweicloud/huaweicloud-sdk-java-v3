@@ -16,6 +16,8 @@ public class MetaStudioRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://metastudio.cn-north-4.myhuaweicloud.com");
 
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://metastudio.cn-east-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("METASTUDIO");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -23,6 +25,7 @@ public class MetaStudioRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("cn-east-3", CN_EAST_3);
         return Collections.unmodifiableMap(map);
     }
 

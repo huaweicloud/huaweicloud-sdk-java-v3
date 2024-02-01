@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.cc.v3.model.ApplyCentralNetworkPolicyRequest;
 import com.huaweicloud.sdk.cc.v3.model.ApplyCentralNetworkPolicyResponse;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequest;
@@ -16,6 +18,8 @@ import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequest;
@@ -32,12 +36,16 @@ import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsRequest;
@@ -74,12 +82,24 @@ import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthConfigsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthConfigsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthLineLevelsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthLineLevelsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSitesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSitesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSpecCodesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSpecCodesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentRequest;
@@ -90,6 +110,8 @@ import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
@@ -118,6 +140,8 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequest;
@@ -1677,6 +1701,376 @@ public class CcAsyncClient {
     public AsyncInvoker<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse> showCloudConnectionRoutesAsyncInvoker(
         ShowCloudConnectionRoutesRequest request) {
         return new AsyncInvoker<>(request, CcMeta.showCloudConnectionRoutes, hcClient);
+    }
+
+    /**
+     * 全域互联带宽绑定实例
+     *
+     * 全域互联带宽绑定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateGlobalConnectionBandwidthInstanceRequest 请求对象
+     * @return CompletableFuture<AssociateGlobalConnectionBandwidthInstanceResponse>
+     */
+    public CompletableFuture<AssociateGlobalConnectionBandwidthInstanceResponse> associateGlobalConnectionBandwidthInstanceAsync(
+        AssociateGlobalConnectionBandwidthInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.associateGlobalConnectionBandwidthInstance);
+    }
+
+    /**
+     * 全域互联带宽绑定实例
+     *
+     * 全域互联带宽绑定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateGlobalConnectionBandwidthInstanceRequest 请求对象
+     * @return AsyncInvoker<AssociateGlobalConnectionBandwidthInstanceRequest, AssociateGlobalConnectionBandwidthInstanceResponse>
+     */
+    public AsyncInvoker<AssociateGlobalConnectionBandwidthInstanceRequest, AssociateGlobalConnectionBandwidthInstanceResponse> associateGlobalConnectionBandwidthInstanceAsyncInvoker(
+        AssociateGlobalConnectionBandwidthInstanceRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.associateGlobalConnectionBandwidthInstance, hcClient);
+    }
+
+    /**
+     * 创建全域互联带宽
+     *
+     * 创建全域互联带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGlobalConnectionBandwidthRequest 请求对象
+     * @return CompletableFuture<CreateGlobalConnectionBandwidthResponse>
+     */
+    public CompletableFuture<CreateGlobalConnectionBandwidthResponse> createGlobalConnectionBandwidthAsync(
+        CreateGlobalConnectionBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.createGlobalConnectionBandwidth);
+    }
+
+    /**
+     * 创建全域互联带宽
+     *
+     * 创建全域互联带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGlobalConnectionBandwidthRequest 请求对象
+     * @return AsyncInvoker<CreateGlobalConnectionBandwidthRequest, CreateGlobalConnectionBandwidthResponse>
+     */
+    public AsyncInvoker<CreateGlobalConnectionBandwidthRequest, CreateGlobalConnectionBandwidthResponse> createGlobalConnectionBandwidthAsyncInvoker(
+        CreateGlobalConnectionBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.createGlobalConnectionBandwidth, hcClient);
+    }
+
+    /**
+     * 删除全域互联带宽
+     *
+     * 删除全域互联带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGlobalConnectionBandwidthRequest 请求对象
+     * @return CompletableFuture<DeleteGlobalConnectionBandwidthResponse>
+     */
+    public CompletableFuture<DeleteGlobalConnectionBandwidthResponse> deleteGlobalConnectionBandwidthAsync(
+        DeleteGlobalConnectionBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.deleteGlobalConnectionBandwidth);
+    }
+
+    /**
+     * 删除全域互联带宽
+     *
+     * 删除全域互联带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGlobalConnectionBandwidthRequest 请求对象
+     * @return AsyncInvoker<DeleteGlobalConnectionBandwidthRequest, DeleteGlobalConnectionBandwidthResponse>
+     */
+    public AsyncInvoker<DeleteGlobalConnectionBandwidthRequest, DeleteGlobalConnectionBandwidthResponse> deleteGlobalConnectionBandwidthAsyncInvoker(
+        DeleteGlobalConnectionBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.deleteGlobalConnectionBandwidth, hcClient);
+    }
+
+    /**
+     * 全域互联带宽解绑实例
+     *
+     * 全域互联带宽解绑实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateGlobalConnectionBandwidthInstanceRequest 请求对象
+     * @return CompletableFuture<DisassociateGlobalConnectionBandwidthInstanceResponse>
+     */
+    public CompletableFuture<DisassociateGlobalConnectionBandwidthInstanceResponse> disassociateGlobalConnectionBandwidthInstanceAsync(
+        DisassociateGlobalConnectionBandwidthInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.disassociateGlobalConnectionBandwidthInstance);
+    }
+
+    /**
+     * 全域互联带宽解绑实例
+     *
+     * 全域互联带宽解绑实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateGlobalConnectionBandwidthInstanceRequest 请求对象
+     * @return AsyncInvoker<DisassociateGlobalConnectionBandwidthInstanceRequest, DisassociateGlobalConnectionBandwidthInstanceResponse>
+     */
+    public AsyncInvoker<DisassociateGlobalConnectionBandwidthInstanceRequest, DisassociateGlobalConnectionBandwidthInstanceResponse> disassociateGlobalConnectionBandwidthInstanceAsyncInvoker(
+        DisassociateGlobalConnectionBandwidthInstanceRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.disassociateGlobalConnectionBandwidthInstance, hcClient);
+    }
+
+    /**
+     * 查询全域互联带宽租户配置信息
+     *
+     * 查询全域互联带宽租户配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthConfigsRequest 请求对象
+     * @return CompletableFuture<ListGlobalConnectionBandwidthConfigsResponse>
+     */
+    public CompletableFuture<ListGlobalConnectionBandwidthConfigsResponse> listGlobalConnectionBandwidthConfigsAsync(
+        ListGlobalConnectionBandwidthConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listGlobalConnectionBandwidthConfigs);
+    }
+
+    /**
+     * 查询全域互联带宽租户配置信息
+     *
+     * 查询全域互联带宽租户配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthConfigsRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConnectionBandwidthConfigsRequest, ListGlobalConnectionBandwidthConfigsResponse>
+     */
+    public AsyncInvoker<ListGlobalConnectionBandwidthConfigsRequest, ListGlobalConnectionBandwidthConfigsResponse> listGlobalConnectionBandwidthConfigsAsyncInvoker(
+        ListGlobalConnectionBandwidthConfigsRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listGlobalConnectionBandwidthConfigs, hcClient);
+    }
+
+    /**
+     * 查询线路等级列表
+     *
+     * 查询线路等级列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthLineLevelsRequest 请求对象
+     * @return CompletableFuture<ListGlobalConnectionBandwidthLineLevelsResponse>
+     */
+    public CompletableFuture<ListGlobalConnectionBandwidthLineLevelsResponse> listGlobalConnectionBandwidthLineLevelsAsync(
+        ListGlobalConnectionBandwidthLineLevelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listGlobalConnectionBandwidthLineLevels);
+    }
+
+    /**
+     * 查询线路等级列表
+     *
+     * 查询线路等级列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthLineLevelsRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConnectionBandwidthLineLevelsRequest, ListGlobalConnectionBandwidthLineLevelsResponse>
+     */
+    public AsyncInvoker<ListGlobalConnectionBandwidthLineLevelsRequest, ListGlobalConnectionBandwidthLineLevelsResponse> listGlobalConnectionBandwidthLineLevelsAsyncInvoker(
+        ListGlobalConnectionBandwidthLineLevelsRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listGlobalConnectionBandwidthLineLevels, hcClient);
+    }
+
+    /**
+     * 查询站点列表
+     *
+     * 查询站点列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthSitesRequest 请求对象
+     * @return CompletableFuture<ListGlobalConnectionBandwidthSitesResponse>
+     */
+    public CompletableFuture<ListGlobalConnectionBandwidthSitesResponse> listGlobalConnectionBandwidthSitesAsync(
+        ListGlobalConnectionBandwidthSitesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listGlobalConnectionBandwidthSites);
+    }
+
+    /**
+     * 查询站点列表
+     *
+     * 查询站点列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthSitesRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConnectionBandwidthSitesRequest, ListGlobalConnectionBandwidthSitesResponse>
+     */
+    public AsyncInvoker<ListGlobalConnectionBandwidthSitesRequest, ListGlobalConnectionBandwidthSitesResponse> listGlobalConnectionBandwidthSitesAsyncInvoker(
+        ListGlobalConnectionBandwidthSitesRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listGlobalConnectionBandwidthSites, hcClient);
+    }
+
+    /**
+     * 查询线路规格列表
+     *
+     * 查询线路规格列表。租户白名单控制，默认为空。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthSpecCodesRequest 请求对象
+     * @return CompletableFuture<ListGlobalConnectionBandwidthSpecCodesResponse>
+     */
+    public CompletableFuture<ListGlobalConnectionBandwidthSpecCodesResponse> listGlobalConnectionBandwidthSpecCodesAsync(
+        ListGlobalConnectionBandwidthSpecCodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listGlobalConnectionBandwidthSpecCodes);
+    }
+
+    /**
+     * 查询线路规格列表
+     *
+     * 查询线路规格列表。租户白名单控制，默认为空。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthSpecCodesRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConnectionBandwidthSpecCodesRequest, ListGlobalConnectionBandwidthSpecCodesResponse>
+     */
+    public AsyncInvoker<ListGlobalConnectionBandwidthSpecCodesRequest, ListGlobalConnectionBandwidthSpecCodesResponse> listGlobalConnectionBandwidthSpecCodesAsyncInvoker(
+        ListGlobalConnectionBandwidthSpecCodesRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listGlobalConnectionBandwidthSpecCodes, hcClient);
+    }
+
+    /**
+     * 查询全域互联带宽列表
+     *
+     * 查询全域互联带宽列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthsRequest 请求对象
+     * @return CompletableFuture<ListGlobalConnectionBandwidthsResponse>
+     */
+    public CompletableFuture<ListGlobalConnectionBandwidthsResponse> listGlobalConnectionBandwidthsAsync(
+        ListGlobalConnectionBandwidthsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listGlobalConnectionBandwidths);
+    }
+
+    /**
+     * 查询全域互联带宽列表
+     *
+     * 查询全域互联带宽列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConnectionBandwidthsRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConnectionBandwidthsRequest, ListGlobalConnectionBandwidthsResponse>
+     */
+    public AsyncInvoker<ListGlobalConnectionBandwidthsRequest, ListGlobalConnectionBandwidthsResponse> listGlobalConnectionBandwidthsAsyncInvoker(
+        ListGlobalConnectionBandwidthsRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listGlobalConnectionBandwidths, hcClient);
+    }
+
+    /**
+     * 查询符合绑定条件的全域互联带宽列表
+     *
+     * 查询符合绑定条件的全域互联带宽列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportBindingConnectionBandwidthsRequest 请求对象
+     * @return CompletableFuture<ListSupportBindingConnectionBandwidthsResponse>
+     */
+    public CompletableFuture<ListSupportBindingConnectionBandwidthsResponse> listSupportBindingConnectionBandwidthsAsync(
+        ListSupportBindingConnectionBandwidthsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listSupportBindingConnectionBandwidths);
+    }
+
+    /**
+     * 查询符合绑定条件的全域互联带宽列表
+     *
+     * 查询符合绑定条件的全域互联带宽列表。
+     * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportBindingConnectionBandwidthsRequest 请求对象
+     * @return AsyncInvoker<ListSupportBindingConnectionBandwidthsRequest, ListSupportBindingConnectionBandwidthsResponse>
+     */
+    public AsyncInvoker<ListSupportBindingConnectionBandwidthsRequest, ListSupportBindingConnectionBandwidthsResponse> listSupportBindingConnectionBandwidthsAsyncInvoker(
+        ListSupportBindingConnectionBandwidthsRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listSupportBindingConnectionBandwidths, hcClient);
+    }
+
+    /**
+     * 查询全域互联带宽详情
+     *
+     * 查询全域互联带宽详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalConnectionBandwidthRequest 请求对象
+     * @return CompletableFuture<ShowGlobalConnectionBandwidthResponse>
+     */
+    public CompletableFuture<ShowGlobalConnectionBandwidthResponse> showGlobalConnectionBandwidthAsync(
+        ShowGlobalConnectionBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.showGlobalConnectionBandwidth);
+    }
+
+    /**
+     * 查询全域互联带宽详情
+     *
+     * 查询全域互联带宽详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalConnectionBandwidthRequest 请求对象
+     * @return AsyncInvoker<ShowGlobalConnectionBandwidthRequest, ShowGlobalConnectionBandwidthResponse>
+     */
+    public AsyncInvoker<ShowGlobalConnectionBandwidthRequest, ShowGlobalConnectionBandwidthResponse> showGlobalConnectionBandwidthAsyncInvoker(
+        ShowGlobalConnectionBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.showGlobalConnectionBandwidth, hcClient);
+    }
+
+    /**
+     * 更新全域互联带宽详情
+     *
+     * 更新全域互联带宽详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGlobalConnectionBandwidthRequest 请求对象
+     * @return CompletableFuture<UpdateGlobalConnectionBandwidthResponse>
+     */
+    public CompletableFuture<UpdateGlobalConnectionBandwidthResponse> updateGlobalConnectionBandwidthAsync(
+        UpdateGlobalConnectionBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateGlobalConnectionBandwidth);
+    }
+
+    /**
+     * 更新全域互联带宽详情
+     *
+     * 更新全域互联带宽详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGlobalConnectionBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse> updateGlobalConnectionBandwidthAsyncInvoker(
+        UpdateGlobalConnectionBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.updateGlobalConnectionBandwidth, hcClient);
     }
 
     /**

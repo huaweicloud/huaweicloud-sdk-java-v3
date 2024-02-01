@@ -12,6 +12,12 @@ import com.huaweicloud.sdk.aos.v1.model.ContinueRollbackStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderVersionRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackInstanceRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackInstanceResponse;
@@ -114,6 +120,74 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class AosMeta {
+
+    public static final HttpRequestDef<CreatePrivateProviderRequest, CreatePrivateProviderResponse> createPrivateProvider =
+        genForCreatePrivateProvider();
+
+    private static HttpRequestDef<CreatePrivateProviderRequest, CreatePrivateProviderResponse> genForCreatePrivateProvider() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateProviderRequest, CreatePrivateProviderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePrivateProviderRequest.class, CreatePrivateProviderResponse.class)
+            .withName("CreatePrivateProvider")
+            .withUri("/v1/private-providers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateProviderRequest::getClientRequestId,
+                CreatePrivateProviderRequest::setClientRequestId));
+        builder.<CreatePrivateProviderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateProviderRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateProviderRequest::getBody, CreatePrivateProviderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateProviderVersionRequest, CreatePrivateProviderVersionResponse> createPrivateProviderVersion =
+        genForCreatePrivateProviderVersion();
+
+    private static HttpRequestDef<CreatePrivateProviderVersionRequest, CreatePrivateProviderVersionResponse> genForCreatePrivateProviderVersion() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateProviderVersionRequest, CreatePrivateProviderVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePrivateProviderVersionRequest.class,
+                    CreatePrivateProviderVersionResponse.class)
+                .withName("CreatePrivateProviderVersion")
+                .withUri("/v1/private-providers/{provider_name}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateProviderVersionRequest::getProviderName,
+                CreatePrivateProviderVersionRequest::setProviderName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateProviderVersionRequest::getClientRequestId,
+                CreatePrivateProviderVersionRequest::setClientRequestId));
+        builder.<CreatePrivateProviderVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateProviderVersionRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateProviderVersionRequest::getBody,
+                CreatePrivateProviderVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> applyExecutionPlan =
         genForApplyExecutionPlan();

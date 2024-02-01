@@ -1016,6 +1016,11 @@ public class AomMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePromInstanceRequest::getRegion, CreatePromInstanceRequest::setRegion));
         builder.<PromInstanceRequestModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

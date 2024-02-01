@@ -32,6 +32,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
@@ -682,6 +684,34 @@ public class CdnClient {
     public SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasksInvoker(
         ShowHistoryTasksRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showHistoryTasks, hcClient);
+    }
+
+    /**
+     * 日志查询
+     *
+     * 查询日志下载链接，支持查询30天内的日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogsRequest 请求对象
+     * @return ShowLogsResponse
+     */
+    public ShowLogsResponse showLogs(ShowLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showLogs);
+    }
+
+    /**
+     * 日志查询
+     *
+     * 查询日志下载链接，支持查询30天内的日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogsRequest 请求对象
+     * @return SyncInvoker<ShowLogsRequest, ShowLogsResponse>
+     */
+    public SyncInvoker<ShowLogsRequest, ShowLogsResponse> showLogsInvoker(ShowLogsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showLogs, hcClient);
     }
 
     /**

@@ -171,6 +171,11 @@ public class DigitalAssetSummary {
 
     private String coverUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnail_url")
+
+    private String thumbnailUrl;
+
     public DigitalAssetSummary withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -239,6 +244,23 @@ public class DigitalAssetSummary {
         this.coverUrl = coverUrl;
     }
 
+    public DigitalAssetSummary withThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+        return this;
+    }
+
+    /**
+     * 缩略图路径。
+     * @return thumbnailUrl
+     */
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -249,12 +271,13 @@ public class DigitalAssetSummary {
         }
         DigitalAssetSummary that = (DigitalAssetSummary) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
-            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.coverUrl, that.coverUrl);
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.coverUrl, that.coverUrl)
+            && Objects.equals(this.thumbnailUrl, that.thumbnailUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, assetName, assetType, coverUrl);
+        return Objects.hash(assetId, assetName, assetType, coverUrl, thumbnailUrl);
     }
 
     @Override
@@ -265,6 +288,7 @@ public class DigitalAssetSummary {
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    thumbnailUrl: ").append(toIndentedString(thumbnailUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

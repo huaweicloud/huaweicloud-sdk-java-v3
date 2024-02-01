@@ -117,6 +117,81 @@ public class ShowPhotoDigitalHumanVideoResponse extends SdkResponse {
 
     private StateEnum state;
 
+    /**
+     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * PHOTO_DIGITAL_HUMAN_VIDEO: 照片数字人视频制作任务
+     */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum _2D_DIGITAL_HUMAN_VIDEO for value: "2D_DIGITAL_HUMAN_VIDEO"
+         */
+        public static final JobTypeEnum _2D_DIGITAL_HUMAN_VIDEO = new JobTypeEnum("2D_DIGITAL_HUMAN_VIDEO");
+
+        /**
+         * Enum DIGITAL_HUMAN_PHOTO_VIDEO for value: "DIGITAL_HUMAN_PHOTO_VIDEO"
+         */
+        public static final JobTypeEnum DIGITAL_HUMAN_PHOTO_VIDEO = new JobTypeEnum("DIGITAL_HUMAN_PHOTO_VIDEO");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("2D_DIGITAL_HUMAN_VIDEO", _2D_DIGITAL_HUMAN_VIDEO);
+            map.put("DIGITAL_HUMAN_PHOTO_VIDEO", DIGITAL_HUMAN_PHOTO_VIDEO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_type")
+
+    private JobTypeEnum jobType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
@@ -214,6 +289,23 @@ public class ShowPhotoDigitalHumanVideoResponse extends SdkResponse {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public ShowPhotoDigitalHumanVideoResponse withJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * PHOTO_DIGITAL_HUMAN_VIDEO: 照片数字人视频制作任务
+     * @return jobType
+     */
+    public JobTypeEnum getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
     }
 
     public ShowPhotoDigitalHumanVideoResponse withStartTime(String startTime) {
@@ -503,8 +595,8 @@ public class ShowPhotoDigitalHumanVideoResponse extends SdkResponse {
         }
         ShowPhotoDigitalHumanVideoResponse that = (ShowPhotoDigitalHumanVideoResponse) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
             && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime) && Objects.equals(this.scriptId, that.scriptId)
@@ -517,6 +609,7 @@ public class ShowPhotoDigitalHumanVideoResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(jobId,
             state,
+            jobType,
             startTime,
             endTime,
             duration,
@@ -538,6 +631,7 @@ public class ShowPhotoDigitalHumanVideoResponse extends SdkResponse {
         sb.append("class ShowPhotoDigitalHumanVideoResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");

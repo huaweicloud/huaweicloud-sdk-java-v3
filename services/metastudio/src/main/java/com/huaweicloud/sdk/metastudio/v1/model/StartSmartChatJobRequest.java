@@ -63,7 +63,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
+     * 使用AK/SK方式认证时必选，请求的发生时间。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,7 +101,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 开发者应用作为资产权属的可选字段。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -120,7 +120,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 直播间ID。
+     * 直播间ID，获取方法请参考[[创建智能交互对话直播间](https://support.huaweicloud.com/api-metastudio/CreateSmartChatRoom.html)](tag:hc,hk)[“创建智能交互对话直播间”](tag:cmcc)。
      * @return roomId
      */
     public String getRoomId() {
@@ -137,7 +137,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 机器人ID。
+     * 应用ID，获取方法请参考[[创建应用](https://support.huaweicloud.com/api-metastudio/CreateRobot.html)](tag:hc,hk)[“创建应用”](tag:cmcc)。
      * @return robotId
      */
     public String getRobotId() {

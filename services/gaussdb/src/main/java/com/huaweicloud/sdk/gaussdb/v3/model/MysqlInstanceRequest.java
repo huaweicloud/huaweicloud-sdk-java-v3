@@ -123,6 +123,11 @@ public class MysqlInstanceRequest {
 
     private MysqlRestorePoint restorePoint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tde_info")
+
+    private MysqlTdeInfo tdeInfo;
+
     public MysqlInstanceRequest withChargeInfo(MysqlChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
@@ -558,6 +563,32 @@ public class MysqlInstanceRequest {
         this.restorePoint = restorePoint;
     }
 
+    public MysqlInstanceRequest withTdeInfo(MysqlTdeInfo tdeInfo) {
+        this.tdeInfo = tdeInfo;
+        return this;
+    }
+
+    public MysqlInstanceRequest withTdeInfo(Consumer<MysqlTdeInfo> tdeInfoSetter) {
+        if (this.tdeInfo == null) {
+            this.tdeInfo = new MysqlTdeInfo();
+            tdeInfoSetter.accept(this.tdeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tdeInfo
+     * @return tdeInfo
+     */
+    public MysqlTdeInfo getTdeInfo() {
+        return tdeInfo;
+    }
+
+    public void setTdeInfo(MysqlTdeInfo tdeInfo) {
+        this.tdeInfo = tdeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -582,7 +613,7 @@ public class MysqlInstanceRequest {
             && Objects.equals(this.lowerCaseTableNames, that.lowerCaseTableNames)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
-            && Objects.equals(this.restorePoint, that.restorePoint);
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.tdeInfo, that.tdeInfo);
     }
 
     @Override
@@ -608,7 +639,8 @@ public class MysqlInstanceRequest {
             lowerCaseTableNames,
             enterpriseProjectId,
             dedicatedResourceId,
-            restorePoint);
+            restorePoint,
+            tdeInfo);
     }
 
     @Override
@@ -637,6 +669,7 @@ public class MysqlInstanceRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
+        sb.append("    tdeInfo: ").append(toIndentedString(tdeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

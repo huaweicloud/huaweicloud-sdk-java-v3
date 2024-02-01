@@ -55,7 +55,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
 
     R req;
 
-    Map<String, String> extraHeader;
+    Map<String, String> extraHeaders;
 
     int retryTimes;
 
@@ -108,10 +108,10 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
      * @return DerivedT
      */
     public D addHeader(String headerKey, String headerValue) {
-        if (Objects.isNull(extraHeader)) {
-            extraHeader = new TreeMap<>();
+        if (Objects.isNull(extraHeaders)) {
+            extraHeaders = new TreeMap<>();
         }
-        extraHeader.put(headerKey, headerValue);
+        extraHeaders.put(headerKey, headerValue);
         return toDerivedT();
     }
 

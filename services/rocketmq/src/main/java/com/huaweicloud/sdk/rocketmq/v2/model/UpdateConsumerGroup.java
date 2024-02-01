@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -37,7 +36,7 @@ public class UpdateConsumerGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
-    private BigDecimal retryMaxTime;
+    private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_beginning")
@@ -128,7 +127,7 @@ public class UpdateConsumerGroup {
         this.name = name;
     }
 
-    public UpdateConsumerGroup withRetryMaxTime(BigDecimal retryMaxTime) {
+    public UpdateConsumerGroup withRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
     }
@@ -137,11 +136,11 @@ public class UpdateConsumerGroup {
      * 最大重试次数，取值范围为1~16。
      * @return retryMaxTime
      */
-    public BigDecimal getRetryMaxTime() {
+    public Integer getRetryMaxTime() {
         return retryMaxTime;
     }
 
-    public void setRetryMaxTime(BigDecimal retryMaxTime) {
+    public void setRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
     }
 

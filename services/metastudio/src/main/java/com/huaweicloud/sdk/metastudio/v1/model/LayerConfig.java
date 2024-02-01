@@ -104,6 +104,11 @@ public class LayerConfig {
     private LayerTypeEnum layerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_id")
+
+    private String assetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
@@ -148,6 +153,23 @@ public class LayerConfig {
 
     public void setLayerType(LayerTypeEnum layerType) {
         this.layerType = layerType;
+    }
+
+    public LayerConfig withAssetId(String assetId) {
+        this.assetId = assetId;
+        return this;
+    }
+
+    /**
+     * 图层所需资产的资产id，外部资产信息无需填写
+     * @return assetId
+     */
+    public String getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
     }
 
     public LayerConfig withGroupId(String groupId) {
@@ -306,15 +328,15 @@ public class LayerConfig {
             return false;
         }
         LayerConfig that = (LayerConfig) obj;
-        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.position, that.position) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.textConfig, that.textConfig);
+        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.imageConfig, that.imageConfig)
+            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.textConfig, that.textConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(layerType, groupId, position, size, imageConfig, videoConfig, textConfig);
+        return Objects.hash(layerType, assetId, groupId, position, size, imageConfig, videoConfig, textConfig);
     }
 
     @Override
@@ -322,6 +344,7 @@ public class LayerConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class LayerConfig {\n");
         sb.append("    layerType: ").append(toIndentedString(layerType)).append("\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");

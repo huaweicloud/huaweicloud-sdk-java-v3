@@ -20,6 +20,11 @@ public class VideoLayerConfig {
 
     private String videoCoverUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loop_count")
+
+    private Integer loopCount;
+
     public VideoLayerConfig withVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
         return this;
@@ -54,6 +59,25 @@ public class VideoLayerConfig {
         this.videoCoverUrl = videoCoverUrl;
     }
 
+    public VideoLayerConfig withLoopCount(Integer loopCount) {
+        this.loopCount = loopCount;
+        return this;
+    }
+
+    /**
+     * 循环播放视频次数。
+     * minimum: -1
+     * maximum: 100
+     * @return loopCount
+     */
+    public Integer getLoopCount() {
+        return loopCount;
+    }
+
+    public void setLoopCount(Integer loopCount) {
+        this.loopCount = loopCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +87,13 @@ public class VideoLayerConfig {
             return false;
         }
         VideoLayerConfig that = (VideoLayerConfig) obj;
-        return Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.videoCoverUrl, that.videoCoverUrl);
+        return Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.videoCoverUrl, that.videoCoverUrl)
+            && Objects.equals(this.loopCount, that.loopCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoUrl, videoCoverUrl);
+        return Objects.hash(videoUrl, videoCoverUrl, loopCount);
     }
 
     @Override
@@ -77,6 +102,7 @@ public class VideoLayerConfig {
         sb.append("class VideoLayerConfig {\n");
         sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
         sb.append("    videoCoverUrl: ").append(toIndentedString(videoCoverUrl)).append("\n");
+        sb.append("    loopCount: ").append(toIndentedString(loopCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

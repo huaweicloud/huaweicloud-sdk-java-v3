@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.rds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SetAuditlogPolicyRequestBody
@@ -19,6 +22,11 @@ public class SetAuditlogPolicyRequestBody {
     @JsonProperty(value = "reserve_auditlogs")
 
     private Boolean reserveAuditlogs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audit_types")
+
+    private List<String> auditTypes = null;
 
     public SetAuditlogPolicyRequestBody withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
@@ -54,6 +62,39 @@ public class SetAuditlogPolicyRequestBody {
         this.reserveAuditlogs = reserveAuditlogs;
     }
 
+    public SetAuditlogPolicyRequestBody withAuditTypes(List<String> auditTypes) {
+        this.auditTypes = auditTypes;
+        return this;
+    }
+
+    public SetAuditlogPolicyRequestBody addAuditTypesItem(String auditTypesItem) {
+        if (this.auditTypes == null) {
+            this.auditTypes = new ArrayList<>();
+        }
+        this.auditTypes.add(auditTypesItem);
+        return this;
+    }
+
+    public SetAuditlogPolicyRequestBody withAuditTypes(Consumer<List<String>> auditTypesSetter) {
+        if (this.auditTypes == null) {
+            this.auditTypes = new ArrayList<>();
+        }
+        auditTypesSetter.accept(this.auditTypes);
+        return this;
+    }
+
+    /**
+     * 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+     * @return auditTypes
+     */
+    public List<String> getAuditTypes() {
+        return auditTypes;
+    }
+
+    public void setAuditTypes(List<String> auditTypes) {
+        this.auditTypes = auditTypes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +105,13 @@ public class SetAuditlogPolicyRequestBody {
         }
         SetAuditlogPolicyRequestBody that = (SetAuditlogPolicyRequestBody) obj;
         return Objects.equals(this.keepDays, that.keepDays)
-            && Objects.equals(this.reserveAuditlogs, that.reserveAuditlogs);
+            && Objects.equals(this.reserveAuditlogs, that.reserveAuditlogs)
+            && Objects.equals(this.auditTypes, that.auditTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, reserveAuditlogs);
+        return Objects.hash(keepDays, reserveAuditlogs, auditTypes);
     }
 
     @Override
@@ -78,6 +120,7 @@ public class SetAuditlogPolicyRequestBody {
         sb.append("class SetAuditlogPolicyRequestBody {\n");
         sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    reserveAuditlogs: ").append(toIndentedString(reserveAuditlogs)).append("\n");
+        sb.append("    auditTypes: ").append(toIndentedString(auditTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

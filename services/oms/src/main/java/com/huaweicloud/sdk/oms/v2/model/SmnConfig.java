@@ -103,6 +103,11 @@ public class SmnConfig {
 
     private List<String> triggerConditions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_template_name")
+
+    private String messageTemplateName;
+
     public SmnConfig withLanguage(LanguageEnum language) {
         this.language = language;
         return this;
@@ -159,7 +164,7 @@ public class SmnConfig {
     }
 
     /**
-     *   SMN消息的触发条件，取决于迁移任务状态。  迁移任务状态的取值范围为SUCCESS或者FAILURE。  - FAILURE表示任务失败后发送SMN消息。 - SUCCESS表示任务成功后发送SMN消息。
+     * SMN消息的触发条件，取决于迁移任务状态。  迁移任务状态的取值范围为SUCCESS或者FAILURE。  - FAILURE表示任务失败后发送SMN消息。 - SUCCESS表示任务成功后发送SMN消息。
      * @return triggerConditions
      */
     public List<String> getTriggerConditions() {
@@ -168,6 +173,23 @@ public class SmnConfig {
 
     public void setTriggerConditions(List<String> triggerConditions) {
         this.triggerConditions = triggerConditions;
+    }
+
+    public SmnConfig withMessageTemplateName(String messageTemplateName) {
+        this.messageTemplateName = messageTemplateName;
+        return this;
+    }
+
+    /**
+     * 如果设置此值，则表示用模板方式发送smn信息。 模板示例: {  “Task_Status”: \"\",     \"Task_Name\" : \"\",     \"Start_Time\": \"\",     \"Total_Time_Used\": \"\",     \"Transferred_Data\": \"\",     \"Average_Speed\": \"\",     \"Source_Bucket\": \"\",     \"Destination_Bucket\": \"\",     \"List_File_Bucket\": \"\",     \"List_File_Key\": \"\",     \"Success_object_list_path\": \"\",     \"Skip_object_list_path\": \"\",     \"Failed_object_list_path\": \"\" }
+     * @return messageTemplateName
+     */
+    public String getMessageTemplateName() {
+        return messageTemplateName;
+    }
+
+    public void setMessageTemplateName(String messageTemplateName) {
+        this.messageTemplateName = messageTemplateName;
     }
 
     @Override
@@ -180,12 +202,13 @@ public class SmnConfig {
         }
         SmnConfig that = (SmnConfig) obj;
         return Objects.equals(this.language, that.language) && Objects.equals(this.topicUrn, that.topicUrn)
-            && Objects.equals(this.triggerConditions, that.triggerConditions);
+            && Objects.equals(this.triggerConditions, that.triggerConditions)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(language, topicUrn, triggerConditions);
+        return Objects.hash(language, topicUrn, triggerConditions, messageTemplateName);
     }
 
     @Override
@@ -195,6 +218,7 @@ public class SmnConfig {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    triggerConditions: ").append(toIndentedString(triggerConditions)).append("\n");
+        sb.append("    messageTemplateName: ").append(toIndentedString(messageTemplateName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

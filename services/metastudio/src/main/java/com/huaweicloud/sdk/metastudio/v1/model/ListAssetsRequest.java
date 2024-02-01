@@ -191,6 +191,91 @@ public class ListAssetsRequest {
 
     private Boolean actionEditable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_movable")
+
+    private Boolean isMovable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_provider")
+
+    private String voiceProvider;
+
+    /**
+     * 角色。 SHARER：共享方，SHAREE：被共享方
+     */
+    public static final class RoleEnum {
+
+        /**
+         * Enum SHARER for value: "SHARER"
+         */
+        public static final RoleEnum SHARER = new RoleEnum("SHARER");
+
+        /**
+         * Enum SHAREE for value: "SHAREE"
+         */
+        public static final RoleEnum SHAREE = new RoleEnum("SHAREE");
+
+        private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoleEnum> createStaticFields() {
+            Map<String, RoleEnum> map = new HashMap<>();
+            map.put("SHARER", SHARER);
+            map.put("SHAREE", SHAREE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RoleEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RoleEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleEnum(value));
+        }
+
+        public static RoleEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RoleEnum) {
+                return this.value.equals(((RoleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role")
+
+    private RoleEnum role;
+
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -539,6 +624,57 @@ public class ListAssetsRequest {
         this.actionEditable = actionEditable;
     }
 
+    public ListAssetsRequest withIsMovable(Boolean isMovable) {
+        this.isMovable = isMovable;
+        return this;
+    }
+
+    /**
+     * 分身数字人是否资产走动。仅在分身数字人模型查询时有效。
+     * @return isMovable
+     */
+    public Boolean getIsMovable() {
+        return isMovable;
+    }
+
+    public void setIsMovable(Boolean isMovable) {
+        this.isMovable = isMovable;
+    }
+
+    public ListAssetsRequest withVoiceProvider(String voiceProvider) {
+        this.voiceProvider = voiceProvider;
+        return this;
+    }
+
+    /**
+     * 可取值HUAWEI_METASTUDIO, MOBVOI。 HUAWEI_METASTUDIO：MetaStudio自研音色 MOBVOI：出门问问音色
+     * @return voiceProvider
+     */
+    public String getVoiceProvider() {
+        return voiceProvider;
+    }
+
+    public void setVoiceProvider(String voiceProvider) {
+        this.voiceProvider = voiceProvider;
+    }
+
+    public ListAssetsRequest withRole(RoleEnum role) {
+        this.role = role;
+        return this;
+    }
+
+    /**
+     * 角色。 SHARER：共享方，SHAREE：被共享方
+     * @return role
+     */
+    public RoleEnum getRole() {
+        return role;
+    }
+
+    public void setRole(RoleEnum role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -558,7 +694,9 @@ public class ListAssetsRequest {
             && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
             && Objects.equals(this.systemProperty, that.systemProperty)
-            && Objects.equals(this.actionEditable, that.actionEditable);
+            && Objects.equals(this.actionEditable, that.actionEditable)
+            && Objects.equals(this.isMovable, that.isMovable) && Objects.equals(this.voiceProvider, that.voiceProvider)
+            && Objects.equals(this.role, that.role);
     }
 
     @Override
@@ -582,7 +720,10 @@ public class ListAssetsRequest {
             sex,
             language,
             systemProperty,
-            actionEditable);
+            actionEditable,
+            isMovable,
+            voiceProvider,
+            role);
     }
 
     @Override
@@ -609,6 +750,9 @@ public class ListAssetsRequest {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    systemProperty: ").append(toIndentedString(systemProperty)).append("\n");
         sb.append("    actionEditable: ").append(toIndentedString(actionEditable)).append("\n");
+        sb.append("    isMovable: ").append(toIndentedString(isMovable)).append("\n");
+        sb.append("    voiceProvider: ").append(toIndentedString(voiceProvider)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("}");
         return sb.toString();
     }

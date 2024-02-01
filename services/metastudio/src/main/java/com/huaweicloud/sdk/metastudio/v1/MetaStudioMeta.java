@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlSmartLiveReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
@@ -133,6 +135,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
@@ -668,6 +672,21 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAssetsRequest::getActionEditable, ListAssetsRequest::setActionEditable));
+        builder.<Boolean>withRequestField("is_movable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAssetsRequest::getIsMovable, ListAssetsRequest::setIsMovable));
+        builder.<String>withRequestField("voice_provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getVoiceProvider, ListAssetsRequest::setVoiceProvider));
+        builder.<ListAssetsRequest.RoleEnum>withRequestField("role",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAssetsRequest.RoleEnum.class),
+            f -> f.withMarshaller(ListAssetsRequest::getRole, ListAssetsRequest::setRole));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2821,6 +2840,90 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse> listSmartLiveJobs =
+        genForListSmartLiveJobs();
+
+    private static HttpRequestDef<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse> genForListSmartLiveJobs() {
+        // basic
+        HttpRequestDef.Builder<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSmartLiveJobsRequest.class, ListSmartLiveJobsResponse.class)
+                .withName("ListSmartLiveJobs")
+                .withUri("/v1/{project_id}/smart-live-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getOffset, ListSmartLiveJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getLimit, ListSmartLiveJobsRequest::setLimit));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getState, ListSmartLiveJobsRequest::setState));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getSortKey, ListSmartLiveJobsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getSortDir, ListSmartLiveJobsRequest::setSortDir));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getCreateSince, ListSmartLiveJobsRequest::setCreateSince));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getCreateUntil, ListSmartLiveJobsRequest::setCreateUntil));
+        builder.<String>withRequestField("room_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getRoomName, ListSmartLiveJobsRequest::setRoomName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getAuthorization,
+                ListSmartLiveJobsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getXSdkDate, ListSmartLiveJobsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getXProjectId, ListSmartLiveJobsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveJobsRequest::getXAppUserId, ListSmartLiveJobsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSmartLiveJobsResponse::getXRequestId, ListSmartLiveJobsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<LiveEventReportRequest, LiveEventReportResponse> liveEventReport =
         genForLiveEventReport();
 
@@ -3432,6 +3535,12 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSmartLiveRoomsRequest::getRoomType, ListSmartLiveRoomsRequest::setRoomType));
+        builder.<String>withRequestField("template_own_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRoomsRequest::getTemplateOwnType,
+                ListSmartLiveRoomsRequest::setTemplateOwnType));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -5135,6 +5244,55 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(StopVideoMotionCaptureJobResponse::getXRequestId,
                 StopVideoMotionCaptureJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyVideoScriptsRequest, CopyVideoScriptsResponse> copyVideoScripts =
+        genForCopyVideoScripts();
+
+    private static HttpRequestDef<CopyVideoScriptsRequest, CopyVideoScriptsResponse> genForCopyVideoScripts() {
+        // basic
+        HttpRequestDef.Builder<CopyVideoScriptsRequest, CopyVideoScriptsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyVideoScriptsRequest.class, CopyVideoScriptsResponse.class)
+                .withName("CopyVideoScripts")
+                .withUri("/v1/{project_id}/digital-human-video-scripts/{script_id}/copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("script_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyVideoScriptsRequest::getScriptId, CopyVideoScriptsRequest::setScriptId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyVideoScriptsRequest::getAuthorization,
+                CopyVideoScriptsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyVideoScriptsRequest::getXSdkDate, CopyVideoScriptsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyVideoScriptsRequest::getXProjectId, CopyVideoScriptsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyVideoScriptsRequest::getXAppUserId, CopyVideoScriptsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyVideoScriptsResponse::getXRequestId, CopyVideoScriptsResponse::setXRequestId));
         return builder.build();
     }
 

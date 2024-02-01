@@ -81,6 +81,99 @@ public class CreateSyncTaskReq {
 
     private Boolean enableRestore;
 
+    /**
+     * 目的端存储类型设置，当且仅当目的端为华为云OBS时需要，默认为标准存储 STANDARD：华为云OBS标准存储 IA：华为云OBS低频存储 ARCHIVE：华为云OBS归档存储 DEEP_ARCHIVE：华为云OBS深度归档存储 SRC_STORAGE_MAPPING：保留源端存储类型，将源端存储类型映射为华为云OBS存储类型
+     */
+    public static final class DstStoragePolicyEnum {
+
+        /**
+         * Enum STANDARD for value: "STANDARD"
+         */
+        public static final DstStoragePolicyEnum STANDARD = new DstStoragePolicyEnum("STANDARD");
+
+        /**
+         * Enum IA for value: "IA"
+         */
+        public static final DstStoragePolicyEnum IA = new DstStoragePolicyEnum("IA");
+
+        /**
+         * Enum ARCHIVE for value: "ARCHIVE"
+         */
+        public static final DstStoragePolicyEnum ARCHIVE = new DstStoragePolicyEnum("ARCHIVE");
+
+        /**
+         * Enum DEEP_ARCHIVE for value: "DEEP_ARCHIVE"
+         */
+        public static final DstStoragePolicyEnum DEEP_ARCHIVE = new DstStoragePolicyEnum("DEEP_ARCHIVE");
+
+        /**
+         * Enum SRC_STORAGE_MAPPING for value: "SRC_STORAGE_MAPPING"
+         */
+        public static final DstStoragePolicyEnum SRC_STORAGE_MAPPING = new DstStoragePolicyEnum("SRC_STORAGE_MAPPING");
+
+        private static final Map<String, DstStoragePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DstStoragePolicyEnum> createStaticFields() {
+            Map<String, DstStoragePolicyEnum> map = new HashMap<>();
+            map.put("STANDARD", STANDARD);
+            map.put("IA", IA);
+            map.put("ARCHIVE", ARCHIVE);
+            map.put("DEEP_ARCHIVE", DEEP_ARCHIVE);
+            map.put("SRC_STORAGE_MAPPING", SRC_STORAGE_MAPPING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DstStoragePolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DstStoragePolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DstStoragePolicyEnum(value));
+        }
+
+        public static DstStoragePolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DstStoragePolicyEnum) {
+                return this.value.equals(((DstStoragePolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_storage_policy")
+
+    private DstStoragePolicyEnum dstStoragePolicy;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
@@ -393,6 +486,23 @@ public class CreateSyncTaskReq {
         this.enableRestore = enableRestore;
     }
 
+    public CreateSyncTaskReq withDstStoragePolicy(DstStoragePolicyEnum dstStoragePolicy) {
+        this.dstStoragePolicy = dstStoragePolicy;
+        return this;
+    }
+
+    /**
+     * 目的端存储类型设置，当且仅当目的端为华为云OBS时需要，默认为标准存储 STANDARD：华为云OBS标准存储 IA：华为云OBS低频存储 ARCHIVE：华为云OBS归档存储 DEEP_ARCHIVE：华为云OBS深度归档存储 SRC_STORAGE_MAPPING：保留源端存储类型，将源端存储类型映射为华为云OBS存储类型
+     * @return dstStoragePolicy
+     */
+    public DstStoragePolicyEnum getDstStoragePolicy() {
+        return dstStoragePolicy;
+    }
+
+    public void setDstStoragePolicy(DstStoragePolicyEnum dstStoragePolicy) {
+        this.dstStoragePolicy = dstStoragePolicy;
+    }
+
     public CreateSyncTaskReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -469,7 +579,8 @@ public class CreateSyncTaskReq {
             && Objects.equals(this.dstBucket, that.dstBucket) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
             && Objects.equals(this.enableKms, that.enableKms) && Objects.equals(this.enableRestore, that.enableRestore)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.sourceCdn, that.sourceCdn)
+            && Objects.equals(this.dstStoragePolicy, that.dstStoragePolicy) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.sourceCdn, that.sourceCdn)
             && Objects.equals(this.consistencyCheck, that.consistencyCheck);
     }
 
@@ -488,6 +599,7 @@ public class CreateSyncTaskReq {
             enableMetadataMigration,
             enableKms,
             enableRestore,
+            dstStoragePolicy,
             appId,
             sourceCdn,
             consistencyCheck);
@@ -510,6 +622,7 @@ public class CreateSyncTaskReq {
         sb.append("    enableMetadataMigration: ").append(toIndentedString(enableMetadataMigration)).append("\n");
         sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
+        sb.append("    dstStoragePolicy: ").append(toIndentedString(dstStoragePolicy)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    sourceCdn: ").append(toIndentedString(sourceCdn)).append("\n");
         sb.append("    consistencyCheck: ").append(toIndentedString(consistencyCheck)).append("\n");

@@ -44,6 +44,11 @@ public class DatabasePermissionReq {
     private Object objectList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "all_object")
+
+    private Boolean allObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cascade")
 
     private Boolean cascade;
@@ -213,6 +218,23 @@ public class DatabasePermissionReq {
         this.objectList = objectList;
     }
 
+    public DatabasePermissionReq withAllObject(Boolean allObject) {
+        this.allObject = allObject;
+        return this;
+    }
+
+    /**
+     * schema下所有数据库对象权限，默认false
+     * @return allObject
+     */
+    public Boolean getAllObject() {
+        return allObject;
+    }
+
+    public void setAllObject(Boolean allObject) {
+        this.allObject = allObject;
+    }
+
     public DatabasePermissionReq withCascade(Boolean cascade) {
         this.cascade = cascade;
         return this;
@@ -293,14 +315,24 @@ public class DatabasePermissionReq {
         return Objects.equals(this.type, that.type) && Objects.equals(this.isGrant, that.isGrant)
             && Objects.equals(this.grantList, that.grantList) && Objects.equals(this.revokeList, that.revokeList)
             && Objects.equals(this.roleList, that.roleList) && Objects.equals(this.objectList, that.objectList)
-            && Objects.equals(this.cascade, that.cascade) && Objects.equals(this.database, that.database)
-            && Objects.equals(this.schema, that.schema) && Objects.equals(this.table, that.table);
+            && Objects.equals(this.allObject, that.allObject) && Objects.equals(this.cascade, that.cascade)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.table, that.table);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(type, isGrant, grantList, revokeList, roleList, objectList, cascade, database, schema, table);
+        return Objects.hash(type,
+            isGrant,
+            grantList,
+            revokeList,
+            roleList,
+            objectList,
+            allObject,
+            cascade,
+            database,
+            schema,
+            table);
     }
 
     @Override
@@ -313,6 +345,7 @@ public class DatabasePermissionReq {
         sb.append("    revokeList: ").append(toIndentedString(revokeList)).append("\n");
         sb.append("    roleList: ").append(toIndentedString(roleList)).append("\n");
         sb.append("    objectList: ").append(toIndentedString(objectList)).append("\n");
+        sb.append("    allObject: ").append(toIndentedString(allObject)).append("\n");
         sb.append("    cascade: ").append(toIndentedString(cascade)).append("\n");
         sb.append("    database: ").append(toIndentedString(database)).append("\n");
         sb.append("    schema: ").append(toIndentedString(schema)).append("\n");

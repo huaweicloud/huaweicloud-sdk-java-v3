@@ -168,6 +168,11 @@ public class MysqlInstanceInfoDetailUnifyStatus {
 
     private List<MysqlProxyInfo> proxies = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tde_info")
+
+    private MysqlTdeInfo tdeInfo;
+
     public MysqlInstanceInfoDetailUnifyStatus withId(String id) {
         this.id = id;
         return this;
@@ -802,6 +807,32 @@ public class MysqlInstanceInfoDetailUnifyStatus {
         this.proxies = proxies;
     }
 
+    public MysqlInstanceInfoDetailUnifyStatus withTdeInfo(MysqlTdeInfo tdeInfo) {
+        this.tdeInfo = tdeInfo;
+        return this;
+    }
+
+    public MysqlInstanceInfoDetailUnifyStatus withTdeInfo(Consumer<MysqlTdeInfo> tdeInfoSetter) {
+        if (this.tdeInfo == null) {
+            this.tdeInfo = new MysqlTdeInfo();
+            tdeInfoSetter.accept(this.tdeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tdeInfo
+     * @return tdeInfo
+     */
+    public MysqlTdeInfo getTdeInfo() {
+        return tdeInfo;
+    }
+
+    public void setTdeInfo(MysqlTdeInfo tdeInfo) {
+        this.tdeInfo = tdeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -829,7 +860,7 @@ public class MysqlInstanceInfoDetailUnifyStatus {
             && Objects.equals(this.masterAzCode, that.masterAzCode)
             && Objects.equals(this.maintenanceWindow, that.maintenanceWindow) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
-            && Objects.equals(this.proxies, that.proxies);
+            && Objects.equals(this.proxies, that.proxies) && Objects.equals(this.tdeInfo, that.tdeInfo);
     }
 
     @Override
@@ -864,7 +895,8 @@ public class MysqlInstanceInfoDetailUnifyStatus {
             maintenanceWindow,
             tags,
             dedicatedResourceId,
-            proxies);
+            proxies,
+            tdeInfo);
     }
 
     @Override
@@ -902,6 +934,7 @@ public class MysqlInstanceInfoDetailUnifyStatus {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    proxies: ").append(toIndentedString(proxies)).append("\n");
+        sb.append("    tdeInfo: ").append(toIndentedString(tdeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,11 +9,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 音色模型元数据。
  */
 public class VoiceModelAssetMeta {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private Integer order;
 
     /**
      * 音色资产类型。 * COMMON：通用情感模型 * CLONE：语音克隆模型
@@ -406,6 +412,30 @@ public class VoiceModelAssetMeta {
 
     private Float volumeRatio;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_voice_meta")
+
+    private ExternalVoiceAssetMeta externalVoiceMeta;
+
+    public VoiceModelAssetMeta withOrder(Integer order) {
+        this.order = order;
+        return this;
+    }
+
+    /**
+     * 展示顺序
+     * minimum: 0
+     * maximum: 32767
+     * @return order
+     */
+    public Integer getOrder() {
+        return order;
+    }
+
+    public void setOrder(Integer order) {
+        this.order = order;
+    }
+
     public VoiceModelAssetMeta withModelType(ModelTypeEnum modelType) {
         this.modelType = modelType;
         return this;
@@ -495,6 +525,32 @@ public class VoiceModelAssetMeta {
         this.volumeRatio = volumeRatio;
     }
 
+    public VoiceModelAssetMeta withExternalVoiceMeta(ExternalVoiceAssetMeta externalVoiceMeta) {
+        this.externalVoiceMeta = externalVoiceMeta;
+        return this;
+    }
+
+    public VoiceModelAssetMeta withExternalVoiceMeta(Consumer<ExternalVoiceAssetMeta> externalVoiceMetaSetter) {
+        if (this.externalVoiceMeta == null) {
+            this.externalVoiceMeta = new ExternalVoiceAssetMeta();
+            externalVoiceMetaSetter.accept(this.externalVoiceMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get externalVoiceMeta
+     * @return externalVoiceMeta
+     */
+    public ExternalVoiceAssetMeta getExternalVoiceMeta() {
+        return externalVoiceMeta;
+    }
+
+    public void setExternalVoiceMeta(ExternalVoiceAssetMeta externalVoiceMeta) {
+        this.externalVoiceMeta = externalVoiceMeta;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -504,25 +560,28 @@ public class VoiceModelAssetMeta {
             return false;
         }
         VoiceModelAssetMeta that = (VoiceModelAssetMeta) obj;
-        return Objects.equals(this.modelType, that.modelType) && Objects.equals(this.sex, that.sex)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.speedRatio, that.speedRatio)
-            && Objects.equals(this.volumeRatio, that.volumeRatio);
+        return Objects.equals(this.order, that.order) && Objects.equals(this.modelType, that.modelType)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.speedRatio, that.speedRatio) && Objects.equals(this.volumeRatio, that.volumeRatio)
+            && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(modelType, sex, language, speedRatio, volumeRatio);
+        return Objects.hash(order, modelType, sex, language, speedRatio, volumeRatio, externalVoiceMeta);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VoiceModelAssetMeta {\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    modelType: ").append(toIndentedString(modelType)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    speedRatio: ").append(toIndentedString(speedRatio)).append("\n");
         sb.append("    volumeRatio: ").append(toIndentedString(volumeRatio)).append("\n");
+        sb.append("    externalVoiceMeta: ").append(toIndentedString(externalVoiceMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

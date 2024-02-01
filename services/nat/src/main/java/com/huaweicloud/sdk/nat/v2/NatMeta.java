@@ -361,6 +361,12 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getProtocol,
                 ListNatGatewayDnatRulesRequest::setProtocol));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getMarker,
+                ListNatGatewayDnatRulesRequest::setMarker));
 
         // response
 
@@ -1106,6 +1112,11 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getLimit, ListNatGatewaysRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewaysRequest::getMarker, ListNatGatewaysRequest::setMarker));
 
         // response
 
@@ -1694,6 +1705,12 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(ListNatGatewaySnatRulesRequest.StatusEnum.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getStatus,
                 ListNatGatewaySnatRulesRequest::setStatus));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getMarker,
+                ListNatGatewaySnatRulesRequest::setMarker));
 
         // response
 

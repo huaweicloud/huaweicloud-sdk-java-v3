@@ -36,6 +36,11 @@ public class ListProcessesRequest {
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -188,6 +193,23 @@ public class ListProcessesRequest {
         this.database = database;
     }
 
+    public ListProcessesRequest withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * 节点ID
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
     public ListProcessesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -252,13 +274,13 @@ public class ListProcessesRequest {
         ListProcessesRequest that = (ListProcessesRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dbUserId, that.dbUserId)
             && Objects.equals(this.user, that.user) && Objects.equals(this.database, that.database)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.xLanguage, that.xLanguage);
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, dbUserId, user, database, offset, limit, xLanguage);
+        return Objects.hash(instanceId, dbUserId, user, database, nodeId, offset, limit, xLanguage);
     }
 
     @Override
@@ -269,6 +291,7 @@ public class ListProcessesRequest {
         sb.append("    dbUserId: ").append(toIndentedString(dbUserId)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    database: ").append(toIndentedString(database)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");

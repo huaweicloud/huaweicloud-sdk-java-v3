@@ -87,7 +87,7 @@ public class OutputAssetInfo {
     }
 
     /**
-     * 预览视频下载URL。URL有效期24小时。 > * 分数数字人视频制作不支持预览。
+     * 预览视频下载URL。URL有效期24小时。 > * 分身数字人视频制作不支持预览。
      * @return previewVideoUrl
      */
     public String getPreviewVideoUrl() {

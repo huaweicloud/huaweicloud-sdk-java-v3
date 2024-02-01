@@ -522,9 +522,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询集群主机安装的ICAgent信息
+     * 查询主机安装的ICAgent信息
      *
-     * 该接口用于查询集群主机安装的ICAgent信息。
+     * 该接口用于查询集群主机或用户自定义主机安装的ICAgent信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -536,9 +536,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询集群主机安装的ICAgent信息
+     * 查询主机安装的ICAgent信息
      *
-     * 该接口用于查询集群主机安装的ICAgent信息。
+     * 该接口用于查询集群主机或用户自定义主机安装的ICAgent信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1215,9 +1215,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 瞬时数据查询
+     * GET方法查询瞬时数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1230,9 +1230,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 瞬时数据查询
+     * GET方法查询瞬时数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1245,9 +1245,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 瞬时数据查询
+     * （推荐）POST方法查询瞬时数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1260,9 +1260,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 瞬时数据查询
+     * （推荐）POST方法查询瞬时数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1305,9 +1305,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取标签名列表
+     * GET方法获取标签名列表
      *
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1320,9 +1320,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取标签名列表
+     * GET方法获取标签名列表
      *
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1335,9 +1335,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取标签名列表
+     * （推荐）POST方法获取标签名列表
      *
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1350,9 +1350,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取标签名列表
+     * （推荐）POST方法获取标签名列表
      *
-     * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1424,9 +1424,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 区间数据查询
+     * GET方法查询区间数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1439,9 +1439,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 区间数据查询
+     * GET方法查询区间数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1454,9 +1454,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 区间数据查询
+     * （推荐）POST方法查询区间数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1469,9 +1469,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 区间数据查询
+     * （推荐）POST方法查询区间数据
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -24,7 +24,7 @@ public class SrcNodeResp {
     private String bucket;
 
     /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Google、Qiniu、URLSource或者UCloud。默认值为Aliyun。
      */
     public static final class CloudTypeEnum {
 
@@ -83,6 +83,11 @@ public class SrcNodeResp {
          */
         public static final CloudTypeEnum UCLOUD = new CloudTypeEnum("UCloud");
 
+        /**
+         * Enum GOOGLE for value: "Google"
+         */
+        public static final CloudTypeEnum GOOGLE = new CloudTypeEnum("Google");
+
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CloudTypeEnum> createStaticFields() {
@@ -98,6 +103,7 @@ public class SrcNodeResp {
             map.put("Qiniu", QINIU);
             map.put("URLSource", URLSOURCE);
             map.put("UCloud", UCLOUD);
+            map.put("Google", GOOGLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -195,7 +201,7 @@ public class SrcNodeResp {
     }
 
     /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Google、Qiniu、URLSource或者UCloud。默认值为Aliyun。
      * @return cloudType
      */
     public CloudTypeEnum getCloudType() {

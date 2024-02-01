@@ -26,7 +26,7 @@ public class PlayPolicy {
     private Boolean autoPlayScript;
 
     /**
-     * 驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * 驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动 * NO_PRESET: 无预置剧本。人工控制模式。
      */
     public static final class PlayModeEnum {
 
@@ -40,12 +40,18 @@ public class PlayPolicy {
          */
         public static final PlayModeEnum AUDIO = new PlayModeEnum("AUDIO");
 
+        /**
+         * Enum NO_PRESET for value: "NO_PRESET"
+         */
+        public static final PlayModeEnum NO_PRESET = new PlayModeEnum("NO_PRESET");
+
         private static final Map<String, PlayModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PlayModeEnum> createStaticFields() {
             Map<String, PlayModeEnum> map = new HashMap<>();
             map.put("TEXT", TEXT);
             map.put("AUDIO", AUDIO);
+            map.put("NO_PRESET", NO_PRESET);
             return Collections.unmodifiableMap(map);
         }
 
@@ -229,7 +235,7 @@ public class PlayPolicy {
     }
 
     /**
-     * 驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * 驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动 * NO_PRESET: 无预置剧本。人工控制模式。
      * @return playMode
      */
     public PlayModeEnum getPlayMode() {

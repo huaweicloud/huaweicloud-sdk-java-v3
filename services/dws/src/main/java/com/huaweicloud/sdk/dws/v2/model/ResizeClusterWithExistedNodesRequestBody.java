@@ -17,11 +17,6 @@ public class ResizeClusterWithExistedNodesRequestBody {
     private ScaleOut scaleOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resize")
-
-    private Resize resize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_backup")
 
     private Boolean forceBackup;
@@ -42,34 +37,14 @@ public class ResizeClusterWithExistedNodesRequestBody {
     private Boolean expandWithExistedNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_node_only")
-
-    private Boolean createNodeOnly;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_redistribute")
 
     private Boolean autoRedistribute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_scheduler_build_mode")
-
-    private Boolean isSchedulerBuildMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redis_conf")
 
-    private RedisConf redisConf;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "build_task_info")
-
-    private BuildTaskInfo buildTaskInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
+    private RedisConfReq redisConf;
 
     public ResizeClusterWithExistedNodesRequestBody withScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
@@ -97,32 +72,6 @@ public class ResizeClusterWithExistedNodesRequestBody {
         this.scaleOut = scaleOut;
     }
 
-    public ResizeClusterWithExistedNodesRequestBody withResize(Resize resize) {
-        this.resize = resize;
-        return this;
-    }
-
-    public ResizeClusterWithExistedNodesRequestBody withResize(Consumer<Resize> resizeSetter) {
-        if (this.resize == null) {
-            this.resize = new Resize();
-            resizeSetter.accept(this.resize);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get resize
-     * @return resize
-     */
-    public Resize getResize() {
-        return resize;
-    }
-
-    public void setResize(Resize resize) {
-        this.resize = resize;
-    }
-
     public ResizeClusterWithExistedNodesRequestBody withForceBackup(Boolean forceBackup) {
         this.forceBackup = forceBackup;
         return this;
@@ -146,7 +95,7 @@ public class ResizeClusterWithExistedNodesRequestBody {
     }
 
     /**
-     * 扩容模式
+     * 扩容备份模式，不传默认离线read-only。
      * @return mode
      */
     public String getMode() {
@@ -163,7 +112,7 @@ public class ResizeClusterWithExistedNodesRequestBody {
     }
 
     /**
-     * 逻辑集群名称
+     * 逻辑集群名称。非逻辑集群模式下该字段不填，逻辑集群模式下不传默认elastic_group。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -191,30 +140,13 @@ public class ResizeClusterWithExistedNodesRequestBody {
         this.expandWithExistedNode = expandWithExistedNode;
     }
 
-    public ResizeClusterWithExistedNodesRequestBody withCreateNodeOnly(Boolean createNodeOnly) {
-        this.createNodeOnly = createNodeOnly;
-        return this;
-    }
-
-    /**
-     * 否只是添加节点
-     * @return createNodeOnly
-     */
-    public Boolean getCreateNodeOnly() {
-        return createNodeOnly;
-    }
-
-    public void setCreateNodeOnly(Boolean createNodeOnly) {
-        this.createNodeOnly = createNodeOnly;
-    }
-
     public ResizeClusterWithExistedNodesRequestBody withAutoRedistribute(Boolean autoRedistribute) {
         this.autoRedistribute = autoRedistribute;
         return this;
     }
 
     /**
-     * 扩容完成后是否自动启动重分布，默认是
+     * 扩容完成后是否自动启动重分布，默认true
      * @return autoRedistribute
      */
     public Boolean getAutoRedistribute() {
@@ -225,31 +157,14 @@ public class ResizeClusterWithExistedNodesRequestBody {
         this.autoRedistribute = autoRedistribute;
     }
 
-    public ResizeClusterWithExistedNodesRequestBody withIsSchedulerBuildMode(Boolean isSchedulerBuildMode) {
-        this.isSchedulerBuildMode = isSchedulerBuildMode;
-        return this;
-    }
-
-    /**
-     * 是否调度模式扩容加节点
-     * @return isSchedulerBuildMode
-     */
-    public Boolean getIsSchedulerBuildMode() {
-        return isSchedulerBuildMode;
-    }
-
-    public void setIsSchedulerBuildMode(Boolean isSchedulerBuildMode) {
-        this.isSchedulerBuildMode = isSchedulerBuildMode;
-    }
-
-    public ResizeClusterWithExistedNodesRequestBody withRedisConf(RedisConf redisConf) {
+    public ResizeClusterWithExistedNodesRequestBody withRedisConf(RedisConfReq redisConf) {
         this.redisConf = redisConf;
         return this;
     }
 
-    public ResizeClusterWithExistedNodesRequestBody withRedisConf(Consumer<RedisConf> redisConfSetter) {
+    public ResizeClusterWithExistedNodesRequestBody withRedisConf(Consumer<RedisConfReq> redisConfSetter) {
         if (this.redisConf == null) {
-            this.redisConf = new RedisConf();
+            this.redisConf = new RedisConfReq();
             redisConfSetter.accept(this.redisConf);
         }
 
@@ -260,55 +175,12 @@ public class ResizeClusterWithExistedNodesRequestBody {
      * Get redisConf
      * @return redisConf
      */
-    public RedisConf getRedisConf() {
+    public RedisConfReq getRedisConf() {
         return redisConf;
     }
 
-    public void setRedisConf(RedisConf redisConf) {
+    public void setRedisConf(RedisConfReq redisConf) {
         this.redisConf = redisConf;
-    }
-
-    public ResizeClusterWithExistedNodesRequestBody withBuildTaskInfo(BuildTaskInfo buildTaskInfo) {
-        this.buildTaskInfo = buildTaskInfo;
-        return this;
-    }
-
-    public ResizeClusterWithExistedNodesRequestBody withBuildTaskInfo(Consumer<BuildTaskInfo> buildTaskInfoSetter) {
-        if (this.buildTaskInfo == null) {
-            this.buildTaskInfo = new BuildTaskInfo();
-            buildTaskInfoSetter.accept(this.buildTaskInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get buildTaskInfo
-     * @return buildTaskInfo
-     */
-    public BuildTaskInfo getBuildTaskInfo() {
-        return buildTaskInfo;
-    }
-
-    public void setBuildTaskInfo(BuildTaskInfo buildTaskInfo) {
-        this.buildTaskInfo = buildTaskInfo;
-    }
-
-    public ResizeClusterWithExistedNodesRequestBody withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 扩容订单ID
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     @Override
@@ -320,31 +192,17 @@ public class ResizeClusterWithExistedNodesRequestBody {
             return false;
         }
         ResizeClusterWithExistedNodesRequestBody that = (ResizeClusterWithExistedNodesRequestBody) obj;
-        return Objects.equals(this.scaleOut, that.scaleOut) && Objects.equals(this.resize, that.resize)
-            && Objects.equals(this.forceBackup, that.forceBackup) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.logicalClusterName, that.logicalClusterName)
+        return Objects.equals(this.scaleOut, that.scaleOut) && Objects.equals(this.forceBackup, that.forceBackup)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.logicalClusterName, that.logicalClusterName)
             && Objects.equals(this.expandWithExistedNode, that.expandWithExistedNode)
-            && Objects.equals(this.createNodeOnly, that.createNodeOnly)
             && Objects.equals(this.autoRedistribute, that.autoRedistribute)
-            && Objects.equals(this.isSchedulerBuildMode, that.isSchedulerBuildMode)
-            && Objects.equals(this.redisConf, that.redisConf) && Objects.equals(this.buildTaskInfo, that.buildTaskInfo)
-            && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.redisConf, that.redisConf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scaleOut,
-            resize,
-            forceBackup,
-            mode,
-            logicalClusterName,
-            expandWithExistedNode,
-            createNodeOnly,
-            autoRedistribute,
-            isSchedulerBuildMode,
-            redisConf,
-            buildTaskInfo,
-            orderId);
+        return Objects
+            .hash(scaleOut, forceBackup, mode, logicalClusterName, expandWithExistedNode, autoRedistribute, redisConf);
     }
 
     @Override
@@ -352,17 +210,12 @@ public class ResizeClusterWithExistedNodesRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeClusterWithExistedNodesRequestBody {\n");
         sb.append("    scaleOut: ").append(toIndentedString(scaleOut)).append("\n");
-        sb.append("    resize: ").append(toIndentedString(resize)).append("\n");
         sb.append("    forceBackup: ").append(toIndentedString(forceBackup)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    logicalClusterName: ").append(toIndentedString(logicalClusterName)).append("\n");
         sb.append("    expandWithExistedNode: ").append(toIndentedString(expandWithExistedNode)).append("\n");
-        sb.append("    createNodeOnly: ").append(toIndentedString(createNodeOnly)).append("\n");
         sb.append("    autoRedistribute: ").append(toIndentedString(autoRedistribute)).append("\n");
-        sb.append("    isSchedulerBuildMode: ").append(toIndentedString(isSchedulerBuildMode)).append("\n");
         sb.append("    redisConf: ").append(toIndentedString(redisConf)).append("\n");
-        sb.append("    buildTaskInfo: ").append(toIndentedString(buildTaskInfo)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

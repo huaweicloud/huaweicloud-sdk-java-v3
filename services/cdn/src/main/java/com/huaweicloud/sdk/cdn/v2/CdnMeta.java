@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
@@ -844,6 +846,53 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.TaskTypeEnum.class),
             f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskType, ShowHistoryTasksRequest::setTaskType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogsRequest, ShowLogsResponse> showLogs = genForShowLogs();
+
+    private static HttpRequestDef<ShowLogsRequest, ShowLogsResponse> genForShowLogs() {
+        // basic
+        HttpRequestDef.Builder<ShowLogsRequest, ShowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogsRequest.class, ShowLogsResponse.class)
+                .withName("ShowLogs")
+                .withUri("/v1.0/cdn/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogsRequest::getDomainName, ShowLogsRequest::setDomainName));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLogsRequest::getStartTime, ShowLogsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLogsRequest::getEndTime, ShowLogsRequest::setEndTime));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLogsRequest::getPageSize, ShowLogsRequest::setPageSize));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLogsRequest::getPageNumber, ShowLogsRequest::setPageNumber));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogsRequest::getEnterpriseProjectId, ShowLogsRequest::setEnterpriseProjectId));
 
         // response
 

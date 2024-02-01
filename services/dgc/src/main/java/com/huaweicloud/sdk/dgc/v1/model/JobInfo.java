@@ -174,9 +174,14 @@ public class JobInfo {
         public static final SingleNodeJobTypeEnum MERGE = new SingleNodeJobTypeEnum("MERGE");
 
         /**
-         * Enum DATAMIGRATION for value: "DataMigration"
+         * Enum NORMALJOB for value: "NormalJob"
          */
-        public static final SingleNodeJobTypeEnum DATAMIGRATION = new SingleNodeJobTypeEnum("DataMigration");
+        public static final SingleNodeJobTypeEnum NORMALJOB = new SingleNodeJobTypeEnum("NormalJob");
+
+        /**
+         * Enum ONECLICK for value: "OneClick"
+         */
+        public static final SingleNodeJobTypeEnum ONECLICK = new SingleNodeJobTypeEnum("OneClick");
 
         /**
          * Enum MRSFLINK for value: "MrsFlink"
@@ -211,7 +216,8 @@ public class JobInfo {
             map.put("ASSIGNMENT", ASSIGNMENT);
             map.put("BRANCH", BRANCH);
             map.put("MERGE", MERGE);
-            map.put("DataMigration", DATAMIGRATION);
+            map.put("NormalJob", NORMALJOB);
+            map.put("OneClick", ONECLICK);
             map.put("MrsFlink", MRSFLINK);
             map.put("FlinkSQL", FLINKSQL);
             map.put("FlinkJar", FLINKJAR);

@@ -34,6 +34,11 @@ public class DigitalAssetInfo {
     private String assetDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_user_id")
+
+    private String appUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -376,11 +381,6 @@ public class DigitalAssetInfo {
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_need_generate_cover")
-
-    private Boolean isNeedGenerateCover;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<String> tags = null;
@@ -449,6 +449,23 @@ public class DigitalAssetInfo {
 
     public void setAssetDescription(String assetDescription) {
         this.assetDescription = assetDescription;
+    }
+
+    public DigitalAssetInfo withAppUserId(String appUserId) {
+        this.appUserId = appUserId;
+        return this;
+    }
+
+    /**
+     * 第三方用户ID。 > * 即创建资产是通过X-App-UserId头域传入的值。
+     * @return appUserId
+     */
+    public String getAppUserId() {
+        return appUserId;
+    }
+
+    public void setAppUserId(String appUserId) {
+        this.appUserId = appUserId;
     }
 
     public DigitalAssetInfo withCreateTime(String createTime) {
@@ -551,23 +568,6 @@ public class DigitalAssetInfo {
 
     public void setReason(String reason) {
         this.reason = reason;
-    }
-
-    public DigitalAssetInfo withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
-        return this;
-    }
-
-    /**
-     * 是否需要资产库生成封面图片。 > * 当前支持自动生成封面图片的资产类型包括VIDEO
-     * @return isNeedGenerateCover
-     */
-    public Boolean getIsNeedGenerateCover() {
-        return isNeedGenerateCover;
-    }
-
-    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
     }
 
     public DigitalAssetInfo withTags(List<String> tags) {
@@ -706,11 +706,11 @@ public class DigitalAssetInfo {
         DigitalAssetInfo that = (DigitalAssetInfo) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
-            && Objects.equals(this.failType, that.failType) && Objects.equals(this.reason, that.reason)
-            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.assetType, that.assetType)
+            && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.failType, that.failType)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files);
     }
 
@@ -719,13 +719,13 @@ public class DigitalAssetInfo {
         return Objects.hash(assetId,
             assetName,
             assetDescription,
+            appUserId,
             createTime,
             updateTime,
             assetType,
             assetState,
             failType,
             reason,
-            isNeedGenerateCover,
             tags,
             assetExtraMeta,
             systemProperties,
@@ -739,13 +739,13 @@ public class DigitalAssetInfo {
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
+        sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    failType: ").append(toIndentedString(failType)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");

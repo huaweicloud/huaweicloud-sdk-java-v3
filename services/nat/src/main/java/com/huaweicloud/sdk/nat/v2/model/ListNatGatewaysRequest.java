@@ -243,6 +243,11 @@ public class ListNatGatewaysRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListNatGatewaysRequest withId(String id) {
         this.id = id;
         return this;
@@ -464,6 +469,23 @@ public class ListNatGatewaysRequest {
         this.limit = limit;
     }
 
+    public ListNatGatewaysRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页查询的起始资源ID，表示从指定资源的下一条记录开始查询。 - 若不传入marker和limit参数，查询结果返回第一页全部资源记录（默认2000条）。 - 若不传入marker参数，limit为10，查询结果返回第1~10条资源记录。 - 若marker为第10条记录的资源ID，limit为10，查询结果返回第11~20条资源记录。 - 若marker为第10条记录的资源ID，不传入limit参数，查询结果返回第11条及之后的资源记录（默认2000条）。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -478,7 +500,8 @@ public class ListNatGatewaysRequest {
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.spec, that.spec) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
-            && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -493,7 +516,8 @@ public class ListNatGatewaysRequest {
             adminStateUp,
             internalNetworkId,
             routerId,
-            limit);
+            limit,
+            marker);
     }
 
     @Override
@@ -511,6 +535,7 @@ public class ListNatGatewaysRequest {
         sb.append("    internalNetworkId: ").append(toIndentedString(internalNetworkId)).append("\n");
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

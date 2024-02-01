@@ -25,6 +25,11 @@ public class ExecutionPlanSummary {
 
     private Integer resourceDelete;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_import")
+
+    private Integer resourceImport;
+
     public ExecutionPlanSummary withResourceAdd(Integer resourceAdd) {
         this.resourceAdd = resourceAdd;
         return this;
@@ -76,6 +81,23 @@ public class ExecutionPlanSummary {
         this.resourceDelete = resourceDelete;
     }
 
+    public ExecutionPlanSummary withResourceImport(Integer resourceImport) {
+        this.resourceImport = resourceImport;
+        return this;
+    }
+
+    /**
+     * 导入资源数
+     * @return resourceImport
+     */
+    public Integer getResourceImport() {
+        return resourceImport;
+    }
+
+    public void setResourceImport(Integer resourceImport) {
+        this.resourceImport = resourceImport;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,13 @@ public class ExecutionPlanSummary {
         ExecutionPlanSummary that = (ExecutionPlanSummary) obj;
         return Objects.equals(this.resourceAdd, that.resourceAdd)
             && Objects.equals(this.resourceUpdate, that.resourceUpdate)
-            && Objects.equals(this.resourceDelete, that.resourceDelete);
+            && Objects.equals(this.resourceDelete, that.resourceDelete)
+            && Objects.equals(this.resourceImport, that.resourceImport);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceAdd, resourceUpdate, resourceDelete);
+        return Objects.hash(resourceAdd, resourceUpdate, resourceDelete, resourceImport);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class ExecutionPlanSummary {
         sb.append("    resourceAdd: ").append(toIndentedString(resourceAdd)).append("\n");
         sb.append("    resourceUpdate: ").append(toIndentedString(resourceUpdate)).append("\n");
         sb.append("    resourceDelete: ").append(toIndentedString(resourceDelete)).append("\n");
+        sb.append("    resourceImport: ").append(toIndentedString(resourceImport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

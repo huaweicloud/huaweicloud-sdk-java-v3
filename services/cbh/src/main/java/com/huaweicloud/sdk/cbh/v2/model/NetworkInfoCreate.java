@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建云堡垒机实例所需网络信息。
+ * 切换云堡垒机实例vpc所需网络信息。
  */
 public class NetworkInfoCreate {
 
@@ -26,7 +26,7 @@ public class NetworkInfoCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
 
-    private Object publicIp;
+    private PublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
@@ -36,7 +36,7 @@ public class NetworkInfoCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
 
-    private Object privateIp;
+    private PrivateIp privateIp;
 
     public NetworkInfoCreate withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -72,20 +72,29 @@ public class NetworkInfoCreate {
         this.subnetId = subnetId;
     }
 
-    public NetworkInfoCreate withPublicIp(Object publicIp) {
+    public NetworkInfoCreate withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
         return this;
     }
 
+    public NetworkInfoCreate withPublicIp(Consumer<PublicIp> publicIpSetter) {
+        if (this.publicIp == null) {
+            this.publicIp = new PublicIp();
+            publicIpSetter.accept(this.publicIp);
+        }
+
+        return this;
+    }
+
     /**
-     * 云堡垒机实例弹性公网IP信息。可填写null值
+     * Get publicIp
      * @return publicIp
      */
-    public Object getPublicIp() {
+    public PublicIp getPublicIp() {
         return publicIp;
     }
 
-    public void setPublicIp(Object publicIp) {
+    public void setPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
     }
 
@@ -122,20 +131,29 @@ public class NetworkInfoCreate {
         this.securityGroups = securityGroups;
     }
 
-    public NetworkInfoCreate withPrivateIp(Object privateIp) {
+    public NetworkInfoCreate withPrivateIp(PrivateIp privateIp) {
         this.privateIp = privateIp;
         return this;
     }
 
+    public NetworkInfoCreate withPrivateIp(Consumer<PrivateIp> privateIpSetter) {
+        if (this.privateIp == null) {
+            this.privateIp = new PrivateIp();
+            privateIpSetter.accept(this.privateIp);
+        }
+
+        return this;
+    }
+
     /**
-     * 私网IP信息。
+     * Get privateIp
      * @return privateIp
      */
-    public Object getPrivateIp() {
+    public PrivateIp getPrivateIp() {
         return privateIp;
     }
 
-    public void setPrivateIp(Object privateIp) {
+    public void setPrivateIp(PrivateIp privateIp) {
         this.privateIp = privateIp;
     }
 

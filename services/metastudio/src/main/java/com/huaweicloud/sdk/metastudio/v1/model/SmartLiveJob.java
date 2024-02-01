@@ -21,6 +21,16 @@ public class SmartLiveJob {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_id")
+
+    private String roomId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_name")
+
+    private String roomName;
+
     /**
      * 数字人直播任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * BLOCKED: 封禁
      */
@@ -169,6 +179,11 @@ public class SmartLiveJob {
 
     private String blockReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cover_url")
+
+    private String coverUrl;
+
     public SmartLiveJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -184,6 +199,40 @@ public class SmartLiveJob {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public SmartLiveJob withRoomId(String roomId) {
+        this.roomId = roomId;
+        return this;
+    }
+
+    /**
+     * 直播间ID
+     * @return roomId
+     */
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public SmartLiveJob withRoomName(String roomName) {
+        this.roomName = roomName;
+        return this;
+    }
+
+    /**
+     * 直播间名称
+     * @return roomName
+     */
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 
     public SmartLiveJob withState(StateEnum state) {
@@ -421,6 +470,23 @@ public class SmartLiveJob {
         this.blockReason = blockReason;
     }
 
+    public SmartLiveJob withCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+        return this;
+    }
+
+    /**
+     * 直播间封面图UR
+     * @return coverUrl
+     */
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -430,7 +496,8 @@ public class SmartLiveJob {
             return false;
         }
         SmartLiveJob that = (SmartLiveJob) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.roomName, that.roomName) && Objects.equals(this.state, that.state)
             && Objects.equals(this.duration, that.duration) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorInfo, that.errorInfo)
             && Objects.equals(this.createTime, that.createTime)
@@ -439,12 +506,14 @@ public class SmartLiveJob {
             && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.streamDuration, that.streamDuration)
-            && Objects.equals(this.blockReason, that.blockReason);
+            && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(jobId,
+            roomId,
+            roomName,
             state,
             duration,
             startTime,
@@ -456,7 +525,8 @@ public class SmartLiveJob {
             liveEventReportUrl,
             liveEventCallbackConfig,
             streamDuration,
-            blockReason);
+            blockReason,
+            coverUrl);
     }
 
     @Override
@@ -464,6 +534,8 @@ public class SmartLiveJob {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartLiveJob {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+        sb.append("    roomName: ").append(toIndentedString(roomName)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
@@ -476,6 +548,7 @@ public class SmartLiveJob {
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
         sb.append("    streamDuration: ").append(toIndentedString(streamDuration)).append("\n");
         sb.append("    blockReason: ").append(toIndentedString(blockReason)).append("\n");
+        sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

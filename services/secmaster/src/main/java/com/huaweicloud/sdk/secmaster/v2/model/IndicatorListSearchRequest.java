@@ -212,7 +212,7 @@ public class IndicatorListSearchRequest {
     }
 
     /**
-     * 查询起始时间
+     * 查询起始时间，例如：2024-01-20T00:00:00.000Z+0800
      * @return fromDate
      */
     public String getFromDate() {
@@ -229,7 +229,7 @@ public class IndicatorListSearchRequest {
     }
 
     /**
-     * 查询截止时间
+     * 查询截止时间，例如：2024-01-26T23:59:59.999Z+0800
      * @return toDate
      */
     public String getToDate() {

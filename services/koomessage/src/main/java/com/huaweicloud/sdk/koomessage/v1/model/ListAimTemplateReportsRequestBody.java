@@ -38,6 +38,11 @@ public class ListAimTemplateReportsRequestBody {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "factory_type")
+
+    private List<String> factoryType = null;
+
     public ListAimTemplateReportsRequestBody withTplIds(List<String> tplIds) {
         this.tplIds = tplIds;
         return this;
@@ -143,6 +148,39 @@ public class ListAimTemplateReportsRequestBody {
         this.limit = limit;
     }
 
+    public ListAimTemplateReportsRequestBody withFactoryType(List<String> factoryType) {
+        this.factoryType = factoryType;
+        return this;
+    }
+
+    public ListAimTemplateReportsRequestBody addFactoryTypeItem(String factoryTypeItem) {
+        if (this.factoryType == null) {
+            this.factoryType = new ArrayList<>();
+        }
+        this.factoryType.add(factoryTypeItem);
+        return this;
+    }
+
+    public ListAimTemplateReportsRequestBody withFactoryType(Consumer<List<String>> factoryTypeSetter) {
+        if (this.factoryType == null) {
+            this.factoryType = new ArrayList<>();
+        }
+        factoryTypeSetter.accept(this.factoryType);
+        return this;
+    }
+
+    /**
+     * 厂商类型。不填时默认全厂商。列举值：\"huawei\", \"vivo\", \"oppo\", \"xiaomi\", \"meizu\", \"samsung\"。 
+     * @return factoryType
+     */
+    public List<String> getFactoryType() {
+        return factoryType;
+    }
+
+    public void setFactoryType(List<String> factoryType) {
+        this.factoryType = factoryType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +192,12 @@ public class ListAimTemplateReportsRequestBody {
         ListAimTemplateReportsRequestBody that = (ListAimTemplateReportsRequestBody) obj;
         return Objects.equals(this.tplIds, that.tplIds) && Objects.equals(this.beginTime, that.beginTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.factoryType, that.factoryType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tplIds, beginTime, endTime, offset, limit);
+        return Objects.hash(tplIds, beginTime, endTime, offset, limit, factoryType);
     }
 
     @Override
@@ -171,6 +209,7 @@ public class ListAimTemplateReportsRequestBody {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    factoryType: ").append(toIndentedString(factoryType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

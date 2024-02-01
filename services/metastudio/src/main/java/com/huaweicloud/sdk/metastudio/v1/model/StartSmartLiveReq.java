@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -42,6 +47,81 @@ public class StartSmartLiveReq {
     @JsonProperty(value = "live_event_callback_config")
 
     private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     */
+    public static final class ViewModeEnum {
+
+        /**
+         * Enum LANDSCAPE for value: "LANDSCAPE"
+         */
+        public static final ViewModeEnum LANDSCAPE = new ViewModeEnum("LANDSCAPE");
+
+        /**
+         * Enum VERTICAL for value: "VERTICAL"
+         */
+        public static final ViewModeEnum VERTICAL = new ViewModeEnum("VERTICAL");
+
+        private static final Map<String, ViewModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ViewModeEnum> createStaticFields() {
+            Map<String, ViewModeEnum> map = new HashMap<>();
+            map.put("LANDSCAPE", LANDSCAPE);
+            map.put("VERTICAL", VERTICAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ViewModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ViewModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewModeEnum(value));
+        }
+
+        public static ViewModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ViewModeEnum) {
+                return this.value.equals(((ViewModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "view_mode")
+
+    private ViewModeEnum viewMode;
 
     public StartSmartLiveReq withVideoConfig(VideoConfig videoConfig) {
         this.videoConfig = videoConfig;
@@ -205,6 +285,23 @@ public class StartSmartLiveReq {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
     }
 
+    public StartSmartLiveReq withViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+        return this;
+    }
+
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * @return viewMode
+     */
+    public ViewModeEnum getViewMode() {
+        return viewMode;
+    }
+
+    public void setViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,13 +314,19 @@ public class StartSmartLiveReq {
         return Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.playPolicy, that.playPolicy)
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
             && Objects.equals(this.interactionCallbackUrl, that.interactionCallbackUrl)
-            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig);
+            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.viewMode, that.viewMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(videoConfig, playPolicy, outputUrls, streamKeys, interactionCallbackUrl, liveEventCallbackConfig);
+        return Objects.hash(videoConfig,
+            playPolicy,
+            outputUrls,
+            streamKeys,
+            interactionCallbackUrl,
+            liveEventCallbackConfig,
+            viewMode);
     }
 
     @Override
@@ -236,6 +339,7 @@ public class StartSmartLiveReq {
         sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
         sb.append("    interactionCallbackUrl: ").append(toIndentedString(interactionCallbackUrl)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

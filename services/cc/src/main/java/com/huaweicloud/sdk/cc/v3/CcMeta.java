@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.cc.v3.model.ApplyCentralNetworkPolicyResponse;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.AttachmentInstanceTypeEnum;
 import com.huaweicloud.sdk.cc.v3.model.BandwidthTypeEnum;
 import com.huaweicloud.sdk.cc.v3.model.CentralNetworkCapabilityEnum;
@@ -31,6 +34,9 @@ import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateGlobalConnectionBandwidthRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.CreateGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
@@ -49,6 +55,8 @@ import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
@@ -56,6 +64,9 @@ import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsRequest;
@@ -94,12 +105,24 @@ import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthConfigsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthConfigsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthLineLevelsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthLineLevelsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSitesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSitesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSpecCodesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthSpecCodesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListGlobalConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentRequest;
@@ -110,6 +133,8 @@ import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
@@ -151,6 +176,9 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateGlobalConnectionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateGlobalConnectionBandwidthRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.UpdateGlobalConnectionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
@@ -2072,6 +2100,498 @@ public class CcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCloudConnectionRoutesRequest::getId, ShowCloudConnectionRoutesRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateGlobalConnectionBandwidthInstanceRequest, AssociateGlobalConnectionBandwidthInstanceResponse> associateGlobalConnectionBandwidthInstance =
+        genForAssociateGlobalConnectionBandwidthInstance();
+
+    private static HttpRequestDef<AssociateGlobalConnectionBandwidthInstanceRequest, AssociateGlobalConnectionBandwidthInstanceResponse> genForAssociateGlobalConnectionBandwidthInstance() {
+        // basic
+        HttpRequestDef.Builder<AssociateGlobalConnectionBandwidthInstanceRequest, AssociateGlobalConnectionBandwidthInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateGlobalConnectionBandwidthInstanceRequest.class,
+                    AssociateGlobalConnectionBandwidthInstanceResponse.class)
+                .withName("AssociateGlobalConnectionBandwidthInstance")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/{id}/associate-instance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateGlobalConnectionBandwidthInstanceRequest::getId,
+                AssociateGlobalConnectionBandwidthInstanceRequest::setId));
+        builder.<AssociateGlobalConnectionBandwidthInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateGlobalConnectionBandwidthInstanceRequestBody.class),
+            f -> f.withMarshaller(AssociateGlobalConnectionBandwidthInstanceRequest::getBody,
+                AssociateGlobalConnectionBandwidthInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGlobalConnectionBandwidthRequest, CreateGlobalConnectionBandwidthResponse> createGlobalConnectionBandwidth =
+        genForCreateGlobalConnectionBandwidth();
+
+    private static HttpRequestDef<CreateGlobalConnectionBandwidthRequest, CreateGlobalConnectionBandwidthResponse> genForCreateGlobalConnectionBandwidth() {
+        // basic
+        HttpRequestDef.Builder<CreateGlobalConnectionBandwidthRequest, CreateGlobalConnectionBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateGlobalConnectionBandwidthRequest.class,
+                    CreateGlobalConnectionBandwidthResponse.class)
+                .withName("CreateGlobalConnectionBandwidth")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateGlobalConnectionBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGlobalConnectionBandwidthRequestBody.class),
+            f -> f.withMarshaller(CreateGlobalConnectionBandwidthRequest::getBody,
+                CreateGlobalConnectionBandwidthRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGlobalConnectionBandwidthRequest, DeleteGlobalConnectionBandwidthResponse> deleteGlobalConnectionBandwidth =
+        genForDeleteGlobalConnectionBandwidth();
+
+    private static HttpRequestDef<DeleteGlobalConnectionBandwidthRequest, DeleteGlobalConnectionBandwidthResponse> genForDeleteGlobalConnectionBandwidth() {
+        // basic
+        HttpRequestDef.Builder<DeleteGlobalConnectionBandwidthRequest, DeleteGlobalConnectionBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteGlobalConnectionBandwidthRequest.class,
+                    DeleteGlobalConnectionBandwidthResponse.class)
+                .withName("DeleteGlobalConnectionBandwidth")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGlobalConnectionBandwidthRequest::getId,
+                DeleteGlobalConnectionBandwidthRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateGlobalConnectionBandwidthInstanceRequest, DisassociateGlobalConnectionBandwidthInstanceResponse> disassociateGlobalConnectionBandwidthInstance =
+        genForDisassociateGlobalConnectionBandwidthInstance();
+
+    private static HttpRequestDef<DisassociateGlobalConnectionBandwidthInstanceRequest, DisassociateGlobalConnectionBandwidthInstanceResponse> genForDisassociateGlobalConnectionBandwidthInstance() {
+        // basic
+        HttpRequestDef.Builder<DisassociateGlobalConnectionBandwidthInstanceRequest, DisassociateGlobalConnectionBandwidthInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateGlobalConnectionBandwidthInstanceRequest.class,
+                    DisassociateGlobalConnectionBandwidthInstanceResponse.class)
+                .withName("DisassociateGlobalConnectionBandwidthInstance")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/{id}/disassociate-instance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateGlobalConnectionBandwidthInstanceRequest::getId,
+                DisassociateGlobalConnectionBandwidthInstanceRequest::setId));
+        builder.<DisassociateGlobalConnectionBandwidthInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociateGlobalConnectionBandwidthInstanceRequestBody.class),
+            f -> f.withMarshaller(DisassociateGlobalConnectionBandwidthInstanceRequest::getBody,
+                DisassociateGlobalConnectionBandwidthInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalConnectionBandwidthConfigsRequest, ListGlobalConnectionBandwidthConfigsResponse> listGlobalConnectionBandwidthConfigs =
+        genForListGlobalConnectionBandwidthConfigs();
+
+    private static HttpRequestDef<ListGlobalConnectionBandwidthConfigsRequest, ListGlobalConnectionBandwidthConfigsResponse> genForListGlobalConnectionBandwidthConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConnectionBandwidthConfigsRequest, ListGlobalConnectionBandwidthConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGlobalConnectionBandwidthConfigsRequest.class,
+                    ListGlobalConnectionBandwidthConfigsResponse.class)
+                .withName("ListGlobalConnectionBandwidthConfigs")
+                .withUri("/v3/{domain_id}/gcb/configs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalConnectionBandwidthLineLevelsRequest, ListGlobalConnectionBandwidthLineLevelsResponse> listGlobalConnectionBandwidthLineLevels =
+        genForListGlobalConnectionBandwidthLineLevels();
+
+    private static HttpRequestDef<ListGlobalConnectionBandwidthLineLevelsRequest, ListGlobalConnectionBandwidthLineLevelsResponse> genForListGlobalConnectionBandwidthLineLevels() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConnectionBandwidthLineLevelsRequest, ListGlobalConnectionBandwidthLineLevelsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGlobalConnectionBandwidthLineLevelsRequest.class,
+                    ListGlobalConnectionBandwidthLineLevelsResponse.class)
+                .withName("ListGlobalConnectionBandwidthLineLevels")
+                .withUri("/v3/{domain_id}/gcb/line-levels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getLimit,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getMarker,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getId,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setId));
+        builder.<String>withRequestField("local_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getLocalArea,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setLocalArea));
+        builder.<String>withRequestField("remote_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getRemoteArea,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setRemoteArea));
+        builder.<List<ListGlobalConnectionBandwidthLineLevelsRequest.LevelsEnum>>withRequestField("levels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthLineLevelsRequest::getLevels,
+                ListGlobalConnectionBandwidthLineLevelsRequest::setLevels));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalConnectionBandwidthSitesRequest, ListGlobalConnectionBandwidthSitesResponse> listGlobalConnectionBandwidthSites =
+        genForListGlobalConnectionBandwidthSites();
+
+    private static HttpRequestDef<ListGlobalConnectionBandwidthSitesRequest, ListGlobalConnectionBandwidthSitesResponse> genForListGlobalConnectionBandwidthSites() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConnectionBandwidthSitesRequest, ListGlobalConnectionBandwidthSitesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGlobalConnectionBandwidthSitesRequest.class,
+                    ListGlobalConnectionBandwidthSitesResponse.class)
+                .withName("ListGlobalConnectionBandwidthSites")
+                .withUri("/v3/{domain_id}/gcb/sites")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSitesRequest::getLimit,
+                ListGlobalConnectionBandwidthSitesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSitesRequest::getMarker,
+                ListGlobalConnectionBandwidthSitesRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSitesRequest::getId,
+                ListGlobalConnectionBandwidthSitesRequest::setId));
+        builder.<String>withRequestField("site_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSitesRequest::getSiteCode,
+                ListGlobalConnectionBandwidthSitesRequest::setSiteCode));
+        builder.<ListGlobalConnectionBandwidthSitesRequest.SiteTypeEnum>withRequestField("site_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListGlobalConnectionBandwidthSitesRequest.SiteTypeEnum.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSitesRequest::getSiteType,
+                ListGlobalConnectionBandwidthSitesRequest::setSiteType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalConnectionBandwidthSpecCodesRequest, ListGlobalConnectionBandwidthSpecCodesResponse> listGlobalConnectionBandwidthSpecCodes =
+        genForListGlobalConnectionBandwidthSpecCodes();
+
+    private static HttpRequestDef<ListGlobalConnectionBandwidthSpecCodesRequest, ListGlobalConnectionBandwidthSpecCodesResponse> genForListGlobalConnectionBandwidthSpecCodes() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConnectionBandwidthSpecCodesRequest, ListGlobalConnectionBandwidthSpecCodesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGlobalConnectionBandwidthSpecCodesRequest.class,
+                    ListGlobalConnectionBandwidthSpecCodesResponse.class)
+                .withName("ListGlobalConnectionBandwidthSpecCodes")
+                .withUri("/v3/{domain_id}/gcb/spec-codes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getLimit,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getMarker,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getId,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setId));
+        builder.<String>withRequestField("local_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getLocalArea,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setLocalArea));
+        builder.<String>withRequestField("remote_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getRemoteArea,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setRemoteArea));
+        builder.<List<ListGlobalConnectionBandwidthSpecCodesRequest.LevelEnum>>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthSpecCodesRequest::getLevel,
+                ListGlobalConnectionBandwidthSpecCodesRequest::setLevel));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalConnectionBandwidthsRequest, ListGlobalConnectionBandwidthsResponse> listGlobalConnectionBandwidths =
+        genForListGlobalConnectionBandwidths();
+
+    private static HttpRequestDef<ListGlobalConnectionBandwidthsRequest, ListGlobalConnectionBandwidthsResponse> genForListGlobalConnectionBandwidths() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConnectionBandwidthsRequest, ListGlobalConnectionBandwidthsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGlobalConnectionBandwidthsRequest.class,
+                    ListGlobalConnectionBandwidthsResponse.class)
+                .withName("ListGlobalConnectionBandwidths")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getLimit,
+                ListGlobalConnectionBandwidthsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getMarker,
+                ListGlobalConnectionBandwidthsRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getId,
+                ListGlobalConnectionBandwidthsRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getName,
+                ListGlobalConnectionBandwidthsRequest::setName));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getEnterpriseProjectId,
+                ListGlobalConnectionBandwidthsRequest::setEnterpriseProjectId));
+        builder.<List<ListGlobalConnectionBandwidthsRequest.BindingServiceEnum>>withRequestField("binding_service",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getBindingService,
+                ListGlobalConnectionBandwidthsRequest::setBindingService));
+        builder.<List<ListGlobalConnectionBandwidthsRequest.TypeEnum>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getType,
+                ListGlobalConnectionBandwidthsRequest::setType));
+        builder.<List<ListGlobalConnectionBandwidthsRequest.ChargeModeEnum>>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalConnectionBandwidthsRequest::getChargeMode,
+                ListGlobalConnectionBandwidthsRequest::setChargeMode));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSupportBindingConnectionBandwidthsRequest, ListSupportBindingConnectionBandwidthsResponse> listSupportBindingConnectionBandwidths =
+        genForListSupportBindingConnectionBandwidths();
+
+    private static HttpRequestDef<ListSupportBindingConnectionBandwidthsRequest, ListSupportBindingConnectionBandwidthsResponse> genForListSupportBindingConnectionBandwidths() {
+        // basic
+        HttpRequestDef.Builder<ListSupportBindingConnectionBandwidthsRequest, ListSupportBindingConnectionBandwidthsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSupportBindingConnectionBandwidthsRequest.class,
+                    ListSupportBindingConnectionBandwidthsResponse.class)
+                .withName("ListSupportBindingConnectionBandwidths")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/support-bindings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getLimit,
+                ListSupportBindingConnectionBandwidthsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getMarker,
+                ListSupportBindingConnectionBandwidthsRequest::setMarker));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getEnterpriseProjectId,
+                ListSupportBindingConnectionBandwidthsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("local_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getLocalArea,
+                ListSupportBindingConnectionBandwidthsRequest::setLocalArea));
+        builder.<String>withRequestField("remote_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getRemoteArea,
+                ListSupportBindingConnectionBandwidthsRequest::setRemoteArea));
+        builder.<ListSupportBindingConnectionBandwidthsRequest.BindingServiceEnum>withRequestField("binding_service",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSupportBindingConnectionBandwidthsRequest.BindingServiceEnum.class),
+            f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getBindingService,
+                ListSupportBindingConnectionBandwidthsRequest::setBindingService));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGlobalConnectionBandwidthRequest, ShowGlobalConnectionBandwidthResponse> showGlobalConnectionBandwidth =
+        genForShowGlobalConnectionBandwidth();
+
+    private static HttpRequestDef<ShowGlobalConnectionBandwidthRequest, ShowGlobalConnectionBandwidthResponse> genForShowGlobalConnectionBandwidth() {
+        // basic
+        HttpRequestDef.Builder<ShowGlobalConnectionBandwidthRequest, ShowGlobalConnectionBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowGlobalConnectionBandwidthRequest.class,
+                    ShowGlobalConnectionBandwidthResponse.class)
+                .withName("ShowGlobalConnectionBandwidth")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGlobalConnectionBandwidthRequest::getId,
+                ShowGlobalConnectionBandwidthRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse> updateGlobalConnectionBandwidth =
+        genForUpdateGlobalConnectionBandwidth();
+
+    private static HttpRequestDef<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse> genForUpdateGlobalConnectionBandwidth() {
+        // basic
+        HttpRequestDef.Builder<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateGlobalConnectionBandwidthRequest.class,
+                    UpdateGlobalConnectionBandwidthResponse.class)
+                .withName("UpdateGlobalConnectionBandwidth")
+                .withUri("/v3/{domain_id}/gcb/gcbandwidths/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGlobalConnectionBandwidthRequest::getId,
+                UpdateGlobalConnectionBandwidthRequest::setId));
+        builder.<UpdateGlobalConnectionBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateGlobalConnectionBandwidthRequestBody.class),
+            f -> f.withMarshaller(UpdateGlobalConnectionBandwidthRequest::getBody,
+                UpdateGlobalConnectionBandwidthRequest::setBody));
 
         // response
 

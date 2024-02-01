@@ -1958,6 +1958,11 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventRequest::getPagesize, ListEventRequest::setPagesize));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getXLanguage, ListEventRequest::setXLanguage));
 
         // response
 
@@ -3072,6 +3077,11 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventRequest::getEnterpriseProjectId, ShowEventRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventRequest::getXLanguage, ShowEventRequest::setXLanguage));
 
         // response
 

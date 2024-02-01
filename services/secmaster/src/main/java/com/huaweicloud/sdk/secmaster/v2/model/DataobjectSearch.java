@@ -199,7 +199,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * 搜索开始时间
+     * 搜索开始时间，例如：2023-02-20T00:00:00.000Z
      * @return fromDate
      */
     public String getFromDate() {
@@ -216,7 +216,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * 搜索结束时间
+     * 搜索结束时间，例如：2023-02-27T23:59:59.999Z
      * @return toDate
      */
     public String getToDate() {

@@ -26,7 +26,7 @@ public class ListSparkJobsRequest {
     private Integer from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job-name")
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 

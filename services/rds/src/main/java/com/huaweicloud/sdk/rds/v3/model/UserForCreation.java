@@ -29,6 +29,11 @@ public class UserForCreation {
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_privilege")
+
+    private Boolean isPrivilege;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
     private List<String> hosts = null;
@@ -87,6 +92,23 @@ public class UserForCreation {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public UserForCreation withIsPrivilege(Boolean isPrivilege) {
+        this.isPrivilege = isPrivilege;
+        return this;
+    }
+
+    /**
+     * 是否创建高权限用户。 • 若为true，则不用传hosts、databases参数。
+     * @return isPrivilege
+     */
+    public Boolean getIsPrivilege() {
+        return isPrivilege;
+    }
+
+    public void setIsPrivilege(Boolean isPrivilege) {
+        this.isPrivilege = isPrivilege;
     }
 
     public UserForCreation withHosts(List<String> hosts) {
@@ -165,13 +187,13 @@ public class UserForCreation {
         }
         UserForCreation that = (UserForCreation) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.comment, that.comment) && Objects.equals(this.hosts, that.hosts)
-            && Objects.equals(this.databases, that.databases);
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.isPrivilege, that.isPrivilege)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.databases, that.databases);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password, comment, hosts, databases);
+        return Objects.hash(name, password, comment, isPrivilege, hosts, databases);
     }
 
     @Override
@@ -181,6 +203,7 @@ public class UserForCreation {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
+        sb.append("    isPrivilege: ").append(toIndentedString(isPrivilege)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("}");

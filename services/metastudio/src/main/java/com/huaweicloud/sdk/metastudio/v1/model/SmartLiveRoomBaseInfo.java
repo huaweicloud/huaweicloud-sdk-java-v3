@@ -24,6 +24,11 @@ public class SmartLiveRoomBaseInfo {
     private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_name")
 
     private String roomName;
@@ -196,6 +201,11 @@ public class SmartLiveRoomBaseInfo {
     private ErrorResponse errorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared_config")
+
+    private SharedConfig sharedConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_description")
 
     private String roomDescription;
@@ -346,6 +356,23 @@ public class SmartLiveRoomBaseInfo {
         this.roomId = roomId;
     }
 
+    public SmartLiveRoomBaseInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 租户id
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public SmartLiveRoomBaseInfo withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -421,6 +448,32 @@ public class SmartLiveRoomBaseInfo {
 
     public void setErrorInfo(ErrorResponse errorInfo) {
         this.errorInfo = errorInfo;
+    }
+
+    public SmartLiveRoomBaseInfo withSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+        return this;
+    }
+
+    public SmartLiveRoomBaseInfo withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+        if (this.sharedConfig == null) {
+            this.sharedConfig = new SharedConfig();
+            sharedConfigSetter.accept(this.sharedConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sharedConfig
+     * @return sharedConfig
+     */
+    public SharedConfig getSharedConfig() {
+        return sharedConfig;
+    }
+
+    public void setSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
     }
 
     public SmartLiveRoomBaseInfo withRoomDescription(String roomDescription) {
@@ -584,9 +637,10 @@ public class SmartLiveRoomBaseInfo {
             return false;
         }
         SmartLiveRoomBaseInfo that = (SmartLiveRoomBaseInfo) obj;
-        return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.roomName, that.roomName)
-            && Objects.equals(this.roomType, that.roomType) && Objects.equals(this.roomState, that.roomState)
-            && Objects.equals(this.errorInfo, that.errorInfo)
+        return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.roomName, that.roomName) && Objects.equals(this.roomType, that.roomType)
+            && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
+            && Objects.equals(this.sharedConfig, that.sharedConfig)
             && Objects.equals(this.roomDescription, that.roomDescription)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.modelInfos, that.modelInfos)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -598,10 +652,12 @@ public class SmartLiveRoomBaseInfo {
     @Override
     public int hashCode() {
         return Objects.hash(roomId,
+            projectId,
             roomName,
             roomType,
             roomState,
             errorInfo,
+            sharedConfig,
             roomDescription,
             coverUrl,
             modelInfos,
@@ -617,10 +673,12 @@ public class SmartLiveRoomBaseInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartLiveRoomBaseInfo {\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    roomName: ").append(toIndentedString(roomName)).append("\n");
         sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
         sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
+        sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    roomDescription: ").append(toIndentedString(roomDescription)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    modelInfos: ").append(toIndentedString(modelInfos)).append("\n");

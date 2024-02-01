@@ -3228,7 +3228,7 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSparkJobsRequest::getFrom, ListSparkJobsRequest::setFrom));
-        builder.<String>withRequestField("job-name",
+        builder.<String>withRequestField("job_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),

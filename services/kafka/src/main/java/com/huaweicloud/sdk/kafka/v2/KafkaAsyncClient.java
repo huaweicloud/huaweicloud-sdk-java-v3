@@ -33,8 +33,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
@@ -129,8 +127,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
@@ -149,8 +145,6 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
@@ -358,11 +352,11 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建实例的转储节点
+     * 创建实例的Smart Connect节点
      *
-     * 创建实例的转储节点。
+     * 创建Smart Connect节点。
      * 
-     * **当前通过调用API，只支持按需实例创建转储节点。**
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -374,11 +368,11 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建实例的转储节点
+     * 创建实例的Smart Connect节点
      *
-     * 创建实例的转储节点。
+     * 创建Smart Connect节点。
      * 
-     * **当前通过调用API，只支持按需实例创建转储节点。**
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -630,35 +624,6 @@ public class KafkaAsyncClient {
     public AsyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTaskAsyncInvoker(
         CreateReassignmentTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.createReassignmentTask, hcClient);
-    }
-
-    /**
-     * 实例缩容
-     *
-     * 实例缩容
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShrinkageJobRequest 请求对象
-     * @return CompletableFuture<CreateShrinkageJobResponse>
-     */
-    public CompletableFuture<CreateShrinkageJobResponse> createShrinkageJobAsync(CreateShrinkageJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.createShrinkageJob);
-    }
-
-    /**
-     * 实例缩容
-     *
-     * 实例缩容
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShrinkageJobRequest 请求对象
-     * @return AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>
-     */
-    public AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJobAsyncInvoker(
-        CreateShrinkageJobRequest request) {
-        return new AsyncInvoker<>(request, KafkaMeta.createShrinkageJob, hcClient);
     }
 
     /**
@@ -2066,36 +2031,6 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 实例缩容前置检查
-     *
-     * 实例缩容前置检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowShrinkCheckResultRequest 请求对象
-     * @return CompletableFuture<ShowShrinkCheckResultResponse>
-     */
-    public CompletableFuture<ShowShrinkCheckResultResponse> showShrinkCheckResultAsync(
-        ShowShrinkCheckResultRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.showShrinkCheckResult);
-    }
-
-    /**
-     * 实例缩容前置检查
-     *
-     * 实例缩容前置检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowShrinkCheckResultRequest 请求对象
-     * @return AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>
-     */
-    public AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResultAsyncInvoker(
-        ShowShrinkCheckResultRequest request) {
-        return new AsyncInvoker<>(request, KafkaMeta.showShrinkCheckResult, hcClient);
-    }
-
-    /**
      * 查询单个转储任务
      *
      * 查询单个转储任务。
@@ -2363,39 +2298,6 @@ public class KafkaAsyncClient {
     public AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskAsyncInvoker(
         UpdateKafkaUserClientQuotaTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
-    }
-
-    /**
-     * 修改转储任务的配额
-     *
-     * 修改转储任务的配额。
-     * 
-     * 2022年9月前创建的实例支持调用此接口新增转储任务配额，2022年9月及以后创建的实例，转储任务配额默认为最大值，由于转储任务配额不支持减少，调用此接口修改转储任务配额会报错。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSinkTaskQuotaRequest 请求对象
-     * @return CompletableFuture<UpdateSinkTaskQuotaResponse>
-     */
-    public CompletableFuture<UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsync(UpdateSinkTaskQuotaRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateSinkTaskQuota);
-    }
-
-    /**
-     * 修改转储任务的配额
-     *
-     * 修改转储任务的配额。
-     * 
-     * 2022年9月前创建的实例支持调用此接口新增转储任务配额，2022年9月及以后创建的实例，转储任务配额默认为最大值，由于转储任务配额不支持减少，调用此接口修改转储任务配额会报错。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSinkTaskQuotaRequest 请求对象
-     * @return AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>
-     */
-    public AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsyncInvoker(
-        UpdateSinkTaskQuotaRequest request) {
-        return new AsyncInvoker<>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
     }
 
     /**

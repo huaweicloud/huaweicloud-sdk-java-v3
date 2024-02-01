@@ -128,6 +128,11 @@ public class Node {
          */
         public static final TypeEnum RDS_SQL = new TypeEnum("RDS SQL");
 
+        /**
+         * Enum DATAMIGRATION for value: "DataMigration"
+         */
+        public static final TypeEnum DATAMIGRATION = new TypeEnum("DataMigration");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -152,6 +157,7 @@ public class Node {
             map.put("MRSFlinkJob", MRSFLINKJOB);
             map.put("MRSHetuEngine", MRSHETUENGINE);
             map.put("RDS SQL", RDS_SQL);
+            map.put("DataMigration", DATAMIGRATION);
             return Collections.unmodifiableMap(map);
         }
 

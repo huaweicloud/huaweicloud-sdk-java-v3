@@ -33,8 +33,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
@@ -129,8 +127,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
@@ -149,8 +145,6 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
@@ -353,11 +347,11 @@ public class KafkaClient {
     }
 
     /**
-     * 创建实例的转储节点
+     * 创建实例的Smart Connect节点
      *
-     * 创建实例的转储节点。
+     * 创建Smart Connect节点。
      * 
-     * **当前通过调用API，只支持按需实例创建转储节点。**
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -369,11 +363,11 @@ public class KafkaClient {
     }
 
     /**
-     * 创建实例的转储节点
+     * 创建实例的Smart Connect节点
      *
-     * 创建实例的转储节点。
+     * 创建Smart Connect节点。
      * 
-     * **当前通过调用API，只支持按需实例创建转储节点。**
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -620,35 +614,6 @@ public class KafkaClient {
     public SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTaskInvoker(
         CreateReassignmentTaskRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.createReassignmentTask, hcClient);
-    }
-
-    /**
-     * 实例缩容
-     *
-     * 实例缩容
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShrinkageJobRequest 请求对象
-     * @return CreateShrinkageJobResponse
-     */
-    public CreateShrinkageJobResponse createShrinkageJob(CreateShrinkageJobRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.createShrinkageJob);
-    }
-
-    /**
-     * 实例缩容
-     *
-     * 实例缩容
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShrinkageJobRequest 请求对象
-     * @return SyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>
-     */
-    public SyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJobInvoker(
-        CreateShrinkageJobRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.createShrinkageJob, hcClient);
     }
 
     /**
@@ -2038,35 +2003,6 @@ public class KafkaClient {
     }
 
     /**
-     * 实例缩容前置检查
-     *
-     * 实例缩容前置检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowShrinkCheckResultRequest 请求对象
-     * @return ShowShrinkCheckResultResponse
-     */
-    public ShowShrinkCheckResultResponse showShrinkCheckResult(ShowShrinkCheckResultRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.showShrinkCheckResult);
-    }
-
-    /**
-     * 实例缩容前置检查
-     *
-     * 实例缩容前置检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowShrinkCheckResultRequest 请求对象
-     * @return SyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>
-     */
-    public SyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResultInvoker(
-        ShowShrinkCheckResultRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.showShrinkCheckResult, hcClient);
-    }
-
-    /**
      * 查询单个转储任务
      *
      * 查询单个转储任务。
@@ -2331,39 +2267,6 @@ public class KafkaClient {
     public SyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskInvoker(
         UpdateKafkaUserClientQuotaTaskRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
-    }
-
-    /**
-     * 修改转储任务的配额
-     *
-     * 修改转储任务的配额。
-     * 
-     * 2022年9月前创建的实例支持调用此接口新增转储任务配额，2022年9月及以后创建的实例，转储任务配额默认为最大值，由于转储任务配额不支持减少，调用此接口修改转储任务配额会报错。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSinkTaskQuotaRequest 请求对象
-     * @return UpdateSinkTaskQuotaResponse
-     */
-    public UpdateSinkTaskQuotaResponse updateSinkTaskQuota(UpdateSinkTaskQuotaRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.updateSinkTaskQuota);
-    }
-
-    /**
-     * 修改转储任务的配额
-     *
-     * 修改转储任务的配额。
-     * 
-     * 2022年9月前创建的实例支持调用此接口新增转储任务配额，2022年9月及以后创建的实例，转储任务配额默认为最大值，由于转储任务配额不支持减少，调用此接口修改转储任务配额会报错。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSinkTaskQuotaRequest 请求对象
-     * @return SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>
-     */
-    public SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaInvoker(
-        UpdateSinkTaskQuotaRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
     }
 
     /**

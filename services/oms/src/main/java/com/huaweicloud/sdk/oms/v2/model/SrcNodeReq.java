@@ -34,6 +34,11 @@ public class SrcNodeReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "json_auth_file")
+
+    private String jsonAuthFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_token")
 
     private String securityToken;
@@ -64,7 +69,7 @@ public class SrcNodeReq {
     }
 
     /**
-     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource且必选。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、Google、URLSource或者UCloud。默认值为Aliyun。
      * @return cloudType
      */
     public String getCloudType() {
@@ -124,6 +129,23 @@ public class SrcNodeReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public SrcNodeReq withJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
+        return this;
+    }
+
+    /**
+     * 用于谷歌云Cloud Storage鉴权
+     * @return jsonAuthFile
+     */
+    public String getJsonAuthFile() {
+        return jsonAuthFile;
+    }
+
+    public void setJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
     }
 
     public SrcNodeReq withSecurityToken(String securityToken) {
@@ -247,6 +269,7 @@ public class SrcNodeReq {
         SrcNodeReq that = (SrcNodeReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.region, that.region)
             && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
             && Objects.equals(this.securityToken, that.securityToken) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.objectKey, that.objectKey)
             && Objects.equals(this.listFile, that.listFile);
@@ -254,7 +277,7 @@ public class SrcNodeReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, region, ak, sk, securityToken, appId, bucket, objectKey, listFile);
+        return Objects.hash(cloudType, region, ak, sk, jsonAuthFile, securityToken, appId, bucket, objectKey, listFile);
     }
 
     @Override
@@ -265,6 +288,7 @@ public class SrcNodeReq {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    securityToken: ").append(toIndentedString(securityToken)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");

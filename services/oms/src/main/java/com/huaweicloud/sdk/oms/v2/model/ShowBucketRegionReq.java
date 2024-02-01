@@ -26,6 +26,11 @@ public class ShowBucketRegionReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "json_auth_file")
+
+    private String jsonAuthFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -41,7 +46,7 @@ public class ShowBucketRegionReq {
     }
 
     /**
-     * 云类型 AWS：亚马逊 Aliyun：阿里云 Qiniu：七牛云 QingCloud：青云 Tencent：腾讯云 Baidu：百度云 KingsoftCloud：金山云 Azure：微软云 UCloud：优刻得 HuaweiCloud：华为云 URLSource：URL HEC：HEC
+     * 云类型 AWS：亚马逊 Aliyun：阿里云 Qiniu：七牛云 QingCloud：青云 Tencent：腾讯云 Baidu：百度云 KingsoftCloud：金山云 Azure：微软云 UCloud：优刻得 HuaweiCloud：华为云 Google: 谷歌云 URLSource：URL HEC：HEC
      * @return cloudType
      */
     public String getCloudType() {
@@ -84,6 +89,23 @@ public class ShowBucketRegionReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public ShowBucketRegionReq withJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
+        return this;
+    }
+
+    /**
+     * 用于谷歌云Cloud Storage鉴权
+     * @return jsonAuthFile
+     */
+    public String getJsonAuthFile() {
+        return jsonAuthFile;
+    }
+
+    public void setJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
     }
 
     public ShowBucketRegionReq withAppId(String appId) {
@@ -130,13 +152,13 @@ public class ShowBucketRegionReq {
         }
         ShowBucketRegionReq that = (ShowBucketRegionReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.ak, that.ak)
-            && Objects.equals(this.sk, that.sk) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.bucketName, that.bucketName);
+            && Objects.equals(this.sk, that.sk) && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, ak, sk, appId, bucketName);
+        return Objects.hash(cloudType, ak, sk, jsonAuthFile, appId, bucketName);
     }
 
     @Override
@@ -146,6 +168,7 @@ public class ShowBucketRegionReq {
         sb.append("    cloudType: ").append(toIndentedString(cloudType)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("}");

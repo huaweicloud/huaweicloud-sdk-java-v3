@@ -31,7 +31,7 @@ public class HumanModel2DAssetMeta {
     private Boolean supportLive;
 
     /**
-     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型
+     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
      */
     public static final class ModelVersionEnum {
 
@@ -45,12 +45,18 @@ public class HumanModel2DAssetMeta {
          */
         public static final ModelVersionEnum V3 = new ModelVersionEnum("V3");
 
+        /**
+         * Enum V3_2 for value: "V3_2"
+         */
+        public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3_2");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
             Map<String, ModelVersionEnum> map = new HashMap<>();
             map.put("V2", V2);
             map.put("V3", V3);
+            map.put("V3_2", V3_2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -167,7 +173,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型
+     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {

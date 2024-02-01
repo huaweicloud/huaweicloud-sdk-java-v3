@@ -201,7 +201,7 @@ public class CBHInstances {
     }
 
     /**
-     * 计费模式。 - 0 包周期计费。 - 1 按需计费，部分局点支持。
+     * 计费模式。 - 0 包周期计费。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return chargingMode

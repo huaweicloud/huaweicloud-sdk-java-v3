@@ -40,7 +40,7 @@ public class BatchUpdateConsumerGroupReq {
     }
 
     /**
-     * 消费组列表，当批量删除消费组时使用。
+     * 消费组列表。
      * @return groups
      */
     public List<ConsumerGroup> getGroups() {

@@ -24,7 +24,7 @@ public class TaskGroupSrcNodeResp {
     private String bucket;
 
     /**
-     * 源端云服务提供商。  可选值有AWS、AZURE、ALIYUN、TENCENT、HUAWEICLOUD、QINGCLOUD、KINGSOFTCLOUD、BAIDU、QINIU、URLSOURCE或者UCLOUD。默认值为ALIYUN。
+     * 源端云服务提供商。  可选值有AWS、AZURE、ALIYUN、TENCENT、HUAWEICLOUD、QINGCLOUD、KINGSOFTCLOUD、BAIDU、QINIU、GOOGLE、URLSOURCE或者UCLOUD。默认值为ALIYUN。
      */
     public static final class CloudTypeEnum {
 
@@ -83,6 +83,11 @@ public class TaskGroupSrcNodeResp {
          */
         public static final CloudTypeEnum UCLOUD = new CloudTypeEnum("UCLOUD");
 
+        /**
+         * Enum GOOGLE for value: "GOOGLE"
+         */
+        public static final CloudTypeEnum GOOGLE = new CloudTypeEnum("GOOGLE");
+
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CloudTypeEnum> createStaticFields() {
@@ -98,6 +103,7 @@ public class TaskGroupSrcNodeResp {
             map.put("QINIU", QINIU);
             map.put("URLSOURCE", URLSOURCE);
             map.put("UCLOUD", UCLOUD);
+            map.put("GOOGLE", GOOGLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -195,7 +201,7 @@ public class TaskGroupSrcNodeResp {
     }
 
     /**
-     * 源端云服务提供商。  可选值有AWS、AZURE、ALIYUN、TENCENT、HUAWEICLOUD、QINGCLOUD、KINGSOFTCLOUD、BAIDU、QINIU、URLSOURCE或者UCLOUD。默认值为ALIYUN。
+     * 源端云服务提供商。  可选值有AWS、AZURE、ALIYUN、TENCENT、HUAWEICLOUD、QINGCLOUD、KINGSOFTCLOUD、BAIDU、QINIU、GOOGLE、URLSOURCE或者UCLOUD。默认值为ALIYUN。
      * @return cloudType
      */
     public CloudTypeEnum getCloudType() {

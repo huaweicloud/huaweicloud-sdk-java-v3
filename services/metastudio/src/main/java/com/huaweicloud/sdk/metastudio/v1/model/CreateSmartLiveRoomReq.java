@@ -159,6 +159,81 @@ public class CreateSmartLiveRoomReq {
 
     private SharedConfig sharedConfig;
 
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     */
+    public static final class ViewModeEnum {
+
+        /**
+         * Enum LANDSCAPE for value: "LANDSCAPE"
+         */
+        public static final ViewModeEnum LANDSCAPE = new ViewModeEnum("LANDSCAPE");
+
+        /**
+         * Enum VERTICAL for value: "VERTICAL"
+         */
+        public static final ViewModeEnum VERTICAL = new ViewModeEnum("VERTICAL");
+
+        private static final Map<String, ViewModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ViewModeEnum> createStaticFields() {
+            Map<String, ViewModeEnum> map = new HashMap<>();
+            map.put("LANDSCAPE", LANDSCAPE);
+            map.put("VERTICAL", VERTICAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ViewModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ViewModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewModeEnum(value));
+        }
+
+        public static ViewModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ViewModeEnum) {
+                return this.value.equals(((ViewModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "view_mode")
+
+    private ViewModeEnum viewMode;
+
     public CreateSmartLiveRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -506,6 +581,23 @@ public class CreateSmartLiveRoomReq {
         this.sharedConfig = sharedConfig;
     }
 
+    public CreateSmartLiveRoomReq withViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+        return this;
+    }
+
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * @return viewMode
+     */
+    public ViewModeEnum getViewMode() {
+        return viewMode;
+    }
+
+    public void setViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -524,7 +616,7 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.sharedConfig, that.sharedConfig);
+            && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode);
     }
 
     @Override
@@ -541,7 +633,8 @@ public class CreateSmartLiveRoomReq {
             backupModelAssetIds,
             liveEventCallbackConfig,
             reviewConfig,
-            sharedConfig);
+            sharedConfig,
+            viewMode);
     }
 
     @Override
@@ -561,6 +654,7 @@ public class CreateSmartLiveRoomReq {
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
+        sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

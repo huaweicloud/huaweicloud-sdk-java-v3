@@ -172,6 +172,11 @@ public class ListNatGatewaySnatRulesRequest {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListNatGatewaySnatRulesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -396,6 +401,23 @@ public class ListNatGatewaySnatRulesRequest {
         this.status = status;
     }
 
+    public ListNatGatewaySnatRulesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页查询的起始资源ID，表示从指定资源的下一条记录开始查询。 - 若不传入marker和limit参数，查询结果返回第一页全部资源记录（默认2000条）。 - 若不传入marker参数，limit为10，查询结果返回第1~10条资源记录。 - 若marker为第10条记录的资源ID，limit为10，查询结果返回第11~20条资源记录。 - 若marker为第10条记录的资源ID，不传入limit参数，查询结果返回第11条及之后的资源记录（默认2000条）。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -410,7 +432,8 @@ public class ListNatGatewaySnatRulesRequest {
             && Objects.equals(this.floatingIpId, that.floatingIpId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.networkId, that.networkId)
-            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -426,7 +449,8 @@ public class ListNatGatewaySnatRulesRequest {
             natGatewayId,
             networkId,
             sourceType,
-            status);
+            status,
+            marker);
     }
 
     @Override
@@ -445,6 +469,7 @@ public class ListNatGatewaySnatRulesRequest {
         sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

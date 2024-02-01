@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CreateConnectorReq {
 
     /**
-     * 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。  取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  可以不填，则默认跟当前实例的规格是一致。  第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。
+     * 部署Smart Connect的规格，基准带宽，表示单位时间内传送的最大数据量。请保持和当前实例规格一致。仅老规格实例需要填写。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
      */
     public static final class SpecificationEnum {
 
@@ -118,7 +118,7 @@ public class CreateConnectorReq {
     }
 
     /**
-     * 部署connector的规格，基准带宽，表示单位时间内传送的最大数据量，单位Byte/秒。  取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  可以不填，则默认跟当前实例的规格是一致。  第一阶段实现先不填，保持和当前实例规格一致，后面再扩展可以选择不同的规格。
+     * 部署Smart Connect的规格，基准带宽，表示单位时间内传送的最大数据量。请保持和当前实例规格一致。仅老规格实例需要填写。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
      * @return specification
      */
     public SpecificationEnum getSpecification() {
@@ -135,7 +135,7 @@ public class CreateConnectorReq {
     }
 
     /**
-     * 转储节点数量。不能小于2个。 默认是2个。 
+     * Smart Connect节点数量。不能小于2个。 如果不填，默认是2个。 
      * @return nodeCnt
      */
     public String getNodeCnt() {
@@ -152,7 +152,7 @@ public class CreateConnectorReq {
     }
 
     /**
-     * 转储节点规格编码。 
+     * 转储节点规格编码。仅老规格实例需要填写。 
      * @return specCode
      */
     public String getSpecCode() {

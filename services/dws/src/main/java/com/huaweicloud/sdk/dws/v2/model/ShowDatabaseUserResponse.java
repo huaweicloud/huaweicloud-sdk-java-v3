@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ShowDatabaseUserResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login")
 
     private Boolean login;
@@ -70,6 +75,38 @@ public class ShowDatabaseUserResponse extends SdkResponse {
     @JsonProperty(value = "lock")
 
     private Boolean lock;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_type")
+
+    private String userType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logical_cluster")
+
+    private String logicalCluster;
+
+    public ShowDatabaseUserResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 用户名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public ShowDatabaseUserResponse withLogin(Boolean login) {
         this.login = login;
@@ -275,6 +312,57 @@ public class ShowDatabaseUserResponse extends SdkResponse {
         this.lock = lock;
     }
 
+    public ShowDatabaseUserResponse withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public ShowDatabaseUserResponse withUserType(String userType) {
+        this.userType = userType;
+        return this;
+    }
+
+    /**
+     * 用户类型
+     * @return userType
+     */
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public ShowDatabaseUserResponse withLogicalCluster(String logicalCluster) {
+        this.logicalCluster = logicalCluster;
+        return this;
+    }
+
+    /**
+     * 所属逻辑集群
+     * @return logicalCluster
+     */
+    public String getLogicalCluster() {
+        return logicalCluster;
+    }
+
+    public void setLogicalCluster(String logicalCluster) {
+        this.logicalCluster = logicalCluster;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -284,17 +372,20 @@ public class ShowDatabaseUserResponse extends SdkResponse {
             return false;
         }
         ShowDatabaseUserResponse that = (ShowDatabaseUserResponse) obj;
-        return Objects.equals(this.login, that.login) && Objects.equals(this.createrole, that.createrole)
-            && Objects.equals(this.createdb, that.createdb) && Objects.equals(this.systemadmin, that.systemadmin)
-            && Objects.equals(this.auditadmin, that.auditadmin) && Objects.equals(this.inherit, that.inherit)
-            && Objects.equals(this.useft, that.useft) && Objects.equals(this.connLimit, that.connLimit)
-            && Objects.equals(this.replication, that.replication) && Objects.equals(this.validBegin, that.validBegin)
-            && Objects.equals(this.validUntil, that.validUntil) && Objects.equals(this.lock, that.lock);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.login, that.login)
+            && Objects.equals(this.createrole, that.createrole) && Objects.equals(this.createdb, that.createdb)
+            && Objects.equals(this.systemadmin, that.systemadmin) && Objects.equals(this.auditadmin, that.auditadmin)
+            && Objects.equals(this.inherit, that.inherit) && Objects.equals(this.useft, that.useft)
+            && Objects.equals(this.connLimit, that.connLimit) && Objects.equals(this.replication, that.replication)
+            && Objects.equals(this.validBegin, that.validBegin) && Objects.equals(this.validUntil, that.validUntil)
+            && Objects.equals(this.lock, that.lock) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.logicalCluster, that.logicalCluster);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(login,
+        return Objects.hash(name,
+            login,
             createrole,
             createdb,
             systemadmin,
@@ -305,13 +396,17 @@ public class ShowDatabaseUserResponse extends SdkResponse {
             replication,
             validBegin,
             validUntil,
-            lock);
+            lock,
+            desc,
+            userType,
+            logicalCluster);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDatabaseUserResponse {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("    createrole: ").append(toIndentedString(createrole)).append("\n");
         sb.append("    createdb: ").append(toIndentedString(createdb)).append("\n");
@@ -324,6 +419,9 @@ public class ShowDatabaseUserResponse extends SdkResponse {
         sb.append("    validBegin: ").append(toIndentedString(validBegin)).append("\n");
         sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
         sb.append("    lock: ").append(toIndentedString(lock)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
+        sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
+        sb.append("    logicalCluster: ").append(toIndentedString(logicalCluster)).append("\n");
         sb.append("}");
         return sb.toString();
     }

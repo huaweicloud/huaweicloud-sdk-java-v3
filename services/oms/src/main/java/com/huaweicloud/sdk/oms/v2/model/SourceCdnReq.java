@@ -58,6 +58,11 @@ public class SourceCdnReq {
             new AuthenticationTypeEnum("KSYUN_PRIVATE_AUTHENTICATION");
 
         /**
+         * Enum AZURE_SAS_TOKEN for value: "AZURE_SAS_TOKEN"
+         */
+        public static final AuthenticationTypeEnum AZURE_SAS_TOKEN = new AuthenticationTypeEnum("AZURE_SAS_TOKEN");
+
+        /**
          * Enum TENCENT_COS_A for value: "TENCENT_COS_A"
          */
         public static final AuthenticationTypeEnum TENCENT_COS_A = new AuthenticationTypeEnum("TENCENT_COS_A");
@@ -87,6 +92,7 @@ public class SourceCdnReq {
             map.put("ALIYUN_OSS_B", ALIYUN_OSS_B);
             map.put("ALIYUN_OSS_C", ALIYUN_OSS_C);
             map.put("KSYUN_PRIVATE_AUTHENTICATION", KSYUN_PRIVATE_AUTHENTICATION);
+            map.put("AZURE_SAS_TOKEN", AZURE_SAS_TOKEN);
             map.put("TENCENT_COS_A", TENCENT_COS_A);
             map.put("TENCENT_COS_B", TENCENT_COS_B);
             map.put("TENCENT_COS_C", TENCENT_COS_C);

@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,12 +46,22 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
-    private BigDecimal retryMaxTime;
+    private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "from_beginning")
+    @JsonProperty(value = "createdAt")
 
-    private Boolean fromBeginning;
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permissions")
+
+    private List<String> permissions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_orderly")
+
+    private Boolean consumeOrderly;
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(List<String> groups) {
         this.groups = groups;
@@ -188,7 +197,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.groupDesc = groupDesc;
     }
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withRetryMaxTime(BigDecimal retryMaxTime) {
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
     }
@@ -197,29 +206,79 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
      * 最大重试次数，取值范围为1~16。
      * @return retryMaxTime
      */
-    public BigDecimal getRetryMaxTime() {
+    public Integer getRetryMaxTime() {
         return retryMaxTime;
     }
 
-    public void setRetryMaxTime(BigDecimal retryMaxTime) {
+    public void setRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
     }
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * 是否重头消费。
-     * @return fromBeginning
+     * 创建时间戳。
+     * @return createdAt
      */
-    public Boolean getFromBeginning() {
-        return fromBeginning;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withPermissions(List<String> permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq addPermissionsItem(String permissionsItem) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        this.permissions.add(permissionsItem);
+        return this;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withPermissions(Consumer<List<String>> permissionsSetter) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        permissionsSetter.accept(this.permissions);
+        return this;
+    }
+
+    /**
+     * 权限集。
+     * @return permissions
+     */
+    public List<String> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<String> permissions) {
+        this.permissions = permissions;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
+        return this;
+    }
+
+    /**
+     * 是否按序消费。
+     * @return consumeOrderly
+     */
+    public Boolean getConsumeOrderly() {
+        return consumeOrderly;
+    }
+
+    public void setConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
     }
 
     @Override
@@ -234,13 +293,23 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         return Objects.equals(this.groups, that.groups) && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.broadcast, that.broadcast) && Objects.equals(this.brokers, that.brokers)
             && Objects.equals(this.name, that.name) && Objects.equals(this.groupDesc, that.groupDesc)
-            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
-            && Objects.equals(this.fromBeginning, that.fromBeginning);
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.permissions, that.permissions)
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups, enabled, broadcast, brokers, name, groupDesc, retryMaxTime, fromBeginning);
+        return Objects.hash(groups,
+            enabled,
+            broadcast,
+            brokers,
+            name,
+            groupDesc,
+            retryMaxTime,
+            createdAt,
+            permissions,
+            consumeOrderly);
     }
 
     @Override
@@ -254,7 +323,9 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
-        sb.append("    fromBeginning: ").append(toIndentedString(fromBeginning)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+        sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -256,11 +256,6 @@ public class UpdateDigitalAssetRequestBody {
     private String assetOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_need_generate_cover")
-
-    private Boolean isNeedGenerateCover;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_config")
 
     private ReviewConfig reviewConfig;
@@ -279,6 +274,11 @@ public class UpdateDigitalAssetRequestBody {
     @JsonProperty(value = "system_properties")
 
     private List<SystemProperty> systemProperties = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared_config")
+
+    private SharedConfig sharedConfig;
 
     public UpdateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
@@ -363,23 +363,6 @@ public class UpdateDigitalAssetRequestBody {
 
     public void setAssetOwner(String assetOwner) {
         this.assetOwner = assetOwner;
-    }
-
-    public UpdateDigitalAssetRequestBody withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
-        return this;
-    }
-
-    /**
-     * 是否需要资产库生成封面图片。 > * 当前支持自动生成封面图片的资产类型包括VIDEO
-     * @return isNeedGenerateCover
-     */
-    public Boolean getIsNeedGenerateCover() {
-        return isNeedGenerateCover;
-    }
-
-    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
     }
 
     public UpdateDigitalAssetRequestBody withReviewConfig(ReviewConfig reviewConfig) {
@@ -500,6 +483,32 @@ public class UpdateDigitalAssetRequestBody {
         this.systemProperties = systemProperties;
     }
 
+    public UpdateDigitalAssetRequestBody withSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+        return this;
+    }
+
+    public UpdateDigitalAssetRequestBody withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+        if (this.sharedConfig == null) {
+            this.sharedConfig = new SharedConfig();
+            sharedConfigSetter.accept(this.sharedConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sharedConfig
+     * @return sharedConfig
+     */
+    public SharedConfig getSharedConfig() {
+        return sharedConfig;
+    }
+
+    public void setSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -512,11 +521,10 @@ public class UpdateDigitalAssetRequestBody {
         return Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
-            && Objects.equals(this.assetOwner, that.assetOwner)
-            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
-            && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
-            && Objects.equals(this.systemProperties, that.systemProperties);
+            && Objects.equals(this.assetOwner, that.assetOwner) && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties)
+            && Objects.equals(this.sharedConfig, that.sharedConfig);
     }
 
     @Override
@@ -526,11 +534,11 @@ public class UpdateDigitalAssetRequestBody {
             assetType,
             assetState,
             assetOwner,
-            isNeedGenerateCover,
             reviewConfig,
             tags,
             assetExtraMeta,
-            systemProperties);
+            systemProperties,
+            sharedConfig);
     }
 
     @Override
@@ -542,11 +550,11 @@ public class UpdateDigitalAssetRequestBody {
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    assetOwner: ").append(toIndentedString(assetOwner)).append("\n");
-        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
+        sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

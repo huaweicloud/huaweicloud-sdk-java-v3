@@ -21,6 +21,11 @@ public class StartTaskReq {
     private String srcSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "json_auth_file")
+
+    private String jsonAuthFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_security_token")
 
     private String srcSecurityToken;
@@ -82,6 +87,23 @@ public class StartTaskReq {
 
     public void setSrcSk(String srcSk) {
         this.srcSk = srcSk;
+    }
+
+    public StartTaskReq withJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
+        return this;
+    }
+
+    /**
+     * 用于谷歌云Cloud Storage鉴权
+     * @return jsonAuthFile
+     */
+    public String getJsonAuthFile() {
+        return jsonAuthFile;
+    }
+
+    public void setJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
     }
 
     public StartTaskReq withSrcSecurityToken(String srcSecurityToken) {
@@ -196,6 +218,7 @@ public class StartTaskReq {
         }
         StartTaskReq that = (StartTaskReq) obj;
         return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
             && Objects.equals(this.srcSecurityToken, that.srcSecurityToken) && Objects.equals(this.dstAk, that.dstAk)
             && Objects.equals(this.dstSk, that.dstSk) && Objects.equals(this.dstSecurityToken, that.dstSecurityToken)
             && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey)
@@ -206,6 +229,7 @@ public class StartTaskReq {
     public int hashCode() {
         return Objects.hash(srcAk,
             srcSk,
+            jsonAuthFile,
             srcSecurityToken,
             dstAk,
             dstSk,
@@ -220,6 +244,7 @@ public class StartTaskReq {
         sb.append("class StartTaskReq {\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    srcSecurityToken: ").append(toIndentedString(srcSecurityToken)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");
         sb.append("    dstSk: ").append(toIndentedString(dstSk)).append("\n");

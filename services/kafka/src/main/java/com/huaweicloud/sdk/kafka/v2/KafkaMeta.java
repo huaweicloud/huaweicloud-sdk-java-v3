@@ -48,9 +48,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequestBody;
-import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
@@ -157,9 +154,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckRequestBody;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
@@ -183,9 +177,6 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaReq;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
@@ -634,39 +625,6 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJob =
-        genForCreateShrinkageJob();
-
-    private static HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> genForCreateShrinkageJob() {
-        // basic
-        HttpRequestDef.Builder<CreateShrinkageJobRequest, CreateShrinkageJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateShrinkageJobRequest.class, CreateShrinkageJobResponse.class)
-                .withName("CreateShrinkageJob")
-                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/shrink")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateShrinkageJobRequest.EngineEnum>withRequestField("engine",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateShrinkageJobRequest.EngineEnum.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getEngine, CreateShrinkageJobRequest::setEngine));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getInstanceId, CreateShrinkageJobRequest::setInstanceId));
-        builder.<CreateShrinkageJobRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateShrinkageJobRequestBody.class),
-            f -> f.withMarshaller(CreateShrinkageJobRequest::getBody, CreateShrinkageJobRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTask =
         genForCreateSinkTask();
 
@@ -741,6 +699,11 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, DeleteConnectorRequest::setInstanceId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(DeleteConnectorRequest::getBody, DeleteConnectorRequest::setBody));
 
         // response
 
@@ -2181,40 +2144,6 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResult =
-        genForShowShrinkCheckResult();
-
-    private static HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> genForShowShrinkCheckResult() {
-        // basic
-        HttpRequestDef.Builder<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ShowShrinkCheckResultRequest.class, ShowShrinkCheckResultResponse.class)
-            .withName("ShowShrinkCheckResult")
-            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check")
-            .withContentType("application/json");
-
-        // requests
-        builder.<ShowShrinkCheckResultRequest.EngineEnum>withRequestField("engine",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowShrinkCheckResultRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getEngine, ShowShrinkCheckResultRequest::setEngine));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getInstanceId,
-                ShowShrinkCheckResultRequest::setInstanceId));
-        builder.<ShowShrinkCheckRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowShrinkCheckRequestBody.class),
-            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getBody, ShowShrinkCheckResultRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail =
         genForShowSinkTaskDetail();
 
@@ -2509,35 +2438,6 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(UpdateKafkaUserClientQuotaTaskReq.class),
             f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getBody,
                 UpdateKafkaUserClientQuotaTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuota =
-        genForUpdateSinkTaskQuota();
-
-    private static HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> genForUpdateSinkTaskQuota() {
-        // basic
-        HttpRequestDef.Builder<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateSinkTaskQuotaRequest.class, UpdateSinkTaskQuotaResponse.class)
-                .withName("UpdateSinkTaskQuota")
-                .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connector_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getConnectorId,
-                UpdateSinkTaskQuotaRequest::setConnectorId));
-        builder.<UpdateSinkTaskQuotaReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateSinkTaskQuotaReq.class),
-            f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getBody, UpdateSinkTaskQuotaRequest::setBody));
 
         // response
 

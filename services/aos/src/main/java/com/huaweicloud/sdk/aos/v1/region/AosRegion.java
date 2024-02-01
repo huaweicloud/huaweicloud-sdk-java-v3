@@ -14,32 +14,40 @@ import java.util.stream.Collectors;
 
 public class AosRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://aos.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://rfs.cn-north-4.myhuaweicloud.com");
 
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://aos.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://rfs.cn-south-1.myhuaweicloud.com");
 
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://aos.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://rfs.cn-east-3.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://aos.cn-north-9.myhuaweicloud.com");
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://rfs.cn-north-9.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://aos.cn-southwest-2.myhuaweicloud.com");
+        new Region("cn-southwest-2", "https://rfs.cn-southwest-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
-        new Region("ap-southeast-3", "https://aos.ap-southeast-3.myhuaweicloud.com");
+        new Region("ap-southeast-3", "https://rfs.ap-southeast-3.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_2 =
-        new Region("ap-southeast-2", "https://aos.ap-southeast-2.myhuaweicloud.com");
+        new Region("ap-southeast-2", "https://rfs.ap-southeast-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://aos.ap-southeast-1.myhuaweicloud.com");
+        new Region("ap-southeast-1", "https://rfs.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_4 =
-        new Region("ap-southeast-4", "https://aos.ap-southeast-4.myhuaweicloud.com");
+        new Region("ap-southeast-4", "https://rfs.ap-southeast-4.myhuaweicloud.com");
 
-    public static final Region ME_EAST_1 = new Region("me-east-1", "https://aos.me-east-1.myhuaweicloud.com");
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://rfs.me-east-1.myhuaweicloud.com");
 
-    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://aos.tr-west-1.myhuaweicloud.com");
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://rfs.tr-west-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://rfs.la-south-2.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://rfs.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://rfs.la-north-2.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://rfs.af-south-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AOS");
 
@@ -58,6 +66,10 @@ public class AosRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("me-east-1", ME_EAST_1);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

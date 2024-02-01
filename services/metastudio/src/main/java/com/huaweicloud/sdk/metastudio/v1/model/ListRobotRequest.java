@@ -63,7 +63,7 @@ public class ListRobotRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
+     * 使用AK/SK方式认证时必选，请求的发生时间。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,7 +101,7 @@ public class ListRobotRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 开发者应用作为资产权属的可选字段。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

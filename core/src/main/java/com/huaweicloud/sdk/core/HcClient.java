@@ -152,6 +152,13 @@ public class HcClient implements CustomizationConfigure {
         return new HcClient(this).withCredential(credential);
     }
 
+    /**
+     * preInvoke
+     *
+     * @param extraHeader extraHeader
+     * @deprecated this method will be removed in the future version
+     */
+    @Deprecated
     public HcClient preInvoke(Map<String, String> extraHeader) {
         HcClient client = new HcClient(this);
         client.extraHeader = extraHeader;
@@ -165,7 +172,11 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange)
             throws ServiceResponseException {
+        return syncInvokeHttp(request, reqDef, exchange, extraHeader);
+    }
 
+    public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange,
+                                   Map<String, String> extraHeaders) throws ServiceResponseException {
         if (Objects.isNull(exchange)) {
             throw new IllegalArgumentException("SdkExchange is null");
         }
@@ -180,7 +191,7 @@ public class HcClient implements CustomizationConfigure {
             HttpResponse httpResponse;
             while (true) {
                 try {
-                    httpRequest = buildRequest(request, reqDef);
+                    httpRequest = buildRequest(request, reqDef, extraHeaders);
                     if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION))
                             && Objects.nonNull(credential)) {
                         // 鉴权，处理project_id，domain_id信息
@@ -213,7 +224,11 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
                                                        SdkExchange exchange) {
+        return asyncInvokeHttp(request, reqDef, exchange, extraHeader);
+    }
 
+    public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
+                                                       SdkExchange exchange, Map<String, String> extraHeaders) {
         if (Objects.isNull(exchange)) {
             return CompletableFuture.supplyAsync(() -> {
                 throw new IllegalArgumentException("SdkExchange is null");
@@ -226,7 +241,7 @@ public class HcClient implements CustomizationConfigure {
         // SdkException could be thrown if the value of NON_NULL_NON_EMPTY field is null
         HttpRequest httpRequest;
         try {
-            httpRequest = buildRequest(request, reqDef);
+            httpRequest = buildRequest(request, reqDef, extraHeaders);
         } catch (SdkException e) {
             CompletableFuture<S> future = new CompletableFuture<>();
             future.completeExceptionally(e);
@@ -256,6 +271,11 @@ public class HcClient implements CustomizationConfigure {
     }
 
     protected <R, S> HttpRequest buildRequest(R request, HttpRequestDef<R, S> reqDef) {
+        return buildRequest(request, reqDef, null);
+    }
+
+    protected <R, S> HttpRequest buildRequest(R request, HttpRequestDef<R, S> reqDef,
+                                              Map<String, String> extraHeaders) {
         String endpoint = this.endpoints.get(endpointIndex.intValue());
         HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
         httpRequestBuilder.withMethod(reqDef.getMethod())
@@ -310,9 +330,9 @@ public class HcClient implements CustomizationConfigure {
 
         httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-usdk-java/3.0");
 
-        // extraHeader
-        if (Objects.nonNull(extraHeader) && extraHeader.size() > 0) {
-            extraHeader.forEach(httpRequestBuilder::addHeader);
+        // extraHeaders
+        if (Objects.nonNull(extraHeaders) && extraHeaders.size() > 0) {
+            extraHeaders.forEach(httpRequestBuilder::addHeader);
         }
 
         // sign algorithm

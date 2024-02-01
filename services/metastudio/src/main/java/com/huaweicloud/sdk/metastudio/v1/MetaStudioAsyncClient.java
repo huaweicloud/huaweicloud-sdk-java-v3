@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
@@ -107,6 +109,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
@@ -361,7 +365,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除资产
      *
-     * 该接口用于删除资产库中的媒体资产。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
+     * 该接口用于删除资产库中的媒体资产。调用该接口删除媒体资产时，媒体资产会放入回收站中，不会彻底删除。如需彻底删除资产，需增加“mode&#x3D;force”参数配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -375,7 +379,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除资产
      *
-     * 该接口用于删除资产库中的媒体资产。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
+     * 该接口用于删除资产库中的媒体资产。调用该接口删除媒体资产时，媒体资产会放入回收站中，不会彻底删除。如需彻底删除资产，需增加“mode&#x3D;force”参数配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1036,7 +1040,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建一次性鉴权码
      *
-     * 该接口用于创建一次性鉴权码。
+     * 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1050,7 +1054,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建一次性鉴权码
      *
-     * 该接口用于创建一次性鉴权码。
+     * 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1524,6 +1528,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse> listSmartLiveAsyncInvoker(
         ListSmartLiveRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.listSmartLive, hcClient);
+    }
+
+    /**
+     * 查询数字人智能直播任务列表
+     *
+     * 该接口用于查询数字人智能直播任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveJobsRequest 请求对象
+     * @return CompletableFuture<ListSmartLiveJobsResponse>
+     */
+    public CompletableFuture<ListSmartLiveJobsResponse> listSmartLiveJobsAsync(ListSmartLiveJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listSmartLiveJobs);
+    }
+
+    /**
+     * 查询数字人智能直播任务列表
+     *
+     * 该接口用于查询数字人智能直播任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveJobsRequest 请求对象
+     * @return AsyncInvoker<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse>
+     */
+    public AsyncInvoker<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse> listSmartLiveJobsAsyncInvoker(
+        ListSmartLiveJobsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listSmartLiveJobs, hcClient);
     }
 
     /**
@@ -2654,7 +2687,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建TTS试听任务
      *
-     * 该接口用于创建生成播报内容的语音试听文件任务。
+     * 该接口用于创建生成播报内容的语音试听文件任务。第三方音色试听需要收费，收费标准参考：https://marketplace.huaweicloud.com/product/OFFI919400645308506112#productid&#x3D;OFFI919400645308506112
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2668,7 +2701,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建TTS试听任务
      *
-     * 该接口用于创建生成播报内容的语音试听文件任务。
+     * 该接口用于创建生成播报内容的语音试听文件任务。第三方音色试听需要收费，收费标准参考：https://marketplace.huaweicloud.com/product/OFFI919400645308506112#productid&#x3D;OFFI919400645308506112
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2857,6 +2890,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> stopVideoMotionCaptureJobAsyncInvoker(
         StopVideoMotionCaptureJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.stopVideoMotionCaptureJob, hcClient);
+    }
+
+    /**
+     * 复制视频制作剧本
+     *
+     * 该接口用于复制视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyVideoScriptsRequest 请求对象
+     * @return CompletableFuture<CopyVideoScriptsResponse>
+     */
+    public CompletableFuture<CopyVideoScriptsResponse> copyVideoScriptsAsync(CopyVideoScriptsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.copyVideoScripts);
+    }
+
+    /**
+     * 复制视频制作剧本
+     *
+     * 该接口用于复制视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyVideoScriptsRequest 请求对象
+     * @return AsyncInvoker<CopyVideoScriptsRequest, CopyVideoScriptsResponse>
+     */
+    public AsyncInvoker<CopyVideoScriptsRequest, CopyVideoScriptsResponse> copyVideoScriptsAsyncInvoker(
+        CopyVideoScriptsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.copyVideoScripts, hcClient);
     }
 
     /**

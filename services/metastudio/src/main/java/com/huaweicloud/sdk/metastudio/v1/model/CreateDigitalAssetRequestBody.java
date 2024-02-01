@@ -181,11 +181,6 @@ public class CreateDigitalAssetRequestBody {
     private String assetOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_need_generate_cover")
-
-    private Boolean isNeedGenerateCover;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_config")
 
     private ReviewConfig reviewConfig;
@@ -204,6 +199,11 @@ public class CreateDigitalAssetRequestBody {
     @JsonProperty(value = "system_properties")
 
     private List<SystemProperty> systemProperties = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared_config")
+
+    private SharedConfig sharedConfig;
 
     public CreateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
@@ -271,23 +271,6 @@ public class CreateDigitalAssetRequestBody {
 
     public void setAssetOwner(String assetOwner) {
         this.assetOwner = assetOwner;
-    }
-
-    public CreateDigitalAssetRequestBody withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
-        return this;
-    }
-
-    /**
-     * 是否需要资产库生成封面图片。 > * 当前支持自动生成封面图片的资产类型包括VIDEO。
-     * @return isNeedGenerateCover
-     */
-    public Boolean getIsNeedGenerateCover() {
-        return isNeedGenerateCover;
-    }
-
-    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
-        this.isNeedGenerateCover = isNeedGenerateCover;
     }
 
     public CreateDigitalAssetRequestBody withReviewConfig(ReviewConfig reviewConfig) {
@@ -408,6 +391,32 @@ public class CreateDigitalAssetRequestBody {
         this.systemProperties = systemProperties;
     }
 
+    public CreateDigitalAssetRequestBody withSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+        if (this.sharedConfig == null) {
+            this.sharedConfig = new SharedConfig();
+            sharedConfigSetter.accept(this.sharedConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sharedConfig
+     * @return sharedConfig
+     */
+    public SharedConfig getSharedConfig() {
+        return sharedConfig;
+    }
+
+    public void setSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -420,10 +429,10 @@ public class CreateDigitalAssetRequestBody {
         return Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetOwner, that.assetOwner)
-            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
             && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
-            && Objects.equals(this.systemProperties, that.systemProperties);
+            && Objects.equals(this.systemProperties, that.systemProperties)
+            && Objects.equals(this.sharedConfig, that.sharedConfig);
     }
 
     @Override
@@ -432,11 +441,11 @@ public class CreateDigitalAssetRequestBody {
             assetDescription,
             assetType,
             assetOwner,
-            isNeedGenerateCover,
             reviewConfig,
             tags,
             assetExtraMeta,
-            systemProperties);
+            systemProperties,
+            sharedConfig);
     }
 
     @Override
@@ -447,11 +456,11 @@ public class CreateDigitalAssetRequestBody {
         sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetOwner: ").append(toIndentedString(assetOwner)).append("\n");
-        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
+        sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

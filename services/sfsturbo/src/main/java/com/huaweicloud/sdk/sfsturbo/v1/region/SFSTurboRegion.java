@@ -64,6 +64,8 @@ public class SFSTurboRegion {
 
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://sfs-turbo.me-east-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://sfs-turbo.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SFSTURBO");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -91,6 +93,7 @@ public class SFSTurboRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("me-east-1", ME_EAST_1);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

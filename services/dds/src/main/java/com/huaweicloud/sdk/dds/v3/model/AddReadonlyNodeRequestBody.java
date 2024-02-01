@@ -87,7 +87,7 @@ public class AddReadonlyNodeRequestBody {
     }
 
     /**
-     * 扩容包年包月实例的存储容量时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
+     * 新增包年包月实例的只读节点时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。 - true，表示自动从账户中支付。 - false，表示手动从账户中支付，默认为该方式。
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {

@@ -123,6 +123,11 @@ public class Node {
          */
         public static final TypeEnum MRSHETUENGINE = new TypeEnum("MRSHetuEngine");
 
+        /**
+         * Enum DATAMIGRATION for value: "DataMigration"
+         */
+        public static final TypeEnum DATAMIGRATION = new TypeEnum("DataMigration");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -146,6 +151,7 @@ public class Node {
             map.put("MRSFlink", MRSFLINK);
             map.put("MRSFlinkJob", MRSFLINKJOB);
             map.put("MRSHetuEngine", MRSHETUENGINE);
+            map.put("DataMigration", DATAMIGRATION);
             return Collections.unmodifiableMap(map);
         }
 

@@ -52,7 +52,7 @@ public class ListTaskGroupRequest {
     /**
      * 起始的任务序号，默认为0。 取值大于等于0，取值为0时从第一条开始查询。
      * minimum: 0
-     * maximum: 10000
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {

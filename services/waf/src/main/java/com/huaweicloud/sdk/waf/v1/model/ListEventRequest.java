@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class ListEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -145,6 +150,25 @@ public class ListEventRequest {
     @JsonProperty(value = "pagesize")
 
     private Integer pagesize;
+
+    public ListEventRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 语言，默认值为en-us。zh-cn（中文）/en-us（英文）
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListEventRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -323,7 +347,8 @@ public class ListEventRequest {
             return false;
         }
         ListEventRequest that = (ListEventRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.recent, that.recent) && Objects.equals(this.from, that.from)
             && Objects.equals(this.to, that.to) && Objects.equals(this.attacks, that.attacks)
             && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.page, that.page)
@@ -332,13 +357,14 @@ public class ListEventRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, recent, from, to, attacks, hosts, page, pagesize);
+        return Objects.hash(xLanguage, enterpriseProjectId, recent, from, to, attacks, hosts, page, pagesize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    recent: ").append(toIndentedString(recent)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");

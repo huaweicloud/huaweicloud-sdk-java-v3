@@ -43,6 +43,11 @@ public class CreateVmsTemplateRequestBody {
 
     private String callbackurl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_draft")
+
+    private Integer isDraft;
+
     public CreateVmsTemplateRequestBody withExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
         return this;
@@ -161,6 +166,23 @@ public class CreateVmsTemplateRequestBody {
         this.callbackurl = callbackurl;
     }
 
+    public CreateVmsTemplateRequestBody withIsDraft(Integer isDraft) {
+        this.isDraft = isDraft;
+        return this;
+    }
+
+    /**
+     * 以草稿状态提交模板。 - 0：非草稿模板 - 1：草稿模板 
+     * @return isDraft
+     */
+    public Integer getIsDraft() {
+        return isDraft;
+    }
+
+    public void setIsDraft(Integer isDraft) {
+        this.isDraft = isDraft;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -172,12 +194,13 @@ public class CreateVmsTemplateRequestBody {
         CreateVmsTemplateRequestBody that = (CreateVmsTemplateRequestBody) obj;
         return Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.tplName, that.tplName)
             && Objects.equals(this.title, that.title) && Objects.equals(this.reslist, that.reslist)
-            && Objects.equals(this.remarks, that.remarks) && Objects.equals(this.callbackurl, that.callbackurl);
+            && Objects.equals(this.remarks, that.remarks) && Objects.equals(this.callbackurl, that.callbackurl)
+            && Objects.equals(this.isDraft, that.isDraft);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(expirationTime, tplName, title, reslist, remarks, callbackurl);
+        return Objects.hash(expirationTime, tplName, title, reslist, remarks, callbackurl, isDraft);
     }
 
     @Override
@@ -190,6 +213,7 @@ public class CreateVmsTemplateRequestBody {
         sb.append("    reslist: ").append(toIndentedString(reslist)).append("\n");
         sb.append("    remarks: ").append(toIndentedString(remarks)).append("\n");
         sb.append("    callbackurl: ").append(toIndentedString(callbackurl)).append("\n");
+        sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
         sb.append("}");
         return sb.toString();
     }

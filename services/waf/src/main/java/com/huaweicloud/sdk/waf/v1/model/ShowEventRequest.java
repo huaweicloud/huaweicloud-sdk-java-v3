@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ShowEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -19,6 +24,25 @@ public class ShowEventRequest {
     @JsonProperty(value = "eventid")
 
     private String eventid;
+
+    public ShowEventRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 语言，默认值为en-us。zh-cn（中文）/en-us（英文）
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ShowEventRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -63,19 +87,21 @@ public class ShowEventRequest {
             return false;
         }
         ShowEventRequest that = (ShowEventRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.eventid, that.eventid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, eventid);
+        return Objects.hash(xLanguage, enterpriseProjectId, eventid);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEventRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    eventid: ").append(toIndentedString(eventid)).append("\n");
         sb.append("}");

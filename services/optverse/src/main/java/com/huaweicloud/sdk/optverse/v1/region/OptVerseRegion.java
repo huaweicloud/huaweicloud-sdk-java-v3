@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class OptVerseRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://optverse.cn-north-4.huaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://optverse.cn-north-4.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OPTVERSE");
 

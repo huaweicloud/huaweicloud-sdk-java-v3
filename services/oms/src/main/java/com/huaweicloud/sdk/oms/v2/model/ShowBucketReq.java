@@ -31,6 +31,11 @@ public class ShowBucketReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "json_auth_file")
+
+    private String jsonAuthFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_center")
 
     private String dataCenter;
@@ -61,7 +66,7 @@ public class ShowBucketReq {
     }
 
     /**
-     * 云类型 AWS：亚马逊 Aliyun：阿里云 Qiniu：七牛云 QingCloud：青云 Tencent：腾讯云 Baidu：百度云 KingsoftCloud：金山云 Azure：微软云 UCloud：优刻得 HuaweiCloud：华为云 URLSource：URL HEC：HEC
+     * 云类型 AWS：亚马逊 Aliyun：阿里云 Qiniu：七牛云 QingCloud：青云 Tencent：腾讯云 Baidu：百度云 KingsoftCloud：金山云 Azure：微软云 UCloud：优刻得 HuaweiCloud：华为云 Google: 谷歌云 URLSource：URL HEC：HEC
      * @return cloudType
      */
     public String getCloudType() {
@@ -121,6 +126,23 @@ public class ShowBucketReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public ShowBucketReq withJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
+        return this;
+    }
+
+    /**
+     * 用于谷歌云Cloud Storage鉴权
+     * @return jsonAuthFile
+     */
+    public String getJsonAuthFile() {
+        return jsonAuthFile;
+    }
+
+    public void setJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
     }
 
     public ShowBucketReq withDataCenter(String dataCenter) {
@@ -221,14 +243,15 @@ public class ShowBucketReq {
         ShowBucketReq that = (ShowBucketReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.filePath, that.filePath)
             && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
-            && Objects.equals(this.dataCenter, that.dataCenter) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.behindFilename, that.behindFilename) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.bucketName, that.bucketName);
+            && Objects.equals(this.jsonAuthFile, that.jsonAuthFile) && Objects.equals(this.dataCenter, that.dataCenter)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.behindFilename, that.behindFilename)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, filePath, ak, sk, dataCenter, pageSize, behindFilename, appId, bucketName);
+        return Objects
+            .hash(cloudType, filePath, ak, sk, jsonAuthFile, dataCenter, pageSize, behindFilename, appId, bucketName);
     }
 
     @Override
@@ -239,6 +262,7 @@ public class ShowBucketReq {
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    dataCenter: ").append(toIndentedString(dataCenter)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("    behindFilename: ").append(toIndentedString(behindFilename)).append("\n");

@@ -67,6 +67,7 @@ import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateMysqlMultiProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseSchemaRequest;
@@ -75,6 +76,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceResponse;
@@ -115,6 +118,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
@@ -222,6 +227,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
@@ -259,10 +268,13 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDnsNameRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifyMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyParamRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyProxyWeightRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.OpenProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.OpsWindowRequest;
@@ -279,9 +291,12 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistingInstanceRequestBody;
@@ -324,6 +339,7 @@ import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetHostPrivilegeRequestV3;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkRequest;
@@ -367,6 +383,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Request;
+import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Response;
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationRequest;
@@ -403,6 +421,8 @@ import com.huaweicloud.sdk.rds.v3.model.StartFailoverRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartFailoverResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartInstanceEnlargeVolumeActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartInstanceEnlargeVolumeActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceReduceVolumeActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceReduceVolumeActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartInstanceRestartActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartInstanceRestartActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartInstanceSingleToHaActionRequest;
@@ -437,6 +457,11 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserReq;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateHostPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateHostPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Request;
+import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1RequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Response;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
@@ -970,6 +995,41 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRdSforMySqlProxyRequest, CreateRdSforMySqlProxyResponse> createRdSforMySqlProxy =
+        genForCreateRdSforMySqlProxy();
+
+    private static HttpRequestDef<CreateRdSforMySqlProxyRequest, CreateRdSforMySqlProxyResponse> genForCreateRdSforMySqlProxy() {
+        // basic
+        HttpRequestDef.Builder<CreateRdSforMySqlProxyRequest, CreateRdSforMySqlProxyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRdSforMySqlProxyRequest.class, CreateRdSforMySqlProxyResponse.class)
+            .withName("CreateRdSforMySqlProxy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/open")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRdSforMySqlProxyRequest::getInstanceId,
+                CreateRdSforMySqlProxyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRdSforMySqlProxyRequest::getXLanguage,
+                CreateRdSforMySqlProxyRequest::setXLanguage));
+        builder.<CreateMysqlMultiProxyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMysqlMultiProxyRequest.class),
+            f -> f.withMarshaller(CreateRdSforMySqlProxyRequest::getBody, CreateRdSforMySqlProxyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstance =
         genForCreateRestoreInstance();
 
@@ -1202,6 +1262,42 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(DeletePostgresqlHbaConfRequest::getBody, DeletePostgresqlHbaConfRequest::setBody)
                 .withInnerContainerType(PostgresqlHbaConf.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRdSforMySqlProxyRequest, DeleteRdSforMySqlProxyResponse> deleteRdSforMySqlProxy =
+        genForDeleteRdSforMySqlProxy();
+
+    private static HttpRequestDef<DeleteRdSforMySqlProxyRequest, DeleteRdSforMySqlProxyResponse> genForDeleteRdSforMySqlProxy() {
+        // basic
+        HttpRequestDef.Builder<DeleteRdSforMySqlProxyRequest, DeleteRdSforMySqlProxyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteRdSforMySqlProxyRequest.class, DeleteRdSforMySqlProxyResponse.class)
+            .withName("DeleteRdSforMySqlProxy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRdSforMySqlProxyRequest::getInstanceId,
+                DeleteRdSforMySqlProxyRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRdSforMySqlProxyRequest::getProxyId,
+                DeleteRdSforMySqlProxyRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRdSforMySqlProxyRequest::getXLanguage,
+                DeleteRdSforMySqlProxyRequest::setXLanguage));
 
         // response
 
@@ -2494,6 +2590,81 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRdSforMySqlProxyRequest, ListRdSforMySqlProxyResponse> listRdSforMySqlProxy =
+        genForListRdSforMySqlProxy();
+
+    private static HttpRequestDef<ListRdSforMySqlProxyRequest, ListRdSforMySqlProxyResponse> genForListRdSforMySqlProxy() {
+        // basic
+        HttpRequestDef.Builder<ListRdSforMySqlProxyRequest, ListRdSforMySqlProxyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRdSforMySqlProxyRequest.class, ListRdSforMySqlProxyResponse.class)
+            .withName("ListRdSforMySqlProxy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRdSforMySqlProxyRequest::getInstanceId,
+                ListRdSforMySqlProxyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRdSforMySqlProxyRequest::getXLanguage,
+                ListRdSforMySqlProxyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRdSforMysqlProxyFlavorsRequest, ListRdSforMysqlProxyFlavorsResponse> listRdSforMysqlProxyFlavors =
+        genForListRdSforMysqlProxyFlavors();
+
+    private static HttpRequestDef<ListRdSforMysqlProxyFlavorsRequest, ListRdSforMysqlProxyFlavorsResponse> genForListRdSforMysqlProxyFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListRdSforMysqlProxyFlavorsRequest, ListRdSforMysqlProxyFlavorsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRdSforMysqlProxyFlavorsRequest.class,
+                    ListRdSforMysqlProxyFlavorsResponse.class)
+                .withName("ListRdSforMysqlProxyFlavors")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRdSforMysqlProxyFlavorsRequest::getInstanceId,
+                ListRdSforMysqlProxyFlavorsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRdSforMysqlProxyFlavorsRequest::getOffset,
+                ListRdSforMysqlProxyFlavorsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRdSforMysqlProxyFlavorsRequest::getLimit,
+                ListRdSforMysqlProxyFlavorsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRdSforMysqlProxyFlavorsRequest::getXLanguage,
+                ListRdSforMysqlProxyFlavorsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
         genForListRecycleInstances();
 
@@ -3080,6 +3251,87 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ModifyPostgresqlHbaConfRequest::getBody, ModifyPostgresqlHbaConfRequest::setBody)
                 .withInnerContainerType(PostgresqlHbaConf.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyRdSforMySqlProxyRouteModeRequest, ModifyRdSforMySqlProxyRouteModeResponse> modifyRdSforMySqlProxyRouteMode =
+        genForModifyRdSforMySqlProxyRouteMode();
+
+    private static HttpRequestDef<ModifyRdSforMySqlProxyRouteModeRequest, ModifyRdSforMySqlProxyRouteModeResponse> genForModifyRdSforMySqlProxyRouteMode() {
+        // basic
+        HttpRequestDef.Builder<ModifyRdSforMySqlProxyRouteModeRequest, ModifyRdSforMySqlProxyRouteModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ModifyRdSforMySqlProxyRouteModeRequest.class,
+                    ModifyRdSforMySqlProxyRouteModeResponse.class)
+                .withName("ModifyRdSforMySqlProxyRouteMode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyRdSforMySqlProxyRouteModeRequest::getInstanceId,
+                ModifyRdSforMySqlProxyRouteModeRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyRdSforMySqlProxyRouteModeRequest::getProxyId,
+                ModifyRdSforMySqlProxyRouteModeRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyRdSforMySqlProxyRouteModeRequest::getXLanguage,
+                ModifyRdSforMySqlProxyRouteModeRequest::setXLanguage));
+        builder.<ModifyMySqlProxyRouteModeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyMySqlProxyRouteModeRequest.class),
+            f -> f.withMarshaller(ModifyRdSforMySqlProxyRouteModeRequest::getBody,
+                ModifyRdSforMySqlProxyRouteModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> restartRdSforMysqlProxy =
+        genForRestartRdSforMysqlProxy();
+
+    private static HttpRequestDef<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> genForRestartRdSforMysqlProxy() {
+        // basic
+        HttpRequestDef.Builder<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestartRdSforMysqlProxyRequest.class, RestartRdSforMysqlProxyResponse.class)
+            .withName("RestartRdSforMysqlProxy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getInstanceId,
+                RestartRdSforMysqlProxyRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getProxyId,
+                RestartRdSforMysqlProxyRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getXLanguage,
+                RestartRdSforMysqlProxyRequest::setXLanguage));
 
         // response
 
@@ -3864,6 +4116,30 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIncreBackupPolicy1Request, ShowIncreBackupPolicy1Response> showIncreBackupPolicy1 =
+        genForShowIncreBackupPolicy1();
+
+    private static HttpRequestDef<ShowIncreBackupPolicy1Request, ShowIncreBackupPolicy1Response> genForShowIncreBackupPolicy1() {
+        // basic
+        HttpRequestDef.Builder<ShowIncreBackupPolicy1Request, ShowIncreBackupPolicy1Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowIncreBackupPolicy1Request.class, ShowIncreBackupPolicy1Response.class)
+            .withName("ShowIncreBackupPolicy1")
+            .withUri("/v3/{project_id}/instances/{instance_id}/incre-backup/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIncreBackupPolicy1Request::getInstanceId,
+                ShowIncreBackupPolicy1Request::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
         genForShowInstanceConfiguration();
 
@@ -4163,6 +4439,45 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(EnlargeVolumeRequestBody.class),
             f -> f.withMarshaller(StartInstanceEnlargeVolumeActionRequest::getBody,
                 StartInstanceEnlargeVolumeActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartInstanceReduceVolumeActionRequest, StartInstanceReduceVolumeActionResponse> startInstanceReduceVolumeAction =
+        genForStartInstanceReduceVolumeAction();
+
+    private static HttpRequestDef<StartInstanceReduceVolumeActionRequest, StartInstanceReduceVolumeActionResponse> genForStartInstanceReduceVolumeAction() {
+        // basic
+        HttpRequestDef.Builder<StartInstanceReduceVolumeActionRequest, StartInstanceReduceVolumeActionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StartInstanceReduceVolumeActionRequest.class,
+                    StartInstanceReduceVolumeActionResponse.class)
+                .withName("StartInstanceReduceVolumeAction")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartInstanceReduceVolumeActionRequest::getInstanceId,
+                StartInstanceReduceVolumeActionRequest::setInstanceId));
+        builder.<StartInstanceReduceVolumeActionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartInstanceReduceVolumeActionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartInstanceReduceVolumeActionRequest::getXLanguage,
+                StartInstanceReduceVolumeActionRequest::setXLanguage));
+        builder.<ReduceVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReduceVolumeRequestBody.class),
+            f -> f.withMarshaller(StartInstanceReduceVolumeActionRequest::getBody,
+                StartInstanceReduceVolumeActionRequest::setBody));
 
         // response
 
@@ -4516,6 +4831,36 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyDnsNameRequestBody.class),
             f -> f.withMarshaller(UpdateDnsNameRequest::getBody, UpdateDnsNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIncreBackupPolicy1Request, UpdateIncreBackupPolicy1Response> updateIncreBackupPolicy1 =
+        genForUpdateIncreBackupPolicy1();
+
+    private static HttpRequestDef<UpdateIncreBackupPolicy1Request, UpdateIncreBackupPolicy1Response> genForUpdateIncreBackupPolicy1() {
+        // basic
+        HttpRequestDef.Builder<UpdateIncreBackupPolicy1Request, UpdateIncreBackupPolicy1Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateIncreBackupPolicy1Request.class, UpdateIncreBackupPolicy1Response.class)
+                .withName("UpdateIncreBackupPolicy1")
+                .withUri("/v3/{project_id}/instances/{instance_id}/incre-backup/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIncreBackupPolicy1Request::getInstanceId,
+                UpdateIncreBackupPolicy1Request::setInstanceId));
+        builder.<UpdateIncreBackupPolicy1RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateIncreBackupPolicy1RequestBody.class),
+            f -> f.withMarshaller(UpdateIncreBackupPolicy1Request::getBody, UpdateIncreBackupPolicy1Request::setBody));
 
         // response
 
@@ -5447,6 +5792,35 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDbUserReq.class),
             f -> f.withMarshaller(UpdateDbUserCommentRequest::getBody, UpdateDbUserCommentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHostPrivilegeRequest, UpdateHostPrivilegeResponse> updateHostPrivilege =
+        genForUpdateHostPrivilege();
+
+    private static HttpRequestDef<UpdateHostPrivilegeRequest, UpdateHostPrivilegeResponse> genForUpdateHostPrivilege() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostPrivilegeRequest, UpdateHostPrivilegeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHostPrivilegeRequest.class, UpdateHostPrivilegeResponse.class)
+                .withName("UpdateHostPrivilege")
+                .withUri("/v3/{project_id}/instances/{instance_id}/host-privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostPrivilegeRequest::getInstanceId,
+                UpdateHostPrivilegeRequest::setInstanceId));
+        builder.<SetHostPrivilegeRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetHostPrivilegeRequestV3.class),
+            f -> f.withMarshaller(UpdateHostPrivilegeRequest::getBody, UpdateHostPrivilegeRequest::setBody));
 
         // response
 

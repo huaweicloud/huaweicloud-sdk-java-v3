@@ -24,6 +24,11 @@ public class TaskGroupSrcNode {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "json_auth_file")
+
+    private String jsonAuthFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -85,6 +90,23 @@ public class TaskGroupSrcNode {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public TaskGroupSrcNode withJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
+        return this;
+    }
+
+    /**
+     * 用于谷歌云Cloud Storage鉴权
+     * @return jsonAuthFile
+     */
+    public String getJsonAuthFile() {
+        return jsonAuthFile;
+    }
+
+    public void setJsonAuthFile(String jsonAuthFile) {
+        this.jsonAuthFile = jsonAuthFile;
     }
 
     public TaskGroupSrcNode withAppId(String appId) {
@@ -177,7 +199,7 @@ public class TaskGroupSrcNode {
     }
 
     /**
-     * 源端云服务提供商，当task_type为URL_LIST时，本参数为URLSource且必选。可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 源端云服务提供商，当task_type为URL_LIST时，本参数为URLSource且必选。可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource、Google或者UCloud。默认值为Aliyun。
      * @return cloudType
      */
     public String getCloudType() {
@@ -224,14 +246,15 @@ public class TaskGroupSrcNode {
         }
         TaskGroupSrcNode that = (TaskGroupSrcNode) obj;
         return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.bucket, that.bucket)
-            && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.listFile, that.listFile);
+            && Objects.equals(this.jsonAuthFile, that.jsonAuthFile) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.objectKey, that.objectKey)
+            && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.cloudType, that.cloudType)
+            && Objects.equals(this.listFile, that.listFile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ak, sk, appId, region, objectKey, bucket, cloudType, listFile);
+        return Objects.hash(ak, sk, jsonAuthFile, appId, region, objectKey, bucket, cloudType, listFile);
     }
 
     @Override
@@ -240,6 +263,7 @@ public class TaskGroupSrcNode {
         sb.append("class TaskGroupSrcNode {\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");

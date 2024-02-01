@@ -496,7 +496,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb)
+     * [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -649,7 +649,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网路由。
+     * 子网路由（仅RocketMQ 5.x版本会显示此字段）。
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -1107,7 +1107,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 节点数。
+     * 节点数（仅RocketMQ 4.8.0版本会显示此字段）。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -1192,7 +1192,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * grpc连接地址。
+     * grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
      * @return grpcAddress
      */
     public String getGrpcAddress() {
@@ -1209,7 +1209,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网grpc连接地址。
+     * 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
      * @return publicGrpcAddress
      */
     public String getPublicGrpcAddress() {

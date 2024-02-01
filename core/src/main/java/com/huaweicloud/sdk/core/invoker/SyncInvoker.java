@@ -52,7 +52,7 @@ public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
      */
     public S invoke() {
         try {
-            return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange)).get();
+            return retry(() -> this.hcClient.asyncInvokeHttp(req, meta, exchange, extraHeaders)).get();
         } catch (ExecutionException e) {
             throw (SdkException) e.getCause();
         } catch (InterruptedException e) {

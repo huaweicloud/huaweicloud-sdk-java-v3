@@ -92,6 +92,11 @@ public class SmartLayerConfig {
     private LayerTypeEnum layerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_id")
+
+    private String assetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
 
     private LayerPositionConfig position;
@@ -126,6 +131,23 @@ public class SmartLayerConfig {
 
     public void setLayerType(LayerTypeEnum layerType) {
         this.layerType = layerType;
+    }
+
+    public SmartLayerConfig withAssetId(String assetId) {
+        this.assetId = assetId;
+        return this;
+    }
+
+    /**
+     * 图层所需资产的资产id，外部资产信息无需填写
+     * @return assetId
+     */
+    public String getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
     }
 
     public SmartLayerConfig withPosition(LayerPositionConfig position) {
@@ -241,14 +263,14 @@ public class SmartLayerConfig {
             return false;
         }
         SmartLayerConfig that = (SmartLayerConfig) obj;
-        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.position, that.position)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.imageConfig, that.imageConfig)
-            && Objects.equals(this.videoConfig, that.videoConfig);
+        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(layerType, position, size, imageConfig, videoConfig);
+        return Objects.hash(layerType, assetId, position, size, imageConfig, videoConfig);
     }
 
     @Override
@@ -256,6 +278,7 @@ public class SmartLayerConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartLayerConfig {\n");
         sb.append("    layerType: ").append(toIndentedString(layerType)).append("\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    imageConfig: ").append(toIndentedString(imageConfig)).append("\n");

@@ -75,6 +75,11 @@ public class ListSmartLiveRoomsRequest {
 
     private String roomType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_own_type")
+
+    private String templateOwnType;
+
     public ListSmartLiveRoomsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -306,6 +311,23 @@ public class ListSmartLiveRoomsRequest {
         this.roomType = roomType;
     }
 
+    public ListSmartLiveRoomsRequest withTemplateOwnType(String templateOwnType) {
+        this.templateOwnType = templateOwnType;
+        return this;
+    }
+
+    /**
+     * 按照自己拥有的和别人分享以及公共的模板进行查询 * OWNED 自己拥有且暂未共享的 * SHARED_TO_OHTERS 分享给别人的 * SHARED_FROM_OHTERS 别人分享给我的 * PUBLIC 公共模板
+     * @return templateOwnType
+     */
+    public String getTemplateOwnType() {
+        return templateOwnType;
+    }
+
+    public void setTemplateOwnType(String templateOwnType) {
+        this.templateOwnType = templateOwnType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -321,7 +343,8 @@ public class ListSmartLiveRoomsRequest {
             && Objects.equals(this.roomName, that.roomName) && Objects.equals(this.dhId, that.dhId)
             && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.liveState, that.liveState)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.roomType, that.roomType);
+            && Objects.equals(this.roomType, that.roomType)
+            && Objects.equals(this.templateOwnType, that.templateOwnType);
     }
 
     @Override
@@ -338,7 +361,8 @@ public class ListSmartLiveRoomsRequest {
             liveState,
             startTime,
             endTime,
-            roomType);
+            roomType,
+            templateOwnType);
     }
 
     @Override
@@ -358,6 +382,7 @@ public class ListSmartLiveRoomsRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
+        sb.append("    templateOwnType: ").append(toIndentedString(templateOwnType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
