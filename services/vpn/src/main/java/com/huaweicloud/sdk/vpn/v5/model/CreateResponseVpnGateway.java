@@ -129,7 +129,7 @@ public class CreateResponseVpnGateway {
     private String connectSubnet;
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      */
     public static final class NetworkTypeEnum {
 
@@ -252,6 +252,11 @@ public class CreateResponseVpnGateway {
     @JsonProperty(value = "policy_template")
 
     private PolicyTemplate policyTemplate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public CreateResponseVpnGateway withId(String id) {
         this.id = id;
@@ -411,7 +416,7 @@ public class CreateResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      * @return networkType
      */
     public NetworkTypeEnum getNetworkType() {
@@ -603,6 +608,39 @@ public class CreateResponseVpnGateway {
         this.policyTemplate = policyTemplate;
     }
 
+    public CreateResponseVpnGateway withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateResponseVpnGateway addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateResponseVpnGateway withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -623,7 +661,8 @@ public class CreateResponseVpnGateway {
             && Objects.equals(this.usedConnectionNumber, that.usedConnectionNumber)
             && Objects.equals(this.usedConnectionGroup, that.usedConnectionGroup)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.policyTemplate, that.policyTemplate);
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.policyTemplate, that.policyTemplate)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -646,7 +685,8 @@ public class CreateResponseVpnGateway {
             usedConnectionGroup,
             enterpriseProjectId,
             haMode,
-            policyTemplate);
+            policyTemplate,
+            tags);
     }
 
     @Override
@@ -672,6 +712,7 @@ public class CreateResponseVpnGateway {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
         sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

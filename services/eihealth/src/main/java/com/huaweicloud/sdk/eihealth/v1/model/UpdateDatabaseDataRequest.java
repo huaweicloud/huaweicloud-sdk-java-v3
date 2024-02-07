@@ -72,6 +72,8 @@ public class UpdateDatabaseDataRequest {
 
     /**
      * 数据行号，即_row_num值
+     * minimum: 0
+     * maximum: 2147483647
      * @return rowNum
      */
     public Long getRowNum() {

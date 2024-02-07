@@ -509,7 +509,7 @@ public class CdmMeta {
             f -> f.withMarshaller(StartJobRequest::getJobName, StartJobRequest::setJobName));
         builder.<CdmStartJobReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CdmStartJobReq.class),
             f -> f.withMarshaller(StartJobRequest::getBody, StartJobRequest::setBody));
 

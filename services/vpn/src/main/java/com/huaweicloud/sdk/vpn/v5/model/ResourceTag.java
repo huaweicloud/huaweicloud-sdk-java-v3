@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 在对接TMS服务的各个接口中使用，面向租户和EPS服务
+ * ResourceTag
  */
 public class ResourceTag {
 

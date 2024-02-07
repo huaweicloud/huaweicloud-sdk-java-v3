@@ -295,6 +295,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsRequestB
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigRequestBody;
@@ -4507,6 +4510,51 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusModifyInstanceMonitorRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceMonitorRequest::getBody, UpdateInstanceMonitorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNewNodeAutoAddSwitchRequest, UpdateNewNodeAutoAddSwitchResponse> updateNewNodeAutoAddSwitch =
+        genForUpdateNewNodeAutoAddSwitch();
+
+    private static HttpRequestDef<UpdateNewNodeAutoAddSwitchRequest, UpdateNewNodeAutoAddSwitchResponse> genForUpdateNewNodeAutoAddSwitch() {
+        // basic
+        HttpRequestDef.Builder<UpdateNewNodeAutoAddSwitchRequest, UpdateNewNodeAutoAddSwitchResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateNewNodeAutoAddSwitchRequest.class,
+                    UpdateNewNodeAutoAddSwitchResponse.class)
+                .withName("UpdateNewNodeAutoAddSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/new-node-auto-add")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNewNodeAutoAddSwitchRequest::getInstanceId,
+                UpdateNewNodeAutoAddSwitchRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNewNodeAutoAddSwitchRequest::getProxyId,
+                UpdateNewNodeAutoAddSwitchRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNewNodeAutoAddSwitchRequest::getXLanguage,
+                UpdateNewNodeAutoAddSwitchRequest::setXLanguage));
+        builder.<UpdateNewNodeAutoAddSwitchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNewNodeAutoAddSwitchRequestBody.class),
+            f -> f.withMarshaller(UpdateNewNodeAutoAddSwitchRequest::getBody,
+                UpdateNewNodeAutoAddSwitchRequest::setBody));
 
         // response
 

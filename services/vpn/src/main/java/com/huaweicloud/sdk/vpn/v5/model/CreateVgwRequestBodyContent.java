@@ -247,7 +247,7 @@ public class CreateVgwRequestBodyContent {
     private String accessPrivateIp2;
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      */
     public static final class NetworkTypeEnum {
 
@@ -587,7 +587,7 @@ public class CreateVgwRequestBodyContent {
     }
 
     /**
-     * 不填写则采用默认可用区。如果需要指定可用区可以调用查询VPN网关可用区接口来选择
+     * 部署VPN网关的可用区。不填时自动为VPN网关选择可用区。如果需要指定可用区可以通过查询VPN网关可用区查询可用区列表。
      * @return availabilityZoneIds
      */
     public List<String> getAvailabilityZoneIds() {
@@ -673,7 +673,7 @@ public class CreateVgwRequestBodyContent {
     }
 
     /**
-     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
+     * 私网类型VPN网关的接入私网IP1，指定ip创建私网网关时设置，主备网关时为主ip，双活网关时为主ip1
      * @return accessPrivateIp1
      */
     public String getAccessPrivateIp1() {
@@ -690,7 +690,7 @@ public class CreateVgwRequestBodyContent {
     }
 
     /**
-     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
+     * 私网类型VPN网关的接入私网IP2，指定ip创建私网网关时设置，主备网关时为备ip，双活网关时为主ip2
      * @return accessPrivateIp2
      */
     public String getAccessPrivateIp2() {
@@ -707,7 +707,7 @@ public class CreateVgwRequestBodyContent {
     }
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      * @return networkType
      */
     public NetworkTypeEnum getNetworkType() {

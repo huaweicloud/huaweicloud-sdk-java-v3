@@ -163,6 +163,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -2558,6 +2560,33 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ShowSslCertDownloadLinkRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSslCertDownloadLinkRequest::getXLanguage,
                 ShowSslCertDownloadLinkRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopBackupRequest, StopBackupResponse> stopBackup = genForStopBackup();
+
+    private static HttpRequestDef<StopBackupRequest, StopBackupResponse> genForStopBackup() {
+        // basic
+        HttpRequestDef.Builder<StopBackupRequest, StopBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopBackupRequest.class, StopBackupResponse.class)
+                .withName("StopBackup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getInstanceId, StopBackupRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getXLanguage, StopBackupRequest::setXLanguage));
 
         // response
 

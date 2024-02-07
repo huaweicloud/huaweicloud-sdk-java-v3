@@ -94,7 +94,7 @@ public class UpdateVgwRequestBodyContent {
     }
 
     /**
-     * 主eip的ID。用于给VPN网关绑定新的主EIP，需要先解绑当前的主EIP
+     * 有效的EIP的ID，表示绑定新的EIP作为双活VPN网关使用的第一个EIP或主备VPN网关的主EIP。
      * @return eipId1
      */
     public String getEipId1() {
@@ -111,7 +111,7 @@ public class UpdateVgwRequestBodyContent {
     }
 
     /**
-     * 备eip的ID。用于给VPN网关绑定新的备EIP，需要先解绑当前的备EIP
+     * 有效的EIP的ID，表示绑定新的EIP作为双活VPN网关使用的第二个EIP或主备VPN网关的备EIP。
      * @return eipId2
      */
     public String getEipId2() {

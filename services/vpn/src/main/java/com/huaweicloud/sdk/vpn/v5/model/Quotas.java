@@ -16,14 +16,14 @@ public class Quotas {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<Quota> resources = null;
+    private List<QuotaInfo> resources = null;
 
-    public Quotas withResources(List<Quota> resources) {
+    public Quotas withResources(List<QuotaInfo> resources) {
         this.resources = resources;
         return this;
     }
 
-    public Quotas addResourcesItem(Quota resourcesItem) {
+    public Quotas addResourcesItem(QuotaInfo resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class Quotas {
         return this;
     }
 
-    public Quotas withResources(Consumer<List<Quota>> resourcesSetter) {
+    public Quotas withResources(Consumer<List<QuotaInfo>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class Quotas {
      * Get resources
      * @return resources
      */
-    public List<Quota> getResources() {
+    public List<QuotaInfo> getResources() {
         return resources;
     }
 
-    public void setResources(List<Quota> resources) {
+    public void setResources(List<QuotaInfo> resources) {
         this.resources = resources;
     }
 

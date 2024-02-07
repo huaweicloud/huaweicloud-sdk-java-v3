@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateAutoJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceRequest;
@@ -201,6 +203,12 @@ import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDatabaseDataRequest;
@@ -1279,6 +1287,35 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<CreateBackupRequest, CreateBackupResponse> createBackupAsyncInvoker(
         CreateBackupRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.createBackup, hcClient);
+    }
+
+    /**
+     * 创建分子聚类作业
+     *
+     * 创建分子聚类作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterJobRequest 请求对象
+     * @return CompletableFuture<CreateClusterJobResponse>
+     */
+    public CompletableFuture<CreateClusterJobResponse> createClusterJobAsync(CreateClusterJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.createClusterJob);
+    }
+
+    /**
+     * 创建分子聚类作业
+     *
+     * 创建分子聚类作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterJobRequest 请求对象
+     * @return AsyncInvoker<CreateClusterJobRequest, CreateClusterJobResponse>
+     */
+    public AsyncInvoker<CreateClusterJobRequest, CreateClusterJobResponse> createClusterJobAsyncInvoker(
+        CreateClusterJobRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.createClusterJob, hcClient);
     }
 
     /**
@@ -2841,6 +2878,95 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobAsyncInvoker(ExecuteJobRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.executeJob, hcClient);
+    }
+
+    /**
+     * 将传入的蛋白和小分子拼接成复合物结构
+     *
+     * 将传入的蛋白和小分子拼接成复合物结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateComplexCombineRequest 请求对象
+     * @return CompletableFuture<GenerateComplexCombineResponse>
+     */
+    public CompletableFuture<GenerateComplexCombineResponse> generateComplexCombineAsync(
+        GenerateComplexCombineRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.generateComplexCombine);
+    }
+
+    /**
+     * 将传入的蛋白和小分子拼接成复合物结构
+     *
+     * 将传入的蛋白和小分子拼接成复合物结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateComplexCombineRequest 请求对象
+     * @return AsyncInvoker<GenerateComplexCombineRequest, GenerateComplexCombineResponse>
+     */
+    public AsyncInvoker<GenerateComplexCombineRequest, GenerateComplexCombineResponse> generateComplexCombineAsyncInvoker(
+        GenerateComplexCombineRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.generateComplexCombine, hcClient);
+    }
+
+    /**
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     *
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GeneratePocketFileRequest 请求对象
+     * @return CompletableFuture<GeneratePocketFileResponse>
+     */
+    public CompletableFuture<GeneratePocketFileResponse> generatePocketFileAsync(GeneratePocketFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.generatePocketFile);
+    }
+
+    /**
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     *
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GeneratePocketFileRequest 请求对象
+     * @return AsyncInvoker<GeneratePocketFileRequest, GeneratePocketFileResponse>
+     */
+    public AsyncInvoker<GeneratePocketFileRequest, GeneratePocketFileResponse> generatePocketFileAsyncInvoker(
+        GeneratePocketFileRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.generatePocketFile, hcClient);
+    }
+
+    /**
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     *
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSurfacePointsRequest 请求对象
+     * @return CompletableFuture<GenerateSurfacePointsResponse>
+     */
+    public CompletableFuture<GenerateSurfacePointsResponse> generateSurfacePointsAsync(
+        GenerateSurfacePointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.generateSurfacePoints);
+    }
+
+    /**
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     *
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSurfacePointsRequest 请求对象
+     * @return AsyncInvoker<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse>
+     */
+    public AsyncInvoker<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse> generateSurfacePointsAsyncInvoker(
+        GenerateSurfacePointsRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.generateSurfacePoints, hcClient);
     }
 
     /**

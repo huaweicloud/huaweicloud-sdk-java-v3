@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.cdn.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 域名归属校验请求体
+ */
+public class VerifyDomainOwnerRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verify_type")
+
+    private String verifyType;
+
+    public VerifyDomainOwnerRequestBody withVerifyType(String verifyType) {
+        this.verifyType = verifyType;
+        return this;
+    }
+
+    /**
+     * 校验类型： - dns：DNS解析校验； - file：文件校验； - all：dns、file均校验，默认为all。
+     * @return verifyType
+     */
+    public String getVerifyType() {
+        return verifyType;
+    }
+
+    public void setVerifyType(String verifyType) {
+        this.verifyType = verifyType;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        VerifyDomainOwnerRequestBody that = (VerifyDomainOwnerRequestBody) obj;
+        return Objects.equals(this.verifyType, that.verifyType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(verifyType);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class VerifyDomainOwnerRequestBody {\n");
+        sb.append("    verifyType: ").append(toIndentedString(verifyType)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -167,7 +167,7 @@ public class CreateRequestEip {
     }
 
     /**
-     * 带宽大小Mbit/s。flavor为Basic时，取值不能大于100；flavor为Professional1时，取值不能大于300；flavor为Professional2时，取值不能大于1024
+     * 带宽大小Mbit/s。flavor为Basic时，取值不能大于100；flavor为Professional1时，取值不能大于300；flavor为Professional2时，取值不能大于1000
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {

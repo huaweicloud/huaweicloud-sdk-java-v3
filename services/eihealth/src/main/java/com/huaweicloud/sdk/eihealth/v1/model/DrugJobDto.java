@@ -71,12 +71,12 @@ public class DrugJobDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expect_charge_num")
 
-    private Integer expectChargeNum;
+    private Double expectChargeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_charge_num")
 
-    private Integer realChargeNum;
+    private Double realChargeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
@@ -224,7 +224,7 @@ public class DrugJobDto {
     }
 
     /**
-     * 作业结束时间
+     * 作业开始时间
      * @return startTime
      */
     public String getStartTime() {
@@ -286,7 +286,7 @@ public class DrugJobDto {
         this.outputDir = outputDir;
     }
 
-    public DrugJobDto withExpectChargeNum(Integer expectChargeNum) {
+    public DrugJobDto withExpectChargeNum(Double expectChargeNum) {
         this.expectChargeNum = expectChargeNum;
         return this;
     }
@@ -295,15 +295,15 @@ public class DrugJobDto {
      * 预估功能调用消耗次数
      * @return expectChargeNum
      */
-    public Integer getExpectChargeNum() {
+    public Double getExpectChargeNum() {
         return expectChargeNum;
     }
 
-    public void setExpectChargeNum(Integer expectChargeNum) {
+    public void setExpectChargeNum(Double expectChargeNum) {
         this.expectChargeNum = expectChargeNum;
     }
 
-    public DrugJobDto withRealChargeNum(Integer realChargeNum) {
+    public DrugJobDto withRealChargeNum(Double realChargeNum) {
         this.realChargeNum = realChargeNum;
         return this;
     }
@@ -312,11 +312,11 @@ public class DrugJobDto {
      * 实际功能调用消耗次数
      * @return realChargeNum
      */
-    public Integer getRealChargeNum() {
+    public Double getRealChargeNum() {
         return realChargeNum;
     }
 
-    public void setRealChargeNum(Integer realChargeNum) {
+    public void setRealChargeNum(Double realChargeNum) {
         this.realChargeNum = realChargeNum;
     }
 

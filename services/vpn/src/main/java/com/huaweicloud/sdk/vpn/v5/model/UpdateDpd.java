@@ -26,7 +26,7 @@ public class UpdateDpd {
     private Integer timeout;
 
     /**
-     * DPD检测报文格式
+     * 对等体存活检测报文格式
      */
     public static final class MsgEnum {
 
@@ -106,7 +106,7 @@ public class UpdateDpd {
     }
 
     /**
-     * DPD检测间隔时长
+     * 对等体存活检测空闲时间
      * minimum: 10
      * maximum: 3600
      * @return interval
@@ -125,7 +125,7 @@ public class UpdateDpd {
     }
 
     /**
-     * DPD检测间隔超时时间
+     * 对等体存活检测报文重传间隔
      * minimum: 2
      * maximum: 60
      * @return timeout
@@ -144,7 +144,7 @@ public class UpdateDpd {
     }
 
     /**
-     * DPD检测报文格式
+     * 对等体存活检测报文格式
      * @return msg
      */
     public MsgEnum getMsg() {

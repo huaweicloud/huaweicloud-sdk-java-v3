@@ -24,7 +24,7 @@ public class UpdateVgwCertificateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private VpnGatewayCertificateRequestBody body;
+    private UpdateVpnGatewayCertificateRequestBody body;
 
     public UpdateVgwCertificateRequest withVgwId(String vgwId) {
         this.vgwId = vgwId;
@@ -60,14 +60,14 @@ public class UpdateVgwCertificateRequest {
         this.certificateId = certificateId;
     }
 
-    public UpdateVgwCertificateRequest withBody(VpnGatewayCertificateRequestBody body) {
+    public UpdateVgwCertificateRequest withBody(UpdateVpnGatewayCertificateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateVgwCertificateRequest withBody(Consumer<VpnGatewayCertificateRequestBody> bodySetter) {
+    public UpdateVgwCertificateRequest withBody(Consumer<UpdateVpnGatewayCertificateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new VpnGatewayCertificateRequestBody();
+            this.body = new UpdateVpnGatewayCertificateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateVgwCertificateRequest {
      * Get body
      * @return body
      */
-    public VpnGatewayCertificateRequestBody getBody() {
+    public UpdateVpnGatewayCertificateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(VpnGatewayCertificateRequestBody body) {
+    public void setBody(UpdateVpnGatewayCertificateRequestBody body) {
         this.body = body;
     }
 

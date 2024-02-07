@@ -55,7 +55,7 @@ public class MoleculeFileDto {
     /**
      * 分子个数
      * minimum: 1
-     * maximum: 10000
+     * maximum: 1000000
      * @return count
      */
     public Integer getCount() {

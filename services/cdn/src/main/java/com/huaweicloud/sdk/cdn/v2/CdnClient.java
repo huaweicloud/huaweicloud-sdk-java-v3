@@ -2,14 +2,26 @@ package com.huaweicloud.sdk.cdn.v2;
 
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DisableDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DisableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
@@ -18,6 +30,8 @@ import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameRequest;
@@ -32,16 +46,28 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessResponse;
+import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
+import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -88,6 +114,63 @@ public class CdnClient {
     public SyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse> batchCopyDomainInvoker(
         BatchCopyDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.batchCopyDomain, hcClient);
+    }
+
+    /**
+     * 删除资源标签配置接口
+     *
+     * 用于删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTagsRequest 请求对象
+     * @return BatchDeleteTagsResponse
+     */
+    public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.batchDeleteTags);
+    }
+
+    /**
+     * 删除资源标签配置接口
+     *
+     * 用于删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
+        BatchDeleteTagsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.batchDeleteTags, hcClient);
+    }
+
+    /**
+     * 创建加速域名
+     *
+     * 创建加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainRequest 请求对象
+     * @return CreateDomainResponse
+     */
+    public CreateDomainResponse createDomain(CreateDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createDomain);
+    }
+
+    /**
+     * 创建加速域名
+     *
+     * 创建加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainRequest 请求对象
+     * @return SyncInvoker<CreateDomainRequest, CreateDomainResponse>
+     */
+    public SyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainInvoker(CreateDomainRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.createDomain, hcClient);
     }
 
     /**
@@ -146,6 +229,90 @@ public class CdnClient {
     public SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasksInvoker(
         CreateRefreshTasksRequest request) {
         return new SyncInvoker<>(request, CdnMeta.createRefreshTasks, hcClient);
+    }
+
+    /**
+     * 创建资源标签配置接口
+     *
+     * 用于创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagsRequest 请求对象
+     * @return CreateTagsResponse
+     */
+    public CreateTagsResponse createTags(CreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createTags);
+    }
+
+    /**
+     * 创建资源标签配置接口
+     *
+     * 用于创建资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagsRequest 请求对象
+     * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.createTags, hcClient);
+    }
+
+    /**
+     * 删除加速域名
+     *
+     * 删除加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return DeleteDomainResponse
+     */
+    public DeleteDomainResponse deleteDomain(DeleteDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.deleteDomain);
+    }
+
+    /**
+     * 删除加速域名
+     *
+     * 删除加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
+     */
+    public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 停用加速域名
+     *
+     * 停用加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDomainRequest 请求对象
+     * @return DisableDomainResponse
+     */
+    public DisableDomainResponse disableDomain(DisableDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.disableDomain);
+    }
+
+    /**
+     * 停用加速域名
+     *
+     * 停用加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDomainRequest 请求对象
+     * @return SyncInvoker<DisableDomainRequest, DisableDomainResponse>
+     */
+    public SyncInvoker<DisableDomainRequest, DisableDomainResponse> disableDomainInvoker(DisableDomainRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.disableDomain, hcClient);
     }
 
     /**
@@ -248,6 +415,34 @@ public class CdnClient {
     public SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> downloadStatisticsExcelInvoker(
         DownloadStatisticsExcelRequest request) {
         return new SyncInvoker<>(request, CdnMeta.downloadStatisticsExcel, hcClient);
+    }
+
+    /**
+     * 启用加速域名
+     *
+     * 启用加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDomainRequest 请求对象
+     * @return EnableDomainResponse
+     */
+    public EnableDomainResponse enableDomain(EnableDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.enableDomain);
+    }
+
+    /**
+     * 启用加速域名
+     *
+     * 启用加速域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDomainRequest 请求对象
+     * @return SyncInvoker<EnableDomainRequest, EnableDomainResponse>
+     */
+    public SyncInvoker<EnableDomainRequest, EnableDomainResponse> enableDomainInvoker(EnableDomainRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.enableDomain, hcClient);
     }
 
     /**
@@ -417,6 +612,35 @@ public class CdnClient {
     public SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalcInvoker(
         ShowBandwidthCalcRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showBandwidthCalc, hcClient);
+    }
+
+    /**
+     * 查询所有绑定HTTPS证书的域名信息
+     *
+     * 查询所有绑定HTTPS证书的域名信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificatesHttpsInfoRequest 请求对象
+     * @return ShowCertificatesHttpsInfoResponse
+     */
+    public ShowCertificatesHttpsInfoResponse showCertificatesHttpsInfo(ShowCertificatesHttpsInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showCertificatesHttpsInfo);
+    }
+
+    /**
+     * 查询所有绑定HTTPS证书的域名信息
+     *
+     * 查询所有绑定HTTPS证书的域名信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificatesHttpsInfoRequest 请求对象
+     * @return SyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse>
+     */
+    public SyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfoInvoker(
+        ShowCertificatesHttpsInfoRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showCertificatesHttpsInfo, hcClient);
     }
 
     /**
@@ -687,6 +911,34 @@ public class CdnClient {
     }
 
     /**
+     * 查询IP归属信息
+     *
+     * 查询IP归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpInfoRequest 请求对象
+     * @return ShowIpInfoResponse
+     */
+    public ShowIpInfoResponse showIpInfo(ShowIpInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showIpInfo);
+    }
+
+    /**
+     * 查询IP归属信息
+     *
+     * 查询IP归属信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpInfoRequest 请求对象
+     * @return SyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse>
+     */
+    public SyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfoInvoker(ShowIpInfoRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showIpInfo, hcClient);
+    }
+
+    /**
      * 日志查询
      *
      * 查询日志下载链接，支持查询30天内的日志信息。
@@ -712,6 +964,34 @@ public class CdnClient {
      */
     public SyncInvoker<ShowLogsRequest, ShowLogsResponse> showLogsInvoker(ShowLogsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showLogs, hcClient);
+    }
+
+    /**
+     * 查询资源标签列表配置接口
+     *
+     * 用于查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTagsRequest 请求对象
+     * @return ShowTagsResponse
+     */
+    public ShowTagsResponse showTags(ShowTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showTags);
+    }
+
+    /**
+     * 查询资源标签列表配置接口
+     *
+     * 用于查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTagsRequest 请求对象
+     * @return SyncInvoker<ShowTagsRequest, ShowTagsResponse>
+     */
+    public SyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsInvoker(ShowTagsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showTags, hcClient);
     }
 
     /**
@@ -851,6 +1131,35 @@ public class CdnClient {
     }
 
     /**
+     * 查询域名归属校验信息
+     *
+     * 用于查询域名归属校验信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVerifyDomainOwnerInfoRequest 请求对象
+     * @return ShowVerifyDomainOwnerInfoResponse
+     */
+    public ShowVerifyDomainOwnerInfoResponse showVerifyDomainOwnerInfo(ShowVerifyDomainOwnerInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showVerifyDomainOwnerInfo);
+    }
+
+    /**
+     * 查询域名归属校验信息
+     *
+     * 用于查询域名归属校验信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVerifyDomainOwnerInfoRequest 请求对象
+     * @return SyncInvoker<ShowVerifyDomainOwnerInfoRequest, ShowVerifyDomainOwnerInfoResponse>
+     */
+    public SyncInvoker<ShowVerifyDomainOwnerInfoRequest, ShowVerifyDomainOwnerInfoResponse> showVerifyDomainOwnerInfoInvoker(
+        ShowVerifyDomainOwnerInfoRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showVerifyDomainOwnerInfo, hcClient);
+    }
+
+    /**
      * 修改域名全量配置接口
      *
      * 修改域名配置接口，支持修改业务类型、服务范围、备注、IPv6开关、回源方式、回源URL改写、高级回源、Range回源、回源跟随、回源是否校验Etag、回源超时时间、回源请求头、HTTPS配置、TLS版本配置、强制跳转、HSTS、HTTP/2、OCSP Stapling、QUIC、缓存规则、状态码缓存时间、防盗链、IP黑白名单、Use-Agent黑白名单、URL鉴权配置、远程鉴权配置、IP访问限频、HTTP header配置、自定义错误页面配置、智能压缩、请求限速配置、WebSocket配置、视频拖拽。
@@ -877,6 +1186,94 @@ public class CdnClient {
     public SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigInvoker(
         UpdateDomainFullConfigRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateDomainFullConfig, hcClient);
+    }
+
+    /**
+     * 一个证书批量设置多个域名
+     *
+     * 一个证书配置多个域名，设置域名强制https回源参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainMultiCertificatesRequest 请求对象
+     * @return UpdateDomainMultiCertificatesResponse
+     */
+    public UpdateDomainMultiCertificatesResponse updateDomainMultiCertificates(
+        UpdateDomainMultiCertificatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updateDomainMultiCertificates);
+    }
+
+    /**
+     * 一个证书批量设置多个域名
+     *
+     * 一个证书配置多个域名，设置域名强制https回源参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainMultiCertificatesRequest 请求对象
+     * @return SyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse>
+     */
+    public SyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificatesInvoker(
+        UpdateDomainMultiCertificatesRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updateDomainMultiCertificates, hcClient);
+    }
+
+    /**
+     * 修改私有桶开启关闭状态
+     *
+     * 修改私有桶开启关闭状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateBucketAccessRequest 请求对象
+     * @return UpdatePrivateBucketAccessResponse
+     */
+    public UpdatePrivateBucketAccessResponse updatePrivateBucketAccess(UpdatePrivateBucketAccessRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updatePrivateBucketAccess);
+    }
+
+    /**
+     * 修改私有桶开启关闭状态
+     *
+     * 修改私有桶开启关闭状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateBucketAccessRequest 请求对象
+     * @return SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>
+     */
+    public SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccessInvoker(
+        UpdatePrivateBucketAccessRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updatePrivateBucketAccess, hcClient);
+    }
+
+    /**
+     * 域名归属校验
+     *
+     * 用于域名归属校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyDomainOwnerRequest 请求对象
+     * @return VerifyDomainOwnerResponse
+     */
+    public VerifyDomainOwnerResponse verifyDomainOwner(VerifyDomainOwnerRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.verifyDomainOwner);
+    }
+
+    /**
+     * 域名归属校验
+     *
+     * 用于域名归属校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyDomainOwnerRequest 请求对象
+     * @return SyncInvoker<VerifyDomainOwnerRequest, VerifyDomainOwnerResponse>
+     */
+    public SyncInvoker<VerifyDomainOwnerRequest, VerifyDomainOwnerResponse> verifyDomainOwnerInvoker(
+        VerifyDomainOwnerRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.verifyDomainOwner, hcClient);
     }
 
 }

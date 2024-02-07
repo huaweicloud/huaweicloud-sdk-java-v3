@@ -123,6 +123,16 @@ public class OpenMysqlProxyRequestBody {
 
     private String subnetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_node_auto_add_status")
+
+    private String newNodeAutoAddStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_node_weight")
+
+    private Integer newNodeWeight;
+
     public OpenMysqlProxyRequestBody withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -258,6 +268,40 @@ public class OpenMysqlProxyRequestBody {
         this.subnetId = subnetId;
     }
 
+    public OpenMysqlProxyRequestBody withNewNodeAutoAddStatus(String newNodeAutoAddStatus) {
+        this.newNodeAutoAddStatus = newNodeAutoAddStatus;
+        return this;
+    }
+
+    /**
+     * 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
+     * @return newNodeAutoAddStatus
+     */
+    public String getNewNodeAutoAddStatus() {
+        return newNodeAutoAddStatus;
+    }
+
+    public void setNewNodeAutoAddStatus(String newNodeAutoAddStatus) {
+        this.newNodeAutoAddStatus = newNodeAutoAddStatus;
+    }
+
+    public OpenMysqlProxyRequestBody withNewNodeWeight(Integer newNodeWeight) {
+        this.newNodeWeight = newNodeWeight;
+        return this;
+    }
+
+    /**
+     * 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+     * @return newNodeWeight
+     */
+    public Integer getNewNodeWeight() {
+        return newNodeWeight;
+    }
+
+    public void setNewNodeWeight(Integer newNodeWeight) {
+        this.newNodeWeight = newNodeWeight;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,12 +315,22 @@ public class OpenMysqlProxyRequestBody {
             && Objects.equals(this.proxyName, that.proxyName) && Objects.equals(this.proxyMode, that.proxyMode)
             && Objects.equals(this.routeMode, that.routeMode)
             && Objects.equals(this.nodesReadWeight, that.nodesReadWeight)
-            && Objects.equals(this.subnetId, that.subnetId);
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.newNodeAutoAddStatus, that.newNodeAutoAddStatus)
+            && Objects.equals(this.newNodeWeight, that.newNodeWeight);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, nodeNum, proxyName, proxyMode, routeMode, nodesReadWeight, subnetId);
+        return Objects.hash(flavorRef,
+            nodeNum,
+            proxyName,
+            proxyMode,
+            routeMode,
+            nodesReadWeight,
+            subnetId,
+            newNodeAutoAddStatus,
+            newNodeWeight);
     }
 
     @Override
@@ -290,6 +344,8 @@ public class OpenMysqlProxyRequestBody {
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    nodesReadWeight: ").append(toIndentedString(nodesReadWeight)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    newNodeAutoAddStatus: ").append(toIndentedString(newNodeAutoAddStatus)).append("\n");
+        sb.append("    newNodeWeight: ").append(toIndentedString(newNodeWeight)).append("\n");
         sb.append("}");
         return sb.toString();
     }

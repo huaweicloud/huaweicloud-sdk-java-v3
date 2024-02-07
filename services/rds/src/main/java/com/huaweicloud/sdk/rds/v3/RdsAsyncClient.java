@@ -103,6 +103,10 @@ import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -121,6 +125,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
@@ -231,8 +237,6 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
-import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyRequest;
-import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequest;
@@ -267,6 +271,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesProxyRestartRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesProxyRestartResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
@@ -357,6 +363,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseOwnerRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseOwnerResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserCommentRequest;
@@ -381,6 +389,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
@@ -2654,36 +2664,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 重启数据库代理
-     *
-     * 重启数据库代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RestartRdSforMysqlProxyRequest 请求对象
-     * @return CompletableFuture<RestartRdSforMysqlProxyResponse>
-     */
-    public CompletableFuture<RestartRdSforMysqlProxyResponse> restartRdSforMysqlProxyAsync(
-        RestartRdSforMysqlProxyRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.restartRdSforMysqlProxy);
-    }
-
-    /**
-     * 重启数据库代理
-     *
-     * 重启数据库代理。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RestartRdSforMysqlProxyRequest 请求对象
-     * @return AsyncInvoker<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse>
-     */
-    public AsyncInvoker<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> restartRdSforMysqlProxyAsyncInvoker(
-        RestartRdSforMysqlProxyRequest request) {
-        return new AsyncInvoker<>(request, RdsMeta.restartRdSforMysqlProxy, hcClient);
-    }
-
-    /**
      * 恢复到已有实例
      *
      * 恢复到已有实例。
@@ -2921,6 +2901,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> setBinlogClearPolicyAsyncInvoker(
         SetBinlogClearPolicyRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.setBinlogClearPolicy, hcClient);
+    }
+
+    /**
+     * 重启数据库代理
+     *
+     * 重启数据库代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstancesProxyRestartRequest 请求对象
+     * @return CompletableFuture<SetInstancesProxyRestartResponse>
+     */
+    public CompletableFuture<SetInstancesProxyRestartResponse> setInstancesProxyRestartAsync(
+        SetInstancesProxyRestartRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setInstancesProxyRestart);
+    }
+
+    /**
+     * 重启数据库代理
+     *
+     * 重启数据库代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstancesProxyRestartRequest 请求对象
+     * @return AsyncInvoker<SetInstancesProxyRestartRequest, SetInstancesProxyRestartResponse>
+     */
+    public AsyncInvoker<SetInstancesProxyRestartRequest, SetInstancesProxyRestartResponse> setInstancesProxyRestartAsyncInvoker(
+        SetInstancesProxyRestartRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.setInstancesProxyRestart, hcClient);
     }
 
     /**
@@ -5250,6 +5260,96 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 授予用户角色
+     *
+     * 授予用户角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecutePrivilegeDatabaseUserRoleRequest 请求对象
+     * @return CompletableFuture<ExecutePrivilegeDatabaseUserRoleResponse>
+     */
+    public CompletableFuture<ExecutePrivilegeDatabaseUserRoleResponse> executePrivilegeDatabaseUserRoleAsync(
+        ExecutePrivilegeDatabaseUserRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.executePrivilegeDatabaseUserRole);
+    }
+
+    /**
+     * 授予用户角色
+     *
+     * 授予用户角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecutePrivilegeDatabaseUserRoleRequest 请求对象
+     * @return AsyncInvoker<ExecutePrivilegeDatabaseUserRoleRequest, ExecutePrivilegeDatabaseUserRoleResponse>
+     */
+    public AsyncInvoker<ExecutePrivilegeDatabaseUserRoleRequest, ExecutePrivilegeDatabaseUserRoleResponse> executePrivilegeDatabaseUserRoleAsyncInvoker(
+        ExecutePrivilegeDatabaseUserRoleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.executePrivilegeDatabaseUserRole, hcClient);
+    }
+
+    /**
+     * 撤回用户角色
+     *
+     * 撤回用户角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteRevokeDatabaseUserRoleRequest 请求对象
+     * @return CompletableFuture<ExecuteRevokeDatabaseUserRoleResponse>
+     */
+    public CompletableFuture<ExecuteRevokeDatabaseUserRoleResponse> executeRevokeDatabaseUserRoleAsync(
+        ExecuteRevokeDatabaseUserRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.executeRevokeDatabaseUserRole);
+    }
+
+    /**
+     * 撤回用户角色
+     *
+     * 撤回用户角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteRevokeDatabaseUserRoleRequest 请求对象
+     * @return AsyncInvoker<ExecuteRevokeDatabaseUserRoleRequest, ExecuteRevokeDatabaseUserRoleResponse>
+     */
+    public AsyncInvoker<ExecuteRevokeDatabaseUserRoleRequest, ExecuteRevokeDatabaseUserRoleResponse> executeRevokeDatabaseUserRoleAsyncInvoker(
+        ExecuteRevokeDatabaseUserRoleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.executeRevokeDatabaseUserRole, hcClient);
+    }
+
+    /**
+     * 查询数据库角色信息
+     *
+     * 查询数据库角色信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseUserRoleRequest 请求对象
+     * @return CompletableFuture<ListDatabaseUserRoleResponse>
+     */
+    public CompletableFuture<ListDatabaseUserRoleResponse> listDatabaseUserRoleAsync(
+        ListDatabaseUserRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDatabaseUserRole);
+    }
+
+    /**
+     * 查询数据库角色信息
+     *
+     * 查询数据库角色信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseUserRoleRequest 请求对象
+     * @return AsyncInvoker<ListDatabaseUserRoleRequest, ListDatabaseUserRoleResponse>
+     */
+    public AsyncInvoker<ListDatabaseUserRoleRequest, ListDatabaseUserRoleResponse> listDatabaseUserRoleAsyncInvoker(
+        ListDatabaseUserRoleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listDatabaseUserRole, hcClient);
+    }
+
+    /**
      * 查询数据库SCHEMA列表
      *
      * 查询指定实例的数据库SCHEMA列表。
@@ -5646,6 +5746,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改数据库owner
+     *
+     * 修改数据库owner
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatabaseOwnerRequest 请求对象
+     * @return CompletableFuture<UpdateDatabaseOwnerResponse>
+     */
+    public CompletableFuture<UpdateDatabaseOwnerResponse> updateDatabaseOwnerAsync(UpdateDatabaseOwnerRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateDatabaseOwner);
+    }
+
+    /**
+     * 修改数据库owner
+     *
+     * 修改数据库owner
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatabaseOwnerRequest 请求对象
+     * @return AsyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>
+     */
+    public AsyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> updateDatabaseOwnerAsyncInvoker(
+        UpdateDatabaseOwnerRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateDatabaseOwner, hcClient);
+    }
+
+    /**
      * 
      *
      * 数据库帐号授权。
@@ -5733,6 +5862,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse> updatePostgresqlDbUserCommentAsyncInvoker(
         UpdatePostgresqlDbUserCommentRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updatePostgresqlDbUserComment, hcClient);
+    }
+
+    /**
+     * 更新插件
+     *
+     * 在指定数据库上更新插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostgresqlExtensionRequest 请求对象
+     * @return CompletableFuture<UpdatePostgresqlExtensionResponse>
+     */
+    public CompletableFuture<UpdatePostgresqlExtensionResponse> updatePostgresqlExtensionAsync(
+        UpdatePostgresqlExtensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlExtension);
+    }
+
+    /**
+     * 更新插件
+     *
+     * 在指定数据库上更新插件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostgresqlExtensionRequest 请求对象
+     * @return AsyncInvoker<UpdatePostgresqlExtensionRequest, UpdatePostgresqlExtensionResponse>
+     */
+    public AsyncInvoker<UpdatePostgresqlExtensionRequest, UpdatePostgresqlExtensionResponse> updatePostgresqlExtensionAsyncInvoker(
+        UpdatePostgresqlExtensionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updatePostgresqlExtension, hcClient);
     }
 
     /**

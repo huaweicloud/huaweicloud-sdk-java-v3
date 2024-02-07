@@ -7187,6 +7187,50 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTags =
+        genForSetFactoryJobTags();
+
+    private static HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> genForSetFactoryJobTags() {
+        // basic
+        HttpRequestDef.Builder<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetFactoryJobTagsRequest.class, SetFactoryJobTagsResponse.class)
+                .withName("SetFactoryJobTags")
+                .withUri("/v2/{project_id}/factory/jobs/{job_name}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getJobName, SetFactoryJobTagsRequest::setJobName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getWorkspace, SetFactoryJobTagsRequest::setWorkspace));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getAuthorization,
+                SetFactoryJobTagsRequest::setAuthorization));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getHost, SetFactoryJobTagsRequest::setHost));
+        builder.<SetJobTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetJobTagsRequestBody.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getBody, SetFactoryJobTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAggregationLogicTableByIdRequest, ShowAggregationLogicTableByIdResponse> showAggregationLogicTableById =
         genForShowAggregationLogicTableById();
 
@@ -10684,50 +10728,6 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchPublishInfoRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchPublishInfoRequest::getDlmType, SearchPublishInfoRequest::setDlmType));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTags =
-        genForSetFactoryJobTags();
-
-    private static HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> genForSetFactoryJobTags() {
-        // basic
-        HttpRequestDef.Builder<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, SetFactoryJobTagsRequest.class, SetFactoryJobTagsResponse.class)
-                .withName("SetFactoryJobTags")
-                .withUri("/v2/{project_id}/factory/jobs/{job_name}/tags")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("job_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getJobName, SetFactoryJobTagsRequest::setJobName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getWorkspace, SetFactoryJobTagsRequest::setWorkspace));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getAuthorization,
-                SetFactoryJobTagsRequest::setAuthorization));
-        builder.<String>withRequestField("Host",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getHost, SetFactoryJobTagsRequest::setHost));
-        builder.<SetJobTagsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SetJobTagsRequestBody.class),
-            f -> f.withMarshaller(SetFactoryJobTagsRequest::getBody, SetFactoryJobTagsRequest::setBody));
 
         // response
 

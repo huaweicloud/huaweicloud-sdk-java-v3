@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateAutoJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceRequest;
@@ -201,6 +203,12 @@ import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDatabaseDataRequest;
@@ -1269,6 +1277,35 @@ public class EiHealthClient {
      */
     public SyncInvoker<CreateBackupRequest, CreateBackupResponse> createBackupInvoker(CreateBackupRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.createBackup, hcClient);
+    }
+
+    /**
+     * 创建分子聚类作业
+     *
+     * 创建分子聚类作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterJobRequest 请求对象
+     * @return CreateClusterJobResponse
+     */
+    public CreateClusterJobResponse createClusterJob(CreateClusterJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createClusterJob);
+    }
+
+    /**
+     * 创建分子聚类作业
+     *
+     * 创建分子聚类作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClusterJobRequest 请求对象
+     * @return SyncInvoker<CreateClusterJobRequest, CreateClusterJobResponse>
+     */
+    public SyncInvoker<CreateClusterJobRequest, CreateClusterJobResponse> createClusterJobInvoker(
+        CreateClusterJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.createClusterJob, hcClient);
     }
 
     /**
@@ -2811,6 +2848,93 @@ public class EiHealthClient {
      */
     public SyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobInvoker(ExecuteJobRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.executeJob, hcClient);
+    }
+
+    /**
+     * 将传入的蛋白和小分子拼接成复合物结构
+     *
+     * 将传入的蛋白和小分子拼接成复合物结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateComplexCombineRequest 请求对象
+     * @return GenerateComplexCombineResponse
+     */
+    public GenerateComplexCombineResponse generateComplexCombine(GenerateComplexCombineRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.generateComplexCombine);
+    }
+
+    /**
+     * 将传入的蛋白和小分子拼接成复合物结构
+     *
+     * 将传入的蛋白和小分子拼接成复合物结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateComplexCombineRequest 请求对象
+     * @return SyncInvoker<GenerateComplexCombineRequest, GenerateComplexCombineResponse>
+     */
+    public SyncInvoker<GenerateComplexCombineRequest, GenerateComplexCombineResponse> generateComplexCombineInvoker(
+        GenerateComplexCombineRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.generateComplexCombine, hcClient);
+    }
+
+    /**
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     *
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GeneratePocketFileRequest 请求对象
+     * @return GeneratePocketFileResponse
+     */
+    public GeneratePocketFileResponse generatePocketFile(GeneratePocketFileRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.generatePocketFile);
+    }
+
+    /**
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     *
+     * 根据center、size、padding参数生成可渲染的口袋文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GeneratePocketFileRequest 请求对象
+     * @return SyncInvoker<GeneratePocketFileRequest, GeneratePocketFileResponse>
+     */
+    public SyncInvoker<GeneratePocketFileRequest, GeneratePocketFileResponse> generatePocketFileInvoker(
+        GeneratePocketFileRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.generatePocketFile, hcClient);
+    }
+
+    /**
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     *
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSurfacePointsRequest 请求对象
+     * @return GenerateSurfacePointsResponse
+     */
+    public GenerateSurfacePointsResponse generateSurfacePoints(GenerateSurfacePointsRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.generateSurfacePoints);
+    }
+
+    /**
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     *
+     * 根据表面离散点坐标集生成可渲染的文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSurfacePointsRequest 请求对象
+     * @return SyncInvoker<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse>
+     */
+    public SyncInvoker<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse> generateSurfacePointsInvoker(
+        GenerateSurfacePointsRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.generateSurfacePoints, hcClient);
     }
 
     /**

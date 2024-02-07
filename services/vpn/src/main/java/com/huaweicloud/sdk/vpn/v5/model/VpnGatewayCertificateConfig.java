@@ -143,7 +143,7 @@ public class VpnGatewayCertificateConfig {
     }
 
     /**
-     * 签名证书颁发者，国密证书时为签名证书颁发者
+     * 证书颁发者，国密证书时为签名证书颁发者
      * @return issuer
      */
     public String getIssuer() {
@@ -160,7 +160,7 @@ public class VpnGatewayCertificateConfig {
     }
 
     /**
-     * 签名证书签名算法，国密证书时为签名证书签名算法
+     * 证书签名算法，国密证书时为签名证书签名算法
      * @return signatureAlgorithm
      */
     public String getSignatureAlgorithm() {
@@ -194,7 +194,7 @@ public class VpnGatewayCertificateConfig {
     }
 
     /**
-     * 签名证书主题，国密证书时为签名证书主题
+     * 证书主题，国密证书时为签名证书主题
      * @return certificateSubject
      */
     public String getCertificateSubject() {
@@ -211,7 +211,7 @@ public class VpnGatewayCertificateConfig {
     }
 
     /**
-     * 签名证书过期时间，国密证书时为签名证书过期时间
+     * 证书过期时间，国密证书时为签名证书过期时间
      * @return certificateExpireTime
      */
     public OffsetDateTime getCertificateExpireTime() {

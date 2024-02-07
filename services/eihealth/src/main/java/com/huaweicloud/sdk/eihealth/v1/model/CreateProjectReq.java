@@ -33,6 +33,16 @@ public class CreateProjectReq {
 
     private Boolean isCore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_new_bucket")
+
+    private Boolean isNewBucket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_name")
+
+    private String bucketName;
+
     public CreateProjectReq withDescription(String description) {
         this.description = description;
         return this;
@@ -106,7 +116,7 @@ public class CreateProjectReq {
     }
 
     /**
-     * 标签
+     * 是否核心项目
      * @return isCore
      */
     public Boolean getIsCore() {
@@ -115,6 +125,40 @@ public class CreateProjectReq {
 
     public void setIsCore(Boolean isCore) {
         this.isCore = isCore;
+    }
+
+    public CreateProjectReq withIsNewBucket(Boolean isNewBucket) {
+        this.isNewBucket = isNewBucket;
+        return this;
+    }
+
+    /**
+     * 是否新桶, 仅气象支持该字段
+     * @return isNewBucket
+     */
+    public Boolean getIsNewBucket() {
+        return isNewBucket;
+    }
+
+    public void setIsNewBucket(Boolean isNewBucket) {
+        this.isNewBucket = isNewBucket;
+    }
+
+    public CreateProjectReq withBucketName(String bucketName) {
+        this.bucketName = bucketName;
+        return this;
+    }
+
+    /**
+     * 桶名, 仅气象支持该字段
+     * @return bucketName
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
     }
 
     @Override
@@ -127,12 +171,13 @@ public class CreateProjectReq {
         }
         CreateProjectReq that = (CreateProjectReq) obj;
         return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.isCore, that.isCore);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.isCore, that.isCore)
+            && Objects.equals(this.isNewBucket, that.isNewBucket) && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, name, tags, isCore);
+        return Objects.hash(description, name, tags, isCore, isNewBucket, bucketName);
     }
 
     @Override
@@ -143,6 +188,8 @@ public class CreateProjectReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
+        sb.append("    isNewBucket: ").append(toIndentedString(isNewBucket)).append("\n");
+        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

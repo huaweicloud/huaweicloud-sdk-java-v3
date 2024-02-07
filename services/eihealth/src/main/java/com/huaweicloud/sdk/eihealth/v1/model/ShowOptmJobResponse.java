@@ -59,6 +59,11 @@ public class ShowOptmJobResponse extends SdkResponse {
 
     private List<BasicDrugModel> models = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_result")
+
+    private ClusterJobRsp clusterResult;
+
     public ShowOptmJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -289,6 +294,32 @@ public class ShowOptmJobResponse extends SdkResponse {
         this.models = models;
     }
 
+    public ShowOptmJobResponse withClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+        return this;
+    }
+
+    public ShowOptmJobResponse withClusterResult(Consumer<ClusterJobRsp> clusterResultSetter) {
+        if (this.clusterResult == null) {
+            this.clusterResult = new ClusterJobRsp();
+            clusterResultSetter.accept(this.clusterResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusterResult
+     * @return clusterResult
+     */
+    public ClusterJobRsp getClusterResult() {
+        return clusterResult;
+    }
+
+    public void setClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -304,7 +335,7 @@ public class ShowOptmJobResponse extends SdkResponse {
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
             && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
-            && Objects.equals(this.models, that.models);
+            && Objects.equals(this.models, that.models) && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
@@ -317,7 +348,8 @@ public class ShowOptmJobResponse extends SdkResponse {
             weakConstraints,
             strongConstraints,
             samplerMixinWeight,
-            models);
+            models,
+            clusterResult);
     }
 
     @Override
@@ -333,6 +365,7 @@ public class ShowOptmJobResponse extends SdkResponse {
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
         sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");
         sb.append("    models: ").append(toIndentedString(models)).append("\n");
+        sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.eihealth.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -75,6 +77,21 @@ public class ModelDto {
     @JsonProperty(value = "failed_message")
 
     private String failedMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "losses")
+
+    private List<Float> losses = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metrics")
+
+    private List<ModelMetric> metrics = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ModelMetric")
+
+    private ModelDtoModelMetric modelMetric;
 
     public ModelDto withName(String name) {
         this.name = name;
@@ -315,6 +332,98 @@ public class ModelDto {
         this.failedMessage = failedMessage;
     }
 
+    public ModelDto withLosses(List<Float> losses) {
+        this.losses = losses;
+        return this;
+    }
+
+    public ModelDto addLossesItem(Float lossesItem) {
+        if (this.losses == null) {
+            this.losses = new ArrayList<>();
+        }
+        this.losses.add(lossesItem);
+        return this;
+    }
+
+    public ModelDto withLosses(Consumer<List<Float>> lossesSetter) {
+        if (this.losses == null) {
+            this.losses = new ArrayList<>();
+        }
+        lossesSetter.accept(this.losses);
+        return this;
+    }
+
+    /**
+     * 模型训练loss信息
+     * @return losses
+     */
+    public List<Float> getLosses() {
+        return losses;
+    }
+
+    public void setLosses(List<Float> losses) {
+        this.losses = losses;
+    }
+
+    public ModelDto withMetrics(List<ModelMetric> metrics) {
+        this.metrics = metrics;
+        return this;
+    }
+
+    public ModelDto addMetricsItem(ModelMetric metricsItem) {
+        if (this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
+        this.metrics.add(metricsItem);
+        return this;
+    }
+
+    public ModelDto withMetrics(Consumer<List<ModelMetric>> metricsSetter) {
+        if (this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
+        metricsSetter.accept(this.metrics);
+        return this;
+    }
+
+    /**
+     * 模型评估指标
+     * @return metrics
+     */
+    public List<ModelMetric> getMetrics() {
+        return metrics;
+    }
+
+    public void setMetrics(List<ModelMetric> metrics) {
+        this.metrics = metrics;
+    }
+
+    public ModelDto withModelMetric(ModelDtoModelMetric modelMetric) {
+        this.modelMetric = modelMetric;
+        return this;
+    }
+
+    public ModelDto withModelMetric(Consumer<ModelDtoModelMetric> modelMetricSetter) {
+        if (this.modelMetric == null) {
+            this.modelMetric = new ModelDtoModelMetric();
+            modelMetricSetter.accept(this.modelMetric);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get modelMetric
+     * @return modelMetric
+     */
+    public ModelDtoModelMetric getModelMetric() {
+        return modelMetric;
+    }
+
+    public void setModelMetric(ModelDtoModelMetric modelMetric) {
+        this.modelMetric = modelMetric;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -330,7 +439,8 @@ public class ModelDto {
             && Objects.equals(this.status, that.status) && Objects.equals(this.shareable, that.shareable)
             && Objects.equals(this.dataQuantity, that.dataQuantity) && Objects.equals(this.file, that.file)
             && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.failedMessage, that.failedMessage);
+            && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.losses, that.losses)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.modelMetric, that.modelMetric);
     }
 
     @Override
@@ -347,7 +457,10 @@ public class ModelDto {
             file,
             valueRange,
             description,
-            failedMessage);
+            failedMessage,
+            losses,
+            metrics,
+            modelMetric);
     }
 
     @Override
@@ -367,6 +480,9 @@ public class ModelDto {
         sb.append("    valueRange: ").append(toIndentedString(valueRange)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    failedMessage: ").append(toIndentedString(failedMessage)).append("\n");
+        sb.append("    losses: ").append(toIndentedString(losses)).append("\n");
+        sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
+        sb.append("    modelMetric: ").append(toIndentedString(modelMetric)).append("\n");
         sb.append("}");
         return sb.toString();
     }

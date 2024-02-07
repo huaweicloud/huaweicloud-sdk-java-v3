@@ -33,6 +33,9 @@ public class VpnRegion {
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://vpn.ap-southeast-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://vpn.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://vpn.sa-brazil-1.myhuaweicloud.com");
 
     public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://vpn.la-south-2.myhuaweicloud.com");
@@ -43,6 +46,20 @@ public class VpnRegion {
 
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://vpn.cn-southwest-2.myhuaweicloud.com");
+
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://vpn.ae-ad-1.myhuaweicloud.com");
+
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://vpn.eu-west-101.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://vpn.tr-west-1.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://vpn.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://vpn.me-east-1.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://vpn.cn-east-5.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://vpn.af-south-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("VPN");
 
@@ -58,11 +75,19 @@ public class VpnRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-south-2", LA_SOUTH_2);
         map.put("la-north-2", LA_NORTH_2);
         map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("ae-ad-1", AE_AD_1);
+        map.put("eu-west-101", EU_WEST_101);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

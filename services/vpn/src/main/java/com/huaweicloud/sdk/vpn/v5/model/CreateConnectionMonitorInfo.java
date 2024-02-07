@@ -80,7 +80,7 @@ public class CreateConnectionMonitorInfo {
     }
 
     /**
-     * 网关连通性，取值范围：gateway
+     * 监控类型，取值范围：gateway
      * @return type
      */
     public String getType() {

@@ -26,6 +26,11 @@ public class ExtensionsResponse {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_update")
+
+    private String versionUpdate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared_preload_libraries")
 
     private String sharedPreloadLibraries;
@@ -91,6 +96,23 @@ public class ExtensionsResponse {
         this.version = version;
     }
 
+    public ExtensionsResponse withVersionUpdate(String versionUpdate) {
+        this.versionUpdate = versionUpdate;
+        return this;
+    }
+
+    /**
+     * 可更新插件版本
+     * @return versionUpdate
+     */
+    public String getVersionUpdate() {
+        return versionUpdate;
+    }
+
+    public void setVersionUpdate(String versionUpdate) {
+        this.versionUpdate = versionUpdate;
+    }
+
     public ExtensionsResponse withSharedPreloadLibraries(String sharedPreloadLibraries) {
         this.sharedPreloadLibraries = sharedPreloadLibraries;
         return this;
@@ -152,14 +174,14 @@ public class ExtensionsResponse {
         }
         ExtensionsResponse that = (ExtensionsResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.databaseName, that.databaseName)
-            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.versionUpdate, that.versionUpdate)
             && Objects.equals(this.sharedPreloadLibraries, that.sharedPreloadLibraries)
             && Objects.equals(this.created, that.created) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, databaseName, version, sharedPreloadLibraries, created, description);
+        return Objects.hash(name, databaseName, version, versionUpdate, sharedPreloadLibraries, created, description);
     }
 
     @Override
@@ -169,6 +191,7 @@ public class ExtensionsResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    versionUpdate: ").append(toIndentedString(versionUpdate)).append("\n");
         sb.append("    sharedPreloadLibraries: ").append(toIndentedString(sharedPreloadLibraries)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

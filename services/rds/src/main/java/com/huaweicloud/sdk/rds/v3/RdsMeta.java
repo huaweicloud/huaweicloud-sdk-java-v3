@@ -93,6 +93,7 @@ import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReqNew;
 import com.huaweicloud.sdk.rds.v3.model.DataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
+import com.huaweicloud.sdk.rds.v3.model.DatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.DbUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.DbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
@@ -133,6 +134,10 @@ import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.EnlargeVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ErrorlogForLtsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.FailoverModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.FailoverRequest;
@@ -160,6 +165,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
@@ -295,8 +302,6 @@ import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorRequest;
-import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyRequest;
-import com.huaweicloud.sdk.rds.v3.model.RestartRdSforMysqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistingInstanceRequestBody;
@@ -344,6 +349,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesProxyRestartRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesProxyRestartResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
@@ -446,6 +453,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDBShrinkRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseOwnerRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseOwnerRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseOwnerResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseReq;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseResponse;
@@ -475,6 +485,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
@@ -3302,42 +3314,6 @@ public class RdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> restartRdSforMysqlProxy =
-        genForRestartRdSforMysqlProxy();
-
-    private static HttpRequestDef<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> genForRestartRdSforMysqlProxy() {
-        // basic
-        HttpRequestDef.Builder<RestartRdSforMysqlProxyRequest, RestartRdSforMysqlProxyResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, RestartRdSforMysqlProxyRequest.class, RestartRdSforMysqlProxyResponse.class)
-            .withName("RestartRdSforMysqlProxy")
-            .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getInstanceId,
-                RestartRdSforMysqlProxyRequest::setInstanceId));
-        builder.<String>withRequestField("proxy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getProxyId,
-                RestartRdSforMysqlProxyRequest::setProxyId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartRdSforMysqlProxyRequest::getXLanguage,
-                RestartRdSforMysqlProxyRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RestoreExistInstanceRequest, RestoreExistInstanceResponse> restoreExistInstance =
         genForRestoreExistInstance();
 
@@ -3601,6 +3577,43 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BinlogClearPolicyRequestBody.class),
             f -> f.withMarshaller(SetBinlogClearPolicyRequest::getBody, SetBinlogClearPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetInstancesProxyRestartRequest, SetInstancesProxyRestartResponse> setInstancesProxyRestart =
+        genForSetInstancesProxyRestart();
+
+    private static HttpRequestDef<SetInstancesProxyRestartRequest, SetInstancesProxyRestartResponse> genForSetInstancesProxyRestart() {
+        // basic
+        HttpRequestDef.Builder<SetInstancesProxyRestartRequest, SetInstancesProxyRestartResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SetInstancesProxyRestartRequest.class, SetInstancesProxyRestartResponse.class)
+                .withName("SetInstancesProxyRestart")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesProxyRestartRequest::getInstanceId,
+                SetInstancesProxyRestartRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesProxyRestartRequest::getProxyId,
+                SetInstancesProxyRestartRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesProxyRestartRequest::getXLanguage,
+                SetInstancesProxyRestartRequest::setXLanguage));
 
         // response
 
@@ -6203,6 +6216,101 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecutePrivilegeDatabaseUserRoleRequest, ExecutePrivilegeDatabaseUserRoleResponse> executePrivilegeDatabaseUserRole =
+        genForExecutePrivilegeDatabaseUserRole();
+
+    private static HttpRequestDef<ExecutePrivilegeDatabaseUserRoleRequest, ExecutePrivilegeDatabaseUserRoleResponse> genForExecutePrivilegeDatabaseUserRole() {
+        // basic
+        HttpRequestDef.Builder<ExecutePrivilegeDatabaseUserRoleRequest, ExecutePrivilegeDatabaseUserRoleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecutePrivilegeDatabaseUserRoleRequest.class,
+                    ExecutePrivilegeDatabaseUserRoleResponse.class)
+                .withName("ExecutePrivilegeDatabaseUserRole")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-user-role")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecutePrivilegeDatabaseUserRoleRequest::getInstanceId,
+                ExecutePrivilegeDatabaseUserRoleRequest::setInstanceId));
+        builder.<DatabaseUserRoleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DatabaseUserRoleRequest.class),
+            f -> f.withMarshaller(ExecutePrivilegeDatabaseUserRoleRequest::getBody,
+                ExecutePrivilegeDatabaseUserRoleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteRevokeDatabaseUserRoleRequest, ExecuteRevokeDatabaseUserRoleResponse> executeRevokeDatabaseUserRole =
+        genForExecuteRevokeDatabaseUserRole();
+
+    private static HttpRequestDef<ExecuteRevokeDatabaseUserRoleRequest, ExecuteRevokeDatabaseUserRoleResponse> genForExecuteRevokeDatabaseUserRole() {
+        // basic
+        HttpRequestDef.Builder<ExecuteRevokeDatabaseUserRoleRequest, ExecuteRevokeDatabaseUserRoleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    ExecuteRevokeDatabaseUserRoleRequest.class,
+                    ExecuteRevokeDatabaseUserRoleResponse.class)
+                .withName("ExecuteRevokeDatabaseUserRole")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-user-role")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteRevokeDatabaseUserRoleRequest::getInstanceId,
+                ExecuteRevokeDatabaseUserRoleRequest::setInstanceId));
+        builder.<DatabaseUserRoleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DatabaseUserRoleRequest.class),
+            f -> f.withMarshaller(ExecuteRevokeDatabaseUserRoleRequest::getBody,
+                ExecuteRevokeDatabaseUserRoleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabaseUserRoleRequest, ListDatabaseUserRoleResponse> listDatabaseUserRole =
+        genForListDatabaseUserRole();
+
+    private static HttpRequestDef<ListDatabaseUserRoleRequest, ListDatabaseUserRoleResponse> genForListDatabaseUserRole() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseUserRoleRequest, ListDatabaseUserRoleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatabaseUserRoleRequest.class, ListDatabaseUserRoleResponse.class)
+            .withName("ListDatabaseUserRole")
+            .withUri("/v3/{project_id}/instances/{instance_id}/roles")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRoleRequest::getInstanceId,
+                ListDatabaseUserRoleRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUserRoleRequest::getUserName, ListDatabaseUserRoleRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse> listPostgresqlDatabaseSchemas =
         genForListPostgresqlDatabaseSchemas();
 
@@ -6695,6 +6803,35 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> updateDatabaseOwner =
+        genForUpdateDatabaseOwner();
+
+    private static HttpRequestDef<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> genForUpdateDatabaseOwner() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateDatabaseOwnerRequest.class, UpdateDatabaseOwnerResponse.class)
+                .withName("UpdateDatabaseOwner")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/owner")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabaseOwnerRequest::getInstanceId,
+                UpdateDatabaseOwnerRequest::setInstanceId));
+        builder.<UpdateDatabaseOwnerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDatabaseOwnerRequestBody.class),
+            f -> f.withMarshaller(UpdateDatabaseOwnerRequest::getBody, UpdateDatabaseOwnerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> updateDbUserPrivilege =
         genForUpdateDbUserPrivilege();
 
@@ -6795,6 +6932,51 @@ public class RdsMeta {
                 UpdatePostgresqlDbUserCommentRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePostgresqlExtensionRequest, UpdatePostgresqlExtensionResponse> updatePostgresqlExtension =
+        genForUpdatePostgresqlExtension();
+
+    private static HttpRequestDef<UpdatePostgresqlExtensionRequest, UpdatePostgresqlExtensionResponse> genForUpdatePostgresqlExtension() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostgresqlExtensionRequest, UpdatePostgresqlExtensionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePostgresqlExtensionRequest.class,
+                    UpdatePostgresqlExtensionResponse.class)
+                .withName("UpdatePostgresqlExtension")
+                .withUri("/v3/{project_id}/instances/{instance_id}/extensions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlExtensionRequest::getInstanceId,
+                UpdatePostgresqlExtensionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlExtensionRequest::getXLanguage,
+                UpdatePostgresqlExtensionRequest::setXLanguage));
+        builder.<ExtensionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtensionRequest.class),
+            f -> f.withMarshaller(UpdatePostgresqlExtensionRequest::getBody,
+                UpdatePostgresqlExtensionRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePostgresqlExtensionResponse::getBody,
+                UpdatePostgresqlExtensionResponse::setBody));
 
         return builder.build();
     }

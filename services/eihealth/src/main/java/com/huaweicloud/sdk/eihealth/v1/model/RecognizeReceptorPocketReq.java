@@ -21,7 +21,7 @@ public class RecognizeReceptorPocketReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receptor_file")
 
-    private ReceptorDrugFile receptorFile;
+    private ReceptorDrugFileReq receptorFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligand_file")
@@ -50,14 +50,14 @@ public class RecognizeReceptorPocketReq {
         this.mode = mode;
     }
 
-    public RecognizeReceptorPocketReq withReceptorFile(ReceptorDrugFile receptorFile) {
+    public RecognizeReceptorPocketReq withReceptorFile(ReceptorDrugFileReq receptorFile) {
         this.receptorFile = receptorFile;
         return this;
     }
 
-    public RecognizeReceptorPocketReq withReceptorFile(Consumer<ReceptorDrugFile> receptorFileSetter) {
+    public RecognizeReceptorPocketReq withReceptorFile(Consumer<ReceptorDrugFileReq> receptorFileSetter) {
         if (this.receptorFile == null) {
-            this.receptorFile = new ReceptorDrugFile();
+            this.receptorFile = new ReceptorDrugFileReq();
             receptorFileSetter.accept(this.receptorFile);
         }
 
@@ -68,11 +68,11 @@ public class RecognizeReceptorPocketReq {
      * Get receptorFile
      * @return receptorFile
      */
-    public ReceptorDrugFile getReceptorFile() {
+    public ReceptorDrugFileReq getReceptorFile() {
         return receptorFile;
     }
 
-    public void setReceptorFile(ReceptorDrugFile receptorFile) {
+    public void setReceptorFile(ReceptorDrugFileReq receptorFile) {
         this.receptorFile = receptorFile;
     }
 

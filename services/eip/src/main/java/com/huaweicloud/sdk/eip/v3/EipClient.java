@@ -11,6 +11,10 @@ import com.huaweicloud.sdk.eip.v3.model.AttachShareBandwidthRequest;
 import com.huaweicloud.sdk.eip.v3.model.AttachShareBandwidthResponse;
 import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesRequest;
 import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesResponse;
+import com.huaweicloud.sdk.eip.v3.model.CreateTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.CreateTenantVpcIgwResponse;
+import com.huaweicloud.sdk.eip.v3.model.DeleteTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.DeleteTenantVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpRequest;
 import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpResponse;
 import com.huaweicloud.sdk.eip.v3.model.DetachShareBandwidthRequest;
@@ -29,6 +33,8 @@ import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListProjectGeipBindingsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListProjectGeipBindingsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolRequest;
@@ -37,12 +43,18 @@ import com.huaweicloud.sdk.eip.v3.model.ListPublicipsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListTenantVpcIgwsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListTenantVpcIgwsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdateTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdateTenantVpcIgwResponse;
 
 public class EipClient {
 
@@ -286,6 +298,180 @@ public class EipClient {
     public SyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPoolInvoker(
         ShowPublicipPoolRequest request) {
         return new SyncInvoker<>(request, EipMeta.showPublicipPool, hcClient);
+    }
+
+    /**
+     * 查询GEIP与实例绑定关系的租户列表
+     *
+     * 查询GEIP与实例绑定关系的租户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectGeipBindingsRequest 请求对象
+     * @return ListProjectGeipBindingsResponse
+     */
+    public ListProjectGeipBindingsResponse listProjectGeipBindings(ListProjectGeipBindingsRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.listProjectGeipBindings);
+    }
+
+    /**
+     * 查询GEIP与实例绑定关系的租户列表
+     *
+     * 查询GEIP与实例绑定关系的租户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectGeipBindingsRequest 请求对象
+     * @return SyncInvoker<ListProjectGeipBindingsRequest, ListProjectGeipBindingsResponse>
+     */
+    public SyncInvoker<ListProjectGeipBindingsRequest, ListProjectGeipBindingsResponse> listProjectGeipBindingsInvoker(
+        ListProjectGeipBindingsRequest request) {
+        return new SyncInvoker<>(request, EipMeta.listProjectGeipBindings, hcClient);
+    }
+
+    /**
+     * 创建虚拟igw
+     *
+     * 创建虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTenantVpcIgwRequest 请求对象
+     * @return CreateTenantVpcIgwResponse
+     */
+    public CreateTenantVpcIgwResponse createTenantVpcIgw(CreateTenantVpcIgwRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.createTenantVpcIgw);
+    }
+
+    /**
+     * 创建虚拟igw
+     *
+     * 创建虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTenantVpcIgwRequest 请求对象
+     * @return SyncInvoker<CreateTenantVpcIgwRequest, CreateTenantVpcIgwResponse>
+     */
+    public SyncInvoker<CreateTenantVpcIgwRequest, CreateTenantVpcIgwResponse> createTenantVpcIgwInvoker(
+        CreateTenantVpcIgwRequest request) {
+        return new SyncInvoker<>(request, EipMeta.createTenantVpcIgw, hcClient);
+    }
+
+    /**
+     * 删除虚拟igw
+     *
+     * 删除虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTenantVpcIgwRequest 请求对象
+     * @return DeleteTenantVpcIgwResponse
+     */
+    public DeleteTenantVpcIgwResponse deleteTenantVpcIgw(DeleteTenantVpcIgwRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.deleteTenantVpcIgw);
+    }
+
+    /**
+     * 删除虚拟igw
+     *
+     * 删除虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTenantVpcIgwRequest 请求对象
+     * @return SyncInvoker<DeleteTenantVpcIgwRequest, DeleteTenantVpcIgwResponse>
+     */
+    public SyncInvoker<DeleteTenantVpcIgwRequest, DeleteTenantVpcIgwResponse> deleteTenantVpcIgwInvoker(
+        DeleteTenantVpcIgwRequest request) {
+        return new SyncInvoker<>(request, EipMeta.deleteTenantVpcIgw, hcClient);
+    }
+
+    /**
+     * 查询指定租户下的虚拟igw列表
+     *
+     * 查询指定租户下的虚拟igw列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantVpcIgwsRequest 请求对象
+     * @return ListTenantVpcIgwsResponse
+     */
+    public ListTenantVpcIgwsResponse listTenantVpcIgws(ListTenantVpcIgwsRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.listTenantVpcIgws);
+    }
+
+    /**
+     * 查询指定租户下的虚拟igw列表
+     *
+     * 查询指定租户下的虚拟igw列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantVpcIgwsRequest 请求对象
+     * @return SyncInvoker<ListTenantVpcIgwsRequest, ListTenantVpcIgwsResponse>
+     */
+    public SyncInvoker<ListTenantVpcIgwsRequest, ListTenantVpcIgwsResponse> listTenantVpcIgwsInvoker(
+        ListTenantVpcIgwsRequest request) {
+        return new SyncInvoker<>(request, EipMeta.listTenantVpcIgws, hcClient);
+    }
+
+    /**
+     * 查询虚拟igw详情
+     *
+     * 查询虚拟igw详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInternalVpcIgwRequest 请求对象
+     * @return ShowInternalVpcIgwResponse
+     */
+    public ShowInternalVpcIgwResponse showInternalVpcIgw(ShowInternalVpcIgwRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.showInternalVpcIgw);
+    }
+
+    /**
+     * 查询虚拟igw详情
+     *
+     * 查询虚拟igw详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInternalVpcIgwRequest 请求对象
+     * @return SyncInvoker<ShowInternalVpcIgwRequest, ShowInternalVpcIgwResponse>
+     */
+    public SyncInvoker<ShowInternalVpcIgwRequest, ShowInternalVpcIgwResponse> showInternalVpcIgwInvoker(
+        ShowInternalVpcIgwRequest request) {
+        return new SyncInvoker<>(request, EipMeta.showInternalVpcIgw, hcClient);
+    }
+
+    /**
+     * 修改虚拟igw
+     *
+     * 修改虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantVpcIgwRequest 请求对象
+     * @return UpdateTenantVpcIgwResponse
+     */
+    public UpdateTenantVpcIgwResponse updateTenantVpcIgw(UpdateTenantVpcIgwRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.updateTenantVpcIgw);
+    }
+
+    /**
+     * 修改虚拟igw
+     *
+     * 修改虚拟igw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantVpcIgwRequest 请求对象
+     * @return SyncInvoker<UpdateTenantVpcIgwRequest, UpdateTenantVpcIgwResponse>
+     */
+    public SyncInvoker<UpdateTenantVpcIgwRequest, UpdateTenantVpcIgwResponse> updateTenantVpcIgwInvoker(
+        UpdateTenantVpcIgwRequest request) {
+        return new SyncInvoker<>(request, EipMeta.updateTenantVpcIgw, hcClient);
     }
 
     /**

@@ -3,14 +3,29 @@ package com.huaweicloud.sdk.cdn.v2;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteTagsRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.DisableDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DisableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
@@ -23,6 +38,8 @@ import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameRequest;
@@ -37,16 +54,31 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessBody;
+import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessResponse;
+import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
+import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -73,6 +105,51 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCopyDRequestBody.class),
             f -> f.withMarshaller(BatchCopyDomainRequest::getBody, BatchCopyDomainRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
+        genForBatchDeleteTags();
+
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
+                .withName("BatchDeleteTags")
+                .withUri("/v1.0/cdn/configuration/tags/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
+
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
+                .withName("CreateDomain")
+                .withUri("/v1.0/cdn/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDomainRequestBody.class),
+            f -> f.withMarshaller(CreateDomainRequest::getBody, CreateDomainRequest::setBody));
 
         // response
 
@@ -131,6 +208,85 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RefreshTaskRequest.class),
             f -> f.withMarshaller(CreateRefreshTasksRequest::getBody, CreateRefreshTasksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
+
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
+                .withName("CreateTags")
+                .withUri("/v1.0/cdn/configuration/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTagsRequestBody.class),
+            f -> f.withMarshaller(CreateTagsRequest::getBody, CreateTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
+
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
+                .withName("DeleteDomain")
+                .withUri("/v1.0/cdn/domains/{domain_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainRequest::getDomainId, DeleteDomainRequest::setDomainId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainRequest::getEnterpriseProjectId,
+                DeleteDomainRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableDomainRequest, DisableDomainResponse> disableDomain =
+        genForDisableDomain();
+
+    private static HttpRequestDef<DisableDomainRequest, DisableDomainResponse> genForDisableDomain() {
+        // basic
+        HttpRequestDef.Builder<DisableDomainRequest, DisableDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DisableDomainRequest.class, DisableDomainResponse.class)
+                .withName("DisableDomain")
+                .withUri("/v1.0/cdn/domains/{domain_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDomainRequest::getDomainId, DisableDomainRequest::setDomainId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDomainRequest::getEnterpriseProjectId,
+                DisableDomainRequest::setEnterpriseProjectId));
 
         // response
 
@@ -278,6 +434,34 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadStatisticsExcelRequest::getExcelType,
                 DownloadStatisticsExcelRequest::setExcelType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDomainRequest, EnableDomainResponse> enableDomain = genForEnableDomain();
+
+    private static HttpRequestDef<EnableDomainRequest, EnableDomainResponse> genForEnableDomain() {
+        // basic
+        HttpRequestDef.Builder<EnableDomainRequest, EnableDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, EnableDomainRequest.class, EnableDomainResponse.class)
+                .withName("EnableDomain")
+                .withUri("/v1.0/cdn/domains/{domain_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDomainRequest::getDomainId, EnableDomainRequest::setDomainId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDomainRequest::getEnterpriseProjectId,
+                EnableDomainRequest::setEnterpriseProjectId));
 
         // response
 
@@ -473,6 +657,57 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBandwidthCalcRequest::getCalcType, ShowBandwidthCalcRequest::setCalcType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfo =
+        genForShowCertificatesHttpsInfo();
+
+    private static HttpRequestDef<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> genForShowCertificatesHttpsInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCertificatesHttpsInfoRequest.class,
+                    ShowCertificatesHttpsInfoResponse.class)
+                .withName("ShowCertificatesHttpsInfo")
+                .withUri("/v1.0/cdn/domains/https-certificate-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageSize,
+                ShowCertificatesHttpsInfoRequest::setPageSize));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getPageNumber,
+                ShowCertificatesHttpsInfoRequest::setPageNumber));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getDomainName,
+                ShowCertificatesHttpsInfoRequest::setDomainName));
+        builder.<String>withRequestField("user_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getUserDomainId,
+                ShowCertificatesHttpsInfoRequest::setUserDomainId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoRequest::getEnterpriseProjectId,
+                ShowCertificatesHttpsInfoRequest::setEnterpriseProjectId));
 
         // response
 
@@ -852,6 +1087,34 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfo = genForShowIpInfo();
+
+    private static HttpRequestDef<ShowIpInfoRequest, ShowIpInfoResponse> genForShowIpInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowIpInfoRequest, ShowIpInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIpInfoRequest.class, ShowIpInfoResponse.class)
+                .withName("ShowIpInfo")
+                .withUri("/v1.0/cdn/ip-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpInfoRequest::getEnterpriseProjectId,
+                ShowIpInfoRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("ips",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpInfoRequest::getIps, ShowIpInfoRequest::setIps));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLogsRequest, ShowLogsResponse> showLogs = genForShowLogs();
 
     private static HttpRequestDef<ShowLogsRequest, ShowLogsResponse> genForShowLogs() {
@@ -893,6 +1156,28 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLogsRequest::getEnterpriseProjectId, ShowLogsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForShowTags();
+
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForShowTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
+                .withName("ShowTags")
+                .withUri("/v1.0/cdn/configuration/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagsRequest::getResourceId, ShowTagsRequest::setResourceId));
 
         // response
 
@@ -1060,6 +1345,33 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVerifyDomainOwnerInfoRequest, ShowVerifyDomainOwnerInfoResponse> showVerifyDomainOwnerInfo =
+        genForShowVerifyDomainOwnerInfo();
+
+    private static HttpRequestDef<ShowVerifyDomainOwnerInfoRequest, ShowVerifyDomainOwnerInfoResponse> genForShowVerifyDomainOwnerInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowVerifyDomainOwnerInfoRequest, ShowVerifyDomainOwnerInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVerifyDomainOwnerInfoRequest.class,
+                    ShowVerifyDomainOwnerInfoResponse.class)
+                .withName("ShowVerifyDomainOwnerInfo")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/domain-verifies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVerifyDomainOwnerInfoRequest::getDomainName,
+                ShowVerifyDomainOwnerInfoRequest::setDomainName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfig =
         genForUpdateDomainFullConfig();
 
@@ -1089,6 +1401,106 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ModifyDomainConfigRequestBody.class),
             f -> f.withMarshaller(UpdateDomainFullConfigRequest::getBody, UpdateDomainFullConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificates =
+        genForUpdateDomainMultiCertificates();
+
+    private static HttpRequestDef<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> genForUpdateDomainMultiCertificates() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDomainMultiCertificatesRequest.class,
+                    UpdateDomainMultiCertificatesResponse.class)
+                .withName("UpdateDomainMultiCertificates")
+                .withUri("/v1.0/cdn/domains/config-https-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getEnterpriseProjectId,
+                UpdateDomainMultiCertificatesRequest::setEnterpriseProjectId));
+        builder.<UpdateDomainMultiCertificatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDomainMultiCertificatesRequestBody.class),
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesRequest::getBody,
+                UpdateDomainMultiCertificatesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccess =
+        genForUpdatePrivateBucketAccess();
+
+    private static HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> genForUpdatePrivateBucketAccess() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePrivateBucketAccessRequest.class,
+                    UpdatePrivateBucketAccessResponse.class)
+                .withName("UpdatePrivateBucketAccess")
+                .withUri("/v1.0/cdn/domains/{domain_id}/private-bucket-access")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getDomainId,
+                UpdatePrivateBucketAccessRequest::setDomainId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getEnterpriseProjectId,
+                UpdatePrivateBucketAccessRequest::setEnterpriseProjectId));
+        builder.<UpdatePrivateBucketAccessBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePrivateBucketAccessBody.class),
+            f -> f.withMarshaller(UpdatePrivateBucketAccessRequest::getBody,
+                UpdatePrivateBucketAccessRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<VerifyDomainOwnerRequest, VerifyDomainOwnerResponse> verifyDomainOwner =
+        genForVerifyDomainOwner();
+
+    private static HttpRequestDef<VerifyDomainOwnerRequest, VerifyDomainOwnerResponse> genForVerifyDomainOwner() {
+        // basic
+        HttpRequestDef.Builder<VerifyDomainOwnerRequest, VerifyDomainOwnerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, VerifyDomainOwnerRequest.class, VerifyDomainOwnerResponse.class)
+                .withName("VerifyDomainOwner")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/verify-owner")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(VerifyDomainOwnerRequest::getDomainName, VerifyDomainOwnerRequest::setDomainName));
+        builder.<VerifyDomainOwnerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(VerifyDomainOwnerRequestBody.class),
+            f -> f.withMarshaller(VerifyDomainOwnerRequest::getBody, VerifyDomainOwnerRequest::setBody));
 
         // response
 

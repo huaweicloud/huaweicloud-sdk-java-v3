@@ -5085,6 +5085,33 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 设置作业标签
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetFactoryJobTagsRequest 请求对象
+     * @return CompletableFuture<SetFactoryJobTagsResponse>
+     */
+    public CompletableFuture<SetFactoryJobTagsResponse> setFactoryJobTagsAsync(SetFactoryJobTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.setFactoryJobTags);
+    }
+
+    /**
+     * 设置作业标签
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetFactoryJobTagsRequest 请求对象
+     * @return AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse>
+     */
+    public AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTagsAsyncInvoker(
+        SetFactoryJobTagsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.setFactoryJobTags, hcClient);
+    }
+
+    /**
      * 查看汇总表详情
      *
      * 通过id查看汇总表的详情信息
@@ -7858,33 +7885,6 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<SearchPublishInfoRequest, SearchPublishInfoResponse> searchPublishInfoAsyncInvoker(
         SearchPublishInfoRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.searchPublishInfo, hcClient);
-    }
-
-    /**
-     * 设置作业标签
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetFactoryJobTagsRequest 请求对象
-     * @return CompletableFuture<SetFactoryJobTagsResponse>
-     */
-    public CompletableFuture<SetFactoryJobTagsResponse> setFactoryJobTagsAsync(SetFactoryJobTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.setFactoryJobTags);
-    }
-
-    /**
-     * 设置作业标签
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetFactoryJobTagsRequest 请求对象
-     * @return AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse>
-     */
-    public AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTagsAsyncInvoker(
-        SetFactoryJobTagsRequest request) {
-        return new AsyncInvoker<>(request, DataArtsStudioMeta.setFactoryJobTags, hcClient);
     }
 
     /**

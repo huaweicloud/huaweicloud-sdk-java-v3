@@ -34,6 +34,11 @@ public class DomainsWithPort {
     private String businessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_domain_id")
+
+    private String userDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_status")
 
     private String domainStatus;
@@ -46,7 +51,12 @@ public class DomainsWithPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    private List<SourcesDomainConfig> sources = null;
+    private List<SourceWithPort> sources = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_origin_host")
+
+    private DomainOriginHost domainOriginHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_status")
@@ -59,9 +69,9 @@ public class DomainsWithPort {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "modify_time")
 
-    private Long updateTime;
+    private Long modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled")
@@ -72,6 +82,11 @@ public class DomainsWithPort {
     @JsonProperty(value = "locked")
 
     private Integer locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_refresh_preheat")
+
+    private Integer autoRefreshPreheat;
 
     /**
      * 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
@@ -154,6 +169,36 @@ public class DomainsWithPort {
 
     private ServiceAreaEnum serviceArea;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "range_status")
+
+    private String rangeStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "follow_status")
+
+    private String followStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_status")
+
+    private String originStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "banned_reason")
+
+    private String bannedReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked_reason")
+
+    private String lockedReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public DomainsWithPort withId(String id) {
         this.id = id;
         return this;
@@ -205,6 +250,23 @@ public class DomainsWithPort {
         this.businessType = businessType;
     }
 
+    public DomainsWithPort withUserDomainId(String userDomainId) {
+        this.userDomainId = userDomainId;
+        return this;
+    }
+
+    /**
+     * 域名所属用户的domain_id。
+     * @return userDomainId
+     */
+    public String getUserDomainId() {
+        return userDomainId;
+    }
+
+    public void setUserDomainId(String userDomainId) {
+        this.userDomainId = userDomainId;
+    }
+
     public DomainsWithPort withDomainStatus(String domainStatus) {
         this.domainStatus = domainStatus;
         return this;
@@ -239,12 +301,12 @@ public class DomainsWithPort {
         this.cname = cname;
     }
 
-    public DomainsWithPort withSources(List<SourcesDomainConfig> sources) {
+    public DomainsWithPort withSources(List<SourceWithPort> sources) {
         this.sources = sources;
         return this;
     }
 
-    public DomainsWithPort addSourcesItem(SourcesDomainConfig sourcesItem) {
+    public DomainsWithPort addSourcesItem(SourceWithPort sourcesItem) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -252,7 +314,7 @@ public class DomainsWithPort {
         return this;
     }
 
-    public DomainsWithPort withSources(Consumer<List<SourcesDomainConfig>> sourcesSetter) {
+    public DomainsWithPort withSources(Consumer<List<SourceWithPort>> sourcesSetter) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -264,12 +326,38 @@ public class DomainsWithPort {
      * 源站配置。
      * @return sources
      */
-    public List<SourcesDomainConfig> getSources() {
+    public List<SourceWithPort> getSources() {
         return sources;
     }
 
-    public void setSources(List<SourcesDomainConfig> sources) {
+    public void setSources(List<SourceWithPort> sources) {
         this.sources = sources;
+    }
+
+    public DomainsWithPort withDomainOriginHost(DomainOriginHost domainOriginHost) {
+        this.domainOriginHost = domainOriginHost;
+        return this;
+    }
+
+    public DomainsWithPort withDomainOriginHost(Consumer<DomainOriginHost> domainOriginHostSetter) {
+        if (this.domainOriginHost == null) {
+            this.domainOriginHost = new DomainOriginHost();
+            domainOriginHostSetter.accept(this.domainOriginHost);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get domainOriginHost
+     * @return domainOriginHost
+     */
+    public DomainOriginHost getDomainOriginHost() {
+        return domainOriginHost;
+    }
+
+    public void setDomainOriginHost(DomainOriginHost domainOriginHost) {
+        this.domainOriginHost = domainOriginHost;
     }
 
     public DomainsWithPort withHttpsStatus(Integer httpsStatus) {
@@ -306,21 +394,21 @@ public class DomainsWithPort {
         this.createTime = createTime;
     }
 
-    public DomainsWithPort withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public DomainsWithPort withModifyTime(Long modifyTime) {
+        this.modifyTime = modifyTime;
         return this;
     }
 
     /**
      * 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return updateTime
+     * @return modifyTime
      */
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getModifyTime() {
+        return modifyTime;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setModifyTime(Long modifyTime) {
+        this.modifyTime = modifyTime;
     }
 
     public DomainsWithPort withDisabled(Integer disabled) {
@@ -357,6 +445,23 @@ public class DomainsWithPort {
         this.locked = locked;
     }
 
+    public DomainsWithPort withAutoRefreshPreheat(Integer autoRefreshPreheat) {
+        this.autoRefreshPreheat = autoRefreshPreheat;
+        return this;
+    }
+
+    /**
+     * 自动刷新预热（0代表关闭；1代表打开）。
+     * @return autoRefreshPreheat
+     */
+    public Integer getAutoRefreshPreheat() {
+        return autoRefreshPreheat;
+    }
+
+    public void setAutoRefreshPreheat(Integer autoRefreshPreheat) {
+        this.autoRefreshPreheat = autoRefreshPreheat;
+    }
+
     public DomainsWithPort withServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
         return this;
@@ -374,6 +479,108 @@ public class DomainsWithPort {
         this.serviceArea = serviceArea;
     }
 
+    public DomainsWithPort withRangeStatus(String rangeStatus) {
+        this.rangeStatus = rangeStatus;
+        return this;
+    }
+
+    /**
+     * Range回源状态（off代表关闭 on代表开启）。
+     * @return rangeStatus
+     */
+    public String getRangeStatus() {
+        return rangeStatus;
+    }
+
+    public void setRangeStatus(String rangeStatus) {
+        this.rangeStatus = rangeStatus;
+    }
+
+    public DomainsWithPort withFollowStatus(String followStatus) {
+        this.followStatus = followStatus;
+        return this;
+    }
+
+    /**
+     * 回源跟随状态（off代表关闭 on代表开启）。
+     * @return followStatus
+     */
+    public String getFollowStatus() {
+        return followStatus;
+    }
+
+    public void setFollowStatus(String followStatus) {
+        this.followStatus = followStatus;
+    }
+
+    public DomainsWithPort withOriginStatus(String originStatus) {
+        this.originStatus = originStatus;
+        return this;
+    }
+
+    /**
+     * 是否暂停源站回源（off代表关闭 on代表开启）。
+     * @return originStatus
+     */
+    public String getOriginStatus() {
+        return originStatus;
+    }
+
+    public void setOriginStatus(String originStatus) {
+        this.originStatus = originStatus;
+    }
+
+    public DomainsWithPort withBannedReason(String bannedReason) {
+        this.bannedReason = bannedReason;
+        return this;
+    }
+
+    /**
+     * 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
+     * @return bannedReason
+     */
+    public String getBannedReason() {
+        return bannedReason;
+    }
+
+    public void setBannedReason(String bannedReason) {
+        this.bannedReason = bannedReason;
+    }
+
+    public DomainsWithPort withLockedReason(String lockedReason) {
+        this.lockedReason = lockedReason;
+        return this;
+    }
+
+    /**
+     * 域名锁定原因（Changing the config, please wait）。
+     * @return lockedReason
+     */
+    public String getLockedReason() {
+        return lockedReason;
+    }
+
+    public void setLockedReason(String lockedReason) {
+        this.lockedReason = lockedReason;
+    }
+
+    public DomainsWithPort withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -385,11 +592,20 @@ public class DomainsWithPort {
         DomainsWithPort that = (DomainsWithPort) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.domainName, that.domainName)
             && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.userDomainId, that.userDomainId)
             && Objects.equals(this.domainStatus, that.domainStatus) && Objects.equals(this.cname, that.cname)
-            && Objects.equals(this.sources, that.sources) && Objects.equals(this.httpsStatus, that.httpsStatus)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.disabled, that.disabled) && Objects.equals(this.locked, that.locked)
-            && Objects.equals(this.serviceArea, that.serviceArea);
+            && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.domainOriginHost, that.domainOriginHost)
+            && Objects.equals(this.httpsStatus, that.httpsStatus) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.modifyTime, that.modifyTime) && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.autoRefreshPreheat, that.autoRefreshPreheat)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.rangeStatus, that.rangeStatus)
+            && Objects.equals(this.followStatus, that.followStatus)
+            && Objects.equals(this.originStatus, that.originStatus)
+            && Objects.equals(this.bannedReason, that.bannedReason)
+            && Objects.equals(this.lockedReason, that.lockedReason)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -397,15 +613,24 @@ public class DomainsWithPort {
         return Objects.hash(id,
             domainName,
             businessType,
+            userDomainId,
             domainStatus,
             cname,
             sources,
+            domainOriginHost,
             httpsStatus,
             createTime,
-            updateTime,
+            modifyTime,
             disabled,
             locked,
-            serviceArea);
+            autoRefreshPreheat,
+            serviceArea,
+            rangeStatus,
+            followStatus,
+            originStatus,
+            bannedReason,
+            lockedReason,
+            enterpriseProjectId);
     }
 
     @Override
@@ -415,15 +640,24 @@ public class DomainsWithPort {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
+        sb.append("    userDomainId: ").append(toIndentedString(userDomainId)).append("\n");
         sb.append("    domainStatus: ").append(toIndentedString(domainStatus)).append("\n");
         sb.append("    cname: ").append(toIndentedString(cname)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("    domainOriginHost: ").append(toIndentedString(domainOriginHost)).append("\n");
         sb.append("    httpsStatus: ").append(toIndentedString(httpsStatus)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    autoRefreshPreheat: ").append(toIndentedString(autoRefreshPreheat)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    rangeStatus: ").append(toIndentedString(rangeStatus)).append("\n");
+        sb.append("    followStatus: ").append(toIndentedString(followStatus)).append("\n");
+        sb.append("    originStatus: ").append(toIndentedString(originStatus)).append("\n");
+        sb.append("    bannedReason: ").append(toIndentedString(bannedReason)).append("\n");
+        sb.append("    lockedReason: ").append(toIndentedString(lockedReason)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

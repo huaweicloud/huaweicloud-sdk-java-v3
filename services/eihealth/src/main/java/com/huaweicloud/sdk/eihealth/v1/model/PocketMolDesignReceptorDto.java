@@ -22,14 +22,24 @@ public class PocketMolDesignReceptorDto {
     private BoundingBoxDto boundingBox;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remove_ion")
+
+    private Boolean removeIon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_water")
 
     private Boolean removeWater;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remove_ion")
+    @JsonProperty(value = "remove_ligand")
 
-    private Boolean removeIon;
+    private Boolean removeLigand;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_hydrogen")
+
+    private Boolean addHydrogen;
 
     public PocketMolDesignReceptorDto withFile(ReceptorDrugFile file) {
         this.file = file;
@@ -83,13 +93,30 @@ public class PocketMolDesignReceptorDto {
         this.boundingBox = boundingBox;
     }
 
+    public PocketMolDesignReceptorDto withRemoveIon(Boolean removeIon) {
+        this.removeIon = removeIon;
+        return this;
+    }
+
+    /**
+     * 去除受体中的离子
+     * @return removeIon
+     */
+    public Boolean getRemoveIon() {
+        return removeIon;
+    }
+
+    public void setRemoveIon(Boolean removeIon) {
+        this.removeIon = removeIon;
+    }
+
     public PocketMolDesignReceptorDto withRemoveWater(Boolean removeWater) {
         this.removeWater = removeWater;
         return this;
     }
 
     /**
-     * 去水
+     * 去除受体中的水分子
      * @return removeWater
      */
     public Boolean getRemoveWater() {
@@ -100,21 +127,38 @@ public class PocketMolDesignReceptorDto {
         this.removeWater = removeWater;
     }
 
-    public PocketMolDesignReceptorDto withRemoveIon(Boolean removeIon) {
-        this.removeIon = removeIon;
+    public PocketMolDesignReceptorDto withRemoveLigand(Boolean removeLigand) {
+        this.removeLigand = removeLigand;
         return this;
     }
 
     /**
-     * 去离子
-     * @return removeIon
+     * 去除受体中的配体分子
+     * @return removeLigand
      */
-    public Boolean getRemoveIon() {
-        return removeIon;
+    public Boolean getRemoveLigand() {
+        return removeLigand;
     }
 
-    public void setRemoveIon(Boolean removeIon) {
-        this.removeIon = removeIon;
+    public void setRemoveLigand(Boolean removeLigand) {
+        this.removeLigand = removeLigand;
+    }
+
+    public PocketMolDesignReceptorDto withAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
+        return this;
+    }
+
+    /**
+     * 增加氢原子
+     * @return addHydrogen
+     */
+    public Boolean getAddHydrogen() {
+        return addHydrogen;
+    }
+
+    public void setAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
     }
 
     @Override
@@ -127,12 +171,14 @@ public class PocketMolDesignReceptorDto {
         }
         PocketMolDesignReceptorDto that = (PocketMolDesignReceptorDto) obj;
         return Objects.equals(this.file, that.file) && Objects.equals(this.boundingBox, that.boundingBox)
-            && Objects.equals(this.removeWater, that.removeWater) && Objects.equals(this.removeIon, that.removeIon);
+            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
+            && Objects.equals(this.removeLigand, that.removeLigand)
+            && Objects.equals(this.addHydrogen, that.addHydrogen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(file, boundingBox, removeWater, removeIon);
+        return Objects.hash(file, boundingBox, removeIon, removeWater, removeLigand, addHydrogen);
     }
 
     @Override
@@ -141,8 +187,10 @@ public class PocketMolDesignReceptorDto {
         sb.append("class PocketMolDesignReceptorDto {\n");
         sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    boundingBox: ").append(toIndentedString(boundingBox)).append("\n");
-        sb.append("    removeWater: ").append(toIndentedString(removeWater)).append("\n");
         sb.append("    removeIon: ").append(toIndentedString(removeIon)).append("\n");
+        sb.append("    removeWater: ").append(toIndentedString(removeWater)).append("\n");
+        sb.append("    removeLigand: ").append(toIndentedString(removeLigand)).append("\n");
+        sb.append("    addHydrogen: ").append(toIndentedString(addHydrogen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -48,7 +48,7 @@ public class OriginRequestHeader {
     }
 
     /**
-     * 设置回源请求头参数的值。当为删除动作时，可不填。格式要求：长度1~512。不支持中文，不支持变量配置，如：$client_ip,$remote_port等。
+     * 设置回源请求头参数的值。当为删除动作时，可不填。格式要求：长度1-512。不支持中文，不支持变量配置，如：$client_ip,$remote_port等。
      * @return value
      */
     public String getValue() {

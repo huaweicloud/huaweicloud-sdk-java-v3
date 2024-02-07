@@ -80,6 +80,11 @@ public class ComputingResourceFlavorsRsp {
 
     private String cpuArch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_info")
+
+    private String gpuInfo;
+
     public ComputingResourceFlavorsRsp withCode(String code) {
         this.code = code;
         return this;
@@ -318,6 +323,23 @@ public class ComputingResourceFlavorsRsp {
         this.cpuArch = cpuArch;
     }
 
+    public ComputingResourceFlavorsRsp withGpuInfo(String gpuInfo) {
+        this.gpuInfo = gpuInfo;
+        return this;
+    }
+
+    /**
+     * GPU信息
+     * @return gpuInfo
+     */
+    public String getGpuInfo() {
+        return gpuInfo;
+    }
+
+    public void setGpuInfo(String gpuInfo) {
+        this.gpuInfo = gpuInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -333,7 +355,8 @@ public class ComputingResourceFlavorsRsp {
             && Objects.equals(this.maxPps, that.maxPps) && Objects.equals(this.soldOut, that.soldOut)
             && Objects.equals(this.az, that.az) && Objects.equals(this.cpuDetail, that.cpuDetail)
             && Objects.equals(this.diskDetail, that.diskDetail) && Objects.equals(this.memoryDetail, that.memoryDetail)
-            && Objects.equals(this.netcardDetail, that.netcardDetail) && Objects.equals(this.cpuArch, that.cpuArch);
+            && Objects.equals(this.netcardDetail, that.netcardDetail) && Objects.equals(this.cpuArch, that.cpuArch)
+            && Objects.equals(this.gpuInfo, that.gpuInfo);
     }
 
     @Override
@@ -351,7 +374,8 @@ public class ComputingResourceFlavorsRsp {
             diskDetail,
             memoryDetail,
             netcardDetail,
-            cpuArch);
+            cpuArch,
+            gpuInfo);
     }
 
     @Override
@@ -372,6 +396,7 @@ public class ComputingResourceFlavorsRsp {
         sb.append("    memoryDetail: ").append(toIndentedString(memoryDetail)).append("\n");
         sb.append("    netcardDetail: ").append(toIndentedString(netcardDetail)).append("\n");
         sb.append("    cpuArch: ").append(toIndentedString(cpuArch)).append("\n");
+        sb.append("    gpuInfo: ").append(toIndentedString(gpuInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

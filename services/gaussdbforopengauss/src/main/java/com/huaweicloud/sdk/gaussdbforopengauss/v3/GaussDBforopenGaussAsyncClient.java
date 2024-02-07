@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -2150,6 +2152,34 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLinkAsyncInvoker(
         ShowSslCertDownloadLinkRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showSslCertDownloadLink, hcClient);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 停止进行中的备份，包括全备和差备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return CompletableFuture<StopBackupResponse>
+     */
+    public CompletableFuture<StopBackupResponse> stopBackupAsync(StopBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.stopBackup);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 停止进行中的备份，包括全备和差备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return AsyncInvoker<StopBackupRequest, StopBackupResponse>
+     */
+    public AsyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupAsyncInvoker(StopBackupRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopBackup, hcClient);
     }
 
     /**

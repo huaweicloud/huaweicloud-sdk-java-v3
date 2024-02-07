@@ -39,6 +39,11 @@ public class ShowDockingJobResponse extends SdkResponse {
 
     private List<FailedReasonRecord> partFailedReason = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_result")
+
+    private ClusterJobRsp clusterResult;
+
     public ShowDockingJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -190,6 +195,32 @@ public class ShowDockingJobResponse extends SdkResponse {
         this.partFailedReason = partFailedReason;
     }
 
+    public ShowDockingJobResponse withClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+        return this;
+    }
+
+    public ShowDockingJobResponse withClusterResult(Consumer<ClusterJobRsp> clusterResultSetter) {
+        if (this.clusterResult == null) {
+            this.clusterResult = new ClusterJobRsp();
+            clusterResultSetter.accept(this.clusterResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusterResult
+     * @return clusterResult
+     */
+    public ClusterJobRsp getClusterResult() {
+        return clusterResult;
+    }
+
+    public void setClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -201,12 +232,13 @@ public class ShowDockingJobResponse extends SdkResponse {
         ShowDockingJobResponse that = (ShowDockingJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptors, that.receptors)
             && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.jobResult, that.jobResult)
-            && Objects.equals(this.partFailedReason, that.partFailedReason);
+            && Objects.equals(this.partFailedReason, that.partFailedReason)
+            && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptors, ligands, jobResult, partFailedReason);
+        return Objects.hash(basicInfo, receptors, ligands, jobResult, partFailedReason, clusterResult);
     }
 
     @Override
@@ -218,6 +250,7 @@ public class ShowDockingJobResponse extends SdkResponse {
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
         sb.append("    jobResult: ").append(toIndentedString(jobResult)).append("\n");
         sb.append("    partFailedReason: ").append(toIndentedString(partFailedReason)).append("\n");
+        sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

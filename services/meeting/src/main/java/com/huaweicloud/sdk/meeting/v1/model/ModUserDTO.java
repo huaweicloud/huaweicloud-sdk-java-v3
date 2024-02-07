@@ -258,7 +258,7 @@ public class ModUserDTO {
     }
 
     /**
-     * 个人会议ID，若不携带则后台默认生成。 默认值：1
+     * 部门编码，若不携带则默认根部门。 默认值：1
      * @return deptCode
      */
     public String getDeptCode() {

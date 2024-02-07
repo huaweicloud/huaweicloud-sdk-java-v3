@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 侧链修饰
+ * 靶点口袋分子设计模式：支持从头生成、侧链修饰、骨架跃迁
  */
 public class OptimizationMode {
 
@@ -22,12 +22,18 @@ public class OptimizationMode {
      */
     public static final OptimizationMode SIDE_CHAINS_DECORATION = new OptimizationMode("side_chains_decoration");
 
+    /**
+     * Enum SCAFFOLD_HOPPING for value: "scaffold_hopping"
+     */
+    public static final OptimizationMode SCAFFOLD_HOPPING = new OptimizationMode("scaffold_hopping");
+
     private static final Map<String, OptimizationMode> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, OptimizationMode> createStaticFields() {
         Map<String, OptimizationMode> map = new HashMap<>();
         map.put("generation", GENERATION);
         map.put("side_chains_decoration", SIDE_CHAINS_DECORATION);
+        map.put("scaffold_hopping", SCAFFOLD_HOPPING);
         return Collections.unmodifiableMap(map);
     }
 

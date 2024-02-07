@@ -54,6 +54,8 @@ public class ExtremumDto {
 
     /**
      * 最值所在的行数
+     * minimum: 0
+     * maximum: 2147483647
      * @return rowNumber
      */
     public Long getRowNumber() {

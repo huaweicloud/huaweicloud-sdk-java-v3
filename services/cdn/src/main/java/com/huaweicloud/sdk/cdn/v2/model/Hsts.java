@@ -48,7 +48,7 @@ public class Hsts {
     }
 
     /**
-     * 过期时间,即：响应头“Strict-Transport-Security”在客户端的缓存时间。单位:秒,取值范围:0~63072000。  > status参数为on时，必传。
+     * 过期时间,即：响应头“Strict-Transport-Security”在客户端的缓存时间。单位:秒,取值范围:0-63072000。  > status参数为on时，必传。
      * @return maxAge
      */
     public Integer getMaxAge() {

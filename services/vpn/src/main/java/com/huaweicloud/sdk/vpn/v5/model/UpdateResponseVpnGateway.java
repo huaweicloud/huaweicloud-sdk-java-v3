@@ -130,7 +130,7 @@ public class UpdateResponseVpnGateway {
     private String connectSubnet;
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      */
     public static final class NetworkTypeEnum {
 
@@ -288,6 +288,11 @@ public class UpdateResponseVpnGateway {
     @JsonProperty(value = "policy_template")
 
     private PolicyTemplate policyTemplate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<VpnResourceTag> tags = null;
 
     public UpdateResponseVpnGateway withId(String id) {
         this.id = id;
@@ -447,7 +452,7 @@ public class UpdateResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向类型，默认为公网(public)
+     * VPN网关的网络类型，默认为公网(public)
      * @return networkType
      */
     public NetworkTypeEnum getNetworkType() {
@@ -498,7 +503,7 @@ public class UpdateResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表主worker的私网IP
+     * 私网类型VPN网关的接入私网IP，VPN网关使用该私网IP与对端网关建连。双活网关表示使用的第一个私网地址，主备表示主私网地址。
      * @return accessPrivateIp1
      */
     public String getAccessPrivateIp1() {
@@ -515,7 +520,7 @@ public class UpdateResponseVpnGateway {
     }
 
     /**
-     * VPN网关北向接入私网IP，当VPN网关的北向类型是私网(private)时有值,主备模式代表备worker的私网IP
+     * 私网类型VPN网关的接入私网IP，VPN网关使用该私网IP与对端网关建连。双活网关表示使用的第二个私网地址，主备表示备私网地址。
      * @return accessPrivateIp2
      */
     public String getAccessPrivateIp2() {
@@ -792,6 +797,39 @@ public class UpdateResponseVpnGateway {
         this.policyTemplate = policyTemplate;
     }
 
+    public UpdateResponseVpnGateway withTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public UpdateResponseVpnGateway addTagsItem(VpnResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public UpdateResponseVpnGateway withTags(Consumer<List<VpnResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<VpnResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<VpnResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -819,7 +857,7 @@ public class UpdateResponseVpnGateway {
             && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.eip1, that.eip1)
             && Objects.equals(this.eip2, that.eip2) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.policyTemplate, that.policyTemplate);
+            && Objects.equals(this.policyTemplate, that.policyTemplate) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -849,7 +887,8 @@ public class UpdateResponseVpnGateway {
             eip2,
             createdAt,
             updatedAt,
-            policyTemplate);
+            policyTemplate,
+            tags);
     }
 
     @Override
@@ -882,6 +921,7 @@ public class UpdateResponseVpnGateway {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -27,7 +27,12 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligands")
 
-    private List<DrugFile> ligands = null;
+    private List<PocketFragment> ligands = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "num_trials")
+
+    private Integer numTrials;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_list")
@@ -43,6 +48,11 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
     @JsonProperty(value = "optimization_mode")
 
     private OptimizationMode optimizationMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_result")
+
+    private ClusterJobRsp clusterResult;
 
     public ShowPocketMolDesignJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
@@ -96,12 +106,12 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
         this.receptor = receptor;
     }
 
-    public ShowPocketMolDesignJobResponse withLigands(List<DrugFile> ligands) {
+    public ShowPocketMolDesignJobResponse withLigands(List<PocketFragment> ligands) {
         this.ligands = ligands;
         return this;
     }
 
-    public ShowPocketMolDesignJobResponse addLigandsItem(DrugFile ligandsItem) {
+    public ShowPocketMolDesignJobResponse addLigandsItem(PocketFragment ligandsItem) {
         if (this.ligands == null) {
             this.ligands = new ArrayList<>();
         }
@@ -109,7 +119,7 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
         return this;
     }
 
-    public ShowPocketMolDesignJobResponse withLigands(Consumer<List<DrugFile>> ligandsSetter) {
+    public ShowPocketMolDesignJobResponse withLigands(Consumer<List<PocketFragment>> ligandsSetter) {
         if (this.ligands == null) {
             this.ligands = new ArrayList<>();
         }
@@ -121,12 +131,31 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
      * 配体文件列表
      * @return ligands
      */
-    public List<DrugFile> getLigands() {
+    public List<PocketFragment> getLigands() {
         return ligands;
     }
 
-    public void setLigands(List<DrugFile> ligands) {
+    public void setLigands(List<PocketFragment> ligands) {
         this.ligands = ligands;
+    }
+
+    public ShowPocketMolDesignJobResponse withNumTrials(Integer numTrials) {
+        this.numTrials = numTrials;
+        return this;
+    }
+
+    /**
+     * 生成分子数量
+     * minimum: 1
+     * maximum: 5000
+     * @return numTrials
+     */
+    public Integer getNumTrials() {
+        return numTrials;
+    }
+
+    public void setNumTrials(Integer numTrials) {
+        this.numTrials = numTrials;
     }
 
     public ShowPocketMolDesignJobResponse withModelList(List<BasicDrugModel> modelList) {
@@ -212,6 +241,32 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
         this.optimizationMode = optimizationMode;
     }
 
+    public ShowPocketMolDesignJobResponse withClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+        return this;
+    }
+
+    public ShowPocketMolDesignJobResponse withClusterResult(Consumer<ClusterJobRsp> clusterResultSetter) {
+        if (this.clusterResult == null) {
+            this.clusterResult = new ClusterJobRsp();
+            clusterResultSetter.accept(this.clusterResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusterResult
+     * @return clusterResult
+     */
+    public ClusterJobRsp getClusterResult() {
+        return clusterResult;
+    }
+
+    public void setClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -222,14 +277,17 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
         }
         ShowPocketMolDesignJobResponse that = (ShowPocketMolDesignJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
-            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.modelList, that.modelList)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.numTrials, that.numTrials)
+            && Objects.equals(this.modelList, that.modelList)
             && Objects.equals(this.molecularWeight, that.molecularWeight)
-            && Objects.equals(this.optimizationMode, that.optimizationMode);
+            && Objects.equals(this.optimizationMode, that.optimizationMode)
+            && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, modelList, molecularWeight, optimizationMode);
+        return Objects
+            .hash(basicInfo, receptor, ligands, numTrials, modelList, molecularWeight, optimizationMode, clusterResult);
     }
 
     @Override
@@ -239,9 +297,11 @@ public class ShowPocketMolDesignJobResponse extends SdkResponse {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptor: ").append(toIndentedString(receptor)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
+        sb.append("    numTrials: ").append(toIndentedString(numTrials)).append("\n");
         sb.append("    modelList: ").append(toIndentedString(modelList)).append("\n");
         sb.append("    molecularWeight: ").append(toIndentedString(molecularWeight)).append("\n");
         sb.append("    optimizationMode: ").append(toIndentedString(optimizationMode)).append("\n");
+        sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

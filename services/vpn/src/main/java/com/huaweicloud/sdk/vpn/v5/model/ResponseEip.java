@@ -164,7 +164,7 @@ public class ResponseEip {
     }
 
     /**
-     * 功能说明: 公网IP版本号  取值范围：4, 6
+     * 功能说明: 公网IP版本号  取值范围：4
      * @return ipVersion
      */
     public Integer getIpVersion() {
@@ -266,9 +266,9 @@ public class ResponseEip {
     }
 
     /**
-     * 带宽大小Mbit/s，flavor为V300时，取值不能大于300，flavor为V1G时，取值不能大于1024
+     * 带宽大小Mbit/s，flavor为V300时，取值不能大于300，flavor为V1G时，取值不能大于1000
      * minimum: 1
-     * maximum: 1024
+     * maximum: 1000
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {

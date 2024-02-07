@@ -77,6 +77,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceReq;
@@ -259,6 +262,13 @@ import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineReq;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateComplexCombineResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GeneratePocketFileResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.GenerateSurfacePointsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.GenerationTaskData;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportAppRsp;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportDataReq;
@@ -451,7 +461,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionRequ
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunPocketReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RunReceptorPreprocessReq;
+import com.huaweicloud.sdk.eihealth.v1.model.RunSurfacePointsReq;
 import com.huaweicloud.sdk.eihealth.v1.model.SearchTaskData;
 import com.huaweicloud.sdk.eihealth.v1.model.SendCodeReq;
 import com.huaweicloud.sdk.eihealth.v1.model.SetMessageClearRuleReq;
@@ -1394,6 +1406,40 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBackupReq.class),
             f -> f.withMarshaller(CreateBackupRequest::getBody, CreateBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClusterJobRequest, CreateClusterJobResponse> createClusterJob =
+        genForCreateClusterJob();
+
+    private static HttpRequestDef<CreateClusterJobRequest, CreateClusterJobResponse> genForCreateClusterJob() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterJobRequest, CreateClusterJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusterJobRequest.class, CreateClusterJobResponse.class)
+                .withName("CreateClusterJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/{job_id}/cluster")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterJobRequest::getEihealthProjectId,
+                CreateClusterJobRequest::setEihealthProjectId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterJobRequest::getJobId, CreateClusterJobRequest::setJobId));
+        builder.<CreateClusterJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClusterJobReq.class),
+            f -> f.withMarshaller(CreateClusterJobRequest::getBody, CreateClusterJobRequest::setBody));
 
         // response
 
@@ -2863,6 +2909,108 @@ public class EiHealthMeta {
             f -> f.withMarshaller(ExecuteJobRequest::getBody, ExecuteJobRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GenerateComplexCombineRequest, GenerateComplexCombineResponse> generateComplexCombine =
+        genForGenerateComplexCombine();
+
+    private static HttpRequestDef<GenerateComplexCombineRequest, GenerateComplexCombineResponse> genForGenerateComplexCombine() {
+        // basic
+        HttpRequestDef.Builder<GenerateComplexCombineRequest, GenerateComplexCombineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, GenerateComplexCombineRequest.class, GenerateComplexCombineResponse.class)
+            .withName("GenerateComplexCombine")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/toolkit/complex-combine")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GenerateComplexCombineRequest::getEihealthProjectId,
+                GenerateComplexCombineRequest::setEihealthProjectId));
+        builder.<GenerateComplexCombineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerateComplexCombineReq.class),
+            f -> f.withMarshaller(GenerateComplexCombineRequest::getBody, GenerateComplexCombineRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GenerateComplexCombineResponse::getBody, GenerateComplexCombineResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GeneratePocketFileRequest, GeneratePocketFileResponse> generatePocketFile =
+        genForGeneratePocketFile();
+
+    private static HttpRequestDef<GeneratePocketFileRequest, GeneratePocketFileResponse> genForGeneratePocketFile() {
+        // basic
+        HttpRequestDef.Builder<GeneratePocketFileRequest, GeneratePocketFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, GeneratePocketFileRequest.class, GeneratePocketFileResponse.class)
+                .withName("GeneratePocketFile")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/toolkit/pocket")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GeneratePocketFileRequest::getEihealthProjectId,
+                GeneratePocketFileRequest::setEihealthProjectId));
+        builder.<RunPocketReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunPocketReq.class),
+            f -> f.withMarshaller(GeneratePocketFileRequest::getBody, GeneratePocketFileRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GeneratePocketFileResponse::getBody, GeneratePocketFileResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse> generateSurfacePoints =
+        genForGenerateSurfacePoints();
+
+    private static HttpRequestDef<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse> genForGenerateSurfacePoints() {
+        // basic
+        HttpRequestDef.Builder<GenerateSurfacePointsRequest, GenerateSurfacePointsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, GenerateSurfacePointsRequest.class, GenerateSurfacePointsResponse.class)
+            .withName("GenerateSurfacePoints")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/toolkit/surface-points")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GenerateSurfacePointsRequest::getEihealthProjectId,
+                GenerateSurfacePointsRequest::setEihealthProjectId));
+        builder.<RunSurfacePointsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunSurfacePointsReq.class),
+            f -> f.withMarshaller(GenerateSurfacePointsRequest::getBody, GenerateSurfacePointsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GenerateSurfacePointsResponse::getBody, GenerateSurfacePointsResponse::setBody));
 
         return builder.build();
     }

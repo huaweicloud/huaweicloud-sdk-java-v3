@@ -14,7 +14,7 @@ public class RunReceptorPreprocessReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file")
 
-    private ReceptorDrugFile file;
+    private ReceptorDrugFileReq file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remove_water")
@@ -31,14 +31,19 @@ public class RunReceptorPreprocessReq {
 
     private Boolean removeLigand;
 
-    public RunReceptorPreprocessReq withFile(ReceptorDrugFile file) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_hydrogen")
+
+    private Boolean addHydrogen;
+
+    public RunReceptorPreprocessReq withFile(ReceptorDrugFileReq file) {
         this.file = file;
         return this;
     }
 
-    public RunReceptorPreprocessReq withFile(Consumer<ReceptorDrugFile> fileSetter) {
+    public RunReceptorPreprocessReq withFile(Consumer<ReceptorDrugFileReq> fileSetter) {
         if (this.file == null) {
-            this.file = new ReceptorDrugFile();
+            this.file = new ReceptorDrugFileReq();
             fileSetter.accept(this.file);
         }
 
@@ -49,11 +54,11 @@ public class RunReceptorPreprocessReq {
      * Get file
      * @return file
      */
-    public ReceptorDrugFile getFile() {
+    public ReceptorDrugFileReq getFile() {
         return file;
     }
 
-    public void setFile(ReceptorDrugFile file) {
+    public void setFile(ReceptorDrugFileReq file) {
         this.file = file;
     }
 
@@ -108,6 +113,23 @@ public class RunReceptorPreprocessReq {
         this.removeLigand = removeLigand;
     }
 
+    public RunReceptorPreprocessReq withAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
+        return this;
+    }
+
+    /**
+     * 增加氢原子
+     * @return addHydrogen
+     */
+    public Boolean getAddHydrogen() {
+        return addHydrogen;
+    }
+
+    public void setAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +140,13 @@ public class RunReceptorPreprocessReq {
         }
         RunReceptorPreprocessReq that = (RunReceptorPreprocessReq) obj;
         return Objects.equals(this.file, that.file) && Objects.equals(this.removeWater, that.removeWater)
-            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeLigand, that.removeLigand);
+            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeLigand, that.removeLigand)
+            && Objects.equals(this.addHydrogen, that.addHydrogen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(file, removeWater, removeIon, removeLigand);
+        return Objects.hash(file, removeWater, removeIon, removeLigand, addHydrogen);
     }
 
     @Override
@@ -134,6 +157,7 @@ public class RunReceptorPreprocessReq {
         sb.append("    removeWater: ").append(toIndentedString(removeWater)).append("\n");
         sb.append("    removeIon: ").append(toIndentedString(removeIon)).append("\n");
         sb.append("    removeLigand: ").append(toIndentedString(removeLigand)).append("\n");
+        sb.append("    addHydrogen: ").append(toIndentedString(addHydrogen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,6 +36,11 @@ public class DockingReceptorDto {
 
     private Boolean removeLigand;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_hydrogen")
+
+    private Boolean addHydrogen;
+
     public DockingReceptorDto withReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
         return this;
@@ -139,6 +144,23 @@ public class DockingReceptorDto {
         this.removeLigand = removeLigand;
     }
 
+    public DockingReceptorDto withAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
+        return this;
+    }
+
+    /**
+     * 增加氢原子
+     * @return addHydrogen
+     */
+    public Boolean getAddHydrogen() {
+        return addHydrogen;
+    }
+
+    public void setAddHydrogen(Boolean addHydrogen) {
+        this.addHydrogen = addHydrogen;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +172,13 @@ public class DockingReceptorDto {
         DockingReceptorDto that = (DockingReceptorDto) obj;
         return Objects.equals(this.receptor, that.receptor) && Objects.equals(this.boundingBox, that.boundingBox)
             && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
-            && Objects.equals(this.removeLigand, that.removeLigand);
+            && Objects.equals(this.removeLigand, that.removeLigand)
+            && Objects.equals(this.addHydrogen, that.addHydrogen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receptor, boundingBox, removeIon, removeWater, removeLigand);
+        return Objects.hash(receptor, boundingBox, removeIon, removeWater, removeLigand, addHydrogen);
     }
 
     @Override
@@ -167,6 +190,7 @@ public class DockingReceptorDto {
         sb.append("    removeIon: ").append(toIndentedString(removeIon)).append("\n");
         sb.append("    removeWater: ").append(toIndentedString(removeWater)).append("\n");
         sb.append("    removeLigand: ").append(toIndentedString(removeLigand)).append("\n");
+        sb.append("    addHydrogen: ").append(toIndentedString(addHydrogen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,21 +14,21 @@ public class CreateDrugLigandInteraction2dSvgReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receptor_file")
 
-    private ReceptorDrugFile receptorFile;
+    private ReceptorDrugFileReq receptorFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligand_file")
 
     private DrugFile ligandFile;
 
-    public CreateDrugLigandInteraction2dSvgReq withReceptorFile(ReceptorDrugFile receptorFile) {
+    public CreateDrugLigandInteraction2dSvgReq withReceptorFile(ReceptorDrugFileReq receptorFile) {
         this.receptorFile = receptorFile;
         return this;
     }
 
-    public CreateDrugLigandInteraction2dSvgReq withReceptorFile(Consumer<ReceptorDrugFile> receptorFileSetter) {
+    public CreateDrugLigandInteraction2dSvgReq withReceptorFile(Consumer<ReceptorDrugFileReq> receptorFileSetter) {
         if (this.receptorFile == null) {
-            this.receptorFile = new ReceptorDrugFile();
+            this.receptorFile = new ReceptorDrugFileReq();
             receptorFileSetter.accept(this.receptorFile);
         }
 
@@ -39,11 +39,11 @@ public class CreateDrugLigandInteraction2dSvgReq {
      * Get receptorFile
      * @return receptorFile
      */
-    public ReceptorDrugFile getReceptorFile() {
+    public ReceptorDrugFileReq getReceptorFile() {
         return receptorFile;
     }
 
-    public void setReceptorFile(ReceptorDrugFile receptorFile) {
+    public void setReceptorFile(ReceptorDrugFileReq receptorFile) {
         this.receptorFile = receptorFile;
     }
 

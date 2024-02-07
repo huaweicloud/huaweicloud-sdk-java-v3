@@ -227,6 +227,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigurationsRequest;
@@ -3478,6 +3480,36 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorAsyncInvoker(
         UpdateInstanceMonitorRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
+    }
+
+    /**
+     * 开启或关闭新增节点自动加入该Proxy
+     *
+     * 开启或关闭新增节点自动加入该Proxy。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNewNodeAutoAddSwitchRequest 请求对象
+     * @return CompletableFuture<UpdateNewNodeAutoAddSwitchResponse>
+     */
+    public CompletableFuture<UpdateNewNodeAutoAddSwitchResponse> updateNewNodeAutoAddSwitchAsync(
+        UpdateNewNodeAutoAddSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateNewNodeAutoAddSwitch);
+    }
+
+    /**
+     * 开启或关闭新增节点自动加入该Proxy
+     *
+     * 开启或关闭新增节点自动加入该Proxy。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNewNodeAutoAddSwitchRequest 请求对象
+     * @return AsyncInvoker<UpdateNewNodeAutoAddSwitchRequest, UpdateNewNodeAutoAddSwitchResponse>
+     */
+    public AsyncInvoker<UpdateNewNodeAutoAddSwitchRequest, UpdateNewNodeAutoAddSwitchResponse> updateNewNodeAutoAddSwitchAsyncInvoker(
+        UpdateNewNodeAutoAddSwitchRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.updateNewNodeAutoAddSwitch, hcClient);
     }
 
     /**

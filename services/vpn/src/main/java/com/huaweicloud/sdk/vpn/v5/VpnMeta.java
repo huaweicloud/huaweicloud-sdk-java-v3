@@ -26,6 +26,7 @@ import com.huaweicloud.sdk.vpn.v5.model.CreateVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVpnConnectionRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CreateVpnGatewayCertificateRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
@@ -75,7 +76,7 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionResponse;
-import com.huaweicloud.sdk.vpn.v5.model.VpnGatewayCertificateRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnGatewayCertificateRequestBody;
 
 import java.util.List;
 
@@ -854,10 +855,10 @@ public class VpnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateVgwCertificateRequest::getVgwId, CreateVgwCertificateRequest::setVgwId));
-        builder.<VpnGatewayCertificateRequestBody>withRequestField("body",
+        builder.<CreateVpnGatewayCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VpnGatewayCertificateRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateVpnGatewayCertificateRequestBody.class),
             f -> f.withMarshaller(CreateVgwCertificateRequest::getBody, CreateVgwCertificateRequest::setBody));
 
         // response
@@ -921,10 +922,10 @@ public class VpnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateVgwCertificateRequest::getCertificateId,
                 UpdateVgwCertificateRequest::setCertificateId));
-        builder.<VpnGatewayCertificateRequestBody>withRequestField("body",
+        builder.<UpdateVpnGatewayCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VpnGatewayCertificateRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateVpnGatewayCertificateRequestBody.class),
             f -> f.withMarshaller(UpdateVgwCertificateRequest::getBody, UpdateVgwCertificateRequest::setBody));
 
         // response

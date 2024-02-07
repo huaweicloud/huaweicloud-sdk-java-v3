@@ -308,6 +308,9 @@ import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetProfileImageRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetProfileImageRequestBody;
+import com.huaweicloud.sdk.meeting.v1.model.SetProfileImageResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetQosThresholdReq;
 import com.huaweicloud.sdk.meeting.v1.model.SetQosThresholdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetQosThresholdResponse;
@@ -315,6 +318,9 @@ import com.huaweicloud.sdk.meeting.v1.model.SetRoleRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetRoleResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetSsoConfigRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetSsoConfigResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetUserProfileImageRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetUserProfileImageRequestBody;
+import com.huaweicloud.sdk.meeting.v1.model.SetUserProfileImageResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetWebHookConfigRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetWebHookConfigResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowConfOrgRequest;
@@ -5079,6 +5085,34 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetProfileImageRequest, SetProfileImageResponse> setProfileImage =
+        genForSetProfileImage();
+
+    private static HttpRequestDef<SetProfileImageRequest, SetProfileImageResponse> genForSetProfileImage() {
+        // basic
+        HttpRequestDef.Builder<SetProfileImageRequest, SetProfileImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetProfileImageRequest.class, SetProfileImageResponse.class)
+                .withName("SetProfileImage")
+                .withUri("/v1/usg/abs/profile-images")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProfileImageRequest::getXRequestId, SetProfileImageRequest::setXRequestId));
+        builder.<SetProfileImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetProfileImageRequestBody.class),
+            f -> f.withMarshaller(SetProfileImageRequest::getBody, SetProfileImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetRoleRequest, SetRoleResponse> setRole = genForSetRole();
 
     private static HttpRequestDef<SetRoleRequest, SetRoleResponse> genForSetRole() {
@@ -5143,6 +5177,40 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizeConfigInfoRequestBody.class),
             f -> f.withMarshaller(SetSsoConfigRequest::getBody, SetSsoConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetUserProfileImageRequest, SetUserProfileImageResponse> setUserProfileImage =
+        genForSetUserProfileImage();
+
+    private static HttpRequestDef<SetUserProfileImageRequest, SetUserProfileImageResponse> genForSetUserProfileImage() {
+        // basic
+        HttpRequestDef.Builder<SetUserProfileImageRequest, SetUserProfileImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetUserProfileImageRequest.class, SetUserProfileImageResponse.class)
+                .withName("SetUserProfileImage")
+                .withUri("/v1/usg/abs/profile-images/{user_id}")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetUserProfileImageRequest::getUserId, SetUserProfileImageRequest::setUserId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetUserProfileImageRequest::getXRequestId,
+                SetUserProfileImageRequest::setXRequestId));
+        builder.<SetUserProfileImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetUserProfileImageRequestBody.class),
+            f -> f.withMarshaller(SetUserProfileImageRequest::getBody, SetUserProfileImageRequest::setBody));
 
         // response
 

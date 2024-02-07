@@ -26,7 +26,7 @@ public class PageInfo {
     }
 
     /**
-     * 下一页的marker，值为上一次消息的最后一个id，为空时为查询第一页
+     * 下一页的marker，值为上一次查询响应中最后一个资源的创建时间
      * @return nextMarker
      */
     public String getNextMarker() {

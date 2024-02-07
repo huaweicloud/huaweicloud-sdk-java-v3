@@ -243,12 +243,16 @@ import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetProfileImageRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetProfileImageResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetQosThresholdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetQosThresholdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetRoleRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetRoleResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetSsoConfigRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetSsoConfigResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetUserProfileImageRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetUserProfileImageResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetWebHookConfigRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetWebHookConfigResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowConfOrgRequest;
@@ -3665,6 +3669,35 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 用户设置头像
+     *
+     * 用户设置头像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetProfileImageRequest 请求对象
+     * @return CompletableFuture<SetProfileImageResponse>
+     */
+    public CompletableFuture<SetProfileImageResponse> setProfileImageAsync(SetProfileImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setProfileImage);
+    }
+
+    /**
+     * 用户设置头像
+     *
+     * 用户设置头像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetProfileImageRequest 请求对象
+     * @return AsyncInvoker<SetProfileImageRequest, SetProfileImageResponse>
+     */
+    public AsyncInvoker<SetProfileImageRequest, SetProfileImageResponse> setProfileImageAsyncInvoker(
+        SetProfileImageRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.setProfileImage, hcClient);
+    }
+
+    /**
      * 申请主持人
      *
      * 该接口用于设置主持人或释放主持人。
@@ -3719,6 +3752,35 @@ public class MeetingAsyncClient {
     public AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse> setSsoConfigAsyncInvoker(
         SetSsoConfigRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.setSsoConfig, hcClient);
+    }
+
+    /**
+     * 企业管理员设置企业成员头像
+     *
+     * 为企业内的用户设置头像（只允许管理员调用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserProfileImageRequest 请求对象
+     * @return CompletableFuture<SetUserProfileImageResponse>
+     */
+    public CompletableFuture<SetUserProfileImageResponse> setUserProfileImageAsync(SetUserProfileImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setUserProfileImage);
+    }
+
+    /**
+     * 企业管理员设置企业成员头像
+     *
+     * 为企业内的用户设置头像（只允许管理员调用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserProfileImageRequest 请求对象
+     * @return AsyncInvoker<SetUserProfileImageRequest, SetUserProfileImageResponse>
+     */
+    public AsyncInvoker<SetUserProfileImageRequest, SetUserProfileImageResponse> setUserProfileImageAsyncInvoker(
+        SetUserProfileImageRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.setUserProfileImage, hcClient);
     }
 
     /**

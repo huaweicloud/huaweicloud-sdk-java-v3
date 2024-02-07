@@ -16,6 +16,11 @@ import com.huaweicloud.sdk.eip.v3.model.AttachSharebwReq;
 import com.huaweicloud.sdk.eip.v3.model.BatchAttachSharebwReq;
 import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesRequest;
 import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesResponse;
+import com.huaweicloud.sdk.eip.v3.model.CreateTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.CreateTenantVpcIgwRequestBody;
+import com.huaweicloud.sdk.eip.v3.model.CreateTenantVpcIgwResponse;
+import com.huaweicloud.sdk.eip.v3.model.DeleteTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.DeleteTenantVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpRequest;
 import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpResponse;
 import com.huaweicloud.sdk.eip.v3.model.DetachBatchSharedbwReq;
@@ -37,6 +42,8 @@ import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListProjectGeipBindingsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListProjectGeipBindingsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolRequest;
@@ -45,6 +52,10 @@ import com.huaweicloud.sdk.eip.v3.model.ListPublicipsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListTenantVpcIgwsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListTenantVpcIgwsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
@@ -52,6 +63,9 @@ import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipsRequestBody;
+import com.huaweicloud.sdk.eip.v3.model.UpdateTenantVpcIgwRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdateTenantVpcIgwRequestBody;
+import com.huaweicloud.sdk.eip.v3.model.UpdateTenantVpcIgwResponse;
 
 import java.util.List;
 
@@ -565,6 +579,326 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, ShowPublicipPoolRequest::setFields));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectGeipBindingsRequest, ListProjectGeipBindingsResponse> listProjectGeipBindings =
+        genForListProjectGeipBindings();
+
+    private static HttpRequestDef<ListProjectGeipBindingsRequest, ListProjectGeipBindingsResponse> genForListProjectGeipBindings() {
+        // basic
+        HttpRequestDef.Builder<ListProjectGeipBindingsRequest, ListProjectGeipBindingsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListProjectGeipBindingsRequest.class, ListProjectGeipBindingsResponse.class)
+            .withName("ListProjectGeipBindings")
+            .withUri("/v3/{project_id}/geip/bindings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getFields,
+                ListProjectGeipBindingsRequest::setFields));
+        builder.<String>withRequestField("geip_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGeipId,
+                ListProjectGeipBindingsRequest::setGeipId));
+        builder.<String>withRequestField("geip_ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGeipIpAddress,
+                ListProjectGeipBindingsRequest::setGeipIpAddress));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getPublicBorderGroup,
+                ListProjectGeipBindingsRequest::setPublicBorderGroup));
+        builder.<String>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getInstanceType,
+                ListProjectGeipBindingsRequest::setInstanceType));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getInstanceId,
+                ListProjectGeipBindingsRequest::setInstanceId));
+        builder.<String>withRequestField("instance_vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getInstanceVpcId,
+                ListProjectGeipBindingsRequest::setInstanceVpcId));
+        builder.<String>withRequestField("gcbandwidth.id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGcbandwidthId,
+                ListProjectGeipBindingsRequest::setGcbandwidthId));
+        builder.<String>withRequestField("gcbandwidth.admin_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGcbandwidthAdminStatus,
+                ListProjectGeipBindingsRequest::setGcbandwidthAdminStatus));
+        builder.<Integer>withRequestField("gcbandwidth.size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGcbandwidthSize,
+                ListProjectGeipBindingsRequest::setGcbandwidthSize));
+        builder.<String>withRequestField("gcbandwidth.sla_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGcbandwidthSlaLevel,
+                ListProjectGeipBindingsRequest::setGcbandwidthSlaLevel));
+        builder.<Integer>withRequestField("gcbandwidth.dscp",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getGcbandwidthDscp,
+                ListProjectGeipBindingsRequest::setGcbandwidthDscp));
+        builder.<String>withRequestField("vnic.private_ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicPrivateIpAddress,
+                ListProjectGeipBindingsRequest::setVnicPrivateIpAddress));
+        builder.<String>withRequestField("vnic.vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicVpcId,
+                ListProjectGeipBindingsRequest::setVnicVpcId));
+        builder.<String>withRequestField("vnic.port_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicPortId,
+                ListProjectGeipBindingsRequest::setVnicPortId));
+        builder.<String>withRequestField("vnic.device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicDeviceId,
+                ListProjectGeipBindingsRequest::setVnicDeviceId));
+        builder.<String>withRequestField("vnic.device_owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicDeviceOwner,
+                ListProjectGeipBindingsRequest::setVnicDeviceOwner));
+        builder.<String>withRequestField("vnic.device_owner_prefixlike",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicDeviceOwnerPrefixlike,
+                ListProjectGeipBindingsRequest::setVnicDeviceOwnerPrefixlike));
+        builder.<String>withRequestField("vnic.instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicInstanceType,
+                ListProjectGeipBindingsRequest::setVnicInstanceType));
+        builder.<String>withRequestField("vnic.instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getVnicInstanceId,
+                ListProjectGeipBindingsRequest::setVnicInstanceId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getSortKey,
+                ListProjectGeipBindingsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getSortDir,
+                ListProjectGeipBindingsRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getLimit, ListProjectGeipBindingsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTenantVpcIgwRequest, CreateTenantVpcIgwResponse> createTenantVpcIgw =
+        genForCreateTenantVpcIgw();
+
+    private static HttpRequestDef<CreateTenantVpcIgwRequest, CreateTenantVpcIgwResponse> genForCreateTenantVpcIgw() {
+        // basic
+        HttpRequestDef.Builder<CreateTenantVpcIgwRequest, CreateTenantVpcIgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTenantVpcIgwRequest.class, CreateTenantVpcIgwResponse.class)
+                .withName("CreateTenantVpcIgw")
+                .withUri("/v3/{project_id}/geip/vpc-igws")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTenantVpcIgwRequest::getFields, CreateTenantVpcIgwRequest::setFields));
+        builder.<CreateTenantVpcIgwRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTenantVpcIgwRequestBody.class),
+            f -> f.withMarshaller(CreateTenantVpcIgwRequest::getBody, CreateTenantVpcIgwRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTenantVpcIgwRequest, DeleteTenantVpcIgwResponse> deleteTenantVpcIgw =
+        genForDeleteTenantVpcIgw();
+
+    private static HttpRequestDef<DeleteTenantVpcIgwRequest, DeleteTenantVpcIgwResponse> genForDeleteTenantVpcIgw() {
+        // basic
+        HttpRequestDef.Builder<DeleteTenantVpcIgwRequest, DeleteTenantVpcIgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTenantVpcIgwRequest.class, DeleteTenantVpcIgwResponse.class)
+                .withName("DeleteTenantVpcIgw")
+                .withUri("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_igw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTenantVpcIgwRequest::getVpcIgwId, DeleteTenantVpcIgwRequest::setVpcIgwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantVpcIgwsRequest, ListTenantVpcIgwsResponse> listTenantVpcIgws =
+        genForListTenantVpcIgws();
+
+    private static HttpRequestDef<ListTenantVpcIgwsRequest, ListTenantVpcIgwsResponse> genForListTenantVpcIgws() {
+        // basic
+        HttpRequestDef.Builder<ListTenantVpcIgwsRequest, ListTenantVpcIgwsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTenantVpcIgwsRequest.class, ListTenantVpcIgwsResponse.class)
+                .withName("ListTenantVpcIgws")
+                .withUri("/v3/{project_id}/geip/vpc-igws")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getFields, ListTenantVpcIgwsRequest::setFields));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getId, ListTenantVpcIgwsRequest::setId));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getVpcId, ListTenantVpcIgwsRequest::setVpcId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getName, ListTenantVpcIgwsRequest::setName));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getSortKey, ListTenantVpcIgwsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getSortDir, ListTenantVpcIgwsRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getLimit, ListTenantVpcIgwsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInternalVpcIgwRequest, ShowInternalVpcIgwResponse> showInternalVpcIgw =
+        genForShowInternalVpcIgw();
+
+    private static HttpRequestDef<ShowInternalVpcIgwRequest, ShowInternalVpcIgwResponse> genForShowInternalVpcIgw() {
+        // basic
+        HttpRequestDef.Builder<ShowInternalVpcIgwRequest, ShowInternalVpcIgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInternalVpcIgwRequest.class, ShowInternalVpcIgwResponse.class)
+                .withName("ShowInternalVpcIgw")
+                .withUri("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_igw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInternalVpcIgwRequest::getVpcIgwId, ShowInternalVpcIgwRequest::setVpcIgwId));
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInternalVpcIgwRequest::getFields, ShowInternalVpcIgwRequest::setFields));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTenantVpcIgwRequest, UpdateTenantVpcIgwResponse> updateTenantVpcIgw =
+        genForUpdateTenantVpcIgw();
+
+    private static HttpRequestDef<UpdateTenantVpcIgwRequest, UpdateTenantVpcIgwResponse> genForUpdateTenantVpcIgw() {
+        // basic
+        HttpRequestDef.Builder<UpdateTenantVpcIgwRequest, UpdateTenantVpcIgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTenantVpcIgwRequest.class, UpdateTenantVpcIgwResponse.class)
+                .withName("UpdateTenantVpcIgw")
+                .withUri("/v3/{project_id}/geip/vpc-igws/{vpc_igw_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_igw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTenantVpcIgwRequest::getVpcIgwId, UpdateTenantVpcIgwRequest::setVpcIgwId));
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTenantVpcIgwRequest::getFields, UpdateTenantVpcIgwRequest::setFields));
+        builder.<UpdateTenantVpcIgwRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTenantVpcIgwRequestBody.class),
+            f -> f.withMarshaller(UpdateTenantVpcIgwRequest::getBody, UpdateTenantVpcIgwRequest::setBody));
 
         // response
 

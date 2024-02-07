@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 指定规格的可用区情况
+ * VpnGatewayAvailabilityZones
  */
 public class VpnGatewayAvailabilityZones {
 

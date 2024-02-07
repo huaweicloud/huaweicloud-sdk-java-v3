@@ -26,7 +26,12 @@ public class CreatePocketMolDesignJobReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligands")
 
-    private List<DrugFile> ligands = null;
+    private List<PocketFragment> ligands = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "num_trials")
+
+    private Integer numTrials;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_ids")
@@ -95,12 +100,12 @@ public class CreatePocketMolDesignJobReq {
         this.receptor = receptor;
     }
 
-    public CreatePocketMolDesignJobReq withLigands(List<DrugFile> ligands) {
+    public CreatePocketMolDesignJobReq withLigands(List<PocketFragment> ligands) {
         this.ligands = ligands;
         return this;
     }
 
-    public CreatePocketMolDesignJobReq addLigandsItem(DrugFile ligandsItem) {
+    public CreatePocketMolDesignJobReq addLigandsItem(PocketFragment ligandsItem) {
         if (this.ligands == null) {
             this.ligands = new ArrayList<>();
         }
@@ -108,7 +113,7 @@ public class CreatePocketMolDesignJobReq {
         return this;
     }
 
-    public CreatePocketMolDesignJobReq withLigands(Consumer<List<DrugFile>> ligandsSetter) {
+    public CreatePocketMolDesignJobReq withLigands(Consumer<List<PocketFragment>> ligandsSetter) {
         if (this.ligands == null) {
             this.ligands = new ArrayList<>();
         }
@@ -120,12 +125,31 @@ public class CreatePocketMolDesignJobReq {
      * 配体文件列表，最多支持1个
      * @return ligands
      */
-    public List<DrugFile> getLigands() {
+    public List<PocketFragment> getLigands() {
         return ligands;
     }
 
-    public void setLigands(List<DrugFile> ligands) {
+    public void setLigands(List<PocketFragment> ligands) {
         this.ligands = ligands;
+    }
+
+    public CreatePocketMolDesignJobReq withNumTrials(Integer numTrials) {
+        this.numTrials = numTrials;
+        return this;
+    }
+
+    /**
+     * 生成分子数量
+     * minimum: 1
+     * maximum: 5000
+     * @return numTrials
+     */
+    public Integer getNumTrials() {
+        return numTrials;
+    }
+
+    public void setNumTrials(Integer numTrials) {
+        this.numTrials = numTrials;
     }
 
     public CreatePocketMolDesignJobReq withModelIds(List<String> modelIds) {
@@ -221,14 +245,15 @@ public class CreatePocketMolDesignJobReq {
         }
         CreatePocketMolDesignJobReq that = (CreatePocketMolDesignJobReq) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
-            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.modelIds, that.modelIds)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.numTrials, that.numTrials)
+            && Objects.equals(this.modelIds, that.modelIds)
             && Objects.equals(this.molecularWeight, that.molecularWeight)
             && Objects.equals(this.optimizationMode, that.optimizationMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, modelIds, molecularWeight, optimizationMode);
+        return Objects.hash(basicInfo, receptor, ligands, numTrials, modelIds, molecularWeight, optimizationMode);
     }
 
     @Override
@@ -238,6 +263,7 @@ public class CreatePocketMolDesignJobReq {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptor: ").append(toIndentedString(receptor)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
+        sb.append("    numTrials: ").append(toIndentedString(numTrials)).append("\n");
         sb.append("    modelIds: ").append(toIndentedString(modelIds)).append("\n");
         sb.append("    molecularWeight: ").append(toIndentedString(molecularWeight)).append("\n");
         sb.append("    optimizationMode: ").append(toIndentedString(optimizationMode)).append("\n");

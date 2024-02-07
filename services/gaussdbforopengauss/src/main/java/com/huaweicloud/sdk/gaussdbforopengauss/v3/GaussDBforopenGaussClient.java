@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -2120,6 +2122,34 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLinkInvoker(
         ShowSslCertDownloadLinkRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showSslCertDownloadLink, hcClient);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 停止进行中的备份，包括全备和差备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return StopBackupResponse
+     */
+    public StopBackupResponse stopBackup(StopBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.stopBackup);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 停止进行中的备份，包括全备和差备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return SyncInvoker<StopBackupRequest, StopBackupResponse>
+     */
+    public SyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupInvoker(StopBackupRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.stopBackup, hcClient);
     }
 
     /**

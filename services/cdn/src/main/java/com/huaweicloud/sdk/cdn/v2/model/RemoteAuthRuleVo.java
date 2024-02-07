@@ -330,7 +330,7 @@ public class RemoteAuthRuleVo {
     }
 
     /**
-     * 设置鉴权超时时间，即从CDN转发鉴权请求开始，到CDN节点收到远程鉴权服务器返回的结果的时间。单位为毫秒，值为0或50~3000。
+     * 设置鉴权超时时间，即从CDN转发鉴权请求开始，到CDN节点收到远程鉴权服务器返回的结果的时间。单位为毫秒，值为0或50-3000。
      * @return timeout
      */
     public Integer getTimeout() {

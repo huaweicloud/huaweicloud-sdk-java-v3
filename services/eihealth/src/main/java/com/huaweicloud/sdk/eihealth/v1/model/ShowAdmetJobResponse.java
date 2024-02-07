@@ -39,6 +39,11 @@ public class ShowAdmetJobResponse extends SdkResponse {
 
     private List<BasicDrugModel> models = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_result")
+
+    private ClusterJobRsp clusterResult;
+
     public ShowAdmetJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -183,6 +188,32 @@ public class ShowAdmetJobResponse extends SdkResponse {
         this.models = models;
     }
 
+    public ShowAdmetJobResponse withClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+        return this;
+    }
+
+    public ShowAdmetJobResponse withClusterResult(Consumer<ClusterJobRsp> clusterResultSetter) {
+        if (this.clusterResult == null) {
+            this.clusterResult = new ClusterJobRsp();
+            clusterResultSetter.accept(this.clusterResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusterResult
+     * @return clusterResult
+     */
+    public ClusterJobRsp getClusterResult() {
+        return clusterResult;
+    }
+
+    public void setClusterResult(ClusterJobRsp clusterResult) {
+        this.clusterResult = clusterResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -194,12 +225,13 @@ public class ShowAdmetJobResponse extends SdkResponse {
         ShowAdmetJobResponse that = (ShowAdmetJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.moleculeFile, that.moleculeFile)
             && Objects.equals(this.jobResult, that.jobResult)
-            && Objects.equals(this.partFailedReason, that.partFailedReason) && Objects.equals(this.models, that.models);
+            && Objects.equals(this.partFailedReason, that.partFailedReason) && Objects.equals(this.models, that.models)
+            && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, moleculeFile, jobResult, partFailedReason, models);
+        return Objects.hash(basicInfo, moleculeFile, jobResult, partFailedReason, models, clusterResult);
     }
 
     @Override
@@ -211,6 +243,7 @@ public class ShowAdmetJobResponse extends SdkResponse {
         sb.append("    jobResult: ").append(toIndentedString(jobResult)).append("\n");
         sb.append("    partFailedReason: ").append(toIndentedString(partFailedReason)).append("\n");
         sb.append("    models: ").append(toIndentedString(models)).append("\n");
+        sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }
