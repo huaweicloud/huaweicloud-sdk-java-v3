@@ -4,8 +4,6 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.pangulargemodels.v1.model.ChatCompletionReq;
 import com.huaweicloud.sdk.pangulargemodels.v1.model.TextCompletionReq;
 
-import reactor.core.publisher.Flux;
-
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,6 +18,8 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.function.Consumer;
+
+import reactor.core.publisher.Flux;
 
 public class PanguLargeModelsFluxClient {
     private String panguEndpoint;

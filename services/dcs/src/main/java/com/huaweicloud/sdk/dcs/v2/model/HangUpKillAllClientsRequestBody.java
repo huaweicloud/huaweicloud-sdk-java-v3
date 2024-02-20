@@ -1,0 +1,95 @@
+package com.huaweicloud.sdk.dcs.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * HangUpKillAllClientsRequestBody
+ */
+public class HangUpKillAllClientsRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kill_all_nodes")
+
+    private Boolean killAllNodes;
+
+    public HangUpKillAllClientsRequestBody withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * 指定要kill全部会话的节点ID，kill_all_nodes为false时必填
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public HangUpKillAllClientsRequestBody withKillAllNodes(Boolean killAllNodes) {
+        this.killAllNodes = killAllNodes;
+        return this;
+    }
+
+    /**
+     * true：Kill实例全部节点的会话 false: kill指定节点的全部会话
+     * @return killAllNodes
+     */
+    public Boolean getKillAllNodes() {
+        return killAllNodes;
+    }
+
+    public void setKillAllNodes(Boolean killAllNodes) {
+        this.killAllNodes = killAllNodes;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        HangUpKillAllClientsRequestBody that = (HangUpKillAllClientsRequestBody) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.killAllNodes, that.killAllNodes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nodeId, killAllNodes);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class HangUpKillAllClientsRequestBody {\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+        sb.append("    killAllNodes: ").append(toIndentedString(killAllNodes)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

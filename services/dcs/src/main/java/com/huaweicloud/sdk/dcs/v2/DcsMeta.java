@@ -99,6 +99,12 @@ import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskBody;
 import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpClientsRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpClientsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpKillAllClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpKillAllClientsRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpKillAllClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.InstanceReplicationListInfo;
 import com.huaweicloud.sdk.dcs.v2.model.IpExchangeRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
@@ -115,6 +121,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListBigkeyScanTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListBigkeyScanTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListCenterTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListCenterTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigHistoriesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigHistoriesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigTemplatesRequest;
@@ -180,6 +188,9 @@ import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.ScanClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskBody;
@@ -1268,6 +1279,68 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<HangUpClientsRequest, HangUpClientsResponse> hangUpClients =
+        genForHangUpClients();
+
+    private static HttpRequestDef<HangUpClientsRequest, HangUpClientsResponse> genForHangUpClients() {
+        // basic
+        HttpRequestDef.Builder<HangUpClientsRequest, HangUpClientsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, HangUpClientsRequest.class, HangUpClientsResponse.class)
+                .withName("HangUpClients")
+                .withUri("/v2/{project_id}/instances/{instance_id}/clients/kill")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(HangUpClientsRequest::getInstanceId, HangUpClientsRequest::setInstanceId));
+        builder.<HangUpClientsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HangUpClientsRequestBody.class),
+            f -> f.withMarshaller(HangUpClientsRequest::getBody, HangUpClientsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<HangUpKillAllClientsRequest, HangUpKillAllClientsResponse> hangUpKillAllClients =
+        genForHangUpKillAllClients();
+
+    private static HttpRequestDef<HangUpKillAllClientsRequest, HangUpKillAllClientsResponse> genForHangUpKillAllClients() {
+        // basic
+        HttpRequestDef.Builder<HangUpKillAllClientsRequest, HangUpKillAllClientsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, HangUpKillAllClientsRequest.class, HangUpKillAllClientsResponse.class)
+            .withName("HangUpKillAllClients")
+            .withUri("/v2/{project_id}/instances/{instance_id}/clients/kill-all")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(HangUpKillAllClientsRequest::getInstanceId,
+                HangUpKillAllClientsRequest::setInstanceId));
+        builder.<HangUpKillAllClientsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HangUpKillAllClientsRequestBody.class),
+            f -> f.withMarshaller(HangUpKillAllClientsRequest::getBody, HangUpKillAllClientsRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(HangUpKillAllClientsResponse::getBody, HangUpKillAllClientsResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> listAclAccounts =
         genForListAclAccounts();
 
@@ -1500,6 +1573,58 @@ public class DcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCenterTaskRequest::getEndTime, ListCenterTaskRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClientsRequest, ListClientsResponse> listClients = genForListClients();
+
+    private static HttpRequestDef<ListClientsRequest, ListClientsResponse> genForListClients() {
+        // basic
+        HttpRequestDef.Builder<ListClientsRequest, ListClientsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClientsRequest.class, ListClientsResponse.class)
+                .withName("ListClients")
+                .withUri("/v2/{project_id}/instances/{instance_id}/clients")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClientsRequest::getInstanceId, ListClientsRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClientsRequest::getNodeId, ListClientsRequest::setNodeId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClientsRequest::getOffset, ListClientsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClientsRequest::getLimit, ListClientsRequest::setLimit));
+        builder.<String>withRequestField("addr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClientsRequest::getAddr, ListClientsRequest::setAddr));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClientsRequest::getSort, ListClientsRequest::setSort));
+        builder.<ListClientsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListClientsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListClientsRequest::getOrder, ListClientsRequest::setOrder));
 
         // response
 
@@ -2422,6 +2547,38 @@ public class DcsMeta {
             f -> f.withMarshaller(RestoreInstanceRequest::getBody, RestoreInstanceRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ScanClientsRequest, ScanClientsResponse> scanClients = genForScanClients();
+
+    private static HttpRequestDef<ScanClientsRequest, ScanClientsResponse> genForScanClients() {
+        // basic
+        HttpRequestDef.Builder<ScanClientsRequest, ScanClientsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ScanClientsRequest.class, ScanClientsResponse.class)
+                .withName("ScanClients")
+                .withUri("/v2/{project_id}/instances/{instance_id}/clients")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ScanClientsRequest::getInstanceId, ScanClientsRequest::setInstanceId));
+        builder.<ScanClientsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScanClientsRequestBody.class),
+            f -> f.withMarshaller(ScanClientsRequest::getBody, ScanClientsRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ScanClientsResponse::getBody, ScanClientsResponse::setBody));
 
         return builder.build();
     }

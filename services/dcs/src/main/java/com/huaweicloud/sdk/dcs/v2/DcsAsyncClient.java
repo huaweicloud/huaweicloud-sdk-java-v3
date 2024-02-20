@@ -75,6 +75,10 @@ import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpClientsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpKillAllClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.HangUpKillAllClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesRequest;
@@ -89,6 +93,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListBigkeyScanTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListBigkeyScanTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListCenterTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListCenterTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigHistoriesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigHistoriesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListConfigTemplatesRequest;
@@ -143,6 +149,8 @@ import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ScanClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskRequest;
@@ -1331,6 +1339,65 @@ public class DcsAsyncClient {
     }
 
     /**
+     * kill指定的会话
+     *
+     * kill指定的会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HangUpClientsRequest 请求对象
+     * @return CompletableFuture<HangUpClientsResponse>
+     */
+    public CompletableFuture<HangUpClientsResponse> hangUpClientsAsync(HangUpClientsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.hangUpClients);
+    }
+
+    /**
+     * kill指定的会话
+     *
+     * kill指定的会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HangUpClientsRequest 请求对象
+     * @return AsyncInvoker<HangUpClientsRequest, HangUpClientsResponse>
+     */
+    public AsyncInvoker<HangUpClientsRequest, HangUpClientsResponse> hangUpClientsAsyncInvoker(
+        HangUpClientsRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.hangUpClients, hcClient);
+    }
+
+    /**
+     * 下发kill指定节点或实例的全部会话任务
+     *
+     * 下发kill指定节点或实例的全部会话任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HangUpKillAllClientsRequest 请求对象
+     * @return CompletableFuture<HangUpKillAllClientsResponse>
+     */
+    public CompletableFuture<HangUpKillAllClientsResponse> hangUpKillAllClientsAsync(
+        HangUpKillAllClientsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.hangUpKillAllClients);
+    }
+
+    /**
+     * 下发kill指定节点或实例的全部会话任务
+     *
+     * 下发kill指定节点或实例的全部会话任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HangUpKillAllClientsRequest 请求对象
+     * @return AsyncInvoker<HangUpKillAllClientsRequest, HangUpKillAllClientsResponse>
+     */
+    public AsyncInvoker<HangUpKillAllClientsRequest, HangUpKillAllClientsResponse> hangUpKillAllClientsAsyncInvoker(
+        HangUpKillAllClientsRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.hangUpKillAllClients, hcClient);
+    }
+
+    /**
      * 查询ACL账户列表
      *
      * 查询ACL账户列表。
@@ -1531,6 +1598,34 @@ public class DcsAsyncClient {
     public AsyncInvoker<ListCenterTaskRequest, ListCenterTaskResponse> listCenterTaskAsyncInvoker(
         ListCenterTaskRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.listCenterTask, hcClient);
+    }
+
+    /**
+     * 获取会话列表
+     *
+     * 获取会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClientsRequest 请求对象
+     * @return CompletableFuture<ListClientsResponse>
+     */
+    public CompletableFuture<ListClientsResponse> listClientsAsync(ListClientsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listClients);
+    }
+
+    /**
+     * 获取会话列表
+     *
+     * 获取会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClientsRequest 请求对象
+     * @return AsyncInvoker<ListClientsRequest, ListClientsResponse>
+     */
+    public AsyncInvoker<ListClientsRequest, ListClientsResponse> listClientsAsyncInvoker(ListClientsRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.listClients, hcClient);
     }
 
     /**
@@ -2331,6 +2426,34 @@ public class DcsAsyncClient {
     public AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceAsyncInvoker(
         RestoreInstanceRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.restoreInstance, hcClient);
+    }
+
+    /**
+     * 下发查询会话列表任务
+     *
+     * 下发查询会话列表任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScanClientsRequest 请求对象
+     * @return CompletableFuture<ScanClientsResponse>
+     */
+    public CompletableFuture<ScanClientsResponse> scanClientsAsync(ScanClientsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.scanClients);
+    }
+
+    /**
+     * 下发查询会话列表任务
+     *
+     * 下发查询会话列表任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScanClientsRequest 请求对象
+     * @return AsyncInvoker<ScanClientsRequest, ScanClientsResponse>
+     */
+    public AsyncInvoker<ScanClientsRequest, ScanClientsResponse> scanClientsAsyncInvoker(ScanClientsRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.scanClients, hcClient);
     }
 
     /**

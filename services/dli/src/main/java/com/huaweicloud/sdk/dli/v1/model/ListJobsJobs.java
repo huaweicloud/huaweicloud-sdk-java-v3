@@ -46,7 +46,7 @@ public class ListJobsJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private Integer duration;
+    private Long duration;
 
     /**
      * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
@@ -159,7 +159,7 @@ public class ListJobsJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_count")
 
-    private Integer resultCount;
+    private Long resultCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
@@ -296,7 +296,7 @@ public class ListJobsJobs {
         this.startTime = startTime;
     }
 
-    public ListJobsJobs withDuration(Integer duration) {
+    public ListJobsJobs withDuration(Long duration) {
         this.duration = duration;
         return this;
     }
@@ -305,11 +305,11 @@ public class ListJobsJobs {
      * 作业运行时长，单位毫秒。
      * @return duration
      */
-    public Integer getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 
@@ -381,7 +381,7 @@ public class ListJobsJobs {
         this.inputSize = inputSize;
     }
 
-    public ListJobsJobs withResultCount(Integer resultCount) {
+    public ListJobsJobs withResultCount(Long resultCount) {
         this.resultCount = resultCount;
         return this;
     }
@@ -390,11 +390,11 @@ public class ListJobsJobs {
      * 当前作业返回的结果总条数或insert作业插入的总条数。
      * @return resultCount
      */
-    public Integer getResultCount() {
+    public Long getResultCount() {
         return resultCount;
     }
 
-    public void setResultCount(Integer resultCount) {
+    public void setResultCount(Long resultCount) {
         this.resultCount = resultCount;
     }
 
