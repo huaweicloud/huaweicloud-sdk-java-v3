@@ -197,12 +197,12 @@ public class ShowWidgetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private BaseWidgetInfoProperties properties;
+    private UpdateWidgetInfoProperties properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    private BaseWidgetInfoLocation location;
+    private UpdateWidgetInfoLocation location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -351,14 +351,14 @@ public class ShowWidgetResponse extends SdkResponse {
         this.metricDisplayMode = metricDisplayMode;
     }
 
-    public ShowWidgetResponse withProperties(BaseWidgetInfoProperties properties) {
+    public ShowWidgetResponse withProperties(UpdateWidgetInfoProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public ShowWidgetResponse withProperties(Consumer<BaseWidgetInfoProperties> propertiesSetter) {
+    public ShowWidgetResponse withProperties(Consumer<UpdateWidgetInfoProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new BaseWidgetInfoProperties();
+            this.properties = new UpdateWidgetInfoProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -369,22 +369,22 @@ public class ShowWidgetResponse extends SdkResponse {
      * Get properties
      * @return properties
      */
-    public BaseWidgetInfoProperties getProperties() {
+    public UpdateWidgetInfoProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(BaseWidgetInfoProperties properties) {
+    public void setProperties(UpdateWidgetInfoProperties properties) {
         this.properties = properties;
     }
 
-    public ShowWidgetResponse withLocation(BaseWidgetInfoLocation location) {
+    public ShowWidgetResponse withLocation(UpdateWidgetInfoLocation location) {
         this.location = location;
         return this;
     }
 
-    public ShowWidgetResponse withLocation(Consumer<BaseWidgetInfoLocation> locationSetter) {
+    public ShowWidgetResponse withLocation(Consumer<UpdateWidgetInfoLocation> locationSetter) {
         if (this.location == null) {
-            this.location = new BaseWidgetInfoLocation();
+            this.location = new UpdateWidgetInfoLocation();
             locationSetter.accept(this.location);
         }
 
@@ -395,11 +395,11 @@ public class ShowWidgetResponse extends SdkResponse {
      * Get location
      * @return location
      */
-    public BaseWidgetInfoLocation getLocation() {
+    public UpdateWidgetInfoLocation getLocation() {
         return location;
     }
 
-    public void setLocation(BaseWidgetInfoLocation location) {
+    public void setLocation(UpdateWidgetInfoLocation location) {
         this.location = location;
     }
 

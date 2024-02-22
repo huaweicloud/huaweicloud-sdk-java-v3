@@ -61,7 +61,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private String _package;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      */
     public static final class RuntimeEnum {
 
@@ -155,6 +155,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
 
+        /**
+         * Enum CUSTOM_IMAGE for value: "Custom Image"
+         */
+        public static final RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -177,6 +182,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             map.put("Python3.9", PYTHON3_9);
             map.put("Custom", CUSTOM);
             map.put("http", HTTP);
+            map.put("Custom Image", CUSTOM_IMAGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -257,7 +263,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private Integer cpu;
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      */
     public static final class CodeTypeEnum {
 
@@ -281,6 +287,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+        /**
+         * Enum CUSTOM_IMAGE_SWR for value: "Custom-Image-Swr"
+         */
+        public static final CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeTypeEnum> createStaticFields() {
@@ -289,6 +300,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             map.put("zip", ZIP);
             map.put("obs", OBS);
             map.put("jar", JAR);
+            map.put("Custom-Image-Swr", CUSTOM_IMAGE_SWR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -469,7 +481,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private String logStreamId;
 
     /**
-     * v2表示为公测版本,v1为原来版本。
+     * v2表示为正式版本,v1为废弃版本。
      */
     public static final class TypeEnum {
 
@@ -710,7 +722,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -727,7 +739,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -812,7 +824,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      * @return codeType
      */
     public CodeTypeEnum getCodeType() {
@@ -965,7 +977,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
      * @return xrole
      */
     public String getXrole() {
@@ -982,7 +994,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数执行委托。可为函数执行单独配置执行委托，这将减小不必要的性能损耗；不单独配置执行委托时，函数执行和函数配置将使用同一委托。
      * @return appXrole
      */
     public String getAppXrole() {
@@ -1033,7 +1045,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 临时存储大小。
+     * 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
      * @return ephemeralStorage
      */
     public Integer getEphemeralStorage() {
@@ -1161,7 +1173,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+     * 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
      * @return initializerHandler
      */
     public String getInitializerHandler() {
@@ -1178,7 +1190,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
      * @return initializerTimeout
      */
     public Integer getInitializerTimeout() {
@@ -1297,7 +1309,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * v2表示为公测版本,v1为原来版本。
+     * v2表示为正式版本,v1为废弃版本。
      * @return type
      */
     public TypeEnum getType() {

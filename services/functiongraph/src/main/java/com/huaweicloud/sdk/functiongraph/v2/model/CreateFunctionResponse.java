@@ -21,6 +21,11 @@ import java.util.function.Consumer;
 public class CreateFunctionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "func_id")
+
+    private String funcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
     private String funcUrn;
@@ -51,7 +56,7 @@ public class CreateFunctionResponse extends SdkResponse {
     private String _package;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      */
     public static final class RuntimeEnum {
 
@@ -145,6 +150,11 @@ public class CreateFunctionResponse extends SdkResponse {
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
 
+        /**
+         * Enum CUSTOM_IMAGE for value: "Custom Image"
+         */
+        public static final RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -167,6 +177,7 @@ public class CreateFunctionResponse extends SdkResponse {
             map.put("Python3.9", PYTHON3_9);
             map.put("Custom", CUSTOM);
             map.put("http", HTTP);
+            map.put("Custom Image", CUSTOM_IMAGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -247,7 +258,7 @@ public class CreateFunctionResponse extends SdkResponse {
     private Integer cpu;
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      */
     public static final class CodeTypeEnum {
 
@@ -271,6 +282,11 @@ public class CreateFunctionResponse extends SdkResponse {
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+        /**
+         * Enum CUSTOM_IMAGE_SWR for value: "Custom-Image-Swr"
+         */
+        public static final CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeTypeEnum> createStaticFields() {
@@ -279,6 +295,7 @@ public class CreateFunctionResponse extends SdkResponse {
             map.put("zip", ZIP);
             map.put("obs", OBS);
             map.put("jar", JAR);
+            map.put("Custom-Image-Swr", CUSTOM_IMAGE_SWR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -349,6 +366,11 @@ public class CreateFunctionResponse extends SdkResponse {
     private Long codeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_names")
+
+    private String domainNames;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
     private String userData;
@@ -404,6 +426,11 @@ public class CreateFunctionResponse extends SdkResponse {
     private MountConfig mountConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reserved_instance_count")
+
+    private Integer reservedInstanceCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "depend_list")
 
     private List<String> dependList = null;
@@ -422,6 +449,11 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonProperty(value = "extend_config")
 
     private String extendConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependencies")
+
+    private List<Dependency> dependencies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_handler")
@@ -449,6 +481,101 @@ public class CreateFunctionResponse extends SdkResponse {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "long_time")
+
+    private Boolean longTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_id")
+
+    private String logStreamId;
+
+    /**
+     * v2表示为正式版本,v1为废弃版本。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum V1 for value: "v1"
+         */
+        public static final TypeEnum V1 = new TypeEnum("v1");
+
+        /**
+         * Enum V2 for value: "v2"
+         */
+        public static final TypeEnum V2 = new TypeEnum("v2");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("v1", V1);
+            map.put("v2", V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_cloud_debug")
+
+    private String enableCloudDebug;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dynamic_memory")
 
     private Boolean enableDynamicMemory;
@@ -467,6 +594,68 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonProperty(value = "custom_image")
 
     private CustomImage customImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_bridge_function")
+
+    private Boolean isBridgeFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apig_route_enable")
+
+    private Boolean apigRouteEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "heartbeat_handler")
+
+    private String heartbeatHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_class_isolation")
+
+    private Boolean enableClassIsolation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_ephemeral_storage")
+
+    private Boolean allowEphemeralStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ephemeral_storage")
+
+    private Integer ephemeralStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_controller")
+
+    private NetworkControlConfig networkController;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    public CreateFunctionResponse withFuncId(String funcId) {
+        this.funcId = funcId;
+        return this;
+    }
+
+    /**
+     * 函数id，唯一标识函数。
+     * @return funcId
+     */
+    public String getFuncId() {
+        return funcId;
+    }
+
+    public void setFuncId(String funcId) {
+        this.funcId = funcId;
+    }
 
     public CreateFunctionResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -576,7 +765,7 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -593,7 +782,7 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -678,7 +867,7 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      * @return codeType
      */
     public CodeTypeEnum getCodeType() {
@@ -740,6 +929,23 @@ public class CreateFunctionResponse extends SdkResponse {
         this.codeSize = codeSize;
     }
 
+    public CreateFunctionResponse withDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+        return this;
+    }
+
+    /**
+     * 函数配置的需要支持域名解析的内网域名。
+     * @return domainNames
+     */
+    public String getDomainNames() {
+        return domainNames;
+    }
+
+    public void setDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+    }
+
     public CreateFunctionResponse withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -797,7 +1003,7 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     /**
-     * 函数版本号，由系统自动生成，规则：vYYYYMMDD-HHMMSS（v+年月日-时分秒）。
+     * 函数版本号。
      * @return version
      */
     public String getVersion() {
@@ -945,6 +1151,23 @@ public class CreateFunctionResponse extends SdkResponse {
         this.mountConfig = mountConfig;
     }
 
+    public CreateFunctionResponse withReservedInstanceCount(Integer reservedInstanceCount) {
+        this.reservedInstanceCount = reservedInstanceCount;
+        return this;
+    }
+
+    /**
+     * 函数预留实例数量。
+     * @return reservedInstanceCount
+     */
+    public Integer getReservedInstanceCount() {
+        return reservedInstanceCount;
+    }
+
+    public void setReservedInstanceCount(Integer reservedInstanceCount) {
+        this.reservedInstanceCount = reservedInstanceCount;
+    }
+
     public CreateFunctionResponse withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -1054,13 +1277,46 @@ public class CreateFunctionResponse extends SdkResponse {
         this.extendConfig = extendConfig;
     }
 
+    public CreateFunctionResponse withDependencies(List<Dependency> dependencies) {
+        this.dependencies = dependencies;
+        return this;
+    }
+
+    public CreateFunctionResponse addDependenciesItem(Dependency dependenciesItem) {
+        if (this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
+        this.dependencies.add(dependenciesItem);
+        return this;
+    }
+
+    public CreateFunctionResponse withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
+        if (this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
+        dependenciesSetter.accept(this.dependencies);
+        return this;
+    }
+
+    /**
+     * 函数依赖代码包列表。
+     * @return dependencies
+     */
+    public List<Dependency> getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(List<Dependency> dependencies) {
+        this.dependencies = dependencies;
+    }
+
     public CreateFunctionResponse withInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
         return this;
     }
 
     /**
-     * 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+     * 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
      * @return initializerHandler
      */
     public String getInitializerHandler() {
@@ -1077,7 +1333,7 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     /**
-     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
      * @return initializerTimeout
      */
     public Integer getInitializerTimeout() {
@@ -1137,6 +1393,91 @@ public class CreateFunctionResponse extends SdkResponse {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateFunctionResponse withLongTime(Boolean longTime) {
+        this.longTime = longTime;
+        return this;
+    }
+
+    /**
+     * 是否允许进行长时间超时设置。
+     * @return longTime
+     */
+    public Boolean getLongTime() {
+        return longTime;
+    }
+
+    public void setLongTime(Boolean longTime) {
+        this.longTime = longTime;
+    }
+
+    public CreateFunctionResponse withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询组id
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
+    public CreateFunctionResponse withLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询流id
+     * @return logStreamId
+     */
+    public String getLogStreamId() {
+        return logStreamId;
+    }
+
+    public void setLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+    }
+
+    public CreateFunctionResponse withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * v2表示为正式版本,v1为废弃版本。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public CreateFunctionResponse withEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+        return this;
+    }
+
+    /**
+     * 是否启用cloud debug功能
+     * @return enableCloudDebug
+     */
+    public String getEnableCloudDebug() {
+        return enableCloudDebug;
+    }
+
+    public void setEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
     }
 
     public CreateFunctionResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
@@ -1216,6 +1557,168 @@ public class CreateFunctionResponse extends SdkResponse {
         this.customImage = customImage;
     }
 
+    public CreateFunctionResponse withIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
+        return this;
+    }
+
+    /**
+     * 是否为bridge函数
+     * @return isBridgeFunction
+     */
+    public Boolean getIsBridgeFunction() {
+        return isBridgeFunction;
+    }
+
+    public void setIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
+    }
+
+    public CreateFunctionResponse withApigRouteEnable(Boolean apigRouteEnable) {
+        this.apigRouteEnable = apigRouteEnable;
+        return this;
+    }
+
+    /**
+     * 是否配置下沉apig路由规则。
+     * @return apigRouteEnable
+     */
+    public Boolean getApigRouteEnable() {
+        return apigRouteEnable;
+    }
+
+    public void setApigRouteEnable(Boolean apigRouteEnable) {
+        this.apigRouteEnable = apigRouteEnable;
+    }
+
+    public CreateFunctionResponse withHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+        return this;
+    }
+
+    /**
+     * 心跳函数函数的入口，规则：xx.xx，必须包含“. ”，只支持JAVA运行时配置。 心跳函数入口需要与函数执行入口在同一文件下。在开启心跳函数配置时，此参数必填。
+     * @return heartbeatHandler
+     */
+    public String getHeartbeatHandler() {
+        return heartbeatHandler;
+    }
+
+    public void setHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+    }
+
+    public CreateFunctionResponse withEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+        return this;
+    }
+
+    /**
+     * 类隔离开关，只支持JAVA运行时配置。开启类隔离后可以支持Kafka转储并提升类加载效率，但也可能会导致某些兼容性问题，请谨慎开启。
+     * @return enableClassIsolation
+     */
+    public Boolean getEnableClassIsolation() {
+        return enableClassIsolation;
+    }
+
+    public void setEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+    }
+
+    public CreateFunctionResponse withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
+    public CreateFunctionResponse withAllowEphemeralStorage(Boolean allowEphemeralStorage) {
+        this.allowEphemeralStorage = allowEphemeralStorage;
+        return this;
+    }
+
+    /**
+     * 是否支持配置临时存储。
+     * @return allowEphemeralStorage
+     */
+    public Boolean getAllowEphemeralStorage() {
+        return allowEphemeralStorage;
+    }
+
+    public void setAllowEphemeralStorage(Boolean allowEphemeralStorage) {
+        this.allowEphemeralStorage = allowEphemeralStorage;
+    }
+
+    public CreateFunctionResponse withEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+        return this;
+    }
+
+    /**
+     * 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
+     * @return ephemeralStorage
+     */
+    public Integer getEphemeralStorage() {
+        return ephemeralStorage;
+    }
+
+    public void setEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    public CreateFunctionResponse withNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+        return this;
+    }
+
+    public CreateFunctionResponse withNetworkController(Consumer<NetworkControlConfig> networkControllerSetter) {
+        if (this.networkController == null) {
+            this.networkController = new NetworkControlConfig();
+            networkControllerSetter.accept(this.networkController);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkController
+     * @return networkController
+     */
+    public NetworkControlConfig getNetworkController() {
+        return networkController;
+    }
+
+    public void setNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+    }
+
+    public CreateFunctionResponse withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1225,38 +1728,55 @@ public class CreateFunctionResponse extends SdkResponse {
             return false;
         }
         CreateFunctionResponse that = (CreateFunctionResponse) obj;
-        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
-            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
-            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
-            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.cpu, that.cpu)
-            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
-            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
+        return Objects.equals(this.funcId, that.funcId) && Objects.equals(this.funcUrn, that.funcUrn)
+            && Objects.equals(this.funcName, that.funcName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this._package, that._package) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.memorySize, that.memorySize) && Objects.equals(this.gpuMemory, that.gpuMemory)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.domainNames, that.domainNames)
             && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData)
             && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
             && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.funcVpc, that.funcVpc)
-            && Objects.equals(this.mountConfig, that.mountConfig) && Objects.equals(this.dependList, that.dependList)
+            && Objects.equals(this.mountConfig, that.mountConfig)
+            && Objects.equals(this.reservedInstanceCount, that.reservedInstanceCount)
+            && Objects.equals(this.dependList, that.dependList)
             && Objects.equals(this.dependVersionList, that.dependVersionList)
             && Objects.equals(this.strategyConfig, that.strategyConfig)
             && Objects.equals(this.extendConfig, that.extendConfig)
+            && Objects.equals(this.dependencies, that.dependencies)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
             && Objects.equals(this.preStopHandler, that.preStopHandler)
             && Objects.equals(this.preStopTimeout, that.preStopTimeout)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.longTime, that.longTime) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableCloudDebug, that.enableCloudDebug)
             && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
             && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
-            && Objects.equals(this.customImage, that.customImage);
+            && Objects.equals(this.customImage, that.customImage)
+            && Objects.equals(this.isBridgeFunction, that.isBridgeFunction)
+            && Objects.equals(this.apigRouteEnable, that.apigRouteEnable)
+            && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
+            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
+            && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.allowEphemeralStorage, that.allowEphemeralStorage)
+            && Objects.equals(this.ephemeralStorage, that.ephemeralStorage)
+            && Objects.equals(this.networkController, that.networkController)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn,
+        return Objects.hash(funcId,
+            funcUrn,
             funcName,
             domainId,
             namespace,
@@ -1272,6 +1792,7 @@ public class CreateFunctionResponse extends SdkResponse {
             codeUrl,
             codeFilename,
             codeSize,
+            domainNames,
             userData,
             encryptedUserData,
             digest,
@@ -1283,25 +1804,42 @@ public class CreateFunctionResponse extends SdkResponse {
             lastModified,
             funcVpc,
             mountConfig,
+            reservedInstanceCount,
             dependList,
             dependVersionList,
             strategyConfig,
             extendConfig,
+            dependencies,
             initializerHandler,
             initializerTimeout,
             preStopHandler,
             preStopTimeout,
             enterpriseProjectId,
+            longTime,
+            logGroupId,
+            logStreamId,
+            type,
+            enableCloudDebug,
             enableDynamicMemory,
             isStatefulFunction,
             enableAuthInHeader,
-            customImage);
+            customImage,
+            isBridgeFunction,
+            apigRouteEnable,
+            heartbeatHandler,
+            enableClassIsolation,
+            gpuType,
+            allowEphemeralStorage,
+            ephemeralStorage,
+            networkController,
+            resourceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateFunctionResponse {\n");
+        sb.append("    funcId: ").append(toIndentedString(funcId)).append("\n");
         sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
         sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
@@ -1318,6 +1856,7 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
+        sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
@@ -1329,19 +1868,35 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
+        sb.append("    reservedInstanceCount: ").append(toIndentedString(reservedInstanceCount)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
+        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    preStopHandler: ").append(toIndentedString(preStopHandler)).append("\n");
         sb.append("    preStopTimeout: ").append(toIndentedString(preStopTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    longTime: ").append(toIndentedString(longTime)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableCloudDebug: ").append(toIndentedString(enableCloudDebug)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
+        sb.append("    isBridgeFunction: ").append(toIndentedString(isBridgeFunction)).append("\n");
+        sb.append("    apigRouteEnable: ").append(toIndentedString(apigRouteEnable)).append("\n");
+        sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
+        sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
+        sb.append("    allowEphemeralStorage: ").append(toIndentedString(allowEphemeralStorage)).append("\n");
+        sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
+        sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

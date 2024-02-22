@@ -61,7 +61,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private String _package;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      */
     public static final class RuntimeEnum {
 
@@ -155,6 +155,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
 
+        /**
+         * Enum CUSTOM_IMAGE for value: "Custom Image"
+         */
+        public static final RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -177,6 +182,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             map.put("Python3.9", PYTHON3_9);
             map.put("Custom", CUSTOM);
             map.put("http", HTTP);
+            map.put("Custom Image", CUSTOM_IMAGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -257,7 +263,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Integer cpu;
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      */
     public static final class CodeTypeEnum {
 
@@ -281,6 +287,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+        /**
+         * Enum CUSTOM_IMAGE_SWR for value: "Custom-Image-Swr"
+         */
+        public static final CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeTypeEnum> createStaticFields() {
@@ -289,6 +300,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             map.put("zip", ZIP);
             map.put("obs", OBS);
             map.put("jar", JAR);
+            map.put("Custom-Image-Swr", CUSTOM_IMAGE_SWR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -479,7 +491,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private String logStreamId;
 
     /**
-     * v2表示为公测版本,v1为原来版本。
+     * v2表示为正式版本,v1为废弃版本。
      */
     public static final class TypeEnum {
 
@@ -554,6 +566,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_cloud_debug")
+
+    private String enableCloudDebug;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dynamic_memory")
 
     private Boolean enableDynamicMemory;
@@ -564,6 +581,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Boolean isStatefulFunction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_bridge_function")
+
+    private Boolean isBridgeFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auth_in_header")
 
     private Boolean enableAuthInHeader;
@@ -572,6 +594,41 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "custom_image")
 
     private CustomImage customImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reserved_instance_idle_mode")
+
+    private Boolean reservedInstanceIdleMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apig_route_enable")
+
+    private Boolean apigRouteEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "heartbeat_handler")
+
+    private String heartbeatHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_class_isolation")
+
+    private Boolean enableClassIsolation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_ephemeral_storage")
+
+    private Boolean allowEphemeralStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_controller")
+
+    private NetworkControlConfig networkController;
 
     public ShowFunctionConfigResponse withFuncId(String funcId) {
         this.funcId = funcId;
@@ -715,7 +772,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -732,7 +789,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -817,7 +874,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      * @return codeType
      */
     public CodeTypeEnum getCodeType() {
@@ -970,7 +1027,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
      * @return xrole
      */
     public String getXrole() {
@@ -987,7 +1044,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数执行委托。可为函数执行单独配置执行委托，这将减小不必要的性能损耗；不单独配置执行委托时，函数执行和函数配置将使用同一委托。
      * @return appXrole
      */
     public String getAppXrole() {
@@ -1038,7 +1095,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 临时存储大小。
+     * 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
      * @return ephemeralStorage
      */
     public Integer getEphemeralStorage() {
@@ -1232,7 +1289,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+     * 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
      * @return initializerHandler
      */
     public String getInitializerHandler() {
@@ -1249,7 +1306,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
      * @return initializerTimeout
      */
     public Integer getInitializerTimeout() {
@@ -1368,7 +1425,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     }
 
     /**
-     * v2表示为公测版本,v1为原来版本。
+     * v2表示为正式版本,v1为废弃版本。
      * @return type
      */
     public TypeEnum getType() {
@@ -1377,6 +1434,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public ShowFunctionConfigResponse withEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+        return this;
+    }
+
+    /**
+     * 是否启用cloud debug功能
+     * @return enableCloudDebug
+     */
+    public String getEnableCloudDebug() {
+        return enableCloudDebug;
+    }
+
+    public void setEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
     }
 
     public ShowFunctionConfigResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
@@ -1411,6 +1485,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     public void setIsStatefulFunction(Boolean isStatefulFunction) {
         this.isStatefulFunction = isStatefulFunction;
+    }
+
+    public ShowFunctionConfigResponse withIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
+        return this;
+    }
+
+    /**
+     * 是否为bridge函数
+     * @return isBridgeFunction
+     */
+    public Boolean getIsBridgeFunction() {
+        return isBridgeFunction;
+    }
+
+    public void setIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
     }
 
     public ShowFunctionConfigResponse withEnableAuthInHeader(Boolean enableAuthInHeader) {
@@ -1456,6 +1547,134 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.customImage = customImage;
     }
 
+    public ShowFunctionConfigResponse withReservedInstanceIdleMode(Boolean reservedInstanceIdleMode) {
+        this.reservedInstanceIdleMode = reservedInstanceIdleMode;
+        return this;
+    }
+
+    /**
+     * 是否开启预留实例闲置模式
+     * @return reservedInstanceIdleMode
+     */
+    public Boolean getReservedInstanceIdleMode() {
+        return reservedInstanceIdleMode;
+    }
+
+    public void setReservedInstanceIdleMode(Boolean reservedInstanceIdleMode) {
+        this.reservedInstanceIdleMode = reservedInstanceIdleMode;
+    }
+
+    public ShowFunctionConfigResponse withApigRouteEnable(Boolean apigRouteEnable) {
+        this.apigRouteEnable = apigRouteEnable;
+        return this;
+    }
+
+    /**
+     * 是否配置下沉apig路由规则。
+     * @return apigRouteEnable
+     */
+    public Boolean getApigRouteEnable() {
+        return apigRouteEnable;
+    }
+
+    public void setApigRouteEnable(Boolean apigRouteEnable) {
+        this.apigRouteEnable = apigRouteEnable;
+    }
+
+    public ShowFunctionConfigResponse withHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+        return this;
+    }
+
+    /**
+     * 心跳函数函数的入口，规则：xx.xx，必须包含“. ”，只支持JAVA运行时配置。 心跳函数入口需要与函数执行入口在同一文件下。在开启心跳函数配置时，此参数必填。
+     * @return heartbeatHandler
+     */
+    public String getHeartbeatHandler() {
+        return heartbeatHandler;
+    }
+
+    public void setHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+    }
+
+    public ShowFunctionConfigResponse withEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+        return this;
+    }
+
+    /**
+     * 类隔离开关，只支持JAVA运行时配置。开启类隔离后可以支持Kafka转储并提升类加载效率，但也可能会导致某些兼容性问题，请谨慎开启。
+     * @return enableClassIsolation
+     */
+    public Boolean getEnableClassIsolation() {
+        return enableClassIsolation;
+    }
+
+    public void setEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+    }
+
+    public ShowFunctionConfigResponse withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
+    public ShowFunctionConfigResponse withAllowEphemeralStorage(Boolean allowEphemeralStorage) {
+        this.allowEphemeralStorage = allowEphemeralStorage;
+        return this;
+    }
+
+    /**
+     * 是否支持配置临时存储。
+     * @return allowEphemeralStorage
+     */
+    public Boolean getAllowEphemeralStorage() {
+        return allowEphemeralStorage;
+    }
+
+    public void setAllowEphemeralStorage(Boolean allowEphemeralStorage) {
+        this.allowEphemeralStorage = allowEphemeralStorage;
+    }
+
+    public ShowFunctionConfigResponse withNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+        return this;
+    }
+
+    public ShowFunctionConfigResponse withNetworkController(Consumer<NetworkControlConfig> networkControllerSetter) {
+        if (this.networkController == null) {
+            this.networkController = new NetworkControlConfig();
+            networkControllerSetter.accept(this.networkController);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkController
+     * @return networkController
+     */
+    public NetworkControlConfig getNetworkController() {
+        return networkController;
+    }
+
+    public void setNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1493,10 +1712,19 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.longTime, that.longTime) && Objects.equals(this.logGroupId, that.logGroupId)
             && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableCloudDebug, that.enableCloudDebug)
             && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
             && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.isBridgeFunction, that.isBridgeFunction)
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
-            && Objects.equals(this.customImage, that.customImage);
+            && Objects.equals(this.customImage, that.customImage)
+            && Objects.equals(this.reservedInstanceIdleMode, that.reservedInstanceIdleMode)
+            && Objects.equals(this.apigRouteEnable, that.apigRouteEnable)
+            && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
+            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
+            && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.allowEphemeralStorage, that.allowEphemeralStorage)
+            && Objects.equals(this.networkController, that.networkController);
     }
 
     @Override
@@ -1544,10 +1772,19 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             logGroupId,
             logStreamId,
             type,
+            enableCloudDebug,
             enableDynamicMemory,
             isStatefulFunction,
+            isBridgeFunction,
             enableAuthInHeader,
-            customImage);
+            customImage,
+            reservedInstanceIdleMode,
+            apigRouteEnable,
+            heartbeatHandler,
+            enableClassIsolation,
+            gpuType,
+            allowEphemeralStorage,
+            networkController);
     }
 
     @Override
@@ -1597,10 +1834,19 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableCloudDebug: ").append(toIndentedString(enableCloudDebug)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    isBridgeFunction: ").append(toIndentedString(isBridgeFunction)).append("\n");
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
+        sb.append("    reservedInstanceIdleMode: ").append(toIndentedString(reservedInstanceIdleMode)).append("\n");
+        sb.append("    apigRouteEnable: ").append(toIndentedString(apigRouteEnable)).append("\n");
+        sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
+        sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
+        sb.append("    allowEphemeralStorage: ").append(toIndentedString(allowEphemeralStorage)).append("\n");
+        sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("}");
         return sb.toString();
     }

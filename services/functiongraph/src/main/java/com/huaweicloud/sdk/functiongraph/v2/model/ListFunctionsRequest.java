@@ -65,7 +65,7 @@ public class ListFunctionsRequest {
     }
 
     /**
-     * 应用名称。
+     * 自定义分组名称。
      * @return packageName
      */
     public String getPackageName() {

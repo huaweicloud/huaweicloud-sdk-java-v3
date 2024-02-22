@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * 额外信息，当view为bar时有效
  */
-public class BaseWidgetInfoProperties {
+public class UpdateWidgetInfoProperties {
 
     /**
      * 聚合类型，目前只有TopN这一种类型
@@ -164,7 +164,7 @@ public class BaseWidgetInfoProperties {
 
     private OrderEnum order;
 
-    public BaseWidgetInfoProperties withFilter(FilterEnum filter) {
+    public UpdateWidgetInfoProperties withFilter(FilterEnum filter) {
         this.filter = filter;
         return this;
     }
@@ -181,7 +181,7 @@ public class BaseWidgetInfoProperties {
         this.filter = filter;
     }
 
-    public BaseWidgetInfoProperties withTopN(Integer topN) {
+    public UpdateWidgetInfoProperties withTopN(Integer topN) {
         this.topN = topN;
         return this;
     }
@@ -200,7 +200,7 @@ public class BaseWidgetInfoProperties {
         this.topN = topN;
     }
 
-    public BaseWidgetInfoProperties withOrder(OrderEnum order) {
+    public UpdateWidgetInfoProperties withOrder(OrderEnum order) {
         this.order = order;
         return this;
     }
@@ -225,7 +225,7 @@ public class BaseWidgetInfoProperties {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseWidgetInfoProperties that = (BaseWidgetInfoProperties) obj;
+        UpdateWidgetInfoProperties that = (UpdateWidgetInfoProperties) obj;
         return Objects.equals(this.filter, that.filter) && Objects.equals(this.topN, that.topN)
             && Objects.equals(this.order, that.order);
     }
@@ -238,7 +238,7 @@ public class BaseWidgetInfoProperties {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BaseWidgetInfoProperties {\n");
+        sb.append("class UpdateWidgetInfoProperties {\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    topN: ").append(toIndentedString(topN)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");

@@ -441,7 +441,7 @@ import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeResponse;
-import com.huaweicloud.sdk.eihealth.v1.model.ReceptorDrugFile;
+import com.huaweicloud.sdk.eihealth.v1.model.ReceptorDrugFileReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RecognizeReceptorPocketReq;
@@ -8248,10 +8248,10 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ParseDrugReceptorInfoRequest::getEihealthProjectId,
                 ParseDrugReceptorInfoRequest::setEihealthProjectId));
-        builder.<ReceptorDrugFile>withRequestField("body",
+        builder.<ReceptorDrugFileReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ReceptorDrugFile.class),
+            TypeCasts.uncheckedConversion(ReceptorDrugFileReq.class),
             f -> f.withMarshaller(ParseDrugReceptorInfoRequest::getBody, ParseDrugReceptorInfoRequest::setBody));
 
         // response

@@ -2,7 +2,6 @@ package com.huaweicloud.sdk.ces.v2;
 
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesResponse;
-import com.huaweicloud.sdk.ces.v2.model.BaseWidgetInfo;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmRulesRequest;
@@ -587,12 +586,12 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDashboardWidgetsRequest::getDashboardId,
                 CreateDashboardWidgetsRequest::setDashboardId));
-        builder.<List<BaseWidgetInfo>>withRequestField("body",
+        builder.<List<Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateDashboardWidgetsRequest::getBody, CreateDashboardWidgetsRequest::setBody)
-                .withInnerContainerType(BaseWidgetInfo.class));
+                .withInnerContainerType(Object.class));
 
         // response
 

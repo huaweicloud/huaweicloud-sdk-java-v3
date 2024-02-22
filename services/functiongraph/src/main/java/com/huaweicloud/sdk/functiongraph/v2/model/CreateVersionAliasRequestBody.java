@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 版本别名结构
+ * 创建别名请求体
  */
 public class CreateVersionAliasRequestBody {
 
@@ -32,6 +32,11 @@ public class CreateVersionAliasRequestBody {
     @JsonProperty(value = "additional_version_weights")
 
     private Map<String, Integer> additionalVersionWeights = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_version_strategy")
+
+    private Map<String, VersionStrategy> additionalVersionStrategy = null;
 
     public CreateVersionAliasRequestBody withName(String name) {
         this.name = name;
@@ -108,7 +113,7 @@ public class CreateVersionAliasRequestBody {
     }
 
     /**
-     * 灰度版本信息
+     * 百分比灰度配置信息
      * @return additionalVersionWeights
      */
     public Map<String, Integer> getAdditionalVersionWeights() {
@@ -117,6 +122,42 @@ public class CreateVersionAliasRequestBody {
 
     public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
+    }
+
+    public CreateVersionAliasRequestBody withAdditionalVersionStrategy(
+        Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
+        return this;
+    }
+
+    public CreateVersionAliasRequestBody putAdditionalVersionStrategyItem(String key,
+        VersionStrategy additionalVersionStrategyItem) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        this.additionalVersionStrategy.put(key, additionalVersionStrategyItem);
+        return this;
+    }
+
+    public CreateVersionAliasRequestBody withAdditionalVersionStrategy(
+        Consumer<Map<String, VersionStrategy>> additionalVersionStrategySetter) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        additionalVersionStrategySetter.accept(this.additionalVersionStrategy);
+        return this;
+    }
+
+    /**
+     * 指定规则灰度策略信息
+     * @return additionalVersionStrategy
+     */
+    public Map<String, VersionStrategy> getAdditionalVersionStrategy() {
+        return additionalVersionStrategy;
+    }
+
+    public void setAdditionalVersionStrategy(Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
     }
 
     @Override
@@ -130,12 +171,13 @@ public class CreateVersionAliasRequestBody {
         CreateVersionAliasRequestBody that = (CreateVersionAliasRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
             && Objects.equals(this.description, that.description)
-            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights)
+            && Objects.equals(this.additionalVersionStrategy, that.additionalVersionStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, version, description, additionalVersionWeights);
+        return Objects.hash(name, version, description, additionalVersionWeights, additionalVersionStrategy);
     }
 
     @Override
@@ -146,6 +188,7 @@ public class CreateVersionAliasRequestBody {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    additionalVersionWeights: ").append(toIndentedString(additionalVersionWeights)).append("\n");
+        sb.append("    additionalVersionStrategy: ").append(toIndentedString(additionalVersionStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

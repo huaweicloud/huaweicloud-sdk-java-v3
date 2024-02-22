@@ -38,12 +38,12 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    private OffsetDateTime created;
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    private OffsetDateTime updated;
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
@@ -726,7 +726,7 @@ public class ServerDetails {
         this.name = name;
     }
 
-    public ServerDetails withCreated(OffsetDateTime created) {
+    public ServerDetails withCreated(String created) {
         this.created = created;
         return this;
     }
@@ -735,15 +735,15 @@ public class ServerDetails {
      * 裸金属服务器创建时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
      * @return created
      */
-    public OffsetDateTime getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(OffsetDateTime created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
-    public ServerDetails withUpdated(OffsetDateTime updated) {
+    public ServerDetails withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
@@ -752,11 +752,11 @@ public class ServerDetails {
      * 裸金属服务器更新时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T04:30:52Z
      * @return updated
      */
-    public OffsetDateTime getUpdated() {
+    public String getUpdated() {
         return updated;
     }
 
-    public void setUpdated(OffsetDateTime updated) {
+    public void setUpdated(String updated) {
         this.updated = updated;
     }
 

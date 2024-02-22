@@ -26,7 +26,7 @@ public class RunPocketReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "padding")
 
-    private Integer padding;
+    private Float padding;
 
     public RunPocketReq withCenter(List<Float> center) {
         this.center = center;
@@ -94,7 +94,7 @@ public class RunPocketReq {
         this.size = size;
     }
 
-    public RunPocketReq withPadding(Integer padding) {
+    public RunPocketReq withPadding(Float padding) {
         this.padding = padding;
         return this;
     }
@@ -102,14 +102,14 @@ public class RunPocketReq {
     /**
      * 口袋的padding值
      * minimum: 0
-     * maximum: 20
+     * maximum: 2E+1
      * @return padding
      */
-    public Integer getPadding() {
+    public Float getPadding() {
         return padding;
     }
 
-    public void setPadding(Integer padding) {
+    public void setPadding(Float padding) {
         this.padding = padding;
     }
 

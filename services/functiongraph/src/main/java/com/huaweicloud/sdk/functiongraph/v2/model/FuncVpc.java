@@ -9,9 +9,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 函数vpc配置。
+ * 函数vpc配置。需同时为函数配置具有vpc权限的委托。
  */
 public class FuncVpc {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_name")
@@ -47,6 +57,40 @@ public class FuncVpc {
     @JsonProperty(value = "security_groups")
 
     private List<String> securityGroups = null;
+
+    public FuncVpc withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 域名id。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public FuncVpc withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * 租户的project id。
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
 
     public FuncVpc withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -192,7 +236,8 @@ public class FuncVpc {
             return false;
         }
         FuncVpc that = (FuncVpc) obj;
-        return Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.vpcId, that.vpcId)
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.gateway, that.gateway)
             && Objects.equals(this.securityGroups, that.securityGroups);
@@ -200,13 +245,15 @@ public class FuncVpc {
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcName, vpcId, subnetName, subnetId, cidr, gateway, securityGroups);
+        return Objects.hash(domainId, namespace, vpcName, vpcId, subnetName, subnetId, cidr, gateway, securityGroups);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class FuncVpc {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");

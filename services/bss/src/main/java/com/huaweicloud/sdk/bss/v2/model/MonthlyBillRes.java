@@ -795,7 +795,7 @@ public class MonthlyBillRes {
     }
 
     /**
-     * 唯一标识。 账单类型为1，2，3，4，8时，存在唯一标识其它场景下，不存在唯一标识。 该字段为预留字段。
+     * 唯一标识。 该字段为预留字段。
      * @return id
      */
     public String getId() {

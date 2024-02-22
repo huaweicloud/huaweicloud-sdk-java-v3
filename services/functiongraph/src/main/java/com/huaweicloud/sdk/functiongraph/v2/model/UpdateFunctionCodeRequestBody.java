@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class UpdateFunctionCodeRequestBody {
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      */
     public static final class CodeTypeEnum {
 
@@ -43,6 +43,11 @@ public class UpdateFunctionCodeRequestBody {
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+        /**
+         * Enum CUSTOM_IMAGE_SWR for value: "Custom-Image-Swr"
+         */
+        public static final CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeTypeEnum> createStaticFields() {
@@ -51,6 +56,7 @@ public class UpdateFunctionCodeRequestBody {
             map.put("zip", ZIP);
             map.put("obs", OBS);
             map.put("jar", JAR);
+            map.put("Custom-Image-Swr", CUSTOM_IMAGE_SWR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -136,7 +142,7 @@ public class UpdateFunctionCodeRequestBody {
     }
 
     /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      * @return codeType
      */
     public CodeTypeEnum getCodeType() {

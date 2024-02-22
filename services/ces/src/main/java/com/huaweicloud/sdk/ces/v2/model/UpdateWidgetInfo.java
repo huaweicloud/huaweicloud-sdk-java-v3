@@ -196,12 +196,12 @@ public class UpdateWidgetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private BaseWidgetInfoProperties properties;
+    private UpdateWidgetInfoProperties properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    private BaseWidgetInfoLocation location;
+    private UpdateWidgetInfoLocation location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -345,14 +345,14 @@ public class UpdateWidgetInfo {
         this.metricDisplayMode = metricDisplayMode;
     }
 
-    public UpdateWidgetInfo withProperties(BaseWidgetInfoProperties properties) {
+    public UpdateWidgetInfo withProperties(UpdateWidgetInfoProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public UpdateWidgetInfo withProperties(Consumer<BaseWidgetInfoProperties> propertiesSetter) {
+    public UpdateWidgetInfo withProperties(Consumer<UpdateWidgetInfoProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new BaseWidgetInfoProperties();
+            this.properties = new UpdateWidgetInfoProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -363,22 +363,22 @@ public class UpdateWidgetInfo {
      * Get properties
      * @return properties
      */
-    public BaseWidgetInfoProperties getProperties() {
+    public UpdateWidgetInfoProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(BaseWidgetInfoProperties properties) {
+    public void setProperties(UpdateWidgetInfoProperties properties) {
         this.properties = properties;
     }
 
-    public UpdateWidgetInfo withLocation(BaseWidgetInfoLocation location) {
+    public UpdateWidgetInfo withLocation(UpdateWidgetInfoLocation location) {
         this.location = location;
         return this;
     }
 
-    public UpdateWidgetInfo withLocation(Consumer<BaseWidgetInfoLocation> locationSetter) {
+    public UpdateWidgetInfo withLocation(Consumer<UpdateWidgetInfoLocation> locationSetter) {
         if (this.location == null) {
-            this.location = new BaseWidgetInfoLocation();
+            this.location = new UpdateWidgetInfoLocation();
             locationSetter.accept(this.location);
         }
 
@@ -389,11 +389,11 @@ public class UpdateWidgetInfo {
      * Get location
      * @return location
      */
-    public BaseWidgetInfoLocation getLocation() {
+    public UpdateWidgetInfoLocation getLocation() {
         return location;
     }
 
-    public void setLocation(BaseWidgetInfoLocation location) {
+    public void setLocation(UpdateWidgetInfoLocation location) {
         this.location = location;
     }
 

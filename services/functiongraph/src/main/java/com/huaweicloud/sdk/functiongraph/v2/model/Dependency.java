@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,11 @@ import java.util.Objects;
  * 函数依赖包结构。
  */
 public class Dependency {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
@@ -26,7 +32,7 @@ public class Dependency {
     private String link;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      */
     public static final class RuntimeEnum {
 
@@ -120,6 +126,11 @@ public class Dependency {
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
 
+        /**
+         * Enum CUSTOM_IMAGE for value: "Custom Image"
+         */
+        public static final RuntimeEnum CUSTOM_IMAGE = new RuntimeEnum("Custom Image");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -142,6 +153,7 @@ public class Dependency {
             map.put("Python3.9", PYTHON3_9);
             map.put("Custom", CUSTOM);
             map.put("http", HTTP);
+            map.put("Custom Image", CUSTOM_IMAGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -221,6 +233,38 @@ public class Dependency {
 
     private String fileName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Long version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dep_id")
+
+    private String depId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_modified")
+
+    private OffsetDateTime lastModified;
+
+    public Dependency withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 依赖包版本ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public Dependency withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -261,7 +305,7 @@ public class Dependency {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。
+     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -357,6 +401,57 @@ public class Dependency {
         this.fileName = fileName;
     }
 
+    public Dependency withVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 依赖包版本编号。
+     * @return version
+     */
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public Dependency withDepId(String depId) {
+        this.depId = depId;
+        return this;
+    }
+
+    /**
+     * 依赖包ID
+     * @return depId
+     */
+    public String getDepId() {
+        return depId;
+    }
+
+    public void setDepId(String depId) {
+        this.depId = depId;
+    }
+
+    public Dependency withLastModified(OffsetDateTime lastModified) {
+        this.lastModified = lastModified;
+        return this;
+    }
+
+    /**
+     * 函数最后一次更新时间。
+     * @return lastModified
+     */
+    public OffsetDateTime getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(OffsetDateTime lastModified) {
+        this.lastModified = lastModified;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -366,21 +461,25 @@ public class Dependency {
             return false;
         }
         Dependency that = (Dependency) obj;
-        return Objects.equals(this.owner, that.owner) && Objects.equals(this.link, that.link)
-            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.etag, that.etag)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.fileName, that.fileName);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.depId, that.depId) && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(owner, link, runtime, etag, size, name, description, fileName);
+        return Objects
+            .hash(id, owner, link, runtime, etag, size, name, description, fileName, version, depId, lastModified);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Dependency {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    link: ").append(toIndentedString(link)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
@@ -389,6 +488,9 @@ public class Dependency {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    depId: ").append(toIndentedString(depId)).append("\n");
+        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();
     }

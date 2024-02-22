@@ -17,7 +17,7 @@ public class ListDependencyVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependencies")
 
-    private List<ListDependenciesResult> dependencies = null;
+    private List<ListDependencyVersionsResult> dependencies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_marker")
@@ -29,12 +29,12 @@ public class ListDependencyVersionResponse extends SdkResponse {
 
     private Long count;
 
-    public ListDependencyVersionResponse withDependencies(List<ListDependenciesResult> dependencies) {
+    public ListDependencyVersionResponse withDependencies(List<ListDependencyVersionsResult> dependencies) {
         this.dependencies = dependencies;
         return this;
     }
 
-    public ListDependencyVersionResponse addDependenciesItem(ListDependenciesResult dependenciesItem) {
+    public ListDependencyVersionResponse addDependenciesItem(ListDependencyVersionsResult dependenciesItem) {
         if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
@@ -42,7 +42,8 @@ public class ListDependencyVersionResponse extends SdkResponse {
         return this;
     }
 
-    public ListDependencyVersionResponse withDependencies(Consumer<List<ListDependenciesResult>> dependenciesSetter) {
+    public ListDependencyVersionResponse withDependencies(
+        Consumer<List<ListDependencyVersionsResult>> dependenciesSetter) {
         if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
@@ -54,11 +55,11 @@ public class ListDependencyVersionResponse extends SdkResponse {
      * 依赖包列表
      * @return dependencies
      */
-    public List<ListDependenciesResult> getDependencies() {
+    public List<ListDependencyVersionsResult> getDependencies() {
         return dependencies;
     }
 
-    public void setDependencies(List<ListDependenciesResult> dependencies) {
+    public void setDependencies(List<ListDependencyVersionsResult> dependencies) {
         this.dependencies = dependencies;
     }
 

@@ -332,6 +332,21 @@ public class UpdateFunctionConfigRequestBody {
 
     private Integer restoreHookTimeout;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "heartbeat_handler")
+
+    private String heartbeatHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_class_isolation")
+
+    private Boolean enableClassIsolation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -372,7 +387,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -474,7 +489,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数配置委托。需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。配置后用户可以通过函数执行入口方法中的context参数获取具有委托中权限的token、ak、sk，用于访问其他云服务。如果用户函数不访问任何云服务，则不用提供委托名称。
      * @return xrole
      */
     public String getXrole() {
@@ -491,7 +506,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 函数执行委托。可为函数执行单独配置执行委托，这将减小不必要的性能损耗；不单独配置执行委托时，函数执行和函数配置将使用同一委托。
      * @return appXrole
      */
     public String getAppXrole() {
@@ -646,7 +661,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+     * 函数初始化入口，规则：xx.xx，必须包含“. ”。当配置初始化函数时，此参数必填。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
      * @return initializerHandler
      */
     public String getInitializerHandler() {
@@ -663,7 +678,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。当配置初始化函数时，此参数必填。
      * @return initializerTimeout
      */
     public Integer getInitializerTimeout() {
@@ -714,7 +729,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 临时存储大小, 默认512M, 支持配置10G。
+     * 临时存储大小。默认情况下会为函数的/tmp目录分配512MB的空间。您可以通过临时存储设置将函数的/tmp目录大小调整为10G。
      * @return ephemeralStorage
      */
     public Integer getEphemeralStorage() {
@@ -897,6 +912,57 @@ public class UpdateFunctionConfigRequestBody {
         this.restoreHookTimeout = restoreHookTimeout;
     }
 
+    public UpdateFunctionConfigRequestBody withHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+        return this;
+    }
+
+    /**
+     * 心跳函数函数的入口，规则：xx.xx，必须包含“. ”，只支持JAVA运行时配置。 心跳函数入口需要与函数执行入口在同一文件下。在开启心跳函数配置时，此参数必填。
+     * @return heartbeatHandler
+     */
+    public String getHeartbeatHandler() {
+        return heartbeatHandler;
+    }
+
+    public void setHeartbeatHandler(String heartbeatHandler) {
+        this.heartbeatHandler = heartbeatHandler;
+    }
+
+    public UpdateFunctionConfigRequestBody withEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+        return this;
+    }
+
+    /**
+     * 类隔离开关，只支持JAVA运行时配置。开启类隔离后可以支持Kafka转储并提升类加载效率，但也可能会导致某些兼容性问题，请谨慎开启。
+     * @return enableClassIsolation
+     */
+    public Boolean getEnableClassIsolation() {
+        return enableClassIsolation;
+    }
+
+    public void setEnableClassIsolation(Boolean enableClassIsolation) {
+        this.enableClassIsolation = enableClassIsolation;
+    }
+
+    public UpdateFunctionConfigRequestBody withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -929,7 +995,10 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
             && Objects.equals(this.domainNames, that.domainNames)
             && Objects.equals(this.restoreHookHandler, that.restoreHookHandler)
-            && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout);
+            && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout)
+            && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
+            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
+            && Objects.equals(this.gpuType, that.gpuType);
     }
 
     @Override
@@ -963,7 +1032,10 @@ public class UpdateFunctionConfigRequestBody {
             enableAuthInHeader,
             domainNames,
             restoreHookHandler,
-            restoreHookTimeout);
+            restoreHookTimeout,
+            heartbeatHandler,
+            enableClassIsolation,
+            gpuType);
     }
 
     @Override
@@ -1000,6 +1072,9 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("    restoreHookHandler: ").append(toIndentedString(restoreHookHandler)).append("\n");
         sb.append("    restoreHookTimeout: ").append(toIndentedString(restoreHookTimeout)).append("\n");
+        sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
+        sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

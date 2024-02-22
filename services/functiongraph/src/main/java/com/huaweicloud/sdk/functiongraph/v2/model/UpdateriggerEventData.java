@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * TriggerEventData
+ * UpdateriggerEventData
  */
-public class TriggerEventData {
+public class UpdateriggerEventData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_serial")
@@ -105,7 +105,7 @@ public class TriggerEventData {
 
     private PollingUnitEnum pollingUnit;
 
-    public TriggerEventData withIsSerial(Boolean isSerial) {
+    public UpdateriggerEventData withIsSerial(Boolean isSerial) {
         this.isSerial = isSerial;
         return this;
     }
@@ -122,7 +122,7 @@ public class TriggerEventData {
         this.isSerial = isSerial;
     }
 
-    public TriggerEventData withMaxFetchBytes(Integer maxFetchBytes) {
+    public UpdateriggerEventData withMaxFetchBytes(Integer maxFetchBytes) {
         this.maxFetchBytes = maxFetchBytes;
         return this;
     }
@@ -139,7 +139,7 @@ public class TriggerEventData {
         this.maxFetchBytes = maxFetchBytes;
     }
 
-    public TriggerEventData withPollingInterval(Integer pollingInterval) {
+    public UpdateriggerEventData withPollingInterval(Integer pollingInterval) {
         this.pollingInterval = pollingInterval;
         return this;
     }
@@ -156,7 +156,7 @@ public class TriggerEventData {
         this.pollingInterval = pollingInterval;
     }
 
-    public TriggerEventData withPollingUnit(PollingUnitEnum pollingUnit) {
+    public UpdateriggerEventData withPollingUnit(PollingUnitEnum pollingUnit) {
         this.pollingUnit = pollingUnit;
         return this;
     }
@@ -181,7 +181,7 @@ public class TriggerEventData {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TriggerEventData that = (TriggerEventData) obj;
+        UpdateriggerEventData that = (UpdateriggerEventData) obj;
         return Objects.equals(this.isSerial, that.isSerial) && Objects.equals(this.maxFetchBytes, that.maxFetchBytes)
             && Objects.equals(this.pollingInterval, that.pollingInterval)
             && Objects.equals(this.pollingUnit, that.pollingUnit);
@@ -195,7 +195,7 @@ public class TriggerEventData {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TriggerEventData {\n");
+        sb.append("class UpdateriggerEventData {\n");
         sb.append("    isSerial: ").append(toIndentedString(isSerial)).append("\n");
         sb.append("    maxFetchBytes: ").append(toIndentedString(maxFetchBytes)).append("\n");
         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");

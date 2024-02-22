@@ -21,7 +21,7 @@ public class CreateDashboardWidgetsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<BaseWidgetInfo> body = null;
+    private List<Object> body = null;
 
     public CreateDashboardWidgetsRequest withDashboardId(String dashboardId) {
         this.dashboardId = dashboardId;
@@ -40,12 +40,12 @@ public class CreateDashboardWidgetsRequest {
         this.dashboardId = dashboardId;
     }
 
-    public CreateDashboardWidgetsRequest withBody(List<BaseWidgetInfo> body) {
+    public CreateDashboardWidgetsRequest withBody(List<Object> body) {
         this.body = body;
         return this;
     }
 
-    public CreateDashboardWidgetsRequest addBodyItem(BaseWidgetInfo bodyItem) {
+    public CreateDashboardWidgetsRequest addBodyItem(Object bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class CreateDashboardWidgetsRequest {
         return this;
     }
 
-    public CreateDashboardWidgetsRequest withBody(Consumer<List<BaseWidgetInfo>> bodySetter) {
+    public CreateDashboardWidgetsRequest withBody(Consumer<List<Object>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class CreateDashboardWidgetsRequest {
      * Get body
      * @return body
      */
-    public List<BaseWidgetInfo> getBody() {
+    public List<Object> getBody() {
         return body;
     }
 
-    public void setBody(List<BaseWidgetInfo> body) {
+    public void setBody(List<Object> body) {
         this.body = body;
     }
 

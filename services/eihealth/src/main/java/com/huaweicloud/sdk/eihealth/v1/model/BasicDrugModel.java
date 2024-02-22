@@ -39,7 +39,7 @@ public class BasicDrugModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value_range")
 
-    private ValueRange valueRange;
+    private ValueRange2 valueRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -131,14 +131,14 @@ public class BasicDrugModel {
         this.type = type;
     }
 
-    public BasicDrugModel withValueRange(ValueRange valueRange) {
+    public BasicDrugModel withValueRange(ValueRange2 valueRange) {
         this.valueRange = valueRange;
         return this;
     }
 
-    public BasicDrugModel withValueRange(Consumer<ValueRange> valueRangeSetter) {
+    public BasicDrugModel withValueRange(Consumer<ValueRange2> valueRangeSetter) {
         if (this.valueRange == null) {
-            this.valueRange = new ValueRange();
+            this.valueRange = new ValueRange2();
             valueRangeSetter.accept(this.valueRange);
         }
 
@@ -149,11 +149,11 @@ public class BasicDrugModel {
      * Get valueRange
      * @return valueRange
      */
-    public ValueRange getValueRange() {
+    public ValueRange2 getValueRange() {
         return valueRange;
     }
 
-    public void setValueRange(ValueRange valueRange) {
+    public void setValueRange(ValueRange2 valueRange) {
         this.valueRange = valueRange;
     }
 

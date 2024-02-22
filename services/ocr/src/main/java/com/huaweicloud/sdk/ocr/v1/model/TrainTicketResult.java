@@ -96,6 +96,96 @@ public class TrainTicketResult {
     private String saleLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "invoice_style")
+
+    private String invoiceStyle;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "issue_date")
+
+    private String issueDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "discount_mark")
+
+    private String discountMark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serial_number")
+
+    private String serialNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tax_amount")
+
+    private String taxAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tax_rate")
+
+    private String taxRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "air_conditioning")
+
+    private String airConditioning;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "original_invoice_number")
+
+    private String originalInvoiceNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unified_social_credit_code")
+
+    private String unifiedSocialCreditCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buyer_name")
+
+    private String buyerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_amount_excluding_tax")
+
+    private String totalAmountExcludingTax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "invoice_number")
+
+    private String invoiceNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "seal_mark")
+
+    private Boolean sealMark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "title")
+
+    private String title;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "area")
+
+    private String area;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "receipt_number")
+
+    private String receiptNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "amount_in_figures")
+
+    private String amountInFigures;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "amount_in_words")
+
+    private String amountInWords;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -394,6 +484,312 @@ public class TrainTicketResult {
         this.saleLocation = saleLocation;
     }
 
+    public TrainTicketResult withInvoiceStyle(String invoiceStyle) {
+        this.invoiceStyle = invoiceStyle;
+        return this;
+    }
+
+    /**
+     * 类型。包含以下几种类型： - paper：纸质火车票 - electronic：电子发票 - refund_old：旧版退票凭证 - refund_new：新版退票凭证 
+     * @return invoiceStyle
+     */
+    public String getInvoiceStyle() {
+        return invoiceStyle;
+    }
+
+    public void setInvoiceStyle(String invoiceStyle) {
+        this.invoiceStyle = invoiceStyle;
+    }
+
+    public TrainTicketResult withIssueDate(String issueDate) {
+        this.issueDate = issueDate;
+        return this;
+    }
+
+    /**
+     * 开票时间 
+     * @return issueDate
+     */
+    public String getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(String issueDate) {
+        this.issueDate = issueDate;
+    }
+
+    public TrainTicketResult withDiscountMark(String discountMark) {
+        this.discountMark = discountMark;
+        return this;
+    }
+
+    /**
+     * 打折标识 
+     * @return discountMark
+     */
+    public String getDiscountMark() {
+        return discountMark;
+    }
+
+    public void setDiscountMark(String discountMark) {
+        this.discountMark = discountMark;
+    }
+
+    public TrainTicketResult withSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+        return this;
+    }
+
+    /**
+     * 电子客票号 
+     * @return serialNumber
+     */
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public TrainTicketResult withTaxAmount(String taxAmount) {
+        this.taxAmount = taxAmount;
+        return this;
+    }
+
+    /**
+     * 税金价格 
+     * @return taxAmount
+     */
+    public String getTaxAmount() {
+        return taxAmount;
+    }
+
+    public void setTaxAmount(String taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
+    public TrainTicketResult withTaxRate(String taxRate) {
+        this.taxRate = taxRate;
+        return this;
+    }
+
+    /**
+     * 税率 
+     * @return taxRate
+     */
+    public String getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(String taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public TrainTicketResult withAirConditioning(String airConditioning) {
+        this.airConditioning = airConditioning;
+        return this;
+    }
+
+    /**
+     * 是否是空调车厢 
+     * @return airConditioning
+     */
+    public String getAirConditioning() {
+        return airConditioning;
+    }
+
+    public void setAirConditioning(String airConditioning) {
+        this.airConditioning = airConditioning;
+    }
+
+    public TrainTicketResult withOriginalInvoiceNumber(String originalInvoiceNumber) {
+        this.originalInvoiceNumber = originalInvoiceNumber;
+        return this;
+    }
+
+    /**
+     * 原发票号码 
+     * @return originalInvoiceNumber
+     */
+    public String getOriginalInvoiceNumber() {
+        return originalInvoiceNumber;
+    }
+
+    public void setOriginalInvoiceNumber(String originalInvoiceNumber) {
+        this.originalInvoiceNumber = originalInvoiceNumber;
+    }
+
+    public TrainTicketResult withUnifiedSocialCreditCode(String unifiedSocialCreditCode) {
+        this.unifiedSocialCreditCode = unifiedSocialCreditCode;
+        return this;
+    }
+
+    /**
+     * 统一社会信用号码 
+     * @return unifiedSocialCreditCode
+     */
+    public String getUnifiedSocialCreditCode() {
+        return unifiedSocialCreditCode;
+    }
+
+    public void setUnifiedSocialCreditCode(String unifiedSocialCreditCode) {
+        this.unifiedSocialCreditCode = unifiedSocialCreditCode;
+    }
+
+    public TrainTicketResult withBuyerName(String buyerName) {
+        this.buyerName = buyerName;
+        return this;
+    }
+
+    /**
+     * 购买方名称 
+     * @return buyerName
+     */
+    public String getBuyerName() {
+        return buyerName;
+    }
+
+    public void setBuyerName(String buyerName) {
+        this.buyerName = buyerName;
+    }
+
+    public TrainTicketResult withTotalAmountExcludingTax(String totalAmountExcludingTax) {
+        this.totalAmountExcludingTax = totalAmountExcludingTax;
+        return this;
+    }
+
+    /**
+     * 不含税价格 
+     * @return totalAmountExcludingTax
+     */
+    public String getTotalAmountExcludingTax() {
+        return totalAmountExcludingTax;
+    }
+
+    public void setTotalAmountExcludingTax(String totalAmountExcludingTax) {
+        this.totalAmountExcludingTax = totalAmountExcludingTax;
+    }
+
+    public TrainTicketResult withInvoiceNumber(String invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+        return this;
+    }
+
+    /**
+     * 发票号码 
+     * @return invoiceNumber
+     */
+    public String getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public void setInvoiceNumber(String invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
+
+    public TrainTicketResult withSealMark(Boolean sealMark) {
+        this.sealMark = sealMark;
+        return this;
+    }
+
+    /**
+     * 是否有印章，True表示有印章，False表示不含印章，字段默认为False 
+     * @return sealMark
+     */
+    public Boolean getSealMark() {
+        return sealMark;
+    }
+
+    public void setSealMark(Boolean sealMark) {
+        this.sealMark = sealMark;
+    }
+
+    public TrainTicketResult withTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    /**
+     * 标题 
+     * @return title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public TrainTicketResult withArea(String area) {
+        this.area = area;
+        return this;
+    }
+
+    /**
+     * 地区 
+     * @return area
+     */
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public TrainTicketResult withReceiptNumber(String receiptNumber) {
+        this.receiptNumber = receiptNumber;
+        return this;
+    }
+
+    /**
+     * 收据编码 
+     * @return receiptNumber
+     */
+    public String getReceiptNumber() {
+        return receiptNumber;
+    }
+
+    public void setReceiptNumber(String receiptNumber) {
+        this.receiptNumber = receiptNumber;
+    }
+
+    public TrainTicketResult withAmountInFigures(String amountInFigures) {
+        this.amountInFigures = amountInFigures;
+        return this;
+    }
+
+    /**
+     * 小写票据金额 
+     * @return amountInFigures
+     */
+    public String getAmountInFigures() {
+        return amountInFigures;
+    }
+
+    public void setAmountInFigures(String amountInFigures) {
+        this.amountInFigures = amountInFigures;
+    }
+
+    public TrainTicketResult withAmountInWords(String amountInWords) {
+        this.amountInWords = amountInWords;
+        return this;
+    }
+
+    /**
+     * 大写票据金额 
+     * @return amountInWords
+     */
+    public String getAmountInWords() {
+        return amountInWords;
+    }
+
+    public void setAmountInWords(String amountInWords) {
+        this.amountInWords = amountInWords;
+    }
+
     public TrainTicketResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
@@ -448,8 +844,21 @@ public class TrainTicketResult {
             && Objects.equals(this.saleMethod, that.saleMethod) && Objects.equals(this.seatCategory, that.seatCategory)
             && Objects.equals(this.ticketChanging, that.ticketChanging) && Objects.equals(this.idNumber, that.idNumber)
             && Objects.equals(this.name, that.name) && Objects.equals(this.logId, that.logId)
-            && Objects.equals(this.saleLocation, that.saleLocation) && Objects.equals(this.confidence, that.confidence)
-            && Objects.equals(this.textLocation, that.textLocation);
+            && Objects.equals(this.saleLocation, that.saleLocation)
+            && Objects.equals(this.invoiceStyle, that.invoiceStyle) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.discountMark, that.discountMark)
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.taxAmount, that.taxAmount)
+            && Objects.equals(this.taxRate, that.taxRate) && Objects.equals(this.airConditioning, that.airConditioning)
+            && Objects.equals(this.originalInvoiceNumber, that.originalInvoiceNumber)
+            && Objects.equals(this.unifiedSocialCreditCode, that.unifiedSocialCreditCode)
+            && Objects.equals(this.buyerName, that.buyerName)
+            && Objects.equals(this.totalAmountExcludingTax, that.totalAmountExcludingTax)
+            && Objects.equals(this.invoiceNumber, that.invoiceNumber) && Objects.equals(this.sealMark, that.sealMark)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.receiptNumber, that.receiptNumber)
+            && Objects.equals(this.amountInFigures, that.amountInFigures)
+            && Objects.equals(this.amountInWords, that.amountInWords)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override
@@ -471,6 +880,24 @@ public class TrainTicketResult {
             name,
             logId,
             saleLocation,
+            invoiceStyle,
+            issueDate,
+            discountMark,
+            serialNumber,
+            taxAmount,
+            taxRate,
+            airConditioning,
+            originalInvoiceNumber,
+            unifiedSocialCreditCode,
+            buyerName,
+            totalAmountExcludingTax,
+            invoiceNumber,
+            sealMark,
+            title,
+            area,
+            receiptNumber,
+            amountInFigures,
+            amountInWords,
             confidence,
             textLocation);
     }
@@ -496,6 +923,24 @@ public class TrainTicketResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
         sb.append("    saleLocation: ").append(toIndentedString(saleLocation)).append("\n");
+        sb.append("    invoiceStyle: ").append(toIndentedString(invoiceStyle)).append("\n");
+        sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+        sb.append("    discountMark: ").append(toIndentedString(discountMark)).append("\n");
+        sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+        sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+        sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+        sb.append("    airConditioning: ").append(toIndentedString(airConditioning)).append("\n");
+        sb.append("    originalInvoiceNumber: ").append(toIndentedString(originalInvoiceNumber)).append("\n");
+        sb.append("    unifiedSocialCreditCode: ").append(toIndentedString(unifiedSocialCreditCode)).append("\n");
+        sb.append("    buyerName: ").append(toIndentedString(buyerName)).append("\n");
+        sb.append("    totalAmountExcludingTax: ").append(toIndentedString(totalAmountExcludingTax)).append("\n");
+        sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+        sb.append("    sealMark: ").append(toIndentedString(sealMark)).append("\n");
+        sb.append("    title: ").append(toIndentedString(title)).append("\n");
+        sb.append("    area: ").append(toIndentedString(area)).append("\n");
+        sb.append("    receiptNumber: ").append(toIndentedString(receiptNumber)).append("\n");
+        sb.append("    amountInFigures: ").append(toIndentedString(amountInFigures)).append("\n");
+        sb.append("    amountInWords: ").append(toIndentedString(amountInWords)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");

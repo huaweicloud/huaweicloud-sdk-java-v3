@@ -21,7 +21,7 @@ public class CancelAsyncInvocationRequestBody {
     private String requestId;
 
     /**
-     * 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接杀死runtime。
+     * 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接终止runtime。
      */
     public static final class TypeEnum {
 
@@ -118,7 +118,7 @@ public class CancelAsyncInvocationRequestBody {
     }
 
     /**
-     * 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接杀死runtime。
+     * 停止的类型 支持recursive, force。 recursive: 停止正在调用的子函数。 force: 直接终止runtime。
      * @return type
      */
     public TypeEnum getType() {

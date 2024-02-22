@@ -263,7 +263,7 @@ public class ShowFunctionTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 超时时间
+     * 函数执行超时时间，超时函数将被强行停止，范围3～259200秒。
      * @return timeout
      */
     public Integer getTimeout() {

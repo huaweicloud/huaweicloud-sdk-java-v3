@@ -101,6 +101,11 @@ public class RecycleInstancesDetailResult {
     private HaModeEnum haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_name")
+
+    private String engineName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
     private String engineVersion;
@@ -272,6 +277,11 @@ public class RecycleInstancesDetailResult {
     private VolumeTypeEnum volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_size")
+
+    private String volumeSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_vip")
 
     private String dataVip;
@@ -280,6 +290,16 @@ public class RecycleInstancesDetailResult {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_level")
+
+    private String backupLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recycle_backup_id")
@@ -493,6 +513,23 @@ public class RecycleInstancesDetailResult {
         this.haMode = haMode;
     }
 
+    public RecycleInstancesDetailResult withEngineName(String engineName) {
+        this.engineName = engineName;
+        return this;
+    }
+
+    /**
+     * 引擎名称
+     * @return engineName
+     */
+    public String getEngineName() {
+        return engineName;
+    }
+
+    public void setEngineName(String engineName) {
+        this.engineName = engineName;
+    }
+
     public RecycleInstancesDetailResult withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
@@ -578,6 +615,23 @@ public class RecycleInstancesDetailResult {
         this.volumeType = volumeType;
     }
 
+    public RecycleInstancesDetailResult withVolumeSize(String volumeSize) {
+        this.volumeSize = volumeSize;
+        return this;
+    }
+
+    /**
+     * 磁盘大小
+     * @return volumeSize
+     */
+    public String getVolumeSize() {
+        return volumeSize;
+    }
+
+    public void setVolumeSize(String volumeSize) {
+        this.volumeSize = volumeSize;
+    }
+
     public RecycleInstancesDetailResult withDataVip(String dataVip) {
         this.dataVip = dataVip;
         return this;
@@ -610,6 +664,40 @@ public class RecycleInstancesDetailResult {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public RecycleInstancesDetailResult withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 企业项目名称
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
+    public RecycleInstancesDetailResult withBackupLevel(String backupLevel) {
+        this.backupLevel = backupLevel;
+        return this;
+    }
+
+    /**
+     * 备份级别
+     * @return backupLevel
+     */
+    public String getBackupLevel() {
+        return backupLevel;
+    }
+
+    public void setBackupLevel(String backupLevel) {
+        this.backupLevel = backupLevel;
     }
 
     public RecycleInstancesDetailResult withRecycleBackupId(String recycleBackupId) {
@@ -673,11 +761,14 @@ public class RecycleInstancesDetailResult {
         }
         RecycleInstancesDetailResult that = (RecycleInstancesDetailResult) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.engineVersion, that.engineVersion)
-            && Objects.equals(this.payModel, that.payModel) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.deletedAt, that.deletedAt) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.payModel, that.payModel)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.deletedAt, that.deletedAt)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.volumeSize, that.volumeSize)
             && Objects.equals(this.dataVip, that.dataVip)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.recycleBackupId, that.recycleBackupId)
             && Objects.equals(this.recycleStatus, that.recycleStatus) && Objects.equals(this.mode, that.mode);
     }
@@ -687,13 +778,17 @@ public class RecycleInstancesDetailResult {
         return Objects.hash(id,
             name,
             haMode,
+            engineName,
             engineVersion,
             payModel,
             createdAt,
             deletedAt,
             volumeType,
+            volumeSize,
             dataVip,
             enterpriseProjectId,
+            enterpriseProjectName,
+            backupLevel,
             recycleBackupId,
             recycleStatus,
             mode);
@@ -706,13 +801,17 @@ public class RecycleInstancesDetailResult {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
+        sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    payModel: ").append(toIndentedString(payModel)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    volumeSize: ").append(toIndentedString(volumeSize)).append("\n");
         sb.append("    dataVip: ").append(toIndentedString(dataVip)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    recycleBackupId: ").append(toIndentedString(recycleBackupId)).append("\n");
         sb.append("    recycleStatus: ").append(toIndentedString(recycleStatus)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

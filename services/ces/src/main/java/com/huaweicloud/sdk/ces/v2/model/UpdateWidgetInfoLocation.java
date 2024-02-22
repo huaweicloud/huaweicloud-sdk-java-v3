@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 监控视图图表坐标
  */
-public class BaseWidgetInfoLocation {
+public class UpdateWidgetInfoLocation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top")
@@ -30,7 +30,7 @@ public class BaseWidgetInfoLocation {
 
     private Integer height;
 
-    public BaseWidgetInfoLocation withTop(Integer top) {
+    public UpdateWidgetInfoLocation withTop(Integer top) {
         this.top = top;
         return this;
     }
@@ -49,7 +49,7 @@ public class BaseWidgetInfoLocation {
         this.top = top;
     }
 
-    public BaseWidgetInfoLocation withLeft(Integer left) {
+    public UpdateWidgetInfoLocation withLeft(Integer left) {
         this.left = left;
         return this;
     }
@@ -68,7 +68,7 @@ public class BaseWidgetInfoLocation {
         this.left = left;
     }
 
-    public BaseWidgetInfoLocation withWidth(Integer width) {
+    public UpdateWidgetInfoLocation withWidth(Integer width) {
         this.width = width;
         return this;
     }
@@ -87,7 +87,7 @@ public class BaseWidgetInfoLocation {
         this.width = width;
     }
 
-    public BaseWidgetInfoLocation withHeight(Integer height) {
+    public UpdateWidgetInfoLocation withHeight(Integer height) {
         this.height = height;
         return this;
     }
@@ -114,7 +114,7 @@ public class BaseWidgetInfoLocation {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseWidgetInfoLocation that = (BaseWidgetInfoLocation) obj;
+        UpdateWidgetInfoLocation that = (UpdateWidgetInfoLocation) obj;
         return Objects.equals(this.top, that.top) && Objects.equals(this.left, that.left)
             && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height);
     }
@@ -127,7 +127,7 @@ public class BaseWidgetInfoLocation {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BaseWidgetInfoLocation {\n");
+        sb.append("class UpdateWidgetInfoLocation {\n");
         sb.append("    top: ").append(toIndentedString(top)).append("\n");
         sb.append("    left: ").append(toIndentedString(left)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");

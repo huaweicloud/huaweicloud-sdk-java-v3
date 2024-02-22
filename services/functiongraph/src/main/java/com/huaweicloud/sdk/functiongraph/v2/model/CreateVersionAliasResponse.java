@@ -43,7 +43,12 @@ public class CreateVersionAliasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additional_version_weights")
 
-    private Map<String, Long> additionalVersionWeights = null;
+    private Map<String, Integer> additionalVersionWeights = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_version_strategy")
+
+    private Map<String, VersionStrategy> additionalVersionStrategy = null;
 
     public CreateVersionAliasResponse withName(String name) {
         this.name = name;
@@ -130,12 +135,13 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.aliasUrn = aliasUrn;
     }
 
-    public CreateVersionAliasResponse withAdditionalVersionWeights(Map<String, Long> additionalVersionWeights) {
+    public CreateVersionAliasResponse withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
     }
 
-    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key, Long additionalVersionWeightsItem) {
+    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key,
+        Integer additionalVersionWeightsItem) {
         if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
@@ -144,7 +150,7 @@ public class CreateVersionAliasResponse extends SdkResponse {
     }
 
     public CreateVersionAliasResponse withAdditionalVersionWeights(
-        Consumer<Map<String, Long>> additionalVersionWeightsSetter) {
+        Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
         if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
@@ -153,15 +159,51 @@ public class CreateVersionAliasResponse extends SdkResponse {
     }
 
     /**
-     * 灰度版本信息
+     * 百分比灰度配置信息
      * @return additionalVersionWeights
      */
-    public Map<String, Long> getAdditionalVersionWeights() {
+    public Map<String, Integer> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
 
-    public void setAdditionalVersionWeights(Map<String, Long> additionalVersionWeights) {
+    public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
+    }
+
+    public CreateVersionAliasResponse withAdditionalVersionStrategy(
+        Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
+        return this;
+    }
+
+    public CreateVersionAliasResponse putAdditionalVersionStrategyItem(String key,
+        VersionStrategy additionalVersionStrategyItem) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        this.additionalVersionStrategy.put(key, additionalVersionStrategyItem);
+        return this;
+    }
+
+    public CreateVersionAliasResponse withAdditionalVersionStrategy(
+        Consumer<Map<String, VersionStrategy>> additionalVersionStrategySetter) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        additionalVersionStrategySetter.accept(this.additionalVersionStrategy);
+        return this;
+    }
+
+    /**
+     * 指定规则灰度策略信息
+     * @return additionalVersionStrategy
+     */
+    public Map<String, VersionStrategy> getAdditionalVersionStrategy() {
+        return additionalVersionStrategy;
+    }
+
+    public void setAdditionalVersionStrategy(Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
     }
 
     @Override
@@ -176,12 +218,19 @@ public class CreateVersionAliasResponse extends SdkResponse {
         return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.aliasUrn, that.aliasUrn)
-            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights)
+            && Objects.equals(this.additionalVersionStrategy, that.additionalVersionStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, version, description, lastModified, aliasUrn, additionalVersionWeights);
+        return Objects.hash(name,
+            version,
+            description,
+            lastModified,
+            aliasUrn,
+            additionalVersionWeights,
+            additionalVersionStrategy);
     }
 
     @Override
@@ -194,6 +243,7 @@ public class CreateVersionAliasResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    additionalVersionWeights: ").append(toIndentedString(additionalVersionWeights)).append("\n");
+        sb.append("    additionalVersionStrategy: ").append(toIndentedString(additionalVersionStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ public class ParseDrugReceptorInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ReceptorDrugFile body;
+    private ReceptorDrugFileReq body;
 
     public ParseDrugReceptorInfoRequest withEihealthProjectId(String eihealthProjectId) {
         this.eihealthProjectId = eihealthProjectId;
@@ -38,14 +38,14 @@ public class ParseDrugReceptorInfoRequest {
         this.eihealthProjectId = eihealthProjectId;
     }
 
-    public ParseDrugReceptorInfoRequest withBody(ReceptorDrugFile body) {
+    public ParseDrugReceptorInfoRequest withBody(ReceptorDrugFileReq body) {
         this.body = body;
         return this;
     }
 
-    public ParseDrugReceptorInfoRequest withBody(Consumer<ReceptorDrugFile> bodySetter) {
+    public ParseDrugReceptorInfoRequest withBody(Consumer<ReceptorDrugFileReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ReceptorDrugFile();
+            this.body = new ReceptorDrugFileReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ParseDrugReceptorInfoRequest {
      * Get body
      * @return body
      */
-    public ReceptorDrugFile getBody() {
+    public ReceptorDrugFileReq getBody() {
         return body;
     }
 
-    public void setBody(ReceptorDrugFile body) {
+    public void setBody(ReceptorDrugFileReq body) {
         this.body = body;
     }
 

@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateFunctionTriggerRequestBody
@@ -257,7 +258,7 @@ public class CreateFunctionTriggerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private Object eventData;
+    private TriggerEventDataRequestBody eventData;
 
     public CreateFunctionTriggerRequestBody withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
@@ -310,20 +311,29 @@ public class CreateFunctionTriggerRequestBody {
         this.eventTypeCode = eventTypeCode;
     }
 
-    public CreateFunctionTriggerRequestBody withEventData(Object eventData) {
+    public CreateFunctionTriggerRequestBody withEventData(TriggerEventDataRequestBody eventData) {
         this.eventData = eventData;
         return this;
     }
 
+    public CreateFunctionTriggerRequestBody withEventData(Consumer<TriggerEventDataRequestBody> eventDataSetter) {
+        if (this.eventData == null) {
+            this.eventData = new TriggerEventDataRequestBody();
+            eventDataSetter.accept(this.eventData);
+        }
+
+        return this;
+    }
+
     /**
-     * 事件结构体。
+     * Get eventData
      * @return eventData
      */
-    public Object getEventData() {
+    public TriggerEventDataRequestBody getEventData() {
         return eventData;
     }
 
-    public void setEventData(Object eventData) {
+    public void setEventData(TriggerEventDataRequestBody eventData) {
         this.eventData = eventData;
     }
 

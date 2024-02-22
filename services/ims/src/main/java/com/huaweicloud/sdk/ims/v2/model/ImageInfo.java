@@ -1245,6 +1245,11 @@ public class ImageInfo {
     private String supportAgentList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__image_displayname")
+
+    private String imageDisplayname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__support_amd")
 
     private String supportAmd;
@@ -2319,6 +2324,25 @@ public class ImageInfo {
         this.supportAgentList = supportAgentList;
     }
 
+    public ImageInfo withImageDisplayname(String imageDisplayname) {
+        this.imageDisplayname = imageDisplayname;
+        return this;
+    }
+
+    /**
+     * 对外展示名称。
+     * @return imageDisplayname
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__image_displayname")
+    public String getImageDisplayname() {
+        return imageDisplayname;
+    }
+
+    public void setImageDisplayname(String imageDisplayname) {
+        this.imageDisplayname = imageDisplayname;
+    }
+
     public ImageInfo withSupportAmd(String supportAmd) {
         this.supportAmd = supportAmd;
         return this;
@@ -2388,6 +2412,7 @@ public class ImageInfo {
             && Objects.equals(this.lazyloading, that.lazyloading) && Objects.equals(this.rootOrigin, that.rootOrigin)
             && Objects.equals(this.sequenceNum, that.sequenceNum) && Objects.equals(this.activeAt, that.activeAt)
             && Objects.equals(this.supportAgentList, that.supportAgentList)
+            && Objects.equals(this.imageDisplayname, that.imageDisplayname)
             && Objects.equals(this.supportAmd, that.supportAmd);
     }
 
@@ -2451,6 +2476,7 @@ public class ImageInfo {
             sequenceNum,
             activeAt,
             supportAgentList,
+            imageDisplayname,
             supportAmd);
     }
 
@@ -2516,6 +2542,7 @@ public class ImageInfo {
         sb.append("    sequenceNum: ").append(toIndentedString(sequenceNum)).append("\n");
         sb.append("    activeAt: ").append(toIndentedString(activeAt)).append("\n");
         sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
+        sb.append("    imageDisplayname: ").append(toIndentedString(imageDisplayname)).append("\n");
         sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
         sb.append("}");
         return sb.toString();

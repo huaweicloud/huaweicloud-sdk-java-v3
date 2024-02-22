@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ListFunctionTriggerResult
@@ -258,7 +259,7 @@ public class ListFunctionTriggerResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private Object eventData;
+    private TriggerEventDataResponseBody eventData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_time")
@@ -321,20 +322,29 @@ public class ListFunctionTriggerResult {
         this.triggerStatus = triggerStatus;
     }
 
-    public ListFunctionTriggerResult withEventData(Object eventData) {
+    public ListFunctionTriggerResult withEventData(TriggerEventDataResponseBody eventData) {
         this.eventData = eventData;
         return this;
     }
 
+    public ListFunctionTriggerResult withEventData(Consumer<TriggerEventDataResponseBody> eventDataSetter) {
+        if (this.eventData == null) {
+            this.eventData = new TriggerEventDataResponseBody();
+            eventDataSetter.accept(this.eventData);
+        }
+
+        return this;
+    }
+
     /**
-     * 触发器源事件。
+     * Get eventData
      * @return eventData
      */
-    public Object getEventData() {
+    public TriggerEventDataResponseBody getEventData() {
         return eventData;
     }
 
-    public void setEventData(Object eventData) {
+    public void setEventData(TriggerEventDataResponseBody eventData) {
         this.eventData = eventData;
     }
 

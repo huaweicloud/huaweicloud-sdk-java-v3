@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class SecMasterRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://sa.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://secmaster.cn-north-4.myhuaweicloud.com");
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://secmaster.cn-east-3.myhuaweicloud.com");
 

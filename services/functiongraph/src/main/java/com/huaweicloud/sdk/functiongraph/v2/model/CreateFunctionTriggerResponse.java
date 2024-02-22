@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -259,7 +260,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private Object eventData;
+    private TriggerEventDataRequestBody eventData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_time")
@@ -322,20 +323,29 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         this.triggerStatus = triggerStatus;
     }
 
-    public CreateFunctionTriggerResponse withEventData(Object eventData) {
+    public CreateFunctionTriggerResponse withEventData(TriggerEventDataRequestBody eventData) {
         this.eventData = eventData;
         return this;
     }
 
+    public CreateFunctionTriggerResponse withEventData(Consumer<TriggerEventDataRequestBody> eventDataSetter) {
+        if (this.eventData == null) {
+            this.eventData = new TriggerEventDataRequestBody();
+            eventDataSetter.accept(this.eventData);
+        }
+
+        return this;
+    }
+
     /**
-     * 触发器源事件。
+     * Get eventData
      * @return eventData
      */
-    public Object getEventData() {
+    public TriggerEventDataRequestBody getEventData() {
         return eventData;
     }
 
-    public void setEventData(Object eventData) {
+    public void setEventData(TriggerEventDataRequestBody eventData) {
         this.eventData = eventData;
     }
 

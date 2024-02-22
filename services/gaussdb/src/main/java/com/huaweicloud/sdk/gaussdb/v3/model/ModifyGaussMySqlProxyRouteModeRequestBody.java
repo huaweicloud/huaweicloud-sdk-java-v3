@@ -28,6 +28,16 @@ public class ModifyGaussMySqlProxyRouteModeRequestBody {
 
     private List<ModifyProxyRouteWeightReadonlyNode> readonlyNodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_node_auto_add_status")
+
+    private String newNodeAutoAddStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_node_weight")
+
+    private Integer newNodeWeight;
+
     public ModifyGaussMySqlProxyRouteModeRequestBody withRouteMode(Integer routeMode) {
         this.routeMode = routeMode;
         return this;
@@ -98,6 +108,40 @@ public class ModifyGaussMySqlProxyRouteModeRequestBody {
         this.readonlyNodes = readonlyNodes;
     }
 
+    public ModifyGaussMySqlProxyRouteModeRequestBody withNewNodeAutoAddStatus(String newNodeAutoAddStatus) {
+        this.newNodeAutoAddStatus = newNodeAutoAddStatus;
+        return this;
+    }
+
+    /**
+     * 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
+     * @return newNodeAutoAddStatus
+     */
+    public String getNewNodeAutoAddStatus() {
+        return newNodeAutoAddStatus;
+    }
+
+    public void setNewNodeAutoAddStatus(String newNodeAutoAddStatus) {
+        this.newNodeAutoAddStatus = newNodeAutoAddStatus;
+    }
+
+    public ModifyGaussMySqlProxyRouteModeRequestBody withNewNodeWeight(Integer newNodeWeight) {
+        this.newNodeWeight = newNodeWeight;
+        return this;
+    }
+
+    /**
+     * 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+     * @return newNodeWeight
+     */
+    public Integer getNewNodeWeight() {
+        return newNodeWeight;
+    }
+
+    public void setNewNodeWeight(Integer newNodeWeight) {
+        this.newNodeWeight = newNodeWeight;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +152,14 @@ public class ModifyGaussMySqlProxyRouteModeRequestBody {
         }
         ModifyGaussMySqlProxyRouteModeRequestBody that = (ModifyGaussMySqlProxyRouteModeRequestBody) obj;
         return Objects.equals(this.routeMode, that.routeMode) && Objects.equals(this.masterWeight, that.masterWeight)
-            && Objects.equals(this.readonlyNodes, that.readonlyNodes);
+            && Objects.equals(this.readonlyNodes, that.readonlyNodes)
+            && Objects.equals(this.newNodeAutoAddStatus, that.newNodeAutoAddStatus)
+            && Objects.equals(this.newNodeWeight, that.newNodeWeight);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeMode, masterWeight, readonlyNodes);
+        return Objects.hash(routeMode, masterWeight, readonlyNodes, newNodeAutoAddStatus, newNodeWeight);
     }
 
     @Override
@@ -123,6 +169,8 @@ public class ModifyGaussMySqlProxyRouteModeRequestBody {
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    masterWeight: ").append(toIndentedString(masterWeight)).append("\n");
         sb.append("    readonlyNodes: ").append(toIndentedString(readonlyNodes)).append("\n");
+        sb.append("    newNodeAutoAddStatus: ").append(toIndentedString(newNodeAutoAddStatus)).append("\n");
+        sb.append("    newNodeWeight: ").append(toIndentedString(newNodeWeight)).append("\n");
         sb.append("}");
         return sb.toString();
     }

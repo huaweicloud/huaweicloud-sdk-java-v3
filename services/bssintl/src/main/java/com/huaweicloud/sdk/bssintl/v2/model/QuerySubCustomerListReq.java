@@ -51,6 +51,11 @@ public class QuerySubCustomerListReq {
     private String associatedOnEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customer_id")
+
+    private String customerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indirect_partner_id")
 
     private String indirectPartnerId;
@@ -195,6 +200,23 @@ public class QuerySubCustomerListReq {
         this.associatedOnEnd = associatedOnEnd;
     }
 
+    public QuerySubCustomerListReq withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    /**
+     * 客户账号ID。您可以调用[查询客户列表](https://support.huaweicloud.com/intl/zh-cn/api-bpconsole/mc_00021.html)接口获取customer_id，或者可以从创建客户接口的响应获取domain_id。此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
     public QuerySubCustomerListReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -226,6 +248,7 @@ public class QuerySubCustomerListReq {
             && Objects.equals(this.label, that.label) && Objects.equals(this.associationType, that.associationType)
             && Objects.equals(this.associatedOnBegin, that.associatedOnBegin)
             && Objects.equals(this.associatedOnEnd, that.associatedOnEnd)
+            && Objects.equals(this.customerId, that.customerId)
             && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
@@ -239,6 +262,7 @@ public class QuerySubCustomerListReq {
             associationType,
             associatedOnBegin,
             associatedOnEnd,
+            customerId,
             indirectPartnerId);
     }
 
@@ -254,6 +278,7 @@ public class QuerySubCustomerListReq {
         sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
         sb.append("    associatedOnBegin: ").append(toIndentedString(associatedOnBegin)).append("\n");
         sb.append("    associatedOnEnd: ").append(toIndentedString(associatedOnEnd)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();

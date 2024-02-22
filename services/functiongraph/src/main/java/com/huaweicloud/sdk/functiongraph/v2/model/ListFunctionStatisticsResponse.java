@@ -44,6 +44,26 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     private List<SlaReportsValue> rejectCount = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_error_count")
+
+    private List<SlaReportsValue> functionErrorCount = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_error_count")
+
+    private List<SlaReportsValue> systemErrorCount = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reserved_instance_num")
+
+    private List<SlaReportsValue> reservedInstanceNum = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "concurrency_num")
+
+    private List<SlaReportsValue> concurrencyNum = null;
+
     public ListFunctionStatisticsResponse withCount(List<SlaReportsValue> count) {
         this.count = count;
         return this;
@@ -242,6 +262,140 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.rejectCount = rejectCount;
     }
 
+    public ListFunctionStatisticsResponse withFunctionErrorCount(List<SlaReportsValue> functionErrorCount) {
+        this.functionErrorCount = functionErrorCount;
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse addFunctionErrorCountItem(SlaReportsValue functionErrorCountItem) {
+        if (this.functionErrorCount == null) {
+            this.functionErrorCount = new ArrayList<>();
+        }
+        this.functionErrorCount.add(functionErrorCountItem);
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse withFunctionErrorCount(
+        Consumer<List<SlaReportsValue>> functionErrorCountSetter) {
+        if (this.functionErrorCount == null) {
+            this.functionErrorCount = new ArrayList<>();
+        }
+        functionErrorCountSetter.accept(this.functionErrorCount);
+        return this;
+    }
+
+    /**
+     * 函数错误次数
+     * @return functionErrorCount
+     */
+    public List<SlaReportsValue> getFunctionErrorCount() {
+        return functionErrorCount;
+    }
+
+    public void setFunctionErrorCount(List<SlaReportsValue> functionErrorCount) {
+        this.functionErrorCount = functionErrorCount;
+    }
+
+    public ListFunctionStatisticsResponse withSystemErrorCount(List<SlaReportsValue> systemErrorCount) {
+        this.systemErrorCount = systemErrorCount;
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse addSystemErrorCountItem(SlaReportsValue systemErrorCountItem) {
+        if (this.systemErrorCount == null) {
+            this.systemErrorCount = new ArrayList<>();
+        }
+        this.systemErrorCount.add(systemErrorCountItem);
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse withSystemErrorCount(Consumer<List<SlaReportsValue>> systemErrorCountSetter) {
+        if (this.systemErrorCount == null) {
+            this.systemErrorCount = new ArrayList<>();
+        }
+        systemErrorCountSetter.accept(this.systemErrorCount);
+        return this;
+    }
+
+    /**
+     * 系统错误次数
+     * @return systemErrorCount
+     */
+    public List<SlaReportsValue> getSystemErrorCount() {
+        return systemErrorCount;
+    }
+
+    public void setSystemErrorCount(List<SlaReportsValue> systemErrorCount) {
+        this.systemErrorCount = systemErrorCount;
+    }
+
+    public ListFunctionStatisticsResponse withReservedInstanceNum(List<SlaReportsValue> reservedInstanceNum) {
+        this.reservedInstanceNum = reservedInstanceNum;
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse addReservedInstanceNumItem(SlaReportsValue reservedInstanceNumItem) {
+        if (this.reservedInstanceNum == null) {
+            this.reservedInstanceNum = new ArrayList<>();
+        }
+        this.reservedInstanceNum.add(reservedInstanceNumItem);
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse withReservedInstanceNum(
+        Consumer<List<SlaReportsValue>> reservedInstanceNumSetter) {
+        if (this.reservedInstanceNum == null) {
+            this.reservedInstanceNum = new ArrayList<>();
+        }
+        reservedInstanceNumSetter.accept(this.reservedInstanceNum);
+        return this;
+    }
+
+    /**
+     * 预留实例指标
+     * @return reservedInstanceNum
+     */
+    public List<SlaReportsValue> getReservedInstanceNum() {
+        return reservedInstanceNum;
+    }
+
+    public void setReservedInstanceNum(List<SlaReportsValue> reservedInstanceNum) {
+        this.reservedInstanceNum = reservedInstanceNum;
+    }
+
+    public ListFunctionStatisticsResponse withConcurrencyNum(List<SlaReportsValue> concurrencyNum) {
+        this.concurrencyNum = concurrencyNum;
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse addConcurrencyNumItem(SlaReportsValue concurrencyNumItem) {
+        if (this.concurrencyNum == null) {
+            this.concurrencyNum = new ArrayList<>();
+        }
+        this.concurrencyNum.add(concurrencyNumItem);
+        return this;
+    }
+
+    public ListFunctionStatisticsResponse withConcurrencyNum(Consumer<List<SlaReportsValue>> concurrencyNumSetter) {
+        if (this.concurrencyNum == null) {
+            this.concurrencyNum = new ArrayList<>();
+        }
+        concurrencyNumSetter.accept(this.concurrencyNum);
+        return this;
+    }
+
+    /**
+     * 弹性实例指标
+     * @return concurrencyNum
+     */
+    public List<SlaReportsValue> getConcurrencyNum() {
+        return concurrencyNum;
+    }
+
+    public void setConcurrencyNum(List<SlaReportsValue> concurrencyNum) {
+        this.concurrencyNum = concurrencyNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,12 +407,25 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         ListFunctionStatisticsResponse that = (ListFunctionStatisticsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.failCount, that.failCount) && Objects.equals(this.maxDuration, that.maxDuration)
-            && Objects.equals(this.minDuration, that.minDuration) && Objects.equals(this.rejectCount, that.rejectCount);
+            && Objects.equals(this.minDuration, that.minDuration) && Objects.equals(this.rejectCount, that.rejectCount)
+            && Objects.equals(this.functionErrorCount, that.functionErrorCount)
+            && Objects.equals(this.systemErrorCount, that.systemErrorCount)
+            && Objects.equals(this.reservedInstanceNum, that.reservedInstanceNum)
+            && Objects.equals(this.concurrencyNum, that.concurrencyNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, duration, failCount, maxDuration, minDuration, rejectCount);
+        return Objects.hash(count,
+            duration,
+            failCount,
+            maxDuration,
+            minDuration,
+            rejectCount,
+            functionErrorCount,
+            systemErrorCount,
+            reservedInstanceNum,
+            concurrencyNum);
     }
 
     @Override
@@ -271,6 +438,10 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         sb.append("    maxDuration: ").append(toIndentedString(maxDuration)).append("\n");
         sb.append("    minDuration: ").append(toIndentedString(minDuration)).append("\n");
         sb.append("    rejectCount: ").append(toIndentedString(rejectCount)).append("\n");
+        sb.append("    functionErrorCount: ").append(toIndentedString(functionErrorCount)).append("\n");
+        sb.append("    systemErrorCount: ").append(toIndentedString(systemErrorCount)).append("\n");
+        sb.append("    reservedInstanceNum: ").append(toIndentedString(reservedInstanceNum)).append("\n");
+        sb.append("    concurrencyNum: ").append(toIndentedString(concurrencyNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

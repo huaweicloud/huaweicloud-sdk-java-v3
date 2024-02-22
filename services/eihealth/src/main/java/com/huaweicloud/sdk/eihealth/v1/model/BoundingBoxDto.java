@@ -26,7 +26,7 @@ public class BoundingBoxDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "padding")
 
-    private Integer padding;
+    private Float padding;
 
     public BoundingBoxDto withCenter(List<Float> center) {
         this.center = center;
@@ -94,7 +94,7 @@ public class BoundingBoxDto {
         this.size = size;
     }
 
-    public BoundingBoxDto withPadding(Integer padding) {
+    public BoundingBoxDto withPadding(Float padding) {
         this.padding = padding;
         return this;
     }
@@ -102,14 +102,14 @@ public class BoundingBoxDto {
     /**
      * 填充
      * minimum: 0
-     * maximum: 20
+     * maximum: 2E+1
      * @return padding
      */
-    public Integer getPadding() {
+    public Float getPadding() {
         return padding;
     }
 
-    public void setPadding(Integer padding) {
+    public void setPadding(Float padding) {
         this.padding = padding;
     }
 

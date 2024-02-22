@@ -96,7 +96,7 @@ public class UpdateTriggerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private List<TriggerEventData> eventData = null;
+    private List<UpdateriggerEventData> eventData = null;
 
     public UpdateTriggerRequestBody withTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
@@ -115,12 +115,12 @@ public class UpdateTriggerRequestBody {
         this.triggerStatus = triggerStatus;
     }
 
-    public UpdateTriggerRequestBody withEventData(List<TriggerEventData> eventData) {
+    public UpdateTriggerRequestBody withEventData(List<UpdateriggerEventData> eventData) {
         this.eventData = eventData;
         return this;
     }
 
-    public UpdateTriggerRequestBody addEventDataItem(TriggerEventData eventDataItem) {
+    public UpdateTriggerRequestBody addEventDataItem(UpdateriggerEventData eventDataItem) {
         if (this.eventData == null) {
             this.eventData = new ArrayList<>();
         }
@@ -128,7 +128,7 @@ public class UpdateTriggerRequestBody {
         return this;
     }
 
-    public UpdateTriggerRequestBody withEventData(Consumer<List<TriggerEventData>> eventDataSetter) {
+    public UpdateTriggerRequestBody withEventData(Consumer<List<UpdateriggerEventData>> eventDataSetter) {
         if (this.eventData == null) {
             this.eventData = new ArrayList<>();
         }
@@ -140,11 +140,11 @@ public class UpdateTriggerRequestBody {
      * 触发器更新事件
      * @return eventData
      */
-    public List<TriggerEventData> getEventData() {
+    public List<UpdateriggerEventData> getEventData() {
         return eventData;
     }
 
-    public void setEventData(List<TriggerEventData> eventData) {
+    public void setEventData(List<UpdateriggerEventData> eventData) {
         this.eventData = eventData;
     }
 
