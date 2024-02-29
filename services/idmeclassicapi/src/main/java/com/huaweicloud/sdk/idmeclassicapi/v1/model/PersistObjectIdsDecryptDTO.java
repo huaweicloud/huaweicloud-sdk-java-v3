@@ -21,7 +21,7 @@ public class PersistObjectIdsDecryptDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<String> ids = null;
+    private List<Long> ids = null;
 
     public PersistObjectIdsDecryptDTO withDecrypt(Boolean decrypt) {
         this.decrypt = decrypt;
@@ -40,12 +40,12 @@ public class PersistObjectIdsDecryptDTO {
         this.decrypt = decrypt;
     }
 
-    public PersistObjectIdsDecryptDTO withIds(List<String> ids) {
+    public PersistObjectIdsDecryptDTO withIds(List<Long> ids) {
         this.ids = ids;
         return this;
     }
 
-    public PersistObjectIdsDecryptDTO addIdsItem(String idsItem) {
+    public PersistObjectIdsDecryptDTO addIdsItem(Long idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class PersistObjectIdsDecryptDTO {
         return this;
     }
 
-    public PersistObjectIdsDecryptDTO withIds(Consumer<List<String>> idsSetter) {
+    public PersistObjectIdsDecryptDTO withIds(Consumer<List<Long>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class PersistObjectIdsDecryptDTO {
      * ID列表。
      * @return ids
      */
-    public List<String> getIds() {
+    public List<Long> getIds() {
         return ids;
     }
 
-    public void setIds(List<String> ids) {
+    public void setIds(List<Long> ids) {
         this.ids = ids;
     }
 

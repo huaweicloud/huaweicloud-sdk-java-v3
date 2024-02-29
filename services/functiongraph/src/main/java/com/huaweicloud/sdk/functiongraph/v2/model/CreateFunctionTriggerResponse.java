@@ -260,7 +260,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private TriggerEventDataRequestBody eventData;
+    private TriggerEventDataResponseBody eventData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_updated_time")
@@ -323,14 +323,14 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         this.triggerStatus = triggerStatus;
     }
 
-    public CreateFunctionTriggerResponse withEventData(TriggerEventDataRequestBody eventData) {
+    public CreateFunctionTriggerResponse withEventData(TriggerEventDataResponseBody eventData) {
         this.eventData = eventData;
         return this;
     }
 
-    public CreateFunctionTriggerResponse withEventData(Consumer<TriggerEventDataRequestBody> eventDataSetter) {
+    public CreateFunctionTriggerResponse withEventData(Consumer<TriggerEventDataResponseBody> eventDataSetter) {
         if (this.eventData == null) {
-            this.eventData = new TriggerEventDataRequestBody();
+            this.eventData = new TriggerEventDataResponseBody();
             eventDataSetter.accept(this.eventData);
         }
 
@@ -341,11 +341,11 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
      * Get eventData
      * @return eventData
      */
-    public TriggerEventDataRequestBody getEventData() {
+    public TriggerEventDataResponseBody getEventData() {
         return eventData;
     }
 
-    public void setEventData(TriggerEventDataRequestBody eventData) {
+    public void setEventData(TriggerEventDataResponseBody eventData) {
         this.eventData = eventData;
     }
 

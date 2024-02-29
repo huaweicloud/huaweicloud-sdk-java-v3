@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ConnectorOrderRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateGroupReq;
@@ -51,10 +53,13 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateSmartConnectTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
@@ -66,6 +71,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsRequest;
@@ -86,6 +93,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsReq;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PartitionReassignRequest;
+import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
@@ -107,8 +116,12 @@ import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
@@ -118,6 +131,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoRequest;
@@ -352,34 +367,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CloseKafkaManagerRequest::getInstanceId, CloseKafkaManagerRequest::setInstanceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector =
-        genForCreateConnector();
-
-    private static HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> genForCreateConnector() {
-        // basic
-        HttpRequestDef.Builder<CreateConnectorRequest, CreateConnectorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateConnectorRequest.class, CreateConnectorResponse.class)
-                .withName("CreateConnector")
-                .withUri("/v2/{project_id}/instances/{instance_id}/connector")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectorRequest::getInstanceId, CreateConnectorRequest::setInstanceId));
-        builder.<CreateConnectorReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateConnectorReq.class),
-            f -> f.withMarshaller(CreateConnectorRequest::getBody, CreateConnectorRequest::setBody));
 
         // response
 
@@ -676,34 +663,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, DeleteBackgroundTaskRequest::setTaskId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnector =
-        genForDeleteConnector();
-
-    private static HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> genForDeleteConnector() {
-        // basic
-        HttpRequestDef.Builder<DeleteConnectorRequest, DeleteConnectorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeleteConnectorRequest.class, DeleteConnectorResponse.class)
-                .withName("DeleteConnector")
-                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, DeleteConnectorRequest::setInstanceId));
-        builder.<Object>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteConnectorRequest::getBody, DeleteConnectorRequest::setBody));
 
         // response
 
@@ -2500,6 +2459,267 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetReplicaReq.class),
             f -> f.withMarshaller(UpdateTopicReplicaRequest::getBody, UpdateTopicReplicaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector =
+        genForCreateConnector();
+
+    private static HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> genForCreateConnector() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectorRequest, CreateConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConnectorRequest.class, CreateConnectorResponse.class)
+                .withName("CreateConnector")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectorRequest::getInstanceId, CreateConnectorRequest::setInstanceId));
+        builder.<CreateConnectorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConnectorReq.class),
+            f -> f.withMarshaller(CreateConnectorRequest::getBody, CreateConnectorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectorTaskRequest, CreateConnectorTaskResponse> createConnectorTask =
+        genForCreateConnectorTask();
+
+    private static HttpRequestDef<CreateConnectorTaskRequest, CreateConnectorTaskResponse> genForCreateConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectorTaskRequest, CreateConnectorTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConnectorTaskRequest.class, CreateConnectorTaskResponse.class)
+                .withName("CreateConnectorTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectorTaskRequest::getInstanceId,
+                CreateConnectorTaskRequest::setInstanceId));
+        builder.<CreateSmartConnectTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSmartConnectTaskReq.class),
+            f -> f.withMarshaller(CreateConnectorTaskRequest::getBody, CreateConnectorTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnector =
+        genForDeleteConnector();
+
+    private static HttpRequestDef<DeleteConnectorRequest, DeleteConnectorResponse> genForDeleteConnector() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectorRequest, DeleteConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteConnectorRequest.class, DeleteConnectorResponse.class)
+                .withName("DeleteConnector")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, DeleteConnectorRequest::setInstanceId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(DeleteConnectorRequest::getBody, DeleteConnectorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectorTaskRequest, DeleteConnectorTaskResponse> deleteConnectorTask =
+        genForDeleteConnectorTask();
+
+    private static HttpRequestDef<DeleteConnectorTaskRequest, DeleteConnectorTaskResponse> genForDeleteConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectorTaskRequest, DeleteConnectorTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConnectorTaskRequest.class, DeleteConnectorTaskResponse.class)
+            .withName("DeleteConnectorTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectorTaskRequest::getInstanceId,
+                DeleteConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectorTaskRequest::getTaskId, DeleteConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConnectorTasksRequest, ListConnectorTasksResponse> listConnectorTasks =
+        genForListConnectorTasks();
+
+    private static HttpRequestDef<ListConnectorTasksRequest, ListConnectorTasksResponse> genForListConnectorTasks() {
+        // basic
+        HttpRequestDef.Builder<ListConnectorTasksRequest, ListConnectorTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConnectorTasksRequest.class, ListConnectorTasksResponse.class)
+                .withName("ListConnectorTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectorTasksRequest::getInstanceId, ListConnectorTasksRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectorTasksRequest::getOffset, ListConnectorTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectorTasksRequest::getLimit, ListConnectorTasksRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseConnectorTaskRequest, PauseConnectorTaskResponse> pauseConnectorTask =
+        genForPauseConnectorTask();
+
+    private static HttpRequestDef<PauseConnectorTaskRequest, PauseConnectorTaskResponse> genForPauseConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<PauseConnectorTaskRequest, PauseConnectorTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, PauseConnectorTaskRequest.class, PauseConnectorTaskResponse.class)
+                .withName("PauseConnectorTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseConnectorTaskRequest::getInstanceId, PauseConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseConnectorTaskRequest::getTaskId, PauseConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartConnectorTaskRequest, RestartConnectorTaskResponse> restartConnectorTask =
+        genForRestartConnectorTask();
+
+    private static HttpRequestDef<RestartConnectorTaskRequest, RestartConnectorTaskResponse> genForRestartConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<RestartConnectorTaskRequest, RestartConnectorTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, RestartConnectorTaskRequest.class, RestartConnectorTaskResponse.class)
+            .withName("RestartConnectorTask")
+            .withUri("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartConnectorTaskRequest::getInstanceId,
+                RestartConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartConnectorTaskRequest::getTaskId, RestartConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse> resumeConnectorTask =
+        genForResumeConnectorTask();
+
+    private static HttpRequestDef<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse> genForResumeConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResumeConnectorTaskRequest.class, ResumeConnectorTaskResponse.class)
+                .withName("ResumeConnectorTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeConnectorTaskRequest::getInstanceId,
+                ResumeConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeConnectorTaskRequest::getTaskId, ResumeConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConnectorTaskRequest, ShowConnectorTaskResponse> showConnectorTask =
+        genForShowConnectorTask();
+
+    private static HttpRequestDef<ShowConnectorTaskRequest, ShowConnectorTaskResponse> genForShowConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<ShowConnectorTaskRequest, ShowConnectorTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConnectorTaskRequest.class, ShowConnectorTaskResponse.class)
+                .withName("ShowConnectorTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectorTaskRequest::getInstanceId, ShowConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectorTaskRequest::getTaskId, ShowConnectorTaskRequest::setTaskId));
 
         // response
 

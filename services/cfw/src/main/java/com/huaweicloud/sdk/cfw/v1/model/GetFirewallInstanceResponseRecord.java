@@ -205,6 +205,16 @@ public class GetFirewallInstanceResponseRecord {
     private Boolean isOldFirewallInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_available_obs")
+
+    private Boolean isAvailableObs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_threat_tags")
+
+    private Boolean isSupportThreatTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_ipv6")
 
     private Boolean supportIpv6;
@@ -434,6 +444,40 @@ public class GetFirewallInstanceResponseRecord {
         this.isOldFirewallInstance = isOldFirewallInstance;
     }
 
+    public GetFirewallInstanceResponseRecord withIsAvailableObs(Boolean isAvailableObs) {
+        this.isAvailableObs = isAvailableObs;
+        return this;
+    }
+
+    /**
+     * 是否支持obs
+     * @return isAvailableObs
+     */
+    public Boolean getIsAvailableObs() {
+        return isAvailableObs;
+    }
+
+    public void setIsAvailableObs(Boolean isAvailableObs) {
+        this.isAvailableObs = isAvailableObs;
+    }
+
+    public GetFirewallInstanceResponseRecord withIsSupportThreatTags(Boolean isSupportThreatTags) {
+        this.isSupportThreatTags = isSupportThreatTags;
+        return this;
+    }
+
+    /**
+     * 是否支持威胁标签
+     * @return isSupportThreatTags
+     */
+    public Boolean getIsSupportThreatTags() {
+        return isSupportThreatTags;
+    }
+
+    public void setIsSupportThreatTags(Boolean isSupportThreatTags) {
+        this.isSupportThreatTags = isSupportThreatTags;
+    }
+
     public GetFirewallInstanceResponseRecord withSupportIpv6(Boolean supportIpv6) {
         this.supportIpv6 = supportIpv6;
         return this;
@@ -600,6 +644,8 @@ public class GetFirewallInstanceResponseRecord {
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.protectObjects, that.protectObjects)
             && Objects.equals(this.status, that.status)
             && Objects.equals(this.isOldFirewallInstance, that.isOldFirewallInstance)
+            && Objects.equals(this.isAvailableObs, that.isAvailableObs)
+            && Objects.equals(this.isSupportThreatTags, that.isSupportThreatTags)
             && Objects.equals(this.supportIpv6, that.supportIpv6)
             && Objects.equals(this.featureToggle, that.featureToggle) && Objects.equals(this.resources, that.resources)
             && Objects.equals(this.fwInstanceName, that.fwInstanceName)
@@ -620,6 +666,8 @@ public class GetFirewallInstanceResponseRecord {
             protectObjects,
             status,
             isOldFirewallInstance,
+            isAvailableObs,
+            isSupportThreatTags,
             supportIpv6,
             featureToggle,
             resources,
@@ -643,6 +691,8 @@ public class GetFirewallInstanceResponseRecord {
         sb.append("    protectObjects: ").append(toIndentedString(protectObjects)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    isOldFirewallInstance: ").append(toIndentedString(isOldFirewallInstance)).append("\n");
+        sb.append("    isAvailableObs: ").append(toIndentedString(isAvailableObs)).append("\n");
+        sb.append("    isSupportThreatTags: ").append(toIndentedString(isSupportThreatTags)).append("\n");
         sb.append("    supportIpv6: ").append(toIndentedString(supportIpv6)).append("\n");
         sb.append("    featureToggle: ").append(toIndentedString(featureToggle)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CreateFirewallReqFlavor {
 
     /**
-     * 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版 Platinum - 铂金版，防火墙版本“charge_mode”为\"postPaid\"时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+     * 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版
      */
     public static final class VersionEnum {
 
@@ -30,18 +30,12 @@ public class CreateFirewallReqFlavor {
          */
         public static final VersionEnum PROFESSIONAL = new VersionEnum("Professional");
 
-        /**
-         * Enum PLATINUM for value: "Platinum"
-         */
-        public static final VersionEnum PLATINUM = new VersionEnum("Platinum");
-
         private static final Map<String, VersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VersionEnum> createStaticFields() {
             Map<String, VersionEnum> map = new HashMap<>();
             map.put("Standard", STANDARD);
             map.put("Professional", PROFESSIONAL);
-            map.put("Platinum", PLATINUM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -117,7 +111,7 @@ public class CreateFirewallReqFlavor {
     }
 
     /**
-     * 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版 Platinum - 铂金版，防火墙版本“charge_mode”为\"postPaid\"时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+     * 防火墙版本 “charge_mode”为“prePaid”时，仅支持专业版。 “charge_mode”为“postPaid”时，支持标准版、专业版。  Standard - 标准版 Professional - 专业版
      * @return version
      */
     public VersionEnum getVersion() {

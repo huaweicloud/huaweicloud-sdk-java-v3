@@ -158,7 +158,7 @@ public class ListStrategyRequest {
     }
 
     /**
-     * 规则集类型
+     * 策略类型
      * @return type
      */
     public String getType() {

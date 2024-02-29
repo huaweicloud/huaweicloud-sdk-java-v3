@@ -29,6 +29,11 @@ public class CreateEnhancedConnectionsReq {
     private String destNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pools")
+
+    private List<String> elasticResourcePools = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
     private List<String> queues = null;
@@ -97,6 +102,39 @@ public class CreateEnhancedConnectionsReq {
 
     public void setDestNetworkId(String destNetworkId) {
         this.destNetworkId = destNetworkId;
+    }
+
+    public CreateEnhancedConnectionsReq withElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+        return this;
+    }
+
+    public CreateEnhancedConnectionsReq addElasticResourcePoolsItem(String elasticResourcePoolsItem) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        this.elasticResourcePools.add(elasticResourcePoolsItem);
+        return this;
+    }
+
+    public CreateEnhancedConnectionsReq withElasticResourcePools(Consumer<List<String>> elasticResourcePoolsSetter) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        elasticResourcePoolsSetter.accept(this.elasticResourcePools);
+        return this;
+    }
+
+    /**
+     * 弹性资源池列表。
+     * @return elasticResourcePools
+     */
+    public List<String> getElasticResourcePools() {
+        return elasticResourcePools;
+    }
+
+    public void setElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
     }
 
     public CreateEnhancedConnectionsReq withQueues(List<String> queues) {
@@ -225,14 +263,15 @@ public class CreateEnhancedConnectionsReq {
         }
         CreateEnhancedConnectionsReq that = (CreateEnhancedConnectionsReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.destVpcId, that.destVpcId)
-            && Objects.equals(this.destNetworkId, that.destNetworkId) && Objects.equals(this.queues, that.queues)
-            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.routetableId, that.routetableId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.destNetworkId, that.destNetworkId)
+            && Objects.equals(this.elasticResourcePools, that.elasticResourcePools)
+            && Objects.equals(this.queues, that.queues) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.routetableId, that.routetableId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, destVpcId, destNetworkId, queues, hosts, routetableId, tags);
+        return Objects.hash(name, destVpcId, destNetworkId, elasticResourcePools, queues, hosts, routetableId, tags);
     }
 
     @Override
@@ -242,6 +281,7 @@ public class CreateEnhancedConnectionsReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    destVpcId: ").append(toIndentedString(destVpcId)).append("\n");
         sb.append("    destNetworkId: ").append(toIndentedString(destNetworkId)).append("\n");
+        sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    routetableId: ").append(toIndentedString(routetableId)).append("\n");

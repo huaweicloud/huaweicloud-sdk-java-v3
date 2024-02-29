@@ -5,9 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.dns.v2.model.AssociateHealthCheckReq;
-import com.huaweicloud.sdk.dns.v2.model.AssociateHealthCheckRequest;
-import com.huaweicloud.sdk.dns.v2.model.AssociateHealthCheckResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterResponse;
@@ -61,8 +58,6 @@ import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagResponse;
-import com.huaweicloud.sdk.dns.v2.model.DisassociateHealthCheckRequest;
-import com.huaweicloud.sdk.dns.v2.model.DisassociateHealthCheckResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociaterouterRequestBody;
@@ -669,35 +664,6 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheck =
-        genForAssociateHealthCheck();
-
-    private static HttpRequestDef<AssociateHealthCheckRequest, AssociateHealthCheckResponse> genForAssociateHealthCheck() {
-        // basic
-        HttpRequestDef.Builder<AssociateHealthCheckRequest, AssociateHealthCheckResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, AssociateHealthCheckRequest.class, AssociateHealthCheckResponse.class)
-            .withName("AssociateHealthCheck")
-            .withUri("/v2.1/recordsets/{recordset_id}/associatehealthcheck")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("recordset_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateHealthCheckRequest::getRecordsetId,
-                AssociateHealthCheckRequest::setRecordsetId));
-        builder.<AssociateHealthCheckReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
-            f -> f.withMarshaller(AssociateHealthCheckRequest::getBody, AssociateHealthCheckRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
         genForBatchDeleteRecordSetWithLine();
 
@@ -904,35 +870,6 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRecordSetsRequest::getRecordsetId, DeleteRecordSetsRequest::setRecordsetId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheck =
-        genForDisassociateHealthCheck();
-
-    private static HttpRequestDef<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> genForDisassociateHealthCheck() {
-        // basic
-        HttpRequestDef.Builder<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DisassociateHealthCheckRequest.class, DisassociateHealthCheckResponse.class)
-            .withName("DisassociateHealthCheck")
-            .withUri("/v2.1/recordsets/{recordset_id}/disassociatehealthcheck")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("recordset_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateHealthCheckRequest::getRecordsetId,
-                DisassociateHealthCheckRequest::setRecordsetId));
-        builder.<AssociateHealthCheckReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateHealthCheckReq.class),
-            f -> f.withMarshaller(DisassociateHealthCheckRequest::getBody, DisassociateHealthCheckRequest::setBody));
 
         // response
 

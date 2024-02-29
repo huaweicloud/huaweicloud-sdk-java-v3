@@ -28,6 +28,16 @@ public class CreateLogStreamParams {
 
     private List<TagsBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name_alias")
+
+    private String logStreamNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
         return this;
@@ -97,6 +107,40 @@ public class CreateLogStreamParams {
         this.tags = tags;
     }
 
+    public CreateLogStreamParams withLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+        return this;
+    }
+
+    /**
+     * 日志流名称别名
+     * @return logStreamNameAlias
+     */
+    public String getLogStreamNameAlias() {
+        return logStreamNameAlias;
+    }
+
+    public void setLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+    }
+
+    public CreateLogStreamParams withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 企业项目名称 >只能由中文、英文字母、数字、下划线、中划线组成，且不能使用任何大小写形式的“default”； 描述不超过512个字符。
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,12 +151,13 @@ public class CreateLogStreamParams {
         }
         CreateLogStreamParams that = (CreateLogStreamParams) obj;
         return Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.ttlInDays, that.ttlInDays)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamName, ttlInDays, tags);
+        return Objects.hash(logStreamName, ttlInDays, tags, logStreamNameAlias, enterpriseProjectName);
     }
 
     @Override
@@ -122,6 +167,8 @@ public class CreateLogStreamParams {
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

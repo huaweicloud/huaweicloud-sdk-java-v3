@@ -525,6 +525,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean connectorEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connector_node_num")
+
+    private Integer connectorNodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_id")
 
     private String connectorId;
@@ -1681,6 +1686,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.connectorEnable = connectorEnable;
     }
 
+    public ShowInstanceResponse withConnectorNodeNum(Integer connectorNodeNum) {
+        this.connectorNodeNum = connectorNodeNum;
+        return this;
+    }
+
+    /**
+     * connector节点数量。
+     * @return connectorNodeNum
+     */
+    public Integer getConnectorNodeNum() {
+        return connectorNodeNum;
+    }
+
+    public void setConnectorNodeNum(Integer connectorNodeNum) {
+        this.connectorNodeNum = connectorNodeNum;
+    }
+
     public ShowInstanceResponse withConnectorId(String connectorId) {
         this.connectorId = connectorId;
         return this;
@@ -2110,6 +2132,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.crossVpcInfo, that.crossVpcInfo) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
             && Objects.equals(this.connectorEnable, that.connectorEnable)
+            && Objects.equals(this.connectorNodeNum, that.connectorNodeNum)
             && Objects.equals(this.connectorId, that.connectorId) && Objects.equals(this.restEnable, that.restEnable)
             && Objects.equals(this.restConnectAddress, that.restConnectAddress)
             && Objects.equals(this.publicBoundwidth, that.publicBoundwidth)
@@ -2190,6 +2213,7 @@ public class ShowInstanceResponse extends SdkResponse {
             ipv6Enable,
             ipv6ConnectAddresses,
             connectorEnable,
+            connectorNodeNum,
             connectorId,
             restEnable,
             restConnectAddress,
@@ -2278,6 +2302,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
+        sb.append("    connectorNodeNum: ").append(toIndentedString(connectorNodeNum)).append("\n");
         sb.append("    connectorId: ").append(toIndentedString(connectorId)).append("\n");
         sb.append("    restEnable: ").append(toIndentedString(restEnable)).append("\n");
         sb.append("    restConnectAddress: ").append(toIndentedString(restConnectAddress)).append("\n");

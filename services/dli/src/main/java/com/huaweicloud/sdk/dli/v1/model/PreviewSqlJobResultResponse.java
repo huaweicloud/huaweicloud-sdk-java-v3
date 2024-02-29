@@ -151,7 +151,7 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
-    private List<List<String>> rows = null;
+    private List<List<Object>> rows = null;
 
     public PreviewSqlJobResultResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -288,12 +288,12 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
         this.schema = schema;
     }
 
-    public PreviewSqlJobResultResponse withRows(List<List<String>> rows) {
+    public PreviewSqlJobResultResponse withRows(List<List<Object>> rows) {
         this.rows = rows;
         return this;
     }
 
-    public PreviewSqlJobResultResponse addRowsItem(List<String> rowsItem) {
+    public PreviewSqlJobResultResponse addRowsItem(List<Object> rowsItem) {
         if (this.rows == null) {
             this.rows = new ArrayList<>();
         }
@@ -301,7 +301,7 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
         return this;
     }
 
-    public PreviewSqlJobResultResponse withRows(Consumer<List<List<String>>> rowsSetter) {
+    public PreviewSqlJobResultResponse withRows(Consumer<List<List<Object>>> rowsSetter) {
         if (this.rows == null) {
             this.rows = new ArrayList<>();
         }
@@ -313,11 +313,11 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
      * 作业结果集。
      * @return rows
      */
-    public List<List<String>> getRows() {
+    public List<List<Object>> getRows() {
         return rows;
     }
 
-    public void setRows(List<List<String>> rows) {
+    public void setRows(List<List<Object>> rows) {
         this.rows = rows;
     }
 

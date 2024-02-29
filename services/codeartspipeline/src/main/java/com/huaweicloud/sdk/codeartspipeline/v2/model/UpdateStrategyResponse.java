@@ -44,7 +44,7 @@ public class UpdateStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 规则集ID
+     * 策略ID
      * @return ruleSetId
      */
     public String getRuleSetId() {

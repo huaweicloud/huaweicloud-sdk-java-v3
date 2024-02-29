@@ -29,7 +29,7 @@ public class CreateRuleSetReq {
     }
 
     /**
-     * 规则集名称
+     * 策略名称
      * @return name
      */
     public String getName() {

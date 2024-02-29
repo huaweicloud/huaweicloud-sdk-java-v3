@@ -32,7 +32,7 @@ public class UpdateStrategyRequest {
     }
 
     /**
-     * 规则集ID
+     * 策略ID
      * @return ruleSetId
      */
     public String getRuleSetId() {

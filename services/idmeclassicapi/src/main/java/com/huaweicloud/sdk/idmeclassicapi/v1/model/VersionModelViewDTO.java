@@ -99,7 +99,7 @@ public class VersionModelViewDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preVersionId")
 
-    private Long preVersionId;
+    private String preVersionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rdmDeleteFlag")
@@ -453,7 +453,7 @@ public class VersionModelViewDTO {
         this.name = name;
     }
 
-    public VersionModelViewDTO withPreVersionId(Long preVersionId) {
+    public VersionModelViewDTO withPreVersionId(String preVersionId) {
         this.preVersionId = preVersionId;
         return this;
     }
@@ -462,11 +462,11 @@ public class VersionModelViewDTO {
      * 前序版本实例ID。
      * @return preVersionId
      */
-    public Long getPreVersionId() {
+    public String getPreVersionId() {
         return preVersionId;
     }
 
-    public void setPreVersionId(Long preVersionId) {
+    public void setPreVersionId(String preVersionId) {
         this.preVersionId = preVersionId;
     }
 

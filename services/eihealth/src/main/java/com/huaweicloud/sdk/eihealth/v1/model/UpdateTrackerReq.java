@@ -14,31 +14,9 @@ import java.util.function.Consumer;
 public class UpdateTrackerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bucket_lifecycle")
-
-    private String bucketLifecycle;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_event")
 
     private List<DataEvent> dataEvent = null;
-
-    public UpdateTrackerReq withBucketLifecycle(String bucketLifecycle) {
-        this.bucketLifecycle = bucketLifecycle;
-        return this;
-    }
-
-    /**
-     * 转储生命周期
-     * @return bucketLifecycle
-     */
-    public String getBucketLifecycle() {
-        return bucketLifecycle;
-    }
-
-    public void setBucketLifecycle(String bucketLifecycle) {
-        this.bucketLifecycle = bucketLifecycle;
-    }
 
     public UpdateTrackerReq withDataEvent(List<DataEvent> dataEvent) {
         this.dataEvent = dataEvent;
@@ -82,20 +60,18 @@ public class UpdateTrackerReq {
             return false;
         }
         UpdateTrackerReq that = (UpdateTrackerReq) obj;
-        return Objects.equals(this.bucketLifecycle, that.bucketLifecycle)
-            && Objects.equals(this.dataEvent, that.dataEvent);
+        return Objects.equals(this.dataEvent, that.dataEvent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketLifecycle, dataEvent);
+        return Objects.hash(dataEvent);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTrackerReq {\n");
-        sb.append("    bucketLifecycle: ").append(toIndentedString(bucketLifecycle)).append("\n");
         sb.append("    dataEvent: ").append(toIndentedString(dataEvent)).append("\n");
         sb.append("}");
         return sb.toString();

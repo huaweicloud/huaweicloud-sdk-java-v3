@@ -30,6 +30,11 @@ public class AddressSetDetailResponseDTOData {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_set_type")
+
+    private Integer addressSetType;
+
     /**
      * 地址类型0 ipv4,1 ipv6
      */
@@ -156,6 +161,23 @@ public class AddressSetDetailResponseDTOData {
         this.description = description;
     }
 
+    public AddressSetDetailResponseDTOData withAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+        return this;
+    }
+
+    /**
+     * 地址组类型，0表示自定义地址组，1表示预定义地址组
+     * @return addressSetType
+     */
+    public Integer getAddressSetType() {
+        return addressSetType;
+    }
+
+    public void setAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+    }
+
     public AddressSetDetailResponseDTOData withAddressType(AddressTypeEnum addressType) {
         this.addressType = addressType;
         return this;
@@ -183,12 +205,14 @@ public class AddressSetDetailResponseDTOData {
         }
         AddressSetDetailResponseDTOData that = (AddressSetDetailResponseDTOData) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.addressType, that.addressType);
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.addressSetType, that.addressSetType)
+            && Objects.equals(this.addressType, that.addressType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, addressType);
+        return Objects.hash(id, name, description, addressSetType, addressType);
     }
 
     @Override
@@ -198,6 +222,7 @@ public class AddressSetDetailResponseDTOData {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    addressSetType: ").append(toIndentedString(addressSetType)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("}");
         return sb.toString();

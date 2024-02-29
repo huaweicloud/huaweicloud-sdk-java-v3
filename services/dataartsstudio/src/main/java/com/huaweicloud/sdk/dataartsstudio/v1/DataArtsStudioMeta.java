@@ -64,6 +64,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BizCatalogVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BizMetricVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BulkSecurityLevel;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BusinessAssetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogLevelVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMetaDataEventRequest;
@@ -121,6 +124,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
@@ -151,6 +156,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CustomizedFieldsVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleEnableDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleOperateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataEntityWithExtInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionRequest;
@@ -199,6 +205,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EntityWithExtInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EnvRequestBody;
@@ -296,8 +305,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
@@ -320,6 +333,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListQualityTemplatesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListQualityTemplatesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListReleasePackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
@@ -478,6 +492,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListRequest;
@@ -1050,6 +1066,35 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogMetaDataEventRequest.class),
             f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, BatchSyncMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelFactoryPackagesRequest, CancelFactoryPackagesResponse> cancelFactoryPackages =
+        genForCancelFactoryPackages();
+
+    private static HttpRequestDef<CancelFactoryPackagesRequest, CancelFactoryPackagesResponse> genForCancelFactoryPackages() {
+        // basic
+        HttpRequestDef.Builder<CancelFactoryPackagesRequest, CancelFactoryPackagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CancelFactoryPackagesRequest.class, CancelFactoryPackagesResponse.class)
+            .withName("CancelFactoryPackages")
+            .withUri("/v2/{project_id}/factory/release-packages/unpack")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelFactoryPackagesRequest::getWorkspace,
+                CancelFactoryPackagesRequest::setWorkspace));
+        builder.<CancelFactoryPackagesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CancelFactoryPackagesRequestBody.class),
+            f -> f.withMarshaller(CancelFactoryPackagesRequest::getBody, CancelFactoryPackagesRequest::setBody));
 
         // response
 
@@ -1715,6 +1760,35 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EntityWithExtInfo.class),
             f -> f.withMarshaller(CreateOrUpdateAssetRequest::getBody, CreateOrUpdateAssetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOrUpdateEntitiesRequest, CreateOrUpdateEntitiesResponse> createOrUpdateEntities =
+        genForCreateOrUpdateEntities();
+
+    private static HttpRequestDef<CreateOrUpdateEntitiesRequest, CreateOrUpdateEntitiesResponse> genForCreateOrUpdateEntities() {
+        // basic
+        HttpRequestDef.Builder<CreateOrUpdateEntitiesRequest, CreateOrUpdateEntitiesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateOrUpdateEntitiesRequest.class, CreateOrUpdateEntitiesResponse.class)
+            .withName("CreateOrUpdateEntities")
+            .withUri("/v1/{project_id}/datamap/entities")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrUpdateEntitiesRequest::getInstance,
+                CreateOrUpdateEntitiesRequest::setInstance));
+        builder.<DataEntityWithExtInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataEntityWithExtInfo.class),
+            f -> f.withMarshaller(CreateOrUpdateEntitiesRequest::getBody, CreateOrUpdateEntitiesRequest::setBody));
 
         // response
 
@@ -2772,6 +2846,35 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDelUserParams.class),
             f -> f.withMarshaller(DeleteWorkspaceusersRequest::getBody, DeleteWorkspaceusersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse> deployFactoryPackages =
+        genForDeployFactoryPackages();
+
+    private static HttpRequestDef<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse> genForDeployFactoryPackages() {
+        // basic
+        HttpRequestDef.Builder<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeployFactoryPackagesRequest.class, DeployFactoryPackagesResponse.class)
+            .withName("DeployFactoryPackages")
+            .withUri("/v2/{project_id}/factory/release-packages/deploy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeployFactoryPackagesRequest::getWorkspace,
+                DeployFactoryPackagesRequest::setWorkspace));
+        builder.<DeployFactoryPackagesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeployFactoryPackagesRequestBody.class),
+            f -> f.withMarshaller(DeployFactoryPackagesRequest::getBody, DeployFactoryPackagesRequest::setBody));
 
         // response
 
@@ -4937,6 +5040,87 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFactoryJobInstancesByNameRequest, ListFactoryJobInstancesByNameResponse> listFactoryJobInstancesByName =
+        genForListFactoryJobInstancesByName();
+
+    private static HttpRequestDef<ListFactoryJobInstancesByNameRequest, ListFactoryJobInstancesByNameResponse> genForListFactoryJobInstancesByName() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryJobInstancesByNameRequest, ListFactoryJobInstancesByNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFactoryJobInstancesByNameRequest.class,
+                    ListFactoryJobInstancesByNameResponse.class)
+                .withName("ListFactoryJobInstancesByName")
+                .withUri("/v2/{project_id}/factory/jobs/{job_name}/instances/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getJobName,
+                ListFactoryJobInstancesByNameRequest::setJobName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getLimit,
+                ListFactoryJobInstancesByNameRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getOffset,
+                ListFactoryJobInstancesByNameRequest::setOffset));
+        builder.<Long>withRequestField("min_plan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getMinPlanTime,
+                ListFactoryJobInstancesByNameRequest::setMinPlanTime));
+        builder.<Long>withRequestField("max_plan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getMaxPlanTime,
+                ListFactoryJobInstancesByNameRequest::setMaxPlanTime));
+        builder.<ListFactoryJobInstancesByNameRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFactoryJobInstancesByNameRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getStatus,
+                ListFactoryJobInstancesByNameRequest::setStatus));
+        builder.<Boolean>withRequestField("force_success",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getForceSuccess,
+                ListFactoryJobInstancesByNameRequest::setForceSuccess));
+        builder.<Boolean>withRequestField("ignore_success",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getIgnoreSuccess,
+                ListFactoryJobInstancesByNameRequest::setIgnoreSuccess));
+        builder.<String>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getInstanceType,
+                ListFactoryJobInstancesByNameRequest::setInstanceType));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobInstancesByNameRequest::getWorkspace,
+                ListFactoryJobInstancesByNameRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobs =
         genForListFactoryJobs();
 
@@ -4982,6 +5166,45 @@ public class DataArtsStudioMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> listFactoryReleasePackages =
+        genForListFactoryReleasePackages();
+
+    private static HttpRequestDef<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> genForListFactoryReleasePackages() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListFactoryReleasePackagesRequest.class,
+                    ListFactoryReleasePackagesResponse.class)
+                .withName("ListFactoryReleasePackages")
+                .withUri("/v2/{project_id}/factory/release-packages")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryReleasePackagesRequest::getWorkspace,
+                ListFactoryReleasePackagesRequest::setWorkspace));
+        builder.<ListReleasePackagesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListReleasePackagesRequestBody.class),
+            f -> f.withMarshaller(ListFactoryReleasePackagesRequest::getBody,
+                ListFactoryReleasePackagesRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFactoryReleasePackagesResponse::getXRequestId,
+                ListFactoryReleasePackagesResponse::setXRequestId));
         return builder.build();
     }
 
@@ -8421,6 +8644,43 @@ public class DataArtsStudioMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFactoryPackageDetailRequest, ShowFactoryPackageDetailResponse> showFactoryPackageDetail =
+        genForShowFactoryPackageDetail();
+
+    private static HttpRequestDef<ShowFactoryPackageDetailRequest, ShowFactoryPackageDetailResponse> genForShowFactoryPackageDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFactoryPackageDetailRequest, ShowFactoryPackageDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowFactoryPackageDetailRequest.class, ShowFactoryPackageDetailResponse.class)
+                .withName("ShowFactoryPackageDetail")
+                .withUri("/v2/{project_id}/factory/release-packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryPackageDetailRequest::getPackageId,
+                ShowFactoryPackageDetailRequest::setPackageId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryPackageDetailRequest::getWorkspace,
+                ShowFactoryPackageDetailRequest::setWorkspace));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFactoryPackageDetailResponse::getXRequestId,
+                ShowFactoryPackageDetailResponse::setXRequestId));
         return builder.build();
     }
 

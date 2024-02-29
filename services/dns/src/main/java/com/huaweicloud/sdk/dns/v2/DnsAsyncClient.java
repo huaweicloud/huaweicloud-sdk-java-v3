@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.dns.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.dns.v2.model.AssociateHealthCheckRequest;
-import com.huaweicloud.sdk.dns.v2.model.AssociateHealthCheckResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagRequest;
@@ -45,8 +43,6 @@ import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagResponse;
-import com.huaweicloud.sdk.dns.v2.model.DisassociateHealthCheckRequest;
-import com.huaweicloud.sdk.dns.v2.model.DisassociateHealthCheckResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsRequest;
@@ -655,36 +651,6 @@ public class DnsAsyncClient {
     }
 
     /**
-     * Record Set关联健康检查
-     *
-     * Record Set关联健康检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AssociateHealthCheckRequest 请求对象
-     * @return CompletableFuture<AssociateHealthCheckResponse>
-     */
-    public CompletableFuture<AssociateHealthCheckResponse> associateHealthCheckAsync(
-        AssociateHealthCheckRequest request) {
-        return hcClient.asyncInvokeHttp(request, DnsMeta.associateHealthCheck);
-    }
-
-    /**
-     * Record Set关联健康检查
-     *
-     * Record Set关联健康检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AssociateHealthCheckRequest 请求对象
-     * @return AsyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>
-     */
-    public AsyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse> associateHealthCheckAsyncInvoker(
-        AssociateHealthCheckRequest request) {
-        return new AsyncInvoker<>(request, DnsMeta.associateHealthCheck, hcClient);
-    }
-
-    /**
      * 批量删除某个Zone下的Record Set资源
      *
      * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
@@ -893,36 +859,6 @@ public class DnsAsyncClient {
     public AsyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse> deleteRecordSetsAsyncInvoker(
         DeleteRecordSetsRequest request) {
         return new AsyncInvoker<>(request, DnsMeta.deleteRecordSets, hcClient);
-    }
-
-    /**
-     * Record Set解关联健康检查
-     *
-     * Record Set解关联健康检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DisassociateHealthCheckRequest 请求对象
-     * @return CompletableFuture<DisassociateHealthCheckResponse>
-     */
-    public CompletableFuture<DisassociateHealthCheckResponse> disassociateHealthCheckAsync(
-        DisassociateHealthCheckRequest request) {
-        return hcClient.asyncInvokeHttp(request, DnsMeta.disassociateHealthCheck);
-    }
-
-    /**
-     * Record Set解关联健康检查
-     *
-     * Record Set解关联健康检查。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DisassociateHealthCheckRequest 请求对象
-     * @return AsyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>
-     */
-    public AsyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> disassociateHealthCheckAsyncInvoker(
-        DisassociateHealthCheckRequest request) {
-        return new AsyncInvoker<>(request, DnsMeta.disassociateHealthCheck, hcClient);
     }
 
     /**

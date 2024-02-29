@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeResourceRequest;
@@ -83,6 +85,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
@@ -157,6 +161,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
@@ -243,8 +249,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
@@ -407,6 +417,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListRequest;
@@ -933,6 +945,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<BatchSyncMetadataRequest, BatchSyncMetadataResponse> batchSyncMetadataInvoker(
         BatchSyncMetadataRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.batchSyncMetadata, hcClient);
+    }
+
+    /**
+     * 撤销任务包
+     *
+     * 撤销任务包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelFactoryPackagesRequest 请求对象
+     * @return CancelFactoryPackagesResponse
+     */
+    public CancelFactoryPackagesResponse cancelFactoryPackages(CancelFactoryPackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.cancelFactoryPackages);
+    }
+
+    /**
+     * 撤销任务包
+     *
+     * 撤销任务包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelFactoryPackagesRequest 请求对象
+     * @return SyncInvoker<CancelFactoryPackagesRequest, CancelFactoryPackagesResponse>
+     */
+    public SyncInvoker<CancelFactoryPackagesRequest, CancelFactoryPackagesResponse> cancelFactoryPackagesInvoker(
+        CancelFactoryPackagesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.cancelFactoryPackages, hcClient);
     }
 
     /**
@@ -1513,9 +1554,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 创建补数据实例的接口
+     * 创建补数据实例
      *
-     * 创建一个补数据实例
+     * 创建补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1528,9 +1569,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 创建补数据实例的接口
+     * 创建补数据实例
      *
-     * 创建一个补数据实例
+     * 创建补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1598,6 +1639,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<CreateOrUpdateAssetRequest, CreateOrUpdateAssetResponse> createOrUpdateAssetInvoker(
         CreateOrUpdateAssetRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.createOrUpdateAsset, hcClient);
+    }
+
+    /**
+     * 创建或修改资产(邀测)
+     *
+     * 创建或修改资产，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrUpdateEntitiesRequest 请求对象
+     * @return CreateOrUpdateEntitiesResponse
+     */
+    public CreateOrUpdateEntitiesResponse createOrUpdateEntities(CreateOrUpdateEntitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createOrUpdateEntities);
+    }
+
+    /**
+     * 创建或修改资产(邀测)
+     *
+     * 创建或修改资产，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrUpdateEntitiesRequest 请求对象
+     * @return SyncInvoker<CreateOrUpdateEntitiesRequest, CreateOrUpdateEntitiesResponse>
+     */
+    public SyncInvoker<CreateOrUpdateEntitiesRequest, CreateOrUpdateEntitiesResponse> createOrUpdateEntitiesInvoker(
+        CreateOrUpdateEntitiesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createOrUpdateEntities, hcClient);
     }
 
     /**
@@ -2613,6 +2683,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<DeleteWorkspaceusersRequest, DeleteWorkspaceusersResponse> deleteWorkspaceusersInvoker(
         DeleteWorkspaceusersRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.deleteWorkspaceusers, hcClient);
+    }
+
+    /**
+     * 发布任务包
+     *
+     * 发布任务包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeployFactoryPackagesRequest 请求对象
+     * @return DeployFactoryPackagesResponse
+     */
+    public DeployFactoryPackagesResponse deployFactoryPackages(DeployFactoryPackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deployFactoryPackages);
+    }
+
+    /**
+     * 发布任务包
+     *
+     * 发布任务包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeployFactoryPackagesRequest 请求对象
+     * @return SyncInvoker<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse>
+     */
+    public SyncInvoker<DeployFactoryPackagesRequest, DeployFactoryPackagesResponse> deployFactoryPackagesInvoker(
+        DeployFactoryPackagesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deployFactoryPackages, hcClient);
     }
 
     /**
@@ -3790,6 +3889,36 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询指定作业的实例列表
+     *
+     * 查询指定作业的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryJobInstancesByNameRequest 请求对象
+     * @return ListFactoryJobInstancesByNameResponse
+     */
+    public ListFactoryJobInstancesByNameResponse listFactoryJobInstancesByName(
+        ListFactoryJobInstancesByNameRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryJobInstancesByName);
+    }
+
+    /**
+     * 查询指定作业的实例列表
+     *
+     * 查询指定作业的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryJobInstancesByNameRequest 请求对象
+     * @return SyncInvoker<ListFactoryJobInstancesByNameRequest, ListFactoryJobInstancesByNameResponse>
+     */
+    public SyncInvoker<ListFactoryJobInstancesByNameRequest, ListFactoryJobInstancesByNameResponse> listFactoryJobInstancesByNameInvoker(
+        ListFactoryJobInstancesByNameRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryJobInstancesByName, hcClient);
+    }
+
+    /**
      * 查询作业列表
      *
      * 查询作业列表清单
@@ -3816,6 +3945,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobsInvoker(
         ListFactoryJobsRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryJobs, hcClient);
+    }
+
+    /**
+     * 查询发布包列表
+     *
+     * 查询发布包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryReleasePackagesRequest 请求对象
+     * @return ListFactoryReleasePackagesResponse
+     */
+    public ListFactoryReleasePackagesResponse listFactoryReleasePackages(ListFactoryReleasePackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryReleasePackages);
+    }
+
+    /**
+     * 查询发布包列表
+     *
+     * 查询发布包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryReleasePackagesRequest 请求对象
+     * @return SyncInvoker<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse>
+     */
+    public SyncInvoker<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> listFactoryReleasePackagesInvoker(
+        ListFactoryReleasePackagesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryReleasePackages, hcClient);
     }
 
     /**
@@ -5986,9 +6144,38 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 查询所有的补数据实例
+     * 查询指定发布包详情
      *
-     * 查询所有的补数据实例
+     * 查询指定发布包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryPackageDetailRequest 请求对象
+     * @return ShowFactoryPackageDetailResponse
+     */
+    public ShowFactoryPackageDetailResponse showFactoryPackageDetail(ShowFactoryPackageDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showFactoryPackageDetail);
+    }
+
+    /**
+     * 查询指定发布包详情
+     *
+     * 查询指定发布包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryPackageDetailRequest 请求对象
+     * @return SyncInvoker<ShowFactoryPackageDetailRequest, ShowFactoryPackageDetailResponse>
+     */
+    public SyncInvoker<ShowFactoryPackageDetailRequest, ShowFactoryPackageDetailResponse> showFactoryPackageDetailInvoker(
+        ShowFactoryPackageDetailRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryPackageDetail, hcClient);
+    }
+
+    /**
+     * 查询补数据实例
+     *
+     * 查询补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6000,9 +6187,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 查询所有的补数据实例
+     * 查询补数据实例
      *
-     * 查询所有的补数据实例
+     * 查询补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6823,9 +7010,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 停止一个补数据实例
+     * 停止补数据实例
      *
-     * 停止一个补数据实例
+     * 停止补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6838,9 +7025,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 停止一个补数据实例
+     * 停止补数据实例
      *
-     * 停止一个补数据实例
+     * 停止补数据实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

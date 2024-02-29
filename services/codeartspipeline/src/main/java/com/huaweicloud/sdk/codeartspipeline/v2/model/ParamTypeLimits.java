@@ -92,7 +92,7 @@ public class ParamTypeLimits {
     }
 
     /**
-     * 规则集ID
+     * 策略ID
      * @return id
      */
     public String getId() {

@@ -248,6 +248,16 @@ public class RuleAclListResponseDTODataRecords {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_date")
+
+    private String createdDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_open_time")
+
+    private String lastOpenTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
     private TagsVO tag;
@@ -577,6 +587,40 @@ public class RuleAclListResponseDTODataRecords {
         this.type = type;
     }
 
+    public RuleAclListResponseDTODataRecords withCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createdDate
+     */
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public RuleAclListResponseDTODataRecords withLastOpenTime(String lastOpenTime) {
+        this.lastOpenTime = lastOpenTime;
+        return this;
+    }
+
+    /**
+     * 最后开启时间
+     * @return lastOpenTime
+     */
+    public String getLastOpenTime() {
+        return lastOpenTime;
+    }
+
+    public void setLastOpenTime(String lastOpenTime) {
+        this.lastOpenTime = lastOpenTime;
+    }
+
     public RuleAclListResponseDTODataRecords withTag(TagsVO tag) {
         this.tag = tag;
         return this;
@@ -623,7 +667,8 @@ public class RuleAclListResponseDTODataRecords {
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.lastOpenTime, that.lastOpenTime) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -645,6 +690,8 @@ public class RuleAclListResponseDTODataRecords {
             destination,
             service,
             type,
+            createdDate,
+            lastOpenTime,
             tag);
     }
 
@@ -669,6 +716,8 @@ public class RuleAclListResponseDTODataRecords {
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
+        sb.append("    lastOpenTime: ").append(toIndentedString(lastOpenTime)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();

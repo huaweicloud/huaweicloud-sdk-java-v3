@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.kvs.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
@@ -21,14 +19,10 @@ import com.huaweicloud.sdk.kvs.v1.model.ListTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ListTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.PutKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.PutKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.RenameKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.RenameKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvResponse;
 
@@ -164,34 +158,6 @@ public class KvsClient {
     }
 
     /**
-     * 批量读请求
-     *
-     * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchGetKvRequest 请求对象
-     * @return BatchGetKvResponse
-     */
-    public BatchGetKvResponse batchGetKv(BatchGetKvRequest request) {
-        return hcClient.syncInvokeHttp(request, KvsMeta.batchGetKv);
-    }
-
-    /**
-     * 批量读请求
-     *
-     * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchGetKvRequest 请求对象
-     * @return SyncInvoker<BatchGetKvRequest, BatchGetKvResponse>
-     */
-    public SyncInvoker<BatchGetKvRequest, BatchGetKvResponse> batchGetKvInvoker(BatchGetKvRequest request) {
-        return new SyncInvoker<>(request, KvsMeta.batchGetKv, hcClient);
-    }
-
-    /**
      * 批量写请求
      *
      * 批量写请求，其中可以携带一或多个表的不同kv的写操作，上传kv/删除kv。
@@ -304,38 +270,6 @@ public class KvsClient {
     }
 
     /**
-     * 排序键更名
-     *
-     * 更新指定KvBlob的分区键和属性信息
-     * 1.rename-kv只支持对KvBlob生效，否则返回400 BadReqeust；
-     * 2.rename-kv同时只能增加对Xattr字段修改，不支持内容修改。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RenameKvRequest 请求对象
-     * @return RenameKvResponse
-     */
-    public RenameKvResponse renameKv(RenameKvRequest request) {
-        return hcClient.syncInvokeHttp(request, KvsMeta.renameKv);
-    }
-
-    /**
-     * 排序键更名
-     *
-     * 更新指定KvBlob的分区键和属性信息
-     * 1.rename-kv只支持对KvBlob生效，否则返回400 BadReqeust；
-     * 2.rename-kv同时只能增加对Xattr字段修改，不支持内容修改。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RenameKvRequest 请求对象
-     * @return SyncInvoker<RenameKvRequest, RenameKvResponse>
-     */
-    public SyncInvoker<RenameKvRequest, RenameKvResponse> renameKvInvoker(RenameKvRequest request) {
-        return new SyncInvoker<>(request, KvsMeta.renameKv, hcClient);
-    }
-
-    /**
      * 扫描所有kv
      *
      * 指定表，扫描表下所有kv；允许指定过滤条件。
@@ -389,35 +323,6 @@ public class KvsClient {
      */
     public SyncInvoker<ScanSkeyKvRequest, ScanSkeyKvResponse> scanSkeyKvInvoker(ScanSkeyKvRequest request) {
         return new SyncInvoker<>(request, KvsMeta.scanSkeyKv, hcClient);
-    }
-
-    /**
-     * 指定分区键下事务写请求
-     *
-     * transact-write-skey-kv支持对某个表指定分区键下的kv的操作，kv条数最大100,000，body最大不超过16MB，该操作保证原子性。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request TransactWriteSkeyKvRequest 请求对象
-     * @return TransactWriteSkeyKvResponse
-     */
-    public TransactWriteSkeyKvResponse transactWriteSkeyKv(TransactWriteSkeyKvRequest request) {
-        return hcClient.syncInvokeHttp(request, KvsMeta.transactWriteSkeyKv);
-    }
-
-    /**
-     * 指定分区键下事务写请求
-     *
-     * transact-write-skey-kv支持对某个表指定分区键下的kv的操作，kv条数最大100,000，body最大不超过16MB，该操作保证原子性。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request TransactWriteSkeyKvRequest 请求对象
-     * @return SyncInvoker<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse>
-     */
-    public SyncInvoker<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> transactWriteSkeyKvInvoker(
-        TransactWriteSkeyKvRequest request) {
-        return new SyncInvoker<>(request, KvsMeta.transactWriteSkeyKv, hcClient);
     }
 
     /**

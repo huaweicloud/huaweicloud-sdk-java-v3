@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineRequest;
@@ -39,6 +41,8 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
@@ -49,6 +53,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsRequest;
@@ -67,6 +73,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetRequest;
@@ -81,8 +89,12 @@ import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
@@ -91,6 +103,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoRequest;
@@ -344,39 +358,6 @@ public class KafkaClient {
     public SyncInvoker<CloseKafkaManagerRequest, CloseKafkaManagerResponse> closeKafkaManagerInvoker(
         CloseKafkaManagerRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.closeKafkaManager, hcClient);
-    }
-
-    /**
-     * 创建实例的Smart Connect节点
-     *
-     * 创建Smart Connect节点。
-     * 
-     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateConnectorRequest 请求对象
-     * @return CreateConnectorResponse
-     */
-    public CreateConnectorResponse createConnector(CreateConnectorRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.createConnector);
-    }
-
-    /**
-     * 创建实例的Smart Connect节点
-     *
-     * 创建Smart Connect节点。
-     * 
-     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateConnectorRequest 请求对象
-     * @return SyncInvoker<CreateConnectorRequest, CreateConnectorResponse>
-     */
-    public SyncInvoker<CreateConnectorRequest, CreateConnectorResponse> createConnectorInvoker(
-        CreateConnectorRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.createConnector, hcClient);
     }
 
     /**
@@ -672,35 +653,6 @@ public class KafkaClient {
     public SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskInvoker(
         DeleteBackgroundTaskRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.deleteBackgroundTask, hcClient);
-    }
-
-    /**
-     * 关闭Smart Connect（按需实例）
-     *
-     * 介绍按需实例如何关闭Smart Connect。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConnectorRequest 请求对象
-     * @return DeleteConnectorResponse
-     */
-    public DeleteConnectorResponse deleteConnector(DeleteConnectorRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.deleteConnector);
-    }
-
-    /**
-     * 关闭Smart Connect（按需实例）
-     *
-     * 介绍按需实例如何关闭Smart Connect。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConnectorRequest 请求对象
-     * @return SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>
-     */
-    public SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnectorInvoker(
-        DeleteConnectorRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.deleteConnector, hcClient);
     }
 
     /**
@@ -2329,6 +2281,271 @@ public class KafkaClient {
     public SyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplicaInvoker(
         UpdateTopicReplicaRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.updateTopicReplica, hcClient);
+    }
+
+    /**
+     * 开启Smart Connect（按需实例）
+     *
+     * 开启Smart Connect，提交创建Smart Connect节点任务。
+     * 
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectorRequest 请求对象
+     * @return CreateConnectorResponse
+     */
+    public CreateConnectorResponse createConnector(CreateConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.createConnector);
+    }
+
+    /**
+     * 开启Smart Connect（按需实例）
+     *
+     * 开启Smart Connect，提交创建Smart Connect节点任务。
+     * 
+     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectorRequest 请求对象
+     * @return SyncInvoker<CreateConnectorRequest, CreateConnectorResponse>
+     */
+    public SyncInvoker<CreateConnectorRequest, CreateConnectorResponse> createConnectorInvoker(
+        CreateConnectorRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.createConnector, hcClient);
+    }
+
+    /**
+     * 创建Smart Connect任务
+     *
+     * 创建Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectorTaskRequest 请求对象
+     * @return CreateConnectorTaskResponse
+     */
+    public CreateConnectorTaskResponse createConnectorTask(CreateConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.createConnectorTask);
+    }
+
+    /**
+     * 创建Smart Connect任务
+     *
+     * 创建Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectorTaskRequest 请求对象
+     * @return SyncInvoker<CreateConnectorTaskRequest, CreateConnectorTaskResponse>
+     */
+    public SyncInvoker<CreateConnectorTaskRequest, CreateConnectorTaskResponse> createConnectorTaskInvoker(
+        CreateConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.createConnectorTask, hcClient);
+    }
+
+    /**
+     * 关闭Smart Connect（按需实例）
+     *
+     * 介绍按需实例如何关闭Smart Connect。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectorRequest 请求对象
+     * @return DeleteConnectorResponse
+     */
+    public DeleteConnectorResponse deleteConnector(DeleteConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.deleteConnector);
+    }
+
+    /**
+     * 关闭Smart Connect（按需实例）
+     *
+     * 介绍按需实例如何关闭Smart Connect。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectorRequest 请求对象
+     * @return SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse>
+     */
+    public SyncInvoker<DeleteConnectorRequest, DeleteConnectorResponse> deleteConnectorInvoker(
+        DeleteConnectorRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.deleteConnector, hcClient);
+    }
+
+    /**
+     * 删除Smart Connector任务
+     *
+     * 删除Smart Connector任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectorTaskRequest 请求对象
+     * @return DeleteConnectorTaskResponse
+     */
+    public DeleteConnectorTaskResponse deleteConnectorTask(DeleteConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.deleteConnectorTask);
+    }
+
+    /**
+     * 删除Smart Connector任务
+     *
+     * 删除Smart Connector任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectorTaskRequest 请求对象
+     * @return SyncInvoker<DeleteConnectorTaskRequest, DeleteConnectorTaskResponse>
+     */
+    public SyncInvoker<DeleteConnectorTaskRequest, DeleteConnectorTaskResponse> deleteConnectorTaskInvoker(
+        DeleteConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.deleteConnectorTask, hcClient);
+    }
+
+    /**
+     * 查询Smart Connect任务列表
+     *
+     * 查询Smart Connect任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectorTasksRequest 请求对象
+     * @return ListConnectorTasksResponse
+     */
+    public ListConnectorTasksResponse listConnectorTasks(ListConnectorTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.listConnectorTasks);
+    }
+
+    /**
+     * 查询Smart Connect任务列表
+     *
+     * 查询Smart Connect任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectorTasksRequest 请求对象
+     * @return SyncInvoker<ListConnectorTasksRequest, ListConnectorTasksResponse>
+     */
+    public SyncInvoker<ListConnectorTasksRequest, ListConnectorTasksResponse> listConnectorTasksInvoker(
+        ListConnectorTasksRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.listConnectorTasks, hcClient);
+    }
+
+    /**
+     * 暂停Smart Connect任务
+     *
+     * 暂停Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseConnectorTaskRequest 请求对象
+     * @return PauseConnectorTaskResponse
+     */
+    public PauseConnectorTaskResponse pauseConnectorTask(PauseConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.pauseConnectorTask);
+    }
+
+    /**
+     * 暂停Smart Connect任务
+     *
+     * 暂停Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseConnectorTaskRequest 请求对象
+     * @return SyncInvoker<PauseConnectorTaskRequest, PauseConnectorTaskResponse>
+     */
+    public SyncInvoker<PauseConnectorTaskRequest, PauseConnectorTaskResponse> pauseConnectorTaskInvoker(
+        PauseConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.pauseConnectorTask, hcClient);
+    }
+
+    /**
+     * 启动未启动的Smart Connect任务/重启已暂停或者运行中的Smart Connect任务
+     *
+     * 用于**启动未启动的Smart Connect任务**以及**重启已暂停或者运行中的Smart Connect任务**。注意，重启Smart Connect任务将重置同步进度，并重新开始同步任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartConnectorTaskRequest 请求对象
+     * @return RestartConnectorTaskResponse
+     */
+    public RestartConnectorTaskResponse restartConnectorTask(RestartConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.restartConnectorTask);
+    }
+
+    /**
+     * 启动未启动的Smart Connect任务/重启已暂停或者运行中的Smart Connect任务
+     *
+     * 用于**启动未启动的Smart Connect任务**以及**重启已暂停或者运行中的Smart Connect任务**。注意，重启Smart Connect任务将重置同步进度，并重新开始同步任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartConnectorTaskRequest 请求对象
+     * @return SyncInvoker<RestartConnectorTaskRequest, RestartConnectorTaskResponse>
+     */
+    public SyncInvoker<RestartConnectorTaskRequest, RestartConnectorTaskResponse> restartConnectorTaskInvoker(
+        RestartConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.restartConnectorTask, hcClient);
+    }
+
+    /**
+     * 启动已暂停的Smart Connect任务
+     *
+     * 启动已暂停的Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeConnectorTaskRequest 请求对象
+     * @return ResumeConnectorTaskResponse
+     */
+    public ResumeConnectorTaskResponse resumeConnectorTask(ResumeConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.resumeConnectorTask);
+    }
+
+    /**
+     * 启动已暂停的Smart Connect任务
+     *
+     * 启动已暂停的Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeConnectorTaskRequest 请求对象
+     * @return SyncInvoker<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse>
+     */
+    public SyncInvoker<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse> resumeConnectorTaskInvoker(
+        ResumeConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.resumeConnectorTask, hcClient);
+    }
+
+    /**
+     * 查询Smart Connector任务详情
+     *
+     * 查询Smart Connector任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectorTaskRequest 请求对象
+     * @return ShowConnectorTaskResponse
+     */
+    public ShowConnectorTaskResponse showConnectorTask(ShowConnectorTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showConnectorTask);
+    }
+
+    /**
+     * 查询Smart Connector任务详情
+     *
+     * 查询Smart Connector任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectorTaskRequest 请求对象
+     * @return SyncInvoker<ShowConnectorTaskRequest, ShowConnectorTaskResponse>
+     */
+    public SyncInvoker<ShowConnectorTaskRequest, ShowConnectorTaskResponse> showConnectorTaskInvoker(
+        ShowConnectorTaskRequest request) {
+        return new SyncInvoker<>(request, KafkaMeta.showConnectorTask, hcClient);
     }
 
 }

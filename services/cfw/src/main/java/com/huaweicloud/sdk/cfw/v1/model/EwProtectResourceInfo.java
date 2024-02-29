@@ -45,6 +45,11 @@ public class EwProtectResourceInfo {
 
     private String protectedResourceMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
     public EwProtectResourceInfo withProtectedResourceType(Integer protectedResourceType) {
         this.protectedResourceType = protectedResourceType;
         return this;
@@ -164,6 +169,23 @@ public class EwProtectResourceInfo {
         this.protectedResourceMode = protectedResourceMode;
     }
 
+    public EwProtectResourceInfo withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 防护VPC的防护状态，0表示已关联，1表示未关联。
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,7 +201,8 @@ public class EwProtectResourceInfo {
             && Objects.equals(this.protectedResourceNatName, that.protectedResourceNatName)
             && Objects.equals(this.protectedResourceNatId, that.protectedResourceNatId)
             && Objects.equals(this.protectedResourceProjectId, that.protectedResourceProjectId)
-            && Objects.equals(this.protectedResourceMode, that.protectedResourceMode);
+            && Objects.equals(this.protectedResourceMode, that.protectedResourceMode)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -190,7 +213,8 @@ public class EwProtectResourceInfo {
             protectedResourceNatName,
             protectedResourceNatId,
             protectedResourceProjectId,
-            protectedResourceMode);
+            protectedResourceMode,
+            status);
     }
 
     @Override
@@ -204,6 +228,7 @@ public class EwProtectResourceInfo {
         sb.append("    protectedResourceNatId: ").append(toIndentedString(protectedResourceNatId)).append("\n");
         sb.append("    protectedResourceProjectId: ").append(toIndentedString(protectedResourceProjectId)).append("\n");
         sb.append("    protectedResourceMode: ").append(toIndentedString(protectedResourceMode)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

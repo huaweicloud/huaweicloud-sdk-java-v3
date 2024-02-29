@@ -61,6 +61,9 @@ public class VpcepRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://vpcep.eu-west-0.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://vpcep.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("VPCEP");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -88,6 +91,7 @@ public class VpcepRegion {
         map.put("eu-west-101", EU_WEST_101);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("eu-west-0", EU_WEST_0);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

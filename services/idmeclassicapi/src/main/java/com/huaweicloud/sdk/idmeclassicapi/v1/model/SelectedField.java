@@ -26,7 +26,7 @@ public class SelectedField {
     }
 
     /**
-     * 字段名称，如果是子参考对象的属性，则为“参考对象.属性名称”，例如：“master.name”。
+     * 字段名称，如果是子参考对象的属性，则为“参考对象.属性名称”，例如：“master.name”
      * @return name
      */
     public String getName() {

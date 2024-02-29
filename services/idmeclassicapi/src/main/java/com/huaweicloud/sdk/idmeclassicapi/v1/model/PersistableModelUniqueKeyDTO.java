@@ -43,7 +43,7 @@ public class PersistableModelUniqueKeyDTO {
     }
 
     /**
-     * 示例模型的唯一键属性。
+     * 示例模型的唯一键属性值。
      * @return uniqueKey
      */
     public String getUniqueKey() {

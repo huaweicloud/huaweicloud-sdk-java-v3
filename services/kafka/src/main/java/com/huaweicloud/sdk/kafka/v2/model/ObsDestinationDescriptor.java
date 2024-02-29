@@ -189,10 +189,98 @@ public class ObsDestinationDescriptor {
 
     private String obsPath;
 
+    /**
+     *  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+     */
+    public static final class PartitionFormatEnum {
+
+        /**
+         * Enum YYYY for value: "yyyy"
+         */
+        public static final PartitionFormatEnum YYYY = new PartitionFormatEnum("yyyy");
+
+        /**
+         * Enum YYYY_MM for value: "yyyy/MM"
+         */
+        public static final PartitionFormatEnum YYYY_MM = new PartitionFormatEnum("yyyy/MM");
+
+        /**
+         * Enum YYYY_MM_DD for value: "yyyy/MM/dd"
+         */
+        public static final PartitionFormatEnum YYYY_MM_DD = new PartitionFormatEnum("yyyy/MM/dd");
+
+        /**
+         * Enum YYYY_MM_DD_HH for value: "yyyy/MM/dd/HH"
+         */
+        public static final PartitionFormatEnum YYYY_MM_DD_HH = new PartitionFormatEnum("yyyy/MM/dd/HH");
+
+        /**
+         * Enum YYYY_MM_DD_HH_MM for value: "yyyy/MM/dd/HH/mm"
+         */
+        public static final PartitionFormatEnum YYYY_MM_DD_HH_MM = new PartitionFormatEnum("yyyy/MM/dd/HH/mm");
+
+        private static final Map<String, PartitionFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PartitionFormatEnum> createStaticFields() {
+            Map<String, PartitionFormatEnum> map = new HashMap<>();
+            map.put("yyyy", YYYY);
+            map.put("yyyy/MM", YYYY_MM);
+            map.put("yyyy/MM/dd", YYYY_MM_DD);
+            map.put("yyyy/MM/dd/HH", YYYY_MM_DD_HH);
+            map.put("yyyy/MM/dd/HH/mm", YYYY_MM_DD_HH_MM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PartitionFormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PartitionFormatEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartitionFormatEnum(value));
+        }
+
+        public static PartitionFormatEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PartitionFormatEnum) {
+                return this.value.equals(((PartitionFormatEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_format")
 
-    private String partitionFormat;
+    private PartitionFormatEnum partitionFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_delimiter")
@@ -340,20 +428,20 @@ public class ObsDestinationDescriptor {
         this.obsPath = obsPath;
     }
 
-    public ObsDestinationDescriptor withPartitionFormat(String partitionFormat) {
+    public ObsDestinationDescriptor withPartitionFormat(PartitionFormatEnum partitionFormat) {
         this.partitionFormat = partitionFormat;
         return this;
     }
 
     /**
-     *  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。    - N/A：置空，不使用日期时间目录。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  默认值：空  > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
+     *  将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。      - yyyy：年      - yyyy/MM：年/月      - yyyy/MM/dd：年/月/日      - yyyy/MM/dd/HH：年/月/日/时      - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
      * @return partitionFormat
      */
-    public String getPartitionFormat() {
+    public PartitionFormatEnum getPartitionFormat() {
         return partitionFormat;
     }
 
-    public void setPartitionFormat(String partitionFormat) {
+    public void setPartitionFormat(PartitionFormatEnum partitionFormat) {
         this.partitionFormat = partitionFormat;
     }
 

@@ -88,11 +88,6 @@ public class ModelDto {
 
     private List<ModelMetric> metrics = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ModelMetric")
-
-    private ModelDtoModelMetric modelMetric;
-
     public ModelDto withName(String name) {
         this.name = name;
         return this;
@@ -398,32 +393,6 @@ public class ModelDto {
         this.metrics = metrics;
     }
 
-    public ModelDto withModelMetric(ModelDtoModelMetric modelMetric) {
-        this.modelMetric = modelMetric;
-        return this;
-    }
-
-    public ModelDto withModelMetric(Consumer<ModelDtoModelMetric> modelMetricSetter) {
-        if (this.modelMetric == null) {
-            this.modelMetric = new ModelDtoModelMetric();
-            modelMetricSetter.accept(this.modelMetric);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get modelMetric
-     * @return modelMetric
-     */
-    public ModelDtoModelMetric getModelMetric() {
-        return modelMetric;
-    }
-
-    public void setModelMetric(ModelDtoModelMetric modelMetric) {
-        this.modelMetric = modelMetric;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -440,7 +409,7 @@ public class ModelDto {
             && Objects.equals(this.dataQuantity, that.dataQuantity) && Objects.equals(this.file, that.file)
             && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.description, that.description)
             && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.losses, that.losses)
-            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.modelMetric, that.modelMetric);
+            && Objects.equals(this.metrics, that.metrics);
     }
 
     @Override
@@ -459,8 +428,7 @@ public class ModelDto {
             description,
             failedMessage,
             losses,
-            metrics,
-            modelMetric);
+            metrics);
     }
 
     @Override
@@ -482,7 +450,6 @@ public class ModelDto {
         sb.append("    failedMessage: ").append(toIndentedString(failedMessage)).append("\n");
         sb.append("    losses: ").append(toIndentedString(losses)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
-        sb.append("    modelMetric: ").append(toIndentedString(modelMetric)).append("\n");
         sb.append("}");
         return sb.toString();
     }

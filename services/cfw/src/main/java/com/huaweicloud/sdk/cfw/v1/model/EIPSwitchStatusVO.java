@@ -23,6 +23,11 @@ public class EIPSwitchStatusVO {
 
     private List<String> failEipIdList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public EIPSwitchStatusVO withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -73,6 +78,23 @@ public class EIPSwitchStatusVO {
         this.failEipIdList = failEipIdList;
     }
 
+    public EIPSwitchStatusVO withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class EIPSwitchStatusVO {
             return false;
         }
         EIPSwitchStatusVO that = (EIPSwitchStatusVO) obj;
-        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.failEipIdList, that.failEipIdList);
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.failEipIdList, that.failEipIdList)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, failEipIdList);
+        return Objects.hash(objectId, failEipIdList, id);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class EIPSwitchStatusVO {
         sb.append("class EIPSwitchStatusVO {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    failEipIdList: ").append(toIndentedString(failEipIdList)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

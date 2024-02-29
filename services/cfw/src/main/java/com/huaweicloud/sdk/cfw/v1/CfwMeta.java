@@ -1085,6 +1085,12 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressSetDetailRequest::getFwInstanceId,
                 ListAddressSetDetailRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_address_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressSetDetailRequest::getQueryAddressSetType,
+                ListAddressSetDetailRequest::setQueryAddressSetType));
 
         // response
 
@@ -1144,6 +1150,12 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressSetsRequest::getFwInstanceId, ListAddressSetsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_address_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressSetsRequest::getQueryAddressSetType,
+                ListAddressSetsRequest::setQueryAddressSetType));
 
         // response
 

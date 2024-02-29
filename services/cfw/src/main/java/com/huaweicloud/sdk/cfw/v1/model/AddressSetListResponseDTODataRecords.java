@@ -35,6 +35,16 @@ public class AddressSetListResponseDTODataRecords {
 
     private Integer addressType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_id")
+
+    private String objectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_set_type")
+
+    private Integer addressSetType;
+
     public AddressSetListResponseDTODataRecords withSetId(String setId) {
         this.setId = setId;
         return this;
@@ -120,6 +130,40 @@ public class AddressSetListResponseDTODataRecords {
         this.addressType = addressType;
     }
 
+    public AddressSetListResponseDTODataRecords withObjectId(String objectId) {
+        this.objectId = objectId;
+        return this;
+    }
+
+    /**
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * @return objectId
+     */
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public AddressSetListResponseDTODataRecords withAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+        return this;
+    }
+
+    /**
+     * 地址组类型，0表示自定义地址组，1表示预定义地址组
+     * @return addressSetType
+     */
+    public Integer getAddressSetType() {
+        return addressSetType;
+    }
+
+    public void setAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,13 @@ public class AddressSetListResponseDTODataRecords {
         AddressSetListResponseDTODataRecords that = (AddressSetListResponseDTODataRecords) obj;
         return Objects.equals(this.setId, that.setId) && Objects.equals(this.refCount, that.refCount)
             && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.addressType, that.addressType);
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.addressSetType, that.addressSetType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, refCount, description, name, addressType);
+        return Objects.hash(setId, refCount, description, name, addressType, objectId, addressSetType);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class AddressSetListResponseDTODataRecords {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
+        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    addressSetType: ").append(toIndentedString(addressSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

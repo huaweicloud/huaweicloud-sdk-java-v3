@@ -16,6 +16,11 @@ public class GenStreamGraphReq {
     private String sqlBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_version")
+
+    private String flinkVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_number")
 
     private Integer cuNumber;
@@ -80,6 +85,23 @@ public class GenStreamGraphReq {
 
     public void setSqlBody(String sqlBody) {
         this.sqlBody = sqlBody;
+    }
+
+    public GenStreamGraphReq withFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
+        return this;
+    }
+
+    /**
+     * flink版本。可以为空，也可以填写1.10或1.12。
+     * @return flinkVersion
+     */
+    public String getFlinkVersion() {
+        return flinkVersion;
+    }
+
+    public void setFlinkVersion(String flinkVersion) {
+        this.flinkVersion = flinkVersion;
     }
 
     public GenStreamGraphReq withCuNumber(Integer cuNumber) {
@@ -266,7 +288,8 @@ public class GenStreamGraphReq {
             return false;
         }
         GenStreamGraphReq that = (GenStreamGraphReq) obj;
-        return Objects.equals(this.sqlBody, that.sqlBody) && Objects.equals(this.cuNumber, that.cuNumber)
+        return Objects.equals(this.sqlBody, that.sqlBody) && Objects.equals(this.flinkVersion, that.flinkVersion)
+            && Objects.equals(this.cuNumber, that.cuNumber)
             && Objects.equals(this.managerCuNumber, that.managerCuNumber)
             && Objects.equals(this.parallelNumber, that.parallelNumber) && Objects.equals(this.tmCus, that.tmCus)
             && Objects.equals(this.tmSlotNum, that.tmSlotNum)
@@ -279,6 +302,7 @@ public class GenStreamGraphReq {
     @Override
     public int hashCode() {
         return Objects.hash(sqlBody,
+            flinkVersion,
             cuNumber,
             managerCuNumber,
             parallelNumber,
@@ -296,6 +320,7 @@ public class GenStreamGraphReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class GenStreamGraphReq {\n");
         sb.append("    sqlBody: ").append(toIndentedString(sqlBody)).append("\n");
+        sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
         sb.append("    cuNumber: ").append(toIndentedString(cuNumber)).append("\n");
         sb.append("    managerCuNumber: ").append(toIndentedString(managerCuNumber)).append("\n");
         sb.append("    parallelNumber: ").append(toIndentedString(parallelNumber)).append("\n");

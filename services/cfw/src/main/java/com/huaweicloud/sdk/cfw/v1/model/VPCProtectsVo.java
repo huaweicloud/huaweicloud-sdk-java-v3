@@ -43,6 +43,11 @@ public class VPCProtectsVo {
 
     private List<VpcAttachmentDetail> otherProtectVpcs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_assets")
+
+    private Integer totalAssets;
+
     public VPCProtectsVo withTotal(Integer total) {
         this.total = total;
         return this;
@@ -193,6 +198,23 @@ public class VPCProtectsVo {
         this.otherProtectVpcs = otherProtectVpcs;
     }
 
+    public VPCProtectsVo withTotalAssets(Integer totalAssets) {
+        this.totalAssets = totalAssets;
+        return this;
+    }
+
+    /**
+     * 所有资产数量
+     * @return totalAssets
+     */
+    public Integer getTotalAssets() {
+        return totalAssets;
+    }
+
+    public void setTotalAssets(Integer totalAssets) {
+        this.totalAssets = totalAssets;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +227,13 @@ public class VPCProtectsVo {
         return Objects.equals(this.total, that.total) && Objects.equals(this.selfTotal, that.selfTotal)
             && Objects.equals(this.otherTotal, that.otherTotal) && Objects.equals(this.protectVpcs, that.protectVpcs)
             && Objects.equals(this.selfProtectVpcs, that.selfProtectVpcs)
-            && Objects.equals(this.otherProtectVpcs, that.otherProtectVpcs);
+            && Objects.equals(this.otherProtectVpcs, that.otherProtectVpcs)
+            && Objects.equals(this.totalAssets, that.totalAssets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, selfTotal, otherTotal, protectVpcs, selfProtectVpcs, otherProtectVpcs);
+        return Objects.hash(total, selfTotal, otherTotal, protectVpcs, selfProtectVpcs, otherProtectVpcs, totalAssets);
     }
 
     @Override
@@ -223,6 +246,7 @@ public class VPCProtectsVo {
         sb.append("    protectVpcs: ").append(toIndentedString(protectVpcs)).append("\n");
         sb.append("    selfProtectVpcs: ").append(toIndentedString(selfProtectVpcs)).append("\n");
         sb.append("    otherProtectVpcs: ").append(toIndentedString(otherProtectVpcs)).append("\n");
+        sb.append("    totalAssets: ").append(toIndentedString(totalAssets)).append("\n");
         sb.append("}");
         return sb.toString();
     }

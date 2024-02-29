@@ -36,6 +36,11 @@ public class ActionSmnForwarding {
     private String messageContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_template_name")
+
+    private String messageTemplateName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_title")
 
     private String messageTitle;
@@ -125,13 +130,30 @@ public class ActionSmnForwarding {
         this.messageContent = messageContent;
     }
 
+    public ActionSmnForwarding withMessageTemplateName(String messageTemplateName) {
+        this.messageTemplateName = messageTemplateName;
+        return this;
+    }
+
+    /**
+     * **参数说明**：SMN服务对应的模板名称。
+     * @return messageTemplateName
+     */
+    public String getMessageTemplateName() {
+        return messageTemplateName;
+    }
+
+    public void setMessageTemplateName(String messageTemplateName) {
+        this.messageTemplateName = messageTemplateName;
+    }
+
     public ActionSmnForwarding withMessageTitle(String messageTitle) {
         this.messageTitle = messageTitle;
         return this;
     }
 
     /**
-     * **参数说明**：短信或邮件的主题。
+     * **参数说明**：短信或邮件的主题。最大长度支持UTF-8编码后的521个字节。
      * @return messageTitle
      */
     public String getMessageTitle() {
@@ -154,12 +176,14 @@ public class ActionSmnForwarding {
         return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.themeName, that.themeName) && Objects.equals(this.topicUrn, that.topicUrn)
             && Objects.equals(this.messageContent, that.messageContent)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName)
             && Objects.equals(this.messageTitle, that.messageTitle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, projectId, themeName, topicUrn, messageContent, messageTitle);
+        return Objects
+            .hash(regionName, projectId, themeName, topicUrn, messageContent, messageTemplateName, messageTitle);
     }
 
     @Override
@@ -171,6 +195,7 @@ public class ActionSmnForwarding {
         sb.append("    themeName: ").append(toIndentedString(themeName)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    messageContent: ").append(toIndentedString(messageContent)).append("\n");
+        sb.append("    messageTemplateName: ").append(toIndentedString(messageTemplateName)).append("\n");
         sb.append("    messageTitle: ").append(toIndentedString(messageTitle)).append("\n");
         sb.append("}");
         return sb.toString();

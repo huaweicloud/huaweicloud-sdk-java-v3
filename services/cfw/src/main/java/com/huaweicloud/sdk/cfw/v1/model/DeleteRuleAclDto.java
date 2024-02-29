@@ -62,7 +62,7 @@ public class DeleteRuleAclDto {
     }
 
     /**
-     * 规则列表
+     * 规则ID列表
      * @return ruleIds
      */
     public List<String> getRuleIds() {

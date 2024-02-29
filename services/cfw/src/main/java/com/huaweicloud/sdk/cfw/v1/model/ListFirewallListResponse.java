@@ -18,6 +18,26 @@ public class ListFirewallListResponse extends SdkResponse {
     private Boolean userSupportEps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_ndr")
+
+    private Boolean hasNdr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_postpaid")
+
+    private Boolean isSupportPostpaid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_basic_version")
+
+    private Boolean isSupportBasicVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_buy_professional")
+
+    private Boolean isSupportBuyProfessional;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
     private HttpFirewallInstanceListResponseData data;
@@ -37,6 +57,74 @@ public class ListFirewallListResponse extends SdkResponse {
 
     public void setUserSupportEps(Boolean userSupportEps) {
         this.userSupportEps = userSupportEps;
+    }
+
+    public ListFirewallListResponse withHasNdr(Boolean hasNdr) {
+        this.hasNdr = hasNdr;
+        return this;
+    }
+
+    /**
+     * 是否存在ndr
+     * @return hasNdr
+     */
+    public Boolean getHasNdr() {
+        return hasNdr;
+    }
+
+    public void setHasNdr(Boolean hasNdr) {
+        this.hasNdr = hasNdr;
+    }
+
+    public ListFirewallListResponse withIsSupportPostpaid(Boolean isSupportPostpaid) {
+        this.isSupportPostpaid = isSupportPostpaid;
+        return this;
+    }
+
+    /**
+     * 是否支持按需购买
+     * @return isSupportPostpaid
+     */
+    public Boolean getIsSupportPostpaid() {
+        return isSupportPostpaid;
+    }
+
+    public void setIsSupportPostpaid(Boolean isSupportPostpaid) {
+        this.isSupportPostpaid = isSupportPostpaid;
+    }
+
+    public ListFirewallListResponse withIsSupportBasicVersion(Boolean isSupportBasicVersion) {
+        this.isSupportBasicVersion = isSupportBasicVersion;
+        return this;
+    }
+
+    /**
+     * 是否支持基础版
+     * @return isSupportBasicVersion
+     */
+    public Boolean getIsSupportBasicVersion() {
+        return isSupportBasicVersion;
+    }
+
+    public void setIsSupportBasicVersion(Boolean isSupportBasicVersion) {
+        this.isSupportBasicVersion = isSupportBasicVersion;
+    }
+
+    public ListFirewallListResponse withIsSupportBuyProfessional(Boolean isSupportBuyProfessional) {
+        this.isSupportBuyProfessional = isSupportBuyProfessional;
+        return this;
+    }
+
+    /**
+     * 是否支持购买专业版
+     * @return isSupportBuyProfessional
+     */
+    public Boolean getIsSupportBuyProfessional() {
+        return isSupportBuyProfessional;
+    }
+
+    public void setIsSupportBuyProfessional(Boolean isSupportBuyProfessional) {
+        this.isSupportBuyProfessional = isSupportBuyProfessional;
     }
 
     public ListFirewallListResponse withData(HttpFirewallInstanceListResponseData data) {
@@ -74,12 +162,17 @@ public class ListFirewallListResponse extends SdkResponse {
             return false;
         }
         ListFirewallListResponse that = (ListFirewallListResponse) obj;
-        return Objects.equals(this.userSupportEps, that.userSupportEps) && Objects.equals(this.data, that.data);
+        return Objects.equals(this.userSupportEps, that.userSupportEps) && Objects.equals(this.hasNdr, that.hasNdr)
+            && Objects.equals(this.isSupportPostpaid, that.isSupportPostpaid)
+            && Objects.equals(this.isSupportBasicVersion, that.isSupportBasicVersion)
+            && Objects.equals(this.isSupportBuyProfessional, that.isSupportBuyProfessional)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userSupportEps, data);
+        return Objects
+            .hash(userSupportEps, hasNdr, isSupportPostpaid, isSupportBasicVersion, isSupportBuyProfessional, data);
     }
 
     @Override
@@ -87,6 +180,10 @@ public class ListFirewallListResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFirewallListResponse {\n");
         sb.append("    userSupportEps: ").append(toIndentedString(userSupportEps)).append("\n");
+        sb.append("    hasNdr: ").append(toIndentedString(hasNdr)).append("\n");
+        sb.append("    isSupportPostpaid: ").append(toIndentedString(isSupportPostpaid)).append("\n");
+        sb.append("    isSupportBasicVersion: ").append(toIndentedString(isSupportBasicVersion)).append("\n");
+        sb.append("    isSupportBuyProfessional: ").append(toIndentedString(isSupportBuyProfessional)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();

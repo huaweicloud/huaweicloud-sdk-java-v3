@@ -125,6 +125,11 @@ public class ListAddressSetsRequest {
 
     private String fwInstanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_address_set_type")
+
+    private Integer queryAddressSetType;
+
     public ListAddressSetsRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -261,6 +266,23 @@ public class ListAddressSetsRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
+    public ListAddressSetsRequest withQueryAddressSetType(Integer queryAddressSetType) {
+        this.queryAddressSetType = queryAddressSetType;
+        return this;
+    }
+
+    /**
+     * 查询地址组类型，0表示自定义地址组，1表示预定义地址组
+     * @return queryAddressSetType
+     */
+    public Integer getQueryAddressSetType() {
+        return queryAddressSetType;
+    }
+
+    public void setQueryAddressSetType(Integer queryAddressSetType) {
+        this.queryAddressSetType = queryAddressSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -274,12 +296,21 @@ public class ListAddressSetsRequest {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.address, that.address) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId)
+            && Objects.equals(this.queryAddressSetType, that.queryAddressSetType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, keyWord, limit, offset, address, addressType, enterpriseProjectId, fwInstanceId);
+        return Objects.hash(objectId,
+            keyWord,
+            limit,
+            offset,
+            address,
+            addressType,
+            enterpriseProjectId,
+            fwInstanceId,
+            queryAddressSetType);
     }
 
     @Override
@@ -294,6 +325,7 @@ public class ListAddressSetsRequest {
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    queryAddressSetType: ").append(toIndentedString(queryAddressSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

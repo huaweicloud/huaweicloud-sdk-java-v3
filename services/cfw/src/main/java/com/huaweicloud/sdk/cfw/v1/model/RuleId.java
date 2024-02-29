@@ -15,6 +15,11 @@ public class RuleId {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public RuleId withId(String id) {
         this.id = id;
         return this;
@@ -32,6 +37,23 @@ public class RuleId {
         this.id = id;
     }
 
+    public RuleId withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class RuleId {
             return false;
         }
         RuleId that = (RuleId) obj;
-        return Objects.equals(this.id, that.id);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, name);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class RuleId {
         StringBuilder sb = new StringBuilder();
         sb.append("class RuleId {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

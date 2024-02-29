@@ -141,7 +141,7 @@ public class CreateSqlJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
-    private List<List<String>> rows = null;
+    private List<List<Object>> rows = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_mode")
@@ -249,12 +249,12 @@ public class CreateSqlJobResponse extends SdkResponse {
         this.schema = schema;
     }
 
-    public CreateSqlJobResponse withRows(List<List<String>> rows) {
+    public CreateSqlJobResponse withRows(List<List<Object>> rows) {
         this.rows = rows;
         return this;
     }
 
-    public CreateSqlJobResponse addRowsItem(List<String> rowsItem) {
+    public CreateSqlJobResponse addRowsItem(List<Object> rowsItem) {
         if (this.rows == null) {
             this.rows = new ArrayList<>();
         }
@@ -262,7 +262,7 @@ public class CreateSqlJobResponse extends SdkResponse {
         return this;
     }
 
-    public CreateSqlJobResponse withRows(Consumer<List<List<String>>> rowsSetter) {
+    public CreateSqlJobResponse withRows(Consumer<List<List<Object>>> rowsSetter) {
         if (this.rows == null) {
             this.rows = new ArrayList<>();
         }
@@ -274,11 +274,11 @@ public class CreateSqlJobResponse extends SdkResponse {
      * 当语句类型为DDL时，直接返回其执行结果。
      * @return rows
      */
-    public List<List<String>> getRows() {
+    public List<List<Object>> getRows() {
         return rows;
     }
 
-    public void setRows(List<List<String>> rows) {
+    public void setRows(List<List<Object>> rows) {
         this.rows = rows;
     }
 

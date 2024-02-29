@@ -5,8 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
@@ -23,14 +21,10 @@ import com.huaweicloud.sdk.kvs.v1.model.ListTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ListTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.PutKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.PutKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.RenameKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.RenameKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.ScanSkeyKvResponse;
-import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvRequest;
-import com.huaweicloud.sdk.kvs.v1.model.TransactWriteSkeyKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.UpdateKvResponse;
 
@@ -115,28 +109,6 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableRequest::getStoreName, ListTableRequest::setStoreName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> batchGetKv = genForBatchGetKv();
-
-    private static HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> genForBatchGetKv() {
-        // basic
-        HttpRequestDef.Builder<BatchGetKvRequest, BatchGetKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchGetKvRequest.class, BatchGetKvResponse.class)
-                .withName("BatchGetKv")
-                .withUri("/v1/batch-get-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchGetKvRequest::getStoreName, BatchGetKvRequest::setStoreName));
 
         // response
 
@@ -231,28 +203,6 @@ public class KvsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForRenameKv();
-
-    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForRenameKv() {
-        // basic
-        HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
-                .withName("RenameKv")
-                .withUri("/v1/rename-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameKvRequest::getStoreName, RenameKvRequest::setStoreName));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ScanKvRequest, ScanKvResponse> scanKv = genForScanKv();
 
     private static HttpRequestDef<ScanKvRequest, ScanKvResponse> genForScanKv() {
@@ -291,29 +241,6 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ScanSkeyKvRequest::getStoreName, ScanSkeyKvRequest::setStoreName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> transactWriteSkeyKv =
-        genForTransactWriteSkeyKv();
-
-    private static HttpRequestDef<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> genForTransactWriteSkeyKv() {
-        // basic
-        HttpRequestDef.Builder<TransactWriteSkeyKvRequest, TransactWriteSkeyKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, TransactWriteSkeyKvRequest.class, TransactWriteSkeyKvResponse.class)
-                .withName("TransactWriteSkeyKv")
-                .withUri("/v1/transact-write-skey-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(TransactWriteSkeyKvRequest::getStoreName, TransactWriteSkeyKvRequest::setStoreName));
 
         // response
 

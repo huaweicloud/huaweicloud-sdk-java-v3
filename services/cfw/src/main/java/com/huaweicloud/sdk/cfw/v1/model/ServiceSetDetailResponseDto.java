@@ -25,6 +25,11 @@ public class ServiceSetDetailResponseDto {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_set_type")
+
+    private Integer serviceSetType;
+
     public ServiceSetDetailResponseDto withId(String id) {
         this.id = id;
         return this;
@@ -76,6 +81,23 @@ public class ServiceSetDetailResponseDto {
         this.description = description;
     }
 
+    public ServiceSetDetailResponseDto withServiceSetType(Integer serviceSetType) {
+        this.serviceSetType = serviceSetType;
+        return this;
+    }
+
+    /**
+     * 服务组类型，0表示自定义服务组，1表示预定义服务组
+     * @return serviceSetType
+     */
+    public Integer getServiceSetType() {
+        return serviceSetType;
+    }
+
+    public void setServiceSetType(Integer serviceSetType) {
+        this.serviceSetType = serviceSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class ServiceSetDetailResponseDto {
         }
         ServiceSetDetailResponseDto that = (ServiceSetDetailResponseDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.serviceSetType, that.serviceSetType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description);
+        return Objects.hash(id, name, description, serviceSetType);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class ServiceSetDetailResponseDto {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    serviceSetType: ").append(toIndentedString(serviceSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
