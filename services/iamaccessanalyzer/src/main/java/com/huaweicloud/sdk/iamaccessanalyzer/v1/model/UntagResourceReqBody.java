@@ -40,7 +40,7 @@ public class UntagResourceReqBody {
     }
 
     /**
-     * Get tagKeys
+     * 待删除的标签键列表。
      * @return tagKeys
      */
     public List<String> getTagKeys() {

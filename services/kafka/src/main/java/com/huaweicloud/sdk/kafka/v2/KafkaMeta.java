@@ -22,14 +22,11 @@ import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ConnectorOrderRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateGroupReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineRequest;
@@ -50,9 +47,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskReq;
-import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSmartConnectTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
@@ -65,8 +59,6 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskRequest;
-import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
@@ -83,8 +75,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
@@ -169,8 +159,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicReq;
@@ -367,39 +355,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CloseKafkaManagerRequest::getInstanceId, CloseKafkaManagerRequest::setInstanceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrder =
-        genForCreateDeleteConnectorOrder();
-
-    private static HttpRequestDef<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> genForCreateDeleteConnectorOrder() {
-        // basic
-        HttpRequestDef.Builder<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateDeleteConnectorOrderRequest.class,
-                    CreateDeleteConnectorOrderResponse.class)
-                .withName("CreateDeleteConnectorOrder")
-                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector-order")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getInstanceId,
-                CreateDeleteConnectorOrderRequest::setInstanceId));
-        builder.<ConnectorOrderRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ConnectorOrderRequestBody.class),
-            f -> f.withMarshaller(CreateDeleteConnectorOrderRequest::getBody,
-                CreateDeleteConnectorOrderRequest::setBody));
 
         // response
 
@@ -612,34 +567,6 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTask =
-        genForCreateSinkTask();
-
-    private static HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> genForCreateSinkTask() {
-        // basic
-        HttpRequestDef.Builder<CreateSinkTaskRequest, CreateSinkTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSinkTaskRequest.class, CreateSinkTaskResponse.class)
-                .withName("CreateSinkTask")
-                .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connector_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSinkTaskRequest::getConnectorId, CreateSinkTaskRequest::setConnectorId));
-        builder.<CreateSinkTaskReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateSinkTaskReq.class),
-            f -> f.withMarshaller(CreateSinkTaskRequest::getBody, CreateSinkTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
         genForDeleteBackgroundTask();
 
@@ -719,34 +646,6 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(DeleteKafkaUserClientQuotaTaskReq.class),
             f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getBody,
                 DeleteKafkaUserClientQuotaTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTask =
-        genForDeleteSinkTask();
-
-    private static HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> genForDeleteSinkTask() {
-        // basic
-        HttpRequestDef.Builder<DeleteSinkTaskRequest, DeleteSinkTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSinkTaskRequest.class, DeleteSinkTaskResponse.class)
-                .withName("DeleteSinkTask")
-                .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connector_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSinkTaskRequest::getConnectorId, DeleteSinkTaskRequest::setConnectorId));
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSinkTaskRequest::getTaskId, DeleteSinkTaskRequest::setTaskId));
 
         // response
 
@@ -1001,29 +900,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, ListProductsRequest::setEngine));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasks =
-        genForListSinkTasks();
-
-    private static HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> genForListSinkTasks() {
-        // basic
-        HttpRequestDef.Builder<ListSinkTasksRequest, ListSinkTasksResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSinkTasksRequest.class, ListSinkTasksResponse.class)
-                .withName("ListSinkTasks")
-                .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connector_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSinkTasksRequest::getConnectorId, ListSinkTasksRequest::setConnectorId));
 
         // response
 
@@ -2097,40 +1973,6 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getMessageOffset,
                 ShowPartitionMessageRequest::setMessageOffset));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail =
-        genForShowSinkTaskDetail();
-
-    private static HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> genForShowSinkTaskDetail() {
-        // basic
-        HttpRequestDef.Builder<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSinkTaskDetailRequest.class, ShowSinkTaskDetailResponse.class)
-                .withName("ShowSinkTaskDetail")
-                .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connector_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getConnectorId,
-                ShowSinkTaskDetailRequest::setConnectorId));
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, ShowSinkTaskDetailRequest::setTaskId));
-        builder.<ShowSinkTaskDetailRequest.TopicInfoEnum>withRequestField("topic-info",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowSinkTaskDetailRequest.TopicInfoEnum.class),
-            f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTopicInfo, ShowSinkTaskDetailRequest::setTopicInfo));
 
         // response
 

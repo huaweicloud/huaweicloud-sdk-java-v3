@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -511,12 +510,12 @@ public class ServerDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-SRV-USG:launched_at")
 
-    private OffsetDateTime osSRVUSGLaunchedAt;
+    private String osSRVUSGLaunchedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-SRV-USG:terminated_at")
 
-    private OffsetDateTime osSRVUSGTerminatedAt;
+    private String osSRVUSGTerminatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os-extended-volumes:volumes_attached")
@@ -1202,7 +1201,7 @@ public class ServerDetails {
         this.fault = fault;
     }
 
-    public ServerDetails withOsSRVUSGLaunchedAt(OffsetDateTime osSRVUSGLaunchedAt) {
+    public ServerDetails withOsSRVUSGLaunchedAt(String osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
     }
@@ -1211,15 +1210,15 @@ public class ServerDetails {
      * 裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-22T03:23:59.000000
      * @return osSRVUSGLaunchedAt
      */
-    public OffsetDateTime getOsSRVUSGLaunchedAt() {
+    public String getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
 
-    public void setOsSRVUSGLaunchedAt(OffsetDateTime osSRVUSGLaunchedAt) {
+    public void setOsSRVUSGLaunchedAt(String osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
 
-    public ServerDetails withOsSRVUSGTerminatedAt(OffsetDateTime osSRVUSGTerminatedAt) {
+    public ServerDetails withOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
         return this;
     }
@@ -1228,11 +1227,11 @@ public class ServerDetails {
      * 裸金属服务器删除时间。时间戳格式为ISO 8601，例如：2019-05-22T04:23:59.000000
      * @return osSRVUSGTerminatedAt
      */
-    public OffsetDateTime getOsSRVUSGTerminatedAt() {
+    public String getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
 
-    public void setOsSRVUSGTerminatedAt(OffsetDateTime osSRVUSGTerminatedAt) {
+    public void setOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
 

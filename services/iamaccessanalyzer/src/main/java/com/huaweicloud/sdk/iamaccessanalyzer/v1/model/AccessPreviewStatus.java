@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 分析预览的状态
+ * 访问预览的状态。
  */
 public class AccessPreviewStatus {
 

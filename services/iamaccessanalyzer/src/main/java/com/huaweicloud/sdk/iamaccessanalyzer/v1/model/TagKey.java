@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 标记的密钥标识符或名称。
+ * 标签键。
  */
 public class TagKey {
 

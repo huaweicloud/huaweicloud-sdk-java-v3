@@ -45,7 +45,7 @@ public class CreateArchiveRuleReqBody {
     }
 
     /**
-     * Get filters
+     * 匹配要返回的访问分析结果的筛选器。
      * @return filters
      */
     public List<FindingFilter> getFilters() {
@@ -62,7 +62,7 @@ public class CreateArchiveRuleReqBody {
     }
 
     /**
-     * 创建归档规则的名称。
+     * 创建存档规则的名称。
      * @return name
      */
     public String getName() {

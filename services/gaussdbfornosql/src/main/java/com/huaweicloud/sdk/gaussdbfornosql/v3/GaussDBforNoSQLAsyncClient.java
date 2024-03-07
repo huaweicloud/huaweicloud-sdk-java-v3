@@ -203,6 +203,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateClientNetworkRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateClientNetworkResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequest;
@@ -3107,6 +3109,35 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationAsyncInvoker(
         UpdateConfigurationRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateConfiguration, hcClient);
+    }
+
+    /**
+     * 操作GeminDB实例数据库
+     *
+     * 操作GeminDB实例数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatabasesRequest 请求对象
+     * @return CompletableFuture<UpdateDatabasesResponse>
+     */
+    public CompletableFuture<UpdateDatabasesResponse> updateDatabasesAsync(UpdateDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateDatabases);
+    }
+
+    /**
+     * 操作GeminDB实例数据库
+     *
+     * 操作GeminDB实例数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatabasesRequest 请求对象
+     * @return AsyncInvoker<UpdateDatabasesRequest, UpdateDatabasesResponse>
+     */
+    public AsyncInvoker<UpdateDatabasesRequest, UpdateDatabasesResponse> updateDatabasesAsyncInvoker(
+        UpdateDatabasesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateDatabases, hcClient);
     }
 
     /**

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 唯一的资源名称。
+ * 访问分析的唯一资源标识。
  */
 public class Urn {
 

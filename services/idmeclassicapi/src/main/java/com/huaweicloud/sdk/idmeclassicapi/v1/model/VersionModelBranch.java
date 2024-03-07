@@ -26,7 +26,7 @@ public class VersionModelBranch {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdateTime")
@@ -82,7 +82,7 @@ public class VersionModelBranch {
         this.creator = creator;
     }
 
-    public VersionModelBranch withId(Long id) {
+    public VersionModelBranch withId(String id) {
         this.id = id;
         return this;
     }
@@ -91,11 +91,11 @@ public class VersionModelBranch {
      * 唯一标识。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

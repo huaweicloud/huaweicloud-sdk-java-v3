@@ -13,14 +13,14 @@ public class VersionModelMasterIdsDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masterId")
 
-    private Long masterId;
+    private String masterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
 
-    public VersionModelMasterIdsDTO withMasterId(Long masterId) {
+    public VersionModelMasterIdsDTO withMasterId(String masterId) {
         this.masterId = masterId;
         return this;
     }
@@ -29,11 +29,11 @@ public class VersionModelMasterIdsDTO {
      * 父模型ID。
      * @return masterId
      */
-    public Long getMasterId() {
+    public String getMasterId() {
         return masterId;
     }
 
-    public void setMasterId(Long masterId) {
+    public void setMasterId(String masterId) {
         this.masterId = masterId;
     }
 

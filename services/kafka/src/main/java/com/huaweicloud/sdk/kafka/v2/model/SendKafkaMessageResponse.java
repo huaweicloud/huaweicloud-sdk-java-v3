@@ -35,7 +35,7 @@ public class SendKafkaMessageResponse extends SdkResponse {
     }
 
     /**
-     * Get topic
+     * Kafka的topic
      * @return topic
      */
     public String getTopic() {
@@ -52,7 +52,7 @@ public class SendKafkaMessageResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 消息内容
      * @return body
      */
     public String getBody() {
@@ -85,7 +85,7 @@ public class SendKafkaMessageResponse extends SdkResponse {
     }
 
     /**
-     * Get propertyList
+     * topic的分区信息等
      * @return propertyList
      */
     public List<Object> getPropertyList() {

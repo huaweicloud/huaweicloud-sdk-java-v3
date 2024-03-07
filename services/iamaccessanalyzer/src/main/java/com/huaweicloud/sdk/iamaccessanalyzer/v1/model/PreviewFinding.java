@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 包含有关查找结果的信息。
+ * PreviewFinding
  */
 public class PreviewFinding {
 
@@ -25,7 +25,7 @@ public class PreviewFinding {
     private List<String> action = null;
 
     /**
-     * 结果状态的变化
+     * 结果状态的变化。
      */
     public static final class ChangeTypeEnum {
 
@@ -339,7 +339,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 访问信任区域内资源的外部主体。
+     * 允许外部主体使用的操作。
      * @return action
      */
     public List<String> getAction() {
@@ -356,7 +356,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 结果状态的变化
+     * 结果状态的变化。
      * @return changeType
      */
     public ChangeTypeEnum getChangeType() {
@@ -389,7 +389,7 @@ public class PreviewFinding {
     }
 
     /**
-     * Get condition
+     * 分析的策略语句中导致访问预览分析结果的条件。
      * @return condition
      */
     public List<FindingCondition> getCondition() {
@@ -406,7 +406,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 生成查找结果的时间。
+     * 生成预览访问分析结果的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -423,7 +423,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 要检索的结果的ID。
+     * 访问分析结果的唯一标识符。
      * @return existingFindingId
      */
     public String getExistingFindingId() {
@@ -457,7 +457,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 要检索的结果的ID。
+     * 访问分析结果的唯一标识符。
      * @return id
      */
     public String getId() {
@@ -474,7 +474,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 表示生成查找结果的策略是否允许公共访问资源。
+     * 表示生成访问分析结果的策略是否允许公共访问资源。
      * @return isPublic
      */
     public Boolean getIsPublic() {
@@ -517,7 +517,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 唯一的资源名称。
+     * 访问分析的唯一资源标识。
      * @return resource
      */
     public String getResource() {
@@ -534,7 +534,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 拥有资源的帐户ID。
+     * 拥有资源的账户ID。
      * @return resourceOwnerAccount
      */
     public String getResourceOwnerAccount() {
@@ -584,7 +584,7 @@ public class PreviewFinding {
     }
 
     /**
-     * Get sources
+     * 访问分析结果的来源，这指示如何授予生成访问分析结果的访问权限。
      * @return sources
      */
     public List<FindingSourceType> getSources() {

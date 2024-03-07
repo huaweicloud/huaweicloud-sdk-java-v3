@@ -49,7 +49,7 @@ public class ListPreviewFindingsRequest {
     }
 
     /**
-     * 分析预览的唯一标识符。
+     * 访问预览的唯一标识符。
      * @return accessPreviewId
      */
     public String getAccessPreviewId() {

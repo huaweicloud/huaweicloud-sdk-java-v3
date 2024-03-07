@@ -146,7 +146,7 @@ public class InstanceResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
 
-    private Volume volume;
+    private VolumeForInstanceResponse volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -788,14 +788,14 @@ public class InstanceResponse {
         this.mem = mem;
     }
 
-    public InstanceResponse withVolume(Volume volume) {
+    public InstanceResponse withVolume(VolumeForInstanceResponse volume) {
         this.volume = volume;
         return this;
     }
 
-    public InstanceResponse withVolume(Consumer<Volume> volumeSetter) {
+    public InstanceResponse withVolume(Consumer<VolumeForInstanceResponse> volumeSetter) {
         if (this.volume == null) {
-            this.volume = new Volume();
+            this.volume = new VolumeForInstanceResponse();
             volumeSetter.accept(this.volume);
         }
 
@@ -806,11 +806,11 @@ public class InstanceResponse {
      * Get volume
      * @return volume
      */
-    public Volume getVolume() {
+    public VolumeForInstanceResponse getVolume() {
         return volume;
     }
 
-    public void setVolume(Volume volume) {
+    public void setVolume(VolumeForInstanceResponse volume) {
         this.volume = volume;
     }
 

@@ -50,7 +50,7 @@ public class ListFindingsReqBody {
     }
 
     /**
-     * Get filters
+     * 匹配要返回的访问分析结果的筛选器。
      * @return filters
      */
     public List<FindingFilter> getFilters() {

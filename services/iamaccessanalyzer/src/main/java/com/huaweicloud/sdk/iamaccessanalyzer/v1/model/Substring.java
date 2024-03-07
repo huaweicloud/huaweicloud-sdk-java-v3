@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * json反序列化后的字符串的子串。
+ * JSON反序列化后的字符串的子串。
  */
 public class Substring {
 

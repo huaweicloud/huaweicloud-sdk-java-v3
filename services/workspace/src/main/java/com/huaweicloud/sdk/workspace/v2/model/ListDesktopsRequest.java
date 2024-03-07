@@ -50,6 +50,11 @@ public class ListDesktopsRequest {
 
     private String desktopType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public ListDesktopsRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -190,6 +195,23 @@ public class ListDesktopsRequest {
         this.desktopType = desktopType;
     }
 
+    public ListDesktopsRequest withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 桌面的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +225,13 @@ public class ListDesktopsRequest {
             && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.desktopType, that.desktopType);
+            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, computerName, desktopIp, offset, limit, poolId, enterpriseProjectId, desktopType);
+        return Objects
+            .hash(userName, computerName, desktopIp, offset, limit, poolId, enterpriseProjectId, desktopType, subnetId);
     }
 
     @Override
@@ -223,6 +246,7 @@ public class ListDesktopsRequest {
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

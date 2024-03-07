@@ -28,7 +28,7 @@ public class SmartConnectTaskRespSinkConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db")
 
-    private String targetDb;
+    private Integer targetDb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_strategy")
@@ -176,7 +176,7 @@ public class SmartConnectTaskRespSinkConfig {
         this.dcsInstanceId = dcsInstanceId;
     }
 
-    public SmartConnectTaskRespSinkConfig withTargetDb(String targetDb) {
+    public SmartConnectTaskRespSinkConfig withTargetDb(Integer targetDb) {
         this.targetDb = targetDb;
         return this;
     }
@@ -185,11 +185,11 @@ public class SmartConnectTaskRespSinkConfig {
      * 目标数据库，默认为-1。（仅目标端类型为Redis时会显示）
      * @return targetDb
      */
-    public String getTargetDb() {
+    public Integer getTargetDb() {
         return targetDb;
     }
 
-    public void setTargetDb(String targetDb) {
+    public void setTargetDb(Integer targetDb) {
         this.targetDb = targetDb;
     }
 

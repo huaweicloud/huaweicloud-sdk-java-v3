@@ -62,6 +62,21 @@ public class JobDetailInfo {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_name")
+
+    private String desktopName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_address")
+
+    private String ipAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mac_address")
+
+    private String macAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
     private Integer process;
@@ -245,6 +260,57 @@ public class JobDetailInfo {
         this.jobId = jobId;
     }
 
+    public JobDetailInfo withDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+        return this;
+    }
+
+    /**
+     * 桌面名称。
+     * @return desktopName
+     */
+    public String getDesktopName() {
+        return desktopName;
+    }
+
+    public void setDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+    }
+
+    public JobDetailInfo withIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    /**
+     * ip地址。
+     * @return ipAddress
+     */
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    public JobDetailInfo withMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+        return this;
+    }
+
+    /**
+     * mac地址。
+     * @return macAddress
+     */
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+
     public JobDetailInfo withProcess(Integer process) {
         this.process = process;
         return this;
@@ -276,13 +342,26 @@ public class JobDetailInfo {
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
             && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.message, that.message) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.process, that.process);
+            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.macAddress, that.macAddress) && Objects.equals(this.process, that.process);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, jobType, entities, beginTime, endTime, status, errorCode, failReason, message, jobId, process);
+        return Objects.hash(id,
+            jobType,
+            entities,
+            beginTime,
+            endTime,
+            status,
+            errorCode,
+            failReason,
+            message,
+            jobId,
+            desktopName,
+            ipAddress,
+            macAddress,
+            process);
     }
 
     @Override
@@ -299,6 +378,9 @@ public class JobDetailInfo {
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("}");
         return sb.toString();

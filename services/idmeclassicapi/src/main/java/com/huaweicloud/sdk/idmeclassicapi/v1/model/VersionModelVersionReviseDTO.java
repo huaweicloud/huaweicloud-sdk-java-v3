@@ -26,7 +26,7 @@ public class VersionModelVersionReviseDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masterId")
 
-    private Long masterId;
+    private String masterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifier")
@@ -93,7 +93,7 @@ public class VersionModelVersionReviseDTO {
         this.customLinkSet = customLinkSet;
     }
 
-    public VersionModelVersionReviseDTO withMasterId(Long masterId) {
+    public VersionModelVersionReviseDTO withMasterId(String masterId) {
         this.masterId = masterId;
         return this;
     }
@@ -102,11 +102,11 @@ public class VersionModelVersionReviseDTO {
      * 主对象ID。
      * @return masterId
      */
-    public Long getMasterId() {
+    public String getMasterId() {
         return masterId;
     }
 
-    public void setMasterId(Long masterId) {
+    public void setMasterId(String masterId) {
         this.masterId = masterId;
     }
 

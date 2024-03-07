@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
@@ -93,6 +95,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
@@ -215,6 +219,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDbUsersRequest;
@@ -329,6 +335,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
@@ -357,6 +365,8 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
@@ -397,6 +407,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
@@ -943,6 +955,35 @@ public class RdsClient {
     }
 
     /**
+     * 新增SQL限流
+     *
+     * 新增SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlLimitRequest 请求对象
+     * @return CreateSqlLimitResponse
+     */
+    public CreateSqlLimitResponse createSqlLimit(CreateSqlLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createSqlLimit);
+    }
+
+    /**
+     * 新增SQL限流
+     *
+     * 新增SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlLimitRequest 请求对象
+     * @return SyncInvoker<CreateSqlLimitRequest, CreateSqlLimitResponse>
+     */
+    public SyncInvoker<CreateSqlLimitRequest, CreateSqlLimitResponse> createSqlLimitInvoker(
+        CreateSqlLimitRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.createSqlLimit, hcClient);
+    }
+
+    /**
      * 获取扩展日志下载信息
      *
      * 获取扩展日志下载信息
@@ -1169,6 +1210,35 @@ public class RdsClient {
     public SyncInvoker<DeleteRdSforMySqlProxyRequest, DeleteRdSforMySqlProxyResponse> deleteRdSforMySqlProxyInvoker(
         DeleteRdSforMySqlProxyRequest request) {
         return new SyncInvoker<>(request, RdsMeta.deleteRdSforMySqlProxy, hcClient);
+    }
+
+    /**
+     * 删除SQL限流
+     *
+     * 删除SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlLimitRequest 请求对象
+     * @return DeleteSqlLimitResponse
+     */
+    public DeleteSqlLimitResponse deleteSqlLimit(DeleteSqlLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlLimit);
+    }
+
+    /**
+     * 删除SQL限流
+     *
+     * 删除SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlLimitRequest 请求对象
+     * @return SyncInvoker<DeleteSqlLimitRequest, DeleteSqlLimitResponse>
+     */
+    public SyncInvoker<DeleteSqlLimitRequest, DeleteSqlLimitResponse> deleteSqlLimitInvoker(
+        DeleteSqlLimitRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.deleteSqlLimit, hcClient);
     }
 
     /**
@@ -2425,6 +2495,34 @@ public class RdsClient {
     }
 
     /**
+     * 查询SQL限流列表
+     *
+     * 查询SQL限流列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlLimitRequest 请求对象
+     * @return ListSqlLimitResponse
+     */
+    public ListSqlLimitResponse listSqlLimit(ListSqlLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSqlLimit);
+    }
+
+    /**
+     * 查询SQL限流列表
+     *
+     * 查询SQL限流列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlLimitRequest 请求对象
+     * @return SyncInvoker<ListSqlLimitRequest, ListSqlLimitResponse>
+     */
+    public SyncInvoker<ListSqlLimitRequest, ListSqlLimitResponse> listSqlLimitInvoker(ListSqlLimitRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listSqlLimit, hcClient);
+    }
+
+    /**
      * 获取SSL证书下载地址
      *
      * 获取SSL证书下载地址
@@ -3564,6 +3662,35 @@ public class RdsClient {
     }
 
     /**
+     * 查询实例磁盘空间使用量
+     *
+     * 查询实例磁盘空间使用量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStorageUsedSpaceRequest 请求对象
+     * @return ShowStorageUsedSpaceResponse
+     */
+    public ShowStorageUsedSpaceResponse showStorageUsedSpace(ShowStorageUsedSpaceRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showStorageUsedSpace);
+    }
+
+    /**
+     * 查询实例磁盘空间使用量
+     *
+     * 查询实例磁盘空间使用量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStorageUsedSpaceRequest 请求对象
+     * @return SyncInvoker<ShowStorageUsedSpaceRequest, ShowStorageUsedSpaceResponse>
+     */
+    public SyncInvoker<ShowStorageUsedSpaceRequest, ShowStorageUsedSpaceResponse> showStorageUsedSpaceInvoker(
+        ShowStorageUsedSpaceRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showStorageUsedSpace, hcClient);
+    }
+
+    /**
      * 根据实例id查询sqlserver TDE状态
      *
      * 根据实例id查询sqlserver TDE状态
@@ -3912,6 +4039,35 @@ public class RdsClient {
     }
 
     /**
+     * 开启/关闭/禁用所有SQL限流
+     *
+     * 开启/关闭/禁用所有SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSqlLimitRequest 请求对象
+     * @return SwitchSqlLimitResponse
+     */
+    public SwitchSqlLimitResponse switchSqlLimit(SwitchSqlLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.switchSqlLimit);
+    }
+
+    /**
+     * 开启/关闭/禁用所有SQL限流
+     *
+     * 开启/关闭/禁用所有SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSqlLimitRequest 请求对象
+     * @return SyncInvoker<SwitchSqlLimitRequest, SwitchSqlLimitResponse>
+     */
+    public SyncInvoker<SwitchSqlLimitRequest, SwitchSqlLimitResponse> switchSqlLimitInvoker(
+        SwitchSqlLimitRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.switchSqlLimit, hcClient);
+    }
+
+    /**
      * 设置SSL数据加密
      *
      * 设置SSL数据加密。
@@ -4197,6 +4353,35 @@ public class RdsClient {
     public SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasInvoker(
         UpdatePostgresqlInstanceAliasRequest request) {
         return new SyncInvoker<>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /**
+     * 修改SQL限流
+     *
+     * 修改SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlLimitRequest 请求对象
+     * @return UpdateSqlLimitResponse
+     */
+    public UpdateSqlLimitResponse updateSqlLimit(UpdateSqlLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateSqlLimit);
+    }
+
+    /**
+     * 修改SQL限流
+     *
+     * 修改SQL限流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlLimitRequest 请求对象
+     * @return SyncInvoker<UpdateSqlLimitRequest, UpdateSqlLimitResponse>
+     */
+    public SyncInvoker<UpdateSqlLimitRequest, UpdateSqlLimitResponse> updateSqlLimitInvoker(
+        UpdateSqlLimitRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.updateSqlLimit, hcClient);
     }
 
     /**

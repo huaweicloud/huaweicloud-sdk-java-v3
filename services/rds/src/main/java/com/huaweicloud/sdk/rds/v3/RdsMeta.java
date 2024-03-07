@@ -81,6 +81,9 @@ import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlLimitResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlLimitRuleReqV3;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
@@ -121,6 +124,9 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitRuleReqV3;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
@@ -256,6 +262,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDbUsersRequest;
@@ -408,6 +416,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
@@ -446,6 +456,9 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitControlReqV3;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
@@ -494,6 +507,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateRdsInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRuleReqV3;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
@@ -1071,6 +1087,34 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSqlLimitRequest, CreateSqlLimitResponse> createSqlLimit =
+        genForCreateSqlLimit();
+
+    private static HttpRequestDef<CreateSqlLimitRequest, CreateSqlLimitResponse> genForCreateSqlLimit() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlLimitRequest, CreateSqlLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSqlLimitRequest.class, CreateSqlLimitResponse.class)
+                .withName("CreateSqlLimit")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSqlLimitRequest::getInstanceId, CreateSqlLimitRequest::setInstanceId));
+        builder.<CreateSqlLimitRuleReqV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSqlLimitRuleReqV3.class),
+            f -> f.withMarshaller(CreateSqlLimitRequest::getBody, CreateSqlLimitRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> createXelLogDownload =
         genForCreateXelLogDownload();
 
@@ -1310,6 +1354,34 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRdSforMySqlProxyRequest::getXLanguage,
                 DeleteRdSforMySqlProxyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSqlLimitRequest, DeleteSqlLimitResponse> deleteSqlLimit =
+        genForDeleteSqlLimit();
+
+    private static HttpRequestDef<DeleteSqlLimitRequest, DeleteSqlLimitResponse> genForDeleteSqlLimit() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlLimitRequest, DeleteSqlLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSqlLimitRequest.class, DeleteSqlLimitResponse.class)
+                .withName("DeleteSqlLimit")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlLimitRequest::getInstanceId, DeleteSqlLimitRequest::setInstanceId));
+        builder.<DeleteSqlLimitRuleReqV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSqlLimitRuleReqV3.class),
+            f -> f.withMarshaller(DeleteSqlLimitRequest::getBody, DeleteSqlLimitRequest::setBody));
 
         // response
 
@@ -3049,6 +3121,43 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSqlLimitRequest, ListSqlLimitResponse> listSqlLimit = genForListSqlLimit();
+
+    private static HttpRequestDef<ListSqlLimitRequest, ListSqlLimitResponse> genForListSqlLimit() {
+        // basic
+        HttpRequestDef.Builder<ListSqlLimitRequest, ListSqlLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlLimitRequest.class, ListSqlLimitResponse.class)
+                .withName("ListSqlLimit")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlLimitRequest::getInstanceId, ListSqlLimitRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlLimitRequest::getDbName, ListSqlLimitRequest::setDbName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSqlLimitRequest::getOffset, ListSqlLimitRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSqlLimitRequest::getLimit, ListSqlLimitRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> listSslCertDownloadLink =
         genForListSslCertDownloadLink();
 
@@ -4324,6 +4433,30 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStorageUsedSpaceRequest, ShowStorageUsedSpaceResponse> showStorageUsedSpace =
+        genForShowStorageUsedSpace();
+
+    private static HttpRequestDef<ShowStorageUsedSpaceRequest, ShowStorageUsedSpaceResponse> genForShowStorageUsedSpace() {
+        // basic
+        HttpRequestDef.Builder<ShowStorageUsedSpaceRequest, ShowStorageUsedSpaceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowStorageUsedSpaceRequest.class, ShowStorageUsedSpaceResponse.class)
+            .withName("ShowStorageUsedSpace")
+            .withUri("/v3/{project_id}/instances/{instance_id}/storage-used-space")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStorageUsedSpaceRequest::getInstanceId,
+                ShowStorageUsedSpaceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTdeStatusRequest, ShowTdeStatusResponse> showTdeStatus =
         genForShowTdeStatus();
 
@@ -4720,6 +4853,34 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SwitchSqlLimitRequest, SwitchSqlLimitResponse> switchSqlLimit =
+        genForSwitchSqlLimit();
+
+    private static HttpRequestDef<SwitchSqlLimitRequest, SwitchSqlLimitResponse> genForSwitchSqlLimit() {
+        // basic
+        HttpRequestDef.Builder<SwitchSqlLimitRequest, SwitchSqlLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchSqlLimitRequest.class, SwitchSqlLimitResponse.class)
+                .withName("SwitchSqlLimit")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSqlLimitRequest::getInstanceId, SwitchSqlLimitRequest::setInstanceId));
+        builder.<SwitchSqlLimitControlReqV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSqlLimitControlReqV3.class),
+            f -> f.withMarshaller(SwitchSqlLimitRequest::getBody, SwitchSqlLimitRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchSslRequest, SwitchSslResponse> switchSsl = genForSwitchSsl();
 
     private static HttpRequestDef<SwitchSslRequest, SwitchSslResponse> genForSwitchSsl() {
@@ -5056,6 +5217,34 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
             f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody,
                 UpdatePostgresqlInstanceAliasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlLimitRequest, UpdateSqlLimitResponse> updateSqlLimit =
+        genForUpdateSqlLimit();
+
+    private static HttpRequestDef<UpdateSqlLimitRequest, UpdateSqlLimitResponse> genForUpdateSqlLimit() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlLimitRequest, UpdateSqlLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSqlLimitRequest.class, UpdateSqlLimitResponse.class)
+                .withName("UpdateSqlLimit")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlLimitRequest::getInstanceId, UpdateSqlLimitRequest::setInstanceId));
+        builder.<UpdateSqlLimitRuleReqV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSqlLimitRuleReqV3.class),
+            f -> f.withMarshaller(UpdateSqlLimitRequest::getBody, UpdateSqlLimitRequest::setBody));
 
         // response
 

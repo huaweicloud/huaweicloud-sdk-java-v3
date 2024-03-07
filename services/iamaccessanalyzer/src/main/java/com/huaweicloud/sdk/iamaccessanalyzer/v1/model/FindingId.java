@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 要检索的结果的ID。
+ * 访问分析结果的唯一标识符。
  */
 public class FindingId {
 

@@ -103,6 +103,8 @@ public final class Constants {
 
         public static final String MULTIPART_FORM_DATA = "multipart/form-data";
 
+        public static final String APPLICATION_X_WWW_FORM_URLENCODED = "application/x-www-form-urlencoded";
+
         public static final String TEXT = "text";
 
         public static final String IMAGE = "image";

@@ -51,7 +51,7 @@ public class ShowInstanceExtendProductInfoRespMonthly {
     }
 
     /**
-     * 消息引擎的版本，当前支持3.8.35[和3.7.17](tag:cmcc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)
+     * 消息引擎的版本，当前支持3.8.35[和3.7.17](tag:cmcc,sbc,hk_sbc,tm,hk_tm)
      * @return version
      */
     public String getVersion() {

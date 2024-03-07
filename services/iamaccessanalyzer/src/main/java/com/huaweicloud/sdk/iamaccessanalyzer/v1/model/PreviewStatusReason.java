@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * PreviewStatusReason
+ * 提供有关访问预览当前状态的更多详细信息。
  */
 public class PreviewStatusReason {
 
     /**
-     * 分析预览状态原因
+     * 访问预览当前状态的原因。
      */
     public static final class CodeEnum {
 
@@ -96,7 +96,7 @@ public class PreviewStatusReason {
     }
 
     /**
-     * 分析预览状态原因
+     * 访问预览当前状态的原因。
      * @return code
      */
     public CodeEnum getCode() {

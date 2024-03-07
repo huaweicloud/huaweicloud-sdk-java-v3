@@ -42,7 +42,7 @@ public class ListAuthorizationPrivilegesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<ShowDatabaseUsersPrivilege> privileges = null;
+    private List<AuthorizationPrivilege> privileges = null;
 
     public ListAuthorizationPrivilegesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -129,12 +129,12 @@ public class ListAuthorizationPrivilegesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListAuthorizationPrivilegesResponse withPrivileges(List<ShowDatabaseUsersPrivilege> privileges) {
+    public ListAuthorizationPrivilegesResponse withPrivileges(List<AuthorizationPrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ListAuthorizationPrivilegesResponse addPrivilegesItem(ShowDatabaseUsersPrivilege privilegesItem) {
+    public ListAuthorizationPrivilegesResponse addPrivilegesItem(AuthorizationPrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -142,8 +142,7 @@ public class ListAuthorizationPrivilegesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAuthorizationPrivilegesResponse withPrivileges(
-        Consumer<List<ShowDatabaseUsersPrivilege>> privilegesSetter) {
+    public ListAuthorizationPrivilegesResponse withPrivileges(Consumer<List<AuthorizationPrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -155,11 +154,11 @@ public class ListAuthorizationPrivilegesResponse extends SdkResponse {
      * 权限信息
      * @return privileges
      */
-    public List<ShowDatabaseUsersPrivilege> getPrivileges() {
+    public List<AuthorizationPrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<ShowDatabaseUsersPrivilege> privileges) {
+    public void setPrivileges(List<AuthorizationPrivilege> privileges) {
         this.privileges = privileges;
     }
 

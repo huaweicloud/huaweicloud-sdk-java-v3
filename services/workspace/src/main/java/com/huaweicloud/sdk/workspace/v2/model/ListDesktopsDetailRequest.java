@@ -248,6 +248,11 @@ public class ListDesktopsDetailRequest {
 
     private Boolean inMaintenanceMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public ListDesktopsDetailRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -590,6 +595,23 @@ public class ListDesktopsDetailRequest {
         this.inMaintenanceMode = inMaintenanceMode;
     }
 
+    public ListDesktopsDetailRequest withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 桌面的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -608,7 +630,8 @@ public class ListDesktopsDetailRequest {
             && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.userAttached, that.userAttached)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode);
+            && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
+            && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
@@ -630,7 +653,8 @@ public class ListDesktopsDetailRequest {
             enterpriseProjectId,
             imageId,
             chargeMode,
-            inMaintenanceMode);
+            inMaintenanceMode,
+            subnetId);
     }
 
     @Override
@@ -655,6 +679,7 @@ public class ListDesktopsDetailRequest {
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

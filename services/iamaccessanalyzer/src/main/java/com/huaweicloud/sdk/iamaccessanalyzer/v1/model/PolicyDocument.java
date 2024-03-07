@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 此策略的json格式策略文档。
+ * 该策略JSON格式策略文档。
  */
 public class PolicyDocument {
 

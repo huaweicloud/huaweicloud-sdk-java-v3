@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 自定义键值对。
+ * Tag
  */
 public class Tag {
 
@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 标记的密钥标识符或名称。
+     * 标签键。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Tag {
     }
 
     /**
-     * 与标记键关联的字符串值。
+     * 与标签键关联的字符串值。
      * @return value
      */
     public String getValue() {

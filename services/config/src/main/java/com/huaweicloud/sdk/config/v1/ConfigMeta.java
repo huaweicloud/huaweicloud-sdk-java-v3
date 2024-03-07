@@ -1708,6 +1708,22 @@ public class ConfigMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyAssignmentsRequest::getPolicyAssignmentName,
+                ListPolicyAssignmentsRequest::setPolicyAssignmentName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyAssignmentsRequest::getLimit, ListPolicyAssignmentsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyAssignmentsRequest::getMarker, ListPolicyAssignmentsRequest::setMarker));
 
         // response
 
@@ -2064,6 +2080,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationId,
                 ShowOrganizationPolicyAssignmentStatusesRequest::setOrganizationId));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationPolicyAssignmentId,
+                ShowOrganizationPolicyAssignmentStatusesRequest::setOrganizationPolicyAssignmentId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

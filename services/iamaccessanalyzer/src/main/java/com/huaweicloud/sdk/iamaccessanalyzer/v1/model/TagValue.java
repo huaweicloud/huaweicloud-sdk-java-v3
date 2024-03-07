@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 与标记键关联的字符串值。
+ * 与标签键关联的字符串值。
  */
 public class TagValue {
 

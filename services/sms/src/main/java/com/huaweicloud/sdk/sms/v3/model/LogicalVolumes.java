@@ -33,7 +33,7 @@ public class LogicalVolumes {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
-    private Integer deviceUse;
+    private String deviceUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_point")
@@ -134,22 +134,20 @@ public class LogicalVolumes {
         this.inodeSize = inodeSize;
     }
 
-    public LogicalVolumes withDeviceUse(Integer deviceUse) {
+    public LogicalVolumes withDeviceUse(String deviceUse) {
         this.deviceUse = deviceUse;
         return this;
     }
 
     /**
-     * 已使用大小
-     * minimum: 0
-     * maximum: 4294967296
+     * 分区类型，普通分区，启动分区，系统分区
      * @return deviceUse
      */
-    public Integer getDeviceUse() {
+    public String getDeviceUse() {
         return deviceUse;
     }
 
-    public void setDeviceUse(Integer deviceUse) {
+    public void setDeviceUse(String deviceUse) {
         this.deviceUse = deviceUse;
     }
 

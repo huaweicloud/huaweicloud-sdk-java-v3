@@ -114,11 +114,6 @@ public class CreateRestoreInstanceRequestBody {
     private String dsspoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "replica_of_id")
-
-    private String replicaOfId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_point")
 
     private RestorePoint restorePoint;
@@ -132,11 +127,6 @@ public class CreateRestoreInstanceRequestBody {
     @JsonProperty(value = "tags")
 
     private List<TagWithKeyValue> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unchangeable_param")
-
-    private UnchangeableParam unchangeableParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverless_info")
@@ -377,7 +367,7 @@ public class CreateRestoreInstanceRequestBody {
     }
 
     /**
-     * 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+     * 区域ID。创建主实例时必选，其它场景不可选。 取值参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
      * @return region
      */
     public String getRegion() {
@@ -411,7 +401,7 @@ public class CreateRestoreInstanceRequestBody {
     }
 
     /**
-     * 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
+     * 虚拟私有云ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
      * @return vpcId
      */
     public String getVpcId() {
@@ -428,7 +418,7 @@ public class CreateRestoreInstanceRequestBody {
     }
 
     /**
-     * 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+     * 子网的网络ID信息。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -462,7 +452,7 @@ public class CreateRestoreInstanceRequestBody {
     }
 
     /**
-     * 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。
+     * 安全组ID。创建只读实例时不可选（只读实例的网络属性默认和主实例相同），其它场景必选。 获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。 SQL Server数据库和PostgreSQL数据库备份恢复到新实例时为必填项。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -531,23 +521,6 @@ public class CreateRestoreInstanceRequestBody {
 
     public void setDsspoolId(String dsspoolId) {
         this.dsspoolId = dsspoolId;
-    }
-
-    public CreateRestoreInstanceRequestBody withReplicaOfId(String replicaOfId) {
-        this.replicaOfId = replicaOfId;
-        return this;
-    }
-
-    /**
-     * 只读实例的主实例ID。创建只读实例时必选，其它场景不可选。
-     * @return replicaOfId
-     */
-    public String getReplicaOfId() {
-        return replicaOfId;
-    }
-
-    public void setReplicaOfId(String replicaOfId) {
-        this.replicaOfId = replicaOfId;
     }
 
     public CreateRestoreInstanceRequestBody withRestorePoint(RestorePoint restorePoint) {
@@ -626,32 +599,6 @@ public class CreateRestoreInstanceRequestBody {
         this.tags = tags;
     }
 
-    public CreateRestoreInstanceRequestBody withUnchangeableParam(UnchangeableParam unchangeableParam) {
-        this.unchangeableParam = unchangeableParam;
-        return this;
-    }
-
-    public CreateRestoreInstanceRequestBody withUnchangeableParam(Consumer<UnchangeableParam> unchangeableParamSetter) {
-        if (this.unchangeableParam == null) {
-            this.unchangeableParam = new UnchangeableParam();
-            unchangeableParamSetter.accept(this.unchangeableParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get unchangeableParam
-     * @return unchangeableParam
-     */
-    public UnchangeableParam getUnchangeableParam() {
-        return unchangeableParam;
-    }
-
-    public void setUnchangeableParam(UnchangeableParam unchangeableParam) {
-        this.unchangeableParam = unchangeableParam;
-    }
-
     public CreateRestoreInstanceRequestBody withServerlessInfo(ServerlessInfo serverlessInfo) {
         this.serverlessInfo = serverlessInfo;
         return this;
@@ -715,9 +662,8 @@ public class CreateRestoreInstanceRequestBody {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.dataVip, that.dataVip) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
-            && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.replicaOfId, that.replicaOfId)
-            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
+            && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.restorePoint, that.restorePoint)
+            && Objects.equals(this.collation, that.collation) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.serverlessInfo, that.serverlessInfo) && Objects.equals(this.dryRun, that.dryRun);
     }
 
@@ -743,11 +689,9 @@ public class CreateRestoreInstanceRequestBody {
             chargeInfo,
             timeZone,
             dsspoolId,
-            replicaOfId,
             restorePoint,
             collation,
             tags,
-            unchangeableParam,
             serverlessInfo,
             dryRun);
     }
@@ -776,11 +720,9 @@ public class CreateRestoreInstanceRequestBody {
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    dsspoolId: ").append(toIndentedString(dsspoolId)).append("\n");
-        sb.append("    replicaOfId: ").append(toIndentedString(replicaOfId)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("    collation: ").append(toIndentedString(collation)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    unchangeableParam: ").append(toIndentedString(unchangeableParam)).append("\n");
         sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("}");

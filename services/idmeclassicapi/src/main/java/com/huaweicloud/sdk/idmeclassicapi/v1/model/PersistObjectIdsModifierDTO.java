@@ -16,19 +16,19 @@ public class PersistObjectIdsModifierDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifier")
 
     private String modifier;
 
-    public PersistObjectIdsModifierDTO withIds(List<Long> ids) {
+    public PersistObjectIdsModifierDTO withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public PersistObjectIdsModifierDTO addIdsItem(Long idsItem) {
+    public PersistObjectIdsModifierDTO addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class PersistObjectIdsModifierDTO {
         return this;
     }
 
-    public PersistObjectIdsModifierDTO withIds(Consumer<List<Long>> idsSetter) {
+    public PersistObjectIdsModifierDTO withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -48,11 +48,11 @@ public class PersistObjectIdsModifierDTO {
      * ID列表。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 

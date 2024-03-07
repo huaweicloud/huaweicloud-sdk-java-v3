@@ -46,7 +46,7 @@ public class ListPreviewFindingsResponse extends SdkResponse {
     }
 
     /**
-     * Get findings
+     * 访问预览生成的分析结果列表。
      * @return findings
      */
     public List<PreviewFinding> getFindings() {

@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,85 +15,20 @@ public class ImageInfo {
 
     private String id;
 
-    /**
-     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private。
-     */
-    public static final class ImageTypeEnum {
-
-        /**
-         * Enum GOLD for value: "gold"
-         */
-        public static final ImageTypeEnum GOLD = new ImageTypeEnum("gold");
-
-        /**
-         * Enum PRIVATE for value: "private"
-         */
-        public static final ImageTypeEnum PRIVATE = new ImageTypeEnum("private");
-
-        private static final Map<String, ImageTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ImageTypeEnum> createStaticFields() {
-            Map<String, ImageTypeEnum> map = new HashMap<>();
-            map.put("gold", GOLD);
-            map.put("private", PRIVATE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ImageTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ImageTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageTypeEnum(value));
-        }
-
-        public static ImageTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ImageTypeEnum) {
-                return this.value.equals(((ImageTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
-    private ImageTypeEnum imageType;
+    private String imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "architecture")
+
+    private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_version")
@@ -147,7 +77,7 @@ public class ImageInfo {
         this.id = id;
     }
 
-    public ImageInfo withImageType(ImageTypeEnum imageType) {
+    public ImageInfo withImageType(String imageType) {
         this.imageType = imageType;
         return this;
     }
@@ -156,11 +86,11 @@ public class ImageInfo {
      * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private。
      * @return imageType
      */
-    public ImageTypeEnum getImageType() {
+    public String getImageType() {
         return imageType;
     }
 
-    public void setImageType(ImageTypeEnum imageType) {
+    public void setImageType(String imageType) {
         this.imageType = imageType;
     }
 
@@ -179,6 +109,23 @@ public class ImageInfo {
 
     public void setOsType(String osType) {
         this.osType = osType;
+    }
+
+    public ImageInfo withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+
+    /**
+     * 操作系统架构，目前取值arm，x86
+     * @return architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
     }
 
     public ImageInfo withOsVersion(String osVersion) {
@@ -297,15 +244,16 @@ public class ImageInfo {
         }
         ImageInfo that = (ImageInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
-            && Objects.equals(this.diskFormat, that.diskFormat) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.minDisk, that.minDisk)
-            && Objects.equals(this.productCode, that.productCode);
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.diskFormat, that.diskFormat)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.minRam, that.minRam)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.productCode, that.productCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, imageType, osType, osVersion, diskFormat, name, minRam, minDisk, productCode);
+        return Objects
+            .hash(id, imageType, osType, architecture, osVersion, diskFormat, name, minRam, minDisk, productCode);
     }
 
     @Override
@@ -315,6 +263,7 @@ public class ImageInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 策略中的位置，形式分别为json表示的路径和相应的行列范围。
+ * 策略中的位置，形式分别为JSON表示的路径和相应的行列范围。
  */
 public class Location {
 

@@ -67,7 +67,7 @@ public class CreateAnalyzerReqBody {
     }
 
     /**
-     * Get tags
+     * 自定义标签列表。
      * @return tags
      */
     public List<Tag> getTags() {

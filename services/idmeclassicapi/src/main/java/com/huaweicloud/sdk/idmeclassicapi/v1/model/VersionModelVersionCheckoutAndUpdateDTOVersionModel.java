@@ -31,7 +31,7 @@ public class VersionModelVersionCheckoutAndUpdateDTOVersionModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masterId")
 
-    private Long masterId;
+    private String masterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifier")
@@ -120,7 +120,7 @@ public class VersionModelVersionCheckoutAndUpdateDTOVersionModel {
         this.data = data;
     }
 
-    public VersionModelVersionCheckoutAndUpdateDTOVersionModel withMasterId(Long masterId) {
+    public VersionModelVersionCheckoutAndUpdateDTOVersionModel withMasterId(String masterId) {
         this.masterId = masterId;
         return this;
     }
@@ -129,11 +129,11 @@ public class VersionModelVersionCheckoutAndUpdateDTOVersionModel {
      * 小版本ID。
      * @return masterId
      */
-    public Long getMasterId() {
+    public String getMasterId() {
         return masterId;
     }
 
-    public void setMasterId(Long masterId) {
+    public void setMasterId(String masterId) {
         this.masterId = masterId;
     }
 

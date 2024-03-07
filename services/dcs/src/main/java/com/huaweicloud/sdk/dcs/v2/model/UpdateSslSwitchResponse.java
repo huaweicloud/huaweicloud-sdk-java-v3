@@ -16,6 +16,16 @@ public class UpdateSslSwitchResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
+
+    private String result;
+
     public UpdateSslSwitchResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -33,6 +43,40 @@ public class UpdateSslSwitchResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public UpdateSslSwitchResponse withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public UpdateSslSwitchResponse withResult(String result) {
+        this.result = result;
+        return this;
+    }
+
+    /**
+     * 执行结果。
+     * @return result
+     */
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +86,13 @@ public class UpdateSslSwitchResponse extends SdkResponse {
             return false;
         }
         UpdateSslSwitchResponse that = (UpdateSslSwitchResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, instanceId, result);
     }
 
     @Override
@@ -55,6 +100,8 @@ public class UpdateSslSwitchResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSslSwitchResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -27,6 +27,11 @@ public class IdcardBackResult {
     private String validTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adjusted_image")
+
+    private String adjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_result")
 
     private IdcardBackVerificationResult verificationResult;
@@ -130,6 +135,23 @@ public class IdcardBackResult {
 
     public void setValidTo(String validTo) {
         this.validTo = validTo;
+    }
+
+    public IdcardBackResult withAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+        return this;
+    }
+
+    /**
+     * 身份证卡面图片信息的base64码结果。  > 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+     * @return adjustedImage
+     */
+    public String getAdjustedImage() {
+        return adjustedImage;
+    }
+
+    public void setAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
     }
 
     public IdcardBackResult withVerificationResult(IdcardBackVerificationResult verificationResult) {
@@ -347,7 +369,7 @@ public class IdcardBackResult {
         }
         IdcardBackResult that = (IdcardBackResult) obj;
         return Objects.equals(this.issue, that.issue) && Objects.equals(this.validFrom, that.validFrom)
-            && Objects.equals(this.validTo, that.validTo)
+            && Objects.equals(this.validTo, that.validTo) && Objects.equals(this.adjustedImage, that.adjustedImage)
             && Objects.equals(this.verificationResult, that.verificationResult)
             && Objects.equals(this.textLocation, that.textLocation)
             && Objects.equals(this.detectReproduceResult, that.detectReproduceResult)
@@ -366,6 +388,7 @@ public class IdcardBackResult {
         return Objects.hash(issue,
             validFrom,
             validTo,
+            adjustedImage,
             verificationResult,
             textLocation,
             detectReproduceResult,
@@ -386,6 +409,7 @@ public class IdcardBackResult {
         sb.append("    issue: ").append(toIndentedString(issue)).append("\n");
         sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
         sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
+        sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
         sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("    detectReproduceResult: ").append(toIndentedString(detectReproduceResult)).append("\n");

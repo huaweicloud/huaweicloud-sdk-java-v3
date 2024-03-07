@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.workspace.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyDesktopsInternetRequest;
@@ -11,6 +13,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
@@ -27,6 +31,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipRequest;
@@ -45,12 +51,16 @@ import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequest;
@@ -61,6 +71,10 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
@@ -69,6 +83,8 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserLoginInfoNewRequest;
@@ -77,18 +93,24 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
@@ -97,12 +119,22 @@ import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
@@ -115,6 +147,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserUsageMetricRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersRequest;
@@ -135,6 +169,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockRequest;
@@ -147,6 +183,10 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigReques
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
@@ -319,6 +359,64 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateAccessPolicyObjectsRequest, UpdateAccessPolicyObjectsResponse> updateAccessPolicyObjectsAsyncInvoker(
         UpdateAccessPolicyObjectsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateAccessPolicyObjects, hcClient);
+    }
+
+    /**
+     * 开通委托功能
+     *
+     * 开通委托功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgenciesRequest 请求对象
+     * @return CompletableFuture<CreateAgenciesResponse>
+     */
+    public CompletableFuture<CreateAgenciesResponse> createAgenciesAsync(CreateAgenciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createAgencies);
+    }
+
+    /**
+     * 开通委托功能
+     *
+     * 开通委托功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgenciesRequest 请求对象
+     * @return AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>
+     */
+    public AsyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse> createAgenciesAsyncInvoker(
+        CreateAgenciesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createAgencies, hcClient);
+    }
+
+    /**
+     * 查询委托功能
+     *
+     * 查询委托功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgenciesRequest 请求对象
+     * @return CompletableFuture<ListAgenciesResponse>
+     */
+    public CompletableFuture<ListAgenciesResponse> listAgenciesAsync(ListAgenciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAgencies);
+    }
+
+    /**
+     * 查询委托功能
+     *
+     * 查询委托功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgenciesRequest 请求对象
+     * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
+     */
+    public AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesAsyncInvoker(
+        ListAgenciesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAgencies, hcClient);
     }
 
     /**
@@ -498,6 +596,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListLoginRecordsNewRequest, ListLoginRecordsNewResponse> listLoginRecordsNewAsyncInvoker(
         ListLoginRecordsNewRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listLoginRecordsNew, hcClient);
+    }
+
+    /**
+     * 分配用户
+     *
+     * 将桌面分配给用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachInstancesRequest 请求对象
+     * @return CompletableFuture<AttachInstancesResponse>
+     */
+    public CompletableFuture<AttachInstancesResponse> attachInstancesAsync(AttachInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.attachInstances);
+    }
+
+    /**
+     * 分配用户
+     *
+     * 将桌面分配给用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachInstancesRequest 请求对象
+     * @return AsyncInvoker<AttachInstancesRequest, AttachInstancesResponse>
+     */
+    public AsyncInvoker<AttachInstancesRequest, AttachInstancesResponse> attachInstancesAsyncInvoker(
+        AttachInstancesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.attachInstances, hcClient);
     }
 
     /**
@@ -703,6 +830,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<DeleteDesktopRequest, DeleteDesktopResponse> deleteDesktopAsyncInvoker(
         DeleteDesktopRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.deleteDesktop, hcClient);
+    }
+
+    /**
+     * 解绑用户
+     *
+     * 将桌面和用户解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachInstancesRequest 请求对象
+     * @return CompletableFuture<DetachInstancesResponse>
+     */
+    public CompletableFuture<DetachInstancesResponse> detachInstancesAsync(DetachInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.detachInstances);
+    }
+
+    /**
+     * 解绑用户
+     *
+     * 将桌面和用户解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachInstancesRequest 请求对象
+     * @return AsyncInvoker<DetachInstancesRequest, DetachInstancesResponse>
+     */
+    public AsyncInvoker<DetachInstancesRequest, DetachInstancesResponse> detachInstancesAsyncInvoker(
+        DetachInstancesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.detachInstances, hcClient);
     }
 
     /**
@@ -1695,6 +1851,504 @@ public class WorkspaceAsyncClient {
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 批量删除定时任务
+     *
+     * 批量删除定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteScheduledTasksRequest 请求对象
+     * @return CompletableFuture<BatchDeleteScheduledTasksResponse>
+     */
+    public CompletableFuture<BatchDeleteScheduledTasksResponse> batchDeleteScheduledTasksAsync(
+        BatchDeleteScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteScheduledTasks);
+    }
+
+    /**
+     * 批量删除定时任务
+     *
+     * 批量删除定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteScheduledTasksRequest, BatchDeleteScheduledTasksResponse>
+     */
+    public AsyncInvoker<BatchDeleteScheduledTasksRequest, BatchDeleteScheduledTasksResponse> batchDeleteScheduledTasksAsyncInvoker(
+        BatchDeleteScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteScheduledTasks, hcClient);
+    }
+
+    /**
+     * 创建定时任务
+     *
+     * 创建定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduledTasksRequest 请求对象
+     * @return CompletableFuture<CreateScheduledTasksResponse>
+     */
+    public CompletableFuture<CreateScheduledTasksResponse> createScheduledTasksAsync(
+        CreateScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createScheduledTasks);
+    }
+
+    /**
+     * 创建定时任务
+     *
+     * 创建定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<CreateScheduledTasksRequest, CreateScheduledTasksResponse>
+     */
+    public AsyncInvoker<CreateScheduledTasksRequest, CreateScheduledTasksResponse> createScheduledTasksAsyncInvoker(
+        CreateScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createScheduledTasks, hcClient);
+    }
+
+    /**
+     * 删除定时任务
+     *
+     * 删除定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTasksRequest 请求对象
+     * @return CompletableFuture<DeleteScheduledTasksResponse>
+     */
+    public CompletableFuture<DeleteScheduledTasksResponse> deleteScheduledTasksAsync(
+        DeleteScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteScheduledTasks);
+    }
+
+    /**
+     * 删除定时任务
+     *
+     * 删除定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduledTasksRequest, DeleteScheduledTasksResponse>
+     */
+    public AsyncInvoker<DeleteScheduledTasksRequest, DeleteScheduledTasksResponse> deleteScheduledTasksAsyncInvoker(
+        DeleteScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteScheduledTasks, hcClient);
+    }
+
+    /**
+     * 未来执行的具体时间列表
+     *
+     * 未来执行的具体时间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFutureExecutionsRequest 请求对象
+     * @return CompletableFuture<ListFutureExecutionsResponse>
+     */
+    public CompletableFuture<ListFutureExecutionsResponse> listFutureExecutionsAsync(
+        ListFutureExecutionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listFutureExecutions);
+    }
+
+    /**
+     * 未来执行的具体时间列表
+     *
+     * 未来执行的具体时间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFutureExecutionsRequest 请求对象
+     * @return AsyncInvoker<ListFutureExecutionsRequest, ListFutureExecutionsResponse>
+     */
+    public AsyncInvoker<ListFutureExecutionsRequest, ListFutureExecutionsResponse> listFutureExecutionsAsyncInvoker(
+        ListFutureExecutionsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listFutureExecutions, hcClient);
+    }
+
+    /**
+     * 查询定时任务列表
+     *
+     * 查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksResponse>
+     */
+    public CompletableFuture<ListScheduledTasksResponse> listScheduledTasksAsync(ListScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScheduledTasks);
+    }
+
+    /**
+     * 查询定时任务列表
+     *
+     * 查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasksAsyncInvoker(
+        ListScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScheduledTasks, hcClient);
+    }
+
+    /**
+     * 查询定时任务执行记录
+     *
+     * 查询定时任务执行记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRecordsRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksRecordsResponse>
+     */
+    public CompletableFuture<ListScheduledTasksRecordsResponse> listScheduledTasksRecordsAsync(
+        ListScheduledTasksRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScheduledTasksRecords);
+    }
+
+    /**
+     * 查询定时任务执行记录
+     *
+     * 查询定时任务执行记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRecordsRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRecordsRequest, ListScheduledTasksRecordsResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRecordsRequest, ListScheduledTasksRecordsResponse> listScheduledTasksRecordsAsyncInvoker(
+        ListScheduledTasksRecordsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScheduledTasksRecords, hcClient);
+    }
+
+    /**
+     * 查询定时任务执行记录详情
+     *
+     * 查询定时任务执行记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRecordsDetailsRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksRecordsDetailsResponse>
+     */
+    public CompletableFuture<ListScheduledTasksRecordsDetailsResponse> listScheduledTasksRecordsDetailsAsync(
+        ListScheduledTasksRecordsDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScheduledTasksRecordsDetails);
+    }
+
+    /**
+     * 查询定时任务执行记录详情
+     *
+     * 查询定时任务执行记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRecordsDetailsRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRecordsDetailsRequest, ListScheduledTasksRecordsDetailsResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRecordsDetailsRequest, ListScheduledTasksRecordsDetailsResponse> listScheduledTasksRecordsDetailsAsyncInvoker(
+        ListScheduledTasksRecordsDetailsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScheduledTasksRecordsDetails, hcClient);
+    }
+
+    /**
+     * 查询定时任务详情
+     *
+     * 查询定时任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScheduledTasksRequest 请求对象
+     * @return CompletableFuture<ShowScheduledTasksResponse>
+     */
+    public CompletableFuture<ShowScheduledTasksResponse> showScheduledTasksAsync(ShowScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showScheduledTasks);
+    }
+
+    /**
+     * 查询定时任务详情
+     *
+     * 查询定时任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<ShowScheduledTasksRequest, ShowScheduledTasksResponse>
+     */
+    public AsyncInvoker<ShowScheduledTasksRequest, ShowScheduledTasksResponse> showScheduledTasksAsyncInvoker(
+        ShowScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showScheduledTasks, hcClient);
+    }
+
+    /**
+     * 修改定时任务
+     *
+     * 修改定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTasksRequest 请求对象
+     * @return CompletableFuture<UpdateScheduledTasksResponse>
+     */
+    public CompletableFuture<UpdateScheduledTasksResponse> updateScheduledTasksAsync(
+        UpdateScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateScheduledTasks);
+    }
+
+    /**
+     * 修改定时任务
+     *
+     * 修改定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse>
+     */
+    public AsyncInvoker<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse> updateScheduledTasksAsyncInvoker(
+        UpdateScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateScheduledTasks, hcClient);
+    }
+
+    /**
+     * 新增通知规则
+     *
+     * 新增对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 同一指标的规则不允许重复;
+     * 统计指标名称，目前仅支持固定值：desktop_idle_duration
+     *   * &#x60;desktop_idle_duration&#x60; -  桌面空闲时长, 仅允许设置 &#39;&gt;&#x3D;&#39; 阈值
+     * 注：需先为云服务添加委托授权，否则无法正常发送通知到SMN
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddMetricNotifyRuleRequest 请求对象
+     * @return CompletableFuture<AddMetricNotifyRuleResponse>
+     */
+    public CompletableFuture<AddMetricNotifyRuleResponse> addMetricNotifyRuleAsync(AddMetricNotifyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addMetricNotifyRule);
+    }
+
+    /**
+     * 新增通知规则
+     *
+     * 新增对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 同一指标的规则不允许重复;
+     * 统计指标名称，目前仅支持固定值：desktop_idle_duration
+     *   * &#x60;desktop_idle_duration&#x60; -  桌面空闲时长, 仅允许设置 &#39;&gt;&#x3D;&#39; 阈值
+     * 注：需先为云服务添加委托授权，否则无法正常发送通知到SMN
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddMetricNotifyRuleRequest 请求对象
+     * @return AsyncInvoker<AddMetricNotifyRuleRequest, AddMetricNotifyRuleResponse>
+     */
+    public AsyncInvoker<AddMetricNotifyRuleRequest, AddMetricNotifyRuleResponse> addMetricNotifyRuleAsyncInvoker(
+        AddMetricNotifyRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 删除通知规则
+     *
+     * 删除对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMetricNotifyRuleRequest 请求对象
+     * @return CompletableFuture<DeleteMetricNotifyRuleResponse>
+     */
+    public CompletableFuture<DeleteMetricNotifyRuleResponse> deleteMetricNotifyRuleAsync(
+        DeleteMetricNotifyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteMetricNotifyRule);
+    }
+
+    /**
+     * 删除通知规则
+     *
+     * 删除对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMetricNotifyRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteMetricNotifyRuleRequest, DeleteMetricNotifyRuleResponse>
+     */
+    public AsyncInvoker<DeleteMetricNotifyRuleRequest, DeleteMetricNotifyRuleResponse> deleteMetricNotifyRuleAsyncInvoker(
+        DeleteMetricNotifyRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 查询桌面使用情况统计数据
+     *
+     * 查询桌面使用统计信息;
+     * 云服务每天凌晨02:00进行聚合运算前一天00:00:00~23:59:59的使用时长,并将周期范围内的数据聚合到周期边界上
+     * 跨天的记录会按照统计周期进行计算
+     * 假设一天内桌面登录多次，09:00~12:00,13:00~21:00,22:00~01:00(次日):
+     * 则当天的累计使用时长数据会被汇聚到23:59:59这个点;总使用时长为 3hours(09:00~12:00)+8hours(13:00~21:00)+2hours(22:00~00:00)
+     * 仅能查询最近180天已进行汇聚计算的数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopUsageMetricRequest 请求对象
+     * @return CompletableFuture<ListDesktopUsageMetricResponse>
+     */
+    public CompletableFuture<ListDesktopUsageMetricResponse> listDesktopUsageMetricAsync(
+        ListDesktopUsageMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopUsageMetric);
+    }
+
+    /**
+     * 查询桌面使用情况统计数据
+     *
+     * 查询桌面使用统计信息;
+     * 云服务每天凌晨02:00进行聚合运算前一天00:00:00~23:59:59的使用时长,并将周期范围内的数据聚合到周期边界上
+     * 跨天的记录会按照统计周期进行计算
+     * 假设一天内桌面登录多次，09:00~12:00,13:00~21:00,22:00~01:00(次日):
+     * 则当天的累计使用时长数据会被汇聚到23:59:59这个点;总使用时长为 3hours(09:00~12:00)+8hours(13:00~21:00)+2hours(22:00~00:00)
+     * 仅能查询最近180天已进行汇聚计算的数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopUsageMetricRequest 请求对象
+     * @return AsyncInvoker<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse>
+     */
+    public AsyncInvoker<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse> listDesktopUsageMetricAsyncInvoker(
+        ListDesktopUsageMetricRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopUsageMetric, hcClient);
+    }
+
+    /**
+     * 查询对应指标维度是否存在满足通知规则的记录
+     *
+     * 查询对应指标维度是否存在满足通知规则的记录;
+     * 查询结果仅表示满足相应指标维度下对应通知规则可产生的通知记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricNotifyRecordRequest 请求对象
+     * @return CompletableFuture<ListMetricNotifyRecordResponse>
+     */
+    public CompletableFuture<ListMetricNotifyRecordResponse> listMetricNotifyRecordAsync(
+        ListMetricNotifyRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listMetricNotifyRecord);
+    }
+
+    /**
+     * 查询对应指标维度是否存在满足通知规则的记录
+     *
+     * 查询对应指标维度是否存在满足通知规则的记录;
+     * 查询结果仅表示满足相应指标维度下对应通知规则可产生的通知记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricNotifyRecordRequest 请求对象
+     * @return AsyncInvoker<ListMetricNotifyRecordRequest, ListMetricNotifyRecordResponse>
+     */
+    public AsyncInvoker<ListMetricNotifyRecordRequest, ListMetricNotifyRecordResponse> listMetricNotifyRecordAsyncInvoker(
+        ListMetricNotifyRecordRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listMetricNotifyRecord, hcClient);
+    }
+
+    /**
+     * 查询通知规则
+     *
+     * 查询对应指标的通知规则;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricNotifyRuleRequest 请求对象
+     * @return CompletableFuture<ListMetricNotifyRuleResponse>
+     */
+    public CompletableFuture<ListMetricNotifyRuleResponse> listMetricNotifyRuleAsync(
+        ListMetricNotifyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listMetricNotifyRule);
+    }
+
+    /**
+     * 查询通知规则
+     *
+     * 查询对应指标的通知规则;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricNotifyRuleRequest 请求对象
+     * @return AsyncInvoker<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse>
+     */
+    public AsyncInvoker<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> listMetricNotifyRuleAsyncInvoker(
+        ListMetricNotifyRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 查询用户使用统计数据
+     *
+     * 查询用户使用统计信息;
+     * 最多查询30天内的数据;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserUsageMetricRequest 请求对象
+     * @return CompletableFuture<ListUserUsageMetricResponse>
+     */
+    public CompletableFuture<ListUserUsageMetricResponse> listUserUsageMetricAsync(ListUserUsageMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUserUsageMetric);
+    }
+
+    /**
+     * 查询用户使用统计数据
+     *
+     * 查询用户使用统计信息;
+     * 最多查询30天内的数据;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserUsageMetricRequest 请求对象
+     * @return AsyncInvoker<ListUserUsageMetricRequest, ListUserUsageMetricResponse>
+     */
+    public AsyncInvoker<ListUserUsageMetricRequest, ListUserUsageMetricResponse> listUserUsageMetricAsyncInvoker(
+        ListUserUsageMetricRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listUserUsageMetric, hcClient);
+    }
+
+    /**
+     * 更新通知规则
+     *
+     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMetricNotifyRuleRequest 请求对象
+     * @return CompletableFuture<UpdateMetricNotifyRuleResponse>
+     */
+    public CompletableFuture<UpdateMetricNotifyRuleResponse> updateMetricNotifyRuleAsync(
+        UpdateMetricNotifyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateMetricNotifyRule);
+    }
+
+    /**
+     * 更新通知规则
+     *
+     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMetricNotifyRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse>
+     */
+    public AsyncInvoker<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse> updateMetricNotifyRuleAsyncInvoker(
+        UpdateMetricNotifyRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateMetricNotifyRule, hcClient);
     }
 
     /**

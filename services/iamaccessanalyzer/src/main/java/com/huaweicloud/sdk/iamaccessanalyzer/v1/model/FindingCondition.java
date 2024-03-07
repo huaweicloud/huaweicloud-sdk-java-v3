@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分析的策略语句中导致查找结果的条件。
+ * FindingCondition
  */
 public class FindingCondition {
 
@@ -26,7 +26,7 @@ public class FindingCondition {
     }
 
     /**
-     * 标签\"键\"的标识符或名称。
+     * 条件\"键\"的标识符或名称。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class FindingCondition {
     }
 
     /**
-     * 标签\"键\"对应的\"值\"。
+     * 条件\"键\"对应的\"值\"。
      * @return value
      */
     public String getValue() {

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ModelConfiguration
+ * 访问预览配置。
  */
 public class ModelConfiguration {
 

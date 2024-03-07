@@ -161,7 +161,6 @@ public class ListClientsRequest {
 
     /**
      * 偏移量，表示从此偏移量开始查询， 偏移量大于等于0。
-     * minimum: 1
      * @return offset
      */
     public Integer getOffset() {

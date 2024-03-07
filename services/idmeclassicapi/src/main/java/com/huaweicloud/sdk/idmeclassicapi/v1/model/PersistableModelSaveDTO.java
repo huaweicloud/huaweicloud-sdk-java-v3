@@ -26,7 +26,7 @@ public class PersistableModelSaveDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdateTime")
@@ -92,7 +92,7 @@ public class PersistableModelSaveDTO {
         this.creator = creator;
     }
 
-    public PersistableModelSaveDTO withId(Long id) {
+    public PersistableModelSaveDTO withId(String id) {
         this.id = id;
         return this;
     }
@@ -101,11 +101,11 @@ public class PersistableModelSaveDTO {
      * 唯一标识。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

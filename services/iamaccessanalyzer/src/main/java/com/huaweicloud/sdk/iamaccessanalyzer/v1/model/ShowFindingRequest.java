@@ -43,7 +43,7 @@ public class ShowFindingRequest {
     }
 
     /**
-     * 要检索的结果的ID。
+     * 访问分析结果的唯一标识符。
      * @return findingId
      */
     public String getFindingId() {

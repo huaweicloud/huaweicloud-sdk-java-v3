@@ -26,7 +26,7 @@ public class SendKafkaMessageRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_list")
 
-    private List<Object> propertyList = null;
+    private List<SendKafkaMessageRequestBodyPropertyList> propertyList = null;
 
     public SendKafkaMessageRequestBody withTopic(String topic) {
         this.topic = topic;
@@ -62,12 +62,12 @@ public class SendKafkaMessageRequestBody {
         this.body = body;
     }
 
-    public SendKafkaMessageRequestBody withPropertyList(List<Object> propertyList) {
+    public SendKafkaMessageRequestBody withPropertyList(List<SendKafkaMessageRequestBodyPropertyList> propertyList) {
         this.propertyList = propertyList;
         return this;
     }
 
-    public SendKafkaMessageRequestBody addPropertyListItem(Object propertyListItem) {
+    public SendKafkaMessageRequestBody addPropertyListItem(SendKafkaMessageRequestBodyPropertyList propertyListItem) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -75,7 +75,8 @@ public class SendKafkaMessageRequestBody {
         return this;
     }
 
-    public SendKafkaMessageRequestBody withPropertyList(Consumer<List<Object>> propertyListSetter) {
+    public SendKafkaMessageRequestBody withPropertyList(
+        Consumer<List<SendKafkaMessageRequestBodyPropertyList>> propertyListSetter) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -87,11 +88,11 @@ public class SendKafkaMessageRequestBody {
      * topic的分区信息等
      * @return propertyList
      */
-    public List<Object> getPropertyList() {
+    public List<SendKafkaMessageRequestBodyPropertyList> getPropertyList() {
         return propertyList;
     }
 
-    public void setPropertyList(List<Object> propertyList) {
+    public void setPropertyList(List<SendKafkaMessageRequestBodyPropertyList> propertyList) {
         this.propertyList = propertyList;
     }
 

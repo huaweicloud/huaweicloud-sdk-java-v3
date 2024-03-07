@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 策略的json表示的路径的单个元素。
+ * 策略的JSON表示的路径的单个元素。
  */
 public class PathElement {
 

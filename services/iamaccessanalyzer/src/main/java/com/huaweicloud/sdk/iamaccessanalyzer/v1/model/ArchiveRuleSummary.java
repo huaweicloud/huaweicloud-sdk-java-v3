@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 为指定分析器创建的存档规则的列表。
+ * 分析器创建的存档规则。
  */
 public class ArchiveRuleSummary {
 
@@ -50,7 +50,7 @@ public class ArchiveRuleSummary {
     }
 
     /**
-     * 创建归档规则的时间。
+     * 创建存档规则的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -83,7 +83,7 @@ public class ArchiveRuleSummary {
     }
 
     /**
-     * Get filters
+     * 匹配要返回的访问分析结果的筛选器。
      * @return filters
      */
     public List<FindingFilter> getFilters() {
@@ -117,7 +117,7 @@ public class ArchiveRuleSummary {
     }
 
     /**
-     * 创建归档规则的名称。
+     * 创建存档规则的名称。
      * @return name
      */
     public String getName() {
@@ -151,7 +151,7 @@ public class ArchiveRuleSummary {
     }
 
     /**
-     * 唯一的资源名称。
+     * 访问分析的唯一资源标识。
      * @return urn
      */
     public String getUrn() {

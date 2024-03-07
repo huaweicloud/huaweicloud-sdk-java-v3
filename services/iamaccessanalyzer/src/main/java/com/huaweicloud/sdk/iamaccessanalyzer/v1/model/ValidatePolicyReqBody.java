@@ -31,7 +31,7 @@ public class ValidatePolicyReqBody {
     }
 
     /**
-     * 此策略的json格式策略文档。
+     * 该策略JSON格式策略文档。
      * @return policyDocument
      */
     public String getPolicyDocument() {

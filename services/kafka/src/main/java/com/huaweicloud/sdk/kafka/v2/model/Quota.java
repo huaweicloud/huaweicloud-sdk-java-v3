@@ -46,7 +46,7 @@ public class Quota {
     }
 
     /**
-     * 用户名
+     * 用户名。  不对全部用户/客户端限流时，用户名和客户端ID不能同时为空。
      * @return user
      */
     public String getUser() {
@@ -63,7 +63,7 @@ public class Quota {
     }
 
     /**
-     * 客户端ID
+     * 客户端ID。  不对全部用户/客户端限流时，用户名和客户端ID不能同时为空。
      * @return client
      */
     public String getClient() {
@@ -80,7 +80,7 @@ public class Quota {
     }
 
     /**
-     * 是否使用用户默认设置（是则表示对全部用户限流）。
+     * 是否使用用户默认设置。   - 是，表示对全部用户限流。此时不能同时设置用户名。   - 否，表示对特定用户限流。此时需要设置用户名。
      * @return userDefault
      */
     public Boolean getUserDefault() {
@@ -97,7 +97,7 @@ public class Quota {
     }
 
     /**
-     * 是否使用客户端默认设置（是则表示对全部客户端限流）。
+     * 是否使用客户端默认设置。   - 是，表示对全部客户端限流。此时不能设置客户端ID。   - 否，表示对特定客户端限流。此时需要设置客户端ID。
      * @return clientDefault
      */
     public Boolean getClientDefault() {
@@ -114,7 +114,7 @@ public class Quota {
     }
 
     /**
-     * 生产上限速率（单位为B/s）
+     * 生产上限速率（单位为B/s）。
      * @return producerByteRate
      */
     public Long getProducerByteRate() {
@@ -131,7 +131,7 @@ public class Quota {
     }
 
     /**
-     * 消费上限速率（单位为B/s）
+     * 消费上限速率（单位为B/s）。  > “生产上限速率”和“消费上限速率”不可同时为空。
      * @return consumerByteRate
      */
     public Long getConsumerByteRate() {

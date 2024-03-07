@@ -37,6 +37,16 @@ public class AddCertificateResponse extends SdkResponse {
     private String verifyCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provision_enable")
+
+    private Boolean provisionEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_id")
+
+    private String templateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
 
     private String createDate;
@@ -136,6 +146,40 @@ public class AddCertificateResponse extends SdkResponse {
         this.verifyCode = verifyCode;
     }
 
+    public AddCertificateResponse withProvisionEnable(Boolean provisionEnable) {
+        this.provisionEnable = provisionEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启自注册能力，当为true时该功能必须配合自注册模板使用，true：是，false：否。
+     * @return provisionEnable
+     */
+    public Boolean getProvisionEnable() {
+        return provisionEnable;
+    }
+
+    public void setProvisionEnable(Boolean provisionEnable) {
+        this.provisionEnable = provisionEnable;
+    }
+
+    public AddCertificateResponse withTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    /**
+     * 绑定的自注册模板ID。
+     * @return templateId
+     */
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
     public AddCertificateResponse withCreateDate(String createDate) {
         this.createDate = createDate;
         return this;
@@ -198,14 +242,25 @@ public class AddCertificateResponse extends SdkResponse {
         AddCertificateResponse that = (AddCertificateResponse) obj;
         return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.cnName, that.cnName)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.verifyCode, that.verifyCode)
+            && Objects.equals(this.provisionEnable, that.provisionEnable)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.createDate, that.createDate)
             && Objects.equals(this.effectiveDate, that.effectiveDate)
             && Objects.equals(this.expiryDate, that.expiryDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificateId, cnName, owner, status, verifyCode, createDate, effectiveDate, expiryDate);
+        return Objects.hash(certificateId,
+            cnName,
+            owner,
+            status,
+            verifyCode,
+            provisionEnable,
+            templateId,
+            createDate,
+            effectiveDate,
+            expiryDate);
     }
 
     @Override
@@ -217,6 +272,8 @@ public class AddCertificateResponse extends SdkResponse {
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    verifyCode: ").append(toIndentedString(verifyCode)).append("\n");
+        sb.append("    provisionEnable: ").append(toIndentedString(provisionEnable)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
         sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
         sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");

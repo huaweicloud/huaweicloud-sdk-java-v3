@@ -31,7 +31,7 @@ public class ListInstancesDetailsRequest {
     private String instanceId;
 
     /**
-     * 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
+     * 实例状态，[详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
      */
     public static final class StatusEnum {
 
@@ -405,7 +405,7 @@ public class ListInstancesDetailsRequest {
     }
 
     /**
-     * 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
+     * 实例状态，[详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
      * @return status
      */
     public StatusEnum getStatus() {

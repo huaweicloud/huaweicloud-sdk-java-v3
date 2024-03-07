@@ -46,7 +46,7 @@ public class ListAccessPreviewsResponse extends SdkResponse {
     }
 
     /**
-     * Get accessPreviews
+     * 访问预览列表。
      * @return accessPreviews
      */
     public List<AccessPreviewSummary> getAccessPreviews() {

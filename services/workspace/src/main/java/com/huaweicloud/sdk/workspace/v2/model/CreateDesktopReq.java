@@ -131,7 +131,7 @@ public class CreateDesktopReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroupInfo> securityGroups = null;
+    private List<SecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktops")
@@ -350,12 +350,12 @@ public class CreateDesktopReq {
         this.nics = nics;
     }
 
-    public CreateDesktopReq withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public CreateDesktopReq withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public CreateDesktopReq addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
+    public CreateDesktopReq addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -363,7 +363,7 @@ public class CreateDesktopReq {
         return this;
     }
 
-    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -375,11 +375,11 @@ public class CreateDesktopReq {
      * 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组。
      * @return securityGroups
      */
-    public List<SecurityGroupInfo> getSecurityGroups() {
+    public List<SecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

@@ -26,6 +26,11 @@ public class ClientInfo {
     private String addr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fd")
+
+    private String fd;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -170,6 +175,21 @@ public class ClientInfo {
 
     private EventsEnum events;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network")
+
+    private String network;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peer")
+
+    private String peer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user")
+
+    private String user;
+
     public ClientInfo withId(String id) {
         this.id = id;
         return this;
@@ -202,6 +222,23 @@ public class ClientInfo {
 
     public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    public ClientInfo withFd(String fd) {
+        this.fd = fd;
+        return this;
+    }
+
+    /**
+     * 套接字所使用的文件描述符。
+     * @return fd
+     */
+    public String getFd() {
+        return fd;
+    }
+
+    public void setFd(String fd) {
+        this.fd = fd;
     }
 
     public ClientInfo withName(String name) {
@@ -459,6 +496,57 @@ public class ClientInfo {
         this.events = events;
     }
 
+    public ClientInfo withNetwork(String network) {
+        this.network = network;
+        return this;
+    }
+
+    /**
+     * 客户端所使用的网络类型。
+     * @return network
+     */
+    public String getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+
+    public ClientInfo withPeer(String peer) {
+        this.peer = peer;
+        return this;
+    }
+
+    /**
+     * 单机，主备和cluster实例地址和端口。
+     * @return peer
+     */
+    public String getPeer() {
+        return peer;
+    }
+
+    public void setPeer(String peer) {
+        this.peer = peer;
+    }
+
+    public ClientInfo withUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    /**
+     * 客户端用户。
+     * @return user
+     */
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -469,20 +557,41 @@ public class ClientInfo {
         }
         ClientInfo that = (ClientInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.addr, that.addr)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.cmd, that.cmd)
-            && Objects.equals(this.age, that.age) && Objects.equals(this.idle, that.idle)
-            && Objects.equals(this.db, that.db) && Objects.equals(this.flags, that.flags)
-            && Objects.equals(this.sub, that.sub) && Objects.equals(this.psub, that.psub)
-            && Objects.equals(this.multi, that.multi) && Objects.equals(this.qbuf, that.qbuf)
-            && Objects.equals(this.qbufFree, that.qbufFree) && Objects.equals(this.obl, that.obl)
-            && Objects.equals(this.oll, that.oll) && Objects.equals(this.omem, that.omem)
-            && Objects.equals(this.events, that.events);
+            && Objects.equals(this.fd, that.fd) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cmd, that.cmd) && Objects.equals(this.age, that.age)
+            && Objects.equals(this.idle, that.idle) && Objects.equals(this.db, that.db)
+            && Objects.equals(this.flags, that.flags) && Objects.equals(this.sub, that.sub)
+            && Objects.equals(this.psub, that.psub) && Objects.equals(this.multi, that.multi)
+            && Objects.equals(this.qbuf, that.qbuf) && Objects.equals(this.qbufFree, that.qbufFree)
+            && Objects.equals(this.obl, that.obl) && Objects.equals(this.oll, that.oll)
+            && Objects.equals(this.omem, that.omem) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.network, that.network) && Objects.equals(this.peer, that.peer)
+            && Objects.equals(this.user, that.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, addr, name, cmd, age, idle, db, flags, sub, psub, multi, qbuf, qbufFree, obl, oll, omem, events);
+        return Objects.hash(id,
+            addr,
+            fd,
+            name,
+            cmd,
+            age,
+            idle,
+            db,
+            flags,
+            sub,
+            psub,
+            multi,
+            qbuf,
+            qbufFree,
+            obl,
+            oll,
+            omem,
+            events,
+            network,
+            peer,
+            user);
     }
 
     @Override
@@ -491,6 +600,7 @@ public class ClientInfo {
         sb.append("class ClientInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
+        sb.append("    fd: ").append(toIndentedString(fd)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    cmd: ").append(toIndentedString(cmd)).append("\n");
         sb.append("    age: ").append(toIndentedString(age)).append("\n");
@@ -506,6 +616,9 @@ public class ClientInfo {
         sb.append("    oll: ").append(toIndentedString(oll)).append("\n");
         sb.append("    omem: ").append(toIndentedString(omem)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    network: ").append(toIndentedString(network)).append("\n");
+        sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("}");
         return sb.toString();
     }

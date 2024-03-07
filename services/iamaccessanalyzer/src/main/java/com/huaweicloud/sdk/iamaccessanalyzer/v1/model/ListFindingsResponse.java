@@ -46,7 +46,7 @@ public class ListFindingsResponse extends SdkResponse {
     }
 
     /**
-     * Get findings
+     * 访问分析结果列表。
      * @return findings
      */
     public List<Finding> getFindings() {

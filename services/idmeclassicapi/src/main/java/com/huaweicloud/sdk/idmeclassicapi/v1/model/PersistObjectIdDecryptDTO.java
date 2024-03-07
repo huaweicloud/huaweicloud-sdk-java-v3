@@ -18,7 +18,7 @@ public class PersistObjectIdDecryptDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     public PersistObjectIdDecryptDTO withDecrypt(Boolean decrypt) {
         this.decrypt = decrypt;
@@ -37,7 +37,7 @@ public class PersistObjectIdDecryptDTO {
         this.decrypt = decrypt;
     }
 
-    public PersistObjectIdDecryptDTO withId(Long id) {
+    public PersistObjectIdDecryptDTO withId(String id) {
         this.id = id;
         return this;
     }
@@ -46,11 +46,11 @@ public class PersistObjectIdDecryptDTO {
      * 唯一标识。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

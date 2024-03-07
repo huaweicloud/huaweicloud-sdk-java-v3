@@ -98,6 +98,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineArtifactsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineArtifactsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
@@ -124,6 +126,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStepOutputsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStepOutputsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailRequest;
@@ -1586,6 +1590,35 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 查询流水线上的构建产物
+     *
+     * 查询流水线上的构建产物
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPipelineArtifactsRequest 请求对象
+     * @return ShowPipelineArtifactsResponse
+     */
+    public ShowPipelineArtifactsResponse showPipelineArtifacts(ShowPipelineArtifactsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineArtifacts);
+    }
+
+    /**
+     * 查询流水线上的构建产物
+     *
+     * 查询流水线上的构建产物
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPipelineArtifactsRequest 请求对象
+     * @return SyncInvoker<ShowPipelineArtifactsRequest, ShowPipelineArtifactsResponse>
+     */
+    public SyncInvoker<ShowPipelineArtifactsRequest, ShowPipelineArtifactsResponse> showPipelineArtifactsInvoker(
+        ShowPipelineArtifactsRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.showPipelineArtifacts, hcClient);
+    }
+
+    /**
      * 查询流水线详情
      *
      * 查询流水线详情
@@ -1958,6 +1991,35 @@ public class CodeArtsPipelineClient {
      */
     public SyncInvoker<ShowRuleRequest, ShowRuleResponse> showRuleInvoker(ShowRuleRequest request) {
         return new SyncInvoker<>(request, CodeArtsPipelineMeta.showRule, hcClient);
+    }
+
+    /**
+     * 获取流水线步骤执行输出
+     *
+     * 获取流水线步骤执行输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStepOutputsRequest 请求对象
+     * @return ShowStepOutputsResponse
+     */
+    public ShowStepOutputsResponse showStepOutputs(ShowStepOutputsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showStepOutputs);
+    }
+
+    /**
+     * 获取流水线步骤执行输出
+     *
+     * 获取流水线步骤执行输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStepOutputsRequest 请求对象
+     * @return SyncInvoker<ShowStepOutputsRequest, ShowStepOutputsResponse>
+     */
+    public SyncInvoker<ShowStepOutputsRequest, ShowStepOutputsResponse> showStepOutputsInvoker(
+        ShowStepOutputsRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.showStepOutputs, hcClient);
     }
 
     /**

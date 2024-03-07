@@ -44,6 +44,16 @@ public class IdcardFrontResult {
     private String number;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "portrait_image")
+
+    private String portraitImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adjusted_image")
+
+    private String adjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_result")
 
     private IdcardFrontVerificationResult verificationResult;
@@ -203,6 +213,40 @@ public class IdcardFrontResult {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public IdcardFrontResult withPortraitImage(String portraitImage) {
+        this.portraitImage = portraitImage;
+        return this;
+    }
+
+    /**
+     * 身份证头像图片信息的base64码结果。  > 说明： - 仅在输入参数return_portrait_image为true时，返回该字段。 - 当输入为身份证背面时返回为空字符串。 
+     * @return portraitImage
+     */
+    public String getPortraitImage() {
+        return portraitImage;
+    }
+
+    public void setPortraitImage(String portraitImage) {
+        this.portraitImage = portraitImage;
+    }
+
+    public IdcardFrontResult withAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+        return this;
+    }
+
+    /**
+     * 身份证卡面图片信息的base64码结果。  > 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+     * @return adjustedImage
+     */
+    public String getAdjustedImage() {
+        return adjustedImage;
+    }
+
+    public void setAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
     }
 
     public IdcardFrontResult withVerificationResult(IdcardFrontVerificationResult verificationResult) {
@@ -455,6 +499,8 @@ public class IdcardFrontResult {
         return Objects.equals(this.name, that.name) && Objects.equals(this.sex, that.sex)
             && Objects.equals(this.birth, that.birth) && Objects.equals(this.ethnicity, that.ethnicity)
             && Objects.equals(this.address, that.address) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.adjustedImage, that.adjustedImage)
             && Objects.equals(this.verificationResult, that.verificationResult)
             && Objects.equals(this.textLocation, that.textLocation)
             && Objects.equals(this.portraitLocation, that.portraitLocation)
@@ -477,6 +523,8 @@ public class IdcardFrontResult {
             ethnicity,
             address,
             number,
+            portraitImage,
+            adjustedImage,
             verificationResult,
             textLocation,
             portraitLocation,
@@ -501,6 +549,8 @@ public class IdcardFrontResult {
         sb.append("    ethnicity: ").append(toIndentedString(ethnicity)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
+        sb.append("    portraitImage: ").append(toIndentedString(portraitImage)).append("\n");
+        sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
         sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("    portraitLocation: ").append(toIndentedString(portraitLocation)).append("\n");

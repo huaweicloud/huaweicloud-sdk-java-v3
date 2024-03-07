@@ -46,7 +46,7 @@ public class ListAnalyzersResponse extends SdkResponse {
     }
 
     /**
-     * Get analyzers
+     * 分析器列表信息。
      * @return analyzers
      */
     public List<AnalyzerSummary> getAnalyzers() {

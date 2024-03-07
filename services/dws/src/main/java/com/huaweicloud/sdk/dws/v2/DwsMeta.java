@@ -3643,6 +3643,12 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkloadQueueRequest::getClusterId, ListWorkloadQueueRequest::setClusterId));
+        builder.<String>withRequestField("logical_cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkloadQueueRequest::getLogicalClusterName,
+                ListWorkloadQueueRequest::setLogicalClusterName));
 
         // response
 
@@ -4373,6 +4379,12 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWorkloadQueueRequest::getQueueName, ShowWorkloadQueueRequest::setQueueName));
+        builder.<String>withRequestField("logical_cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkloadQueueRequest::getLogicalClusterName,
+                ShowWorkloadQueueRequest::setLogicalClusterName));
 
         // response
 

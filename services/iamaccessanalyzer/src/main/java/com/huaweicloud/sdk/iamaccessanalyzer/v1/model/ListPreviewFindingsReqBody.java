@@ -50,7 +50,7 @@ public class ListPreviewFindingsReqBody {
     }
 
     /**
-     * Get filters
+     * 匹配要返回的分析结果的筛选项。
      * @return filters
      */
     public List<FindingFilter> getFilters() {

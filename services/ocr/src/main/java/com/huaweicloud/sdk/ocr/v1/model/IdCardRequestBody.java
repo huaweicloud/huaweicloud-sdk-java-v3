@@ -51,6 +51,16 @@ public class IdCardRequestBody {
     private Boolean returnPortraitLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_portrait_image")
+
+    private Boolean returnPortraitImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_adjusted_image")
+
+    private Boolean returnAdjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detect_tampering")
 
     private Boolean detectTampering;
@@ -216,6 +226,40 @@ public class IdCardRequestBody {
         this.returnPortraitLocation = returnPortraitLocation;
     }
 
+    public IdCardRequestBody withReturnPortraitImage(Boolean returnPortraitImage) {
+        this.returnPortraitImage = returnPortraitImage;
+        return this;
+    }
+
+    /**
+     * 返回头像图片信息（base64码）的开关，默认false，可选值如下所示：  - true ：开启头像图片信息（base64码）的功能 - false : 关闭头像图片信息（base64码）的功能 
+     * @return returnPortraitImage
+     */
+    public Boolean getReturnPortraitImage() {
+        return returnPortraitImage;
+    }
+
+    public void setReturnPortraitImage(Boolean returnPortraitImage) {
+        this.returnPortraitImage = returnPortraitImage;
+    }
+
+    public IdCardRequestBody withReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+        return this;
+    }
+
+    /**
+     * 返回身份证卡面（base64码）的开关，默认false，可选值如下所示：  - true ：开启身份证卡面（base64码）的功能 - false : 关闭身份证卡面（base64码）的功能 
+     * @return returnAdjustedImage
+     */
+    public Boolean getReturnAdjustedImage() {
+        return returnAdjustedImage;
+    }
+
+    public void setReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+    }
+
     public IdCardRequestBody withDetectTampering(Boolean detectTampering) {
         this.detectTampering = detectTampering;
         return this;
@@ -333,6 +377,8 @@ public class IdCardRequestBody {
             && Objects.equals(this.detectReproduce, that.detectReproduce)
             && Objects.equals(this.detectCopy, that.detectCopy)
             && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation)
+            && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
+            && Objects.equals(this.returnAdjustedImage, that.returnAdjustedImage)
             && Objects.equals(this.detectTampering, that.detectTampering)
             && Objects.equals(this.detectBorderIntegrity, that.detectBorderIntegrity)
             && Objects.equals(this.detectBlockingWithinBorder, that.detectBlockingWithinBorder)
@@ -351,6 +397,8 @@ public class IdCardRequestBody {
             detectReproduce,
             detectCopy,
             returnPortraitLocation,
+            returnPortraitImage,
+            returnAdjustedImage,
             detectTampering,
             detectBorderIntegrity,
             detectBlockingWithinBorder,
@@ -371,6 +419,8 @@ public class IdCardRequestBody {
         sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
         sb.append("    detectCopy: ").append(toIndentedString(detectCopy)).append("\n");
         sb.append("    returnPortraitLocation: ").append(toIndentedString(returnPortraitLocation)).append("\n");
+        sb.append("    returnPortraitImage: ").append(toIndentedString(returnPortraitImage)).append("\n");
+        sb.append("    returnAdjustedImage: ").append(toIndentedString(returnAdjustedImage)).append("\n");
         sb.append("    detectTampering: ").append(toIndentedString(detectTampering)).append("\n");
         sb.append("    detectBorderIntegrity: ").append(toIndentedString(detectBorderIntegrity)).append("\n");
         sb.append("    detectBlockingWithinBorder: ").append(toIndentedString(detectBlockingWithinBorder)).append("\n");

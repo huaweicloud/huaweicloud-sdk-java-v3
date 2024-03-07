@@ -253,6 +253,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateClientNetworkResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequest;
@@ -3224,6 +3227,34 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConfigurationRequestBody.class),
             f -> f.withMarshaller(UpdateConfigurationRequest::getBody, UpdateConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDatabasesRequest, UpdateDatabasesResponse> updateDatabases =
+        genForUpdateDatabases();
+
+    private static HttpRequestDef<UpdateDatabasesRequest, UpdateDatabasesResponse> genForUpdateDatabases() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatabasesRequest, UpdateDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDatabasesRequest.class, UpdateDatabasesResponse.class)
+                .withName("UpdateDatabases")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatabasesRequest::getInstanceId, UpdateDatabasesRequest::setInstanceId));
+        builder.<UpdateDatabasesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDatabasesRequestBody.class),
+            f -> f.withMarshaller(UpdateDatabasesRequest::getBody, UpdateDatabasesRequest::setBody));
 
         // response
 

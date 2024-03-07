@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 分析预览的唯一标识符。
+ * 访问预览的唯一标识符。
  */
 public class AccessPreviewId {
 

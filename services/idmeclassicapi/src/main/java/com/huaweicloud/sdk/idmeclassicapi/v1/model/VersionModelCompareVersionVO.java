@@ -23,7 +23,7 @@ public class VersionModelCompareVersionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     public VersionModelCompareVersionVO withBasicVersion(String basicVersion) {
         this.basicVersion = basicVersion;
@@ -59,7 +59,7 @@ public class VersionModelCompareVersionVO {
         this.correlationVersion = correlationVersion;
     }
 
-    public VersionModelCompareVersionVO withId(Long id) {
+    public VersionModelCompareVersionVO withId(String id) {
         this.id = id;
         return this;
     }
@@ -68,11 +68,11 @@ public class VersionModelCompareVersionVO {
      * 主对象ID。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -36,6 +36,11 @@ public class VolumeDetail {
     private String volumeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_resource_id")
+
+    private String billResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -132,6 +137,23 @@ public class VolumeDetail {
         this.volumeId = volumeId;
     }
 
+    public VolumeDetail withBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
+        return this;
+    }
+
+    /**
+     * 磁盘计费资源ID。
+     * @return billResourceId
+     */
+    public String getBillResourceId() {
+        return billResourceId;
+    }
+
+    public void setBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
+    }
+
     public VolumeDetail withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -177,13 +199,13 @@ public class VolumeDetail {
         VolumeDetail that = (VolumeDetail) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
             && Objects.equals(this.device, that.device) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.displayName, that.displayName);
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.billResourceId, that.billResourceId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.displayName, that.displayName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, size, device, id, volumeId, createTime, displayName);
+        return Objects.hash(type, size, device, id, volumeId, billResourceId, createTime, displayName);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class VolumeDetail {
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("}");

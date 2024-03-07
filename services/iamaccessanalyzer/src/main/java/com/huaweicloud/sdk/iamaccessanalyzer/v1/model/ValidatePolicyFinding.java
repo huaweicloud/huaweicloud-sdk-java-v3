@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 可用于改进策略的可操作建议。
+ * ValidatePolicyFinding
  */
 public class ValidatePolicyFinding {
 
@@ -24,7 +24,7 @@ public class ValidatePolicyFinding {
     private String findingDetails;
 
     /**
-     * 影响级别。  安全警告：策略允许的范围过大。  错误：策略不符合策略语法规则。  警告：非安全问题，策略不符合策略编写最佳实践。  建议：改进策略，不影响访问范围。 
+     * 影响级别。  安全：策略存在安全风险，可能是允许访问的权限过于宽松等导致。  错误：存在策略无法运行的错误，如语法错误、参数错误等。存在错误的情况下策略无法创建。  警告：存在策略无法运行的警告，如参数取值类型不匹配等。存在警告的情况下策略可以创建。  建议：不影响策略运行，但策略可能不能达到预期的效果。如存在空数组、空对象条件等。 
      */
     public static final class FindingTypeEnum {
 
@@ -148,7 +148,7 @@ public class ValidatePolicyFinding {
     }
 
     /**
-     * 影响级别。  安全警告：策略允许的范围过大。  错误：策略不符合策略语法规则。  警告：非安全问题，策略不符合策略编写最佳实践。  建议：改进策略，不影响访问范围。 
+     * 影响级别。  安全：策略存在安全风险，可能是允许访问的权限过于宽松等导致。  错误：存在策略无法运行的错误，如语法错误、参数错误等。存在错误的情况下策略无法创建。  警告：存在策略无法运行的警告，如参数取值类型不匹配等。存在警告的情况下策略可以创建。  建议：不影响策略运行，但策略可能不能达到预期的效果。如存在空数组、空对象条件等。 
      * @return findingType
      */
     public FindingTypeEnum getFindingType() {
@@ -165,7 +165,7 @@ public class ValidatePolicyFinding {
     }
 
     /**
-     * 问题码提供了与此查找结果关联的问题的标识符。
+     * 问题码提供了与此校验结果关联的问题的标识符。
      * @return issueCode
      */
     public String getIssueCode() {
@@ -182,7 +182,7 @@ public class ValidatePolicyFinding {
     }
 
     /**
-     * 指向与此查找结果关联的相关文档的链接。
+     * 指向与此校验结果关联的相关文档的链接。
      * @return learnMoreLink
      */
     public String getLearnMoreLink() {
@@ -215,7 +215,7 @@ public class ValidatePolicyFinding {
     }
 
     /**
-     * 策略文档中与查找结果相关的位置列表。
+     * 策略文档中与校验结果相关的位置列表。
      * @return locations
      */
     public List<Location> getLocations() {

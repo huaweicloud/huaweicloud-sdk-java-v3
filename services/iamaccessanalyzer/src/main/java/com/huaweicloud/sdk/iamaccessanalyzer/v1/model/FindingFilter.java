@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 匹配要返回的调查结果的筛选器。
+ * FindingFilter
  */
 public class FindingFilter {
 

@@ -1572,9 +1572,9 @@ public class DwsClient {
     }
 
     /**
-     * 删除工作负载队列
+     * 删除资源池
      *
-     * 该接口用于删除工作负载队列。
+     * 该接口用于删除资源池。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1586,9 +1586,9 @@ public class DwsClient {
     }
 
     /**
-     * 删除工作负载队列
+     * 删除资源池
      *
-     * 该接口用于删除工作负载队列。
+     * 该接口用于删除资源池。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

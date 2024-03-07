@@ -21,7 +21,7 @@ public class FindingPrincipal {
     private String identifier;
 
     /**
-     * 检索结果的标识符。
+     * 外部主体身份的类型。
      */
     public static final class TypeEnum {
 
@@ -144,7 +144,7 @@ public class FindingPrincipal {
     }
 
     /**
-     * 检索结果的身份的类型。
+     * 外部主体身份的标识符。
      * @return identifier
      */
     public String getIdentifier() {
@@ -161,7 +161,7 @@ public class FindingPrincipal {
     }
 
     /**
-     * 检索结果的标识符。
+     * 外部主体身份的类型。
      * @return type
      */
     public TypeEnum getType() {

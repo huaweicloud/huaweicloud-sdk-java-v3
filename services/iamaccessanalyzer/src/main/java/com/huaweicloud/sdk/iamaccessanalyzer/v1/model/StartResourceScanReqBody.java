@@ -48,7 +48,7 @@ public class StartResourceScanReqBody {
     }
 
     /**
-     * 拥有资源的帐户ID。
+     * 拥有资源的账户ID。
      * @return resourceOwnerAccount
      */
     public String getResourceOwnerAccount() {
@@ -65,7 +65,7 @@ public class StartResourceScanReqBody {
     }
 
     /**
-     * 唯一的资源名称。
+     * 访问分析的唯一资源标识。
      * @return resourceUrn
      */
     public String getResourceUrn() {

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 创建归档规则的名称。
+ * 创建存档规则的名称。
  */
 public class ArchiveRuleName {
 

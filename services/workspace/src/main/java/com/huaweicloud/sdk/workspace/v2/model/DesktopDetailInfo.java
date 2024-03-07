@@ -81,7 +81,7 @@ public class DesktopDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroupInfo> securityGroups = null;
+    private List<SecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_status")
@@ -379,6 +379,21 @@ public class DesktopDetailInfo {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_resource_id")
+
+    private String billResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process")
+
+    private Integer process;
+
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -584,7 +599,7 @@ public class DesktopDetailInfo {
     }
 
     /**
-     * 桌面元数据。  - charging_mode 周期套餐标识，1表示包周期，0表示按需。 - image_name 创建桌面的镜像名称。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
+     * 桌面元数据。  - charging_mode 周期套餐标识，1表示包周期，0表示按需。 - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
      * @return metadata
      */
     public Map<String, String> getMetadata() {
@@ -672,12 +687,12 @@ public class DesktopDetailInfo {
         this.created = created;
     }
 
-    public DesktopDetailInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public DesktopDetailInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
+    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -685,7 +700,7 @@ public class DesktopDetailInfo {
         return this;
     }
 
-    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -697,11 +712,11 @@ public class DesktopDetailInfo {
      * 桌面安全组。
      * @return securityGroups
      */
-    public List<SecurityGroupInfo> getSecurityGroups() {
+    public List<SecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -1111,6 +1126,57 @@ public class DesktopDetailInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public DesktopDetailInfo withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 桌面的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public DesktopDetailInfo withBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
+        return this;
+    }
+
+    /**
+     * 桌面计费资源ID
+     * @return billResourceId
+     */
+    public String getBillResourceId() {
+        return billResourceId;
+    }
+
+    public void setBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
+    }
+
+    public DesktopDetailInfo withProcess(Integer process) {
+        this.process = process;
+        return this;
+    }
+
+    /**
+     * 桌面任务进度， 取值范围0-100以及null，null表示该桌面无任务，0-100表明该任务进度的百分比。
+     * @return process
+     */
+    public Integer getProcess() {
+        return process;
+    }
+
+    public void setProcess(Integer process) {
+        this.process = process;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1139,7 +1205,9 @@ public class DesktopDetailInfo {
             && Objects.equals(this.internetMode, that.internetMode)
             && Objects.equals(this.isAttachingEip, that.isAttachingEip)
             && Objects.equals(this.attachState, that.attachState)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
+            && Objects.equals(this.process, that.process);
     }
 
     @Override
@@ -1176,7 +1244,10 @@ public class DesktopDetailInfo {
             internetMode,
             isAttachingEip,
             attachState,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            subnetId,
+            billResourceId,
+            process);
     }
 
     @Override
@@ -1216,6 +1287,9 @@ public class DesktopDetailInfo {
         sb.append("    isAttachingEip: ").append(toIndentedString(isAttachingEip)).append("\n");
         sb.append("    attachState: ").append(toIndentedString(attachState)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
+        sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("}");
         return sb.toString();
     }

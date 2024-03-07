@@ -48,7 +48,7 @@ public class DeleteWorkloadQueueRequest {
     }
 
     /**
-     * 逻辑集群名称。
+     * 逻辑集群名称。逻辑集群模式下该字段必填。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {

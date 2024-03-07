@@ -46,7 +46,7 @@ public class ListArchiveRulesResponse extends SdkResponse {
     }
 
     /**
-     * Get archiveRules
+     * 为指定分析器创建的存档规则的列表。
      * @return archiveRules
      */
     public List<ArchiveRuleSummary> getArchiveRules() {

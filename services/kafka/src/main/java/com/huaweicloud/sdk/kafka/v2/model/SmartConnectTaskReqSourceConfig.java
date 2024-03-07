@@ -103,12 +103,12 @@ public class SmartConnectTaskReqSourceConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_factor")
 
-    private String replicationFactor;
+    private Integer replicationFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_num")
 
-    private String taskNum;
+    private Integer taskNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rename_topic_enable")
@@ -441,7 +441,7 @@ public class SmartConnectTaskReqSourceConfig {
         this.syncConsumerOffsetsEnabled = syncConsumerOffsetsEnabled;
     }
 
-    public SmartConnectTaskReqSourceConfig withReplicationFactor(String replicationFactor) {
+    public SmartConnectTaskReqSourceConfig withReplicationFactor(Integer replicationFactor) {
         this.replicationFactor = replicationFactor;
         return this;
     }
@@ -450,15 +450,15 @@ public class SmartConnectTaskReqSourceConfig {
      * 在对端实例中自动创建Topic时，指定Topic的副本数，此参数值不能超过对端实例的代理数。如果对端实例中设置了“default.replication.factor”，此参数的优先级高于“default.replication.factor”。（仅源端类型为Kafka时需要填写）
      * @return replicationFactor
      */
-    public String getReplicationFactor() {
+    public Integer getReplicationFactor() {
         return replicationFactor;
     }
 
-    public void setReplicationFactor(String replicationFactor) {
+    public void setReplicationFactor(Integer replicationFactor) {
         this.replicationFactor = replicationFactor;
     }
 
-    public SmartConnectTaskReqSourceConfig withTaskNum(String taskNum) {
+    public SmartConnectTaskReqSourceConfig withTaskNum(Integer taskNum) {
         this.taskNum = taskNum;
         return this;
     }
@@ -467,11 +467,11 @@ public class SmartConnectTaskReqSourceConfig {
      * 数据复制的任务数。默认值为2，建议保持默认值。如果“同步方式”为“双向”，实际任务数=设置的任务数*2。（仅源端类型为Kafka时需要填写）
      * @return taskNum
      */
-    public String getTaskNum() {
+    public Integer getTaskNum() {
         return taskNum;
     }
 
-    public void setTaskNum(String taskNum) {
+    public void setTaskNum(Integer taskNum) {
         this.taskNum = taskNum;
     }
 

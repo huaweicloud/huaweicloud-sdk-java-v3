@@ -16,7 +16,7 @@ import java.util.Objects;
 public class StatusReason {
 
     /**
-     * 分析器的当前状态的原因。
+     * 分析器当前状态的原因。
      */
     public static final class CodeEnum {
 
@@ -91,7 +91,7 @@ public class StatusReason {
     }
 
     /**
-     * 分析器的当前状态的原因。
+     * 分析器当前状态的原因。
      * @return code
      */
     public CodeEnum getCode() {

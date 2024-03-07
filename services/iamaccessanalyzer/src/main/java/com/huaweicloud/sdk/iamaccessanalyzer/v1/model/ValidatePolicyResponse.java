@@ -46,7 +46,7 @@ public class ValidatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * Get findings
+     * 可用于改进策略的可操作建议。
      * @return findings
      */
     public List<ValidatePolicyFinding> getFindings() {

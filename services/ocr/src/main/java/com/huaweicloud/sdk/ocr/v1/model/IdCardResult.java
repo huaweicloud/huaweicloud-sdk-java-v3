@@ -69,6 +69,16 @@ public class IdCardResult {
     private Object textLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "portrait_image")
+
+    private String portraitImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adjusted_image")
+
+    private String adjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "portrait_location")
 
     private List<List<Integer>> portraitLocation = null;
@@ -322,6 +332,40 @@ public class IdCardResult {
 
     public void setTextLocation(Object textLocation) {
         this.textLocation = textLocation;
+    }
+
+    public IdCardResult withPortraitImage(String portraitImage) {
+        this.portraitImage = portraitImage;
+        return this;
+    }
+
+    /**
+     * 身份证头像图片信息的base64码结果。  > 说明： - 仅在输入参数return_portrait_image为true时，返回该字段。 - 当输入为身份证背面时返回为空字符串。 
+     * @return portraitImage
+     */
+    public String getPortraitImage() {
+        return portraitImage;
+    }
+
+    public void setPortraitImage(String portraitImage) {
+        this.portraitImage = portraitImage;
+    }
+
+    public IdCardResult withAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+        return this;
+    }
+
+    /**
+     * 身份证卡面图片信息的base64码结果。  > 说明： - 仅在输入参数return_adjusted_image为true时，返回该字段。 
+     * @return adjustedImage
+     */
+    public String getAdjustedImage() {
+        return adjustedImage;
+    }
+
+    public void setAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
     }
 
     public IdCardResult withPortraitLocation(List<List<Integer>> portraitLocation) {
@@ -587,6 +631,8 @@ public class IdCardResult {
             && Objects.equals(this.validTo, that.validTo)
             && Objects.equals(this.verificationResult, that.verificationResult)
             && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.adjustedImage, that.adjustedImage)
             && Objects.equals(this.portraitLocation, that.portraitLocation)
             && Objects.equals(this.detectReproduceResult, that.detectReproduceResult)
             && Objects.equals(this.detectCopyResult, that.detectCopyResult)
@@ -613,6 +659,8 @@ public class IdCardResult {
             validTo,
             verificationResult,
             textLocation,
+            portraitImage,
+            adjustedImage,
             portraitLocation,
             detectReproduceResult,
             detectCopyResult,
@@ -642,6 +690,8 @@ public class IdCardResult {
         sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
         sb.append("    verificationResult: ").append(toIndentedString(verificationResult)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    portraitImage: ").append(toIndentedString(portraitImage)).append("\n");
+        sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
         sb.append("    portraitLocation: ").append(toIndentedString(portraitLocation)).append("\n");
         sb.append("    detectReproduceResult: ").append(toIndentedString(detectReproduceResult)).append("\n");
         sb.append("    detectCopyResult: ").append(toIndentedString(detectCopyResult)).append("\n");

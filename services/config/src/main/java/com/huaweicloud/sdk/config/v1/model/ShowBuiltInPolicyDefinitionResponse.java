@@ -27,6 +27,11 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "display_name")
+
+    private String displayName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_type")
 
     private String policyType;
@@ -98,6 +103,23 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowBuiltInPolicyDefinitionResponse withDisplayName(String displayName) {
+        this.displayName = displayName;
+        return this;
+    }
+
+    /**
+     * 策略展示名
+     * @return displayName
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public ShowBuiltInPolicyDefinitionResponse withPolicyType(String policyType) {
@@ -298,7 +320,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         }
         ShowBuiltInPolicyDefinitionResponse that = (ShowBuiltInPolicyDefinitionResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.policyType, that.policyType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.policyType, that.policyType)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyRuleType, that.policyRuleType)
             && Objects.equals(this.policyRule, that.policyRule) && Objects.equals(this.triggerType, that.triggerType)
             && Objects.equals(this.keywords, that.keywords)
@@ -310,6 +333,7 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            displayName,
             policyType,
             description,
             policyRuleType,
@@ -326,6 +350,7 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         sb.append("class ShowBuiltInPolicyDefinitionResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    policyType: ").append(toIndentedString(policyType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyRuleType: ").append(toIndentedString(policyRuleType)).append("\n");

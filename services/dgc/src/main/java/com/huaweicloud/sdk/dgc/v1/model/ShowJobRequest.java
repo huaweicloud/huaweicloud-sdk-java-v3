@@ -20,6 +20,11 @@ public class ShowJobRequest {
 
     private String jobName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
     public ShowJobRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -54,6 +59,23 @@ public class ShowJobRequest {
         this.jobName = jobName;
     }
 
+    public ShowJobRequest withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 作业版本号，若传入版本号，则查询指定版本号的作业；若不传入，则查询最新的版本作业.
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ShowJobRequest {
             return false;
         }
         ShowJobRequest that = (ShowJobRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, jobName);
+        return Objects.hash(workspace, jobName, version);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ShowJobRequest {
         sb.append("class ShowJobRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

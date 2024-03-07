@@ -36,7 +36,7 @@ public class DeleteKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 用户名
+     * 用户名。  不对全部用户/客户端限流时，用户名和客户端ID不能同时为空。
      * @return user
      */
     public String getUser() {
@@ -53,7 +53,7 @@ public class DeleteKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 客户端ID
+     * 客户端ID。  不对全部用户/客户端限流时，用户名和客户端ID不能同时为空。
      * @return client
      */
     public String getClient() {
@@ -70,7 +70,7 @@ public class DeleteKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 是否使用用户默认设置（是则表示对全部用户限流）。
+     * 是否使用用户默认设置。   - 是，表示对全部用户限流。此时不能同时设置用户名。   - 否，表示对特定用户限流。此时需要设置用户名。
      * @return userDefault
      */
     public Boolean getUserDefault() {
@@ -87,7 +87,7 @@ public class DeleteKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 是否使用客户端默认设置（是则表示对全部客户端限流）。
+     * 是否使用客户端默认设置。   - 是，表示对全部客户端限流。此时不能设置客户端ID。   - 否，表示对特定客户端限流。此时需要设置客户端ID。
      * @return clientDefault
      */
     public Boolean getClientDefault() {

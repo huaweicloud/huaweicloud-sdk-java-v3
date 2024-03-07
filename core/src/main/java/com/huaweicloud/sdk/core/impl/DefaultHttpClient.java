@@ -27,6 +27,7 @@ import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.SslHandShakeException;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
+import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
@@ -42,6 +43,7 @@ import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Credentials;
+import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -66,6 +68,7 @@ import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -165,14 +168,24 @@ public class DefaultHttpClient implements HttpClient {
 
         httpRequest.getHeaders().forEach((key, values) -> values.forEach(value -> requestBuilder.header(key, value)));
 
-        if (Objects.isNull(httpRequest.getBodyAsString())) {
-            return httpRequest.getContentType().startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)
-                    ? buildOkHttpRequestWithFormData(httpRequest, requestBuilder)
-                    : buildOkHttpRequestWithoutTextBody(httpRequest, requestBuilder);
-        } else {
+        if (Objects.nonNull(httpRequest.getBodyAsString())) {
             return buildOkHttpRequestWithTextBody(httpRequest, requestBuilder);
         }
+        if (httpRequest.getContentType().startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)) {
+            return buildOkHttpRequestWithFormData(httpRequest, requestBuilder);
+        }
+        if (httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_X_WWW_FORM_URLENCODED)) {
+            return buildOkHttpRequestWithUrlEncoded(httpRequest, requestBuilder);
+        }
+        return buildOkHttpRequestWithoutTextBody(httpRequest, requestBuilder);
+    }
 
+    private Request buildOkHttpRequestWithUrlEncoded(HttpRequest httpRequest, Request.Builder requestBuilder) {
+        FormBody.Builder bodyBuilder = new FormBody.Builder();
+        for (Map.Entry<String, FormDataPart<?>> entry : httpRequest.getFormData().entrySet()) {
+            bodyBuilder.addEncoded(entry.getKey(), entry.getValue().toString());
+        }
+        return requestBuilder.method(httpRequest.getMethod().toString(), bodyBuilder.build()).build();
     }
 
     private Request buildOkHttpRequestWithFormData(HttpRequest httpRequest, Request.Builder requestBuilder) {

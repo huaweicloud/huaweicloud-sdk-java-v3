@@ -7,6 +7,9 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.workspace.v2.model.ActionsOfUsersInGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddDesktopsVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleReq;
+import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyDesktopsInternetReq;
@@ -19,6 +22,9 @@ import com.huaweicloud.sdk.workspace.v2.model.AssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipReq;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesReq;
+import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchActionDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
@@ -41,6 +47,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsResponse;
@@ -63,6 +71,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
@@ -71,6 +81,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
@@ -87,6 +100,11 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopsReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
@@ -97,6 +115,9 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesReq;
+import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserReq;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopsVolumesReq;
@@ -108,18 +129,25 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsReq;
+import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
@@ -128,12 +156,22 @@ import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
@@ -147,6 +185,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserUsageMetricRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersRequest;
@@ -173,6 +213,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockRequest;
@@ -190,6 +232,12 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRespon
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
@@ -347,6 +395,46 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(UpdateAccessPolicyObjectsReq.class),
             f -> f.withMarshaller(UpdateAccessPolicyObjectsRequest::getBody,
                 UpdateAccessPolicyObjectsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> createAgencies =
+        genForCreateAgencies();
+
+    private static HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> genForCreateAgencies() {
+        // basic
+        HttpRequestDef.Builder<CreateAgenciesRequest, CreateAgenciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgenciesRequest.class, CreateAgenciesResponse.class)
+                .withName("CreateAgencies")
+                .withUri("/v2/{project_id}/agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(CreateAgenciesRequest::getBody, CreateAgenciesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForListAgencies();
+
+    private static HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> genForListAgencies() {
+        // basic
+        HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
+                .withName("ListAgencies")
+                .withUri("/v2/{project_id}/agencies")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -562,6 +650,29 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AttachInstancesRequest, AttachInstancesResponse> attachInstances =
+        genForAttachInstances();
+
+    private static HttpRequestDef<AttachInstancesRequest, AttachInstancesResponse> genForAttachInstances() {
+        // basic
+        HttpRequestDef.Builder<AttachInstancesRequest, AttachInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachInstancesRequest.class, AttachInstancesResponse.class)
+                .withName("AttachInstances")
+                .withUri("/v2/{project_id}/desktops/attach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AttachInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachInstancesReq.class),
+            f -> f.withMarshaller(AttachInstancesRequest::getBody, AttachInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteDesktopsRequest, BatchDeleteDesktopsResponse> batchDeleteDesktops =
         genForBatchDeleteDesktops();
 
@@ -749,6 +860,29 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetachInstancesRequest, DetachInstancesResponse> detachInstances =
+        genForDetachInstances();
+
+    private static HttpRequestDef<DetachInstancesRequest, DetachInstancesResponse> genForDetachInstances() {
+        // basic
+        HttpRequestDef.Builder<DetachInstancesRequest, DetachInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetachInstancesRequest.class, DetachInstancesResponse.class)
+                .withName("DetachInstances")
+                .withUri("/v2/{project_id}/desktops/detach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DetachInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DetachInstancesReq.class),
+            f -> f.withMarshaller(DetachInstancesRequest::getBody, DetachInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> listDesktops = genForListDesktops();
 
     private static HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> genForListDesktops() {
@@ -801,6 +935,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsRequest::getDesktopType, ListDesktopsRequest::setDesktopType));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsRequest::getSubnetId, ListDesktopsRequest::setSubnetId));
 
         // response
 
@@ -914,6 +1053,11 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getInMaintenanceMode,
                 ListDesktopsDetailRequest::setInMaintenanceMode));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getSubnetId, ListDesktopsDetailRequest::setSubnetId));
 
         // response
 
@@ -1609,6 +1753,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getPackageType, ListImagesRequest::setPackageType));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getImageId, ListImagesRequest::setImageId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1873,6 +2022,579 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteScheduledTasksRequest, BatchDeleteScheduledTasksResponse> batchDeleteScheduledTasks =
+        genForBatchDeleteScheduledTasks();
+
+    private static HttpRequestDef<BatchDeleteScheduledTasksRequest, BatchDeleteScheduledTasksResponse> genForBatchDeleteScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteScheduledTasksRequest, BatchDeleteScheduledTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteScheduledTasksRequest.class,
+                    BatchDeleteScheduledTasksResponse.class)
+                .withName("BatchDeleteScheduledTasks")
+                .withUri("/v2/{project_id}/scheduled-tasks/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteScheduledTasksReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteScheduledTasksReq.class),
+            f -> f.withMarshaller(BatchDeleteScheduledTasksRequest::getBody,
+                BatchDeleteScheduledTasksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScheduledTasksRequest, CreateScheduledTasksResponse> createScheduledTasks =
+        genForCreateScheduledTasks();
+
+    private static HttpRequestDef<CreateScheduledTasksRequest, CreateScheduledTasksResponse> genForCreateScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduledTasksRequest, CreateScheduledTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateScheduledTasksRequest.class, CreateScheduledTasksResponse.class)
+            .withName("CreateScheduledTasks")
+            .withUri("/v2/{project_id}/scheduled-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateScheduledTasksReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduledTasksReq.class),
+            f -> f.withMarshaller(CreateScheduledTasksRequest::getBody, CreateScheduledTasksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduledTasksRequest, DeleteScheduledTasksResponse> deleteScheduledTasks =
+        genForDeleteScheduledTasks();
+
+    private static HttpRequestDef<DeleteScheduledTasksRequest, DeleteScheduledTasksResponse> genForDeleteScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduledTasksRequest, DeleteScheduledTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScheduledTasksRequest.class, DeleteScheduledTasksResponse.class)
+            .withName("DeleteScheduledTasks")
+            .withUri("/v2/{project_id}/scheduled-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTasksRequest::getTaskId, DeleteScheduledTasksRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFutureExecutionsRequest, ListFutureExecutionsResponse> listFutureExecutions =
+        genForListFutureExecutions();
+
+    private static HttpRequestDef<ListFutureExecutionsRequest, ListFutureExecutionsResponse> genForListFutureExecutions() {
+        // basic
+        HttpRequestDef.Builder<ListFutureExecutionsRequest, ListFutureExecutionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListFutureExecutionsRequest.class, ListFutureExecutionsResponse.class)
+            .withName("ListFutureExecutions")
+            .withUri("/v2/{project_id}/scheduled-tasks/future-executions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListFutureExecutionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListFutureExecutionsReq.class),
+            f -> f.withMarshaller(ListFutureExecutionsRequest::getBody, ListFutureExecutionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
+        genForListScheduledTasks();
+
+    private static HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> genForListScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRequest, ListScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTasksRequest.class, ListScheduledTasksResponse.class)
+                .withName("ListScheduledTasks")
+                .withUri("/v2/{project_id}/scheduled-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getOffset, ListScheduledTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLimit, ListScheduledTasksRequest::setLimit));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getTaskName, ListScheduledTasksRequest::setTaskName));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getTaskType, ListScheduledTasksRequest::setTaskType));
+        builder.<String>withRequestField("scheduled_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getScheduledType,
+                ListScheduledTasksRequest::setScheduledType));
+        builder.<String>withRequestField("life_cycle_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLifeCycleType,
+                ListScheduledTasksRequest::setLifeCycleType));
+        builder.<String>withRequestField("last_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLastStatus, ListScheduledTasksRequest::setLastStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTasksRecordsRequest, ListScheduledTasksRecordsResponse> listScheduledTasksRecords =
+        genForListScheduledTasksRecords();
+
+    private static HttpRequestDef<ListScheduledTasksRecordsRequest, ListScheduledTasksRecordsResponse> genForListScheduledTasksRecords() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRecordsRequest, ListScheduledTasksRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListScheduledTasksRecordsRequest.class,
+                    ListScheduledTasksRecordsResponse.class)
+                .withName("ListScheduledTasksRecords")
+                .withUri("/v2/{project_id}/scheduled-tasks/{task_id}/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRecordsRequest::getTaskId,
+                ListScheduledTasksRecordsRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTasksRecordsDetailsRequest, ListScheduledTasksRecordsDetailsResponse> listScheduledTasksRecordsDetails =
+        genForListScheduledTasksRecordsDetails();
+
+    private static HttpRequestDef<ListScheduledTasksRecordsDetailsRequest, ListScheduledTasksRecordsDetailsResponse> genForListScheduledTasksRecordsDetails() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRecordsDetailsRequest, ListScheduledTasksRecordsDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListScheduledTasksRecordsDetailsRequest.class,
+                    ListScheduledTasksRecordsDetailsResponse.class)
+                .withName("ListScheduledTasksRecordsDetails")
+                .withUri("/v2/{project_id}/scheduled-tasks/{task_id}/records/{record_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRecordsDetailsRequest::getTaskId,
+                ListScheduledTasksRecordsDetailsRequest::setTaskId));
+        builder.<String>withRequestField("record_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRecordsDetailsRequest::getRecordId,
+                ListScheduledTasksRecordsDetailsRequest::setRecordId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRecordsDetailsRequest::getOffset,
+                ListScheduledTasksRecordsDetailsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRecordsDetailsRequest::getLimit,
+                ListScheduledTasksRecordsDetailsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScheduledTasksRequest, ShowScheduledTasksResponse> showScheduledTasks =
+        genForShowScheduledTasks();
+
+    private static HttpRequestDef<ShowScheduledTasksRequest, ShowScheduledTasksResponse> genForShowScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ShowScheduledTasksRequest, ShowScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScheduledTasksRequest.class, ShowScheduledTasksResponse.class)
+                .withName("ShowScheduledTasks")
+                .withUri("/v2/{project_id}/scheduled-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScheduledTasksRequest::getTaskId, ShowScheduledTasksRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse> updateScheduledTasks =
+        genForUpdateScheduledTasks();
+
+    private static HttpRequestDef<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse> genForUpdateScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateScheduledTasksRequest.class, UpdateScheduledTasksResponse.class)
+            .withName("UpdateScheduledTasks")
+            .withUri("/v2/{project_id}/scheduled-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTasksRequest::getTaskId, UpdateScheduledTasksRequest::setTaskId));
+        builder.<UpdateScheduledTasksReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduledTasksReq.class),
+            f -> f.withMarshaller(UpdateScheduledTasksRequest::getBody, UpdateScheduledTasksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddMetricNotifyRuleRequest, AddMetricNotifyRuleResponse> addMetricNotifyRule =
+        genForAddMetricNotifyRule();
+
+    private static HttpRequestDef<AddMetricNotifyRuleRequest, AddMetricNotifyRuleResponse> genForAddMetricNotifyRule() {
+        // basic
+        HttpRequestDef.Builder<AddMetricNotifyRuleRequest, AddMetricNotifyRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddMetricNotifyRuleRequest.class, AddMetricNotifyRuleResponse.class)
+                .withName("AddMetricNotifyRule")
+                .withUri("/v2/{project_id}/statistics/notify-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddMetricNotifyRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddMetricNotifyRuleReq.class),
+            f -> f.withMarshaller(AddMetricNotifyRuleRequest::getBody, AddMetricNotifyRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMetricNotifyRuleRequest, DeleteMetricNotifyRuleResponse> deleteMetricNotifyRule =
+        genForDeleteMetricNotifyRule();
+
+    private static HttpRequestDef<DeleteMetricNotifyRuleRequest, DeleteMetricNotifyRuleResponse> genForDeleteMetricNotifyRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteMetricNotifyRuleRequest, DeleteMetricNotifyRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMetricNotifyRuleRequest.class, DeleteMetricNotifyRuleResponse.class)
+            .withName("DeleteMetricNotifyRule")
+            .withUri("/v2/{project_id}/statistics/notify-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMetricNotifyRuleRequest::getRuleId, DeleteMetricNotifyRuleRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse> listDesktopUsageMetric =
+        genForListDesktopUsageMetric();
+
+    private static HttpRequestDef<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse> genForListDesktopUsageMetric() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDesktopUsageMetricRequest.class, ListDesktopUsageMetricResponse.class)
+            .withName("ListDesktopUsageMetric")
+            .withUri("/v2/{project_id}/statistics/metrics/desktops")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getStartTime,
+                ListDesktopUsageMetricRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getEndTime,
+                ListDesktopUsageMetricRequest::setEndTime));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getResourceName,
+                ListDesktopUsageMetricRequest::setResourceName));
+        builder.<Integer>withRequestField("min_idle_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getMinIdleDays,
+                ListDesktopUsageMetricRequest::setMinIdleDays));
+        builder.<Integer>withRequestField("max_idle_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getMaxIdleDays,
+                ListDesktopUsageMetricRequest::setMaxIdleDays));
+        builder.<Integer>withRequestField("usage_min_hours",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getUsageMinHours,
+                ListDesktopUsageMetricRequest::setUsageMinHours));
+        builder.<Integer>withRequestField("usage_max_hours",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getUsageMaxHours,
+                ListDesktopUsageMetricRequest::setUsageMaxHours));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getSortField,
+                ListDesktopUsageMetricRequest::setSortField));
+        builder.<String>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getSortType,
+                ListDesktopUsageMetricRequest::setSortType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getOffset, ListDesktopUsageMetricRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopUsageMetricRequest::getLimit, ListDesktopUsageMetricRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricNotifyRecordRequest, ListMetricNotifyRecordResponse> listMetricNotifyRecord =
+        genForListMetricNotifyRecord();
+
+    private static HttpRequestDef<ListMetricNotifyRecordRequest, ListMetricNotifyRecordResponse> genForListMetricNotifyRecord() {
+        // basic
+        HttpRequestDef.Builder<ListMetricNotifyRecordRequest, ListMetricNotifyRecordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMetricNotifyRecordRequest.class, ListMetricNotifyRecordResponse.class)
+            .withName("ListMetricNotifyRecord")
+            .withUri("/v2/{project_id}/statistics/notification-records")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricNotifyRecordRequest::getMetricName,
+                ListMetricNotifyRecordRequest::setMetricName));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricNotifyRecordRequest::getRuleId, ListMetricNotifyRecordRequest::setRuleId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricNotifyRecordRequest::getOffset, ListMetricNotifyRecordRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricNotifyRecordRequest::getLimit, ListMetricNotifyRecordRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> listMetricNotifyRule =
+        genForListMetricNotifyRule();
+
+    private static HttpRequestDef<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> genForListMetricNotifyRule() {
+        // basic
+        HttpRequestDef.Builder<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMetricNotifyRuleRequest.class, ListMetricNotifyRuleResponse.class)
+            .withName("ListMetricNotifyRule")
+            .withUri("/v2/{project_id}/statistics/notify-rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricNotifyRuleRequest::getMetricName,
+                ListMetricNotifyRuleRequest::setMetricName));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricNotifyRuleRequest::getRuleId, ListMetricNotifyRuleRequest::setRuleId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricNotifyRuleRequest::getOffset, ListMetricNotifyRuleRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricNotifyRuleRequest::getLimit, ListMetricNotifyRuleRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserUsageMetricRequest, ListUserUsageMetricResponse> listUserUsageMetric =
+        genForListUserUsageMetric();
+
+    private static HttpRequestDef<ListUserUsageMetricRequest, ListUserUsageMetricResponse> genForListUserUsageMetric() {
+        // basic
+        HttpRequestDef.Builder<ListUserUsageMetricRequest, ListUserUsageMetricResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserUsageMetricRequest.class, ListUserUsageMetricResponse.class)
+                .withName("ListUserUsageMetric")
+                .withUri("/v2/{project_id}/statistics/metrics/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getStartTime, ListUserUsageMetricRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getEndTime, ListUserUsageMetricRequest::setEndTime));
+        builder.<String>withRequestField("username",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getUsername, ListUserUsageMetricRequest::setUsername));
+        builder.<Integer>withRequestField("usage_min_hours",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getUsageMinHours,
+                ListUserUsageMetricRequest::setUsageMinHours));
+        builder.<Integer>withRequestField("usage_max_hours",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getUsageMaxHours,
+                ListUserUsageMetricRequest::setUsageMaxHours));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getSortField, ListUserUsageMetricRequest::setSortField));
+        builder.<String>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getSortType, ListUserUsageMetricRequest::setSortType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getOffset, ListUserUsageMetricRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getLimit, ListUserUsageMetricRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse> updateMetricNotifyRule =
+        genForUpdateMetricNotifyRule();
+
+    private static HttpRequestDef<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse> genForUpdateMetricNotifyRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMetricNotifyRuleRequest.class, UpdateMetricNotifyRuleResponse.class)
+            .withName("UpdateMetricNotifyRule")
+            .withUri("/v2/{project_id}/statistics/notify-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMetricNotifyRuleRequest::getRuleId, UpdateMetricNotifyRuleRequest::setRuleId));
+        builder.<UpdateMetricNotifyRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateMetricNotifyRuleReq.class),
+            f -> f.withMarshaller(UpdateMetricNotifyRuleRequest::getBody, UpdateMetricNotifyRuleRequest::setBody));
 
         // response
 

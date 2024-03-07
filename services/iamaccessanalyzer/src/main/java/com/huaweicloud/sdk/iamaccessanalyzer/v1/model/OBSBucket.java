@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * OBSBucket
+ * OBS桶。
  */
 public class OBSBucket {
 
@@ -26,7 +26,7 @@ public class OBSBucket {
     }
 
     /**
-     * 此ACL xml文件的string格式
+     * 桶ACL xml文件的string格式
      * @return bucketAcl
      */
     public String getBucketAcl() {
@@ -43,7 +43,7 @@ public class OBSBucket {
     }
 
     /**
-     * 此策略的json格式策略文档。
+     * 该策略JSON格式策略文档。
      * @return bucketPolicy
      */
     public String getBucketPolicy() {

@@ -36,6 +36,11 @@ public class ListImagesRequest {
     private String packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_id")
+
+    private String imageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -130,6 +135,23 @@ public class ListImagesRequest {
         this.packageType = packageType;
     }
 
+    public ListImagesRequest withImageId(String imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
+    /**
+     * 镜像Id
+     * @return imageId
+     */
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
     public ListImagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -179,13 +201,13 @@ public class ListImagesRequest {
         ListImagesRequest that = (ListImagesRequest) obj;
         return Objects.equals(this.osType, that.osType) && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.platform, that.platform) && Objects.equals(this.architecture, that.architecture)
-            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(osType, imageType, platform, architecture, packageType, limit, offset);
+        return Objects.hash(osType, imageType, platform, architecture, packageType, imageId, limit, offset);
     }
 
     @Override
@@ -197,6 +219,7 @@ public class ListImagesRequest {
         sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

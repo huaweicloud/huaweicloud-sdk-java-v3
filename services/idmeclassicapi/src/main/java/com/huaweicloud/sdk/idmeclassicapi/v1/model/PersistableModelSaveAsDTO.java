@@ -16,7 +16,7 @@ public class PersistableModelSaveAsDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifier")
@@ -56,7 +56,7 @@ public class PersistableModelSaveAsDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sourceInstanceId")
 
-    private Long sourceInstanceId;
+    private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "needSetNullAttrs")
@@ -78,7 +78,7 @@ public class PersistableModelSaveAsDTO {
 
     private String uniqueKey;
 
-    public PersistableModelSaveAsDTO withId(Long id) {
+    public PersistableModelSaveAsDTO withId(String id) {
         this.id = id;
         return this;
     }
@@ -87,11 +87,11 @@ public class PersistableModelSaveAsDTO {
      * 唯一标识。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -223,7 +223,7 @@ public class PersistableModelSaveAsDTO {
         this.sourceEntityNumber = sourceEntityNumber;
     }
 
-    public PersistableModelSaveAsDTO withSourceInstanceId(Long sourceInstanceId) {
+    public PersistableModelSaveAsDTO withSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
         return this;
     }
@@ -232,11 +232,11 @@ public class PersistableModelSaveAsDTO {
      * 源实例的唯一标识(单实例为ID，版本实例为versionId)。
      * @return sourceInstanceId
      */
-    public Long getSourceInstanceId() {
+    public String getSourceInstanceId() {
         return sourceInstanceId;
     }
 
-    public void setSourceInstanceId(Long sourceInstanceId) {
+    public void setSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
     }
 

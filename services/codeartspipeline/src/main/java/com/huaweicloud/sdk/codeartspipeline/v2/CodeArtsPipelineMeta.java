@@ -126,6 +126,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineArtifactsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineArtifactsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
@@ -152,6 +154,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStepOutputsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStepOutputsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailRequest;
@@ -1901,6 +1905,42 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPipelineArtifactsRequest, ShowPipelineArtifactsResponse> showPipelineArtifacts =
+        genForShowPipelineArtifacts();
+
+    private static HttpRequestDef<ShowPipelineArtifactsRequest, ShowPipelineArtifactsResponse> genForShowPipelineArtifacts() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineArtifactsRequest, ShowPipelineArtifactsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPipelineArtifactsRequest.class, ShowPipelineArtifactsResponse.class)
+            .withName("ShowPipelineArtifacts")
+            .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/artifacts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineArtifactsRequest::getProjectId,
+                ShowPipelineArtifactsRequest::setProjectId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineArtifactsRequest::getPipelineId,
+                ShowPipelineArtifactsRequest::setPipelineId));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineArtifactsRequest::getPipelineRunId,
+                ShowPipelineArtifactsRequest::setPipelineRunId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetail =
         genForShowPipelineDetail();
 
@@ -2326,6 +2366,44 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRuleRequest::getCloudProjectId, ShowRuleRequest::setCloudProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStepOutputsRequest, ShowStepOutputsResponse> showStepOutputs =
+        genForShowStepOutputs();
+
+    private static HttpRequestDef<ShowStepOutputsRequest, ShowStepOutputsResponse> genForShowStepOutputs() {
+        // basic
+        HttpRequestDef.Builder<ShowStepOutputsRequest, ShowStepOutputsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStepOutputsRequest.class, ShowStepOutputsResponse.class)
+                .withName("ShowStepOutputs")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/steps/outputs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStepOutputsRequest::getProjectId, ShowStepOutputsRequest::setProjectId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStepOutputsRequest::getPipelineId, ShowStepOutputsRequest::setPipelineId));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStepOutputsRequest::getPipelineRunId, ShowStepOutputsRequest::setPipelineRunId));
+        builder.<String>withRequestField("step_run_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStepOutputsRequest::getStepRunIds, ShowStepOutputsRequest::setStepRunIds));
 
         // response
 

@@ -19,8 +19,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceTopicRequest;
@@ -35,8 +33,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
@@ -47,8 +43,6 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskRequest;
-import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
@@ -65,8 +59,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
@@ -141,8 +133,6 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
-import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
-import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
@@ -361,35 +351,6 @@ public class KafkaClient {
     }
 
     /**
-     * 创建关闭实例转储节点的订单
-     *
-     * 创建删除实例转储节点的订单。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDeleteConnectorOrderRequest 请求对象
-     * @return CreateDeleteConnectorOrderResponse
-     */
-    public CreateDeleteConnectorOrderResponse createDeleteConnectorOrder(CreateDeleteConnectorOrderRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.createDeleteConnectorOrder);
-    }
-
-    /**
-     * 创建关闭实例转储节点的订单
-     *
-     * 创建删除实例转储节点的订单。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateDeleteConnectorOrderRequest 请求对象
-     * @return SyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse>
-     */
-    public SyncInvoker<CreateDeleteConnectorOrderRequest, CreateDeleteConnectorOrderResponse> createDeleteConnectorOrderInvoker(
-        CreateDeleteConnectorOrderRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.createDeleteConnectorOrder, hcClient);
-    }
-
-    /**
      * 创建实例
      *
      * 创建实例。
@@ -598,35 +559,6 @@ public class KafkaClient {
     }
 
     /**
-     * 创建转储任务
-     *
-     * 创建转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateSinkTaskRequest 请求对象
-     * @return CreateSinkTaskResponse
-     */
-    public CreateSinkTaskResponse createSinkTask(CreateSinkTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.createSinkTask);
-    }
-
-    /**
-     * 创建转储任务
-     *
-     * 创建转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateSinkTaskRequest 请求对象
-     * @return SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>
-     */
-    public SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTaskInvoker(
-        CreateSinkTaskRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.createSinkTask, hcClient);
-    }
-
-    /**
      * 删除后台任务管理中的指定记录
      *
      * 删除后台任务管理中的指定记录。
@@ -712,35 +644,6 @@ public class KafkaClient {
     public SyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskInvoker(
         DeleteKafkaUserClientQuotaTaskRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
-    }
-
-    /**
-     * 删除单个转储任务
-     *
-     * 删除单个转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSinkTaskRequest 请求对象
-     * @return DeleteSinkTaskResponse
-     */
-    public DeleteSinkTaskResponse deleteSinkTask(DeleteSinkTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.deleteSinkTask);
-    }
-
-    /**
-     * 删除单个转储任务
-     *
-     * 删除单个转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSinkTaskRequest 请求对象
-     * @return SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>
-     */
-    public SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTaskInvoker(
-        DeleteSinkTaskRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.deleteSinkTask, hcClient);
     }
 
     /**
@@ -954,34 +857,6 @@ public class KafkaClient {
      */
     public SyncInvoker<ListProductsRequest, ListProductsResponse> listProductsInvoker(ListProductsRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.listProducts, hcClient);
-    }
-
-    /**
-     * 查询转储任务列表
-     *
-     * 查询转储任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSinkTasksRequest 请求对象
-     * @return ListSinkTasksResponse
-     */
-    public ListSinkTasksResponse listSinkTasks(ListSinkTasksRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.listSinkTasks);
-    }
-
-    /**
-     * 查询转储任务列表
-     *
-     * 查询转储任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSinkTasksRequest 请求对象
-     * @return SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>
-     */
-    public SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasksInvoker(ListSinkTasksRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.listSinkTasks, hcClient);
     }
 
     /**
@@ -1952,35 +1827,6 @@ public class KafkaClient {
     public SyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessageInvoker(
         ShowPartitionMessageRequest request) {
         return new SyncInvoker<>(request, KafkaMeta.showPartitionMessage, hcClient);
-    }
-
-    /**
-     * 查询单个转储任务
-     *
-     * 查询单个转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSinkTaskDetailRequest 请求对象
-     * @return ShowSinkTaskDetailResponse
-     */
-    public ShowSinkTaskDetailResponse showSinkTaskDetail(ShowSinkTaskDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.showSinkTaskDetail);
-    }
-
-    /**
-     * 查询单个转储任务
-     *
-     * 查询单个转储任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSinkTaskDetailRequest 请求对象
-     * @return SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>
-     */
-    public SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetailInvoker(
-        ShowSinkTaskDetailRequest request) {
-        return new SyncInvoker<>(request, KafkaMeta.showSinkTaskDetail, hcClient);
     }
 
     /**

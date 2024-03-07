@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IAMAgency
+ * IAM委托。
  */
 public class IAMAgency {
 
@@ -21,7 +21,7 @@ public class IAMAgency {
     }
 
     /**
-     * 此策略的json格式策略文档。
+     * 该策略JSON格式策略文档。
      * @return trustPolicy
      */
     public String getTrustPolicy() {

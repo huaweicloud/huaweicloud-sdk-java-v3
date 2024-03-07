@@ -45,7 +45,7 @@ public class AnalyzerSummary {
     private String name;
 
     /**
-     * 分析器的状态
+     * 分析器的状态。
      */
     public static final class StatusEnum {
 
@@ -185,7 +185,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 唯一的资源名称。
+     * 访问分析的唯一资源标识。
      * @return lastAnalyzedResource
      */
     public String getLastAnalyzedResource() {
@@ -202,7 +202,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 分析最近分析的资源的时间。
+     * 最近一次分析资源的时间。
      * @return lastResourceAnalyzedAt
      */
     public OffsetDateTime getLastResourceAnalyzedAt() {
@@ -236,7 +236,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 分析器的状态
+     * 分析器的状态。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -295,7 +295,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * Get tags
+     * 自定义标签列表。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -329,7 +329,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 唯一的资源名称。
+     * 访问分析的唯一资源标识。
      * @return urn
      */
     public String getUrn() {

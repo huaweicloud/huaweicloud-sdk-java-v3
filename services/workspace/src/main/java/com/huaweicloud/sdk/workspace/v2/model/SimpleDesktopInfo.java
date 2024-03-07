@@ -64,9 +64,24 @@ public class SimpleDesktopInfo {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_maintenance_mode")
 
     private Boolean inMaintenanceMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_resource_id")
+
+    private String billResourceId;
 
     public SimpleDesktopInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -254,6 +269,39 @@ public class SimpleDesktopInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public SimpleDesktopInfo withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public SimpleDesktopInfo addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public SimpleDesktopInfo withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     public SimpleDesktopInfo withInMaintenanceMode(Boolean inMaintenanceMode) {
         this.inMaintenanceMode = inMaintenanceMode;
         return this;
@@ -269,6 +317,40 @@ public class SimpleDesktopInfo {
 
     public void setInMaintenanceMode(Boolean inMaintenanceMode) {
         this.inMaintenanceMode = inMaintenanceMode;
+    }
+
+    public SimpleDesktopInfo withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 桌面的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public SimpleDesktopInfo withBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
+        return this;
+    }
+
+    /**
+     * 桌面计费资源ID。
+     * @return billResourceId
+     */
+    public String getBillResourceId() {
+        return billResourceId;
+    }
+
+    public void setBillResourceId(String billResourceId) {
+        this.billResourceId = billResourceId;
     }
 
     @Override
@@ -287,7 +369,8 @@ public class SimpleDesktopInfo {
             && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.sid, that.sid)
             && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId);
     }
 
     @Override
@@ -302,7 +385,10 @@ public class SimpleDesktopInfo {
             sid,
             ouName,
             enterpriseProjectId,
-            inMaintenanceMode);
+            tags,
+            inMaintenanceMode,
+            subnetId,
+            billResourceId);
     }
 
     @Override
@@ -319,7 +405,10 @@ public class SimpleDesktopInfo {
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

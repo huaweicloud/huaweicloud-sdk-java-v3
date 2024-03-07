@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 发现的来源。这指示如何授予生成查找结果的访问权限。OBS桶查找结果会填充它。
+ * Gets or Sets FindingSourceType
  */
 public class FindingSourceType {
 

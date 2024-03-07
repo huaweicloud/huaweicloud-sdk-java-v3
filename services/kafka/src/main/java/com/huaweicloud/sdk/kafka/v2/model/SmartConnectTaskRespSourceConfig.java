@@ -93,12 +93,12 @@ public class SmartConnectTaskRespSourceConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replication_factor")
 
-    private String replicationFactor;
+    private Integer replicationFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_num")
 
-    private String taskNum;
+    private Integer taskNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rename_topic_enable")
@@ -397,7 +397,7 @@ public class SmartConnectTaskRespSourceConfig {
         this.syncConsumerOffsetsEnabled = syncConsumerOffsetsEnabled;
     }
 
-    public SmartConnectTaskRespSourceConfig withReplicationFactor(String replicationFactor) {
+    public SmartConnectTaskRespSourceConfig withReplicationFactor(Integer replicationFactor) {
         this.replicationFactor = replicationFactor;
         return this;
     }
@@ -406,15 +406,15 @@ public class SmartConnectTaskRespSourceConfig {
      * 副本数。（仅源端类型为Kafka时会显示）
      * @return replicationFactor
      */
-    public String getReplicationFactor() {
+    public Integer getReplicationFactor() {
         return replicationFactor;
     }
 
-    public void setReplicationFactor(String replicationFactor) {
+    public void setReplicationFactor(Integer replicationFactor) {
         this.replicationFactor = replicationFactor;
     }
 
-    public SmartConnectTaskRespSourceConfig withTaskNum(String taskNum) {
+    public SmartConnectTaskRespSourceConfig withTaskNum(Integer taskNum) {
         this.taskNum = taskNum;
         return this;
     }
@@ -423,11 +423,11 @@ public class SmartConnectTaskRespSourceConfig {
      * 任务数。（仅源端类型为Kafka时会显示）
      * @return taskNum
      */
-    public String getTaskNum() {
+    public Integer getTaskNum() {
         return taskNum;
     }
 
-    public void setTaskNum(String taskNum) {
+    public void setTaskNum(Integer taskNum) {
         this.taskNum = taskNum;
     }
 

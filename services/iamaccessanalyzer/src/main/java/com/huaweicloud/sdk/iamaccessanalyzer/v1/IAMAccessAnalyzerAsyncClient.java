@@ -65,7 +65,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 创建分析器
      *
-     * 为您的帐号或者组织创建分析器。
+     * 为您的账号或者组织创建分析器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -79,7 +79,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 创建分析器
      *
-     * 为您的帐号或者组织创建分析器。
+     * 为您的账号或者组织创建分析器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -382,9 +382,9 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 检索指定分析器生成的结果列表
+     * 检索指定分析器生成的访问分析结果列表
      *
-     * 检索指定分析器生成的查找结果列表。
+     * 检索指定分析器生成的访问分析结果列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -396,9 +396,9 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 检索指定分析器生成的结果列表
+     * 检索指定分析器生成的访问分析结果列表
      *
-     * 检索指定分析器生成的查找结果列表。
+     * 检索指定分析器生成的访问分析结果列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -441,7 +441,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 更新指定结果的状态
      *
-     * 更新指定调查结果的状态。
+     * 更新指定访问分析结果的状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -455,7 +455,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 更新指定结果的状态
      *
-     * 更新指定调查结果的状态。
+     * 更新指定访问分析结果的状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -555,9 +555,9 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 获取相关预览生成的findings
+     * 获取相关预览生成的分析结果
      *
-     * 获取指定预览生成的findings
+     * 获取相关预览生成的分析结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -569,9 +569,9 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 获取相关预览生成的findings
+     * 获取相关预览生成的分析结果
      *
-     * 获取指定预览生成的findings
+     * 获取相关预览生成的分析结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

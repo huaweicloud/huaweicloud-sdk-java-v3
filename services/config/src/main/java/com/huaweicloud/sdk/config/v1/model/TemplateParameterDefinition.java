@@ -38,6 +38,41 @@ public class TemplateParameterDefinition {
 
     private List<Object> allowedValues = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "minimum")
+
+    private Float minimum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maximum")
+
+    private Float maximum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_items")
+
+    private Integer minItems;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_items")
+
+    private Integer maxItems;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_length")
+
+    private Integer minLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_length")
+
+    private Integer maxLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pattern")
+
+    private String pattern;
+
     /**
      * 预定义合规包模板参数类型。
      */
@@ -227,6 +262,125 @@ public class TemplateParameterDefinition {
         this.allowedValues = allowedValues;
     }
 
+    public TemplateParameterDefinition withMinimum(Float minimum) {
+        this.minimum = minimum;
+        return this;
+    }
+
+    /**
+     * 策略参数的最小值，当参数类型为Integer或Float时生效。
+     * @return minimum
+     */
+    public Float getMinimum() {
+        return minimum;
+    }
+
+    public void setMinimum(Float minimum) {
+        this.minimum = minimum;
+    }
+
+    public TemplateParameterDefinition withMaximum(Float maximum) {
+        this.maximum = maximum;
+        return this;
+    }
+
+    /**
+     * 策略参数的最大值，当参数类型为Integer或Float时生效。
+     * @return maximum
+     */
+    public Float getMaximum() {
+        return maximum;
+    }
+
+    public void setMaximum(Float maximum) {
+        this.maximum = maximum;
+    }
+
+    public TemplateParameterDefinition withMinItems(Integer minItems) {
+        this.minItems = minItems;
+        return this;
+    }
+
+    /**
+     * 策略参数的最小项数，当参数类型为Array时生效。
+     * @return minItems
+     */
+    public Integer getMinItems() {
+        return minItems;
+    }
+
+    public void setMinItems(Integer minItems) {
+        this.minItems = minItems;
+    }
+
+    public TemplateParameterDefinition withMaxItems(Integer maxItems) {
+        this.maxItems = maxItems;
+        return this;
+    }
+
+    /**
+     * 策略参数的最大项数，当参数类型为Array时生效。
+     * @return maxItems
+     */
+    public Integer getMaxItems() {
+        return maxItems;
+    }
+
+    public void setMaxItems(Integer maxItems) {
+        this.maxItems = maxItems;
+    }
+
+    public TemplateParameterDefinition withMinLength(Integer minLength) {
+        this.minLength = minLength;
+        return this;
+    }
+
+    /**
+     * 策略参数的最小字符串长度或每项的最小字符串长度，当参数类型为String或Array时生效。
+     * @return minLength
+     */
+    public Integer getMinLength() {
+        return minLength;
+    }
+
+    public void setMinLength(Integer minLength) {
+        this.minLength = minLength;
+    }
+
+    public TemplateParameterDefinition withMaxLength(Integer maxLength) {
+        this.maxLength = maxLength;
+        return this;
+    }
+
+    /**
+     * 策略参数的最大字符串长度或每项的最大字符串长度，当参数类型为String或Array时生效。
+     * @return maxLength
+     */
+    public Integer getMaxLength() {
+        return maxLength;
+    }
+
+    public void setMaxLength(Integer maxLength) {
+        this.maxLength = maxLength;
+    }
+
+    public TemplateParameterDefinition withPattern(String pattern) {
+        this.pattern = pattern;
+        return this;
+    }
+
+    /**
+     * 策略参数的字符串正则要求或每项的字符串正则要求，当参数类型为String或Array时生效。
+     * @return pattern
+     */
+    public String getPattern() {
+        return pattern;
+    }
+
+    public void setPattern(String pattern) {
+        this.pattern = pattern;
+    }
+
     public TemplateParameterDefinition withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -255,12 +409,27 @@ public class TemplateParameterDefinition {
         TemplateParameterDefinition that = (TemplateParameterDefinition) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.defaultValue, that.defaultValue)
-            && Objects.equals(this.allowedValues, that.allowedValues) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.allowedValues, that.allowedValues) && Objects.equals(this.minimum, that.minimum)
+            && Objects.equals(this.maximum, that.maximum) && Objects.equals(this.minItems, that.minItems)
+            && Objects.equals(this.maxItems, that.maxItems) && Objects.equals(this.minLength, that.minLength)
+            && Objects.equals(this.maxLength, that.maxLength) && Objects.equals(this.pattern, that.pattern)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, defaultValue, allowedValues, type);
+        return Objects.hash(name,
+            description,
+            defaultValue,
+            allowedValues,
+            minimum,
+            maximum,
+            minItems,
+            maxItems,
+            minLength,
+            maxLength,
+            pattern,
+            type);
     }
 
     @Override
@@ -271,6 +440,13 @@ public class TemplateParameterDefinition {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
         sb.append("    allowedValues: ").append(toIndentedString(allowedValues)).append("\n");
+        sb.append("    minimum: ").append(toIndentedString(minimum)).append("\n");
+        sb.append("    maximum: ").append(toIndentedString(maximum)).append("\n");
+        sb.append("    minItems: ").append(toIndentedString(minItems)).append("\n");
+        sb.append("    maxItems: ").append(toIndentedString(maxItems)).append("\n");
+        sb.append("    minLength: ").append(toIndentedString(minLength)).append("\n");
+        sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
+        sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();

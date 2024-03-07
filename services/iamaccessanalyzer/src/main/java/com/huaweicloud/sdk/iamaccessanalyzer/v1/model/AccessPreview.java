@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * AccessPreview
+ * 访问预览。
  */
 public class AccessPreview {
 
@@ -48,7 +48,7 @@ public class AccessPreview {
     }
 
     /**
-     * 分析预览的唯一标识符。
+     * 访问预览的唯一标识符。
      * @return accessPreviewId
      */
     public String getAccessPreviewId() {
@@ -108,7 +108,7 @@ public class AccessPreview {
     }
 
     /**
-     * Get createdAt
+     * 访问预览创建时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
