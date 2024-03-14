@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 两个帐号（发起者和接收者）之间为了能安全地建立关系，所需要交换的信息。例如，当管理帐号（发起者）邀请另一个帐号（接收者）加入其组织时，两个帐号一系列邀请（握手）请求和响应交换信息。
+ * 两个账号（发起者和接收者）之间为了能安全地建立关系，所需要交换的信息。例如，当管理账号（发起者）邀请另一个账号（接收者）加入其组织时，两个账号一系列邀请（握手）请求和响应交换信息。
  */
 public class HandshakeDto {
 
@@ -68,7 +68,7 @@ public class HandshakeDto {
     }
 
     /**
-     * 邀请（握手）的唯一标识符（ID）。源帐号在发起邀请（握手）时创建ID。
+     * 邀请（握手）的唯一标识符（ID）。源账号在发起邀请（握手）时创建ID。
      * @return id
      */
     public String getId() {
@@ -136,7 +136,7 @@ public class HandshakeDto {
     }
 
     /**
-     * 组织管理帐号的唯一标识符（ID）。
+     * 组织管理账号的唯一标识符（ID）。
      * @return managementAccountId
      */
     public String getManagementAccountId() {
@@ -153,7 +153,7 @@ public class HandshakeDto {
     }
 
     /**
-     * 组织管理帐号的名称。
+     * 组织管理账号的名称。
      * @return managementAccountName
      */
     public String getManagementAccountName() {
@@ -187,7 +187,7 @@ public class HandshakeDto {
     }
 
     /**
-     * 给收件帐号所有者的邮件中的附加信息。
+     * 给收件账号所有者的邮件中的附加信息。
      * @return notes
      */
     public String getNotes() {

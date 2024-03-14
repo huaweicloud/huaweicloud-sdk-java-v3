@@ -17,6 +17,11 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
 
     private UpdateDomainMultiCertificatesResponseBodyContent https;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateDomainMultiCertificatesResponse withHttps(UpdateDomainMultiCertificatesResponseBodyContent https) {
         this.https = https;
         return this;
@@ -44,6 +49,25 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         this.https = https;
     }
 
+    public UpdateDomainMultiCertificatesResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -53,12 +77,12 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
             return false;
         }
         UpdateDomainMultiCertificatesResponse that = (UpdateDomainMultiCertificatesResponse) obj;
-        return Objects.equals(this.https, that.https);
+        return Objects.equals(this.https, that.https) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(https);
+        return Objects.hash(https, xRequestId);
     }
 
     @Override
@@ -66,6 +90,7 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDomainMultiCertificatesResponse {\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

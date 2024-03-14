@@ -21,6 +21,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
@@ -65,6 +69,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -91,6 +97,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandR
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
@@ -129,12 +137,18 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
@@ -181,6 +195,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
@@ -209,6 +225,180 @@ public class MetaStudioAsyncClient {
     public static ClientBuilder<MetaStudioAsyncClient> newBuilder() {
         ClientBuilder<MetaStudioAsyncClient> clientBuilder = new ClientBuilder<>(MetaStudioAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 创建激活码
+     *
+     * 该接口用于创建激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateActiveCodeRequest 请求对象
+     * @return CompletableFuture<CreateActiveCodeResponse>
+     */
+    public CompletableFuture<CreateActiveCodeResponse> createActiveCodeAsync(CreateActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createActiveCode);
+    }
+
+    /**
+     * 创建激活码
+     *
+     * 该接口用于创建激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateActiveCodeRequest 请求对象
+     * @return AsyncInvoker<CreateActiveCodeRequest, CreateActiveCodeResponse>
+     */
+    public AsyncInvoker<CreateActiveCodeRequest, CreateActiveCodeResponse> createActiveCodeAsyncInvoker(
+        CreateActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createActiveCode, hcClient);
+    }
+
+    /**
+     * 删除激活码
+     *
+     * 该接口用于删除激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActiveCodeRequest 请求对象
+     * @return CompletableFuture<DeleteActiveCodeResponse>
+     */
+    public CompletableFuture<DeleteActiveCodeResponse> deleteActiveCodeAsync(DeleteActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteActiveCode);
+    }
+
+    /**
+     * 删除激活码
+     *
+     * 该接口用于删除激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActiveCodeRequest 请求对象
+     * @return AsyncInvoker<DeleteActiveCodeRequest, DeleteActiveCodeResponse>
+     */
+    public AsyncInvoker<DeleteActiveCodeRequest, DeleteActiveCodeResponse> deleteActiveCodeAsyncInvoker(
+        DeleteActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteActiveCode, hcClient);
+    }
+
+    /**
+     * 查询激活码列表
+     *
+     * 该接口用于查询激活码列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActiveCodeRequest 请求对象
+     * @return CompletableFuture<ListActiveCodeResponse>
+     */
+    public CompletableFuture<ListActiveCodeResponse> listActiveCodeAsync(ListActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listActiveCode);
+    }
+
+    /**
+     * 查询激活码列表
+     *
+     * 该接口用于查询激活码列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActiveCodeRequest 请求对象
+     * @return AsyncInvoker<ListActiveCodeRequest, ListActiveCodeResponse>
+     */
+    public AsyncInvoker<ListActiveCodeRequest, ListActiveCodeResponse> listActiveCodeAsyncInvoker(
+        ListActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listActiveCode, hcClient);
+    }
+
+    /**
+     * 重置激活码
+     *
+     * 该接口用于重置激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetActiveCodeRequest 请求对象
+     * @return CompletableFuture<ResetActiveCodeResponse>
+     */
+    public CompletableFuture<ResetActiveCodeResponse> resetActiveCodeAsync(ResetActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.resetActiveCode);
+    }
+
+    /**
+     * 重置激活码
+     *
+     * 该接口用于重置激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetActiveCodeRequest 请求对象
+     * @return AsyncInvoker<ResetActiveCodeRequest, ResetActiveCodeResponse>
+     */
+    public AsyncInvoker<ResetActiveCodeRequest, ResetActiveCodeResponse> resetActiveCodeAsyncInvoker(
+        ResetActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.resetActiveCode, hcClient);
+    }
+
+    /**
+     * 查询激活码详情
+     *
+     * 该接口用于查询激活码详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActiveCodeRequest 请求对象
+     * @return CompletableFuture<ShowActiveCodeResponse>
+     */
+    public CompletableFuture<ShowActiveCodeResponse> showActiveCodeAsync(ShowActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showActiveCode);
+    }
+
+    /**
+     * 查询激活码详情
+     *
+     * 该接口用于查询激活码详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActiveCodeRequest 请求对象
+     * @return AsyncInvoker<ShowActiveCodeRequest, ShowActiveCodeResponse>
+     */
+    public AsyncInvoker<ShowActiveCodeRequest, ShowActiveCodeResponse> showActiveCodeAsyncInvoker(
+        ShowActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showActiveCode, hcClient);
+    }
+
+    /**
+     * 修改激活码
+     *
+     * 该接口用于修改激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateActiveCodeRequest 请求对象
+     * @return CompletableFuture<UpdateActiveCodeResponse>
+     */
+    public CompletableFuture<UpdateActiveCodeResponse> updateActiveCodeAsync(UpdateActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateActiveCode);
+    }
+
+    /**
+     * 修改激活码
+     *
+     * 该接口用于修改激活码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateActiveCodeRequest 请求对象
+     * @return AsyncInvoker<UpdateActiveCodeRequest, UpdateActiveCodeResponse>
+     */
+    public AsyncInvoker<UpdateActiveCodeRequest, UpdateActiveCodeResponse> updateActiveCodeAsyncInvoker(
+        UpdateActiveCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateActiveCode, hcClient);
     }
 
     /**
@@ -325,6 +515,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<StopSmartChatJobRequest, StopSmartChatJobResponse> stopSmartChatJobAsyncInvoker(
         StopSmartChatJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.stopSmartChatJob, hcClient);
+    }
+
+    /**
+     * 复制资产
+     *
+     * 该接口用于在Region B复制Region A的指定资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetbyReplicationInfoRequest 请求对象
+     * @return CompletableFuture<CreateAssetbyReplicationInfoResponse>
+     */
+    public CompletableFuture<CreateAssetbyReplicationInfoResponse> createAssetbyReplicationInfoAsync(
+        CreateAssetbyReplicationInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createAssetbyReplicationInfo);
+    }
+
+    /**
+     * 复制资产
+     *
+     * 该接口用于在Region B复制Region A的指定资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetbyReplicationInfoRequest 请求对象
+     * @return AsyncInvoker<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse>
+     */
+    public AsyncInvoker<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> createAssetbyReplicationInfoAsyncInvoker(
+        CreateAssetbyReplicationInfoRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createAssetbyReplicationInfo, hcClient);
     }
 
     /**
@@ -502,6 +722,36 @@ public class MetaStudioAsyncClient {
      */
     public AsyncInvoker<ShowAssetRequest, ShowAssetResponse> showAssetAsyncInvoker(ShowAssetRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showAsset, hcClient);
+    }
+
+    /**
+     * 查询资产复制信息
+     *
+     * 当需要将资产从A Region复制到B Region时，先要在A Region调用该接口用于查询资产复制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetReplicationInfoRequest 请求对象
+     * @return CompletableFuture<ShowAssetReplicationInfoResponse>
+     */
+    public CompletableFuture<ShowAssetReplicationInfoResponse> showAssetReplicationInfoAsync(
+        ShowAssetReplicationInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showAssetReplicationInfo);
+    }
+
+    /**
+     * 查询资产复制信息
+     *
+     * 当需要将资产从A Region复制到B Region时，先要在A Region调用该接口用于查询资产复制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetReplicationInfoRequest 请求对象
+     * @return AsyncInvoker<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse>
+     */
+    public AsyncInvoker<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse> showAssetReplicationInfoAsyncInvoker(
+        ShowAssetReplicationInfoRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showAssetReplicationInfo, hcClient);
     }
 
     /**
@@ -1041,6 +1291,7 @@ public class MetaStudioAsyncClient {
      * 创建一次性鉴权码
      *
      * 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
+     * &gt; 接口只能通过第三方后台调用，不能在浏览器前台直接调用，否则会有跨域问题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1055,6 +1306,7 @@ public class MetaStudioAsyncClient {
      * 创建一次性鉴权码
      *
      * 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
+     * &gt; 接口只能通过第三方后台调用，不能在浏览器前台直接调用，否则会有跨域问题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1327,9 +1579,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 创建智能交互对话直播间
+     * 创建智能交互对话
      *
-     * 该接口用于创建智能交互对话直播间。
+     * 该接口用于创建智能交互对话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1341,9 +1593,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 创建智能交互对话直播间
+     * 创建智能交互对话
      *
-     * 该接口用于创建智能交互对话直播间。
+     * 该接口用于创建智能交互对话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1356,9 +1608,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 删除智能交互对话直播间
+     * 删除智能交互对话
      *
-     * 该接口用于删除智能交互对话直播间。
+     * 该接口用于删除智能交互对话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1370,9 +1622,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 删除智能交互对话直播间
+     * 删除智能交互对话
      *
-     * 该接口用于删除智能交互对话直播间。
+     * 该接口用于删除智能交互对话。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1385,9 +1637,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 查询智能交互对话直播间列表
+     * 查询智能交互对话列表
      *
-     * 该接口用于智能交互对话直播间列表。
+     * 该接口用于智能交互对话列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1399,9 +1651,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 查询智能交互对话直播间列表
+     * 查询智能交互对话列表
      *
-     * 该接口用于智能交互对话直播间列表。
+     * 该接口用于智能交互对话列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1414,9 +1666,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 查询智能交互对话直播间详情
+     * 查询智能交互对话详情
      *
-     * 该接口用于查询智能交互对话直播间详情。
+     * 该接口用于查询智能交互对话详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1428,9 +1680,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 查询智能交互对话直播间详情
+     * 查询智能交互对话详情
      *
-     * 该接口用于查询智能交互对话直播间详情。
+     * 该接口用于查询智能交互对话详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1443,9 +1695,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 更新智能交互对话直播间信息
+     * 更新智能交互对话信息
      *
-     * 该接口用于智能交互对话直播间信息。
+     * 该接口用于智能交互对话信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1457,9 +1709,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 更新智能交互对话直播间信息
+     * 更新智能交互对话信息
      *
-     * 该接口用于智能交互对话直播间信息。
+     * 该接口用于智能交互对话信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

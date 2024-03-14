@@ -64,6 +64,11 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
     private String fileType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowHistoryTaskDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -250,6 +255,25 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.fileType = fileType;
     }
 
+    public ShowHistoryTaskDetailsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -263,12 +287,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.urls, that.urls)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.processing, that.processing)
             && Objects.equals(this.succeed, that.succeed) && Objects.equals(this.failed, that.failed)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.fileType, that.fileType);
+            && Objects.equals(this.total, that.total) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, taskType, status, urls, createTime, processing, succeed, failed, total, fileType);
+        return Objects
+            .hash(id, taskType, status, urls, createTime, processing, succeed, failed, total, fileType, xRequestId);
     }
 
     @Override
@@ -285,6 +311,7 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

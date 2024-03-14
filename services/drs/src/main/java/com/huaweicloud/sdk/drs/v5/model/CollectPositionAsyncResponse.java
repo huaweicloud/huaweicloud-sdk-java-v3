@@ -102,6 +102,11 @@ public class CollectPositionAsyncResponse extends SdkResponse {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public CollectPositionAsyncResponse withId(String id) {
         this.id = id;
         return this;
@@ -136,6 +141,23 @@ public class CollectPositionAsyncResponse extends SdkResponse {
         this.status = status;
     }
 
+    public CollectPositionAsyncResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 任务ID
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -145,12 +167,13 @@ public class CollectPositionAsyncResponse extends SdkResponse {
             return false;
         }
         CollectPositionAsyncResponse that = (CollectPositionAsyncResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status);
+        return Objects.hash(id, status, jobId);
     }
 
     @Override
@@ -159,6 +182,7 @@ public class CollectPositionAsyncResponse extends SdkResponse {
         sb.append("class CollectPositionAsyncResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -177,6 +177,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
@@ -2924,6 +2928,63 @@ public class DwsAsyncClient {
      */
     public AsyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse> listLtsLogsAsyncInvoker(ListLtsLogsRequest request) {
         return new AsyncInvoker<>(request, DwsMeta.listLtsLogs, hcClient);
+    }
+
+    /**
+     * 查询集群使用指标列表
+     *
+     * 查询集群使用指标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return CompletableFuture<ListMetricsResponse>
+     */
+    public CompletableFuture<ListMetricsResponse> listMetricsAsync(ListMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listMetrics);
+    }
+
+    /**
+     * 查询集群使用指标列表
+     *
+     * 查询集群使用指标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return AsyncInvoker<ListMetricsRequest, ListMetricsResponse>
+     */
+    public AsyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsAsyncInvoker(ListMetricsRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.listMetrics, hcClient);
+    }
+
+    /**
+     * 获取指定指标相关采集数据
+     *
+     * 获取指定指标相关采集数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsDataRequest 请求对象
+     * @return CompletableFuture<ListMetricsDataResponse>
+     */
+    public CompletableFuture<ListMetricsDataResponse> listMetricsDataAsync(ListMetricsDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listMetricsData);
+    }
+
+    /**
+     * 获取指定指标相关采集数据
+     *
+     * 获取指定指标相关采集数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsDataRequest 请求对象
+     * @return AsyncInvoker<ListMetricsDataRequest, ListMetricsDataResponse>
+     */
+    public AsyncInvoker<ListMetricsDataRequest, ListMetricsDataResponse> listMetricsDataAsyncInvoker(
+        ListMetricsDataRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.listMetricsData, hcClient);
     }
 
     /**

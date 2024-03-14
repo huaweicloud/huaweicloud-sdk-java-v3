@@ -229,7 +229,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * 源实例的唯一标识(单实例为ID，版本实例为versionId)。
+     * 源实例的唯一标识（单实例为ID，版本实例为versionId）。
      * @return sourceInstanceId
      */
     public String getSourceInstanceId() {

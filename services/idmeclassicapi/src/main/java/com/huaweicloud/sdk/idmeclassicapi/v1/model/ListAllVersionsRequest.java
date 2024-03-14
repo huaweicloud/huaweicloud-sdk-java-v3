@@ -230,7 +230,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 当前页
+     * 当前页数（路径参数）。
      * @return curPagePath
      */
     public Integer getCurPagePath() {
@@ -247,7 +247,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 每页大小
+     * 当前页数（路径参数）。
      * @return pageSizePath
      */
     public Integer getPageSizePath() {

@@ -17,6 +17,11 @@ public class UpdateDomainOriginResponse extends SdkResponse {
 
     private ResourceBody origin;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateDomainOriginResponse withOrigin(ResourceBody origin) {
         this.origin = origin;
         return this;
@@ -43,6 +48,25 @@ public class UpdateDomainOriginResponse extends SdkResponse {
         this.origin = origin;
     }
 
+    public UpdateDomainOriginResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class UpdateDomainOriginResponse extends SdkResponse {
             return false;
         }
         UpdateDomainOriginResponse that = (UpdateDomainOriginResponse) obj;
-        return Objects.equals(this.origin, that.origin);
+        return Objects.equals(this.origin, that.origin) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(origin);
+        return Objects.hash(origin, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class UpdateDomainOriginResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDomainOriginResponse {\n");
         sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

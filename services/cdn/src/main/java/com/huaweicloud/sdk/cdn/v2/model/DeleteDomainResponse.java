@@ -17,6 +17,11 @@ public class DeleteDomainResponse extends SdkResponse {
 
     private DomainsWithPort domain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public DeleteDomainResponse withDomain(DomainsWithPort domain) {
         this.domain = domain;
         return this;
@@ -43,6 +48,25 @@ public class DeleteDomainResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    public DeleteDomainResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class DeleteDomainResponse extends SdkResponse {
             return false;
         }
         DeleteDomainResponse that = (DeleteDomainResponse) obj;
-        return Objects.equals(this.domain, that.domain);
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain);
+        return Objects.hash(domain, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class DeleteDomainResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDomainResponse {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

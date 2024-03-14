@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class AcceptOrRejectEndpointRequestBody {
 
     /**
-     * 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+     * 允许或拒绝连接。  - receive：允许连接。  - reject：拒绝连接。
      */
     public static final class ActionEnum {
 
@@ -104,7 +104,7 @@ public class AcceptOrRejectEndpointRequestBody {
     }
 
     /**
-     * 允许或拒绝连接。 ● receive：允许连接。 ● reject：拒绝连接。
+     * 允许或拒绝连接。  - receive：允许连接。  - reject：拒绝连接。
      * @return action
      */
     public ActionEnum getAction() {

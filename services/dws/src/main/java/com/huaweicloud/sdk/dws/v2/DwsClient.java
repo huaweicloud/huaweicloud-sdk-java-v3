@@ -177,6 +177,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
@@ -2882,6 +2886,63 @@ public class DwsClient {
      */
     public SyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse> listLtsLogsInvoker(ListLtsLogsRequest request) {
         return new SyncInvoker<>(request, DwsMeta.listLtsLogs, hcClient);
+    }
+
+    /**
+     * 查询集群使用指标列表
+     *
+     * 查询集群使用指标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return ListMetricsResponse
+     */
+    public ListMetricsResponse listMetrics(ListMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listMetrics);
+    }
+
+    /**
+     * 查询集群使用指标列表
+     *
+     * 查询集群使用指标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return SyncInvoker<ListMetricsRequest, ListMetricsResponse>
+     */
+    public SyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsInvoker(ListMetricsRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listMetrics, hcClient);
+    }
+
+    /**
+     * 获取指定指标相关采集数据
+     *
+     * 获取指定指标相关采集数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsDataRequest 请求对象
+     * @return ListMetricsDataResponse
+     */
+    public ListMetricsDataResponse listMetricsData(ListMetricsDataRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listMetricsData);
+    }
+
+    /**
+     * 获取指定指标相关采集数据
+     *
+     * 获取指定指标相关采集数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsDataRequest 请求对象
+     * @return SyncInvoker<ListMetricsDataRequest, ListMetricsDataResponse>
+     */
+    public SyncInvoker<ListMetricsDataRequest, ListMetricsDataResponse> listMetricsDataInvoker(
+        ListMetricsDataRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.listMetricsData, hcClient);
     }
 
     /**

@@ -184,6 +184,16 @@ public class SmartLiveJob {
 
     private String coverUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "co_streamer_config")
+
+    private CoStreamerConfig coStreamerConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_job_log")
+
+    private LiveJobLog liveJobLog;
+
     public SmartLiveJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -487,6 +497,58 @@ public class SmartLiveJob {
         this.coverUrl = coverUrl;
     }
 
+    public SmartLiveJob withCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+        return this;
+    }
+
+    public SmartLiveJob withCoStreamerConfig(Consumer<CoStreamerConfig> coStreamerConfigSetter) {
+        if (this.coStreamerConfig == null) {
+            this.coStreamerConfig = new CoStreamerConfig();
+            coStreamerConfigSetter.accept(this.coStreamerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get coStreamerConfig
+     * @return coStreamerConfig
+     */
+    public CoStreamerConfig getCoStreamerConfig() {
+        return coStreamerConfig;
+    }
+
+    public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+    }
+
+    public SmartLiveJob withLiveJobLog(LiveJobLog liveJobLog) {
+        this.liveJobLog = liveJobLog;
+        return this;
+    }
+
+    public SmartLiveJob withLiveJobLog(Consumer<LiveJobLog> liveJobLogSetter) {
+        if (this.liveJobLog == null) {
+            this.liveJobLog = new LiveJobLog();
+            liveJobLogSetter.accept(this.liveJobLog);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveJobLog
+     * @return liveJobLog
+     */
+    public LiveJobLog getLiveJobLog() {
+        return liveJobLog;
+    }
+
+    public void setLiveJobLog(LiveJobLog liveJobLog) {
+        this.liveJobLog = liveJobLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -506,7 +568,9 @@ public class SmartLiveJob {
             && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.streamDuration, that.streamDuration)
-            && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl);
+            && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl)
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
+            && Objects.equals(this.liveJobLog, that.liveJobLog);
     }
 
     @Override
@@ -526,7 +590,9 @@ public class SmartLiveJob {
             liveEventCallbackConfig,
             streamDuration,
             blockReason,
-            coverUrl);
+            coverUrl,
+            coStreamerConfig,
+            liveJobLog);
     }
 
     @Override
@@ -549,6 +615,8 @@ public class SmartLiveJob {
         sb.append("    streamDuration: ").append(toIndentedString(streamDuration)).append("\n");
         sb.append("    blockReason: ").append(toIndentedString(blockReason)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
+        sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

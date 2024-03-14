@@ -20,6 +20,11 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count_concurrency")
+
+    private Integer countConcurrency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smart_chat_rooms")
 
     private List<SmartChatRoomBaseInfo> smartChatRooms = null;
@@ -35,7 +40,7 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话直播间总数。
+     * 智能交互对话总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -46,6 +51,25 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public ListSmartChatRoomsResponse withCountConcurrency(Integer countConcurrency) {
+        this.countConcurrency = countConcurrency;
+        return this;
+    }
+
+    /**
+     * 智能交互对话总并发路数。
+     * minimum: 0
+     * maximum: 1024000
+     * @return countConcurrency
+     */
+    public Integer getCountConcurrency() {
+        return countConcurrency;
+    }
+
+    public void setCountConcurrency(Integer countConcurrency) {
+        this.countConcurrency = countConcurrency;
     }
 
     public ListSmartChatRoomsResponse withSmartChatRooms(List<SmartChatRoomBaseInfo> smartChatRooms) {
@@ -70,7 +94,7 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话直播间列表。
+     * 智能交互对话列表。
      * @return smartChatRooms
      */
     public List<SmartChatRoomBaseInfo> getSmartChatRooms() {
@@ -109,13 +133,14 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
             return false;
         }
         ListSmartChatRoomsResponse that = (ListSmartChatRoomsResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.smartChatRooms, that.smartChatRooms)
+        return Objects.equals(this.count, that.count) && Objects.equals(this.countConcurrency, that.countConcurrency)
+            && Objects.equals(this.smartChatRooms, that.smartChatRooms)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, smartChatRooms, xRequestId);
+        return Objects.hash(count, countConcurrency, smartChatRooms, xRequestId);
     }
 
     @Override
@@ -123,6 +148,7 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSmartChatRoomsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    countConcurrency: ").append(toIndentedString(countConcurrency)).append("\n");
         sb.append("    smartChatRooms: ").append(toIndentedString(smartChatRooms)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

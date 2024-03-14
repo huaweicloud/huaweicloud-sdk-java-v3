@@ -26,6 +26,11 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
 
     private Object data;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateBlackWhiteListResponse withCode(String code) {
         this.code = code;
         return this;
@@ -77,6 +82,25 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         this.data = data;
     }
 
+    public UpdateBlackWhiteListResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +111,12 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         }
         UpdateBlackWhiteListResponse that = (UpdateBlackWhiteListResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.result, that.result)
-            && Objects.equals(this.data, that.data);
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, result, data);
+        return Objects.hash(code, result, data, xRequestId);
     }
 
     @Override
@@ -102,6 +126,7 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

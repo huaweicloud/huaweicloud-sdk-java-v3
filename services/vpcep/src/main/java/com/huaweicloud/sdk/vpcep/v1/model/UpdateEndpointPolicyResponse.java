@@ -1,16 +1,12 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -24,179 +20,15 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
 
     private String id;
 
-    /**
-     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
-     */
-    public static final class ServiceTypeEnum {
-
-        /**
-         * Enum INTERFACE for value: "interface"
-         */
-        public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
-
-        /**
-         * Enum GATEWAY for value: "gateway"
-         */
-        public static final ServiceTypeEnum GATEWAY = new ServiceTypeEnum("gateway");
-
-        private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ServiceTypeEnum> createStaticFields() {
-            Map<String, ServiceTypeEnum> map = new HashMap<>();
-            map.put("interface", INTERFACE);
-            map.put("gateway", GATEWAY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ServiceTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ServiceTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
-        }
-
-        public static ServiceTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ServiceTypeEnum) {
-                return this.value.equals(((ServiceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
-    private ServiceTypeEnum serviceType;
-
-    /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum PENDINGACCEPTANCE for value: "pendingAcceptance"
-         */
-        public static final StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
-
-        /**
-         * Enum CREATING for value: "creating"
-         */
-        public static final StatusEnum CREATING = new StatusEnum("creating");
-
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
-        public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
-        public static final StatusEnum REJECTED = new StatusEnum("rejected");
-
-        /**
-         * Enum FAILED for value: "failed"
-         */
-        public static final StatusEnum FAILED = new StatusEnum("failed");
-
-        /**
-         * Enum DELETING for value: "deleting"
-         */
-        public static final StatusEnum DELETING = new StatusEnum("deleting");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("pendingAcceptance", PENDINGACCEPTANCE);
-            map.put("creating", CREATING);
-            map.put("accepted", ACCEPTED);
-            map.put("rejected", REJECTED);
-            map.put("failed", FAILED);
-            map.put("deleting", DELETING);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_status")
@@ -219,16 +51,6 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     private String endpointServiceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_dns")
-
-    private Boolean enableDns;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_names")
-
-    private List<String> dnsNames = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
     private String ip;
@@ -239,19 +61,14 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_id")
-
-    private String subnetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private String updatedAt;
+    private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -320,37 +137,37 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
         this.id = id;
     }
 
-    public UpdateEndpointPolicyResponse withServiceType(ServiceTypeEnum serviceType) {
+    public UpdateEndpointPolicyResponse withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 终端节点连接的终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
+     * 终端节点连接的终端节点服务类型。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
      * @return serviceType
      */
-    public ServiceTypeEnum getServiceType() {
+    public String getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(ServiceTypeEnum serviceType) {
+    public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
 
-    public UpdateEndpointPolicyResponse withStatus(StatusEnum status) {
+    public UpdateEndpointPolicyResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+     * 终端节点的连接状态。  - pendingAcceptance：待接受  - creating：创建中  - accepted：已接受  - rejected：已拒绝  - failed：失败  - deleting：删除中
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -376,7 +193,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 帐号状态。 ● frozen：冻结 ● active：解冻
+     * 帐号状态。  - frozen：冻结  - active：解冻
      * @return activeStatus
      */
     public List<String> getActiveStatus() {
@@ -438,56 +255,6 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
         this.endpointServiceId = endpointServiceId;
     }
 
-    public UpdateEndpointPolicyResponse withEnableDns(Boolean enableDns) {
-        this.enableDns = enableDns;
-        return this;
-    }
-
-    /**
-     * 是否创建域名。 ● true：创建域名 ● false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
-     * @return enableDns
-     */
-    public Boolean getEnableDns() {
-        return enableDns;
-    }
-
-    public void setEnableDns(Boolean enableDns) {
-        this.enableDns = enableDns;
-    }
-
-    public UpdateEndpointPolicyResponse withDnsNames(List<String> dnsNames) {
-        this.dnsNames = dnsNames;
-        return this;
-    }
-
-    public UpdateEndpointPolicyResponse addDnsNamesItem(String dnsNamesItem) {
-        if (this.dnsNames == null) {
-            this.dnsNames = new ArrayList<>();
-        }
-        this.dnsNames.add(dnsNamesItem);
-        return this;
-    }
-
-    public UpdateEndpointPolicyResponse withDnsNames(Consumer<List<String>> dnsNamesSetter) {
-        if (this.dnsNames == null) {
-            this.dnsNames = new ArrayList<>();
-        }
-        dnsNamesSetter.accept(this.dnsNames);
-        return this;
-    }
-
-    /**
-     * 访问所连接的终端节点服务的域名。 当“enable_dns”为true时，该参数可见。
-     * @return dnsNames
-     */
-    public List<String> getDnsNames() {
-        return dnsNames;
-    }
-
-    public void setDnsNames(List<String> dnsNames) {
-        this.dnsNames = dnsNames;
-    }
-
     public UpdateEndpointPolicyResponse withIp(String ip) {
         this.ip = ip;
         return this;
@@ -522,24 +289,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
-    public UpdateEndpointPolicyResponse withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-        return this;
-    }
-
-    /**
-     * vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。
-     * @return subnetId
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    public UpdateEndpointPolicyResponse withCreatedAt(String createdAt) {
+    public UpdateEndpointPolicyResponse withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -548,15 +298,15 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
      * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public UpdateEndpointPolicyResponse withUpdatedAt(String updatedAt) {
+    public UpdateEndpointPolicyResponse withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -565,11 +315,11 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
      * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return updatedAt
      */
-    public String getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -695,7 +445,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
+     * 是否开启网络ACL隔离。  - true：开启网络ACL隔离  - false：不开启网络ACL隔离 若未指定，则返回false。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
      * @return enableWhitelist
      */
     public Boolean getEnableWhitelist() {
@@ -836,10 +586,8 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.activeStatus, that.activeStatus)
             && Objects.equals(this.endpointServiceName, that.endpointServiceName)
             && Objects.equals(this.markerId, that.markerId)
-            && Objects.equals(this.endpointServiceId, that.endpointServiceId)
-            && Objects.equals(this.enableDns, that.enableDns) && Objects.equals(this.dnsNames, that.dnsNames)
-            && Objects.equals(this.ip, that.ip) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.endpointServiceId, that.endpointServiceId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.error, that.error)
             && Objects.equals(this.whitelist, that.whitelist)
@@ -859,11 +607,8 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
             endpointServiceName,
             markerId,
             endpointServiceId,
-            enableDns,
-            dnsNames,
             ip,
             vpcId,
-            subnetId,
             createdAt,
             updatedAt,
             projectId,
@@ -889,11 +634,8 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
         sb.append("    endpointServiceName: ").append(toIndentedString(endpointServiceName)).append("\n");
         sb.append("    markerId: ").append(toIndentedString(markerId)).append("\n");
         sb.append("    endpointServiceId: ").append(toIndentedString(endpointServiceId)).append("\n");
-        sb.append("    enableDns: ").append(toIndentedString(enableDns)).append("\n");
-        sb.append("    dnsNames: ").append(toIndentedString(dnsNames)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

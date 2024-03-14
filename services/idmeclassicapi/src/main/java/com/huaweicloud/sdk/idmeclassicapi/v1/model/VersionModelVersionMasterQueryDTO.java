@@ -53,7 +53,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * 迭代版本。
+     * 迭代版本。如果此参数为空，则返回M-V模型实例的最新版本信息。
      * @return iteration
      */
     public Integer getIteration() {

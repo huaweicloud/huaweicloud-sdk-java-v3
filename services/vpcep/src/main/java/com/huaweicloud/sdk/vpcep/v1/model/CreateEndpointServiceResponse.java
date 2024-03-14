@@ -1,16 +1,12 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -34,86 +30,10 @@ public class CreateEndpointServiceResponse extends SdkResponse {
 
     private String serviceName;
 
-    /**
-     * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
-     */
-    public static final class ServerTypeEnum {
-
-        /**
-         * Enum VM for value: "VM"
-         */
-        public static final ServerTypeEnum VM = new ServerTypeEnum("VM");
-
-        /**
-         * Enum VIP for value: "VIP"
-         */
-        public static final ServerTypeEnum VIP = new ServerTypeEnum("VIP");
-
-        /**
-         * Enum LB for value: "LB"
-         */
-        public static final ServerTypeEnum LB = new ServerTypeEnum("LB");
-
-        private static final Map<String, ServerTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ServerTypeEnum> createStaticFields() {
-            Map<String, ServerTypeEnum> map = new HashMap<>();
-            map.put("VM", VM);
-            map.put("VIP", VIP);
-            map.put("LB", LB);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ServerTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ServerTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServerTypeEnum(value));
-        }
-
-        public static ServerTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ServerTypeEnum) {
-                return this.value.equals(((ServerTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_type")
 
-    private ServerTypeEnum serverType;
+    private String serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -130,86 +50,10 @@ public class CreateEndpointServiceResponse extends SdkResponse {
 
     private Boolean approvalEnabled;
 
-    /**
-     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum CREATING for value: "creating"
-         */
-        public static final StatusEnum CREATING = new StatusEnum("creating");
-
-        /**
-         * Enum AVAILABLE for value: "available"
-         */
-        public static final StatusEnum AVAILABLE = new StatusEnum("available");
-
-        /**
-         * Enum FAILED for value: "failed"
-         */
-        public static final StatusEnum FAILED = new StatusEnum("failed");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("creating", CREATING);
-            map.put("available", AVAILABLE);
-            map.put("failed", FAILED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
@@ -219,12 +63,12 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private String updatedAt;
+    private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -236,98 +80,10 @@ public class CreateEndpointServiceResponse extends SdkResponse {
 
     private List<PortList> ports = null;
 
-    /**
-     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
-     */
-    public static final class TcpProxyEnum {
-
-        /**
-         * Enum CLOSE for value: "close"
-         */
-        public static final TcpProxyEnum CLOSE = new TcpProxyEnum("close");
-
-        /**
-         * Enum TOA_OPEN for value: "toa_open"
-         */
-        public static final TcpProxyEnum TOA_OPEN = new TcpProxyEnum("toa_open");
-
-        /**
-         * Enum PROXY_OPEN for value: "proxy_open"
-         */
-        public static final TcpProxyEnum PROXY_OPEN = new TcpProxyEnum("proxy_open");
-
-        /**
-         * Enum OPEN for value: "open"
-         */
-        public static final TcpProxyEnum OPEN = new TcpProxyEnum("open");
-
-        /**
-         * Enum PROXY_VNI for value: "proxy_vni"
-         */
-        public static final TcpProxyEnum PROXY_VNI = new TcpProxyEnum("proxy_vni");
-
-        private static final Map<String, TcpProxyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TcpProxyEnum> createStaticFields() {
-            Map<String, TcpProxyEnum> map = new HashMap<>();
-            map.put("close", CLOSE);
-            map.put("toa_open", TOA_OPEN);
-            map.put("proxy_open", PROXY_OPEN);
-            map.put("open", OPEN);
-            map.put("proxy_vni", PROXY_VNI);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TcpProxyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TcpProxyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
-        }
-
-        public static TcpProxyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TcpProxyEnum) {
-                return this.value.equals(((TcpProxyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tcp_proxy")
 
-    private TcpProxyEnum tcpProxy;
+    private String tcpProxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -367,7 +123,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型）
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为：  - LB类型：负载均衡器内网IP对应的端口ID。  - VM类型：弹性云服务器IP地址对应的网卡ID。  - VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型）
      * @return portId
      */
     public String getPortId() {
@@ -395,20 +151,20 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.serviceName = serviceName;
     }
 
-    public CreateEndpointServiceResponse withServerType(ServerTypeEnum serverType) {
+    public CreateEndpointServiceResponse withServerType(String serverType) {
         this.serverType = serverType;
         return this;
     }
 
     /**
-     * 资源类型。 ● VM：云服务器。 ● VIP：虚拟IP。 ● LB：增强负载均衡型。
+     * 资源类型。  - VM：云服务器。  - VIP：虚拟IP。  - LB：增强负载均衡型。
      * @return serverType
      */
-    public ServerTypeEnum getServerType() {
+    public String getServerType() {
         return serverType;
     }
 
-    public void setServerType(ServerTypeEnum serverType) {
+    public void setServerType(String serverType) {
         this.serverType = serverType;
     }
 
@@ -452,7 +208,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 是否需要审批。 ● false：不需要审批，创建的终端节点连接直接为accepted状态。 ● true：需要审批，创建的终端节点连接为pendingAcceptance状态， 需要终端节点服务所属用户审核后方可使用。
+     * 是否需要审批。  - false：不需要审批，创建的终端节点连接直接为accepted状态。  - true：需要审批，创建的终端节点连接为pendingAcceptance状态， 需要终端节点服务所属用户审核后方可使用。
      * @return approvalEnabled
      */
     public Boolean getApprovalEnabled() {
@@ -463,20 +219,20 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.approvalEnabled = approvalEnabled;
     }
 
-    public CreateEndpointServiceResponse withStatus(StatusEnum status) {
+    public CreateEndpointServiceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败
+     * 终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -486,7 +242,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点服务类型。 终端节点服务类型包括“网关（gataway）型”和“接口（interface）型”： ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。 终端节点服务类型包括“网关（gateway）型”和“接口（interface）型”：  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      * @return serviceType
      */
     public String getServiceType() {
@@ -497,7 +253,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.serviceType = serviceType;
     }
 
-    public CreateEndpointServiceResponse withCreatedAt(String createdAt) {
+    public CreateEndpointServiceResponse withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -506,15 +262,15 @@ public class CreateEndpointServiceResponse extends SdkResponse {
      * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public CreateEndpointServiceResponse withUpdatedAt(String updatedAt) {
+    public CreateEndpointServiceResponse withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -523,11 +279,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
      * 终端节点服务的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return updatedAt
      */
-    public String getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -581,20 +337,20 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.ports = ports;
     }
 
-    public CreateEndpointServiceResponse withTcpProxy(TcpProxyEnum tcpProxy) {
+    public CreateEndpointServiceResponse withTcpProxy(String tcpProxy) {
         this.tcpProxy = tcpProxy;
         return this;
     }
 
     /**
-     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      * @return tcpProxy
      */
-    public TcpProxyEnum getTcpProxy() {
+    public String getTcpProxy() {
         return tcpProxy;
     }
 
-    public void setTcpProxy(TcpProxyEnum tcpProxy) {
+    public void setTcpProxy(String tcpProxy) {
         this.tcpProxy = tcpProxy;
     }
 
@@ -654,7 +410,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+     * 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
      * @return enablePolicy
      */
     public Boolean getEnablePolicy() {

@@ -17,6 +17,11 @@ public class UpdateOriginHostResponse extends SdkResponse {
 
     private DomainOriginHost originHost;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateOriginHostResponse withOriginHost(DomainOriginHost originHost) {
         this.originHost = originHost;
         return this;
@@ -43,6 +48,25 @@ public class UpdateOriginHostResponse extends SdkResponse {
         this.originHost = originHost;
     }
 
+    public UpdateOriginHostResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class UpdateOriginHostResponse extends SdkResponse {
             return false;
         }
         UpdateOriginHostResponse that = (UpdateOriginHostResponse) obj;
-        return Objects.equals(this.originHost, that.originHost);
+        return Objects.equals(this.originHost, that.originHost) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originHost);
+        return Objects.hash(originHost, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class UpdateOriginHostResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateOriginHostResponse {\n");
         sb.append("    originHost: ").append(toIndentedString(originHost)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

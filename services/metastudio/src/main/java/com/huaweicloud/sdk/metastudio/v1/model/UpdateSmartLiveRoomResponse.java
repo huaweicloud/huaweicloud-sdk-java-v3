@@ -236,6 +236,11 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private ViewModeEnum viewMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "co_streamer_config")
+
+    private CoStreamerConfig coStreamerConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
     private String roomId;
@@ -254,6 +259,11 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     @JsonProperty(value = "cover_url")
 
     private String coverUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnail")
+
+    private String thumbnail;
 
     /**
      * 直播间配置状态。 - ENABLE: 直播间正常可用。 - DISABLE： 直播间不可用。不可用原因在error_info中说明。 - BLOCKED：直播间被冻结。冻结原因在error_info中说明。
@@ -711,6 +721,32 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         this.viewMode = viewMode;
     }
 
+    public UpdateSmartLiveRoomResponse withCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+        return this;
+    }
+
+    public UpdateSmartLiveRoomResponse withCoStreamerConfig(Consumer<CoStreamerConfig> coStreamerConfigSetter) {
+        if (this.coStreamerConfig == null) {
+            this.coStreamerConfig = new CoStreamerConfig();
+            coStreamerConfigSetter.accept(this.coStreamerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get coStreamerConfig
+     * @return coStreamerConfig
+     */
+    public CoStreamerConfig getCoStreamerConfig() {
+        return coStreamerConfig;
+    }
+
+    public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+    }
+
     public UpdateSmartLiveRoomResponse withRoomId(String roomId) {
         this.roomId = roomId;
         return this;
@@ -777,6 +813,23 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
 
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
+    }
+
+    public UpdateSmartLiveRoomResponse withThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+        return this;
+    }
+
+    /**
+     * 直播间封面图新URL
+     * @return thumbnail
+     */
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public UpdateSmartLiveRoomResponse withRoomState(RoomStateEnum roomState) {
@@ -860,8 +913,9 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
-            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.coverUrl, that.coverUrl)
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnail, that.thumbnail)
             && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
@@ -882,10 +936,12 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             reviewConfig,
             sharedConfig,
             viewMode,
+            coStreamerConfig,
             roomId,
             createTime,
             updateTime,
             coverUrl,
+            thumbnail,
             roomState,
             errorInfo,
             xRequestId);
@@ -909,10 +965,12 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
+        sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

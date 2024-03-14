@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ListCreateAccountStatusesRequest {
 
     /**
-     * in_progress处理中，succeeded成功，failed失败
+     * 创建账号的状态，in_progress处理中，succeeded成功，failed失败
      */
     public static final class StatesEnum {
 

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -11,10 +16,80 @@ import java.util.function.Consumer;
  */
 public class BatchAddOrRemoveResourceInstanceRequest {
 
+    /**
+     * 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
+     */
+    public static final class ResourceTypeEnum {
+
+        /**
+         * Enum ENDPOINT_SERVICE for value: "endpoint_service"
+         */
+        public static final ResourceTypeEnum ENDPOINT_SERVICE = new ResourceTypeEnum("endpoint_service");
+
+        /**
+         * Enum ENDPOINT for value: "endpoint"
+         */
+        public static final ResourceTypeEnum ENDPOINT = new ResourceTypeEnum("endpoint");
+
+        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceTypeEnum> createStaticFields() {
+            Map<String, ResourceTypeEnum> map = new HashMap<>();
+            map.put("endpoint_service", ENDPOINT_SERVICE);
+            map.put("endpoint", ENDPOINT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
+        }
+
+        public static ResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceTypeEnum) {
+                return this.value.equals(((ResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    private String resourceType;
+    private ResourceTypeEnum resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
@@ -24,22 +99,22 @@ public class BatchAddOrRemoveResourceInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchAddOrRemoveResourceInstanceBody body;
+    private BatchAddOrRemoveResourceInstanceRequestBody body;
 
-    public BatchAddOrRemoveResourceInstanceRequest withResourceType(String resourceType) {
+    public BatchAddOrRemoveResourceInstanceRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 资源类型，值为：endpoint_service或endpoint。
+     * 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
      * @return resourceType
      */
-    public String getResourceType() {
+    public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(String resourceType) {
+    public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
 
@@ -49,7 +124,7 @@ public class BatchAddOrRemoveResourceInstanceRequest {
     }
 
     /**
-     * 资源ID，Endpoint ServiceID或Endpoint ID。
+     * 资源ID，Endpoint Service ID或Endpoint ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -60,14 +135,15 @@ public class BatchAddOrRemoveResourceInstanceRequest {
         this.resourceId = resourceId;
     }
 
-    public BatchAddOrRemoveResourceInstanceRequest withBody(BatchAddOrRemoveResourceInstanceBody body) {
+    public BatchAddOrRemoveResourceInstanceRequest withBody(BatchAddOrRemoveResourceInstanceRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchAddOrRemoveResourceInstanceRequest withBody(Consumer<BatchAddOrRemoveResourceInstanceBody> bodySetter) {
+    public BatchAddOrRemoveResourceInstanceRequest withBody(
+        Consumer<BatchAddOrRemoveResourceInstanceRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchAddOrRemoveResourceInstanceBody();
+            this.body = new BatchAddOrRemoveResourceInstanceRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +154,11 @@ public class BatchAddOrRemoveResourceInstanceRequest {
      * Get body
      * @return body
      */
-    public BatchAddOrRemoveResourceInstanceBody getBody() {
+    public BatchAddOrRemoveResourceInstanceRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchAddOrRemoveResourceInstanceBody body) {
+    public void setBody(BatchAddOrRemoveResourceInstanceRequestBody body) {
         this.body = body;
     }
 

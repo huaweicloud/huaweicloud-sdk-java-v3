@@ -195,6 +195,81 @@ public class SmartLiveRoomBaseInfo {
 
     private RoomStateEnum roomState;
 
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     */
+    public static final class ViewModeEnum {
+
+        /**
+         * Enum LANDSCAPE for value: "LANDSCAPE"
+         */
+        public static final ViewModeEnum LANDSCAPE = new ViewModeEnum("LANDSCAPE");
+
+        /**
+         * Enum VERTICAL for value: "VERTICAL"
+         */
+        public static final ViewModeEnum VERTICAL = new ViewModeEnum("VERTICAL");
+
+        private static final Map<String, ViewModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ViewModeEnum> createStaticFields() {
+            Map<String, ViewModeEnum> map = new HashMap<>();
+            map.put("LANDSCAPE", LANDSCAPE);
+            map.put("VERTICAL", VERTICAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ViewModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ViewModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewModeEnum(value));
+        }
+
+        public static ViewModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ViewModeEnum) {
+                return this.value.equals(((ViewModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "view_mode")
+
+    private ViewModeEnum viewMode;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_info")
 
@@ -214,6 +289,11 @@ public class SmartLiveRoomBaseInfo {
     @JsonProperty(value = "cover_url")
 
     private String coverUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnail")
+
+    private String thumbnail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_infos")
@@ -424,6 +504,23 @@ public class SmartLiveRoomBaseInfo {
         this.roomState = roomState;
     }
 
+    public SmartLiveRoomBaseInfo withViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+        return this;
+    }
+
+    /**
+     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * @return viewMode
+     */
+    public ViewModeEnum getViewMode() {
+        return viewMode;
+    }
+
+    public void setViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+    }
+
     public SmartLiveRoomBaseInfo withErrorInfo(ErrorResponse errorInfo) {
         this.errorInfo = errorInfo;
         return this;
@@ -508,6 +605,23 @@ public class SmartLiveRoomBaseInfo {
 
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
+    }
+
+    public SmartLiveRoomBaseInfo withThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+        return this;
+    }
+
+    /**
+     * 直播间封面图URL
+     * @return thumbnail
+     */
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public SmartLiveRoomBaseInfo withModelInfos(List<ModelInfo> modelInfos) {
@@ -639,11 +753,12 @@ public class SmartLiveRoomBaseInfo {
         SmartLiveRoomBaseInfo that = (SmartLiveRoomBaseInfo) obj;
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.roomName, that.roomName) && Objects.equals(this.roomType, that.roomType)
-            && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
-            && Objects.equals(this.sharedConfig, that.sharedConfig)
+            && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.viewMode, that.viewMode)
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.sharedConfig, that.sharedConfig)
             && Objects.equals(this.roomDescription, that.roomDescription)
-            && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.modelInfos, that.modelInfos)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnail, that.thumbnail)
+            && Objects.equals(this.modelInfos, that.modelInfos) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.lastJobStartTime, that.lastJobStartTime)
             && Objects.equals(this.lastJobEndTime, that.lastJobEndTime)
             && Objects.equals(this.lastJobStatus, that.lastJobStatus);
@@ -656,10 +771,12 @@ public class SmartLiveRoomBaseInfo {
             roomName,
             roomType,
             roomState,
+            viewMode,
             errorInfo,
             sharedConfig,
             roomDescription,
             coverUrl,
+            thumbnail,
             modelInfos,
             createTime,
             updateTime,
@@ -677,10 +794,12 @@ public class SmartLiveRoomBaseInfo {
         sb.append("    roomName: ").append(toIndentedString(roomName)).append("\n");
         sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
         sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
+        sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    roomDescription: ").append(toIndentedString(roomDescription)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    modelInfos: ").append(toIndentedString(modelInfos)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

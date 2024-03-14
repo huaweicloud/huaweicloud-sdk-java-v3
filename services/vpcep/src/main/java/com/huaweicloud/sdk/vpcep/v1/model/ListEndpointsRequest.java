@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,15 +40,155 @@ public class ListEndpointsRequest {
 
     private Integer offset;
 
+    /**
+     * 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
+     */
+    public static final class SortKeyEnum {
+
+        /**
+         * Enum CREATE_AT for value: "create_at"
+         */
+        public static final SortKeyEnum CREATE_AT = new SortKeyEnum("create_at");
+
+        /**
+         * Enum UPDATE_AT for value: "update_at"
+         */
+        public static final SortKeyEnum UPDATE_AT = new SortKeyEnum("update_at");
+
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("create_at", CREATE_AT);
+            map.put("update_at", UPDATE_AT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
-    private String sortKey;
+    private SortKeyEnum sortKey;
+
+    /**
+     * 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
+     */
+    public static final class SortDirEnum {
+
+        /**
+         * Enum DESC for value: "desc"
+         */
+        public static final SortDirEnum DESC = new SortDirEnum("desc");
+
+        /**
+         * Enum ASC for value: "asc"
+         */
+        public static final SortDirEnum ASC = new SortDirEnum("asc");
+
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("desc", DESC);
+            map.put("asc", ASC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortDirEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortDirEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
+        }
+
+        public static SortDirEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortDirEnum) {
+                return this.value.equals(((SortDirEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    private String sortDir;
+    private SortDirEnum sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
@@ -138,37 +283,37 @@ public class ListEndpointsRequest {
         this.offset = offset;
     }
 
-    public ListEndpointsRequest withSortKey(String sortKey) {
+    public ListEndpointsRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
     /**
-     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+     * 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
      * @return sortKey
      */
-    public String getSortKey() {
+    public SortKeyEnum getSortKey() {
         return sortKey;
     }
 
-    public void setSortKey(String sortKey) {
+    public void setSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
     }
 
-    public ListEndpointsRequest withSortDir(String sortDir) {
+    public ListEndpointsRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
     /**
-     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
      * @return sortDir
      */
-    public String getSortDir() {
+    public SortDirEnum getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(String sortDir) {
+    public void setSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
     }
 

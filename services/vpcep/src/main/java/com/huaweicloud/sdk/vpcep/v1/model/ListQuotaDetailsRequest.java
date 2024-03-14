@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListQuotaDetailsRequest {
 
     /**
-     * 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
      */
     public static final class TypeEnum {
 
@@ -96,7 +96,7 @@ public class ListQuotaDetailsRequest {
     }
 
     /**
-     * 资源类型。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * 资源类型。  - endpoint_service：终端节点服务  - endpoint：终端节点
      * @return type
      */
     public TypeEnum getType() {

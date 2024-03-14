@@ -108,6 +108,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchCopyDomainResponse::getXRequestId, BatchCopyDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -131,6 +136,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteTagsResponse::getXRequestId, BatchDeleteTagsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -153,6 +163,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDomainResponse::getXRequestId, CreateDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -182,6 +197,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePreheatingTasksResponse::getXRequestId,
+                CreatePreheatingTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -211,6 +232,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRefreshTasksResponse::getXRequestId,
+                CreateRefreshTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -233,6 +260,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTagsResponse::getXRequestId, CreateTagsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -261,6 +293,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainResponse::getXRequestId, DeleteDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -290,6 +327,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DisableDomainResponse::getXRequestId, DisableDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -465,6 +507,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(EnableDomainResponse::getXRequestId, EnableDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -588,6 +635,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDomainsResponse::getXRequestId, ListDomainsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -711,6 +763,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCertificatesHttpsInfoResponse::getXRequestId,
+                ShowCertificatesHttpsInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -774,6 +832,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDomainDetailByNameResponse::getXRequestId,
+                ShowDomainDetailByNameResponse::setXRequestId));
         return builder.build();
     }
 
@@ -810,6 +874,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDomainFullConfigResponse::getXRequestId,
+                ShowDomainFullConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1015,6 +1085,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowHistoryTaskDetailsResponse::getXRequestId,
+                ShowHistoryTaskDetailsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1084,6 +1160,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowHistoryTasksResponse::getXRequestId, ShowHistoryTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1112,6 +1193,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowIpInfoResponse::getXRequestId, ShowIpInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1181,6 +1267,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTagsResponse::getXRequestId, ShowTagsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1369,6 +1460,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVerifyDomainOwnerInfoResponse::getXRequestId,
+                ShowVerifyDomainOwnerInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1404,6 +1501,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainFullConfigResponse::getXRequestId,
+                UpdateDomainFullConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1437,6 +1540,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainMultiCertificatesResponse::getXRequestId,
+                UpdateDomainMultiCertificatesResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1476,6 +1585,12 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePrivateBucketAccessResponse::getXRequestId,
+                UpdatePrivateBucketAccessResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1504,6 +1619,11 @@ public class CdnMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(VerifyDomainOwnerResponse::getXRequestId, VerifyDomainOwnerResponse::setXRequestId));
         return builder.build();
     }
 

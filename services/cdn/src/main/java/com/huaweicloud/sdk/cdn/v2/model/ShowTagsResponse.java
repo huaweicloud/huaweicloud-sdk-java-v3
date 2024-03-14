@@ -19,6 +19,11 @@ public class ShowTagsResponse extends SdkResponse {
 
     private List<TagMap> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowTagsResponse withTags(List<TagMap> tags) {
         this.tags = tags;
         return this;
@@ -52,6 +57,25 @@ public class ShowTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowTagsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +85,12 @@ public class ShowTagsResponse extends SdkResponse {
             return false;
         }
         ShowTagsResponse that = (ShowTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags);
+        return Objects.hash(tags, xRequestId);
     }
 
     @Override
@@ -74,6 +98,7 @@ public class ShowTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

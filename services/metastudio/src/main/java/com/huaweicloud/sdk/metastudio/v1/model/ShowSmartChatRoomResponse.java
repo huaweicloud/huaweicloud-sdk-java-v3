@@ -100,7 +100,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间名称
+     * 对话名称
      * @return roomName
      */
     public String getRoomName() {
@@ -117,7 +117,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间描述。
+     * 对话描述。
      * @return roomDescription
      */
     public String getRoomDescription() {
@@ -203,7 +203,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 机器人ID。
+     * 机器人ID。获取方法请参考[创建应用](CreateRobot.xml)。
      * @return robotId
      */
     public String getRobotId() {
@@ -350,7 +350,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间ID
+     * 对话ID。
      * @return roomId
      */
     public String getRoomId() {
@@ -367,7 +367,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话直播间创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 智能交互对话创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
      * @return createTime
      */
     public String getCreateTime() {
@@ -384,7 +384,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话直播间更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 智能交互对话更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -401,7 +401,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间封面图URL
+     * 对话封面图URL
      * @return coverUrl
      */
     public String getCoverUrl() {

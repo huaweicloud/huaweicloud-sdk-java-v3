@@ -16,8 +16,13 @@ import java.util.Objects;
  */
 public class ExecuteSmartLiveCommandResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command_id")
+
+    private String commandId;
+
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO: 插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构
+     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO: 插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_LIVE_JOB_CONFIG_INFO: 获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
      */
     public static final class CommandEnum {
 
@@ -41,6 +46,16 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
          */
         public static final CommandEnum GET_CURRENT_PLAYING_SCRIPTS = new CommandEnum("GET_CURRENT_PLAYING_SCRIPTS");
 
+        /**
+         * Enum REWRITE_INTERACTION_RULES for value: "REWRITE_INTERACTION_RULES"
+         */
+        public static final CommandEnum REWRITE_INTERACTION_RULES = new CommandEnum("REWRITE_INTERACTION_RULES");
+
+        /**
+         * Enum GET_LIVE_JOB_CONFIG_INFO for value: "GET_LIVE_JOB_CONFIG_INFO"
+         */
+        public static final CommandEnum GET_LIVE_JOB_CONFIG_INFO = new CommandEnum("GET_LIVE_JOB_CONFIG_INFO");
+
         private static final Map<String, CommandEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CommandEnum> createStaticFields() {
@@ -49,6 +64,8 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
             map.put("REWRITE_PLAY_SCRIPT", REWRITE_PLAY_SCRIPT);
             map.put("INSERT_PLAY_AUDIO", INSERT_PLAY_AUDIO);
             map.put("GET_CURRENT_PLAYING_SCRIPTS", GET_CURRENT_PLAYING_SCRIPTS);
+            map.put("REWRITE_INTERACTION_RULES", REWRITE_INTERACTION_RULES);
+            map.put("GET_LIVE_JOB_CONFIG_INFO", GET_LIVE_JOB_CONFIG_INFO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -113,13 +130,30 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
 
     private String xRequestId;
 
+    public ExecuteSmartLiveCommandResponse withCommandId(String commandId) {
+        this.commandId = commandId;
+        return this;
+    }
+
+    /**
+     * 控制命令ID
+     * @return commandId
+     */
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     public ExecuteSmartLiveCommandResponse withCommand(CommandEnum command) {
         this.command = command;
         return this;
     }
 
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO: 插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构
+     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO: 插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_LIVE_JOB_CONFIG_INFO: 获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
      * @return command
      */
     public CommandEnum getCommand() {
@@ -175,19 +209,20 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
             return false;
         }
         ExecuteSmartLiveCommandResponse that = (ExecuteSmartLiveCommandResponse) obj;
-        return Objects.equals(this.command, that.command) && Objects.equals(this.result, that.result)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.commandId, that.commandId) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(command, result, xRequestId);
+        return Objects.hash(commandId, command, result, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExecuteSmartLiveCommandResponse {\n");
+        sb.append("    commandId: ").append(toIndentedString(commandId)).append("\n");
         sb.append("    command: ").append(toIndentedString(command)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

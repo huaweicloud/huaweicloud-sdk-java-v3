@@ -30,6 +30,8 @@ import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareRequest;
 import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareResponse;
 import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareRequest;
 import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionVersionsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionVersionsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListPermissionsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListQuotaRequest;
@@ -287,6 +289,40 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPermissionVersionsRequest, ListPermissionVersionsResponse> listPermissionVersions =
+        genForListPermissionVersions();
+
+    private static HttpRequestDef<ListPermissionVersionsRequest, ListPermissionVersionsResponse> genForListPermissionVersions() {
+        // basic
+        HttpRequestDef.Builder<ListPermissionVersionsRequest, ListPermissionVersionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPermissionVersionsRequest.class, ListPermissionVersionsResponse.class)
+            .withName("ListPermissionVersions")
+            .withUri("/v1/permissions/{permission_id}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("permission_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPermissionVersionsRequest::getPermissionId,
+                ListPermissionVersionsRequest::setPermissionId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPermissionVersionsRequest::getLimit, ListPermissionVersionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPermissionVersionsRequest::getMarker, ListPermissionVersionsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
         genForListPermissions();
 
@@ -314,6 +350,12 @@ public class RamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPermissionsRequest::getResourceType, ListPermissionsRequest::setResourceType));
+        builder.<ListPermissionsRequest.PermissionTypeEnum>withRequestField("permission_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPermissionsRequest.PermissionTypeEnum.class),
+            f -> f.withMarshaller(ListPermissionsRequest::getPermissionType,
+                ListPermissionsRequest::setPermissionType));
 
         // response
 
@@ -337,6 +379,12 @@ public class RamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPermissionRequest::getPermissionId, ShowPermissionRequest::setPermissionId));
+        builder.<Integer>withRequestField("permission_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPermissionRequest::getPermissionVersion,
+                ShowPermissionRequest::setPermissionVersion));
 
         // response
 

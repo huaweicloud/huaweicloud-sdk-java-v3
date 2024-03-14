@@ -1,15 +1,11 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,160 +14,20 @@ import java.util.function.Consumer;
  */
 public class VersionObject {
 
-    /**
-     * 版本状态。 ● CURRENT：表示该版本为主推版本。 ● SUPPORT：表示为老版本，但是现在还在继续支持。 ● DEPRECATED：表示为废弃版本，存在后续删除的可能。
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum CURRENT for value: "CURRENT"
-         */
-        public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
-
-        /**
-         * Enum SUPPORT for value: "SUPPORT"
-         */
-        public static final StatusEnum SUPPORT = new StatusEnum("SUPPORT");
-
-        /**
-         * Enum DEPRECATED for value: "DEPRECATED"
-         */
-        public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("CURRENT", CURRENT);
-            map.put("SUPPORT", SUPPORT);
-            map.put("DEPRECATED", DEPRECATED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
-
-    /**
-     * 版本ID。
-     */
-    public static final class IdEnum {
-
-        /**
-         * Enum V1 for value: "v1"
-         */
-        public static final IdEnum V1 = new IdEnum("v1");
-
-        private static final Map<String, IdEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, IdEnum> createStaticFields() {
-            Map<String, IdEnum> map = new HashMap<>();
-            map.put("v1", V1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        IdEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static IdEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IdEnum(value));
-        }
-
-        public static IdEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof IdEnum) {
-                return this.value.equals(((IdEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private IdEnum id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    private String updated;
+    private OffsetDateTime updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
@@ -188,41 +44,41 @@ public class VersionObject {
 
     private List<Link> links = null;
 
-    public VersionObject withStatus(StatusEnum status) {
+    public VersionObject withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 版本状态。 ● CURRENT：表示该版本为主推版本。 ● SUPPORT：表示为老版本，但是现在还在继续支持。 ● DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * 版本状态。   - CURRENT：表示该版本为主推版本。   - SUPPORT：表示为老版本，但是现在还在继续支持。   -DEPRECATED：表示为废弃版本，存在后续删除的可能。
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public VersionObject withId(IdEnum id) {
+    public VersionObject withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 版本ID。
+     * 版本ID。 - v1：当前主推版本
      * @return id
      */
-    public IdEnum getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(IdEnum id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public VersionObject withUpdated(String updated) {
+    public VersionObject withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
     }
@@ -231,11 +87,11 @@ public class VersionObject {
      * 版本发布时间。采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return updated
      */
-    public String getUpdated() {
+    public OffsetDateTime getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(OffsetDateTime updated) {
         this.updated = updated;
     }
 

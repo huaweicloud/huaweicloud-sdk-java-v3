@@ -178,7 +178,7 @@ public class ListSmartChatRoomsRequest {
     }
 
     /**
-     * 按智能交互对话直播间名称模糊查询。
+     * 按智能交互对话名称模糊查询。
      * @return roomName
      */
     public String getRoomName() {

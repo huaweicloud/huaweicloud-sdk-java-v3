@@ -47,6 +47,11 @@ public class SmartChatRoomBaseInfo {
     private VoiceConfig voiceConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "concurrency")
+
+    private Integer concurrency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -62,7 +67,7 @@ public class SmartChatRoomBaseInfo {
     }
 
     /**
-     * 智能交互对话直播间ID
+     * 智能交互对话ID
      * @return roomId
      */
     public String getRoomId() {
@@ -79,7 +84,7 @@ public class SmartChatRoomBaseInfo {
     }
 
     /**
-     * 智能交互对话直播间名称
+     * 智能交互对话名称
      * @return roomName
      */
     public String getRoomName() {
@@ -96,7 +101,7 @@ public class SmartChatRoomBaseInfo {
     }
 
     /**
-     * 智能交互对话直播间描述。
+     * 智能交互对话描述。
      * @return roomDescription
      */
     public String getRoomDescription() {
@@ -130,7 +135,7 @@ public class SmartChatRoomBaseInfo {
     }
 
     /**
-     * 直播间封面图URL
+     * 对话封面图URL
      * @return coverUrl
      */
     public String getCoverUrl() {
@@ -193,6 +198,25 @@ public class SmartChatRoomBaseInfo {
         this.voiceConfig = voiceConfig;
     }
 
+    public SmartChatRoomBaseInfo withConcurrency(Integer concurrency) {
+        this.concurrency = concurrency;
+        return this;
+    }
+
+    /**
+     * 并发路数。
+     * minimum: 0
+     * maximum: 1024
+     * @return concurrency
+     */
+    public Integer getConcurrency() {
+        return concurrency;
+    }
+
+    public void setConcurrency(Integer concurrency) {
+        this.concurrency = concurrency;
+    }
+
     public SmartChatRoomBaseInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -239,8 +263,8 @@ public class SmartChatRoomBaseInfo {
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.roomName, that.roomName)
             && Objects.equals(this.roomDescription, that.roomDescription) && Objects.equals(this.robotId, that.robotId)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.modelInfos, that.modelInfos)
-            && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -252,6 +276,7 @@ public class SmartChatRoomBaseInfo {
             coverUrl,
             modelInfos,
             voiceConfig,
+            concurrency,
             createTime,
             updateTime);
     }
@@ -267,6 +292,7 @@ public class SmartChatRoomBaseInfo {
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    modelInfos: ").append(toIndentedString(modelInfos)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
+        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

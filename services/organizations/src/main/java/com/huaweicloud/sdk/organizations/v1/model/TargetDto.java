@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 要邀请加入组织的帐号的标识符（ID）。
+ * 要邀请加入组织的账号的标识符（ID）。
  */
 public class TargetDto {
 
@@ -43,7 +43,7 @@ public class TargetDto {
     }
 
     /**
-     * 如果指定 'type:account'，则必须提供帐号ID作为实体。如果指定'type:email'，则必须指定与帐号关联的电子邮件地址。
+     * 如果指定 \"type:account\"，则必须提供账号ID作为实体。如果指定\"type:email\"，则必须指定与账号关联的电子邮件地址。
      * @return entity
      */
     public String getEntity() {

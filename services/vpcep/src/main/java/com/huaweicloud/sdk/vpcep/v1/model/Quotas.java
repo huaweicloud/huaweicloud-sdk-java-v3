@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,80 +10,10 @@ import java.util.Objects;
  */
 public class Quotas {
 
-    /**
-     * 资源类型。支持根据资源类型过滤查询指定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum ENDPOINT_SERVICE for value: "endpoint_service"
-         */
-        public static final TypeEnum ENDPOINT_SERVICE = new TypeEnum("endpoint_service");
-
-        /**
-         * Enum ENDPOINT for value: "endpoint"
-         */
-        public static final TypeEnum ENDPOINT = new TypeEnum("endpoint");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("endpoint_service", ENDPOINT_SERVICE);
-            map.put("endpoint", ENDPOINT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
@@ -100,20 +25,20 @@ public class Quotas {
 
     private Integer quota;
 
-    public Quotas withType(TypeEnum type) {
+    public Quotas withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 资源类型。支持根据资源类型过滤查询指定类型的配额。 ● endpoint_service：终端节点服务 ● endpoint：终端节点
+     * 资源类型。支持根据资源类型过滤查询指定类型的配额。  - endpoint_service：终端节点服务  - endpoint：终端节点
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -124,6 +49,7 @@ public class Quotas {
 
     /**
      * 已创建的资源个数。 取值范围：0~quota数。
+     * minimum: 0
      * @return used
      */
     public Integer getUsed() {
@@ -141,6 +67,7 @@ public class Quotas {
 
     /**
      * 资源的最大配额数。 取值范围：各类型资源默认配额数的最大值。
+     * minimum: 0
      * @return quota
      */
     public Integer getQuota() {

@@ -17,6 +17,11 @@ public class ShowHttpInfoResponse extends SdkResponse {
 
     private HttpInfoResponseBody https;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowHttpInfoResponse withHttps(HttpInfoResponseBody https) {
         this.https = https;
         return this;
@@ -43,6 +48,25 @@ public class ShowHttpInfoResponse extends SdkResponse {
         this.https = https;
     }
 
+    public ShowHttpInfoResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class ShowHttpInfoResponse extends SdkResponse {
             return false;
         }
         ShowHttpInfoResponse that = (ShowHttpInfoResponse) obj;
-        return Objects.equals(this.https, that.https);
+        return Objects.equals(this.https, that.https) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(https);
+        return Objects.hash(https, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class ShowHttpInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowHttpInfoResponse {\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

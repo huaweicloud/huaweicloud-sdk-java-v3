@@ -46,7 +46,7 @@ public class ListHandshakesResponse extends SdkResponse {
     }
 
     /**
-     * 邀请（握手）对象的列表，其中包含与指定帐号关联的每个邀请（握手）的详细信息。
+     * 邀请（握手）对象的列表，其中包含与指定账号关联的每个邀请（握手）的详细信息。
      * @return handshakes
      */
     public List<HandshakeDto> getHandshakes() {

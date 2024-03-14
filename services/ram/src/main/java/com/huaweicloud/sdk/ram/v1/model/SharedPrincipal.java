@@ -54,7 +54,7 @@ public class SharedPrincipal {
     }
 
     /**
-     * 资源使用者的帐号ID或URN。
+     * 资源使用者的账号ID或URN。
      * @return id
      */
     public String getId() {

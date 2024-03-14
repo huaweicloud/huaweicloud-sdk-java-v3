@@ -22,7 +22,7 @@ public class DigitalHumanVideo {
     private String jobId;
 
     /**
-     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
+     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败 * CANCELED：取消 * BLOCK: 冻结
      */
     public static final class StateEnum {
 
@@ -51,6 +51,11 @@ public class DigitalHumanVideo {
          */
         public static final StateEnum CANCELED = new StateEnum("CANCELED");
 
+        /**
+         * Enum BLOCK for value: "BLOCK"
+         */
+        public static final StateEnum BLOCK = new StateEnum("BLOCK");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -60,6 +65,7 @@ public class DigitalHumanVideo {
             map.put("SUCCEED", SUCCEED);
             map.put("FAILED", FAILED);
             map.put("CANCELED", CANCELED);
+            map.put("BLOCK", BLOCK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -247,7 +253,7 @@ public class DigitalHumanVideo {
     }
 
     /**
-     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
+     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败 * CANCELED：取消 * BLOCK: 冻结
      * @return state
      */
     public StateEnum getState() {

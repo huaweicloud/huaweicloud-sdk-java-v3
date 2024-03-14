@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 包含组织成员的帐号的有关信息。
+ * 包含组织成员的账号的有关信息。
  */
 public class AccountDto {
 
@@ -27,6 +27,11 @@ public class AccountDto {
     private String joinMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "joined_at")
 
     private OffsetDateTime joinedAt;
@@ -42,7 +47,7 @@ public class AccountDto {
     }
 
     /**
-     * 帐号的唯一标识符（ID）。
+     * 账号的唯一标识符（ID）。
      * @return id
      */
     public String getId() {
@@ -59,7 +64,7 @@ public class AccountDto {
     }
 
     /**
-     * 帐号的统一资源名称。
+     * 账号的统一资源名称。
      * @return urn
      */
     public String getUrn() {
@@ -76,7 +81,7 @@ public class AccountDto {
     }
 
     /**
-     * 帐号加入组织的方式,invited：邀请加入，created：创建加入。
+     * 账号加入组织的方式,invited：邀请加入，created：创建加入。
      * @return joinMethod
      */
     public String getJoinMethod() {
@@ -87,13 +92,30 @@ public class AccountDto {
         this.joinMethod = joinMethod;
     }
 
+    public AccountDto withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 账号当前的状态,ACTIVE 有效| SUSPENDED 静默| PENDING_CLOSURE 关闭中
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public AccountDto withJoinedAt(OffsetDateTime joinedAt) {
         this.joinedAt = joinedAt;
         return this;
     }
 
     /**
-     * 帐号加入组织的日期。
+     * 账号加入组织的日期。
      * @return joinedAt
      */
     public OffsetDateTime getJoinedAt() {
@@ -110,7 +132,7 @@ public class AccountDto {
     }
 
     /**
-     * 帐号名称。
+     * 账号名称
      * @return name
      */
     public String getName() {
@@ -131,13 +153,13 @@ public class AccountDto {
         }
         AccountDto that = (AccountDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
-            && Objects.equals(this.joinMethod, that.joinMethod) && Objects.equals(this.joinedAt, that.joinedAt)
-            && Objects.equals(this.name, that.name);
+            && Objects.equals(this.joinMethod, that.joinMethod) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.joinedAt, that.joinedAt) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, urn, joinMethod, joinedAt, name);
+        return Objects.hash(id, urn, joinMethod, status, joinedAt, name);
     }
 
     @Override
@@ -147,6 +169,7 @@ public class AccountDto {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("    joinMethod: ").append(toIndentedString(joinMethod)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    joinedAt: ").append(toIndentedString(joinedAt)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

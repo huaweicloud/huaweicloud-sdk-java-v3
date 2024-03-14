@@ -84,6 +84,8 @@ import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskReq;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListCompareResultRequest;
@@ -873,6 +875,60 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCompareTaskReq.class),
             f -> f.withMarshaller(CreateCompareTaskRequest::getBody, CreateCompareTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> listAvailableNodeTypes =
+        genForListAvailableNodeTypes();
+
+    private static HttpRequestDef<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> genForListAvailableNodeTypes() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAvailableNodeTypesRequest.class, ListAvailableNodeTypesResponse.class)
+            .withName("ListAvailableNodeTypes")
+            .withUri("/v3/{project_id}/node-type")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getEngineType,
+                ListAvailableNodeTypesRequest::setEngineType));
+        builder.<ListAvailableNodeTypesRequest.DbUseTypeEnum>withRequestField("db_use_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAvailableNodeTypesRequest.DbUseTypeEnum.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getDbUseType,
+                ListAvailableNodeTypesRequest::setDbUseType));
+        builder.<ListAvailableNodeTypesRequest.JobDirectionEnum>withRequestField("job_direction",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAvailableNodeTypesRequest.JobDirectionEnum.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getJobDirection,
+                ListAvailableNodeTypesRequest::setJobDirection));
+        builder.<Boolean>withRequestField("is_use_sellout_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getIsUseSelloutInfo,
+                ListAvailableNodeTypesRequest::setIsUseSelloutInfo));
+        builder.<Boolean>withRequestField("is_multi_write",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getIsMultiWrite,
+                ListAvailableNodeTypesRequest::setIsMultiWrite));
+        builder.<ListAvailableNodeTypesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAvailableNodeTypesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAvailableNodeTypesRequest::getXLanguage,
+                ListAvailableNodeTypesRequest::setXLanguage));
 
         // response
 

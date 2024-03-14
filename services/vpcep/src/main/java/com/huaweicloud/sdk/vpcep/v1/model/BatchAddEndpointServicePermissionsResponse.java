@@ -41,7 +41,7 @@ public class BatchAddEndpointServicePermissionsResponse extends SdkResponse {
     }
 
     /**
-     * Get permissions
+     * 终端节点服务白名单
      * @return permissions
      */
     public List<EpsPermission> getPermissions() {

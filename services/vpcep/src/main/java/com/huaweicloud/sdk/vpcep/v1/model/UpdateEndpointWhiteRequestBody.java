@@ -45,7 +45,7 @@ public class UpdateEndpointWhiteRequestBody {
     }
 
     /**
-     * 更新或删除用于控制访问终端节点的白名单。此参数可以添加IPv4或CIDR： ● 当取值不为空时，表示将白名单更新为取值所示内容。 ● 当取值为空时，表示删除所有白名单。 默认为空列表。
+     * 更新或删除用于控制访问终端节点的白名单。此参数可以添加IPv4或CIDR：  - 当取值不为空时，表示将白名单更新为取值所示内容。  - 当取值为空时，表示删除所有白名单。 默认为空列表。
      * @return whitelist
      */
     public List<String> getWhitelist() {
@@ -62,7 +62,7 @@ public class UpdateEndpointWhiteRequestBody {
     }
 
     /**
-     * 是否开启网络ACL隔离。 ● true：开启网络ACL隔离 ● false：不开启网络ACL隔离 默认值为false。
+     * 是否开启网络ACL隔离。  - true：开启网络ACL隔离  - false：不开启网络ACL隔离 默认值为false。
      * @return enableWhitelist
      */
     public Boolean getEnableWhitelist() {

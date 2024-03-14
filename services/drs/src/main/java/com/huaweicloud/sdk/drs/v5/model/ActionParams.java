@@ -53,6 +53,11 @@ public class ActionParams {
 
     private Boolean forceDelete;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_config")
+
+    private PublicIpConfig publicIpConfig;
+
     public ActionParams withEndpoints(List<JobEndpointInfo> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -223,6 +228,32 @@ public class ActionParams {
         this.forceDelete = forceDelete;
     }
 
+    public ActionParams withPublicIpConfig(PublicIpConfig publicIpConfig) {
+        this.publicIpConfig = publicIpConfig;
+        return this;
+    }
+
+    public ActionParams withPublicIpConfig(Consumer<PublicIpConfig> publicIpConfigSetter) {
+        if (this.publicIpConfig == null) {
+            this.publicIpConfig = new PublicIpConfig();
+            publicIpConfigSetter.accept(this.publicIpConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicIpConfig
+     * @return publicIpConfig
+     */
+    public PublicIpConfig getPublicIpConfig() {
+        return publicIpConfig;
+    }
+
+    public void setPublicIpConfig(PublicIpConfig publicIpConfig) {
+        this.publicIpConfig = publicIpConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -237,7 +268,8 @@ public class ActionParams {
             && Objects.equals(this.pauseMode, that.pauseMode) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.compareTaskParam, that.compareTaskParam)
             && Objects.equals(this.isSyncReEdit, that.isSyncReEdit)
-            && Objects.equals(this.forceDelete, that.forceDelete);
+            && Objects.equals(this.forceDelete, that.forceDelete)
+            && Objects.equals(this.publicIpConfig, that.publicIpConfig);
     }
 
     @Override
@@ -249,7 +281,8 @@ public class ActionParams {
             startTime,
             compareTaskParam,
             isSyncReEdit,
-            forceDelete);
+            forceDelete,
+            publicIpConfig);
     }
 
     @Override
@@ -264,6 +297,7 @@ public class ActionParams {
         sb.append("    compareTaskParam: ").append(toIndentedString(compareTaskParam)).append("\n");
         sb.append("    isSyncReEdit: ").append(toIndentedString(isSyncReEdit)).append("\n");
         sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
+        sb.append("    publicIpConfig: ").append(toIndentedString(publicIpConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,7 +22,7 @@ public class ActionReq {
     private String jobId;
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。
      */
     public static final class ActionNameEnum {
 
@@ -86,6 +86,16 @@ public class ActionReq {
          */
         public static final ActionNameEnum RELOAD_PARAMETERS = new ActionNameEnum("reload_parameters");
 
+        /**
+         * Enum BIND_EIP for value: "bind_eip"
+         */
+        public static final ActionNameEnum BIND_EIP = new ActionNameEnum("bind_eip");
+
+        /**
+         * Enum UNBIND_EIP for value: "unbind_eip"
+         */
+        public static final ActionNameEnum UNBIND_EIP = new ActionNameEnum("unbind_eip");
+
         private static final Map<String, ActionNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionNameEnum> createStaticFields() {
@@ -102,6 +112,8 @@ public class ActionReq {
             map.put("cancel_compare", CANCEL_COMPARE);
             map.put("column_limit", COLUMN_LIMIT);
             map.put("reload_parameters", RELOAD_PARAMETERS);
+            map.put("bind_eip", BIND_EIP);
+            map.put("unbind_eip", UNBIND_EIP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -184,7 +196,7 @@ public class ActionReq {
     }
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。
      * @return actionName
      */
     public ActionNameEnum getActionName() {

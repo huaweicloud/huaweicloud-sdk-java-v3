@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -48,10 +53,80 @@ public class QueryResourceInstanceTagsBody {
 
     private String offset;
 
+    /**
+     * 操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。
+     */
+    public static final class ActionEnum {
+
+        /**
+         * Enum FILTER for value: "filter"
+         */
+        public static final ActionEnum FILTER = new ActionEnum("filter");
+
+        /**
+         * Enum COUNT for value: "count"
+         */
+        public static final ActionEnum COUNT = new ActionEnum("count");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("filter", FILTER);
+            map.put("count", COUNT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private String action;
+    private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
@@ -262,7 +337,7 @@ public class QueryResourceInstanceTagsBody {
         this.offset = offset;
     }
 
-    public QueryResourceInstanceTagsBody withAction(String action) {
+    public QueryResourceInstanceTagsBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
@@ -271,11 +346,11 @@ public class QueryResourceInstanceTagsBody {
      * 操作标识（仅限于filter，count）：filter（过滤）， count(查询总条数)如果是filter就按照过滤条件查询， 如果是count，只需要返回总条数，禁止返回其他字段。
      * @return action
      */
-    public String getAction() {
+    public ActionEnum getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(ActionEnum action) {
         this.action = action;
     }
 

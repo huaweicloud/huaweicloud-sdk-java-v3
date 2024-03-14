@@ -474,6 +474,11 @@ public class SyncPolicyReq {
 
     private String gtidSet;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ddl_topic")
+
+    private String ddlTopic;
+
     public SyncPolicyReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -763,6 +768,23 @@ public class SyncPolicyReq {
         this.gtidSet = gtidSet;
     }
 
+    public SyncPolicyReq withDdlTopic(String ddlTopic) {
+        this.ddlTopic = ddlTopic;
+        return this;
+    }
+
+    /**
+     * 存储DDL的topic。Kafka为目标且ddl_trans为true时必填，取值：目标库已存在的topic名称，确保topic已存在。
+     * @return ddlTopic
+     */
+    public String getDdlTopic() {
+        return ddlTopic;
+    }
+
+    public void setDdlTopic(String ddlTopic) {
+        this.ddlTopic = ddlTopic;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -783,7 +805,8 @@ public class SyncPolicyReq {
             && Objects.equals(this.replicationFactor, that.replicationFactor)
             && Objects.equals(this.isFillMaterializedView, that.isFillMaterializedView)
             && Objects.equals(this.exportSnapshot, that.exportSnapshot) && Objects.equals(this.slotName, that.slotName)
-            && Objects.equals(this.fileAndPosition, that.fileAndPosition) && Objects.equals(this.gtidSet, that.gtidSet);
+            && Objects.equals(this.fileAndPosition, that.fileAndPosition) && Objects.equals(this.gtidSet, that.gtidSet)
+            && Objects.equals(this.ddlTopic, that.ddlTopic);
     }
 
     @Override
@@ -804,7 +827,8 @@ public class SyncPolicyReq {
             exportSnapshot,
             slotName,
             fileAndPosition,
-            gtidSet);
+            gtidSet,
+            ddlTopic);
     }
 
     @Override
@@ -828,6 +852,7 @@ public class SyncPolicyReq {
         sb.append("    slotName: ").append(toIndentedString(slotName)).append("\n");
         sb.append("    fileAndPosition: ").append(toIndentedString(fileAndPosition)).append("\n");
         sb.append("    gtidSet: ").append(toIndentedString(gtidSet)).append("\n");
+        sb.append("    ddlTopic: ").append(toIndentedString(ddlTopic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

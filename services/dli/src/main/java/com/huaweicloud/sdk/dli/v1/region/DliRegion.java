@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 
 public class DliRegion {
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://dli.my-kualalumpur-1.myhuaweicloud.com");
+
     public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://dli.cn-north-2.myhuaweicloud.com");
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://dli.cn-north-4.myhuaweicloud.com");
@@ -72,6 +75,7 @@ public class DliRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-north-1", CN_NORTH_1);

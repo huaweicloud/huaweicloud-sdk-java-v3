@@ -677,6 +677,11 @@ public class CreateJobReq {
 
     private PeriodOrderInfo periodOrder;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private List<PublicIpConfig> publicIpList = null;
+
     public CreateJobReq withBindEip(Boolean bindEip) {
         this.bindEip = bindEip;
         return this;
@@ -1129,6 +1134,39 @@ public class CreateJobReq {
         this.periodOrder = periodOrder;
     }
 
+    public CreateJobReq withPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    public CreateJobReq addPublicIpListItem(PublicIpConfig publicIpListItem) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        this.publicIpList.add(publicIpListItem);
+        return this;
+    }
+
+    public CreateJobReq withPublicIpList(Consumer<List<PublicIpConfig>> publicIpListSetter) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        publicIpListSetter.accept(this.publicIpList);
+        return this;
+    }
+
+    /**
+     * 指定公网IP的信息
+     * @return publicIpList
+     */
+    public List<PublicIpConfig> getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1151,7 +1189,8 @@ public class CreateJobReq {
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.sysTags, that.sysTags)
             && Objects.equals(this.expiredDays, that.expiredDays) && Objects.equals(this.masterAz, that.masterAz)
             && Objects.equals(this.slaveAz, that.slaveAz) && Objects.equals(this.chargingMode, that.chargingMode)
-            && Objects.equals(this.periodOrder, that.periodOrder);
+            && Objects.equals(this.periodOrder, that.periodOrder)
+            && Objects.equals(this.publicIpList, that.publicIpList);
     }
 
     @Override
@@ -1178,7 +1217,8 @@ public class CreateJobReq {
             masterAz,
             slaveAz,
             chargingMode,
-            periodOrder);
+            periodOrder,
+            publicIpList);
     }
 
     @Override
@@ -1208,6 +1248,7 @@ public class CreateJobReq {
         sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

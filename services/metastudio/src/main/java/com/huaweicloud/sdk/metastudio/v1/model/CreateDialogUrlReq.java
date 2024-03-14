@@ -26,7 +26,7 @@ public class CreateDialogUrlReq {
     }
 
     /**
-     * 直播间ID。
+     * 智能交互对话ID。
      * @return roomId
      */
     public String getRoomId() {
@@ -43,7 +43,7 @@ public class CreateDialogUrlReq {
     }
 
     /**
-     * 机器人ID。
+     * 应用ID。
      * @return robotId
      */
     public String getRobotId() {

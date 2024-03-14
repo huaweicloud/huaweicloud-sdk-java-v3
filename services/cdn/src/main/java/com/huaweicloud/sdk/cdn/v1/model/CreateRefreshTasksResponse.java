@@ -16,6 +16,11 @@ public class CreateRefreshTasksResponse extends SdkResponse {
 
     private String refreshTask;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateRefreshTasksResponse withRefreshTask(String refreshTask) {
         this.refreshTask = refreshTask;
         return this;
@@ -33,6 +38,25 @@ public class CreateRefreshTasksResponse extends SdkResponse {
         this.refreshTask = refreshTask;
     }
 
+    public CreateRefreshTasksResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class CreateRefreshTasksResponse extends SdkResponse {
             return false;
         }
         CreateRefreshTasksResponse that = (CreateRefreshTasksResponse) obj;
-        return Objects.equals(this.refreshTask, that.refreshTask);
+        return Objects.equals(this.refreshTask, that.refreshTask) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(refreshTask);
+        return Objects.hash(refreshTask, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class CreateRefreshTasksResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRefreshTasksResponse {\n");
         sb.append("    refreshTask: ").append(toIndentedString(refreshTask)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

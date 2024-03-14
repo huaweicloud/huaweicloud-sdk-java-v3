@@ -11,31 +11,14 @@ import java.util.Objects;
 public class AssociatePermissionReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "permission_id")
-
-    private String permissionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "replace")
 
     private Boolean replace;
 
-    public AssociatePermissionReqBody withPermissionId(String permissionId) {
-        this.permissionId = permissionId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_id")
 
-    /**
-     * 共享资源权限的ID。
-     * @return permissionId
-     */
-    public String getPermissionId() {
-        return permissionId;
-    }
-
-    public void setPermissionId(String permissionId) {
-        this.permissionId = permissionId;
-    }
+    private String permissionId;
 
     public AssociatePermissionReqBody withReplace(Boolean replace) {
         this.replace = replace;
@@ -54,6 +37,23 @@ public class AssociatePermissionReqBody {
         this.replace = replace;
     }
 
+    public AssociatePermissionReqBody withPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+        return this;
+    }
+
+    /**
+     * 共享资源权限的ID。
+     * @return permissionId
+     */
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,20 +63,20 @@ public class AssociatePermissionReqBody {
             return false;
         }
         AssociatePermissionReqBody that = (AssociatePermissionReqBody) obj;
-        return Objects.equals(this.permissionId, that.permissionId) && Objects.equals(this.replace, that.replace);
+        return Objects.equals(this.replace, that.replace) && Objects.equals(this.permissionId, that.permissionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(permissionId, replace);
+        return Objects.hash(replace, permissionId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociatePermissionReqBody {\n");
-        sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
         sb.append("    replace: ").append(toIndentedString(replace)).append("\n");
+        sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

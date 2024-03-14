@@ -73,6 +73,11 @@ public class AsyncCreateJobReq {
 
     private JobNodeInfo nodeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private List<PublicIpConfig> publicIpList = null;
+
     public AsyncCreateJobReq withBaseInfo(JobBaseInfo baseInfo) {
         this.baseInfo = baseInfo;
         return this;
@@ -406,6 +411,39 @@ public class AsyncCreateJobReq {
         this.nodeInfo = nodeInfo;
     }
 
+    public AsyncCreateJobReq withPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    public AsyncCreateJobReq addPublicIpListItem(PublicIpConfig publicIpListItem) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        this.publicIpList.add(publicIpListItem);
+        return this;
+    }
+
+    public AsyncCreateJobReq withPublicIpList(Consumer<List<PublicIpConfig>> publicIpListSetter) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        publicIpListSetter.accept(this.publicIpList);
+        return this;
+    }
+
+    /**
+     * 指定公网IP的信息
+     * @return publicIpList
+     */
+    public List<PublicIpConfig> getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -421,7 +459,8 @@ public class AsyncCreateJobReq {
             && Objects.equals(this.userMigration, that.userMigration)
             && Objects.equals(this.policyConfig, that.policyConfig) && Objects.equals(this.dbObject, that.dbObject)
             && Objects.equals(this.dbParam, that.dbParam) && Objects.equals(this.tuningParams, that.tuningParams)
-            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo);
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo)
+            && Objects.equals(this.publicIpList, that.publicIpList);
     }
 
     @Override
@@ -437,7 +476,8 @@ public class AsyncCreateJobReq {
             dbParam,
             tuningParams,
             periodOrder,
-            nodeInfo);
+            nodeInfo,
+            publicIpList);
     }
 
     @Override
@@ -456,6 +496,7 @@ public class AsyncCreateJobReq {
         sb.append("    tuningParams: ").append(toIndentedString(tuningParams)).append("\n");
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("    nodeInfo: ").append(toIndentedString(nodeInfo)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

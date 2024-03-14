@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsRequest;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListCompareResultRequest;
@@ -888,6 +890,36 @@ public class DrsAsyncClient {
     public AsyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTaskAsyncInvoker(
         CreateCompareTaskRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.createCompareTask, hcClient);
+    }
+
+    /**
+     * 查询可用的Node规格
+     *
+     * 查询可用的Node规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableNodeTypesRequest 请求对象
+     * @return CompletableFuture<ListAvailableNodeTypesResponse>
+     */
+    public CompletableFuture<ListAvailableNodeTypesResponse> listAvailableNodeTypesAsync(
+        ListAvailableNodeTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listAvailableNodeTypes);
+    }
+
+    /**
+     * 查询可用的Node规格
+     *
+     * 查询可用的Node规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableNodeTypesRequest 请求对象
+     * @return AsyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse>
+     */
+    public AsyncInvoker<ListAvailableNodeTypesRequest, ListAvailableNodeTypesResponse> listAvailableNodeTypesAsyncInvoker(
+        ListAvailableNodeTypesRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listAvailableNodeTypes, hcClient);
     }
 
     /**

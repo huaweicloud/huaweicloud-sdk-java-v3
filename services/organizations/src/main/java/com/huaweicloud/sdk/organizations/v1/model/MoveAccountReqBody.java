@@ -26,7 +26,7 @@ public class MoveAccountReqBody {
     }
 
     /**
-     * 要移出帐号的根或组织单元的唯一标识符（ID）。
+     * 要移出账号的根或组织单元的唯一标识符（ID）。
      * @return sourceParentId
      */
     public String getSourceParentId() {
@@ -43,7 +43,7 @@ public class MoveAccountReqBody {
     }
 
     /**
-     * 要移入帐号的根或组织单元的唯一标识符（ID）。
+     * 要移入账号的根或组织单元的唯一标识符（ID）。
      * @return destinationParentId
      */
     public String getDestinationParentId() {

@@ -68,6 +68,9 @@ public class RocketMQRegion {
 
     public static final Region CN_EAST_5 = new Region("cn-east-5", "https://dms.cn-east-5.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://dms.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ROCKETMQ");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -98,6 +101,7 @@ public class RocketMQRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("cn-east-5", CN_EAST_5);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -47,7 +47,7 @@ public class ListDelegatedServicesResponse extends SdkResponse {
     }
 
     /**
-     * 帐号是其委托管理员的服务。
+     * 账号是其委托管理员的服务。
      * @return delegatedServices
      */
     public List<DelegatedServiceDto> getDelegatedServices() {

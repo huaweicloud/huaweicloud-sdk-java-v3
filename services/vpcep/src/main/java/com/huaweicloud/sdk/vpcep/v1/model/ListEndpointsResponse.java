@@ -17,19 +17,19 @@ public class ListEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoints")
 
-    private List<EndpointResp> endpoints = null;
+    private List<EndpointResponseBody> endpoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListEndpointsResponse withEndpoints(List<EndpointResp> endpoints) {
+    public ListEndpointsResponse withEndpoints(List<EndpointResponseBody> endpoints) {
         this.endpoints = endpoints;
         return this;
     }
 
-    public ListEndpointsResponse addEndpointsItem(EndpointResp endpointsItem) {
+    public ListEndpointsResponse addEndpointsItem(EndpointResponseBody endpointsItem) {
         if (this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListEndpointsResponse extends SdkResponse {
         return this;
     }
 
-    public ListEndpointsResponse withEndpoints(Consumer<List<EndpointResp>> endpointsSetter) {
+    public ListEndpointsResponse withEndpoints(Consumer<List<EndpointResponseBody>> endpointsSetter) {
         if (this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListEndpointsResponse extends SdkResponse {
      * 终端节点列表。
      * @return endpoints
      */
-    public List<EndpointResp> getEndpoints() {
+    public List<EndpointResponseBody> getEndpoints() {
         return endpoints;
     }
 
-    public void setEndpoints(List<EndpointResp> endpoints) {
+    public void setEndpoints(List<EndpointResponseBody> endpoints) {
         this.endpoints = endpoints;
     }
 

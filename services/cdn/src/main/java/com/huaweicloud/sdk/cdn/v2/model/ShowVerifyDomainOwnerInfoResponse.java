@@ -46,6 +46,11 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
 
     private String verifyContent;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowVerifyDomainOwnerInfoResponse withDnsVerifyType(String dnsVerifyType) {
         this.dnsVerifyType = dnsVerifyType;
         return this;
@@ -165,6 +170,25 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
         this.verifyContent = verifyContent;
     }
 
+    public ShowVerifyDomainOwnerInfoResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,7 +204,8 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
             && Objects.equals(this.domainName, that.domainName)
             && Objects.equals(this.verifyDomainName, that.verifyDomainName)
             && Objects.equals(this.fileVerifyFilename, that.fileVerifyFilename)
-            && Objects.equals(this.verifyContent, that.verifyContent);
+            && Objects.equals(this.verifyContent, that.verifyContent)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -191,7 +216,8 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
             domainName,
             verifyDomainName,
             fileVerifyFilename,
-            verifyContent);
+            verifyContent,
+            xRequestId);
     }
 
     @Override
@@ -205,6 +231,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
         sb.append("    verifyDomainName: ").append(toIndentedString(verifyDomainName)).append("\n");
         sb.append("    fileVerifyFilename: ").append(toIndentedString(fileVerifyFilename)).append("\n");
         sb.append("    verifyContent: ").append(toIndentedString(verifyContent)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

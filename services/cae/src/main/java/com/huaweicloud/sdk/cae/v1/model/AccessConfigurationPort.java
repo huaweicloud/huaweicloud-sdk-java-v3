@@ -21,12 +21,12 @@ public class AccessConfigurationPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_port")
 
-    private String targetPort;
+    private Integer targetPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
     /**
      * 协议，负载均衡支持TCP，负载均衡与路由配置支持HTTP、HTTPS。
@@ -216,7 +216,7 @@ public class AccessConfigurationPort {
 
     private String elbId;
 
-    public AccessConfigurationPort withTargetPort(String targetPort) {
+    public AccessConfigurationPort withTargetPort(Integer targetPort) {
         this.targetPort = targetPort;
         return this;
     }
@@ -225,15 +225,15 @@ public class AccessConfigurationPort {
      * 监听端口。
      * @return targetPort
      */
-    public String getTargetPort() {
+    public Integer getTargetPort() {
         return targetPort;
     }
 
-    public void setTargetPort(String targetPort) {
+    public void setTargetPort(Integer targetPort) {
         this.targetPort = targetPort;
     }
 
-    public AccessConfigurationPort withPort(String port) {
+    public AccessConfigurationPort withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -242,11 +242,11 @@ public class AccessConfigurationPort {
      * 访问端口。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

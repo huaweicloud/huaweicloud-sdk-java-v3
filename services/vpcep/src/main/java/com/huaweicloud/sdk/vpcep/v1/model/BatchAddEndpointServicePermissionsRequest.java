@@ -19,7 +19,7 @@ public class BatchAddEndpointServicePermissionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchAddPermissionRequest body;
+    private BatchAddEndpointServicePermissionsRequestBody body;
 
     public BatchAddEndpointServicePermissionsRequest withVpcEndpointServiceId(String vpcEndpointServiceId) {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
@@ -38,14 +38,15 @@ public class BatchAddEndpointServicePermissionsRequest {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
     }
 
-    public BatchAddEndpointServicePermissionsRequest withBody(BatchAddPermissionRequest body) {
+    public BatchAddEndpointServicePermissionsRequest withBody(BatchAddEndpointServicePermissionsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchAddEndpointServicePermissionsRequest withBody(Consumer<BatchAddPermissionRequest> bodySetter) {
+    public BatchAddEndpointServicePermissionsRequest withBody(
+        Consumer<BatchAddEndpointServicePermissionsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchAddPermissionRequest();
+            this.body = new BatchAddEndpointServicePermissionsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +57,11 @@ public class BatchAddEndpointServicePermissionsRequest {
      * Get body
      * @return body
      */
-    public BatchAddPermissionRequest getBody() {
+    public BatchAddEndpointServicePermissionsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchAddPermissionRequest body) {
+    public void setBody(BatchAddEndpointServicePermissionsRequestBody body) {
         this.body = body;
     }
 

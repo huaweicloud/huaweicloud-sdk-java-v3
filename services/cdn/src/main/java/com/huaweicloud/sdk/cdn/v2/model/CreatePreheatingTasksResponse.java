@@ -16,6 +16,11 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
 
     private String preheatingTask;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreatePreheatingTasksResponse withPreheatingTask(String preheatingTask) {
         this.preheatingTask = preheatingTask;
         return this;
@@ -33,6 +38,25 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
         this.preheatingTask = preheatingTask;
     }
 
+    public CreatePreheatingTasksResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,13 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
             return false;
         }
         CreatePreheatingTasksResponse that = (CreatePreheatingTasksResponse) obj;
-        return Objects.equals(this.preheatingTask, that.preheatingTask);
+        return Objects.equals(this.preheatingTask, that.preheatingTask)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(preheatingTask);
+        return Objects.hash(preheatingTask, xRequestId);
     }
 
     @Override
@@ -55,6 +80,7 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePreheatingTasksResponse {\n");
         sb.append("    preheatingTask: ").append(toIndentedString(preheatingTask)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

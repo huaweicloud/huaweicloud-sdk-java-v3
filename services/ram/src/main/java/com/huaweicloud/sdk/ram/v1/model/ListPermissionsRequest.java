@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ram.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -24,6 +29,87 @@ public class ListPermissionsRequest {
     @JsonProperty(value = "resource_type")
 
     private String resourceType;
+
+    /**
+     * 权限类型。RAM_MANAGED表示RAM托管的权限，CUSTOMER_MANAGED表示租户创建的自定义的权限，ALL表示所有的权限。
+     */
+    public static final class PermissionTypeEnum {
+
+        /**
+         * Enum RAM_MANAGED for value: "RAM_MANAGED"
+         */
+        public static final PermissionTypeEnum RAM_MANAGED = new PermissionTypeEnum("RAM_MANAGED");
+
+        /**
+         * Enum CUSTOMER_MANAGED for value: "CUSTOMER_MANAGED"
+         */
+        public static final PermissionTypeEnum CUSTOMER_MANAGED = new PermissionTypeEnum("CUSTOMER_MANAGED");
+
+        /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final PermissionTypeEnum ALL = new PermissionTypeEnum("ALL");
+
+        private static final Map<String, PermissionTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PermissionTypeEnum> createStaticFields() {
+            Map<String, PermissionTypeEnum> map = new HashMap<>();
+            map.put("RAM_MANAGED", RAM_MANAGED);
+            map.put("CUSTOMER_MANAGED", CUSTOMER_MANAGED);
+            map.put("ALL", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PermissionTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PermissionTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionTypeEnum(value));
+        }
+
+        public static PermissionTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PermissionTypeEnum) {
+                return this.value.equals(((PermissionTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_type")
+
+    private PermissionTypeEnum permissionType;
 
     public ListPermissionsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -78,6 +164,23 @@ public class ListPermissionsRequest {
         this.resourceType = resourceType;
     }
 
+    public ListPermissionsRequest withPermissionType(PermissionTypeEnum permissionType) {
+        this.permissionType = permissionType;
+        return this;
+    }
+
+    /**
+     * 权限类型。RAM_MANAGED表示RAM托管的权限，CUSTOMER_MANAGED表示租户创建的自定义的权限，ALL表示所有的权限。
+     * @return permissionType
+     */
+    public PermissionTypeEnum getPermissionType() {
+        return permissionType;
+    }
+
+    public void setPermissionType(PermissionTypeEnum permissionType) {
+        this.permissionType = permissionType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +191,13 @@ public class ListPermissionsRequest {
         }
         ListPermissionsRequest that = (ListPermissionsRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.resourceType, that.resourceType);
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.permissionType, that.permissionType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, resourceType);
+        return Objects.hash(limit, marker, resourceType, permissionType);
     }
 
     @Override
@@ -103,6 +207,7 @@ public class ListPermissionsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    permissionType: ").append(toIndentedString(permissionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

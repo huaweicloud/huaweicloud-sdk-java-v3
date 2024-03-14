@@ -26,7 +26,7 @@ public class PolicyTypeSummaryDto {
     }
 
     /**
-     * 与根关联的策略类型状态。要将指定类型的策略绑定到根或该根中的组织单元或帐号，该策略必须在组织中可用，并在该根已启用。enabled：启用；pending_enable：启用中；disabled：禁用；pending_disable：禁用中。
+     * 与根关联的策略类型状态。要将指定类型的策略绑定到根或该根中的组织单元或账号，该策略必须在组织中可用，并在该根已启用。enabled：启用；pending_enable：启用中；disabled：禁用；pending_disable：禁用中。
      * @return status
      */
     public String getStatus() {

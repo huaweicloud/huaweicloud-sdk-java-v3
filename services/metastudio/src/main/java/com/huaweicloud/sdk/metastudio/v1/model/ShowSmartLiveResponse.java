@@ -186,6 +186,16 @@ public class ShowSmartLiveResponse extends SdkResponse {
     private String coverUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "co_streamer_config")
+
+    private CoStreamerConfig coStreamerConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_job_log")
+
+    private LiveJobLog liveJobLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -494,6 +504,58 @@ public class ShowSmartLiveResponse extends SdkResponse {
         this.coverUrl = coverUrl;
     }
 
+    public ShowSmartLiveResponse withCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+        return this;
+    }
+
+    public ShowSmartLiveResponse withCoStreamerConfig(Consumer<CoStreamerConfig> coStreamerConfigSetter) {
+        if (this.coStreamerConfig == null) {
+            this.coStreamerConfig = new CoStreamerConfig();
+            coStreamerConfigSetter.accept(this.coStreamerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get coStreamerConfig
+     * @return coStreamerConfig
+     */
+    public CoStreamerConfig getCoStreamerConfig() {
+        return coStreamerConfig;
+    }
+
+    public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+    }
+
+    public ShowSmartLiveResponse withLiveJobLog(LiveJobLog liveJobLog) {
+        this.liveJobLog = liveJobLog;
+        return this;
+    }
+
+    public ShowSmartLiveResponse withLiveJobLog(Consumer<LiveJobLog> liveJobLogSetter) {
+        if (this.liveJobLog == null) {
+            this.liveJobLog = new LiveJobLog();
+            liveJobLogSetter.accept(this.liveJobLog);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveJobLog
+     * @return liveJobLog
+     */
+    public LiveJobLog getLiveJobLog() {
+        return liveJobLog;
+    }
+
+    public void setLiveJobLog(LiveJobLog liveJobLog) {
+        this.liveJobLog = liveJobLog;
+    }
+
     public ShowSmartLiveResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -533,7 +595,8 @@ public class ShowSmartLiveResponse extends SdkResponse {
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.streamDuration, that.streamDuration)
             && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
+            && Objects.equals(this.liveJobLog, that.liveJobLog) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -554,6 +617,8 @@ public class ShowSmartLiveResponse extends SdkResponse {
             streamDuration,
             blockReason,
             coverUrl,
+            coStreamerConfig,
+            liveJobLog,
             xRequestId);
     }
 
@@ -577,6 +642,8 @@ public class ShowSmartLiveResponse extends SdkResponse {
         sb.append("    streamDuration: ").append(toIndentedString(streamDuration)).append("\n");
         sb.append("    blockReason: ").append(toIndentedString(blockReason)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
+        sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

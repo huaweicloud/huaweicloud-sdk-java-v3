@@ -21,7 +21,7 @@ public class PolicyTachReqBody {
     }
 
     /**
-     * 根、组织单元或帐号的唯一标识符（ID）。
+     * 根、组织单元或账号的唯一标识符（ID）。
      * @return entityId
      */
     public String getEntityId() {

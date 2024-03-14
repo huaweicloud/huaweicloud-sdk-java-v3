@@ -95,7 +95,7 @@ public class ShowEffectivePoliciesRequest {
     }
 
     /**
-     * 帐号的唯一标识符（ID）。当前还不支持指定根、组织单元。
+     * 账号的唯一标识符（ID）。当前还不支持指定根、组织单元。
      * @return entityId
      */
     public String getEntityId() {

@@ -234,6 +234,11 @@ public class CreateSmartLiveRoomReq {
 
     private ViewModeEnum viewMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "co_streamer_config")
+
+    private CoStreamerConfig coStreamerConfig;
+
     public CreateSmartLiveRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -598,6 +603,32 @@ public class CreateSmartLiveRoomReq {
         this.viewMode = viewMode;
     }
 
+    public CreateSmartLiveRoomReq withCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withCoStreamerConfig(Consumer<CoStreamerConfig> coStreamerConfigSetter) {
+        if (this.coStreamerConfig == null) {
+            this.coStreamerConfig = new CoStreamerConfig();
+            coStreamerConfigSetter.accept(this.coStreamerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get coStreamerConfig
+     * @return coStreamerConfig
+     */
+    public CoStreamerConfig getCoStreamerConfig() {
+        return coStreamerConfig;
+    }
+
+    public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -616,7 +647,8 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode);
+            && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
     }
 
     @Override
@@ -634,7 +666,8 @@ public class CreateSmartLiveRoomReq {
             liveEventCallbackConfig,
             reviewConfig,
             sharedConfig,
-            viewMode);
+            viewMode,
+            coStreamerConfig);
     }
 
     @Override
@@ -655,6 +688,7 @@ public class CreateSmartLiveRoomReq {
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
+        sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

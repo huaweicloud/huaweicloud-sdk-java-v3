@@ -41,6 +41,31 @@ public class PermissionSummary {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_urn")
+
+    private String permissionUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_type")
+
+    private String permissionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_version")
+
+    private Boolean defaultVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public PermissionSummary withId(String id) {
         this.id = id;
         return this;
@@ -143,6 +168,93 @@ public class PermissionSummary {
         this.updatedAt = updatedAt;
     }
 
+    public PermissionSummary withPermissionUrn(String permissionUrn) {
+        this.permissionUrn = permissionUrn;
+        return this;
+    }
+
+    /**
+     * 权限URN。
+     * @return permissionUrn
+     */
+    public String getPermissionUrn() {
+        return permissionUrn;
+    }
+
+    public void setPermissionUrn(String permissionUrn) {
+        this.permissionUrn = permissionUrn;
+    }
+
+    public PermissionSummary withPermissionType(String permissionType) {
+        this.permissionType = permissionType;
+        return this;
+    }
+
+    /**
+     * 权限类型，RAM托管或者租户自定义权限。
+     * @return permissionType
+     */
+    public String getPermissionType() {
+        return permissionType;
+    }
+
+    public void setPermissionType(String permissionType) {
+        this.permissionType = permissionType;
+    }
+
+    public PermissionSummary withDefaultVersion(Boolean defaultVersion) {
+        this.defaultVersion = defaultVersion;
+        return this;
+    }
+
+    /**
+     * 是否是默认版本。
+     * @return defaultVersion
+     */
+    public Boolean getDefaultVersion() {
+        return defaultVersion;
+    }
+
+    public void setDefaultVersion(Boolean defaultVersion) {
+        this.defaultVersion = defaultVersion;
+    }
+
+    public PermissionSummary withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 权限版本。
+     * minimum: 0
+     * maximum: 1000000
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public PermissionSummary withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 权限的状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +267,26 @@ public class PermissionSummary {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.isResourceTypeDefault, that.isResourceTypeDefault)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.permissionUrn, that.permissionUrn)
+            && Objects.equals(this.permissionType, that.permissionType)
+            && Objects.equals(this.defaultVersion, that.defaultVersion) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, resourceType, isResourceTypeDefault, createdAt, updatedAt);
+        return Objects.hash(id,
+            name,
+            resourceType,
+            isResourceTypeDefault,
+            createdAt,
+            updatedAt,
+            permissionUrn,
+            permissionType,
+            defaultVersion,
+            version,
+            status);
     }
 
     @Override
@@ -173,6 +299,11 @@ public class PermissionSummary {
         sb.append("    isResourceTypeDefault: ").append(toIndentedString(isResourceTypeDefault)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    permissionUrn: ").append(toIndentedString(permissionUrn)).append("\n");
+        sb.append("    permissionType: ").append(toIndentedString(permissionType)).append("\n");
+        sb.append("    defaultVersion: ").append(toIndentedString(defaultVersion)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

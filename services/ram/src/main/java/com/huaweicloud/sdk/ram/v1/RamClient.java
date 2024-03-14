@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareRequest;
 import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareResponse;
 import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareRequest;
 import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionVersionsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionVersionsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListPermissionsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListQuotaRequest;
@@ -164,7 +166,7 @@ public class RamClient {
     /**
      * 查询资源共享的配额
      *
-     * 查询当前帐号的资源共享配额信息。
+     * 查询当前账号的资源共享配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -178,7 +180,7 @@ public class RamClient {
     /**
      * 查询资源共享的配额
      *
-     * 查询当前帐号的资源共享配额信息。
+     * 查询当前账号的资源共享配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -306,6 +308,35 @@ public class RamClient {
     }
 
     /**
+     * 获取权限的所有版本
+     *
+     * 获取权限的所有版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPermissionVersionsRequest 请求对象
+     * @return ListPermissionVersionsResponse
+     */
+    public ListPermissionVersionsResponse listPermissionVersions(ListPermissionVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.listPermissionVersions);
+    }
+
+    /**
+     * 获取权限的所有版本
+     *
+     * 获取权限的所有版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPermissionVersionsRequest 请求对象
+     * @return SyncInvoker<ListPermissionVersionsRequest, ListPermissionVersionsResponse>
+     */
+    public SyncInvoker<ListPermissionVersionsRequest, ListPermissionVersionsResponse> listPermissionVersionsInvoker(
+        ListPermissionVersionsRequest request) {
+        return new SyncInvoker<>(request, RamMeta.listPermissionVersions, hcClient);
+    }
+
+    /**
      * 检索共享资源权限列表
      *
      * 检索指定资源类型的共享资源权限列表。
@@ -337,7 +368,7 @@ public class RamClient {
     /**
      * 检索资源共享权限内容
      *
-     * 检索指定资源类型的共享资源权限内容。
+     * 检索指定资源类型的共享资源指定版本的权限内容，如果不指定权限版本，则返回默认版本的权限内容。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -351,7 +382,7 @@ public class RamClient {
     /**
      * 检索资源共享权限内容
      *
-     * 检索指定资源类型的共享资源权限内容。
+     * 检索指定资源类型的共享资源指定版本的权限内容，如果不指定权限版本，则返回默认版本的权限内容。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -453,7 +484,7 @@ public class RamClient {
     /**
      * 删除资源共享实例
      *
-     * 删除指定的资源共享实例。此操作不会删除实体资源，仅停止向其他帐号共享资源。
+     * 删除指定的资源共享实例。此操作不会删除实体资源，仅停止向其他账号共享资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -467,7 +498,7 @@ public class RamClient {
     /**
      * 删除资源共享实例
      *
-     * 删除指定的资源共享实例。此操作不会删除实体资源，仅停止向其他帐号共享资源。
+     * 删除指定的资源共享实例。此操作不会删除实体资源，仅停止向其他账号共享资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -628,7 +659,7 @@ public class RamClient {
     /**
      * 接受共享邀请
      *
-     * 接受来自其他帐号的资源共享邀请。
+     * 接受来自其他账号的资源共享邀请。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -643,7 +674,7 @@ public class RamClient {
     /**
      * 接受共享邀请
      *
-     * 接受来自其他帐号的资源共享邀请。
+     * 接受来自其他账号的资源共享邀请。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -658,7 +689,7 @@ public class RamClient {
     /**
      * 拒绝共享邀请
      *
-     * 拒绝来自其他帐号的资源共享邀请。
+     * 拒绝来自其他账号的资源共享邀请。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -673,7 +704,7 @@ public class RamClient {
     /**
      * 拒绝共享邀请
      *
-     * 拒绝来自其他帐号的资源共享邀请。
+     * 拒绝来自其他账号的资源共享邀请。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

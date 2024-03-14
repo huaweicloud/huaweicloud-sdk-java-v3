@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class LiveVideoScriptInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_id")
+
+    private String scriptId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_name")
 
     private String scriptName;
@@ -52,6 +57,23 @@ public class LiveVideoScriptInfo {
     @JsonProperty(value = "shoot_scripts")
 
     private List<LiveShootScriptItem> shootScripts = null;
+
+    public LiveVideoScriptInfo withScriptId(String scriptId) {
+        this.scriptId = scriptId;
+        return this;
+    }
+
+    /**
+     * 剧本ID。
+     * @return scriptId
+     */
+    public String getScriptId() {
+        return scriptId;
+    }
+
+    public void setScriptId(String scriptId) {
+        this.scriptId = scriptId;
+    }
 
     public LiveVideoScriptInfo withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -255,7 +277,7 @@ public class LiveVideoScriptInfo {
             return false;
         }
         LiveVideoScriptInfo that = (LiveVideoScriptInfo) obj;
-        return Objects.equals(this.scriptName, that.scriptName)
+        return Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.scriptName, that.scriptName)
             && Objects.equals(this.scriptDescription, that.scriptDescription) && Objects.equals(this.dhId, that.dhId)
             && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.voiceConfig, that.voiceConfig)
@@ -266,7 +288,8 @@ public class LiveVideoScriptInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptName,
+        return Objects.hash(scriptId,
+            scriptName,
             scriptDescription,
             dhId,
             modelAssetId,
@@ -280,6 +303,7 @@ public class LiveVideoScriptInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LiveVideoScriptInfo {\n");
+        sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    scriptDescription: ").append(toIndentedString(scriptDescription)).append("\n");
         sb.append("    dhId: ").append(toIndentedString(dhId)).append("\n");

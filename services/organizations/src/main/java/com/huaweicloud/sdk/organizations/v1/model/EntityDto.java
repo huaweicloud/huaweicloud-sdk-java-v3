@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 包含有关根、组织单位或帐号的信息。
+ * 包含有关根、组织单位或账号的信息。
  */
 public class EntityDto {
 

@@ -47,7 +47,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 将帐号设置为委托管理员的日期。
+     * 将账号设置为委托管理员的日期。
      * @return delegationEnabledAt
      */
     public OffsetDateTime getDelegationEnabledAt() {
@@ -64,7 +64,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 帐号的唯一标识符（ID）。
+     * 账号的唯一标识符（ID）。
      * @return accountId
      */
     public String getAccountId() {
@@ -81,7 +81,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 帐号的统一资源名称。
+     * 账号的统一资源名称。
      * @return accountUrn
      */
     public String getAccountUrn() {
@@ -98,7 +98,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 帐号加入组织的方式,invited：邀请加入，created：创建加入。
+     * 账号加入组织的方式,invited：邀请加入，created：创建加入。
      * @return joinMethod
      */
     public String getJoinMethod() {
@@ -115,7 +115,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 帐号成为组织一部分的日期。
+     * 账号成为组织一部分的日期。
      * @return joinedAt
      */
     public OffsetDateTime getJoinedAt() {
@@ -132,7 +132,7 @@ public class DelegatedAdministratorDto {
     }
 
     /**
-     * 帐号名称。
+     * 账号名称
      * @return accountName
      */
     public String getAccountName() {

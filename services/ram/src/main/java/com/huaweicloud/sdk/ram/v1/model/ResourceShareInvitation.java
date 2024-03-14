@@ -57,7 +57,7 @@ public class ResourceShareInvitation {
     }
 
     /**
-     * 接收资源共享邀请的帐号ID。
+     * 接收资源共享邀请的账号ID。
      * @return receiverAccountId
      */
     public String getReceiverAccountId() {
@@ -125,7 +125,7 @@ public class ResourceShareInvitation {
     }
 
     /**
-     * 发送资源共享邀请的帐号ID。
+     * 发送资源共享邀请的账号ID。
      * @return senderAccountId
      */
     public String getSenderAccountId() {

@@ -46,7 +46,7 @@ public class ListAccountsResponse extends SdkResponse {
     }
 
     /**
-     * 组织中的帐号列表。
+     * 组织中的账号列表。
      * @return accounts
      */
     public List<AccountDto> getAccounts() {

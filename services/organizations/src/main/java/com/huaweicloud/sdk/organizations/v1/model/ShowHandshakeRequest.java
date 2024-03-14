@@ -21,7 +21,7 @@ public class ShowHandshakeRequest {
     }
 
     /**
-     * 邀请的唯一标识符（ID）。帐号在发起邀请时创建ID。
+     * 邀请的唯一标识符（ID）。账号在发起邀请时创建ID。
      * @return handshakeId
      */
     public String getHandshakeId() {

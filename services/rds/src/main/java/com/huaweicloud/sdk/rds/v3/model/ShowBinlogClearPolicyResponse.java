@@ -16,6 +16,11 @@ public class ShowBinlogClearPolicyResponse extends SdkResponse {
 
     private Integer binlogRetentionHours;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binlog_clear_type")
+
+    private String binlogClearType;
+
     public ShowBinlogClearPolicyResponse withBinlogRetentionHours(Integer binlogRetentionHours) {
         this.binlogRetentionHours = binlogRetentionHours;
         return this;
@@ -33,6 +38,23 @@ public class ShowBinlogClearPolicyResponse extends SdkResponse {
         this.binlogRetentionHours = binlogRetentionHours;
     }
 
+    public ShowBinlogClearPolicyResponse withBinlogClearType(String binlogClearType) {
+        this.binlogClearType = binlogClearType;
+        return this;
+    }
+
+    /**
+     * 二进制日志保留策略,取值：time、fast - time:表示按时长保留二进制文件 - fast:表示快速清理,不保留二进制文件
+     * @return binlogClearType
+     */
+    public String getBinlogClearType() {
+        return binlogClearType;
+    }
+
+    public void setBinlogClearType(String binlogClearType) {
+        this.binlogClearType = binlogClearType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,13 @@ public class ShowBinlogClearPolicyResponse extends SdkResponse {
             return false;
         }
         ShowBinlogClearPolicyResponse that = (ShowBinlogClearPolicyResponse) obj;
-        return Objects.equals(this.binlogRetentionHours, that.binlogRetentionHours);
+        return Objects.equals(this.binlogRetentionHours, that.binlogRetentionHours)
+            && Objects.equals(this.binlogClearType, that.binlogClearType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(binlogRetentionHours);
+        return Objects.hash(binlogRetentionHours, binlogClearType);
     }
 
     @Override
@@ -55,6 +78,7 @@ public class ShowBinlogClearPolicyResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBinlogClearPolicyResponse {\n");
         sb.append("    binlogRetentionHours: ").append(toIndentedString(binlogRetentionHours)).append("\n");
+        sb.append("    binlogClearType: ").append(toIndentedString(binlogClearType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -28,6 +28,11 @@ import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
@@ -86,6 +91,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -116,6 +123,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.InteractionRuleGroup;
 import com.huaweicloud.sdk.metastudio.v1.model.LanguageCheckInfoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummarysReq;
@@ -156,13 +165,20 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.PictureModelingByUrlReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ReplicationAssetInfo;
 import com.huaweicloud.sdk.metastudio.v1.model.ReportLiveEventReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
@@ -210,6 +226,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
@@ -233,6 +252,313 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class MetaStudioMeta {
+
+    public static final HttpRequestDef<CreateActiveCodeRequest, CreateActiveCodeResponse> createActiveCode =
+        genForCreateActiveCode();
+
+    private static HttpRequestDef<CreateActiveCodeRequest, CreateActiveCodeResponse> genForCreateActiveCode() {
+        // basic
+        HttpRequestDef.Builder<CreateActiveCodeRequest, CreateActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateActiveCodeRequest.class, CreateActiveCodeResponse.class)
+                .withName("CreateActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateActiveCodeRequest::getAuthorization,
+                CreateActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateActiveCodeRequest::getXSdkDate, CreateActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateActiveCodeRequest::getXProjectId, CreateActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateActiveCodeRequest::getXAppUserId, CreateActiveCodeRequest::setXAppUserId));
+        builder.<CreateActiveCodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateActiveCodeReq.class),
+            f -> f.withMarshaller(CreateActiveCodeRequest::getBody, CreateActiveCodeRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateActiveCodeResponse::getXRequestId, CreateActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteActiveCodeRequest, DeleteActiveCodeResponse> deleteActiveCode =
+        genForDeleteActiveCode();
+
+    private static HttpRequestDef<DeleteActiveCodeRequest, DeleteActiveCodeResponse> genForDeleteActiveCode() {
+        // basic
+        HttpRequestDef.Builder<DeleteActiveCodeRequest, DeleteActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteActiveCodeRequest.class, DeleteActiveCodeResponse.class)
+                .withName("DeleteActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActiveCodeRequest::getAuthorization,
+                DeleteActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActiveCodeRequest::getXSdkDate, DeleteActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActiveCodeRequest::getXProjectId, DeleteActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActiveCodeRequest::getXAppUserId, DeleteActiveCodeRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteActiveCodeRequest::getBody, DeleteActiveCodeRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteActiveCodeResponse::getXRequestId, DeleteActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListActiveCodeRequest, ListActiveCodeResponse> listActiveCode =
+        genForListActiveCode();
+
+    private static HttpRequestDef<ListActiveCodeRequest, ListActiveCodeResponse> genForListActiveCode() {
+        // basic
+        HttpRequestDef.Builder<ListActiveCodeRequest, ListActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListActiveCodeRequest.class, ListActiveCodeResponse.class)
+                .withName("ListActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getOffset, ListActiveCodeRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getLimit, ListActiveCodeRequest::setLimit));
+        builder.<String>withRequestField("robot_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getRobotId, ListActiveCodeRequest::setRobotId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getAuthorization, ListActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getXSdkDate, ListActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getXProjectId, ListActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveCodeRequest::getXAppUserId, ListActiveCodeRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListActiveCodeResponse::getXRequestId, ListActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetActiveCodeRequest, ResetActiveCodeResponse> resetActiveCode =
+        genForResetActiveCode();
+
+    private static HttpRequestDef<ResetActiveCodeRequest, ResetActiveCodeResponse> genForResetActiveCode() {
+        // basic
+        HttpRequestDef.Builder<ResetActiveCodeRequest, ResetActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetActiveCodeRequest.class, ResetActiveCodeResponse.class)
+                .withName("ResetActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("active_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getActiveCodeId, ResetActiveCodeRequest::setActiveCodeId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getAuthorization, ResetActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getXSdkDate, ResetActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getXProjectId, ResetActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getXAppUserId, ResetActiveCodeRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetActiveCodeResponse::getXRequestId, ResetActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowActiveCodeRequest, ShowActiveCodeResponse> showActiveCode =
+        genForShowActiveCode();
+
+    private static HttpRequestDef<ShowActiveCodeRequest, ShowActiveCodeResponse> genForShowActiveCode() {
+        // basic
+        HttpRequestDef.Builder<ShowActiveCodeRequest, ShowActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowActiveCodeRequest.class, ShowActiveCodeResponse.class)
+                .withName("ShowActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("active_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveCodeRequest::getActiveCodeId, ShowActiveCodeRequest::setActiveCodeId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveCodeRequest::getAuthorization, ShowActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveCodeRequest::getXSdkDate, ShowActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveCodeRequest::getXProjectId, ShowActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveCodeRequest::getXAppUserId, ShowActiveCodeRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowActiveCodeResponse::getXRequestId, ShowActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateActiveCodeRequest, UpdateActiveCodeResponse> updateActiveCode =
+        genForUpdateActiveCode();
+
+    private static HttpRequestDef<UpdateActiveCodeRequest, UpdateActiveCodeResponse> genForUpdateActiveCode() {
+        // basic
+        HttpRequestDef.Builder<UpdateActiveCodeRequest, UpdateActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateActiveCodeRequest.class, UpdateActiveCodeResponse.class)
+                .withName("UpdateActiveCode")
+                .withUri("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("active_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getActiveCodeId, UpdateActiveCodeRequest::setActiveCodeId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getAuthorization,
+                UpdateActiveCodeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getXSdkDate, UpdateActiveCodeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getXProjectId, UpdateActiveCodeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getXAppUserId, UpdateActiveCodeRequest::setXAppUserId));
+        builder.<UpdateActiveCodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateActiveCodeReq.class),
+            f -> f.withMarshaller(UpdateActiveCodeRequest::getBody, UpdateActiveCodeRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateActiveCodeResponse::getXRequestId, UpdateActiveCodeResponse::setXRequestId));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateDialogUrlRequest, CreateDialogUrlResponse> createDialogUrl =
         genForCreateDialogUrl();
@@ -442,6 +768,57 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(StopSmartChatJobResponse::getXRequestId, StopSmartChatJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> createAssetbyReplicationInfo =
+        genForCreateAssetbyReplicationInfo();
+
+    private static HttpRequestDef<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> genForCreateAssetbyReplicationInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAssetbyReplicationInfoRequest.class,
+                    CreateAssetbyReplicationInfoResponse.class)
+                .withName("CreateAssetbyReplicationInfo")
+                .withUri("/v1/{project_id}/digital-assets-by-replication-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getAuthorization,
+                CreateAssetbyReplicationInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getXSdkDate,
+                CreateAssetbyReplicationInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getXAppUserId,
+                CreateAssetbyReplicationInfoRequest::setXAppUserId));
+        builder.<ReplicationAssetInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ReplicationAssetInfo.class),
+            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getBody,
+                CreateAssetbyReplicationInfoRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetbyReplicationInfoResponse::getXRequestId,
+                CreateAssetbyReplicationInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -687,6 +1064,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAssetsRequest.RoleEnum.class),
             f -> f.withMarshaller(ListAssetsRequest::getRole, ListAssetsRequest::setRole));
+        builder.<String>withRequestField("X-REAL-IP",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getXRealIp, ListAssetsRequest::setXRealIp));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -794,6 +1176,55 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowAssetResponse::getXRequestId, ShowAssetResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse> showAssetReplicationInfo =
+        genForShowAssetReplicationInfo();
+
+    private static HttpRequestDef<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse> genForShowAssetReplicationInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowAssetReplicationInfoRequest.class, ShowAssetReplicationInfoResponse.class)
+                .withName("ShowAssetReplicationInfo")
+                .withUri("/v1/{project_id}/digital-assets/{asset_id}/replication-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssetReplicationInfoRequest::getAssetId,
+                ShowAssetReplicationInfoRequest::setAssetId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssetReplicationInfoRequest::getAuthorization,
+                ShowAssetReplicationInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssetReplicationInfoRequest::getXSdkDate,
+                ShowAssetReplicationInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssetReplicationInfoRequest::getXAppUserId,
+                ShowAssetReplicationInfoRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetReplicationInfoResponse::getXRequestId,
+                ShowAssetReplicationInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1351,7 +1782,7 @@ public class MetaStudioMeta {
                     Create2DDigitalHumanVideoResponse.class)
                 .withName("Create2DDigitalHumanVideo")
                 .withUri("/v1/{project_id}/2d-digital-human-videos")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1521,7 +1952,7 @@ public class MetaStudioMeta {
             .builder(HttpMethod.POST, CreatePhotoDetectionRequest.class, CreatePhotoDetectionResponse.class)
             .withName("CreatePhotoDetection")
             .withUri("/v1/{project_id}/photo-detection")
-            .withContentType("application/json;charset=utf-8");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1576,7 +2007,7 @@ public class MetaStudioMeta {
                     CreatePhotoDigitalHumanVideoResponse.class)
                 .withName("CreatePhotoDigitalHumanVideo")
                 .withUri("/v1/{project_id}/photo-digital-human-videos")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1743,7 +2174,7 @@ public class MetaStudioMeta {
             HttpRequestDef.builder(HttpMethod.POST, ConfirmFileUploadRequest.class, ConfirmFileUploadResponse.class)
                 .withName("ConfirmFileUpload")
                 .withUri("/v1/{project_id}/files/{file_id}/complete")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("file_id",
@@ -1791,7 +2222,7 @@ public class MetaStudioMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateFileRequest.class, CreateFileResponse.class)
                 .withName("CreateFile")
                 .withUri("/v1/{project_id}/files")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -3905,7 +4336,7 @@ public class MetaStudioMeta {
                 .builder(HttpMethod.POST, CreateTrainingAdvanceJobRequest.class, CreateTrainingAdvanceJobResponse.class)
                 .withName("CreateTrainingAdvanceJob")
                 .withUri("/v1/{project_id}/voice-training-manage/user/advance-jobs")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("X-App-UserId",
@@ -3934,7 +4365,7 @@ public class MetaStudioMeta {
             .builder(HttpMethod.POST, CreateTrainingBasicJobRequest.class, CreateTrainingBasicJobResponse.class)
             .withName("CreateTrainingBasicJob")
             .withUri("/v1/{project_id}/voice-training-manage/user/basic-jobs")
-            .withContentType("application/json;charset=utf-8");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -3981,7 +4412,7 @@ public class MetaStudioMeta {
             .builder(HttpMethod.POST, CreateTrainingMiddleJobRequest.class, CreateTrainingMiddleJobResponse.class)
             .withName("CreateTrainingMiddleJob")
             .withUri("/v1/{project_id}/voice-training-manage/user/middle-jobs")
-            .withContentType("application/json;charset=utf-8");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -4258,7 +4689,7 @@ public class MetaStudioMeta {
                 .builder(HttpMethod.POST, Create2dModelTrainingJobRequest.class, Create2dModelTrainingJobResponse.class)
                 .withName("Create2dModelTrainingJob")
                 .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -4371,7 +4802,7 @@ public class MetaStudioMeta {
                     Execute2dModelTrainingCommandByUserResponse.class)
                 .withName("Execute2dModelTrainingCommandByUser")
                 .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}/command")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("job_id",
@@ -4593,7 +5024,7 @@ public class MetaStudioMeta {
                 .builder(HttpMethod.PUT, Update2dModelTrainingJobRequest.class, Update2dModelTrainingJobResponse.class)
                 .withName("Update2dModelTrainingJob")
                 .withUri("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("job_id",
@@ -5019,7 +5450,7 @@ public class MetaStudioMeta {
                     ExecuteVideoMotionCaptureCommandResponse.class)
                 .withName("ExecuteVideoMotionCaptureCommand")
                 .withUri("/v1/{project_id}/video-motion-capture-jobs/{job_id}/command")
-                .withContentType("application/json;charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("job_id",

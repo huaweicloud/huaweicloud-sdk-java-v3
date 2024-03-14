@@ -27,7 +27,7 @@ public class TagResourceRequest {
     }
 
     /**
-     * 根、组织单元、帐号或策略的唯一标识符（ID）。
+     * 根、组织单元、账号或策略的唯一标识符（ID）。
      * @return resourceId
      */
     public String getResourceId() {

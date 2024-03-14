@@ -16,6 +16,8 @@ public class IdentityCenterRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://identitycenter.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://identitycenter.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IDENTITYCENTER");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -23,6 +25,7 @@ public class IdentityCenterRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("cn-south-1", CN_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

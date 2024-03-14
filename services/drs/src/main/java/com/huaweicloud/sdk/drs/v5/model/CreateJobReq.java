@@ -38,6 +38,11 @@ public class CreateJobReq {
 
     private JobNodeInfo nodeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private List<PublicIpConfig> publicIpList = null;
+
     public CreateJobReq withBaseInfo(JobBaseInfo baseInfo) {
         this.baseInfo = baseInfo;
         return this;
@@ -182,6 +187,39 @@ public class CreateJobReq {
         this.nodeInfo = nodeInfo;
     }
 
+    public CreateJobReq withPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    public CreateJobReq addPublicIpListItem(PublicIpConfig publicIpListItem) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        this.publicIpList.add(publicIpListItem);
+        return this;
+    }
+
+    public CreateJobReq withPublicIpList(Consumer<List<PublicIpConfig>> publicIpListSetter) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        publicIpListSetter.accept(this.publicIpList);
+        return this;
+    }
+
+    /**
+     * 指定公网IP的信息
+     * @return publicIpList
+     */
+    public List<PublicIpConfig> getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -193,12 +231,13 @@ public class CreateJobReq {
         CreateJobReq that = (CreateJobReq) obj;
         return Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
             && Objects.equals(this.targetEndpoint, that.targetEndpoint)
-            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo);
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo)
+            && Objects.equals(this.publicIpList, that.publicIpList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(baseInfo, sourceEndpoint, targetEndpoint, periodOrder, nodeInfo);
+        return Objects.hash(baseInfo, sourceEndpoint, targetEndpoint, periodOrder, nodeInfo, publicIpList);
     }
 
     @Override
@@ -210,6 +249,7 @@ public class CreateJobReq {
         sb.append("    targetEndpoint: ").append(toIndentedString(targetEndpoint)).append("\n");
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("    nodeInfo: ").append(toIndentedString(nodeInfo)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

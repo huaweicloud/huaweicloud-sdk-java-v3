@@ -30,13 +30,95 @@ public class ListServiceConnectionsRequest {
 
     private String markerId;
 
+    /**
+     * 终端节点的连接状态。  - pendingAcceptance：待接受  - accepted：已接受  - rejected：已拒绝  - failed：失败
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum PENDINGACCEPTANCE for value: "pendingAcceptance"
+         */
+        public static final StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
+
+        /**
+         * Enum ACCEPTED for value: "accepted"
+         */
+        public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
+
+        /**
+         * Enum REJECTED for value: "rejected"
+         */
+        public static final StatusEnum REJECTED = new StatusEnum("rejected");
+
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("failed");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("pendingAcceptance", PENDINGACCEPTANCE);
+            map.put("accepted", ACCEPTED);
+            map.put("rejected", REJECTED);
+            map.put("failed", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     /**
-     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+     * 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
      */
     public static final class SortKeyEnum {
 
@@ -111,7 +193,7 @@ public class ListServiceConnectionsRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
      */
     public static final class SortDirEnum {
 
@@ -246,20 +328,20 @@ public class ListServiceConnectionsRequest {
         this.markerId = markerId;
     }
 
-    public ListServiceConnectionsRequest withStatus(String status) {
+    public ListServiceConnectionsRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败
+     * 终端节点的连接状态。  - pendingAcceptance：待接受  - accepted：已接受  - rejected：已拒绝  - failed：失败
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -269,7 +351,7 @@ public class ListServiceConnectionsRequest {
     }
 
     /**
-     * 查询结果中终端节点列表的排序字段，取值为： ● create_at：终端节点的创建时间 ● update_at：终端节点的更新时间 默认值为create_at。
+     * 查询结果中终端节点列表的排序字段，取值为：  - create_at：终端节点的创建时间  - update_at：终端节点的更新时间 默认值为create_at。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -286,7 +368,7 @@ public class ListServiceConnectionsRequest {
     }
 
     /**
-     * 查询结果中终端节点列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {

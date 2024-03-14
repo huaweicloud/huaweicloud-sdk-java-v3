@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 包含有关在组织中创建帐号的CreateAccount请求的状态。
+ * 包含有关在组织中创建账号的CreateAccount请求的状态。
  */
 public class CreateAccountStatusDto {
 
@@ -52,7 +52,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 如果帐号创建成功，则为新帐号的唯一标识符（ID）。
+     * 如果账号创建成功，则为新账号的唯一标识符（ID）。
      * @return accountId
      */
     public String getAccountId() {
@@ -69,7 +69,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 帐号名称。
+     * 账号名称
      * @return accountName
      */
     public String getAccountName() {
@@ -86,7 +86,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 创建帐号和完成请求的日期和时间。
+     * 创建账号和完成请求的日期和时间。
      * @return completedAt
      */
     public OffsetDateTime getCompletedAt() {
@@ -103,7 +103,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 请求创建帐号的日期和时间。
+     * 请求创建账号的日期和时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -120,7 +120,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 请求的唯一标识符（ID）。您可以从创建帐号的初始CreateAccount请求的响应中获得此值。
+     * 请求的唯一标识符（ID）。您可以从创建账号的初始CreateAccount请求的响应中获得此值。
      * @return id
      */
     public String getId() {
@@ -137,7 +137,7 @@ public class CreateAccountStatusDto {
     }
 
     /**
-     * 创建帐号的异步请求的状态，in_progress：处理中，succeeded：成功，failed：失败。
+     * 创建账号的异步请求的状态，in_progress：处理中，succeeded：成功，failed：失败。
      * @return state
      */
     public String getState() {

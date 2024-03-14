@@ -100,7 +100,7 @@ public class ResourceInstanceReqBody {
     }
 
     /**
-     * 要绑定到新创建的帐号的标签列表。
+     * 要绑定到新创建的账号的标签列表。
      * @return matches
      */
     public List<Match> getMatches() {

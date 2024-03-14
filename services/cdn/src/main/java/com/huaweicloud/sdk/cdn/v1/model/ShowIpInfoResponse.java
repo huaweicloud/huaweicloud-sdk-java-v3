@@ -19,6 +19,11 @@ public class ShowIpInfoResponse extends SdkResponse {
 
     private List<CdnIps> cdnIps = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowIpInfoResponse withCdnIps(List<CdnIps> cdnIps) {
         this.cdnIps = cdnIps;
         return this;
@@ -52,6 +57,25 @@ public class ShowIpInfoResponse extends SdkResponse {
         this.cdnIps = cdnIps;
     }
 
+    public ShowIpInfoResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +85,12 @@ public class ShowIpInfoResponse extends SdkResponse {
             return false;
         }
         ShowIpInfoResponse that = (ShowIpInfoResponse) obj;
-        return Objects.equals(this.cdnIps, that.cdnIps);
+        return Objects.equals(this.cdnIps, that.cdnIps) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cdnIps);
+        return Objects.hash(cdnIps, xRequestId);
     }
 
     @Override
@@ -74,6 +98,7 @@ public class ShowIpInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowIpInfoResponse {\n");
         sb.append("    cdnIps: ").append(toIndentedString(cdnIps)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

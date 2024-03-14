@@ -47,6 +47,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
     private JobState state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reject_times")
+
+    private Integer rejectTimes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
     private String assetId;
@@ -205,6 +210,25 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.state = state;
     }
 
+    public ShowVoiceTrainingJobResponse withRejectTimes(Integer rejectTimes) {
+        this.rejectTimes = rejectTimes;
+        return this;
+    }
+
+    /**
+     * 本次任务中该状态出现的次数
+     * minimum: 1
+     * maximum: 10
+     * @return rejectTimes
+     */
+    public Integer getRejectTimes() {
+        return rejectTimes;
+    }
+
+    public void setRejectTimes(Integer rejectTimes) {
+        this.rejectTimes = rejectTimes;
+    }
+
     public ShowVoiceTrainingJobResponse withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -357,8 +381,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.assetId, that.assetId)
-            && Objects.equals(this.jobFailedCode, that.jobFailedCode)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.rejectTimes, that.rejectTimes)
+            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.jobFailedCode, that.jobFailedCode)
             && Objects.equals(this.jobFailedReason, that.jobFailedReason)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
@@ -375,6 +399,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             sex,
             language,
             state,
+            rejectTimes,
             assetId,
             jobFailedCode,
             jobFailedReason,
@@ -396,6 +421,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    rejectTimes: ").append(toIndentedString(rejectTimes)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    jobFailedCode: ").append(toIndentedString(jobFailedCode)).append("\n");
         sb.append("    jobFailedReason: ").append(toIndentedString(jobFailedReason)).append("\n");

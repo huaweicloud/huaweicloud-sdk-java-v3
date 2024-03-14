@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.identitycenterstore.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,13 +30,88 @@ public class EmailDto {
 
     private String value;
 
+    /**
+     * 电子邮箱地址的验证状态
+     */
+    public static final class VerificationStatusEnum {
+
+        /**
+         * Enum NOT_VERIFIED for value: "NOT_VERIFIED"
+         */
+        public static final VerificationStatusEnum NOT_VERIFIED = new VerificationStatusEnum("NOT_VERIFIED");
+
+        /**
+         * Enum VERIFIED for value: "VERIFIED"
+         */
+        public static final VerificationStatusEnum VERIFIED = new VerificationStatusEnum("VERIFIED");
+
+        private static final Map<String, VerificationStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VerificationStatusEnum> createStaticFields() {
+            Map<String, VerificationStatusEnum> map = new HashMap<>();
+            map.put("NOT_VERIFIED", NOT_VERIFIED);
+            map.put("VERIFIED", VERIFIED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VerificationStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VerificationStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VerificationStatusEnum(value));
+        }
+
+        public static VerificationStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VerificationStatusEnum) {
+                return this.value.equals(((VerificationStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification_status")
+
+    private VerificationStatusEnum verificationStatus;
+
     public EmailDto withPrimary(Boolean primary) {
         this.primary = primary;
         return this;
     }
 
     /**
-     * 一个布尔值，表示这是否是用户的主电子邮箱
+     * 一个布尔值，表示这是否为用户的主电子邮箱
      * @return primary
      */
     public Boolean getPrimary() {
@@ -76,6 +156,23 @@ public class EmailDto {
         this.value = value;
     }
 
+    public EmailDto withVerificationStatus(VerificationStatusEnum verificationStatus) {
+        this.verificationStatus = verificationStatus;
+        return this;
+    }
+
+    /**
+     * 电子邮箱地址的验证状态
+     * @return verificationStatus
+     */
+    public VerificationStatusEnum getVerificationStatus() {
+        return verificationStatus;
+    }
+
+    public void setVerificationStatus(VerificationStatusEnum verificationStatus) {
+        this.verificationStatus = verificationStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +183,13 @@ public class EmailDto {
         }
         EmailDto that = (EmailDto) obj;
         return Objects.equals(this.primary, that.primary) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.value, that.value);
+            && Objects.equals(this.value, that.value)
+            && Objects.equals(this.verificationStatus, that.verificationStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(primary, type, value);
+        return Objects.hash(primary, type, value, verificationStatus);
     }
 
     @Override
@@ -101,6 +199,7 @@ public class EmailDto {
         sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    verificationStatus: ").append(toIndentedString(verificationStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

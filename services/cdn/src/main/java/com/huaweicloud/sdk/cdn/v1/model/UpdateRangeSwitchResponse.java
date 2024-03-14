@@ -17,6 +17,11 @@ public class UpdateRangeSwitchResponse extends SdkResponse {
 
     private OriginRangeBody originRange;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateRangeSwitchResponse withOriginRange(OriginRangeBody originRange) {
         this.originRange = originRange;
         return this;
@@ -43,6 +48,25 @@ public class UpdateRangeSwitchResponse extends SdkResponse {
         this.originRange = originRange;
     }
 
+    public UpdateRangeSwitchResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class UpdateRangeSwitchResponse extends SdkResponse {
             return false;
         }
         UpdateRangeSwitchResponse that = (UpdateRangeSwitchResponse) obj;
-        return Objects.equals(this.originRange, that.originRange);
+        return Objects.equals(this.originRange, that.originRange) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originRange);
+        return Objects.hash(originRange, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class UpdateRangeSwitchResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateRangeSwitchResponse {\n");
         sb.append("    originRange: ").append(toIndentedString(originRange)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

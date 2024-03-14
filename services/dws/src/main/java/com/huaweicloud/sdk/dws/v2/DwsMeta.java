@@ -212,6 +212,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsDataResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListMetricsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
@@ -2992,6 +2996,106 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListLtsLogsRequest::getOffset, ListLtsLogsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricsRequest, ListMetricsResponse> listMetrics = genForListMetrics();
+
+    private static HttpRequestDef<ListMetricsRequest, ListMetricsResponse> genForListMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListMetricsRequest, ListMetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMetricsRequest.class, ListMetricsResponse.class)
+                .withName("ListMetrics")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/dms/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getClusterId, ListMetricsRequest::setClusterId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricsRequest::getOffset, ListMetricsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricsRequest::getLimit, ListMetricsRequest::setLimit));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getOrderBy, ListMetricsRequest::setOrderBy));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getSortBy, ListMetricsRequest::setSortBy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricsDataRequest, ListMetricsDataResponse> listMetricsData =
+        genForListMetricsData();
+
+    private static HttpRequestDef<ListMetricsDataRequest, ListMetricsDataResponse> genForListMetricsData() {
+        // basic
+        HttpRequestDef.Builder<ListMetricsDataRequest, ListMetricsDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMetricsDataRequest.class, ListMetricsDataResponse.class)
+                .withName("ListMetricsData")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/dms/metrics/{metric_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getClusterId, ListMetricsDataRequest::setClusterId));
+        builder.<String>withRequestField("metric_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getMetricName, ListMetricsDataRequest::setMetricName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getOffset, ListMetricsDataRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getLimit, ListMetricsDataRequest::setLimit));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getFrom, ListMetricsDataRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getTo, ListMetricsDataRequest::setTo));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getOrderBy, ListMetricsDataRequest::setOrderBy));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsDataRequest::getSortBy, ListMetricsDataRequest::setSortBy));
 
         // response
 

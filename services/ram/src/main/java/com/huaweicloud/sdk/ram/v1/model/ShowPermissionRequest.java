@@ -15,6 +15,11 @@ public class ShowPermissionRequest {
 
     private String permissionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_version")
+
+    private Integer permissionVersion;
+
     public ShowPermissionRequest withPermissionId(String permissionId) {
         this.permissionId = permissionId;
         return this;
@@ -32,6 +37,25 @@ public class ShowPermissionRequest {
         this.permissionId = permissionId;
     }
 
+    public ShowPermissionRequest withPermissionVersion(Integer permissionVersion) {
+        this.permissionVersion = permissionVersion;
+        return this;
+    }
+
+    /**
+     * 资源权限版本。
+     * minimum: 0
+     * maximum: 1000000
+     * @return permissionVersion
+     */
+    public Integer getPermissionVersion() {
+        return permissionVersion;
+    }
+
+    public void setPermissionVersion(Integer permissionVersion) {
+        this.permissionVersion = permissionVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +65,13 @@ public class ShowPermissionRequest {
             return false;
         }
         ShowPermissionRequest that = (ShowPermissionRequest) obj;
-        return Objects.equals(this.permissionId, that.permissionId);
+        return Objects.equals(this.permissionId, that.permissionId)
+            && Objects.equals(this.permissionVersion, that.permissionVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(permissionId);
+        return Objects.hash(permissionId, permissionVersion);
     }
 
     @Override
@@ -54,6 +79,7 @@ public class ShowPermissionRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPermissionRequest {\n");
         sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
+        sb.append("    permissionVersion: ").append(toIndentedString(permissionVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,11 @@ public class UpdateFollow302SwitchResponse extends SdkResponse {
 
     private Follow302StatusBody followStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateFollow302SwitchResponse withFollowStatus(Follow302StatusBody followStatus) {
         this.followStatus = followStatus;
         return this;
@@ -43,6 +48,25 @@ public class UpdateFollow302SwitchResponse extends SdkResponse {
         this.followStatus = followStatus;
     }
 
+    public UpdateFollow302SwitchResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class UpdateFollow302SwitchResponse extends SdkResponse {
             return false;
         }
         UpdateFollow302SwitchResponse that = (UpdateFollow302SwitchResponse) obj;
-        return Objects.equals(this.followStatus, that.followStatus);
+        return Objects.equals(this.followStatus, that.followStatus) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(followStatus);
+        return Objects.hash(followStatus, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class UpdateFollow302SwitchResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFollow302SwitchResponse {\n");
         sb.append("    followStatus: ").append(toIndentedString(followStatus)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

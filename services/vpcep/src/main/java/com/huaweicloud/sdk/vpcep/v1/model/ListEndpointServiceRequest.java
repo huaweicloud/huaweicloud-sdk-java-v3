@@ -26,7 +26,7 @@ public class ListEndpointServiceRequest {
     private String id;
 
     /**
-     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     * 终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败  - deleting：删除中
      */
     public static final class StatusEnum {
 
@@ -113,7 +113,7 @@ public class ListEndpointServiceRequest {
     private StatusEnum status;
 
     /**
-     * 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+     * 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
      */
     public static final class SortKeyEnum {
 
@@ -188,7 +188,7 @@ public class ListEndpointServiceRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点服务列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
      */
     public static final class SortDirEnum {
 
@@ -317,7 +317,7 @@ public class ListEndpointServiceRequest {
     }
 
     /**
-     * 终端节点服务的状态。 ● creating：创建中 ● available：可连接 ● failed：失败 ● deleting：删除中
+     * 终端节点服务的状态。  - creating：创建中  - available：可连接  - failed：失败  - deleting：删除中
      * @return status
      */
     public StatusEnum getStatus() {
@@ -334,7 +334,7 @@ public class ListEndpointServiceRequest {
     }
 
     /**
-     * 查询结果中终端节点服务列表的排序字段，取值为： ● create_at：终端节点服务的创建时间 ● update_at：终端节点服务的更新时间 默认值为create_at。
+     * 查询结果中终端节点服务列表的排序字段，取值为：  - create_at：终端节点服务的创建时间  - update_at：终端节点服务的更新时间 默认值为create_at。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -351,7 +351,7 @@ public class ListEndpointServiceRequest {
     }
 
     /**
-     * 查询结果中终端节点服务列表的排序方式，取值为： ● desc：降序排序 ● asc：升序排序 默认值为desc。
+     * 查询结果中终端节点服务列表的排序方式，取值为：  - desc：降序排序  - asc：升序排序 默认值为desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {

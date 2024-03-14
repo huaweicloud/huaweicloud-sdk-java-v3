@@ -19,7 +19,7 @@ public class BatchRemoveEndpointServicePermissionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchRemovePermissionRequest body;
+    private BatchRemoveEndpointServicePermissionsRequestBody body;
 
     public BatchRemoveEndpointServicePermissionsRequest withVpcEndpointServiceId(String vpcEndpointServiceId) {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
@@ -38,14 +38,16 @@ public class BatchRemoveEndpointServicePermissionsRequest {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
     }
 
-    public BatchRemoveEndpointServicePermissionsRequest withBody(BatchRemovePermissionRequest body) {
+    public BatchRemoveEndpointServicePermissionsRequest withBody(
+        BatchRemoveEndpointServicePermissionsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchRemoveEndpointServicePermissionsRequest withBody(Consumer<BatchRemovePermissionRequest> bodySetter) {
+    public BatchRemoveEndpointServicePermissionsRequest withBody(
+        Consumer<BatchRemoveEndpointServicePermissionsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchRemovePermissionRequest();
+            this.body = new BatchRemoveEndpointServicePermissionsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +58,11 @@ public class BatchRemoveEndpointServicePermissionsRequest {
      * Get body
      * @return body
      */
-    public BatchRemovePermissionRequest getBody() {
+    public BatchRemoveEndpointServicePermissionsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchRemovePermissionRequest body) {
+    public void setBody(BatchRemoveEndpointServicePermissionsRequestBody body) {
         this.body = body;
     }
 

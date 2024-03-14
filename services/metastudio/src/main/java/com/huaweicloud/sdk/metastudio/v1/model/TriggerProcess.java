@@ -194,6 +194,81 @@ public class TriggerProcess {
 
     private ReplyOrderEnum replyOrder;
 
+    /**
+     * 回复角色。默认为主播 * STREAMER：主播 * CO_STREAMER：助播
+     */
+    public static final class ReplyRoleEnum {
+
+        /**
+         * Enum STREAMER for value: "STREAMER"
+         */
+        public static final ReplyRoleEnum STREAMER = new ReplyRoleEnum("STREAMER");
+
+        /**
+         * Enum CO_STREAMER for value: "CO_STREAMER"
+         */
+        public static final ReplyRoleEnum CO_STREAMER = new ReplyRoleEnum("CO_STREAMER");
+
+        private static final Map<String, ReplyRoleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReplyRoleEnum> createStaticFields() {
+            Map<String, ReplyRoleEnum> map = new HashMap<>();
+            map.put("STREAMER", STREAMER);
+            map.put("CO_STREAMER", CO_STREAMER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReplyRoleEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReplyRoleEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplyRoleEnum(value));
+        }
+
+        public static ReplyRoleEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReplyRoleEnum) {
+                return this.value.equals(((ReplyRoleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reply_role")
+
+    private ReplyRoleEnum replyRole;
+
     public TriggerProcess withTimeWindow(Integer timeWindow) {
         this.timeWindow = timeWindow;
         return this;
@@ -339,6 +414,23 @@ public class TriggerProcess {
         this.replyOrder = replyOrder;
     }
 
+    public TriggerProcess withReplyRole(ReplyRoleEnum replyRole) {
+        this.replyRole = replyRole;
+        return this;
+    }
+
+    /**
+     * 回复角色。默认为主播 * STREAMER：主播 * CO_STREAMER：助播
+     * @return replyRole
+     */
+    public ReplyRoleEnum getReplyRole() {
+        return replyRole;
+    }
+
+    public void setReplyRole(ReplyRoleEnum replyRole) {
+        this.replyRole = replyRole;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -350,12 +442,13 @@ public class TriggerProcess {
         TriggerProcess that = (TriggerProcess) obj;
         return Objects.equals(this.timeWindow, that.timeWindow) && Objects.equals(this.replyMode, that.replyMode)
             && Objects.equals(this.layerConfig, that.layerConfig) && Objects.equals(this.replyTexts, that.replyTexts)
-            && Objects.equals(this.replyAudios, that.replyAudios) && Objects.equals(this.replyOrder, that.replyOrder);
+            && Objects.equals(this.replyAudios, that.replyAudios) && Objects.equals(this.replyOrder, that.replyOrder)
+            && Objects.equals(this.replyRole, that.replyRole);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeWindow, replyMode, layerConfig, replyTexts, replyAudios, replyOrder);
+        return Objects.hash(timeWindow, replyMode, layerConfig, replyTexts, replyAudios, replyOrder, replyRole);
     }
 
     @Override
@@ -368,6 +461,7 @@ public class TriggerProcess {
         sb.append("    replyTexts: ").append(toIndentedString(replyTexts)).append("\n");
         sb.append("    replyAudios: ").append(toIndentedString(replyAudios)).append("\n");
         sb.append("    replyOrder: ").append(toIndentedString(replyOrder)).append("\n");
+        sb.append("    replyRole: ").append(toIndentedString(replyRole)).append("\n");
         sb.append("}");
         return sb.toString();
     }

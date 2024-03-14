@@ -17,14 +17,14 @@ import java.util.function.Consumer;
 public class DeleteTagResourceRequest {
 
     /**
-     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts 帐号信息 organizations:roots根
+     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
      */
     public static final class ResourceTypeEnum {
 
         /**
-         * Enum ORGANIZATIONS_ROOTS for value: "organizations:roots"
+         * Enum ORGANIZATIONS_POLICIES for value: "organizations:policies"
          */
-        public static final ResourceTypeEnum ORGANIZATIONS_ROOTS = new ResourceTypeEnum("organizations:roots");
+        public static final ResourceTypeEnum ORGANIZATIONS_POLICIES = new ResourceTypeEnum("organizations:policies");
 
         /**
          * Enum ORGANIZATIONS_OUS for value: "organizations:ous"
@@ -37,18 +37,18 @@ public class DeleteTagResourceRequest {
         public static final ResourceTypeEnum ORGANIZATIONS_ACCOUNTS = new ResourceTypeEnum("organizations:accounts");
 
         /**
-         * Enum ORGANIZATIONS_POLICIES for value: "organizations:policies"
+         * Enum ORGANIZATIONS_ROOTS for value: "organizations:roots"
          */
-        public static final ResourceTypeEnum ORGANIZATIONS_POLICIES = new ResourceTypeEnum("organizations:policies");
+        public static final ResourceTypeEnum ORGANIZATIONS_ROOTS = new ResourceTypeEnum("organizations:roots");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
-            map.put("organizations:roots", ORGANIZATIONS_ROOTS);
+            map.put("organizations:policies", ORGANIZATIONS_POLICIES);
             map.put("organizations:ous", ORGANIZATIONS_OUS);
             map.put("organizations:accounts", ORGANIZATIONS_ACCOUNTS);
-            map.put("organizations:policies", ORGANIZATIONS_POLICIES);
+            map.put("organizations:roots", ORGANIZATIONS_ROOTS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -119,7 +119,7 @@ public class DeleteTagResourceRequest {
     }
 
     /**
-     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts 帐号信息 organizations:roots根
+     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -136,7 +136,7 @@ public class DeleteTagResourceRequest {
     }
 
     /**
-     * 根、组织单元、帐号或策略的唯一标识符（ID）。
+     * 根、组织单元、账号或策略的唯一标识符（ID）。
      * @return resourceId
      */
     public String getResourceId() {

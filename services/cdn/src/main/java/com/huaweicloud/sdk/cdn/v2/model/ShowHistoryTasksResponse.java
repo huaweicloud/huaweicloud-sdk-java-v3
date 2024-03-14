@@ -24,6 +24,11 @@ public class ShowHistoryTasksResponse extends SdkResponse {
 
     private List<TasksObject> tasks = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowHistoryTasksResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -74,6 +79,25 @@ public class ShowHistoryTasksResponse extends SdkResponse {
         this.tasks = tasks;
     }
 
+    public ShowHistoryTasksResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +107,13 @@ public class ShowHistoryTasksResponse extends SdkResponse {
             return false;
         }
         ShowHistoryTasksResponse that = (ShowHistoryTasksResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.tasks, that.tasks);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.tasks, that.tasks)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, tasks);
+        return Objects.hash(total, tasks, xRequestId);
     }
 
     @Override
@@ -97,6 +122,7 @@ public class ShowHistoryTasksResponse extends SdkResponse {
         sb.append("class ShowHistoryTasksResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

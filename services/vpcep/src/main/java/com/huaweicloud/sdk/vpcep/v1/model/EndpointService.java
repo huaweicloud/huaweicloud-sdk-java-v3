@@ -1,13 +1,9 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -30,85 +26,15 @@ public class EndpointService {
 
     private String serviceName;
 
-    /**
-     * 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
-     */
-    public static final class ServiceTypeEnum {
-
-        /**
-         * Enum INTERFACE for value: "interface"
-         */
-        public static final ServiceTypeEnum INTERFACE = new ServiceTypeEnum("interface");
-
-        /**
-         * Enum GATEWAY for value: "gateway"
-         */
-        public static final ServiceTypeEnum GATEWAY = new ServiceTypeEnum("gateway");
-
-        private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ServiceTypeEnum> createStaticFields() {
-            Map<String, ServiceTypeEnum> map = new HashMap<>();
-            map.put("interface", INTERFACE);
-            map.put("gateway", GATEWAY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ServiceTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ServiceTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
-        }
-
-        public static ServiceTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ServiceTypeEnum) {
-                return this.value.equals(((ServiceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
-    private ServiceTypeEnum serviceType;
+    private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_charge")
@@ -171,24 +97,24 @@ public class EndpointService {
         this.serviceName = serviceName;
     }
 
-    public EndpointService withServiceType(ServiceTypeEnum serviceType) {
+    public EndpointService withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 终端节点服务类型。 ● gataway：由运维人员配置。用户无需创建，可直接使用。 ● interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
+     * 终端节点服务类型。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建， 用户可直接使用。 您可以通过创建终端节点创建访问Gateway和Interface类型终端节点服务的终端节点。
      * @return serviceType
      */
-    public ServiceTypeEnum getServiceType() {
+    public String getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(ServiceTypeEnum serviceType) {
+    public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
 
-    public EndpointService withCreatedAt(String createdAt) {
+    public EndpointService withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -197,11 +123,11 @@ public class EndpointService {
      * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYYMM-DDTHH:MM:SSZ
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -211,7 +137,7 @@ public class EndpointService {
     }
 
     /**
-     * 连接该终端节点服务的终端节点是否计费。 ● true：计费 ● false：不计费
+     * 连接该终端节点服务的终端节点是否计费。  - true：计费  - false：不计费
      * @return isCharge
      */
     public Boolean getIsCharge() {
@@ -228,7 +154,7 @@ public class EndpointService {
     }
 
     /**
-     * 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+     * 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
      * @return enablePolicy
      */
     public Boolean getEnablePolicy() {

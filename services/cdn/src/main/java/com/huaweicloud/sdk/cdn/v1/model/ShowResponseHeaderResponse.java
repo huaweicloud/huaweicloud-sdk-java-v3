@@ -17,6 +17,11 @@ public class ShowResponseHeaderResponse extends SdkResponse {
 
     private HeaderMap headers;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowResponseHeaderResponse withHeaders(HeaderMap headers) {
         this.headers = headers;
         return this;
@@ -43,6 +48,25 @@ public class ShowResponseHeaderResponse extends SdkResponse {
         this.headers = headers;
     }
 
+    public ShowResponseHeaderResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class ShowResponseHeaderResponse extends SdkResponse {
             return false;
         }
         ShowResponseHeaderResponse that = (ShowResponseHeaderResponse) obj;
-        return Objects.equals(this.headers, that.headers);
+        return Objects.equals(this.headers, that.headers) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(headers);
+        return Objects.hash(headers, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class ShowResponseHeaderResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResponseHeaderResponse {\n");
         sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

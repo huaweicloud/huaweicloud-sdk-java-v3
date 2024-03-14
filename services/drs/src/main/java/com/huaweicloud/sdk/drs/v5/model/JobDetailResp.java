@@ -150,6 +150,21 @@ public class JobDetailResp {
 
     private ConnectionManagement connectionManagement;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private List<PublicIpConfig> publicIpList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bind_public_ip_state")
+
+    private String bindPublicIpState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "children")
+
+    private List<FailedToBindEipChildInfo> children = null;
+
     public JobDetailResp withId(String id) {
         this.id = id;
         return this;
@@ -841,6 +856,89 @@ public class JobDetailResp {
         this.connectionManagement = connectionManagement;
     }
 
+    public JobDetailResp withPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    public JobDetailResp addPublicIpListItem(PublicIpConfig publicIpListItem) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        this.publicIpList.add(publicIpListItem);
+        return this;
+    }
+
+    public JobDetailResp withPublicIpList(Consumer<List<PublicIpConfig>> publicIpListSetter) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        publicIpListSetter.accept(this.publicIpList);
+        return this;
+    }
+
+    /**
+     * 指定公网IP的信息
+     * @return publicIpList
+     */
+    public List<PublicIpConfig> getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
+    public JobDetailResp withBindPublicIpState(String bindPublicIpState) {
+        this.bindPublicIpState = bindPublicIpState;
+        return this;
+    }
+
+    /**
+     * 是否成功绑定公网IP
+     * @return bindPublicIpState
+     */
+    public String getBindPublicIpState() {
+        return bindPublicIpState;
+    }
+
+    public void setBindPublicIpState(String bindPublicIpState) {
+        this.bindPublicIpState = bindPublicIpState;
+    }
+
+    public JobDetailResp withChildren(List<FailedToBindEipChildInfo> children) {
+        this.children = children;
+        return this;
+    }
+
+    public JobDetailResp addChildrenItem(FailedToBindEipChildInfo childrenItem) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        this.children.add(childrenItem);
+        return this;
+    }
+
+    public JobDetailResp withChildren(Consumer<List<FailedToBindEipChildInfo>> childrenSetter) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        childrenSetter.accept(this.children);
+        return this;
+    }
+
+    /**
+     * 多任务时，存在子任务绑定失败时，返回子任务的信息
+     * @return children
+     */
+    public List<FailedToBindEipChildInfo> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<FailedToBindEipChildInfo> children) {
+        this.children = children;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -868,7 +966,10 @@ public class JobDetailResp {
             && Objects.equals(this.supportImportFileResp, that.supportImportFileResp)
             && Objects.equals(this.instanceFeatures, that.instanceFeatures)
             && Objects.equals(this.taskVersion, that.taskVersion)
-            && Objects.equals(this.connectionManagement, that.connectionManagement);
+            && Objects.equals(this.connectionManagement, that.connectionManagement)
+            && Objects.equals(this.publicIpList, that.publicIpList)
+            && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
+            && Objects.equals(this.children, that.children);
     }
 
     @Override
@@ -899,7 +1000,10 @@ public class JobDetailResp {
             supportImportFileResp,
             instanceFeatures,
             taskVersion,
-            connectionManagement);
+            connectionManagement,
+            publicIpList,
+            bindPublicIpState,
+            children);
     }
 
     @Override
@@ -935,6 +1039,9 @@ public class JobDetailResp {
         sb.append("    instanceFeatures: ").append(toIndentedString(instanceFeatures)).append("\n");
         sb.append("    taskVersion: ").append(toIndentedString(taskVersion)).append("\n");
         sb.append("    connectionManagement: ").append(toIndentedString(connectionManagement)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
+        sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
+        sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -46,7 +46,7 @@ public class ListEntitiesResponse extends SdkResponse {
     }
 
     /**
-     * 组织中的根、组织单元和帐号的列表。
+     * 组织中的根、组织单元和账号的列表。
      * @return entities
      */
     public List<EntityDto> getEntities() {

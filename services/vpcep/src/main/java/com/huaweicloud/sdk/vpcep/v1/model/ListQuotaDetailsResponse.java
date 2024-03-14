@@ -15,16 +15,16 @@ public class ListQuotaDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private ResourcesResp quotas;
+    private ResourcesResponseBody quotas;
 
-    public ListQuotaDetailsResponse withQuotas(ResourcesResp quotas) {
+    public ListQuotaDetailsResponse withQuotas(ResourcesResponseBody quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ListQuotaDetailsResponse withQuotas(Consumer<ResourcesResp> quotasSetter) {
+    public ListQuotaDetailsResponse withQuotas(Consumer<ResourcesResponseBody> quotasSetter) {
         if (this.quotas == null) {
-            this.quotas = new ResourcesResp();
+            this.quotas = new ResourcesResponseBody();
             quotasSetter.accept(this.quotas);
         }
 
@@ -35,11 +35,11 @@ public class ListQuotaDetailsResponse extends SdkResponse {
      * Get quotas
      * @return quotas
      */
-    public ResourcesResp getQuotas() {
+    public ResourcesResponseBody getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(ResourcesResp quotas) {
+    public void setQuotas(ResourcesResponseBody quotas) {
         this.quotas = quotas;
     }
 

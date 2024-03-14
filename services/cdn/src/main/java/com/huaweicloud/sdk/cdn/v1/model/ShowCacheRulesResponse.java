@@ -17,6 +17,11 @@ public class ShowCacheRulesResponse extends SdkResponse {
 
     private CacheConfig cacheConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowCacheRulesResponse withCacheConfig(CacheConfig cacheConfig) {
         this.cacheConfig = cacheConfig;
         return this;
@@ -43,6 +48,25 @@ public class ShowCacheRulesResponse extends SdkResponse {
         this.cacheConfig = cacheConfig;
     }
 
+    public ShowCacheRulesResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +76,12 @@ public class ShowCacheRulesResponse extends SdkResponse {
             return false;
         }
         ShowCacheRulesResponse that = (ShowCacheRulesResponse) obj;
-        return Objects.equals(this.cacheConfig, that.cacheConfig);
+        return Objects.equals(this.cacheConfig, that.cacheConfig) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cacheConfig);
+        return Objects.hash(cacheConfig, xRequestId);
     }
 
     @Override
@@ -65,6 +89,7 @@ public class ShowCacheRulesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCacheRulesResponse {\n");
         sb.append("    cacheConfig: ").append(toIndentedString(cacheConfig)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

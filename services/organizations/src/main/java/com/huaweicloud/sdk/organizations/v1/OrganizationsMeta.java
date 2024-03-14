@@ -51,6 +51,8 @@ import com.huaweicloud.sdk.organizations.v1.model.LeaveOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.LeaveOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListAccountsRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListAccountsResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ListCloseAccountStatusesRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ListCloseAccountStatusesResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListCreateAccountStatusesRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListCreateAccountStatusesResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedAdministratorsRequest;
@@ -181,6 +183,31 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccountsRequest::getMarker, ListAccountsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloseAccountStatusesRequest, ListCloseAccountStatusesResponse> listCloseAccountStatuses =
+        genForListCloseAccountStatuses();
+
+    private static HttpRequestDef<ListCloseAccountStatusesRequest, ListCloseAccountStatusesResponse> genForListCloseAccountStatuses() {
+        // basic
+        HttpRequestDef.Builder<ListCloseAccountStatusesRequest, ListCloseAccountStatusesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListCloseAccountStatusesRequest.class, ListCloseAccountStatusesResponse.class)
+                .withName("ListCloseAccountStatuses")
+                .withUri("/v1/organizations/close-account-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<ListCloseAccountStatusesRequest.StatesEnum>>withRequestField("states",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCloseAccountStatusesRequest::getStates,
+                ListCloseAccountStatusesRequest::setStates));
 
         // response
 

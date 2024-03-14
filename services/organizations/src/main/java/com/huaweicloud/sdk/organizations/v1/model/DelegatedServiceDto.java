@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 包含有关帐号是可信服务委托管理员的信息。
+ * 包含有关账号是可信服务委托管理员的信息。
  */
 public class DelegatedServiceDto {
 
@@ -44,7 +44,7 @@ public class DelegatedServiceDto {
     }
 
     /**
-     * 帐号成为此服务的委托管理员的日期。
+     * 账号成为此服务的委托管理员的日期。
      * @return delegationEnabledAt
      */
     public OffsetDateTime getDelegationEnabledAt() {

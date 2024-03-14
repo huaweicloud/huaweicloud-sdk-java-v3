@@ -16,6 +16,11 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
 
     private Boolean status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdatePrivateBucketAccessResponse withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -33,6 +38,25 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
         this.status = status;
     }
 
+    public UpdatePrivateBucketAccessResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
             return false;
         }
         UpdatePrivateBucketAccessResponse that = (UpdatePrivateBucketAccessResponse) obj;
-        return Objects.equals(this.status, that.status);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(status, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class UpdatePrivateBucketAccessResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePrivateBucketAccessResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

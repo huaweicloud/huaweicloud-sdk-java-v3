@@ -62,7 +62,7 @@ public class ResourceShareAssociation {
     }
 
     /**
-     * 绑定的实体。这可以是共享资源的URN、帐号ID、共享资源目录的URN或文件夹的URN之一。
+     * 绑定的实体。这可以是共享资源的URN、账号ID、组织根的URN或OU的URN之一。
      * @return associatedEntity
      */
     public String getAssociatedEntity() {

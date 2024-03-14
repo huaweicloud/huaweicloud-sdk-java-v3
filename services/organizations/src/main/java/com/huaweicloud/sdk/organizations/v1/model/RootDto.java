@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 包含根的详细信息。根是组织层次结构中的顶级父节点，可以包含组织单元和帐号。
+ * 包含根的详细信息。根是组织层次结构中的顶级父节点，可以包含组织单元和账号。
  */
 public class RootDto {
 
@@ -112,7 +112,7 @@ public class RootDto {
     }
 
     /**
-     * 策略类型在当前根已启用，则该类型策略可以绑定到根或其组织单元或帐号。
+     * 策略类型在当前根已启用，则该类型策略可以绑定到根或其组织单元或账号。
      * @return policyTypes
      */
     public List<PolicyTypeSummaryDto> getPolicyTypes() {

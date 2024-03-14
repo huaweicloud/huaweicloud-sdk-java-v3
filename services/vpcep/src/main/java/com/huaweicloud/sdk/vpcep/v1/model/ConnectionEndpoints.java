@@ -1,15 +1,11 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -31,12 +27,12 @@ public class ConnectionEndpoints {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private String updatedAt;
+    private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -48,104 +44,10 @@ public class ConnectionEndpoints {
 
     private List<QueryError> error = null;
 
-    /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum PENDINGACCEPTANCE for value: "pendingAcceptance"
-         */
-        public static final StatusEnum PENDINGACCEPTANCE = new StatusEnum("pendingAcceptance");
-
-        /**
-         * Enum CREATING for value: "creating"
-         */
-        public static final StatusEnum CREATING = new StatusEnum("creating");
-
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
-        public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
-        public static final StatusEnum REJECTED = new StatusEnum("rejected");
-
-        /**
-         * Enum FAILED for value: "failed"
-         */
-        public static final StatusEnum FAILED = new StatusEnum("failed");
-
-        /**
-         * Enum DELETING for value: "deleting"
-         */
-        public static final StatusEnum DELETING = new StatusEnum("deleting");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("pendingAcceptance", PENDINGACCEPTANCE);
-            map.put("creating", CREATING);
-            map.put("accepted", ACCEPTED);
-            map.put("rejected", REJECTED);
-            map.put("failed", FAILED);
-            map.put("deleting", DELETING);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -186,7 +88,7 @@ public class ConnectionEndpoints {
         this.markerId = markerId;
     }
 
-    public ConnectionEndpoints withCreatedAt(String createdAt) {
+    public ConnectionEndpoints withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -195,15 +97,15 @@ public class ConnectionEndpoints {
      * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public ConnectionEndpoints withUpdatedAt(String updatedAt) {
+    public ConnectionEndpoints withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -212,11 +114,11 @@ public class ConnectionEndpoints {
      * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
      * @return updatedAt
      */
-    public String getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -270,20 +172,20 @@ public class ConnectionEndpoints {
         this.error = error;
     }
 
-    public ConnectionEndpoints withStatus(StatusEnum status) {
+    public ConnectionEndpoints withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     * 终端节点的连接状态。  - pendingAcceptance：待接受  - creating：创建中  - accepted：已接受  - rejected：已拒绝  - failed：失败  - deleting：删除中
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

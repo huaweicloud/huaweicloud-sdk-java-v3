@@ -12,14 +12,14 @@ import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsResponse;
-import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceBody;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceResponse;
-import com.huaweicloud.sdk.vpcep.v1.model.BatchAddPermissionRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchRemoveEndpointServicePermissionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchRemoveEndpointServicePermissionsRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchRemoveEndpointServicePermissionsResponse;
-import com.huaweicloud.sdk.vpcep.v1.model.BatchRemovePermissionRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointResponse;
@@ -60,6 +60,7 @@ import com.huaweicloud.sdk.vpcep.v1.model.ListVersionDetailsRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.ListVersionDetailsResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.QueryResourceInstanceTagsBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointConnectionsDescRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointConnectionsDescRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointConnectionsDescResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointPolicyRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointPolicyRequestBody;
@@ -67,10 +68,11 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointPolicyResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointRoutetableRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointRoutetableRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointRoutetableResponse;
-import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameMode;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServicePermissionDescRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServicePermissionDescRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServicePermissionDescResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequestBody;
@@ -78,8 +80,6 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
-import com.huaweicloud.sdk.vpcep.v1.model.UpdateEpConnections;
-import com.huaweicloud.sdk.vpcep.v1.model.UpdatePermissionDescRequest;
 
 @SuppressWarnings("unchecked")
 public class VpcepMeta {
@@ -167,10 +167,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getVpcEndpointServiceId,
                 BatchAddEndpointServicePermissionsRequest::setVpcEndpointServiceId));
-        builder.<BatchAddPermissionRequest>withRequestField("body",
+        builder.<BatchAddEndpointServicePermissionsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchAddPermissionRequest.class),
+            TypeCasts.uncheckedConversion(BatchAddEndpointServicePermissionsRequestBody.class),
             f -> f.withMarshaller(BatchAddEndpointServicePermissionsRequest::getBody,
                 BatchAddEndpointServicePermissionsRequest::setBody));
 
@@ -200,10 +200,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getVpcEndpointServiceId,
                 BatchRemoveEndpointServicePermissionsRequest::setVpcEndpointServiceId));
-        builder.<BatchRemovePermissionRequest>withRequestField("body",
+        builder.<BatchRemoveEndpointServicePermissionsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchRemovePermissionRequest.class),
+            TypeCasts.uncheckedConversion(BatchRemoveEndpointServicePermissionsRequestBody.class),
             f -> f.withMarshaller(BatchRemoveEndpointServicePermissionsRequest::getBody,
                 BatchRemoveEndpointServicePermissionsRequest::setBody));
 
@@ -451,15 +451,15 @@ public class VpcepMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
-        builder.<String>withRequestField("sort_key",
+        builder.<ListEndpointsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListEndpointsRequest.SortKeyEnum.class),
             f -> f.withMarshaller(ListEndpointsRequest::getSortKey, ListEndpointsRequest::setSortKey));
-        builder.<String>withRequestField("sort_dir",
+        builder.<ListEndpointsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListEndpointsRequest.SortDirEnum.class),
             f -> f.withMarshaller(ListEndpointsRequest::getSortDir, ListEndpointsRequest::setSortDir));
         builder.<String>withRequestField("public_border_group",
             LocationType.Query,
@@ -525,10 +525,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceConnectionsRequest::getMarkerId,
                 ListServiceConnectionsRequest::setMarkerId));
-        builder.<String>withRequestField("status",
+        builder.<ListServiceConnectionsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListServiceConnectionsRequest.StatusEnum.class),
             f -> f.withMarshaller(ListServiceConnectionsRequest::getStatus, ListServiceConnectionsRequest::setStatus));
         builder.<ListServiceConnectionsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
@@ -791,10 +791,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getVpcEndpointServiceId,
                 UpdateEndpointConnectionsDescRequest::setVpcEndpointServiceId));
-        builder.<UpdateEpConnections>withRequestField("body",
+        builder.<UpdateEndpointConnectionsDescRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateEpConnections.class),
+            TypeCasts.uncheckedConversion(UpdateEndpointConnectionsDescRequestBody.class),
             f -> f.withMarshaller(UpdateEndpointConnectionsDescRequest::getBody,
                 UpdateEndpointConnectionsDescRequest::setBody));
 
@@ -912,10 +912,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getVpcEndpointServiceId,
                 UpdateEndpointServiceNameRequest::setVpcEndpointServiceId));
-        builder.<UpdateEndpointServiceNameMode>withRequestField("body",
+        builder.<UpdateEndpointServiceNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdateEndpointServiceNameMode.class),
+            TypeCasts.uncheckedConversion(UpdateEndpointServiceNameRequestBody.class),
             f -> f.withMarshaller(UpdateEndpointServiceNameRequest::getBody,
                 UpdateEndpointServiceNameRequest::setBody));
 
@@ -951,10 +951,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getPermissionId,
                 UpdateEndpointServicePermissionDescRequest::setPermissionId));
-        builder.<UpdatePermissionDescRequest>withRequestField("body",
+        builder.<UpdateEndpointServicePermissionDescRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePermissionDescRequest.class),
+            TypeCasts.uncheckedConversion(UpdateEndpointServicePermissionDescRequestBody.class),
             f -> f.withMarshaller(UpdateEndpointServicePermissionDescRequest::getBody,
                 UpdateEndpointServicePermissionDescRequest::setBody));
 
@@ -1007,10 +1007,10 @@ public class VpcepMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("resource_type",
+        builder.<BatchAddOrRemoveResourceInstanceRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(BatchAddOrRemoveResourceInstanceRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceType,
                 BatchAddOrRemoveResourceInstanceRequest::setResourceType));
         builder.<String>withRequestField("resource_id",
@@ -1019,10 +1019,10 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getResourceId,
                 BatchAddOrRemoveResourceInstanceRequest::setResourceId));
-        builder.<BatchAddOrRemoveResourceInstanceBody>withRequestField("body",
+        builder.<BatchAddOrRemoveResourceInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BatchAddOrRemoveResourceInstanceBody.class),
+            TypeCasts.uncheckedConversion(BatchAddOrRemoveResourceInstanceRequestBody.class),
             f -> f.withMarshaller(BatchAddOrRemoveResourceInstanceRequest::getBody,
                 BatchAddOrRemoveResourceInstanceRequest::setBody));
 
@@ -1046,10 +1046,10 @@ public class VpcepMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("resource_type",
+        builder.<ListQueryProjectResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListQueryProjectResourceTagsRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ListQueryProjectResourceTagsRequest::getResourceType,
                 ListQueryProjectResourceTagsRequest::setResourceType));
 
@@ -1070,10 +1070,10 @@ public class VpcepMeta {
             .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("resource_type",
+        builder.<ListResourceInstancesRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType,
                 ListResourceInstancesRequest::setResourceType));
         builder.<QueryResourceInstanceTagsBody>withRequestField("body",

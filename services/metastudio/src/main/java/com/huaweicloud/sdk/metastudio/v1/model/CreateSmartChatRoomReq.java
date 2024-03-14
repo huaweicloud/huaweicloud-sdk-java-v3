@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建智能交互对话直播间配置。
+ * 创建智能交互对话配置。
  */
 public class CreateSmartChatRoomReq {
 
@@ -74,7 +74,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * 直播间名称
+     * 对话名称
      * @return roomName
      */
     public String getRoomName() {
@@ -91,7 +91,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * 直播间描述。
+     * 对话描述。
      * @return roomDescription
      */
     public String getRoomDescription() {
@@ -177,7 +177,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * 机器人ID。
+     * 机器人ID。获取方法请参考[创建应用](CreateRobot.xml)。
      * @return robotId
      */
     public String getRobotId() {

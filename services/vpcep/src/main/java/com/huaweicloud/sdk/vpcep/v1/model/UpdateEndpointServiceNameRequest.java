@@ -19,7 +19,7 @@ public class UpdateEndpointServiceNameRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateEndpointServiceNameMode body;
+    private UpdateEndpointServiceNameRequestBody body;
 
     public UpdateEndpointServiceNameRequest withVpcEndpointServiceId(String vpcEndpointServiceId) {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
@@ -38,14 +38,14 @@ public class UpdateEndpointServiceNameRequest {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
     }
 
-    public UpdateEndpointServiceNameRequest withBody(UpdateEndpointServiceNameMode body) {
+    public UpdateEndpointServiceNameRequest withBody(UpdateEndpointServiceNameRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEndpointServiceNameRequest withBody(Consumer<UpdateEndpointServiceNameMode> bodySetter) {
+    public UpdateEndpointServiceNameRequest withBody(Consumer<UpdateEndpointServiceNameRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateEndpointServiceNameMode();
+            this.body = new UpdateEndpointServiceNameRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateEndpointServiceNameRequest {
      * Get body
      * @return body
      */
-    public UpdateEndpointServiceNameMode getBody() {
+    public UpdateEndpointServiceNameRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateEndpointServiceNameMode body) {
+    public void setBody(UpdateEndpointServiceNameRequestBody body) {
         this.body = body;
     }
 

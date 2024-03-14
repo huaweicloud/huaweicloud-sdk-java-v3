@@ -27,7 +27,7 @@ public class MoveAccountRequest {
     }
 
     /**
-     * 帐号的唯一标识符（ID）。
+     * 账号的唯一标识符（ID）。
      * @return accountId
      */
     public String getAccountId() {

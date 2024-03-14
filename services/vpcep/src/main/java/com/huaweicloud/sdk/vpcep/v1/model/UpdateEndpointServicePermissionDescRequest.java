@@ -24,7 +24,7 @@ public class UpdateEndpointServicePermissionDescRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdatePermissionDescRequest body;
+    private UpdateEndpointServicePermissionDescRequestBody body;
 
     public UpdateEndpointServicePermissionDescRequest withVpcEndpointServiceId(String vpcEndpointServiceId) {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
@@ -60,14 +60,15 @@ public class UpdateEndpointServicePermissionDescRequest {
         this.permissionId = permissionId;
     }
 
-    public UpdateEndpointServicePermissionDescRequest withBody(UpdatePermissionDescRequest body) {
+    public UpdateEndpointServicePermissionDescRequest withBody(UpdateEndpointServicePermissionDescRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEndpointServicePermissionDescRequest withBody(Consumer<UpdatePermissionDescRequest> bodySetter) {
+    public UpdateEndpointServicePermissionDescRequest withBody(
+        Consumer<UpdateEndpointServicePermissionDescRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdatePermissionDescRequest();
+            this.body = new UpdateEndpointServicePermissionDescRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +79,11 @@ public class UpdateEndpointServicePermissionDescRequest {
      * Get body
      * @return body
      */
-    public UpdatePermissionDescRequest getBody() {
+    public UpdateEndpointServicePermissionDescRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePermissionDescRequest body) {
+    public void setBody(UpdateEndpointServicePermissionDescRequestBody body) {
         this.body = body;
     }
 

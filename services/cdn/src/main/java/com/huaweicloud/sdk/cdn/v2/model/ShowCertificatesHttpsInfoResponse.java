@@ -24,6 +24,11 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
 
     private List<HttpsDetail> https = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowCertificatesHttpsInfoResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -74,6 +79,25 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
         this.https = https;
     }
 
+    public ShowCertificatesHttpsInfoResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +107,13 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
             return false;
         }
         ShowCertificatesHttpsInfoResponse that = (ShowCertificatesHttpsInfoResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.https, that.https);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.https, that.https)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, https);
+        return Objects.hash(total, https, xRequestId);
     }
 
     @Override
@@ -97,6 +122,7 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
         sb.append("class ShowCertificatesHttpsInfoResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

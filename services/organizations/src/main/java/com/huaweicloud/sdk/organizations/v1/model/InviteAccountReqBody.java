@@ -60,7 +60,7 @@ public class InviteAccountReqBody {
     }
 
     /**
-     * 给收件帐号所有者的邮件中的附加信息。
+     * 给收件账号所有者的邮件中的附加信息。
      * @return notes
      */
     public String getNotes() {
@@ -93,7 +93,7 @@ public class InviteAccountReqBody {
     }
 
     /**
-     * 要绑定到新创建的帐号的标签列表。
+     * 要绑定到新创建的账号的标签列表。
      * @return tags
      */
     public List<TagDto> getTags() {

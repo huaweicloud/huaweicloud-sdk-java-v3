@@ -29,6 +29,11 @@ public class UserDto {
     private List<EmailDto> emails = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_id")
+
+    private String externalId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_ids")
 
     private List<ExternalIdDto> externalIds = null;
@@ -118,6 +123,11 @@ public class UserDto {
 
     private Boolean enabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise")
+
+    private EnterpriseDto enterprise;
+
     public UserDto withAddresses(List<AddressDto> addresses) {
         this.addresses = addresses;
         return this;
@@ -199,6 +209,23 @@ public class UserDto {
 
     public void setEmails(List<EmailDto> emails) {
         this.emails = emails;
+    }
+
+    public UserDto withExternalId(String externalId) {
+        this.externalId = externalId;
+        return this;
+    }
+
+    /**
+     * 外部身份源分配给此资源的标识符
+     * @return externalId
+     */
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public UserDto withExternalIds(List<ExternalIdDto> externalIds) {
@@ -418,7 +445,7 @@ public class UserDto {
     }
 
     /**
-     * 身份源中IdentityCenter用户的全局唯一标识符（ID）
+     * 身份源中IAM身份中心用户的全局唯一标识符（ID）
      * @return userId
      */
     public String getUserId() {
@@ -548,6 +575,32 @@ public class UserDto {
         this.enabled = enabled;
     }
 
+    public UserDto withEnterprise(EnterpriseDto enterprise) {
+        this.enterprise = enterprise;
+        return this;
+    }
+
+    public UserDto withEnterprise(Consumer<EnterpriseDto> enterpriseSetter) {
+        if (this.enterprise == null) {
+            this.enterprise = new EnterpriseDto();
+            enterpriseSetter.accept(this.enterprise);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enterprise
+     * @return enterprise
+     */
+    public EnterpriseDto getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(EnterpriseDto enterprise) {
+        this.enterprise = enterprise;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -558,7 +611,8 @@ public class UserDto {
         }
         UserDto that = (UserDto) obj;
         return Objects.equals(this.addresses, that.addresses) && Objects.equals(this.displayName, that.displayName)
-            && Objects.equals(this.emails, that.emails) && Objects.equals(this.externalIds, that.externalIds)
+            && Objects.equals(this.emails, that.emails) && Objects.equals(this.externalId, that.externalId)
+            && Objects.equals(this.externalIds, that.externalIds)
             && Objects.equals(this.identityStoreId, that.identityStoreId) && Objects.equals(this.locale, that.locale)
             && Objects.equals(this.name, that.name) && Objects.equals(this.nickname, that.nickname)
             && Objects.equals(this.phoneNumbers, that.phoneNumbers)
@@ -568,7 +622,7 @@ public class UserDto {
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.userType, that.userType)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.createdBy, that.createdBy)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.updatedBy, that.updatedBy)
-            && Objects.equals(this.enabled, that.enabled);
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.enterprise, that.enterprise);
     }
 
     @Override
@@ -576,6 +630,7 @@ public class UserDto {
         return Objects.hash(addresses,
             displayName,
             emails,
+            externalId,
             externalIds,
             identityStoreId,
             locale,
@@ -593,7 +648,8 @@ public class UserDto {
             createdBy,
             updatedAt,
             updatedBy,
-            enabled);
+            enabled,
+            enterprise);
     }
 
     @Override
@@ -603,6 +659,7 @@ public class UserDto {
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
+        sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
         sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
         sb.append("    identityStoreId: ").append(toIndentedString(identityStoreId)).append("\n");
         sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
@@ -621,6 +678,7 @@ public class UserDto {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    updatedBy: ").append(toIndentedString(updatedBy)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    enterprise: ").append(toIndentedString(enterprise)).append("\n");
         sb.append("}");
         return sb.toString();
     }

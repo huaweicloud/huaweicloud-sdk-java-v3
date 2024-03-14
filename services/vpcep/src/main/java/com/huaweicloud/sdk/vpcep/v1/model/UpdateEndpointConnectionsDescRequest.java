@@ -19,7 +19,7 @@ public class UpdateEndpointConnectionsDescRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateEpConnections body;
+    private UpdateEndpointConnectionsDescRequestBody body;
 
     public UpdateEndpointConnectionsDescRequest withVpcEndpointServiceId(String vpcEndpointServiceId) {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
@@ -38,14 +38,15 @@ public class UpdateEndpointConnectionsDescRequest {
         this.vpcEndpointServiceId = vpcEndpointServiceId;
     }
 
-    public UpdateEndpointConnectionsDescRequest withBody(UpdateEpConnections body) {
+    public UpdateEndpointConnectionsDescRequest withBody(UpdateEndpointConnectionsDescRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEndpointConnectionsDescRequest withBody(Consumer<UpdateEpConnections> bodySetter) {
+    public UpdateEndpointConnectionsDescRequest withBody(
+        Consumer<UpdateEndpointConnectionsDescRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateEpConnections();
+            this.body = new UpdateEndpointConnectionsDescRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +57,11 @@ public class UpdateEndpointConnectionsDescRequest {
      * Get body
      * @return body
      */
-    public UpdateEpConnections getBody() {
+    public UpdateEndpointConnectionsDescRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateEpConnections body) {
+    public void setBody(UpdateEndpointConnectionsDescRequestBody body) {
         this.body = body;
     }
 

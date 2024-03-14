@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 提供关于IdentityCenter实例的信息
+ * 提供关于IAM身份中心实例的信息
  */
 public class InstanceMetadataEntryDto {
 
@@ -25,13 +25,18 @@ public class InstanceMetadataEntryDto {
 
     private String alias;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_urn")
+
+    private String instanceUrn;
+
     public InstanceMetadataEntryDto withIdentityStoreId(String identityStoreId) {
         this.identityStoreId = identityStoreId;
         return this;
     }
 
     /**
-     * 关联到IAM身份中心的identity store的唯一标识
+     * 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）
      * @return identityStoreId
      */
     public String getIdentityStoreId() {
@@ -48,7 +53,7 @@ public class InstanceMetadataEntryDto {
     }
 
     /**
-     * IAM身份中心实例唯一标识.
+     * IAM身份中心实例的全局唯一标识符（ID）
      * @return instanceId
      */
     public String getInstanceId() {
@@ -65,7 +70,7 @@ public class InstanceMetadataEntryDto {
     }
 
     /**
-     * 用户自定义的identity_store_id别名
+     * 用户为身份源标识符定义的别名
      * @return alias
      */
     public String getAlias() {
@@ -74,6 +79,23 @@ public class InstanceMetadataEntryDto {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    public InstanceMetadataEntryDto withInstanceUrn(String instanceUrn) {
+        this.instanceUrn = instanceUrn;
+        return this;
+    }
+
+    /**
+     * 实例的统一资源名称（URN）
+     * @return instanceUrn
+     */
+    public String getInstanceUrn() {
+        return instanceUrn;
+    }
+
+    public void setInstanceUrn(String instanceUrn) {
+        this.instanceUrn = instanceUrn;
     }
 
     @Override
@@ -86,12 +108,13 @@ public class InstanceMetadataEntryDto {
         }
         InstanceMetadataEntryDto that = (InstanceMetadataEntryDto) obj;
         return Objects.equals(this.identityStoreId, that.identityStoreId)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.alias, that.alias);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.instanceUrn, that.instanceUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identityStoreId, instanceId, alias);
+        return Objects.hash(identityStoreId, instanceId, alias, instanceUrn);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class InstanceMetadataEntryDto {
         sb.append("    identityStoreId: ").append(toIndentedString(identityStoreId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
+        sb.append("    instanceUrn: ").append(toIndentedString(instanceUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

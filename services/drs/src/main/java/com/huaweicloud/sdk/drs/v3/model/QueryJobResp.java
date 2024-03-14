@@ -1069,6 +1069,21 @@ public class QueryJobResp {
 
     private List<Tag> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private List<PublicIpConfig> publicIpList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bind_public_ip_state")
+
+    private String bindPublicIpState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "children")
+
+    private List<FailedToBindEipChildInfo> children = null;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -2174,6 +2189,89 @@ public class QueryJobResp {
         this.tags = tags;
     }
 
+    public QueryJobResp withPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    public QueryJobResp addPublicIpListItem(PublicIpConfig publicIpListItem) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        this.publicIpList.add(publicIpListItem);
+        return this;
+    }
+
+    public QueryJobResp withPublicIpList(Consumer<List<PublicIpConfig>> publicIpListSetter) {
+        if (this.publicIpList == null) {
+            this.publicIpList = new ArrayList<>();
+        }
+        publicIpListSetter.accept(this.publicIpList);
+        return this;
+    }
+
+    /**
+     * 指定公网Ip的信息
+     * @return publicIpList
+     */
+    public List<PublicIpConfig> getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(List<PublicIpConfig> publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
+    public QueryJobResp withBindPublicIpState(String bindPublicIpState) {
+        this.bindPublicIpState = bindPublicIpState;
+        return this;
+    }
+
+    /**
+     * 是否成功绑定公网IP
+     * @return bindPublicIpState
+     */
+    public String getBindPublicIpState() {
+        return bindPublicIpState;
+    }
+
+    public void setBindPublicIpState(String bindPublicIpState) {
+        this.bindPublicIpState = bindPublicIpState;
+    }
+
+    public QueryJobResp withChildren(List<FailedToBindEipChildInfo> children) {
+        this.children = children;
+        return this;
+    }
+
+    public QueryJobResp addChildrenItem(FailedToBindEipChildInfo childrenItem) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        this.children.add(childrenItem);
+        return this;
+    }
+
+    public QueryJobResp withChildren(Consumer<List<FailedToBindEipChildInfo>> childrenSetter) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        childrenSetter.accept(this.children);
+        return this;
+    }
+
+    /**
+     * 多任务时，存在子任务绑定失败时，返回子任务的信息
+     * @return children
+     */
+    public List<FailedToBindEipChildInfo> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<FailedToBindEipChildInfo> children) {
+        this.children = children;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -2218,7 +2316,10 @@ public class QueryJobResp {
             && Objects.equals(this.nodeRole, that.nodeRole) && Objects.equals(this.periodOrder, that.periodOrder)
             && Objects.equals(this.objectInfos, that.objectInfos)
             && Objects.equals(this.originalJobDirection, that.originalJobDirection)
-            && Objects.equals(this.dataTransformation, that.dataTransformation) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.dataTransformation, that.dataTransformation) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.publicIpList, that.publicIpList)
+            && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
+            && Objects.equals(this.children, that.children);
     }
 
     @Override
@@ -2279,7 +2380,10 @@ public class QueryJobResp {
             objectInfos,
             originalJobDirection,
             dataTransformation,
-            tags);
+            tags,
+            publicIpList,
+            bindPublicIpState,
+            children);
     }
 
     @Override
@@ -2343,6 +2447,9 @@ public class QueryJobResp {
         sb.append("    originalJobDirection: ").append(toIndentedString(originalJobDirection)).append("\n");
         sb.append("    dataTransformation: ").append(toIndentedString(dataTransformation)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
+        sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
+        sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();
     }

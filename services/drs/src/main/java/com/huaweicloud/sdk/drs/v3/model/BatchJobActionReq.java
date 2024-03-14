@@ -16,7 +16,7 @@ import java.util.Objects;
 public class BatchJobActionReq {
 
     /**
-     * 执行操作
+     * 需要执行的特定操作。
      */
     public static final class ActionEnum {
 
@@ -100,7 +100,7 @@ public class BatchJobActionReq {
     }
 
     /**
-     * 执行操作
+     * 需要执行的特定操作。
      * @return action
      */
     public ActionEnum getAction() {
@@ -117,7 +117,7 @@ public class BatchJobActionReq {
     }
 
     /**
-     * 任务ID（集群模式 取父任务的任务id）
+     * 任务ID（集群模式 取父任务的任务ID）。
      * @return jobId
      */
     public String getJobId() {

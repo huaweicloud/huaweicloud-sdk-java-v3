@@ -27,7 +27,7 @@ public class CreateSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话直播间ID
+     * 智能交互对话ID
      * @return roomId
      */
     public String getRoomId() {

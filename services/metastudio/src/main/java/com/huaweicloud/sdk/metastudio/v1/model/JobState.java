@@ -48,6 +48,16 @@ public class JobState {
     public static final JobState AUDIT_FAILED = new JobState("AUDIT_FAILED");
 
     /**
+     * Enum USER_RESULT_REVIEW for value: "USER_RESULT_REVIEW"
+     */
+    public static final JobState USER_RESULT_REVIEW = new JobState("USER_RESULT_REVIEW");
+
+    /**
+     * Enum USER_REVIEW_REJECT for value: "USER_REVIEW_REJECT"
+     */
+    public static final JobState USER_REVIEW_REJECT = new JobState("USER_REVIEW_REJECT");
+
+    /**
      * Enum FAILED for value: "FAILED"
      */
     public static final JobState FAILED = new JobState("FAILED");
@@ -68,6 +78,8 @@ public class JobState {
         map.put("PROCESSING", PROCESSING);
         map.put("RESULT_REVIEW", RESULT_REVIEW);
         map.put("AUDIT_FAILED", AUDIT_FAILED);
+        map.put("USER_RESULT_REVIEW", USER_RESULT_REVIEW);
+        map.put("USER_REVIEW_REJECT", USER_REVIEW_REJECT);
         map.put("FAILED", FAILED);
         map.put("SUCCEED", SUCCEED);
         return Collections.unmodifiableMap(map);

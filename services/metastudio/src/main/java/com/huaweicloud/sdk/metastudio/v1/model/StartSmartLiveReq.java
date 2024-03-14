@@ -123,6 +123,11 @@ public class StartSmartLiveReq {
 
     private ViewModeEnum viewMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "co_streamer_config")
+
+    private CoStreamerConfig coStreamerConfig;
+
     public StartSmartLiveReq withVideoConfig(VideoConfig videoConfig) {
         this.videoConfig = videoConfig;
         return this;
@@ -302,6 +307,32 @@ public class StartSmartLiveReq {
         this.viewMode = viewMode;
     }
 
+    public StartSmartLiveReq withCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+        return this;
+    }
+
+    public StartSmartLiveReq withCoStreamerConfig(Consumer<CoStreamerConfig> coStreamerConfigSetter) {
+        if (this.coStreamerConfig == null) {
+            this.coStreamerConfig = new CoStreamerConfig();
+            coStreamerConfigSetter.accept(this.coStreamerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get coStreamerConfig
+     * @return coStreamerConfig
+     */
+    public CoStreamerConfig getCoStreamerConfig() {
+        return coStreamerConfig;
+    }
+
+    public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
+        this.coStreamerConfig = coStreamerConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -315,7 +346,8 @@ public class StartSmartLiveReq {
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
             && Objects.equals(this.interactionCallbackUrl, that.interactionCallbackUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
-            && Objects.equals(this.viewMode, that.viewMode);
+            && Objects.equals(this.viewMode, that.viewMode)
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
     }
 
     @Override
@@ -326,7 +358,8 @@ public class StartSmartLiveReq {
             streamKeys,
             interactionCallbackUrl,
             liveEventCallbackConfig,
-            viewMode);
+            viewMode,
+            coStreamerConfig);
     }
 
     @Override
@@ -340,6 +373,7 @@ public class StartSmartLiveReq {
         sb.append("    interactionCallbackUrl: ").append(toIndentedString(interactionCallbackUrl)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
+        sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }
