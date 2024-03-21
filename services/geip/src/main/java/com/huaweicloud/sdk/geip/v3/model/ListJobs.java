@@ -57,7 +57,7 @@ public class ListJobs {
     }
 
     /**
-     * ID
+     * Job的ID
      * @return id
      */
     public String getId() {

@@ -86,7 +86,7 @@ public class ListImageRiskConfigRulesRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

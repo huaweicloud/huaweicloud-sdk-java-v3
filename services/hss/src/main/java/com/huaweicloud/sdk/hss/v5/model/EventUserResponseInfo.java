@@ -207,7 +207,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 登录的服务类型
+     * 服务类型，包含如下:   - system   - mysql   - redis
      * @return serviceType
      */
     public String getServiceType() {

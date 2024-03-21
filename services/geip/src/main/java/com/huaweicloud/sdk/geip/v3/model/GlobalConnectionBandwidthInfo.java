@@ -46,7 +46,7 @@ public class GlobalConnectionBandwidthInfo {
     }
 
     /**
-     * 骨干带宽id
+     * 骨干带宽的ID
      * @return gcbId
      */
     public String getGcbId() {
@@ -63,7 +63,7 @@ public class GlobalConnectionBandwidthInfo {
     }
 
     /**
-     * 骨干带宽大小
+     * 骨干带宽的大小
      * @return size
      */
     public Integer getSize() {
@@ -97,7 +97,7 @@ public class GlobalConnectionBandwidthInfo {
     }
 
     /**
-     * 骨干带宽状态，取值：NORMAL 正常、FREEZED 冻结
+     * - 功能说明：骨干带宽状态 - 取值范围：NORMAL 正常、FREEZED 冻结
      * @return adminState
      */
     public String getAdminState() {
@@ -114,7 +114,7 @@ public class GlobalConnectionBandwidthInfo {
     }
 
     /**
-     * 网络服务等级。Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
+     * - 功能说明：网络服务等级 - 取值范围：Pt - 铂金，Au - 金牌，Ag - 银牌，Cu - 铜牌
      * @return slaLevel
      */
     public String getSlaLevel() {

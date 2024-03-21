@@ -31,6 +31,11 @@ public class WtpProtectHostResponseInfo {
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private String ipv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
     private String groupName;
@@ -103,7 +108,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 云服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -146,6 +151,23 @@ public class WtpProtectHostResponseInfo {
 
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
+    }
+
+    public WtpProtectHostResponseInfo withIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * 私有IPv6地址
+     * @return ipv6
+     */
+    public String getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
     }
 
     public WtpProtectHostResponseInfo withGroupName(String groupName) {
@@ -277,7 +299,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 最近检测时间
+     * 最近检测时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return lastDetectTime
@@ -335,8 +357,9 @@ public class WtpProtectHostResponseInfo {
         WtpProtectHostResponseInfo that = (WtpProtectHostResponseInfo) obj;
         return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osBit, that.osBit)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.raspProtectStatus, that.raspProtectStatus)
             && Objects.equals(this.antiTamperingTimes, that.antiTamperingTimes)
             && Objects.equals(this.detectTamperingTimes, that.detectTamperingTimes)
@@ -351,6 +374,7 @@ public class WtpProtectHostResponseInfo {
             hostId,
             publicIp,
             privateIp,
+            ipv6,
             groupName,
             osBit,
             osType,
@@ -371,6 +395,7 @@ public class WtpProtectHostResponseInfo {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");

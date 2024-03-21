@@ -21,7 +21,7 @@ public class BatchDeleteV2RequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private List<BatchDeleteV2RequestBodySysTags> sysTags = null;
+    private List<BatchDeleteV2RequestBodyTags> sysTags = null;
 
     public BatchDeleteV2RequestBody withTags(List<BatchDeleteV2RequestBodyTags> tags) {
         this.tags = tags;
@@ -56,12 +56,12 @@ public class BatchDeleteV2RequestBody {
         this.tags = tags;
     }
 
-    public BatchDeleteV2RequestBody withSysTags(List<BatchDeleteV2RequestBodySysTags> sysTags) {
+    public BatchDeleteV2RequestBody withSysTags(List<BatchDeleteV2RequestBodyTags> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public BatchDeleteV2RequestBody addSysTagsItem(BatchDeleteV2RequestBodySysTags sysTagsItem) {
+    public BatchDeleteV2RequestBody addSysTagsItem(BatchDeleteV2RequestBodyTags sysTagsItem) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class BatchDeleteV2RequestBody {
         return this;
     }
 
-    public BatchDeleteV2RequestBody withSysTags(Consumer<List<BatchDeleteV2RequestBodySysTags>> sysTagsSetter) {
+    public BatchDeleteV2RequestBody withSysTags(Consumer<List<BatchDeleteV2RequestBodyTags>> sysTagsSetter) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class BatchDeleteV2RequestBody {
      * 系统标签
      * @return sysTags
      */
-    public List<BatchDeleteV2RequestBodySysTags> getSysTags() {
+    public List<BatchDeleteV2RequestBodyTags> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<BatchDeleteV2RequestBodySysTags> sysTags) {
+    public void setSysTags(List<BatchDeleteV2RequestBodyTags> sysTags) {
         this.sysTags = sysTags;
     }
 

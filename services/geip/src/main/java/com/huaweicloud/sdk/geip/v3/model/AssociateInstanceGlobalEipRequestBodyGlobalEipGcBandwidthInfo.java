@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo
+ * 骨干带宽的信息
  */
 public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
 
@@ -34,7 +34,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     private String description;
 
     /**
-     * Gets or Sets type
+     * 骨干带宽类型
      */
     public static final class TypeEnum {
 
@@ -199,7 +199,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags = null;
+    private List<CreateGlobalEipRequestBodyGlobalEipTags> tags = null;
 
     public AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo withId(String id) {
         this.id = id;
@@ -207,7 +207,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * ID
+     * 骨干带宽的ID
      * @return id
      */
     public String getId() {
@@ -224,7 +224,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：骨干带宽的名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {
@@ -241,7 +241,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * Get description
+     * 骨干带宽描述信息
      * @return description
      */
     public String getDescription() {
@@ -258,7 +258,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * Get type
+     * 骨干带宽类型
      * @return type
      */
     public TypeEnum getType() {
@@ -276,7 +276,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * 资源的企业项目id
+     * - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -310,7 +310,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * Get bandwidth
+     * 域间带宽值
      * minimum: 0
      * maximum: 2147483647
      * @return bandwidth
@@ -329,7 +329,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     /**
-     * 大小
+     * 域间带宽大小
      * minimum: 0
      * maximum: 2147483647
      * @return size
@@ -377,13 +377,13 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     public AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo withTags(
-        List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags) {
+        List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
         return this;
     }
 
     public AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo addTagsItem(
-        AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags tagsItem) {
+        CreateGlobalEipRequestBodyGlobalEipTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -392,7 +392,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
     }
 
     public AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo withTags(
-        Consumer<List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags>> tagsSetter) {
+        Consumer<List<CreateGlobalEipRequestBodyGlobalEipTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -404,11 +404,11 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfo {
      * 全域弹性公网IP标签
      * @return tags
      */
-    public List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> getTags() {
+    public List<CreateGlobalEipRequestBodyGlobalEipTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags) {
+    public void setTags(List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
     }
 

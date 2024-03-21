@@ -27,7 +27,7 @@ public class UpdateTracingRequest {
     }
 
     /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {

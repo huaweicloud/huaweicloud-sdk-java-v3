@@ -7,8 +7,12 @@ import com.huaweicloud.sdk.rgc.v1.model.CheckLaunchRequest;
 import com.huaweicloud.sdk.rgc.v1.model.CheckLaunchResponse;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountResponse;
+import com.huaweicloud.sdk.rgc.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.rgc.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DeleteManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeleteManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateRequest;
+import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
@@ -37,6 +41,10 @@ import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListOperationRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListPredefinedTemplatesRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListPredefinedTemplatesResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitRequest;
@@ -71,6 +79,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ShowTemplateDeployParamsRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ShowTemplateDeployParamsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequest;
@@ -906,6 +916,34 @@ public class RgcClient {
     }
 
     /**
+     * 查询已注册OU和纳管帐号操作过程信息列表
+     *
+     * 查询在RGC服务里已注册OU和纳管帐号操作的过程信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationRequest 请求对象
+     * @return ListOperationResponse
+     */
+    public ListOperationResponse listOperation(ListOperationRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.listOperation);
+    }
+
+    /**
+     * 查询已注册OU和纳管帐号操作过程信息列表
+     *
+     * 查询在RGC服务里已注册OU和纳管帐号操作的过程信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOperationRequest 请求对象
+     * @return SyncInvoker<ListOperationRequest, ListOperationResponse>
+     */
+    public SyncInvoker<ListOperationRequest, ListOperationResponse> listOperationInvoker(ListOperationRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.listOperation, hcClient);
+    }
+
+    /**
      * 重新注册OU
      *
      * 重新注册组织里的某个OU到RGC服务。
@@ -1136,6 +1174,122 @@ public class RgcClient {
     public SyncInvoker<UpdateManagedAccountRequest, UpdateManagedAccountResponse> updateManagedAccountInvoker(
         UpdateManagedAccountRequest request) {
         return new SyncInvoker<>(request, RgcMeta.updateManagedAccount, hcClient);
+    }
+
+    /**
+     * 创建模板。
+     *
+     * 创建RFS模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return CreateTemplateResponse
+     */
+    public CreateTemplateResponse createTemplate(CreateTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.createTemplate);
+    }
+
+    /**
+     * 创建模板。
+     *
+     * 创建RFS模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return SyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
+    public SyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateInvoker(
+        CreateTemplateRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.createTemplate, hcClient);
+    }
+
+    /**
+     * 删除模板。
+     *
+     * 删除RFS模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTemplateRequest 请求对象
+     * @return DeleteTemplateResponse
+     */
+    public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.deleteTemplate);
+    }
+
+    /**
+     * 删除模板。
+     *
+     * 删除RFS模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
+     */
+    public SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateInvoker(
+        DeleteTemplateRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.deleteTemplate, hcClient);
+    }
+
+    /**
+     * 查询预置模板列表
+     *
+     * 查询预置模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPredefinedTemplatesRequest 请求对象
+     * @return ListPredefinedTemplatesResponse
+     */
+    public ListPredefinedTemplatesResponse listPredefinedTemplates(ListPredefinedTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.listPredefinedTemplates);
+    }
+
+    /**
+     * 查询预置模板列表
+     *
+     * 查询预置模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPredefinedTemplatesRequest 请求对象
+     * @return SyncInvoker<ListPredefinedTemplatesRequest, ListPredefinedTemplatesResponse>
+     */
+    public SyncInvoker<ListPredefinedTemplatesRequest, ListPredefinedTemplatesResponse> listPredefinedTemplatesInvoker(
+        ListPredefinedTemplatesRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.listPredefinedTemplates, hcClient);
+    }
+
+    /**
+     * 查询模板的部署参数。
+     *
+     * 查询模板的部署参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateDeployParamsRequest 请求对象
+     * @return ShowTemplateDeployParamsResponse
+     */
+    public ShowTemplateDeployParamsResponse showTemplateDeployParams(ShowTemplateDeployParamsRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.showTemplateDeployParams);
+    }
+
+    /**
+     * 查询模板的部署参数。
+     *
+     * 查询模板的部署参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateDeployParamsRequest 请求对象
+     * @return SyncInvoker<ShowTemplateDeployParamsRequest, ShowTemplateDeployParamsResponse>
+     */
+    public SyncInvoker<ShowTemplateDeployParamsRequest, ShowTemplateDeployParamsResponse> showTemplateDeployParamsInvoker(
+        ShowTemplateDeployParamsRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.showTemplateDeployParams, hcClient);
     }
 
 }

@@ -20,6 +20,16 @@ public class Blueprint {
 
     private String blueprintProductVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "variables")
+
+    private String variables;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_blueprint_has_multi_account_resource")
+
+    private Boolean isBlueprintHasMultiAccountResource;
+
     public Blueprint withBlueprintProductId(String blueprintProductId) {
         this.blueprintProductId = blueprintProductId;
         return this;
@@ -54,6 +64,40 @@ public class Blueprint {
         this.blueprintProductVersion = blueprintProductVersion;
     }
 
+    public Blueprint withVariables(String variables) {
+        this.variables = variables;
+        return this;
+    }
+
+    /**
+     * 模板部署参数。
+     * @return variables
+     */
+    public String getVariables() {
+        return variables;
+    }
+
+    public void setVariables(String variables) {
+        this.variables = variables;
+    }
+
+    public Blueprint withIsBlueprintHasMultiAccountResource(Boolean isBlueprintHasMultiAccountResource) {
+        this.isBlueprintHasMultiAccountResource = isBlueprintHasMultiAccountResource;
+        return this;
+    }
+
+    /**
+     * 模板是否包含多账号资源。
+     * @return isBlueprintHasMultiAccountResource
+     */
+    public Boolean getIsBlueprintHasMultiAccountResource() {
+        return isBlueprintHasMultiAccountResource;
+    }
+
+    public void setIsBlueprintHasMultiAccountResource(Boolean isBlueprintHasMultiAccountResource) {
+        this.isBlueprintHasMultiAccountResource = isBlueprintHasMultiAccountResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,14 @@ public class Blueprint {
         }
         Blueprint that = (Blueprint) obj;
         return Objects.equals(this.blueprintProductId, that.blueprintProductId)
-            && Objects.equals(this.blueprintProductVersion, that.blueprintProductVersion);
+            && Objects.equals(this.blueprintProductVersion, that.blueprintProductVersion)
+            && Objects.equals(this.variables, that.variables)
+            && Objects.equals(this.isBlueprintHasMultiAccountResource, that.isBlueprintHasMultiAccountResource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(blueprintProductId, blueprintProductVersion);
+        return Objects.hash(blueprintProductId, blueprintProductVersion, variables, isBlueprintHasMultiAccountResource);
     }
 
     @Override
@@ -78,6 +124,10 @@ public class Blueprint {
         sb.append("class Blueprint {\n");
         sb.append("    blueprintProductId: ").append(toIndentedString(blueprintProductId)).append("\n");
         sb.append("    blueprintProductVersion: ").append(toIndentedString(blueprintProductVersion)).append("\n");
+        sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
+        sb.append("    isBlueprintHasMultiAccountResource: ")
+            .append(toIndentedString(isBlueprintHasMultiAccountResource))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

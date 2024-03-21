@@ -85,7 +85,7 @@ public class HostRaspProtectHistoryResponseInfo {
     }
 
     /**
-     * 告警时间
+     * 动态网页防篡改的告警时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return alarmTime
@@ -140,7 +140,7 @@ public class HostRaspProtectHistoryResponseInfo {
     }
 
     /**
-     * 源IP
+     * 攻击主机的源IP
      * @return sourceIp
      */
     public String getSourceIp() {
@@ -157,7 +157,7 @@ public class HostRaspProtectHistoryResponseInfo {
     }
 
     /**
-     * 攻击URL
+     * 攻击请求的URL
      * @return attackedUrl
      */
     public String getAttackedUrl() {

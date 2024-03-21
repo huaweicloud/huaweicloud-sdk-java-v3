@@ -316,7 +316,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 容器实例名称
+     * 容器实例名称，只有容器类型的告警有
      * @return containerName
      */
     public String getContainerName() {
@@ -333,7 +333,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 镜像名称
+     * 镜像名称，只有容器类型的告警有
      * @return imageName
      */
     public String getImageName() {
@@ -367,7 +367,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -556,7 +556,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 处理时间，毫秒
+     * 处理时间，毫秒，已处理的告警才有
      * minimum: 0
      * maximum: 9223372036854775807
      * @return handleTime
@@ -592,7 +592,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 处理方式，包含如下:   - mark_as_handled : 手动处理   - ignore : 忽略   - add_to_alarm_whitelist : 加入告警白名单   - add_to_login_whitelist : 加入登录白名单   - isolate_and_kill : 隔离查杀
+     * 处理方式，已处理的告警才有，包含如下:   - mark_as_handled : 手动处理   - ignore : 忽略   - add_to_alarm_whitelist : 加入告警白名单   - add_to_login_whitelist : 加入登录白名单   - isolate_and_kill : 隔离查杀
      * @return handleMethod
      */
     public String getHandleMethod() {
@@ -609,7 +609,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 备注信息
+     * 备注信息，已处理的告警才有
      * @return handler
      */
     public String getHandler() {

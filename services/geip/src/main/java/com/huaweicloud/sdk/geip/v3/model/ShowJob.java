@@ -57,7 +57,7 @@ public class ShowJob {
     }
 
     /**
-     * ID
+     * Job的ID
      * @return id
      */
     public String getId() {

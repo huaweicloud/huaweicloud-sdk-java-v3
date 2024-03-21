@@ -417,7 +417,7 @@ public class ListAccessSitesRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -516,7 +516,7 @@ public class ListAccessSitesRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -549,7 +549,7 @@ public class ListAccessSitesRequest {
     }
 
     /**
-     * 根据名称过滤
+     * Get code
      * @return code
      */
     public List<String> getCode() {
@@ -582,7 +582,7 @@ public class ListAccessSitesRequest {
     }
 
     /**
-     * 根据proxy_region过滤
+     * Get proxyRegion
      * @return proxyRegion
      */
     public List<String> getProxyRegion() {
@@ -615,7 +615,7 @@ public class ListAccessSitesRequest {
     }
 
     /**
-     * 根据iec_az_code过滤
+     * Get iecAzCode
      * @return iecAzCode
      */
     public List<String> getIecAzCode() {

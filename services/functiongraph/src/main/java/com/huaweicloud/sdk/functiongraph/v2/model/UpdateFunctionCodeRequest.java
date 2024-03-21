@@ -27,7 +27,7 @@ public class UpdateFunctionCodeRequest {
     }
 
     /**
-     * 函数的URN，详细解释见表1 FunctionGraph函数字段说明表的描述。
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {

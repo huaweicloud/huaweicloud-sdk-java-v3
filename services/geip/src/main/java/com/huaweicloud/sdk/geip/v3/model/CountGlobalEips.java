@@ -21,7 +21,7 @@ public class CountGlobalEips {
     }
 
     /**
-     * Global Eip Count
+     * 全域弹性公网IP个数
      * @return count
      */
     public Integer getCount() {

@@ -56,7 +56,7 @@ public class ChangeEventRequestInfo {
     }
 
     /**
-     * 备注信息
+     * 备注信息，已处理的告警才有
      * @return handler
      */
     public String getHandler() {

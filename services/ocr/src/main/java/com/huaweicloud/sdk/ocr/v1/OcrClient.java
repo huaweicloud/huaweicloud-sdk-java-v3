@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeHealthCodeRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHealthCodeResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHkIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHkIdCardResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeHouseholdRegisterRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeHouseholdRegisterResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdDocumentRequest;
@@ -634,6 +636,35 @@ public class OcrClient {
     public SyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse> recognizeHkIdCardInvoker(
         RecognizeHkIdCardRequest request) {
         return new SyncInvoker<>(request, OcrMeta.recognizeHkIdCard, hcClient);
+    }
+
+    /**
+     * 户口本识别
+     *
+     * 识别户口本中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeHouseholdRegisterRequest 请求对象
+     * @return RecognizeHouseholdRegisterResponse
+     */
+    public RecognizeHouseholdRegisterResponse recognizeHouseholdRegister(RecognizeHouseholdRegisterRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeHouseholdRegister);
+    }
+
+    /**
+     * 户口本识别
+     *
+     * 识别户口本中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeHouseholdRegisterRequest 请求对象
+     * @return SyncInvoker<RecognizeHouseholdRegisterRequest, RecognizeHouseholdRegisterResponse>
+     */
+    public SyncInvoker<RecognizeHouseholdRegisterRequest, RecognizeHouseholdRegisterResponse> recognizeHouseholdRegisterInvoker(
+        RecognizeHouseholdRegisterRequest request) {
+        return new SyncInvoker<>(request, OcrMeta.recognizeHouseholdRegister, hcClient);
     }
 
     /**

@@ -32,7 +32,7 @@ public class SwitchHostsProtectStatusRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

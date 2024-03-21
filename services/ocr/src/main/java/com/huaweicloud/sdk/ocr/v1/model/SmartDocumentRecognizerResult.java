@@ -31,6 +31,11 @@ public class SmartDocumentRecognizerResult {
 
     private SmartDocumentRecognizerLayoutResult layoutResult;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "form_result")
+
+    private SmartDocumentRecognizerFormResult formResult;
+
     public SmartDocumentRecognizerResult withOcrResult(SmartDocumentRecognizerOcrResult ocrResult) {
         this.ocrResult = ocrResult;
         return this;
@@ -137,6 +142,32 @@ public class SmartDocumentRecognizerResult {
         this.layoutResult = layoutResult;
     }
 
+    public SmartDocumentRecognizerResult withFormResult(SmartDocumentRecognizerFormResult formResult) {
+        this.formResult = formResult;
+        return this;
+    }
+
+    public SmartDocumentRecognizerResult withFormResult(Consumer<SmartDocumentRecognizerFormResult> formResultSetter) {
+        if (this.formResult == null) {
+            this.formResult = new SmartDocumentRecognizerFormResult();
+            formResultSetter.accept(this.formResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get formResult
+     * @return formResult
+     */
+    public SmartDocumentRecognizerFormResult getFormResult() {
+        return formResult;
+    }
+
+    public void setFormResult(SmartDocumentRecognizerFormResult formResult) {
+        this.formResult = formResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -148,12 +179,12 @@ public class SmartDocumentRecognizerResult {
         SmartDocumentRecognizerResult that = (SmartDocumentRecognizerResult) obj;
         return Objects.equals(this.ocrResult, that.ocrResult) && Objects.equals(this.kvResult, that.kvResult)
             && Objects.equals(this.tableResult, that.tableResult)
-            && Objects.equals(this.layoutResult, that.layoutResult);
+            && Objects.equals(this.layoutResult, that.layoutResult) && Objects.equals(this.formResult, that.formResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ocrResult, kvResult, tableResult, layoutResult);
+        return Objects.hash(ocrResult, kvResult, tableResult, layoutResult, formResult);
     }
 
     @Override
@@ -164,6 +195,7 @@ public class SmartDocumentRecognizerResult {
         sb.append("    kvResult: ").append(toIndentedString(kvResult)).append("\n");
         sb.append("    tableResult: ").append(toIndentedString(tableResult)).append("\n");
         sb.append("    layoutResult: ").append(toIndentedString(layoutResult)).append("\n");
+        sb.append("    formResult: ").append(toIndentedString(formResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

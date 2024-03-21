@@ -26,7 +26,7 @@ public class UpdateGlobalEipSegmentRequestBodyGlobalEipSegment {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：全域弹性公网IP段名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class UpdateGlobalEipSegmentRequestBodyGlobalEipSegment {
     }
 
     /**
-     * 用户自定义的资源描述
+     * - 功能说明：用户自定义的资源描述 - 约束：   - 值的长度最大512字符，由数字、字母、中文、_(下划线)、-（中划线）、.（点）组成。
      * @return description
      */
     public String getDescription() {

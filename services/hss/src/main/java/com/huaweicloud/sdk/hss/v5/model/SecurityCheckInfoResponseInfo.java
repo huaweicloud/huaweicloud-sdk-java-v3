@@ -78,7 +78,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 基线名称
+     * 配置检查（基线）的名称，例如SSH、CentOS 7、Windows
      * @return checkName
      */
     public String getCheckName() {
@@ -95,7 +95,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 基线类型
+     * 配置检查（基线）的类型,Linux系统支持的基线一般check_type和check_name相同,例如SSH、CentOS 7。 Windows系统支持的基线一般check_type和check_name不相同，例如check_name为Windows的配置检查（基线），它的check_type包含Windows Server 2019 R2、Windows Server 2016 R2等。
      * @return checkType
      */
     public String getCheckType() {
@@ -112,7 +112,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 标准类型，包含如下:   - cn_standard : 等保合规标准   - hw_standard : 华为标准   - qt_standard : 青腾标准
+     * 标准类型，包含如下:   - cn_standard : 等保合规标准   - hw_standard : 云安全实践标准
      * @return standard
      */
     public String getStandard() {
@@ -129,7 +129,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 检查项数量
+     * 当前配置检查（基线）类型下，用户共检测了多少个检查项。例如标准类型为hw_standard的SSH基线，主机安全提供了17个检查项，但用户所有主机都只检测了SSH基线的其中5个检查项，check_rule_num就是5。用户有一台主机进行了全量检查项检测，check_rule_num就是17。
      * minimum: 0
      * maximum: 2097152
      * @return checkRuleNum
@@ -148,7 +148,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 风险项数量
+     * 未通过的检查项数量，check_rule_num中只要有一台主机没通过某个检查项，这个检查项就会被计算在failed_rule_num中
      * minimum: 0
      * maximum: 2097152
      * @return failedRuleNum
@@ -167,7 +167,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 影响的服务器数量
+     * 受影响的服务器的数量，进行了当前基线检测的服务器数量
      * minimum: 0
      * maximum: 2097152
      * @return hostNum
@@ -186,7 +186,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 最新检测时间
+     * 最新检测时间(ms)
      * minimum: 0
      * maximum: 2097152
      * @return scanTime
@@ -205,7 +205,7 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     /**
-     * 基线描述信息
+     * 对配置检查（基线）类型的描述信息，概括当前基线包含的检查项是根据什么标准制定的，能够审计哪些方面的问题。
      * @return checkTypeDesc
      */
     public String getCheckTypeDesc() {

@@ -66,7 +66,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * agent_id
+     * HSS的Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -168,7 +168,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 更新时间
+     * 更新时间，最近一次更新的时间，用毫秒表示
      * minimum: 0
      * maximum: 2147483647
      * @return updateTime
@@ -187,7 +187,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 最近扫描时间
+     * 最近扫描时间，用毫秒表示
      * minimum: 0
      * maximum: 2147483647
      * @return recentScanTime

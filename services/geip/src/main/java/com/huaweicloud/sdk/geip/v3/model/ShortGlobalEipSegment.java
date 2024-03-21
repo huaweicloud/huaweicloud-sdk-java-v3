@@ -26,7 +26,7 @@ public class ShortGlobalEipSegment {
     }
 
     /**
-     * ID
+     * 全域弹性公网IP段的ID
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class ShortGlobalEipSegment {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：全域弹性公网IP段名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {

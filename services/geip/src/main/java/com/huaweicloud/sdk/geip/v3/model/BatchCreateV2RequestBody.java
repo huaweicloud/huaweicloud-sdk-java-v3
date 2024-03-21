@@ -16,19 +16,19 @@ public class BatchCreateV2RequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<BatchCreateV2RequestBodyTags> tags = null;
+    private List<CreateGlobalEipRequestBodyGlobalEipTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private List<BatchCreateV2RequestBodySysTags> sysTags = null;
+    private List<CreateGlobalEipRequestBodyGlobalEipTags> sysTags = null;
 
-    public BatchCreateV2RequestBody withTags(List<BatchCreateV2RequestBodyTags> tags) {
+    public BatchCreateV2RequestBody withTags(List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchCreateV2RequestBody addTagsItem(BatchCreateV2RequestBodyTags tagsItem) {
+    public BatchCreateV2RequestBody addTagsItem(CreateGlobalEipRequestBodyGlobalEipTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class BatchCreateV2RequestBody {
         return this;
     }
 
-    public BatchCreateV2RequestBody withTags(Consumer<List<BatchCreateV2RequestBodyTags>> tagsSetter) {
+    public BatchCreateV2RequestBody withTags(Consumer<List<CreateGlobalEipRequestBodyGlobalEipTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -48,20 +48,20 @@ public class BatchCreateV2RequestBody {
      * 全域弹性公网IP标签
      * @return tags
      */
-    public List<BatchCreateV2RequestBodyTags> getTags() {
+    public List<CreateGlobalEipRequestBodyGlobalEipTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<BatchCreateV2RequestBodyTags> tags) {
+    public void setTags(List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
     }
 
-    public BatchCreateV2RequestBody withSysTags(List<BatchCreateV2RequestBodySysTags> sysTags) {
+    public BatchCreateV2RequestBody withSysTags(List<CreateGlobalEipRequestBodyGlobalEipTags> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public BatchCreateV2RequestBody addSysTagsItem(BatchCreateV2RequestBodySysTags sysTagsItem) {
+    public BatchCreateV2RequestBody addSysTagsItem(CreateGlobalEipRequestBodyGlobalEipTags sysTagsItem) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class BatchCreateV2RequestBody {
         return this;
     }
 
-    public BatchCreateV2RequestBody withSysTags(Consumer<List<BatchCreateV2RequestBodySysTags>> sysTagsSetter) {
+    public BatchCreateV2RequestBody withSysTags(Consumer<List<CreateGlobalEipRequestBodyGlobalEipTags>> sysTagsSetter) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class BatchCreateV2RequestBody {
      * 系统标签
      * @return sysTags
      */
-    public List<BatchCreateV2RequestBodySysTags> getSysTags() {
+    public List<CreateGlobalEipRequestBodyGlobalEipTags> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<BatchCreateV2RequestBodySysTags> sysTags) {
+    public void setSysTags(List<CreateGlobalEipRequestBodyGlobalEipTags> sysTags) {
         this.sysTags = sysTags;
     }
 

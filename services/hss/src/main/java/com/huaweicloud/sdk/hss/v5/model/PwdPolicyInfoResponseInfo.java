@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器的口令复杂度策略
+ * 服务器的口令复杂度策略。建议设置最小口令长度不小于8，同时包含大写字母、小写字母、数字和特殊字符。
  */
 public class PwdPolicyInfoResponseInfo {
 
@@ -24,6 +24,16 @@ public class PwdPolicyInfoResponseInfo {
     @JsonProperty(value = "host_ip")
 
     private String hostIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_ip")
+
+    private String privateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_length")
@@ -61,7 +71,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器id(鼠标在“服务器名称”放置后上浮显示)
+     * 主机id(鼠标在“服务器名称”放置后上浮显示)
      * @return hostId
      */
     public String getHostId() {
@@ -95,7 +105,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器IP
+     * 服务器IP（私有IP），为兼容用户使用，不删除此字段
      * @return hostIp
      */
     public String getHostIp() {
@@ -106,13 +116,47 @@ public class PwdPolicyInfoResponseInfo {
         this.hostIp = hostIp;
     }
 
+    public PwdPolicyInfoResponseInfo withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+        return this;
+    }
+
+    /**
+     * 服务器私有IP
+     * @return privateIp
+     */
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
+    public PwdPolicyInfoResponseInfo withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 服务器公网IP
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public PwdPolicyInfoResponseInfo withMinLength(Boolean minLength) {
         this.minLength = minLength;
         return this;
     }
 
     /**
-     * 口令最小长度
+     * 口令最小长度的设置是否符合要求，符合为true，不符合为false
      * @return minLength
      */
     public Boolean getMinLength() {
@@ -129,7 +173,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 大写字母
+     * 大写字母的设置是否符合要求，符合为true，不符合为false
      * @return uppercaseLetter
      */
     public Boolean getUppercaseLetter() {
@@ -146,7 +190,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 小写字母
+     * 小写字母的设置是否符合要求，符合为true，不符合为false
      * @return lowercaseLetter
      */
     public Boolean getLowercaseLetter() {
@@ -163,7 +207,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 数字
+     * 数字的设置是否符合要求，符合为true，不符合为false
      * @return number
      */
     public Boolean getNumber() {
@@ -180,7 +224,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 特殊字符
+     * 特殊字符的设置是否符合要求，符合为true，不符合为false
      * @return specialCharacter
      */
     public Boolean getSpecialCharacter() {
@@ -218,7 +262,8 @@ public class PwdPolicyInfoResponseInfo {
         }
         PwdPolicyInfoResponseInfo that = (PwdPolicyInfoResponseInfo) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.minLength, that.minLength)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.minLength, that.minLength)
             && Objects.equals(this.uppercaseLetter, that.uppercaseLetter)
             && Objects.equals(this.lowercaseLetter, that.lowercaseLetter) && Objects.equals(this.number, that.number)
             && Objects.equals(this.specialCharacter, that.specialCharacter)
@@ -230,6 +275,8 @@ public class PwdPolicyInfoResponseInfo {
         return Objects.hash(hostId,
             hostName,
             hostIp,
+            privateIp,
+            publicIp,
             minLength,
             uppercaseLetter,
             lowercaseLetter,
@@ -245,6 +292,8 @@ public class PwdPolicyInfoResponseInfo {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    minLength: ").append(toIndentedString(minLength)).append("\n");
         sb.append("    uppercaseLetter: ").append(toIndentedString(uppercaseLetter)).append("\n");
         sb.append("    lowercaseLetter: ").append(toIndentedString(lowercaseLetter)).append("\n");

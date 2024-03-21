@@ -61,6 +61,11 @@ public class SwrRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://swr-api.eu-west-101.myhuaweicloud.eu");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://swr-api.my-kualalumpur-1.myhuaweicloud.com");
+
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://swr-api.eu-west-0.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SWR");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -88,6 +93,8 @@ public class SwrRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 

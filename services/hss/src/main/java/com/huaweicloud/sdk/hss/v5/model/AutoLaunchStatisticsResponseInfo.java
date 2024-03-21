@@ -48,7 +48,7 @@ public class AutoLaunchStatisticsResponseInfo {
     }
 
     /**
-     * 自启动项类型
+     * 自启动项类型   - 0 ：自启动服务   - 1 ：定时任务   - 2 ：预加载动态库   - 3 ：Run注册表键   - 4 ：开机启动文件夹
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class AutoLaunchStatisticsResponseInfo {
     }
 
     /**
-     * 数量
+     * 当前自启动项的主机数量
      * minimum: 0
      * maximum: 10000
      * @return num

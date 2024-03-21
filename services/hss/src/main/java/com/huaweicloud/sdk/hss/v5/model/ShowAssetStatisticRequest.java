@@ -31,7 +31,7 @@ public class ShowAssetStatisticRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -48,7 +48,7 @@ public class ShowAssetStatisticRequest {
     }
 
     /**
-     * host id
+     * Host ID
      * @return hostId
      */
     public String getHostId() {

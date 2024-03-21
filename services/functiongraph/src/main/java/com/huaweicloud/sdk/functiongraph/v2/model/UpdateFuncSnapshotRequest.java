@@ -15,6 +15,11 @@ import java.util.Objects;
  */
 public class UpdateFuncSnapshotRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function_urn")
+
+    private String functionUrn;
+
     /**
      * 禁用/启用
      */
@@ -90,10 +95,22 @@ public class UpdateFuncSnapshotRequest {
 
     private ActionEnum action;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "function_urn")
+    public UpdateFuncSnapshotRequest withFunctionUrn(String functionUrn) {
+        this.functionUrn = functionUrn;
+        return this;
+    }
 
-    private String functionUrn;
+    /**
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * @return functionUrn
+     */
+    public String getFunctionUrn() {
+        return functionUrn;
+    }
+
+    public void setFunctionUrn(String functionUrn) {
+        this.functionUrn = functionUrn;
+    }
 
     public UpdateFuncSnapshotRequest withAction(ActionEnum action) {
         this.action = action;
@@ -112,23 +129,6 @@ public class UpdateFuncSnapshotRequest {
         this.action = action;
     }
 
-    public UpdateFuncSnapshotRequest withFunctionUrn(String functionUrn) {
-        this.functionUrn = functionUrn;
-        return this;
-    }
-
-    /**
-     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * @return functionUrn
-     */
-    public String getFunctionUrn() {
-        return functionUrn;
-    }
-
-    public void setFunctionUrn(String functionUrn) {
-        this.functionUrn = functionUrn;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -138,20 +138,20 @@ public class UpdateFuncSnapshotRequest {
             return false;
         }
         UpdateFuncSnapshotRequest that = (UpdateFuncSnapshotRequest) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.functionUrn, that.functionUrn);
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, functionUrn);
+        return Objects.hash(functionUrn, action);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFuncSnapshotRequest {\n");
-        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

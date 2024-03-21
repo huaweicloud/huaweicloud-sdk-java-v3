@@ -69,11 +69,6 @@ public class ConfigurationRequestDataSpec {
     private Map<String, String> envs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
-
-    private String ip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<AccessConfigurationDataItems> items = null;
@@ -227,7 +222,7 @@ public class ConfigurationRequestDataSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
@@ -418,23 +413,6 @@ public class ConfigurationRequestDataSpec {
 
     public void setEnvs(Map<String, String> envs) {
         this.envs = envs;
-    }
-
-    public ConfigurationRequestDataSpec withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    /**
-     * 弹性公网IP，响应体参数，未配置域名时返回此参数。
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
     }
 
     public ConfigurationRequestDataSpec withItems(List<AccessConfigurationDataItems> items) {
@@ -813,7 +791,7 @@ public class ConfigurationRequestDataSpec {
         this.path = path;
     }
 
-    public ConfigurationRequestDataSpec withPort(String port) {
+    public ConfigurationRequestDataSpec withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -822,11 +800,11 @@ public class ConfigurationRequestDataSpec {
      * 自定义监控指标配置采集端口。  ConfigurationItem.type为\"customMetric\"时，配置此参数。 
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 
@@ -877,8 +855,8 @@ public class ConfigurationRequestDataSpec {
             && Objects.equals(this.rdsPassword, that.rdsPassword) && Objects.equals(this.rdsPort, that.rdsPort)
             && Objects.equals(this.configCenterAddr, that.configCenterAddr)
             && Objects.equals(this.serviceCenterAddr, that.serviceCenterAddr) && Objects.equals(this.cseId, that.cseId)
-            && Objects.equals(this.envs, that.envs) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.items, that.items) && Objects.equals(this.scaleStrategy, that.scaleStrategy)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.items, that.items)
+            && Objects.equals(this.scaleStrategy, that.scaleStrategy)
             && Objects.equals(this.maxReplicaCount, that.maxReplicaCount)
             && Objects.equals(this.minReplicaCount, that.minReplicaCount)
             && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.triggers, that.triggers)
@@ -903,7 +881,6 @@ public class ConfigurationRequestDataSpec {
             serviceCenterAddr,
             cseId,
             envs,
-            ip,
             items,
             scaleStrategy,
             maxReplicaCount,
@@ -937,7 +914,6 @@ public class ConfigurationRequestDataSpec {
         sb.append("    serviceCenterAddr: ").append(toIndentedString(serviceCenterAddr)).append("\n");
         sb.append("    cseId: ").append(toIndentedString(cseId)).append("\n");
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("    scaleStrategy: ").append(toIndentedString(scaleStrategy)).append("\n");
         sb.append("    maxReplicaCount: ").append(toIndentedString(maxReplicaCount)).append("\n");

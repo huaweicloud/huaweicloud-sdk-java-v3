@@ -47,7 +47,7 @@ public class ListInternetBandwidthLimits {
     }
 
     /**
-     * ID
+     * 全域公网带宽限制的ID
      * @return id
      */
     public String getId() {

@@ -36,7 +36,7 @@ public class IsolatedFileRequestInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {

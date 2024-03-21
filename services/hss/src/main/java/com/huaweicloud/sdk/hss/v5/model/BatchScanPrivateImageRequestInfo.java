@@ -278,7 +278,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 创建时间开始日期
+     * 创建时间开始日期，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestUpdateTime
@@ -297,7 +297,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 创建时间结束日期
+     * 创建时间结束日期，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestUpdateTime
@@ -316,7 +316,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 最近一次扫描完成时间开始日期
+     * 最近一次扫描完成时间开始日期，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestScanTime
@@ -335,7 +335,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 最近一次扫描完成时间结束日期
+     * 最近一次扫描完成时间结束日期，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestScanTime

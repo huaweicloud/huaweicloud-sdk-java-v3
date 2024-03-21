@@ -23,7 +23,7 @@ public class HealthCheckConfigurationHttpGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
     /**
      * 协议。
@@ -117,7 +117,7 @@ public class HealthCheckConfigurationHttpGet {
         this.path = path;
     }
 
-    public HealthCheckConfigurationHttpGet withPort(String port) {
+    public HealthCheckConfigurationHttpGet withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -126,11 +126,11 @@ public class HealthCheckConfigurationHttpGet {
      * 端口。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

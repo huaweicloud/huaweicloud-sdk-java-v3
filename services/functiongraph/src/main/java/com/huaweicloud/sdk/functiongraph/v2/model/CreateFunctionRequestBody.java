@@ -343,6 +343,11 @@ public class CreateFunctionRequestBody {
     private String userData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypted_user_data")
+
+    private String encryptedUserData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "xrole")
 
     private String xrole;
@@ -361,6 +366,11 @@ public class CreateFunctionRequestBody {
     @JsonProperty(value = "func_code")
 
     private FuncCode funcCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mount_config")
+
+    private MountConfig mountConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializer_handler")
@@ -471,6 +481,16 @@ public class CreateFunctionRequestBody {
     @JsonProperty(value = "network_controller")
 
     private NetworkControlConfig networkController;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_stateful_function")
+
+    private Boolean isStatefulFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
 
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
@@ -744,6 +764,23 @@ public class CreateFunctionRequestBody {
         this.userData = userData;
     }
 
+    public CreateFunctionRequestBody withEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+        return this;
+    }
+
+    /**
+     * 用户自定义的name/value信息，用于需要加密的配置。举例：如配置加密密码，可以设置自定义参数：password={1234}，最多定义20个，总长度不超过4KB。
+     * @return encryptedUserData
+     */
+    public String getEncryptedUserData() {
+        return encryptedUserData;
+    }
+
+    public void setEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+    }
+
     public CreateFunctionRequestBody withXrole(String xrole) {
         this.xrole = xrole;
         return this;
@@ -819,6 +856,32 @@ public class CreateFunctionRequestBody {
 
     public void setFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
+    }
+
+    public CreateFunctionRequestBody withMountConfig(MountConfig mountConfig) {
+        this.mountConfig = mountConfig;
+        return this;
+    }
+
+    public CreateFunctionRequestBody withMountConfig(Consumer<MountConfig> mountConfigSetter) {
+        if (this.mountConfig == null) {
+            this.mountConfig = new MountConfig();
+            mountConfigSetter.accept(this.mountConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mountConfig
+     * @return mountConfig
+     */
+    public MountConfig getMountConfig() {
+        return mountConfig;
+    }
+
+    public void setMountConfig(MountConfig mountConfig) {
+        this.mountConfig = mountConfig;
     }
 
     public CreateFunctionRequestBody withInitializerHandler(String initializerHandler) {
@@ -975,6 +1038,40 @@ public class CreateFunctionRequestBody {
         this.networkController = networkController;
     }
 
+    public CreateFunctionRequestBody withIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+        return this;
+    }
+
+    /**
+     * 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * @return isStatefulFunction
+     */
+    public Boolean getIsStatefulFunction() {
+        return isStatefulFunction;
+    }
+
+    public void setIsStatefulFunction(Boolean isStatefulFunction) {
+        this.isStatefulFunction = isStatefulFunction;
+    }
+
+    public CreateFunctionRequestBody withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /**
+     * 是否启动动态内存配置
+     * @return enableDynamicMemory
+     */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -992,15 +1089,18 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.codeType, that.codeType)
             && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
             && Objects.equals(this.customImage, that.customImage) && Objects.equals(this.userData, that.userData)
-            && Objects.equals(this.xrole, that.xrole) && Objects.equals(this.appXrole, that.appXrole)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.funcCode, that.funcCode)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.funcCode, that.funcCode) && Objects.equals(this.mountConfig, that.mountConfig)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
             && Objects.equals(this.preStopHandler, that.preStopHandler)
             && Objects.equals(this.preStopTimeout, that.preStopTimeout)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.logConfig, that.logConfig)
-            && Objects.equals(this.networkController, that.networkController);
+            && Objects.equals(this.networkController, that.networkController)
+            && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory);
     }
 
     @Override
@@ -1019,10 +1119,12 @@ public class CreateFunctionRequestBody {
             codeFilename,
             customImage,
             userData,
+            encryptedUserData,
             xrole,
             appXrole,
             description,
             funcCode,
+            mountConfig,
             initializerHandler,
             initializerTimeout,
             preStopHandler,
@@ -1030,7 +1132,9 @@ public class CreateFunctionRequestBody {
             enterpriseProjectId,
             type,
             logConfig,
-            networkController);
+            networkController,
+            isStatefulFunction,
+            enableDynamicMemory);
     }
 
     @Override
@@ -1051,10 +1155,12 @@ public class CreateFunctionRequestBody {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
+        sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    preStopHandler: ").append(toIndentedString(preStopHandler)).append("\n");
@@ -1063,6 +1169,8 @@ public class CreateFunctionRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
+        sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("}");
         return sb.toString();
     }

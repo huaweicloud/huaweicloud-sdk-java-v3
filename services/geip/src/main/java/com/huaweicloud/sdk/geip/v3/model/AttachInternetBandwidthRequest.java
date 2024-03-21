@@ -27,7 +27,7 @@ public class AttachInternetBandwidthRequest {
     }
 
     /**
-     * global_eip_id
+     * Get globalEipId
      * @return globalEipId
      */
     public String getGlobalEipId() {

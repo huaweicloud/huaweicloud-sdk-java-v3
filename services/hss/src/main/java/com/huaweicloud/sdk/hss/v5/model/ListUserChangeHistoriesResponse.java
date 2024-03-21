@@ -30,7 +30,7 @@ public class ListUserChangeHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 账号变动总数
      * minimum: 0
      * maximum: 10000000
      * @return totalNum

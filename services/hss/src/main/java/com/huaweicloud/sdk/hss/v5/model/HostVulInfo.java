@@ -123,6 +123,16 @@ public class HostVulInfo {
 
     private Boolean supportRestore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disabled_operate_types")
+
+    private List<VulHostInfoDisabledOperateTypes> disabledOperateTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority")
+
+    private String repairPriority;
+
     public HostVulInfo withVulName(String vulName) {
         this.vulName = vulName;
         return this;
@@ -551,6 +561,57 @@ public class HostVulInfo {
         this.supportRestore = supportRestore;
     }
 
+    public HostVulInfo withDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+        this.disabledOperateTypes = disabledOperateTypes;
+        return this;
+    }
+
+    public HostVulInfo addDisabledOperateTypesItem(VulHostInfoDisabledOperateTypes disabledOperateTypesItem) {
+        if (this.disabledOperateTypes == null) {
+            this.disabledOperateTypes = new ArrayList<>();
+        }
+        this.disabledOperateTypes.add(disabledOperateTypesItem);
+        return this;
+    }
+
+    public HostVulInfo withDisabledOperateTypes(
+        Consumer<List<VulHostInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
+        if (this.disabledOperateTypes == null) {
+            this.disabledOperateTypes = new ArrayList<>();
+        }
+        disabledOperateTypesSetter.accept(this.disabledOperateTypes);
+        return this;
+    }
+
+    /**
+     * 该漏洞不可进行的操作类型列表
+     * @return disabledOperateTypes
+     */
+    public List<VulHostInfoDisabledOperateTypes> getDisabledOperateTypes() {
+        return disabledOperateTypes;
+    }
+
+    public void setDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+        this.disabledOperateTypes = disabledOperateTypes;
+    }
+
+    public HostVulInfo withRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+        return this;
+    }
+
+    /**
+     * 修复优先级,包含如下 - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * @return repairPriority
+     */
+    public String getRepairPriority() {
+        return repairPriority;
+    }
+
+    public void setRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -572,7 +633,9 @@ public class HostVulInfo {
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
             && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.appPath, that.appPath)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.supportRestore, that.supportRestore);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.supportRestore, that.supportRestore)
+            && Objects.equals(this.disabledOperateTypes, that.disabledOperateTypes)
+            && Objects.equals(this.repairPriority, that.repairPriority);
     }
 
     @Override
@@ -598,7 +661,9 @@ public class HostVulInfo {
             appVersion,
             appPath,
             version,
-            supportRestore);
+            supportRestore,
+            disabledOperateTypes,
+            repairPriority);
     }
 
     @Override
@@ -627,6 +692,8 @@ public class HostVulInfo {
         sb.append("    appPath: ").append(toIndentedString(appPath)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
+        sb.append("    disabledOperateTypes: ").append(toIndentedString(disabledOperateTypes)).append("\n");
+        sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -231,7 +231,7 @@ public class ShowGlobalEipRequest {
     }
 
     /**
-     * global_eip_id
+     * Get globalEipId
      * @return globalEipId
      */
     public String getGlobalEipId() {
@@ -264,7 +264,7 @@ public class ShowGlobalEipRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {

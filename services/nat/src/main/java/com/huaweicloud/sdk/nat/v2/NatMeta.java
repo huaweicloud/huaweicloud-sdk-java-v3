@@ -1652,16 +1652,16 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getLimit, ListNatGatewaySnatRulesRequest::setLimit));
-        builder.<String>withRequestField("floating_ip_address",
+        builder.<List<String>>withRequestField("floating_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpAddress,
                 ListNatGatewaySnatRulesRequest::setFloatingIpAddress));
-        builder.<String>withRequestField("floating_ip_id",
+        builder.<List<String>>withRequestField("floating_ip_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpId,
                 ListNatGatewaySnatRulesRequest::setFloatingIpId));
         builder.<String>withRequestField("id",

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 容器实例名称
+ * 容器实例名称，只有容器类型的告警有
  */
 public class ContainerName {
 

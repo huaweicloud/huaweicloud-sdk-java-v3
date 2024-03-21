@@ -29,6 +29,16 @@ public class WeakPwdListInfoResponseInfo {
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_ip")
+
+    private String privateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_pwd_accounts")
 
     private List<WeakPwdAccountInfoResponseInfo> weakPwdAccounts = null;
@@ -39,7 +49,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -73,7 +83,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器IP
+     * 服务器IP（私有IP），为兼容用户使用，不删除此字段
      * @return hostIp
      */
     public String getHostIp() {
@@ -82,6 +92,40 @@ public class WeakPwdListInfoResponseInfo {
 
     public void setHostIp(String hostIp) {
         this.hostIp = hostIp;
+    }
+
+    public WeakPwdListInfoResponseInfo withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+        return this;
+    }
+
+    /**
+     * 服务器私有IP
+     * @return privateIp
+     */
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
+    public WeakPwdListInfoResponseInfo withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 服务器公网IP
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     public WeakPwdListInfoResponseInfo withWeakPwdAccounts(List<WeakPwdAccountInfoResponseInfo> weakPwdAccounts) {
@@ -128,12 +172,14 @@ public class WeakPwdListInfoResponseInfo {
         }
         WeakPwdListInfoResponseInfo that = (WeakPwdListInfoResponseInfo) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.weakPwdAccounts, that.weakPwdAccounts);
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.weakPwdAccounts, that.weakPwdAccounts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, hostIp, weakPwdAccounts);
+        return Objects.hash(hostId, hostName, hostIp, privateIp, publicIp, weakPwdAccounts);
     }
 
     @Override
@@ -143,6 +189,8 @@ public class WeakPwdListInfoResponseInfo {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    weakPwdAccounts: ").append(toIndentedString(weakPwdAccounts)).append("\n");
         sb.append("}");
         return sb.toString();

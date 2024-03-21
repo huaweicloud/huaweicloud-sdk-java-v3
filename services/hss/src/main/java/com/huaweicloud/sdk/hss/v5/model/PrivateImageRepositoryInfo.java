@@ -325,7 +325,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 镜像版本最后更新时间
+     * 镜像版本最后更新时间，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return latestUpdateTime
@@ -344,7 +344,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 最近扫描时间
+     * 最近扫描时间，时间单位 毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return latestScanTime
@@ -471,7 +471,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 企业实例名称
+     * 企业版镜像实例名称
      * @return instanceName
      */
     public String getInstanceName() {
@@ -488,7 +488,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 企业实例ID
+     * 企业版镜像实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -505,7 +505,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 企业镜像URL
+     * 企业版镜像实例URL
      * @return instanceUrl
      */
     public String getInstanceUrl() {

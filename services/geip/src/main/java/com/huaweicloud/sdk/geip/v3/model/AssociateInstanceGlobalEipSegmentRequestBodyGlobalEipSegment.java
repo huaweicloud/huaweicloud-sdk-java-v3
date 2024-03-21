@@ -97,7 +97,7 @@ public class AssociateInstanceGlobalEipSegmentRequestBodyGlobalEipSegment {
     }
 
     /**
-     * 项目ID
+     * 项目ID，获取项目ID请参见[获取项目ID](https://support.huaweicloud.com/api-vpc/vpc_api_0011.html)
      * @return projectId
      */
     public String getProjectId() {

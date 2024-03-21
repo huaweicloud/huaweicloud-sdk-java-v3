@@ -307,7 +307,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -340,7 +340,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据全域公网带宽的ID过滤
+     * Get internetBandwidthId
      * @return internetBandwidthId
      */
     public List<String> getInternetBandwidthId() {
@@ -373,7 +373,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据名称过滤
+     * Get name
      * @return name
      */
     public List<String> getName() {
@@ -390,7 +390,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据名称模糊匹配
+     * Get nameLike
      * @return nameLike
      */
     public String getNameLike() {
@@ -423,7 +423,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据接入点过滤
+     * Get accessSite
      * @return accessSite
      */
     public List<String> getAccessSite() {
@@ -456,7 +456,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据全域弹性公网IP池名称过滤
+     * Get geipPoolName
      * @return geipPoolName
      */
     public List<String> getGeipPoolName() {
@@ -489,7 +489,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据运营商线路过滤
+     * Get isp
      * @return isp
      */
     public List<String> getIsp() {
@@ -522,7 +522,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据IP版本过滤
+     * Get ipVersion
      * @return ipVersion
      */
     public List<IpVersionEnum> getIpVersion() {
@@ -555,7 +555,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据ip地址过滤
+     * Get ipAddress
      * @return ipAddress
      */
     public List<String> getIpAddress() {
@@ -588,7 +588,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据ipv6地址过滤
+     * Get ipv6Address
      * @return ipv6Address
      */
     public List<String> getIpv6Address() {
@@ -621,7 +621,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据是否冻结过滤
+     * Get freezen
      * @return freezen
      */
     public List<Boolean> getFreezen() {
@@ -654,7 +654,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据是否污染过滤
+     * Get polluted
      * @return polluted
      */
     public List<Boolean> getPolluted() {
@@ -687,7 +687,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据是否绑定全域公网带宽过滤
+     * Get internetBandwidthIsNull
      * @return internetBandwidthIsNull
      */
     public List<Boolean> getInternetBandwidthIsNull() {
@@ -720,7 +720,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据是否绑定骨干带宽过滤
+     * Get gcbBandwidthIsNull
      * @return gcbBandwidthIsNull
      */
     public List<Boolean> getGcbBandwidthIsNull() {
@@ -753,7 +753,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据资源状态过滤
+     * Get status
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -787,7 +787,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据绑定实例所属的局点过滤
+     * Get associateInstanceInfoRegion
      * @return associateInstanceInfoRegion
      */
     public List<String> getAssociateInstanceInfoRegion() {
@@ -823,7 +823,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据绑定实例所属的边缘信息过滤
+     * Get associateInstanceInfoPublicBorderGroup
      * @return associateInstanceInfoPublicBorderGroup
      */
     public List<String> getAssociateInstanceInfoPublicBorderGroup() {
@@ -859,7 +859,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据绑定实例所在的站点过滤
+     * Get associateInstanceInfoInstanceSite
      * @return associateInstanceInfoInstanceSite
      */
     public List<String> getAssociateInstanceInfoInstanceSite() {
@@ -895,7 +895,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据绑定实例的类型过滤
+     * Get associateInstanceInfoInstanceType
      * @return associateInstanceInfoInstanceType
      */
     public List<String> getAssociateInstanceInfoInstanceType() {
@@ -929,7 +929,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据绑定实例的ID过滤
+     * Get associateInstanceInfoInstanceId
      * @return associateInstanceInfoInstanceId
      */
     public List<String> getAssociateInstanceInfoInstanceId() {
@@ -963,7 +963,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * query by associate_instance_info.project_id
+     * Get associateInstanceInfoProjectId
      * @return associateInstanceInfoProjectId
      */
     public List<String> getAssociateInstanceInfoProjectId() {
@@ -996,7 +996,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据企业项目ID过滤
+     * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -1029,7 +1029,7 @@ public class CountGlobalEipsRequest {
     }
 
     /**
-     * 根据标签过滤
+     * Get tags
      * @return tags
      */
     public List<String> getTags() {

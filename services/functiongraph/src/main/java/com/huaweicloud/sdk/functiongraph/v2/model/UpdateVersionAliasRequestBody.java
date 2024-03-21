@@ -28,6 +28,11 @@ public class UpdateVersionAliasRequestBody {
 
     private Map<String, Integer> additionalVersionWeights = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_version_strategy")
+
+    private Map<String, VersionStrategy> additionalVersionStrategy = null;
+
     public UpdateVersionAliasRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -97,6 +102,42 @@ public class UpdateVersionAliasRequestBody {
         this.additionalVersionWeights = additionalVersionWeights;
     }
 
+    public UpdateVersionAliasRequestBody withAdditionalVersionStrategy(
+        Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
+        return this;
+    }
+
+    public UpdateVersionAliasRequestBody putAdditionalVersionStrategyItem(String key,
+        VersionStrategy additionalVersionStrategyItem) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        this.additionalVersionStrategy.put(key, additionalVersionStrategyItem);
+        return this;
+    }
+
+    public UpdateVersionAliasRequestBody withAdditionalVersionStrategy(
+        Consumer<Map<String, VersionStrategy>> additionalVersionStrategySetter) {
+        if (this.additionalVersionStrategy == null) {
+            this.additionalVersionStrategy = new HashMap<>();
+        }
+        additionalVersionStrategySetter.accept(this.additionalVersionStrategy);
+        return this;
+    }
+
+    /**
+     * 指定规则灰度策略信息
+     * @return additionalVersionStrategy
+     */
+    public Map<String, VersionStrategy> getAdditionalVersionStrategy() {
+        return additionalVersionStrategy;
+    }
+
+    public void setAdditionalVersionStrategy(Map<String, VersionStrategy> additionalVersionStrategy) {
+        this.additionalVersionStrategy = additionalVersionStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,12 +148,13 @@ public class UpdateVersionAliasRequestBody {
         }
         UpdateVersionAliasRequestBody that = (UpdateVersionAliasRequestBody) obj;
         return Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights)
+            && Objects.equals(this.additionalVersionStrategy, that.additionalVersionStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, description, additionalVersionWeights);
+        return Objects.hash(version, description, additionalVersionWeights, additionalVersionStrategy);
     }
 
     @Override
@@ -122,6 +164,7 @@ public class UpdateVersionAliasRequestBody {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    additionalVersionWeights: ").append(toIndentedString(additionalVersionWeights)).append("\n");
+        sb.append("    additionalVersionStrategy: ").append(toIndentedString(additionalVersionStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

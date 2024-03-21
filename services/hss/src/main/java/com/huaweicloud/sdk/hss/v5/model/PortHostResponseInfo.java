@@ -161,7 +161,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 程序文件路径
+     * 进程可执行文件路径
      * @return path
      */
     public String getPath() {
@@ -233,7 +233,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 类型
+     * 端口类型：目前包括TCP，UDP两种
      * @return type
      */
     public String getType() {
@@ -267,7 +267,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * agent id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {

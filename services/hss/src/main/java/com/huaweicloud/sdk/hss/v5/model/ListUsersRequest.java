@@ -76,7 +76,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -110,7 +110,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 服务器名称
+     * 主机名称
      * @return hostName
      */
     public String getHostName() {
@@ -144,7 +144,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 是否允许登陆
+     * 是否允许登录
      * @return loginPermission
      */
     public Boolean getLoginPermission() {
@@ -178,7 +178,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 用户组
+     * 主机用户组
      * @return userGroup
      */
     public String getUserGroup() {
@@ -212,7 +212,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 默认10
+     * 每页显示数量，默认10
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -231,7 +231,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 默认是0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * minimum: 0
      * maximum: 2000000
      * @return offset

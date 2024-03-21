@@ -23,6 +23,7 @@ import com.huaweicloud.sdk.ocr.v1.model.GeneralTextRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.HandwritingRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.HealthCodeRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.HkIdCardRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.HouseholdRegisterRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.IdCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.IdDocumentRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.InsurancePolicyRequestBody;
@@ -75,6 +76,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeHealthCodeRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHealthCodeResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHkIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeHkIdCardResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeHouseholdRegisterRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeHouseholdRegisterResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeIdDocumentRequest;
@@ -655,6 +658,39 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HkIdCardRequestBody.class),
             f -> f.withMarshaller(RecognizeHkIdCardRequest::getBody, RecognizeHkIdCardRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeHouseholdRegisterRequest, RecognizeHouseholdRegisterResponse> recognizeHouseholdRegister =
+        genForRecognizeHouseholdRegister();
+
+    private static HttpRequestDef<RecognizeHouseholdRegisterRequest, RecognizeHouseholdRegisterResponse> genForRecognizeHouseholdRegister() {
+        // basic
+        HttpRequestDef.Builder<RecognizeHouseholdRegisterRequest, RecognizeHouseholdRegisterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeHouseholdRegisterRequest.class,
+                    RecognizeHouseholdRegisterResponse.class)
+                .withName("RecognizeHouseholdRegister")
+                .withUri("/v2/{project_id}/ocr/household-register")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeHouseholdRegisterRequest::getEnterpriseProjectId,
+                RecognizeHouseholdRegisterRequest::setEnterpriseProjectId));
+        builder.<HouseholdRegisterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HouseholdRegisterRequestBody.class),
+            f -> f.withMarshaller(RecognizeHouseholdRegisterRequest::getBody,
+                RecognizeHouseholdRegisterRequest::setBody));
 
         // response
 

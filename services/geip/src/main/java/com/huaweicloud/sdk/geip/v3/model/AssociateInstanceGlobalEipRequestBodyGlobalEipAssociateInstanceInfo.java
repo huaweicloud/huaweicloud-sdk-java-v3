@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AssociateInstanceGlobalEipRequestBodyGlobalEipAssociateInstanceInfo
+ * 绑定实例的信息
  */
 public class AssociateInstanceGlobalEipRequestBodyGlobalEipAssociateInstanceInfo {
 
@@ -97,7 +97,7 @@ public class AssociateInstanceGlobalEipRequestBodyGlobalEipAssociateInstanceInfo
     }
 
     /**
-     * Get projectId
+     * 项目ID，获取项目ID请参见[获取项目ID](https://support.huaweicloud.com/api-vpc/vpc_api_0011.html)
      * @return projectId
      */
     public String getProjectId() {

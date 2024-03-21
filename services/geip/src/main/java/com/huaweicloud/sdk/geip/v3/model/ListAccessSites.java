@@ -57,7 +57,7 @@ public class ListAccessSites {
     }
 
     /**
-     * ID
+     * 接入点的ID
      * @return id
      */
     public String getId() {
@@ -74,7 +74,7 @@ public class ListAccessSites {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：接入点名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {

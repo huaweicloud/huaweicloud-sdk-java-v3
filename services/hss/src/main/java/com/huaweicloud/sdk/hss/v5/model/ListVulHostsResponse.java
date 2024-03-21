@@ -30,7 +30,7 @@ public class ListVulHostsResponse extends SdkResponse {
     }
 
     /**
-     * 受影响的云服务器台数
+     * 受影响的云服务器总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListVulHostsResponse extends SdkResponse {
     }
 
     /**
-     * 受影响的云服务器台数信息
+     * 受影响的云服务器列表
      * @return dataList
      */
     public List<VulHostInfo> getDataList() {

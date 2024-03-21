@@ -36,7 +36,7 @@ public class ShowResourceQuotasRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

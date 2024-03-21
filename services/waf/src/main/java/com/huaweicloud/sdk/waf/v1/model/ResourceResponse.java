@@ -85,7 +85,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 云服务产品的资源类型   - hws.resource.type.waf.payperuserequest : Web应用防火墙按需请求   - hws.resource.type.waf.payperusedomain：Web应用防火墙按需域名   - hws.resource.type.waf.payperuserule: Web应用防火墙按需规则
+     * 云服务产品的资源类型   - hws.resource.type.waf：云模式包周期WAF   - hws.resource.type.waf.domain：云模式包周期WAF域名扩展包   - hws.resource.type.waf.domain：云模式包周期WAF带宽扩展包   - hws.resource.type.waf.domain：云模式包周期WAF规则扩展包   - hws.resource.type.waf.instance：独享实例WAF   - hws.resource.type.waf.payperuserequest : Web应用防火墙按需请求   - hws.resource.type.waf.payperusedomain：Web应用防火墙按需域名   - hws.resource.type.waf.payperuserule: Web应用防火墙按需规则
      * @return resourceType
      */
     public String getResourceType() {

@@ -49,7 +49,7 @@ public class SetRaspSwitchRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 更新时间，毫秒
+ * 事件白名单更新时间，毫秒
  */
 public class UpdateTime {
 

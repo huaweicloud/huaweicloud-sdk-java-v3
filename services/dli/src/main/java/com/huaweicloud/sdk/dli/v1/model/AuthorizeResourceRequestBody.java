@@ -24,9 +24,9 @@ public class AuthorizeResourceRequestBody {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projectId")
+    @JsonProperty(value = "grant_project_id")
 
-    private String projectId;
+    private String grantProjectId;
 
     /**
      * 指定赋权或回收。值为：grant，revoke或update。  说明：当用户同时拥有grant和revoke权限的时候才有权限使用update操作。
@@ -131,21 +131,21 @@ public class AuthorizeResourceRequestBody {
         this.userName = userName;
     }
 
-    public AuthorizeResourceRequestBody withProjectId(String projectId) {
-        this.projectId = projectId;
+    public AuthorizeResourceRequestBody withGrantProjectId(String grantProjectId) {
+        this.grantProjectId = grantProjectId;
         return this;
     }
 
     /**
      * 被赋权的项目ID，数据赋权给其他项目后，该项目的管理员将 有权访问指定的DLI资源权限，被收回或者更新访问权限。
-     * @return projectId
+     * @return grantProjectId
      */
-    public String getProjectId() {
-        return projectId;
+    public String getGrantProjectId() {
+        return grantProjectId;
     }
 
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
+    public void setGrantProjectId(String grantProjectId) {
+        this.grantProjectId = grantProjectId;
     }
 
     public AuthorizeResourceRequestBody withAction(ActionEnum action) {
@@ -207,13 +207,13 @@ public class AuthorizeResourceRequestBody {
             return false;
         }
         AuthorizeResourceRequestBody that = (AuthorizeResourceRequestBody) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.projectId, that.projectId)
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.grantProjectId, that.grantProjectId)
             && Objects.equals(this.action, that.action) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, projectId, action, privileges);
+        return Objects.hash(userName, grantProjectId, action, privileges);
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AuthorizeResourceRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class AuthorizeResourceRequestBody {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    grantProjectId: ").append(toIndentedString(grantProjectId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    privileges: ").append(toIndentedString(privileges)).append("\n");
         sb.append("}");

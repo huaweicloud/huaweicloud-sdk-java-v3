@@ -1,9 +1,14 @@
 package com.huaweicloud.sdk.geip.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -16,10 +21,80 @@ public class ListSupportMasks {
 
     private String id;
 
+    /**
+     * - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
+     */
+    public static final class IpVersionEnum {
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
+
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
+        public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
+
+        private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpVersionEnum> createStaticFields() {
+            Map<Integer, IpVersionEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(6, NUMBER_6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IpVersionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    private Integer ipVersion;
+    private IpVersionEnum ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mask")
@@ -42,7 +117,7 @@ public class ListSupportMasks {
     }
 
     /**
-     * ID
+     * 全域弹性公网IP段支持的掩码的ID
      * @return id
      */
     public String getId() {
@@ -53,20 +128,20 @@ public class ListSupportMasks {
         this.id = id;
     }
 
-    public ListSupportMasks withIpVersion(Integer ipVersion) {
+    public ListSupportMasks withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
     /**
-     * IPv4或IPv6
+     * - 功能说明：全域弹性公网IP的版本 - 取值范围：4、6
      * @return ipVersion
      */
-    public Integer getIpVersion() {
+    public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
 
-    public void setIpVersion(Integer ipVersion) {
+    public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
 

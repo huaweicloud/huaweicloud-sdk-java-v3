@@ -66,6 +66,21 @@ public class EventProcessResponseInfo {
     private Integer processEuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ancestor_process_path")
+
+    private String ancestorProcessPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ancestor_process_pid")
+
+    private Integer ancestorProcessPid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ancestor_process_cmdline")
+
+    private String ancestorProcessCmdline;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_process_name")
 
     private String parentProcessName;
@@ -387,6 +402,59 @@ public class EventProcessResponseInfo {
 
     public void setProcessEuid(Integer processEuid) {
         this.processEuid = processEuid;
+    }
+
+    public EventProcessResponseInfo withAncestorProcessPath(String ancestorProcessPath) {
+        this.ancestorProcessPath = ancestorProcessPath;
+        return this;
+    }
+
+    /**
+     * 祖父进程文件路径
+     * @return ancestorProcessPath
+     */
+    public String getAncestorProcessPath() {
+        return ancestorProcessPath;
+    }
+
+    public void setAncestorProcessPath(String ancestorProcessPath) {
+        this.ancestorProcessPath = ancestorProcessPath;
+    }
+
+    public EventProcessResponseInfo withAncestorProcessPid(Integer ancestorProcessPid) {
+        this.ancestorProcessPid = ancestorProcessPid;
+        return this;
+    }
+
+    /**
+     * 祖父进程id
+     * minimum: 0
+     * maximum: 2147483647
+     * @return ancestorProcessPid
+     */
+    public Integer getAncestorProcessPid() {
+        return ancestorProcessPid;
+    }
+
+    public void setAncestorProcessPid(Integer ancestorProcessPid) {
+        this.ancestorProcessPid = ancestorProcessPid;
+    }
+
+    public EventProcessResponseInfo withAncestorProcessCmdline(String ancestorProcessCmdline) {
+        this.ancestorProcessCmdline = ancestorProcessCmdline;
+        return this;
+    }
+
+    /**
+     * 祖父进程文件命令行
+     * @return ancestorProcessCmdline
+     */
+    public String getAncestorProcessCmdline() {
+        return ancestorProcessCmdline;
+    }
+
+    public void setAncestorProcessCmdline(String ancestorProcessCmdline) {
+        this.ancestorProcessCmdline = ancestorProcessCmdline;
     }
 
     public EventProcessResponseInfo withParentProcessName(String parentProcessName) {
@@ -855,6 +923,9 @@ public class EventProcessResponseInfo {
             && Objects.equals(this.processStartTime, that.processStartTime)
             && Objects.equals(this.processGid, that.processGid) && Objects.equals(this.processEgid, that.processEgid)
             && Objects.equals(this.processEuid, that.processEuid)
+            && Objects.equals(this.ancestorProcessPath, that.ancestorProcessPath)
+            && Objects.equals(this.ancestorProcessPid, that.ancestorProcessPid)
+            && Objects.equals(this.ancestorProcessCmdline, that.ancestorProcessCmdline)
             && Objects.equals(this.parentProcessName, that.parentProcessName)
             && Objects.equals(this.parentProcessPath, that.parentProcessPath)
             && Objects.equals(this.parentProcessPid, that.parentProcessPid)
@@ -893,6 +964,9 @@ public class EventProcessResponseInfo {
             processGid,
             processEgid,
             processEuid,
+            ancestorProcessPath,
+            ancestorProcessPid,
+            ancestorProcessCmdline,
             parentProcessName,
             parentProcessPath,
             parentProcessPid,
@@ -935,6 +1009,9 @@ public class EventProcessResponseInfo {
         sb.append("    processGid: ").append(toIndentedString(processGid)).append("\n");
         sb.append("    processEgid: ").append(toIndentedString(processEgid)).append("\n");
         sb.append("    processEuid: ").append(toIndentedString(processEuid)).append("\n");
+        sb.append("    ancestorProcessPath: ").append(toIndentedString(ancestorProcessPath)).append("\n");
+        sb.append("    ancestorProcessPid: ").append(toIndentedString(ancestorProcessPid)).append("\n");
+        sb.append("    ancestorProcessCmdline: ").append(toIndentedString(ancestorProcessCmdline)).append("\n");
         sb.append("    parentProcessName: ").append(toIndentedString(parentProcessName)).append("\n");
         sb.append("    parentProcessPath: ").append(toIndentedString(parentProcessPath)).append("\n");
         sb.append("    parentProcessPid: ").append(toIndentedString(parentProcessPid)).append("\n");

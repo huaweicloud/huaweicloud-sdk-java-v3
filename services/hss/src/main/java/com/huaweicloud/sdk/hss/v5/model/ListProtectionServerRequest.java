@@ -61,7 +61,7 @@ public class ListProtectionServerRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

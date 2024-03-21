@@ -26,9 +26,9 @@ public class ListPromInstanceRequest {
     public static final class PromTypeEnum {
 
         /**
-         * Enum DEFAULT for value: "DEFAULT"
+         * Enum DEFAULT for value: "default"
          */
-        public static final PromTypeEnum DEFAULT = new PromTypeEnum("DEFAULT");
+        public static final PromTypeEnum DEFAULT = new PromTypeEnum("default");
 
         /**
          * Enum ECS for value: "ECS"
@@ -69,7 +69,7 @@ public class ListPromInstanceRequest {
 
         private static Map<String, PromTypeEnum> createStaticFields() {
             Map<String, PromTypeEnum> map = new HashMap<>();
-            map.put("DEFAULT", DEFAULT);
+            map.put("default", DEFAULT);
             map.put("ECS", ECS);
             map.put("VPC", VPC);
             map.put("CCE", CCE);
@@ -287,6 +287,11 @@ public class ListPromInstanceRequest {
 
     private PromStatusEnum promStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Enterprise-Project-Id")
+
+    private String enterpriseProjectId;
+
     public ListPromInstanceRequest withPromId(String promId) {
         this.promId = promId;
         return this;
@@ -355,6 +360,23 @@ public class ListPromInstanceRequest {
         this.promStatus = promStatus;
     }
 
+    public ListPromInstanceRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。 - 查询所有企业项目下实例，填写“all_granted_eps”。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -366,12 +388,13 @@ public class ListPromInstanceRequest {
         ListPromInstanceRequest that = (ListPromInstanceRequest) obj;
         return Objects.equals(this.promId, that.promId) && Objects.equals(this.promType, that.promType)
             && Objects.equals(this.cceClusterEnable, that.cceClusterEnable)
-            && Objects.equals(this.promStatus, that.promStatus);
+            && Objects.equals(this.promStatus, that.promStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(promId, promType, cceClusterEnable, promStatus);
+        return Objects.hash(promId, promType, cceClusterEnable, promStatus, enterpriseProjectId);
     }
 
     @Override
@@ -382,6 +405,7 @@ public class ListPromInstanceRequest {
         sb.append("    promType: ").append(toIndentedString(promType)).append("\n");
         sb.append("    cceClusterEnable: ").append(toIndentedString(cceClusterEnable)).append("\n");
         sb.append("    promStatus: ").append(toIndentedString(promStatus)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

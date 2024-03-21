@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
@@ -31,6 +33,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
@@ -53,6 +57,8 @@ import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineResponse;
+import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
@@ -65,6 +71,18 @@ import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEndPointsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEndPointsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoGeneralRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoGeneralResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoInputRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoInputResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsResponse;
 import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
@@ -1729,6 +1747,275 @@ public class LiveAsyncClient {
     public AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublicAsyncInvoker(
         UpdateObsBucketAuthorityPublicRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.updateObsBucketAuthorityPublic, hcClient);
+    }
+
+    /**
+     * 新建OTT频道
+     *
+     * 创建频道接口，支持创建OTT频道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOttChannelInfoRequest 请求对象
+     * @return CompletableFuture<CreateOttChannelInfoResponse>
+     */
+    public CompletableFuture<CreateOttChannelInfoResponse> createOttChannelInfoAsync(
+        CreateOttChannelInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createOttChannelInfo);
+    }
+
+    /**
+     * 新建OTT频道
+     *
+     * 创建频道接口，支持创建OTT频道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOttChannelInfoRequest 请求对象
+     * @return AsyncInvoker<CreateOttChannelInfoRequest, CreateOttChannelInfoResponse>
+     */
+    public AsyncInvoker<CreateOttChannelInfoRequest, CreateOttChannelInfoResponse> createOttChannelInfoAsyncInvoker(
+        CreateOttChannelInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.createOttChannelInfo, hcClient);
+    }
+
+    /**
+     * 删除频道信息
+     *
+     * 删除频道信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOttChannelInfoRequest 请求对象
+     * @return CompletableFuture<DeleteOttChannelInfoResponse>
+     */
+    public CompletableFuture<DeleteOttChannelInfoResponse> deleteOttChannelInfoAsync(
+        DeleteOttChannelInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteOttChannelInfo);
+    }
+
+    /**
+     * 删除频道信息
+     *
+     * 删除频道信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOttChannelInfoRequest 请求对象
+     * @return AsyncInvoker<DeleteOttChannelInfoRequest, DeleteOttChannelInfoResponse>
+     */
+    public AsyncInvoker<DeleteOttChannelInfoRequest, DeleteOttChannelInfoResponse> deleteOttChannelInfoAsyncInvoker(
+        DeleteOttChannelInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.deleteOttChannelInfo, hcClient);
+    }
+
+    /**
+     * 查询频道信息
+     *
+     * 查询频道信息，支持批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOttChannelInfoRequest 请求对象
+     * @return CompletableFuture<ListOttChannelInfoResponse>
+     */
+    public CompletableFuture<ListOttChannelInfoResponse> listOttChannelInfoAsync(ListOttChannelInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listOttChannelInfo);
+    }
+
+    /**
+     * 查询频道信息
+     *
+     * 查询频道信息，支持批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOttChannelInfoRequest 请求对象
+     * @return AsyncInvoker<ListOttChannelInfoRequest, ListOttChannelInfoResponse>
+     */
+    public AsyncInvoker<ListOttChannelInfoRequest, ListOttChannelInfoResponse> listOttChannelInfoAsyncInvoker(
+        ListOttChannelInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listOttChannelInfo, hcClient);
+    }
+
+    /**
+     * 修改频道转码模板信息
+     *
+     * 修改频道转码模板信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoEncoderSettingsRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoEncoderSettingsResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoEncoderSettingsResponse> modifyOttChannelInfoEncoderSettingsAsync(
+        ModifyOttChannelInfoEncoderSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoEncoderSettings);
+    }
+
+    /**
+     * 修改频道转码模板信息
+     *
+     * 修改频道转码模板信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoEncoderSettingsRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoEncoderSettingsRequest, ModifyOttChannelInfoEncoderSettingsResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoEncoderSettingsRequest, ModifyOttChannelInfoEncoderSettingsResponse> modifyOttChannelInfoEncoderSettingsAsyncInvoker(
+        ModifyOttChannelInfoEncoderSettingsRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoEncoderSettings, hcClient);
+    }
+
+    /**
+     * 修改频道打包信息
+     *
+     * 修改频道打包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoEndPointsRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoEndPointsResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoEndPointsResponse> modifyOttChannelInfoEndPointsAsync(
+        ModifyOttChannelInfoEndPointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoEndPoints);
+    }
+
+    /**
+     * 修改频道打包信息
+     *
+     * 修改频道打包信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoEndPointsRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoEndPointsRequest, ModifyOttChannelInfoEndPointsResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoEndPointsRequest, ModifyOttChannelInfoEndPointsResponse> modifyOttChannelInfoEndPointsAsyncInvoker(
+        ModifyOttChannelInfoEndPointsRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoEndPoints, hcClient);
+    }
+
+    /**
+     * 修改频道通用信息
+     *
+     * 修改频道通用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoGeneralRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoGeneralResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoGeneralResponse> modifyOttChannelInfoGeneralAsync(
+        ModifyOttChannelInfoGeneralRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoGeneral);
+    }
+
+    /**
+     * 修改频道通用信息
+     *
+     * 修改频道通用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoGeneralRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoGeneralRequest, ModifyOttChannelInfoGeneralResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoGeneralRequest, ModifyOttChannelInfoGeneralResponse> modifyOttChannelInfoGeneralAsyncInvoker(
+        ModifyOttChannelInfoGeneralRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoGeneral, hcClient);
+    }
+
+    /**
+     * 修改频道入流信息
+     *
+     * 修改频道入流信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoInputRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoInputResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoInputResponse> modifyOttChannelInfoInputAsync(
+        ModifyOttChannelInfoInputRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoInput);
+    }
+
+    /**
+     * 修改频道入流信息
+     *
+     * 修改频道入流信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoInputRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoInputRequest, ModifyOttChannelInfoInputResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoInputRequest, ModifyOttChannelInfoInputResponse> modifyOttChannelInfoInputAsyncInvoker(
+        ModifyOttChannelInfoInputRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoInput, hcClient);
+    }
+
+    /**
+     * 修改频道录制信息
+     *
+     * 修改频道录制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoRecordSettingsRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoRecordSettingsResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoRecordSettingsResponse> modifyOttChannelInfoRecordSettingsAsync(
+        ModifyOttChannelInfoRecordSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoRecordSettings);
+    }
+
+    /**
+     * 修改频道录制信息
+     *
+     * 修改频道录制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoRecordSettingsRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoRecordSettingsRequest, ModifyOttChannelInfoRecordSettingsResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoRecordSettingsRequest, ModifyOttChannelInfoRecordSettingsResponse> modifyOttChannelInfoRecordSettingsAsyncInvoker(
+        ModifyOttChannelInfoRecordSettingsRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoRecordSettings, hcClient);
+    }
+
+    /**
+     * 修改频道状态
+     *
+     * 修改频道状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoStatsRequest 请求对象
+     * @return CompletableFuture<ModifyOttChannelInfoStatsResponse>
+     */
+    public CompletableFuture<ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStatsAsync(
+        ModifyOttChannelInfoStatsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyOttChannelInfoStats);
+    }
+
+    /**
+     * 修改频道状态
+     *
+     * 修改频道状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyOttChannelInfoStatsRequest 请求对象
+     * @return AsyncInvoker<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse>
+     */
+    public AsyncInvoker<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStatsAsyncInvoker(
+        ModifyOttChannelInfoStatsRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyOttChannelInfoStats, hcClient);
     }
 
 }

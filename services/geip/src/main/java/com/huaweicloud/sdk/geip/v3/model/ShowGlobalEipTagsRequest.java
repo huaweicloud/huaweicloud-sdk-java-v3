@@ -21,7 +21,7 @@ public class ShowGlobalEipTagsRequest {
     }
 
     /**
-     * 全域弹性公网IP的id
+     * Get resourceId
      * @return resourceId
      */
     public String getResourceId() {

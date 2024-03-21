@@ -15,6 +15,11 @@ public class DeletePromInstanceRequest {
 
     private String promId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Enterprise-Project-Id")
+
+    private String enterpriseProjectId;
+
     public DeletePromInstanceRequest withPromId(String promId) {
         this.promId = promId;
         return this;
@@ -32,6 +37,23 @@ public class DeletePromInstanceRequest {
         this.promId = promId;
     }
 
+    public DeletePromInstanceRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。 - 查询所有企业项目下实例，填写“all_granted_eps”。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class DeletePromInstanceRequest {
             return false;
         }
         DeletePromInstanceRequest that = (DeletePromInstanceRequest) obj;
-        return Objects.equals(this.promId, that.promId);
+        return Objects.equals(this.promId, that.promId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(promId);
+        return Objects.hash(promId, enterpriseProjectId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class DeletePromInstanceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeletePromInstanceRequest {\n");
         sb.append("    promId: ").append(toIndentedString(promId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

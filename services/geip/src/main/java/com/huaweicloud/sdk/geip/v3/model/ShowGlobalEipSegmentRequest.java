@@ -218,7 +218,7 @@ public class ShowGlobalEipSegmentRequest {
     }
 
     /**
-     * global_eip_segment_id
+     * Get globalEipSegmentId
      * @return globalEipSegmentId
      */
     public String getGlobalEipSegmentId() {
@@ -251,7 +251,7 @@ public class ShowGlobalEipSegmentRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {

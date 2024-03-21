@@ -21,7 +21,7 @@ public class DeleteInternetBandwidthRequest {
     }
 
     /**
-     * 全域公网带宽的ID
+     * Get internetBandwidthId
      * @return internetBandwidthId
      */
     public String getInternetBandwidthId() {

@@ -159,7 +159,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 防护文件类型
+     * 防护文件类型，例如：docx，txt，avi
      * @return protectionType
      */
     public String getProtectionType() {
@@ -209,7 +209,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 关联server
+     * 开启了此勒索防护策略的agent的id列表
      * @return agentIdList
      */
     public List<String> getAgentIdList() {
@@ -226,7 +226,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
+     * 支持该策略的操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
      * @return operatingSystem
      */
     public String getOperatingSystem() {

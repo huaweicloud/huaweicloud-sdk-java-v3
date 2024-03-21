@@ -1135,7 +1135,7 @@ public class ListFunctionVersionResult {
     }
 
     /**
-     * 是否支持有状态，如果需要支持，需要固定传参为true，v2版本支持
+     * 是否支持有状态，v2版本支持
      * @return isStatefulFunction
      */
     public Boolean getIsStatefulFunction() {

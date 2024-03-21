@@ -55,7 +55,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * 类型
+     * 端口类型
      * @return type
      */
     public String getType() {

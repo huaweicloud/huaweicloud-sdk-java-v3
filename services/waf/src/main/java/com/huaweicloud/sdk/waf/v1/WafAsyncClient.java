@@ -609,7 +609,7 @@ public class WafAsyncClient {
     /**
      * 创建WAF独享引擎实例
      *
-     * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
+     * 创建WAF独享引擎实例。独享模式支持的局点包括：华东-青岛、中东-利雅得、华北-北京一、华北-北京四、华北-乌兰察布一、华东-上海一、华东-上海二、华南-广州、华南-深圳、中国-香港、西南-贵阳一、亚太-曼谷、 亚太-新加坡、非洲约翰内斯堡、土耳其-伊斯坦布尔；普通租户类独享支持的局点：华北-北京四、华东-上海一、华南-广州、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -623,7 +623,7 @@ public class WafAsyncClient {
     /**
      * 创建WAF独享引擎实例
      *
-     * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
+     * 创建WAF独享引擎实例。独享模式支持的局点包括：华东-青岛、中东-利雅得、华北-北京一、华北-北京四、华北-乌兰察布一、华东-上海一、华东-上海二、华南-广州、华南-深圳、中国-香港、西南-贵阳一、亚太-曼谷、 亚太-新加坡、非洲约翰内斯堡、土耳其-伊斯坦布尔；普通租户类独享支持的局点：华北-北京四、华东-上海一、华南-广州、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -725,7 +725,7 @@ public class WafAsyncClient {
     /**
      * 购买包周期云模式waf
      *
-     * 购买包周期云模式waf。入门版waf不支持购买扩展包
+     * 购买包周期云模式waf。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -740,7 +740,7 @@ public class WafAsyncClient {
     /**
      * 购买包周期云模式waf
      *
-     * 购买包周期云模式waf。入门版waf不支持购买扩展包
+     * 购买包周期云模式waf。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1489,7 +1489,7 @@ public class WafAsyncClient {
     /**
      * 查询安全统计带宽数据
      *
-     * 查询安全统计带宽数据，统计的带宽数据为平均值，单位为bit/s。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全统计带宽数据，统计的带宽数据为平均值，单位为bit/s。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1504,7 +1504,7 @@ public class WafAsyncClient {
     /**
      * 查询安全统计带宽数据
      *
-     * 查询安全统计带宽数据，统计的带宽数据为平均值，单位为bit/s。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全统计带宽数据，统计的带宽数据为平均值，单位为bit/s。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1863,7 +1863,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览分类统计top信息
      *
-     * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1878,7 +1878,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览分类统计top信息
      *
-     * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2008,7 +2008,7 @@ public class WafAsyncClient {
     /**
      * 查询安全统计qps次数
      *
-     * 查询安全统计qps次数。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全统计qps次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2022,7 +2022,7 @@ public class WafAsyncClient {
     /**
      * 查询安全统计qps次数
      *
-     * 查询安全统计qps次数。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全统计qps次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2037,7 +2037,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览中请求次数时间线统计数据
      *
-     * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览中请求次数时间线统计数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2051,7 +2051,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览中请求次数时间线统计数据
      *
-     * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览中请求次数时间线统计数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2066,7 +2066,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览请求与攻击数量
      *
-     * 查询安全总览请求与攻击数量。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览请求与攻击数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2080,7 +2080,7 @@ public class WafAsyncClient {
     /**
      * 查询安全总览请求与攻击数量
      *
-     * 查询安全总览请求与攻击数量。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询安全总览请求与攻击数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2095,7 +2095,7 @@ public class WafAsyncClient {
     /**
      * 查询业务异常数量
      *
-     * 查询业务异常TOP统计信息。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询业务异常TOP统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2109,7 +2109,7 @@ public class WafAsyncClient {
     /**
      * 查询业务异常数量
      *
-     * 查询业务异常TOP统计信息。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
+     * 查询业务异常TOP统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

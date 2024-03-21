@@ -39,6 +39,11 @@ public class VulHostInfo {
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_num")
 
     private Integer cveNum;
@@ -118,13 +123,23 @@ public class VulHostInfo {
 
     private Boolean supportRestore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disabled_operate_types")
+
+    private List<VulHostInfoDisabledOperateTypes> disabledOperateTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority")
+
+    private String repairPriority;
+
     public VulHostInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * 主机id
+     * 受漏洞影响的服务器id
      * @return hostId
      */
     public String getHostId() {
@@ -158,7 +173,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 受影响资产名称
+     * 受影响主机名称
      * @return hostName
      */
     public String getHostName() {
@@ -175,7 +190,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 受影响资产ip
+     * 受影响主机ip
      * @return hostIp
      */
     public String getHostIp() {
@@ -192,7 +207,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 主机对应的agent id
+     * 主机对应的Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -203,13 +218,30 @@ public class VulHostInfo {
         this.agentId = agentId;
     }
 
+    public VulHostInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 主机绑定的配额版本
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public VulHostInfo withCveNum(Integer cveNum) {
         this.cveNum = cveNum;
         return this;
     }
 
     /**
-     * 漏洞cve数
+     * 漏洞cve总数
      * minimum: 0
      * maximum: 10000
      * @return cveNum
@@ -244,7 +276,7 @@ public class VulHostInfo {
     }
 
     /**
-     * cve列表
+     * 漏洞对应的cve id列表
      * @return cveIdList
      */
     public List<String> getCveIdList() {
@@ -278,7 +310,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 修复命令行
+     * 修复漏洞需要执行的命令行（只有Linux漏洞有该字段）
      * @return repairCmd
      */
     public String getRepairCmd() {
@@ -467,7 +499,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 扫描时间
+     * 扫描时间，时间戳单位：毫秒
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime
@@ -497,6 +529,57 @@ public class VulHostInfo {
         this.supportRestore = supportRestore;
     }
 
+    public VulHostInfo withDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+        this.disabledOperateTypes = disabledOperateTypes;
+        return this;
+    }
+
+    public VulHostInfo addDisabledOperateTypesItem(VulHostInfoDisabledOperateTypes disabledOperateTypesItem) {
+        if (this.disabledOperateTypes == null) {
+            this.disabledOperateTypes = new ArrayList<>();
+        }
+        this.disabledOperateTypes.add(disabledOperateTypesItem);
+        return this;
+    }
+
+    public VulHostInfo withDisabledOperateTypes(
+        Consumer<List<VulHostInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
+        if (this.disabledOperateTypes == null) {
+            this.disabledOperateTypes = new ArrayList<>();
+        }
+        disabledOperateTypesSetter.accept(this.disabledOperateTypes);
+        return this;
+    }
+
+    /**
+     * 漏洞在当前主机上不可进行的操作类型列表
+     * @return disabledOperateTypes
+     */
+    public List<VulHostInfoDisabledOperateTypes> getDisabledOperateTypes() {
+        return disabledOperateTypes;
+    }
+
+    public void setDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+        this.disabledOperateTypes = disabledOperateTypes;
+    }
+
+    public VulHostInfo withRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+        return this;
+    }
+
+    /**
+     * 修复优先级,包含如下  - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * @return repairPriority
+     */
+    public String getRepairPriority() {
+        return repairPriority;
+    }
+
+    public void setRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -508,16 +591,18 @@ public class VulHostInfo {
         VulHostInfo that = (VulHostInfo) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.severityLevel, that.severityLevel)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
-            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.cveNum, that.cveNum)
-            && Objects.equals(this.cveIdList, that.cveIdList) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.repairCmd, that.repairCmd) && Objects.equals(this.appPath, that.appPath)
-            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.publicIp, that.publicIp)
-            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osType, that.osType)
-            && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.cveNum, that.cveNum) && Objects.equals(this.cveIdList, that.cveIdList)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.repairCmd, that.repairCmd)
+            && Objects.equals(this.appPath, that.appPath) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
             && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.scanTime, that.scanTime)
-            && Objects.equals(this.supportRestore, that.supportRestore);
+            && Objects.equals(this.supportRestore, that.supportRestore)
+            && Objects.equals(this.disabledOperateTypes, that.disabledOperateTypes)
+            && Objects.equals(this.repairPriority, that.repairPriority);
     }
 
     @Override
@@ -527,6 +612,7 @@ public class VulHostInfo {
             hostName,
             hostIp,
             agentId,
+            version,
             cveNum,
             cveIdList,
             status,
@@ -542,7 +628,9 @@ public class VulHostInfo {
             isAffectBusiness,
             firstScanTime,
             scanTime,
-            supportRestore);
+            supportRestore,
+            disabledOperateTypes,
+            repairPriority);
     }
 
     @Override
@@ -554,6 +642,7 @@ public class VulHostInfo {
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    cveNum: ").append(toIndentedString(cveNum)).append("\n");
         sb.append("    cveIdList: ").append(toIndentedString(cveIdList)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -570,6 +659,8 @@ public class VulHostInfo {
         sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");
         sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
+        sb.append("    disabledOperateTypes: ").append(toIndentedString(disabledOperateTypes)).append("\n");
+        sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

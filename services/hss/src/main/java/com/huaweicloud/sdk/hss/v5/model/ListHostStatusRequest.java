@@ -394,7 +394,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

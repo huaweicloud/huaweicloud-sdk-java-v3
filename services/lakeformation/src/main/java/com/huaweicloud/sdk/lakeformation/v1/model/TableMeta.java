@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 表描述信息
@@ -122,6 +125,16 @@ public class TableMeta {
 
     private String comments;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "columns")
+
+    private List<Column> columns = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "partition_keys")
+
+    private List<Column> partitionKeys = null;
+
     public TableMeta withCatalogName(String catalogName) {
         this.catalogName = catalogName;
         return this;
@@ -207,6 +220,72 @@ public class TableMeta {
         this.comments = comments;
     }
 
+    public TableMeta withColumns(List<Column> columns) {
+        this.columns = columns;
+        return this;
+    }
+
+    public TableMeta addColumnsItem(Column columnsItem) {
+        if (this.columns == null) {
+            this.columns = new ArrayList<>();
+        }
+        this.columns.add(columnsItem);
+        return this;
+    }
+
+    public TableMeta withColumns(Consumer<List<Column>> columnsSetter) {
+        if (this.columns == null) {
+            this.columns = new ArrayList<>();
+        }
+        columnsSetter.accept(this.columns);
+        return this;
+    }
+
+    /**
+     * 分区列以外的所有字段。
+     * @return columns
+     */
+    public List<Column> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<Column> columns) {
+        this.columns = columns;
+    }
+
+    public TableMeta withPartitionKeys(List<Column> partitionKeys) {
+        this.partitionKeys = partitionKeys;
+        return this;
+    }
+
+    public TableMeta addPartitionKeysItem(Column partitionKeysItem) {
+        if (this.partitionKeys == null) {
+            this.partitionKeys = new ArrayList<>();
+        }
+        this.partitionKeys.add(partitionKeysItem);
+        return this;
+    }
+
+    public TableMeta withPartitionKeys(Consumer<List<Column>> partitionKeysSetter) {
+        if (this.partitionKeys == null) {
+            this.partitionKeys = new ArrayList<>();
+        }
+        partitionKeysSetter.accept(this.partitionKeys);
+        return this;
+    }
+
+    /**
+     * 分区列的信息。
+     * @return partitionKeys
+     */
+    public List<Column> getPartitionKeys() {
+        return partitionKeys;
+    }
+
+    public void setPartitionKeys(List<Column> partitionKeys) {
+        this.partitionKeys = partitionKeys;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -218,12 +297,13 @@ public class TableMeta {
         TableMeta that = (TableMeta) obj;
         return Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
-            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments);
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments)
+            && Objects.equals(this.columns, that.columns) && Objects.equals(this.partitionKeys, that.partitionKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(catalogName, databaseName, tableName, tableType, comments);
+        return Objects.hash(catalogName, databaseName, tableName, tableType, comments, columns, partitionKeys);
     }
 
     @Override
@@ -235,6 +315,8 @@ public class TableMeta {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    tableType: ").append(toIndentedString(tableType)).append("\n");
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+        sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
+        sb.append("    partitionKeys: ").append(toIndentedString(partitionKeys)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,7 +31,7 @@ public class DeleteResourceInstanceTagRequest {
     }
 
     /**
-     * 资源类别，hss
+     * 由标签管理服务定义的资源类别，企业主机安全服务调用此接口时资源类别为hss
      * @return resourceType
      */
     public String getResourceType() {
@@ -48,7 +48,7 @@ public class DeleteResourceInstanceTagRequest {
     }
 
     /**
-     * 资源ID
+     * 由标签管理服务定义的资源id，企业主机安全服务调用此接口时资源id为配额ID
      * @return resourceId
      */
     public String getResourceId() {

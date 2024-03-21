@@ -690,7 +690,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -789,7 +789,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -822,7 +822,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据名称过滤
+     * Get code
      * @return code
      */
     public List<String> getCode() {
@@ -855,7 +855,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据接入点过滤
+     * Get accessSite
      * @return accessSite
      */
     public List<String> getAccessSite() {
@@ -888,7 +888,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据运营商线路过滤
+     * Get isp
      * @return isp
      */
     public List<String> getIsp() {
@@ -921,7 +921,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据IP版本过滤
+     * Get ipVersion
      * @return ipVersion
      */
     public List<IpVersionEnum> getIpVersion() {
@@ -954,7 +954,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据池子状态过滤
+     * Get status
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -987,7 +987,7 @@ public class ListGeipPoolsRequest {
     }
 
     /**
-     * 根据池子里存的内容过滤。取值：GEIP-用于分配全域弹性公网IP单地址；GEIP_SEGMENT-用于分配全域弹性公网IP段
+     * Get type
      * @return type
      */
     public List<TypeEnum> getType() {

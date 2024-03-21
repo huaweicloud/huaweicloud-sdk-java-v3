@@ -30,7 +30,7 @@ public class ListWeakPasswordUsersResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 弱口令总数
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum

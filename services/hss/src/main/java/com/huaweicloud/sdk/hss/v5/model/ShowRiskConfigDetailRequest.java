@@ -63,7 +63,7 @@ public class ShowRiskConfigDetailRequest {
     }
 
     /**
-     * 基线名称
+     * 配置检查（基线）的名称，例如SSH、CentOS 7、Windows
      * @return checkName
      */
     public String getCheckName() {
@@ -80,7 +80,7 @@ public class ShowRiskConfigDetailRequest {
     }
 
     /**
-     * 标准类型，包含如下: - cn_standard : 等保合规标准 - hw_standard : 华为标准 - qt_standard : 青腾标准
+     * 标准类型，包含如下: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准
      * @return standard
      */
     public String getStandard() {
@@ -133,7 +133,7 @@ public class ShowRiskConfigDetailRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0。
      * minimum: 0
      * maximum: 2000000
      * @return offset

@@ -48,7 +48,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 账号类型
+     * 账号类型，包含如下:   - system   - mysql   - redis
      * @return serviceType
      */
     public String getServiceType() {

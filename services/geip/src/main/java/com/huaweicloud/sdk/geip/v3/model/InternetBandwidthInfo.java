@@ -26,7 +26,7 @@ public class InternetBandwidthInfo {
     }
 
     /**
-     * ID
+     * 全域公网带宽的ID
      * @return id
      */
     public String getId() {

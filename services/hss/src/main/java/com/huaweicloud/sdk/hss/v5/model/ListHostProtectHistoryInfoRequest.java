@@ -88,7 +88,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -105,7 +105,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * Host Id
+     * Host Id，为空时查所有主机
      * @return hostId
      */
     public String getHostId() {
@@ -122,7 +122,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 起始时间
+     * 起始时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return startTime
@@ -141,7 +141,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 终止时间
+     * 终止时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return endTime

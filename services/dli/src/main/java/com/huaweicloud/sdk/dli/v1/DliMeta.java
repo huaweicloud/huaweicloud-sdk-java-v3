@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListCatalogsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListCatalogsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabasesRequest;
@@ -225,6 +227,9 @@ import com.huaweicloud.sdk.dli.v1.model.RegisterBucketRequest;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionResponse;
+import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionReq;
@@ -233,6 +238,8 @@ import com.huaweicloud.sdk.dli.v1.model.RunQueueActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.SetQueuePlanReq;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowCatalogRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowCatalogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionRequest;
@@ -1252,6 +1259,33 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> listCatalogs = genForListCatalogs();
+
+    private static HttpRequestDef<ListCatalogsRequest, ListCatalogsResponse> genForListCatalogs() {
+        // basic
+        HttpRequestDef.Builder<ListCatalogsRequest, ListCatalogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCatalogsRequest.class, ListCatalogsResponse.class)
+                .withName("ListCatalogs")
+                .withUri("/v3/{project_id}/catalogs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCatalogsRequest::getOffset, ListCatalogsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCatalogsRequest::getLimit, ListCatalogsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers =
         genForListDatabaseUsers();
 
@@ -1816,6 +1850,34 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunCatalogActionRequest, RunCatalogActionResponse> runCatalogAction =
+        genForRunCatalogAction();
+
+    private static HttpRequestDef<RunCatalogActionRequest, RunCatalogActionResponse> genForRunCatalogAction() {
+        // basic
+        HttpRequestDef.Builder<RunCatalogActionRequest, RunCatalogActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunCatalogActionRequest.class, RunCatalogActionResponse.class)
+                .withName("RunCatalogAction")
+                .withUri("/v3/{project_id}/catalogs/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RunCatalogActionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunCatalogActionRequestBody.class),
+            f -> f.withMarshaller(RunCatalogActionRequest::getBody, RunCatalogActionRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RunCatalogActionResponse::getBody, RunCatalogActionResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunQueueActionRequest, RunQueueActionResponse> runQueueAction =
         genForRunQueueAction();
 
@@ -1838,6 +1900,28 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunQueueActionReq.class),
             f -> f.withMarshaller(RunQueueActionRequest::getBody, RunQueueActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> showCatalog = genForShowCatalog();
+
+    private static HttpRequestDef<ShowCatalogRequest, ShowCatalogResponse> genForShowCatalog() {
+        // basic
+        HttpRequestDef.Builder<ShowCatalogRequest, ShowCatalogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCatalogRequest.class, ShowCatalogResponse.class)
+                .withName("ShowCatalog")
+                .withUri("/v3/{project_id}/catalogs/{catalog_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCatalogRequest::getCatalogName, ShowCatalogRequest::setCatalogName));
 
         // response
 

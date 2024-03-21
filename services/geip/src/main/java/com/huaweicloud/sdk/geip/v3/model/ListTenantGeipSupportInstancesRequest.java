@@ -134,7 +134,7 @@ public class ListTenantGeipSupportInstancesRequest {
     }
 
     /**
-     * 接入点信息
+     * Get accessSite
      * @return accessSite
      */
     public String getAccessSite() {
@@ -167,7 +167,7 @@ public class ListTenantGeipSupportInstancesRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {

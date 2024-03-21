@@ -61,7 +61,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * agent_id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -129,7 +129,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 弹性服务器名称
+     * 服务器名称
      * @return hostName
      */
     public String getHostName() {
@@ -180,7 +180,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 更新时间
+     * 软件更新时间
      * minimum: 0
      * maximum: 4824430336000
      * @return updateTime
@@ -199,7 +199,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 变更时间
+     * 最近扫描时间
      * minimum: 0
      * maximum: 4824430336000
      * @return recentScanTime

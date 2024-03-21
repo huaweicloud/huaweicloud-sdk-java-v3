@@ -41,7 +41,7 @@ public class CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags = null;
+    private List<CreateGlobalEipRequestBodyGlobalEipTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -126,7 +126,7 @@ public class CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth 
     }
 
     /**
-     * 资源名称
+     * - 功能说明：全域公网带宽名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {
@@ -138,13 +138,13 @@ public class CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth 
     }
 
     public CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth withTags(
-        List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags) {
+        List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
         return this;
     }
 
     public CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth addTagsItem(
-        AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags tagsItem) {
+        CreateGlobalEipRequestBodyGlobalEipTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -153,7 +153,7 @@ public class CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth 
     }
 
     public CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth withTags(
-        Consumer<List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags>> tagsSetter) {
+        Consumer<List<CreateGlobalEipRequestBodyGlobalEipTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -165,11 +165,11 @@ public class CreateGlobalEipSegmentRequestBodyGlobalEipSegmentInternetBandwidth 
      * 全域弹性公网IP段标签
      * @return tags
      */
-    public List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> getTags() {
+    public List<CreateGlobalEipRequestBodyGlobalEipTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<AssociateInstanceGlobalEipRequestBodyGlobalEipGcBandwidthInfoTags> tags) {
+    public void setTags(List<CreateGlobalEipRequestBodyGlobalEipTags> tags) {
         this.tags = tags;
     }
 

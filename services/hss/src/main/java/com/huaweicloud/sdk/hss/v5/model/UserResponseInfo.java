@@ -61,11 +61,6 @@ public class UserResponseInfo {
     private String shell;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expire_time")
-
-    private Long expireTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recent_scan_time")
 
     private Long recentScanTime;
@@ -86,7 +81,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * agent_id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -103,7 +98,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -171,7 +166,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 是否有登陆权限
+     * 是否有登录权限
      * @return loginPermission
      */
     public Boolean getLoginPermission() {
@@ -250,25 +245,6 @@ public class UserResponseInfo {
         this.shell = shell;
     }
 
-    public UserResponseInfo withExpireTime(Long expireTime) {
-        this.expireTime = expireTime;
-        return this;
-    }
-
-    /**
-     * 到期时间，采用时间戳，默认毫秒，
-     * minimum: 0
-     * maximum: 4070880000000
-     * @return expireTime
-     */
-    public Long getExpireTime() {
-        return expireTime;
-    }
-
-    public void setExpireTime(Long expireTime) {
-        this.expireTime = expireTime;
-    }
-
     public UserResponseInfo withRecentScanTime(Long recentScanTime) {
         this.recentScanTime = recentScanTime;
         return this;
@@ -338,7 +314,6 @@ public class UserResponseInfo {
             && Objects.equals(this.rootPermission, that.rootPermission)
             && Objects.equals(this.userGroupName, that.userGroupName)
             && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.shell, that.shell)
-            && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.recentScanTime, that.recentScanTime)
             && Objects.equals(this.containerId, that.containerId)
             && Objects.equals(this.containerName, that.containerName);
@@ -356,7 +331,6 @@ public class UserResponseInfo {
             userGroupName,
             userHomeDir,
             shell,
-            expireTime,
             recentScanTime,
             containerId,
             containerName);
@@ -376,7 +350,6 @@ public class UserResponseInfo {
         sb.append("    userGroupName: ").append(toIndentedString(userGroupName)).append("\n");
         sb.append("    userHomeDir: ").append(toIndentedString(userHomeDir)).append("\n");
         sb.append("    shell: ").append(toIndentedString(shell)).append("\n");
-        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");

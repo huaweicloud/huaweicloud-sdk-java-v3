@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateV2TagRequestBody
+ * 标签对象
  */
 public class CreateV2TagRequestBody {
 

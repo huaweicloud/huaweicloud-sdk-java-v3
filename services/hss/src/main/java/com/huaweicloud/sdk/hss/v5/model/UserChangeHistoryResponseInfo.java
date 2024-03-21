@@ -115,7 +115,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -166,7 +166,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * 是否有登陆权限
+     * 是否有登录权限
      * @return loginPermission
      */
     public Boolean getLoginPermission() {
@@ -287,7 +287,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * 变更时间
+     * 账号增加、修改、删除等操作的变更时间
      * minimum: 0
      * maximum: 4070880000000
      * @return recentScanTime

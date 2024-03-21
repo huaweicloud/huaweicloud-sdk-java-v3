@@ -84,7 +84,7 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     /**
-     * 服务器ID列表
+     * 需要部署策略组的主机ID列表
      * @return hostIdList
      */
     public List<String> getHostIdList() {

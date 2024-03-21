@@ -26,7 +26,7 @@ public class AttachInternetBandwidth {
     }
 
     /**
-     * Get globalEipSegmentId
+     * 全域弹性公网IP段的ID
      * @return globalEipSegmentId
      */
     public String getGlobalEipSegmentId() {

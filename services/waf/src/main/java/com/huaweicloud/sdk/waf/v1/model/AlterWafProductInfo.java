@@ -21,7 +21,7 @@ public class AlterWafProductInfo {
     }
 
     /**
-     * waf规格   - detection: 入门版   - professional：标准版   - enterprise：专业版   ultimate：铂金版
+     * waf规格   - professional：标准版   - enterprise：专业版   ultimate：铂金版
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

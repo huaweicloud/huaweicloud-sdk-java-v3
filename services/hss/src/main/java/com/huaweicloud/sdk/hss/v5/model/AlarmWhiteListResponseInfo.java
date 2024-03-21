@@ -73,7 +73,7 @@ public class AlarmWhiteListResponseInfo {
     }
 
     /**
-     * SHA256
+     * 事件白名单SHA256
      * @return hash
      */
     public String getHash() {
@@ -177,7 +177,7 @@ public class AlarmWhiteListResponseInfo {
     }
 
     /**
-     * 更新时间，毫秒
+     * 事件白名单更新时间，毫秒
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime

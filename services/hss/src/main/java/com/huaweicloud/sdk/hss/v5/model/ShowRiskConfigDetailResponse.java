@@ -74,7 +74,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 基线类型
+     * 配置检查（基线）的类型,例如SSH、CentOS 7、Windows Server 2019 R2、Windows Server 2016 R2、MySQL5-Windows
      * @return checkType
      */
     public String getCheckType() {
@@ -91,7 +91,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 基线描述
+     * 对配置检查（基线）类型的描述信息，概括当前基线包含的检查项是根据什么标准制定的，能够审计哪些方面的问题。
      * @return checkTypeDesc
      */
     public String getCheckTypeDesc() {
@@ -108,7 +108,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 检查项总数量
+     * 当前配置检查（基线）类型下，用户共检测了多少个检查项。例如标准类型为hw_standard的SSH基线，主机安全提供了17个检查项，但用户所有主机都只检测了SSH基线的其中5个检查项，check_rule_num就是5。用户有一台主机进行了全量检查项检测，check_rule_num就是17。
      * minimum: 0
      * maximum: 2147483647
      * @return checkRuleNum
@@ -127,7 +127,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 未通过的检查项数量
+     * 未通过的检查项数量，check_rule_num中只要有一台主机没通过某个检查项，这个检查项就会被计算在failed_rule_num中
      * minimum: 0
      * maximum: 2147483647
      * @return failedRuleNum
@@ -146,7 +146,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 已通过的检查项数量
+     * 已通过的检查项数量，check_rule_num中只要有一台主机通过了某个检查项，这个检查项就会被计算在passed_rule_num中
      * minimum: 0
      * maximum: 2147483647
      * @return passedRuleNum
@@ -165,7 +165,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 已忽略的检查项数量
+     * 已忽略的检查项数量，check_rule_num中只要有一台主机忽略了某个检查项，这个检查项就会被计算在ignored_rule_num中
      * minimum: 0
      * maximum: 2147483647
      * @return ignoredRuleNum
@@ -184,7 +184,7 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     /**
-     * 受影响的服务器的数量
+     * 受影响的服务器的数量，进行了当前基线检测的服务器数量
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum

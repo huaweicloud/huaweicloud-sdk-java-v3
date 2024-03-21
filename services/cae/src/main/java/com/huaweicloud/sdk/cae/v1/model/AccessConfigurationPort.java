@@ -211,11 +211,6 @@ public class AccessConfigurationPort {
 
     private List<AccessConfigurationHttpPath> paths = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elb_id")
-
-    private String elbId;
-
     public AccessConfigurationPort withTargetPort(Integer targetPort) {
         this.targetPort = targetPort;
         return this;
@@ -351,23 +346,6 @@ public class AccessConfigurationPort {
         this.paths = paths;
     }
 
-    public AccessConfigurationPort withElbId(String elbId) {
-        this.elbId = elbId;
-        return this;
-    }
-
-    /**
-     * 用户选择的elb的ID。
-     * @return elbId
-     */
-    public String getElbId() {
-        return elbId;
-    }
-
-    public void setElbId(String elbId) {
-        this.elbId = elbId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -381,12 +359,12 @@ public class AccessConfigurationPort {
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.defaultCertificate, that.defaultCertificate)
             && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.policy, that.policy)
-            && Objects.equals(this.paths, that.paths) && Objects.equals(this.elbId, that.elbId);
+            && Objects.equals(this.paths, that.paths);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, paths, elbId);
+        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, paths);
     }
 
     @Override
@@ -400,7 +378,6 @@ public class AccessConfigurationPort {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("    paths: ").append(toIndentedString(paths)).append("\n");
-        sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

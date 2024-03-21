@@ -85,6 +85,11 @@ public class ManagedAccount {
     private String blueprintStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_blueprint_has_multi_account_resource")
+
+    private Boolean isBlueprintHasMultiAccountResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
 
     private List<RegionManagedList> regions = null;
@@ -337,6 +342,23 @@ public class ManagedAccount {
         this.blueprintStatus = blueprintStatus;
     }
 
+    public ManagedAccount withIsBlueprintHasMultiAccountResource(Boolean isBlueprintHasMultiAccountResource) {
+        this.isBlueprintHasMultiAccountResource = isBlueprintHasMultiAccountResource;
+        return this;
+    }
+
+    /**
+     * 模板是否包含多账号资源。
+     * @return isBlueprintHasMultiAccountResource
+     */
+    public Boolean getIsBlueprintHasMultiAccountResource() {
+        return isBlueprintHasMultiAccountResource;
+    }
+
+    public void setIsBlueprintHasMultiAccountResource(Boolean isBlueprintHasMultiAccountResource) {
+        this.isBlueprintHasMultiAccountResource = isBlueprintHasMultiAccountResource;
+    }
+
     public ManagedAccount withRegions(List<RegionManagedList> regions) {
         this.regions = regions;
         return this;
@@ -423,8 +445,10 @@ public class ManagedAccount {
             && Objects.equals(this.identityStoreUserName, that.identityStoreUserName)
             && Objects.equals(this.blueprintProductId, that.blueprintProductId)
             && Objects.equals(this.blueprintProductVersion, that.blueprintProductVersion)
-            && Objects.equals(this.blueprintStatus, that.blueprintStatus) && Objects.equals(this.regions, that.regions)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.blueprintStatus, that.blueprintStatus)
+            && Objects.equals(this.isBlueprintHasMultiAccountResource, that.isBlueprintHasMultiAccountResource)
+            && Objects.equals(this.regions, that.regions) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -443,6 +467,7 @@ public class ManagedAccount {
             blueprintProductId,
             blueprintProductVersion,
             blueprintStatus,
+            isBlueprintHasMultiAccountResource,
             regions,
             createdAt,
             updatedAt);
@@ -466,6 +491,9 @@ public class ManagedAccount {
         sb.append("    blueprintProductId: ").append(toIndentedString(blueprintProductId)).append("\n");
         sb.append("    blueprintProductVersion: ").append(toIndentedString(blueprintProductVersion)).append("\n");
         sb.append("    blueprintStatus: ").append(toIndentedString(blueprintStatus)).append("\n");
+        sb.append("    isBlueprintHasMultiAccountResource: ")
+            .append(toIndentedString(isBlueprintHasMultiAccountResource))
+            .append("\n");
         sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

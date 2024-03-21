@@ -222,7 +222,7 @@ public class ListGeipResourceQuotasRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<String> getFields() {
@@ -255,7 +255,7 @@ public class ListGeipResourceQuotasRequest {
     }
 
     /**
-     * 根据类型过滤
+     * Get type
      * @return type
      */
     public List<TypeEnum> getType() {

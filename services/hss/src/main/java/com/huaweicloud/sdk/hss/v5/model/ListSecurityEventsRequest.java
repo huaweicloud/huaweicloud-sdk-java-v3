@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ListSecurityEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
@@ -79,11 +84,6 @@ public class ListSecurityEventsRequest {
     private String severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
-
-    private String category;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
     private String beginTime;
@@ -128,13 +128,30 @@ public class ListSecurityEventsRequest {
 
     private String eventName;
 
+    public ListSecurityEventsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 事件类别，包含如下:   - host : 主机安全事件   - container : 容器安全事件
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public ListSecurityEventsRequest withRegion(String region) {
         this.region = region;
         return this;
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -151,7 +168,7 @@ public class ListSecurityEventsRequest {
     }
 
     /**
-     * 租户企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -204,7 +221,7 @@ public class ListSecurityEventsRequest {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -272,7 +289,7 @@ public class ListSecurityEventsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -369,23 +386,6 @@ public class ListSecurityEventsRequest {
 
     public void setSeverity(String severity) {
         this.severity = severity;
-    }
-
-    public ListSecurityEventsRequest withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * 事件类别，包含如下:   - host : 主机安全事件   - container : 容器安全事件
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public ListSecurityEventsRequest withBeginTime(String beginTime) {
@@ -598,16 +598,15 @@ public class ListSecurityEventsRequest {
             return false;
         }
         ListSecurityEventsRequest that = (ListSecurityEventsRequest) obj;
-        return Objects.equals(this.region, that.region)
+        return Objects.equals(this.category, that.category) && Objects.equals(this.region, that.region)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.containerName, that.containerName)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.eventTypes, that.eventTypes) && Objects.equals(this.handleStatus, that.handleStatus)
-            && Objects.equals(this.severity, that.severity) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.eventClassIds, that.eventClassIds)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.eventClassIds, that.eventClassIds)
             && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.attackTag, that.attackTag)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.tagList, that.tagList)
             && Objects.equals(this.attCk, that.attCk) && Objects.equals(this.eventName, that.eventName);
@@ -615,7 +614,8 @@ public class ListSecurityEventsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(region,
+        return Objects.hash(category,
+            region,
             enterpriseProjectId,
             lastDays,
             hostName,
@@ -628,7 +628,6 @@ public class ListSecurityEventsRequest {
             eventTypes,
             handleStatus,
             severity,
-            category,
             beginTime,
             endTime,
             eventClassIds,
@@ -644,6 +643,7 @@ public class ListSecurityEventsRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSecurityEventsRequest {\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    lastDays: ").append(toIndentedString(lastDays)).append("\n");
@@ -657,7 +657,6 @@ public class ListSecurityEventsRequest {
         sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    eventClassIds: ").append(toIndentedString(eventClassIds)).append("\n");

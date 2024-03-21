@@ -112,6 +112,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolRequest;
@@ -1967,6 +1969,36 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolAsyncInvoker(
         ShowNodePoolRequest request) {
         return new AsyncInvoker<>(request, CceMeta.showNodePool, hcClient);
+    }
+
+    /**
+     * 查询指定节点池支持配置的参数列表
+     *
+     * 该API用于查询CCE服务下指定节点池支持配置的参数列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodePoolConfigurationDetailsRequest 请求对象
+     * @return CompletableFuture<ShowNodePoolConfigurationDetailsResponse>
+     */
+    public CompletableFuture<ShowNodePoolConfigurationDetailsResponse> showNodePoolConfigurationDetailsAsync(
+        ShowNodePoolConfigurationDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showNodePoolConfigurationDetails);
+    }
+
+    /**
+     * 查询指定节点池支持配置的参数列表
+     *
+     * 该API用于查询CCE服务下指定节点池支持配置的参数列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodePoolConfigurationDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowNodePoolConfigurationDetailsRequest, ShowNodePoolConfigurationDetailsResponse>
+     */
+    public AsyncInvoker<ShowNodePoolConfigurationDetailsRequest, ShowNodePoolConfigurationDetailsResponse> showNodePoolConfigurationDetailsAsyncInvoker(
+        ShowNodePoolConfigurationDetailsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.showNodePoolConfigurationDetails, hcClient);
     }
 
     /**

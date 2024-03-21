@@ -191,7 +191,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 防护文件类型
+     * 防护文件类型，例如：docx，txt，avi
      * @return protectionType
      */
     public String getProtectionType() {
@@ -242,7 +242,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 运行时检测目录，所有目录是/,现在为保留字段
+     * 运行时检测目录，现在为保留字段
      * @return runtimeDetectionDirectory
      */
     public String getRuntimeDetectionDirectory() {
@@ -278,7 +278,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 操作系统类型
+     * 操作系统类型。 - Linux - Windows
      * @return operatingSystem
      */
     public String getOperatingSystem() {

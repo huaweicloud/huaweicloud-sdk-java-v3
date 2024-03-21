@@ -12,6 +12,9 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoReq;
+import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
@@ -35,6 +38,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
@@ -63,6 +68,8 @@ import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineResponse;
+import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
@@ -79,6 +86,24 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEncoderSettings;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEndPointsReq;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelGeneral;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEndPointsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEndPointsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoGeneralRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoGeneralResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoInputRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoInputResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInputReq;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelRecordSettings;
+import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelState;
 import com.huaweicloud.sdk.live.v1.model.ModifyPullSourcesConfig;
 import com.huaweicloud.sdk.live.v1.model.ObsAuthorityConfigV2;
 import com.huaweicloud.sdk.live.v1.model.RecordCallbackConfigRequest;
@@ -1677,6 +1702,375 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(ObsAuthorityConfigV2.class),
             f -> f.withMarshaller(UpdateObsBucketAuthorityPublicRequest::getBody,
                 UpdateObsBucketAuthorityPublicRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOttChannelInfoRequest, CreateOttChannelInfoResponse> createOttChannelInfo =
+        genForCreateOttChannelInfo();
+
+    private static HttpRequestDef<CreateOttChannelInfoRequest, CreateOttChannelInfoResponse> genForCreateOttChannelInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateOttChannelInfoRequest, CreateOttChannelInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateOttChannelInfoRequest.class, CreateOttChannelInfoResponse.class)
+            .withName("CreateOttChannelInfo")
+            .withUri("/v1/{project_id}/ott/channels")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOttChannelInfoRequest::getAccessControlAllowInternal,
+                CreateOttChannelInfoRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOttChannelInfoRequest::getAccessControlAllowExternal,
+                CreateOttChannelInfoRequest::setAccessControlAllowExternal));
+        builder.<CreateOttChannelInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOttChannelInfoReq.class),
+            f -> f.withMarshaller(CreateOttChannelInfoRequest::getBody, CreateOttChannelInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOttChannelInfoRequest, DeleteOttChannelInfoResponse> deleteOttChannelInfo =
+        genForDeleteOttChannelInfo();
+
+    private static HttpRequestDef<DeleteOttChannelInfoRequest, DeleteOttChannelInfoResponse> genForDeleteOttChannelInfo() {
+        // basic
+        HttpRequestDef.Builder<DeleteOttChannelInfoRequest, DeleteOttChannelInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteOttChannelInfoRequest.class, DeleteOttChannelInfoResponse.class)
+            .withName("DeleteOttChannelInfo")
+            .withUri("/v1/{project_id}/ott/channels")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOttChannelInfoRequest::getDomain, DeleteOttChannelInfoRequest::setDomain));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOttChannelInfoRequest::getAppName, DeleteOttChannelInfoRequest::setAppName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOttChannelInfoRequest::getId, DeleteOttChannelInfoRequest::setId));
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOttChannelInfoRequest::getAccessControlAllowInternal,
+                DeleteOttChannelInfoRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOttChannelInfoRequest::getAccessControlAllowExternal,
+                DeleteOttChannelInfoRequest::setAccessControlAllowExternal));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOttChannelInfoRequest, ListOttChannelInfoResponse> listOttChannelInfo =
+        genForListOttChannelInfo();
+
+    private static HttpRequestDef<ListOttChannelInfoRequest, ListOttChannelInfoResponse> genForListOttChannelInfo() {
+        // basic
+        HttpRequestDef.Builder<ListOttChannelInfoRequest, ListOttChannelInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOttChannelInfoRequest.class, ListOttChannelInfoResponse.class)
+                .withName("ListOttChannelInfo")
+                .withUri("/v1/{project_id}/ott/channels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getDomain, ListOttChannelInfoRequest::setDomain));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getAppName, ListOttChannelInfoRequest::setAppName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getId, ListOttChannelInfoRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getLimit, ListOttChannelInfoRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getOffset, ListOttChannelInfoRequest::setOffset));
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getAccessControlAllowInternal,
+                ListOttChannelInfoRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOttChannelInfoRequest::getAccessControlAllowExternal,
+                ListOttChannelInfoRequest::setAccessControlAllowExternal));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoEncoderSettingsRequest, ModifyOttChannelInfoEncoderSettingsResponse> modifyOttChannelInfoEncoderSettings =
+        genForModifyOttChannelInfoEncoderSettings();
+
+    private static HttpRequestDef<ModifyOttChannelInfoEncoderSettingsRequest, ModifyOttChannelInfoEncoderSettingsResponse> genForModifyOttChannelInfoEncoderSettings() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoEncoderSettingsRequest, ModifyOttChannelInfoEncoderSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoEncoderSettingsRequest.class,
+                    ModifyOttChannelInfoEncoderSettingsResponse.class)
+                .withName("ModifyOttChannelInfoEncoderSettings")
+                .withUri("/v1/{project_id}/ott/channels/encorder-settings")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEncoderSettingsRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoEncoderSettingsRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEncoderSettingsRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoEncoderSettingsRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelEncoderSettings>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelEncoderSettings.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEncoderSettingsRequest::getBody,
+                ModifyOttChannelInfoEncoderSettingsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoEndPointsRequest, ModifyOttChannelInfoEndPointsResponse> modifyOttChannelInfoEndPoints =
+        genForModifyOttChannelInfoEndPoints();
+
+    private static HttpRequestDef<ModifyOttChannelInfoEndPointsRequest, ModifyOttChannelInfoEndPointsResponse> genForModifyOttChannelInfoEndPoints() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoEndPointsRequest, ModifyOttChannelInfoEndPointsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoEndPointsRequest.class,
+                    ModifyOttChannelInfoEndPointsResponse.class)
+                .withName("ModifyOttChannelInfoEndPoints")
+                .withUri("/v1/{project_id}/ott/channels/endpoints")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEndPointsRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoEndPointsRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEndPointsRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoEndPointsRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelEndPointsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelEndPointsReq.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoEndPointsRequest::getBody,
+                ModifyOttChannelInfoEndPointsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoGeneralRequest, ModifyOttChannelInfoGeneralResponse> modifyOttChannelInfoGeneral =
+        genForModifyOttChannelInfoGeneral();
+
+    private static HttpRequestDef<ModifyOttChannelInfoGeneralRequest, ModifyOttChannelInfoGeneralResponse> genForModifyOttChannelInfoGeneral() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoGeneralRequest, ModifyOttChannelInfoGeneralResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoGeneralRequest.class,
+                    ModifyOttChannelInfoGeneralResponse.class)
+                .withName("ModifyOttChannelInfoGeneral")
+                .withUri("/v1/{project_id}/ott/channels/general")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoGeneralRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoGeneralRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoGeneralRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoGeneralRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelGeneral>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelGeneral.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoGeneralRequest::getBody,
+                ModifyOttChannelInfoGeneralRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoInputRequest, ModifyOttChannelInfoInputResponse> modifyOttChannelInfoInput =
+        genForModifyOttChannelInfoInput();
+
+    private static HttpRequestDef<ModifyOttChannelInfoInputRequest, ModifyOttChannelInfoInputResponse> genForModifyOttChannelInfoInput() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoInputRequest, ModifyOttChannelInfoInputResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoInputRequest.class,
+                    ModifyOttChannelInfoInputResponse.class)
+                .withName("ModifyOttChannelInfoInput")
+                .withUri("/v1/{project_id}/ott/channels/input")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoInputRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoInputRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoInputRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoInputRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelInputReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelInputReq.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoInputRequest::getBody,
+                ModifyOttChannelInfoInputRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoRecordSettingsRequest, ModifyOttChannelInfoRecordSettingsResponse> modifyOttChannelInfoRecordSettings =
+        genForModifyOttChannelInfoRecordSettings();
+
+    private static HttpRequestDef<ModifyOttChannelInfoRecordSettingsRequest, ModifyOttChannelInfoRecordSettingsResponse> genForModifyOttChannelInfoRecordSettings() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoRecordSettingsRequest, ModifyOttChannelInfoRecordSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoRecordSettingsRequest.class,
+                    ModifyOttChannelInfoRecordSettingsResponse.class)
+                .withName("ModifyOttChannelInfoRecordSettings")
+                .withUri("/v1/{project_id}/ott/channels/record-settings")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoRecordSettingsRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoRecordSettingsRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoRecordSettingsRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoRecordSettingsRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelRecordSettings>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelRecordSettings.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoRecordSettingsRequest::getBody,
+                ModifyOttChannelInfoRecordSettingsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStats =
+        genForModifyOttChannelInfoStats();
+
+    private static HttpRequestDef<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse> genForModifyOttChannelInfoStats() {
+        // basic
+        HttpRequestDef.Builder<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyOttChannelInfoStatsRequest.class,
+                    ModifyOttChannelInfoStatsResponse.class)
+                .withName("ModifyOttChannelInfoStats")
+                .withUri("/v1/{project_id}/ott/channels/state")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoStatsRequest::getAccessControlAllowInternal,
+                ModifyOttChannelInfoStatsRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoStatsRequest::getAccessControlAllowExternal,
+                ModifyOttChannelInfoStatsRequest::setAccessControlAllowExternal));
+        builder.<ModifyOttChannelState>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOttChannelState.class),
+            f -> f.withMarshaller(ModifyOttChannelInfoStatsRequest::getBody,
+                ModifyOttChannelInfoStatsRequest::setBody));
 
         // response
 

@@ -638,7 +638,7 @@ public class Host {
     }
 
     /**
-     * 漏洞风险
+     * 漏洞风险总数，包含Linux软件漏洞、Windows系统漏洞、Web-CMS漏洞、应用漏洞
      * minimum: 0
      * maximum: 2097152
      * @return vulnerability
@@ -657,7 +657,7 @@ public class Host {
     }
 
     /**
-     * 基线风险
+     * 基线风险总数，包含配置风险、弱口令
      * minimum: 0
      * maximum: 2097152
      * @return baseline
@@ -676,7 +676,7 @@ public class Host {
     }
 
     /**
-     * 入侵风险
+     * 入侵风险总数
      * minimum: 0
      * maximum: 2097152
      * @return intrusion

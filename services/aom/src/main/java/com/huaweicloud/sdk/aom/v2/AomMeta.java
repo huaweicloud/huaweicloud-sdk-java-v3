@@ -1083,6 +1083,12 @@ public class AomMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePromInstanceRequest::getPromId, DeletePromInstanceRequest::setPromId));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePromInstanceRequest::getEnterpriseProjectId,
+                DeletePromInstanceRequest::setEnterpriseProjectId));
 
         // response
         builder.<String>withResponseField("body",
@@ -1292,6 +1298,12 @@ public class AomMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPromInstanceRequest.PromStatusEnum.class),
             f -> f.withMarshaller(ListPromInstanceRequest::getPromStatus, ListPromInstanceRequest::setPromStatus));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPromInstanceRequest::getEnterpriseProjectId,
+                ListPromInstanceRequest::setEnterpriseProjectId));
 
         // response
 

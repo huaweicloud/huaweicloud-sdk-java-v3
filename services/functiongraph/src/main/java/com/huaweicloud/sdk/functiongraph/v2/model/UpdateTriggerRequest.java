@@ -106,6 +106,11 @@ public class UpdateTriggerRequest {
          */
         public static final TriggerTypeCodeEnum EVENTGRID = new TriggerTypeCodeEnum("EVENTGRID");
 
+        /**
+         * Enum IOTDA for value: "IOTDA"
+         */
+        public static final TriggerTypeCodeEnum IOTDA = new TriggerTypeCodeEnum("IOTDA");
+
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TriggerTypeCodeEnum> createStaticFields() {
@@ -126,6 +131,7 @@ public class UpdateTriggerRequest {
             map.put("APIC", APIC);
             map.put("GAUSSMONGO", GAUSSMONGO);
             map.put("EVENTGRID", EVENTGRID);
+            map.put("IOTDA", IOTDA);
             return Collections.unmodifiableMap(map);
         }
 

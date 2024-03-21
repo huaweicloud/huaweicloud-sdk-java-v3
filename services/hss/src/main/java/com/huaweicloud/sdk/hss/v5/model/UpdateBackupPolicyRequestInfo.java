@@ -54,7 +54,7 @@ public class UpdateBackupPolicyRequestInfo {
     }
 
     /**
-     * 策略ID
+     * 备份策略ID
      * @return policyId
      */
     public String getPolicyId() {

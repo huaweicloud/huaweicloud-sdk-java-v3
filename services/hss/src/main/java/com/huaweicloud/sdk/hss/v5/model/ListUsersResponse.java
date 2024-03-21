@@ -30,7 +30,7 @@ public class ListUsersResponse extends SdkResponse {
     }
 
     /**
-     * 总数,
+     * 账号总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum

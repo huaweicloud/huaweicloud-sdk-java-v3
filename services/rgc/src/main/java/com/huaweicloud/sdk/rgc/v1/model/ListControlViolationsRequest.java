@@ -26,7 +26,7 @@ public class ListControlViolationsRequest {
     }
 
     /**
-     * 账户ID，用于过滤不合规资源。
+     * 账户ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -43,7 +43,7 @@ public class ListControlViolationsRequest {
     }
 
     /**
-     * 注册OU ID，用于过滤不合规资源。
+     * 注册OU ID。
      * @return organizationUnitId
      */
     public String getOrganizationUnitId() {

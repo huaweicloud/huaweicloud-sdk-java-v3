@@ -137,7 +137,7 @@ public class ListSupportRegions {
     }
 
     /**
-     * ID
+     * 域弹性公网IP支持绑定的Region限制的ID
      * @return id
      */
     public String getId() {
@@ -205,7 +205,7 @@ public class ListSupportRegions {
     }
 
     /**
-     * 中心站点or边缘站点
+     * - 功能说明：表示中心站点资源或者边缘站点资源 - 取值范围：center、边缘站点名称
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {

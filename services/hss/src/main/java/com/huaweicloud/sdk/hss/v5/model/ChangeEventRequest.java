@@ -42,7 +42,7 @@ public class ChangeEventRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -59,7 +59,7 @@ public class ChangeEventRequest {
     }
 
     /**
-     * 租户企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

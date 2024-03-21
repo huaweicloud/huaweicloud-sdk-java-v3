@@ -588,7 +588,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -687,7 +687,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -720,7 +720,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 根据action过滤
+     * Get action
      * @return action
      */
     public List<ActionEnum> getAction() {
@@ -753,7 +753,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 根据job状态过滤
+     * Get status
      * @return status
      */
     public List<StatusEnum> getStatus() {

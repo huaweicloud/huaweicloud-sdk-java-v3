@@ -137,7 +137,7 @@ public class BlockedIpResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {

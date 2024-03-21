@@ -26,7 +26,7 @@ public class ListFunctionTagsRequest {
     }
 
     /**
-     * 资源类型
+     * 资源类型，此处请填写functions
      * @return resourceType
      */
     public String getResourceType() {

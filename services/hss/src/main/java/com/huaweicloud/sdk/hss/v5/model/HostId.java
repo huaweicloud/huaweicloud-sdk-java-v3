@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 服务器ID
+ * 主机ID
  */
 public class HostId {
 

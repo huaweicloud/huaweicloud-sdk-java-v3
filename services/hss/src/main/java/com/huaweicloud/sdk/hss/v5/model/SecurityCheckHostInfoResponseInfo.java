@@ -51,7 +51,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -119,7 +119,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 扫描时间
+     * 扫描时间(ms)
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime

@@ -27,7 +27,7 @@ public class UpdateGlobalEipSegmentRequest {
     }
 
     /**
-     * global_eip_segment_id
+     * Get globalEipSegmentId
      * @return globalEipSegmentId
      */
     public String getGlobalEipSegmentId() {

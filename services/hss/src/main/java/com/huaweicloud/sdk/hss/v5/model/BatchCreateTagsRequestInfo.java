@@ -18,11 +18,6 @@ public class BatchCreateTagsRequestInfo {
 
     private List<ResourceTagInfo> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private List<ResourceTagInfo> sysTags = null;
-
     public BatchCreateTagsRequestInfo withTags(List<ResourceTagInfo> tags) {
         this.tags = tags;
         return this;
@@ -56,39 +51,6 @@ public class BatchCreateTagsRequestInfo {
         this.tags = tags;
     }
 
-    public BatchCreateTagsRequestInfo withSysTags(List<ResourceTagInfo> sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public BatchCreateTagsRequestInfo addSysTagsItem(ResourceTagInfo sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        this.sysTags.add(sysTagsItem);
-        return this;
-    }
-
-    public BatchCreateTagsRequestInfo withSysTags(Consumer<List<ResourceTagInfo>> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        sysTagsSetter.accept(this.sysTags);
-        return this;
-    }
-
-    /**
-     * 标签对象列表
-     * @return sysTags
-     */
-    public List<ResourceTagInfo> getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(List<ResourceTagInfo> sysTags) {
-        this.sysTags = sysTags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -98,12 +60,12 @@ public class BatchCreateTagsRequestInfo {
             return false;
         }
         BatchCreateTagsRequestInfo that = (BatchCreateTagsRequestInfo) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, sysTags);
+        return Objects.hash(tags);
     }
 
     @Override
@@ -111,7 +73,6 @@ public class BatchCreateTagsRequestInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateTagsRequestInfo {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

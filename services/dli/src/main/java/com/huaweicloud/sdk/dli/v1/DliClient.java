@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListCatalogsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListCatalogsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabasesRequest;
@@ -179,12 +181,16 @@ import com.huaweicloud.sdk.dli.v1.model.RegisterBucketRequest;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionResponse;
+import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowCatalogRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowCatalogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionRequest;
@@ -1291,6 +1297,34 @@ public class DliClient {
     }
 
     /**
+     * 获取项目下所有catalog信息
+     *
+     * 该API获取指定项目下所有catalog信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCatalogsRequest 请求对象
+     * @return ListCatalogsResponse
+     */
+    public ListCatalogsResponse listCatalogs(ListCatalogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listCatalogs);
+    }
+
+    /**
+     * 获取项目下所有catalog信息
+     *
+     * 该API获取指定项目下所有catalog信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCatalogsRequest 请求对象
+     * @return SyncInvoker<ListCatalogsRequest, ListCatalogsResponse>
+     */
+    public SyncInvoker<ListCatalogsRequest, ListCatalogsResponse> listCatalogsInvoker(ListCatalogsRequest request) {
+        return new SyncInvoker<>(request, DliMeta.listCatalogs, hcClient);
+    }
+
+    /**
      * 查看数据库的使用者
      *
      * 该API用于查询可以使用的指定队列的所有用户名称。
@@ -1800,6 +1834,35 @@ public class DliClient {
     }
 
     /**
+     * 绑定/解绑catalog映射信息
+     *
+     * 该API创建DLI绑定/解绑到lakeformation等服务的元数据目录（CATALOG）相关信息，包含DLI侧CATALOG名称、外部CATALOG名称和类型，类型为预留字段，当前只支持lakeformation
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunCatalogActionRequest 请求对象
+     * @return RunCatalogActionResponse
+     */
+    public RunCatalogActionResponse runCatalogAction(RunCatalogActionRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.runCatalogAction);
+    }
+
+    /**
+     * 绑定/解绑catalog映射信息
+     *
+     * 该API创建DLI绑定/解绑到lakeformation等服务的元数据目录（CATALOG）相关信息，包含DLI侧CATALOG名称、外部CATALOG名称和类型，类型为预留字段，当前只支持lakeformation
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunCatalogActionRequest 请求对象
+     * @return SyncInvoker<RunCatalogActionRequest, RunCatalogActionResponse>
+     */
+    public SyncInvoker<RunCatalogActionRequest, RunCatalogActionResponse> runCatalogActionInvoker(
+        RunCatalogActionRequest request) {
+        return new SyncInvoker<>(request, DliMeta.runCatalogAction, hcClient);
+    }
+
+    /**
      * 重启/扩容/缩容队列
      *
      * 该功能用于重新启动队列、扩容队列、缩容队列。
@@ -1826,6 +1889,34 @@ public class DliClient {
     public SyncInvoker<RunQueueActionRequest, RunQueueActionResponse> runQueueActionInvoker(
         RunQueueActionRequest request) {
         return new SyncInvoker<>(request, DliMeta.runQueueAction, hcClient);
+    }
+
+    /**
+     * 描述catalog信息
+     *
+     * 该API用于描述DLI catalog详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCatalogRequest 请求对象
+     * @return ShowCatalogResponse
+     */
+    public ShowCatalogResponse showCatalog(ShowCatalogRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.showCatalog);
+    }
+
+    /**
+     * 描述catalog信息
+     *
+     * 该API用于描述DLI catalog详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCatalogRequest 请求对象
+     * @return SyncInvoker<ShowCatalogRequest, ShowCatalogResponse>
+     */
+    public SyncInvoker<ShowCatalogRequest, ShowCatalogResponse> showCatalogInvoker(ShowCatalogRequest request) {
+        return new SyncInvoker<>(request, DliMeta.showCatalog, hcClient);
     }
 
     /**

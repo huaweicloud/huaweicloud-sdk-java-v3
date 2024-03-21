@@ -32,9 +32,9 @@ public class PromInstanceEpsModel {
     public static final class PromTypeEnum {
 
         /**
-         * Enum DEFAULT for value: "DEFAULT"
+         * Enum DEFAULT for value: "default"
          */
-        public static final PromTypeEnum DEFAULT = new PromTypeEnum("DEFAULT");
+        public static final PromTypeEnum DEFAULT = new PromTypeEnum("default");
 
         /**
          * Enum ECS for value: "ECS"
@@ -75,7 +75,7 @@ public class PromInstanceEpsModel {
 
         private static Map<String, PromTypeEnum> createStaticFields() {
             Map<String, PromTypeEnum> map = new HashMap<>();
-            map.put("DEFAULT", DEFAULT);
+            map.put("default", DEFAULT);
             map.put("ECS", ECS);
             map.put("VPC", VPC);
             map.put("CCE", CCE);

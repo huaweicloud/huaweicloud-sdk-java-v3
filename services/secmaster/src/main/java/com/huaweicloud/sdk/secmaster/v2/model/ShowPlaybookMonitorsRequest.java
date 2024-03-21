@@ -145,7 +145,7 @@ public class ShowPlaybookMonitorsRequest {
     }
 
     /**
-     * 开始时间
+     * 开始时间。格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。例如：2021-01-30T23:00:00Z+0800。时区信息为剧本实例产生的时区，无法解析时区的时间，默认时区填东八区。
      * @return startTime
      */
     public String getStartTime() {
@@ -179,7 +179,7 @@ public class ShowPlaybookMonitorsRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间。格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。例如：2021-01-30T23:00:00Z+0800。时区信息为剧本实例产生的时区，无法解析时区的时间，默认时区填东八区。
      * @return endTime
      */
     public String getEndTime() {

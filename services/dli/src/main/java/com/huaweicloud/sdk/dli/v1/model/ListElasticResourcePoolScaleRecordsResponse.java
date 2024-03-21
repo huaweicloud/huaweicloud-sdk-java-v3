@@ -22,7 +22,7 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<List<Object>> items = null;
+    private List<ElasticResourcePoolScaleRecord> items = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Auth-Token")
@@ -46,12 +46,12 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListElasticResourcePoolScaleRecordsResponse withItems(List<List<Object>> items) {
+    public ListElasticResourcePoolScaleRecordsResponse withItems(List<ElasticResourcePoolScaleRecord> items) {
         this.items = items;
         return this;
     }
 
-    public ListElasticResourcePoolScaleRecordsResponse addItemsItem(List<Object> itemsItem) {
+    public ListElasticResourcePoolScaleRecordsResponse addItemsItem(ElasticResourcePoolScaleRecord itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -59,7 +59,8 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
         return this;
     }
 
-    public ListElasticResourcePoolScaleRecordsResponse withItems(Consumer<List<List<Object>>> itemsSetter) {
+    public ListElasticResourcePoolScaleRecordsResponse withItems(
+        Consumer<List<ElasticResourcePoolScaleRecord>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -71,11 +72,11 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
      * 数组中返回的数据
      * @return items
      */
-    public List<List<Object>> getItems() {
+    public List<ElasticResourcePoolScaleRecord> getItems() {
         return items;
     }
 
-    public void setItems(List<List<Object>> items) {
+    public void setItems(List<ElasticResourcePoolScaleRecord> items) {
         this.items = items;
     }
 

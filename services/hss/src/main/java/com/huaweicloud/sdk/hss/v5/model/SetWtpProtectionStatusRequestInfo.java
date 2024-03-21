@@ -72,7 +72,7 @@ public class SetWtpProtectionStatusRequestInfo {
     }
 
     /**
-     * HostId list
+     * 主机ID数组，不能为空
      * @return hostIdList
      */
     public List<String> getHostIdList() {

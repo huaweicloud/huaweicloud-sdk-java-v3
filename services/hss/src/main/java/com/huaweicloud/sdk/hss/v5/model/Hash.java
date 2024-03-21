@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * SHA256
+ * 事件白名单SHA256
  */
 public class Hash {
 

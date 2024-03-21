@@ -21,7 +21,7 @@ public class ShowInternetBandwidthTagsRequest {
     }
 
     /**
-     * 全域公网带宽的id
+     * Get resourceId
      * @return resourceId
      */
     public String getResourceId() {

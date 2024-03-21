@@ -30,7 +30,7 @@ public class ListPortsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 开放端口总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum

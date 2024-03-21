@@ -26,7 +26,7 @@ public class DeleteInternetBandwidthTagRequest {
     }
 
     /**
-     * 全域公网带宽的id
+     * Get resourceId
      * @return resourceId
      */
     public String getResourceId() {
@@ -43,7 +43,7 @@ public class DeleteInternetBandwidthTagRequest {
     }
 
     /**
-     * 待删除标签的key
+     * Get tagKey
      * @return tagKey
      */
     public String getTagKey() {

@@ -30,7 +30,7 @@ public class ListHostRaspProtectHistoryInfoResponse extends SdkResponse {
     }
 
     /**
-     * total number
+     * total number of dynamic WTPs
      * minimum: 0
      * maximum: 200000
      * @return totalNum

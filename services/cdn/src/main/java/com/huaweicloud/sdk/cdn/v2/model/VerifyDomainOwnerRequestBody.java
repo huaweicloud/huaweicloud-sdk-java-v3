@@ -21,7 +21,7 @@ public class VerifyDomainOwnerRequestBody {
     }
 
     /**
-     * 校验类型： - dns：DNS解析校验； - file：文件校验； - all：dns、file均校验，默认为all。
+     * 校验类型： - dns：DNS解析校验； - file：文件校验； - all：DNS与文件都会进行探测，默认为all。
      * @return verifyType
      */
     public String getVerifyType() {

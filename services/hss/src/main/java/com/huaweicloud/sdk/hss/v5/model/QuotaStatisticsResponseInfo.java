@@ -43,7 +43,7 @@ public class QuotaStatisticsResponseInfo {
     }
 
     /**
-     * 总数
+     * 配额总数
      * minimum: 0
      * maximum: 10000000
      * @return totalNum

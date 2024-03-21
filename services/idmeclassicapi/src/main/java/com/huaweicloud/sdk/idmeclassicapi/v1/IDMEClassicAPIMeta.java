@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutAndUpdateRequest;
@@ -17,6 +19,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchRequest;
@@ -49,14 +53,22 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionMultiViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLatestVersionRequest;
@@ -67,10 +79,18 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionReq
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.EnableDataInstanceRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.EnableDataInstanceResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ExecuteReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ExecuteReviseResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostRequest;
@@ -78,6 +98,9 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVODeleteByConditionVo;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOLifecycleManagedModelLifecycleTemplateSwitchDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListMultiViewModelVersionViewCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelSaveAllDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelSaveDTO;
@@ -91,6 +114,10 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVer
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUndoCheckOutDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUpdateAndCheckinDTOVersionModel;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUpdateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMongPageRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelVersionViewCreateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDecryptDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdsDecryptDTO;
@@ -103,6 +130,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestCountVo
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestSelectedVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestStaticsVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestVo;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOStatisticsPVO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOTagOperationDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOUpdateByConditionVoPersistableModelUpdateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionMasterIdsDtoVersionModelVersionMasterDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModel;
@@ -117,6 +146,9 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersion
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionReviseDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionUndoCheckOutDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionUpdateAndCheckinDTOVersionModel;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAsUsingPostRequest;
@@ -135,8 +167,12 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostReq
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowVersionByMasterRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowVersionByMasterResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.SwitchLifecycleTemplateRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.SwitchLifecycleTemplateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndReviseRequest;
@@ -145,11 +181,47 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateViewResponse;
 
 @SuppressWarnings("unchecked")
 public class IDMEClassicAPIMeta {
+
+    public static final HttpRequestDef<AddTagRequest, AddTagResponse> addTag = genForAddTag();
+
+    private static HttpRequestDef<AddTagRequest, AddTagResponse> genForAddTag() {
+        // basic
+        HttpRequestDef.Builder<AddTagRequest, AddTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddTagRequest.class, AddTagResponse.class)
+                .withName("AddTag")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/addTag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTagRequest::getIdentifier, AddTagRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTagRequest::getModelName, AddTagRequest::setModelName));
+        builder.<RDMParamVOTagOperationDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOTagOperationDTO.class),
+            f -> f.withMarshaller(AddTagRequest::getBody, AddTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCheckinRequest, BatchCheckinResponse> batchCheckin = genForBatchCheckin();
 
@@ -349,6 +421,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListPersistableModelCreateDTO.class),
             f -> f.withMarshaller(BatchCreateUsingPostRequest::getBody, BatchCreateUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateViewRequest, BatchCreateViewResponse> batchCreateView =
+        genForBatchCreateView();
+
+    private static HttpRequestDef<BatchCreateViewRequest, BatchCreateViewResponse> genForBatchCreateView() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateViewRequest, BatchCreateViewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateViewRequest.class, BatchCreateViewResponse.class)
+                .withName("BatchCreateView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/batchCreateView")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateViewRequest::getIdentifier, BatchCreateViewRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateViewRequest::getModelName, BatchCreateViewRequest::setModelName));
+        builder.<RDMParamVOListMultiViewModelVersionViewCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOListMultiViewModelVersionViewCreateDTO.class),
+            f -> f.withMarshaller(BatchCreateViewRequest::getBody, BatchCreateViewRequest::setBody));
 
         // response
 
@@ -900,6 +1005,39 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CollectHistoryDataRequest, CollectHistoryDataResponse> collectHistoryData =
+        genForCollectHistoryData();
+
+    private static HttpRequestDef<CollectHistoryDataRequest, CollectHistoryDataResponse> genForCollectHistoryData() {
+        // basic
+        HttpRequestDef.Builder<CollectHistoryDataRequest, CollectHistoryDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CollectHistoryDataRequest.class, CollectHistoryDataResponse.class)
+                .withName("CollectHistoryData")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/statisticsHistoryData")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectHistoryDataRequest::getIdentifier, CollectHistoryDataRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectHistoryDataRequest::getModelName, CollectHistoryDataRequest::setModelName));
+        builder.<RDMParamVOStatisticsPVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOStatisticsPVO.class),
+            f -> f.withMarshaller(CollectHistoryDataRequest::getBody, CollectHistoryDataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CompareBusinessVersionRequest, CompareBusinessVersionResponse> compareBusinessVersion =
         genForCompareBusinessVersion();
 
@@ -968,6 +1106,34 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateMultiViewRequest, CreateMultiViewResponse> createMultiView =
+        genForCreateMultiView();
+
+    private static HttpRequestDef<CreateMultiViewRequest, CreateMultiViewResponse> genForCreateMultiView() {
+        // basic
+        HttpRequestDef.Builder<CreateMultiViewRequest, CreateMultiViewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMultiViewRequest.class, CreateMultiViewResponse.class)
+                .withName("CreateMultiView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/MultiViewModel/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMultiViewRequest::getIdentifier, CreateMultiViewRequest::setIdentifier));
+        builder.<RDMParamVOMultiViewModelDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOMultiViewModelDTO.class),
+            f -> f.withMarshaller(CreateMultiViewRequest::getBody, CreateMultiViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateUsingPostRequest, CreateUsingPostResponse> createUsingPost =
         genForCreateUsingPost();
 
@@ -1001,6 +1167,38 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateViewRequest, CreateViewResponse> createView = genForCreateView();
+
+    private static HttpRequestDef<CreateViewRequest, CreateViewResponse> genForCreateView() {
+        // basic
+        HttpRequestDef.Builder<CreateViewRequest, CreateViewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateViewRequest.class, CreateViewResponse.class)
+                .withName("CreateView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/createView")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateViewRequest::getIdentifier, CreateViewRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateViewRequest::getModelName, CreateViewRequest::setModelName));
+        builder.<RDMParamVOMultiViewModelVersionViewCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOMultiViewModelVersionViewCreateDTO.class),
+            f -> f.withMarshaller(CreateViewRequest::getBody, CreateViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> deleteBranch = genForDeleteBranch();
 
     private static HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> genForDeleteBranch() {
@@ -1027,6 +1225,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelVersionMasterModifierDTO.class),
             f -> f.withMarshaller(DeleteBranchRequest::getBody, DeleteBranchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteByConditionMultiViewRequest, DeleteByConditionMultiViewResponse> deleteByConditionMultiView =
+        genForDeleteByConditionMultiView();
+
+    private static HttpRequestDef<DeleteByConditionMultiViewRequest, DeleteByConditionMultiViewResponse> genForDeleteByConditionMultiView() {
+        // basic
+        HttpRequestDef.Builder<DeleteByConditionMultiViewRequest, DeleteByConditionMultiViewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteByConditionMultiViewRequest.class,
+                    DeleteByConditionMultiViewResponse.class)
+                .withName("DeleteByConditionMultiView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/MultiViewModel/deleteByCondition")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteByConditionMultiViewRequest::getIdentifier,
+                DeleteByConditionMultiViewRequest::setIdentifier));
+        builder.<RDMParamVODeleteByConditionVo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVODeleteByConditionVo.class),
+            f -> f.withMarshaller(DeleteByConditionMultiViewRequest::getBody,
+                DeleteByConditionMultiViewRequest::setBody));
 
         // response
 
@@ -1212,6 +1443,73 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableDataInstanceRequest, DisableDataInstanceResponse> disableDataInstance =
+        genForDisableDataInstance();
+
+    private static HttpRequestDef<DisableDataInstanceRequest, DisableDataInstanceResponse> genForDisableDataInstance() {
+        // basic
+        HttpRequestDef.Builder<DisableDataInstanceRequest, DisableDataInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableDataInstanceRequest.class, DisableDataInstanceResponse.class)
+                .withName("DisableDataInstance")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataInstanceRequest::getIdentifier,
+                DisableDataInstanceRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataInstanceRequest::getModelName, DisableDataInstanceRequest::setModelName));
+        builder.<RDMParamVOPersistObjectIdsModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsModifierDTO.class),
+            f -> f.withMarshaller(DisableDataInstanceRequest::getBody, DisableDataInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDataInstanceRequest, EnableDataInstanceResponse> enableDataInstance =
+        genForEnableDataInstance();
+
+    private static HttpRequestDef<EnableDataInstanceRequest, EnableDataInstanceResponse> genForEnableDataInstance() {
+        // basic
+        HttpRequestDef.Builder<EnableDataInstanceRequest, EnableDataInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDataInstanceRequest.class, EnableDataInstanceResponse.class)
+                .withName("EnableDataInstance")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataInstanceRequest::getIdentifier, EnableDataInstanceRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataInstanceRequest::getModelName, EnableDataInstanceRequest::setModelName));
+        builder.<RDMParamVOPersistObjectIdsModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsModifierDTO.class),
+            f -> f.withMarshaller(EnableDataInstanceRequest::getBody, EnableDataInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteReviseRequest, ExecuteReviseResponse> executeRevise =
         genForExecuteRevise();
 
@@ -1239,6 +1537,36 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelVersionReviseDTO.class),
             f -> f.withMarshaller(ExecuteReviseRequest::getBody, ExecuteReviseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GenerateBusinessCodeRequest, GenerateBusinessCodeResponse> generateBusinessCode =
+        genForGenerateBusinessCode();
+
+    private static HttpRequestDef<GenerateBusinessCodeRequest, GenerateBusinessCodeResponse> genForGenerateBusinessCode() {
+        // basic
+        HttpRequestDef.Builder<GenerateBusinessCodeRequest, GenerateBusinessCodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, GenerateBusinessCodeRequest.class, GenerateBusinessCodeResponse.class)
+            .withName("GenerateBusinessCode")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/generateBusinessCode")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GenerateBusinessCodeRequest::getIdentifier,
+                GenerateBusinessCodeRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GenerateBusinessCodeRequest::getModelName,
+                GenerateBusinessCodeRequest::setModelName));
 
         // response
 
@@ -1318,6 +1646,80 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelVersionMasterDTO.class),
             f -> f.withMarshaller(ListAllVersionsRequest::getBody, ListAllVersionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistoryDataRequest, ListHistoryDataResponse> listHistoryData =
+        genForListHistoryData();
+
+    private static HttpRequestDef<ListHistoryDataRequest, ListHistoryDataResponse> genForListHistoryData() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryDataRequest, ListHistoryDataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListHistoryDataRequest.class, ListHistoryDataResponse.class)
+            .withName("ListHistoryData")
+            .withUri(
+                "/rdm_{identifier}_app/publicservices/api/{modelName}/queryHistoryData/{pageSizePath}/{curPagePath}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getIdentifier, ListHistoryDataRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getModelName, ListHistoryDataRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getPageSizePath, ListHistoryDataRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getCurPagePath, ListHistoryDataRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getCurPage, ListHistoryDataRequest::setCurPage));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getPageSize, ListHistoryDataRequest::setPageSize));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getTotalRows, ListHistoryDataRequest::setTotalRows));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getTotalPages, ListHistoryDataRequest::setTotalPages));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getLimit, ListHistoryDataRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getOffset, ListHistoryDataRequest::setOffset));
+        builder.<RDMParamVOMongPageRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOMongPageRequest.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getBody, ListHistoryDataRequest::setBody));
 
         // response
 
@@ -1561,6 +1963,38 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestVo.class),
             f -> f.withMarshaller(ListUsingPostRequest::getBody, ListUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveTagRequest, RemoveTagResponse> removeTag = genForRemoveTag();
+
+    private static HttpRequestDef<RemoveTagRequest, RemoveTagResponse> genForRemoveTag() {
+        // basic
+        HttpRequestDef.Builder<RemoveTagRequest, RemoveTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveTagRequest.class, RemoveTagResponse.class)
+                .withName("RemoveTag")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/removeTag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveTagRequest::getIdentifier, RemoveTagRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveTagRequest::getModelName, RemoveTagRequest::setModelName));
+        builder.<RDMParamVOTagOperationDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOTagOperationDTO.class),
+            f -> f.withMarshaller(RemoveTagRequest::getBody, RemoveTagRequest::setBody));
 
         // response
 
@@ -1930,6 +2364,38 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTagRequest, ShowTagResponse> showTag = genForShowTag();
+
+    private static HttpRequestDef<ShowTagRequest, ShowTagResponse> genForShowTag() {
+        // basic
+        HttpRequestDef.Builder<ShowTagRequest, ShowTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowTagRequest.class, ShowTagResponse.class)
+                .withName("ShowTag")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/queryTag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagRequest::getIdentifier, ShowTagRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagRequest::getModelName, ShowTagRequest::setModelName));
+        builder.<RDMParamVOPersistObjectIdDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdDTO.class),
+            f -> f.withMarshaller(ShowTagRequest::getBody, ShowTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVersionByMasterRequest, ShowVersionByMasterResponse> showVersionByMaster =
         genForShowVersionByMaster();
 
@@ -1958,6 +2424,41 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelVersionMasterQueryDTO.class),
             f -> f.withMarshaller(ShowVersionByMasterRequest::getBody, ShowVersionByMasterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchLifecycleTemplateRequest, SwitchLifecycleTemplateResponse> switchLifecycleTemplate =
+        genForSwitchLifecycleTemplate();
+
+    private static HttpRequestDef<SwitchLifecycleTemplateRequest, SwitchLifecycleTemplateResponse> genForSwitchLifecycleTemplate() {
+        // basic
+        HttpRequestDef.Builder<SwitchLifecycleTemplateRequest, SwitchLifecycleTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SwitchLifecycleTemplateRequest.class, SwitchLifecycleTemplateResponse.class)
+            .withName("SwitchLifecycleTemplate")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/switchLifecycleTemplate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLifecycleTemplateRequest::getIdentifier,
+                SwitchLifecycleTemplateRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLifecycleTemplateRequest::getModelName,
+                SwitchLifecycleTemplateRequest::setModelName));
+        builder.<RDMParamVOLifecycleManagedModelLifecycleTemplateSwitchDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOLifecycleManagedModelLifecycleTemplateSwitchDTO.class),
+            f -> f.withMarshaller(SwitchLifecycleTemplateRequest::getBody, SwitchLifecycleTemplateRequest::setBody));
 
         // response
 
@@ -2102,6 +2603,38 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateStateRequest, UpdateStateResponse> updateState = genForUpdateState();
+
+    private static HttpRequestDef<UpdateStateRequest, UpdateStateResponse> genForUpdateState() {
+        // basic
+        HttpRequestDef.Builder<UpdateStateRequest, UpdateStateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateStateRequest.class, UpdateStateResponse.class)
+                .withName("UpdateState")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/updateState")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStateRequest::getIdentifier, UpdateStateRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStateRequest::getModelName, UpdateStateRequest::setModelName));
+        builder.<RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO.class),
+            f -> f.withMarshaller(UpdateStateRequest::getBody, UpdateStateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateUsingPostRequest, UpdateUsingPostResponse> updateUsingPost =
         genForUpdateUsingPost();
 
@@ -2129,6 +2662,38 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistableModelUpdateDTO.class),
             f -> f.withMarshaller(UpdateUsingPostRequest::getBody, UpdateUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateViewRequest, UpdateViewResponse> updateView = genForUpdateView();
+
+    private static HttpRequestDef<UpdateViewRequest, UpdateViewResponse> genForUpdateView() {
+        // basic
+        HttpRequestDef.Builder<UpdateViewRequest, UpdateViewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateViewRequest.class, UpdateViewResponse.class)
+                .withName("UpdateView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/updateView")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateViewRequest::getIdentifier, UpdateViewRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateViewRequest::getModelName, UpdateViewRequest::setModelName));
+        builder.<RDMParamVOVersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOVersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO.class),
+            f -> f.withMarshaller(UpdateViewRequest::getBody, UpdateViewRequest::setBody));
 
         // response
 

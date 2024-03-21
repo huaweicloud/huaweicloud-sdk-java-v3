@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.idmeclassicapi.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutAndUpdateRequest;
@@ -15,6 +17,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchRequest;
@@ -47,14 +51,22 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CheckoutUndoResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionMultiViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteByConditionUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLatestVersionRequest;
@@ -65,16 +77,26 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionReq
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.EnableDataInstanceRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.EnableDataInstanceResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ExecuteReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ExecuteReviseResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAsUsingPostRequest;
@@ -93,8 +115,12 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostReq
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowVersionByMasterRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowVersionByMasterResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.SwitchLifecycleTemplateRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.SwitchLifecycleTemplateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateAndReviseRequest;
@@ -103,8 +129,12 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateViewResponse;
 
 public class IDMEClassicAPIClient {
 
@@ -117,6 +147,34 @@ public class IDMEClassicAPIClient {
     public static ClientBuilder<IDMEClassicAPIClient> newBuilder() {
         ClientBuilder<IDMEClassicAPIClient> clientBuilder = new ClientBuilder<>(IDMEClassicAPIClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 添加标签
+     *
+     * 给模型实例数据添加标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTagRequest 请求对象
+     * @return AddTagResponse
+     */
+    public AddTagResponse addTag(AddTagRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.addTag);
+    }
+
+    /**
+     * 添加标签
+     *
+     * 给模型实例数据添加标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTagRequest 请求对象
+     * @return SyncInvoker<AddTagRequest, AddTagResponse>
+     */
+    public SyncInvoker<AddTagRequest, AddTagResponse> addTagInvoker(AddTagRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.addTag, hcClient);
     }
 
     /**
@@ -289,6 +347,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> batchCreateUsingPostInvoker(
         BatchCreateUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchCreateUsingPost, hcClient);
+    }
+
+    /**
+     * 批量创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateViewRequest 请求对象
+     * @return BatchCreateViewResponse
+     */
+    public BatchCreateViewResponse batchCreateView(BatchCreateViewRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchCreateView);
+    }
+
+    /**
+     * 批量创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateViewRequest 请求对象
+     * @return SyncInvoker<BatchCreateViewRequest, BatchCreateViewResponse>
+     */
+    public SyncInvoker<BatchCreateViewRequest, BatchCreateViewResponse> batchCreateViewInvoker(
+        BatchCreateViewRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchCreateView, hcClient);
     }
 
     /**
@@ -761,6 +848,35 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 统计模型历史数据
+     *
+     * 根据开始时间&amp;结束时间统计这段时间内各操作类型（创建、更新、软删除、硬删除）的数据量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectHistoryDataRequest 请求对象
+     * @return CollectHistoryDataResponse
+     */
+    public CollectHistoryDataResponse collectHistoryData(CollectHistoryDataRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.collectHistoryData);
+    }
+
+    /**
+     * 统计模型历史数据
+     *
+     * 根据开始时间&amp;结束时间统计这段时间内各操作类型（创建、更新、软删除、硬删除）的数据量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectHistoryDataRequest 请求对象
+     * @return SyncInvoker<CollectHistoryDataRequest, CollectHistoryDataResponse>
+     */
+    public SyncInvoker<CollectHistoryDataRequest, CollectHistoryDataResponse> collectHistoryDataInvoker(
+        CollectHistoryDataRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.collectHistoryData, hcClient);
+    }
+
+    /**
      * 对比M-V模型实例
      *
      * 通过此接口可以对比某个M-V模型数据实例的不同版本的属性和关系。建议使用数据建模引擎（xDM Foundation，简称xDM-F）新增的差异对比功能，即使用instance-attrs-comparison和instance-relation-comparison接口，更多内容可在应用运行态的“数据服务管理 &gt; 全量数据服务 &gt; 系统管理API &gt; 属性对比API”中查看。
@@ -819,6 +935,35 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 创建视图对象
+     *
+     * 通过接口创建多视图MV对象实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMultiViewRequest 请求对象
+     * @return CreateMultiViewResponse
+     */
+    public CreateMultiViewResponse createMultiView(CreateMultiViewRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.createMultiView);
+    }
+
+    /**
+     * 创建视图对象
+     *
+     * 通过接口创建多视图MV对象实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMultiViewRequest 请求对象
+     * @return SyncInvoker<CreateMultiViewRequest, CreateMultiViewResponse>
+     */
+    public SyncInvoker<CreateMultiViewRequest, CreateMultiViewResponse> createMultiViewInvoker(
+        CreateMultiViewRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.createMultiView, hcClient);
+    }
+
+    /**
      * 创建实例
      *
      * 创建指定数据模型的数据实例。
@@ -848,6 +993,34 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateViewRequest 请求对象
+     * @return CreateViewResponse
+     */
+    public CreateViewResponse createView(CreateViewRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.createView);
+    }
+
+    /**
+     * 创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateViewRequest 请求对象
+     * @return SyncInvoker<CreateViewRequest, CreateViewResponse>
+     */
+    public SyncInvoker<CreateViewRequest, CreateViewResponse> createViewInvoker(CreateViewRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.createView, hcClient);
+    }
+
+    /**
      * 删除最新大版本下的所有小版本
      *
      * 根据父模型ID和版本对象，删除最新大版本下的所有小版本。请您谨慎使用删除操作，删除后该数据将无法恢复。
@@ -873,6 +1046,35 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<DeleteBranchRequest, DeleteBranchResponse> deleteBranchInvoker(DeleteBranchRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.deleteBranch, hcClient);
+    }
+
+    /**
+     * 条件删除模型
+     *
+     * 条件删除多视图对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteByConditionMultiViewRequest 请求对象
+     * @return DeleteByConditionMultiViewResponse
+     */
+    public DeleteByConditionMultiViewResponse deleteByConditionMultiView(DeleteByConditionMultiViewRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.deleteByConditionMultiView);
+    }
+
+    /**
+     * 条件删除模型
+     *
+     * 条件删除多视图对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteByConditionMultiViewRequest 请求对象
+     * @return SyncInvoker<DeleteByConditionMultiViewRequest, DeleteByConditionMultiViewResponse>
+     */
+    public SyncInvoker<DeleteByConditionMultiViewRequest, DeleteByConditionMultiViewResponse> deleteByConditionMultiViewInvoker(
+        DeleteByConditionMultiViewRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.deleteByConditionMultiView, hcClient);
     }
 
     /**
@@ -1029,6 +1231,64 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 失效模型数据实例
+     *
+     * 根据对象ID失效对应实例数据，返回失效成功数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataInstanceRequest 请求对象
+     * @return DisableDataInstanceResponse
+     */
+    public DisableDataInstanceResponse disableDataInstance(DisableDataInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.disableDataInstance);
+    }
+
+    /**
+     * 失效模型数据实例
+     *
+     * 根据对象ID失效对应实例数据，返回失效成功数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataInstanceRequest 请求对象
+     * @return SyncInvoker<DisableDataInstanceRequest, DisableDataInstanceResponse>
+     */
+    public SyncInvoker<DisableDataInstanceRequest, DisableDataInstanceResponse> disableDataInstanceInvoker(
+        DisableDataInstanceRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.disableDataInstance, hcClient);
+    }
+
+    /**
+     * 生效模型数据实例
+     *
+     * 根据对象ID生效对应实例数据，返回生效成功数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataInstanceRequest 请求对象
+     * @return EnableDataInstanceResponse
+     */
+    public EnableDataInstanceResponse enableDataInstance(EnableDataInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.enableDataInstance);
+    }
+
+    /**
+     * 生效模型数据实例
+     *
+     * 根据对象ID生效对应实例数据，返回生效成功数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataInstanceRequest 请求对象
+     * @return SyncInvoker<EnableDataInstanceRequest, EnableDataInstanceResponse>
+     */
+    public SyncInvoker<EnableDataInstanceRequest, EnableDataInstanceResponse> enableDataInstanceInvoker(
+        EnableDataInstanceRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.enableDataInstance, hcClient);
+    }
+
+    /**
      * 修订M-V模型数据实例
      *
      * 通过此接口修订指定M-V模型实例。修订后，该实例的“version.修订版本”会更新为新的修订版本。
@@ -1054,6 +1314,35 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<ExecuteReviseRequest, ExecuteReviseResponse> executeReviseInvoker(ExecuteReviseRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.executeRevise, hcClient);
+    }
+
+    /**
+     * 新增模型业务编码
+     *
+     * 调用接口生成模型业务编码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateBusinessCodeRequest 请求对象
+     * @return GenerateBusinessCodeResponse
+     */
+    public GenerateBusinessCodeResponse generateBusinessCode(GenerateBusinessCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.generateBusinessCode);
+    }
+
+    /**
+     * 新增模型业务编码
+     *
+     * 调用接口生成模型业务编码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateBusinessCodeRequest 请求对象
+     * @return SyncInvoker<GenerateBusinessCodeRequest, GenerateBusinessCodeResponse>
+     */
+    public SyncInvoker<GenerateBusinessCodeRequest, GenerateBusinessCodeResponse> generateBusinessCodeInvoker(
+        GenerateBusinessCodeRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.generateBusinessCode, hcClient);
     }
 
     /**
@@ -1083,6 +1372,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<ListAllVersionsRequest, ListAllVersionsResponse> listAllVersionsInvoker(
         ListAllVersionsRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.listAllVersions, hcClient);
+    }
+
+    /**
+     * 分页查询模型历史版本信息
+     *
+     * 根据对象入参分页查询满足条件的系统版本详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryDataRequest 请求对象
+     * @return ListHistoryDataResponse
+     */
+    public ListHistoryDataResponse listHistoryData(ListHistoryDataRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.listHistoryData);
+    }
+
+    /**
+     * 分页查询模型历史版本信息
+     *
+     * 根据对象入参分页查询满足条件的系统版本详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryDataRequest 请求对象
+     * @return SyncInvoker<ListHistoryDataRequest, ListHistoryDataResponse>
+     */
+    public SyncInvoker<ListHistoryDataRequest, ListHistoryDataResponse> listHistoryDataInvoker(
+        ListHistoryDataRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listHistoryData, hcClient);
     }
 
     /**
@@ -1169,6 +1487,34 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<ListUsingPostRequest, ListUsingPostResponse> listUsingPostInvoker(ListUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.listUsingPost, hcClient);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除模型实例数据绑定的标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveTagRequest 请求对象
+     * @return RemoveTagResponse
+     */
+    public RemoveTagResponse removeTag(RemoveTagRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.removeTag);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除模型实例数据绑定的标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveTagRequest 请求对象
+     * @return SyncInvoker<RemoveTagRequest, RemoveTagResponse>
+     */
+    public SyncInvoker<RemoveTagRequest, RemoveTagResponse> removeTagInvoker(RemoveTagRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.removeTag, hcClient);
     }
 
     /**
@@ -1449,6 +1795,34 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 查询实例标签详细信息
+     *
+     * 根据对象ID获取数据实例标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTagRequest 请求对象
+     * @return ShowTagResponse
+     */
+    public ShowTagResponse showTag(ShowTagRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.showTag);
+    }
+
+    /**
+     * 查询实例标签详细信息
+     *
+     * 根据对象ID获取数据实例标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTagRequest 请求对象
+     * @return SyncInvoker<ShowTagRequest, ShowTagResponse>
+     */
+    public SyncInvoker<ShowTagRequest, ShowTagResponse> showTagInvoker(ShowTagRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showTag, hcClient);
+    }
+
+    /**
      * 获取指定版本的M-V模型实例数据
      *
      * 根据主对象ID、迭代版本和版本号，查询M-V模型实例的详细版本信息。
@@ -1475,6 +1849,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<ShowVersionByMasterRequest, ShowVersionByMasterResponse> showVersionByMasterInvoker(
         ShowVersionByMasterRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.showVersionByMaster, hcClient);
+    }
+
+    /**
+     * 切换模型生命周期模板或状态
+     *
+     * 根据对象ID重新分配生命周期模板&amp;状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLifecycleTemplateRequest 请求对象
+     * @return SwitchLifecycleTemplateResponse
+     */
+    public SwitchLifecycleTemplateResponse switchLifecycleTemplate(SwitchLifecycleTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.switchLifecycleTemplate);
+    }
+
+    /**
+     * 切换模型生命周期模板或状态
+     *
+     * 根据对象ID重新分配生命周期模板&amp;状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLifecycleTemplateRequest 请求对象
+     * @return SyncInvoker<SwitchLifecycleTemplateRequest, SwitchLifecycleTemplateResponse>
+     */
+    public SyncInvoker<SwitchLifecycleTemplateRequest, SwitchLifecycleTemplateResponse> switchLifecycleTemplateInvoker(
+        SwitchLifecycleTemplateRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.switchLifecycleTemplate, hcClient);
     }
 
     /**
@@ -1593,6 +1996,34 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 设置模型生命周期状态
+     *
+     * 根据对象实例ID设置指定生命周期状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStateRequest 请求对象
+     * @return UpdateStateResponse
+     */
+    public UpdateStateResponse updateState(UpdateStateRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.updateState);
+    }
+
+    /**
+     * 设置模型生命周期状态
+     *
+     * 根据对象实例ID设置指定生命周期状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStateRequest 请求对象
+     * @return SyncInvoker<UpdateStateRequest, UpdateStateResponse>
+     */
+    public SyncInvoker<UpdateStateRequest, UpdateStateResponse> updateStateInvoker(UpdateStateRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateState, hcClient);
+    }
+
+    /**
      * 更新实例
      *
      * 更新指定数据模型中的一个实例数据。如果实例的唯一编码不存在，则不做任何更新操作。
@@ -1619,6 +2050,34 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<UpdateUsingPostRequest, UpdateUsingPostResponse> updateUsingPostInvoker(
         UpdateUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateUsingPost, hcClient);
+    }
+
+    /**
+     * 批量创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateViewRequest 请求对象
+     * @return UpdateViewResponse
+     */
+    public UpdateViewResponse updateView(UpdateViewRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.updateView);
+    }
+
+    /**
+     * 批量创建视图
+     *
+     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateViewRequest 请求对象
+     * @return SyncInvoker<UpdateViewRequest, UpdateViewResponse>
+     */
+    public SyncInvoker<UpdateViewRequest, UpdateViewResponse> updateViewInvoker(UpdateViewRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateView, hcClient);
     }
 
 }

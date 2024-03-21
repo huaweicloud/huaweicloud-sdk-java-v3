@@ -93,7 +93,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -127,7 +127,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 云服务器ID
+     * 主机ID
      * @return hostId
      */
     public String getHostId() {
@@ -265,7 +265,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 默认是0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0
      * minimum: 0
      * maximum: 100
      * @return offset

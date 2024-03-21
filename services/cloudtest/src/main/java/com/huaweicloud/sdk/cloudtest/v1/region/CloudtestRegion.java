@@ -23,9 +23,6 @@ public class CloudtestRegion {
     public static final Region CN_SOUTH_1 =
         new Region("cn-south-1", "https://cloudtest-ext.cn-south-1.myhuaweicloud.com");
 
-    public static final Region CN_SOUTH_2 =
-        new Region("cn-south-2", "https://cloudtest-ext.cn-south-2.myhuaweicloud.com");
-
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://cloudtest-ext.cn-east-2.myhuaweicloud.cn");
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://cloudtest-ext.cn-east-3.myhuaweicloud.com");
@@ -48,7 +45,6 @@ public class CloudtestRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
-        map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("la-north-2", LA_NORTH_2);

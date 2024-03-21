@@ -35,6 +35,6 @@ public class StrictIntegerDeserializer extends JsonDeserializer<Integer> {
     @Override
     public Integer deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
         throws IOException {
-        return Integer.valueOf(jsonParser.getIntValue());
+        return jsonParser.getIntValue();
     }
 }

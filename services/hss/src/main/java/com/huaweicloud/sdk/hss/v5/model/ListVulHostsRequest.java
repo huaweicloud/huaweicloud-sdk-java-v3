@@ -75,13 +75,18 @@ public class ListVulHostsRequest {
 
     private Boolean isAffectBusiness;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority")
+
+    private String repairPriority;
+
     public ListVulHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业租户ID，“0”表示默认企业项目，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，“0”表示默认企业项目，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -132,7 +137,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 受影响资产名称
+     * 受影响主机名称
      * @return hostName
      */
     public String getHostName() {
@@ -149,7 +154,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 受影响资产ip
+     * 受影响主机ip
      * @return hostIp
      */
     public String getHostIp() {
@@ -202,7 +207,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 偏移
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -300,6 +305,23 @@ public class ListVulHostsRequest {
         this.isAffectBusiness = isAffectBusiness;
     }
 
+    public ListVulHostsRequest withRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+        return this;
+    }
+
+    /**
+     * 修复优先级,包含如下 - Critical 紧急  - High 高 - Medium 中 - Low 低
+     * @return repairPriority
+     */
+    public String getRepairPriority() {
+        return repairPriority;
+    }
+
+    public void setRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -316,7 +338,8 @@ public class ListVulHostsRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.handleStatus, that.handleStatus)
             && Objects.equals(this.severityLevel, that.severityLevel)
-            && Objects.equals(this.isAffectBusiness, that.isAffectBusiness);
+            && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
+            && Objects.equals(this.repairPriority, that.repairPriority);
     }
 
     @Override
@@ -333,7 +356,8 @@ public class ListVulHostsRequest {
             groupName,
             handleStatus,
             severityLevel,
-            isAffectBusiness);
+            isAffectBusiness,
+            repairPriority);
     }
 
     @Override
@@ -353,6 +377,7 @@ public class ListVulHostsRequest {
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
+        sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

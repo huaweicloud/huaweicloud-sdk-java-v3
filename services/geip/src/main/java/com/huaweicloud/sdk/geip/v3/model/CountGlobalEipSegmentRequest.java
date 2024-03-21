@@ -456,7 +456,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -489,7 +489,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据资源ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -522,7 +522,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据全域公网带宽的ID过滤
+     * Get internetBandwidthId
      * @return internetBandwidthId
      */
     public List<String> getInternetBandwidthId() {
@@ -555,7 +555,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据名称过滤
+     * Get name
      * @return name
      */
     public List<String> getName() {
@@ -572,7 +572,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据名称模糊匹配
+     * Get nameLike
      * @return nameLike
      */
     public String getNameLike() {
@@ -605,7 +605,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据接入点过滤
+     * Get accessSite
      * @return accessSite
      */
     public List<String> getAccessSite() {
@@ -638,7 +638,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据全域弹性公网IP池名称过滤
+     * Get geipPoolName
      * @return geipPoolName
      */
     public List<String> getGeipPoolName() {
@@ -671,7 +671,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据运营商线路过滤
+     * Get isp
      * @return isp
      */
     public List<String> getIsp() {
@@ -704,7 +704,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据IP版本过滤
+     * Get ipVersion
      * @return ipVersion
      */
     public List<IpVersionEnum> getIpVersion() {
@@ -737,7 +737,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据分配的CIDR过滤
+     * Get cidr
      * @return cidr
      */
     public List<String> getCidr() {
@@ -770,7 +770,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据分配的IPv6 CIDR过滤
+     * Get cidrV6
      * @return cidrV6
      */
     public List<String> getCidrV6() {
@@ -803,7 +803,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据是否冻结过滤
+     * Get freezen
      * @return freezen
      */
     public List<Boolean> getFreezen() {
@@ -837,7 +837,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据是否绑定全域公网带宽过滤
+     * Get internetBandwidthIsNull
      * @return internetBandwidthIsNull
      */
     public List<Boolean> getInternetBandwidthIsNull() {
@@ -870,7 +870,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据资源状态过滤
+     * Get status
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -904,7 +904,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例所属的局点过滤
+     * Get associateInstanceRegion
      * @return associateInstanceRegion
      */
     public List<String> getAssociateInstanceRegion() {
@@ -940,7 +940,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例所属的边缘信息过滤
+     * Get associateInstancePublicBorderGroup
      * @return associateInstancePublicBorderGroup
      */
     public List<String> getAssociateInstancePublicBorderGroup() {
@@ -974,7 +974,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例所在的站点过滤
+     * Get associateInstanceInstanceSite
      * @return associateInstanceInstanceSite
      */
     public List<String> getAssociateInstanceInstanceSite() {
@@ -1008,7 +1008,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例的类型过滤
+     * Get associateInstanceInstanceType
      * @return associateInstanceInstanceType
      */
     public List<String> getAssociateInstanceInstanceType() {
@@ -1042,7 +1042,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例的ID过滤
+     * Get associateInstanceInstanceId
      * @return associateInstanceInstanceId
      */
     public List<String> getAssociateInstanceInstanceId() {
@@ -1076,7 +1076,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据绑定实例所属的项目ID过滤
+     * Get associateInstanceProjectId
      * @return associateInstanceProjectId
      */
     public List<String> getAssociateInstanceProjectId() {
@@ -1109,7 +1109,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据企业项目ID过滤
+     * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -1142,7 +1142,7 @@ public class CountGlobalEipSegmentRequest {
     }
 
     /**
-     * 根据标签过滤
+     * Get tags
      * @return tags
      */
     public List<String> getTags() {

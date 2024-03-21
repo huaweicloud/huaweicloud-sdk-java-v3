@@ -30,7 +30,7 @@ public class ListProtectionPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 策略总数
      * minimum: 0
      * maximum: 2097152
      * @return totalNum

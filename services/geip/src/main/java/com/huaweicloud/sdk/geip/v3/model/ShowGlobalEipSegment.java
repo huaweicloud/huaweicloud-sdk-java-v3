@@ -54,10 +54,80 @@ public class ShowGlobalEipSegment {
 
     private String isp;
 
+    /**
+     * - 功能说明：全域弹性公网IP段的版本 - 取值范围：4、6
+     */
+    public static final class IpVersionEnum {
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final IpVersionEnum NUMBER_4 = new IpVersionEnum(4);
+
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
+        public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
+
+        private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpVersionEnum> createStaticFields() {
+            Map<Integer, IpVersionEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(6, NUMBER_6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IpVersionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_version")
 
-    private Integer ipVersion;
+    private IpVersionEnum ipVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidr")
@@ -212,7 +282,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * ID
+     * 全域弹性公网IP段的ID
      * @return id
      */
     public String getId() {
@@ -229,7 +299,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：全域弹性公网IP段名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {
@@ -246,7 +316,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * 用户自定义的资源描述
+     * - 功能说明：用户自定义的资源描述 - 约束：   - 值的长度最大512字符，由数字、字母、中文、_(下划线)、-（中划线）、.（点）组成。
      * @return description
      */
     public String getDescription() {
@@ -263,7 +333,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * 租户ID
+     * - 租户账号ID，获取租户账号ID请参见[租户账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)
      * @return domainId
      */
     public String getDomainId() {
@@ -314,7 +384,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * 线路
+     * 全域弹性公网IP所属线路
      * @return isp
      */
     public String getIsp() {
@@ -325,20 +395,20 @@ public class ShowGlobalEipSegment {
         this.isp = isp;
     }
 
-    public ShowGlobalEipSegment withIpVersion(Integer ipVersion) {
+    public ShowGlobalEipSegment withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
     /**
-     * IPv4或IPv6
+     * - 功能说明：全域弹性公网IP段的版本 - 取值范围：4、6
      * @return ipVersion
      */
-    public Integer getIpVersion() {
+    public IpVersionEnum getIpVersion() {
         return ipVersion;
     }
 
-    public void setIpVersion(Integer ipVersion) {
+    public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
 
@@ -602,7 +672,7 @@ public class ShowGlobalEipSegment {
     }
 
     /**
-     * 资源的企业项目id
+     * - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -138,7 +138,7 @@ public class PackageOptions {
     }
 
     /**
-     * 参数默认值，不指定时按默认值生效
+     * 参数默认值，不指定时按默认值生效, 参数类型以实际返回为准，可能为integer,string或者boolean
      * @return _default
      */
     public String getDefault() {

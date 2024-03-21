@@ -260,7 +260,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 虚拟机UUID
+     * 虚拟机UUID，即主机ID
      * @return vmUuid
      */
     public String getVmUuid() {

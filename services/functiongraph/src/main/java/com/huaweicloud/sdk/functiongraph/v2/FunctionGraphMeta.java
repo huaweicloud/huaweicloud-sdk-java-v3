@@ -2788,17 +2788,17 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<UpdateFuncSnapshotRequest.ActionEnum>withRequestField("action",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFuncSnapshotRequest.ActionEnum.class),
-            f -> f.withMarshaller(UpdateFuncSnapshotRequest::getAction, UpdateFuncSnapshotRequest::setAction));
         builder.<String>withRequestField("function_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateFuncSnapshotRequest::getFunctionUrn,
                 UpdateFuncSnapshotRequest::setFunctionUrn));
+        builder.<UpdateFuncSnapshotRequest.ActionEnum>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFuncSnapshotRequest.ActionEnum.class),
+            f -> f.withMarshaller(UpdateFuncSnapshotRequest::getAction, UpdateFuncSnapshotRequest::setAction));
 
         // response
 

@@ -27,7 +27,7 @@ public class VerifyDomainOwnerResponse extends SdkResponse {
     }
 
     /**
-     * 验证是否通过，true:通过，false:不通过
+     * 验证是否通过，true：通过，false：不通过。
      * @return result
      */
     public Boolean getResult() {

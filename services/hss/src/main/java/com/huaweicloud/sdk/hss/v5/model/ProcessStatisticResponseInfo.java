@@ -26,7 +26,7 @@ public class ProcessStatisticResponseInfo {
     }
 
     /**
-     * 进程名称
+     * 进程的可执行文件路径
      * @return path
      */
     public String getPath() {

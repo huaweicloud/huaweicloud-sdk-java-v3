@@ -71,23 +71,13 @@ public class ShowAssetStatisticResponse extends SdkResponse {
 
     private Long databaseNum;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "core_conf_file_num")
-
-    private Long coreConfFileNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "environment_num")
-
-    private Long environmentNum;
-
     public ShowAssetStatisticResponse withAccountNum(Long accountNum) {
         this.accountNum = accountNum;
         return this;
     }
 
     /**
-     * 账号数量
+     * 主机账号数量
      * minimum: 0
      * maximum: 2147483647
      * @return accountNum
@@ -163,7 +153,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 自启动数量
+     * 自启动进程数量
      * minimum: 0
      * maximum: 2147483647
      * @return autoLaunchNum
@@ -309,44 +299,6 @@ public class ShowAssetStatisticResponse extends SdkResponse {
         this.databaseNum = databaseNum;
     }
 
-    public ShowAssetStatisticResponse withCoreConfFileNum(Long coreConfFileNum) {
-        this.coreConfFileNum = coreConfFileNum;
-        return this;
-    }
-
-    /**
-     * 关键配置文件数量
-     * minimum: 0
-     * maximum: 2147483647
-     * @return coreConfFileNum
-     */
-    public Long getCoreConfFileNum() {
-        return coreConfFileNum;
-    }
-
-    public void setCoreConfFileNum(Long coreConfFileNum) {
-        this.coreConfFileNum = coreConfFileNum;
-    }
-
-    public ShowAssetStatisticResponse withEnvironmentNum(Long environmentNum) {
-        this.environmentNum = environmentNum;
-        return this;
-    }
-
-    /**
-     * 环境变量数量
-     * minimum: 0
-     * maximum: 2147483647
-     * @return environmentNum
-     */
-    public Long getEnvironmentNum() {
-        return environmentNum;
-    }
-
-    public void setEnvironmentNum(Long environmentNum) {
-        this.environmentNum = environmentNum;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -364,9 +316,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
             && Objects.equals(this.jarPackageNum, that.jarPackageNum)
             && Objects.equals(this.kernelModuleNum, that.kernelModuleNum)
             && Objects.equals(this.webServiceNum, that.webServiceNum) && Objects.equals(this.webAppNum, that.webAppNum)
-            && Objects.equals(this.databaseNum, that.databaseNum)
-            && Objects.equals(this.coreConfFileNum, that.coreConfFileNum)
-            && Objects.equals(this.environmentNum, that.environmentNum);
+            && Objects.equals(this.databaseNum, that.databaseNum);
     }
 
     @Override
@@ -382,9 +332,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
             kernelModuleNum,
             webServiceNum,
             webAppNum,
-            databaseNum,
-            coreConfFileNum,
-            environmentNum);
+            databaseNum);
     }
 
     @Override
@@ -403,8 +351,6 @@ public class ShowAssetStatisticResponse extends SdkResponse {
         sb.append("    webServiceNum: ").append(toIndentedString(webServiceNum)).append("\n");
         sb.append("    webAppNum: ").append(toIndentedString(webAppNum)).append("\n");
         sb.append("    databaseNum: ").append(toIndentedString(databaseNum)).append("\n");
-        sb.append("    coreConfFileNum: ").append(toIndentedString(coreConfFileNum)).append("\n");
-        sb.append("    environmentNum: ").append(toIndentedString(environmentNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

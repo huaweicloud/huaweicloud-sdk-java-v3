@@ -34,6 +34,6 @@ public class StrictFloatDeserializer extends JsonDeserializer<Float> {
 
     @Override
     public Float deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-        return Float.valueOf(jsonParser.getFloatValue());
+        return jsonParser.getFloatValue();
     }
 }

@@ -26,7 +26,7 @@ public class DetachInternetBandwidthRequest {
     }
 
     /**
-     * global_eip_id
+     * Get globalEipId
      * @return globalEipId
      */
     public String getGlobalEipId() {
@@ -43,7 +43,7 @@ public class DetachInternetBandwidthRequest {
     }
 
     /**
-     * 是否强制解绑
+     * Get forceUnbind
      * @return forceUnbind
      */
     public Boolean getForceUnbind() {

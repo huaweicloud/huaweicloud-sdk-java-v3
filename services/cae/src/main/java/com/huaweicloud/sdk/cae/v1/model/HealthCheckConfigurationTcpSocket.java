@@ -13,9 +13,9 @@ public class HealthCheckConfigurationTcpSocket {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
-    public HealthCheckConfigurationTcpSocket withPort(String port) {
+    public HealthCheckConfigurationTcpSocket withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -24,11 +24,11 @@ public class HealthCheckConfigurationTcpSocket {
      * 端口。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

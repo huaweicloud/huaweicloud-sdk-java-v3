@@ -51,7 +51,7 @@ public class ListProtectionPolicyRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -157,7 +157,7 @@ public class ListProtectionPolicyRequest {
     }
 
     /**
-     * 策略支持的操作系统
+     * 策略支持的操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
      * @return operatingSystem
      */
     public String getOperatingSystem() {

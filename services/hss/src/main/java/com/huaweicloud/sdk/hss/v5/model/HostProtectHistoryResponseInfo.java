@@ -56,7 +56,7 @@ public class HostProtectHistoryResponseInfo {
     }
 
     /**
-     * 检测时间
+     * 静态网页防篡改的检测时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return occrTime

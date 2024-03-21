@@ -150,7 +150,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -183,7 +183,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据全域公网带宽大小过滤
+     * Get size
      * @return size
      */
     public List<Integer> getSize() {
@@ -216,7 +216,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据名称过滤
+     * Get name
      * @return name
      */
     public List<String> getName() {
@@ -233,7 +233,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据名称模糊匹配
+     * Get nameLike
      * @return nameLike
      */
     public String getNameLike() {
@@ -266,7 +266,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据接入点过滤
+     * Get accessSite
      * @return accessSite
      */
     public List<String> getAccessSite() {
@@ -299,7 +299,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据资源状态过滤
+     * Get status
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -332,7 +332,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据企业项目ID过滤
+     * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -365,7 +365,7 @@ public class CountInternetBandwidthRequest {
     }
 
     /**
-     * 根据标签过滤
+     * Get tags
      * @return tags
      */
     public List<String> getTags() {

@@ -73,6 +73,11 @@ public class CreateInstanceRequestBody {
 
     private Boolean resTenant;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "anti_affinity")
+
+    private Boolean antiAffinity;
+
     public CreateInstanceRequestBody withChargemode(Integer chargemode) {
         this.chargemode = chargemode;
         return this;
@@ -164,7 +169,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 独享引擎版本规格   - 企业版：waf.instance.enterprise   - 专业版：waf.instance.professional
+     * 独享引擎版本规格   - waf.instance.enterprise：企业版，对应控制台WI-100规格   - waf.instance.professional：专业版，对应控制台WI-500规格
      * @return specification
      */
     public String getSpecification() {
@@ -181,7 +186,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 独享引擎ECS规格，实例规格企业版对应8U16G的ecs规格，专业版对应2U4G的ecs规格（通过调用ECS的ListFlavors接口获取应8U16G的ecs和2U4G的ecs对应规格id）
+     * 独享引擎ECS规格，实例规格。创建资源租户类独享引擎可不填该参数，创建普通资源租户独享引擎必填该参数。普通租户类独享引擎具体支持的规格以waf控制台上支持的规格为准，企业版对应8U16G的ecs规格，专业版对应2U4G的ecs规格。
      * @return cpuFlavor
      */
     public String getCpuFlavor() {
@@ -293,6 +298,23 @@ public class CreateInstanceRequestBody {
         this.resTenant = resTenant;
     }
 
+    public CreateInstanceRequestBody withAntiAffinity(Boolean antiAffinity) {
+        this.antiAffinity = antiAffinity;
+        return this;
+    }
+
+    /**
+     * 是否开启反亲和。仅资源租户独享实例支持该特性。
+     * @return antiAffinity
+     */
+    public Boolean getAntiAffinity() {
+        return antiAffinity;
+    }
+
+    public void setAntiAffinity(Boolean antiAffinity) {
+        this.antiAffinity = antiAffinity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -308,7 +330,7 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.specification, that.specification) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroup, that.securityGroup) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.resTenant, that.resTenant);
+            && Objects.equals(this.resTenant, that.resTenant) && Objects.equals(this.antiAffinity, that.antiAffinity);
     }
 
     @Override
@@ -324,7 +346,8 @@ public class CreateInstanceRequestBody {
             subnetId,
             securityGroup,
             count,
-            resTenant);
+            resTenant,
+            antiAffinity);
     }
 
     @Override
@@ -343,6 +366,7 @@ public class CreateInstanceRequestBody {
         sb.append("    securityGroup: ").append(toIndentedString(securityGroup)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    resTenant: ").append(toIndentedString(resTenant)).append("\n");
+        sb.append("    antiAffinity: ").append(toIndentedString(antiAffinity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

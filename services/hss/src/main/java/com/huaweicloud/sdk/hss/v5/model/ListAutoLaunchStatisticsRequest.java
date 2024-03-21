@@ -58,7 +58,7 @@ public class ListAutoLaunchStatisticsRequest {
     }
 
     /**
-     * 自启动项类型
+     * 自启动项类型   - 0 ：自启动服务   - 1 ：定时任务   - 2 ：预加载动态库   - 3 ：Run注册表键   - 4 ：开机启动文件夹
      * @return type
      */
     public String getType() {
@@ -75,7 +75,7 @@ public class ListAutoLaunchStatisticsRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -92,7 +92,7 @@ public class ListAutoLaunchStatisticsRequest {
     }
 
     /**
-     * 默认10
+     * 每页显示数量，默认10
      * minimum: 10
      * maximum: 100
      * @return limit
@@ -111,7 +111,7 @@ public class ListAutoLaunchStatisticsRequest {
     }
 
     /**
-     * 默认是0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * minimum: 0
      * maximum: 10000
      * @return offset

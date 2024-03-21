@@ -90,7 +90,7 @@ public class PolicyGroupResponseInfo {
     }
 
     /**
-     * 描述信息
+     * 策略组的描述信息
      * @return description
      */
     public String getDescription() {

@@ -34,6 +34,11 @@ public class CreateAppRequestBody {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_draft")
 
     private Boolean isDraft;
@@ -173,6 +178,23 @@ public class CreateAppRequestBody {
         this.description = description;
     }
 
+    public CreateAppRequestBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     public CreateAppRequestBody withIsDraft(Boolean isDraft) {
         this.isDraft = isDraft;
         return this;
@@ -293,15 +315,16 @@ public class CreateAppRequestBody {
         }
         CreateAppRequestBody that = (CreateAppRequestBody) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.isDraft, that.isDraft)
-            && Objects.equals(this.createType, that.createType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.isDraft, that.isDraft) && Objects.equals(this.createType, that.createType)
             && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.trigger, that.trigger)
             && Objects.equals(this.arrangeInfos, that.arrangeInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, name, description, isDraft, createType, slaveClusterId, trigger, arrangeInfos);
+        return Objects
+            .hash(projectId, name, description, groupId, isDraft, createType, slaveClusterId, trigger, arrangeInfos);
     }
 
     @Override
@@ -311,6 +334,7 @@ public class CreateAppRequestBody {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    isDraft: ").append(toIndentedString(isDraft)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");

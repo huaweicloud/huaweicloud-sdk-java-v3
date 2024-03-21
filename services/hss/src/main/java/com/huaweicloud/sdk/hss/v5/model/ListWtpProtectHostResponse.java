@@ -63,7 +63,7 @@ public class ListWtpProtectHostResponse extends SdkResponse {
     }
 
     /**
-     * total number
+     * total number of WTP protected servers
      * minimum: 0
      * maximum: 65535
      * @return totalNum

@@ -30,7 +30,7 @@ public class ListAutoLaunchsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 自启动项总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum

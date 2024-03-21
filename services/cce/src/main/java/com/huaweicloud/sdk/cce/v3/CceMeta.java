@@ -138,6 +138,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolRequest;
@@ -1841,6 +1843,40 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNodePoolRequest::getNodepoolId, ShowNodePoolRequest::setNodepoolId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNodePoolConfigurationDetailsRequest, ShowNodePoolConfigurationDetailsResponse> showNodePoolConfigurationDetails =
+        genForShowNodePoolConfigurationDetails();
+
+    private static HttpRequestDef<ShowNodePoolConfigurationDetailsRequest, ShowNodePoolConfigurationDetailsResponse> genForShowNodePoolConfigurationDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowNodePoolConfigurationDetailsRequest, ShowNodePoolConfigurationDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowNodePoolConfigurationDetailsRequest.class,
+                    ShowNodePoolConfigurationDetailsResponse.class)
+                .withName("ShowNodePoolConfigurationDetails")
+                .withUri(
+                    "/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodePoolConfigurationDetailsRequest::getClusterId,
+                ShowNodePoolConfigurationDetailsRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodePoolConfigurationDetailsRequest::getNodepoolId,
+                ShowNodePoolConfigurationDetailsRequest::setNodepoolId));
 
         // response
 

@@ -190,7 +190,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * ID
+     * 全域公网带宽的ID
      * @return id
      */
     public String getId() {
@@ -207,7 +207,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * 资源名称
+     * - 功能说明：全域公网带宽名称 - 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
      * @return name
      */
     public String getName() {
@@ -224,7 +224,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * 线路
+     * 全域弹性公网IP所属线路
      * @return isp
      */
     public String getIsp() {
@@ -292,7 +292,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * 用户自定义的资源描述
+     * - 功能说明：用户自定义的资源描述 - 约束：   - 值的长度最大512字符，由数字、字母、中文、_(下划线)、-（中划线）、.（点）组成。
      * @return description
      */
     public String getDescription() {
@@ -377,7 +377,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * 租户ID
+     * - 租户账号ID，获取租户账号ID请参见[租户账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)
      * @return domainId
      */
     public String getDomainId() {
@@ -495,7 +495,7 @@ public class UpdateInternetBandwidth {
     }
 
     /**
-     * 资源的企业项目id
+     * - 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 - 创建全域弹性公网IP时，给全域弹性公网IP绑定企业项目ID。 - 不指定该参数时，默认值是 0 - 关于企业项目ID的获取及企业项目特性的详细信息，请参见[《企业管理用户指南》](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

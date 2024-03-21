@@ -34,6 +34,6 @@ public class StrictDoubleDeserializer extends JsonDeserializer<Double> {
 
     @Override
     public Double deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-        return Double.valueOf(jsonParser.getDoubleValue());
+        return jsonParser.getDoubleValue();
     }
 }

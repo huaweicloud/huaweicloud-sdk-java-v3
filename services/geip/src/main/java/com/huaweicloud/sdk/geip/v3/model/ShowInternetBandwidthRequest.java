@@ -206,7 +206,7 @@ public class ShowInternetBandwidthRequest {
     }
 
     /**
-     * 全域公网带宽的ID
+     * Get internetBandwidthId
      * @return internetBandwidthId
      */
     public String getInternetBandwidthId() {
@@ -239,7 +239,7 @@ public class ShowInternetBandwidthRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {

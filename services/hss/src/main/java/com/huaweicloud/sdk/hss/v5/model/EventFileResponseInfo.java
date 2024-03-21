@@ -231,7 +231,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件hash
+     * 文件hash,当前为sha256
      * @return fileHash
      */
     public String getFileHash() {

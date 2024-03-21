@@ -66,7 +66,7 @@ public class AutoLauchResponseInfo {
     }
 
     /**
-     * agent_id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -151,7 +151,7 @@ public class AutoLauchResponseInfo {
     }
 
     /**
-     * 自启动项类型
+     * 自启动项类型   - 0 ：自启动服务   - 1 ：定时任务   - 2 ：预加载动态库   - 3 ：Run注册表键   - 4 ：开机启动文件夹
      * minimum: 0
      * maximum: 11
      * @return type
@@ -170,7 +170,7 @@ public class AutoLauchResponseInfo {
     }
 
     /**
-     * 路径
+     * 自启动项的路径
      * @return path
      */
     public String getPath() {
@@ -187,7 +187,7 @@ public class AutoLauchResponseInfo {
     }
 
     /**
-     * 文件hash
+     * 采用sha256算法生成的文件hash值
      * @return hash
      */
     public String getHash() {

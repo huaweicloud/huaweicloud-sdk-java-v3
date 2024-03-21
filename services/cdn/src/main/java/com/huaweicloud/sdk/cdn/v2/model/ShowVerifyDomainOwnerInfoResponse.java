@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -47,6 +50,11 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     private String verifyContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_verify_domains")
+
+    private List<String> fileVerifyDomains = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -57,7 +65,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * DNS探测类型
+     * DNS解析类型。
      * @return dnsVerifyType
      */
     public String getDnsVerifyType() {
@@ -74,7 +82,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * DNS记录名称
+     * DNS解析主机记录名称。
      * @return dnsVerifyName
      */
     public String getDnsVerifyName() {
@@ -91,7 +99,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * 文件探测地址
+     * 文件校验URL地址。
      * @return fileVerifyUrl
      */
     public String getFileVerifyUrl() {
@@ -108,7 +116,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * 域名
+     * 加速域名。
      * @return domainName
      */
     public String getDomainName() {
@@ -125,7 +133,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * 探测域名
+     * 校验域名。
      * @return verifyDomainName
      */
     public String getVerifyDomainName() {
@@ -142,7 +150,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * 探测文件名
+     * 文件校验的校验文件名。
      * @return fileVerifyFilename
      */
     public String getFileVerifyFilename() {
@@ -159,7 +167,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * 探测内容，DNS值或者文件内容，时间加uuid
+     * 校验值，解析值或者文件内容。
      * @return verifyContent
      */
     public String getVerifyContent() {
@@ -168,6 +176,39 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
 
     public void setVerifyContent(String verifyContent) {
         this.verifyContent = verifyContent;
+    }
+
+    public ShowVerifyDomainOwnerInfoResponse withFileVerifyDomains(List<String> fileVerifyDomains) {
+        this.fileVerifyDomains = fileVerifyDomains;
+        return this;
+    }
+
+    public ShowVerifyDomainOwnerInfoResponse addFileVerifyDomainsItem(String fileVerifyDomainsItem) {
+        if (this.fileVerifyDomains == null) {
+            this.fileVerifyDomains = new ArrayList<>();
+        }
+        this.fileVerifyDomains.add(fileVerifyDomainsItem);
+        return this;
+    }
+
+    public ShowVerifyDomainOwnerInfoResponse withFileVerifyDomains(Consumer<List<String>> fileVerifyDomainsSetter) {
+        if (this.fileVerifyDomains == null) {
+            this.fileVerifyDomains = new ArrayList<>();
+        }
+        fileVerifyDomainsSetter.accept(this.fileVerifyDomains);
+        return this;
+    }
+
+    /**
+     * 文件校验域名列表。
+     * @return fileVerifyDomains
+     */
+    public List<String> getFileVerifyDomains() {
+        return fileVerifyDomains;
+    }
+
+    public void setFileVerifyDomains(List<String> fileVerifyDomains) {
+        this.fileVerifyDomains = fileVerifyDomains;
     }
 
     public ShowVerifyDomainOwnerInfoResponse withXRequestId(String xRequestId) {
@@ -205,6 +246,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
             && Objects.equals(this.verifyDomainName, that.verifyDomainName)
             && Objects.equals(this.fileVerifyFilename, that.fileVerifyFilename)
             && Objects.equals(this.verifyContent, that.verifyContent)
+            && Objects.equals(this.fileVerifyDomains, that.fileVerifyDomains)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -217,6 +259,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
             verifyDomainName,
             fileVerifyFilename,
             verifyContent,
+            fileVerifyDomains,
             xRequestId);
     }
 
@@ -231,6 +274,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
         sb.append("    verifyDomainName: ").append(toIndentedString(verifyDomainName)).append("\n");
         sb.append("    fileVerifyFilename: ").append(toIndentedString(fileVerifyFilename)).append("\n");
         sb.append("    verifyContent: ").append(toIndentedString(verifyContent)).append("\n");
+        sb.append("    fileVerifyDomains: ").append(toIndentedString(fileVerifyDomains)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

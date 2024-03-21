@@ -30,7 +30,7 @@ public class ListVulnerabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 漏洞总数
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum

@@ -32,7 +32,7 @@ public class RunImageSynchronizeRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

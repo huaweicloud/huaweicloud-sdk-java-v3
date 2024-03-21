@@ -30,7 +30,7 @@ public class ListAppsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 软件总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum

@@ -118,6 +118,11 @@ public class VulInfo {
 
     private Integer verifyNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority_list")
+
+    private List<RepairPriorityListInfo> repairPriorityList = null;
+
     public VulInfo withVulName(String vulName) {
         this.vulName = vulName;
         return this;
@@ -191,7 +196,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复必要性
+     * 修复必要性   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -208,7 +213,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞级别
+     * 漏洞级别   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -244,7 +249,7 @@ public class VulInfo {
     }
 
     /**
-     * 未处理服务器台数
+     * 未处理主机台数，除已忽略和已修复的主机数量
      * minimum: 0
      * maximum: 2147483647
      * @return unhandleHostNum
@@ -263,7 +268,7 @@ public class VulInfo {
     }
 
     /**
-     * 最近扫描时间
+     * 最近扫描时间，时间戳单位：毫秒
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime
@@ -282,7 +287,7 @@ public class VulInfo {
     }
 
     /**
-     * 解决方案
+     * 修复漏洞的指导意见
      * @return solutionDetail
      */
     public String getSolutionDetail() {
@@ -366,7 +371,7 @@ public class VulInfo {
     }
 
     /**
-     * 主机列表
+     * 可处置该漏洞的主机列表
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -546,6 +551,39 @@ public class VulInfo {
         this.verifyNum = verifyNum;
     }
 
+    public VulInfo withRepairPriorityList(List<RepairPriorityListInfo> repairPriorityList) {
+        this.repairPriorityList = repairPriorityList;
+        return this;
+    }
+
+    public VulInfo addRepairPriorityListItem(RepairPriorityListInfo repairPriorityListItem) {
+        if (this.repairPriorityList == null) {
+            this.repairPriorityList = new ArrayList<>();
+        }
+        this.repairPriorityList.add(repairPriorityListItem);
+        return this;
+    }
+
+    public VulInfo withRepairPriorityList(Consumer<List<RepairPriorityListInfo>> repairPriorityListSetter) {
+        if (this.repairPriorityList == null) {
+            this.repairPriorityList = new ArrayList<>();
+        }
+        repairPriorityListSetter.accept(this.repairPriorityList);
+        return this;
+    }
+
+    /**
+     * 修复优先级，每个修复优先级对应的主机数量
+     * @return repairPriorityList
+     */
+    public List<RepairPriorityListInfo> getRepairPriorityList() {
+        return repairPriorityList;
+    }
+
+    public void setRepairPriorityList(List<RepairPriorityListInfo> repairPriorityList) {
+        this.repairPriorityList = repairPriorityList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -567,7 +605,8 @@ public class VulInfo {
             && Objects.equals(this.repairPriority, that.repairPriority) && Objects.equals(this.hostsNum, that.hostsNum)
             && Objects.equals(this.repairSuccessNum, that.repairSuccessNum)
             && Objects.equals(this.fixedNum, that.fixedNum) && Objects.equals(this.ignoredNum, that.ignoredNum)
-            && Objects.equals(this.verifyNum, that.verifyNum);
+            && Objects.equals(this.verifyNum, that.verifyNum)
+            && Objects.equals(this.repairPriorityList, that.repairPriorityList);
     }
 
     @Override
@@ -592,7 +631,8 @@ public class VulInfo {
             repairSuccessNum,
             fixedNum,
             ignoredNum,
-            verifyNum);
+            verifyNum,
+            repairPriorityList);
     }
 
     @Override
@@ -620,6 +660,7 @@ public class VulInfo {
         sb.append("    fixedNum: ").append(toIndentedString(fixedNum)).append("\n");
         sb.append("    ignoredNum: ").append(toIndentedString(ignoredNum)).append("\n");
         sb.append("    verifyNum: ").append(toIndentedString(verifyNum)).append("\n");
+        sb.append("    repairPriorityList: ").append(toIndentedString(repairPriorityList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

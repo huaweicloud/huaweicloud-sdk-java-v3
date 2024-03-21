@@ -81,7 +81,7 @@ public class ListVulnerabilitiesRequest {
     }
 
     /**
-     * 企业租户ID，“0”表示默认企业项目，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，“0”表示默认企业项目，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

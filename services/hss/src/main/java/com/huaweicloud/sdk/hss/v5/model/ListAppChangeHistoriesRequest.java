@@ -161,7 +161,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -178,7 +178,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 排序的key值
+     * 排序的key值，目前只支持按照recent_scan_time排序
      * @return sortKey
      */
     public String getSortKey() {
@@ -195,7 +195,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 升序还是降序，默认升序，asc
+     * 排序方式，默认为降序:   - asc ：升序   - desc ：降序
      * @return sortDir
      */
     public String getSortDir() {
@@ -212,7 +212,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 默认10
+     * 每页显示数量，默认10
      * minimum: 10
      * maximum: 100
      * @return limit
@@ -231,7 +231,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 默认是0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * minimum: 0
      * maximum: 10000
      * @return offset

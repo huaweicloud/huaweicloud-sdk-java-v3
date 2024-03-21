@@ -277,7 +277,7 @@ public class ConfigurationResponseDataSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
@@ -1034,7 +1034,7 @@ public class ConfigurationResponseDataSpec {
         this.path = path;
     }
 
-    public ConfigurationResponseDataSpec withPort(String port) {
+    public ConfigurationResponseDataSpec withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -1043,11 +1043,11 @@ public class ConfigurationResponseDataSpec {
      * 自定义监控指标配置采集端口。  Configuration.type为\"customMetric\"时，返回此参数。 
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

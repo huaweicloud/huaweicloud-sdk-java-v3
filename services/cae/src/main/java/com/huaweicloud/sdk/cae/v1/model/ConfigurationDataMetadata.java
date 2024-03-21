@@ -40,7 +40,7 @@ public class ConfigurationDataMetadata {
     }
 
     /**
-     * 附加参数。  举例：负载均衡分配策略使用加权轮询算法，不启用健康检查。配置如下： - \"kubernetes.io/elb.health-check-flag\": \"off\" - \"kubernetes.io/elb.lb-algorithm\": \"ROUND_ROBIN\" 
+     * 附加参数。 
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

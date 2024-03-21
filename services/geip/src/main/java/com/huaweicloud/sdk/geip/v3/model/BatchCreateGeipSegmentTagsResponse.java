@@ -12,7 +12,7 @@ import java.util.Objects;
 public class BatchCreateGeipSegmentTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
+    @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
 
@@ -26,7 +26,7 @@ public class BatchCreateGeipSegmentTagsResponse extends SdkResponse {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }

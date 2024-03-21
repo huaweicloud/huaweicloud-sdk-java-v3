@@ -11,8 +11,13 @@ import com.huaweicloud.sdk.rgc.v1.model.ControlOperateReqBody;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.CreateManagedAccountRequest;
+import com.huaweicloud.sdk.rgc.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.rgc.v1.model.CreateTemplateRequestBody;
+import com.huaweicloud.sdk.rgc.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DeleteManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeleteManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateRequest;
+import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
@@ -42,6 +47,10 @@ import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedAccountsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ListManagedOrganizationalUnitsResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListOperationRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListPredefinedTemplatesRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListPredefinedTemplatesResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ReRegisterOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.RegisterOrganizationalUnitRequest;
@@ -77,6 +86,8 @@ import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowManagedOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowOperationResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ShowTemplateDeployParamsRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ShowTemplateDeployParamsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.UnEnrollAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.UpdateManagedAccountRequest;
@@ -834,6 +845,35 @@ public class RgcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOperationRequest, ListOperationResponse> listOperation =
+        genForListOperation();
+
+    private static HttpRequestDef<ListOperationRequest, ListOperationResponse> genForListOperation() {
+        // basic
+        HttpRequestDef.Builder<ListOperationRequest, ListOperationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOperationRequest.class, ListOperationResponse.class)
+                .withName("ListOperation")
+                .withUri("/v1/managed-organization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("account_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationRequest::getAccountId, ListOperationRequest::setAccountId));
+        builder.<String>withRequestField("organization_unit_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationRequest::getOrganizationUnitId,
+                ListOperationRequest::setOrganizationUnitId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ReRegisterOrganizationalUnitRequest, ReRegisterOrganizationalUnitResponse> reRegisterOrganizationalUnit =
         genForReRegisterOrganizationalUnit();
 
@@ -924,10 +964,10 @@ public class RgcMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("account_type",
+        builder.<ShowManagedCoreAccountRequest.AccountTypeEnum>withRequestField("account_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowManagedCoreAccountRequest.AccountTypeEnum.class),
             f -> f.withMarshaller(ShowManagedCoreAccountRequest::getAccountType,
                 ShowManagedCoreAccountRequest::setAccountType));
 
@@ -1033,6 +1073,101 @@ public class RgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateManagedAccountRequestBody.class),
             f -> f.withMarshaller(UpdateManagedAccountRequest::getBody, UpdateManagedAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForCreateTemplate();
+
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
+                .withUri("/v1/rgc/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTemplateRequestBody.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
+        genForDeleteTemplate();
+
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genForDeleteTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
+                .withName("DeleteTemplate")
+                .withUri("/v1/rgc/templates/{template_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateName, DeleteTemplateRequest::setTemplateName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPredefinedTemplatesRequest, ListPredefinedTemplatesResponse> listPredefinedTemplates =
+        genForListPredefinedTemplates();
+
+    private static HttpRequestDef<ListPredefinedTemplatesRequest, ListPredefinedTemplatesResponse> genForListPredefinedTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListPredefinedTemplatesRequest, ListPredefinedTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPredefinedTemplatesRequest.class, ListPredefinedTemplatesResponse.class)
+            .withName("ListPredefinedTemplates")
+            .withUri("/v1/rgc/predefined-templates")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateDeployParamsRequest, ShowTemplateDeployParamsResponse> showTemplateDeployParams =
+        genForShowTemplateDeployParams();
+
+    private static HttpRequestDef<ShowTemplateDeployParamsRequest, ShowTemplateDeployParamsResponse> genForShowTemplateDeployParams() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateDeployParamsRequest, ShowTemplateDeployParamsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowTemplateDeployParamsRequest.class, ShowTemplateDeployParamsResponse.class)
+                .withName("ShowTemplateDeployParams")
+                .withUri("/v1/rgc/templates/{template_name}/deploy-params")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateDeployParamsRequest::getTemplateName,
+                ShowTemplateDeployParamsRequest::setTemplateName));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateDeployParamsRequest::getVersion,
+                ShowTemplateDeployParamsRequest::setVersion));
 
         // response
 

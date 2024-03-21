@@ -36,12 +36,12 @@ public class ListNatGatewaySnatRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_address")
 
-    private String floatingIpAddress;
+    private List<String> floatingIpAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_id")
 
-    private String floatingIpId;
+    private List<String> floatingIpId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -230,37 +230,69 @@ public class ListNatGatewaySnatRulesRequest {
         this.limit = limit;
     }
 
-    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(String floatingIpAddress) {
+    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(List<String> floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
     }
 
+    public ListNatGatewaySnatRulesRequest addFloatingIpAddressItem(String floatingIpAddressItem) {
+        if (this.floatingIpAddress == null) {
+            this.floatingIpAddress = new ArrayList<>();
+        }
+        this.floatingIpAddress.add(floatingIpAddressItem);
+        return this;
+    }
+
+    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(Consumer<List<String>> floatingIpAddressSetter) {
+        if (this.floatingIpAddress == null) {
+            this.floatingIpAddress = new ArrayList<>();
+        }
+        floatingIpAddressSetter.accept(this.floatingIpAddress);
+        return this;
+    }
+
     /**
-     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
+     * 功能说明：弹性公网IP。
      * @return floatingIpAddress
      */
-    public String getFloatingIpAddress() {
+    public List<String> getFloatingIpAddress() {
         return floatingIpAddress;
     }
 
-    public void setFloatingIpAddress(String floatingIpAddress) {
+    public void setFloatingIpAddress(List<String> floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
 
-    public ListNatGatewaySnatRulesRequest withFloatingIpId(String floatingIpId) {
+    public ListNatGatewaySnatRulesRequest withFloatingIpId(List<String> floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
     }
 
+    public ListNatGatewaySnatRulesRequest addFloatingIpIdItem(String floatingIpIdItem) {
+        if (this.floatingIpId == null) {
+            this.floatingIpId = new ArrayList<>();
+        }
+        this.floatingIpId.add(floatingIpIdItem);
+        return this;
+    }
+
+    public ListNatGatewaySnatRulesRequest withFloatingIpId(Consumer<List<String>> floatingIpIdSetter) {
+        if (this.floatingIpId == null) {
+            this.floatingIpId = new ArrayList<>();
+        }
+        floatingIpIdSetter.accept(this.floatingIpId);
+        return this;
+    }
+
     /**
-     * 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
+     * 功能说明：弹性公网IP的id。
      * @return floatingIpId
      */
-    public String getFloatingIpId() {
+    public List<String> getFloatingIpId() {
         return floatingIpId;
     }
 
-    public void setFloatingIpId(String floatingIpId) {
+    public void setFloatingIpId(List<String> floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
 

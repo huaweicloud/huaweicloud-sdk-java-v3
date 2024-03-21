@@ -26,7 +26,7 @@ public class UserStatisticInfoResponseInfo {
     }
 
     /**
-     * 账号名称
+     * 账号名称，参考windows文件命名规则，支持字母、数字、下划线，特殊字符!@.-等
      * @return userName
      */
     public String getUserName() {
@@ -43,7 +43,7 @@ public class UserStatisticInfoResponseInfo {
     }
 
     /**
-     * 账号数量
+     * 当前账号的主机数量
      * minimum: 0
      * maximum: 10000
      * @return num

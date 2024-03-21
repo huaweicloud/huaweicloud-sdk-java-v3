@@ -50,6 +50,11 @@ public class ListHostVulsRequest {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority")
+
+    private String repairPriority;
+
     public ListHostVulsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -190,6 +195,23 @@ public class ListHostVulsRequest {
         this.status = status;
     }
 
+    public ListHostVulsRequest withRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+        return this;
+    }
+
+    /**
+     * 修复优先级,包含如下 - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * @return repairPriority
+     */
+    public String getRepairPriority() {
+        return repairPriority;
+    }
+
+    public void setRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +225,13 @@ public class ListHostVulsRequest {
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.handleStatus, that.handleStatus)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.repairPriority, that.repairPriority);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId, type, vulName, limit, offset, handleStatus, status);
+        return Objects
+            .hash(enterpriseProjectId, hostId, type, vulName, limit, offset, handleStatus, status, repairPriority);
     }
 
     @Override
@@ -223,6 +246,7 @@ public class ListHostVulsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

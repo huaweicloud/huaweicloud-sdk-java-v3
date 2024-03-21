@@ -18,6 +18,16 @@ import java.util.function.Consumer;
  */
 public class AccessConfigurationDataItems {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uid")
+
+    private String uid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private AccessConfigurationMetadata metadata;
+
     /**
      * 访问方式类型。
      */
@@ -102,7 +112,7 @@ public class AccessConfigurationDataItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_names")
 
-    private String domainNames;
+    private List<String> domainNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_control")
@@ -113,6 +123,64 @@ public class AccessConfigurationDataItems {
     @JsonProperty(value = "ports")
 
     private List<AccessConfigurationPort> ports = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elb_id")
+
+    private String elbId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_ip")
+
+    private String privateIp;
+
+    public AccessConfigurationDataItems withUid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    /**
+     * 访问方式的uid。
+     * @return uid
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public AccessConfigurationDataItems withMetadata(AccessConfigurationMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public AccessConfigurationDataItems withMetadata(Consumer<AccessConfigurationMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new AccessConfigurationMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public AccessConfigurationMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(AccessConfigurationMetadata metadata) {
+        this.metadata = metadata;
+    }
 
     public AccessConfigurationDataItems withType(TypeEnum type) {
         this.type = type;
@@ -131,8 +199,24 @@ public class AccessConfigurationDataItems {
         this.type = type;
     }
 
-    public AccessConfigurationDataItems withDomainNames(String domainNames) {
+    public AccessConfigurationDataItems withDomainNames(List<String> domainNames) {
         this.domainNames = domainNames;
+        return this;
+    }
+
+    public AccessConfigurationDataItems addDomainNamesItem(String domainNamesItem) {
+        if (this.domainNames == null) {
+            this.domainNames = new ArrayList<>();
+        }
+        this.domainNames.add(domainNamesItem);
+        return this;
+    }
+
+    public AccessConfigurationDataItems withDomainNames(Consumer<List<String>> domainNamesSetter) {
+        if (this.domainNames == null) {
+            this.domainNames = new ArrayList<>();
+        }
+        domainNamesSetter.accept(this.domainNames);
         return this;
     }
 
@@ -140,11 +224,11 @@ public class AccessConfigurationDataItems {
      * 内网访问方式域名。
      * @return domainNames
      */
-    public String getDomainNames() {
+    public List<String> getDomainNames() {
         return domainNames;
     }
 
-    public void setDomainNames(String domainNames) {
+    public void setDomainNames(List<String> domainNames) {
         this.domainNames = domainNames;
     }
 
@@ -207,6 +291,57 @@ public class AccessConfigurationDataItems {
         this.ports = ports;
     }
 
+    public AccessConfigurationDataItems withElbId(String elbId) {
+        this.elbId = elbId;
+        return this;
+    }
+
+    /**
+     * 用户选择的elb的ID。
+     * @return elbId
+     */
+    public String getElbId() {
+        return elbId;
+    }
+
+    public void setElbId(String elbId) {
+        this.elbId = elbId;
+    }
+
+    public AccessConfigurationDataItems withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 响应体参数，用户选择的elb的公网ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    public AccessConfigurationDataItems withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+        return this;
+    }
+
+    /**
+     * 响应体参数，用户选择的elb的私网ip。
+     * @return privateIp
+     */
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -216,23 +351,31 @@ public class AccessConfigurationDataItems {
             return false;
         }
         AccessConfigurationDataItems that = (AccessConfigurationDataItems) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.domainNames, that.domainNames)
-            && Objects.equals(this.accessControl, that.accessControl) && Objects.equals(this.ports, that.ports);
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.domainNames, that.domainNames)
+            && Objects.equals(this.accessControl, that.accessControl) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.elbId, that.elbId) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.privateIp, that.privateIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, domainNames, accessControl, ports);
+        return Objects.hash(uid, metadata, type, domainNames, accessControl, ports, elbId, publicIp, privateIp);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessConfigurationDataItems {\n");
+        sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("    accessControl: ").append(toIndentedString(accessControl)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
+        sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

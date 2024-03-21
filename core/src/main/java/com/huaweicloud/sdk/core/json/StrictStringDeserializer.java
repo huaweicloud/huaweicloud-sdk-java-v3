@@ -36,11 +36,10 @@ public class StrictStringDeserializer extends JsonDeserializer<String> {
 
     @Override
     public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-
         if (jsonParser.getCurrentToken() == JsonToken.VALUE_STRING) {
             return jsonParser.getValueAsString();
         }
         throw new JsonParseException(jsonParser,
-            String.format("Current token (%s) not of string type", jsonParser.getCurrentToken()));
+            String.format("Cannot deserialize current JsonToken (%s) to string type", jsonParser.getCurrentToken()));
     }
 }

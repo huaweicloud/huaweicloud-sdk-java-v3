@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 处理时间，毫秒
+ * 处理时间，毫秒，已处理的告警才有
  */
 public class HandleTime {
 

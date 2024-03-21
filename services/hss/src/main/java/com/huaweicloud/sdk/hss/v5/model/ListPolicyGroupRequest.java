@@ -35,13 +35,18 @@ public class ListPolicyGroupRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_mode")
+
+    private Boolean containerMode;
+
     public ListPolicyGroupRequest withRegion(String region) {
         this.region = region;
         return this;
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -58,7 +63,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 租户企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -124,6 +129,23 @@ public class ListPolicyGroupRequest {
         this.limit = limit;
     }
 
+    public ListPolicyGroupRequest withContainerMode(Boolean containerMode) {
+        this.containerMode = containerMode;
+        return this;
+    }
+
+    /**
+     * 是否查询容器版策略
+     * @return containerMode
+     */
+    public Boolean getContainerMode() {
+        return containerMode;
+    }
+
+    public void setContainerMode(Boolean containerMode) {
+        this.containerMode = containerMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +158,12 @@ public class ListPolicyGroupRequest {
         return Objects.equals(this.region, that.region)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.containerMode, that.containerMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, groupName, offset, limit);
+        return Objects.hash(region, enterpriseProjectId, groupName, offset, limit, containerMode);
     }
 
     @Override
@@ -153,6 +175,7 @@ public class ListPolicyGroupRequest {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    containerMode: ").append(toIndentedString(containerMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

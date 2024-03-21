@@ -33,6 +33,16 @@ public class SmartDocumentRecognizerLayoutBlock {
 
     private List<Integer> wordsIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_id")
+
+    private Integer tableId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "form_id")
+
+    private Integer formId;
+
     public SmartDocumentRecognizerLayoutBlock withLocation(List<List<Integer>> location) {
         this.location = location;
         return this;
@@ -133,6 +143,40 @@ public class SmartDocumentRecognizerLayoutBlock {
         this.wordsIds = wordsIds;
     }
 
+    public SmartDocumentRecognizerLayoutBlock withTableId(Integer tableId) {
+        this.tableId = tableId;
+        return this;
+    }
+
+    /**
+     * 仅当type为\"table\"且入参table为True时返回该字段，表示当前逻辑表格区域对应table_result中哪一项识别结果。 
+     * @return tableId
+     */
+    public Integer getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(Integer tableId) {
+        this.tableId = tableId;
+    }
+
+    public SmartDocumentRecognizerLayoutBlock withFormId(Integer formId) {
+        this.formId = formId;
+        return this;
+    }
+
+    /**
+     * 仅当type为\"form\"且入参form为True时返回该字段，表示当前有线表单区域对应form_result中哪一项识别结果。 
+     * @return formId
+     */
+    public Integer getFormId() {
+        return formId;
+    }
+
+    public void setFormId(Integer formId) {
+        this.formId = formId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -143,12 +187,13 @@ public class SmartDocumentRecognizerLayoutBlock {
         }
         SmartDocumentRecognizerLayoutBlock that = (SmartDocumentRecognizerLayoutBlock) obj;
         return Objects.equals(this.location, that.location) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.text, that.text) && Objects.equals(this.wordsIds, that.wordsIds);
+            && Objects.equals(this.text, that.text) && Objects.equals(this.wordsIds, that.wordsIds)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.formId, that.formId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(location, type, text, wordsIds);
+        return Objects.hash(location, type, text, wordsIds, tableId, formId);
     }
 
     @Override
@@ -159,6 +204,8 @@ public class SmartDocumentRecognizerLayoutBlock {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    text: ").append(toIndentedString(text)).append("\n");
         sb.append("    wordsIds: ").append(toIndentedString(wordsIds)).append("\n");
+        sb.append("    tableId: ").append(toIndentedString(tableId)).append("\n");
+        sb.append("    formId: ").append(toIndentedString(formId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

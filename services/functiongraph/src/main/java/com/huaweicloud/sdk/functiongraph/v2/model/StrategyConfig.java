@@ -43,7 +43,7 @@ public class StrategyConfig {
     }
 
     /**
-     * 单实例最大并发数，v2版本才支持，取值-1到1000
+     * 单实例并发数，v2版本才支持，取值1到1000
      * @return concurrentNum
      */
     public Integer getConcurrentNum() {

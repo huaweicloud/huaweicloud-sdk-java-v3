@@ -39,7 +39,7 @@ public class CheckRuleKeyInfoRequestInfo {
     }
 
     /**
-     * 基线名称
+     * 配置检查（基线）的名称，例如SSH、CentOS 7、Windows
      * @return checkName
      */
     public String getCheckName() {
@@ -56,7 +56,7 @@ public class CheckRuleKeyInfoRequestInfo {
     }
 
     /**
-     * 检查项ID
+     * 检查项ID，值可以通过这个接口的返回数据获得：/v5/{project_id}/baseline/risk-config/{check_name}/check-rules
      * @return checkRuleId
      */
     public String getCheckRuleId() {

@@ -32,7 +32,7 @@ public class ChangeHostsGroupRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

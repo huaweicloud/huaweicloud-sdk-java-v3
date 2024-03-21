@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusResponse;
+import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderRequest;
+import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupRequest;
@@ -135,6 +137,8 @@ import com.huaweicloud.sdk.hss.v5.model.ShowCheckRuleDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowCheckRuleDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowImageCheckRuleDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowImageCheckRuleDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowResourceQuotasRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowResourceQuotasResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowRiskConfigDetailRequest;
@@ -196,9 +200,9 @@ public class HssClient {
     }
 
     /**
-     * 部署策略
+     * 部署策略组
      *
-     * 部署策略
+     * 部署策略组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -210,9 +214,9 @@ public class HssClient {
     }
 
     /**
-     * 部署策略
+     * 部署策略组
      *
-     * 部署策略
+     * 部署策略组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -482,6 +486,35 @@ public class HssClient {
     public SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse> changeVulStatusInvoker(
         ChangeVulStatusRequest request) {
         return new SyncInvoker<>(request, HssMeta.changeVulStatus, hcClient);
+    }
+
+    /**
+     * HSS服务创建订单订购配额
+     *
+     * HSS服务创建订单订购配额，只支持包周期计费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateQuotasOrderRequest 请求对象
+     * @return CreateQuotasOrderResponse
+     */
+    public CreateQuotasOrderResponse createQuotasOrder(CreateQuotasOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createQuotasOrder);
+    }
+
+    /**
+     * HSS服务创建订单订购配额
+     *
+     * HSS服务创建订单订购配额，只支持包周期计费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateQuotasOrderRequest 请求对象
+     * @return SyncInvoker<CreateQuotasOrderRequest, CreateQuotasOrderResponse>
+     */
+    public SyncInvoker<CreateQuotasOrderRequest, CreateQuotasOrderResponse> createQuotasOrderInvoker(
+        CreateQuotasOrderRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createQuotasOrder, hcClient);
     }
 
     /**
@@ -1352,9 +1385,9 @@ public class HssClient {
     }
 
     /**
-     * 查询防护策略列表
+     * 查询勒索病毒的防护策略列表
      *
-     * 查询防护策略列表
+     * 查询勒索病毒的防护策略列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1366,9 +1399,9 @@ public class HssClient {
     }
 
     /**
-     * 查询防护策略列表
+     * 查询勒索病毒的防护策略列表
      *
-     * 查询防护策略列表
+     * 查询勒索病毒的防护策略列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2074,6 +2107,36 @@ public class HssClient {
     }
 
     /**
+     * 查询产商品信息
+     *
+     * 查询产商品信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProductdataOfferingInfosRequest 请求对象
+     * @return ShowProductdataOfferingInfosResponse
+     */
+    public ShowProductdataOfferingInfosResponse showProductdataOfferingInfos(
+        ShowProductdataOfferingInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showProductdataOfferingInfos);
+    }
+
+    /**
+     * 查询产商品信息
+     *
+     * 查询产商品信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProductdataOfferingInfosRequest 请求对象
+     * @return SyncInvoker<ShowProductdataOfferingInfosRequest, ShowProductdataOfferingInfosResponse>
+     */
+    public SyncInvoker<ShowProductdataOfferingInfosRequest, ShowProductdataOfferingInfosResponse> showProductdataOfferingInfosInvoker(
+        ShowProductdataOfferingInfosRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showProductdataOfferingInfos, hcClient);
+    }
+
+    /**
      * 查询配额信息
      *
      * 查询配额信息
@@ -2306,9 +2369,9 @@ public class HssClient {
     }
 
     /**
-     * 修改防护策略
+     * 修改勒索防护策略
      *
-     * 修改防护策略
+     * 修改勒索防护策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2320,9 +2383,9 @@ public class HssClient {
     }
 
     /**
-     * 修改防护策略
+     * 修改勒索防护策略
      *
-     * 修改防护策略
+     * 修改勒索防护策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

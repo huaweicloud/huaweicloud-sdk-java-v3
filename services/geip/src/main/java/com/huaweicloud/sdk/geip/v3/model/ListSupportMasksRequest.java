@@ -476,7 +476,7 @@ public class ListSupportMasksRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -575,7 +575,7 @@ public class ListSupportMasksRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -608,7 +608,7 @@ public class ListSupportMasksRequest {
     }
 
     /**
-     * 根据IP版本过滤
+     * Get ipVersion
      * @return ipVersion
      */
     public List<IpVersionEnum> getIpVersion() {
@@ -641,7 +641,7 @@ public class ListSupportMasksRequest {
     }
 
     /**
-     * 根据掩码过滤
+     * Get mask
      * @return mask
      */
     public List<Integer> getMask() {

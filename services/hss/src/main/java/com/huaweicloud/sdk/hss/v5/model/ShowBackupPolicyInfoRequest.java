@@ -26,7 +26,7 @@ public class ShowBackupPolicyInfoRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

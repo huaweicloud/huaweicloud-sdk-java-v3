@@ -71,7 +71,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -190,7 +190,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 资源ID
+     * HSS配额的资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -243,7 +243,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字
      * minimum: 0
      * maximum: 2000000
      * @return offset

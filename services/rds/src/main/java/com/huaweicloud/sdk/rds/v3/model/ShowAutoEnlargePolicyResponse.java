@@ -26,6 +26,11 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
 
     private Integer triggerThreshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "step_percent")
+
+    private Integer stepPercent;
+
     public ShowAutoEnlargePolicyResponse withSwitchOption(Boolean switchOption) {
         this.switchOption = switchOption;
         return this;
@@ -77,6 +82,23 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
         this.triggerThreshold = triggerThreshold;
     }
 
+    public ShowAutoEnlargePolicyResponse withStepPercent(Integer stepPercent) {
+        this.stepPercent = stepPercent;
+        return this;
+    }
+
+    /**
+     * 每次自动扩容的百分比步长，开启自定义步长功能时返回。
+     * @return stepPercent
+     */
+    public Integer getStepPercent() {
+        return stepPercent;
+    }
+
+    public void setStepPercent(Integer stepPercent) {
+        this.stepPercent = stepPercent;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,13 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
         }
         ShowAutoEnlargePolicyResponse that = (ShowAutoEnlargePolicyResponse) obj;
         return Objects.equals(this.switchOption, that.switchOption) && Objects.equals(this.limitSize, that.limitSize)
-            && Objects.equals(this.triggerThreshold, that.triggerThreshold);
+            && Objects.equals(this.triggerThreshold, that.triggerThreshold)
+            && Objects.equals(this.stepPercent, that.stepPercent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(switchOption, limitSize, triggerThreshold);
+        return Objects.hash(switchOption, limitSize, triggerThreshold, stepPercent);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
         sb.append("    switchOption: ").append(toIndentedString(switchOption)).append("\n");
         sb.append("    limitSize: ").append(toIndentedString(limitSize)).append("\n");
         sb.append("    triggerThreshold: ").append(toIndentedString(triggerThreshold)).append("\n");
+        sb.append("    stepPercent: ").append(toIndentedString(stepPercent)).append("\n");
         sb.append("}");
         return sb.toString();
     }

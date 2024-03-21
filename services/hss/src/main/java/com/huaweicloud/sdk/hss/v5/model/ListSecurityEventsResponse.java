@@ -30,7 +30,7 @@ public class ListSecurityEventsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 告警事件总数
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum

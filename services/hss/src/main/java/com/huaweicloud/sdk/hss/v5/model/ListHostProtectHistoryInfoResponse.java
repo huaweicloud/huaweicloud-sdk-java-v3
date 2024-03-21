@@ -74,7 +74,7 @@ public class ListHostProtectHistoryInfoResponse extends SdkResponse {
     }
 
     /**
-     * total number
+     * total number of static WTPs
      * minimum: 0
      * maximum: 20000000
      * @return totalNum

@@ -50,7 +50,7 @@ public class ListGlobalEipFilterTagsRequest {
     }
 
     /**
-     * 每页条数
+     * Get limit
      * @return limit
      */
     public List<Integer> getLimit() {
@@ -83,7 +83,7 @@ public class ListGlobalEipFilterTagsRequest {
     }
 
     /**
-     * 分页起始点
+     * Get offset
      * @return offset
      */
     public List<Integer> getOffset() {

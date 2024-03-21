@@ -30,7 +30,7 @@ public class ListRiskConfigHostsResponse extends SdkResponse {
     }
 
     /**
-     * 数据总量
+     * 受配置检测影响的服务器数据总量
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum

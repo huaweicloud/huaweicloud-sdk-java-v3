@@ -46,7 +46,7 @@ public class ListAlarmWhiteListRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -63,7 +63,7 @@ public class ListAlarmWhiteListRequest {
     }
 
     /**
-     * 租户企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -80,7 +80,7 @@ public class ListAlarmWhiteListRequest {
     }
 
     /**
-     * SHA256
+     * 事件白名单SHA256
      * @return hash
      */
     public String getHash() {
@@ -116,7 +116,7 @@ public class ListAlarmWhiteListRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字
      * minimum: 0
      * maximum: 2000000
      * @return offset

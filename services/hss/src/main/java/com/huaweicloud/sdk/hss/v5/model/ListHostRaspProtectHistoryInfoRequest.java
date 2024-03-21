@@ -83,7 +83,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 企业项目
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -100,7 +100,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * Host Id
+     * Host Id，为空时查所有主机
      * @return hostId
      */
     public String getHostId() {
@@ -117,7 +117,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 起始时间
+     * 起始时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return startTime
@@ -136,7 +136,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 终止时间
+     * 终止时间(ms)
      * minimum: 0
      * maximum: 4070880000000
      * @return endTime
@@ -193,7 +193,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 告警级别
+     * 告警级别 - 1 : 低危 - 2 : 中危 - 3 : 高危 - 4 : 严重
      * minimum: 0
      * maximum: 100
      * @return alarmLevel

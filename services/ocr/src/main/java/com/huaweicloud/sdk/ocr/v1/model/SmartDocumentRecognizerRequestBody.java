@@ -40,6 +40,16 @@ public class SmartDocumentRecognizerRequestBody {
 
     private Boolean returnExcel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "form")
+
+    private Boolean form;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kv_map")
+
+    private String kvMap;
+
     public SmartDocumentRecognizerRequestBody withData(String data) {
         this.data = data;
         return this;
@@ -142,6 +152,40 @@ public class SmartDocumentRecognizerRequestBody {
         this.returnExcel = returnExcel;
     }
 
+    public SmartDocumentRecognizerRequestBody withForm(Boolean form) {
+        this.form = form;
+        return this;
+    }
+
+    /**
+     * 是否进行有线表单识别。有线表单指关键信息以有线单元格形式进行呈现，例如户口本、机动车发票等。若是，结果会以\"form_result\"这一关键字返回。 
+     * @return form
+     */
+    public Boolean getForm() {
+        return form;
+    }
+
+    public void setForm(Boolean form) {
+        this.form = form;
+    }
+
+    public SmartDocumentRecognizerRequestBody withKvMap(String kvMap) {
+        this.kvMap = kvMap;
+        return this;
+    }
+
+    /**
+     * 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\"名称\"：\"小明\"}的键值对，若传入{\"名称\"：\"姓名\"}的kv_map，则返回结果为{“姓名”：“小明”}。  > 参数传入示例： - \"kv_map\":\"{\\\"名称\\\":\\\"姓名\\\"}\" 
+     * @return kvMap
+     */
+    public String getKvMap() {
+        return kvMap;
+    }
+
+    public void setKvMap(String kvMap) {
+        this.kvMap = kvMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +197,13 @@ public class SmartDocumentRecognizerRequestBody {
         SmartDocumentRecognizerRequestBody that = (SmartDocumentRecognizerRequestBody) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
             && Objects.equals(this.kv, that.kv) && Objects.equals(this.table, that.table)
-            && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel);
+            && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel)
+            && Objects.equals(this.form, that.form) && Objects.equals(this.kvMap, that.kvMap);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url, kv, table, layout, returnExcel);
+        return Objects.hash(data, url, kv, table, layout, returnExcel, form, kvMap);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    table: ").append(toIndentedString(table)).append("\n");
         sb.append("    layout: ").append(toIndentedString(layout)).append("\n");
         sb.append("    returnExcel: ").append(toIndentedString(returnExcel)).append("\n");
+        sb.append("    form: ").append(toIndentedString(form)).append("\n");
+        sb.append("    kvMap: ").append(toIndentedString(kvMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

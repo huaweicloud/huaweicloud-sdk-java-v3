@@ -71,7 +71,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * agent_id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {
@@ -105,7 +105,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 自启动项类型
+     * 自启动项类型   - 0 ：自启动服务   - 1 ：定时任务   - 2 ：预加载动态库   - 3 ：Run注册表键   - 4 ：开机启动文件夹
      * minimum: 0
      * maximum: 11
      * @return type
@@ -175,7 +175,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 路径
+     * 自启动项的路径
      * @return path
      */
     public String getPath() {
@@ -192,7 +192,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 文件hash
+     * 采用sha256算法生成的文件hash值
      * @return hash
      */
     public String getHash() {
@@ -243,7 +243,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 最近更新时间
+     * 最近更新时间，13位时间戳
      * minimum: 0
      * maximum: 4824430336000
      * @return recentScanTime

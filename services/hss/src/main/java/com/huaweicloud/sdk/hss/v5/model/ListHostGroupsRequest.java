@@ -41,7 +41,7 @@ public class ListHostGroupsRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {

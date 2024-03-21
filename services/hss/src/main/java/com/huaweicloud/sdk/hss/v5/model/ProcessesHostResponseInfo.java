@@ -66,7 +66,7 @@ public class ProcessesHostResponseInfo {
     }
 
     /**
-     * 文件hash
+     * path对应的sha256值
      * @return hash
      */
     public String getHash() {
@@ -153,7 +153,7 @@ public class ProcessesHostResponseInfo {
     }
 
     /**
-     * 进程路径
+     * 进程可执行文件路径
      * @return processPath
      */
     public String getProcessPath() {

@@ -35,6 +35,6 @@ public class StrictBooleanDeserializer extends JsonDeserializer<Boolean> {
     @Override
     public Boolean deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
             throws IOException {
-        return Boolean.valueOf(jsonParser.getBooleanValue());
+        return jsonParser.getBooleanValue();
     }
 }

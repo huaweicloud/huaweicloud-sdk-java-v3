@@ -76,7 +76,7 @@ public class GenerateReportInfo {
     }
 
     /**
-     * 分析维度
+     * 分析维度。该参数选择横坐标（X轴）维度，不传会返回空列表。
      * @return analysisDimRow
      */
     public String getAnalysisDimRow() {

@@ -21,9 +21,9 @@ public class ListIsolatedFileRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_days")
+    @JsonProperty(value = "file_path")
 
-    private Integer lastDays;
+    private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
@@ -31,9 +31,24 @@ public class ListIsolatedFileRequest {
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isolation_status")
+    @JsonProperty(value = "private_ip")
 
-    private String isolationStatus;
+    private String privateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_hash")
+
+    private String fileHash;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_value")
+
+    private String assetValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -51,7 +66,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * region id
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -68,7 +83,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * 租户企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -79,23 +94,21 @@ public class ListIsolatedFileRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListIsolatedFileRequest withLastDays(Integer lastDays) {
-        this.lastDays = lastDays;
+    public ListIsolatedFileRequest withFilePath(String filePath) {
+        this.filePath = filePath;
         return this;
     }
 
     /**
-     * 查询时间范围天数，与自定义查询时间begin_time，end_time互斥
-     * minimum: 1
-     * maximum: 30
-     * @return lastDays
+     * 文件路径
+     * @return filePath
      */
-    public Integer getLastDays() {
-        return lastDays;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setLastDays(Integer lastDays) {
-        this.lastDays = lastDays;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
     public ListIsolatedFileRequest withHostName(String hostName) {
@@ -115,21 +128,72 @@ public class ListIsolatedFileRequest {
         this.hostName = hostName;
     }
 
-    public ListIsolatedFileRequest withIsolationStatus(String isolationStatus) {
-        this.isolationStatus = isolationStatus;
+    public ListIsolatedFileRequest withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
         return this;
     }
 
     /**
-     * 隔离状态，包含如下:   - isolated : 已隔离   - restored : 已恢复   - isolating : 已下发隔离任务   - restoring : 已下发恢复任务
-     * @return isolationStatus
+     * 服务器私有IP
+     * @return privateIp
      */
-    public String getIsolationStatus() {
-        return isolationStatus;
+    public String getPrivateIp() {
+        return privateIp;
     }
 
-    public void setIsolationStatus(String isolationStatus) {
-        this.isolationStatus = isolationStatus;
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
+    public ListIsolatedFileRequest withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 服务器公网IP
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    public ListIsolatedFileRequest withFileHash(String fileHash) {
+        this.fileHash = fileHash;
+        return this;
+    }
+
+    /**
+     * 文件hash,当前为sha256
+     * @return fileHash
+     */
+    public String getFileHash() {
+        return fileHash;
+    }
+
+    public void setFileHash(String fileHash) {
+        this.fileHash = fileHash;
+    }
+
+    public ListIsolatedFileRequest withAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+        return this;
+    }
+
+    /**
+     * 资产重要性，包含如下3种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * @return assetValue
+     */
+    public String getAssetValue() {
+        return assetValue;
+    }
+
+    public void setAssetValue(String assetValue) {
+        this.assetValue = assetValue;
     }
 
     public ListIsolatedFileRequest withOffset(Integer offset) {
@@ -138,7 +202,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -181,14 +245,24 @@ public class ListIsolatedFileRequest {
         ListIsolatedFileRequest that = (ListIsolatedFileRequest) obj;
         return Objects.equals(this.region, that.region)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.isolationStatus, that.isolationStatus) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, lastDays, hostName, isolationStatus, offset, limit);
+        return Objects.hash(region,
+            enterpriseProjectId,
+            filePath,
+            hostName,
+            privateIp,
+            publicIp,
+            fileHash,
+            assetValue,
+            offset,
+            limit);
     }
 
     @Override
@@ -197,9 +271,12 @@ public class ListIsolatedFileRequest {
         sb.append("class ListIsolatedFileRequest {\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    lastDays: ").append(toIndentedString(lastDays)).append("\n");
+        sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
-        sb.append("    isolationStatus: ").append(toIndentedString(isolationStatus)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    fileHash: ").append(toIndentedString(fileHash)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

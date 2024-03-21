@@ -474,7 +474,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -573,7 +573,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据ID过滤
+     * Get id
      * @return id
      */
     public List<String> getId() {
@@ -606,7 +606,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据实例类型过滤
+     * Get instanceType
      * @return instanceType
      */
     public List<String> getInstanceType() {
@@ -639,7 +639,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据边缘信息过滤，中心站点or边缘站点
+     * Get publicBorderGroup
      * @return publicBorderGroup
      */
     public List<String> getPublicBorderGroup() {
@@ -672,7 +672,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据接入点过滤
+     * Get accessSite
      * @return accessSite
      */
     public List<String> getAccessSite() {
@@ -705,7 +705,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据region_id过滤
+     * Get regionId
      * @return regionId
      */
     public List<String> getRegionId() {
@@ -738,7 +738,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * query by remote_endpoint
+     * Get remoteEndpoint
      * @return remoteEndpoint
      */
     public List<String> getRemoteEndpoint() {
@@ -771,7 +771,7 @@ public class ListSupportRegionsRequest {
     }
 
     /**
-     * 根据资源状态过滤
+     * Get status
      * @return status
      */
     public List<String> getStatus() {

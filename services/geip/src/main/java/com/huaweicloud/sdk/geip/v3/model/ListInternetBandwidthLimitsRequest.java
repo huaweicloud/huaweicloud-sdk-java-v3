@@ -369,7 +369,7 @@ public class ListInternetBandwidthLimitsRequest {
     }
 
     /**
-     * 只显示指定的字段
+     * Get fields
      * @return fields
      */
     public List<FieldsEnum> getFields() {
@@ -468,7 +468,7 @@ public class ListInternetBandwidthLimitsRequest {
     }
 
     /**
-     * 根据计费模式过滤
+     * Get chargeMode
      * @return chargeMode
      */
     public List<ChargeModeEnum> getChargeMode() {
@@ -485,7 +485,7 @@ public class ListInternetBandwidthLimitsRequest {
     }
 
     /**
-     * 根据全域公网带宽类型过滤
+     * Get type
      * @return type
      */
     public String getType() {
