@@ -47,6 +47,8 @@ public class HttpConfig {
 
     private boolean ignoreSSLVerification = false;
 
+    private boolean ignoreHostnameVerification = false;
+
     private boolean ignoreRequiredValidation = false;
 
     private boolean allowRedirects = false;
@@ -114,6 +116,19 @@ public class HttpConfig {
 
     public HttpConfig withIgnoreSSLVerification(boolean ignoreSSLVerification) {
         setIgnoreSSLVerification(ignoreSSLVerification);
+        return this;
+    }
+
+    public boolean isIgnoreHostnameVerification() {
+        return this.ignoreHostnameVerification;
+    }
+
+    public void setIgnoreHostnameVerification(boolean ignoreHostnameVerification) {
+        this.ignoreHostnameVerification = ignoreHostnameVerification;
+    }
+
+    public HttpConfig withIgnoreHostnameVerification(boolean ignoreHostnameVerification) {
+        setIgnoreHostnameVerification(ignoreHostnameVerification);
         return this;
     }
 
