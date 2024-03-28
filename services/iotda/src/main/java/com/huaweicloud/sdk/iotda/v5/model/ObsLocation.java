@@ -25,6 +25,11 @@ public class ObsLocation {
 
     private String objectKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sign")
+
+    private String sign;
+
     public ObsLocation withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
@@ -76,6 +81,23 @@ public class ObsLocation {
         this.objectKey = objectKey;
     }
 
+    public ObsLocation withSign(String sign) {
+        this.sign = sign;
+        return this;
+    }
+
+    /**
+     * **参数说明**：SHA256算法计算出的升级包签名值。添加该升级包完成，并创建升级任务后，物联网平台向设备下发升级通知时，会下发该签名给设备。 **取值范围**：长度为64，只允许大小写字母a到f、数字的组合。
+     * @return sign
+     */
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class ObsLocation {
         }
         ObsLocation that = (ObsLocation) obj;
         return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.bucketName, that.bucketName)
-            && Objects.equals(this.objectKey, that.objectKey);
+            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.sign, that.sign);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, bucketName, objectKey);
+        return Objects.hash(regionName, bucketName, objectKey, sign);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ObsLocation {
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+        sb.append("    sign: ").append(toIndentedString(sign)).append("\n");
         sb.append("}");
         return sb.toString();
     }

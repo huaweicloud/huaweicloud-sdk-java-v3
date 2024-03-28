@@ -27,16 +27,16 @@ public class HttpDetectRequestBody {
         public static final ProtocolEnum HTTP = new ProtocolEnum("http");
 
         /**
-         * Enum HTTPS_ for value: "https;"
+         * Enum HTTPS for value: "https"
          */
-        public static final ProtocolEnum HTTPS_ = new ProtocolEnum("https;");
+        public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtocolEnum> createStaticFields() {
             Map<String, ProtocolEnum> map = new HashMap<>();
             map.put("http", HTTP);
-            map.put("https;", HTTPS_);
+            map.put("https", HTTPS);
             return Collections.unmodifiableMap(map);
         }
 

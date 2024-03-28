@@ -32,7 +32,7 @@ public class ListQueueUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<PrivilegesInfo> privileges = null;
+    private List<QueueUserPrivilege> privileges = null;
 
     public ListQueueUsersResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListQueueUsersResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
-    public ListQueueUsersResponse withPrivileges(List<PrivilegesInfo> privileges) {
+    public ListQueueUsersResponse withPrivileges(List<QueueUserPrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ListQueueUsersResponse addPrivilegesItem(PrivilegesInfo privilegesItem) {
+    public ListQueueUsersResponse addPrivilegesItem(QueueUserPrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListQueueUsersResponse extends SdkResponse {
         return this;
     }
 
-    public ListQueueUsersResponse withPrivileges(Consumer<List<PrivilegesInfo>> privilegesSetter) {
+    public ListQueueUsersResponse withPrivileges(Consumer<List<QueueUserPrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -107,14 +107,14 @@ public class ListQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 有权限使用该队列的用户及其对应的权限数组。 
+     * 有权限使用该队列的用户及其对应的权限数组。
      * @return privileges
      */
-    public List<PrivilegesInfo> getPrivileges() {
+    public List<QueueUserPrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<PrivilegesInfo> privileges) {
+    public void setPrivileges(List<QueueUserPrivilege> privileges) {
         this.privileges = privileges;
     }
 

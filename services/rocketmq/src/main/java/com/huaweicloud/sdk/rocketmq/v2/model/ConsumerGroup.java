@@ -46,7 +46,7 @@ public class ConsumerGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createdAt")
 
-    private String createdAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
@@ -176,7 +176,7 @@ public class ConsumerGroup {
         this.retryMaxTime = retryMaxTime;
     }
 
-    public ConsumerGroup withCreatedAt(String createdAt) {
+    public ConsumerGroup withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -185,11 +185,11 @@ public class ConsumerGroup {
      * 创建时间戳。
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 

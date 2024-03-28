@@ -19,7 +19,7 @@ public class UpdateQueueCidrRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateQueueCidrReq body;
+    private UpdateQueueCidrRequestBody body;
 
     public UpdateQueueCidrRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class UpdateQueueCidrRequest {
         this.queueName = queueName;
     }
 
-    public UpdateQueueCidrRequest withBody(UpdateQueueCidrReq body) {
+    public UpdateQueueCidrRequest withBody(UpdateQueueCidrRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateQueueCidrRequest withBody(Consumer<UpdateQueueCidrReq> bodySetter) {
+    public UpdateQueueCidrRequest withBody(Consumer<UpdateQueueCidrRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateQueueCidrReq();
+            this.body = new UpdateQueueCidrRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateQueueCidrRequest {
      * Get body
      * @return body
      */
-    public UpdateQueueCidrReq getBody() {
+    public UpdateQueueCidrRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateQueueCidrReq body) {
+    public void setBody(UpdateQueueCidrRequestBody body) {
         this.body = body;
     }
 

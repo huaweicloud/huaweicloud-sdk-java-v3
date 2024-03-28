@@ -95,6 +95,11 @@ public class ProfileCredentialProvider implements ICredentialProvider {
             throw new SdkException(e);
         }
 
+        Map<String, String> map = profileLinesToMap(lines, filePath);
+        return buildAbstractCredentials(map, filePath);
+    }
+
+    private Map<String, String> profileLinesToMap(List<String> lines, String filePath) {
         Map<String, String> map = new LinkedHashMap<>();
         Stack<String> sections = new Stack<>();
         sections.push("");
@@ -112,7 +117,10 @@ public class ProfileCredentialProvider implements ICredentialProvider {
             throw new SdkException(String.format(
                     "credential type '%s' does not exist in credentials file '%s'", credentialType, filePath));
         }
+        return map;
+    }
 
+    private AbstractCredentials<?> buildAbstractCredentials(Map<String, String> map, String filePath) {
         String ak = map.get(credentialType + AK_NAME);
         String sk = map.get(credentialType + SK_NAME);
         String securityToken = map.get(credentialType + SECURITY_TOKEN_NAME);
@@ -139,7 +147,6 @@ public class ProfileCredentialProvider implements ICredentialProvider {
         if (!StringUtils.isEmpty(iamEndpoint)) {
             credentials.withIamEndpoint(iamEndpoint);
         }
-
         return credentials;
     }
 

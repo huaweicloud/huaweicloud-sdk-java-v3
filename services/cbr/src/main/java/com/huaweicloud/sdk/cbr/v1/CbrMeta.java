@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.cbr.v1.model.CopyCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CopyCheckpointResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreateCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CreateCheckpointResponse;
+import com.huaweicloud.sdk.cbr.v1.model.CreateOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.CreateOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePostPaidVaultRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.cbr.v1.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteBackupResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteMemberRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteMemberResponse;
+import com.huaweicloud.sdk.cbr.v1.model.DeleteOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.DeleteOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteVaultRequest;
@@ -68,6 +72,10 @@ import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPolicyDetailRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPolicyDetailResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListPoliciesRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListPoliciesResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListProjectsRequest;
@@ -80,6 +88,8 @@ import com.huaweicloud.sdk.cbr.v1.model.MigrateDomainRequest;
 import com.huaweicloud.sdk.cbr.v1.model.MigrateDomainResponse;
 import com.huaweicloud.sdk.cbr.v1.model.MigrateVaultResourceRequest;
 import com.huaweicloud.sdk.cbr.v1.model.MigrateVaultResourceResponse;
+import com.huaweicloud.sdk.cbr.v1.model.OrganizationPolicyCreateReq;
+import com.huaweicloud.sdk.cbr.v1.model.OrganizationPolicyUpdateReq;
 import com.huaweicloud.sdk.cbr.v1.model.PolicyCreateReq;
 import com.huaweicloud.sdk.cbr.v1.model.PolicyUpdateReq;
 import com.huaweicloud.sdk.cbr.v1.model.ProtectableAgentReq;
@@ -111,6 +121,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ShowMigrateStatusRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMigrateStatusResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowOpLogRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowOpLogResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ShowOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ShowOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowProtectableRequest;
@@ -141,6 +153,8 @@ import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateOrderRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateOrderResponse;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdatePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateVaultRequest;
@@ -430,6 +444,30 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOrganizationPolicyRequest, CreateOrganizationPolicyResponse> createOrganizationPolicy =
+        genForCreateOrganizationPolicy();
+
+    private static HttpRequestDef<CreateOrganizationPolicyRequest, CreateOrganizationPolicyResponse> genForCreateOrganizationPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateOrganizationPolicyRequest, CreateOrganizationPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateOrganizationPolicyRequest.class, CreateOrganizationPolicyResponse.class)
+                .withName("CreateOrganizationPolicy")
+                .withUri("/v3/{project_id}/organization-policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<OrganizationPolicyCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OrganizationPolicyCreateReq.class),
+            f -> f.withMarshaller(CreateOrganizationPolicyRequest::getBody, CreateOrganizationPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForCreatePolicy();
 
     private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForCreatePolicy() {
@@ -568,6 +606,33 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMemberRequest::getMemberId, DeleteMemberRequest::setMemberId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOrganizationPolicyRequest, DeleteOrganizationPolicyResponse> deleteOrganizationPolicy =
+        genForDeleteOrganizationPolicy();
+
+    private static HttpRequestDef<DeleteOrganizationPolicyRequest, DeleteOrganizationPolicyResponse> genForDeleteOrganizationPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteOrganizationPolicyRequest, DeleteOrganizationPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOrganizationPolicyRequest.class,
+                    DeleteOrganizationPolicyResponse.class)
+                .withName("DeleteOrganizationPolicy")
+                .withUri("/v3/{project_id}/organization-policies/{organization_policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrganizationPolicyRequest::getOrganizationPolicyId,
+                DeleteOrganizationPolicyRequest::setOrganizationPolicyId));
 
         // response
 
@@ -1044,6 +1109,58 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpLogsRequest::getEnterpriseProjectId,
                 ListOpLogsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrganizationPoliciesRequest, ListOrganizationPoliciesResponse> listOrganizationPolicies =
+        genForListOrganizationPolicies();
+
+    private static HttpRequestDef<ListOrganizationPoliciesRequest, ListOrganizationPoliciesResponse> genForListOrganizationPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListOrganizationPoliciesRequest, ListOrganizationPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListOrganizationPoliciesRequest.class, ListOrganizationPoliciesResponse.class)
+                .withName("ListOrganizationPolicies")
+                .withUri("/v3/{project_id}/organization-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("operation_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPoliciesRequest::getOperationType,
+                ListOrganizationPoliciesRequest::setOperationType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrganizationPolicyDetailRequest, ListOrganizationPolicyDetailResponse> listOrganizationPolicyDetail =
+        genForListOrganizationPolicyDetail();
+
+    private static HttpRequestDef<ListOrganizationPolicyDetailRequest, ListOrganizationPolicyDetailResponse> genForListOrganizationPolicyDetail() {
+        // basic
+        HttpRequestDef.Builder<ListOrganizationPolicyDetailRequest, ListOrganizationPolicyDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOrganizationPolicyDetailRequest.class,
+                    ListOrganizationPolicyDetailResponse.class)
+                .withName("ListOrganizationPolicyDetail")
+                .withUri("/v3/{project_id}/organization-policies/{organization_policy_id}/policy-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPolicyDetailRequest::getOrganizationPolicyId,
+                ListOrganizationPolicyDetailRequest::setOrganizationPolicyId));
 
         // response
 
@@ -1665,6 +1782,30 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowOrganizationPolicyRequest, ShowOrganizationPolicyResponse> showOrganizationPolicy =
+        genForShowOrganizationPolicy();
+
+    private static HttpRequestDef<ShowOrganizationPolicyRequest, ShowOrganizationPolicyResponse> genForShowOrganizationPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowOrganizationPolicyRequest, ShowOrganizationPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowOrganizationPolicyRequest.class, ShowOrganizationPolicyResponse.class)
+            .withName("ShowOrganizationPolicy")
+            .withUri("/v3/{project_id}/organization-policies/{organization_policy_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyRequest::getOrganizationPolicyId,
+                ShowOrganizationPolicyRequest::setOrganizationPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForShowPolicy();
 
     private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForShowPolicy() {
@@ -2012,6 +2153,36 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CbcUpdate.class),
             f -> f.withMarshaller(UpdateOrderRequest::getBody, UpdateOrderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOrganizationPolicyRequest, UpdateOrganizationPolicyResponse> updateOrganizationPolicy =
+        genForUpdateOrganizationPolicy();
+
+    private static HttpRequestDef<UpdateOrganizationPolicyRequest, UpdateOrganizationPolicyResponse> genForUpdateOrganizationPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateOrganizationPolicyRequest, UpdateOrganizationPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateOrganizationPolicyRequest.class, UpdateOrganizationPolicyResponse.class)
+                .withName("UpdateOrganizationPolicy")
+                .withUri("/v3/{project_id}/organization-policies/{organization_policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("organization_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationPolicyRequest::getOrganizationPolicyId,
+                UpdateOrganizationPolicyRequest::setOrganizationPolicyId));
+        builder.<OrganizationPolicyUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OrganizationPolicyUpdateReq.class),
+            f -> f.withMarshaller(UpdateOrganizationPolicyRequest::getBody, UpdateOrganizationPolicyRequest::setBody));
 
         // response
 

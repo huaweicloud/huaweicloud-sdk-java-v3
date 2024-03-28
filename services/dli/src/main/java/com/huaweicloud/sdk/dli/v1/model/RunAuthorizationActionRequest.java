@@ -14,16 +14,16 @@ public class RunAuthorizationActionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AuthorizeResourceRequestBody body;
+    private RunAuthorizationActionRequestBody body;
 
-    public RunAuthorizationActionRequest withBody(AuthorizeResourceRequestBody body) {
+    public RunAuthorizationActionRequest withBody(RunAuthorizationActionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RunAuthorizationActionRequest withBody(Consumer<AuthorizeResourceRequestBody> bodySetter) {
+    public RunAuthorizationActionRequest withBody(Consumer<RunAuthorizationActionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AuthorizeResourceRequestBody();
+            this.body = new RunAuthorizationActionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RunAuthorizationActionRequest {
      * Get body
      * @return body
      */
-    public AuthorizeResourceRequestBody getBody() {
+    public RunAuthorizationActionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AuthorizeResourceRequestBody body) {
+    public void setBody(RunAuthorizationActionRequestBody body) {
         this.body = body;
     }
 

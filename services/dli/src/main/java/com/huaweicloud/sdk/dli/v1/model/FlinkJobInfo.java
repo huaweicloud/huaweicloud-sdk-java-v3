@@ -89,7 +89,7 @@ public class FlinkJobInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_config")
 
-    private ShowStreamJobListJobConfig jobConfig;
+    private FlinkJobConfig jobConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "main_class")
@@ -376,14 +376,14 @@ public class FlinkJobInfo {
         this.runMode = runMode;
     }
 
-    public FlinkJobInfo withJobConfig(ShowStreamJobListJobConfig jobConfig) {
+    public FlinkJobInfo withJobConfig(FlinkJobConfig jobConfig) {
         this.jobConfig = jobConfig;
         return this;
     }
 
-    public FlinkJobInfo withJobConfig(Consumer<ShowStreamJobListJobConfig> jobConfigSetter) {
+    public FlinkJobInfo withJobConfig(Consumer<FlinkJobConfig> jobConfigSetter) {
         if (this.jobConfig == null) {
-            this.jobConfig = new ShowStreamJobListJobConfig();
+            this.jobConfig = new FlinkJobConfig();
             jobConfigSetter.accept(this.jobConfig);
         }
 
@@ -394,11 +394,11 @@ public class FlinkJobInfo {
      * Get jobConfig
      * @return jobConfig
      */
-    public ShowStreamJobListJobConfig getJobConfig() {
+    public FlinkJobConfig getJobConfig() {
         return jobConfig;
     }
 
-    public void setJobConfig(ShowStreamJobListJobConfig jobConfig) {
+    public void setJobConfig(FlinkJobConfig jobConfig) {
         this.jobConfig = jobConfig;
     }
 

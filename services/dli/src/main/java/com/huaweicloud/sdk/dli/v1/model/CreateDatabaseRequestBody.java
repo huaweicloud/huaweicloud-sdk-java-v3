@@ -31,7 +31,7 @@ public class CreateDatabaseRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTagEntity> tags = null;
+    private List<Tag> tags = null;
 
     public CreateDatabaseRequestBody withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -84,12 +84,12 @@ public class CreateDatabaseRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateDatabaseRequestBody withTags(List<TmsTagEntity> tags) {
+    public CreateDatabaseRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateDatabaseRequestBody addTagsItem(TmsTagEntity tagsItem) {
+    public CreateDatabaseRequestBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -97,7 +97,7 @@ public class CreateDatabaseRequestBody {
         return this;
     }
 
-    public CreateDatabaseRequestBody withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+    public CreateDatabaseRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -109,11 +109,11 @@ public class CreateDatabaseRequestBody {
      * 标签
      * @return tags
      */
-    public List<TmsTagEntity> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTagEntity> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

@@ -27,7 +27,7 @@ public class ListQueuePlansResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plans")
 
-    private List<QueuePlanEntity> plans = null;
+    private List<QueuePlan> plans = null;
 
     public ListQueuePlansResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ListQueuePlansResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListQueuePlansResponse withPlans(List<QueuePlanEntity> plans) {
+    public ListQueuePlansResponse withPlans(List<QueuePlan> plans) {
         this.plans = plans;
         return this;
     }
 
-    public ListQueuePlansResponse addPlansItem(QueuePlanEntity plansItem) {
+    public ListQueuePlansResponse addPlansItem(QueuePlan plansItem) {
         if (this.plans == null) {
             this.plans = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListQueuePlansResponse extends SdkResponse {
         return this;
     }
 
-    public ListQueuePlansResponse withPlans(Consumer<List<QueuePlanEntity>> plansSetter) {
+    public ListQueuePlansResponse withPlans(Consumer<List<QueuePlan>> plansSetter) {
         if (this.plans == null) {
             this.plans = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListQueuePlansResponse extends SdkResponse {
      * 定时扩缩容信息
      * @return plans
      */
-    public List<QueuePlanEntity> getPlans() {
+    public List<QueuePlan> getPlans() {
         return plans;
     }
 
-    public void setPlans(List<QueuePlanEntity> plans) {
+    public void setPlans(List<QueuePlan> plans) {
         this.plans = plans;
     }
 

@@ -27,7 +27,7 @@ public class ListGlobalVariablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_vars")
 
-    private List<ListGlobalValue> globalVars = null;
+    private List<GlobalVariable> globalVars = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -68,12 +68,12 @@ public class ListGlobalVariablesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListGlobalVariablesResponse withGlobalVars(List<ListGlobalValue> globalVars) {
+    public ListGlobalVariablesResponse withGlobalVars(List<GlobalVariable> globalVars) {
         this.globalVars = globalVars;
         return this;
     }
 
-    public ListGlobalVariablesResponse addGlobalVarsItem(ListGlobalValue globalVarsItem) {
+    public ListGlobalVariablesResponse addGlobalVarsItem(GlobalVariable globalVarsItem) {
         if (this.globalVars == null) {
             this.globalVars = new ArrayList<>();
         }
@@ -81,7 +81,7 @@ public class ListGlobalVariablesResponse extends SdkResponse {
         return this;
     }
 
-    public ListGlobalVariablesResponse withGlobalVars(Consumer<List<ListGlobalValue>> globalVarsSetter) {
+    public ListGlobalVariablesResponse withGlobalVars(Consumer<List<GlobalVariable>> globalVarsSetter) {
         if (this.globalVars == null) {
             this.globalVars = new ArrayList<>();
         }
@@ -93,11 +93,11 @@ public class ListGlobalVariablesResponse extends SdkResponse {
      * 全局变量
      * @return globalVars
      */
-    public List<ListGlobalValue> getGlobalVars() {
+    public List<GlobalVariable> getGlobalVars() {
         return globalVars;
     }
 
-    public void setGlobalVars(List<ListGlobalValue> globalVars) {
+    public void setGlobalVars(List<GlobalVariable> globalVars) {
         this.globalVars = globalVars;
     }
 

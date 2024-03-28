@@ -215,7 +215,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTagEntity> tags = null;
+    private List<Tag> tags = null;
 
     public ShowSqlJobStatusResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -574,12 +574,12 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         this.jobMode = jobMode;
     }
 
-    public ShowSqlJobStatusResponse withTags(List<TmsTagEntity> tags) {
+    public ShowSqlJobStatusResponse withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowSqlJobStatusResponse addTagsItem(TmsTagEntity tagsItem) {
+    public ShowSqlJobStatusResponse addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -587,7 +587,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    public ShowSqlJobStatusResponse withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+    public ShowSqlJobStatusResponse withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -599,11 +599,11 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
      * 作业标签
      * @return tags
      */
-    public List<TmsTagEntity> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTagEntity> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

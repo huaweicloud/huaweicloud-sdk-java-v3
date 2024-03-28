@@ -24,6 +24,11 @@ public class ListGcbResourceByTagResponse extends SdkResponse {
 
     private Integer totalCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
     public ListGcbResourceByTagResponse withResources(List<TmsResource> resources) {
         this.resources = resources;
         return this;
@@ -76,6 +81,23 @@ public class ListGcbResourceByTagResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    public ListGcbResourceByTagResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 请求ID。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +107,13 @@ public class ListGcbResourceByTagResponse extends SdkResponse {
             return false;
         }
         ListGcbResourceByTagResponse that = (ListGcbResourceByTagResponse) obj;
-        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resources, totalCount);
+        return Objects.hash(resources, totalCount, requestId);
     }
 
     @Override
@@ -99,6 +122,7 @@ public class ListGcbResourceByTagResponse extends SdkResponse {
         sb.append("class ListGcbResourceByTagResponse {\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

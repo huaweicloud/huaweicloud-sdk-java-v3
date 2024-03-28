@@ -27,7 +27,7 @@ public class ListQueuePropertiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private List<ListQueuePropertyRespProperties> properties = null;
+    private List<Property> properties = null;
 
     public ListQueuePropertiesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ListQueuePropertiesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListQueuePropertiesResponse withProperties(List<ListQueuePropertyRespProperties> properties) {
+    public ListQueuePropertiesResponse withProperties(List<Property> properties) {
         this.properties = properties;
         return this;
     }
 
-    public ListQueuePropertiesResponse addPropertiesItem(ListQueuePropertyRespProperties propertiesItem) {
+    public ListQueuePropertiesResponse addPropertiesItem(Property propertiesItem) {
         if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
@@ -76,8 +76,7 @@ public class ListQueuePropertiesResponse extends SdkResponse {
         return this;
     }
 
-    public ListQueuePropertiesResponse withProperties(
-        Consumer<List<ListQueuePropertyRespProperties>> propertiesSetter) {
+    public ListQueuePropertiesResponse withProperties(Consumer<List<Property>> propertiesSetter) {
         if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
@@ -89,11 +88,11 @@ public class ListQueuePropertiesResponse extends SdkResponse {
      * Get properties
      * @return properties
      */
-    public List<ListQueuePropertyRespProperties> getProperties() {
+    public List<Property> getProperties() {
         return properties;
     }
 
-    public void setProperties(List<ListQueuePropertyRespProperties> properties) {
+    public void setProperties(List<Property> properties) {
         this.properties = properties;
     }
 

@@ -107,7 +107,7 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTagEntity> tags = null;
+    private List<Tag> tags = null;
 
     public ShowSqlJobDetailResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -404,7 +404,7 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
     }
 
     /**
-     *   导出作业时，用户指定的压缩方式。
+     * 导出作业时，用户指定的压缩方式。
      * @return compress
      */
     public String getCompress() {
@@ -415,12 +415,12 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
         this.compress = compress;
     }
 
-    public ShowSqlJobDetailResponse withTags(List<TmsTagEntity> tags) {
+    public ShowSqlJobDetailResponse withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowSqlJobDetailResponse addTagsItem(TmsTagEntity tagsItem) {
+    public ShowSqlJobDetailResponse addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -428,7 +428,7 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowSqlJobDetailResponse withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+    public ShowSqlJobDetailResponse withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -440,11 +440,11 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
      * 作业标签
      * @return tags
      */
-    public List<TmsTagEntity> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTagEntity> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

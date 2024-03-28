@@ -53,6 +53,8 @@ public final class Constants {
 
     public static final String USER_AGENT = "User-Agent";
 
+    public static final String USER_AGENT_VALUE = "huaweicloud-usdk-java/3.0";
+
     public static final String AUTHORIZATION = "Authorization";
 
     public static final String X_PROJECT_ID = "X-Project-Id";

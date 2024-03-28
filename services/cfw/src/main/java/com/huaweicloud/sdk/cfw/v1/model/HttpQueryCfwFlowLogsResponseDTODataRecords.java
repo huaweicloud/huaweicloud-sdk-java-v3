@@ -18,7 +18,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bytes")
 
-    private Integer bytes;
+    private Double bytes;
 
     /**
      * 方向，有内到外和外到内两种
@@ -150,7 +150,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
 
     private String dstHost;
 
-    public HttpQueryCfwFlowLogsResponseDTODataRecords withBytes(Integer bytes) {
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withBytes(Double bytes) {
         this.bytes = bytes;
         return this;
     }
@@ -159,11 +159,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
      * 字节
      * @return bytes
      */
-    public Integer getBytes() {
+    public Double getBytes() {
         return bytes;
     }
 
-    public void setBytes(Integer bytes) {
+    public void setBytes(Double bytes) {
         this.bytes = bytes;
     }
 

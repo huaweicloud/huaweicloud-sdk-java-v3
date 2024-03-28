@@ -25,7 +25,7 @@ public class CreateFlinkSqlJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job")
 
-    private CreateJobRespJob job;
+    private FlinkJob job;
 
     public CreateFlinkSqlJobResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class CreateFlinkSqlJobResponse extends SdkResponse {
         this.message = message;
     }
 
-    public CreateFlinkSqlJobResponse withJob(CreateJobRespJob job) {
+    public CreateFlinkSqlJobResponse withJob(FlinkJob job) {
         this.job = job;
         return this;
     }
 
-    public CreateFlinkSqlJobResponse withJob(Consumer<CreateJobRespJob> jobSetter) {
+    public CreateFlinkSqlJobResponse withJob(Consumer<FlinkJob> jobSetter) {
         if (this.job == null) {
-            this.job = new CreateJobRespJob();
+            this.job = new FlinkJob();
             jobSetter.accept(this.job);
         }
 
@@ -79,11 +79,11 @@ public class CreateFlinkSqlJobResponse extends SdkResponse {
      * Get job
      * @return job
      */
-    public CreateJobRespJob getJob() {
+    public FlinkJob getJob() {
         return job;
     }
 
-    public void setJob(CreateJobRespJob job) {
+    public void setJob(FlinkJob job) {
         this.job = job;
     }
 

@@ -19,7 +19,7 @@ public class CreateFlinkSqlJobGraphRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private GenStreamGraphReq body;
+    private CreateFlinkSqlJobGraphRequestBody body;
 
     public CreateFlinkSqlJobGraphRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -38,14 +38,14 @@ public class CreateFlinkSqlJobGraphRequest {
         this.jobId = jobId;
     }
 
-    public CreateFlinkSqlJobGraphRequest withBody(GenStreamGraphReq body) {
+    public CreateFlinkSqlJobGraphRequest withBody(CreateFlinkSqlJobGraphRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateFlinkSqlJobGraphRequest withBody(Consumer<GenStreamGraphReq> bodySetter) {
+    public CreateFlinkSqlJobGraphRequest withBody(Consumer<CreateFlinkSqlJobGraphRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new GenStreamGraphReq();
+            this.body = new CreateFlinkSqlJobGraphRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateFlinkSqlJobGraphRequest {
      * Get body
      * @return body
      */
-    public GenStreamGraphReq getBody() {
+    public CreateFlinkSqlJobGraphRequestBody getBody() {
         return body;
     }
 
-    public void setBody(GenStreamGraphReq body) {
+    public void setBody(CreateFlinkSqlJobGraphRequestBody body) {
         this.body = body;
     }
 

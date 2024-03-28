@@ -17,6 +17,9 @@ import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceTopicResponse;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsReq;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesResponse;
@@ -42,6 +45,9 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateMessageDiagnosisTaskReq;
+import com.huaweicloud.sdk.kafka.v2.model.CreateMessageDiagnosisTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateMessageDiagnosisTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
@@ -59,6 +65,7 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.KafkaDiagnosisCheckEntity;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
@@ -73,6 +80,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListInstanceTopicsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceTopicsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
@@ -125,6 +134,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowDiagnosisPreCheckRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowDiagnosisPreCheckResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsRequest;
@@ -151,6 +162,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMessageDiagnosisReportRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMessageDiagnosisReportResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionBeginningMessageRequest;
@@ -186,6 +199,8 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateUserReq;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class KafkaMeta {
@@ -305,6 +320,39 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteInstanceUsersReq.class),
             f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getBody, BatchDeleteInstanceUsersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteMessageDiagnosisReportsRequest, BatchDeleteMessageDiagnosisReportsResponse> batchDeleteMessageDiagnosisReports =
+        genForBatchDeleteMessageDiagnosisReports();
+
+    private static HttpRequestDef<BatchDeleteMessageDiagnosisReportsRequest, BatchDeleteMessageDiagnosisReportsResponse> genForBatchDeleteMessageDiagnosisReports() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteMessageDiagnosisReportsRequest, BatchDeleteMessageDiagnosisReportsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteMessageDiagnosisReportsRequest.class,
+                    BatchDeleteMessageDiagnosisReportsResponse.class)
+                .withName("BatchDeleteMessageDiagnosisReports")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteMessageDiagnosisReportsRequest::getInstanceId,
+                BatchDeleteMessageDiagnosisReportsRequest::setInstanceId));
+        builder.<BatchDeleteMessageDiagnosisReportsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteMessageDiagnosisReportsReq.class),
+            f -> f.withMarshaller(BatchDeleteMessageDiagnosisReportsRequest::getBody,
+                BatchDeleteMessageDiagnosisReportsRequest::setBody));
 
         // response
 
@@ -509,6 +557,39 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(CreateKafkaUserClientQuotaTaskReq.class),
             f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getBody,
                 CreateKafkaUserClientQuotaTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMessageDiagnosisTaskRequest, CreateMessageDiagnosisTaskResponse> createMessageDiagnosisTask =
+        genForCreateMessageDiagnosisTask();
+
+    private static HttpRequestDef<CreateMessageDiagnosisTaskRequest, CreateMessageDiagnosisTaskResponse> genForCreateMessageDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateMessageDiagnosisTaskRequest, CreateMessageDiagnosisTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateMessageDiagnosisTaskRequest.class,
+                    CreateMessageDiagnosisTaskResponse.class)
+                .withName("CreateMessageDiagnosisTask")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMessageDiagnosisTaskRequest::getInstanceId,
+                CreateMessageDiagnosisTaskRequest::setInstanceId));
+        builder.<CreateMessageDiagnosisTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMessageDiagnosisTaskReq.class),
+            f -> f.withMarshaller(CreateMessageDiagnosisTaskRequest::getBody,
+                CreateMessageDiagnosisTaskRequest::setBody));
 
         // response
 
@@ -878,6 +959,45 @@ public class KafkaMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMessageDiagnosisReportsRequest, ListMessageDiagnosisReportsResponse> listMessageDiagnosisReports =
+        genForListMessageDiagnosisReports();
+
+    private static HttpRequestDef<ListMessageDiagnosisReportsRequest, ListMessageDiagnosisReportsResponse> genForListMessageDiagnosisReports() {
+        // basic
+        HttpRequestDef.Builder<ListMessageDiagnosisReportsRequest, ListMessageDiagnosisReportsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMessageDiagnosisReportsRequest.class,
+                    ListMessageDiagnosisReportsResponse.class)
+                .withName("ListMessageDiagnosisReports")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessageDiagnosisReportsRequest::getInstanceId,
+                ListMessageDiagnosisReportsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessageDiagnosisReportsRequest::getOffset,
+                ListMessageDiagnosisReportsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessageDiagnosisReportsRequest::getLimit,
+                ListMessageDiagnosisReportsRequest::setLimit));
 
         // response
 
@@ -1388,6 +1508,46 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDiagnosisPreCheckRequest, ShowDiagnosisPreCheckResponse> showDiagnosisPreCheck =
+        genForShowDiagnosisPreCheck();
+
+    private static HttpRequestDef<ShowDiagnosisPreCheckRequest, ShowDiagnosisPreCheckResponse> genForShowDiagnosisPreCheck() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisPreCheckRequest, ShowDiagnosisPreCheckResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDiagnosisPreCheckRequest.class, ShowDiagnosisPreCheckResponse.class)
+            .withName("ShowDiagnosisPreCheck")
+            .withUri("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisPreCheckRequest::getInstanceId,
+                ShowDiagnosisPreCheckRequest::setInstanceId));
+        builder.<String>withRequestField("group",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisPreCheckRequest::getGroup, ShowDiagnosisPreCheckRequest::setGroup));
+        builder.<String>withRequestField("topic",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisPreCheckRequest::getTopic, ShowDiagnosisPreCheckRequest::setTopic));
+
+        // response
+        builder.<List<KafkaDiagnosisCheckEntity>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowDiagnosisPreCheckResponse::getBody, ShowDiagnosisPreCheckResponse::setBody)
+                .withInnerContainerType(KafkaDiagnosisCheckEntity.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
         genForShowEngineInstanceExtendProductInfo();
 
@@ -1803,6 +1963,39 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMessageDiagnosisReportRequest, ShowMessageDiagnosisReportResponse> showMessageDiagnosisReport =
+        genForShowMessageDiagnosisReport();
+
+    private static HttpRequestDef<ShowMessageDiagnosisReportRequest, ShowMessageDiagnosisReportResponse> genForShowMessageDiagnosisReport() {
+        // basic
+        HttpRequestDef.Builder<ShowMessageDiagnosisReportRequest, ShowMessageDiagnosisReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowMessageDiagnosisReportRequest.class,
+                    ShowMessageDiagnosisReportResponse.class)
+                .withName("ShowMessageDiagnosisReport")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMessageDiagnosisReportRequest::getInstanceId,
+                ShowMessageDiagnosisReportRequest::setInstanceId));
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMessageDiagnosisReportRequest::getReportId,
+                ShowMessageDiagnosisReportRequest::setReportId));
 
         // response
 
@@ -2381,11 +2574,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, DeleteConnectorRequest::setInstanceId));
-        builder.<Object>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Object.class),
-            f -> f.withMarshaller(DeleteConnectorRequest::getBody, DeleteConnectorRequest::setBody));
 
         // response
 

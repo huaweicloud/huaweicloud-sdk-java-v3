@@ -391,6 +391,16 @@ public class GlobalConnectionBandwidth {
     private SlaLevelEnum slaLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_area")
+
+    private String localArea;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_area")
+
+    private String remoteArea;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_site_code")
 
     private String localSiteCode;
@@ -399,6 +409,81 @@ public class GlobalConnectionBandwidth {
     @JsonProperty(value = "remote_site_code")
 
     private String remoteSiteCode;
+
+    /**
+     * 功能说明: 全域互联带宽状态。 取值范围：     NORMAL-正常     FREEZED-冻结状态
+     */
+    public static final class AdminStateEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final AdminStateEnum NORMAL = new AdminStateEnum("NORMAL");
+
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
+        public static final AdminStateEnum FREEZED = new AdminStateEnum("FREEZED");
+
+        private static final Map<String, AdminStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AdminStateEnum> createStaticFields() {
+            Map<String, AdminStateEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("FREEZED", FREEZED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AdminStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AdminStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdminStateEnum(value));
+        }
+
+        public static AdminStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AdminStateEnum) {
+                return this.value.equals(((AdminStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_state")
+
+    private AdminStateEnum adminState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frozen")
@@ -624,6 +709,40 @@ public class GlobalConnectionBandwidth {
         this.slaLevel = slaLevel;
     }
 
+    public GlobalConnectionBandwidth withLocalArea(String localArea) {
+        this.localArea = localArea;
+        return this;
+    }
+
+    /**
+     * 功能说明：本端接入点的中英文名。通过HEADER里面的x-language控制，默认英文，zh-cn返回中文。
+     * @return localArea
+     */
+    public String getLocalArea() {
+        return localArea;
+    }
+
+    public void setLocalArea(String localArea) {
+        this.localArea = localArea;
+    }
+
+    public GlobalConnectionBandwidth withRemoteArea(String remoteArea) {
+        this.remoteArea = remoteArea;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端接入点的中英文名。通过HEADER里面的x-language控制，默认英文，zh-cn返回中文。
+     * @return remoteArea
+     */
+    public String getRemoteArea() {
+        return remoteArea;
+    }
+
+    public void setRemoteArea(String remoteArea) {
+        this.remoteArea = remoteArea;
+    }
+
     public GlobalConnectionBandwidth withLocalSiteCode(String localSiteCode) {
         this.localSiteCode = localSiteCode;
         return this;
@@ -656,6 +775,23 @@ public class GlobalConnectionBandwidth {
 
     public void setRemoteSiteCode(String remoteSiteCode) {
         this.remoteSiteCode = remoteSiteCode;
+    }
+
+    public GlobalConnectionBandwidth withAdminState(AdminStateEnum adminState) {
+        this.adminState = adminState;
+        return this;
+    }
+
+    /**
+     * 功能说明: 全域互联带宽状态。 取值范围：     NORMAL-正常     FREEZED-冻结状态
+     * @return adminState
+     */
+    public AdminStateEnum getAdminState() {
+        return adminState;
+    }
+
+    public void setAdminState(AdminStateEnum adminState) {
+        this.adminState = adminState;
     }
 
     public GlobalConnectionBandwidth withFrozen(Boolean frozen) {
@@ -825,8 +961,11 @@ public class GlobalConnectionBandwidth {
             && Objects.equals(this.bindingService, that.bindingService)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.slaLevel, that.slaLevel) && Objects.equals(this.localSiteCode, that.localSiteCode)
-            && Objects.equals(this.remoteSiteCode, that.remoteSiteCode) && Objects.equals(this.frozen, that.frozen)
+            && Objects.equals(this.slaLevel, that.slaLevel) && Objects.equals(this.localArea, that.localArea)
+            && Objects.equals(this.remoteArea, that.remoteArea)
+            && Objects.equals(this.localSiteCode, that.localSiteCode)
+            && Objects.equals(this.remoteSiteCode, that.remoteSiteCode)
+            && Objects.equals(this.adminState, that.adminState) && Objects.equals(this.frozen, that.frozen)
             && Objects.equals(this.specCodeId, that.specCodeId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enableShare, that.enableShare) && Objects.equals(this.instances, that.instances);
@@ -845,8 +984,11 @@ public class GlobalConnectionBandwidth {
             chargeMode,
             size,
             slaLevel,
+            localArea,
+            remoteArea,
             localSiteCode,
             remoteSiteCode,
+            adminState,
             frozen,
             specCodeId,
             tags,
@@ -871,8 +1013,11 @@ public class GlobalConnectionBandwidth {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    slaLevel: ").append(toIndentedString(slaLevel)).append("\n");
+        sb.append("    localArea: ").append(toIndentedString(localArea)).append("\n");
+        sb.append("    remoteArea: ").append(toIndentedString(remoteArea)).append("\n");
         sb.append("    localSiteCode: ").append(toIndentedString(localSiteCode)).append("\n");
         sb.append("    remoteSiteCode: ").append(toIndentedString(remoteSiteCode)).append("\n");
+        sb.append("    adminState: ").append(toIndentedString(adminState)).append("\n");
         sb.append("    frozen: ").append(toIndentedString(frozen)).append("\n");
         sb.append("    specCodeId: ").append(toIndentedString(specCodeId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

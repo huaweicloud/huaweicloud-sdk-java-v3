@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -30,7 +32,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "intervals")
 
-    private ReplyRatesIntervals intervals;
+    private List<ReplyRatesIntervals> intervals = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startutc")
@@ -102,29 +104,36 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.total = total;
     }
 
-    public CollectReplyRatesResponse withIntervals(ReplyRatesIntervals intervals) {
+    public CollectReplyRatesResponse withIntervals(List<ReplyRatesIntervals> intervals) {
         this.intervals = intervals;
         return this;
     }
 
-    public CollectReplyRatesResponse withIntervals(Consumer<ReplyRatesIntervals> intervalsSetter) {
+    public CollectReplyRatesResponse addIntervalsItem(ReplyRatesIntervals intervalsItem) {
         if (this.intervals == null) {
-            this.intervals = new ReplyRatesIntervals();
-            intervalsSetter.accept(this.intervals);
+            this.intervals = new ArrayList<>();
         }
+        this.intervals.add(intervalsItem);
+        return this;
+    }
 
+    public CollectReplyRatesResponse withIntervals(Consumer<List<ReplyRatesIntervals>> intervalsSetter) {
+        if (this.intervals == null) {
+            this.intervals = new ArrayList<>();
+        }
+        intervalsSetter.accept(this.intervals);
         return this;
     }
 
     /**
-     * Get intervals
+     * 会话间隔统计数据。
      * @return intervals
      */
-    public ReplyRatesIntervals getIntervals() {
+    public List<ReplyRatesIntervals> getIntervals() {
         return intervals;
     }
 
-    public void setIntervals(ReplyRatesIntervals intervals) {
+    public void setIntervals(List<ReplyRatesIntervals> intervals) {
         this.intervals = intervals;
     }
 

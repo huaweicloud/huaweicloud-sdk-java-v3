@@ -28,6 +28,11 @@ public class ThailandLicensePlateItem {
 
     private Float confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "province")
+
+    private String province;
+
     public ThailandLicensePlateItem withPlateNumber(String plateNumber) {
         this.plateNumber = plateNumber;
         return this;
@@ -95,6 +100,23 @@ public class ThailandLicensePlateItem {
         this.confidence = confidence;
     }
 
+    public ThailandLicensePlateItem withProvince(String province) {
+        this.province = province;
+        return this;
+    }
+
+    /**
+     * 车牌所属府 
+     * @return province
+     */
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +128,12 @@ public class ThailandLicensePlateItem {
         ThailandLicensePlateItem that = (ThailandLicensePlateItem) obj;
         return Objects.equals(this.plateNumber, that.plateNumber)
             && Objects.equals(this.plateLocation, that.plateLocation)
-            && Objects.equals(this.confidence, that.confidence);
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.province, that.province);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(plateNumber, plateLocation, confidence);
+        return Objects.hash(plateNumber, plateLocation, confidence, province);
     }
 
     @Override
@@ -121,6 +143,7 @@ public class ThailandLicensePlateItem {
         sb.append("    plateNumber: ").append(toIndentedString(plateNumber)).append("\n");
         sb.append("    plateLocation: ").append(toIndentedString(plateLocation)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    province: ").append(toIndentedString(province)).append("\n");
         sb.append("}");
         return sb.toString();
     }

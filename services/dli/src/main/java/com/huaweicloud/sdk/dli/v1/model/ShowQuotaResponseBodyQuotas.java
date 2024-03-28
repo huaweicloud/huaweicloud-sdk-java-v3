@@ -21,7 +21,7 @@ public class ShowQuotaResponseBodyQuotas {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<ShowQuotaPropertiesBody> resources = null;
+    private List<QuotaInfo> resources = null;
 
     public ShowQuotaResponseBodyQuotas withProjectId(String projectId) {
         this.projectId = projectId;
@@ -40,12 +40,12 @@ public class ShowQuotaResponseBodyQuotas {
         this.projectId = projectId;
     }
 
-    public ShowQuotaResponseBodyQuotas withResources(List<ShowQuotaPropertiesBody> resources) {
+    public ShowQuotaResponseBodyQuotas withResources(List<QuotaInfo> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ShowQuotaResponseBodyQuotas addResourcesItem(ShowQuotaPropertiesBody resourcesItem) {
+    public ShowQuotaResponseBodyQuotas addResourcesItem(QuotaInfo resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class ShowQuotaResponseBodyQuotas {
         return this;
     }
 
-    public ShowQuotaResponseBodyQuotas withResources(Consumer<List<ShowQuotaPropertiesBody>> resourcesSetter) {
+    public ShowQuotaResponseBodyQuotas withResources(Consumer<List<QuotaInfo>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class ShowQuotaResponseBodyQuotas {
      * Get resources
      * @return resources
      */
-    public List<ShowQuotaPropertiesBody> getResources() {
+    public List<QuotaInfo> getResources() {
         return resources;
     }
 
-    public void setResources(List<ShowQuotaPropertiesBody> resources) {
+    public void setResources(List<QuotaInfo> resources) {
         this.resources = resources;
     }
 

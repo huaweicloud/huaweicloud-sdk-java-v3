@@ -19,7 +19,7 @@ public class CreateQueuePropertyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private InsertQueuePropertyRequestBody body;
+    private CreateQueuePropertyRequestBody body;
 
     public CreateQueuePropertyRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class CreateQueuePropertyRequest {
         this.queueName = queueName;
     }
 
-    public CreateQueuePropertyRequest withBody(InsertQueuePropertyRequestBody body) {
+    public CreateQueuePropertyRequest withBody(CreateQueuePropertyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateQueuePropertyRequest withBody(Consumer<InsertQueuePropertyRequestBody> bodySetter) {
+    public CreateQueuePropertyRequest withBody(Consumer<CreateQueuePropertyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new InsertQueuePropertyRequestBody();
+            this.body = new CreateQueuePropertyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateQueuePropertyRequest {
      * Get body
      * @return body
      */
-    public InsertQueuePropertyRequestBody getBody() {
+    public CreateQueuePropertyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(InsertQueuePropertyRequestBody body) {
+    public void setBody(CreateQueuePropertyRequestBody body) {
         this.body = body;
     }
 

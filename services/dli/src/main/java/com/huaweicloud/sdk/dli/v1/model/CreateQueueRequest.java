@@ -14,16 +14,16 @@ public class CreateQueueRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateQueueReq body;
+    private CreateQueueRequestBody body;
 
-    public CreateQueueRequest withBody(CreateQueueReq body) {
+    public CreateQueueRequest withBody(CreateQueueRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateQueueRequest withBody(Consumer<CreateQueueReq> bodySetter) {
+    public CreateQueueRequest withBody(Consumer<CreateQueueRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateQueueReq();
+            this.body = new CreateQueueRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateQueueRequest {
      * Get body
      * @return body
      */
-    public CreateQueueReq getBody() {
+    public CreateQueueRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateQueueReq body) {
+    public void setBody(CreateQueueRequestBody body) {
         this.body = body;
     }
 

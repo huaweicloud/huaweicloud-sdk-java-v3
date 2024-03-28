@@ -207,10 +207,15 @@ import com.huaweicloud.sdk.apig.v2.model.EndpointPermissionList;
 import com.huaweicloud.sdk.apig.v2.model.EnvCreate;
 import com.huaweicloud.sdk.apig.v2.model.EnvVariableBase;
 import com.huaweicloud.sdk.apig.v2.model.EnvVariableCreate;
+import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsAsyncRequest;
+import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsAsyncResponse;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ExportOpenApiReq;
 import com.huaweicloud.sdk.apig.v2.model.FeatureToggle;
+import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsAsyncRequest;
+import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsAsyncRequestBody;
+import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsAsyncResponse;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2RequestBody;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Response;
@@ -296,6 +301,8 @@ import com.huaweicloud.sdk.apig.v2.model.ListGatewayResponsesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListGatewayResponsesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceConfigsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceConfigsV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Request;
@@ -356,6 +363,8 @@ import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Request;
@@ -395,6 +404,7 @@ import com.huaweicloud.sdk.apig.v2.model.ShowPluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.SignApiBinding;
+import com.huaweicloud.sdk.apig.v2.model.SlDomainAccessSetting;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleApiBindingCreate;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleBaseInfo;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleBindingBatchDelete;
@@ -445,6 +455,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSignatureKeyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSignatureKeyV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateSlDomainSettingV2Request;
+import com.huaweicloud.sdk.apig.v2.model.UpdateSlDomainSettingV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSpecialThrottlingConfigurationV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSpecialThrottlingConfigurationV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateVpcChannelV2Request;
@@ -2097,6 +2109,78 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportApiDefinitionsAsyncRequest, ExportApiDefinitionsAsyncResponse> exportApiDefinitionsAsync =
+        genForExportApiDefinitionsAsync();
+
+    private static HttpRequestDef<ExportApiDefinitionsAsyncRequest, ExportApiDefinitionsAsyncResponse> genForExportApiDefinitionsAsync() {
+        // basic
+        HttpRequestDef.Builder<ExportApiDefinitionsAsyncRequest, ExportApiDefinitionsAsyncResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExportApiDefinitionsAsyncRequest.class,
+                    ExportApiDefinitionsAsyncResponse.class)
+                .withName("ExportApiDefinitionsAsync")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/openapi/async-export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportApiDefinitionsAsyncRequest::getInstanceId,
+                ExportApiDefinitionsAsyncRequest::setInstanceId));
+        builder.<ExportApiDefinitionsAsyncRequest.OasVersionEnum>withRequestField("oas_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportApiDefinitionsAsyncRequest.OasVersionEnum.class),
+            f -> f.withMarshaller(ExportApiDefinitionsAsyncRequest::getOasVersion,
+                ExportApiDefinitionsAsyncRequest::setOasVersion));
+        builder.<ExportOpenApiReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportOpenApiReq.class),
+            f -> f.withMarshaller(ExportApiDefinitionsAsyncRequest::getBody,
+                ExportApiDefinitionsAsyncRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportApiDefinitionsAsyncRequest, ImportApiDefinitionsAsyncResponse> importApiDefinitionsAsync =
+        genForImportApiDefinitionsAsync();
+
+    private static HttpRequestDef<ImportApiDefinitionsAsyncRequest, ImportApiDefinitionsAsyncResponse> genForImportApiDefinitionsAsync() {
+        // basic
+        HttpRequestDef.Builder<ImportApiDefinitionsAsyncRequest, ImportApiDefinitionsAsyncResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ImportApiDefinitionsAsyncRequest.class,
+                    ImportApiDefinitionsAsyncResponse.class)
+                .withName("ImportApiDefinitionsAsync")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/openapi/async-import")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportApiDefinitionsAsyncRequest::getInstanceId,
+                ImportApiDefinitionsAsyncRequest::setInstanceId));
+        builder.<ImportApiDefinitionsAsyncRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportApiDefinitionsAsyncRequestBody.class),
+            f -> f.withMarshaller(ImportApiDefinitionsAsyncRequest::getBody,
+                ImportApiDefinitionsAsyncRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportMicroserviceRequest, ImportMicroserviceResponse> importMicroservice =
         genForImportMicroservice();
 
@@ -3080,6 +3164,40 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceFeaturesRequest, ListInstanceFeaturesResponse> listInstanceFeatures =
+        genForListInstanceFeatures();
+
+    private static HttpRequestDef<ListInstanceFeaturesRequest, ListInstanceFeaturesResponse> genForListInstanceFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceFeaturesRequest, ListInstanceFeaturesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceFeaturesRequest.class, ListInstanceFeaturesResponse.class)
+            .withName("ListInstanceFeatures")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/instance-features")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceFeaturesRequest::getInstanceId,
+                ListInstanceFeaturesRequest::setInstanceId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstanceFeaturesRequest::getOffset, ListInstanceFeaturesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceFeaturesRequest::getLimit, ListInstanceFeaturesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
         genForListInstanceTags();
 
@@ -3949,6 +4067,35 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, ShowAppQuotaRequest::setAppQuotaId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsyncTaskResultRequest, ShowAsyncTaskResultResponse> showAsyncTaskResult =
+        genForShowAsyncTaskResult();
+
+    private static HttpRequestDef<ShowAsyncTaskResultRequest, ShowAsyncTaskResultResponse> genForShowAsyncTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowAsyncTaskResultRequest, ShowAsyncTaskResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncTaskResultRequest.class, ShowAsyncTaskResultResponse.class)
+                .withName("ShowAsyncTaskResult")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/async-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTaskResultRequest::getInstanceId,
+                ShowAsyncTaskResultRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTaskResultRequest::getTaskId, ShowAsyncTaskResultRequest::setTaskId));
 
         // response
 
@@ -4920,6 +5067,41 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BaseSignature.class),
             f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, UpdateSignatureKeyV2Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSlDomainSettingV2Request, UpdateSlDomainSettingV2Response> updateSlDomainSettingV2 =
+        genForUpdateSlDomainSettingV2();
+
+    private static HttpRequestDef<UpdateSlDomainSettingV2Request, UpdateSlDomainSettingV2Response> genForUpdateSlDomainSettingV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateSlDomainSettingV2Request, UpdateSlDomainSettingV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSlDomainSettingV2Request.class, UpdateSlDomainSettingV2Response.class)
+            .withName("UpdateSlDomainSettingV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/sl-domain-access-settings")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSlDomainSettingV2Request::getInstanceId,
+                UpdateSlDomainSettingV2Request::setInstanceId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSlDomainSettingV2Request::getGroupId,
+                UpdateSlDomainSettingV2Request::setGroupId));
+        builder.<SlDomainAccessSetting>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SlDomainAccessSetting.class),
+            f -> f.withMarshaller(UpdateSlDomainSettingV2Request::getBody, UpdateSlDomainSettingV2Request::setBody));
 
         // response
 

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateEndpointGroupRequest;
@@ -51,6 +53,10 @@ import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowAcceleratorRequest;
@@ -1122,6 +1128,35 @@ public class GaAsyncClient {
     }
 
     /**
+     * 通过标签查询资源实例数量
+     *
+     * 通过标签查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return CompletableFuture<CountResourcesByTagResponse>
+     */
+    public CompletableFuture<CountResourcesByTagResponse> countResourcesByTagAsync(CountResourcesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.countResourcesByTag);
+    }
+
+    /**
+     * 通过标签查询资源实例数量
+     *
+     * 通过标签查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return AsyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse>
+     */
+    public AsyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse> countResourcesByTagAsyncInvoker(
+        CountResourcesByTagRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.countResourcesByTag, hcClient);
+    }
+
+    /**
      * 创建资源标签
      *
      * 创建资源标签。
@@ -1175,6 +1210,63 @@ public class GaAsyncClient {
      */
     public AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsAsyncInvoker(DeleteTagsRequest request) {
         return new AsyncInvoker<>(request, GaMeta.deleteTags, hcClient);
+    }
+
+    /**
+     * 通过标签查询资源实例列表
+     *
+     * 通过标签查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return CompletableFuture<ListResourcesByTagResponse>
+     */
+    public CompletableFuture<ListResourcesByTagResponse> listResourcesByTagAsync(ListResourcesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.listResourcesByTag);
+    }
+
+    /**
+     * 通过标签查询资源实例列表
+     *
+     * 通过标签查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return AsyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse>
+     */
+    public AsyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse> listResourcesByTagAsyncInvoker(
+        ListResourcesByTagRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.listResourcesByTag, hcClient);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return CompletableFuture<ListTagsResponse>
+     */
+    public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.listTags);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.listTags, hcClient);
     }
 
     /**

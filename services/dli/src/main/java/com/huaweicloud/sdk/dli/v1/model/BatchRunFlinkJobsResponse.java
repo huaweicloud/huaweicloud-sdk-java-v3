@@ -17,14 +17,14 @@ public class BatchRunFlinkJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<CommonResp> body = null;
+    private List<SuccessResponse> body = null;
 
-    public BatchRunFlinkJobsResponse withBody(List<CommonResp> body) {
+    public BatchRunFlinkJobsResponse withBody(List<SuccessResponse> body) {
         this.body = body;
         return this;
     }
 
-    public BatchRunFlinkJobsResponse addBodyItem(CommonResp bodyItem) {
+    public BatchRunFlinkJobsResponse addBodyItem(SuccessResponse bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class BatchRunFlinkJobsResponse extends SdkResponse {
         return this;
     }
 
-    public BatchRunFlinkJobsResponse withBody(Consumer<List<CommonResp>> bodySetter) {
+    public BatchRunFlinkJobsResponse withBody(Consumer<List<SuccessResponse>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class BatchRunFlinkJobsResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<CommonResp> getBody() {
+    public List<SuccessResponse> getBody() {
         return body;
     }
 
-    public void setBody(List<CommonResp> body) {
+    public void setBody(List<SuccessResponse> body) {
         this.body = body;
     }
 

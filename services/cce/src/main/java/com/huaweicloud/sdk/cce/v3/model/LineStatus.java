@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * LineStatus
@@ -13,20 +14,29 @@ public class LineStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startPoint")
 
-    private TaskType startPoint;
+    private Point startPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endPoint")
 
-    private TaskType endPoint;
+    private Point endPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical")
 
     private String critical;
 
-    public LineStatus withStartPoint(TaskType startPoint) {
+    public LineStatus withStartPoint(Point startPoint) {
         this.startPoint = startPoint;
+        return this;
+    }
+
+    public LineStatus withStartPoint(Consumer<Point> startPointSetter) {
+        if (this.startPoint == null) {
+            this.startPoint = new Point();
+            startPointSetter.accept(this.startPoint);
+        }
+
         return this;
     }
 
@@ -34,16 +44,25 @@ public class LineStatus {
      * Get startPoint
      * @return startPoint
      */
-    public TaskType getStartPoint() {
+    public Point getStartPoint() {
         return startPoint;
     }
 
-    public void setStartPoint(TaskType startPoint) {
+    public void setStartPoint(Point startPoint) {
         this.startPoint = startPoint;
     }
 
-    public LineStatus withEndPoint(TaskType endPoint) {
+    public LineStatus withEndPoint(Point endPoint) {
         this.endPoint = endPoint;
+        return this;
+    }
+
+    public LineStatus withEndPoint(Consumer<Point> endPointSetter) {
+        if (this.endPoint == null) {
+            this.endPoint = new Point();
+            endPointSetter.accept(this.endPoint);
+        }
+
         return this;
     }
 
@@ -51,11 +70,11 @@ public class LineStatus {
      * Get endPoint
      * @return endPoint
      */
-    public TaskType getEndPoint() {
+    public Point getEndPoint() {
         return endPoint;
     }
 
-    public void setEndPoint(TaskType endPoint) {
+    public void setEndPoint(Point endPoint) {
         this.endPoint = endPoint;
     }
 

@@ -32,7 +32,7 @@ public class ListSqlJobTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sqls")
 
-    private List<SqlsResp> sqls = null;
+    private List<SqlJobTemplate> sqls = null;
 
     public ListSqlJobTemplatesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListSqlJobTemplatesResponse extends SdkResponse {
         this.sqlCount = sqlCount;
     }
 
-    public ListSqlJobTemplatesResponse withSqls(List<SqlsResp> sqls) {
+    public ListSqlJobTemplatesResponse withSqls(List<SqlJobTemplate> sqls) {
         this.sqls = sqls;
         return this;
     }
 
-    public ListSqlJobTemplatesResponse addSqlsItem(SqlsResp sqlsItem) {
+    public ListSqlJobTemplatesResponse addSqlsItem(SqlJobTemplate sqlsItem) {
         if (this.sqls == null) {
             this.sqls = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListSqlJobTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    public ListSqlJobTemplatesResponse withSqls(Consumer<List<SqlsResp>> sqlsSetter) {
+    public ListSqlJobTemplatesResponse withSqls(Consumer<List<SqlJobTemplate>> sqlsSetter) {
         if (this.sqls == null) {
             this.sqls = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListSqlJobTemplatesResponse extends SdkResponse {
      * Get sqls
      * @return sqls
      */
-    public List<SqlsResp> getSqls() {
+    public List<SqlJobTemplate> getSqls() {
         return sqls;
     }
 
-    public void setSqls(List<SqlsResp> sqls) {
+    public void setSqls(List<SqlJobTemplate> sqls) {
         this.sqls = sqls;
     }
 

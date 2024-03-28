@@ -25,7 +25,7 @@ public class ShowFlinkMetricResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
-    private ShowJobMonitorInfoRespPayload metrics;
+    private FlinkMetric metrics;
 
     public ShowFlinkMetricResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ShowFlinkMetricResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowFlinkMetricResponse withMetrics(ShowJobMonitorInfoRespPayload metrics) {
+    public ShowFlinkMetricResponse withMetrics(FlinkMetric metrics) {
         this.metrics = metrics;
         return this;
     }
 
-    public ShowFlinkMetricResponse withMetrics(Consumer<ShowJobMonitorInfoRespPayload> metricsSetter) {
+    public ShowFlinkMetricResponse withMetrics(Consumer<FlinkMetric> metricsSetter) {
         if (this.metrics == null) {
-            this.metrics = new ShowJobMonitorInfoRespPayload();
+            this.metrics = new FlinkMetric();
             metricsSetter.accept(this.metrics);
         }
 
@@ -79,11 +79,11 @@ public class ShowFlinkMetricResponse extends SdkResponse {
      * Get metrics
      * @return metrics
      */
-    public ShowJobMonitorInfoRespPayload getMetrics() {
+    public FlinkMetric getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(ShowJobMonitorInfoRespPayload metrics) {
+    public void setMetrics(FlinkMetric metrics) {
         this.metrics = metrics;
     }
 

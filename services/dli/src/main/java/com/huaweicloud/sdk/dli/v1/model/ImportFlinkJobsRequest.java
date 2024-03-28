@@ -14,16 +14,16 @@ public class ImportFlinkJobsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ImportFlinkJobRequestBody body;
+    private ImportFlinkJobsRequestBody body;
 
-    public ImportFlinkJobsRequest withBody(ImportFlinkJobRequestBody body) {
+    public ImportFlinkJobsRequest withBody(ImportFlinkJobsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportFlinkJobsRequest withBody(Consumer<ImportFlinkJobRequestBody> bodySetter) {
+    public ImportFlinkJobsRequest withBody(Consumer<ImportFlinkJobsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ImportFlinkJobRequestBody();
+            this.body = new ImportFlinkJobsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class ImportFlinkJobsRequest {
      * Get body
      * @return body
      */
-    public ImportFlinkJobRequestBody getBody() {
+    public ImportFlinkJobsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ImportFlinkJobRequestBody body) {
+    public void setBody(ImportFlinkJobsRequestBody body) {
         this.body = body;
     }
 

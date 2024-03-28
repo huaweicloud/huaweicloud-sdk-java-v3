@@ -19,7 +19,7 @@ public class ExportSqlJobResultRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ExportSqlResultRequestBody body;
+    private ExportSqlJobResultRequestBody body;
 
     public ExportSqlJobResultRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -38,14 +38,14 @@ public class ExportSqlJobResultRequest {
         this.jobId = jobId;
     }
 
-    public ExportSqlJobResultRequest withBody(ExportSqlResultRequestBody body) {
+    public ExportSqlJobResultRequest withBody(ExportSqlJobResultRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ExportSqlJobResultRequest withBody(Consumer<ExportSqlResultRequestBody> bodySetter) {
+    public ExportSqlJobResultRequest withBody(Consumer<ExportSqlJobResultRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ExportSqlResultRequestBody();
+            this.body = new ExportSqlJobResultRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ExportSqlJobResultRequest {
      * Get body
      * @return body
      */
-    public ExportSqlResultRequestBody getBody() {
+    public ExportSqlJobResultRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ExportSqlResultRequestBody body) {
+    public void setBody(ExportSqlJobResultRequestBody body) {
         this.body = body;
     }
 

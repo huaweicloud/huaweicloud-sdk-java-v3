@@ -16,13 +16,18 @@ public class CreateReassignmentTaskResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reassignment_time")
+
+    private Integer reassignmentTime;
+
     public CreateReassignmentTaskResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * 任务ID。
+     * 任务ID（当执行重平衡任务时仅返回job_id）。
      * @return jobId
      */
     public String getJobId() {
@@ -31,6 +36,23 @@ public class CreateReassignmentTaskResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public CreateReassignmentTaskResponse withReassignmentTime(Integer reassignmentTime) {
+        this.reassignmentTime = reassignmentTime;
+        return this;
+    }
+
+    /**
+     * 预估时间，单位为秒（当执行预估时间任务时仅返回reassignment_time）。
+     * @return reassignmentTime
+     */
+    public Integer getReassignmentTime() {
+        return reassignmentTime;
+    }
+
+    public void setReassignmentTime(Integer reassignmentTime) {
+        this.reassignmentTime = reassignmentTime;
     }
 
     @Override
@@ -42,12 +64,12 @@ public class CreateReassignmentTaskResponse extends SdkResponse {
             return false;
         }
         CreateReassignmentTaskResponse that = (CreateReassignmentTaskResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.reassignmentTime, that.reassignmentTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, reassignmentTime);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class CreateReassignmentTaskResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateReassignmentTaskResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    reassignmentTime: ").append(toIndentedString(reassignmentTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

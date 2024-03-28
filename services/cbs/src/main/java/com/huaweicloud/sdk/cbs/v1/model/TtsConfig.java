@@ -18,7 +18,7 @@ public class TtsConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed")
 
-    private Integer speed;
+    private Float speed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
@@ -67,7 +67,7 @@ public class TtsConfig {
         this.property = property;
     }
 
-    public TtsConfig withSpeed(Integer speed) {
+    public TtsConfig withSpeed(Float speed) {
         this.speed = speed;
         return this;
     }
@@ -76,11 +76,11 @@ public class TtsConfig {
      * 用户设置音速
      * @return speed
      */
-    public Integer getSpeed() {
+    public Float getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Integer speed) {
+    public void setSpeed(Float speed) {
         this.speed = speed;
     }
 

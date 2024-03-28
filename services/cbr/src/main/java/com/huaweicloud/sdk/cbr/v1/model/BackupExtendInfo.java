@@ -29,11 +29,6 @@ public class BackupExtendInfo {
     private Boolean bootable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "incremental")
-
-    private Boolean incremental;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_id")
 
     private String snapshotId;
@@ -176,23 +171,6 @@ public class BackupExtendInfo {
 
     public void setBootable(Boolean bootable) {
         this.bootable = bootable;
-    }
-
-    public BackupExtendInfo withIncremental(Boolean incremental) {
-        this.incremental = incremental;
-        return this;
-    }
-
-    /**
-     * 是否是增备
-     * @return incremental
-     */
-    public Boolean getIncremental() {
-        return incremental;
-    }
-
-    public void setIncremental(Boolean incremental) {
-        this.incremental = incremental;
     }
 
     public BackupExtendInfo withSnapshotId(String snapshotId) {
@@ -340,8 +318,7 @@ public class BackupExtendInfo {
         }
         BackupExtendInfo that = (BackupExtendInfo) obj;
         return Objects.equals(this.autoTrigger, that.autoTrigger) && Objects.equals(this.bootable, that.bootable)
-            && Objects.equals(this.incremental, that.incremental) && Objects.equals(this.snapshotId, that.snapshotId)
-            && Objects.equals(this.supportLld, that.supportLld)
+            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.supportLld, that.supportLld)
             && Objects.equals(this.supportedRestoreMode, that.supportedRestoreMode)
             && Objects.equals(this.osImagesData, that.osImagesData)
             && Objects.equals(this.containSystemDisk, that.containSystemDisk)
@@ -352,7 +329,6 @@ public class BackupExtendInfo {
     public int hashCode() {
         return Objects.hash(autoTrigger,
             bootable,
-            incremental,
             snapshotId,
             supportLld,
             supportedRestoreMode,
@@ -368,7 +344,6 @@ public class BackupExtendInfo {
         sb.append("class BackupExtendInfo {\n");
         sb.append("    autoTrigger: ").append(toIndentedString(autoTrigger)).append("\n");
         sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
-        sb.append("    incremental: ").append(toIndentedString(incremental)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    supportLld: ").append(toIndentedString(supportLld)).append("\n");
         sb.append("    supportedRestoreMode: ").append(toIndentedString(supportedRestoreMode)).append("\n");

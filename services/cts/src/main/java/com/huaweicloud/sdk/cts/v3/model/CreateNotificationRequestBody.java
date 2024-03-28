@@ -98,6 +98,75 @@ public class CreateNotificationRequestBody {
 
     private OperationTypeEnum operationType;
 
+    /**
+     * 云服务委托名称。 参数值为\"cts_admin_trust\"时，创建关键操作通知时会自动创建一个云服务委托：cts_admin_trust。
+     */
+    public static final class AgencyNameEnum {
+
+        /**
+         * Enum CTS_ADMIN_TRUST for value: "cts_admin_trust"
+         */
+        public static final AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+        private static final Map<String, AgencyNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgencyNameEnum> createStaticFields() {
+            Map<String, AgencyNameEnum> map = new HashMap<>();
+            map.put("cts_admin_trust", CTS_ADMIN_TRUST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgencyNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgencyNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyNameEnum(value));
+        }
+
+        public static AgencyNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgencyNameEnum) {
+                return this.value.equals(((AgencyNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private AgencyNameEnum agencyName;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operations")
 
@@ -150,6 +219,23 @@ public class CreateNotificationRequestBody {
 
     public void setOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
+    }
+
+    public CreateNotificationRequestBody withAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 云服务委托名称。 参数值为\"cts_admin_trust\"时，创建关键操作通知时会自动创建一个云服务委托：cts_admin_trust。
+     * @return agencyName
+     */
+    public AgencyNameEnum getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
     }
 
     public CreateNotificationRequestBody withOperations(List<Operations> operations) {
@@ -272,14 +358,14 @@ public class CreateNotificationRequestBody {
         CreateNotificationRequestBody that = (CreateNotificationRequestBody) obj;
         return Objects.equals(this.notificationName, that.notificationName)
             && Objects.equals(this.operationType, that.operationType)
-            && Objects.equals(this.operations, that.operations)
+            && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.operations, that.operations)
             && Objects.equals(this.notifyUserList, that.notifyUserList) && Objects.equals(this.topicId, that.topicId)
             && Objects.equals(this.filter, that.filter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(notificationName, operationType, operations, notifyUserList, topicId, filter);
+        return Objects.hash(notificationName, operationType, agencyName, operations, notifyUserList, topicId, filter);
     }
 
     @Override
@@ -288,6 +374,7 @@ public class CreateNotificationRequestBody {
         sb.append("class CreateNotificationRequestBody {\n");
         sb.append("    notificationName: ").append(toIndentedString(notificationName)).append("\n");
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
         sb.append("    notifyUserList: ").append(toIndentedString(notifyUserList)).append("\n");
         sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");

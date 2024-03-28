@@ -47,7 +47,7 @@ public class ShowSqlJobProgressResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_jobs")
 
-    private List<SubJobDatas> subJobs = null;
+    private List<SubJob> subJobs = null;
 
     public ShowSqlJobProgressResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -151,12 +151,12 @@ public class ShowSqlJobProgressResponse extends SdkResponse {
         this.progress = progress;
     }
 
-    public ShowSqlJobProgressResponse withSubJobs(List<SubJobDatas> subJobs) {
+    public ShowSqlJobProgressResponse withSubJobs(List<SubJob> subJobs) {
         this.subJobs = subJobs;
         return this;
     }
 
-    public ShowSqlJobProgressResponse addSubJobsItem(SubJobDatas subJobsItem) {
+    public ShowSqlJobProgressResponse addSubJobsItem(SubJob subJobsItem) {
         if (this.subJobs == null) {
             this.subJobs = new ArrayList<>();
         }
@@ -164,7 +164,7 @@ public class ShowSqlJobProgressResponse extends SdkResponse {
         return this;
     }
 
-    public ShowSqlJobProgressResponse withSubJobs(Consumer<List<SubJobDatas>> subJobsSetter) {
+    public ShowSqlJobProgressResponse withSubJobs(Consumer<List<SubJob>> subJobsSetter) {
         if (this.subJobs == null) {
             this.subJobs = new ArrayList<>();
         }
@@ -176,11 +176,11 @@ public class ShowSqlJobProgressResponse extends SdkResponse {
      * 正在运行作业的子作业的详细信息，一个作业可能包含多个子作业。
      * @return subJobs
      */
-    public List<SubJobDatas> getSubJobs() {
+    public List<SubJob> getSubJobs() {
         return subJobs;
     }
 
-    public void setSubJobs(List<SubJobDatas> subJobs) {
+    public void setSubJobs(List<SubJob> subJobs) {
         this.subJobs = subJobs;
     }
 

@@ -19,7 +19,7 @@ public class UpdateEnhancedConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateHostMassageReq body;
+    private UpdateEnhancedConnectionRequestBody body;
 
     public UpdateEnhancedConnectionRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -38,14 +38,14 @@ public class UpdateEnhancedConnectionRequest {
         this.connectionId = connectionId;
     }
 
-    public UpdateEnhancedConnectionRequest withBody(UpdateHostMassageReq body) {
+    public UpdateEnhancedConnectionRequest withBody(UpdateEnhancedConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateEnhancedConnectionRequest withBody(Consumer<UpdateHostMassageReq> bodySetter) {
+    public UpdateEnhancedConnectionRequest withBody(Consumer<UpdateEnhancedConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateHostMassageReq();
+            this.body = new UpdateEnhancedConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateEnhancedConnectionRequest {
      * Get body
      * @return body
      */
-    public UpdateHostMassageReq getBody() {
+    public UpdateEnhancedConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateHostMassageReq body) {
+    public void setBody(UpdateEnhancedConnectionRequestBody body) {
         this.body = body;
     }
 

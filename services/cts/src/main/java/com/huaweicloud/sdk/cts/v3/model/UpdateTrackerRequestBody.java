@@ -97,6 +97,75 @@ public class UpdateTrackerRequestBody {
     private String trackerName;
 
     /**
+     * 云服务委托名称。 参数值为\"cts_admin_trust\"时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。
+     */
+    public static final class AgencyNameEnum {
+
+        /**
+         * Enum CTS_ADMIN_TRUST for value: "cts_admin_trust"
+         */
+        public static final AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+        private static final Map<String, AgencyNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgencyNameEnum> createStaticFields() {
+            Map<String, AgencyNameEnum> map = new HashMap<>();
+            map.put("cts_admin_trust", CTS_ADMIN_TRUST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgencyNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgencyNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyNameEnum(value));
+        }
+
+        public static AgencyNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgencyNameEnum) {
+                return this.value.equals(((AgencyNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private AgencyNameEnum agencyName;
+
+    /**
      * 标识追踪器状态，该接口中可修改的状态包括正常（enabled）和停止（disabled）。如果选择修改状态为停止，则修改成功后追踪器停止记录事件。
      */
     public static final class StatusEnum {
@@ -243,6 +312,23 @@ public class UpdateTrackerRequestBody {
 
     public void setTrackerName(String trackerName) {
         this.trackerName = trackerName;
+    }
+
+    public UpdateTrackerRequestBody withAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 云服务委托名称。 参数值为\"cts_admin_trust\"时，更新追踪器会自动创建一个云服务委托：cts_admin_trust。
+     * @return agencyName
+     */
+    public AgencyNameEnum getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
     }
 
     public UpdateTrackerRequestBody withStatus(StatusEnum status) {
@@ -436,7 +522,7 @@ public class UpdateTrackerRequestBody {
         }
         UpdateTrackerRequestBody that = (UpdateTrackerRequestBody) obj;
         return Objects.equals(this.trackerType, that.trackerType) && Objects.equals(this.trackerName, that.trackerName)
-            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.status, that.status)
             && Objects.equals(this.isOrganizationTracker, that.isOrganizationTracker)
             && Objects.equals(this.managementEventSelector, that.managementEventSelector)
             && Objects.equals(this.isLtsEnabled, that.isLtsEnabled) && Objects.equals(this.obsInfo, that.obsInfo)
@@ -449,6 +535,7 @@ public class UpdateTrackerRequestBody {
     public int hashCode() {
         return Objects.hash(trackerType,
             trackerName,
+            agencyName,
             status,
             isOrganizationTracker,
             managementEventSelector,
@@ -466,6 +553,7 @@ public class UpdateTrackerRequestBody {
         sb.append("class UpdateTrackerRequestBody {\n");
         sb.append("    trackerType: ").append(toIndentedString(trackerType)).append("\n");
         sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    isOrganizationTracker: ").append(toIndentedString(isOrganizationTracker)).append("\n");
         sb.append("    managementEventSelector: ").append(toIndentedString(managementEventSelector)).append("\n");

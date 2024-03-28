@@ -14,16 +14,16 @@ public class CreateSparkJobTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateJobTemplatesRequestBody body;
+    private CreateSparkJobTemplateRequestBody body;
 
-    public CreateSparkJobTemplateRequest withBody(CreateJobTemplatesRequestBody body) {
+    public CreateSparkJobTemplateRequest withBody(CreateSparkJobTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateSparkJobTemplateRequest withBody(Consumer<CreateJobTemplatesRequestBody> bodySetter) {
+    public CreateSparkJobTemplateRequest withBody(Consumer<CreateSparkJobTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateJobTemplatesRequestBody();
+            this.body = new CreateSparkJobTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateSparkJobTemplateRequest {
      * Get body
      * @return body
      */
-    public CreateJobTemplatesRequestBody getBody() {
+    public CreateSparkJobTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateJobTemplatesRequestBody body) {
+    public void setBody(CreateSparkJobTemplateRequestBody body) {
         this.body = body;
     }
 

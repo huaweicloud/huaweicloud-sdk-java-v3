@@ -517,7 +517,7 @@ public class CreateGlobalConnectionBandwidth {
     }
 
     /**
-     * 功能说明：线路规格编码UUID。
+     * UUID of a line specification code.
      * @return specCodeId
      */
     public String getSpecCodeId() {

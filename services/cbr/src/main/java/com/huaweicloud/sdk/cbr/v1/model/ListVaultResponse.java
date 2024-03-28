@@ -34,11 +34,6 @@ public class ListVaultResponse extends SdkResponse {
 
     private Integer offset;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_lock_source_service")
-
-    private String sysLockSourceService;
-
     public ListVaultResponse withVaults(List<Vault> vaults) {
         this.vaults = vaults;
         return this;
@@ -126,23 +121,6 @@ public class ListVaultResponse extends SdkResponse {
         this.offset = offset;
     }
 
-    public ListVaultResponse withSysLockSourceService(String sysLockSourceService) {
-        this.sysLockSourceService = sysLockSourceService;
-        return this;
-    }
-
-    /**
-     * 用于标识SMB服务
-     * @return sysLockSourceService
-     */
-    public String getSysLockSourceService() {
-        return sysLockSourceService;
-    }
-
-    public void setSysLockSourceService(String sysLockSourceService) {
-        this.sysLockSourceService = sysLockSourceService;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,13 +131,12 @@ public class ListVaultResponse extends SdkResponse {
         }
         ListVaultResponse that = (ListVaultResponse) obj;
         return Objects.equals(this.vaults, that.vaults) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vaults, count, limit, offset, sysLockSourceService);
+        return Objects.hash(vaults, count, limit, offset);
     }
 
     @Override
@@ -170,7 +147,6 @@ public class ListVaultResponse extends SdkResponse {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

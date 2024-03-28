@@ -11,6 +11,16 @@ import java.util.Objects;
 public class NetworkCheckInfoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_connectivity")
+
+    private Boolean domainConnectivity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "destination_connectivity")
+
+    private Boolean destinationConnectivity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_delay")
 
     private Double networkDelay;
@@ -44,6 +54,40 @@ public class NetworkCheckInfoRequestBody {
     @JsonProperty(value = "evaluation_result")
 
     private String evaluationResult;
+
+    public NetworkCheckInfoRequestBody withDomainConnectivity(Boolean domainConnectivity) {
+        this.domainConnectivity = domainConnectivity;
+        return this;
+    }
+
+    /**
+     * 域名连通性
+     * @return domainConnectivity
+     */
+    public Boolean getDomainConnectivity() {
+        return domainConnectivity;
+    }
+
+    public void setDomainConnectivity(Boolean domainConnectivity) {
+        this.domainConnectivity = domainConnectivity;
+    }
+
+    public NetworkCheckInfoRequestBody withDestinationConnectivity(Boolean destinationConnectivity) {
+        this.destinationConnectivity = destinationConnectivity;
+        return this;
+    }
+
+    /**
+     * 目的端连通性
+     * @return destinationConnectivity
+     */
+    public Boolean getDestinationConnectivity() {
+        return destinationConnectivity;
+    }
+
+    public void setDestinationConnectivity(Boolean destinationConnectivity) {
+        this.destinationConnectivity = destinationConnectivity;
+    }
 
     public NetworkCheckInfoRequestBody withNetworkDelay(Double networkDelay) {
         this.networkDelay = networkDelay;
@@ -185,7 +229,9 @@ public class NetworkCheckInfoRequestBody {
             return false;
         }
         NetworkCheckInfoRequestBody that = (NetworkCheckInfoRequestBody) obj;
-        return Objects.equals(this.networkDelay, that.networkDelay)
+        return Objects.equals(this.domainConnectivity, that.domainConnectivity)
+            && Objects.equals(this.destinationConnectivity, that.destinationConnectivity)
+            && Objects.equals(this.networkDelay, that.networkDelay)
             && Objects.equals(this.networkJitter, that.networkJitter)
             && Objects.equals(this.migrationSpeed, that.migrationSpeed)
             && Objects.equals(this.lossPercentage, that.lossPercentage) && Objects.equals(this.cpuUsage, that.cpuUsage)
@@ -195,14 +241,23 @@ public class NetworkCheckInfoRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(networkDelay, networkJitter, migrationSpeed, lossPercentage, cpuUsage, memUsage, evaluationResult);
+        return Objects.hash(domainConnectivity,
+            destinationConnectivity,
+            networkDelay,
+            networkJitter,
+            migrationSpeed,
+            lossPercentage,
+            cpuUsage,
+            memUsage,
+            evaluationResult);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NetworkCheckInfoRequestBody {\n");
+        sb.append("    domainConnectivity: ").append(toIndentedString(domainConnectivity)).append("\n");
+        sb.append("    destinationConnectivity: ").append(toIndentedString(destinationConnectivity)).append("\n");
         sb.append("    networkDelay: ").append(toIndentedString(networkDelay)).append("\n");
         sb.append("    networkJitter: ").append(toIndentedString(networkJitter)).append("\n");
         sb.append("    migrationSpeed: ").append(toIndentedString(migrationSpeed)).append("\n");

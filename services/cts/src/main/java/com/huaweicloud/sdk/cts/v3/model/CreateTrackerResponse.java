@@ -143,6 +143,75 @@ public class CreateTrackerResponse extends SdkResponse {
     private String trackerName;
 
     /**
+     * 云服务委托名称。
+     */
+    public static final class AgencyNameEnum {
+
+        /**
+         * Enum CTS_ADMIN_TRUST for value: "cts_admin_trust"
+         */
+        public static final AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+        private static final Map<String, AgencyNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgencyNameEnum> createStaticFields() {
+            Map<String, AgencyNameEnum> map = new HashMap<>();
+            map.put("cts_admin_trust", CTS_ADMIN_TRUST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgencyNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgencyNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyNameEnum(value));
+        }
+
+        public static AgencyNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgencyNameEnum) {
+                return this.value.equals(((AgencyNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private AgencyNameEnum agencyName;
+
+    /**
      * 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
      */
     public static final class StatusEnum {
@@ -445,6 +514,23 @@ public class CreateTrackerResponse extends SdkResponse {
         this.trackerName = trackerName;
     }
 
+    public CreateTrackerResponse withAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 云服务委托名称。
+     * @return agencyName
+     */
+    public AgencyNameEnum getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+    }
+
     public CreateTrackerResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -563,8 +649,8 @@ public class CreateTrackerResponse extends SdkResponse {
             && Objects.equals(this.managementEventSelector, that.managementEventSelector)
             && Objects.equals(this.lts, that.lts) && Objects.equals(this.trackerType, that.trackerType)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.trackerName, that.trackerName) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.trackerName, that.trackerName) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.isSupportTraceFilesEncryption, that.isSupportTraceFilesEncryption)
             && Objects.equals(this.obsInfo, that.obsInfo) && Objects.equals(this.dataBucket, that.dataBucket);
     }
@@ -582,6 +668,7 @@ public class CreateTrackerResponse extends SdkResponse {
             domainId,
             projectId,
             trackerName,
+            agencyName,
             status,
             detail,
             isSupportTraceFilesEncryption,
@@ -604,6 +691,7 @@ public class CreateTrackerResponse extends SdkResponse {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    isSupportTraceFilesEncryption: ")

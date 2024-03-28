@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.cbr.v1.model.CopyCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CopyCheckpointResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreateCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CreateCheckpointResponse;
+import com.huaweicloud.sdk.cbr.v1.model.CreateOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.CreateOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CreatePostPaidVaultRequest;
@@ -32,6 +34,8 @@ import com.huaweicloud.sdk.cbr.v1.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteBackupResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteMemberRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteMemberResponse;
+import com.huaweicloud.sdk.cbr.v1.model.DeleteOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.DeleteOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.DeleteVaultRequest;
@@ -54,6 +58,10 @@ import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPolicyDetailRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPolicyDetailResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListPoliciesRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListPoliciesResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListProjectsRequest;
@@ -94,6 +102,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ShowMigrateStatusRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMigrateStatusResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowOpLogRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowOpLogResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ShowOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ShowOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowProtectableRequest;
@@ -122,6 +132,8 @@ import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateMemberStatusResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateOrderRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateOrderResponse;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateOrganizationPolicyRequest;
+import com.huaweicloud.sdk.cbr.v1.model.UpdateOrganizationPolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdatePolicyRequest;
 import com.huaweicloud.sdk.cbr.v1.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.cbr.v1.model.UpdateVaultRequest;
@@ -449,6 +461,36 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 创建组织策略
+     *
+     * 创建组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrganizationPolicyRequest 请求对象
+     * @return CompletableFuture<CreateOrganizationPolicyResponse>
+     */
+    public CompletableFuture<CreateOrganizationPolicyResponse> createOrganizationPolicyAsync(
+        CreateOrganizationPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.createOrganizationPolicy);
+    }
+
+    /**
+     * 创建组织策略
+     *
+     * 创建组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrganizationPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateOrganizationPolicyRequest, CreateOrganizationPolicyResponse>
+     */
+    public AsyncInvoker<CreateOrganizationPolicyRequest, CreateOrganizationPolicyResponse> createOrganizationPolicyAsyncInvoker(
+        CreateOrganizationPolicyRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.createOrganizationPolicy, hcClient);
+    }
+
+    /**
      * 创建策略
      *
      * 创建策略，策略分为备份策略和复制策略。
@@ -621,6 +663,36 @@ public class CbrAsyncClient {
     public AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse> deleteMemberAsyncInvoker(
         DeleteMemberRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.deleteMember, hcClient);
+    }
+
+    /**
+     * 删除组织策略
+     *
+     * 删除组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOrganizationPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteOrganizationPolicyResponse>
+     */
+    public CompletableFuture<DeleteOrganizationPolicyResponse> deleteOrganizationPolicyAsync(
+        DeleteOrganizationPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.deleteOrganizationPolicy);
+    }
+
+    /**
+     * 删除组织策略
+     *
+     * 删除组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOrganizationPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteOrganizationPolicyRequest, DeleteOrganizationPolicyResponse>
+     */
+    public AsyncInvoker<DeleteOrganizationPolicyRequest, DeleteOrganizationPolicyResponse> deleteOrganizationPolicyAsyncInvoker(
+        DeleteOrganizationPolicyRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.deleteOrganizationPolicy, hcClient);
     }
 
     /**
@@ -937,6 +1009,66 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<ListOpLogsRequest, ListOpLogsResponse> listOpLogsAsyncInvoker(ListOpLogsRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.listOpLogs, hcClient);
+    }
+
+    /**
+     * 查询组织策略列表
+     *
+     * 查询组织策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationPoliciesRequest 请求对象
+     * @return CompletableFuture<ListOrganizationPoliciesResponse>
+     */
+    public CompletableFuture<ListOrganizationPoliciesResponse> listOrganizationPoliciesAsync(
+        ListOrganizationPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listOrganizationPolicies);
+    }
+
+    /**
+     * 查询组织策略列表
+     *
+     * 查询组织策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListOrganizationPoliciesRequest, ListOrganizationPoliciesResponse>
+     */
+    public AsyncInvoker<ListOrganizationPoliciesRequest, ListOrganizationPoliciesResponse> listOrganizationPoliciesAsyncInvoker(
+        ListOrganizationPoliciesRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.listOrganizationPolicies, hcClient);
+    }
+
+    /**
+     * 查询组织策略部署状态列表
+     *
+     * 查询组织策略每个账号下策略部署状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationPolicyDetailRequest 请求对象
+     * @return CompletableFuture<ListOrganizationPolicyDetailResponse>
+     */
+    public CompletableFuture<ListOrganizationPolicyDetailResponse> listOrganizationPolicyDetailAsync(
+        ListOrganizationPolicyDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listOrganizationPolicyDetail);
+    }
+
+    /**
+     * 查询组织策略部署状态列表
+     *
+     * 查询组织策略每个账号下策略部署状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationPolicyDetailRequest 请求对象
+     * @return AsyncInvoker<ListOrganizationPolicyDetailRequest, ListOrganizationPolicyDetailResponse>
+     */
+    public AsyncInvoker<ListOrganizationPolicyDetailRequest, ListOrganizationPolicyDetailResponse> listOrganizationPolicyDetailAsyncInvoker(
+        ListOrganizationPolicyDetailRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.listOrganizationPolicyDetail, hcClient);
     }
 
     /**
@@ -1516,6 +1648,36 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 查询指定组织策略
+     *
+     * 查询指定组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOrganizationPolicyRequest 请求对象
+     * @return CompletableFuture<ShowOrganizationPolicyResponse>
+     */
+    public CompletableFuture<ShowOrganizationPolicyResponse> showOrganizationPolicyAsync(
+        ShowOrganizationPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showOrganizationPolicy);
+    }
+
+    /**
+     * 查询指定组织策略
+     *
+     * 查询指定组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOrganizationPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowOrganizationPolicyRequest, ShowOrganizationPolicyResponse>
+     */
+    public AsyncInvoker<ShowOrganizationPolicyRequest, ShowOrganizationPolicyResponse> showOrganizationPolicyAsyncInvoker(
+        ShowOrganizationPolicyRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.showOrganizationPolicy, hcClient);
+    }
+
+    /**
      * 查询单个策略
      *
      * 查询单个策略
@@ -1922,6 +2084,36 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<UpdateOrderRequest, UpdateOrderResponse> updateOrderAsyncInvoker(UpdateOrderRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.updateOrder, hcClient);
+    }
+
+    /**
+     * 更新组织策略
+     *
+     * 更新组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateOrganizationPolicyResponse>
+     */
+    public CompletableFuture<UpdateOrganizationPolicyResponse> updateOrganizationPolicyAsync(
+        UpdateOrganizationPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.updateOrganizationPolicy);
+    }
+
+    /**
+     * 更新组织策略
+     *
+     * 更新组织策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateOrganizationPolicyRequest, UpdateOrganizationPolicyResponse>
+     */
+    public AsyncInvoker<UpdateOrganizationPolicyRequest, UpdateOrganizationPolicyResponse> updateOrganizationPolicyAsyncInvoker(
+        UpdateOrganizationPolicyRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.updateOrganizationPolicy, hcClient);
     }
 
     /**

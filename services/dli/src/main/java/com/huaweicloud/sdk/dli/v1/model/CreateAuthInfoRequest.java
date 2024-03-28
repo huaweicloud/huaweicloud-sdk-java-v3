@@ -14,16 +14,16 @@ public class CreateAuthInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateAuthInfoReq body;
+    private CreateAuthInfoRequestBody body;
 
-    public CreateAuthInfoRequest withBody(CreateAuthInfoReq body) {
+    public CreateAuthInfoRequest withBody(CreateAuthInfoRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateAuthInfoRequest withBody(Consumer<CreateAuthInfoReq> bodySetter) {
+    public CreateAuthInfoRequest withBody(Consumer<CreateAuthInfoRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateAuthInfoReq();
+            this.body = new CreateAuthInfoRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateAuthInfoRequest {
      * Get body
      * @return body
      */
-    public CreateAuthInfoReq getBody() {
+    public CreateAuthInfoRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateAuthInfoReq body) {
+    public void setBody(CreateAuthInfoRequestBody body) {
         this.body = body;
     }
 

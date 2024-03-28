@@ -24,8 +24,11 @@ package com.huaweicloud.sdk.core;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.github.tomakehurst.wiremock.matching.MatchResult;
-import com.github.tomakehurst.wiremock.matching.StringValuePattern;
 import com.huaweicloud.sdk.core.Constants.MEDIATYPE;
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.exchange.SdkExchange;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.progress.ProgressListener;
 import com.huaweicloud.sdk.core.progress.ProgressStatus;
@@ -40,6 +43,8 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -112,14 +117,31 @@ public class TestHcClient {
                         .withBody(new byte[FILE_SIZE])
                         .withStatus(200)));
 
-        StringValuePattern expectedHeader = equalTo("test");
         wireMockRule.stubFor(WireMock.post("/v3/oidc/authorization")
-                .withHeader("Authorization", expectedHeader)
+                .withHeader("Authorization", equalTo("test"))
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
                         .withHeader("token", "success")
                         .withBody("")
                         .withStatus(200)));
+
+        wireMockRule.stubFor(WireMock.get("/user-agent")
+                .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0"))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("")
+                        .withStatus(200)));
+
+        wireMockRule.stubFor(WireMock.get("/test-extra-headers")
+                .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0;test-user-agent"))
+                .withHeader("Test-Client-Header", equalTo("Test-Client-Header-Value"))
+                .withHeader("Test-Request-Override-Client-Header", equalTo("Test-Request-Header-Value"))
+                .withHeader("Test-Request-Header", equalTo("Test-Request-Header-Value"))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("")
+                        .withStatus(200)));
+
         wireMockRule.start();
 
         hcClient = TestUtils.createHcClient(
@@ -221,6 +243,47 @@ public class TestHcClient {
                 new TestHttpRequestDef.TestCustomAuthorizationRequest().withAuthorization("test"));
         TestHttpRequestDef.TestCustomAuthorizationResponse response = future.get();
         Assert.assertEquals(response.getToken(), "success");
+    }
+
+    @Test
+    public void testUserAgentHeader() {
+        HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
+                .withName("TestUserAgent")
+                .withUri("/user-agent")
+                .withContentType("application/json").build();
+        SdkResponse response = (SdkResponse) hcClient.syncInvokeHttp(new Object(), reqDef);
+        Assert.assertEquals(200, response.getHttpStatusCode());
+    }
+
+    @Test
+    public void testExtraHeaders() {
+        String endpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        HcClient client = new HcClient(HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true))
+                .withCredential(new BasicCredentials().withAk("test").withSk("test"))
+                .withEndpoints(Collections.singletonList(endpoint))
+                .withExtraHeaders(new HashMap<String, String>() {
+                    private static final long serialVersionUID = 1073936404033112671L;
+
+                    {
+                        put("User-Agent", "test-user-agent");
+                        put("Test-Client-Header", "Test-Client-Header-Value");
+                        put("Test-Request-Override-Client-Header", "Test-Client-Header-Value");
+                    }
+                });
+        HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
+                .withName("TestExtraHeaders")
+                .withUri("/test-extra-headers")
+                .withContentType("application/json").build();
+        SdkResponse response = (SdkResponse) client.syncInvokeHttp(new Object(), reqDef, new SdkExchange(),
+                new HashMap<String, String>() {
+                    private static final long serialVersionUID = -2523946305257291275L;
+
+                    {
+                        put("Test-Request-Override-Client-Header", "Test-Request-Header-Value");
+                        put("Test-Request-Header", "Test-Request-Header-Value");
+                    }
+                });
+        Assert.assertEquals(200, response.getHttpStatusCode());
     }
 
     public CompletableFuture<TestHttpRequestDef.TestCustomAuthorizationResponse> callCustomAuthorizationAsync(

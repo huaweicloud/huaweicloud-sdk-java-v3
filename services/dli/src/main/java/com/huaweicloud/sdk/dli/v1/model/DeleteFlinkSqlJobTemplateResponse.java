@@ -25,7 +25,7 @@ public class DeleteFlinkSqlJobTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template")
 
-    private DeleteTemplateRespTemplate template;
+    private FlinkSqlJobTemplateId template;
 
     public DeleteFlinkSqlJobTemplateResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class DeleteFlinkSqlJobTemplateResponse extends SdkResponse {
         this.message = message;
     }
 
-    public DeleteFlinkSqlJobTemplateResponse withTemplate(DeleteTemplateRespTemplate template) {
+    public DeleteFlinkSqlJobTemplateResponse withTemplate(FlinkSqlJobTemplateId template) {
         this.template = template;
         return this;
     }
 
-    public DeleteFlinkSqlJobTemplateResponse withTemplate(Consumer<DeleteTemplateRespTemplate> templateSetter) {
+    public DeleteFlinkSqlJobTemplateResponse withTemplate(Consumer<FlinkSqlJobTemplateId> templateSetter) {
         if (this.template == null) {
-            this.template = new DeleteTemplateRespTemplate();
+            this.template = new FlinkSqlJobTemplateId();
             templateSetter.accept(this.template);
         }
 
@@ -79,11 +79,11 @@ public class DeleteFlinkSqlJobTemplateResponse extends SdkResponse {
      * Get template
      * @return template
      */
-    public DeleteTemplateRespTemplate getTemplate() {
+    public FlinkSqlJobTemplateId getTemplate() {
         return template;
     }
 
-    public void setTemplate(DeleteTemplateRespTemplate template) {
+    public void setTemplate(FlinkSqlJobTemplateId template) {
         this.template = template;
     }
 

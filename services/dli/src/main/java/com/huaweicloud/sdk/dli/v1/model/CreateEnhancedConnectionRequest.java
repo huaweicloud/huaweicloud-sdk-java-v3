@@ -14,16 +14,16 @@ public class CreateEnhancedConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateEnhancedConnectionsReq body;
+    private CreateEnhancedConnectionRequestBody body;
 
-    public CreateEnhancedConnectionRequest withBody(CreateEnhancedConnectionsReq body) {
+    public CreateEnhancedConnectionRequest withBody(CreateEnhancedConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateEnhancedConnectionRequest withBody(Consumer<CreateEnhancedConnectionsReq> bodySetter) {
+    public CreateEnhancedConnectionRequest withBody(Consumer<CreateEnhancedConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateEnhancedConnectionsReq();
+            this.body = new CreateEnhancedConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateEnhancedConnectionRequest {
      * Get body
      * @return body
      */
-    public CreateEnhancedConnectionsReq getBody() {
+    public CreateEnhancedConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateEnhancedConnectionsReq body) {
+    public void setBody(CreateEnhancedConnectionRequestBody body) {
         this.body = body;
     }
 

@@ -195,6 +195,81 @@ public class ApiFuncCreate {
 
     private String authorizerId;
 
+    /**
+     * 函数后端的请求协议：HTTPS、GRPCS，默认值为HTTPS，前端配置中的请求协议为GRPCS时可选GRPCS。
+     */
+    public static final class ReqProtocolEnum {
+
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
+        public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
+
+        /**
+         * Enum GRPCS for value: "GRPCS"
+         */
+        public static final ReqProtocolEnum GRPCS = new ReqProtocolEnum("GRPCS");
+
+        private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqProtocolEnum> createStaticFields() {
+            Map<String, ReqProtocolEnum> map = new HashMap<>();
+            map.put("HTTPS", HTTPS);
+            map.put("GRPCS", GRPCS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReqProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReqProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
+        }
+
+        public static ReqProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReqProtocolEnum) {
+                return this.value.equals(((ReqProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_protocol")
+
+    private ReqProtocolEnum reqProtocol;
+
     public ApiFuncCreate withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
@@ -332,6 +407,23 @@ public class ApiFuncCreate {
         this.authorizerId = authorizerId;
     }
 
+    public ApiFuncCreate withReqProtocol(ReqProtocolEnum reqProtocol) {
+        this.reqProtocol = reqProtocol;
+        return this;
+    }
+
+    /**
+     * 函数后端的请求协议：HTTPS、GRPCS，默认值为HTTPS，前端配置中的请求协议为GRPCS时可选GRPCS。
+     * @return reqProtocol
+     */
+    public ReqProtocolEnum getReqProtocol() {
+        return reqProtocol;
+    }
+
+    public void setReqProtocol(ReqProtocolEnum reqProtocol) {
+        this.reqProtocol = reqProtocol;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -345,12 +437,21 @@ public class ApiFuncCreate {
             && Objects.equals(this.invocationType, that.invocationType)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.version, that.version)
             && Objects.equals(this.aliasUrn, that.aliasUrn) && Objects.equals(this.timeout, that.timeout)
-            && Objects.equals(this.authorizerId, that.authorizerId);
+            && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.reqProtocol, that.reqProtocol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, remark, invocationType, networkType, version, aliasUrn, timeout, authorizerId);
+        return Objects.hash(functionUrn,
+            remark,
+            invocationType,
+            networkType,
+            version,
+            aliasUrn,
+            timeout,
+            authorizerId,
+            reqProtocol);
     }
 
     @Override
@@ -365,6 +466,7 @@ public class ApiFuncCreate {
         sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
+        sb.append("    reqProtocol: ").append(toIndentedString(reqProtocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

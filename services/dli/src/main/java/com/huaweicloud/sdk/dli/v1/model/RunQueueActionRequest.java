@@ -19,7 +19,7 @@ public class RunQueueActionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private RunQueueActionReq body;
+    private RunQueueActionRequestBody body;
 
     public RunQueueActionRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class RunQueueActionRequest {
         this.queueName = queueName;
     }
 
-    public RunQueueActionRequest withBody(RunQueueActionReq body) {
+    public RunQueueActionRequest withBody(RunQueueActionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RunQueueActionRequest withBody(Consumer<RunQueueActionReq> bodySetter) {
+    public RunQueueActionRequest withBody(Consumer<RunQueueActionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new RunQueueActionReq();
+            this.body = new RunQueueActionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class RunQueueActionRequest {
      * Get body
      * @return body
      */
-    public RunQueueActionReq getBody() {
+    public RunQueueActionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RunQueueActionReq body) {
+    public void setBody(RunQueueActionRequestBody body) {
         this.body = body;
     }
 

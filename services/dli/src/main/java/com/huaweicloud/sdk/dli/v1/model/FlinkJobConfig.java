@@ -118,71 +118,6 @@ public class FlinkJobConfig {
 
     private Boolean resumeCheckpoint;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "runtime_config")
-
-    private String runtimeConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "graph_editor_enabled")
-
-    private Boolean graphEditorEnabled;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "graph_editor_data")
-
-    private String graphEditorData;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resume_max_num")
-
-    private Long resumeMaxNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "checkpoint_path")
-
-    private String checkpointPath;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "config_url")
-
-    private String configUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tm_cus")
-
-    private Integer tmCus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tm_slot_num")
-
-    private Integer tmSlotNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image")
-
-    private String image;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "feature")
-
-    private String feature;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flink_version")
-
-    private String flinkVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operator_config")
-
-    private String operatorConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "static_estimator_config")
-
-    private String staticEstimatorConfig;
-
     public FlinkJobConfig withCheckpointEnabled(Boolean checkpointEnabled) {
         this.checkpointEnabled = checkpointEnabled;
         return this;
@@ -377,7 +312,7 @@ public class FlinkJobConfig {
     }
 
     /**
-     * 用户设置的作业并行数， “show_detail”为“true”时独有。默认值为1。 最小值：1，最大值：2000。 
+     * 用户设置的作业并行数， “show_detail”为“true”时独有。默认值为1。 最小值：1，最大值：2000。
      * minimum: 1
      * maximum: 2000
      * @return parallelNumber
@@ -592,227 +527,6 @@ public class FlinkJobConfig {
         this.resumeCheckpoint = resumeCheckpoint;
     }
 
-    public FlinkJobConfig withRuntimeConfig(String runtimeConfig) {
-        this.runtimeConfig = runtimeConfig;
-        return this;
-    }
-
-    /**
-     * Flink作业运行时自定义优化参数。
-     * @return runtimeConfig
-     */
-    public String getRuntimeConfig() {
-        return runtimeConfig;
-    }
-
-    public void setRuntimeConfig(String runtimeConfig) {
-        this.runtimeConfig = runtimeConfig;
-    }
-
-    public FlinkJobConfig withGraphEditorEnabled(Boolean graphEditorEnabled) {
-        this.graphEditorEnabled = graphEditorEnabled;
-        return this;
-    }
-
-    /**
-     * 流图编辑开关。默认为“false。
-     * @return graphEditorEnabled
-     */
-    public Boolean getGraphEditorEnabled() {
-        return graphEditorEnabled;
-    }
-
-    public void setGraphEditorEnabled(Boolean graphEditorEnabled) {
-        this.graphEditorEnabled = graphEditorEnabled;
-    }
-
-    public FlinkJobConfig withGraphEditorData(String graphEditorData) {
-        this.graphEditorData = graphEditorData;
-        return this;
-    }
-
-    /**
-     * 流图编辑数据。默认为null。
-     * @return graphEditorData
-     */
-    public String getGraphEditorData() {
-        return graphEditorData;
-    }
-
-    public void setGraphEditorData(String graphEditorData) {
-        this.graphEditorData = graphEditorData;
-    }
-
-    public FlinkJobConfig withResumeMaxNum(Long resumeMaxNum) {
-        this.resumeMaxNum = resumeMaxNum;
-        return this;
-    }
-
-    /**
-     * 异常重试最大次数。-1代表无限。
-     * @return resumeMaxNum
-     */
-    public Long getResumeMaxNum() {
-        return resumeMaxNum;
-    }
-
-    public void setResumeMaxNum(Long resumeMaxNum) {
-        this.resumeMaxNum = resumeMaxNum;
-    }
-
-    public FlinkJobConfig withCheckpointPath(String checkpointPath) {
-        this.checkpointPath = checkpointPath;
-        return this;
-    }
-
-    /**
-     * 检查点保存路径。
-     * @return checkpointPath
-     */
-    public String getCheckpointPath() {
-        return checkpointPath;
-    }
-
-    public void setCheckpointPath(String checkpointPath) {
-        this.checkpointPath = checkpointPath;
-    }
-
-    public FlinkJobConfig withConfigUrl(String configUrl) {
-        this.configUrl = configUrl;
-        return this;
-    }
-
-    /**
-     * 用户上传的config包OBS路径。
-     * @return configUrl
-     */
-    public String getConfigUrl() {
-        return configUrl;
-    }
-
-    public void setConfigUrl(String configUrl) {
-        this.configUrl = configUrl;
-    }
-
-    public FlinkJobConfig withTmCus(Integer tmCus) {
-        this.tmCus = tmCus;
-        return this;
-    }
-
-    /**
-     * 单TM所占CU数。
-     * @return tmCus
-     */
-    public Integer getTmCus() {
-        return tmCus;
-    }
-
-    public void setTmCus(Integer tmCus) {
-        this.tmCus = tmCus;
-    }
-
-    public FlinkJobConfig withTmSlotNum(Integer tmSlotNum) {
-        this.tmSlotNum = tmSlotNum;
-        return this;
-    }
-
-    /**
-     * 单TM Slot数。
-     * @return tmSlotNum
-     */
-    public Integer getTmSlotNum() {
-        return tmSlotNum;
-    }
-
-    public void setTmSlotNum(Integer tmSlotNum) {
-        this.tmSlotNum = tmSlotNum;
-    }
-
-    public FlinkJobConfig withImage(String image) {
-        this.image = image;
-        return this;
-    }
-
-    /**
-     * 自定义镜像。格式为：组织名/镜像名:镜像版本。当用户设置“feature”为“custom”时，该参数生效。用户可通过与“feature”参数配合使用，指定作业运行使用自定义的Flink镜像。
-     * @return image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public FlinkJobConfig withFeature(String feature) {
-        this.feature = feature;
-        return this;
-    }
-
-    /**
-     * 自定义作业特性。表示用户作业使用的Flink镜像类型。basic：表示使用DLI提供的基础Flink镜像。custom：表示使用用户自定义的Flink镜像。
-     * @return feature
-     */
-    public String getFeature() {
-        return feature;
-    }
-
-    public void setFeature(String feature) {
-        this.feature = feature;
-    }
-
-    public FlinkJobConfig withFlinkVersion(String flinkVersion) {
-        this.flinkVersion = flinkVersion;
-        return this;
-    }
-
-    /**
-     * Flink版本。当用户设置“feature”为“basic”时，该参数生效。用户可通过与“feature”参数配合使用，指定作业运行使用的DLI基础Flink镜像的版本。
-     * @return flinkVersion
-     */
-    public String getFlinkVersion() {
-        return flinkVersion;
-    }
-
-    public void setFlinkVersion(String flinkVersion) {
-        this.flinkVersion = flinkVersion;
-    }
-
-    public FlinkJobConfig withOperatorConfig(String operatorConfig) {
-        this.operatorConfig = operatorConfig;
-        return this;
-    }
-
-    /**
-     * 各算子并行度参数，以json的形式展示各算子id和并行度。
-     * @return operatorConfig
-     */
-    public String getOperatorConfig() {
-        return operatorConfig;
-    }
-
-    public void setOperatorConfig(String operatorConfig) {
-        this.operatorConfig = operatorConfig;
-    }
-
-    public FlinkJobConfig withStaticEstimatorConfig(String staticEstimatorConfig) {
-        this.staticEstimatorConfig = staticEstimatorConfig;
-        return this;
-    }
-
-    /**
-     * 静态流图资源预估参数，以json的形式展示。
-     * @return staticEstimatorConfig
-     */
-    public String getStaticEstimatorConfig() {
-        return staticEstimatorConfig;
-    }
-
-    public void setStaticEstimatorConfig(String staticEstimatorConfig) {
-        this.staticEstimatorConfig = staticEstimatorConfig;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -838,17 +552,7 @@ public class FlinkJobConfig {
             && Objects.equals(this.dependencyFiles, that.dependencyFiles)
             && Objects.equals(this.executorNumber, that.executorNumber)
             && Objects.equals(this.executorCuNumber, that.executorCuNumber)
-            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
-            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
-            && Objects.equals(this.graphEditorEnabled, that.graphEditorEnabled)
-            && Objects.equals(this.graphEditorData, that.graphEditorData)
-            && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
-            && Objects.equals(this.checkpointPath, that.checkpointPath)
-            && Objects.equals(this.configUrl, that.configUrl) && Objects.equals(this.tmCus, that.tmCus)
-            && Objects.equals(this.tmSlotNum, that.tmSlotNum) && Objects.equals(this.image, that.image)
-            && Objects.equals(this.feature, that.feature) && Objects.equals(this.flinkVersion, that.flinkVersion)
-            && Objects.equals(this.operatorConfig, that.operatorConfig)
-            && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig);
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint);
     }
 
     @Override
@@ -873,20 +577,7 @@ public class FlinkJobConfig {
             dependencyFiles,
             executorNumber,
             executorCuNumber,
-            resumeCheckpoint,
-            runtimeConfig,
-            graphEditorEnabled,
-            graphEditorData,
-            resumeMaxNum,
-            checkpointPath,
-            configUrl,
-            tmCus,
-            tmSlotNum,
-            image,
-            feature,
-            flinkVersion,
-            operatorConfig,
-            staticEstimatorConfig);
+            resumeCheckpoint);
     }
 
     @Override
@@ -914,19 +605,6 @@ public class FlinkJobConfig {
         sb.append("    executorNumber: ").append(toIndentedString(executorNumber)).append("\n");
         sb.append("    executorCuNumber: ").append(toIndentedString(executorCuNumber)).append("\n");
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
-        sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
-        sb.append("    graphEditorEnabled: ").append(toIndentedString(graphEditorEnabled)).append("\n");
-        sb.append("    graphEditorData: ").append(toIndentedString(graphEditorData)).append("\n");
-        sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
-        sb.append("    checkpointPath: ").append(toIndentedString(checkpointPath)).append("\n");
-        sb.append("    configUrl: ").append(toIndentedString(configUrl)).append("\n");
-        sb.append("    tmCus: ").append(toIndentedString(tmCus)).append("\n");
-        sb.append("    tmSlotNum: ").append(toIndentedString(tmSlotNum)).append("\n");
-        sb.append("    image: ").append(toIndentedString(image)).append("\n");
-        sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
-        sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
-        sb.append("    operatorConfig: ").append(toIndentedString(operatorConfig)).append("\n");
-        sb.append("    staticEstimatorConfig: ").append(toIndentedString(staticEstimatorConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

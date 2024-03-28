@@ -14,16 +14,16 @@ public class CreateSqlJobTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateSqlTemplatesRequestBody body;
+    private CreateSqlJobTemplateRequestBody body;
 
-    public CreateSqlJobTemplateRequest withBody(CreateSqlTemplatesRequestBody body) {
+    public CreateSqlJobTemplateRequest withBody(CreateSqlJobTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateSqlJobTemplateRequest withBody(Consumer<CreateSqlTemplatesRequestBody> bodySetter) {
+    public CreateSqlJobTemplateRequest withBody(Consumer<CreateSqlJobTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateSqlTemplatesRequestBody();
+            this.body = new CreateSqlJobTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateSqlJobTemplateRequest {
      * Get body
      * @return body
      */
-    public CreateSqlTemplatesRequestBody getBody() {
+    public CreateSqlJobTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateSqlTemplatesRequestBody body) {
+    public void setBody(CreateSqlJobTemplateRequestBody body) {
         this.body = body;
     }
 

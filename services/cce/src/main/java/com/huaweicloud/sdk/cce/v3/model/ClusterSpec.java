@@ -174,11 +174,6 @@ public class ClusterSpec {
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enableAutopilot")
-
-    private Boolean enableAutopilot;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -249,7 +244,7 @@ public class ClusterSpec {
     private List<ResourceTag> clusterTags = null;
 
     /**
-     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。 
+     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 默认使用iptables转发模式。 
      */
     public static final class KubeProxyModeEnum {
 
@@ -397,23 +392,6 @@ public class ClusterSpec {
 
     public void setFlavor(String flavor) {
         this.flavor = flavor;
-    }
-
-    public ClusterSpec withEnableAutopilot(Boolean enableAutopilot) {
-        this.enableAutopilot = enableAutopilot;
-        return this;
-    }
-
-    /**
-     * CCE Autopilot集群开关： - true：创建集群为CCE Autopilot集群 
-     * @return enableAutopilot
-     */
-    public Boolean getEnableAutopilot() {
-        return enableAutopilot;
-    }
-
-    public void setEnableAutopilot(Boolean enableAutopilot) {
-        this.enableAutopilot = enableAutopilot;
     }
 
     public ClusterSpec withVersion(String version) {
@@ -753,7 +731,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。 
+     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 默认使用iptables转发模式。 
      * @return kubeProxyMode
      */
     public KubeProxyModeEnum getKubeProxyMode() {
@@ -884,8 +862,8 @@ public class ClusterSpec {
         }
         ClusterSpec that = (ClusterSpec) obj;
         return Objects.equals(this.category, that.category) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.enableAutopilot, that.enableAutopilot)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.platformVersion, that.platformVersion)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.platformVersion, that.platformVersion)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
@@ -907,7 +885,6 @@ public class ClusterSpec {
         return Objects.hash(category,
             type,
             flavor,
-            enableAutopilot,
             version,
             platformVersion,
             description,
@@ -937,7 +914,6 @@ public class ClusterSpec {
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-        sb.append("    enableAutopilot: ").append(toIndentedString(enableAutopilot)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

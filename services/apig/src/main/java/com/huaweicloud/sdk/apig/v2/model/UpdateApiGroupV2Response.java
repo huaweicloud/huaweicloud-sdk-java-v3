@@ -125,6 +125,11 @@ public class UpdateApiGroupV2Response extends SdkResponse {
     private List<UrlDomain> urlDomains = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sl_domain_access_enabled")
+
+    private Boolean slDomainAccessEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sl_domains")
 
     private List<String> slDomains = null;
@@ -321,6 +326,23 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.urlDomains = urlDomains;
     }
 
+    public UpdateApiGroupV2Response withSlDomainAccessEnabled(Boolean slDomainAccessEnabled) {
+        this.slDomainAccessEnabled = slDomainAccessEnabled;
+        return this;
+    }
+
+    /**
+     * 调试域名是否可以访问，true表示可以访问，false表示禁止访问
+     * @return slDomainAccessEnabled
+     */
+    public Boolean getSlDomainAccessEnabled() {
+        return slDomainAccessEnabled;
+    }
+
+    public void setSlDomainAccessEnabled(Boolean slDomainAccessEnabled) {
+        this.slDomainAccessEnabled = slDomainAccessEnabled;
+    }
+
     public UpdateApiGroupV2Response withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -503,6 +525,7 @@ public class UpdateApiGroupV2Response extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.slDomain, that.slDomain)
             && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains)
+            && Objects.equals(this.slDomainAccessEnabled, that.slDomainAccessEnabled)
             && Objects.equals(this.slDomains, that.slDomains) && Objects.equals(this.remark, that.remark)
             && Objects.equals(this.callLimits, that.callLimits) && Objects.equals(this.timeInterval, that.timeInterval)
             && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.isDefault, that.isDefault)
@@ -520,6 +543,7 @@ public class UpdateApiGroupV2Response extends SdkResponse {
             updateTime,
             onSellStatus,
             urlDomains,
+            slDomainAccessEnabled,
             slDomains,
             remark,
             callLimits,
@@ -543,6 +567,7 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    onSellStatus: ").append(toIndentedString(onSellStatus)).append("\n");
         sb.append("    urlDomains: ").append(toIndentedString(urlDomains)).append("\n");
+        sb.append("    slDomainAccessEnabled: ").append(toIndentedString(slDomainAccessEnabled)).append("\n");
         sb.append("    slDomains: ").append(toIndentedString(slDomains)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    callLimits: ").append(toIndentedString(callLimits)).append("\n");

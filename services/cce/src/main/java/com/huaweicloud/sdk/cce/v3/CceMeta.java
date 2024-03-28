@@ -100,6 +100,7 @@ import com.huaweicloud.sdk.cce.v3.model.MigrateNodesTask;
 import com.huaweicloud.sdk.cce.v3.model.NodeCreateRequest;
 import com.huaweicloud.sdk.cce.v3.model.NodePool;
 import com.huaweicloud.sdk.cce.v3.model.NodePoolUpdate;
+import com.huaweicloud.sdk.cce.v3.model.PackageOptions;
 import com.huaweicloud.sdk.cce.v3.model.PartitionReqBody;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
@@ -203,6 +204,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CceMeta {
@@ -856,6 +858,12 @@ public class CceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteClusterRequest.DeleteSfs30Enum.class),
             f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs30, DeleteClusterRequest::setDeleteSfs30));
+        builder.<DeleteClusterRequest.LtsReclaimPolicyEnum>withRequestField("lts_reclaim_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteClusterRequest.LtsReclaimPolicyEnum.class),
+            f -> f.withMarshaller(DeleteClusterRequest::getLtsReclaimPolicy,
+                DeleteClusterRequest::setLtsReclaimPolicy));
         builder.<DeleteClusterRequest.TobedeletedEnum>withRequestField("tobedeleted",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1721,6 +1729,14 @@ public class CceMeta {
                 ShowClusterConfigurationDetailsRequest::setClusterId));
 
         // response
+        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ShowClusterConfigurationDetailsResponse::getBody,
+                    ShowClusterConfigurationDetailsResponse::setBody)
+                .withInnerContainerType(List.class));
 
         return builder.build();
     }
@@ -1879,6 +1895,14 @@ public class CceMeta {
                 ShowNodePoolConfigurationDetailsRequest::setNodepoolId));
 
         // response
+        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ShowNodePoolConfigurationDetailsResponse::getBody,
+                    ShowNodePoolConfigurationDetailsResponse::setBody)
+                .withInnerContainerType(List.class));
 
         return builder.build();
     }

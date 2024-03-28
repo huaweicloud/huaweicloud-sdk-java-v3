@@ -236,7 +236,7 @@ public class RocketMQAsyncClient {
     /**
      * 创建实例
      *
-     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -251,7 +251,7 @@ public class RocketMQAsyncClient {
     /**
      * 创建实例
      *
-     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

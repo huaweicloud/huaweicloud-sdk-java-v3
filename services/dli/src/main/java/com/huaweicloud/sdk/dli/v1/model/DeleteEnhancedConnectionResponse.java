@@ -44,7 +44,7 @@ public class DeleteEnhancedConnectionResponse extends SdkResponse {
     }
 
     /**
-     * 系统提示信息，执行成功时，返回“Deleted”。
+     * 系统提示信息，执行成功时，信息可能为空。
      * @return message
      */
     public String getMessage() {

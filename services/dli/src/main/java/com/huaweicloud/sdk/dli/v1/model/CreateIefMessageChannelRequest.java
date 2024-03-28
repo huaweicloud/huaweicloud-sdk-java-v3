@@ -14,16 +14,16 @@ public class CreateIefMessageChannelRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateIefMessageChannelReq body;
+    private CreateIefMessageChannelRequestBody body;
 
-    public CreateIefMessageChannelRequest withBody(CreateIefMessageChannelReq body) {
+    public CreateIefMessageChannelRequest withBody(CreateIefMessageChannelRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateIefMessageChannelRequest withBody(Consumer<CreateIefMessageChannelReq> bodySetter) {
+    public CreateIefMessageChannelRequest withBody(Consumer<CreateIefMessageChannelRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateIefMessageChannelReq();
+            this.body = new CreateIefMessageChannelRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateIefMessageChannelRequest {
      * Get body
      * @return body
      */
-    public CreateIefMessageChannelReq getBody() {
+    public CreateIefMessageChannelRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateIefMessageChannelReq body) {
+    public void setBody(CreateIefMessageChannelRequestBody body) {
         this.body = body;
     }
 

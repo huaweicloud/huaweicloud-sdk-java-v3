@@ -188,6 +188,81 @@ public class ApiPolicyFunctionResp {
 
     private Integer timeout;
 
+    /**
+     * 函数后端的请求协议：HTTPS、GRPCS，默认值为HTTPS，前端配置中的请求协议为GRPCS时可选GRPCS。
+     */
+    public static final class ReqProtocolEnum {
+
+        /**
+         * Enum HTTPS for value: "HTTPS"
+         */
+        public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
+
+        /**
+         * Enum GRPCS for value: "GRPCS"
+         */
+        public static final ReqProtocolEnum GRPCS = new ReqProtocolEnum("GRPCS");
+
+        private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqProtocolEnum> createStaticFields() {
+            Map<String, ReqProtocolEnum> map = new HashMap<>();
+            map.put("HTTPS", HTTPS);
+            map.put("GRPCS", GRPCS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReqProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReqProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
+        }
+
+        public static ReqProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReqProtocolEnum) {
+                return this.value.equals(((ReqProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_protocol")
+
+    private ReqProtocolEnum reqProtocol;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
@@ -391,6 +466,23 @@ public class ApiPolicyFunctionResp {
         this.timeout = timeout;
     }
 
+    public ApiPolicyFunctionResp withReqProtocol(ReqProtocolEnum reqProtocol) {
+        this.reqProtocol = reqProtocol;
+        return this;
+    }
+
+    /**
+     * 函数后端的请求协议：HTTPS、GRPCS，默认值为HTTPS，前端配置中的请求协议为GRPCS时可选GRPCS。
+     * @return reqProtocol
+     */
+    public ReqProtocolEnum getReqProtocol() {
+        return reqProtocol;
+    }
+
+    public void setReqProtocol(ReqProtocolEnum reqProtocol) {
+        this.reqProtocol = reqProtocol;
+    }
+
     public ApiPolicyFunctionResp withId(String id) {
         this.id = id;
         return this;
@@ -538,8 +630,9 @@ public class ApiPolicyFunctionResp {
             && Objects.equals(this.invocationType, that.invocationType)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.version, that.version)
             && Objects.equals(this.aliasUrn, that.aliasUrn) && Objects.equals(this.timeout, that.timeout)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.effectMode, that.effectMode)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.reqProtocol, that.reqProtocol) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backendParams, that.backendParams)
             && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
@@ -551,6 +644,7 @@ public class ApiPolicyFunctionResp {
             version,
             aliasUrn,
             timeout,
+            reqProtocol,
             id,
             effectMode,
             name,
@@ -569,6 +663,7 @@ public class ApiPolicyFunctionResp {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    reqProtocol: ").append(toIndentedString(reqProtocol)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

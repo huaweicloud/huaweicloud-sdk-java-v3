@@ -32,7 +32,7 @@ public class ListSparkJobTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "templates")
 
-    private List<JobTemplateInfo> templates = null;
+    private List<SparkJobTemplate> templates = null;
 
     public ListSparkJobTemplatesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListSparkJobTemplatesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListSparkJobTemplatesResponse withTemplates(List<JobTemplateInfo> templates) {
+    public ListSparkJobTemplatesResponse withTemplates(List<SparkJobTemplate> templates) {
         this.templates = templates;
         return this;
     }
 
-    public ListSparkJobTemplatesResponse addTemplatesItem(JobTemplateInfo templatesItem) {
+    public ListSparkJobTemplatesResponse addTemplatesItem(SparkJobTemplate templatesItem) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListSparkJobTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    public ListSparkJobTemplatesResponse withTemplates(Consumer<List<JobTemplateInfo>> templatesSetter) {
+    public ListSparkJobTemplatesResponse withTemplates(Consumer<List<SparkJobTemplate>> templatesSetter) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListSparkJobTemplatesResponse extends SdkResponse {
      * 模板信息列表。
      * @return templates
      */
-    public List<JobTemplateInfo> getTemplates() {
+    public List<SparkJobTemplate> getTemplates() {
         return templates;
     }
 
-    public void setTemplates(List<JobTemplateInfo> templates) {
+    public void setTemplates(List<SparkJobTemplate> templates) {
         this.templates = templates;
     }
 

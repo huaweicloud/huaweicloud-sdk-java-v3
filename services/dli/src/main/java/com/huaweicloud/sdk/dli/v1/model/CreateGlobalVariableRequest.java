@@ -14,16 +14,16 @@ public class CreateGlobalVariableRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateGlobalValueReq body;
+    private CreateGlobalVariableRequestBody body;
 
-    public CreateGlobalVariableRequest withBody(CreateGlobalValueReq body) {
+    public CreateGlobalVariableRequest withBody(CreateGlobalVariableRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateGlobalVariableRequest withBody(Consumer<CreateGlobalValueReq> bodySetter) {
+    public CreateGlobalVariableRequest withBody(Consumer<CreateGlobalVariableRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateGlobalValueReq();
+            this.body = new CreateGlobalVariableRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateGlobalVariableRequest {
      * Get body
      * @return body
      */
-    public CreateGlobalValueReq getBody() {
+    public CreateGlobalVariableRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateGlobalValueReq body) {
+    public void setBody(CreateGlobalVariableRequestBody body) {
         this.body = body;
     }
 

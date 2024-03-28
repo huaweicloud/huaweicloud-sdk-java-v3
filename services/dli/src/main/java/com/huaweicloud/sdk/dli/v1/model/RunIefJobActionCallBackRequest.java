@@ -14,16 +14,16 @@ public class RunIefJobActionCallBackRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private IefFlinkJobMessagesReq body;
+    private RunIefJobActionCallBackRequestBody body;
 
-    public RunIefJobActionCallBackRequest withBody(IefFlinkJobMessagesReq body) {
+    public RunIefJobActionCallBackRequest withBody(RunIefJobActionCallBackRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RunIefJobActionCallBackRequest withBody(Consumer<IefFlinkJobMessagesReq> bodySetter) {
+    public RunIefJobActionCallBackRequest withBody(Consumer<RunIefJobActionCallBackRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new IefFlinkJobMessagesReq();
+            this.body = new RunIefJobActionCallBackRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RunIefJobActionCallBackRequest {
      * Get body
      * @return body
      */
-    public IefFlinkJobMessagesReq getBody() {
+    public RunIefJobActionCallBackRequestBody getBody() {
         return body;
     }
 
-    public void setBody(IefFlinkJobMessagesReq body) {
+    public void setBody(RunIefJobActionCallBackRequestBody body) {
         this.body = body;
     }
 

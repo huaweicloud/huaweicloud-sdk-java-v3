@@ -32,7 +32,7 @@ public class ListTablePrivilegesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<TableUserPermissionsRespPrivilege> privileges = null;
+    private List<TablePrivilege> privileges = null;
 
     public ListTablePrivilegesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListTablePrivilegesResponse extends SdkResponse {
         this.userName = userName;
     }
 
-    public ListTablePrivilegesResponse withPrivileges(List<TableUserPermissionsRespPrivilege> privileges) {
+    public ListTablePrivilegesResponse withPrivileges(List<TablePrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ListTablePrivilegesResponse addPrivilegesItem(TableUserPermissionsRespPrivilege privilegesItem) {
+    public ListTablePrivilegesResponse addPrivilegesItem(TablePrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -98,8 +98,7 @@ public class ListTablePrivilegesResponse extends SdkResponse {
         return this;
     }
 
-    public ListTablePrivilegesResponse withPrivileges(
-        Consumer<List<TableUserPermissionsRespPrivilege>> privilegesSetter) {
+    public ListTablePrivilegesResponse withPrivileges(Consumer<List<TablePrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -111,11 +110,11 @@ public class ListTablePrivilegesResponse extends SdkResponse {
      * 权限信息。
      * @return privileges
      */
-    public List<TableUserPermissionsRespPrivilege> getPrivileges() {
+    public List<TablePrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<TableUserPermissionsRespPrivilege> privileges) {
+    public void setPrivileges(List<TablePrivilege> privileges) {
         this.privileges = privileges;
     }
 

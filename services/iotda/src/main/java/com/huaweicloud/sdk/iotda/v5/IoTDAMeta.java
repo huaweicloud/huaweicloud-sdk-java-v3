@@ -180,6 +180,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateActionReq;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationDTO;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDesireds;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
@@ -477,6 +480,39 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApplicationsRequest::getInstanceId, ShowApplicationsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> updateApplication =
+        genForUpdateApplication();
+
+    private static HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> genForUpdateApplication() {
+        // basic
+        HttpRequestDef.Builder<UpdateApplicationRequest, UpdateApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateApplicationRequest.class, UpdateApplicationResponse.class)
+                .withName("UpdateApplication")
+                .withUri("/v5/iot/{project_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getAppId, UpdateApplicationRequest::setAppId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getInstanceId, UpdateApplicationRequest::setInstanceId));
+        builder.<UpdateApplicationDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateApplicationDTO.class),
+            f -> f.withMarshaller(UpdateApplicationRequest::getBody, UpdateApplicationRequest::setBody));
 
         // response
 

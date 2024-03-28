@@ -312,7 +312,7 @@ public class InstanceCreateReq {
     private Boolean ipv6Enable;
 
     /**
-     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
      */
     public static final class LoadbalancerProviderEnum {
 
@@ -755,7 +755,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 实例使用的负载均衡器类型 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
      * @return loadbalancerProvider
      */
     public LoadbalancerProviderEnum getLoadbalancerProvider() {

@@ -51,7 +51,7 @@ public class CreateElasticResourcePoolRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTag> tags = null;
+    private List<Tag> tags = null;
 
     public CreateElasticResourcePoolRequestBody withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
@@ -178,12 +178,12 @@ public class CreateElasticResourcePoolRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateElasticResourcePoolRequestBody withTags(List<TmsTag> tags) {
+    public CreateElasticResourcePoolRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateElasticResourcePoolRequestBody addTagsItem(TmsTag tagsItem) {
+    public CreateElasticResourcePoolRequestBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -191,7 +191,7 @@ public class CreateElasticResourcePoolRequestBody {
         return this;
     }
 
-    public CreateElasticResourcePoolRequestBody withTags(Consumer<List<TmsTag>> tagsSetter) {
+    public CreateElasticResourcePoolRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -203,11 +203,11 @@ public class CreateElasticResourcePoolRequestBody {
      * 标签
      * @return tags
      */
-    public List<TmsTag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

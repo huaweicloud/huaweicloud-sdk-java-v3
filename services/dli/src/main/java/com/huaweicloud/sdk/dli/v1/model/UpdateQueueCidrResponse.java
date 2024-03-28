@@ -27,7 +27,7 @@ public class UpdateQueueCidrResponse extends SdkResponse {
     }
 
     /**
-     * 请求执行是否成功。“true”表示请求执行成功。
+     * 执行请求是否成功。“true”表示请求执行成功。
      * @return isSuccess
      */
     public Boolean getIsSuccess() {

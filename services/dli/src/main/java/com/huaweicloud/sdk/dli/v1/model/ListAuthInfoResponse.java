@@ -32,7 +32,7 @@ public class ListAuthInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_infos")
 
-    private List<AuthInfos> authInfos = null;
+    private List<AuthInfo> authInfos = null;
 
     public ListAuthInfoResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListAuthInfoResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListAuthInfoResponse withAuthInfos(List<AuthInfos> authInfos) {
+    public ListAuthInfoResponse withAuthInfos(List<AuthInfo> authInfos) {
         this.authInfos = authInfos;
         return this;
     }
 
-    public ListAuthInfoResponse addAuthInfosItem(AuthInfos authInfosItem) {
+    public ListAuthInfoResponse addAuthInfosItem(AuthInfo authInfosItem) {
         if (this.authInfos == null) {
             this.authInfos = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListAuthInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ListAuthInfoResponse withAuthInfos(Consumer<List<AuthInfos>> authInfosSetter) {
+    public ListAuthInfoResponse withAuthInfos(Consumer<List<AuthInfo>> authInfosSetter) {
         if (this.authInfos == null) {
             this.authInfos = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListAuthInfoResponse extends SdkResponse {
      * 认证信息列表
      * @return authInfos
      */
-    public List<AuthInfos> getAuthInfos() {
+    public List<AuthInfo> getAuthInfos() {
         return authInfos;
     }
 
-    public void setAuthInfos(List<AuthInfos> authInfos) {
+    public void setAuthInfos(List<AuthInfo> authInfos) {
         this.authInfos = authInfos;
     }
 

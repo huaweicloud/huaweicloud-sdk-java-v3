@@ -27,7 +27,7 @@ public class ListTableUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<ShowTableUsersRespPrivilege> privileges = null;
+    private List<TableUserPrivilege> privileges = null;
 
     public ListTableUsersResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ListTableUsersResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListTableUsersResponse withPrivileges(List<ShowTableUsersRespPrivilege> privileges) {
+    public ListTableUsersResponse withPrivileges(List<TableUserPrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ListTableUsersResponse addPrivilegesItem(ShowTableUsersRespPrivilege privilegesItem) {
+    public ListTableUsersResponse addPrivilegesItem(TableUserPrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListTableUsersResponse extends SdkResponse {
         return this;
     }
 
-    public ListTableUsersResponse withPrivileges(Consumer<List<ShowTableUsersRespPrivilege>> privilegesSetter) {
+    public ListTableUsersResponse withPrivileges(Consumer<List<TableUserPrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListTableUsersResponse extends SdkResponse {
      * 权限信息。
      * @return privileges
      */
-    public List<ShowTableUsersRespPrivilege> getPrivileges() {
+    public List<TableUserPrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<ShowTableUsersRespPrivilege> privileges) {
+    public void setPrivileges(List<TableUserPrivilege> privileges) {
         this.privileges = privileges;
     }
 

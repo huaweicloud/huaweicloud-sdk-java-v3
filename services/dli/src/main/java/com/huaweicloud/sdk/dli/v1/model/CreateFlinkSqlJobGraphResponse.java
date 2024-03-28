@@ -37,7 +37,7 @@ public class CreateFlinkSqlJobGraphResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * Get isSuccess
      * @return isSuccess
      */
     public Boolean getIsSuccess() {
@@ -54,7 +54,7 @@ public class CreateFlinkSqlJobGraphResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * Get message
      * @return message
      */
     public String getMessage() {
@@ -71,7 +71,7 @@ public class CreateFlinkSqlJobGraphResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * Get errorCode
      * @return errorCode
      */
     public String getErrorCode() {

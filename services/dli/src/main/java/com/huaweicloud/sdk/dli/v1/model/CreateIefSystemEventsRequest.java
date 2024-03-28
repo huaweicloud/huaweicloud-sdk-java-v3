@@ -14,16 +14,16 @@ public class CreateIefSystemEventsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private IefSystemEventsReq body;
+    private CreateIefSystemEventsRequestBody body;
 
-    public CreateIefSystemEventsRequest withBody(IefSystemEventsReq body) {
+    public CreateIefSystemEventsRequest withBody(CreateIefSystemEventsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateIefSystemEventsRequest withBody(Consumer<IefSystemEventsReq> bodySetter) {
+    public CreateIefSystemEventsRequest withBody(Consumer<CreateIefSystemEventsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new IefSystemEventsReq();
+            this.body = new CreateIefSystemEventsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateIefSystemEventsRequest {
      * Get body
      * @return body
      */
-    public IefSystemEventsReq getBody() {
+    public CreateIefSystemEventsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(IefSystemEventsReq body) {
+    public void setBody(CreateIefSystemEventsRequestBody body) {
         this.body = body;
     }
 

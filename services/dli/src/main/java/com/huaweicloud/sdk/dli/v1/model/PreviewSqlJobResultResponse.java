@@ -146,7 +146,7 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
 
-    private List<Object> schema = null;
+    private List<Map<String, String>> schema = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
@@ -255,12 +255,12 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
         this.inputSize = inputSize;
     }
 
-    public PreviewSqlJobResultResponse withSchema(List<Object> schema) {
+    public PreviewSqlJobResultResponse withSchema(List<Map<String, String>> schema) {
         this.schema = schema;
         return this;
     }
 
-    public PreviewSqlJobResultResponse addSchemaItem(Object schemaItem) {
+    public PreviewSqlJobResultResponse addSchemaItem(Map<String, String> schemaItem) {
         if (this.schema == null) {
             this.schema = new ArrayList<>();
         }
@@ -268,7 +268,7 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
         return this;
     }
 
-    public PreviewSqlJobResultResponse withSchema(Consumer<List<Object>> schemaSetter) {
+    public PreviewSqlJobResultResponse withSchema(Consumer<List<Map<String, String>>> schemaSetter) {
         if (this.schema == null) {
             this.schema = new ArrayList<>();
         }
@@ -280,11 +280,11 @@ public class PreviewSqlJobResultResponse extends SdkResponse {
      * 作业结果列名称和类型。
      * @return schema
      */
-    public List<Object> getSchema() {
+    public List<Map<String, String>> getSchema() {
         return schema;
     }
 
-    public void setSchema(List<Object> schema) {
+    public void setSchema(List<Map<String, String>> schema) {
         this.schema = schema;
     }
 

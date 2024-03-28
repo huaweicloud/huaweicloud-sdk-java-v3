@@ -100,10 +100,10 @@ public class HcClient implements CustomizationConfigure {
 
     private final HttpConfig httpConfig;
 
-    private Map<String, String> extraHeader;
+    private Map<String, String> extraHeaders;
 
     private HcClient(HcClient hcClient) {
-        this.extraHeader = hcClient.extraHeader;
+        this.extraHeaders = hcClient.extraHeaders;
         this.httpClient = hcClient.httpClient;
         this.endpoints = hcClient.endpoints;
         this.credential = hcClient.credential;
@@ -131,6 +131,11 @@ public class HcClient implements CustomizationConfigure {
         return this;
     }
 
+    public HcClient withExtraHeaders(Map<String, String> extraHeaders) {
+        this.extraHeaders = extraHeaders;
+        return this;
+    }
+
     protected HcClient withExceptionHandler(ExceptionHandler exceptionHandler) {
         this.exceptionHandler = exceptionHandler;
         return this;
@@ -155,13 +160,14 @@ public class HcClient implements CustomizationConfigure {
     /**
      * preInvoke
      *
-     * @param extraHeader extraHeader
+     * @param extraHeaders extraHeaders
      * @deprecated this method will be removed in the future version
+     * use {@link #withExtraHeaders(Map)} ()} instead
      */
     @Deprecated
-    public HcClient preInvoke(Map<String, String> extraHeader) {
+    public HcClient preInvoke(Map<String, String> extraHeaders) {
         HcClient client = new HcClient(this);
-        client.extraHeader = extraHeader;
+        client.extraHeaders = extraHeaders;
         return client;
     }
 
@@ -172,7 +178,7 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange)
             throws ServiceResponseException {
-        return syncInvokeHttp(request, reqDef, exchange, extraHeader);
+        return syncInvokeHttp(request, reqDef, exchange, this.extraHeaders);
     }
 
     public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange,
@@ -224,7 +230,7 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
                                                        SdkExchange exchange) {
-        return asyncInvokeHttp(request, reqDef, exchange, extraHeader);
+        return asyncInvokeHttp(request, reqDef, exchange, extraHeaders);
     }
 
     public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
@@ -317,23 +323,8 @@ public class HcClient implements CustomizationConfigure {
             httpRequestBuilder.withContentType(reqDef.getContentType());
         }
 
-        // handle upload/download progress
-        if (request instanceof ProgressRequest) {
-            ProgressRequest progressRequest = (ProgressRequest) request;
-            httpRequestBuilder.withProgressListener((progressRequest.getProgressListener()))
-                    .withProgressInterval(progressRequest.getProgressInterval() > 0 ?
-                            progressRequest.getProgressInterval() : Constants.DEFAULT_PROGRESS_INTERVAL);
-            if (request instanceof SdkStreamRequest) {
-                httpRequestBuilder.withBody(((SdkStreamRequest) request).extractBody());
-            }
-        }
-
-        httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-usdk-java/3.0");
-
-        // extraHeaders
-        if (Objects.nonNull(extraHeaders) && extraHeaders.size() > 0) {
-            extraHeaders.forEach(httpRequestBuilder::addHeader);
-        }
+        processStreamRequest(httpRequestBuilder, request);
+        processExtraHeaders(httpRequestBuilder, extraHeaders);
 
         // sign algorithm
         if (Objects.nonNull(httpConfig.getSigningAlgorithm())) {
@@ -341,6 +332,38 @@ public class HcClient implements CustomizationConfigure {
         }
 
         return httpRequestBuilder.build();
+    }
+
+    private <R> void processStreamRequest(HttpRequest.HttpRequestBuilder builder, R request) {
+        if (request instanceof SdkStreamRequest) {
+            builder.withBody(((SdkStreamRequest) request).extractBody());
+        }
+
+        if (!(request instanceof ProgressRequest)) {
+            return;
+        }
+        ProgressRequest progressRequest = (ProgressRequest) request;
+        long progressInterval = progressRequest.getProgressInterval() > 0 ?
+                progressRequest.getProgressInterval() : Constants.DEFAULT_PROGRESS_INTERVAL;
+        builder.withProgressListener(progressRequest.getProgressListener()).withProgressInterval(progressInterval);
+    }
+
+    private void processExtraHeaders(HttpRequest.HttpRequestBuilder builder, Map<String, String> extraHeaders) {
+        Map<String, String> headers = new HashMap<>();
+        // client-level extra headers
+        if (Objects.nonNull(this.extraHeaders)) {
+            headers.putAll(this.extraHeaders);
+        }
+        // request-level extra headers
+        if (Objects.nonNull(extraHeaders)) {
+            headers.putAll(extraHeaders);
+        }
+        // user-agent
+        String userAgent = headers.containsKey(Constants.USER_AGENT) ?
+                Constants.USER_AGENT_VALUE + ";" + headers.get(Constants.USER_AGENT) : Constants.USER_AGENT_VALUE;
+        headers.put(Constants.USER_AGENT, userAgent);
+
+        builder.addHeaders(headers);
     }
 
     private void buildCname(HttpRequest.HttpRequestBuilder httpRequestBuilder, String endpoint, Object reqValue) {
@@ -388,13 +411,10 @@ public class HcClient implements CustomizationConfigure {
     }
 
     private String convertToStringParams(Object reqValue) {
-        String value;
         if (reqValue instanceof OffsetDateTime) {
-            value = ((OffsetDateTime) reqValue).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-        } else {
-            value = reqValue.toString();
+            return ((OffsetDateTime) reqValue).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
         }
-        return value;
+        return reqValue.toString();
     }
 
     private List<String> buildCollectionQueryParams(Object reqValue) {

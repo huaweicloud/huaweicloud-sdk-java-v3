@@ -19,7 +19,7 @@ public class CreateEnhancedConnectionRoutesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateRouteRequestBody body;
+    private CreateEnhancedConnectionRoutesRequestBody body;
 
     public CreateEnhancedConnectionRoutesRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -38,14 +38,15 @@ public class CreateEnhancedConnectionRoutesRequest {
         this.connectionId = connectionId;
     }
 
-    public CreateEnhancedConnectionRoutesRequest withBody(CreateRouteRequestBody body) {
+    public CreateEnhancedConnectionRoutesRequest withBody(CreateEnhancedConnectionRoutesRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateEnhancedConnectionRoutesRequest withBody(Consumer<CreateRouteRequestBody> bodySetter) {
+    public CreateEnhancedConnectionRoutesRequest withBody(
+        Consumer<CreateEnhancedConnectionRoutesRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateRouteRequestBody();
+            this.body = new CreateEnhancedConnectionRoutesRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +57,11 @@ public class CreateEnhancedConnectionRoutesRequest {
      * Get body
      * @return body
      */
-    public CreateRouteRequestBody getBody() {
+    public CreateEnhancedConnectionRoutesRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateRouteRequestBody body) {
+    public void setBody(CreateEnhancedConnectionRoutesRequestBody body) {
         this.body = body;
     }
 

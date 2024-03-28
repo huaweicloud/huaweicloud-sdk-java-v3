@@ -110,6 +110,75 @@ public class CreateNotificationResponse extends SdkResponse {
     private List<NotificationUsers> notifyUserList = null;
 
     /**
+     * 云服务委托名称。
+     */
+    public static final class AgencyNameEnum {
+
+        /**
+         * Enum CTS_ADMIN_TRUST for value: "cts_admin_trust"
+         */
+        public static final AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+        private static final Map<String, AgencyNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgencyNameEnum> createStaticFields() {
+            Map<String, AgencyNameEnum> map = new HashMap<>();
+            map.put("cts_admin_trust", CTS_ADMIN_TRUST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgencyNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgencyNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyNameEnum(value));
+        }
+
+        public static AgencyNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgencyNameEnum) {
+                return this.value.equals(((AgencyNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private AgencyNameEnum agencyName;
+
+    /**
      * 通知状态，启用和停用。
      */
     public static final class StatusEnum {
@@ -384,6 +453,23 @@ public class CreateNotificationResponse extends SdkResponse {
         this.notifyUserList = notifyUserList;
     }
 
+    public CreateNotificationResponse withAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 云服务委托名称。
+     * @return agencyName
+     */
+    public AgencyNameEnum getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+    }
+
     public CreateNotificationResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -526,7 +612,8 @@ public class CreateNotificationResponse extends SdkResponse {
         return Objects.equals(this.notificationName, that.notificationName)
             && Objects.equals(this.operationType, that.operationType)
             && Objects.equals(this.operations, that.operations)
-            && Objects.equals(this.notifyUserList, that.notifyUserList) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.notifyUserList, that.notifyUserList)
+            && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.status, that.status)
             && Objects.equals(this.topicId, that.topicId) && Objects.equals(this.notificationId, that.notificationId)
             && Objects.equals(this.notificationType, that.notificationType)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createTime, that.createTime)
@@ -539,6 +626,7 @@ public class CreateNotificationResponse extends SdkResponse {
             operationType,
             operations,
             notifyUserList,
+            agencyName,
             status,
             topicId,
             notificationId,
@@ -556,6 +644,7 @@ public class CreateNotificationResponse extends SdkResponse {
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
         sb.append("    notifyUserList: ").append(toIndentedString(notifyUserList)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
         sb.append("    notificationId: ").append(toIndentedString(notificationId)).append("\n");

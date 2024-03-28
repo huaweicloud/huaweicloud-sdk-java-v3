@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class UpdateTaskStatusReq {
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 network_check:网络质量检测 
      */
     public static final class OperationEnum {
 
@@ -56,6 +56,11 @@ public class UpdateTaskStatusReq {
          */
         public static final OperationEnum SYNC_FAILED_ROLLBACK = new OperationEnum("sync_failed_rollback");
 
+        /**
+         * Enum NETWORK_CHECK for value: "network_check"
+         */
+        public static final OperationEnum NETWORK_CHECK = new OperationEnum("network_check");
+
         private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OperationEnum> createStaticFields() {
@@ -67,6 +72,7 @@ public class UpdateTaskStatusReq {
             map.put("clone_test", CLONE_TEST);
             map.put("restart", RESTART);
             map.put("sync_failed_rollback", SYNC_FAILED_ROLLBACK);
+            map.put("network_check", NETWORK_CHECK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -142,7 +148,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 network_check:网络质量检测 
      * @return operation
      */
     public OperationEnum getOperation() {

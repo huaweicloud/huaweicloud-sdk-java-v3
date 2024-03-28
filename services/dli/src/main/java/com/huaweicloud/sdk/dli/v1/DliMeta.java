@@ -5,106 +5,107 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.dli.v1.model.AssociateConnectionQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolRequest;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolResponse;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionResponse;
-import com.huaweicloud.sdk.dli.v1.model.AuthorizeResourceRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesResponse;
-import com.huaweicloud.sdk.dli.v1.model.BatchJobInfo;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchStopFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchStopFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CancelSparkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CancelSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.ChangeAuthorizationRequest;
-import com.huaweicloud.sdk.dli.v1.model.ChangeAuthorizationResponse;
-import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportRequest;
-import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportResponse;
-import com.huaweicloud.sdk.dli.v1.model.ChangeQueuePlanRequest;
-import com.huaweicloud.sdk.dli.v1.model.ChangeQueuePlanResponse;
+import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequest;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlResponse;
-import com.huaweicloud.sdk.dli.v1.model.CommonResp;
-import com.huaweicloud.sdk.dli.v1.model.CreateAgencyRequest;
-import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateDatasourceConnectionReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatasourceConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateDatasourceConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatasourceConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateDliAgencyRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateDliAgencyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateDliAgencyResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateElasticResourcePoolRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateElasticResourcePoolRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateElasticResourcePoolResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRoutesRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRoutesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRoutesResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionsReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobGraphRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobGraphRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobGraphResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkTemplateRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateGlobalValueReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateGlobalVariableRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateGlobalVariableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateGlobalVariableResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateRouteRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateSqlTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateTableReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteAuthInfoResponse;
@@ -126,6 +127,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobResourceRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobResourceResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertiesRequestBody;
@@ -133,40 +136,28 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
-import com.huaweicloud.sdk.dli.v1.model.DeleteResourceResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteSqlTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
-import com.huaweicloud.sdk.dli.v1.model.DisassociateConnectionQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionResponse;
-import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultRequest;
+import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultResponse;
-import com.huaweicloud.sdk.dli.v1.model.ExportSqlResultRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableResponse;
-import com.huaweicloud.sdk.dli.v1.model.GenStreamGraphReq;
-import com.huaweicloud.sdk.dli.v1.model.GrantDataPermissionReq;
-import com.huaweicloud.sdk.dli.v1.model.GrantQueuePermissionReq;
-import com.huaweicloud.sdk.dli.v1.model.IefFlinkJobMessagesReq;
-import com.huaweicloud.sdk.dli.v1.model.IefFlinkJobStatusReportReq;
-import com.huaweicloud.sdk.dli.v1.model.IefSystemEventsReq;
-import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableResponse;
-import com.huaweicloud.sdk.dli.v1.model.InsertQueuePropertyRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.ListAllTablesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesRequest;
@@ -195,6 +186,10 @@ import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListJobResourcesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListJobResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListPartitionsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListPartitionsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesRequest;
@@ -203,8 +198,6 @@ import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListResourcesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
@@ -213,39 +206,46 @@ import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlSampleTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlSampleTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListTablePrivilegesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListTablePrivilegesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListTableUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListTableUsersResponse;
-import com.huaweicloud.sdk.dli.v1.model.ObsBuckets;
+import com.huaweicloud.sdk.dli.v1.model.ListTablesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListTablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.PreviewSqlJobResultRequest;
 import com.huaweicloud.sdk.dli.v1.model.PreviewSqlJobResultResponse;
-import com.huaweicloud.sdk.dli.v1.model.QueuePlanIds;
+import com.huaweicloud.sdk.dli.v1.model.PreviewTableRequest;
+import com.huaweicloud.sdk.dli.v1.model.PreviewTableResponse;
+import com.huaweicloud.sdk.dli.v1.model.QueuePlanRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RegisterAuthorizedQueueRequest;
+import com.huaweicloud.sdk.dli.v1.model.RegisterAuthorizedQueueRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RegisterAuthorizedQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketRequest;
+import com.huaweicloud.sdk.dli.v1.model.RegisterBucketRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RunCatalogActionResponse;
+import com.huaweicloud.sdk.dli.v1.model.RunDataAuthorizationActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunDataAuthorizationActionRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.RunDataAuthorizationActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackResponse;
-import com.huaweicloud.sdk.dli.v1.model.RunQueueActionReq;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunQueueActionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionResponse;
-import com.huaweicloud.sdk.dli.v1.model.SetQueuePlanReq;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowCatalogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowCatalogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowDescribeTableRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowDescribeTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDliAgencyRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowDliAgencyResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedConnectionPrivilegeRequest;
@@ -257,16 +257,16 @@ import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobExecutionGraphResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkMetricRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowFlinkMetricRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkMetricResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowJobMonitorInfoReq;
-import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowJobResourceRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowJobResourceResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusRequest;
@@ -279,71 +279,71 @@ import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowSqlSampleTemplatesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowSqlSampleTemplatesResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowTableContentRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowTableContentResponse;
-import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowTableRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.SuccessResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateDatabaseOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateDatabaseOwnerResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueScalingPolicyInfo;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJobStatusReportRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJobStatusReportResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkTemplateRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalValueReq;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerRequest;
-import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateHostMassageReq;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobResourceOwnerRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobResourceOwnerRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobResourceOwnerResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateOwnerRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrReq;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePlanRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateResourceOwner;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerResponse;
-import com.huaweicloud.sdk.dli.v1.model.UploadFilesRequest;
-import com.huaweicloud.sdk.dli.v1.model.UploadFilesResponse;
-import com.huaweicloud.sdk.dli.v1.model.UploadGroupPackageReq;
-import com.huaweicloud.sdk.dli.v1.model.UploadJarsRequest;
-import com.huaweicloud.sdk.dli.v1.model.UploadJarsResponse;
-import com.huaweicloud.sdk.dli.v1.model.UploadPackageGroupReq;
-import com.huaweicloud.sdk.dli.v1.model.UploadPythonFilesRequest;
-import com.huaweicloud.sdk.dli.v1.model.UploadPythonFilesResponse;
-import com.huaweicloud.sdk.dli.v1.model.UploadResourcesRequest;
-import com.huaweicloud.sdk.dli.v1.model.UploadResourcesResponse;
-import com.huaweicloud.sdk.dli.v1.model.VerityConnectivityReq;
+import com.huaweicloud.sdk.dli.v1.model.UploadFileJobResourcesRequest;
+import com.huaweicloud.sdk.dli.v1.model.UploadFileJobResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.UploadJarJobResourcesRequest;
+import com.huaweicloud.sdk.dli.v1.model.UploadJarJobResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.UploadJobResourcesRequest;
+import com.huaweicloud.sdk.dli.v1.model.UploadJobResourcesRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UploadJobResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.UploadPythonFileJobResourcesRequest;
+import com.huaweicloud.sdk.dli.v1.model.UploadPythonFileJobResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.UploadResourcesRequestBody;
 
 import java.util.List;
 
@@ -404,10 +404,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociateQueueToEnhancedConnectionRequest::getConnectionId,
                 AssociateQueueToEnhancedConnectionRequest::setConnectionId));
-        builder.<AssociateConnectionQueueReq>withRequestField("body",
+        builder.<AssociateQueueToEnhancedConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateConnectionQueueReq.class),
+            TypeCasts.uncheckedConversion(AssociateQueueToEnhancedConnectionRequestBody.class),
             f -> f.withMarshaller(AssociateQueueToEnhancedConnectionRequest::getBody,
                 AssociateQueueToEnhancedConnectionRequest::setBody));
 
@@ -434,67 +434,11 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteQueuePlansRequest::getQueueName,
                 BatchDeleteQueuePlansRequest::setQueueName));
-        builder.<QueuePlanIds>withRequestField("body",
+        builder.<BatchDeleteQueuePlansRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueuePlanIds.class),
+            TypeCasts.uncheckedConversion(BatchDeleteQueuePlansRequestBody.class),
             f -> f.withMarshaller(BatchDeleteQueuePlansRequest::getBody, BatchDeleteQueuePlansRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeAuthorizationRequest, ChangeAuthorizationResponse> changeAuthorization =
-        genForChangeAuthorization();
-
-    private static HttpRequestDef<ChangeAuthorizationRequest, ChangeAuthorizationResponse> genForChangeAuthorization() {
-        // basic
-        HttpRequestDef.Builder<ChangeAuthorizationRequest, ChangeAuthorizationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ChangeAuthorizationRequest.class, ChangeAuthorizationResponse.class)
-                .withName("ChangeAuthorization")
-                .withUri("/v1.0/{project_id}/user-authorization")
-                .withContentType("application/json");
-
-        // requests
-        builder.<GrantDataPermissionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GrantDataPermissionReq.class),
-            f -> f.withMarshaller(ChangeAuthorizationRequest::getBody, ChangeAuthorizationRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeQueuePlanRequest, ChangeQueuePlanResponse> changeQueuePlan =
-        genForChangeQueuePlan();
-
-    private static HttpRequestDef<ChangeQueuePlanRequest, ChangeQueuePlanResponse> genForChangeQueuePlan() {
-        // basic
-        HttpRequestDef.Builder<ChangeQueuePlanRequest, ChangeQueuePlanResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ChangeQueuePlanRequest.class, ChangeQueuePlanResponse.class)
-                .withName("ChangeQueuePlan")
-                .withUri("/v1/{project_id}/queues/{queue_name}/plans/{plan_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("plan_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeQueuePlanRequest::getPlanId, ChangeQueuePlanRequest::setPlanId));
-        builder.<String>withRequestField("queue_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeQueuePlanRequest::getQueueName, ChangeQueuePlanRequest::setQueueName));
-        builder.<SetQueuePlanReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SetQueuePlanReq.class),
-            f -> f.withMarshaller(ChangeQueuePlanRequest::getBody, ChangeQueuePlanRequest::setBody));
 
         // response
 
@@ -513,10 +457,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateAuthInfoReq>withRequestField("body",
+        builder.<CreateAuthInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateAuthInfoReq.class),
+            TypeCasts.uncheckedConversion(CreateAuthInfoRequestBody.class),
             f -> f.withMarshaller(CreateAuthInfoRequest::getBody, CreateAuthInfoRequest::setBody));
 
         // response
@@ -542,10 +486,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateConnectivityTaskRequest::getQueueName,
                 CreateConnectivityTaskRequest::setQueueName));
-        builder.<VerityConnectivityReq>withRequestField("body",
+        builder.<CreateConnectivityTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VerityConnectivityReq.class),
+            TypeCasts.uncheckedConversion(CreateConnectivityTaskRequestBody.class),
             f -> f.withMarshaller(CreateConnectivityTaskRequest::getBody, CreateConnectivityTaskRequest::setBody));
 
         // response
@@ -568,10 +512,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateDatasourceConnectionReq>withRequestField("body",
+        builder.<CreateDatasourceConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDatasourceConnectionReq.class),
+            TypeCasts.uncheckedConversion(CreateDatasourceConnectionRequestBody.class),
             f -> f.withMarshaller(CreateDatasourceConnectionRequest::getBody,
                 CreateDatasourceConnectionRequest::setBody));
 
@@ -592,10 +536,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateAgencyRequest>withRequestField("body",
+        builder.<CreateDliAgencyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateAgencyRequest.class),
+            TypeCasts.uncheckedConversion(CreateDliAgencyRequestBody.class),
             f -> f.withMarshaller(CreateDliAgencyRequest::getBody, CreateDliAgencyRequest::setBody));
 
         // response
@@ -643,10 +587,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateEnhancedConnectionsReq>withRequestField("body",
+        builder.<CreateEnhancedConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateEnhancedConnectionsReq.class),
+            TypeCasts.uncheckedConversion(CreateEnhancedConnectionRequestBody.class),
             f -> f.withMarshaller(CreateEnhancedConnectionRequest::getBody, CreateEnhancedConnectionRequest::setBody));
 
         // response
@@ -675,10 +619,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateEnhancedConnectionRoutesRequest::getConnectionId,
                 CreateEnhancedConnectionRoutesRequest::setConnectionId));
-        builder.<CreateRouteRequestBody>withRequestField("body",
+        builder.<CreateEnhancedConnectionRoutesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateRouteRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateEnhancedConnectionRoutesRequestBody.class),
             f -> f.withMarshaller(CreateEnhancedConnectionRoutesRequest::getBody,
                 CreateEnhancedConnectionRoutesRequest::setBody));
 
@@ -699,10 +643,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<CreateGlobalValueReq>withRequestField("body",
+        builder.<CreateGlobalVariableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateGlobalValueReq.class),
+            TypeCasts.uncheckedConversion(CreateGlobalVariableRequestBody.class),
             f -> f.withMarshaller(CreateGlobalVariableRequest::getBody, CreateGlobalVariableRequest::setBody));
 
         // response
@@ -744,10 +688,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateQueueReq>withRequestField("body",
+        builder.<CreateQueueRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateQueueReq.class),
+            TypeCasts.uncheckedConversion(CreateQueueRequestBody.class),
             f -> f.withMarshaller(CreateQueueRequest::getBody, CreateQueueRequest::setBody));
 
         // response
@@ -772,10 +716,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateQueuePlanRequest::getQueueName, CreateQueuePlanRequest::setQueueName));
-        builder.<SetQueuePlanReq>withRequestField("body",
+        builder.<QueuePlanRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SetQueuePlanReq.class),
+            TypeCasts.uncheckedConversion(QueuePlanRequestBody.class),
             f -> f.withMarshaller(CreateQueuePlanRequest::getBody, CreateQueuePlanRequest::setBody));
 
         // response
@@ -800,10 +744,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateQueuePropertyRequest::getQueueName, CreateQueuePropertyRequest::setQueueName));
-        builder.<InsertQueuePropertyRequestBody>withRequestField("body",
+        builder.<CreateQueuePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InsertQueuePropertyRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateQueuePropertyRequestBody.class),
             f -> f.withMarshaller(CreateQueuePropertyRequest::getBody, CreateQueuePropertyRequest::setBody));
 
         // response
@@ -1028,6 +972,35 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteJobResourceRequest, DeleteJobResourceResponse> deleteJobResource =
+        genForDeleteJobResource();
+
+    private static HttpRequestDef<DeleteJobResourceRequest, DeleteJobResourceResponse> genForDeleteJobResource() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobResourceRequest, DeleteJobResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobResourceRequest.class, DeleteJobResourceResponse.class)
+                .withName("DeleteJobResource")
+                .withUri("/v2.0/{project_id}/resources/{resource_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobResourceRequest::getResourceName,
+                DeleteJobResourceRequest::setResourceName));
+        builder.<String>withRequestField("group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobResourceRequest::getGroup, DeleteJobResourceRequest::setGroup));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteQueueRequest, DeleteQueueResponse> deleteQueue = genForDeleteQueue();
 
     private static HttpRequestDef<DeleteQueueRequest, DeleteQueueResponse> genForDeleteQueue() {
@@ -1106,34 +1079,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> deleteResource =
-        genForDeleteResource();
-
-    private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genForDeleteResource() {
-        // basic
-        HttpRequestDef.Builder<DeleteResourceRequest, DeleteResourceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceRequest.class, DeleteResourceResponse.class)
-                .withName("DeleteResource")
-                .withUri("/v2.0/{project_id}/resources/{resource_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getResourceName, DeleteResourceRequest::setResourceName));
-        builder.<String>withRequestField("group",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteResourceRequest::getGroup, DeleteResourceRequest::setGroup));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> deleteRouteFromEnhancedConnection =
         genForDeleteRouteFromEnhancedConnection();
 
@@ -1188,10 +1133,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateQueueFromEnhancedConnectionRequest::getConnectionId,
                 DisassociateQueueFromEnhancedConnectionRequest::setConnectionId));
-        builder.<DisassociateConnectionQueueReq>withRequestField("body",
+        builder.<DisassociateQueueFromEnhancedConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DisassociateConnectionQueueReq.class),
+            TypeCasts.uncheckedConversion(DisassociateQueueFromEnhancedConnectionRequestBody.class),
             f -> f.withMarshaller(DisassociateQueueFromEnhancedConnectionRequest::getBody,
                 DisassociateQueueFromEnhancedConnectionRequest::setBody));
 
@@ -1598,6 +1543,34 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListJobResourcesRequest, ListJobResourcesResponse> listJobResources =
+        genForListJobResources();
+
+    private static HttpRequestDef<ListJobResourcesRequest, ListJobResourcesResponse> genForListJobResources() {
+        // basic
+        HttpRequestDef.Builder<ListJobResourcesRequest, ListJobResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobResourcesRequest.class, ListJobResourcesResponse.class)
+                .withName("ListJobResources")
+                .withUri("/v2.0/{project_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("kind",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobResourcesRequest::getKind, ListJobResourcesRequest::setKind));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobResourcesRequest::getTags, ListJobResourcesRequest::setTags));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQueuePlansRequest, ListQueuePlansResponse> listQueuePlans =
         genForListQueuePlans();
 
@@ -1714,34 +1687,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources =
-        genForListResources();
-
-    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForListResources() {
-        // basic
-        HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
-                .withName("ListResources")
-                .withUri("/v2.0/{project_id}/resources")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("kind",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getKind, ListResourcesRequest::setKind));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourcesRequest::getTags, ListResourcesRequest::setTags));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListTablePrivilegesRequest, ListTablePrivilegesResponse> listTablePrivileges =
         genForListTablePrivileges();
 
@@ -1816,10 +1761,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<GrantQueuePermissionReq>withRequestField("body",
+        builder.<RegisterAuthorizedQueueRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GrantQueuePermissionReq.class),
+            TypeCasts.uncheckedConversion(RegisterAuthorizedQueueRequestBody.class),
             f -> f.withMarshaller(RegisterAuthorizedQueueRequest::getBody, RegisterAuthorizedQueueRequest::setBody));
 
         // response
@@ -1839,10 +1784,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<AuthorizeResourceRequestBody>withRequestField("body",
+        builder.<RunAuthorizationActionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AuthorizeResourceRequestBody.class),
+            TypeCasts.uncheckedConversion(RunAuthorizationActionRequestBody.class),
             f -> f.withMarshaller(RunAuthorizationActionRequest::getBody, RunAuthorizationActionRequest::setBody));
 
         // response
@@ -1878,6 +1823,33 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunDataAuthorizationActionRequest, RunDataAuthorizationActionResponse> runDataAuthorizationAction =
+        genForRunDataAuthorizationAction();
+
+    private static HttpRequestDef<RunDataAuthorizationActionRequest, RunDataAuthorizationActionResponse> genForRunDataAuthorizationAction() {
+        // basic
+        HttpRequestDef.Builder<RunDataAuthorizationActionRequest, RunDataAuthorizationActionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    RunDataAuthorizationActionRequest.class,
+                    RunDataAuthorizationActionResponse.class)
+                .withName("RunDataAuthorizationAction")
+                .withUri("/v1.0/{project_id}/user-authorization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RunDataAuthorizationActionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunDataAuthorizationActionRequestBody.class),
+            f -> f.withMarshaller(RunDataAuthorizationActionRequest::getBody,
+                RunDataAuthorizationActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunQueueActionRequest, RunQueueActionResponse> runQueueAction =
         genForRunQueueAction();
 
@@ -1895,10 +1867,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunQueueActionRequest::getQueueName, RunQueueActionRequest::setQueueName));
-        builder.<RunQueueActionReq>withRequestField("body",
+        builder.<RunQueueActionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RunQueueActionReq.class),
+            TypeCasts.uncheckedConversion(RunQueueActionRequestBody.class),
             f -> f.withMarshaller(RunQueueActionRequest::getBody, RunQueueActionRequest::setBody));
 
         // response
@@ -2051,6 +2023,34 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobResourceRequest, ShowJobResourceResponse> showJobResource =
+        genForShowJobResource();
+
+    private static HttpRequestDef<ShowJobResourceRequest, ShowJobResourceResponse> genForShowJobResource() {
+        // basic
+        HttpRequestDef.Builder<ShowJobResourceRequest, ShowJobResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobResourceRequest.class, ShowJobResourceResponse.class)
+                .withName("ShowJobResource")
+                .withUri("/v2.0/{project_id}/resources/{resource_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobResourceRequest::getResourceName, ShowJobResourceRequest::setResourceName));
+        builder.<String>withRequestField("group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobResourceRequest::getGroup, ShowJobResourceRequest::setGroup));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQueueRequest, ShowQueueResponse> showQueue = genForShowQueue();
 
     private static HttpRequestDef<ShowQueueRequest, ShowQueueResponse> genForShowQueue() {
@@ -2084,34 +2084,6 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowResourceInfoRequest, ShowResourceInfoResponse> showResourceInfo =
-        genForShowResourceInfo();
-
-    private static HttpRequestDef<ShowResourceInfoRequest, ShowResourceInfoResponse> genForShowResourceInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowResourceInfoRequest, ShowResourceInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowResourceInfoRequest.class, ShowResourceInfoResponse.class)
-                .withName("ShowResourceInfo")
-                .withUri("/v2.0/{project_id}/resources/{resource_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceInfoRequest::getResourceName, ShowResourceInfoRequest::setResourceName));
-        builder.<String>withRequestField("group",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceInfoRequest::getGroup, ShowResourceInfoRequest::setGroup));
 
         // response
 
@@ -2201,10 +2173,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateElasticResourcePoolQueueRequest::getQueueName,
                 UpdateElasticResourcePoolQueueRequest::setQueueName));
-        builder.<UpdateElasticResourcePoolQueueScalingPolicyInfo>withRequestField("body",
+        builder.<UpdateElasticResourcePoolQueueRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateElasticResourcePoolQueueScalingPolicyInfo.class),
+            TypeCasts.uncheckedConversion(UpdateElasticResourcePoolQueueRequestBody.class),
             f -> f.withMarshaller(UpdateElasticResourcePoolQueueRequest::getBody,
                 UpdateElasticResourcePoolQueueRequest::setBody));
 
@@ -2232,10 +2204,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEnhancedConnectionRequest::getConnectionId,
                 UpdateEnhancedConnectionRequest::setConnectionId));
-        builder.<UpdateHostMassageReq>withRequestField("body",
+        builder.<UpdateEnhancedConnectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateHostMassageReq.class),
+            TypeCasts.uncheckedConversion(UpdateEnhancedConnectionRequestBody.class),
             f -> f.withMarshaller(UpdateEnhancedConnectionRequest::getBody, UpdateEnhancedConnectionRequest::setBody));
 
         // response
@@ -2260,38 +2232,11 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateGlobalVariableRequest::getVarName, UpdateGlobalVariableRequest::setVarName));
-        builder.<UpdateGlobalValueReq>withRequestField("body",
+        builder.<UpdateGlobalVariableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateGlobalValueReq.class),
+            TypeCasts.uncheckedConversion(UpdateGlobalVariableRequestBody.class),
             f -> f.withMarshaller(UpdateGlobalVariableRequest::getBody, UpdateGlobalVariableRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> updateGroupOrResourceOwner =
-        genForUpdateGroupOrResourceOwner();
-
-    private static HttpRequestDef<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> genForUpdateGroupOrResourceOwner() {
-        // basic
-        HttpRequestDef.Builder<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateGroupOrResourceOwnerRequest.class,
-                    UpdateGroupOrResourceOwnerResponse.class)
-                .withName("UpdateGroupOrResourceOwner")
-                .withUri("/v2.0/{project_id}/resources/owner")
-                .withContentType("application/json");
-
-        // requests
-        builder.<UpdateResourceOwner>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateResourceOwner.class),
-            f -> f.withMarshaller(UpdateGroupOrResourceOwnerRequest::getBody,
-                UpdateGroupOrResourceOwnerRequest::setBody));
 
         // response
 
@@ -2321,6 +2266,29 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateJobResourceOwnerRequest, UpdateJobResourceOwnerResponse> updateJobResourceOwner =
+        genForUpdateJobResourceOwner();
+
+    private static HttpRequestDef<UpdateJobResourceOwnerRequest, UpdateJobResourceOwnerResponse> genForUpdateJobResourceOwner() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobResourceOwnerRequest, UpdateJobResourceOwnerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateJobResourceOwnerRequest.class, UpdateJobResourceOwnerResponse.class)
+            .withName("UpdateJobResourceOwner")
+            .withUri("/v2.0/{project_id}/resources/owner")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateJobResourceOwnerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateJobResourceOwnerRequestBody.class),
+            f -> f.withMarshaller(UpdateJobResourceOwnerRequest::getBody, UpdateJobResourceOwnerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateQueueCidrRequest, UpdateQueueCidrResponse> updateQueueCidr =
         genForUpdateQueueCidr();
 
@@ -2338,11 +2306,44 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateQueueCidrRequest::getQueueName, UpdateQueueCidrRequest::setQueueName));
-        builder.<UpdateQueueCidrReq>withRequestField("body",
+        builder.<UpdateQueueCidrRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdateQueueCidrReq.class),
+            TypeCasts.uncheckedConversion(UpdateQueueCidrRequestBody.class),
             f -> f.withMarshaller(UpdateQueueCidrRequest::getBody, UpdateQueueCidrRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateQueuePlanRequest, UpdateQueuePlanResponse> updateQueuePlan =
+        genForUpdateQueuePlan();
+
+    private static HttpRequestDef<UpdateQueuePlanRequest, UpdateQueuePlanResponse> genForUpdateQueuePlan() {
+        // basic
+        HttpRequestDef.Builder<UpdateQueuePlanRequest, UpdateQueuePlanResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateQueuePlanRequest.class, UpdateQueuePlanResponse.class)
+                .withName("UpdateQueuePlan")
+                .withUri("/v1/{project_id}/queues/{queue_name}/plans/{plan_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQueuePlanRequest::getPlanId, UpdateQueuePlanRequest::setPlanId));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQueuePlanRequest::getQueueName, UpdateQueuePlanRequest::setQueueName));
+        builder.<QueuePlanRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueuePlanRequestBody.class),
+            f -> f.withMarshaller(UpdateQueuePlanRequest::getBody, UpdateQueuePlanRequest::setBody));
 
         // response
 
@@ -2377,96 +2378,70 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadFilesRequest, UploadFilesResponse> uploadFiles = genForUploadFiles();
+    public static final HttpRequestDef<UploadFileJobResourcesRequest, UploadFileJobResourcesResponse> uploadFileJobResources =
+        genForUploadFileJobResources();
 
-    private static HttpRequestDef<UploadFilesRequest, UploadFilesResponse> genForUploadFiles() {
+    private static HttpRequestDef<UploadFileJobResourcesRequest, UploadFileJobResourcesResponse> genForUploadFileJobResources() {
         // basic
-        HttpRequestDef.Builder<UploadFilesRequest, UploadFilesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadFilesRequest.class, UploadFilesResponse.class)
-                .withName("UploadFiles")
-                .withUri("/v2.0/{project_id}/resources/files")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UploadFileJobResourcesRequest, UploadFileJobResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UploadFileJobResourcesRequest.class, UploadFileJobResourcesResponse.class)
+            .withName("UploadFileJobResources")
+            .withUri("/v2.0/{project_id}/resources/files")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadFilesRequest::getUserId, UploadFilesRequest::setUserId));
-        builder.<UploadGroupPackageReq>withRequestField("body",
+            f -> f.withMarshaller(UploadFileJobResourcesRequest::getUserId, UploadFileJobResourcesRequest::setUserId));
+        builder.<UploadResourcesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadGroupPackageReq.class),
-            f -> f.withMarshaller(UploadFilesRequest::getBody, UploadFilesRequest::setBody));
+            TypeCasts.uncheckedConversion(UploadResourcesRequestBody.class),
+            f -> f.withMarshaller(UploadFileJobResourcesRequest::getBody, UploadFileJobResourcesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadJarsRequest, UploadJarsResponse> uploadJars = genForUploadJars();
+    public static final HttpRequestDef<UploadJarJobResourcesRequest, UploadJarJobResourcesResponse> uploadJarJobResources =
+        genForUploadJarJobResources();
 
-    private static HttpRequestDef<UploadJarsRequest, UploadJarsResponse> genForUploadJars() {
+    private static HttpRequestDef<UploadJarJobResourcesRequest, UploadJarJobResourcesResponse> genForUploadJarJobResources() {
         // basic
-        HttpRequestDef.Builder<UploadJarsRequest, UploadJarsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadJarsRequest.class, UploadJarsResponse.class)
-                .withName("UploadJars")
-                .withUri("/v2.0/{project_id}/resources/jars")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UploadJarJobResourcesRequest, UploadJarJobResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UploadJarJobResourcesRequest.class, UploadJarJobResourcesResponse.class)
+            .withName("UploadJarJobResources")
+            .withUri("/v2.0/{project_id}/resources/jars")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("USER-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadJarsRequest::getUserId, UploadJarsRequest::setUserId));
-        builder.<UploadGroupPackageReq>withRequestField("body",
+            f -> f.withMarshaller(UploadJarJobResourcesRequest::getUserId, UploadJarJobResourcesRequest::setUserId));
+        builder.<UploadResourcesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadGroupPackageReq.class),
-            f -> f.withMarshaller(UploadJarsRequest::getBody, UploadJarsRequest::setBody));
+            TypeCasts.uncheckedConversion(UploadResourcesRequestBody.class),
+            f -> f.withMarshaller(UploadJarJobResourcesRequest::getBody, UploadJarJobResourcesRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadPythonFilesRequest, UploadPythonFilesResponse> uploadPythonFiles =
-        genForUploadPythonFiles();
+    public static final HttpRequestDef<UploadJobResourcesRequest, UploadJobResourcesResponse> uploadJobResources =
+        genForUploadJobResources();
 
-    private static HttpRequestDef<UploadPythonFilesRequest, UploadPythonFilesResponse> genForUploadPythonFiles() {
+    private static HttpRequestDef<UploadJobResourcesRequest, UploadJobResourcesResponse> genForUploadJobResources() {
         // basic
-        HttpRequestDef.Builder<UploadPythonFilesRequest, UploadPythonFilesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadPythonFilesRequest.class, UploadPythonFilesResponse.class)
-                .withName("UploadPythonFiles")
-                .withUri("/v2.0/{project_id}/resources/pyfiles")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("USER-ID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadPythonFilesRequest::getUserId, UploadPythonFilesRequest::setUserId));
-        builder.<UploadGroupPackageReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadGroupPackageReq.class),
-            f -> f.withMarshaller(UploadPythonFilesRequest::getBody, UploadPythonFilesRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UploadResourcesRequest, UploadResourcesResponse> uploadResources =
-        genForUploadResources();
-
-    private static HttpRequestDef<UploadResourcesRequest, UploadResourcesResponse> genForUploadResources() {
-        // basic
-        HttpRequestDef.Builder<UploadResourcesRequest, UploadResourcesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadResourcesRequest.class, UploadResourcesResponse.class)
-                .withName("UploadResources")
+        HttpRequestDef.Builder<UploadJobResourcesRequest, UploadJobResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadJobResourcesRequest.class, UploadJobResourcesResponse.class)
+                .withName("UploadJobResources")
                 .withUri("/v2.0/{project_id}/resources")
                 .withContentType("application/json");
 
@@ -2475,12 +2450,45 @@ public class DliMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UploadResourcesRequest::getUserId, UploadResourcesRequest::setUserId));
-        builder.<UploadPackageGroupReq>withRequestField("body",
+            f -> f.withMarshaller(UploadJobResourcesRequest::getUserId, UploadJobResourcesRequest::setUserId));
+        builder.<UploadJobResourcesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadPackageGroupReq.class),
-            f -> f.withMarshaller(UploadResourcesRequest::getBody, UploadResourcesRequest::setBody));
+            TypeCasts.uncheckedConversion(UploadJobResourcesRequestBody.class),
+            f -> f.withMarshaller(UploadJobResourcesRequest::getBody, UploadJobResourcesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadPythonFileJobResourcesRequest, UploadPythonFileJobResourcesResponse> uploadPythonFileJobResources =
+        genForUploadPythonFileJobResources();
+
+    private static HttpRequestDef<UploadPythonFileJobResourcesRequest, UploadPythonFileJobResourcesResponse> genForUploadPythonFileJobResources() {
+        // basic
+        HttpRequestDef.Builder<UploadPythonFileJobResourcesRequest, UploadPythonFileJobResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadPythonFileJobResourcesRequest.class,
+                    UploadPythonFileJobResourcesResponse.class)
+                .withName("UploadPythonFileJobResources")
+                .withUri("/v2.0/{project_id}/resources/pyfiles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("USER-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadPythonFileJobResourcesRequest::getUserId,
+                UploadPythonFileJobResourcesRequest::setUserId));
+        builder.<UploadResourcesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadResourcesRequestBody.class),
+            f -> f.withMarshaller(UploadPythonFileJobResourcesRequest::getBody,
+                UploadPythonFileJobResourcesRequest::setBody));
 
         // response
 
@@ -2529,39 +2537,41 @@ public class DliMeta {
             f -> f.withMarshaller(BatchRunFlinkJobsRequest::getBody, BatchRunFlinkJobsRequest::setBody));
 
         // response
-        builder.<List<CommonResp>>withResponseField("body",
+        builder.<List<SuccessResponse>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchRunFlinkJobsResponse::getBody, BatchRunFlinkJobsResponse::setBody)
-                .withInnerContainerType(CommonResp.class));
+                .withInnerContainerType(SuccessResponse.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReport =
-        genForChangeFlinkJobStatusReport();
+    public static final HttpRequestDef<BatchStopFlinkJobsRequest, BatchStopFlinkJobsResponse> batchStopFlinkJobs =
+        genForBatchStopFlinkJobs();
 
-    private static HttpRequestDef<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> genForChangeFlinkJobStatusReport() {
+    private static HttpRequestDef<BatchStopFlinkJobsRequest, BatchStopFlinkJobsResponse> genForBatchStopFlinkJobs() {
         // basic
-        HttpRequestDef.Builder<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ChangeFlinkJobStatusReportRequest.class,
-                    ChangeFlinkJobStatusReportResponse.class)
-                .withName("ChangeFlinkJobStatusReport")
-                .withUri("/v1/{project_id}/edgesrv/job-report")
+        HttpRequestDef.Builder<BatchStopFlinkJobsRequest, BatchStopFlinkJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchStopFlinkJobsRequest.class, BatchStopFlinkJobsResponse.class)
+                .withName("BatchStopFlinkJobs")
+                .withUri("/v1.0/{project_id}/streaming/jobs/stop")
                 .withContentType("application/json");
 
         // requests
-        builder.<IefFlinkJobStatusReportReq>withRequestField("body",
+        builder.<StopFlinkJobsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IefFlinkJobStatusReportReq.class),
-            f -> f.withMarshaller(ChangeFlinkJobStatusReportRequest::getBody,
-                ChangeFlinkJobStatusReportRequest::setBody));
+            TypeCasts.uncheckedConversion(StopFlinkJobsRequestBody.class),
+            f -> f.withMarshaller(BatchStopFlinkJobsRequest::getBody, BatchStopFlinkJobsRequest::setBody));
 
         // response
+        builder.<List<SuccessResponse>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchStopFlinkJobsResponse::getBody, BatchStopFlinkJobsResponse::setBody)
+                .withInnerContainerType(SuccessResponse.class));
 
         return builder.build();
     }
@@ -2578,10 +2588,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateFlinkJarRequestBody>withRequestField("body",
+        builder.<CreateFlinkJarJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateFlinkJarRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateFlinkJarJobRequestBody.class),
             f -> f.withMarshaller(CreateFlinkJarJobRequest::getBody, CreateFlinkJarJobRequest::setBody));
 
         // response
@@ -2629,10 +2639,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateFlinkSqlJobGraphRequest::getJobId, CreateFlinkSqlJobGraphRequest::setJobId));
-        builder.<GenStreamGraphReq>withRequestField("body",
+        builder.<CreateFlinkSqlJobGraphRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GenStreamGraphReq.class),
+            TypeCasts.uncheckedConversion(CreateFlinkSqlJobGraphRequestBody.class),
             f -> f.withMarshaller(CreateFlinkSqlJobGraphRequest::getBody, CreateFlinkSqlJobGraphRequest::setBody));
 
         // response
@@ -2655,10 +2665,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateFlinkTemplateRequestBody>withRequestField("body",
+        builder.<CreateFlinkSqlJobTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateFlinkTemplateRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateFlinkSqlJobTemplateRequestBody.class),
             f -> f.withMarshaller(CreateFlinkSqlJobTemplateRequest::getBody,
                 CreateFlinkSqlJobTemplateRequest::setBody));
 
@@ -2679,10 +2689,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<CreateIefMessageChannelReq>withRequestField("body",
+        builder.<CreateIefMessageChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateIefMessageChannelReq.class),
+            TypeCasts.uncheckedConversion(CreateIefMessageChannelRequestBody.class),
             f -> f.withMarshaller(CreateIefMessageChannelRequest::getBody, CreateIefMessageChannelRequest::setBody));
 
         // response
@@ -2702,10 +2712,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<IefSystemEventsReq>withRequestField("body",
+        builder.<CreateIefSystemEventsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IefSystemEventsReq.class),
+            TypeCasts.uncheckedConversion(CreateIefSystemEventsRequestBody.class),
             f -> f.withMarshaller(CreateIefSystemEventsRequest::getBody, CreateIefSystemEventsRequest::setBody));
 
         // response
@@ -2775,10 +2785,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ExportFlinkJobRequestBody>withRequestField("body",
+        builder.<ExportFlinkJobsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportFlinkJobRequestBody.class),
+            TypeCasts.uncheckedConversion(ExportFlinkJobsRequestBody.class),
             f -> f.withMarshaller(ExportFlinkJobsRequest::getBody, ExportFlinkJobsRequest::setBody));
 
         // response
@@ -2798,10 +2808,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ImportFlinkJobRequestBody>withRequestField("body",
+        builder.<ImportFlinkJobsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImportFlinkJobRequestBody.class),
+            TypeCasts.uncheckedConversion(ImportFlinkJobsRequestBody.class),
             f -> f.withMarshaller(ImportFlinkJobsRequest::getBody, ImportFlinkJobsRequest::setBody));
 
         // response
@@ -2947,10 +2957,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ObsBuckets>withRequestField("body",
+        builder.<RegisterBucketRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ObsBuckets.class),
+            TypeCasts.uncheckedConversion(RegisterBucketRequestBody.class),
             f -> f.withMarshaller(RegisterBucketRequest::getBody, RegisterBucketRequest::setBody));
 
         // response
@@ -2970,10 +2980,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<IefFlinkJobMessagesReq>withRequestField("body",
+        builder.<RunIefJobActionCallBackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IefFlinkJobMessagesReq.class),
+            TypeCasts.uncheckedConversion(RunIefJobActionCallBackRequestBody.class),
             f -> f.withMarshaller(RunIefJobActionCallBackRequest::getBody, RunIefJobActionCallBackRequest::setBody));
 
         // response
@@ -3042,42 +3052,13 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ShowJobMonitorInfoReq>withRequestField("body",
+        builder.<ShowFlinkMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowJobMonitorInfoReq.class),
+            TypeCasts.uncheckedConversion(ShowFlinkMetricRequestBody.class),
             f -> f.withMarshaller(ShowFlinkMetricRequest::getBody, ShowFlinkMetricRequest::setBody));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StopFlinkJobsRequest, StopFlinkJobsResponse> stopFlinkJobs =
-        genForStopFlinkJobs();
-
-    private static HttpRequestDef<StopFlinkJobsRequest, StopFlinkJobsResponse> genForStopFlinkJobs() {
-        // basic
-        HttpRequestDef.Builder<StopFlinkJobsRequest, StopFlinkJobsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StopFlinkJobsRequest.class, StopFlinkJobsResponse.class)
-                .withName("StopFlinkJobs")
-                .withUri("/v1.0/{project_id}/streaming/jobs/stop")
-                .withContentType("application/json");
-
-        // requests
-        builder.<StopFlinkJobsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(StopFlinkJobsRequestBody.class),
-            f -> f.withMarshaller(StopFlinkJobsRequest::getBody, StopFlinkJobsRequest::setBody));
-
-        // response
-        builder.<List<CommonResp>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(StopFlinkJobsResponse::getBody, StopFlinkJobsResponse::setBody)
-                .withInnerContainerType(CommonResp.class));
 
         return builder.build();
     }
@@ -3099,11 +3080,38 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(UpdateFlinkJarJobRequest::getJobId, UpdateFlinkJarJobRequest::setJobId));
-        builder.<UpdateFlinkJarRequestBody>withRequestField("body",
+        builder.<UpdateFlinkJarJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFlinkJarRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateFlinkJarJobRequestBody.class),
             f -> f.withMarshaller(UpdateFlinkJarJobRequest::getBody, UpdateFlinkJarJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFlinkJobStatusReportRequest, UpdateFlinkJobStatusReportResponse> updateFlinkJobStatusReport =
+        genForUpdateFlinkJobStatusReport();
+
+    private static HttpRequestDef<UpdateFlinkJobStatusReportRequest, UpdateFlinkJobStatusReportResponse> genForUpdateFlinkJobStatusReport() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlinkJobStatusReportRequest, UpdateFlinkJobStatusReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateFlinkJobStatusReportRequest.class,
+                    UpdateFlinkJobStatusReportResponse.class)
+                .withName("UpdateFlinkJobStatusReport")
+                .withUri("/v1/{project_id}/edgesrv/job-report")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChangeFlinkJobStatusReportRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeFlinkJobStatusReportRequestBody.class),
+            f -> f.withMarshaller(UpdateFlinkJobStatusReportRequest::getBody,
+                UpdateFlinkJobStatusReportRequest::setBody));
 
         // response
 
@@ -3127,10 +3135,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(UpdateFlinkSqlJobRequest::getJobId, UpdateFlinkSqlJobRequest::setJobId));
-        builder.<UpdateFlinkSqlRequestBody>withRequestField("body",
+        builder.<UpdateFlinkSqlJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFlinkSqlRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateFlinkSqlJobRequestBody.class),
             f -> f.withMarshaller(UpdateFlinkSqlJobRequest::getBody, UpdateFlinkSqlJobRequest::setBody));
 
         // response
@@ -3159,10 +3167,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(UpdateFlinkSqlJobTemplateRequest::getTemplateId,
                 UpdateFlinkSqlJobTemplateRequest::setTemplateId));
-        builder.<UpdateFlinkTemplateRequestBody>withRequestField("body",
+        builder.<UpdateFlinkSqlJobTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateFlinkTemplateRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateFlinkSqlJobTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateFlinkSqlJobTemplateRequest::getBody,
                 UpdateFlinkSqlJobTemplateRequest::setBody));
 
@@ -3211,10 +3219,10 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSparkJobRequest::getUserId, CreateSparkJobRequest::setUserId));
-        builder.<BatchJobInfo>withRequestField("body",
+        builder.<CreateSparkJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchJobInfo.class),
+            TypeCasts.uncheckedConversion(CreateSparkJobRequestBody.class),
             f -> f.withMarshaller(CreateSparkJobRequest::getBody, CreateSparkJobRequest::setBody));
 
         // response
@@ -3234,10 +3242,10 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<CreateJobTemplatesRequestBody>withRequestField("body",
+        builder.<CreateSparkJobTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateJobTemplatesRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateSparkJobTemplateRequestBody.class),
             f -> f.withMarshaller(CreateSparkJobTemplateRequest::getBody, CreateSparkJobTemplateRequest::setBody));
 
         // response
@@ -3353,48 +3361,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBatchLogRequest, ShowBatchLogResponse> showBatchLog = genForShowBatchLog();
-
-    private static HttpRequestDef<ShowBatchLogRequest, ShowBatchLogResponse> genForShowBatchLog() {
-        // basic
-        HttpRequestDef.Builder<ShowBatchLogRequest, ShowBatchLogResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBatchLogRequest.class, ShowBatchLogResponse.class)
-                .withName("ShowBatchLog")
-                .withUri("/v2.0/{project_id}/batches/{batch_id}/log")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("batch_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getBatchId, ShowBatchLogRequest::setBatchId));
-        builder.<Integer>withRequestField("from",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getFrom, ShowBatchLogRequest::setFrom));
-        builder.<Integer>withRequestField("index",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getIndex, ShowBatchLogRequest::setIndex));
-        builder.<Integer>withRequestField("size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getSize, ShowBatchLogRequest::setSize));
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchLogRequest::getType, ShowBatchLogRequest::setType));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowSparkJobRequest, ShowSparkJobResponse> showSparkJob = genForShowSparkJob();
 
     private static HttpRequestDef<ShowSparkJobRequest, ShowSparkJobResponse> genForShowSparkJob() {
@@ -3411,6 +3377,49 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSparkJobRequest::getBatchId, ShowSparkJobRequest::setBatchId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSparkJobLogRequest, ShowSparkJobLogResponse> showSparkJobLog =
+        genForShowSparkJobLog();
+
+    private static HttpRequestDef<ShowSparkJobLogRequest, ShowSparkJobLogResponse> genForShowSparkJobLog() {
+        // basic
+        HttpRequestDef.Builder<ShowSparkJobLogRequest, ShowSparkJobLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSparkJobLogRequest.class, ShowSparkJobLogResponse.class)
+                .withName("ShowSparkJobLog")
+                .withUri("/v2.0/{project_id}/batches/{batch_id}/log")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("batch_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSparkJobLogRequest::getBatchId, ShowSparkJobLogRequest::setBatchId));
+        builder.<Integer>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSparkJobLogRequest::getFrom, ShowSparkJobLogRequest::setFrom));
+        builder.<Integer>withRequestField("index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSparkJobLogRequest::getIndex, ShowSparkJobLogRequest::setIndex));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSparkJobLogRequest::getSize, ShowSparkJobLogRequest::setSize));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSparkJobLogRequest::getType, ShowSparkJobLogRequest::setType));
 
         // response
 
@@ -3482,10 +3491,10 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getTemplateId,
                 UpdateSparkJobTemplateRequest::setTemplateId));
-        builder.<UpdateJobTemplatesRequestBody>withRequestField("body",
+        builder.<UpdateSparkJobTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateJobTemplatesRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateSparkJobTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getBody, UpdateSparkJobTemplateRequest::setBody));
 
         // response
@@ -3508,10 +3517,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<DeleteSqlTemplatesRequestBody>withRequestField("body",
+        builder.<BatchDeleteSqlJobTemplatesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteSqlTemplatesRequestBody.class),
+            TypeCasts.uncheckedConversion(BatchDeleteSqlJobTemplatesRequestBody.class),
             f -> f.withMarshaller(BatchDeleteSqlJobTemplatesRequest::getBody,
                 BatchDeleteSqlJobTemplatesRequest::setBody));
 
@@ -3564,29 +3573,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
-        genForCreateDatabase();
-
-    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForCreateDatabase() {
-        // basic
-        HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
-                .withName("CreateDatabase")
-                .withUri("/v1.0/{project_id}/databases")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateDatabaseRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDatabaseRequestBody.class),
-            f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSqlJobRequest, CreateSqlJobResponse> createSqlJob = genForCreateSqlJob();
 
     private static HttpRequestDef<CreateSqlJobRequest, CreateSqlJobResponse> genForCreateSqlJob() {
@@ -3621,103 +3607,11 @@ public class DliMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<CreateSqlTemplatesRequestBody>withRequestField("body",
+        builder.<CreateSqlJobTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateSqlTemplatesRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateSqlJobTemplateRequestBody.class),
             f -> f.withMarshaller(CreateSqlJobTemplateRequest::getBody, CreateSqlJobTemplateRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
-
-    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
-        // basic
-        HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
-                .withName("CreateTable")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTableRequest::getDatabaseName, CreateTableRequest::setDatabaseName));
-        builder.<CreateTableReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateTableReq.class),
-            f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
-        genForDeleteDatabase();
-
-    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genForDeleteDatabase() {
-        // basic
-        HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
-                .withName("DeleteDatabase")
-                .withUri("/v1.0/{project_id}/databases/{database_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, DeleteDatabaseRequest::setDatabaseName));
-        builder.<Boolean>withRequestField("async",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getAsync, DeleteDatabaseRequest::setAsync));
-        builder.<Boolean>withRequestField("cascade",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, DeleteDatabaseRequest::setCascade));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
-
-    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
-        // basic
-        HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTableRequest.class, DeleteTableResponse.class)
-                .withName("DeleteTable")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getDatabaseName, DeleteTableRequest::setDatabaseName));
-        builder.<String>withRequestField("table_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTableRequest::getTableName, DeleteTableRequest::setTableName));
-        builder.<Boolean>withRequestField("async",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteTableRequest::getAsync, DeleteTableRequest::setAsync));
 
         // response
 
@@ -3741,151 +3635,11 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSqlJobResultRequest::getJobId, ExportSqlJobResultRequest::setJobId));
-        builder.<ExportSqlResultRequestBody>withRequestField("body",
+        builder.<ExportSqlJobResultRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportSqlResultRequestBody.class),
+            TypeCasts.uncheckedConversion(ExportSqlJobResultRequestBody.class),
             f -> f.withMarshaller(ExportSqlJobResultRequest::getBody, ExportSqlJobResultRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ExportTableRequest, ExportTableResponse> exportTable = genForExportTable();
-
-    private static HttpRequestDef<ExportTableRequest, ExportTableResponse> genForExportTable() {
-        // basic
-        HttpRequestDef.Builder<ExportTableRequest, ExportTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExportTableRequest.class, ExportTableResponse.class)
-                .withName("ExportTable")
-                .withUri("/v1.0/{project_id}/jobs/export-table")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ExportTableRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportTableRequestBody.class),
-            f -> f.withMarshaller(ExportTableRequest::getBody, ExportTableRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ImportTableRequest, ImportTableResponse> importTable = genForImportTable();
-
-    private static HttpRequestDef<ImportTableRequest, ImportTableResponse> genForImportTable() {
-        // basic
-        HttpRequestDef.Builder<ImportTableRequest, ImportTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ImportTableRequest.class, ImportTableResponse.class)
-                .withName("ImportTable")
-                .withUri("/v1.0/{project_id}/jobs/import-table")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ImportTableRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImportTableRequestBody.class),
-            f -> f.withMarshaller(ImportTableRequest::getBody, ImportTableRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> listAllTables =
-        genForListAllTables();
-
-    private static HttpRequestDef<ListAllTablesRequest, ListAllTablesResponse> genForListAllTables() {
-        // basic
-        HttpRequestDef.Builder<ListAllTablesRequest, ListAllTablesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAllTablesRequest.class, ListAllTablesResponse.class)
-                .withName("ListAllTables")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getDatabaseName, ListAllTablesRequest::setDatabaseName));
-        builder.<Integer>withRequestField("current-page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getCurrentPage, ListAllTablesRequest::setCurrentPage));
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getKeyword, ListAllTablesRequest::setKeyword));
-        builder.<Integer>withRequestField("page-size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getPageSize, ListAllTablesRequest::setPageSize));
-        builder.<String>withRequestField("table-type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getTableType, ListAllTablesRequest::setTableType));
-        builder.<Boolean>withRequestField("with-detail",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getWithDetail, ListAllTablesRequest::setWithDetail));
-        builder.<Boolean>withRequestField("with-priv",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListAllTablesRequest::getWithPriv, ListAllTablesRequest::setWithPriv));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
-        genForListDatabases();
-
-    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
-        // basic
-        HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
-                .withName("ListDatabases")
-                .withUri("/v1.0/{project_id}/databases")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getKeyword, ListDatabasesRequest::setKeyword));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getTags, ListDatabasesRequest::setTags));
-        builder.<Boolean>withRequestField("with-priv",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDatabasesRequest::getWithPriv, ListDatabasesRequest::setWithPriv));
 
         // response
 
@@ -4030,73 +3784,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDescribeTableRequest, ShowDescribeTableResponse> showDescribeTable =
-        genForShowDescribeTable();
-
-    private static HttpRequestDef<ShowDescribeTableRequest, ShowDescribeTableResponse> genForShowDescribeTable() {
-        // basic
-        HttpRequestDef.Builder<ShowDescribeTableRequest, ShowDescribeTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDescribeTableRequest.class, ShowDescribeTableResponse.class)
-                .withName("ShowDescribeTable")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDescribeTableRequest::getDatabaseName,
-                ShowDescribeTableRequest::setDatabaseName));
-        builder.<String>withRequestField("table_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDescribeTableRequest::getTableName, ShowDescribeTableRequest::setTableName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPartitionsRequest, ShowPartitionsResponse> showPartitions =
-        genForShowPartitions();
-
-    private static HttpRequestDef<ShowPartitionsRequest, ShowPartitionsResponse> genForShowPartitions() {
-        // basic
-        HttpRequestDef.Builder<ShowPartitionsRequest, ShowPartitionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPartitionsRequest.class, ShowPartitionsResponse.class)
-                .withName("ShowPartitions")
-                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}/partitions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("database_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionsRequest::getDatabaseName, ShowPartitionsRequest::setDatabaseName));
-        builder.<String>withRequestField("table_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPartitionsRequest::getTableName, ShowPartitionsRequest::setTableName));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartitionsRequest::getLimit, ShowPartitionsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowPartitionsRequest::getOffset, ShowPartitionsRequest::setOffset));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowSqlJobDetailRequest, ShowSqlJobDetailResponse> showSqlJobDetail =
         genForShowSqlJobDetail();
 
@@ -4166,14 +3853,282 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplates =
-        genForShowSqlSampleTemplates();
+    public static final HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplate =
+        genForUpdateSqlJobTemplate();
 
-    private static HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> genForShowSqlSampleTemplates() {
+    private static HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> genForUpdateSqlJobTemplate() {
         // basic
-        HttpRequestDef.Builder<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowSqlSampleTemplatesRequest.class, ShowSqlSampleTemplatesResponse.class)
-            .withName("ShowSqlSampleTemplates")
+        HttpRequestDef.Builder<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSqlJobTemplateRequest.class, UpdateSqlJobTemplateResponse.class)
+            .withName("UpdateSqlJobTemplate")
+            .withUri("/v1.0/{project_id}/sqls/{sql_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sql_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getSqlId, UpdateSqlJobTemplateRequest::setSqlId));
+        builder.<UpdateSqlJobTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSqlJobTemplateRequestBody.class),
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getBody, UpdateSqlJobTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
+        genForCreateDatabase();
+
+    private static HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> genForCreateDatabase() {
+        // basic
+        HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
+                .withName("CreateDatabase")
+                .withUri("/v1.0/{project_id}/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDatabaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDatabaseRequestBody.class),
+            f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
+
+    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
+        // basic
+        HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
+                .withName("CreateTable")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTableRequest::getDatabaseName, CreateTableRequest::setDatabaseName));
+        builder.<CreateTableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTableRequestBody.class),
+            f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
+        genForDeleteDatabase();
+
+    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genForDeleteDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
+                .withName("DeleteDatabase")
+                .withUri("/v1.0/{project_id}/databases/{database_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, DeleteDatabaseRequest::setDatabaseName));
+        builder.<Boolean>withRequestField("async",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getAsync, DeleteDatabaseRequest::setAsync));
+        builder.<Boolean>withRequestField("cascade",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, DeleteDatabaseRequest::setCascade));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
+
+    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTableRequest.class, DeleteTableResponse.class)
+                .withName("DeleteTable")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTableRequest::getDatabaseName, DeleteTableRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTableRequest::getTableName, DeleteTableRequest::setTableName));
+        builder.<Boolean>withRequestField("async",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteTableRequest::getAsync, DeleteTableRequest::setAsync));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportTableRequest, ExportTableResponse> exportTable = genForExportTable();
+
+    private static HttpRequestDef<ExportTableRequest, ExportTableResponse> genForExportTable() {
+        // basic
+        HttpRequestDef.Builder<ExportTableRequest, ExportTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportTableRequest.class, ExportTableResponse.class)
+                .withName("ExportTable")
+                .withUri("/v1.0/{project_id}/jobs/export-table")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExportTableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportTableRequestBody.class),
+            f -> f.withMarshaller(ExportTableRequest::getBody, ExportTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportTableRequest, ImportTableResponse> importTable = genForImportTable();
+
+    private static HttpRequestDef<ImportTableRequest, ImportTableResponse> genForImportTable() {
+        // basic
+        HttpRequestDef.Builder<ImportTableRequest, ImportTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportTableRequest.class, ImportTableResponse.class)
+                .withName("ImportTable")
+                .withUri("/v1.0/{project_id}/jobs/import-table")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ImportTableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportTableRequestBody.class),
+            f -> f.withMarshaller(ImportTableRequest::getBody, ImportTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
+        genForListDatabases();
+
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
+                .withName("ListDatabases")
+                .withUri("/v1.0/{project_id}/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getKeyword, ListDatabasesRequest::setKeyword));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getTags, ListDatabasesRequest::setTags));
+        builder.<Boolean>withRequestField("with-priv",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getWithPriv, ListDatabasesRequest::setWithPriv));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> listPartitions =
+        genForListPartitions();
+
+    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForListPartitions() {
+        // basic
+        HttpRequestDef.Builder<ListPartitionsRequest, ListPartitionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPartitionsRequest.class, ListPartitionsResponse.class)
+                .withName("ListPartitions")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}/partitions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionsRequest::getDatabaseName, ListPartitionsRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionsRequest::getTableName, ListPartitionsRequest::setTableName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPartitionsRequest::getLimit, ListPartitionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPartitionsRequest::getOffset, ListPartitionsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlSampleTemplatesRequest, ListSqlSampleTemplatesResponse> listSqlSampleTemplates =
+        genForListSqlSampleTemplates();
+
+    private static HttpRequestDef<ListSqlSampleTemplatesRequest, ListSqlSampleTemplatesResponse> genForListSqlSampleTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListSqlSampleTemplatesRequest, ListSqlSampleTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSqlSampleTemplatesRequest.class, ListSqlSampleTemplatesResponse.class)
+            .withName("ListSqlSampleTemplates")
             .withUri("/v1.0/{project_id}/sqls/sample")
             .withContentType("application/json");
 
@@ -4184,14 +4139,65 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTableContentRequest, ShowTableContentResponse> showTableContent =
-        genForShowTableContent();
+    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForListTables();
 
-    private static HttpRequestDef<ShowTableContentRequest, ShowTableContentResponse> genForShowTableContent() {
+    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForListTables() {
         // basic
-        HttpRequestDef.Builder<ShowTableContentRequest, ShowTableContentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTableContentRequest.class, ShowTableContentResponse.class)
-                .withName("ShowTableContent")
+        HttpRequestDef.Builder<ListTablesRequest, ListTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTablesRequest.class, ListTablesResponse.class)
+                .withName("ListTables")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesRequest::getDatabaseName, ListTablesRequest::setDatabaseName));
+        builder.<Integer>withRequestField("current-page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTablesRequest::getCurrentPage, ListTablesRequest::setCurrentPage));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesRequest::getKeyword, ListTablesRequest::setKeyword));
+        builder.<Integer>withRequestField("page-size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTablesRequest::getPageSize, ListTablesRequest::setPageSize));
+        builder.<String>withRequestField("table-type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesRequest::getTableType, ListTablesRequest::setTableType));
+        builder.<Boolean>withRequestField("with-detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTablesRequest::getWithDetail, ListTablesRequest::setWithDetail));
+        builder.<Boolean>withRequestField("with-priv",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTablesRequest::getWithPriv, ListTablesRequest::setWithPriv));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PreviewTableRequest, PreviewTableResponse> previewTable = genForPreviewTable();
+
+    private static HttpRequestDef<PreviewTableRequest, PreviewTableResponse> genForPreviewTable() {
+        // basic
+        HttpRequestDef.Builder<PreviewTableRequest, PreviewTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, PreviewTableRequest.class, PreviewTableResponse.class)
+                .withName("PreviewTable")
                 .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}/preview")
                 .withContentType("application/json");
 
@@ -4200,17 +4206,44 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableContentRequest::getDatabaseName, ShowTableContentRequest::setDatabaseName));
+            f -> f.withMarshaller(PreviewTableRequest::getDatabaseName, PreviewTableRequest::setDatabaseName));
         builder.<String>withRequestField("table_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableContentRequest::getTableName, ShowTableContentRequest::setTableName));
+            f -> f.withMarshaller(PreviewTableRequest::getTableName, PreviewTableRequest::setTableName));
         builder.<String>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTableContentRequest::getMode, ShowTableContentRequest::setMode));
+            f -> f.withMarshaller(PreviewTableRequest::getMode, PreviewTableRequest::setMode));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTableRequest, ShowTableResponse> showTable = genForShowTable();
+
+    private static HttpRequestDef<ShowTableRequest, ShowTableResponse> genForShowTable() {
+        // basic
+        HttpRequestDef.Builder<ShowTableRequest, ShowTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTableRequest.class, ShowTableResponse.class)
+                .withName("ShowTable")
+                .withUri("/v1.0/{project_id}/databases/{database_name}/tables/{table_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableRequest::getDatabaseName, ShowTableRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableRequest::getTableName, ShowTableRequest::setTableName));
 
         // response
 
@@ -4240,34 +4273,6 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateOwnerRequestBody.class),
             f -> f.withMarshaller(UpdateDatabaseOwnerRequest::getBody, UpdateDatabaseOwnerRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplate =
-        genForUpdateSqlJobTemplate();
-
-    private static HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> genForUpdateSqlJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateSqlJobTemplateRequest.class, UpdateSqlJobTemplateResponse.class)
-            .withName("UpdateSqlJobTemplate")
-            .withUri("/v1.0/{project_id}/sqls/{sql_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("sql_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getSqlId, UpdateSqlJobTemplateRequest::setSqlId));
-        builder.<UpdateSqlTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getBody, UpdateSqlJobTemplateRequest::setBody));
 
         // response
 

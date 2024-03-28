@@ -19,7 +19,7 @@ public class CreateSparkJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchJobInfo body;
+    private CreateSparkJobRequestBody body;
 
     public CreateSparkJobRequest withUserId(String userId) {
         this.userId = userId;
@@ -38,14 +38,14 @@ public class CreateSparkJobRequest {
         this.userId = userId;
     }
 
-    public CreateSparkJobRequest withBody(BatchJobInfo body) {
+    public CreateSparkJobRequest withBody(CreateSparkJobRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateSparkJobRequest withBody(Consumer<BatchJobInfo> bodySetter) {
+    public CreateSparkJobRequest withBody(Consumer<CreateSparkJobRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchJobInfo();
+            this.body = new CreateSparkJobRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateSparkJobRequest {
      * Get body
      * @return body
      */
-    public BatchJobInfo getBody() {
+    public CreateSparkJobRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchJobInfo body) {
+    public void setBody(CreateSparkJobRequestBody body) {
         this.body = body;
     }
 

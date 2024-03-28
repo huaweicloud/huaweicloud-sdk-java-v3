@@ -75,6 +75,11 @@ public class PutCopyStateReq {
          */
         public static final CopystateEnum CUTOVERING = new CopystateEnum("CUTOVERING");
 
+        /**
+         * Enum FINISHED for value: "FINISHED"
+         */
+        public static final CopystateEnum FINISHED = new CopystateEnum("FINISHED");
+
         private static final Map<String, CopystateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CopystateEnum> createStaticFields() {
@@ -90,6 +95,7 @@ public class PutCopyStateReq {
             map.put("ERROR", ERROR);
             map.put("CLONING", CLONING);
             map.put("CUTOVERING", CUTOVERING);
+            map.put("FINISHED", FINISHED);
             return Collections.unmodifiableMap(map);
         }
 

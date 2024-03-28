@@ -19,7 +19,7 @@ public class BatchDeleteQueuePlansRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private QueuePlanIds body;
+    private BatchDeleteQueuePlansRequestBody body;
 
     public BatchDeleteQueuePlansRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class BatchDeleteQueuePlansRequest {
         this.queueName = queueName;
     }
 
-    public BatchDeleteQueuePlansRequest withBody(QueuePlanIds body) {
+    public BatchDeleteQueuePlansRequest withBody(BatchDeleteQueuePlansRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteQueuePlansRequest withBody(Consumer<QueuePlanIds> bodySetter) {
+    public BatchDeleteQueuePlansRequest withBody(Consumer<BatchDeleteQueuePlansRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new QueuePlanIds();
+            this.body = new BatchDeleteQueuePlansRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteQueuePlansRequest {
      * Get body
      * @return body
      */
-    public QueuePlanIds getBody() {
+    public BatchDeleteQueuePlansRequestBody getBody() {
         return body;
     }
 
-    public void setBody(QueuePlanIds body) {
+    public void setBody(BatchDeleteQueuePlansRequestBody body) {
         this.body = body;
     }
 

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -82,6 +87,81 @@ public class VaultCreate {
     @JsonProperty(value = "demand_billing")
 
     private Boolean demandBilling;
+
+    /**
+     * 用于标识SMB服务，您可以设置为SMB或者空
+     */
+    public static final class SysLockSourceServiceEnum {
+
+        /**
+         * Enum SMB for value: "SMB"
+         */
+        public static final SysLockSourceServiceEnum SMB = new SysLockSourceServiceEnum("SMB");
+
+        /**
+         * Enum EMPTY for value: ""
+         */
+        public static final SysLockSourceServiceEnum EMPTY = new SysLockSourceServiceEnum("");
+
+        private static final Map<String, SysLockSourceServiceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SysLockSourceServiceEnum> createStaticFields() {
+            Map<String, SysLockSourceServiceEnum> map = new HashMap<>();
+            map.put("SMB", SMB);
+            map.put("", EMPTY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SysLockSourceServiceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SysLockSourceServiceEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SysLockSourceServiceEnum(value));
+        }
+
+        public static SysLockSourceServiceEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SysLockSourceServiceEnum) {
+                return this.value.equals(((SysLockSourceServiceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_lock_source_service")
+
+    private SysLockSourceServiceEnum sysLockSourceService;
 
     public VaultCreate withBackupPolicyId(String backupPolicyId) {
         this.backupPolicyId = backupPolicyId;
@@ -373,6 +453,23 @@ public class VaultCreate {
         this.demandBilling = demandBilling;
     }
 
+    public VaultCreate withSysLockSourceService(SysLockSourceServiceEnum sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+        return this;
+    }
+
+    /**
+     * 用于标识SMB服务，您可以设置为SMB或者空
+     * @return sysLockSourceService
+     */
+    public SysLockSourceServiceEnum getSysLockSourceService() {
+        return sysLockSourceService;
+    }
+
+    public void setSysLockSourceService(SysLockSourceServiceEnum sysLockSourceService) {
+        this.sysLockSourceService = sysLockSourceService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -390,7 +487,8 @@ public class VaultCreate {
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.smnNotify, that.smnNotify)
             && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
-            && Objects.equals(this.demandBilling, that.demandBilling);
+            && Objects.equals(this.demandBilling, that.demandBilling)
+            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService);
     }
 
     @Override
@@ -408,7 +506,8 @@ public class VaultCreate {
             threshold,
             smnNotify,
             backupNamePrefix,
-            demandBilling);
+            demandBilling,
+            sysLockSourceService);
     }
 
     @Override
@@ -429,6 +528,7 @@ public class VaultCreate {
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    backupNamePrefix: ").append(toIndentedString(backupNamePrefix)).append("\n");
         sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
+        sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -32,7 +32,7 @@ public class ListDatabaseUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<ShowDatabaseUsersPrivilege> privileges = null;
+    private List<DatabaseUserPrivilege> privileges = null;
 
     public ListDatabaseUsersResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         this.databaseName = databaseName;
     }
 
-    public ListDatabaseUsersResponse withPrivileges(List<ShowDatabaseUsersPrivilege> privileges) {
+    public ListDatabaseUsersResponse withPrivileges(List<DatabaseUserPrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ListDatabaseUsersResponse addPrivilegesItem(ShowDatabaseUsersPrivilege privilegesItem) {
+    public ListDatabaseUsersResponse addPrivilegesItem(DatabaseUserPrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         return this;
     }
 
-    public ListDatabaseUsersResponse withPrivileges(Consumer<List<ShowDatabaseUsersPrivilege>> privilegesSetter) {
+    public ListDatabaseUsersResponse withPrivileges(Consumer<List<DatabaseUserPrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListDatabaseUsersResponse extends SdkResponse {
      * 权限信息。
      * @return privileges
      */
-    public List<ShowDatabaseUsersPrivilege> getPrivileges() {
+    public List<DatabaseUserPrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<ShowDatabaseUsersPrivilege> privileges) {
+    public void setPrivileges(List<DatabaseUserPrivilege> privileges) {
         this.privileges = privileges;
     }
 

@@ -22,6 +22,9 @@ import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkErRouteTableAttachmentResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkErRouteTableAttachmentsRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentResponse;
@@ -82,6 +85,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkErRouteTableAttachmentsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkErRouteTableAttachmentsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPoliciesRequest;
@@ -92,6 +97,9 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasRequest;
@@ -125,6 +133,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsReq
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkErRouteTableAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkRequest;
@@ -167,6 +177,9 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkErRouteTableAttachmentRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkErRouteTableAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentResponse;
@@ -1083,6 +1096,45 @@ public class CcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCentralNetworksByTagsRequest, ListCentralNetworksByTagsResponse> listCentralNetworksByTags =
+        genForListCentralNetworksByTags();
+
+    private static HttpRequestDef<ListCentralNetworksByTagsRequest, ListCentralNetworksByTagsResponse> genForListCentralNetworksByTags() {
+        // basic
+        HttpRequestDef.Builder<ListCentralNetworksByTagsRequest, ListCentralNetworksByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListCentralNetworksByTagsRequest.class,
+                    ListCentralNetworksByTagsResponse.class)
+                .withName("ListCentralNetworksByTags")
+                .withUri("/v3/{domain_id}/gcn/central-networks/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCentralNetworksByTagsRequest::getLimit,
+                ListCentralNetworksByTagsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCentralNetworksByTagsRequest::getMarker,
+                ListCentralNetworksByTagsRequest::setMarker));
+        builder.<ListCentralNetworksByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCentralNetworksByTagsRequestBody.class),
+            f -> f.withMarshaller(ListCentralNetworksByTagsRequest::getBody,
+                ListCentralNetworksByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCentralNetworkRequest, ShowCentralNetworkResponse> showCentralNetwork =
         genForShowCentralNetwork();
 
@@ -1199,6 +1251,39 @@ public class CcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCentralNetworkRequestBody.class),
             f -> f.withMarshaller(UpdateCentralNetworkRequest::getBody, UpdateCentralNetworkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCentralNetworkErRouteTableAttachmentRequest, CreateCentralNetworkErRouteTableAttachmentResponse> createCentralNetworkErRouteTableAttachment =
+        genForCreateCentralNetworkErRouteTableAttachment();
+
+    private static HttpRequestDef<CreateCentralNetworkErRouteTableAttachmentRequest, CreateCentralNetworkErRouteTableAttachmentResponse> genForCreateCentralNetworkErRouteTableAttachment() {
+        // basic
+        HttpRequestDef.Builder<CreateCentralNetworkErRouteTableAttachmentRequest, CreateCentralNetworkErRouteTableAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCentralNetworkErRouteTableAttachmentRequest.class,
+                    CreateCentralNetworkErRouteTableAttachmentResponse.class)
+                .withName("CreateCentralNetworkErRouteTableAttachment")
+                .withUri("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("central_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCentralNetworkErRouteTableAttachmentRequest::getCentralNetworkId,
+                CreateCentralNetworkErRouteTableAttachmentRequest::setCentralNetworkId));
+        builder.<CreateCentralNetworkErRouteTableAttachmentsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCentralNetworkErRouteTableAttachmentsRequestBody.class),
+            f -> f.withMarshaller(CreateCentralNetworkErRouteTableAttachmentRequest::getBody,
+                CreateCentralNetworkErRouteTableAttachmentRequest::setBody));
 
         // response
 
@@ -1352,6 +1437,81 @@ public class CcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCentralNetworkErRouteTableAttachmentsRequest, ListCentralNetworkErRouteTableAttachmentsResponse> listCentralNetworkErRouteTableAttachments =
+        genForListCentralNetworkErRouteTableAttachments();
+
+    private static HttpRequestDef<ListCentralNetworkErRouteTableAttachmentsRequest, ListCentralNetworkErRouteTableAttachmentsResponse> genForListCentralNetworkErRouteTableAttachments() {
+        // basic
+        HttpRequestDef.Builder<ListCentralNetworkErRouteTableAttachmentsRequest, ListCentralNetworkErRouteTableAttachmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCentralNetworkErRouteTableAttachmentsRequest.class,
+                    ListCentralNetworkErRouteTableAttachmentsResponse.class)
+                .withName("ListCentralNetworkErRouteTableAttachments")
+                .withUri("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("central_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getCentralNetworkId,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setCentralNetworkId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getLimit,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getMarker,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setMarker));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getSortKey,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setSortKey));
+        builder.<SortDir>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SortDir.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getSortDir,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setSortDir));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getId,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getName,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setName));
+        builder.<List<CentralNetworkConnectionStateEnum>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getState,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setState));
+        builder.<List<String>>withRequestField("attachment_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCentralNetworkErRouteTableAttachmentsRequest::getAttachmentInstanceId,
+                ListCentralNetworkErRouteTableAttachmentsRequest::setAttachmentInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> listCentralNetworkGdgwAttachments =
         genForListCentralNetworkGdgwAttachments();
 
@@ -1427,6 +1587,40 @@ public class CcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCentralNetworkErRouteTableAttachmentRequest, ShowCentralNetworkErRouteTableAttachmentResponse> showCentralNetworkErRouteTableAttachment =
+        genForShowCentralNetworkErRouteTableAttachment();
+
+    private static HttpRequestDef<ShowCentralNetworkErRouteTableAttachmentRequest, ShowCentralNetworkErRouteTableAttachmentResponse> genForShowCentralNetworkErRouteTableAttachment() {
+        // basic
+        HttpRequestDef.Builder<ShowCentralNetworkErRouteTableAttachmentRequest, ShowCentralNetworkErRouteTableAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCentralNetworkErRouteTableAttachmentRequest.class,
+                    ShowCentralNetworkErRouteTableAttachmentResponse.class)
+                .withName("ShowCentralNetworkErRouteTableAttachment")
+                .withUri(
+                    "/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("central_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCentralNetworkErRouteTableAttachmentRequest::getCentralNetworkId,
+                ShowCentralNetworkErRouteTableAttachmentRequest::setCentralNetworkId));
+        builder.<String>withRequestField("er_route_table_attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCentralNetworkErRouteTableAttachmentRequest::getErRouteTableAttachmentId,
+                ShowCentralNetworkErRouteTableAttachmentRequest::setErRouteTableAttachmentId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> showCentralNetworkGdgwAttachment =
         genForShowCentralNetworkGdgwAttachment();
 
@@ -1455,6 +1649,46 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCentralNetworkGdgwAttachmentRequest::getGdgwAttachmentId,
                 ShowCentralNetworkGdgwAttachmentRequest::setGdgwAttachmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCentralNetworkErRouteTableAttachmentRequest, UpdateCentralNetworkErRouteTableAttachmentResponse> updateCentralNetworkErRouteTableAttachment =
+        genForUpdateCentralNetworkErRouteTableAttachment();
+
+    private static HttpRequestDef<UpdateCentralNetworkErRouteTableAttachmentRequest, UpdateCentralNetworkErRouteTableAttachmentResponse> genForUpdateCentralNetworkErRouteTableAttachment() {
+        // basic
+        HttpRequestDef.Builder<UpdateCentralNetworkErRouteTableAttachmentRequest, UpdateCentralNetworkErRouteTableAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateCentralNetworkErRouteTableAttachmentRequest.class,
+                    UpdateCentralNetworkErRouteTableAttachmentResponse.class)
+                .withName("UpdateCentralNetworkErRouteTableAttachment")
+                .withUri(
+                    "/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("central_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCentralNetworkErRouteTableAttachmentRequest::getCentralNetworkId,
+                UpdateCentralNetworkErRouteTableAttachmentRequest::setCentralNetworkId));
+        builder.<String>withRequestField("er_route_table_attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCentralNetworkErRouteTableAttachmentRequest::getErRouteTableAttachmentId,
+                UpdateCentralNetworkErRouteTableAttachmentRequest::setErRouteTableAttachmentId));
+        builder.<UpdateCentralNetworkErRouteTableAttachmentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCentralNetworkErRouteTableAttachmentRequestBody.class),
+            f -> f.withMarshaller(UpdateCentralNetworkErRouteTableAttachmentRequest::getBody,
+                UpdateCentralNetworkErRouteTableAttachmentRequest::setBody));
 
         // response
 

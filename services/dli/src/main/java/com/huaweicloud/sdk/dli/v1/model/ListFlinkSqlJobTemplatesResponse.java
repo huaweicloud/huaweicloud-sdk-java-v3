@@ -25,7 +25,7 @@ public class ListFlinkSqlJobTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_list")
 
-    private FlinkTemplateList templateList;
+    private FlinkSqlJobTemplateList templateList;
 
     public ListFlinkSqlJobTemplatesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ListFlinkSqlJobTemplatesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListFlinkSqlJobTemplatesResponse withTemplateList(FlinkTemplateList templateList) {
+    public ListFlinkSqlJobTemplatesResponse withTemplateList(FlinkSqlJobTemplateList templateList) {
         this.templateList = templateList;
         return this;
     }
 
-    public ListFlinkSqlJobTemplatesResponse withTemplateList(Consumer<FlinkTemplateList> templateListSetter) {
+    public ListFlinkSqlJobTemplatesResponse withTemplateList(Consumer<FlinkSqlJobTemplateList> templateListSetter) {
         if (this.templateList == null) {
-            this.templateList = new FlinkTemplateList();
+            this.templateList = new FlinkSqlJobTemplateList();
             templateListSetter.accept(this.templateList);
         }
 
@@ -79,11 +79,11 @@ public class ListFlinkSqlJobTemplatesResponse extends SdkResponse {
      * Get templateList
      * @return templateList
      */
-    public FlinkTemplateList getTemplateList() {
+    public FlinkSqlJobTemplateList getTemplateList() {
         return templateList;
     }
 
-    public void setTemplateList(FlinkTemplateList templateList) {
+    public void setTemplateList(FlinkSqlJobTemplateList templateList) {
         this.templateList = templateList;
     }
 

@@ -30,7 +30,7 @@ public class ShowSparkJobTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchJobInfo body;
+    private SparkJobTemplateDetail body;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group")
@@ -103,14 +103,14 @@ public class ShowSparkJobTemplateResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ShowSparkJobTemplateResponse withBody(BatchJobInfo body) {
+    public ShowSparkJobTemplateResponse withBody(SparkJobTemplateDetail body) {
         this.body = body;
         return this;
     }
 
-    public ShowSparkJobTemplateResponse withBody(Consumer<BatchJobInfo> bodySetter) {
+    public ShowSparkJobTemplateResponse withBody(Consumer<SparkJobTemplateDetail> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchJobInfo();
+            this.body = new SparkJobTemplateDetail();
             bodySetter.accept(this.body);
         }
 
@@ -121,11 +121,11 @@ public class ShowSparkJobTemplateResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public BatchJobInfo getBody() {
+    public SparkJobTemplateDetail getBody() {
         return body;
     }
 
-    public void setBody(BatchJobInfo body) {
+    public void setBody(SparkJobTemplateDetail body) {
         this.body = body;
     }
 

@@ -19,7 +19,7 @@ public class CreateConnectivityTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private VerityConnectivityReq body;
+    private CreateConnectivityTaskRequestBody body;
 
     public CreateConnectivityTaskRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class CreateConnectivityTaskRequest {
         this.queueName = queueName;
     }
 
-    public CreateConnectivityTaskRequest withBody(VerityConnectivityReq body) {
+    public CreateConnectivityTaskRequest withBody(CreateConnectivityTaskRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateConnectivityTaskRequest withBody(Consumer<VerityConnectivityReq> bodySetter) {
+    public CreateConnectivityTaskRequest withBody(Consumer<CreateConnectivityTaskRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new VerityConnectivityReq();
+            this.body = new CreateConnectivityTaskRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateConnectivityTaskRequest {
      * Get body
      * @return body
      */
-    public VerityConnectivityReq getBody() {
+    public CreateConnectivityTaskRequestBody getBody() {
         return body;
     }
 
-    public void setBody(VerityConnectivityReq body) {
+    public void setBody(CreateConnectivityTaskRequestBody body) {
         this.body = body;
     }
 

@@ -571,11 +571,6 @@ public class CreatePostPaidInstanceReq {
     private RetentionPolicyEnum retentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipv6_enable")
-
-    private Boolean ipv6Enable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_encrypted_enable")
 
     private Boolean diskEncryptedEnable;
@@ -726,7 +721,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例的描述信息。  长度不超过1024的字符串。  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
      * @return description
      */
     public String getDescription() {
@@ -1178,23 +1173,6 @@ public class CreatePostPaidInstanceReq {
         this.retentionPolicy = retentionPolicy;
     }
 
-    public CreatePostPaidInstanceReq withIpv6Enable(Boolean ipv6Enable) {
-        this.ipv6Enable = ipv6Enable;
-        return this;
-    }
-
-    /**
-     * 是否开启ipv6。仅在虚拟私有云支持ipv6时生效。
-     * @return ipv6Enable
-     */
-    public Boolean getIpv6Enable() {
-        return ipv6Enable;
-    }
-
-    public void setIpv6Enable(Boolean ipv6Enable) {
-        this.ipv6Enable = ipv6Enable;
-    }
-
     public CreatePostPaidInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
         this.diskEncryptedEnable = diskEncryptedEnable;
         return this;
@@ -1358,7 +1336,6 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
             && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
             && Objects.equals(this.retentionPolicy, that.retentionPolicy)
-            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
             && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
             && Objects.equals(this.connectorEnable, that.connectorEnable)
@@ -1396,7 +1373,6 @@ public class CreatePostPaidInstanceReq {
             kafkaSecurityProtocol,
             saslEnabledMechanisms,
             retentionPolicy,
-            ipv6Enable,
             diskEncryptedEnable,
             diskEncryptedKey,
             connectorEnable,
@@ -1436,7 +1412,6 @@ public class CreatePostPaidInstanceReq {
         sb.append("    kafkaSecurityProtocol: ").append(toIndentedString(kafkaSecurityProtocol)).append("\n");
         sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
-        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
         sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");

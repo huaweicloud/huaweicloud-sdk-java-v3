@@ -42,12 +42,12 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_queue_info")
 
-    private List<EnhancedConnectionResourceInfo> availableQueueInfo = null;
+    private List<EnhancedConnectionResource> availableQueueInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pools")
 
-    private List<EnhancedConnectionResourceInfo> elasticResourcePools = null;
+    private List<EnhancedConnectionResource> elasticResourcePools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_vpc_id")
@@ -67,7 +67,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private List<EnhancedConnectionsHost> hosts = null;
+    private List<EnhancedConnectionHost> hosts = null;
 
     public ShowEnhancedConnectionResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -154,14 +154,12 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowEnhancedConnectionResponse withAvailableQueueInfo(
-        List<EnhancedConnectionResourceInfo> availableQueueInfo) {
+    public ShowEnhancedConnectionResponse withAvailableQueueInfo(List<EnhancedConnectionResource> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
         return this;
     }
 
-    public ShowEnhancedConnectionResponse addAvailableQueueInfoItem(
-        EnhancedConnectionResourceInfo availableQueueInfoItem) {
+    public ShowEnhancedConnectionResponse addAvailableQueueInfoItem(EnhancedConnectionResource availableQueueInfoItem) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -170,7 +168,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     }
 
     public ShowEnhancedConnectionResponse withAvailableQueueInfo(
-        Consumer<List<EnhancedConnectionResourceInfo>> availableQueueInfoSetter) {
+        Consumer<List<EnhancedConnectionResource>> availableQueueInfoSetter) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -182,22 +180,22 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
      * 各个队列创建对等连接的信息。
      * @return availableQueueInfo
      */
-    public List<EnhancedConnectionResourceInfo> getAvailableQueueInfo() {
+    public List<EnhancedConnectionResource> getAvailableQueueInfo() {
         return availableQueueInfo;
     }
 
-    public void setAvailableQueueInfo(List<EnhancedConnectionResourceInfo> availableQueueInfo) {
+    public void setAvailableQueueInfo(List<EnhancedConnectionResource> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
     }
 
     public ShowEnhancedConnectionResponse withElasticResourcePools(
-        List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+        List<EnhancedConnectionResource> elasticResourcePools) {
         this.elasticResourcePools = elasticResourcePools;
         return this;
     }
 
     public ShowEnhancedConnectionResponse addElasticResourcePoolsItem(
-        EnhancedConnectionResourceInfo elasticResourcePoolsItem) {
+        EnhancedConnectionResource elasticResourcePoolsItem) {
         if (this.elasticResourcePools == null) {
             this.elasticResourcePools = new ArrayList<>();
         }
@@ -206,7 +204,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     }
 
     public ShowEnhancedConnectionResponse withElasticResourcePools(
-        Consumer<List<EnhancedConnectionResourceInfo>> elasticResourcePoolsSetter) {
+        Consumer<List<EnhancedConnectionResource>> elasticResourcePoolsSetter) {
         if (this.elasticResourcePools == null) {
             this.elasticResourcePools = new ArrayList<>();
         }
@@ -218,11 +216,11 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
      * 各个弹性资源池创建对等连接的信息。
      * @return elasticResourcePools
      */
-    public List<EnhancedConnectionResourceInfo> getElasticResourcePools() {
+    public List<EnhancedConnectionResource> getElasticResourcePools() {
         return elasticResourcePools;
     }
 
-    public void setElasticResourcePools(List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+    public void setElasticResourcePools(List<EnhancedConnectionResource> elasticResourcePools) {
         this.elasticResourcePools = elasticResourcePools;
     }
 
@@ -277,12 +275,12 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    public ShowEnhancedConnectionResponse withHosts(List<EnhancedConnectionsHost> hosts) {
+    public ShowEnhancedConnectionResponse withHosts(List<EnhancedConnectionHost> hosts) {
         this.hosts = hosts;
         return this;
     }
 
-    public ShowEnhancedConnectionResponse addHostsItem(EnhancedConnectionsHost hostsItem) {
+    public ShowEnhancedConnectionResponse addHostsItem(EnhancedConnectionHost hostsItem) {
         if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
@@ -290,7 +288,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
         return this;
     }
 
-    public ShowEnhancedConnectionResponse withHosts(Consumer<List<EnhancedConnectionsHost>> hostsSetter) {
+    public ShowEnhancedConnectionResponse withHosts(Consumer<List<EnhancedConnectionHost>> hostsSetter) {
         if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
@@ -302,11 +300,11 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
      * 用户自定义主机信息。
      * @return hosts
      */
-    public List<EnhancedConnectionsHost> getHosts() {
+    public List<EnhancedConnectionHost> getHosts() {
         return hosts;
     }
 
-    public void setHosts(List<EnhancedConnectionsHost> hosts) {
+    public void setHosts(List<EnhancedConnectionHost> hosts) {
         this.hosts = hosts;
     }
 

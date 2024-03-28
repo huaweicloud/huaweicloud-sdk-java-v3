@@ -32,7 +32,7 @@ public class ListSqlJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<ListJobsJobs> jobs = null;
+    private List<SqlJob> jobs = null;
 
     public ListSqlJobsResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListSqlJobsResponse extends SdkResponse {
         this.jobCount = jobCount;
     }
 
-    public ListSqlJobsResponse withJobs(List<ListJobsJobs> jobs) {
+    public ListSqlJobsResponse withJobs(List<SqlJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ListSqlJobsResponse addJobsItem(ListJobsJobs jobsItem) {
+    public ListSqlJobsResponse addJobsItem(SqlJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListSqlJobsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSqlJobsResponse withJobs(Consumer<List<ListJobsJobs>> jobsSetter) {
+    public ListSqlJobsResponse withJobs(Consumer<List<SqlJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListSqlJobsResponse extends SdkResponse {
      * 作业信息。
      * @return jobs
      */
-    public List<ListJobsJobs> getJobs() {
+    public List<SqlJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<ListJobsJobs> jobs) {
+    public void setJobs(List<SqlJob> jobs) {
         this.jobs = jobs;
     }
 

@@ -25,7 +25,7 @@ public class ShowFlinkJobExecutionGraphResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_graph")
 
-    private StreamGraphInfo executeGraph;
+    private FlinkJobExecutionGraph executeGraph;
 
     public ShowFlinkJobExecutionGraphResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ShowFlinkJobExecutionGraphResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowFlinkJobExecutionGraphResponse withExecuteGraph(StreamGraphInfo executeGraph) {
+    public ShowFlinkJobExecutionGraphResponse withExecuteGraph(FlinkJobExecutionGraph executeGraph) {
         this.executeGraph = executeGraph;
         return this;
     }
 
-    public ShowFlinkJobExecutionGraphResponse withExecuteGraph(Consumer<StreamGraphInfo> executeGraphSetter) {
+    public ShowFlinkJobExecutionGraphResponse withExecuteGraph(Consumer<FlinkJobExecutionGraph> executeGraphSetter) {
         if (this.executeGraph == null) {
-            this.executeGraph = new StreamGraphInfo();
+            this.executeGraph = new FlinkJobExecutionGraph();
             executeGraphSetter.accept(this.executeGraph);
         }
 
@@ -79,11 +79,11 @@ public class ShowFlinkJobExecutionGraphResponse extends SdkResponse {
      * Get executeGraph
      * @return executeGraph
      */
-    public StreamGraphInfo getExecuteGraph() {
+    public FlinkJobExecutionGraph getExecuteGraph() {
         return executeGraph;
     }
 
-    public void setExecuteGraph(StreamGraphInfo executeGraph) {
+    public void setExecuteGraph(FlinkJobExecutionGraph executeGraph) {
         this.executeGraph = executeGraph;
     }
 

@@ -165,7 +165,7 @@ public class ListMessageTraceRespTrace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_times")
 
-    private String retryTimes;
+    private Integer retryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body_length")
@@ -588,7 +588,7 @@ public class ListMessageTraceRespTrace {
         this.clientHost = clientHost;
     }
 
-    public ListMessageTraceRespTrace withRetryTimes(String retryTimes) {
+    public ListMessageTraceRespTrace withRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
         return this;
     }
@@ -597,11 +597,11 @@ public class ListMessageTraceRespTrace {
      * 重试次数。
      * @return retryTimes
      */
-    public String getRetryTimes() {
+    public Integer getRetryTimes() {
         return retryTimes;
     }
 
-    public void setRetryTimes(String retryTimes) {
+    public void setRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
     }
 

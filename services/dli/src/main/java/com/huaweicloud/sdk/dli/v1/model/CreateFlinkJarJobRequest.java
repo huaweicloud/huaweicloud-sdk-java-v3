@@ -14,16 +14,16 @@ public class CreateFlinkJarJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateFlinkJarRequestBody body;
+    private CreateFlinkJarJobRequestBody body;
 
-    public CreateFlinkJarJobRequest withBody(CreateFlinkJarRequestBody body) {
+    public CreateFlinkJarJobRequest withBody(CreateFlinkJarJobRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateFlinkJarJobRequest withBody(Consumer<CreateFlinkJarRequestBody> bodySetter) {
+    public CreateFlinkJarJobRequest withBody(Consumer<CreateFlinkJarJobRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateFlinkJarRequestBody();
+            this.body = new CreateFlinkJarJobRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateFlinkJarJobRequest {
      * Get body
      * @return body
      */
-    public CreateFlinkJarRequestBody getBody() {
+    public CreateFlinkJarJobRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateFlinkJarRequestBody body) {
+    public void setBody(CreateFlinkJarJobRequestBody body) {
         this.body = body;
     }
 

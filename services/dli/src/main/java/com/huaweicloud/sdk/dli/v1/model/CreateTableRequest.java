@@ -19,7 +19,7 @@ public class CreateTableRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateTableReq body;
+    private CreateTableRequestBody body;
 
     public CreateTableRequest withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -38,14 +38,14 @@ public class CreateTableRequest {
         this.databaseName = databaseName;
     }
 
-    public CreateTableRequest withBody(CreateTableReq body) {
+    public CreateTableRequest withBody(CreateTableRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateTableRequest withBody(Consumer<CreateTableReq> bodySetter) {
+    public CreateTableRequest withBody(Consumer<CreateTableRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateTableReq();
+            this.body = new CreateTableRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateTableRequest {
      * Get body
      * @return body
      */
-    public CreateTableReq getBody() {
+    public CreateTableRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateTableReq body) {
+    public void setBody(CreateTableRequestBody body) {
         this.body = body;
     }
 

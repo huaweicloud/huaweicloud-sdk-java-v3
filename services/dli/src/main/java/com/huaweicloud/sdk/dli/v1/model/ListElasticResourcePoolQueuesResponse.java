@@ -27,7 +27,7 @@ public class ListElasticResourcePoolQueuesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
-    private List<QueueInfo> queues = null;
+    private List<ElasticResourcePoolQueue> queues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -68,12 +68,12 @@ public class ListElasticResourcePoolQueuesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListElasticResourcePoolQueuesResponse withQueues(List<QueueInfo> queues) {
+    public ListElasticResourcePoolQueuesResponse withQueues(List<ElasticResourcePoolQueue> queues) {
         this.queues = queues;
         return this;
     }
 
-    public ListElasticResourcePoolQueuesResponse addQueuesItem(QueueInfo queuesItem) {
+    public ListElasticResourcePoolQueuesResponse addQueuesItem(ElasticResourcePoolQueue queuesItem) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -81,7 +81,7 @@ public class ListElasticResourcePoolQueuesResponse extends SdkResponse {
         return this;
     }
 
-    public ListElasticResourcePoolQueuesResponse withQueues(Consumer<List<QueueInfo>> queuesSetter) {
+    public ListElasticResourcePoolQueuesResponse withQueues(Consumer<List<ElasticResourcePoolQueue>> queuesSetter) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -93,11 +93,11 @@ public class ListElasticResourcePoolQueuesResponse extends SdkResponse {
      * 该弹性资源池下所有queue信息及队列扩缩容策略信息。
      * @return queues
      */
-    public List<QueueInfo> getQueues() {
+    public List<ElasticResourcePoolQueue> getQueues() {
         return queues;
     }
 
-    public void setQueues(List<QueueInfo> queues) {
+    public void setQueues(List<ElasticResourcePoolQueue> queues) {
         this.queues = queues;
     }
 

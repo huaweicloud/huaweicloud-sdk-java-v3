@@ -19,7 +19,7 @@ public class AssociateQueueToEnhancedConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AssociateConnectionQueueReq body;
+    private AssociateQueueToEnhancedConnectionRequestBody body;
 
     public AssociateQueueToEnhancedConnectionRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -38,14 +38,15 @@ public class AssociateQueueToEnhancedConnectionRequest {
         this.connectionId = connectionId;
     }
 
-    public AssociateQueueToEnhancedConnectionRequest withBody(AssociateConnectionQueueReq body) {
+    public AssociateQueueToEnhancedConnectionRequest withBody(AssociateQueueToEnhancedConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public AssociateQueueToEnhancedConnectionRequest withBody(Consumer<AssociateConnectionQueueReq> bodySetter) {
+    public AssociateQueueToEnhancedConnectionRequest withBody(
+        Consumer<AssociateQueueToEnhancedConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AssociateConnectionQueueReq();
+            this.body = new AssociateQueueToEnhancedConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +57,11 @@ public class AssociateQueueToEnhancedConnectionRequest {
      * Get body
      * @return body
      */
-    public AssociateConnectionQueueReq getBody() {
+    public AssociateQueueToEnhancedConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AssociateConnectionQueueReq body) {
+    public void setBody(AssociateQueueToEnhancedConnectionRequestBody body) {
         this.body = body;
     }
 

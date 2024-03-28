@@ -131,7 +131,7 @@ public class CreateFlinkSqlJobRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTagEntity> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_checkpoint")
@@ -431,7 +431,7 @@ public class CreateFlinkSqlJobRequestBody {
     }
 
     /**
-     * 作业类型：flink_sql_job和flink_sql_edge_job。 run_mode为edge_node时，作业类型须为flink_sql_edge_job。 run_mode为shared_cluster跟exclusive_cluster时，作业类型须为flink_sql_job。 默认值：flink_sql_job。 
+     * 作业类型：flink_sql_job和flink_sql_edge_job。 run_mode为edge_node时，作业类型须为flink_sql_edge_job。 run_mode为shared_cluster跟exclusive_cluster时，作业类型须为flink_sql_job。 默认值：flink_sql_job。
      * @return jobType
      */
     public String getJobType() {
@@ -560,12 +560,12 @@ public class CreateFlinkSqlJobRequestBody {
         this.tmSlotNum = tmSlotNum;
     }
 
-    public CreateFlinkSqlJobRequestBody withTags(List<TmsTagEntity> tags) {
+    public CreateFlinkSqlJobRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateFlinkSqlJobRequestBody addTagsItem(TmsTagEntity tagsItem) {
+    public CreateFlinkSqlJobRequestBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -573,7 +573,7 @@ public class CreateFlinkSqlJobRequestBody {
         return this;
     }
 
-    public CreateFlinkSqlJobRequestBody withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+    public CreateFlinkSqlJobRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -585,11 +585,11 @@ public class CreateFlinkSqlJobRequestBody {
      * 标签
      * @return tags
      */
-    public List<TmsTagEntity> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTagEntity> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

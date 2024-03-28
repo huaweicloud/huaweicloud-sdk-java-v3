@@ -28,8 +28,17 @@ public class LakeFormationRegion {
     public static final Region CN_NORTH_11 =
         new Region("cn-north-11", "https://lakeformation.cn-north-11.myhuaweicloud.com");
 
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://lakeformation.cn-southwest-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://lakeformation.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region LA_NORTH_2 =
         new Region("la-north-2", "https://lakeformation.la-north-2.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 =
+        new Region("af-south-1", "https://lakeformation.af-south-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LAKEFORMATION");
 
@@ -42,7 +51,10 @@ public class LakeFormationRegion {
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("la-north-2", LA_NORTH_2);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

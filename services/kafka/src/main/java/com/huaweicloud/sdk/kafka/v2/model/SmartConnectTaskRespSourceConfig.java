@@ -101,9 +101,9 @@ public class SmartConnectTaskRespSourceConfig {
     private Integer taskNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rename_topic_enable")
+    @JsonProperty(value = "rename_topic_enabled")
 
-    private Boolean renameTopicEnable;
+    private Boolean renameTopicEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provenance_header_enabled")
@@ -431,21 +431,21 @@ public class SmartConnectTaskRespSourceConfig {
         this.taskNum = taskNum;
     }
 
-    public SmartConnectTaskRespSourceConfig withRenameTopicEnable(Boolean renameTopicEnable) {
-        this.renameTopicEnable = renameTopicEnable;
+    public SmartConnectTaskRespSourceConfig withRenameTopicEnabled(Boolean renameTopicEnabled) {
+        this.renameTopicEnabled = renameTopicEnabled;
         return this;
     }
 
     /**
      * 是否重命名Topic。（仅源端类型为Kafka时会显示）
-     * @return renameTopicEnable
+     * @return renameTopicEnabled
      */
-    public Boolean getRenameTopicEnable() {
-        return renameTopicEnable;
+    public Boolean getRenameTopicEnabled() {
+        return renameTopicEnabled;
     }
 
-    public void setRenameTopicEnable(Boolean renameTopicEnable) {
-        this.renameTopicEnable = renameTopicEnable;
+    public void setRenameTopicEnabled(Boolean renameTopicEnabled) {
+        this.renameTopicEnabled = renameTopicEnabled;
     }
 
     public SmartConnectTaskRespSourceConfig withProvenanceHeaderEnabled(Boolean provenanceHeaderEnabled) {
@@ -540,7 +540,7 @@ public class SmartConnectTaskRespSourceConfig {
             && Objects.equals(this.syncConsumerOffsetsEnabled, that.syncConsumerOffsetsEnabled)
             && Objects.equals(this.replicationFactor, that.replicationFactor)
             && Objects.equals(this.taskNum, that.taskNum)
-            && Objects.equals(this.renameTopicEnable, that.renameTopicEnable)
+            && Objects.equals(this.renameTopicEnabled, that.renameTopicEnabled)
             && Objects.equals(this.provenanceHeaderEnabled, that.provenanceHeaderEnabled)
             && Objects.equals(this.consumerStrategy, that.consumerStrategy)
             && Objects.equals(this.compressionType, that.compressionType)
@@ -567,7 +567,7 @@ public class SmartConnectTaskRespSourceConfig {
             syncConsumerOffsetsEnabled,
             replicationFactor,
             taskNum,
-            renameTopicEnable,
+            renameTopicEnabled,
             provenanceHeaderEnabled,
             consumerStrategy,
             compressionType,
@@ -596,7 +596,7 @@ public class SmartConnectTaskRespSourceConfig {
         sb.append("    syncConsumerOffsetsEnabled: ").append(toIndentedString(syncConsumerOffsetsEnabled)).append("\n");
         sb.append("    replicationFactor: ").append(toIndentedString(replicationFactor)).append("\n");
         sb.append("    taskNum: ").append(toIndentedString(taskNum)).append("\n");
-        sb.append("    renameTopicEnable: ").append(toIndentedString(renameTopicEnable)).append("\n");
+        sb.append("    renameTopicEnabled: ").append(toIndentedString(renameTopicEnabled)).append("\n");
         sb.append("    provenanceHeaderEnabled: ").append(toIndentedString(provenanceHeaderEnabled)).append("\n");
         sb.append("    consumerStrategy: ").append(toIndentedString(consumerStrategy)).append("\n");
         sb.append("    compressionType: ").append(toIndentedString(compressionType)).append("\n");

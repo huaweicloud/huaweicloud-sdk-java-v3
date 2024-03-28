@@ -19,7 +19,7 @@ public class DisassociateQueueFromEnhancedConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DisassociateConnectionQueueReq body;
+    private DisassociateQueueFromEnhancedConnectionRequestBody body;
 
     public DisassociateQueueFromEnhancedConnectionRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -38,15 +38,16 @@ public class DisassociateQueueFromEnhancedConnectionRequest {
         this.connectionId = connectionId;
     }
 
-    public DisassociateQueueFromEnhancedConnectionRequest withBody(DisassociateConnectionQueueReq body) {
+    public DisassociateQueueFromEnhancedConnectionRequest withBody(
+        DisassociateQueueFromEnhancedConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DisassociateQueueFromEnhancedConnectionRequest withBody(
-        Consumer<DisassociateConnectionQueueReq> bodySetter) {
+        Consumer<DisassociateQueueFromEnhancedConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DisassociateConnectionQueueReq();
+            this.body = new DisassociateQueueFromEnhancedConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -57,11 +58,11 @@ public class DisassociateQueueFromEnhancedConnectionRequest {
      * Get body
      * @return body
      */
-    public DisassociateConnectionQueueReq getBody() {
+    public DisassociateQueueFromEnhancedConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DisassociateConnectionQueueReq body) {
+    public void setBody(DisassociateQueueFromEnhancedConnectionRequestBody body) {
         this.body = body;
     }
 

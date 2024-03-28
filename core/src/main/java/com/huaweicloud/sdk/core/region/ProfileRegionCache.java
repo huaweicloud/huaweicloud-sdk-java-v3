@@ -86,40 +86,30 @@ public class ProfileRegionCache {
         }
     }
 
-    @SuppressWarnings("unchecked")
     private static Map<String, Region> resolveRegions(String filepath) {
         Map<String, Region> result = new LinkedHashMap<>();
-        Yaml yaml;
-        try {
-            yaml = new Yaml(new SafeConstructor(new LoaderOptions()));
-        } catch (NoClassDefFoundError | NoSuchMethodError ignore) {
-            try {
-                yaml = Yaml.class.newInstance();
-                logger.warn("Initialize Yaml failed due to version conflict," +
-                        " use default construct to reinitialize." +
-                        " It is recommended that you use org.yaml:snakeyaml v2.0+" +
-                        " for better security and compatibility.");
-            } catch (InstantiationException | IllegalAccessException e) {
-                String message = "Failed to initialize yaml loader.";
-                logger.error(message, e);
-                throw new SdkException(message, e);
-            }
+        Object obj = loadYaml(filepath);
+        if (!(obj instanceof Map)) {
+            return result;
         }
-        Map<?, ?> map;
-        try (FileInputStream inputStream = new FileInputStream(filepath)) {
-            Object obj = yaml.load(inputStream);
-            if (obj instanceof Map) {
-                map = (Map<?, ?>) obj;
-            } else {
-                return result;
-            }
-        } catch (IOException e) {
-            String message = String.format("Failed to resolve file '%s'", filepath);
+
+        try {
+            return processRegions(obj);
+        } catch (ClassCastException e) {
+            String message = String.format("failed to resolve file '%s'", filepath);
             logger.error(message, e);
             throw new SdkException(message, e);
         }
+    }
 
-        Iterator<? extends Map.Entry<?, ?>> iterator = map.entrySet().iterator();
+    @SuppressWarnings("unchecked")
+    private static Map<String, Region> processRegions(Object obj) {
+        Map<String, Region> result = new LinkedHashMap<>();
+        if (!(obj instanceof Map)) {
+            return result;
+        }
+
+        Iterator<? extends Map.Entry<?, ?>> iterator = ((Map<String, ?>) obj).entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<?, ?> next = iterator.next();
             if (!(next.getValue() instanceof List)) {
@@ -129,34 +119,63 @@ public class ProfileRegionCache {
                 if (!(o instanceof Map)) {
                     continue;
                 }
-                try {
-                    Map<?, ?> regionMap = (Map<?, ?>) o;
-                    String id = (String) regionMap.get("id");
-                    if (StringUtils.isEmpty(id)) {
-                        continue;
-                    }
-
-                    String endpoint = (String) regionMap.get("endpoint");
-                    List<String> endpoints = (List<String>) regionMap.get("endpoints");
-                    if (Objects.isNull(endpoints)) {
-                        endpoints = new ArrayList<>();
-                    }
-                    if (!StringUtils.isEmpty(endpoint)) {
-                        endpoints.add(endpoint);
-                    }
-
-                    if (!endpoints.isEmpty()) {
-                        Region region = new Region(id, endpoints.toArray(new String[0]));
-                        result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, region);
-                    }
-                } catch (ClassCastException e) {
-                    String message = String.format("failed to resolve file '%s'", filepath);
-                    logger.error(message, e);
-                    throw new SdkException(message, e);
+                Map<String, ?> regionMap = (Map<String, ?>) o;
+                String id = (String) regionMap.get("id");
+                if (StringUtils.isEmpty(id)) {
+                    continue;
                 }
+
+                List<String> endpoints = processEndpoints(regionMap);
+                if (endpoints.isEmpty()) {
+                    continue;
+                }
+                Region region = new Region(id, endpoints.toArray(new String[0]));
+                result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, region);
             }
         }
         return result;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static List<String> processEndpoints(Map<String, ?> regionMap) {
+        String endpoint = (String) regionMap.get("endpoint");
+        List<String> endpoints = (List<String>) regionMap.get("endpoints");
+        if (Objects.isNull(endpoints)) {
+            endpoints = new ArrayList<>();
+        }
+        if (!StringUtils.isEmpty(endpoint)) {
+            endpoints.add(endpoint);
+        }
+        return endpoints;
+    }
+
+    private static Object loadYaml(String filepath) {
+        Yaml yaml = buildYaml();
+        try (FileInputStream inputStream = new FileInputStream(filepath)) {
+            return yaml.load(inputStream);
+        } catch (IOException e) {
+            String message = String.format("Failed to resolve file '%s'", filepath);
+            logger.error(message, e);
+            throw new SdkException(message, e);
+        }
+    }
+
+    private static Yaml buildYaml() {
+        try {
+            return new Yaml(new SafeConstructor(new LoaderOptions()));
+        } catch (NoClassDefFoundError | NoSuchMethodError ignore) {
+            try {
+                logger.warn("Initialize Yaml failed due to version conflict," +
+                        " use default construct to reinitialize." +
+                        " It is recommended that you use org.yaml:snakeyaml v2.0+" +
+                        " for better security and compatibility.");
+                return Yaml.class.newInstance();
+            } catch (InstantiationException | IllegalAccessException e) {
+                String message = "Failed to initialize yaml loader.";
+                logger.error(message, e);
+                throw new SdkException(message, e);
+            }
+        }
     }
 
     private static String getRegionsFilePath() {

@@ -14,16 +14,16 @@ public class CreateDatasourceConnectionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateDatasourceConnectionReq body;
+    private CreateDatasourceConnectionRequestBody body;
 
-    public CreateDatasourceConnectionRequest withBody(CreateDatasourceConnectionReq body) {
+    public CreateDatasourceConnectionRequest withBody(CreateDatasourceConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateDatasourceConnectionRequest withBody(Consumer<CreateDatasourceConnectionReq> bodySetter) {
+    public CreateDatasourceConnectionRequest withBody(Consumer<CreateDatasourceConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateDatasourceConnectionReq();
+            this.body = new CreateDatasourceConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateDatasourceConnectionRequest {
      * Get body
      * @return body
      */
-    public CreateDatasourceConnectionReq getBody() {
+    public CreateDatasourceConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateDatasourceConnectionReq body) {
+    public void setBody(CreateDatasourceConnectionRequestBody body) {
         this.body = body;
     }
 

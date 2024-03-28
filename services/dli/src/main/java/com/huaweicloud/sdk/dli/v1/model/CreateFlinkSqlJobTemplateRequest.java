@@ -14,16 +14,16 @@ public class CreateFlinkSqlJobTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateFlinkTemplateRequestBody body;
+    private CreateFlinkSqlJobTemplateRequestBody body;
 
-    public CreateFlinkSqlJobTemplateRequest withBody(CreateFlinkTemplateRequestBody body) {
+    public CreateFlinkSqlJobTemplateRequest withBody(CreateFlinkSqlJobTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateFlinkSqlJobTemplateRequest withBody(Consumer<CreateFlinkTemplateRequestBody> bodySetter) {
+    public CreateFlinkSqlJobTemplateRequest withBody(Consumer<CreateFlinkSqlJobTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateFlinkTemplateRequestBody();
+            this.body = new CreateFlinkSqlJobTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateFlinkSqlJobTemplateRequest {
      * Get body
      * @return body
      */
-    public CreateFlinkTemplateRequestBody getBody() {
+    public CreateFlinkSqlJobTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateFlinkTemplateRequestBody body) {
+    public void setBody(CreateFlinkSqlJobTemplateRequestBody body) {
         this.body = body;
     }
 

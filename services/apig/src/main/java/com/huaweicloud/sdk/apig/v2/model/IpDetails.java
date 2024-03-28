@@ -16,6 +16,11 @@ public class IpDetails {
     private String ipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_address")
+
+    private String ipv6Address;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
     private Integer bandwidthSize;
@@ -35,6 +40,23 @@ public class IpDetails {
 
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
+    }
+
+    public IpDetails withIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+        return this;
+    }
+
+    /**
+     * IPV6地址
+     * @return ipv6Address
+     */
+    public String getIpv6Address() {
+        return ipv6Address;
+    }
+
+    public void setIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
     }
 
     public IpDetails withBandwidthSize(Integer bandwidthSize) {
@@ -63,12 +85,13 @@ public class IpDetails {
             return false;
         }
         IpDetails that = (IpDetails) obj;
-        return Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.bandwidthSize, that.bandwidthSize);
+        return Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.ipv6Address, that.ipv6Address)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipAddress, bandwidthSize);
+        return Objects.hash(ipAddress, ipv6Address, bandwidthSize);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class IpDetails {
         StringBuilder sb = new StringBuilder();
         sb.append("class IpDetails {\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("}");
         return sb.toString();

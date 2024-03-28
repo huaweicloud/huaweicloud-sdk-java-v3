@@ -14,16 +14,16 @@ public class BatchDeleteSqlJobTemplatesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DeleteSqlTemplatesRequestBody body;
+    private BatchDeleteSqlJobTemplatesRequestBody body;
 
-    public BatchDeleteSqlJobTemplatesRequest withBody(DeleteSqlTemplatesRequestBody body) {
+    public BatchDeleteSqlJobTemplatesRequest withBody(BatchDeleteSqlJobTemplatesRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteSqlJobTemplatesRequest withBody(Consumer<DeleteSqlTemplatesRequestBody> bodySetter) {
+    public BatchDeleteSqlJobTemplatesRequest withBody(Consumer<BatchDeleteSqlJobTemplatesRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DeleteSqlTemplatesRequestBody();
+            this.body = new BatchDeleteSqlJobTemplatesRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class BatchDeleteSqlJobTemplatesRequest {
      * Get body
      * @return body
      */
-    public DeleteSqlTemplatesRequestBody getBody() {
+    public BatchDeleteSqlJobTemplatesRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DeleteSqlTemplatesRequestBody body) {
+    public void setBody(BatchDeleteSqlJobTemplatesRequestBody body) {
         this.body = body;
     }
 

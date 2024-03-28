@@ -160,6 +160,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean sslEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_ssl_enable")
+
+    private Boolean brokerSslEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_security_protocol")
 
     private String kafkaSecurityProtocol;
@@ -375,6 +380,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zone_names")
+
+    private List<String> availableZoneNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_storage_space")
 
     private Integer totalStorageSpace;
@@ -503,6 +513,11 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "enable_log_collection")
 
     private Boolean enableLogCollection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_auth_cert")
+
+    private Boolean newAuthCert;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_vpc_info")
@@ -844,7 +859,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 资源规格标识。   - dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。
+     * 资源规格标识。   [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1108,6 +1123,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
+    }
+
+    public ShowInstanceResponse withBrokerSslEnable(Boolean brokerSslEnable) {
+        this.brokerSslEnable = brokerSslEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启broker间副本加密传输。 - true：开启 - false：未开启
+     * @return brokerSslEnable
+     */
+    public Boolean getBrokerSslEnable() {
+        return brokerSslEnable;
+    }
+
+    public void setBrokerSslEnable(Boolean brokerSslEnable) {
+        this.brokerSslEnable = brokerSslEnable;
     }
 
     public ShowInstanceResponse withKafkaSecurityProtocol(String kafkaSecurityProtocol) {
@@ -1398,6 +1430,39 @@ public class ShowInstanceResponse extends SdkResponse {
         this.availableZones = availableZones;
     }
 
+    public ShowInstanceResponse withAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
+        return this;
+    }
+
+    public ShowInstanceResponse addAvailableZoneNamesItem(String availableZoneNamesItem) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        this.availableZoneNames.add(availableZoneNamesItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withAvailableZoneNames(Consumer<List<String>> availableZoneNamesSetter) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        availableZoneNamesSetter.accept(this.availableZoneNames);
+        return this;
+    }
+
+    /**
+     * 实例节点所在的可用区名称，返回“可用区名称”。
+     * @return availableZoneNames
+     */
+    public List<String> getAvailableZoneNames() {
+        return availableZoneNames;
+    }
+
+    public void setAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
+    }
+
     public ShowInstanceResponse withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1600,6 +1665,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setEnableLogCollection(Boolean enableLogCollection) {
         this.enableLogCollection = enableLogCollection;
+    }
+
+    public ShowInstanceResponse withNewAuthCert(Boolean newAuthCert) {
+        this.newAuthCert = newAuthCert;
+        return this;
+    }
+
+    /**
+     * 是否开启新证书。
+     * @return newAuthCert
+     */
+    public Boolean getNewAuthCert() {
+        return newAuthCert;
+    }
+
+    public void setNewAuthCert(Boolean newAuthCert) {
+        this.newAuthCert = newAuthCert;
     }
 
     public ShowInstanceResponse withCrossVpcInfo(String crossVpcInfo) {
@@ -2105,6 +2187,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.enablePublicip, that.enablePublicip)
             && Objects.equals(this.managementConnectAddress, that.managementConnectAddress)
             && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.brokerSslEnable, that.brokerSslEnable)
             && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
             && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
             && Objects.equals(this.sslTwoWayEnable, that.sslTwoWayEnable)
@@ -2118,6 +2201,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.securityGroupName, that.securityGroupName)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.availableZoneNames, that.availableZoneNames)
             && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
             && Objects.equals(this.publicConnectAddress, that.publicConnectAddress)
             && Objects.equals(this.storageResourceId, that.storageResourceId)
@@ -2129,6 +2213,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.kafkaManagerEnable, that.kafkaManagerEnable)
             && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
             && Objects.equals(this.enableLogCollection, that.enableLogCollection)
+            && Objects.equals(this.newAuthCert, that.newAuthCert)
             && Objects.equals(this.crossVpcInfo, that.crossVpcInfo) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
             && Objects.equals(this.connectorEnable, that.connectorEnable)
@@ -2182,6 +2267,7 @@ public class ShowInstanceResponse extends SdkResponse {
             enablePublicip,
             managementConnectAddress,
             sslEnable,
+            brokerSslEnable,
             kafkaSecurityProtocol,
             saslEnabledMechanisms,
             sslTwoWayEnable,
@@ -2197,6 +2283,7 @@ public class ShowInstanceResponse extends SdkResponse {
             securityGroupName,
             subnetId,
             availableZones,
+            availableZoneNames,
             totalStorageSpace,
             publicConnectAddress,
             storageResourceId,
@@ -2209,6 +2296,7 @@ public class ShowInstanceResponse extends SdkResponse {
             kafkaManagerEnable,
             kafkaManagerUser,
             enableLogCollection,
+            newAuthCert,
             crossVpcInfo,
             ipv6Enable,
             ipv6ConnectAddresses,
@@ -2269,6 +2357,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    managementConnectAddress: ").append(toIndentedString(managementConnectAddress)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    brokerSslEnable: ").append(toIndentedString(brokerSslEnable)).append("\n");
         sb.append("    kafkaSecurityProtocol: ").append(toIndentedString(kafkaSecurityProtocol)).append("\n");
         sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    sslTwoWayEnable: ").append(toIndentedString(sslTwoWayEnable)).append("\n");
@@ -2286,6 +2375,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    securityGroupName: ").append(toIndentedString(securityGroupName)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
+        sb.append("    availableZoneNames: ").append(toIndentedString(availableZoneNames)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    publicConnectAddress: ").append(toIndentedString(publicConnectAddress)).append("\n");
         sb.append("    storageResourceId: ").append(toIndentedString(storageResourceId)).append("\n");
@@ -2298,6 +2388,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    kafkaManagerEnable: ").append(toIndentedString(kafkaManagerEnable)).append("\n");
         sb.append("    kafkaManagerUser: ").append(toIndentedString(kafkaManagerUser)).append("\n");
         sb.append("    enableLogCollection: ").append(toIndentedString(enableLogCollection)).append("\n");
+        sb.append("    newAuthCert: ").append(toIndentedString(newAuthCert)).append("\n");
         sb.append("    crossVpcInfo: ").append(toIndentedString(crossVpcInfo)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");

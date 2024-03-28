@@ -15,11 +15,6 @@ public class DeleteConnectorRequest {
 
     private String instanceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private Object body;
-
     public DeleteConnectorRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -37,23 +32,6 @@ public class DeleteConnectorRequest {
         this.instanceId = instanceId;
     }
 
-    public DeleteConnectorRequest withBody(Object body) {
-        this.body = body;
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public Object getBody() {
-        return body;
-    }
-
-    public void setBody(Object body) {
-        this.body = body;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +41,12 @@ public class DeleteConnectorRequest {
             return false;
         }
         DeleteConnectorRequest that = (DeleteConnectorRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(instanceId);
     }
 
     @Override
@@ -76,7 +54,6 @@ public class DeleteConnectorRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteConnectorRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

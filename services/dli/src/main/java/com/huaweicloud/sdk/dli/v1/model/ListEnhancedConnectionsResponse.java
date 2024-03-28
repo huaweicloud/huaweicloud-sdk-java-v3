@@ -27,7 +27,7 @@ public class ListEnhancedConnectionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connections")
 
-    private List<ListEnhancedConnectionsDetail> connections = null;
+    private List<EnhancedConnection> connections = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -68,12 +68,12 @@ public class ListEnhancedConnectionsResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListEnhancedConnectionsResponse withConnections(List<ListEnhancedConnectionsDetail> connections) {
+    public ListEnhancedConnectionsResponse withConnections(List<EnhancedConnection> connections) {
         this.connections = connections;
         return this;
     }
 
-    public ListEnhancedConnectionsResponse addConnectionsItem(ListEnhancedConnectionsDetail connectionsItem) {
+    public ListEnhancedConnectionsResponse addConnectionsItem(EnhancedConnection connectionsItem) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -81,8 +81,7 @@ public class ListEnhancedConnectionsResponse extends SdkResponse {
         return this;
     }
 
-    public ListEnhancedConnectionsResponse withConnections(
-        Consumer<List<ListEnhancedConnectionsDetail>> connectionsSetter) {
+    public ListEnhancedConnectionsResponse withConnections(Consumer<List<EnhancedConnection>> connectionsSetter) {
         if (this.connections == null) {
             this.connections = new ArrayList<>();
         }
@@ -94,11 +93,11 @@ public class ListEnhancedConnectionsResponse extends SdkResponse {
      * 跨源连接信息列表。
      * @return connections
      */
-    public List<ListEnhancedConnectionsDetail> getConnections() {
+    public List<EnhancedConnection> getConnections() {
         return connections;
     }
 
-    public void setConnections(List<ListEnhancedConnectionsDetail> connections) {
+    public void setConnections(List<EnhancedConnection> connections) {
         this.connections = connections;
     }
 

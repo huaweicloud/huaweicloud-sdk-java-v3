@@ -19,7 +19,7 @@ public class UpdateSqlJobTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateSqlTemplatesRequestBody body;
+    private UpdateSqlJobTemplateRequestBody body;
 
     public UpdateSqlJobTemplateRequest withSqlId(String sqlId) {
         this.sqlId = sqlId;
@@ -38,14 +38,14 @@ public class UpdateSqlJobTemplateRequest {
         this.sqlId = sqlId;
     }
 
-    public UpdateSqlJobTemplateRequest withBody(UpdateSqlTemplatesRequestBody body) {
+    public UpdateSqlJobTemplateRequest withBody(UpdateSqlJobTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSqlJobTemplateRequest withBody(Consumer<UpdateSqlTemplatesRequestBody> bodySetter) {
+    public UpdateSqlJobTemplateRequest withBody(Consumer<UpdateSqlJobTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateSqlTemplatesRequestBody();
+            this.body = new UpdateSqlJobTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateSqlJobTemplateRequest {
      * Get body
      * @return body
      */
-    public UpdateSqlTemplatesRequestBody getBody() {
+    public UpdateSqlJobTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateSqlTemplatesRequestBody body) {
+    public void setBody(UpdateSqlJobTemplateRequestBody body) {
         this.body = body;
     }
 

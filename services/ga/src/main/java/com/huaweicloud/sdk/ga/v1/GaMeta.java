@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorResponse;
@@ -64,6 +66,11 @@ import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequestBody;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
@@ -1132,6 +1139,35 @@ public class GaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountResourcesByTagRequest, CountResourcesByTagResponse> countResourcesByTag =
+        genForCountResourcesByTag();
+
+    private static HttpRequestDef<CountResourcesByTagRequest, CountResourcesByTagResponse> genForCountResourcesByTag() {
+        // basic
+        HttpRequestDef.Builder<CountResourcesByTagRequest, CountResourcesByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CountResourcesByTagRequest.class, CountResourcesByTagResponse.class)
+                .withName("CountResourcesByTag")
+                .withUri("/v1/{resource_type}/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(CountResourcesByTagRequest::getResourceType,
+                CountResourcesByTagRequest::setResourceType));
+        builder.<ListResourcesByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagRequestBody.class),
+            f -> f.withMarshaller(CountResourcesByTagRequest::getBody, CountResourcesByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
 
     private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
@@ -1190,6 +1226,77 @@ public class GaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
             f -> f.withMarshaller(DeleteTagsRequest::getBody, DeleteTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourcesByTagRequest, ListResourcesByTagResponse> listResourcesByTag =
+        genForListResourcesByTag();
+
+    private static HttpRequestDef<ListResourcesByTagRequest, ListResourcesByTagResponse> genForListResourcesByTag() {
+        // basic
+        HttpRequestDef.Builder<ListResourcesByTagRequest, ListResourcesByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagRequest.class, ListResourcesByTagResponse.class)
+                .withName("ListResourcesByTag")
+                .withUri("/v1/{resource_type}/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getResourceType,
+                ListResourcesByTagRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getLimit, ListResourcesByTagRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getOffset, ListResourcesByTagRequest::setOffset));
+        builder.<ListResourcesByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagRequestBody.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getBody, ListResourcesByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v1/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsRequest::getLimit, ListTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsRequest::getOffset, ListTagsRequest::setOffset));
 
         // response
 

@@ -123,6 +123,11 @@ public class ApiGroupCommonInfo {
 
     private List<UrlDomain> urlDomains = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sl_domain_access_enabled")
+
+    private Boolean slDomainAccessEnabled;
+
     public ApiGroupCommonInfo withId(String id) {
         this.id = id;
         return this;
@@ -275,6 +280,23 @@ public class ApiGroupCommonInfo {
         this.urlDomains = urlDomains;
     }
 
+    public ApiGroupCommonInfo withSlDomainAccessEnabled(Boolean slDomainAccessEnabled) {
+        this.slDomainAccessEnabled = slDomainAccessEnabled;
+        return this;
+    }
+
+    /**
+     * 调试域名是否可以访问，true表示可以访问，false表示禁止访问
+     * @return slDomainAccessEnabled
+     */
+    public Boolean getSlDomainAccessEnabled() {
+        return slDomainAccessEnabled;
+    }
+
+    public void setSlDomainAccessEnabled(Boolean slDomainAccessEnabled) {
+        this.slDomainAccessEnabled = slDomainAccessEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -287,12 +309,21 @@ public class ApiGroupCommonInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.slDomain, that.slDomain)
             && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains);
+            && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains)
+            && Objects.equals(this.slDomainAccessEnabled, that.slDomainAccessEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, slDomain, registerTime, updateTime, onSellStatus, urlDomains);
+        return Objects.hash(id,
+            name,
+            status,
+            slDomain,
+            registerTime,
+            updateTime,
+            onSellStatus,
+            urlDomains,
+            slDomainAccessEnabled);
     }
 
     @Override
@@ -307,6 +338,7 @@ public class ApiGroupCommonInfo {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    onSellStatus: ").append(toIndentedString(onSellStatus)).append("\n");
         sb.append("    urlDomains: ").append(toIndentedString(urlDomains)).append("\n");
+        sb.append("    slDomainAccessEnabled: ").append(toIndentedString(slDomainAccessEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

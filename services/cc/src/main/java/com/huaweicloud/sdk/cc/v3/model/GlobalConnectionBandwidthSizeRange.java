@@ -18,22 +18,22 @@ public class GlobalConnectionBandwidthSizeRange {
     /**
      * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
      */
-    public static final class ChargeModeEnum {
+    public static final class TypeEnum {
 
         /**
          * Enum BWD for value: "bwd"
          */
-        public static final ChargeModeEnum BWD = new ChargeModeEnum("bwd");
+        public static final TypeEnum BWD = new TypeEnum("bwd");
 
         /**
          * Enum _95 for value: "95"
          */
-        public static final ChargeModeEnum _95 = new ChargeModeEnum("95");
+        public static final TypeEnum _95 = new TypeEnum("95");
 
-        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, ChargeModeEnum> createStaticFields() {
-            Map<String, ChargeModeEnum> map = new HashMap<>();
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
             map.put("bwd", BWD);
             map.put("95", _95);
             return Collections.unmodifiableMap(map);
@@ -41,7 +41,7 @@ public class GlobalConnectionBandwidthSizeRange {
 
         private String value;
 
-        ChargeModeEnum(String value) {
+        TypeEnum(String value) {
             this.value = value;
         }
 
@@ -56,14 +56,14 @@ public class GlobalConnectionBandwidthSizeRange {
         }
 
         @JsonCreator
-        public static ChargeModeEnum fromValue(String value) {
+        public static TypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
-        public static ChargeModeEnum valueOf(String value) {
+        public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -73,8 +73,8 @@ public class GlobalConnectionBandwidthSizeRange {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ChargeModeEnum) {
-                return this.value.equals(((ChargeModeEnum) obj).value);
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
         }
@@ -86,9 +86,9 @@ public class GlobalConnectionBandwidthSizeRange {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "charge_mode")
+    @JsonProperty(value = "type")
 
-    private ChargeModeEnum chargeMode;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min")
@@ -100,21 +100,21 @@ public class GlobalConnectionBandwidthSizeRange {
 
     private Integer max;
 
-    public GlobalConnectionBandwidthSizeRange withChargeMode(ChargeModeEnum chargeMode) {
-        this.chargeMode = chargeMode;
+    public GlobalConnectionBandwidthSizeRange withType(TypeEnum type) {
+        this.type = type;
         return this;
     }
 
     /**
      * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
-     * @return chargeMode
+     * @return type
      */
-    public ChargeModeEnum getChargeMode() {
-        return chargeMode;
+    public TypeEnum getType() {
+        return type;
     }
 
-    public void setChargeMode(ChargeModeEnum chargeMode) {
-        this.chargeMode = chargeMode;
+    public void setType(TypeEnum type) {
+        this.type = type;
     }
 
     public GlobalConnectionBandwidthSizeRange withMin(Integer min) {
@@ -164,20 +164,20 @@ public class GlobalConnectionBandwidthSizeRange {
             return false;
         }
         GlobalConnectionBandwidthSizeRange that = (GlobalConnectionBandwidthSizeRange) obj;
-        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.min, that.min)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.min, that.min)
             && Objects.equals(this.max, that.max);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargeMode, min, max);
+        return Objects.hash(type, min, max);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlobalConnectionBandwidthSizeRange {\n");
-        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");
         sb.append("}");

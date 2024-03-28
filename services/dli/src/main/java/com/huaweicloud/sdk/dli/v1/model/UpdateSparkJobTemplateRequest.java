@@ -19,7 +19,7 @@ public class UpdateSparkJobTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateJobTemplatesRequestBody body;
+    private UpdateSparkJobTemplateRequestBody body;
 
     public UpdateSparkJobTemplateRequest withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -38,14 +38,14 @@ public class UpdateSparkJobTemplateRequest {
         this.templateId = templateId;
     }
 
-    public UpdateSparkJobTemplateRequest withBody(UpdateJobTemplatesRequestBody body) {
+    public UpdateSparkJobTemplateRequest withBody(UpdateSparkJobTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSparkJobTemplateRequest withBody(Consumer<UpdateJobTemplatesRequestBody> bodySetter) {
+    public UpdateSparkJobTemplateRequest withBody(Consumer<UpdateSparkJobTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateJobTemplatesRequestBody();
+            this.body = new UpdateSparkJobTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateSparkJobTemplateRequest {
      * Get body
      * @return body
      */
-    public UpdateJobTemplatesRequestBody getBody() {
+    public UpdateSparkJobTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateJobTemplatesRequestBody body) {
+    public void setBody(UpdateSparkJobTemplateRequestBody body) {
         this.body = body;
     }
 

@@ -27,7 +27,7 @@ public class ListQueuesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
-    private List<QueueDetails> queues = null;
+    private List<Queue> queues = null;
 
     public ListQueuesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ListQueuesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListQueuesResponse withQueues(List<QueueDetails> queues) {
+    public ListQueuesResponse withQueues(List<Queue> queues) {
         this.queues = queues;
         return this;
     }
 
-    public ListQueuesResponse addQueuesItem(QueueDetails queuesItem) {
+    public ListQueuesResponse addQueuesItem(Queue queuesItem) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListQueuesResponse extends SdkResponse {
         return this;
     }
 
-    public ListQueuesResponse withQueues(Consumer<List<QueueDetails>> queuesSetter) {
+    public ListQueuesResponse withQueues(Consumer<List<Queue>> queuesSetter) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListQueuesResponse extends SdkResponse {
      * 队列信息。
      * @return queues
      */
-    public List<QueueDetails> getQueues() {
+    public List<Queue> getQueues() {
         return queues;
     }
 
-    public void setQueues(List<QueueDetails> queues) {
+    public void setQueues(List<Queue> queues) {
         this.queues = queues;
     }
 

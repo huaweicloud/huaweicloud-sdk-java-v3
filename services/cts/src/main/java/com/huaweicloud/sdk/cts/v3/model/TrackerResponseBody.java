@@ -41,6 +41,75 @@ public class TrackerResponseBody {
 
     private Boolean isOrganizationTracker;
 
+    /**
+     * 云服务委托名称。
+     */
+    public static final class AgencyNameEnum {
+
+        /**
+         * Enum CTS_ADMIN_TRUST for value: "cts_admin_trust"
+         */
+        public static final AgencyNameEnum CTS_ADMIN_TRUST = new AgencyNameEnum("cts_admin_trust");
+
+        private static final Map<String, AgencyNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgencyNameEnum> createStaticFields() {
+            Map<String, AgencyNameEnum> map = new HashMap<>();
+            map.put("cts_admin_trust", CTS_ADMIN_TRUST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgencyNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgencyNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyNameEnum(value));
+        }
+
+        public static AgencyNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgencyNameEnum) {
+                return this.value.equals(((AgencyNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private AgencyNameEnum agencyName;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_event_selector")
 
@@ -333,6 +402,23 @@ public class TrackerResponseBody {
         this.isOrganizationTracker = isOrganizationTracker;
     }
 
+    public TrackerResponseBody withAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 云服务委托名称。
+     * @return agencyName
+     */
+    public AgencyNameEnum getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(AgencyNameEnum agencyName) {
+        this.agencyName = agencyName;
+    }
+
     public TrackerResponseBody withManagementEventSelector(ManagementEventSelector managementEventSelector) {
         this.managementEventSelector = managementEventSelector;
         return this;
@@ -603,6 +689,7 @@ public class TrackerResponseBody {
         return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.isSupportValidate, that.isSupportValidate)
             && Objects.equals(this.isOrganizationTracker, that.isOrganizationTracker)
+            && Objects.equals(this.agencyName, that.agencyName)
             && Objects.equals(this.managementEventSelector, that.managementEventSelector)
             && Objects.equals(this.lts, that.lts) && Objects.equals(this.trackerType, that.trackerType)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
@@ -620,6 +707,7 @@ public class TrackerResponseBody {
             kmsId,
             isSupportValidate,
             isOrganizationTracker,
+            agencyName,
             managementEventSelector,
             lts,
             trackerType,
@@ -644,6 +732,7 @@ public class TrackerResponseBody {
         sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("    isSupportValidate: ").append(toIndentedString(isSupportValidate)).append("\n");
         sb.append("    isOrganizationTracker: ").append(toIndentedString(isOrganizationTracker)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    managementEventSelector: ").append(toIndentedString(managementEventSelector)).append("\n");
         sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
         sb.append("    trackerType: ").append(toIndentedString(trackerType)).append("\n");

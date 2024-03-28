@@ -16,14 +16,14 @@ public class BatchUpdateConsumerGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    private List<ConsumerGroup> groups = null;
+    private List<CreateOrUpdateConsumerGroup> groups = null;
 
-    public BatchUpdateConsumerGroupReq withGroups(List<ConsumerGroup> groups) {
+    public BatchUpdateConsumerGroupReq withGroups(List<CreateOrUpdateConsumerGroup> groups) {
         this.groups = groups;
         return this;
     }
 
-    public BatchUpdateConsumerGroupReq addGroupsItem(ConsumerGroup groupsItem) {
+    public BatchUpdateConsumerGroupReq addGroupsItem(CreateOrUpdateConsumerGroup groupsItem) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class BatchUpdateConsumerGroupReq {
         return this;
     }
 
-    public BatchUpdateConsumerGroupReq withGroups(Consumer<List<ConsumerGroup>> groupsSetter) {
+    public BatchUpdateConsumerGroupReq withGroups(Consumer<List<CreateOrUpdateConsumerGroup>> groupsSetter) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class BatchUpdateConsumerGroupReq {
      * 消费组列表。
      * @return groups
      */
-    public List<ConsumerGroup> getGroups() {
+    public List<CreateOrUpdateConsumerGroup> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<ConsumerGroup> groups) {
+    public void setGroups(List<CreateOrUpdateConsumerGroup> groups) {
         this.groups = groups;
     }
 

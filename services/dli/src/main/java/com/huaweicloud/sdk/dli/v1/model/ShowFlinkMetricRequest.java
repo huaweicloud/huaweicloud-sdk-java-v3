@@ -14,16 +14,16 @@ public class ShowFlinkMetricRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ShowJobMonitorInfoReq body;
+    private ShowFlinkMetricRequestBody body;
 
-    public ShowFlinkMetricRequest withBody(ShowJobMonitorInfoReq body) {
+    public ShowFlinkMetricRequest withBody(ShowFlinkMetricRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ShowFlinkMetricRequest withBody(Consumer<ShowJobMonitorInfoReq> bodySetter) {
+    public ShowFlinkMetricRequest withBody(Consumer<ShowFlinkMetricRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ShowJobMonitorInfoReq();
+            this.body = new ShowFlinkMetricRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class ShowFlinkMetricRequest {
      * Get body
      * @return body
      */
-    public ShowJobMonitorInfoReq getBody() {
+    public ShowFlinkMetricRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ShowJobMonitorInfoReq body) {
+    public void setBody(ShowFlinkMetricRequestBody body) {
         this.body = body;
     }
 

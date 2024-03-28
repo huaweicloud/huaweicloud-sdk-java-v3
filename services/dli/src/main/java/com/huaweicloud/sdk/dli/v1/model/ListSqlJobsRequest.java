@@ -46,6 +46,11 @@ public class ListSqlJobsRequest {
     public static final class JobTypeEnum {
 
         /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final JobTypeEnum ALL = new JobTypeEnum("ALL");
+
+        /**
          * Enum DDL for value: "DDL"
          */
         public static final JobTypeEnum DDL = new JobTypeEnum("DDL");
@@ -79,6 +84,7 @@ public class ListSqlJobsRequest {
 
         private static Map<String, JobTypeEnum> createStaticFields() {
             Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("ALL", ALL);
             map.put("DDL", DDL);
             map.put("DCL", DCL);
             map.put("IMPORT", IMPORT);

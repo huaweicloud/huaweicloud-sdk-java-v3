@@ -174,8 +174,12 @@ import com.huaweicloud.sdk.apig.v2.model.DisassociateRequestThrottlingPolicyV2Re
 import com.huaweicloud.sdk.apig.v2.model.DisassociateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateSignatureKeyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateSignatureKeyV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsAsyncRequest;
+import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsAsyncResponse;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsAsyncRequest;
+import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsAsyncResponse;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ImportMicroserviceRequest;
@@ -256,6 +260,8 @@ import com.huaweicloud.sdk.apig.v2.model.ListGatewayResponsesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListGatewayResponsesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceConfigsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceConfigsV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Request;
@@ -304,6 +310,8 @@ import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Request;
@@ -386,6 +394,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSignatureKeyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSignatureKeyV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateSlDomainSettingV2Request;
+import com.huaweicloud.sdk.apig.v2.model.UpdateSlDomainSettingV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSpecialThrottlingConfigurationV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateSpecialThrottlingConfigurationV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateVpcChannelV2Request;
@@ -2028,6 +2038,66 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 异步导出API
+     *
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportApiDefinitionsAsyncRequest 请求对象
+     * @return CompletableFuture<ExportApiDefinitionsAsyncResponse>
+     */
+    public CompletableFuture<ExportApiDefinitionsAsyncResponse> exportApiDefinitionsAsyncAsync(
+        ExportApiDefinitionsAsyncRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.exportApiDefinitionsAsync);
+    }
+
+    /**
+     * 异步导出API
+     *
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportApiDefinitionsAsyncRequest 请求对象
+     * @return AsyncInvoker<ExportApiDefinitionsAsyncRequest, ExportApiDefinitionsAsyncResponse>
+     */
+    public AsyncInvoker<ExportApiDefinitionsAsyncRequest, ExportApiDefinitionsAsyncResponse> exportApiDefinitionsAsyncAsyncInvoker(
+        ExportApiDefinitionsAsyncRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.exportApiDefinitionsAsync, hcClient);
+    }
+
+    /**
+     * 异步导入API
+     *
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportApiDefinitionsAsyncRequest 请求对象
+     * @return CompletableFuture<ImportApiDefinitionsAsyncResponse>
+     */
+    public CompletableFuture<ImportApiDefinitionsAsyncResponse> importApiDefinitionsAsyncAsync(
+        ImportApiDefinitionsAsyncRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.importApiDefinitionsAsync);
+    }
+
+    /**
+     * 异步导入API
+     *
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportApiDefinitionsAsyncRequest 请求对象
+     * @return AsyncInvoker<ImportApiDefinitionsAsyncRequest, ImportApiDefinitionsAsyncResponse>
+     */
+    public AsyncInvoker<ImportApiDefinitionsAsyncRequest, ImportApiDefinitionsAsyncResponse> importApiDefinitionsAsyncAsyncInvoker(
+        ImportApiDefinitionsAsyncRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.importApiDefinitionsAsync, hcClient);
+    }
+
+    /**
      * 导入微服务
      *
      * 导入微服务。
@@ -2693,6 +2763,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 查询实例支持的特性列表
+     *
+     * 查询实例支持的特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceFeaturesRequest 请求对象
+     * @return CompletableFuture<ListInstanceFeaturesResponse>
+     */
+    public CompletableFuture<ListInstanceFeaturesResponse> listInstanceFeaturesAsync(
+        ListInstanceFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstanceFeatures);
+    }
+
+    /**
+     * 查询实例支持的特性列表
+     *
+     * 查询实例支持的特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListInstanceFeaturesRequest, ListInstanceFeaturesResponse>
+     */
+    public AsyncInvoker<ListInstanceFeaturesRequest, ListInstanceFeaturesResponse> listInstanceFeaturesAsyncInvoker(
+        ListInstanceFeaturesRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listInstanceFeatures, hcClient);
+    }
+
+    /**
      * 查询单个实例标签
      *
      * 查询单个实例的标签。
@@ -3334,6 +3434,35 @@ public class ApigAsyncClient {
     public AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuotaAsyncInvoker(
         ShowAppQuotaRequest request) {
         return new AsyncInvoker<>(request, ApigMeta.showAppQuota, hcClient);
+    }
+
+    /**
+     * 获取异步任务结果
+     *
+     * 获取异步任务结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAsyncTaskResultRequest 请求对象
+     * @return CompletableFuture<ShowAsyncTaskResultResponse>
+     */
+    public CompletableFuture<ShowAsyncTaskResultResponse> showAsyncTaskResultAsync(ShowAsyncTaskResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showAsyncTaskResult);
+    }
+
+    /**
+     * 获取异步任务结果
+     *
+     * 获取异步任务结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAsyncTaskResultRequest 请求对象
+     * @return AsyncInvoker<ShowAsyncTaskResultRequest, ShowAsyncTaskResultResponse>
+     */
+    public AsyncInvoker<ShowAsyncTaskResultRequest, ShowAsyncTaskResultResponse> showAsyncTaskResultAsyncInvoker(
+        ShowAsyncTaskResultRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.showAsyncTaskResult, hcClient);
     }
 
     /**
@@ -4164,6 +4293,36 @@ public class ApigAsyncClient {
     public AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> updateSignatureKeyV2AsyncInvoker(
         UpdateSignatureKeyV2Request request) {
         return new AsyncInvoker<>(request, ApigMeta.updateSignatureKeyV2, hcClient);
+    }
+
+    /**
+     * 设置调试域名是否可以访问
+     *
+     * 禁用或启用API分组绑定的调试域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSlDomainSettingV2Request 请求对象
+     * @return CompletableFuture<UpdateSlDomainSettingV2Response>
+     */
+    public CompletableFuture<UpdateSlDomainSettingV2Response> updateSlDomainSettingV2Async(
+        UpdateSlDomainSettingV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateSlDomainSettingV2);
+    }
+
+    /**
+     * 设置调试域名是否可以访问
+     *
+     * 禁用或启用API分组绑定的调试域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSlDomainSettingV2Request 请求对象
+     * @return AsyncInvoker<UpdateSlDomainSettingV2Request, UpdateSlDomainSettingV2Response>
+     */
+    public AsyncInvoker<UpdateSlDomainSettingV2Request, UpdateSlDomainSettingV2Response> updateSlDomainSettingV2AsyncInvoker(
+        UpdateSlDomainSettingV2Request request) {
+        return new AsyncInvoker<>(request, ApigMeta.updateSlDomainSettingV2, hcClient);
     }
 
     /**

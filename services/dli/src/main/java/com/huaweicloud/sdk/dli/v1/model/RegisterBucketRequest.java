@@ -14,16 +14,16 @@ public class RegisterBucketRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ObsBuckets body;
+    private RegisterBucketRequestBody body;
 
-    public RegisterBucketRequest withBody(ObsBuckets body) {
+    public RegisterBucketRequest withBody(RegisterBucketRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RegisterBucketRequest withBody(Consumer<ObsBuckets> bodySetter) {
+    public RegisterBucketRequest withBody(Consumer<RegisterBucketRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ObsBuckets();
+            this.body = new RegisterBucketRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RegisterBucketRequest {
      * Get body
      * @return body
      */
-    public ObsBuckets getBody() {
+    public RegisterBucketRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ObsBuckets body) {
+    public void setBody(RegisterBucketRequestBody body) {
         this.body = body;
     }
 

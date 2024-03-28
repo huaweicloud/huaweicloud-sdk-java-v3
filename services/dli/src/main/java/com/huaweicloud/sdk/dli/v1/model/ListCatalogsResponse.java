@@ -27,7 +27,7 @@ public class ListCatalogsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalogs")
 
-    private List<CatalogEntity> catalogs = null;
+    private List<Catalog> catalogs = null;
 
     public ListCatalogsResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ListCatalogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListCatalogsResponse withCatalogs(List<CatalogEntity> catalogs) {
+    public ListCatalogsResponse withCatalogs(List<Catalog> catalogs) {
         this.catalogs = catalogs;
         return this;
     }
 
-    public ListCatalogsResponse addCatalogsItem(CatalogEntity catalogsItem) {
+    public ListCatalogsResponse addCatalogsItem(Catalog catalogsItem) {
         if (this.catalogs == null) {
             this.catalogs = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListCatalogsResponse extends SdkResponse {
         return this;
     }
 
-    public ListCatalogsResponse withCatalogs(Consumer<List<CatalogEntity>> catalogsSetter) {
+    public ListCatalogsResponse withCatalogs(Consumer<List<Catalog>> catalogsSetter) {
         if (this.catalogs == null) {
             this.catalogs = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListCatalogsResponse extends SdkResponse {
      * 项目下所有catalog信息
      * @return catalogs
      */
-    public List<CatalogEntity> getCatalogs() {
+    public List<Catalog> getCatalogs() {
         return catalogs;
     }
 
-    public void setCatalogs(List<CatalogEntity> catalogs) {
+    public void setCatalogs(List<Catalog> catalogs) {
         this.catalogs = catalogs;
     }
 

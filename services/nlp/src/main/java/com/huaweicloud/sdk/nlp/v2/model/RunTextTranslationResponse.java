@@ -22,6 +22,16 @@ public class RunTextTranslationResponse extends SdkResponse {
     private String translatedText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from")
+
+    private String from;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to")
+
+    private String to;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
     private String errorCode;
@@ -63,6 +73,40 @@ public class RunTextTranslationResponse extends SdkResponse {
 
     public void setTranslatedText(String translatedText) {
         this.translatedText = translatedText;
+    }
+
+    public RunTextTranslationResponse withFrom(String from) {
+        this.from = from;
+        return this;
+    }
+
+    /**
+     * 调用成功时表示源语种（源语种输入为auto时，显示语种识别结果），编码格式为UTF-8。调用失败时无此字段。
+     * @return from
+     */
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public RunTextTranslationResponse withTo(String to) {
+        this.to = to;
+        return this;
+    }
+
+    /**
+     * 调用成功时表示目标语种，编码格式为UTF-8。调用失败时无此字段。
+     * @return to
+     */
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 
     public RunTextTranslationResponse withErrorCode(String errorCode) {
@@ -109,12 +153,13 @@ public class RunTextTranslationResponse extends SdkResponse {
         }
         RunTextTranslationResponse that = (RunTextTranslationResponse) obj;
         return Objects.equals(this.srcText, that.srcText) && Objects.equals(this.translatedText, that.translatedText)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
             && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(srcText, translatedText, errorCode, errorMsg);
+        return Objects.hash(srcText, translatedText, from, to, errorCode, errorMsg);
     }
 
     @Override
@@ -123,6 +168,8 @@ public class RunTextTranslationResponse extends SdkResponse {
         sb.append("class RunTextTranslationResponse {\n");
         sb.append("    srcText: ").append(toIndentedString(srcText)).append("\n");
         sb.append("    translatedText: ").append(toIndentedString(translatedText)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");

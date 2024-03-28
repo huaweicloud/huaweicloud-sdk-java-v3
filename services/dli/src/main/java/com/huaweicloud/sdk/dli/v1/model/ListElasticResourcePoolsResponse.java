@@ -32,7 +32,7 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "elastic_resource_pools")
 
-    private List<ElasticResourcePoolsResponse> elasticResourcePools = null;
+    private List<ElasticResourcePool> elasticResourcePools = null;
 
     public ListElasticResourcePoolsResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,14 +85,12 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListElasticResourcePoolsResponse withElasticResourcePools(
-        List<ElasticResourcePoolsResponse> elasticResourcePools) {
+    public ListElasticResourcePoolsResponse withElasticResourcePools(List<ElasticResourcePool> elasticResourcePools) {
         this.elasticResourcePools = elasticResourcePools;
         return this;
     }
 
-    public ListElasticResourcePoolsResponse addElasticResourcePoolsItem(
-        ElasticResourcePoolsResponse elasticResourcePoolsItem) {
+    public ListElasticResourcePoolsResponse addElasticResourcePoolsItem(ElasticResourcePool elasticResourcePoolsItem) {
         if (this.elasticResourcePools == null) {
             this.elasticResourcePools = new ArrayList<>();
         }
@@ -101,7 +99,7 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
     }
 
     public ListElasticResourcePoolsResponse withElasticResourcePools(
-        Consumer<List<ElasticResourcePoolsResponse>> elasticResourcePoolsSetter) {
+        Consumer<List<ElasticResourcePool>> elasticResourcePoolsSetter) {
         if (this.elasticResourcePools == null) {
             this.elasticResourcePools = new ArrayList<>();
         }
@@ -113,11 +111,11 @@ public class ListElasticResourcePoolsResponse extends SdkResponse {
      * 弹性资源池列表
      * @return elasticResourcePools
      */
-    public List<ElasticResourcePoolsResponse> getElasticResourcePools() {
+    public List<ElasticResourcePool> getElasticResourcePools() {
         return elasticResourcePools;
     }
 
-    public void setElasticResourcePools(List<ElasticResourcePoolsResponse> elasticResourcePools) {
+    public void setElasticResourcePools(List<ElasticResourcePool> elasticResourcePools) {
         this.elasticResourcePools = elasticResourcePools;
     }
 

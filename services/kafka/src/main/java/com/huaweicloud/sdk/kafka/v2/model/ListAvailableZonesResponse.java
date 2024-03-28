@@ -22,7 +22,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
-    private List<ListAvailableZonesRespAvailableZones> availableZones = null;
+    private List<AvailableZonesResp> availableZones = null;
 
     public ListAvailableZonesResponse withRegionId(String regionId) {
         this.regionId = regionId;
@@ -41,12 +41,12 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.regionId = regionId;
     }
 
-    public ListAvailableZonesResponse withAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
+    public ListAvailableZonesResponse withAvailableZones(List<AvailableZonesResp> availableZones) {
         this.availableZones = availableZones;
         return this;
     }
 
-    public ListAvailableZonesResponse addAvailableZonesItem(ListAvailableZonesRespAvailableZones availableZonesItem) {
+    public ListAvailableZonesResponse addAvailableZonesItem(AvailableZonesResp availableZonesItem) {
         if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
@@ -54,8 +54,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAvailableZonesResponse withAvailableZones(
-        Consumer<List<ListAvailableZonesRespAvailableZones>> availableZonesSetter) {
+    public ListAvailableZonesResponse withAvailableZones(Consumer<List<AvailableZonesResp>> availableZonesSetter) {
         if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
@@ -67,11 +66,11 @@ public class ListAvailableZonesResponse extends SdkResponse {
      * 可用区数组。
      * @return availableZones
      */
-    public List<ListAvailableZonesRespAvailableZones> getAvailableZones() {
+    public List<AvailableZonesResp> getAvailableZones() {
         return availableZones;
     }
 
-    public void setAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
+    public void setAvailableZones(List<AvailableZonesResp> availableZones) {
         this.availableZones = availableZones;
     }
 

@@ -29,6 +29,9 @@ import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchShutdownInsReq;
+import com.huaweicloud.sdk.rds.v3.model.BatchStopInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchStopInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagActionAddRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagActionDelRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
@@ -703,6 +706,34 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchStopInstanceRequest, BatchStopInstanceResponse> batchStopInstance =
+        genForBatchStopInstance();
+
+    private static HttpRequestDef<BatchStopInstanceRequest, BatchStopInstanceResponse> genForBatchStopInstance() {
+        // basic
+        HttpRequestDef.Builder<BatchStopInstanceRequest, BatchStopInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchStopInstanceRequest.class, BatchStopInstanceResponse.class)
+                .withName("BatchStopInstance")
+                .withUri("/v3/{project_id}/instances/batch/action/shutdown")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchShutdownInsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchShutdownInsReq.class),
+            f -> f.withMarshaller(BatchStopInstanceRequest::getBody, BatchStopInstanceRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchStopInstanceResponse::getXRequestId, BatchStopInstanceResponse::setXRequestId));
         return builder.build();
     }
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.apig.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ResponseInfoResp
@@ -19,6 +22,11 @@ public class ResponseInfoResp {
     @JsonProperty(value = "body")
 
     private String body;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "headers")
+
+    private List<ResponseInfoHeader> headers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default")
@@ -59,6 +67,39 @@ public class ResponseInfoResp {
         this.body = body;
     }
 
+    public ResponseInfoResp withHeaders(List<ResponseInfoHeader> headers) {
+        this.headers = headers;
+        return this;
+    }
+
+    public ResponseInfoResp addHeadersItem(ResponseInfoHeader headersItem) {
+        if (this.headers == null) {
+            this.headers = new ArrayList<>();
+        }
+        this.headers.add(headersItem);
+        return this;
+    }
+
+    public ResponseInfoResp withHeaders(Consumer<List<ResponseInfoHeader>> headersSetter) {
+        if (this.headers == null) {
+            this.headers = new ArrayList<>();
+        }
+        headersSetter.accept(this.headers);
+        return this;
+    }
+
+    /**
+     * 自定义的响应头
+     * @return headers
+     */
+    public List<ResponseInfoHeader> getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(List<ResponseInfoHeader> headers) {
+        this.headers = headers;
+    }
+
     public ResponseInfoResp withDefault(Boolean _default) {
         this._default = _default;
         return this;
@@ -86,12 +127,12 @@ public class ResponseInfoResp {
         }
         ResponseInfoResp that = (ResponseInfoResp) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.body, that.body)
-            && Objects.equals(this._default, that._default);
+            && Objects.equals(this.headers, that.headers) && Objects.equals(this._default, that._default);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, body, _default);
+        return Objects.hash(status, body, headers, _default);
     }
 
     @Override
@@ -100,6 +141,7 @@ public class ResponseInfoResp {
         sb.append("class ResponseInfoResp {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
         sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
         sb.append("}");
         return sb.toString();

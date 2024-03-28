@@ -19,14 +19,9 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     private List<String> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabled")
+    @JsonProperty(value = "name")
 
-    private Boolean enabled;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "broadcast")
-
-    private Boolean broadcast;
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
@@ -34,14 +29,9 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     private List<String> brokers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "broadcast")
 
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_desc")
-
-    private String groupDesc;
+    private Boolean broadcast;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
@@ -49,19 +39,19 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createdAt")
+    @JsonProperty(value = "enabled")
 
-    private String createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "permissions")
-
-    private List<String> permissions = null;
+    private Boolean enabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_orderly")
 
     private Boolean consumeOrderly;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(List<String> groups) {
         this.groups = groups;
@@ -96,38 +86,21 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.groups = groups;
     }
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withEnabled(Boolean enabled) {
-        this.enabled = enabled;
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * 是否可以消费。
-     * @return enabled
+     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+     * @return name
      */
-    public Boolean getEnabled() {
-        return enabled;
+    public String getName() {
+        return name;
     }
 
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withBroadcast(Boolean broadcast) {
-        this.broadcast = broadcast;
-        return this;
-    }
-
-    /**
-     * 是否广播。
-     * @return broadcast
-     */
-    public Boolean getBroadcast() {
-        return broadcast;
-    }
-
-    public void setBroadcast(Boolean broadcast) {
-        this.broadcast = broadcast;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withBrokers(List<String> brokers) {
@@ -163,38 +136,21 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.brokers = brokers;
     }
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withName(String name) {
-        this.name = name;
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withBroadcast(Boolean broadcast) {
+        this.broadcast = broadcast;
         return this;
     }
 
     /**
-     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
-     * @return name
+     * 是否广播。
+     * @return broadcast
      */
-    public String getName() {
-        return name;
+    public Boolean getBroadcast() {
+        return broadcast;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroupDesc(String groupDesc) {
-        this.groupDesc = groupDesc;
-        return this;
-    }
-
-    /**
-     * 消费组描述，长度0~200个字符。
-     * @return groupDesc
-     */
-    public String getGroupDesc() {
-        return groupDesc;
-    }
-
-    public void setGroupDesc(String groupDesc) {
-        this.groupDesc = groupDesc;
+    public void setBroadcast(Boolean broadcast) {
+        this.broadcast = broadcast;
     }
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withRetryMaxTime(Integer retryMaxTime) {
@@ -214,54 +170,21 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.retryMaxTime = retryMaxTime;
     }
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withEnabled(Boolean enabled) {
+        this.enabled = enabled;
         return this;
     }
 
     /**
-     * 创建时间戳。
-     * @return createdAt
+     * 是否可以消费。
+     * @return enabled
      */
-    public String getCreatedAt() {
-        return createdAt;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withPermissions(List<String> permissions) {
-        this.permissions = permissions;
-        return this;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        this.permissions.add(permissionsItem);
-        return this;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withPermissions(Consumer<List<String>> permissionsSetter) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        permissionsSetter.accept(this.permissions);
-        return this;
-    }
-
-    /**
-     * 权限集。
-     * @return permissions
-     */
-    public List<String> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(List<String> permissions) {
-        this.permissions = permissions;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withConsumeOrderly(Boolean consumeOrderly) {
@@ -281,6 +204,23 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.consumeOrderly = consumeOrderly;
     }
 
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * 消费组描述，长度0~200个字符。
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -290,26 +230,16 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
             return false;
         }
         CreateConsumerGroupOrBatchDeleteConsumerGroupReq that = (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) obj;
-        return Objects.equals(this.groups, that.groups) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.broadcast, that.broadcast) && Objects.equals(this.brokers, that.brokers)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.groupDesc, that.groupDesc)
-            && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.permissions, that.permissions)
-            && Objects.equals(this.consumeOrderly, that.consumeOrderly);
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.broadcast, that.broadcast)
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly)
+            && Objects.equals(this.groupDesc, that.groupDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups,
-            enabled,
-            broadcast,
-            brokers,
-            name,
-            groupDesc,
-            retryMaxTime,
-            createdAt,
-            permissions,
-            consumeOrderly);
+        return Objects.hash(groups, name, brokers, broadcast, retryMaxTime, enabled, consumeOrderly, groupDesc);
     }
 
     @Override
@@ -317,15 +247,13 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
-        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-        sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");
-        sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
+        sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
+        sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -273,6 +273,11 @@ public class ListGlobalConnectionBandwidthConfigs {
     private List<GcbTypeEnum> gcbType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ratio_95peak_plus")
+
+    private Integer ratio95peakPlus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ratio_95peak_guar")
 
     private Integer ratio95peakGuar;
@@ -372,6 +377,21 @@ public class ListGlobalConnectionBandwidthConfigs {
     @JsonProperty(value = "bind_limit")
 
     private Integer bindLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_area_bandwidth")
+
+    private Boolean enableAreaBandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_change_95")
+
+    private Boolean enableChange95;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_spec_code")
+
+    private Boolean enableSpecCode;
 
     public ListGlobalConnectionBandwidthConfigs withSizeRange(List<GlobalConnectionBandwidthSizeRange> sizeRange) {
         this.sizeRange = sizeRange;
@@ -506,6 +526,25 @@ public class ListGlobalConnectionBandwidthConfigs {
         this.gcbType = gcbType;
     }
 
+    public ListGlobalConnectionBandwidthConfigs withRatio95peakPlus(Integer ratio95peakPlus) {
+        this.ratio95peakPlus = ratio95peakPlus;
+        return this;
+    }
+
+    /**
+     * 按增强型95计费保底消费百分比。
+     * minimum: 0
+     * maximum: 100
+     * @return ratio95peakPlus
+     */
+    public Integer getRatio95peakPlus() {
+        return ratio95peakPlus;
+    }
+
+    public void setRatio95peakPlus(Integer ratio95peakPlus) {
+        this.ratio95peakPlus = ratio95peakPlus;
+    }
+
     public ListGlobalConnectionBandwidthConfigs withRatio95peakGuar(Integer ratio95peakGuar) {
         this.ratio95peakGuar = ratio95peakGuar;
         return this;
@@ -628,6 +667,57 @@ public class ListGlobalConnectionBandwidthConfigs {
         this.bindLimit = bindLimit;
     }
 
+    public ListGlobalConnectionBandwidthConfigs withEnableAreaBandwidth(Boolean enableAreaBandwidth) {
+        this.enableAreaBandwidth = enableAreaBandwidth;
+        return this;
+    }
+
+    /**
+     * 是否启用传统的大区带宽。
+     * @return enableAreaBandwidth
+     */
+    public Boolean getEnableAreaBandwidth() {
+        return enableAreaBandwidth;
+    }
+
+    public void setEnableAreaBandwidth(Boolean enableAreaBandwidth) {
+        this.enableAreaBandwidth = enableAreaBandwidth;
+    }
+
+    public ListGlobalConnectionBandwidthConfigs withEnableChange95(Boolean enableChange95) {
+        this.enableChange95 = enableChange95;
+        return this;
+    }
+
+    /**
+     * 是否支持95转按需。
+     * @return enableChange95
+     */
+    public Boolean getEnableChange95() {
+        return enableChange95;
+    }
+
+    public void setEnableChange95(Boolean enableChange95) {
+        this.enableChange95 = enableChange95;
+    }
+
+    public ListGlobalConnectionBandwidthConfigs withEnableSpecCode(Boolean enableSpecCode) {
+        this.enableSpecCode = enableSpecCode;
+        return this;
+    }
+
+    /**
+     * 是否支持多SKU产品功能。
+     * @return enableSpecCode
+     */
+    public Boolean getEnableSpecCode() {
+        return enableSpecCode;
+    }
+
+    public void setEnableSpecCode(Boolean enableSpecCode) {
+        this.enableSpecCode = enableSpecCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -639,15 +729,30 @@ public class ListGlobalConnectionBandwidthConfigs {
         ListGlobalConnectionBandwidthConfigs that = (ListGlobalConnectionBandwidthConfigs) obj;
         return Objects.equals(this.sizeRange, that.sizeRange) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.services, that.services) && Objects.equals(this.gcbType, that.gcbType)
+            && Objects.equals(this.ratio95peakPlus, that.ratio95peakPlus)
             && Objects.equals(this.ratio95peakGuar, that.ratio95peakGuar)
             && Objects.equals(this.crossborder, that.crossborder) && Objects.equals(this.quotas, that.quotas)
-            && Objects.equals(this.slaLevel, that.slaLevel) && Objects.equals(this.bindLimit, that.bindLimit);
+            && Objects.equals(this.slaLevel, that.slaLevel) && Objects.equals(this.bindLimit, that.bindLimit)
+            && Objects.equals(this.enableAreaBandwidth, that.enableAreaBandwidth)
+            && Objects.equals(this.enableChange95, that.enableChange95)
+            && Objects.equals(this.enableSpecCode, that.enableSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(sizeRange, chargeMode, services, gcbType, ratio95peakGuar, crossborder, quotas, slaLevel, bindLimit);
+        return Objects.hash(sizeRange,
+            chargeMode,
+            services,
+            gcbType,
+            ratio95peakPlus,
+            ratio95peakGuar,
+            crossborder,
+            quotas,
+            slaLevel,
+            bindLimit,
+            enableAreaBandwidth,
+            enableChange95,
+            enableSpecCode);
     }
 
     @Override
@@ -658,11 +763,15 @@ public class ListGlobalConnectionBandwidthConfigs {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    services: ").append(toIndentedString(services)).append("\n");
         sb.append("    gcbType: ").append(toIndentedString(gcbType)).append("\n");
+        sb.append("    ratio95peakPlus: ").append(toIndentedString(ratio95peakPlus)).append("\n");
         sb.append("    ratio95peakGuar: ").append(toIndentedString(ratio95peakGuar)).append("\n");
         sb.append("    crossborder: ").append(toIndentedString(crossborder)).append("\n");
         sb.append("    quotas: ").append(toIndentedString(quotas)).append("\n");
         sb.append("    slaLevel: ").append(toIndentedString(slaLevel)).append("\n");
         sb.append("    bindLimit: ").append(toIndentedString(bindLimit)).append("\n");
+        sb.append("    enableAreaBandwidth: ").append(toIndentedString(enableAreaBandwidth)).append("\n");
+        sb.append("    enableChange95: ").append(toIndentedString(enableChange95)).append("\n");
+        sb.append("    enableSpecCode: ").append(toIndentedString(enableSpecCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dli.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询所有表响应参数的表的信息。 说明： 若URI中的过滤条件“with-detail&#x3D;false”，则tables相关参数中只返回“data_location”，“table_name”，“table_type”三个参数。
@@ -58,7 +61,7 @@ public class Table {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_columns")
 
-    private String partitionColumns;
+    private List<String> partitionColumns = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page-size")
@@ -223,8 +226,24 @@ public class Table {
         this.tableType = tableType;
     }
 
-    public Table withPartitionColumns(String partitionColumns) {
+    public Table withPartitionColumns(List<String> partitionColumns) {
         this.partitionColumns = partitionColumns;
+        return this;
+    }
+
+    public Table addPartitionColumnsItem(String partitionColumnsItem) {
+        if (this.partitionColumns == null) {
+            this.partitionColumns = new ArrayList<>();
+        }
+        this.partitionColumns.add(partitionColumnsItem);
+        return this;
+    }
+
+    public Table withPartitionColumns(Consumer<List<String>> partitionColumnsSetter) {
+        if (this.partitionColumns == null) {
+            this.partitionColumns = new ArrayList<>();
+        }
+        partitionColumnsSetter.accept(this.partitionColumns);
         return this;
     }
 
@@ -232,11 +251,11 @@ public class Table {
      * 分区字段。只有OBS分区表有该参数，其他表没有该参数。
      * @return partitionColumns
      */
-    public String getPartitionColumns() {
+    public List<String> getPartitionColumns() {
         return partitionColumns;
     }
 
-    public void setPartitionColumns(String partitionColumns) {
+    public void setPartitionColumns(List<String> partitionColumns) {
         this.partitionColumns = partitionColumns;
     }
 

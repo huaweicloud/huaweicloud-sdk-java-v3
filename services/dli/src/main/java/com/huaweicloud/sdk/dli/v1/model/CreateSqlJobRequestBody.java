@@ -19,6 +19,11 @@ public class CreateSqlJobRequestBody {
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_type")
+
+    private String engineType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
 
     private String currentdb;
@@ -36,7 +41,7 @@ public class CreateSqlJobRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TmsTagEntity> tags = null;
+    private List<Tag> tags = null;
 
     public CreateSqlJobRequestBody withSql(String sql) {
         this.sql = sql;
@@ -53,6 +58,23 @@ public class CreateSqlJobRequestBody {
 
     public void setSql(String sql) {
         this.sql = sql;
+    }
+
+    public CreateSqlJobRequestBody withEngineType(String engineType) {
+        this.engineType = engineType;
+        return this;
+    }
+
+    /**
+     * 待提交作业的队列引擎名称，名称只能包含英文字母。
+     * @return engineType
+     */
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
     }
 
     public CreateSqlJobRequestBody withCurrentdb(String currentdb) {
@@ -122,12 +144,12 @@ public class CreateSqlJobRequestBody {
         this.conf = conf;
     }
 
-    public CreateSqlJobRequestBody withTags(List<TmsTagEntity> tags) {
+    public CreateSqlJobRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateSqlJobRequestBody addTagsItem(TmsTagEntity tagsItem) {
+    public CreateSqlJobRequestBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -135,7 +157,7 @@ public class CreateSqlJobRequestBody {
         return this;
     }
 
-    public CreateSqlJobRequestBody withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+    public CreateSqlJobRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -147,11 +169,11 @@ public class CreateSqlJobRequestBody {
      * 作业标签
      * @return tags
      */
-    public List<TmsTagEntity> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TmsTagEntity> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 
@@ -164,14 +186,14 @@ public class CreateSqlJobRequestBody {
             return false;
         }
         CreateSqlJobRequestBody that = (CreateSqlJobRequestBody) obj;
-        return Objects.equals(this.sql, that.sql) && Objects.equals(this.currentdb, that.currentdb)
-            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.conf, that.conf)
-            && Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.currentdb, that.currentdb) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.conf, that.conf) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sql, currentdb, queueName, conf, tags);
+        return Objects.hash(sql, engineType, currentdb, queueName, conf, tags);
     }
 
     @Override
@@ -179,6 +201,7 @@ public class CreateSqlJobRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSqlJobRequestBody {\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
+        sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    currentdb: ").append(toIndentedString(currentdb)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    conf: ").append(toIndentedString(conf)).append("\n");

@@ -19,7 +19,7 @@ public class UpdateFlinkSqlJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateFlinkSqlRequestBody body;
+    private UpdateFlinkSqlJobRequestBody body;
 
     public UpdateFlinkSqlJobRequest withJobId(Long jobId) {
         this.jobId = jobId;
@@ -38,14 +38,14 @@ public class UpdateFlinkSqlJobRequest {
         this.jobId = jobId;
     }
 
-    public UpdateFlinkSqlJobRequest withBody(UpdateFlinkSqlRequestBody body) {
+    public UpdateFlinkSqlJobRequest withBody(UpdateFlinkSqlJobRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateFlinkSqlJobRequest withBody(Consumer<UpdateFlinkSqlRequestBody> bodySetter) {
+    public UpdateFlinkSqlJobRequest withBody(Consumer<UpdateFlinkSqlJobRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateFlinkSqlRequestBody();
+            this.body = new UpdateFlinkSqlJobRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateFlinkSqlJobRequest {
      * Get body
      * @return body
      */
-    public UpdateFlinkSqlRequestBody getBody() {
+    public UpdateFlinkSqlJobRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateFlinkSqlRequestBody body) {
+    public void setBody(UpdateFlinkSqlJobRequestBody body) {
         this.body = body;
     }
 

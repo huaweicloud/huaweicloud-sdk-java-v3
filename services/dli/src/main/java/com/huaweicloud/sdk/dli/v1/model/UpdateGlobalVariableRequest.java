@@ -19,7 +19,7 @@ public class UpdateGlobalVariableRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateGlobalValueReq body;
+    private UpdateGlobalVariableRequestBody body;
 
     public UpdateGlobalVariableRequest withVarName(String varName) {
         this.varName = varName;
@@ -38,14 +38,14 @@ public class UpdateGlobalVariableRequest {
         this.varName = varName;
     }
 
-    public UpdateGlobalVariableRequest withBody(UpdateGlobalValueReq body) {
+    public UpdateGlobalVariableRequest withBody(UpdateGlobalVariableRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateGlobalVariableRequest withBody(Consumer<UpdateGlobalValueReq> bodySetter) {
+    public UpdateGlobalVariableRequest withBody(Consumer<UpdateGlobalVariableRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateGlobalValueReq();
+            this.body = new UpdateGlobalVariableRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateGlobalVariableRequest {
      * Get body
      * @return body
      */
-    public UpdateGlobalValueReq getBody() {
+    public UpdateGlobalVariableRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateGlobalValueReq body) {
+    public void setBody(UpdateGlobalVariableRequestBody body) {
         this.body = body;
     }
 

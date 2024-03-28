@@ -27,7 +27,7 @@ public class ListSparkJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sessions")
 
-    private List<ShowBatchJobDetailResp> sessions = null;
+    private List<SparkJobSession> sessions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -68,12 +68,12 @@ public class ListSparkJobsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListSparkJobsResponse withSessions(List<ShowBatchJobDetailResp> sessions) {
+    public ListSparkJobsResponse withSessions(List<SparkJobSession> sessions) {
         this.sessions = sessions;
         return this;
     }
 
-    public ListSparkJobsResponse addSessionsItem(ShowBatchJobDetailResp sessionsItem) {
+    public ListSparkJobsResponse addSessionsItem(SparkJobSession sessionsItem) {
         if (this.sessions == null) {
             this.sessions = new ArrayList<>();
         }
@@ -81,7 +81,7 @@ public class ListSparkJobsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSparkJobsResponse withSessions(Consumer<List<ShowBatchJobDetailResp>> sessionsSetter) {
+    public ListSparkJobsResponse withSessions(Consumer<List<SparkJobSession>> sessionsSetter) {
         if (this.sessions == null) {
             this.sessions = new ArrayList<>();
         }
@@ -93,11 +93,11 @@ public class ListSparkJobsResponse extends SdkResponse {
      * 批处理作业信息。
      * @return sessions
      */
-    public List<ShowBatchJobDetailResp> getSessions() {
+    public List<SparkJobSession> getSessions() {
         return sessions;
     }
 
-    public void setSessions(List<ShowBatchJobDetailResp> sessions) {
+    public void setSessions(List<SparkJobSession> sessions) {
         this.sessions = sessions;
     }
 

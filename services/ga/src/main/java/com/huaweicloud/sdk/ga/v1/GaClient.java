@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.AssociateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.CountResourcesByTagResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateEndpointGroupRequest;
@@ -51,6 +53,10 @@ import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowAcceleratorRequest;
@@ -1110,6 +1116,35 @@ public class GaClient {
     }
 
     /**
+     * 通过标签查询资源实例数量
+     *
+     * 通过标签查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return CountResourcesByTagResponse
+     */
+    public CountResourcesByTagResponse countResourcesByTag(CountResourcesByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.countResourcesByTag);
+    }
+
+    /**
+     * 通过标签查询资源实例数量
+     *
+     * 通过标签查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return SyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse>
+     */
+    public SyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse> countResourcesByTagInvoker(
+        CountResourcesByTagRequest request) {
+        return new SyncInvoker<>(request, GaMeta.countResourcesByTag, hcClient);
+    }
+
+    /**
      * 创建资源标签
      *
      * 创建资源标签。
@@ -1163,6 +1198,63 @@ public class GaClient {
      */
     public SyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsInvoker(DeleteTagsRequest request) {
         return new SyncInvoker<>(request, GaMeta.deleteTags, hcClient);
+    }
+
+    /**
+     * 通过标签查询资源实例列表
+     *
+     * 通过标签查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return ListResourcesByTagResponse
+     */
+    public ListResourcesByTagResponse listResourcesByTag(ListResourcesByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.listResourcesByTag);
+    }
+
+    /**
+     * 通过标签查询资源实例列表
+     *
+     * 通过标签查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return SyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse>
+     */
+    public SyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse> listResourcesByTagInvoker(
+        ListResourcesByTagRequest request) {
+        return new SyncInvoker<>(request, GaMeta.listResourcesByTag, hcClient);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return ListTagsResponse
+     */
+    public ListTagsResponse listTags(ListTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.listTags);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
+        return new SyncInvoker<>(request, GaMeta.listTags, hcClient);
     }
 
     /**

@@ -151,6 +151,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
@@ -443,6 +445,35 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<ShowApplicationsRequest, ShowApplicationsResponse> showApplicationsAsyncInvoker(
         ShowApplicationsRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.showApplications, hcClient);
+    }
+
+    /**
+     * 更新资源空间
+     *
+     * 应用服务器可以调用此接口更新资源空间的名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationRequest 请求对象
+     * @return CompletableFuture<UpdateApplicationResponse>
+     */
+    public CompletableFuture<UpdateApplicationResponse> updateApplicationAsync(UpdateApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateApplication);
+    }
+
+    /**
+     * 更新资源空间
+     *
+     * 应用服务器可以调用此接口更新资源空间的名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationRequest 请求对象
+     * @return AsyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
+     */
+    public AsyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse> updateApplicationAsyncInvoker(
+        UpdateApplicationRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateApplication, hcClient);
     }
 
     /**

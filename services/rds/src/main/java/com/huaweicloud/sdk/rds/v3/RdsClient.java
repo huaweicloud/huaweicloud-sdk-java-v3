@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchStopInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchStopInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionRequest;
@@ -605,6 +607,35 @@ public class RdsClient {
     public SyncInvoker<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTablesInvoker(
         BatchRestorePostgreSqlTablesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.batchRestorePostgreSqlTables, hcClient);
+    }
+
+    /**
+     * 批量停止实例
+     *
+     * 批量停止实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStopInstanceRequest 请求对象
+     * @return BatchStopInstanceResponse
+     */
+    public BatchStopInstanceResponse batchStopInstance(BatchStopInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.batchStopInstance);
+    }
+
+    /**
+     * 批量停止实例
+     *
+     * 批量停止实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStopInstanceRequest 请求对象
+     * @return SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse>
+     */
+    public SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse> batchStopInstanceInvoker(
+        BatchStopInstanceRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.batchStopInstance, hcClient);
     }
 
     /**

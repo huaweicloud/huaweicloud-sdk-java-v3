@@ -23,7 +23,7 @@ public class PackageOptions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default")
 
-    private String _default;
+    private Object _default;
 
     /**
      * 参数生效方式  - static：节点创建时生效，后续不可修改 - immediately：节点运行中时可以修改，修改后生效 
@@ -132,7 +132,7 @@ public class PackageOptions {
         this.name = name;
     }
 
-    public PackageOptions withDefault(String _default) {
+    public PackageOptions withDefault(Object _default) {
         this._default = _default;
         return this;
     }
@@ -141,11 +141,11 @@ public class PackageOptions {
      * 参数默认值，不指定时按默认值生效, 参数类型以实际返回为准，可能为integer,string或者boolean
      * @return _default
      */
-    public String getDefault() {
+    public Object getDefault() {
         return _default;
     }
 
-    public void setDefault(String _default) {
+    public void setDefault(Object _default) {
         this._default = _default;
     }
 

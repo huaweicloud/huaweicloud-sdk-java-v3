@@ -14,16 +14,16 @@ public class RegisterAuthorizedQueueRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private GrantQueuePermissionReq body;
+    private RegisterAuthorizedQueueRequestBody body;
 
-    public RegisterAuthorizedQueueRequest withBody(GrantQueuePermissionReq body) {
+    public RegisterAuthorizedQueueRequest withBody(RegisterAuthorizedQueueRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RegisterAuthorizedQueueRequest withBody(Consumer<GrantQueuePermissionReq> bodySetter) {
+    public RegisterAuthorizedQueueRequest withBody(Consumer<RegisterAuthorizedQueueRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new GrantQueuePermissionReq();
+            this.body = new RegisterAuthorizedQueueRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RegisterAuthorizedQueueRequest {
      * Get body
      * @return body
      */
-    public GrantQueuePermissionReq getBody() {
+    public RegisterAuthorizedQueueRequestBody getBody() {
         return body;
     }
 
-    public void setBody(GrantQueuePermissionReq body) {
+    public void setBody(RegisterAuthorizedQueueRequestBody body) {
         this.body = body;
     }
 

@@ -14,16 +14,16 @@ public class CreateDliAgencyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateAgencyRequest body;
+    private CreateDliAgencyRequestBody body;
 
-    public CreateDliAgencyRequest withBody(CreateAgencyRequest body) {
+    public CreateDliAgencyRequest withBody(CreateDliAgencyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateDliAgencyRequest withBody(Consumer<CreateAgencyRequest> bodySetter) {
+    public CreateDliAgencyRequest withBody(Consumer<CreateDliAgencyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateAgencyRequest();
+            this.body = new CreateDliAgencyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateDliAgencyRequest {
      * Get body
      * @return body
      */
-    public CreateAgencyRequest getBody() {
+    public CreateDliAgencyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateAgencyRequest body) {
+    public void setBody(CreateDliAgencyRequestBody body) {
         this.body = body;
     }
 

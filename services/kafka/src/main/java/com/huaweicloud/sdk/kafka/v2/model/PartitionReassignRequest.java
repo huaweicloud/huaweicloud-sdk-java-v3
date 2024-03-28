@@ -33,6 +33,11 @@ public class PartitionReassignRequest {
 
     private Long executeAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_estimate")
+
+    private Boolean timeEstimate;
+
     public PartitionReassignRequest withReassignments(List<PartitionReassignEntity> reassignments) {
         this.reassignments = reassignments;
         return this;
@@ -117,6 +122,23 @@ public class PartitionReassignRequest {
         this.executeAt = executeAt;
     }
 
+    public PartitionReassignRequest withTimeEstimate(Boolean timeEstimate) {
+        this.timeEstimate = timeEstimate;
+        return this;
+    }
+
+    /**
+     * 设为true表示执行时间预估任务，false为执行重平衡任务。
+     * @return timeEstimate
+     */
+    public Boolean getTimeEstimate() {
+        return timeEstimate;
+    }
+
+    public void setTimeEstimate(Boolean timeEstimate) {
+        this.timeEstimate = timeEstimate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class PartitionReassignRequest {
         }
         PartitionReassignRequest that = (PartitionReassignRequest) obj;
         return Objects.equals(this.reassignments, that.reassignments) && Objects.equals(this.throttle, that.throttle)
-            && Objects.equals(this.isSchedule, that.isSchedule) && Objects.equals(this.executeAt, that.executeAt);
+            && Objects.equals(this.isSchedule, that.isSchedule) && Objects.equals(this.executeAt, that.executeAt)
+            && Objects.equals(this.timeEstimate, that.timeEstimate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reassignments, throttle, isSchedule, executeAt);
+        return Objects.hash(reassignments, throttle, isSchedule, executeAt, timeEstimate);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class PartitionReassignRequest {
         sb.append("    throttle: ").append(toIndentedString(throttle)).append("\n");
         sb.append("    isSchedule: ").append(toIndentedString(isSchedule)).append("\n");
         sb.append("    executeAt: ").append(toIndentedString(executeAt)).append("\n");
+        sb.append("    timeEstimate: ").append(toIndentedString(timeEstimate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

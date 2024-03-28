@@ -31,6 +31,16 @@ public class CreateBatchTask {
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_mode")
+
+    private String taskMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_ext_info")
+
+    private Object taskExtInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "targets")
 
     private List<String> targets = null;
@@ -104,6 +114,40 @@ public class CreateBatchTask {
 
     public void setTaskType(String taskType) {
         this.taskType = taskType;
+    }
+
+    public CreateBatchTask withTaskMode(String taskMode) {
+        this.taskMode = taskMode;
+        return this;
+    }
+
+    /**
+     * **参数说明**：批量任务的模式，当前只支持网关模式，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，若升级的设备为某个网关的子设备，则平台下发获取版本信息通知和平台下发升级通知将携带task_id（软固件升级批量任务的任务ID）和sub_device_count（批量任务中网关设备包含的升级子设备数量）字段。 **取值范围**：GATEWAY: 网关模式。
+     * @return taskMode
+     */
+    public String getTaskMode() {
+        return taskMode;
+    }
+
+    public void setTaskMode(String taskMode) {
+        this.taskMode = taskMode;
+    }
+
+    public CreateBatchTask withTaskExtInfo(Object taskExtInfo) {
+        this.taskExtInfo = taskExtInfo;
+        return this;
+    }
+
+    /**
+     * **参数说明**：批量任务额外扩展信息，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，平台下发获取版本信息通知和平台下发升级通知将携带该字段。 **取值范围**：最长不超过512个字符。
+     * @return taskExtInfo
+     */
+    public Object getTaskExtInfo() {
+        return taskExtInfo;
+    }
+
+    public void setTaskExtInfo(Object taskExtInfo) {
+        this.taskExtInfo = taskExtInfo;
     }
 
     public CreateBatchTask withTargets(List<String> targets) {
@@ -242,7 +286,8 @@ public class CreateBatchTask {
         }
         CreateBatchTask that = (CreateBatchTask) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.taskName, that.taskName)
-            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskMode, that.taskMode)
+            && Objects.equals(this.taskExtInfo, that.taskExtInfo) && Objects.equals(this.targets, that.targets)
             && Objects.equals(this.targetsFilter, that.targetsFilter) && Objects.equals(this.document, that.document)
             && Objects.equals(this.taskPolicy, that.taskPolicy)
             && Objects.equals(this.documentSource, that.documentSource);
@@ -250,7 +295,16 @@ public class CreateBatchTask {
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, taskName, taskType, targets, targetsFilter, document, taskPolicy, documentSource);
+        return Objects.hash(appId,
+            taskName,
+            taskType,
+            taskMode,
+            taskExtInfo,
+            targets,
+            targetsFilter,
+            document,
+            taskPolicy,
+            documentSource);
     }
 
     @Override
@@ -260,6 +314,8 @@ public class CreateBatchTask {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    taskMode: ").append(toIndentedString(taskMode)).append("\n");
+        sb.append("    taskExtInfo: ").append(toIndentedString(taskExtInfo)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("    targetsFilter: ").append(toIndentedString(targetsFilter)).append("\n");
         sb.append("    document: ").append(toIndentedString(document)).append("\n");

@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkErRouteTableAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkPolicyRequest;
@@ -60,6 +62,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkErRouteTableAttachmentsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkErRouteTableAttachmentsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPoliciesRequest;
@@ -70,6 +74,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasRequest;
@@ -102,6 +108,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsReq
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkErRouteTableAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkRequest;
@@ -134,6 +142,8 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkErRouteTableAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkErRouteTableAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkRequest;
@@ -901,6 +911,35 @@ public class CcClient {
     }
 
     /**
+     * 通过标签过滤中心网络实例
+     *
+     * 通过标签过滤中心网络实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCentralNetworksByTagsRequest 请求对象
+     * @return ListCentralNetworksByTagsResponse
+     */
+    public ListCentralNetworksByTagsResponse listCentralNetworksByTags(ListCentralNetworksByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listCentralNetworksByTags);
+    }
+
+    /**
+     * 通过标签过滤中心网络实例
+     *
+     * 通过标签过滤中心网络实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCentralNetworksByTagsRequest 请求对象
+     * @return SyncInvoker<ListCentralNetworksByTagsRequest, ListCentralNetworksByTagsResponse>
+     */
+    public SyncInvoker<ListCentralNetworksByTagsRequest, ListCentralNetworksByTagsResponse> listCentralNetworksByTagsInvoker(
+        ListCentralNetworksByTagsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listCentralNetworksByTags, hcClient);
+    }
+
+    /**
      * 查询中心网络详情
      *
      * 查询中心网络详情。
@@ -1017,6 +1056,36 @@ public class CcClient {
     }
 
     /**
+     * 创建中心网络ER路由表附件
+     *
+     * 创建中心网络的路由表附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return CreateCentralNetworkErRouteTableAttachmentResponse
+     */
+    public CreateCentralNetworkErRouteTableAttachmentResponse createCentralNetworkErRouteTableAttachment(
+        CreateCentralNetworkErRouteTableAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.createCentralNetworkErRouteTableAttachment);
+    }
+
+    /**
+     * 创建中心网络ER路由表附件
+     *
+     * 创建中心网络的路由表附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return SyncInvoker<CreateCentralNetworkErRouteTableAttachmentRequest, CreateCentralNetworkErRouteTableAttachmentResponse>
+     */
+    public SyncInvoker<CreateCentralNetworkErRouteTableAttachmentRequest, CreateCentralNetworkErRouteTableAttachmentResponse> createCentralNetworkErRouteTableAttachmentInvoker(
+        CreateCentralNetworkErRouteTableAttachmentRequest request) {
+        return new SyncInvoker<>(request, CcMeta.createCentralNetworkErRouteTableAttachment, hcClient);
+    }
+
+    /**
      * 创建中心网络GDGW附件
      *
      * 创建中心网络的GDGW附件。
@@ -1107,6 +1176,38 @@ public class CcClient {
     }
 
     /**
+     * 查询中心网络ER路由表附件列表
+     *
+     * 查询中心网络ER路由表附件列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCentralNetworkErRouteTableAttachmentsRequest 请求对象
+     * @return ListCentralNetworkErRouteTableAttachmentsResponse
+     */
+    public ListCentralNetworkErRouteTableAttachmentsResponse listCentralNetworkErRouteTableAttachments(
+        ListCentralNetworkErRouteTableAttachmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listCentralNetworkErRouteTableAttachments);
+    }
+
+    /**
+     * 查询中心网络ER路由表附件列表
+     *
+     * 查询中心网络ER路由表附件列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCentralNetworkErRouteTableAttachmentsRequest 请求对象
+     * @return SyncInvoker<ListCentralNetworkErRouteTableAttachmentsRequest, ListCentralNetworkErRouteTableAttachmentsResponse>
+     */
+    public SyncInvoker<ListCentralNetworkErRouteTableAttachmentsRequest, ListCentralNetworkErRouteTableAttachmentsResponse> listCentralNetworkErRouteTableAttachmentsInvoker(
+        ListCentralNetworkErRouteTableAttachmentsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listCentralNetworkErRouteTableAttachments, hcClient);
+    }
+
+    /**
      * 查询中心网络GDGW附件列表
      *
      * 查询中心网络GDGW附件列表。
@@ -1139,6 +1240,36 @@ public class CcClient {
     }
 
     /**
+     * 查询中心网络ER路由表附件详情
+     *
+     * 查询中心网络ER路由表附件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return ShowCentralNetworkErRouteTableAttachmentResponse
+     */
+    public ShowCentralNetworkErRouteTableAttachmentResponse showCentralNetworkErRouteTableAttachment(
+        ShowCentralNetworkErRouteTableAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.showCentralNetworkErRouteTableAttachment);
+    }
+
+    /**
+     * 查询中心网络ER路由表附件详情
+     *
+     * 查询中心网络ER路由表附件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return SyncInvoker<ShowCentralNetworkErRouteTableAttachmentRequest, ShowCentralNetworkErRouteTableAttachmentResponse>
+     */
+    public SyncInvoker<ShowCentralNetworkErRouteTableAttachmentRequest, ShowCentralNetworkErRouteTableAttachmentResponse> showCentralNetworkErRouteTableAttachmentInvoker(
+        ShowCentralNetworkErRouteTableAttachmentRequest request) {
+        return new SyncInvoker<>(request, CcMeta.showCentralNetworkErRouteTableAttachment, hcClient);
+    }
+
+    /**
      * 查询中心网络GDGW附件详情
      *
      * 查询中心网络GDGW附件详情。
@@ -1166,6 +1297,36 @@ public class CcClient {
     public SyncInvoker<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> showCentralNetworkGdgwAttachmentInvoker(
         ShowCentralNetworkGdgwAttachmentRequest request) {
         return new SyncInvoker<>(request, CcMeta.showCentralNetworkGdgwAttachment, hcClient);
+    }
+
+    /**
+     * 更新中心网络ER路由表附件
+     *
+     * 更新中心网络ER路由表附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return UpdateCentralNetworkErRouteTableAttachmentResponse
+     */
+    public UpdateCentralNetworkErRouteTableAttachmentResponse updateCentralNetworkErRouteTableAttachment(
+        UpdateCentralNetworkErRouteTableAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.updateCentralNetworkErRouteTableAttachment);
+    }
+
+    /**
+     * 更新中心网络ER路由表附件
+     *
+     * 更新中心网络ER路由表附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCentralNetworkErRouteTableAttachmentRequest 请求对象
+     * @return SyncInvoker<UpdateCentralNetworkErRouteTableAttachmentRequest, UpdateCentralNetworkErRouteTableAttachmentResponse>
+     */
+    public SyncInvoker<UpdateCentralNetworkErRouteTableAttachmentRequest, UpdateCentralNetworkErRouteTableAttachmentResponse> updateCentralNetworkErRouteTableAttachmentInvoker(
+        UpdateCentralNetworkErRouteTableAttachmentRequest request) {
+        return new SyncInvoker<>(request, CcMeta.updateCentralNetworkErRouteTableAttachment, hcClient);
     }
 
     /**

@@ -672,6 +672,99 @@ public class DeleteClusterRequest {
     private DeleteSfs30Enum deleteSfs30;
 
     /**
+     * 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     */
+    public static final class LtsReclaimPolicyEnum {
+
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final LtsReclaimPolicyEnum TRUE = new LtsReclaimPolicyEnum("true");
+
+        /**
+         * Enum BLOCK for value: "block"
+         */
+        public static final LtsReclaimPolicyEnum BLOCK = new LtsReclaimPolicyEnum("block");
+
+        /**
+         * Enum TRY for value: "try"
+         */
+        public static final LtsReclaimPolicyEnum TRY = new LtsReclaimPolicyEnum("try");
+
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final LtsReclaimPolicyEnum FALSE = new LtsReclaimPolicyEnum("false");
+
+        /**
+         * Enum SKIP for value: "skip"
+         */
+        public static final LtsReclaimPolicyEnum SKIP = new LtsReclaimPolicyEnum("skip");
+
+        private static final Map<String, LtsReclaimPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LtsReclaimPolicyEnum> createStaticFields() {
+            Map<String, LtsReclaimPolicyEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("block", BLOCK);
+            map.put("try", TRY);
+            map.put("false", FALSE);
+            map.put("skip", SKIP);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LtsReclaimPolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LtsReclaimPolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LtsReclaimPolicyEnum(value));
+        }
+
+        public static LtsReclaimPolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LtsReclaimPolicyEnum) {
+                return this.value.equals(((LtsReclaimPolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_reclaim_policy")
+
+    private LtsReclaimPolicyEnum ltsReclaimPolicy;
+
+    /**
      * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。  需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。  使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。  允许重复执行，覆盖预置的删除参数。  枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
      */
     public static final class TobedeletedEnum {
@@ -1032,6 +1125,23 @@ public class DeleteClusterRequest {
         this.deleteSfs30 = deleteSfs30;
     }
 
+    public DeleteClusterRequest withLtsReclaimPolicy(LtsReclaimPolicyEnum ltsReclaimPolicy) {
+        this.ltsReclaimPolicy = ltsReclaimPolicy;
+        return this;
+    }
+
+    /**
+     * 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * @return ltsReclaimPolicy
+     */
+    public LtsReclaimPolicyEnum getLtsReclaimPolicy() {
+        return ltsReclaimPolicy;
+    }
+
+    public void setLtsReclaimPolicy(LtsReclaimPolicyEnum ltsReclaimPolicy) {
+        this.ltsReclaimPolicy = ltsReclaimPolicy;
+    }
+
     public DeleteClusterRequest withTobedeleted(TobedeletedEnum tobedeleted) {
         this.tobedeleted = tobedeleted;
         return this;
@@ -1096,6 +1206,7 @@ public class DeleteClusterRequest {
             && Objects.equals(this.deleteEni, that.deleteEni) && Objects.equals(this.deleteEvs, that.deleteEvs)
             && Objects.equals(this.deleteNet, that.deleteNet) && Objects.equals(this.deleteObs, that.deleteObs)
             && Objects.equals(this.deleteSfs, that.deleteSfs) && Objects.equals(this.deleteSfs30, that.deleteSfs30)
+            && Objects.equals(this.ltsReclaimPolicy, that.ltsReclaimPolicy)
             && Objects.equals(this.tobedeleted, that.tobedeleted)
             && Objects.equals(this.ondemandNodePolicy, that.ondemandNodePolicy)
             && Objects.equals(this.periodicNodePolicy, that.periodicNodePolicy);
@@ -1111,6 +1222,7 @@ public class DeleteClusterRequest {
             deleteObs,
             deleteSfs,
             deleteSfs30,
+            ltsReclaimPolicy,
             tobedeleted,
             ondemandNodePolicy,
             periodicNodePolicy);
@@ -1128,6 +1240,7 @@ public class DeleteClusterRequest {
         sb.append("    deleteObs: ").append(toIndentedString(deleteObs)).append("\n");
         sb.append("    deleteSfs: ").append(toIndentedString(deleteSfs)).append("\n");
         sb.append("    deleteSfs30: ").append(toIndentedString(deleteSfs30)).append("\n");
+        sb.append("    ltsReclaimPolicy: ").append(toIndentedString(ltsReclaimPolicy)).append("\n");
         sb.append("    tobedeleted: ").append(toIndentedString(tobedeleted)).append("\n");
         sb.append("    ondemandNodePolicy: ").append(toIndentedString(ondemandNodePolicy)).append("\n");
         sb.append("    periodicNodePolicy: ").append(toIndentedString(periodicNodePolicy)).append("\n");

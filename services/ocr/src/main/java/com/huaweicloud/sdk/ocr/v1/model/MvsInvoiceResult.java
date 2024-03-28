@@ -256,6 +256,11 @@ public class MvsInvoiceResult {
     private String usedVehicleMarketPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reverse_issue")
+
+    private Boolean reverseIssue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
     private String remark;
@@ -1113,6 +1118,23 @@ public class MvsInvoiceResult {
         this.usedVehicleMarketPhone = usedVehicleMarketPhone;
     }
 
+    public MvsInvoiceResult withReverseIssue(Boolean reverseIssue) {
+        this.reverseIssue = reverseIssue;
+        return this;
+    }
+
+    /**
+     * 二手车反向开具标识，True表示是反向开具发票，False表示不是反向开具发票。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
+     * @return reverseIssue
+     */
+    public Boolean getReverseIssue() {
+        return reverseIssue;
+    }
+
+    public void setReverseIssue(Boolean reverseIssue) {
+        this.reverseIssue = reverseIssue;
+    }
+
     public MvsInvoiceResult withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -1246,9 +1268,9 @@ public class MvsInvoiceResult {
             && Objects.equals(this.usedVehicleMarketAddress, that.usedVehicleMarketAddress)
             && Objects.equals(this.usedVehicleMarketBankAccount, that.usedVehicleMarketBankAccount)
             && Objects.equals(this.usedVehicleMarketPhone, that.usedVehicleMarketPhone)
-            && Objects.equals(this.remark, that.remark) && Objects.equals(this.drawerName, that.drawerName)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.textLocation, that.textLocation)
-            && Objects.equals(this.confidence, that.confidence);
+            && Objects.equals(this.reverseIssue, that.reverseIssue) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.drawerName, that.drawerName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.textLocation, that.textLocation) && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override
@@ -1302,6 +1324,7 @@ public class MvsInvoiceResult {
             usedVehicleMarketAddress,
             usedVehicleMarketBankAccount,
             usedVehicleMarketPhone,
+            reverseIssue,
             remark,
             drawerName,
             type,
@@ -1366,6 +1389,7 @@ public class MvsInvoiceResult {
             .append(toIndentedString(usedVehicleMarketBankAccount))
             .append("\n");
         sb.append("    usedVehicleMarketPhone: ").append(toIndentedString(usedVehicleMarketPhone)).append("\n");
+        sb.append("    reverseIssue: ").append(toIndentedString(reverseIssue)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    drawerName: ").append(toIndentedString(drawerName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

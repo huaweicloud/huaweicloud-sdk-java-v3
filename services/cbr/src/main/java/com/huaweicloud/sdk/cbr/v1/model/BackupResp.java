@@ -387,6 +387,11 @@ public class BackupResp {
 
     private List<BackupResp> children = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incremental")
+
+    private Boolean incremental;
+
     public BackupResp withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -819,6 +824,23 @@ public class BackupResp {
         this.children = children;
     }
 
+    public BackupResp withIncremental(Boolean incremental) {
+        this.incremental = incremental;
+        return this;
+    }
+
+    /**
+     * 是否是增备
+     * @return incremental
+     */
+    public Boolean getIncremental() {
+        return incremental;
+    }
+
+    public void setIncremental(Boolean incremental) {
+        this.incremental = incremental;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -840,7 +862,8 @@ public class BackupResp {
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.vaultId, that.vaultId)
             && Objects.equals(this.replicationRecords, that.replicationRecords)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.children, that.children);
+            && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.children, that.children)
+            && Objects.equals(this.incremental, that.incremental);
     }
 
     @Override
@@ -867,7 +890,8 @@ public class BackupResp {
             replicationRecords,
             enterpriseProjectId,
             providerId,
-            children);
+            children,
+            incremental);
     }
 
     @Override
@@ -897,6 +921,7 @@ public class BackupResp {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
+        sb.append("    incremental: ").append(toIndentedString(incremental)).append("\n");
         sb.append("}");
         return sb.toString();
     }

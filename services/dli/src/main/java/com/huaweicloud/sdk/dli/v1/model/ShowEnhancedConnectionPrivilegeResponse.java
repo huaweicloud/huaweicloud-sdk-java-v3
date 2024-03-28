@@ -32,7 +32,7 @@ public class ShowEnhancedConnectionPrivilegeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<ProjectPrivilege> privileges = null;
+    private List<EnhancedConnectionPrivilege> privileges = null;
 
     public ShowEnhancedConnectionPrivilegeResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ShowEnhancedConnectionPrivilegeResponse extends SdkResponse {
         this.connectionId = connectionId;
     }
 
-    public ShowEnhancedConnectionPrivilegeResponse withPrivileges(List<ProjectPrivilege> privileges) {
+    public ShowEnhancedConnectionPrivilegeResponse withPrivileges(List<EnhancedConnectionPrivilege> privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    public ShowEnhancedConnectionPrivilegeResponse addPrivilegesItem(ProjectPrivilege privilegesItem) {
+    public ShowEnhancedConnectionPrivilegeResponse addPrivilegesItem(EnhancedConnectionPrivilege privilegesItem) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -98,7 +98,8 @@ public class ShowEnhancedConnectionPrivilegeResponse extends SdkResponse {
         return this;
     }
 
-    public ShowEnhancedConnectionPrivilegeResponse withPrivileges(Consumer<List<ProjectPrivilege>> privilegesSetter) {
+    public ShowEnhancedConnectionPrivilegeResponse withPrivileges(
+        Consumer<List<EnhancedConnectionPrivilege>> privilegesSetter) {
         if (this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
@@ -110,11 +111,11 @@ public class ShowEnhancedConnectionPrivilegeResponse extends SdkResponse {
      * 跨源连接各个授权项目的信息。
      * @return privileges
      */
-    public List<ProjectPrivilege> getPrivileges() {
+    public List<EnhancedConnectionPrivilege> getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<ProjectPrivilege> privileges) {
+    public void setPrivileges(List<EnhancedConnectionPrivilege> privileges) {
         this.privileges = privileges;
     }
 
