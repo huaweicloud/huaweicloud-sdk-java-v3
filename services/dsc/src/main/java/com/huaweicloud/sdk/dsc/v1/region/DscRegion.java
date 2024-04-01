@@ -48,6 +48,8 @@ public class DscRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://sdg.tr-west-1.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://sdg.eu-west-101.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DSC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -69,6 +71,7 @@ public class DscRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("la-north-2", LA_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

@@ -551,6 +551,16 @@ public class CloudtestMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPlanListRequest::getCurrentStage, ShowPlanListRequest::setCurrentStage));
+        builder.<String>withRequestField("branch_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getBranchUri, ShowPlanListRequest::setBranchUri));
+        builder.<Boolean>withRequestField("query_all_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getQueryAllVersion, ShowPlanListRequest::setQueryAllVersion));
 
         // response
         builder.<List<TestPlanDetail>>withResponseField("body",

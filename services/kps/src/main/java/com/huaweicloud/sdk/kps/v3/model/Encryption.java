@@ -95,6 +95,11 @@ public class Encryption {
 
     private String kmsKeyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_key_id")
+
+    private String kmsKeyId;
+
     public Encryption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -118,7 +123,7 @@ public class Encryption {
     }
 
     /**
-     * kms密钥的名称。  - 若“type”为“kms”，则必须填入kms服务密钥名称。
+     * kms密钥的名称。  - 若“type”为“kms”，则必须填入\"kms_key_name\"或\"kms_key_id\"。
      * @return kmsKeyName
      */
     public String getKmsKeyName() {
@@ -127,6 +132,23 @@ public class Encryption {
 
     public void setKmsKeyName(String kmsKeyName) {
         this.kmsKeyName = kmsKeyName;
+    }
+
+    public Encryption withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
+     * kms密钥的ID。  - 若“type”为“kms”，则必须填入\"kms_key_name\"或\"kms_key_id\"。
+     * @return kmsKeyId
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
     }
 
     @Override
@@ -138,12 +160,13 @@ public class Encryption {
             return false;
         }
         Encryption that = (Encryption) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.kmsKeyName, that.kmsKeyName);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.kmsKeyName, that.kmsKeyName)
+            && Objects.equals(this.kmsKeyId, that.kmsKeyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, kmsKeyName);
+        return Objects.hash(type, kmsKeyName, kmsKeyId);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class Encryption {
         sb.append("class Encryption {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    kmsKeyName: ").append(toIndentedString(kmsKeyName)).append("\n");
+        sb.append("    kmsKeyId: ").append(toIndentedString(kmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

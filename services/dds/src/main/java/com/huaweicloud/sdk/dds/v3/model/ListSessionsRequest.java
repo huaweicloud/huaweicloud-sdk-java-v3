@@ -153,7 +153,7 @@ public class ListSessionsRequest {
     }
 
     /**
-     * 运行时间，单位为 ms。取空值表示查询所有的运行时间。也可根据当前业务需要进行配置，表示查询超出 cost_time 的会话。
+     * 运行时间，单位为 us。取空值表示查询所有的运行时间。也可根据当前业务需要进行配置，表示查询超出 cost_time 的会话。
      * @return costTime
      */
     public Integer getCostTime() {

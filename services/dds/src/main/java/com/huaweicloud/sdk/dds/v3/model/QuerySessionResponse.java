@@ -134,7 +134,7 @@ public class QuerySessionResponse {
     }
 
     /**
-     * 运行时间，单位为 ms。
+     * 运行时间，单位为 us。
      * @return costTime
      */
     public String getCostTime() {

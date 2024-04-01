@@ -35,6 +35,16 @@ public class ShowPlanListRequest {
 
     private String currentStage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "branch_uri")
+
+    private String branchUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_all_version")
+
+    private Boolean queryAllVersion;
+
     public ShowPlanListRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -124,6 +134,40 @@ public class ShowPlanListRequest {
         this.currentStage = currentStage;
     }
 
+    public ShowPlanListRequest withBranchUri(String branchUri) {
+        this.branchUri = branchUri;
+        return this;
+    }
+
+    /**
+     * 分支Uri，默认master
+     * @return branchUri
+     */
+    public String getBranchUri() {
+        return branchUri;
+    }
+
+    public void setBranchUri(String branchUri) {
+        this.branchUri = branchUri;
+    }
+
+    public ShowPlanListRequest withQueryAllVersion(Boolean queryAllVersion) {
+        this.queryAllVersion = queryAllVersion;
+        return this;
+    }
+
+    /**
+     * 是否查询所有版本下测试计划，默认为false。若值为true, 查询所有版本下测试计划; 若为false, 查询branch_uri指定分支下的测试计划, branch_uri为空时默认为master
+     * @return queryAllVersion
+     */
+    public Boolean getQueryAllVersion() {
+        return queryAllVersion;
+    }
+
+    public void setQueryAllVersion(Boolean queryAllVersion) {
+        this.queryAllVersion = queryAllVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +179,13 @@ public class ShowPlanListRequest {
         ShowPlanListRequest that = (ShowPlanListRequest) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.currentStage, that.currentStage);
+            && Objects.equals(this.currentStage, that.currentStage) && Objects.equals(this.branchUri, that.branchUri)
+            && Objects.equals(this.queryAllVersion, that.queryAllVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, offset, limit, name, currentStage);
+        return Objects.hash(projectId, offset, limit, name, currentStage, branchUri, queryAllVersion);
     }
 
     @Override
@@ -152,6 +197,8 @@ public class ShowPlanListRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    currentStage: ").append(toIndentedString(currentStage)).append("\n");
+        sb.append("    branchUri: ").append(toIndentedString(branchUri)).append("\n");
+        sb.append("    queryAllVersion: ").append(toIndentedString(queryAllVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

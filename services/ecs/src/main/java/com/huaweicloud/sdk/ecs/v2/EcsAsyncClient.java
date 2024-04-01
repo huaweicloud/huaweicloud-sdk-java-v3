@@ -97,12 +97,16 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorRequest;
@@ -2438,6 +2442,82 @@ public class EcsAsyncClient {
     public AsyncInvoker<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadataAsyncInvoker(
         UpdateServerMetadataRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.updateServerMetadata, hcClient);
+    }
+
+    /**
+     * 查询API版本信息列表
+     *
+     * 返回Nova当前所有可用的版本。
+     * 
+     * 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+     * 
+     * - \&quot;主版本号\&quot;: 具有独立的url。
+     * - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaListVersionsRequest 请求对象
+     * @return CompletableFuture<NovaListVersionsResponse>
+     */
+    public CompletableFuture<NovaListVersionsResponse> novaListVersionsAsync(NovaListVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.novaListVersions);
+    }
+
+    /**
+     * 查询API版本信息列表
+     *
+     * 返回Nova当前所有可用的版本。
+     * 
+     * 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+     * 
+     * - \&quot;主版本号\&quot;: 具有独立的url。
+     * - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaListVersionsRequest 请求对象
+     * @return AsyncInvoker<NovaListVersionsRequest, NovaListVersionsResponse>
+     */
+    public AsyncInvoker<NovaListVersionsRequest, NovaListVersionsResponse> novaListVersionsAsyncInvoker(
+        NovaListVersionsRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.novaListVersions, hcClient);
+    }
+
+    /**
+     * 查询指定API版本信息
+     *
+     * 返回指定版本的信息。
+     * 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+     * 
+     * - \&quot;主版本号\&quot;: 具有独立的url。
+     * - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowVersionRequest 请求对象
+     * @return CompletableFuture<NovaShowVersionResponse>
+     */
+    public CompletableFuture<NovaShowVersionResponse> novaShowVersionAsync(NovaShowVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowVersion);
+    }
+
+    /**
+     * 查询指定API版本信息
+     *
+     * 返回指定版本的信息。
+     * 为了支持功能不断扩展，Nova API支持版本号区分。Nova中有两种形式的版本号：
+     * 
+     * - \&quot;主版本号\&quot;: 具有独立的url。
+     * - \&quot;微版本号\&quot;: 通过Http请求头X-OpenStack-Nova-API-Version来使用，从2.27版本后更改为OpenStack-API-Version。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowVersionRequest 请求对象
+     * @return AsyncInvoker<NovaShowVersionRequest, NovaShowVersionResponse>
+     */
+    public AsyncInvoker<NovaShowVersionRequest, NovaShowVersionResponse> novaShowVersionAsyncInvoker(
+        NovaShowVersionRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.novaShowVersion, hcClient);
     }
 
     /**

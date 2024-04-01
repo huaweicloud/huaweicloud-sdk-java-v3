@@ -128,12 +128,16 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryResponse;
@@ -2292,6 +2296,47 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerMetadataRequestBody.class),
             f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, UpdateServerMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NovaListVersionsRequest, NovaListVersionsResponse> novaListVersions =
+        genForNovaListVersions();
+
+    private static HttpRequestDef<NovaListVersionsRequest, NovaListVersionsResponse> genForNovaListVersions() {
+        // basic
+        HttpRequestDef.Builder<NovaListVersionsRequest, NovaListVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NovaListVersionsRequest.class, NovaListVersionsResponse.class)
+                .withName("NovaListVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NovaShowVersionRequest, NovaShowVersionResponse> novaShowVersion =
+        genForNovaShowVersion();
+
+    private static HttpRequestDef<NovaShowVersionRequest, NovaShowVersionResponse> genForNovaShowVersion() {
+        // basic
+        HttpRequestDef.Builder<NovaShowVersionRequest, NovaShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NovaShowVersionRequest.class, NovaShowVersionResponse.class)
+                .withName("NovaShowVersion")
+                .withUri("/{api_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("api_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaShowVersionRequest::getApiVersion, NovaShowVersionRequest::setApiVersion));
 
         // response
 
