@@ -25,6 +25,11 @@ public class ListStatisticsResponse extends SdkResponse {
     private List<MonthUsed> gbs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_gbs")
+
+    private List<MonthUsed> gpuGbs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statistics")
 
     private ListFunctionStatisticsResponseBody statistics;
@@ -95,6 +100,39 @@ public class ListStatisticsResponse extends SdkResponse {
         this.gbs = gbs;
     }
 
+    public ListStatisticsResponse withGpuGbs(List<MonthUsed> gpuGbs) {
+        this.gpuGbs = gpuGbs;
+        return this;
+    }
+
+    public ListStatisticsResponse addGpuGbsItem(MonthUsed gpuGbsItem) {
+        if (this.gpuGbs == null) {
+            this.gpuGbs = new ArrayList<>();
+        }
+        this.gpuGbs.add(gpuGbsItem);
+        return this;
+    }
+
+    public ListStatisticsResponse withGpuGbs(Consumer<List<MonthUsed>> gpuGbsSetter) {
+        if (this.gpuGbs == null) {
+            this.gpuGbs = new ArrayList<>();
+        }
+        gpuGbsSetter.accept(this.gpuGbs);
+        return this;
+    }
+
+    /**
+     * 月度gpu资源用量
+     * @return gpuGbs
+     */
+    public List<MonthUsed> getGpuGbs() {
+        return gpuGbs;
+    }
+
+    public void setGpuGbs(List<MonthUsed> gpuGbs) {
+        this.gpuGbs = gpuGbs;
+    }
+
     public ListStatisticsResponse withStatistics(ListFunctionStatisticsResponseBody statistics) {
         this.statistics = statistics;
         return this;
@@ -131,12 +169,12 @@ public class ListStatisticsResponse extends SdkResponse {
         }
         ListStatisticsResponse that = (ListStatisticsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.gbs, that.gbs)
-            && Objects.equals(this.statistics, that.statistics);
+            && Objects.equals(this.gpuGbs, that.gpuGbs) && Objects.equals(this.statistics, that.statistics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, gbs, statistics);
+        return Objects.hash(count, gbs, gpuGbs, statistics);
     }
 
     @Override
@@ -145,6 +183,7 @@ public class ListStatisticsResponse extends SdkResponse {
         sb.append("class ListStatisticsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    gbs: ").append(toIndentedString(gbs)).append("\n");
+        sb.append("    gpuGbs: ").append(toIndentedString(gpuGbs)).append("\n");
         sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
         sb.append("}");
         return sb.toString();

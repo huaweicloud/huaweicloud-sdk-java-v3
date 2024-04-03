@@ -24,6 +24,11 @@ public class RuleServiceDto {
     private Integer protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocols")
+
+    private List<Integer> protocols = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_port")
 
     private String sourcePort;
@@ -49,6 +54,11 @@ public class RuleServiceDto {
     private List<ServiceItem> customService = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "predefined_group")
+
+    private List<String> predefinedGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_group")
 
     private List<String> serviceGroup = null;
@@ -57,6 +67,11 @@ public class RuleServiceDto {
     @JsonProperty(value = "service_group_names")
 
     private List<AddressGroupVO> serviceGroupNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_set_type")
+
+    private Integer serviceSetType;
 
     public RuleServiceDto withType(Integer type) {
         this.type = type;
@@ -90,6 +105,39 @@ public class RuleServiceDto {
 
     public void setProtocol(Integer protocol) {
         this.protocol = protocol;
+    }
+
+    public RuleServiceDto withProtocols(List<Integer> protocols) {
+        this.protocols = protocols;
+        return this;
+    }
+
+    public RuleServiceDto addProtocolsItem(Integer protocolsItem) {
+        if (this.protocols == null) {
+            this.protocols = new ArrayList<>();
+        }
+        this.protocols.add(protocolsItem);
+        return this;
+    }
+
+    public RuleServiceDto withProtocols(Consumer<List<Integer>> protocolsSetter) {
+        if (this.protocols == null) {
+            this.protocols = new ArrayList<>();
+        }
+        protocolsSetter.accept(this.protocols);
+        return this;
+    }
+
+    /**
+     * 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * @return protocols
+     */
+    public List<Integer> getProtocols() {
+        return protocols;
+    }
+
+    public void setProtocols(List<Integer> protocols) {
+        this.protocols = protocols;
     }
 
     public RuleServiceDto withSourcePort(String sourcePort) {
@@ -193,6 +241,39 @@ public class RuleServiceDto {
         this.customService = customService;
     }
 
+    public RuleServiceDto withPredefinedGroup(List<String> predefinedGroup) {
+        this.predefinedGroup = predefinedGroup;
+        return this;
+    }
+
+    public RuleServiceDto addPredefinedGroupItem(String predefinedGroupItem) {
+        if (this.predefinedGroup == null) {
+            this.predefinedGroup = new ArrayList<>();
+        }
+        this.predefinedGroup.add(predefinedGroupItem);
+        return this;
+    }
+
+    public RuleServiceDto withPredefinedGroup(Consumer<List<String>> predefinedGroupSetter) {
+        if (this.predefinedGroup == null) {
+            this.predefinedGroup = new ArrayList<>();
+        }
+        predefinedGroupSetter.accept(this.predefinedGroup);
+        return this;
+    }
+
+    /**
+     * 预定义服务组列表
+     * @return predefinedGroup
+     */
+    public List<String> getPredefinedGroup() {
+        return predefinedGroup;
+    }
+
+    public void setPredefinedGroup(List<String> predefinedGroup) {
+        this.predefinedGroup = predefinedGroup;
+    }
+
     public RuleServiceDto withServiceGroup(List<String> serviceGroup) {
         this.serviceGroup = serviceGroup;
         return this;
@@ -259,6 +340,23 @@ public class RuleServiceDto {
         this.serviceGroupNames = serviceGroupNames;
     }
 
+    public RuleServiceDto withServiceSetType(Integer serviceSetType) {
+        this.serviceSetType = serviceSetType;
+        return this;
+    }
+
+    /**
+     * 服务组类型，0表示自定义服务组，1表示常用WEB服务，2表示常用远程登录和PING，3表示常用数据库
+     * @return serviceSetType
+     */
+    public Integer getServiceSetType() {
+        return serviceSetType;
+    }
+
+    public void setServiceSetType(Integer serviceSetType) {
+        this.serviceSetType = serviceSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -269,25 +367,30 @@ public class RuleServiceDto {
         }
         RuleServiceDto that = (RuleServiceDto) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
-            && Objects.equals(this.serviceSetId, that.serviceSetId)
+            && Objects.equals(this.protocols, that.protocols) && Objects.equals(this.sourcePort, that.sourcePort)
+            && Objects.equals(this.destPort, that.destPort) && Objects.equals(this.serviceSetId, that.serviceSetId)
             && Objects.equals(this.serviceSetName, that.serviceSetName)
             && Objects.equals(this.customService, that.customService)
+            && Objects.equals(this.predefinedGroup, that.predefinedGroup)
             && Objects.equals(this.serviceGroup, that.serviceGroup)
-            && Objects.equals(this.serviceGroupNames, that.serviceGroupNames);
+            && Objects.equals(this.serviceGroupNames, that.serviceGroupNames)
+            && Objects.equals(this.serviceSetType, that.serviceSetType);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(type,
             protocol,
+            protocols,
             sourcePort,
             destPort,
             serviceSetId,
             serviceSetName,
             customService,
+            predefinedGroup,
             serviceGroup,
-            serviceGroupNames);
+            serviceGroupNames,
+            serviceSetType);
     }
 
     @Override
@@ -296,13 +399,16 @@ public class RuleServiceDto {
         sb.append("class RuleServiceDto {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    protocols: ").append(toIndentedString(protocols)).append("\n");
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    destPort: ").append(toIndentedString(destPort)).append("\n");
         sb.append("    serviceSetId: ").append(toIndentedString(serviceSetId)).append("\n");
         sb.append("    serviceSetName: ").append(toIndentedString(serviceSetName)).append("\n");
         sb.append("    customService: ").append(toIndentedString(customService)).append("\n");
+        sb.append("    predefinedGroup: ").append(toIndentedString(predefinedGroup)).append("\n");
         sb.append("    serviceGroup: ").append(toIndentedString(serviceGroup)).append("\n");
         sb.append("    serviceGroupNames: ").append(toIndentedString(serviceGroupNames)).append("\n");
+        sb.append("    serviceSetType: ").append(toIndentedString(serviceSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

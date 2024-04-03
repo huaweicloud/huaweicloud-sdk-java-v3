@@ -66,12 +66,12 @@ public class CreateSparkJobRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<SparkJobResource> resources = null;
+    private List<JobResource> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    private List<SparkJobGroup> groups = null;
+    private List<JobResourcesGroup> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conf")
@@ -457,12 +457,12 @@ public class CreateSparkJobRequestBody {
         this.modules = modules;
     }
 
-    public CreateSparkJobRequestBody withResources(List<SparkJobResource> resources) {
+    public CreateSparkJobRequestBody withResources(List<JobResource> resources) {
         this.resources = resources;
         return this;
     }
 
-    public CreateSparkJobRequestBody addResourcesItem(SparkJobResource resourcesItem) {
+    public CreateSparkJobRequestBody addResourcesItem(JobResource resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -470,7 +470,7 @@ public class CreateSparkJobRequestBody {
         return this;
     }
 
-    public CreateSparkJobRequestBody withResources(Consumer<List<SparkJobResource>> resourcesSetter) {
+    public CreateSparkJobRequestBody withResources(Consumer<List<JobResource>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -482,20 +482,20 @@ public class CreateSparkJobRequestBody {
      * JSON对象列表，填写用户已上传到队列的类型为JSON的资源包名和类型。
      * @return resources
      */
-    public List<SparkJobResource> getResources() {
+    public List<JobResource> getResources() {
         return resources;
     }
 
-    public void setResources(List<SparkJobResource> resources) {
+    public void setResources(List<JobResource> resources) {
         this.resources = resources;
     }
 
-    public CreateSparkJobRequestBody withGroups(List<SparkJobGroup> groups) {
+    public CreateSparkJobRequestBody withGroups(List<JobResourcesGroup> groups) {
         this.groups = groups;
         return this;
     }
 
-    public CreateSparkJobRequestBody addGroupsItem(SparkJobGroup groupsItem) {
+    public CreateSparkJobRequestBody addGroupsItem(JobResourcesGroup groupsItem) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -503,7 +503,7 @@ public class CreateSparkJobRequestBody {
         return this;
     }
 
-    public CreateSparkJobRequestBody withGroups(Consumer<List<SparkJobGroup>> groupsSetter) {
+    public CreateSparkJobRequestBody withGroups(Consumer<List<JobResourcesGroup>> groupsSetter) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -515,11 +515,11 @@ public class CreateSparkJobRequestBody {
      * JSON对象列表，填写用户组类型资源，格式详见请求示例。resources中的name未进行type校验，只要此分组中存在这个名字的包即可。
      * @return groups
      */
-    public List<SparkJobGroup> getGroups() {
+    public List<JobResourcesGroup> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<SparkJobGroup> groups) {
+    public void setGroups(List<JobResourcesGroup> groups) {
         this.groups = groups;
     }
 

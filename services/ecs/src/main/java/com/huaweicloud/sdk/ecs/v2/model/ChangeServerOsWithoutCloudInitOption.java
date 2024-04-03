@@ -41,6 +41,11 @@ public class ChangeServerOsWithoutCloudInitOption {
 
     private ChangeSeversOsMetadataWithoutCloudInitOption metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isAutoPay")
+
+    private String isAutoPay;
+
     public ChangeServerOsWithoutCloudInitOption withAdminpass(String adminpass) {
         this.adminpass = adminpass;
         return this;
@@ -153,6 +158,23 @@ public class ChangeServerOsWithoutCloudInitOption {
         this.metadata = metadata;
     }
 
+    public ChangeServerOsWithoutCloudInitOption withIsAutoPay(String isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    /**
+     * 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。
+     * @return isAutoPay
+     */
+    public String getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(String isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -164,12 +186,13 @@ public class ChangeServerOsWithoutCloudInitOption {
         ChangeServerOsWithoutCloudInitOption that = (ChangeServerOsWithoutCloudInitOption) obj;
         return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
             && Objects.equals(this.userid, that.userid) && Objects.equals(this.imageid, that.imageid)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.metadata, that.metadata);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminpass, keyname, userid, imageid, mode, metadata);
+        return Objects.hash(adminpass, keyname, userid, imageid, mode, metadata, isAutoPay);
     }
 
     @Override
@@ -182,6 +205,7 @@ public class ChangeServerOsWithoutCloudInitOption {
         sb.append("    imageid: ").append(toIndentedString(imageid)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

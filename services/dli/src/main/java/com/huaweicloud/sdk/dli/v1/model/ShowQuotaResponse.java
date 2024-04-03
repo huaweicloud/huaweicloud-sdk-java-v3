@@ -13,18 +13,40 @@ import java.util.function.Consumer;
 public class ShowQuotaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Quotas")
+    @JsonProperty(value = "is_success")
 
-    private ShowQuotaResponseBodyQuotas quotas;
+    private Boolean isSuccess;
 
-    public ShowQuotaResponse withQuotas(ShowQuotaResponseBodyQuotas quotas) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quotas")
+
+    private QuotaList quotas;
+
+    public ShowQuotaResponse withIsSuccess(Boolean isSuccess) {
+        this.isSuccess = isSuccess;
+        return this;
+    }
+
+    /**
+     * 是否成功
+     * @return isSuccess
+     */
+    public Boolean getIsSuccess() {
+        return isSuccess;
+    }
+
+    public void setIsSuccess(Boolean isSuccess) {
+        this.isSuccess = isSuccess;
+    }
+
+    public ShowQuotaResponse withQuotas(QuotaList quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ShowQuotaResponse withQuotas(Consumer<ShowQuotaResponseBodyQuotas> quotasSetter) {
+    public ShowQuotaResponse withQuotas(Consumer<QuotaList> quotasSetter) {
         if (this.quotas == null) {
-            this.quotas = new ShowQuotaResponseBodyQuotas();
+            this.quotas = new QuotaList();
             quotasSetter.accept(this.quotas);
         }
 
@@ -35,11 +57,11 @@ public class ShowQuotaResponse extends SdkResponse {
      * Get quotas
      * @return quotas
      */
-    public ShowQuotaResponseBodyQuotas getQuotas() {
+    public QuotaList getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(ShowQuotaResponseBodyQuotas quotas) {
+    public void setQuotas(QuotaList quotas) {
         this.quotas = quotas;
     }
 
@@ -52,18 +74,19 @@ public class ShowQuotaResponse extends SdkResponse {
             return false;
         }
         ShowQuotaResponse that = (ShowQuotaResponse) obj;
-        return Objects.equals(this.quotas, that.quotas);
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.quotas, that.quotas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(quotas);
+        return Objects.hash(isSuccess, quotas);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowQuotaResponse {\n");
+        sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    quotas: ").append(toIndentedString(quotas)).append("\n");
         sb.append("}");
         return sb.toString();

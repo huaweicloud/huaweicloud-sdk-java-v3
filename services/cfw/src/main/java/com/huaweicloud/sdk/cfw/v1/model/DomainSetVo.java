@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cfw.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DomainSetVo
@@ -44,6 +47,11 @@ public class DomainSetVo {
     @JsonProperty(value = "message")
 
     private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rules")
+
+    private List<UseRuleVO> rules = null;
 
     public DomainSetVo withSetId(String setId) {
         this.setId = setId;
@@ -164,6 +172,39 @@ public class DomainSetVo {
         this.message = message;
     }
 
+    public DomainSetVo withRules(List<UseRuleVO> rules) {
+        this.rules = rules;
+        return this;
+    }
+
+    public DomainSetVo addRulesItem(UseRuleVO rulesItem) {
+        if (this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
+        this.rules.add(rulesItem);
+        return this;
+    }
+
+    public DomainSetVo withRules(Consumer<List<UseRuleVO>> rulesSetter) {
+        if (this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
+        rulesSetter.accept(this.rules);
+        return this;
+    }
+
+    /**
+     * 使用规则id列表
+     * @return rules
+     */
+    public List<UseRuleVO> getRules() {
+        return rules;
+    }
+
+    public void setRules(List<UseRuleVO> rules) {
+        this.rules = rules;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +217,13 @@ public class DomainSetVo {
         return Objects.equals(this.setId, that.setId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.refCount, that.refCount)
             && Objects.equals(this.domainSetType, that.domainSetType)
-            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.message, that.message);
+            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, name, description, refCount, domainSetType, configStatus, message);
+        return Objects.hash(setId, name, description, refCount, domainSetType, configStatus, message, rules);
     }
 
     @Override
@@ -195,6 +237,7 @@ public class DomainSetVo {
         sb.append("    domainSetType: ").append(toIndentedString(domainSetType)).append("\n");
         sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

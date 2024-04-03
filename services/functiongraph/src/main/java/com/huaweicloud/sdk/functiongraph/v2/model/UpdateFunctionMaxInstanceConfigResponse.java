@@ -51,7 +51,7 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
     private String _package;
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
+     * FunctionGraph函数的执行环境 Java8: Java语言8版本。 Java11: Java语言11版本。 Java17: Java语言17版本（当前仅支持华北-乌兰察布二零二） Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Python3.10: Python语言3.10版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 Node.js16.17: Nodejs语言16.17版本。 Node.js18.15: Nodejs语言18.15版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 C#(.NET Core 6.0): C#语言6.0版本（当前仅支持华北-乌兰察布二零二）。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Cangjie1.0：仓颉语言1.0版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      */
     public static final class RuntimeEnum {
 
@@ -64,6 +64,41 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
          * Enum JAVA11 for value: "Java11"
          */
         public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
+
+        /**
+         * Enum JAVA17 for value: "Java17"
+         */
+        public static final RuntimeEnum JAVA17 = new RuntimeEnum("Java17");
+
+        /**
+         * Enum PYTHON2_7 for value: "Python2.7"
+         */
+        public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
+
+        /**
+         * Enum PYTHON3_6 for value: "Python3.6"
+         */
+        public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
+
+        /**
+         * Enum PYTHON3_9 for value: "Python3.9"
+         */
+        public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
+
+        /**
+         * Enum PYTHON3_10 for value: "Python3.10"
+         */
+        public static final RuntimeEnum PYTHON3_10 = new RuntimeEnum("Python3.10");
+
+        /**
+         * Enum GO1_8 for value: "Go1.8"
+         */
+        public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
+
+        /**
+         * Enum GO1_X for value: "Go1.x"
+         */
+        public static final RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
 
         /**
          * Enum NODE_JS6_10 for value: "Node.js6.10"
@@ -91,24 +126,14 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         public static final RuntimeEnum NODE_JS14_18 = new RuntimeEnum("Node.js14.18");
 
         /**
-         * Enum PYTHON2_7 for value: "Python2.7"
+         * Enum NODE_JS16_17 for value: "Node.js16.17"
          */
-        public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
+        public static final RuntimeEnum NODE_JS16_17 = new RuntimeEnum("Node.js16.17");
 
         /**
-         * Enum PYTHON3_6 for value: "Python3.6"
+         * Enum NODE_JS18_15 for value: "Node.js18.15"
          */
-        public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
-
-        /**
-         * Enum GO1_8 for value: "Go1.8"
-         */
-        public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
-
-        /**
-         * Enum GO1_X for value: "Go1.x"
-         */
-        public static final RuntimeEnum GO1_X = new RuntimeEnum("Go1.x");
+        public static final RuntimeEnum NODE_JS18_15 = new RuntimeEnum("Node.js18.15");
 
         /**
          * Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)"
@@ -126,19 +151,24 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         public static final RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
 
         /**
-         * Enum PHP7_3 for value: "PHP7.3"
+         * Enum C_NET_CORE_6_0_ for value: "C#(.NET Core 6.0)"
          */
-        public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
-
-        /**
-         * Enum PYTHON3_9 for value: "Python3.9"
-         */
-        public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
+        public static final RuntimeEnum C_NET_CORE_6_0_ = new RuntimeEnum("C#(.NET Core 6.0)");
 
         /**
          * Enum CUSTOM for value: "Custom"
          */
         public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
+         * Enum PHP7_3 for value: "PHP7.3"
+         */
+        public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
+
+        /**
+         * Enum CANGJIE1_0 for value: "Cangjie1.0"
+         */
+        public static final RuntimeEnum CANGJIE1_0 = new RuntimeEnum("Cangjie1.0");
 
         /**
          * Enum HTTP for value: "http"
@@ -156,21 +186,27 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             Map<String, RuntimeEnum> map = new HashMap<>();
             map.put("Java8", JAVA8);
             map.put("Java11", JAVA11);
+            map.put("Java17", JAVA17);
+            map.put("Python2.7", PYTHON2_7);
+            map.put("Python3.6", PYTHON3_6);
+            map.put("Python3.9", PYTHON3_9);
+            map.put("Python3.10", PYTHON3_10);
+            map.put("Go1.8", GO1_8);
+            map.put("Go1.x", GO1_X);
             map.put("Node.js6.10", NODE_JS6_10);
             map.put("Node.js8.10", NODE_JS8_10);
             map.put("Node.js10.16", NODE_JS10_16);
             map.put("Node.js12.13", NODE_JS12_13);
             map.put("Node.js14.18", NODE_JS14_18);
-            map.put("Python2.7", PYTHON2_7);
-            map.put("Python3.6", PYTHON3_6);
-            map.put("Go1.8", GO1_8);
-            map.put("Go1.x", GO1_X);
+            map.put("Node.js16.17", NODE_JS16_17);
+            map.put("Node.js18.15", NODE_JS18_15);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
-            map.put("PHP7.3", PHP7_3);
-            map.put("Python3.9", PYTHON3_9);
+            map.put("C#(.NET Core 6.0)", C_NET_CORE_6_0_);
             map.put("Custom", CUSTOM);
+            map.put("PHP7.3", PHP7_3);
+            map.put("Cangjie1.0", CANGJIE1_0);
             map.put("http", HTTP);
             map.put("Custom Image", CUSTOM_IMAGE);
             return Collections.unmodifiableMap(map);
@@ -536,6 +572,11 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_cloud_debug")
+
+    private String enableCloudDebug;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_dynamic_memory")
 
     private Boolean enableDynamicMemory;
@@ -549,6 +590,16 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
     @JsonProperty(value = "domain_names")
 
     private String domainNames;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_return_stream")
+
+    private Boolean isReturnStream;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
 
     public UpdateFunctionMaxInstanceConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -658,7 +709,7 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
     }
 
     /**
-     * FunctionGraph函数的执行环境 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Java8: Java语言8版本。 Java11: Java语言11版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
+     * FunctionGraph函数的执行环境 Java8: Java语言8版本。 Java11: Java语言11版本。 Java17: Java语言17版本（当前仅支持华北-乌兰察布二零二） Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Python3.9: Python语言3.9版本。 Python3.10: Python语言3.10版本。 Go1.8: Go语言1.8版本。 Go1.x: Go语言1.x版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 Node.js10.16: Nodejs语言10.16版本。 Node.js12.13: Nodejs语言12.13版本。 Node.js14.18: Nodejs语言14.18版本。 Node.js16.17: Nodejs语言16.17版本。 Node.js18.15: Nodejs语言18.15版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 C#(.NET Core 6.0): C#语言6.0版本（当前仅支持华北-乌兰察布二零二）。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 Cangjie1.0：仓颉语言1.0版本。 http: HTTP函数。 Custom Image: 自定义镜像函数。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -1222,6 +1273,23 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         this.type = type;
     }
 
+    public UpdateFunctionMaxInstanceConfigResponse withEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+        return this;
+    }
+
+    /**
+     * 适配CloudDebug场景，是否开启云调试（已废弃）
+     * @return enableCloudDebug
+     */
+    public String getEnableCloudDebug() {
+        return enableCloudDebug;
+    }
+
+    public void setEnableCloudDebug(String enableCloudDebug) {
+        this.enableCloudDebug = enableCloudDebug;
+    }
+
     public UpdateFunctionMaxInstanceConfigResponse withEnableDynamicMemory(Boolean enableDynamicMemory) {
         this.enableDynamicMemory = enableDynamicMemory;
         return this;
@@ -1273,6 +1341,40 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         this.domainNames = domainNames;
     }
 
+    public UpdateFunctionMaxInstanceConfigResponse withIsReturnStream(Boolean isReturnStream) {
+        this.isReturnStream = isReturnStream;
+        return this;
+    }
+
+    /**
+     * 是否返回流式数据（已废弃）
+     * @return isReturnStream
+     */
+    public Boolean getIsReturnStream() {
+        return isReturnStream;
+    }
+
+    public void setIsReturnStream(Boolean isReturnStream) {
+        this.isReturnStream = isReturnStream;
+    }
+
+    public UpdateFunctionMaxInstanceConfigResponse withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息，只支持自定义镜像函数
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1305,9 +1407,12 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.longTime, that.longTime) && Objects.equals(this.logGroupId, that.logGroupId)
             && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableCloudDebug, that.enableCloudDebug)
             && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
             && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
-            && Objects.equals(this.domainNames, that.domainNames);
+            && Objects.equals(this.domainNames, that.domainNames)
+            && Objects.equals(this.isReturnStream, that.isReturnStream)
+            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader);
     }
 
     @Override
@@ -1349,9 +1454,12 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             logGroupId,
             logStreamId,
             type,
+            enableCloudDebug,
             enableDynamicMemory,
             isStatefulFunction,
-            domainNames);
+            domainNames,
+            isReturnStream,
+            enableAuthInHeader);
     }
 
     @Override
@@ -1395,9 +1503,12 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enableCloudDebug: ").append(toIndentedString(enableCloudDebug)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
+        sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("}");
         return sb.toString();
     }

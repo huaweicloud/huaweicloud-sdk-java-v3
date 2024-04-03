@@ -45,6 +45,16 @@ public class ListTenantVpcIgwsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListTenantVpcIgwsRequest withFields(String fields) {
         this.fields = fields;
         return this;
@@ -166,6 +176,40 @@ public class ListTenantVpcIgwsRequest {
         this.limit = limit;
     }
 
+    public ListTenantVpcIgwsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页起始点
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListTenantVpcIgwsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页起始点
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,12 +222,13 @@ public class ListTenantVpcIgwsRequest {
         return Objects.equals(this.fields, that.fields) && Objects.equals(this.id, that.id)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fields, id, vpcId, name, sortKey, sortDir, limit);
+        return Objects.hash(fields, id, vpcId, name, sortKey, sortDir, limit, offset, marker);
     }
 
     @Override
@@ -197,6 +242,8 @@ public class ListTenantVpcIgwsRequest {
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

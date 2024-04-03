@@ -14,17 +14,16 @@ public class CreateQueuePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private CreateQueuePropertyRequestBodyProperties properties;
+    private CommonQueueProperty properties;
 
-    public CreateQueuePropertyRequestBody withProperties(CreateQueuePropertyRequestBodyProperties properties) {
+    public CreateQueuePropertyRequestBody withProperties(CommonQueueProperty properties) {
         this.properties = properties;
         return this;
     }
 
-    public CreateQueuePropertyRequestBody withProperties(
-        Consumer<CreateQueuePropertyRequestBodyProperties> propertiesSetter) {
+    public CreateQueuePropertyRequestBody withProperties(Consumer<CommonQueueProperty> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new CreateQueuePropertyRequestBodyProperties();
+            this.properties = new CommonQueueProperty();
             propertiesSetter.accept(this.properties);
         }
 
@@ -35,11 +34,11 @@ public class CreateQueuePropertyRequestBody {
      * Get properties
      * @return properties
      */
-    public CreateQueuePropertyRequestBodyProperties getProperties() {
+    public CommonQueueProperty getProperties() {
         return properties;
     }
 
-    public void setProperties(CreateQueuePropertyRequestBodyProperties properties) {
+    public void setProperties(CommonQueueProperty properties) {
         this.properties = properties;
     }
 

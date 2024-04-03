@@ -22,6 +22,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowApiTestcaseHistoriesRequest;
@@ -333,6 +335,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListTestCasesRequest, ListTestCasesResponse> listTestCasesAsyncInvoker(
         ListTestCasesRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listTestCases, hcClient);
+    }
+
+    /**
+     * 查询项目下关联了需求的用例列表
+     *
+     * 查询项目下关联了需求的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasesByProjectIssuesRelationRequest 请求对象
+     * @return CompletableFuture<ListTestcasesByProjectIssuesRelationResponse>
+     */
+    public CompletableFuture<ListTestcasesByProjectIssuesRelationResponse> listTestcasesByProjectIssuesRelationAsync(
+        ListTestcasesByProjectIssuesRelationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTestcasesByProjectIssuesRelation);
+    }
+
+    /**
+     * 查询项目下关联了需求的用例列表
+     *
+     * 查询项目下关联了需求的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasesByProjectIssuesRelationRequest 请求对象
+     * @return AsyncInvoker<ListTestcasesByProjectIssuesRelationRequest, ListTestcasesByProjectIssuesRelationResponse>
+     */
+    public AsyncInvoker<ListTestcasesByProjectIssuesRelationRequest, ListTestcasesByProjectIssuesRelationResponse> listTestcasesByProjectIssuesRelationAsyncInvoker(
+        ListTestcasesByProjectIssuesRelationRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestcasesByProjectIssuesRelation, hcClient);
     }
 
     /**

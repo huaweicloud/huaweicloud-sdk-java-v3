@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
@@ -20,14 +23,51 @@ import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
+import com.huaweicloud.sdk.scm.v3.model.PurchaseCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateResponse;
 
 @SuppressWarnings("unchecked")
 public class ScmMeta {
+
+    public static final HttpRequestDef<ApplyCertificateRequest, ApplyCertificateResponse> applyCertificate =
+        genForApplyCertificate();
+
+    private static HttpRequestDef<ApplyCertificateRequest, ApplyCertificateResponse> genForApplyCertificate() {
+        // basic
+        HttpRequestDef.Builder<ApplyCertificateRequest, ApplyCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ApplyCertificateRequest.class, ApplyCertificateResponse.class)
+                .withName("ApplyCertificate")
+                .withUri("/v3/scm/certificates/{certificate_id}/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyCertificateRequest::getCertificateId,
+                ApplyCertificateRequest::setCertificateId));
+        builder.<ApplyCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyCertificateRequestBody.class),
+            f -> f.withMarshaller(ApplyCertificateRequest::getBody, ApplyCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificate =
         genForBatchPushCertificate();
@@ -213,6 +253,29 @@ public class ScmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDeployedResourcesRequest, ListDeployedResourcesResponse> listDeployedResources =
+        genForListDeployedResources();
+
+    private static HttpRequestDef<ListDeployedResourcesRequest, ListDeployedResourcesResponse> genForListDeployedResources() {
+        // basic
+        HttpRequestDef.Builder<ListDeployedResourcesRequest, ListDeployedResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListDeployedResourcesRequest.class, ListDeployedResourcesResponse.class)
+            .withName("ListDeployedResources")
+            .withUri("/v3/scm/deployed-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListDeployedResourcesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDeployedResourcesRequestBody.class),
+            f -> f.withMarshaller(ListDeployedResourcesRequest::getBody, ListDeployedResourcesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PushCertificateRequest, PushCertificateResponse> pushCertificate =
         genForPushCertificate();
 
@@ -258,6 +321,52 @@ public class ScmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SubscribeCertificateRequest, SubscribeCertificateResponse> subscribeCertificate =
+        genForSubscribeCertificate();
+
+    private static HttpRequestDef<SubscribeCertificateRequest, SubscribeCertificateResponse> genForSubscribeCertificate() {
+        // basic
+        HttpRequestDef.Builder<SubscribeCertificateRequest, SubscribeCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SubscribeCertificateRequest.class, SubscribeCertificateResponse.class)
+            .withName("SubscribeCertificate")
+            .withUri("/v3/scm/certificates/buy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<PurchaseCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PurchaseCertificateRequestBody.class),
+            f -> f.withMarshaller(SubscribeCertificateRequest::getBody, SubscribeCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse> unsubscribeCertificate =
+        genForUnsubscribeCertificate();
+
+    private static HttpRequestDef<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse> genForUnsubscribeCertificate() {
+        // basic
+        HttpRequestDef.Builder<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, UnsubscribeCertificateRequest.class, UnsubscribeCertificateResponse.class)
+            .withName("UnsubscribeCertificate")
+            .withUri("/v3/scm/certificates/{cert_id}/unsubscribe")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnsubscribeCertificateRequest::getCertId, UnsubscribeCertificateRequest::setCertId));
 
         // response
 

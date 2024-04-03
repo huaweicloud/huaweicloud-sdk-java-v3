@@ -23,6 +23,11 @@ public class CreateConnectorTaskResponse extends SdkResponse {
     private String topics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topics_regex")
+
+    private String topicsRegex;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
     private String sourceType;
@@ -89,6 +94,23 @@ public class CreateConnectorTaskResponse extends SdkResponse {
 
     public void setTopics(String topics) {
         this.topics = topics;
+    }
+
+    public CreateConnectorTaskResponse withTopicsRegex(String topicsRegex) {
+        this.topicsRegex = topicsRegex;
+        return this;
+    }
+
+    /**
+     * SmartConnect任务配置的Topic正则表达式。
+     * @return topicsRegex
+     */
+    public String getTopicsRegex() {
+        return topicsRegex;
+    }
+
+    public void setTopicsRegex(String topicsRegex) {
+        this.topicsRegex = topicsRegex;
     }
 
     public CreateConnectorTaskResponse withSourceType(String sourceType) {
@@ -238,15 +260,16 @@ public class CreateConnectorTaskResponse extends SdkResponse {
         }
         CreateConnectorTaskResponse that = (CreateConnectorTaskResponse) obj;
         return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.topics, that.topics)
-            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.sourceTask, that.sourceTask)
-            && Objects.equals(this.sinkType, that.sinkType) && Objects.equals(this.sinkTask, that.sinkTask)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.topicsRegex, that.topicsRegex) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.sourceTask, that.sourceTask) && Objects.equals(this.sinkType, that.sinkType)
+            && Objects.equals(this.sinkTask, that.sinkTask) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, topics, sourceType, sourceTask, sinkType, sinkTask, id, status, createTime);
+        return Objects
+            .hash(taskName, topics, topicsRegex, sourceType, sourceTask, sinkType, sinkTask, id, status, createTime);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class CreateConnectorTaskResponse extends SdkResponse {
         sb.append("class CreateConnectorTaskResponse {\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
+        sb.append("    topicsRegex: ").append(toIndentedString(topicsRegex)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    sourceTask: ").append(toIndentedString(sourceTask)).append("\n");
         sb.append("    sinkType: ").append(toIndentedString(sinkType)).append("\n");

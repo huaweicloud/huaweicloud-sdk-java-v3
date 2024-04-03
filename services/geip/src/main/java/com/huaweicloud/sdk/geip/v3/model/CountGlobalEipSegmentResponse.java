@@ -17,9 +17,9 @@ public class CountGlobalEipSegmentResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_eip_segments")
+    @JsonProperty(value = "global_eip_segment")
 
-    private CountGeipSegments globalEipSegments;
+    private CountGeipSegments globalEipSegment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -43,21 +43,21 @@ public class CountGlobalEipSegmentResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public CountGlobalEipSegmentResponse withGlobalEipSegments(CountGeipSegments globalEipSegments) {
-        this.globalEipSegments = globalEipSegments;
+    public CountGlobalEipSegmentResponse withGlobalEipSegment(CountGeipSegments globalEipSegment) {
+        this.globalEipSegment = globalEipSegment;
         return this;
     }
 
     /**
-     * Get globalEipSegments
-     * @return globalEipSegments
+     * Get globalEipSegment
+     * @return globalEipSegment
      */
-    public CountGeipSegments getGlobalEipSegments() {
-        return globalEipSegments;
+    public CountGeipSegments getGlobalEipSegment() {
+        return globalEipSegment;
     }
 
-    public void setGlobalEipSegments(CountGeipSegments globalEipSegments) {
-        this.globalEipSegments = globalEipSegments;
+    public void setGlobalEipSegment(CountGeipSegments globalEipSegment) {
+        this.globalEipSegment = globalEipSegment;
     }
 
     public CountGlobalEipSegmentResponse withXRequestId(String xRequestId) {
@@ -89,13 +89,13 @@ public class CountGlobalEipSegmentResponse extends SdkResponse {
         }
         CountGlobalEipSegmentResponse that = (CountGlobalEipSegmentResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.globalEipSegments, that.globalEipSegments)
+            && Objects.equals(this.globalEipSegment, that.globalEipSegment)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalEipSegments, xRequestId);
+        return Objects.hash(requestId, globalEipSegment, xRequestId);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class CountGlobalEipSegmentResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountGlobalEipSegmentResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    globalEipSegments: ").append(toIndentedString(globalEipSegments)).append("\n");
+        sb.append("    globalEipSegment: ").append(toIndentedString(globalEipSegment)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -130,6 +130,11 @@ public class PostPaidServer {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
     public PostPaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
         return this;
@@ -654,6 +659,32 @@ public class PostPaidServer {
         this.description = description;
     }
 
+    public PostPaidServer withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public PostPaidServer withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -677,7 +708,7 @@ public class PostPaidServer {
             && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.userData, that.userData) && Objects.equals(this.vpcid, that.vpcid)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
@@ -704,7 +735,8 @@ public class PostPaidServer {
             tags,
             userData,
             vpcid,
-            description);
+            description,
+            cpuOptions);
     }
 
     @Override
@@ -734,6 +766,7 @@ public class PostPaidServer {
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    vpcid: ").append(toIndentedString(vpcid)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

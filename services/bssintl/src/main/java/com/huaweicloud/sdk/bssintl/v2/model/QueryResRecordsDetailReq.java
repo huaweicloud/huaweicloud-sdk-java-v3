@@ -188,7 +188,7 @@ public class QueryResRecordsDetailReq {
     /**
      * 计费模式。 1 : 包年/包月3：按需10：预留实例 此参数不携带或者携带值为null时，返回所有计费模式的资源详单数据记录。
      * minimum: 1
-     * maximum: 10
+     * maximum: 11
      * @return chargeMode
      */
     public Integer getChargeMode() {

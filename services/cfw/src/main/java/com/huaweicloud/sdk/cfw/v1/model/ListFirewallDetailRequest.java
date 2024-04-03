@@ -110,6 +110,11 @@ public class ListFirewallDetailRequest {
 
     private String fwInstanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public ListFirewallDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -197,6 +202,23 @@ public class ListFirewallDetailRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
+    public ListFirewallDetailRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 防火墙名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -209,12 +231,12 @@ public class ListFirewallDetailRequest {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.serviceType, that.serviceType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, serviceType, enterpriseProjectId, fwInstanceId);
+        return Objects.hash(offset, limit, serviceType, enterpriseProjectId, fwInstanceId, name);
     }
 
     @Override
@@ -226,6 +248,7 @@ public class ListFirewallDetailRequest {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

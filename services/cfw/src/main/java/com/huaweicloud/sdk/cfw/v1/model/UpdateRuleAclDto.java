@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -257,6 +259,16 @@ public class UpdateRuleAclDto {
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applications")
+
+    private List<String> applications = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applicationsJsonString")
+
+    private String applicationsJsonString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -355,6 +367,11 @@ public class UpdateRuleAclDto {
     @JsonProperty(value = "long_connect_enable")
 
     private LongConnectEnableEnum longConnectEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "profile")
+
+    private RuleProfileDto profile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
@@ -568,6 +585,56 @@ public class UpdateRuleAclDto {
         this.status = status;
     }
 
+    public UpdateRuleAclDto withApplications(List<String> applications) {
+        this.applications = applications;
+        return this;
+    }
+
+    public UpdateRuleAclDto addApplicationsItem(String applicationsItem) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        this.applications.add(applicationsItem);
+        return this;
+    }
+
+    public UpdateRuleAclDto withApplications(Consumer<List<String>> applicationsSetter) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        applicationsSetter.accept(this.applications);
+        return this;
+    }
+
+    /**
+     * 应用列表
+     * @return applications
+     */
+    public List<String> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<String> applications) {
+        this.applications = applications;
+    }
+
+    public UpdateRuleAclDto withApplicationsJsonString(String applicationsJsonString) {
+        this.applicationsJsonString = applicationsJsonString;
+        return this;
+    }
+
+    /**
+     * 应用列表转化为字符串
+     * @return applicationsJsonString
+     */
+    public String getApplicationsJsonString() {
+        return applicationsJsonString;
+    }
+
+    public void setApplicationsJsonString(String applicationsJsonString) {
+        this.applicationsJsonString = applicationsJsonString;
+    }
+
     public UpdateRuleAclDto withDescription(String description) {
         this.description = description;
         return this;
@@ -668,6 +735,32 @@ public class UpdateRuleAclDto {
 
     public void setLongConnectEnable(LongConnectEnableEnum longConnectEnable) {
         this.longConnectEnable = longConnectEnable;
+    }
+
+    public UpdateRuleAclDto withProfile(RuleProfileDto profile) {
+        this.profile = profile;
+        return this;
+    }
+
+    public UpdateRuleAclDto withProfile(Consumer<RuleProfileDto> profileSetter) {
+        if (this.profile == null) {
+            this.profile = new RuleProfileDto();
+            profileSetter.accept(this.profile);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get profile
+     * @return profile
+     */
+    public RuleProfileDto getProfile() {
+        return profile;
+    }
+
+    public void setProfile(RuleProfileDto profile) {
+        this.profile = profile;
     }
 
     public UpdateRuleAclDto withSource(RuleAddressDto source) {
@@ -803,15 +896,17 @@ public class UpdateRuleAclDto {
         return Objects.equals(this.addressType, that.addressType) && Objects.equals(this.name, that.name)
             && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.direction, that.direction)
             && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.applications, that.applications)
+            && Objects.equals(this.applicationsJsonString, that.applicationsJsonString)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
             && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
             && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
-            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.profile, that.profile) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.destination, that.destination) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -822,12 +917,15 @@ public class UpdateRuleAclDto {
             direction,
             actionType,
             status,
+            applications,
+            applicationsJsonString,
             description,
             longConnectTimeHour,
             longConnectTimeMinute,
             longConnectTimeSecond,
             longConnectTime,
             longConnectEnable,
+            profile,
             source,
             destination,
             service,
@@ -845,12 +943,15 @@ public class UpdateRuleAclDto {
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
+        sb.append("    applicationsJsonString: ").append(toIndentedString(applicationsJsonString)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    longConnectTimeHour: ").append(toIndentedString(longConnectTimeHour)).append("\n");
         sb.append("    longConnectTimeMinute: ").append(toIndentedString(longConnectTimeMinute)).append("\n");
         sb.append("    longConnectTimeSecond: ").append(toIndentedString(longConnectTimeSecond)).append("\n");
         sb.append("    longConnectTime: ").append(toIndentedString(longConnectTime)).append("\n");
         sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
+        sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");

@@ -30,6 +30,9 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.QueryProjectIssuesRelationTestCasesInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
@@ -351,6 +354,39 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTestcasesByProjectIssuesRelationRequest, ListTestcasesByProjectIssuesRelationResponse> listTestcasesByProjectIssuesRelation =
+        genForListTestcasesByProjectIssuesRelation();
+
+    private static HttpRequestDef<ListTestcasesByProjectIssuesRelationRequest, ListTestcasesByProjectIssuesRelationResponse> genForListTestcasesByProjectIssuesRelation() {
+        // basic
+        HttpRequestDef.Builder<ListTestcasesByProjectIssuesRelationRequest, ListTestcasesByProjectIssuesRelationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListTestcasesByProjectIssuesRelationRequest.class,
+                    ListTestcasesByProjectIssuesRelationResponse.class)
+                .withName("ListTestcasesByProjectIssuesRelation")
+                .withUri("/v1/{project_id}/issues/testcases/batch-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestcasesByProjectIssuesRelationRequest::getProjectId,
+                ListTestcasesByProjectIssuesRelationRequest::setProjectId));
+        builder.<QueryProjectIssuesRelationTestCasesInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryProjectIssuesRelationTestCasesInfo.class),
+            f -> f.withMarshaller(ListTestcasesByProjectIssuesRelationRequest::getBody,
+                ListTestcasesByProjectIssuesRelationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> runTestCase = genForRunTestCase();
 
     private static HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> genForRunTestCase() {
@@ -561,6 +597,11 @@ public class CloudtestMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowPlanListRequest::getQueryAllVersion, ShowPlanListRequest::setQueryAllVersion));
+        builder.<String>withRequestField("fix_version_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPlanListRequest::getFixVersionIds, ShowPlanListRequest::setFixVersionIds));
 
         // response
         builder.<List<TestPlanDetail>>withResponseField("body",

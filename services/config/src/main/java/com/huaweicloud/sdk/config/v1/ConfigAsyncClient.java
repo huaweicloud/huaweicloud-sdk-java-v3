@@ -160,6 +160,8 @@ import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyStateRequest;
@@ -1265,9 +1267,9 @@ public class ConfigAsyncClient {
     }
 
     /**
-     * 创建或更新组织合规规则
+     * 创建组织合规规则
      *
-     * 创建或更新组织合规规则，如果规则名称已存在，则为更新操作。
+     * 创建组织合规规则，如果规则名称已存在，则为更新操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1280,9 +1282,9 @@ public class ConfigAsyncClient {
     }
 
     /**
-     * 创建或更新组织合规规则
+     * 创建组织合规规则
      *
-     * 创建或更新组织合规规则，如果规则名称已存在，则为更新操作。
+     * 创建组织合规规则，如果规则名称已存在，则为更新操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1832,6 +1834,36 @@ public class ConfigAsyncClient {
     public AsyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> showPolicyAssignmentAsyncInvoker(
         ShowPolicyAssignmentRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.showPolicyAssignment, hcClient);
+    }
+
+    /**
+     * 更新组织合规规则
+     *
+     * 更新组织合规规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationPolicyAssignmentRequest 请求对象
+     * @return CompletableFuture<UpdateOrganizationPolicyAssignmentResponse>
+     */
+    public CompletableFuture<UpdateOrganizationPolicyAssignmentResponse> updateOrganizationPolicyAssignmentAsync(
+        UpdateOrganizationPolicyAssignmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.updateOrganizationPolicyAssignment);
+    }
+
+    /**
+     * 更新组织合规规则
+     *
+     * 更新组织合规规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationPolicyAssignmentRequest 请求对象
+     * @return AsyncInvoker<UpdateOrganizationPolicyAssignmentRequest, UpdateOrganizationPolicyAssignmentResponse>
+     */
+    public AsyncInvoker<UpdateOrganizationPolicyAssignmentRequest, UpdateOrganizationPolicyAssignmentResponse> updateOrganizationPolicyAssignmentAsyncInvoker(
+        UpdateOrganizationPolicyAssignmentRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.updateOrganizationPolicyAssignment, hcClient);
     }
 
     /**

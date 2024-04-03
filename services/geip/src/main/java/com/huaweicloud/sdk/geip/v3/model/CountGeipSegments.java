@@ -21,7 +21,7 @@ public class CountGeipSegments {
     }
 
     /**
-     * Geip Segment Count
+     * 全域弹性公网IP段个数
      * @return count
      */
     public Integer getCount() {

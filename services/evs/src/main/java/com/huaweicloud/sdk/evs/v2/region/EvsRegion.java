@@ -67,6 +67,8 @@ public class EvsRegion {
 
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://evs.cn-south-4.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://evs.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EVS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -97,6 +99,7 @@ public class EvsRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("eu-west-0", EU_WEST_0);
         map.put("cn-south-4", CN_SOUTH_4);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

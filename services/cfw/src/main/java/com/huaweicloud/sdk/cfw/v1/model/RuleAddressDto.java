@@ -78,13 +78,23 @@ public class RuleAddressDto {
 
     private List<AddressGroupVO> addressGroupNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_set_type")
+
+    private Integer addressSetType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "predefined_group")
+
+    private List<String> predefinedGroup = null;
+
     public RuleAddressDto withType(Integer type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 源类型0手工输入,1关联IP地址组,2域名
+     * 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
      * @return type
      */
     public Integer getType() {
@@ -363,6 +373,56 @@ public class RuleAddressDto {
         this.addressGroupNames = addressGroupNames;
     }
 
+    public RuleAddressDto withAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+        return this;
+    }
+
+    /**
+     * 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+     * @return addressSetType
+     */
+    public Integer getAddressSetType() {
+        return addressSetType;
+    }
+
+    public void setAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+    }
+
+    public RuleAddressDto withPredefinedGroup(List<String> predefinedGroup) {
+        this.predefinedGroup = predefinedGroup;
+        return this;
+    }
+
+    public RuleAddressDto addPredefinedGroupItem(String predefinedGroupItem) {
+        if (this.predefinedGroup == null) {
+            this.predefinedGroup = new ArrayList<>();
+        }
+        this.predefinedGroup.add(predefinedGroupItem);
+        return this;
+    }
+
+    public RuleAddressDto withPredefinedGroup(Consumer<List<String>> predefinedGroupSetter) {
+        if (this.predefinedGroup == null) {
+            this.predefinedGroup = new ArrayList<>();
+        }
+        predefinedGroupSetter.accept(this.predefinedGroup);
+        return this;
+    }
+
+    /**
+     * 预定义地址组列表
+     * @return predefinedGroup
+     */
+    public List<String> getPredefinedGroup() {
+        return predefinedGroup;
+    }
+
+    public void setPredefinedGroup(List<String> predefinedGroup) {
+        this.predefinedGroup = predefinedGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -380,7 +440,9 @@ public class RuleAddressDto {
             && Objects.equals(this.regionList, that.regionList) && Objects.equals(this.domainSetId, that.domainSetId)
             && Objects.equals(this.domainSetName, that.domainSetName) && Objects.equals(this.ipAddress, that.ipAddress)
             && Objects.equals(this.addressGroup, that.addressGroup)
-            && Objects.equals(this.addressGroupNames, that.addressGroupNames);
+            && Objects.equals(this.addressGroupNames, that.addressGroupNames)
+            && Objects.equals(this.addressSetType, that.addressSetType)
+            && Objects.equals(this.predefinedGroup, that.predefinedGroup);
     }
 
     @Override
@@ -397,7 +459,9 @@ public class RuleAddressDto {
             domainSetName,
             ipAddress,
             addressGroup,
-            addressGroupNames);
+            addressGroupNames,
+            addressSetType,
+            predefinedGroup);
     }
 
     @Override
@@ -417,6 +481,8 @@ public class RuleAddressDto {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    addressGroup: ").append(toIndentedString(addressGroup)).append("\n");
         sb.append("    addressGroupNames: ").append(toIndentedString(addressGroupNames)).append("\n");
+        sb.append("    addressSetType: ").append(toIndentedString(addressSetType)).append("\n");
+        sb.append("    predefinedGroup: ").append(toIndentedString(predefinedGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

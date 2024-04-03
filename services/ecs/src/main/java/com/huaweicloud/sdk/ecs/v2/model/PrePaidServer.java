@@ -130,6 +130,11 @@ public class PrePaidServer {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
     public PrePaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
         return this;
@@ -655,6 +660,32 @@ public class PrePaidServer {
         this.description = description;
     }
 
+    public PrePaidServer withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public PrePaidServer withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -677,7 +708,8 @@ public class PrePaidServer {
             && Objects.equals(this.batchCreateInMultiAz, that.batchCreateInMultiAz)
             && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.osSchedulerHints, that.osSchedulerHints) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
@@ -704,7 +736,8 @@ public class PrePaidServer {
             osSchedulerHints,
             tags,
             serverTags,
-            description);
+            description,
+            cpuOptions);
     }
 
     @Override
@@ -734,6 +767,7 @@ public class PrePaidServer {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

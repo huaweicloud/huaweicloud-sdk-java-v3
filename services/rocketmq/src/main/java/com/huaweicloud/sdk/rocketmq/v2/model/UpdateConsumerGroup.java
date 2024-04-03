@@ -38,11 +38,6 @@ public class UpdateConsumerGroup {
 
     private Integer retryMaxTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "from_beginning")
-
-    private Boolean fromBeginning;
-
     public UpdateConsumerGroup withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -144,23 +139,6 @@ public class UpdateConsumerGroup {
         this.retryMaxTime = retryMaxTime;
     }
 
-    public UpdateConsumerGroup withFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
-        return this;
-    }
-
-    /**
-     * 是否重头消费。
-     * @return fromBeginning
-     */
-    public Boolean getFromBeginning() {
-        return fromBeginning;
-    }
-
-    public void setFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -172,13 +150,12 @@ public class UpdateConsumerGroup {
         UpdateConsumerGroup that = (UpdateConsumerGroup) obj;
         return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
-            && Objects.equals(this.fromBeginning, that.fromBeginning);
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime, fromBeginning);
+        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime);
     }
 
     @Override
@@ -190,7 +167,6 @@ public class UpdateConsumerGroup {
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
-        sb.append("    fromBeginning: ").append(toIndentedString(fromBeginning)).append("\n");
         sb.append("}");
         return sb.toString();
     }

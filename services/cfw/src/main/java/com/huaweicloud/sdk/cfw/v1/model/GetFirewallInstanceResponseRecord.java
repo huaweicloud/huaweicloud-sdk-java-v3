@@ -249,6 +249,11 @@ public class GetFirewallInstanceResponseRecord {
 
     private Boolean supportUrlFiltering;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public GetFirewallInstanceResponseRecord withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -629,6 +634,23 @@ public class GetFirewallInstanceResponseRecord {
         this.supportUrlFiltering = supportUrlFiltering;
     }
 
+    public GetFirewallInstanceResponseRecord withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -651,7 +673,8 @@ public class GetFirewallInstanceResponseRecord {
             && Objects.equals(this.fwInstanceName, that.fwInstanceName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.supportUrlFiltering, that.supportUrlFiltering);
+            && Objects.equals(this.supportUrlFiltering, that.supportUrlFiltering)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -674,7 +697,8 @@ public class GetFirewallInstanceResponseRecord {
             fwInstanceName,
             enterpriseProjectId,
             resourceId,
-            supportUrlFiltering);
+            supportUrlFiltering,
+            tags);
     }
 
     @Override
@@ -700,6 +724,7 @@ public class GetFirewallInstanceResponseRecord {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    supportUrlFiltering: ").append(toIndentedString(supportUrlFiltering)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -131,8 +131,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteJobResourceRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteJobResourceResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertiesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
@@ -1068,10 +1068,10 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteQueuePropertyRequest::getQueueName, DeleteQueuePropertyRequest::setQueueName));
-        builder.<DeleteQueuePropertiesRequestBody>withRequestField("body",
+        builder.<DeleteQueuePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteQueuePropertiesRequestBody.class),
+            TypeCasts.uncheckedConversion(DeleteQueuePropertyRequestBody.class),
             f -> f.withMarshaller(DeleteQueuePropertyRequest::getBody, DeleteQueuePropertyRequest::setBody));
 
         // response

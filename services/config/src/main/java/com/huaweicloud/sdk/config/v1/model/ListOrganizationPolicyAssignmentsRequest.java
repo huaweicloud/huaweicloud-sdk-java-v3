@@ -16,6 +16,11 @@ public class ListOrganizationPolicyAssignmentsRequest {
     private String organizationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organization_policy_assignment_id")
+
+    private String organizationPolicyAssignmentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organization_policy_assignment_name")
 
     private String organizationPolicyAssignmentName;
@@ -45,6 +50,24 @@ public class ListOrganizationPolicyAssignmentsRequest {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public ListOrganizationPolicyAssignmentsRequest withOrganizationPolicyAssignmentId(
+        String organizationPolicyAssignmentId) {
+        this.organizationPolicyAssignmentId = organizationPolicyAssignmentId;
+        return this;
+    }
+
+    /**
+     * 组织合规规则ID
+     * @return organizationPolicyAssignmentId
+     */
+    public String getOrganizationPolicyAssignmentId() {
+        return organizationPolicyAssignmentId;
+    }
+
+    public void setOrganizationPolicyAssignmentId(String organizationPolicyAssignmentId) {
+        this.organizationPolicyAssignmentId = organizationPolicyAssignmentId;
     }
 
     public ListOrganizationPolicyAssignmentsRequest withOrganizationPolicyAssignmentName(
@@ -111,13 +134,15 @@ public class ListOrganizationPolicyAssignmentsRequest {
         }
         ListOrganizationPolicyAssignmentsRequest that = (ListOrganizationPolicyAssignmentsRequest) obj;
         return Objects.equals(this.organizationId, that.organizationId)
+            && Objects.equals(this.organizationPolicyAssignmentId, that.organizationPolicyAssignmentId)
             && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationId, organizationPolicyAssignmentName, limit, marker);
+        return Objects
+            .hash(organizationId, organizationPolicyAssignmentId, organizationPolicyAssignmentName, limit, marker);
     }
 
     @Override
@@ -125,6 +150,9 @@ public class ListOrganizationPolicyAssignmentsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOrganizationPolicyAssignmentsRequest {\n");
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+        sb.append("    organizationPolicyAssignmentId: ")
+            .append(toIndentedString(organizationPolicyAssignmentId))
+            .append("\n");
         sb.append("    organizationPolicyAssignmentName: ")
             .append(toIndentedString(organizationPolicyAssignmentName))
             .append("\n");

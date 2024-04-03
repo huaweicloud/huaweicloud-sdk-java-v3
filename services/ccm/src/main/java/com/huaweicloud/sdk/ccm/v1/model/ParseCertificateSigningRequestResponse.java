@@ -20,7 +20,7 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_algorithm_length")
 
-    private String keyAlgorithmLength;
+    private Integer keyAlgorithmLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "signature_algorithm")
@@ -54,7 +54,7 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
         this.keyAlgorithm = keyAlgorithm;
     }
 
-    public ParseCertificateSigningRequestResponse withKeyAlgorithmLength(String keyAlgorithmLength) {
+    public ParseCertificateSigningRequestResponse withKeyAlgorithmLength(Integer keyAlgorithmLength) {
         this.keyAlgorithmLength = keyAlgorithmLength;
         return this;
     }
@@ -63,11 +63,11 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
      * 密钥算法长度，单位为bit。
      * @return keyAlgorithmLength
      */
-    public String getKeyAlgorithmLength() {
+    public Integer getKeyAlgorithmLength() {
         return keyAlgorithmLength;
     }
 
-    public void setKeyAlgorithmLength(String keyAlgorithmLength) {
+    public void setKeyAlgorithmLength(Integer keyAlgorithmLength) {
         this.keyAlgorithmLength = keyAlgorithmLength;
     }
 

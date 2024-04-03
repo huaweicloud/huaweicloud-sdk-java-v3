@@ -39,24 +39,24 @@ public class GeipBindingsInternalResp {
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "binding_instance_type")
+    @JsonProperty(value = "instance_type")
 
-    private String bindingInstanceType;
+    private String instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "binding_instance_id")
+    @JsonProperty(value = "instance_id")
 
-    private String bindingInstanceId;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gcbandwidth")
 
-    private Object gcbandwidth;
+    private BackboneBandwidthResp gcbandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnic")
 
-    private Object vnic;
+    private InstanceVnicResp vnic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vn_list")
@@ -148,71 +148,89 @@ public class GeipBindingsInternalResp {
         this.updatedAt = updatedAt;
     }
 
-    public GeipBindingsInternalResp withBindingInstanceType(String bindingInstanceType) {
-        this.bindingInstanceType = bindingInstanceType;
+    public GeipBindingsInternalResp withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
         return this;
     }
 
     /**
      * 绑定实例的类型
-     * @return bindingInstanceType
+     * @return instanceType
      */
-    public String getBindingInstanceType() {
-        return bindingInstanceType;
+    public String getInstanceType() {
+        return instanceType;
     }
 
-    public void setBindingInstanceType(String bindingInstanceType) {
-        this.bindingInstanceType = bindingInstanceType;
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
     }
 
-    public GeipBindingsInternalResp withBindingInstanceId(String bindingInstanceId) {
-        this.bindingInstanceId = bindingInstanceId;
+    public GeipBindingsInternalResp withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
      * 绑定实例的id
-     * @return bindingInstanceId
+     * @return instanceId
      */
-    public String getBindingInstanceId() {
-        return bindingInstanceId;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setBindingInstanceId(String bindingInstanceId) {
-        this.bindingInstanceId = bindingInstanceId;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
-    public GeipBindingsInternalResp withGcbandwidth(Object gcbandwidth) {
+    public GeipBindingsInternalResp withGcbandwidth(BackboneBandwidthResp gcbandwidth) {
         this.gcbandwidth = gcbandwidth;
         return this;
     }
 
+    public GeipBindingsInternalResp withGcbandwidth(Consumer<BackboneBandwidthResp> gcbandwidthSetter) {
+        if (this.gcbandwidth == null) {
+            this.gcbandwidth = new BackboneBandwidthResp();
+            gcbandwidthSetter.accept(this.gcbandwidth);
+        }
+
+        return this;
+    }
+
     /**
-     * 骨干带宽对象
+     * Get gcbandwidth
      * @return gcbandwidth
      */
-    public Object getGcbandwidth() {
+    public BackboneBandwidthResp getGcbandwidth() {
         return gcbandwidth;
     }
 
-    public void setGcbandwidth(Object gcbandwidth) {
+    public void setGcbandwidth(BackboneBandwidthResp gcbandwidth) {
         this.gcbandwidth = gcbandwidth;
     }
 
-    public GeipBindingsInternalResp withVnic(Object vnic) {
+    public GeipBindingsInternalResp withVnic(InstanceVnicResp vnic) {
         this.vnic = vnic;
         return this;
     }
 
+    public GeipBindingsInternalResp withVnic(Consumer<InstanceVnicResp> vnicSetter) {
+        if (this.vnic == null) {
+            this.vnic = new InstanceVnicResp();
+            vnicSetter.accept(this.vnic);
+        }
+
+        return this;
+    }
+
     /**
-     * 实例port的信息
+     * Get vnic
      * @return vnic
      */
-    public Object getVnic() {
+    public InstanceVnicResp getVnic() {
         return vnic;
     }
 
-    public void setVnic(Object vnic) {
+    public void setVnic(InstanceVnicResp vnic) {
         this.vnic = vnic;
     }
 
@@ -261,8 +279,7 @@ public class GeipBindingsInternalResp {
         return Objects.equals(this.geipId, that.geipId) && Objects.equals(this.geipIpAddress, that.geipIpAddress)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.bindingInstanceType, that.bindingInstanceType)
-            && Objects.equals(this.bindingInstanceId, that.bindingInstanceId)
+            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.gcbandwidth, that.gcbandwidth) && Objects.equals(this.vnic, that.vnic)
             && Objects.equals(this.vnList, that.vnList);
     }
@@ -274,8 +291,8 @@ public class GeipBindingsInternalResp {
             publicBorderGroup,
             createdAt,
             updatedAt,
-            bindingInstanceType,
-            bindingInstanceId,
+            instanceType,
+            instanceId,
             gcbandwidth,
             vnic,
             vnList);
@@ -290,8 +307,8 @@ public class GeipBindingsInternalResp {
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    bindingInstanceType: ").append(toIndentedString(bindingInstanceType)).append("\n");
-        sb.append("    bindingInstanceId: ").append(toIndentedString(bindingInstanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    gcbandwidth: ").append(toIndentedString(gcbandwidth)).append("\n");
         sb.append("    vnic: ").append(toIndentedString(vnic)).append("\n");
         sb.append("    vnList: ").append(toIndentedString(vnList)).append("\n");

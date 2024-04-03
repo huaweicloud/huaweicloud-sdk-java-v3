@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequ
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
@@ -59,6 +61,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
@@ -167,6 +171,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
@@ -745,6 +751,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 取消远程协助
+     *
+     * 取消远程协助。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelRemoteAssistanceRequest 请求对象
+     * @return CompletableFuture<CancelRemoteAssistanceResponse>
+     */
+    public CompletableFuture<CancelRemoteAssistanceResponse> cancelRemoteAssistanceAsync(
+        CancelRemoteAssistanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.cancelRemoteAssistance);
+    }
+
+    /**
+     * 取消远程协助
+     *
+     * 取消远程协助。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelRemoteAssistanceRequest 请求对象
+     * @return AsyncInvoker<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse>
+     */
+    public AsyncInvoker<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse> cancelRemoteAssistanceAsyncInvoker(
+        CancelRemoteAssistanceRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.cancelRemoteAssistance, hcClient);
+    }
+
+    /**
      * 切换桌面网络
      *
      * 切换桌面vpc、子网、ip、安全组
@@ -801,6 +837,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<CreateDesktopRequest, CreateDesktopResponse> createDesktopAsyncInvoker(
         CreateDesktopRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.createDesktop, hcClient);
+    }
+
+    /**
+     * 创建远程协助
+     *
+     * 创建远程协助。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRemoteAssistanceRequest 请求对象
+     * @return CompletableFuture<CreateRemoteAssistanceResponse>
+     */
+    public CompletableFuture<CreateRemoteAssistanceResponse> createRemoteAssistanceAsync(
+        CreateRemoteAssistanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createRemoteAssistance);
+    }
+
+    /**
+     * 创建远程协助
+     *
+     * 创建远程协助。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRemoteAssistanceRequest 请求对象
+     * @return AsyncInvoker<CreateRemoteAssistanceRequest, CreateRemoteAssistanceResponse>
+     */
+    public AsyncInvoker<CreateRemoteAssistanceRequest, CreateRemoteAssistanceResponse> createRemoteAssistanceAsyncInvoker(
+        CreateRemoteAssistanceRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createRemoteAssistance, hcClient);
     }
 
     /**
@@ -1004,6 +1070,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> showDesktopNetworkAsyncInvoker(
         ShowDesktopNetworkRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopNetwork, hcClient);
+    }
+
+    /**
+     * 根据桌面id查询远程协助信息
+     *
+     * 根据桌面id查询远程协助信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopRemoteAssistanceInfoRequest 请求对象
+     * @return CompletableFuture<ShowDesktopRemoteAssistanceInfoResponse>
+     */
+    public CompletableFuture<ShowDesktopRemoteAssistanceInfoResponse> showDesktopRemoteAssistanceInfoAsync(
+        ShowDesktopRemoteAssistanceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopRemoteAssistanceInfo);
+    }
+
+    /**
+     * 根据桌面id查询远程协助信息
+     *
+     * 根据桌面id查询远程协助信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopRemoteAssistanceInfoRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse>
+     */
+    public AsyncInvoker<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse> showDesktopRemoteAssistanceInfoAsyncInvoker(
+        ShowDesktopRemoteAssistanceInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopRemoteAssistanceInfo, hcClient);
     }
 
     /**

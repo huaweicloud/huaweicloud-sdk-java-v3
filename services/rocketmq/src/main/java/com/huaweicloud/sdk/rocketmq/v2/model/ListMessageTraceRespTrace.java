@@ -32,9 +32,14 @@ public class ListMessageTraceRespTrace {
         public static final TraceTypeEnum PUB = new TraceTypeEnum("Pub");
 
         /**
-         * Enum SUB for value: "Sub"
+         * Enum SUBBEFORE for value: "SubBefore"
          */
-        public static final TraceTypeEnum SUB = new TraceTypeEnum("Sub");
+        public static final TraceTypeEnum SUBBEFORE = new TraceTypeEnum("SubBefore");
+
+        /**
+         * Enum SUBAFTER for value: "SubAfter"
+         */
+        public static final TraceTypeEnum SUBAFTER = new TraceTypeEnum("SubAfter");
 
         /**
          * Enum ENDTRANSACTION for value: "EndTransaction"
@@ -46,7 +51,8 @@ public class ListMessageTraceRespTrace {
         private static Map<String, TraceTypeEnum> createStaticFields() {
             Map<String, TraceTypeEnum> map = new HashMap<>();
             map.put("Pub", PUB);
-            map.put("Sub", SUB);
+            map.put("SubBefore", SUBBEFORE);
+            map.put("SubAfter", SUBAFTER);
             map.put("EndTransaction", ENDTRANSACTION);
             return Collections.unmodifiableMap(map);
         }
@@ -458,7 +464,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消费状态。
+     * 消费状态。0-消费成功, 1-消费超时, 2-消费发生异常, 3-消费返回NULL, 5-消费失败。
      * @return consumeStatus
      */
     public BigDecimal getConsumeStatus() {

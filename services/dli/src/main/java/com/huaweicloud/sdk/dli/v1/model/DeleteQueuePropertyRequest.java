@@ -19,7 +19,7 @@ public class DeleteQueuePropertyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DeleteQueuePropertiesRequestBody body;
+    private DeleteQueuePropertyRequestBody body;
 
     public DeleteQueuePropertyRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -38,14 +38,14 @@ public class DeleteQueuePropertyRequest {
         this.queueName = queueName;
     }
 
-    public DeleteQueuePropertyRequest withBody(DeleteQueuePropertiesRequestBody body) {
+    public DeleteQueuePropertyRequest withBody(DeleteQueuePropertyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DeleteQueuePropertyRequest withBody(Consumer<DeleteQueuePropertiesRequestBody> bodySetter) {
+    public DeleteQueuePropertyRequest withBody(Consumer<DeleteQueuePropertyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DeleteQueuePropertiesRequestBody();
+            this.body = new DeleteQueuePropertyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class DeleteQueuePropertyRequest {
      * Get body
      * @return body
      */
-    public DeleteQueuePropertiesRequestBody getBody() {
+    public DeleteQueuePropertyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DeleteQueuePropertiesRequestBody body) {
+    public void setBody(DeleteQueuePropertyRequestBody body) {
         this.body = body;
     }
 

@@ -49,7 +49,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupRequest {
     }
 
     /**
-     * 批量删除消费组时使用，不配置则为创建接口。
+     * 批量删除消费组时使用，不配置则为创建接口。删除操作：delete。
      * @return action
      */
     public String getAction() {

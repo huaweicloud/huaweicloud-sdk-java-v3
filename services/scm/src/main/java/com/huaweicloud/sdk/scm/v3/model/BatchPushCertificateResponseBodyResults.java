@@ -65,7 +65,7 @@ public class BatchPushCertificateResponseBodyResults {
     }
 
     /**
-     * 推送结果
+     * 推送结果。
      * @return message
      */
     public String getMessage() {

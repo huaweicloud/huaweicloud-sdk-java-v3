@@ -474,6 +474,11 @@ public class ListAclRulesRequest {
 
     private String service;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "application")
+
+    private String application;
+
     public ListAclRulesRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -763,6 +768,23 @@ public class ListAclRulesRequest {
         this.service = service;
     }
 
+    public ListAclRulesRequest withApplication(String application) {
+        this.application = application;
+        return this;
+    }
+
+    /**
+     * 应用
+     * @return application
+     */
+    public String getApplication() {
+        return application;
+    }
+
+    public void setApplication(String application) {
+        this.application = application;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -781,7 +803,7 @@ public class ListAclRulesRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.tagsId, that.tagsId)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.service, that.service);
+            && Objects.equals(this.service, that.service) && Objects.equals(this.application, that.application);
     }
 
     @Override
@@ -802,7 +824,8 @@ public class ListAclRulesRequest {
             tagsId,
             source,
             destination,
-            service);
+            service,
+            application);
     }
 
     @Override
@@ -826,6 +849,7 @@ public class ListAclRulesRequest {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
+        sb.append("    application: ").append(toIndentedString(application)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,10 +23,80 @@ public class CreateSqlJobRequestBody {
 
     private String sql;
 
+    /**
+     * 待提交作业的队列引擎名称，名称只能包含英文字母。
+     */
+    public static final class EngineTypeEnum {
+
+        /**
+         * Enum TRINO for value: "trino"
+         */
+        public static final EngineTypeEnum TRINO = new EngineTypeEnum("trino");
+
+        /**
+         * Enum SPARK for value: "spark"
+         */
+        public static final EngineTypeEnum SPARK = new EngineTypeEnum("spark");
+
+        private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineTypeEnum> createStaticFields() {
+            Map<String, EngineTypeEnum> map = new HashMap<>();
+            map.put("trino", TRINO);
+            map.put("spark", SPARK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
+        }
+
+        public static EngineTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineTypeEnum) {
+                return this.value.equals(((EngineTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_type")
 
-    private String engineType;
+    private EngineTypeEnum engineType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
@@ -60,7 +135,7 @@ public class CreateSqlJobRequestBody {
         this.sql = sql;
     }
 
-    public CreateSqlJobRequestBody withEngineType(String engineType) {
+    public CreateSqlJobRequestBody withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
         return this;
     }
@@ -69,11 +144,11 @@ public class CreateSqlJobRequestBody {
      * 待提交作业的队列引擎名称，名称只能包含英文字母。
      * @return engineType
      */
-    public String getEngineType() {
+    public EngineTypeEnum getEngineType() {
         return engineType;
     }
 
-    public void setEngineType(String engineType) {
+    public void setEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
     }
 

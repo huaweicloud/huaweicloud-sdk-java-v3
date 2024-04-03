@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ListJobResourcesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
     private List<PackageResource> resources = null;
@@ -27,12 +32,24 @@ public class ListJobResourcesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    private List<Object> groups = null;
+    private List<PackageResourceGroup> groups = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    public ListJobResourcesResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
 
-    private Integer total;
+    /**
+     * 资源包返回总数
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public ListJobResourcesResponse withResources(List<PackageResource> resources) {
         this.resources = resources;
@@ -100,12 +117,12 @@ public class ListJobResourcesResponse extends SdkResponse {
         this.modules = modules;
     }
 
-    public ListJobResourcesResponse withGroups(List<Object> groups) {
+    public ListJobResourcesResponse withGroups(List<PackageResourceGroup> groups) {
         this.groups = groups;
         return this;
     }
 
-    public ListJobResourcesResponse addGroupsItem(Object groupsItem) {
+    public ListJobResourcesResponse addGroupsItem(PackageResourceGroup groupsItem) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -113,7 +130,7 @@ public class ListJobResourcesResponse extends SdkResponse {
         return this;
     }
 
-    public ListJobResourcesResponse withGroups(Consumer<List<Object>> groupsSetter) {
+    public ListJobResourcesResponse withGroups(Consumer<List<PackageResourceGroup>> groupsSetter) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -125,29 +142,12 @@ public class ListJobResourcesResponse extends SdkResponse {
      * 已上传的用户分组资源。
      * @return groups
      */
-    public List<Object> getGroups() {
+    public List<PackageResourceGroup> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<Object> groups) {
+    public void setGroups(List<PackageResourceGroup> groups) {
         this.groups = groups;
-    }
-
-    public ListJobResourcesResponse withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 资源包返回总数
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
     }
 
     @Override
@@ -159,23 +159,23 @@ public class ListJobResourcesResponse extends SdkResponse {
             return false;
         }
         ListJobResourcesResponse that = (ListJobResourcesResponse) obj;
-        return Objects.equals(this.resources, that.resources) && Objects.equals(this.modules, that.modules)
-            && Objects.equals(this.groups, that.groups) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.modules, that.modules) && Objects.equals(this.groups, that.groups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resources, modules, groups, total);
+        return Objects.hash(total, resources, modules, groups);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobResourcesResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    modules: ").append(toIndentedString(modules)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class FlinkJobList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<FlinkJobInfo> jobs = null;
+    private List<FlinkJob> jobs = null;
 
     public FlinkJobList withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -40,12 +40,12 @@ public class FlinkJobList {
         this.totalCount = totalCount;
     }
 
-    public FlinkJobList withJobs(List<FlinkJobInfo> jobs) {
+    public FlinkJobList withJobs(List<FlinkJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public FlinkJobList addJobsItem(FlinkJobInfo jobsItem) {
+    public FlinkJobList addJobsItem(FlinkJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class FlinkJobList {
         return this;
     }
 
-    public FlinkJobList withJobs(Consumer<List<FlinkJobInfo>> jobsSetter) {
+    public FlinkJobList withJobs(Consumer<List<FlinkJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class FlinkJobList {
      * 作业信息
      * @return jobs
      */
-    public List<FlinkJobInfo> getJobs() {
+    public List<FlinkJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<FlinkJobInfo> jobs) {
+    public void setJobs(List<FlinkJob> jobs) {
         this.jobs = jobs;
     }
 

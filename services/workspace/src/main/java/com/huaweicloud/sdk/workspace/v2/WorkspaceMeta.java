@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequ
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkReq;
@@ -81,6 +83,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
@@ -211,6 +215,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
@@ -769,6 +775,30 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse> cancelRemoteAssistance =
+        genForCancelRemoteAssistance();
+
+    private static HttpRequestDef<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse> genForCancelRemoteAssistance() {
+        // basic
+        HttpRequestDef.Builder<CancelRemoteAssistanceRequest, CancelRemoteAssistanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelRemoteAssistanceRequest.class, CancelRemoteAssistanceResponse.class)
+            .withName("CancelRemoteAssistance")
+            .withUri("/v2/{project_id}/desktops/{desktop_id}/remote-assistance")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelRemoteAssistanceRequest::getDesktopId,
+                CancelRemoteAssistanceRequest::setDesktopId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> changeDesktopNetwork =
         genForChangeDesktopNetwork();
 
@@ -815,6 +845,30 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDesktopReq.class),
             f -> f.withMarshaller(CreateDesktopRequest::getBody, CreateDesktopRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRemoteAssistanceRequest, CreateRemoteAssistanceResponse> createRemoteAssistance =
+        genForCreateRemoteAssistance();
+
+    private static HttpRequestDef<CreateRemoteAssistanceRequest, CreateRemoteAssistanceResponse> genForCreateRemoteAssistance() {
+        // basic
+        HttpRequestDef.Builder<CreateRemoteAssistanceRequest, CreateRemoteAssistanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRemoteAssistanceRequest.class, CreateRemoteAssistanceResponse.class)
+            .withName("CreateRemoteAssistance")
+            .withUri("/v2/{project_id}/desktops/{desktop_id}/remote-assistance")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRemoteAssistanceRequest::getDesktopId,
+                CreateRemoteAssistanceRequest::setDesktopId));
 
         // response
 
@@ -1127,6 +1181,33 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDesktopNetworkRequest::getDesktopId, ShowDesktopNetworkRequest::setDesktopId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse> showDesktopRemoteAssistanceInfo =
+        genForShowDesktopRemoteAssistanceInfo();
+
+    private static HttpRequestDef<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse> genForShowDesktopRemoteAssistanceInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDesktopRemoteAssistanceInfoRequest.class,
+                    ShowDesktopRemoteAssistanceInfoResponse.class)
+                .withName("ShowDesktopRemoteAssistanceInfo")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/remote-assistance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesktopRemoteAssistanceInfoRequest::getDesktopId,
+                ShowDesktopRemoteAssistanceInfoRequest::setDesktopId));
 
         // response
 

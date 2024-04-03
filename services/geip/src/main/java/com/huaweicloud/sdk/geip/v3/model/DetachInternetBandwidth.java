@@ -21,7 +21,7 @@ public class DetachInternetBandwidth {
     }
 
     /**
-     * 全局IP段id
+     * 全域弹性公网IP段ID
      * @return globalEipSegmentId
      */
     public String getGlobalEipSegmentId() {

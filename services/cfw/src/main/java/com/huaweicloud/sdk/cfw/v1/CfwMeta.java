@@ -996,6 +996,18 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccessControlLogsRequest::getAction, ListAccessControlLogsRequest::setAction));
+        builder.<String>withRequestField("src_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcRegionName,
+                ListAccessControlLogsRequest::setSrcRegionName));
+        builder.<String>withRequestField("dst_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstRegionName,
+                ListAccessControlLogsRequest::setDstRegionName));
 
         // response
 
@@ -1050,6 +1062,12 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressItemsRequest::getFwInstanceId, ListAddressItemsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_address_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressItemsRequest::getQueryAddressSetType,
+                ListAddressItemsRequest::setQueryAddressSetType));
 
         // response
 
@@ -1156,6 +1174,12 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAddressSetsRequest::getQueryAddressSetType,
                 ListAddressSetsRequest::setQueryAddressSetType));
+        builder.<Integer>withRequestField("address_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAddressSetsRequest::getAddressSetType,
+                ListAddressSetsRequest::setAddressSetType));
 
         // response
 
@@ -1285,6 +1309,21 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAttackLogsRequest.LogTypeEnum.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getLogType, ListAttackLogsRequest::setLogType));
+        builder.<String>withRequestField("attack_rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getAttackRuleId, ListAttackLogsRequest::setAttackRuleId));
+        builder.<String>withRequestField("src_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getSrcRegionName, ListAttackLogsRequest::setSrcRegionName));
+        builder.<String>withRequestField("dst_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstRegionName, ListAttackLogsRequest::setDstRegionName));
 
         // response
 
@@ -1640,6 +1679,11 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFirewallDetailRequest::getFwInstanceId,
                 ListFirewallDetailRequest::setFwInstanceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirewallDetailRequest::getName, ListFirewallDetailRequest::setName));
 
         // response
 
@@ -1772,6 +1816,16 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlowLogsRequest::getDstHost, ListFlowLogsRequest::setDstHost));
+        builder.<String>withRequestField("src_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getSrcRegionName, ListFlowLogsRequest::setSrcRegionName));
+        builder.<String>withRequestField("dst_region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstRegionName, ListFlowLogsRequest::setDstRegionName));
 
         // response
 
@@ -1907,6 +1961,12 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceItemsRequest::getFwInstanceId, ListServiceItemsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_service_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceItemsRequest::getQueryServiceSetType,
+                ListServiceItemsRequest::setQueryServiceSetType));
 
         // response
 
@@ -1942,6 +2002,12 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceSetDetailRequest::getFwInstanceId,
                 ListServiceSetDetailRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_service_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceSetDetailRequest::getQueryServiceSetType,
+                ListServiceSetDetailRequest::setQueryServiceSetType));
 
         // response
 
@@ -1991,6 +2057,12 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceSetsRequest::getFwInstanceId, ListServiceSetsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("query_service_set_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServiceSetsRequest::getQueryServiceSetType,
+                ListServiceSetsRequest::setQueryServiceSetType));
 
         // response
 
@@ -2529,6 +2601,11 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAclRulesRequest::getService, ListAclRulesRequest::setService));
+        builder.<String>withRequestField("application",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclRulesRequest::getApplication, ListAclRulesRequest::setApplication));
 
         // response
 

@@ -186,6 +186,16 @@ public class ListAccessControlLogsRequest {
 
     private String action;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
+
     public ListAccessControlLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -509,6 +519,40 @@ public class ListAccessControlLogsRequest {
         this.action = action;
     }
 
+    public ListAccessControlLogsRequest withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源region名称
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
+    public ListAccessControlLogsRequest withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的region名称
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -528,7 +572,8 @@ public class ListAccessControlLogsRequest {
             && Objects.equals(this.logType, that.logType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.ruleName, that.ruleName)
-            && Objects.equals(this.action, that.action);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.srcRegionName, that.srcRegionName)
+            && Objects.equals(this.dstRegionName, that.dstRegionName);
     }
 
     @Override
@@ -551,7 +596,9 @@ public class ListAccessControlLogsRequest {
             enterpriseProjectId,
             dstHost,
             ruleName,
-            action);
+            action,
+            srcRegionName,
+            dstRegionName);
     }
 
     @Override
@@ -577,6 +624,8 @@ public class ListAccessControlLogsRequest {
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

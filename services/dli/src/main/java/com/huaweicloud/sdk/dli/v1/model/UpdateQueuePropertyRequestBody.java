@@ -14,17 +14,16 @@ public class UpdateQueuePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private UpdateQueuePropertyRequestBodyProperties properties;
+    private AdvancedQueueProperty properties;
 
-    public UpdateQueuePropertyRequestBody withProperties(UpdateQueuePropertyRequestBodyProperties properties) {
+    public UpdateQueuePropertyRequestBody withProperties(AdvancedQueueProperty properties) {
         this.properties = properties;
         return this;
     }
 
-    public UpdateQueuePropertyRequestBody withProperties(
-        Consumer<UpdateQueuePropertyRequestBodyProperties> propertiesSetter) {
+    public UpdateQueuePropertyRequestBody withProperties(Consumer<AdvancedQueueProperty> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new UpdateQueuePropertyRequestBodyProperties();
+            this.properties = new AdvancedQueueProperty();
             propertiesSetter.accept(this.properties);
         }
 
@@ -35,11 +34,11 @@ public class UpdateQueuePropertyRequestBody {
      * Get properties
      * @return properties
      */
-    public UpdateQueuePropertyRequestBodyProperties getProperties() {
+    public AdvancedQueueProperty getProperties() {
         return properties;
     }
 
-    public void setProperties(UpdateQueuePropertyRequestBodyProperties properties) {
+    public void setProperties(AdvancedQueueProperty properties) {
         this.properties = properties;
     }
 

@@ -25,7 +25,7 @@ public class ListPartitionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partitions")
 
-    private Partition partitions;
+    private PartitionList partitions;
 
     public ListPartitionsResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ListPartitionsResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListPartitionsResponse withPartitions(Partition partitions) {
+    public ListPartitionsResponse withPartitions(PartitionList partitions) {
         this.partitions = partitions;
         return this;
     }
 
-    public ListPartitionsResponse withPartitions(Consumer<Partition> partitionsSetter) {
+    public ListPartitionsResponse withPartitions(Consumer<PartitionList> partitionsSetter) {
         if (this.partitions == null) {
-            this.partitions = new Partition();
+            this.partitions = new PartitionList();
             partitionsSetter.accept(this.partitions);
         }
 
@@ -79,11 +79,11 @@ public class ListPartitionsResponse extends SdkResponse {
      * Get partitions
      * @return partitions
      */
-    public Partition getPartitions() {
+    public PartitionList getPartitions() {
         return partitions;
     }
 
-    public void setPartitions(Partition partitions) {
+    public void setPartitions(PartitionList partitions) {
         this.partitions = partitions;
     }
 

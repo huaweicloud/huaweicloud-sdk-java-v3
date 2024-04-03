@@ -45,6 +45,11 @@ public class ShowPlanListRequest {
 
     private Boolean queryAllVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fix_version_ids")
+
+    private String fixVersionIds;
+
     public ShowPlanListRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -168,6 +173,23 @@ public class ShowPlanListRequest {
         this.queryAllVersion = queryAllVersion;
     }
 
+    public ShowPlanListRequest withFixVersionIds(String fixVersionIds) {
+        this.fixVersionIds = fixVersionIds;
+        return this;
+    }
+
+    /**
+     * 测试计划关联的迭代。迭代id以逗号间隔
+     * @return fixVersionIds
+     */
+    public String getFixVersionIds() {
+        return fixVersionIds;
+    }
+
+    public void setFixVersionIds(String fixVersionIds) {
+        this.fixVersionIds = fixVersionIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,13 @@ public class ShowPlanListRequest {
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
             && Objects.equals(this.currentStage, that.currentStage) && Objects.equals(this.branchUri, that.branchUri)
-            && Objects.equals(this.queryAllVersion, that.queryAllVersion);
+            && Objects.equals(this.queryAllVersion, that.queryAllVersion)
+            && Objects.equals(this.fixVersionIds, that.fixVersionIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, offset, limit, name, currentStage, branchUri, queryAllVersion);
+        return Objects.hash(projectId, offset, limit, name, currentStage, branchUri, queryAllVersion, fixVersionIds);
     }
 
     @Override
@@ -199,6 +222,7 @@ public class ShowPlanListRequest {
         sb.append("    currentStage: ").append(toIndentedString(currentStage)).append("\n");
         sb.append("    branchUri: ").append(toIndentedString(branchUri)).append("\n");
         sb.append("    queryAllVersion: ").append(toIndentedString(queryAllVersion)).append("\n");
+        sb.append("    fixVersionIds: ").append(toIndentedString(fixVersionIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

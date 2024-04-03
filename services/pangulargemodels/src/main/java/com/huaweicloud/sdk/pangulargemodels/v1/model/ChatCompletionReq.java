@@ -53,6 +53,11 @@ public class ChatCompletionReq {
 
     private Float presencePenalty;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frequency_penalty")
+
+    private Float frequencyPenalty;
+
     public ChatCompletionReq withMessages(List<Message> messages) {
         this.messages = messages;
         return this;
@@ -145,7 +150,7 @@ public class ChatCompletionReq {
     }
 
     /**
-     * 一种替代温度采样的方法，称为nucleus sampling，其中模型考虑具有top_p 概率质量的标记的结果。因此 0.1 意味着只考虑构成前 10% 概率质量的标记。我们通常建议更改此值或温度，但不要同时更改两者。通常建议更改top_p或temperature来调整生成文本的倾向性，但不要同时更改这两个参数。
+     * 一种替代温度采样的方法，称为nucleus sampling，取值范围：(0, 1]，其中模型考虑具有top_p 概率质量的标记的结果。因此 0.1 意味着只考虑构成前 10% 概率质量的标记。我们通常建议更改此值或温度，但不要同时更改两者。通常建议更改top_p或temperature来调整生成文本的倾向性，但不要同时更改这两个参数。
      * minimum: 0
      * maximum: 1
      * @return topP
@@ -214,6 +219,25 @@ public class ChatCompletionReq {
         this.presencePenalty = presencePenalty;
     }
 
+    public ChatCompletionReq withFrequencyPenalty(Float frequencyPenalty) {
+        this.frequencyPenalty = frequencyPenalty;
+        return this;
+    }
+
+    /**
+     * 用于调整模型对频繁出现的Token的处理方式。即如果一个Token在训练集中出现的频率较高，那么模型在生成这个Token时会受到一定的惩罚。当frequency_penalty的值为正数时，模型会更倾向于生成出现频率较低的Token，即模型会更倾向于使用不常见的词汇。最小值：-2，最大值：2
+     * minimum: -2
+     * maximum: 2
+     * @return frequencyPenalty
+     */
+    public Float getFrequencyPenalty() {
+        return frequencyPenalty;
+    }
+
+    public void setFrequencyPenalty(Float frequencyPenalty) {
+        this.frequencyPenalty = frequencyPenalty;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -226,12 +250,13 @@ public class ChatCompletionReq {
         return Objects.equals(this.messages, that.messages) && Objects.equals(this.user, that.user)
             && Objects.equals(this.stream, that.stream) && Objects.equals(this.temperature, that.temperature)
             && Objects.equals(this.topP, that.topP) && Objects.equals(this.maxTokens, that.maxTokens)
-            && Objects.equals(this.n, that.n) && Objects.equals(this.presencePenalty, that.presencePenalty);
+            && Objects.equals(this.n, that.n) && Objects.equals(this.presencePenalty, that.presencePenalty)
+            && Objects.equals(this.frequencyPenalty, that.frequencyPenalty);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(messages, user, stream, temperature, topP, maxTokens, n, presencePenalty);
+        return Objects.hash(messages, user, stream, temperature, topP, maxTokens, n, presencePenalty, frequencyPenalty);
     }
 
     @Override
@@ -246,6 +271,7 @@ public class ChatCompletionReq {
         sb.append("    maxTokens: ").append(toIndentedString(maxTokens)).append("\n");
         sb.append("    n: ").append(toIndentedString(n)).append("\n");
         sb.append("    presencePenalty: ").append(toIndentedString(presencePenalty)).append("\n");
+        sb.append("    frequencyPenalty: ").append(toIndentedString(frequencyPenalty)).append("\n");
         sb.append("}");
         return sb.toString();
     }

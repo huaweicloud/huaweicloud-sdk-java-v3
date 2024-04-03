@@ -25,6 +25,11 @@ public class ListServiceSetDetailRequest {
 
     private String fwInstanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_service_set_type")
+
+    private Integer queryServiceSetType;
+
     public ListServiceSetDetailRequest withSetId(String setId) {
         this.setId = setId;
         return this;
@@ -76,6 +81,23 @@ public class ListServiceSetDetailRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
+    public ListServiceSetDetailRequest withQueryServiceSetType(Integer queryServiceSetType) {
+        this.queryServiceSetType = queryServiceSetType;
+        return this;
+    }
+
+    /**
+     * 查询服务组类型，0表示自定义服务组，1表示预定义服务组
+     * @return queryServiceSetType
+     */
+    public Integer getQueryServiceSetType() {
+        return queryServiceSetType;
+    }
+
+    public void setQueryServiceSetType(Integer queryServiceSetType) {
+        this.queryServiceSetType = queryServiceSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,13 @@ public class ListServiceSetDetailRequest {
         ListServiceSetDetailRequest that = (ListServiceSetDetailRequest) obj;
         return Objects.equals(this.setId, that.setId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId)
+            && Objects.equals(this.queryServiceSetType, that.queryServiceSetType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, enterpriseProjectId, fwInstanceId);
+        return Objects.hash(setId, enterpriseProjectId, fwInstanceId, queryServiceSetType);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class ListServiceSetDetailRequest {
         sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    queryServiceSetType: ").append(toIndentedString(queryServiceSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

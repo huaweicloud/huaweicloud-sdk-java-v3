@@ -343,7 +343,7 @@ public class ListAttackLogsRequest {
     private String dstHost;
 
     /**
-     * log_type
+     * 日志类型
      */
     public static final class LogTypeEnum {
 
@@ -422,6 +422,21 @@ public class ListAttackLogsRequest {
     @JsonProperty(value = "log_type")
 
     private LogTypeEnum logType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attack_rule_id")
+
+    private String attackRuleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
 
     public ListAttackLogsRequest withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -790,7 +805,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * log_type
+     * 日志类型
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -799,6 +814,57 @@ public class ListAttackLogsRequest {
 
     public void setLogType(LogTypeEnum logType) {
         this.logType = logType;
+    }
+
+    public ListAttackLogsRequest withAttackRuleId(String attackRuleId) {
+        this.attackRuleId = attackRuleId;
+        return this;
+    }
+
+    /**
+     * 入侵事件id
+     * @return attackRuleId
+     */
+    public String getAttackRuleId() {
+        return attackRuleId;
+    }
+
+    public void setAttackRuleId(String attackRuleId) {
+        this.attackRuleId = attackRuleId;
+    }
+
+    public ListAttackLogsRequest withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源region名称
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
+    public ListAttackLogsRequest withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的region名称
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
     }
 
     @Override
@@ -821,7 +887,10 @@ public class ListAttackLogsRequest {
             && Objects.equals(this.attackRule, that.attackRule) && Objects.equals(this.level, that.level)
             && Objects.equals(this.source, that.source)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.logType, that.logType);
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.logType, that.logType)
+            && Objects.equals(this.attackRuleId, that.attackRuleId)
+            && Objects.equals(this.srcRegionName, that.srcRegionName)
+            && Objects.equals(this.dstRegionName, that.dstRegionName);
     }
 
     @Override
@@ -847,7 +916,10 @@ public class ListAttackLogsRequest {
             source,
             enterpriseProjectId,
             dstHost,
-            logType);
+            logType,
+            attackRuleId,
+            srcRegionName,
+            dstRegionName);
     }
 
     @Override
@@ -876,6 +948,9 @@ public class ListAttackLogsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
+        sb.append("    attackRuleId: ").append(toIndentedString(attackRuleId)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,9 +20,9 @@ public class BatchCreateGlobalEipResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_eip")
+    @JsonProperty(value = "global_eips")
 
-    private BatchCreateGlobalEip globalEip;
+    private List<BatchCreateGlobalEipJob> globalEips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -44,30 +46,37 @@ public class BatchCreateGlobalEipResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public BatchCreateGlobalEipResponse withGlobalEip(BatchCreateGlobalEip globalEip) {
-        this.globalEip = globalEip;
+    public BatchCreateGlobalEipResponse withGlobalEips(List<BatchCreateGlobalEipJob> globalEips) {
+        this.globalEips = globalEips;
         return this;
     }
 
-    public BatchCreateGlobalEipResponse withGlobalEip(Consumer<BatchCreateGlobalEip> globalEipSetter) {
-        if (this.globalEip == null) {
-            this.globalEip = new BatchCreateGlobalEip();
-            globalEipSetter.accept(this.globalEip);
+    public BatchCreateGlobalEipResponse addGlobalEipsItem(BatchCreateGlobalEipJob globalEipsItem) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
         }
+        this.globalEips.add(globalEipsItem);
+        return this;
+    }
 
+    public BatchCreateGlobalEipResponse withGlobalEips(Consumer<List<BatchCreateGlobalEipJob>> globalEipsSetter) {
+        if (this.globalEips == null) {
+            this.globalEips = new ArrayList<>();
+        }
+        globalEipsSetter.accept(this.globalEips);
         return this;
     }
 
     /**
-     * Get globalEip
-     * @return globalEip
+     * 响应对象
+     * @return globalEips
      */
-    public BatchCreateGlobalEip getGlobalEip() {
-        return globalEip;
+    public List<BatchCreateGlobalEipJob> getGlobalEips() {
+        return globalEips;
     }
 
-    public void setGlobalEip(BatchCreateGlobalEip globalEip) {
-        this.globalEip = globalEip;
+    public void setGlobalEips(List<BatchCreateGlobalEipJob> globalEips) {
+        this.globalEips = globalEips;
     }
 
     public BatchCreateGlobalEipResponse withXRequestId(String xRequestId) {
@@ -98,13 +107,13 @@ public class BatchCreateGlobalEipResponse extends SdkResponse {
             return false;
         }
         BatchCreateGlobalEipResponse that = (BatchCreateGlobalEipResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEip, that.globalEip)
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalEip, xRequestId);
+        return Objects.hash(requestId, globalEips, xRequestId);
     }
 
     @Override
@@ -112,7 +121,7 @@ public class BatchCreateGlobalEipResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateGlobalEipResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    globalEip: ").append(toIndentedString(globalEip)).append("\n");
+        sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

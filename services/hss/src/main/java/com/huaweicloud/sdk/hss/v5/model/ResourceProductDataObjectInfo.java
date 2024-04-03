@@ -17,7 +17,7 @@ public class ResourceProductDataObjectInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    private Object chargingMode;
+    private String chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_renew")
@@ -29,7 +29,7 @@ public class ResourceProductDataObjectInfo {
 
     private Map<String, List<ShowPeriodResponseInfo>> versionInfo = null;
 
-    public ResourceProductDataObjectInfo withChargingMode(Object chargingMode) {
+    public ResourceProductDataObjectInfo withChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
@@ -38,11 +38,11 @@ public class ResourceProductDataObjectInfo {
      * 计费模式   - packet_cycle : 包周期   - on_demand : 按需
      * @return chargingMode
      */
-    public Object getChargingMode() {
+    public String getChargingMode() {
         return chargingMode;
     }
 
-    public void setChargingMode(Object chargingMode) {
+    public void setChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
     }
 

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,14 +18,9 @@ public class CountGlobalEipsResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_eips")
+    @JsonProperty(value = "global_eip")
 
-    private List<CountGlobalEips> globalEips = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_info")
-
-    private ListGlobalEipsResponseBodyPageInfo pageInfo;
+    private CountGlobalEips globalEip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -51,63 +44,30 @@ public class CountGlobalEipsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public CountGlobalEipsResponse withGlobalEips(List<CountGlobalEips> globalEips) {
-        this.globalEips = globalEips;
+    public CountGlobalEipsResponse withGlobalEip(CountGlobalEips globalEip) {
+        this.globalEip = globalEip;
         return this;
     }
 
-    public CountGlobalEipsResponse addGlobalEipsItem(CountGlobalEips globalEipsItem) {
-        if (this.globalEips == null) {
-            this.globalEips = new ArrayList<>();
-        }
-        this.globalEips.add(globalEipsItem);
-        return this;
-    }
-
-    public CountGlobalEipsResponse withGlobalEips(Consumer<List<CountGlobalEips>> globalEipsSetter) {
-        if (this.globalEips == null) {
-            this.globalEips = new ArrayList<>();
-        }
-        globalEipsSetter.accept(this.globalEips);
-        return this;
-    }
-
-    /**
-     * 全域弹性公网IP列表
-     * @return globalEips
-     */
-    public List<CountGlobalEips> getGlobalEips() {
-        return globalEips;
-    }
-
-    public void setGlobalEips(List<CountGlobalEips> globalEips) {
-        this.globalEips = globalEips;
-    }
-
-    public CountGlobalEipsResponse withPageInfo(ListGlobalEipsResponseBodyPageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public CountGlobalEipsResponse withPageInfo(Consumer<ListGlobalEipsResponseBodyPageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new ListGlobalEipsResponseBodyPageInfo();
-            pageInfoSetter.accept(this.pageInfo);
+    public CountGlobalEipsResponse withGlobalEip(Consumer<CountGlobalEips> globalEipSetter) {
+        if (this.globalEip == null) {
+            this.globalEip = new CountGlobalEips();
+            globalEipSetter.accept(this.globalEip);
         }
 
         return this;
     }
 
     /**
-     * Get pageInfo
-     * @return pageInfo
+     * Get globalEip
+     * @return globalEip
      */
-    public ListGlobalEipsResponseBodyPageInfo getPageInfo() {
-        return pageInfo;
+    public CountGlobalEips getGlobalEip() {
+        return globalEip;
     }
 
-    public void setPageInfo(ListGlobalEipsResponseBodyPageInfo pageInfo) {
-        this.pageInfo = pageInfo;
+    public void setGlobalEip(CountGlobalEips globalEip) {
+        this.globalEip = globalEip;
     }
 
     public CountGlobalEipsResponse withXRequestId(String xRequestId) {
@@ -138,13 +98,13 @@ public class CountGlobalEipsResponse extends SdkResponse {
             return false;
         }
         CountGlobalEipsResponse that = (CountGlobalEipsResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEip, that.globalEip)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalEips, pageInfo, xRequestId);
+        return Objects.hash(requestId, globalEip, xRequestId);
     }
 
     @Override
@@ -152,8 +112,7 @@ public class CountGlobalEipsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountGlobalEipsResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    globalEip: ").append(toIndentedString(globalEip)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

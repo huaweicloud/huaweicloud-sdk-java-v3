@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -19,6 +20,11 @@ public class ResizePostPaidServerOption {
     @JsonProperty(value = "mode")
 
     private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
 
     public ResizePostPaidServerOption withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
@@ -54,6 +60,32 @@ public class ResizePostPaidServerOption {
         this.mode = mode;
     }
 
+    public ResizePostPaidServerOption withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public ResizePostPaidServerOption withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +95,13 @@ public class ResizePostPaidServerOption {
             return false;
         }
         ResizePostPaidServerOption that = (ResizePostPaidServerOption) obj;
-        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.mode, that.mode);
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, mode);
+        return Objects.hash(flavorRef, mode, cpuOptions);
     }
 
     @Override
@@ -77,6 +110,7 @@ public class ResizePostPaidServerOption {
         sb.append("class ResizePostPaidServerOption {\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

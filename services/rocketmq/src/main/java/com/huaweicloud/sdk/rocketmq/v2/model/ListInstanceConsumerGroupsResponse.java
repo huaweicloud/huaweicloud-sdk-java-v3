@@ -28,22 +28,22 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max")
 
-    private BigDecimal max;
+    private Integer max;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remaining")
 
-    private BigDecimal remaining;
+    private Integer remaining;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_offset")
 
-    private BigDecimal nextOffset;
+    private Integer nextOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous_offset")
 
-    private BigDecimal previousOffset;
+    private Integer previousOffset;
 
     public ListInstanceConsumerGroupsResponse withTotal(BigDecimal total) {
         this.total = total;
@@ -95,7 +95,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
         this.groups = groups;
     }
 
-    public ListInstanceConsumerGroupsResponse withMax(BigDecimal max) {
+    public ListInstanceConsumerGroupsResponse withMax(Integer max) {
         this.max = max;
         return this;
     }
@@ -104,15 +104,15 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
      * 最大可创建消费组数量。
      * @return max
      */
-    public BigDecimal getMax() {
+    public Integer getMax() {
         return max;
     }
 
-    public void setMax(BigDecimal max) {
+    public void setMax(Integer max) {
         this.max = max;
     }
 
-    public ListInstanceConsumerGroupsResponse withRemaining(BigDecimal remaining) {
+    public ListInstanceConsumerGroupsResponse withRemaining(Integer remaining) {
         this.remaining = remaining;
         return this;
     }
@@ -121,15 +121,15 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
      * 剩余可创建消费组数量。
      * @return remaining
      */
-    public BigDecimal getRemaining() {
+    public Integer getRemaining() {
         return remaining;
     }
 
-    public void setRemaining(BigDecimal remaining) {
+    public void setRemaining(Integer remaining) {
         this.remaining = remaining;
     }
 
-    public ListInstanceConsumerGroupsResponse withNextOffset(BigDecimal nextOffset) {
+    public ListInstanceConsumerGroupsResponse withNextOffset(Integer nextOffset) {
         this.nextOffset = nextOffset;
         return this;
     }
@@ -138,15 +138,15 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
      * 下个分页的offset。
      * @return nextOffset
      */
-    public BigDecimal getNextOffset() {
+    public Integer getNextOffset() {
         return nextOffset;
     }
 
-    public void setNextOffset(BigDecimal nextOffset) {
+    public void setNextOffset(Integer nextOffset) {
         this.nextOffset = nextOffset;
     }
 
-    public ListInstanceConsumerGroupsResponse withPreviousOffset(BigDecimal previousOffset) {
+    public ListInstanceConsumerGroupsResponse withPreviousOffset(Integer previousOffset) {
         this.previousOffset = previousOffset;
         return this;
     }
@@ -155,11 +155,11 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
      * 上个分页的offset。
      * @return previousOffset
      */
-    public BigDecimal getPreviousOffset() {
+    public Integer getPreviousOffset() {
         return previousOffset;
     }
 
-    public void setPreviousOffset(BigDecimal previousOffset) {
+    public void setPreviousOffset(Integer previousOffset) {
         this.previousOffset = previousOffset;
     }
 

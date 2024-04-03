@@ -734,6 +734,18 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProjectGeipBindingsRequest::getLimit, ListProjectGeipBindingsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getOffset,
+                ListProjectGeipBindingsRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectGeipBindingsRequest::getMarker,
+                ListProjectGeipBindingsRequest::setMarker));
 
         // response
 
@@ -838,6 +850,16 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTenantVpcIgwsRequest::getLimit, ListTenantVpcIgwsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getOffset, ListTenantVpcIgwsRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantVpcIgwsRequest::getMarker, ListTenantVpcIgwsRequest::setMarker));
 
         // response
 

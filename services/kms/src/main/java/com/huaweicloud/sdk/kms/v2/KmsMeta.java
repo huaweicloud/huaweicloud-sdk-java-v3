@@ -68,6 +68,9 @@ import com.huaweicloud.sdk.kms.v2.model.EncryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.EncryptDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.EncryptDatakeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.GenRandomRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.GenerateMacRequest;
+import com.huaweicloud.sdk.kms.v2.model.GenerateMacRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.GenerateMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.GetParametersForImportRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequestBody;
@@ -123,6 +126,9 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureRequest;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureResponse;
+import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequest;
+import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.VerifyMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.VerifyRequestBody;
 
 @SuppressWarnings("unchecked")
@@ -742,6 +748,28 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GenerateMacRequest, GenerateMacResponse> generateMac = genForGenerateMac();
+
+    private static HttpRequestDef<GenerateMacRequest, GenerateMacResponse> genForGenerateMac() {
+        // basic
+        HttpRequestDef.Builder<GenerateMacRequest, GenerateMacResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, GenerateMacRequest.class, GenerateMacResponse.class)
+                .withName("GenerateMac")
+                .withUri("/v1.0/{project_id}/kms/generate-mac")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GenerateMacRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerateMacRequestBody.class),
+            f -> f.withMarshaller(GenerateMacRequest::getBody, GenerateMacRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportKeyMaterialRequest, ImportKeyMaterialResponse> importKeyMaterial =
         genForImportKeyMaterial();
 
@@ -1167,6 +1195,28 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VerifyRequestBody.class),
             f -> f.withMarshaller(ValidateSignatureRequest::getBody, ValidateSignatureRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<VerifyMacRequest, VerifyMacResponse> verifyMac = genForVerifyMac();
+
+    private static HttpRequestDef<VerifyMacRequest, VerifyMacResponse> genForVerifyMac() {
+        // basic
+        HttpRequestDef.Builder<VerifyMacRequest, VerifyMacResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, VerifyMacRequest.class, VerifyMacResponse.class)
+                .withName("VerifyMac")
+                .withUri("/v1.0/{project_id}/kms/verify-mac")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<VerifyMacRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VerifyMacRequestBody.class),
+            f -> f.withMarshaller(VerifyMacRequest::getBody, VerifyMacRequest::setBody));
 
         // response
 

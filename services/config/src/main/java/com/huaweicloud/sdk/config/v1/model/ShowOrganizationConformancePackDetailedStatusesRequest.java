@@ -25,6 +25,11 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
 
     private String conformancePackName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organization_conformance_pack_id")
+
+    private String organizationConformancePackId;
+
     /**
      * 部署状态，区分大小写
      */
@@ -162,6 +167,24 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
         this.conformancePackName = conformancePackName;
     }
 
+    public ShowOrganizationConformancePackDetailedStatusesRequest withOrganizationConformancePackId(
+        String organizationConformancePackId) {
+        this.organizationConformancePackId = organizationConformancePackId;
+        return this;
+    }
+
+    /**
+     * 组织合规规则包ID。
+     * @return organizationConformancePackId
+     */
+    public String getOrganizationConformancePackId() {
+        return organizationConformancePackId;
+    }
+
+    public void setOrganizationConformancePackId(String organizationConformancePackId) {
+        this.organizationConformancePackId = organizationConformancePackId;
+    }
+
     public ShowOrganizationConformancePackDetailedStatusesRequest withState(StateEnum state) {
         this.state = state;
         return this;
@@ -227,13 +250,14 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
             (ShowOrganizationConformancePackDetailedStatusesRequest) obj;
         return Objects.equals(this.organizationId, that.organizationId)
             && Objects.equals(this.conformancePackName, that.conformancePackName)
+            && Objects.equals(this.organizationConformancePackId, that.organizationConformancePackId)
             && Objects.equals(this.state, that.state) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationId, conformancePackName, state, limit, marker);
+        return Objects.hash(organizationId, conformancePackName, organizationConformancePackId, state, limit, marker);
     }
 
     @Override
@@ -242,6 +266,9 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
         sb.append("class ShowOrganizationConformancePackDetailedStatusesRequest {\n");
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    conformancePackName: ").append(toIndentedString(conformancePackName)).append("\n");
+        sb.append("    organizationConformancePackId: ")
+            .append(toIndentedString(organizationConformancePackId))
+            .append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

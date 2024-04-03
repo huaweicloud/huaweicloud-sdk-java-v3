@@ -31,6 +31,11 @@ public class ResizePrePaidServerOption {
 
     private String mode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
     public ResizePrePaidServerOption withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -108,6 +113,32 @@ public class ResizePrePaidServerOption {
         this.mode = mode;
     }
 
+    public ResizePrePaidServerOption withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public ResizePrePaidServerOption withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -119,12 +150,13 @@ public class ResizePrePaidServerOption {
         ResizePrePaidServerOption that = (ResizePrePaidServerOption) obj;
         return Objects.equals(this.flavorRef, that.flavorRef)
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
-            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.mode, that.mode);
+            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, dedicatedHostId, extendparam, mode);
+        return Objects.hash(flavorRef, dedicatedHostId, extendparam, mode, cpuOptions);
     }
 
     @Override
@@ -135,6 +167,7 @@ public class ResizePrePaidServerOption {
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

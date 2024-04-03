@@ -20,6 +20,11 @@ public class OrderRuleAclDto {
 
     private Integer top;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bottom")
+
+    private Integer bottom;
+
     public OrderRuleAclDto withDestRuleId(String destRuleId) {
         this.destRuleId = destRuleId;
         return this;
@@ -54,6 +59,23 @@ public class OrderRuleAclDto {
         this.top = top;
     }
 
+    public OrderRuleAclDto withBottom(Integer bottom) {
+        this.bottom = bottom;
+        return this;
+    }
+
+    /**
+     * 是否置底，0代表非置底，1代表置底
+     * @return bottom
+     */
+    public Integer getBottom() {
+        return bottom;
+    }
+
+    public void setBottom(Integer bottom) {
+        this.bottom = bottom;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class OrderRuleAclDto {
             return false;
         }
         OrderRuleAclDto that = (OrderRuleAclDto) obj;
-        return Objects.equals(this.destRuleId, that.destRuleId) && Objects.equals(this.top, that.top);
+        return Objects.equals(this.destRuleId, that.destRuleId) && Objects.equals(this.top, that.top)
+            && Objects.equals(this.bottom, that.bottom);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(destRuleId, top);
+        return Objects.hash(destRuleId, top, bottom);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class OrderRuleAclDto {
         sb.append("class OrderRuleAclDto {\n");
         sb.append("    destRuleId: ").append(toIndentedString(destRuleId)).append("\n");
         sb.append("    top: ").append(toIndentedString(top)).append("\n");
+        sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
         sb.append("}");
         return sb.toString();
     }

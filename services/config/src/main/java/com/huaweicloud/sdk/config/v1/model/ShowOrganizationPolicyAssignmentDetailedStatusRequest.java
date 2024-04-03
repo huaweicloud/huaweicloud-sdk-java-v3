@@ -25,6 +25,11 @@ public class ShowOrganizationPolicyAssignmentDetailedStatusRequest {
 
     private String organizationPolicyAssignmentName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organization_policy_assignment_id")
+
+    private String organizationPolicyAssignmentId;
+
     /**
      * 成员帐号规则部署状态，区分大小写。
      */
@@ -187,6 +192,24 @@ public class ShowOrganizationPolicyAssignmentDetailedStatusRequest {
         this.organizationPolicyAssignmentName = organizationPolicyAssignmentName;
     }
 
+    public ShowOrganizationPolicyAssignmentDetailedStatusRequest withOrganizationPolicyAssignmentId(
+        String organizationPolicyAssignmentId) {
+        this.organizationPolicyAssignmentId = organizationPolicyAssignmentId;
+        return this;
+    }
+
+    /**
+     * 组织合规规则ID
+     * @return organizationPolicyAssignmentId
+     */
+    public String getOrganizationPolicyAssignmentId() {
+        return organizationPolicyAssignmentId;
+    }
+
+    public void setOrganizationPolicyAssignmentId(String organizationPolicyAssignmentId) {
+        this.organizationPolicyAssignmentId = organizationPolicyAssignmentId;
+    }
+
     public ShowOrganizationPolicyAssignmentDetailedStatusRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -252,13 +275,19 @@ public class ShowOrganizationPolicyAssignmentDetailedStatusRequest {
             (ShowOrganizationPolicyAssignmentDetailedStatusRequest) obj;
         return Objects.equals(this.organizationId, that.organizationId)
             && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
+            && Objects.equals(this.organizationPolicyAssignmentId, that.organizationPolicyAssignmentId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationId, organizationPolicyAssignmentName, status, limit, marker);
+        return Objects.hash(organizationId,
+            organizationPolicyAssignmentName,
+            organizationPolicyAssignmentId,
+            status,
+            limit,
+            marker);
     }
 
     @Override
@@ -268,6 +297,9 @@ public class ShowOrganizationPolicyAssignmentDetailedStatusRequest {
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    organizationPolicyAssignmentName: ")
             .append(toIndentedString(organizationPolicyAssignmentName))
+            .append("\n");
+        sb.append("    organizationPolicyAssignmentId: ")
+            .append(toIndentedString(organizationPolicyAssignmentId))
             .append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

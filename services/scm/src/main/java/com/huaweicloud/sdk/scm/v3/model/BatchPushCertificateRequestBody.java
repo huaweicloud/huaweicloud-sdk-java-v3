@@ -45,7 +45,7 @@ public class BatchPushCertificateRequestBody {
     }
 
     /**
-     * 推送到的目标服务所在的区域，CDN支持区域固定为：Global。
+     * 推送到的目标服务所在的区域，CDN、ELB、WAF。
      * @return targetProjects
      */
     public List<String> getTargetProjects() {

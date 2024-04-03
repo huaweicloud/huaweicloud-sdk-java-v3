@@ -333,6 +333,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
@@ -367,6 +369,8 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
@@ -5906,6 +5910,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取wal日志延迟回放状态
+     *
+     * 获取wal日志延迟回放状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayDelayStatusRequest 请求对象
+     * @return CompletableFuture<ShowReplayDelayStatusResponse>
+     */
+    public CompletableFuture<ShowReplayDelayStatusResponse> showReplayDelayStatusAsync(
+        ShowReplayDelayStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showReplayDelayStatus);
+    }
+
+    /**
+     * 获取wal日志延迟回放状态
+     *
+     * 获取wal日志延迟回放状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayDelayStatusRequest 请求对象
+     * @return AsyncInvoker<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse>
+     */
+    public AsyncInvoker<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse> showReplayDelayStatusAsyncInvoker(
+        ShowReplayDelayStatusRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showReplayDelayStatus, hcClient);
+    }
+
+    /**
      * 开启数据库代理
      *
      * 为指定实例开启数据库代理。
@@ -5961,6 +5995,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyAsyncInvoker(
         StopDatabaseProxyRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.stopDatabaseProxy, hcClient);
+    }
+
+    /**
+     * 中止/恢复wal日志回放
+     *
+     * 中止/恢复wal日志回放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogReplayRequest 请求对象
+     * @return CompletableFuture<SwitchLogReplayResponse>
+     */
+    public CompletableFuture<SwitchLogReplayResponse> switchLogReplayAsync(SwitchLogReplayRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.switchLogReplay);
+    }
+
+    /**
+     * 中止/恢复wal日志回放
+     *
+     * 中止/恢复wal日志回放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogReplayRequest 请求对象
+     * @return AsyncInvoker<SwitchLogReplayRequest, SwitchLogReplayResponse>
+     */
+    public AsyncInvoker<SwitchLogReplayRequest, SwitchLogReplayResponse> switchLogReplayAsyncInvoker(
+        SwitchLogReplayRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.switchLogReplay, hcClient);
     }
 
     /**

@@ -178,6 +178,8 @@ import com.huaweicloud.sdk.config.v1.model.StoredQueryRequestBody;
 import com.huaweicloud.sdk.config.v1.model.TrackerConfigBody;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyStateRequest;
@@ -1213,6 +1215,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getMarker,
                 ListOrganizationConformancePackStatusesRequest::setMarker));
+        builder.<String>withRequestField("organization_conformance_pack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationConformancePackStatusesRequest::getOrganizationConformancePackId,
+                ListOrganizationConformancePackStatusesRequest::setOrganizationConformancePackId));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1258,6 +1266,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getMarker,
                 ListOrganizationConformancePacksRequest::setMarker));
+        builder.<String>withRequestField("organization_conformance_pack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationConformancePacksRequest::getOrganizationConformancePackId,
+                ListOrganizationConformancePacksRequest::setOrganizationConformancePackId));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1387,6 +1401,13 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getConformancePackName,
                 ShowOrganizationConformancePackDetailedStatusesRequest::setConformancePackName));
+        builder.<String>withRequestField("organization_conformance_pack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(
+                ShowOrganizationConformancePackDetailedStatusesRequest::getOrganizationConformancePackId,
+                ShowOrganizationConformancePackDetailedStatusesRequest::setOrganizationConformancePackId));
         builder.<ShowOrganizationConformancePackDetailedStatusesRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1672,6 +1693,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationId,
                 ListOrganizationPolicyAssignmentsRequest::setOrganizationId));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationPolicyAssignmentId,
+                ListOrganizationPolicyAssignmentsRequest::setOrganizationPolicyAssignmentId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2035,6 +2062,13 @@ public class ConfigMeta {
             f -> f.withMarshaller(
                 ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationPolicyAssignmentName,
                 ShowOrganizationPolicyAssignmentDetailedStatusRequest::setOrganizationPolicyAssignmentName));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationPolicyAssignmentId,
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::setOrganizationPolicyAssignmentId));
         builder.<ShowOrganizationPolicyAssignmentDetailedStatusRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2128,6 +2162,46 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyAssignmentRequest::getPolicyAssignmentId,
                 ShowPolicyAssignmentRequest::setPolicyAssignmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOrganizationPolicyAssignmentRequest, UpdateOrganizationPolicyAssignmentResponse> updateOrganizationPolicyAssignment =
+        genForUpdateOrganizationPolicyAssignment();
+
+    private static HttpRequestDef<UpdateOrganizationPolicyAssignmentRequest, UpdateOrganizationPolicyAssignmentResponse> genForUpdateOrganizationPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<UpdateOrganizationPolicyAssignmentRequest, UpdateOrganizationPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateOrganizationPolicyAssignmentRequest.class,
+                    UpdateOrganizationPolicyAssignmentResponse.class)
+                .withName("UpdateOrganizationPolicyAssignment")
+                .withUri(
+                    "/v1/resource-manager/organizations/{organization_id}/policy-assignments/{organization_policy_assignment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationPolicyAssignmentRequest::getOrganizationId,
+                UpdateOrganizationPolicyAssignmentRequest::setOrganizationId));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationPolicyAssignmentRequest::getOrganizationPolicyAssignmentId,
+                UpdateOrganizationPolicyAssignmentRequest::setOrganizationPolicyAssignmentId));
+        builder.<OrganizationPolicyAssignmentRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OrganizationPolicyAssignmentRequest.class),
+            f -> f.withMarshaller(UpdateOrganizationPolicyAssignmentRequest::getBody,
+                UpdateOrganizationPolicyAssignmentRequest::setBody));
 
         // response
 

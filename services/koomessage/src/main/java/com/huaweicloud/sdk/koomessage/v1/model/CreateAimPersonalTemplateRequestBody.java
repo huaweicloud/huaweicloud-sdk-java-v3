@@ -142,7 +142,7 @@ public class CreateAimPersonalTemplateRequestBody {
     }
 
     /**
-     * 版式子类型。 > - 当card_id为RedPacket和RedPacketPersonal时，sub_type用于设置按钮样式，1表示静态按钮，2表示动态按钮。 > - 当card_id为ECImageAndText时，sub_type用于设置左右按钮组合颜色，默认值为1，1表示左边按钮为橙色，右边按钮为红色；2表示左边按钮为绿色，右边按钮为黄色；3表示左边按钮为绿色，右边按钮为蓝色；4表示左边按钮为紫色，右边按钮为蓝色。仅华为厂商支持sub_type取值为2、3、4。 > - 当card_id为EcommerceCouponVertical时，sub_type用于设置卡券区是否隐藏。sub_type设置为1，卡券区（position_number为4~7）的visible设置为1，且卡券区（position_number为7）的button_type设置为static或dynamic时，显示卡券区；sub_type设置为2，卡券区（position_number为4~7）的visible设置为0，且卡券区（position_number为7）的button_type设置为空值或不带该字段时，卡券区被隐藏。
+     * 版式子类型。 > - 当card_id为RedPacket和RedPacketPersonal时，sub_type用于设置按钮样式，1表示静态按钮，2表示动态按钮。目前仅华为厂商支持动态按钮。 > - 当card_id为ECImageAndText时，sub_type用于设置左右按钮组合颜色，默认值为1，1表示左边按钮为橙色，右边按钮为红色；2表示左边按钮为绿色，右边按钮为黄色；3表示左边按钮为绿色，右边按钮为蓝色；4表示左边按钮为紫色，右边按钮为蓝色；5表示左边按钮为黑色，右边按钮为玫粉色。仅华为厂商支持sub_type取值为2、3、4、5。 > - 当card_id为CarouselVerticalImage时，sub_type用于设置按钮颜色，1表示蓝色(默认颜色)、2表示黑色、3表示紫色、4表示金色、5表示粉色、6表示玫粉。仅华为厂商支持sub_type取值为2、3、4、5、6。 > - 当card_id为CardVoucher时，sub_type用于设置按钮样式，1表示静态按钮，2表示动态按钮。目前仅华为厂商支持动态按钮。 > - 当card_id为ShortVideoImage时，sub_type用于设置是否显示播放图标，1表示不显示，2表示显示。 > - 当card_id为EcommerceCouponVertical和EcommerceCouponHorizontal时，sub_type用于设置卡券区是否隐藏。sub_type设置为1，卡券区（position_number为4~7）的visible设置为1，且卡券区（position_number为7）的button_type设置为static或dynamic时，显示卡券区；sub_type设置为2，卡券区（position_number为4~7）的visible设置为0，且卡券区（position_number为7）的button_type设置为空值或不带该字段时，卡券区被隐藏。
      * @return subType
      */
     public Integer getSubType() {

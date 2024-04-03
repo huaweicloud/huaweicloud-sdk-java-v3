@@ -150,6 +150,26 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
 
     private String dstHost;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_id")
+
+    private String dstRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_id")
+
+    private String srcRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
     public HttpQueryCfwFlowLogsResponseDTODataRecords withBytes(Double bytes) {
         this.bytes = bytes;
         return this;
@@ -371,6 +391,74 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         this.dstHost = dstHost;
     }
 
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+        return this;
+    }
+
+    /**
+     * 目的地域id
+     * @return dstRegionId
+     */
+    public String getDstRegionId() {
+        return dstRegionId;
+    }
+
+    public void setDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+    }
+
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的地域名称
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+    }
+
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+        return this;
+    }
+
+    /**
+     * 源地域id
+     * @return srcRegionId
+     */
+    public String getSrcRegionId() {
+        return srcRegionId;
+    }
+
+    public void setSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+    }
+
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源地域名称
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -386,7 +474,10 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
             && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
             && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.app, that.app)
             && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.dstHost, that.dstHost);
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.dstRegionId, that.dstRegionId)
+            && Objects.equals(this.dstRegionName, that.dstRegionName)
+            && Objects.equals(this.srcRegionId, that.srcRegionId)
+            && Objects.equals(this.srcRegionName, that.srcRegionName);
     }
 
     @Override
@@ -403,7 +494,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
             app,
             dstPort,
             protocol,
-            dstHost);
+            dstHost,
+            dstRegionId,
+            dstRegionName,
+            srcRegionId,
+            srcRegionName);
     }
 
     @Override
@@ -423,6 +518,10 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         sb.append("    dstPort: ").append(toIndentedString(dstPort)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    dstRegionId: ").append(toIndentedString(dstRegionId)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
+        sb.append("    srcRegionId: ").append(toIndentedString(srcRegionId)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

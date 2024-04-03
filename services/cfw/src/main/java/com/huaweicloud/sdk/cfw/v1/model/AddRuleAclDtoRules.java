@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -188,6 +190,16 @@ public class AddRuleAclDtoRules {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applications")
+
+    private List<String> applications = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applicationsJsonString")
+
+    private String applicationsJsonString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "long_connect_time")
 
     private Long longConnectTime;
@@ -363,14 +375,19 @@ public class AddRuleAclDtoRules {
     private DirectionEnum direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "profile")
+
+    private RuleProfileDto profile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private RuleAddressDto source;
+    private RuleAddressDtoForRequest source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
 
-    private RuleAddressDto destination;
+    private RuleAddressDtoForRequest destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
@@ -474,6 +491,56 @@ public class AddRuleAclDtoRules {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public AddRuleAclDtoRules withApplications(List<String> applications) {
+        this.applications = applications;
+        return this;
+    }
+
+    public AddRuleAclDtoRules addApplicationsItem(String applicationsItem) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        this.applications.add(applicationsItem);
+        return this;
+    }
+
+    public AddRuleAclDtoRules withApplications(Consumer<List<String>> applicationsSetter) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        applicationsSetter.accept(this.applications);
+        return this;
+    }
+
+    /**
+     * 应用列表
+     * @return applications
+     */
+    public List<String> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<String> applications) {
+        this.applications = applications;
+    }
+
+    public AddRuleAclDtoRules withApplicationsJsonString(String applicationsJsonString) {
+        this.applicationsJsonString = applicationsJsonString;
+        return this;
+    }
+
+    /**
+     * 应用列表转化json字符串
+     * @return applicationsJsonString
+     */
+    public String getApplicationsJsonString() {
+        return applicationsJsonString;
+    }
+
+    public void setApplicationsJsonString(String applicationsJsonString) {
+        this.applicationsJsonString = applicationsJsonString;
     }
 
     public AddRuleAclDtoRules withLongConnectTime(Long longConnectTime) {
@@ -595,14 +662,40 @@ public class AddRuleAclDtoRules {
         this.direction = direction;
     }
 
-    public AddRuleAclDtoRules withSource(RuleAddressDto source) {
+    public AddRuleAclDtoRules withProfile(RuleProfileDto profile) {
+        this.profile = profile;
+        return this;
+    }
+
+    public AddRuleAclDtoRules withProfile(Consumer<RuleProfileDto> profileSetter) {
+        if (this.profile == null) {
+            this.profile = new RuleProfileDto();
+            profileSetter.accept(this.profile);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get profile
+     * @return profile
+     */
+    public RuleProfileDto getProfile() {
+        return profile;
+    }
+
+    public void setProfile(RuleProfileDto profile) {
+        this.profile = profile;
+    }
+
+    public AddRuleAclDtoRules withSource(RuleAddressDtoForRequest source) {
         this.source = source;
         return this;
     }
 
-    public AddRuleAclDtoRules withSource(Consumer<RuleAddressDto> sourceSetter) {
+    public AddRuleAclDtoRules withSource(Consumer<RuleAddressDtoForRequest> sourceSetter) {
         if (this.source == null) {
-            this.source = new RuleAddressDto();
+            this.source = new RuleAddressDtoForRequest();
             sourceSetter.accept(this.source);
         }
 
@@ -613,22 +706,22 @@ public class AddRuleAclDtoRules {
      * Get source
      * @return source
      */
-    public RuleAddressDto getSource() {
+    public RuleAddressDtoForRequest getSource() {
         return source;
     }
 
-    public void setSource(RuleAddressDto source) {
+    public void setSource(RuleAddressDtoForRequest source) {
         this.source = source;
     }
 
-    public AddRuleAclDtoRules withDestination(RuleAddressDto destination) {
+    public AddRuleAclDtoRules withDestination(RuleAddressDtoForRequest destination) {
         this.destination = destination;
         return this;
     }
 
-    public AddRuleAclDtoRules withDestination(Consumer<RuleAddressDto> destinationSetter) {
+    public AddRuleAclDtoRules withDestination(Consumer<RuleAddressDtoForRequest> destinationSetter) {
         if (this.destination == null) {
-            this.destination = new RuleAddressDto();
+            this.destination = new RuleAddressDtoForRequest();
             destinationSetter.accept(this.destination);
         }
 
@@ -639,11 +732,11 @@ public class AddRuleAclDtoRules {
      * Get destination
      * @return destination
      */
-    public RuleAddressDto getDestination() {
+    public RuleAddressDtoForRequest getDestination() {
         return destination;
     }
 
-    public void setDestination(RuleAddressDto destination) {
+    public void setDestination(RuleAddressDtoForRequest destination) {
         this.destination = destination;
     }
 
@@ -710,14 +803,17 @@ public class AddRuleAclDtoRules {
         AddRuleAclDtoRules that = (AddRuleAclDtoRules) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
             && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.actionType, that.actionType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.longConnectTime, that.longConnectTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.applications, that.applications)
+            && Objects.equals(this.applicationsJsonString, that.applicationsJsonString)
+            && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
             && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
             && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.service, that.service) && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.profile, that.profile) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.destination, that.destination) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -727,6 +823,8 @@ public class AddRuleAclDtoRules {
             addressType,
             actionType,
             status,
+            applications,
+            applicationsJsonString,
             longConnectTime,
             longConnectTimeHour,
             longConnectTimeMinute,
@@ -734,6 +832,7 @@ public class AddRuleAclDtoRules {
             longConnectEnable,
             description,
             direction,
+            profile,
             source,
             destination,
             service,
@@ -749,6 +848,8 @@ public class AddRuleAclDtoRules {
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
+        sb.append("    applicationsJsonString: ").append(toIndentedString(applicationsJsonString)).append("\n");
         sb.append("    longConnectTime: ").append(toIndentedString(longConnectTime)).append("\n");
         sb.append("    longConnectTimeHour: ").append(toIndentedString(longConnectTimeHour)).append("\n");
         sb.append("    longConnectTimeMinute: ").append(toIndentedString(longConnectTimeMinute)).append("\n");
@@ -756,6 +857,7 @@ public class AddRuleAclDtoRules {
         sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+        sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");

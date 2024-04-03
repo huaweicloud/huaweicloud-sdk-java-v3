@@ -138,9 +138,6 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionResponse;
-import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
-import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequestBody;
-import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorResponse;
@@ -163,8 +160,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerAutoRecoveryRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerAutoRecoveryResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
@@ -1752,39 +1747,6 @@ public class EcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecovery =
-        genForRegisterServerAutoRecovery();
-
-    private static HttpRequestDef<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> genForRegisterServerAutoRecovery() {
-        // basic
-        HttpRequestDef.Builder<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    RegisterServerAutoRecoveryRequest.class,
-                    RegisterServerAutoRecoveryResponse.class)
-                .withName("RegisterServerAutoRecovery")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/autorecovery")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getServerId,
-                RegisterServerAutoRecoveryRequest::setServerId));
-        builder.<RegisterServerAutoRecoveryRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RegisterServerAutoRecoveryRequestBody.class),
-            f -> f.withMarshaller(RegisterServerAutoRecoveryRequest::getBody,
-                RegisterServerAutoRecoveryRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RegisterServerMonitorRequest, RegisterServerMonitorResponse> registerServerMonitor =
         genForRegisterServerMonitor();
 
@@ -2003,30 +1965,6 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerRequest::getServerId, ShowServerRequest::setServerId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecovery =
-        genForShowServerAutoRecovery();
-
-    private static HttpRequestDef<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> genForShowServerAutoRecovery() {
-        // basic
-        HttpRequestDef.Builder<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowServerAutoRecoveryRequest.class, ShowServerAutoRecoveryResponse.class)
-            .withName("ShowServerAutoRecovery")
-            .withUri("/v1/{project_id}/cloudservers/{server_id}/autorecovery")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerAutoRecoveryRequest::getServerId,
-                ShowServerAutoRecoveryRequest::setServerId));
 
         // response
 

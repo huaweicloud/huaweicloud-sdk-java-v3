@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.scm.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
@@ -15,10 +17,16 @@ import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -37,9 +45,38 @@ public class ScmAsyncClient {
     }
 
     /**
+     * 申请证书
+     *
+     * 申请证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyCertificateRequest 请求对象
+     * @return CompletableFuture<ApplyCertificateResponse>
+     */
+    public CompletableFuture<ApplyCertificateResponse> applyCertificateAsync(ApplyCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.applyCertificate);
+    }
+
+    /**
+     * 申请证书
+     *
+     * 申请证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyCertificateRequest 请求对象
+     * @return AsyncInvoker<ApplyCertificateRequest, ApplyCertificateResponse>
+     */
+    public AsyncInvoker<ApplyCertificateRequest, ApplyCertificateResponse> applyCertificateAsyncInvoker(
+        ApplyCertificateRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.applyCertificate, hcClient);
+    }
+
+    /**
      * 批量推送证书
      *
-     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品多个region中。
+     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -54,7 +91,7 @@ public class ScmAsyncClient {
     /**
      * 批量推送证书
      *
-     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品多个region中。
+     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -98,7 +135,7 @@ public class ScmAsyncClient {
     /**
      * 部署证书
      *
-     * 部署SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
+     * 部署SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -112,7 +149,7 @@ public class ScmAsyncClient {
     /**
      * 部署证书
      *
-     * 部署SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
+     * 部署SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -212,9 +249,39 @@ public class ScmAsyncClient {
     }
 
     /**
+     * 查询已部署资源
+     *
+     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeployedResourcesRequest 请求对象
+     * @return CompletableFuture<ListDeployedResourcesResponse>
+     */
+    public CompletableFuture<ListDeployedResourcesResponse> listDeployedResourcesAsync(
+        ListDeployedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.listDeployedResources);
+    }
+
+    /**
+     * 查询已部署资源
+     *
+     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeployedResourcesRequest 请求对象
+     * @return AsyncInvoker<ListDeployedResourcesRequest, ListDeployedResourcesResponse>
+     */
+    public AsyncInvoker<ListDeployedResourcesRequest, ListDeployedResourcesResponse> listDeployedResourcesAsyncInvoker(
+        ListDeployedResourcesRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.listDeployedResources, hcClient);
+    }
+
+    /**
      * 推送证书
      *
-     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
+     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -228,7 +295,7 @@ public class ScmAsyncClient {
     /**
      * 推送证书
      *
-     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
+     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -267,6 +334,66 @@ public class ScmAsyncClient {
     public AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateAsyncInvoker(
         ShowCertificateRequest request) {
         return new AsyncInvoker<>(request, ScmMeta.showCertificate, hcClient);
+    }
+
+    /**
+     * 购买SSL证书
+     *
+     * 购买SSL证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeCertificateRequest 请求对象
+     * @return CompletableFuture<SubscribeCertificateResponse>
+     */
+    public CompletableFuture<SubscribeCertificateResponse> subscribeCertificateAsync(
+        SubscribeCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.subscribeCertificate);
+    }
+
+    /**
+     * 购买SSL证书
+     *
+     * 购买SSL证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeCertificateRequest 请求对象
+     * @return AsyncInvoker<SubscribeCertificateRequest, SubscribeCertificateResponse>
+     */
+    public AsyncInvoker<SubscribeCertificateRequest, SubscribeCertificateResponse> subscribeCertificateAsyncInvoker(
+        SubscribeCertificateRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.subscribeCertificate, hcClient);
+    }
+
+    /**
+     * 退订证书
+     *
+     * 退订证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeCertificateRequest 请求对象
+     * @return CompletableFuture<UnsubscribeCertificateResponse>
+     */
+    public CompletableFuture<UnsubscribeCertificateResponse> unsubscribeCertificateAsync(
+        UnsubscribeCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.unsubscribeCertificate);
+    }
+
+    /**
+     * 退订证书
+     *
+     * 退订证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeCertificateRequest 请求对象
+     * @return AsyncInvoker<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse>
+     */
+    public AsyncInvoker<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse> unsubscribeCertificateAsyncInvoker(
+        UnsubscribeCertificateRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.unsubscribeCertificate, hcClient);
     }
 
 }

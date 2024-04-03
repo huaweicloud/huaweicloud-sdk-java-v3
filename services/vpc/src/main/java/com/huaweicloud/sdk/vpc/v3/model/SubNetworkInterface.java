@@ -84,6 +84,11 @@ public class SubNetworkInterface {
 
     private OffsetDateTime createdAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_enabled")
+
+    private Boolean securityEnabled;
+
     public SubNetworkInterface withId(String id) {
         this.id = id;
         return this;
@@ -354,6 +359,23 @@ public class SubNetworkInterface {
         this.createdAt = createdAt;
     }
 
+    public SubNetworkInterface withSecurityEnabled(Boolean securityEnabled) {
+        this.securityEnabled = securityEnabled;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 取值范围：true（使能），false（不使能）
+     * @return securityEnabled
+     */
+    public Boolean getSecurityEnabled() {
+        return securityEnabled;
+    }
+
+    public void setSecurityEnabled(Boolean securityEnabled) {
+        this.securityEnabled = securityEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -371,7 +393,8 @@ public class SubNetworkInterface {
             && Objects.equals(this.description, that.description) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.vlanId, that.vlanId) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.securityEnabled, that.securityEnabled);
     }
 
     @Override
@@ -389,7 +412,8 @@ public class SubNetworkInterface {
             securityGroups,
             tags,
             projectId,
-            createdAt);
+            createdAt,
+            securityEnabled);
     }
 
     @Override
@@ -410,6 +434,7 @@ public class SubNetworkInterface {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    securityEnabled: ").append(toIndentedString(securityEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

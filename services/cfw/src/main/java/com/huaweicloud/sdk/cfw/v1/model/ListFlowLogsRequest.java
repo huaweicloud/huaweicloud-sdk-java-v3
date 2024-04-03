@@ -258,6 +258,16 @@ public class ListFlowLogsRequest {
 
     private String dstHost;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
+
     public ListFlowLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -553,6 +563,40 @@ public class ListFlowLogsRequest {
         this.dstHost = dstHost;
     }
 
+    public ListFlowLogsRequest withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源region名称
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
+    public ListFlowLogsRequest withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的region名称
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -571,7 +615,8 @@ public class ListFlowLogsRequest {
             && Objects.equals(this.nextDate, that.nextDate) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.dstHost, that.dstHost);
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.srcRegionName, that.srcRegionName)
+            && Objects.equals(this.dstRegionName, that.dstRegionName);
     }
 
     @Override
@@ -592,7 +637,9 @@ public class ListFlowLogsRequest {
             offset,
             limit,
             enterpriseProjectId,
-            dstHost);
+            dstHost,
+            srcRegionName,
+            dstRegionName);
     }
 
     @Override
@@ -616,6 +663,8 @@ public class ListFlowLogsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

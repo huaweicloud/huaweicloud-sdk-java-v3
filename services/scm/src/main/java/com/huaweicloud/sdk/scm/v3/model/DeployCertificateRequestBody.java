@@ -34,7 +34,7 @@ public class DeployCertificateRequestBody {
     }
 
     /**
-     * 部署的资源所在的项目名称，若在主项目下，则该值为region id，CDN支持区域固定为：Global。
+     * 部署的资源所在的项目名称，若在主项目下，则该值为region id。
      * @return projectName
      */
     public String getProjectName() {
@@ -51,7 +51,7 @@ public class DeployCertificateRequestBody {
     }
 
     /**
-     * 证书部署到资源的目标服务，当前仅支持：CDN、WAF、ELB。
+     * 证书推送的目标服务，当前仅支持：CDN、WAF、ELB。
      * @return serviceName
      */
     public String getServiceName() {

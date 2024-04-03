@@ -130,6 +130,11 @@ public class ListAddressSetsRequest {
 
     private Integer queryAddressSetType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_set_type")
+
+    private Integer addressSetType;
+
     public ListAddressSetsRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -283,6 +288,23 @@ public class ListAddressSetsRequest {
         this.queryAddressSetType = queryAddressSetType;
     }
 
+    public ListAddressSetsRequest withAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+        return this;
+    }
+
+    /**
+     * 地址组类型，0表示自定义地址组，1表示WAF回源IP地址组，2表示DDoS回源IP地址组，3表示NAT64转换地址组
+     * @return addressSetType
+     */
+    public Integer getAddressSetType() {
+        return addressSetType;
+    }
+
+    public void setAddressSetType(Integer addressSetType) {
+        this.addressSetType = addressSetType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -297,7 +319,8 @@ public class ListAddressSetsRequest {
             && Objects.equals(this.address, that.address) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId)
-            && Objects.equals(this.queryAddressSetType, that.queryAddressSetType);
+            && Objects.equals(this.queryAddressSetType, that.queryAddressSetType)
+            && Objects.equals(this.addressSetType, that.addressSetType);
     }
 
     @Override
@@ -310,7 +333,8 @@ public class ListAddressSetsRequest {
             addressType,
             enterpriseProjectId,
             fwInstanceId,
-            queryAddressSetType);
+            queryAddressSetType,
+            addressSetType);
     }
 
     @Override
@@ -326,6 +350,7 @@ public class ListAddressSetsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    queryAddressSetType: ").append(toIndentedString(queryAddressSetType)).append("\n");
+        sb.append("    addressSetType: ").append(toIndentedString(addressSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -147,6 +147,26 @@ public class Flavor {
 
     private Integer vpcBandwith;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_bandwidth")
+
+    private Integer defaultBandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_eip_count")
+
+    private Integer defaultEipCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_log_storage")
+
+    private Integer defaultLogStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_vpc_count")
+
+    private Integer defaultVpcCount;
+
     public Flavor withVersion(VersionEnum version) {
         this.version = version;
         return this;
@@ -320,6 +340,74 @@ public class Flavor {
         this.vpcBandwith = vpcBandwith;
     }
 
+    public Flavor withDefaultBandwidth(Integer defaultBandwidth) {
+        this.defaultBandwidth = defaultBandwidth;
+        return this;
+    }
+
+    /**
+     * 默认防火墙带宽
+     * @return defaultBandwidth
+     */
+    public Integer getDefaultBandwidth() {
+        return defaultBandwidth;
+    }
+
+    public void setDefaultBandwidth(Integer defaultBandwidth) {
+        this.defaultBandwidth = defaultBandwidth;
+    }
+
+    public Flavor withDefaultEipCount(Integer defaultEipCount) {
+        this.defaultEipCount = defaultEipCount;
+        return this;
+    }
+
+    /**
+     * 默认eip数
+     * @return defaultEipCount
+     */
+    public Integer getDefaultEipCount() {
+        return defaultEipCount;
+    }
+
+    public void setDefaultEipCount(Integer defaultEipCount) {
+        this.defaultEipCount = defaultEipCount;
+    }
+
+    public Flavor withDefaultLogStorage(Integer defaultLogStorage) {
+        this.defaultLogStorage = defaultLogStorage;
+        return this;
+    }
+
+    /**
+     * 默认日志存储
+     * @return defaultLogStorage
+     */
+    public Integer getDefaultLogStorage() {
+        return defaultLogStorage;
+    }
+
+    public void setDefaultLogStorage(Integer defaultLogStorage) {
+        this.defaultLogStorage = defaultLogStorage;
+    }
+
+    public Flavor withDefaultVpcCount(Integer defaultVpcCount) {
+        this.defaultVpcCount = defaultVpcCount;
+        return this;
+    }
+
+    /**
+     * 默认vpc数
+     * @return defaultVpcCount
+     */
+    public Integer getDefaultVpcCount() {
+        return defaultVpcCount;
+    }
+
+    public void setDefaultVpcCount(Integer defaultVpcCount) {
+        this.defaultVpcCount = defaultVpcCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -336,7 +424,11 @@ public class Flavor {
             && Objects.equals(this.sessionCreate, that.sessionCreate)
             && Objects.equals(this.totalRuleCount, that.totalRuleCount)
             && Objects.equals(this.usedRuleCount, that.usedRuleCount)
-            && Objects.equals(this.vpcBandwith, that.vpcBandwith);
+            && Objects.equals(this.vpcBandwith, that.vpcBandwith)
+            && Objects.equals(this.defaultBandwidth, that.defaultBandwidth)
+            && Objects.equals(this.defaultEipCount, that.defaultEipCount)
+            && Objects.equals(this.defaultLogStorage, that.defaultLogStorage)
+            && Objects.equals(this.defaultVpcCount, that.defaultVpcCount);
     }
 
     @Override
@@ -350,7 +442,11 @@ public class Flavor {
             sessionCreate,
             totalRuleCount,
             usedRuleCount,
-            vpcBandwith);
+            vpcBandwith,
+            defaultBandwidth,
+            defaultEipCount,
+            defaultLogStorage,
+            defaultVpcCount);
     }
 
     @Override
@@ -367,6 +463,10 @@ public class Flavor {
         sb.append("    totalRuleCount: ").append(toIndentedString(totalRuleCount)).append("\n");
         sb.append("    usedRuleCount: ").append(toIndentedString(usedRuleCount)).append("\n");
         sb.append("    vpcBandwith: ").append(toIndentedString(vpcBandwith)).append("\n");
+        sb.append("    defaultBandwidth: ").append(toIndentedString(defaultBandwidth)).append("\n");
+        sb.append("    defaultEipCount: ").append(toIndentedString(defaultEipCount)).append("\n");
+        sb.append("    defaultLogStorage: ").append(toIndentedString(defaultLogStorage)).append("\n");
+        sb.append("    defaultVpcCount: ").append(toIndentedString(defaultVpcCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

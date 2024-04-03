@@ -107,8 +107,6 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowVersionResponse;
-import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryRequest;
-import com.huaweicloud.sdk.ecs.v2.model.RegisterServerAutoRecoveryResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RegisterServerMonitorResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ReinstallServerWithCloudInitRequest;
@@ -125,8 +123,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerAutoRecoveryRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerAutoRecoveryResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
@@ -1763,35 +1759,6 @@ public class EcsClient {
     }
 
     /**
-     * 管理云服务器自动恢复动作
-     *
-     * 配置、删除云服务器自动恢复动作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RegisterServerAutoRecoveryRequest 请求对象
-     * @return RegisterServerAutoRecoveryResponse
-     */
-    public RegisterServerAutoRecoveryResponse registerServerAutoRecovery(RegisterServerAutoRecoveryRequest request) {
-        return hcClient.syncInvokeHttp(request, EcsMeta.registerServerAutoRecovery);
-    }
-
-    /**
-     * 管理云服务器自动恢复动作
-     *
-     * 配置、删除云服务器自动恢复动作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RegisterServerAutoRecoveryRequest 请求对象
-     * @return SyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse>
-     */
-    public SyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse> registerServerAutoRecoveryInvoker(
-        RegisterServerAutoRecoveryRequest request) {
-        return new SyncInvoker<>(request, EcsMeta.registerServerAutoRecovery, hcClient);
-    }
-
-    /**
      * 注册云服务器监控
      *
      * 将云服务器添加到监控表中。
@@ -2061,35 +2028,6 @@ public class EcsClient {
      */
     public SyncInvoker<ShowServerRequest, ShowServerResponse> showServerInvoker(ShowServerRequest request) {
         return new SyncInvoker<>(request, EcsMeta.showServer, hcClient);
-    }
-
-    /**
-     * 查询云服务器是否配置了自动恢复动作
-     *
-     * 查询云服务器是否配置了自动恢复动作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowServerAutoRecoveryRequest 请求对象
-     * @return ShowServerAutoRecoveryResponse
-     */
-    public ShowServerAutoRecoveryResponse showServerAutoRecovery(ShowServerAutoRecoveryRequest request) {
-        return hcClient.syncInvokeHttp(request, EcsMeta.showServerAutoRecovery);
-    }
-
-    /**
-     * 查询云服务器是否配置了自动恢复动作
-     *
-     * 查询云服务器是否配置了自动恢复动作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowServerAutoRecoveryRequest 请求对象
-     * @return SyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse>
-     */
-    public SyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse> showServerAutoRecoveryInvoker(
-        ShowServerAutoRecoveryRequest request) {
-        return new SyncInvoker<>(request, EcsMeta.showServerAutoRecovery, hcClient);
     }
 
     /**

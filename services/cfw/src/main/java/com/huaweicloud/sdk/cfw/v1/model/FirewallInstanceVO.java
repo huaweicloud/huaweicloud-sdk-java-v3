@@ -66,6 +66,11 @@ public class FirewallInstanceVO {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public FirewallInstanceVO withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -262,6 +267,23 @@ public class FirewallInstanceVO {
         this.status = status;
     }
 
+    public FirewallInstanceVO withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -276,7 +298,8 @@ public class FirewallInstanceVO {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.haType, that.haType) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.engineType, that.engineType)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -291,7 +314,8 @@ public class FirewallInstanceVO {
             serviceType,
             engineType,
             flavor,
-            status);
+            status,
+            tags);
     }
 
     @Override
@@ -309,6 +333,7 @@ public class FirewallInstanceVO {
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

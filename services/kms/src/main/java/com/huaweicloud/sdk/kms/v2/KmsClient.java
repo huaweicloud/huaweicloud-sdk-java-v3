@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.kms.v2.model.EncryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.EncryptDataResponse;
 import com.huaweicloud.sdk.kms.v2.model.EncryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.EncryptDatakeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.GenerateMacRequest;
+import com.huaweicloud.sdk.kms.v2.model.GenerateMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequest;
@@ -97,6 +99,8 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureRequest;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureResponse;
+import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequest;
+import com.huaweicloud.sdk.kms.v2.model.VerifyMacResponse;
 
 public class KmsClient {
 
@@ -897,6 +901,34 @@ public class KmsClient {
     }
 
     /**
+     * 生成消息验证码
+     *
+     * 功能介绍：生成消息验证码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateMacRequest 请求对象
+     * @return GenerateMacResponse
+     */
+    public GenerateMacResponse generateMac(GenerateMacRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.generateMac);
+    }
+
+    /**
+     * 生成消息验证码
+     *
+     * 功能介绍：生成消息验证码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateMacRequest 请求对象
+     * @return SyncInvoker<GenerateMacRequest, GenerateMacResponse>
+     */
+    public SyncInvoker<GenerateMacRequest, GenerateMacResponse> generateMacInvoker(GenerateMacRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.generateMac, hcClient);
+    }
+
+    /**
      * 导入密钥材料
      *
      * - 功能介绍：导入密钥材料。
@@ -1447,6 +1479,34 @@ public class KmsClient {
     public SyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse> validateSignatureInvoker(
         ValidateSignatureRequest request) {
         return new SyncInvoker<>(request, KmsMeta.validateSignature, hcClient);
+    }
+
+    /**
+     * 校验消息验证码
+     *
+     * 功能介绍：校验消息验证码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyMacRequest 请求对象
+     * @return VerifyMacResponse
+     */
+    public VerifyMacResponse verifyMac(VerifyMacRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.verifyMac);
+    }
+
+    /**
+     * 校验消息验证码
+     *
+     * 功能介绍：校验消息验证码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request VerifyMacRequest 请求对象
+     * @return SyncInvoker<VerifyMacRequest, VerifyMacResponse>
+     */
+    public SyncInvoker<VerifyMacRequest, VerifyMacResponse> verifyMacInvoker(VerifyMacRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.verifyMac, hcClient);
     }
 
     /**
