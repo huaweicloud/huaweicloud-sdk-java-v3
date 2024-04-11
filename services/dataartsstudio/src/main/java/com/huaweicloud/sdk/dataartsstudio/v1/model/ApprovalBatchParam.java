@@ -65,7 +65,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 业务信息列表.
+     * 业务信息列表。
      * @return bizInfos
      */
     public List<BizInfoVO> getBizInfos() {
@@ -82,7 +82,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 审批人user id
+     * 审批人ID。
      * @return approverUserId
      */
     public String getApproverUserId() {
@@ -99,7 +99,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 审批人user name
+     * 审批人姓名。
      * @return approverUserName
      */
     public String getApproverUserName() {
@@ -116,7 +116,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 审批人邮箱
+     * 审批人邮箱。
      * @return email
      */
     public String getEmail() {
@@ -133,7 +133,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 快速审批, 非正式场景，用于快速上手体验，仅在当前用户有审批权限时提供
+     * 快速审批，非正式场景，用于快速上手体验，仅在当前用户有审批权限时提供。
      * @return fastApproval
      */
     public Boolean getFastApproval() {
@@ -150,7 +150,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 作业调度时间
+     * 作业调度时间。
      * @return scheduleTime
      */
     public String getScheduleTime() {

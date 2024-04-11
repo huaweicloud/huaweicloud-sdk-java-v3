@@ -76,7 +76,7 @@ public class LifecycleManagedModelUpdateLifecycleStateDTO {
     }
 
     /**
-     * 更新人
+     * 修改人。
      * @return modifier
      */
     public String getModifier() {

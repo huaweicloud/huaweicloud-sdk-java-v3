@@ -61,7 +61,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 查询条件：最后修改时间，结束时间范围。
+     * 结束时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。
      * @return endLastModifiedTime
      */
     public String getEndLastModifiedTime() {
@@ -78,7 +78,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 唯一标识。
+     * 数据实例ID。
      * @return id
      */
     public String getId() {
@@ -146,7 +146,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 查询条件：最后修改时间,开始时间范围。
+     * 开始时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。
      * @return startLastModifiedTime
      */
     public String getStartLastModifiedTime() {

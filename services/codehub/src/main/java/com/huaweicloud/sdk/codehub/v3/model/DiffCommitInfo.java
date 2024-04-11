@@ -48,7 +48,7 @@ public class DiffCommitInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diff")
 
-    private Boolean diff;
+    private String diff;
 
     public DiffCommitInfo withOldPath(String oldPath) {
         this.oldPath = oldPath;
@@ -173,7 +173,7 @@ public class DiffCommitInfo {
         this.deletedFile = deletedFile;
     }
 
-    public DiffCommitInfo withDiff(Boolean diff) {
+    public DiffCommitInfo withDiff(String diff) {
         this.diff = diff;
         return this;
     }
@@ -182,11 +182,11 @@ public class DiffCommitInfo {
      * 差异信息
      * @return diff
      */
-    public Boolean getDiff() {
+    public String getDiff() {
         return diff;
     }
 
-    public void setDiff(Boolean diff) {
+    public void setDiff(String diff) {
         this.diff = diff;
     }
 

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dataartsstudio.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddTagToAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddTagToAssetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddWorkSpaceUsersRequest;
@@ -75,6 +77,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
@@ -139,6 +145,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
@@ -173,6 +185,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
@@ -331,6 +349,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardRequest;
@@ -355,8 +377,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchCustomizedFieldsRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchCustomizedFieldsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDebugInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDebugInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoRequest;
@@ -515,6 +541,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
@@ -559,6 +591,35 @@ public class DataArtsStudioClient {
     public static ClientBuilder<DataArtsStudioClient> newBuilder() {
         ClientBuilder<DataArtsStudioClient> clientBuilder = new ClientBuilder<>(DataArtsStudioClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 添加标签
+     *
+     * 根据资产（表或属性）的ID给资产打上标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesignEntityTagsRequest 请求对象
+     * @return AddDesignEntityTagsResponse
+     */
+    public AddDesignEntityTagsResponse addDesignEntityTags(AddDesignEntityTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.addDesignEntityTags);
+    }
+
+    /**
+     * 添加标签
+     *
+     * 根据资产（表或属性）的ID给资产打上标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesignEntityTagsRequest 请求对象
+     * @return SyncInvoker<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse>
+     */
+    public SyncInvoker<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse> addDesignEntityTagsInvoker(
+        AddDesignEntityTagsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.addDesignEntityTags, hcClient);
     }
 
     /**
@@ -919,7 +980,7 @@ public class DataArtsStudioClient {
     /**
      * 批量下线
      *
-     * 批量下线
+     * 批量下线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -933,7 +994,7 @@ public class DataArtsStudioClient {
     /**
      * 批量下线
      *
-     * 批量下线
+     * 批量下线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -947,7 +1008,7 @@ public class DataArtsStudioClient {
     /**
      * 批量发布
      *
-     * 批量发布
+     * 批量发布。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -961,7 +1022,7 @@ public class DataArtsStudioClient {
     /**
      * 批量发布
      *
-     * 批量发布
+     * 批量发布。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1033,7 +1094,7 @@ public class DataArtsStudioClient {
     /**
      * 修改流程架构
      *
-     * 修改流程架构
+     * 修改流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1047,7 +1108,7 @@ public class DataArtsStudioClient {
     /**
      * 修改流程架构
      *
-     * 修改流程架构
+     * 修改流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1090,7 +1151,7 @@ public class DataArtsStudioClient {
     /**
      * 修改或删除主题层级
      *
-     * 修改或删除主题层级
+     * 修改或删除主题层级。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1104,7 +1165,7 @@ public class DataArtsStudioClient {
     /**
      * 修改或删除主题层级
      *
-     * 修改或删除主题层级
+     * 修改或删除主题层级。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1119,7 +1180,7 @@ public class DataArtsStudioClient {
     /**
      * 查看逆向维度表任务
      *
-     * 查看逆向维度表任务
+     * 查看逆向维度表任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1133,7 +1194,7 @@ public class DataArtsStudioClient {
     /**
      * 查看逆向维度表任务
      *
-     * 查看逆向维度表任务
+     * 查看逆向维度表任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1148,7 +1209,7 @@ public class DataArtsStudioClient {
     /**
      * 查看逆向事实表任务
      *
-     * 查看逆向事实表任务
+     * 查看逆向事实表任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1162,7 +1223,7 @@ public class DataArtsStudioClient {
     /**
      * 查看逆向事实表任务
      *
-     * 查看逆向事实表任务
+     * 查看逆向事实表任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1177,7 +1238,7 @@ public class DataArtsStudioClient {
     /**
      * 审批单处理
      *
-     * 审批驳回/通过，单个或多个 action-id&#x3D;reject/resolve
+     * 审批驳回/通过，单个或多个action-id&#x3D;reject/resolve。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1191,7 +1252,7 @@ public class DataArtsStudioClient {
     /**
      * 审批单处理
      *
-     * 审批驳回/通过，单个或多个 action-id&#x3D;reject/resolve
+     * 审批驳回/通过，单个或多个action-id&#x3D;reject/resolve。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1235,7 +1296,7 @@ public class DataArtsStudioClient {
     /**
      * 关系建模统计信息
      *
-     * 关系建模统计信息
+     * 关系建模统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1249,7 +1310,7 @@ public class DataArtsStudioClient {
     /**
      * 关系建模统计信息
      *
-     * 关系建模统计信息
+     * 关系建模统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1264,7 +1325,7 @@ public class DataArtsStudioClient {
     /**
      * 总览统计信息
      *
-     * 总览统计信息
+     * 总览统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1278,7 +1339,7 @@ public class DataArtsStudioClient {
     /**
      * 总览统计信息
      *
-     * 总览统计信息
+     * 总览统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1293,7 +1354,7 @@ public class DataArtsStudioClient {
     /**
      * 标准覆盖率统计信息
      *
-     * 标准覆盖率统计信息
+     * 标准覆盖率统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1307,7 +1368,7 @@ public class DataArtsStudioClient {
     /**
      * 标准覆盖率统计信息
      *
-     * 标准覆盖率统计信息
+     * 标准覆盖率统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1322,7 +1383,7 @@ public class DataArtsStudioClient {
     /**
      * 模型统计信息
      *
-     * 模型统计信息
+     * 模型统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1336,7 +1397,7 @@ public class DataArtsStudioClient {
     /**
      * 模型统计信息
      *
-     * 模型统计信息
+     * 模型统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1379,7 +1440,7 @@ public class DataArtsStudioClient {
     /**
      * 创建审批人
      *
-     * 创建审批人
+     * 创建审批人。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1393,7 +1454,7 @@ public class DataArtsStudioClient {
     /**
      * 创建审批人
      *
-     * 创建审批人
+     * 创建审批人。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1408,7 +1469,7 @@ public class DataArtsStudioClient {
     /**
      * 创建业务指标
      *
-     * 创建业务指标
+     * 创建业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1422,7 +1483,7 @@ public class DataArtsStudioClient {
     /**
      * 创建业务指标
      *
-     * 创建业务指标
+     * 创建业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1437,7 +1498,7 @@ public class DataArtsStudioClient {
     /**
      * 创建流程架构
      *
-     * 创建流程架构
+     * 创建流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1451,7 +1512,7 @@ public class DataArtsStudioClient {
     /**
      * 创建流程架构
      *
-     * 创建流程架构
+     * 创建流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1465,7 +1526,7 @@ public class DataArtsStudioClient {
     /**
      * 创建码表
      *
-     * 创建码表
+     * 创建码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1479,7 +1540,7 @@ public class DataArtsStudioClient {
     /**
      * 创建码表
      *
-     * 创建码表
+     * 创建码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1521,9 +1582,68 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 新建汇总表
+     *
+     * 新建汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignAggregationLogicTableRequest 请求对象
+     * @return CreateDesignAggregationLogicTableResponse
+     */
+    public CreateDesignAggregationLogicTableResponse createDesignAggregationLogicTable(
+        CreateDesignAggregationLogicTableRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createDesignAggregationLogicTable);
+    }
+
+    /**
+     * 新建汇总表
+     *
+     * 新建汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignAggregationLogicTableRequest 请求对象
+     * @return SyncInvoker<CreateDesignAggregationLogicTableRequest, CreateDesignAggregationLogicTableResponse>
+     */
+    public SyncInvoker<CreateDesignAggregationLogicTableRequest, CreateDesignAggregationLogicTableResponse> createDesignAggregationLogicTableInvoker(
+        CreateDesignAggregationLogicTableRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createDesignAggregationLogicTable, hcClient);
+    }
+
+    /**
+     * 新建原子指标
+     *
+     * 新建单个原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignAtomicIndexRequest 请求对象
+     * @return CreateDesignAtomicIndexResponse
+     */
+    public CreateDesignAtomicIndexResponse createDesignAtomicIndex(CreateDesignAtomicIndexRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createDesignAtomicIndex);
+    }
+
+    /**
+     * 新建原子指标
+     *
+     * 新建单个原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignAtomicIndexRequest 请求对象
+     * @return SyncInvoker<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse>
+     */
+    public SyncInvoker<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse> createDesignAtomicIndexInvoker(
+        CreateDesignAtomicIndexRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createDesignAtomicIndex, hcClient);
+    }
+
+    /**
      * 创建目录
      *
-     * 创建目录
+     * 创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1537,7 +1657,7 @@ public class DataArtsStudioClient {
     /**
      * 创建目录
      *
-     * 创建目录
+     * 创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1904,7 +2024,7 @@ public class DataArtsStudioClient {
     /**
      * 创建数据标准
      *
-     * 创建数据标准
+     * 创建数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1918,7 +2038,7 @@ public class DataArtsStudioClient {
     /**
      * 创建数据标准
      *
-     * 创建数据标准
+     * 创建数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1933,7 +2053,7 @@ public class DataArtsStudioClient {
     /**
      * 创建数据标准模板
      *
-     * 创建数据标准模板
+     * 创建数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1947,7 +2067,7 @@ public class DataArtsStudioClient {
     /**
      * 创建数据标准模板
      *
-     * 创建数据标准模板
+     * 创建数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1962,7 +2082,7 @@ public class DataArtsStudioClient {
     /**
      * 创建主题
      *
-     * 创建主题
+     * 创建主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1976,7 +2096,7 @@ public class DataArtsStudioClient {
     /**
      * 创建主题
      *
-     * 创建主题
+     * 创建主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1990,7 +2110,7 @@ public class DataArtsStudioClient {
     /**
      * 创建主题(新)
      *
-     * 创建主题(新)
+     * 创建主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2004,7 +2124,7 @@ public class DataArtsStudioClient {
     /**
      * 创建主题(新)
      *
-     * 创建主题(新)
+     * 创建主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2017,9 +2137,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 创建模型实体
+     * 创建表模型
      *
-     * 创建一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中创建一个表模型，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2031,9 +2151,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 创建模型实体
+     * 创建表模型
      *
-     * 创建一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中创建一个表模型，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2105,7 +2225,7 @@ public class DataArtsStudioClient {
     /**
      * 新建模型工作区
      *
-     * 新建模型工作区
+     * 新建模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2119,7 +2239,7 @@ public class DataArtsStudioClient {
     /**
      * 新建模型工作区
      *
-     * 新建模型工作区
+     * 新建模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2191,7 +2311,7 @@ public class DataArtsStudioClient {
     /**
      * 删除审批人
      *
-     * 删除审批人
+     * 删除审批人。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2205,7 +2325,7 @@ public class DataArtsStudioClient {
     /**
      * 删除审批人
      *
-     * 删除审批人
+     * 删除审批人。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2248,7 +2368,7 @@ public class DataArtsStudioClient {
     /**
      * 删除业务指标
      *
-     * 删除业务指标
+     * 删除业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2262,7 +2382,7 @@ public class DataArtsStudioClient {
     /**
      * 删除业务指标
      *
-     * 删除业务指标
+     * 删除业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2277,7 +2397,7 @@ public class DataArtsStudioClient {
     /**
      * 删除流程架构
      *
-     * 删除流程架构
+     * 删除流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2291,7 +2411,7 @@ public class DataArtsStudioClient {
     /**
      * 删除流程架构
      *
-     * 删除流程架构
+     * 删除流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2335,7 +2455,7 @@ public class DataArtsStudioClient {
     /**
      * 删除码表
      *
-     * 删除码表
+     * 删除码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2349,7 +2469,7 @@ public class DataArtsStudioClient {
     /**
      * 删除码表
      *
-     * 删除码表
+     * 删除码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2391,9 +2511,97 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 删除汇总表
+     *
+     * 批量删除汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignAggregationLogicTableRequest 请求对象
+     * @return DeleteDesignAggregationLogicTableResponse
+     */
+    public DeleteDesignAggregationLogicTableResponse deleteDesignAggregationLogicTable(
+        DeleteDesignAggregationLogicTableRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteDesignAggregationLogicTable);
+    }
+
+    /**
+     * 删除汇总表
+     *
+     * 批量删除汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignAggregationLogicTableRequest 请求对象
+     * @return SyncInvoker<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse>
+     */
+    public SyncInvoker<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse> deleteDesignAggregationLogicTableInvoker(
+        DeleteDesignAggregationLogicTableRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDesignAggregationLogicTable, hcClient);
+    }
+
+    /**
+     * 删除原子指标
+     *
+     * 批量删除原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignAtomicIndexRequest 请求对象
+     * @return DeleteDesignAtomicIndexResponse
+     */
+    public DeleteDesignAtomicIndexResponse deleteDesignAtomicIndex(DeleteDesignAtomicIndexRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteDesignAtomicIndex);
+    }
+
+    /**
+     * 删除原子指标
+     *
+     * 批量删除原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignAtomicIndexRequest 请求对象
+     * @return SyncInvoker<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse>
+     */
+    public SyncInvoker<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse> deleteDesignAtomicIndexInvoker(
+        DeleteDesignAtomicIndexRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDesignAtomicIndex, hcClient);
+    }
+
+    /**
+     * 删除实体下展
+     *
+     * 当已发布的实体被编辑时，其会生成下展，该接口用于删除实体的下展信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignLatestApprovalRequest 请求对象
+     * @return DeleteDesignLatestApprovalResponse
+     */
+    public DeleteDesignLatestApprovalResponse deleteDesignLatestApproval(DeleteDesignLatestApprovalRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteDesignLatestApproval);
+    }
+
+    /**
+     * 删除实体下展
+     *
+     * 当已发布的实体被编辑时，其会生成下展，该接口用于删除实体的下展信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignLatestApprovalRequest 请求对象
+     * @return SyncInvoker<DeleteDesignLatestApprovalRequest, DeleteDesignLatestApprovalResponse>
+     */
+    public SyncInvoker<DeleteDesignLatestApprovalRequest, DeleteDesignLatestApprovalResponse> deleteDesignLatestApprovalInvoker(
+        DeleteDesignLatestApprovalRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDesignLatestApproval, hcClient);
+    }
+
+    /**
      * 删除目录
      *
-     * 删除目录
+     * 删除目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2407,7 +2615,7 @@ public class DataArtsStudioClient {
     /**
      * 删除目录
      *
-     * 删除目录
+     * 删除目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2569,7 +2777,7 @@ public class DataArtsStudioClient {
     /**
      * 删除数据标准
      *
-     * 删除数据标准
+     * 删除数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2583,7 +2791,7 @@ public class DataArtsStudioClient {
     /**
      * 删除数据标准
      *
-     * 删除数据标准
+     * 删除数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2598,7 +2806,7 @@ public class DataArtsStudioClient {
     /**
      * 删除数据标准模板
      *
-     * 删除数据标准模板
+     * 删除数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2612,7 +2820,7 @@ public class DataArtsStudioClient {
     /**
      * 删除数据标准模板
      *
-     * 删除数据标准模板
+     * 删除数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2627,7 +2835,7 @@ public class DataArtsStudioClient {
     /**
      * 删除主题
      *
-     * 删除主题
+     * 删除主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2641,7 +2849,7 @@ public class DataArtsStudioClient {
     /**
      * 删除主题
      *
-     * 删除主题
+     * 删除主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2655,7 +2863,7 @@ public class DataArtsStudioClient {
     /**
      * 删除主题(新)
      *
-     * 删除主题(新)
+     * 删除主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2669,7 +2877,7 @@ public class DataArtsStudioClient {
     /**
      * 删除主题(新)
      *
-     * 删除主题(新)
+     * 删除主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2682,9 +2890,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 删除模型实体
+     * 删除表模型
      *
-     * 删除一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中删除一个表模型及其属性，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2696,9 +2904,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 删除模型实体
+     * 删除表模型
      *
-     * 删除一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中删除一个表模型及其属性，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2742,7 +2950,7 @@ public class DataArtsStudioClient {
     /**
      * 删除模型工作区
      *
-     * 删除模型工作区
+     * 删除模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2756,7 +2964,7 @@ public class DataArtsStudioClient {
     /**
      * 删除模型工作区
      *
-     * 删除模型工作区
+     * 删除模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2856,9 +3064,96 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 导出模型中表的DDL语句
+     *
+     * 根据模型ID导出指定表的DDL语句。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignModelTableDdlRequest 请求对象
+     * @return ExportDesignModelTableDdlResponse
+     */
+    public ExportDesignModelTableDdlResponse exportDesignModelTableDdl(ExportDesignModelTableDdlRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.exportDesignModelTableDdl);
+    }
+
+    /**
+     * 导出模型中表的DDL语句
+     *
+     * 根据模型ID导出指定表的DDL语句。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignModelTableDdlRequest 请求对象
+     * @return SyncInvoker<ExportDesignModelTableDdlRequest, ExportDesignModelTableDdlResponse>
+     */
+    public SyncInvoker<ExportDesignModelTableDdlRequest, ExportDesignModelTableDdlResponse> exportDesignModelTableDdlInvoker(
+        ExportDesignModelTableDdlRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.exportDesignModelTableDdl, hcClient);
+    }
+
+    /**
+     * 导出业务数据
+     *
+     * 根据请求参数，导出业务数据，可以导出：码表、数据标准、原子指标、衍生指标、复合指标、汇总表、业务指标、主题、流程、逻辑模型、物理模型、维度、事实表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignModelsRequest 请求对象
+     * @return ExportDesignModelsResponse
+     */
+    public ExportDesignModelsResponse exportDesignModels(ExportDesignModelsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.exportDesignModels);
+    }
+
+    /**
+     * 导出业务数据
+     *
+     * 根据请求参数，导出业务数据，可以导出：码表、数据标准、原子指标、衍生指标、复合指标、汇总表、业务指标、主题、流程、逻辑模型、物理模型、维度、事实表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignModelsRequest 请求对象
+     * @return SyncInvoker<ExportDesignModelsRequest, ExportDesignModelsResponse>
+     */
+    public SyncInvoker<ExportDesignModelsRequest, ExportDesignModelsResponse> exportDesignModelsInvoker(
+        ExportDesignModelsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.exportDesignModels, hcClient);
+    }
+
+    /**
+     * 获取excel导出结果
+     *
+     * 根据请求导出接口（/export-model）时返回的uuid，获取excel导出结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignResultRequest 请求对象
+     * @return ExportDesignResultResponse
+     */
+    public ExportDesignResultResponse exportDesignResult(ExportDesignResultRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.exportDesignResult);
+    }
+
+    /**
+     * 获取excel导出结果
+     *
+     * 根据请求导出接口（/export-model）时返回的uuid，获取excel导出结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportDesignResultRequest 请求对象
+     * @return SyncInvoker<ExportDesignResultRequest, ExportDesignResultResponse>
+     */
+    public SyncInvoker<ExportDesignResultRequest, ExportDesignResultResponse> exportDesignResultInvoker(
+        ExportDesignResultRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.exportDesignResult, hcClient);
+    }
+
+    /**
      * 导入主题
      *
-     * 用于导入主题
+     * 用于导入主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2872,7 +3167,7 @@ public class DataArtsStudioClient {
     /**
      * 导入主题
      *
-     * 用于导入主题
+     * 用于导入主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2915,7 +3210,7 @@ public class DataArtsStudioClient {
     /**
      * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
      *
-     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2929,7 +3224,7 @@ public class DataArtsStudioClient {
     /**
      * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
      *
-     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构
+     * 导入模型，关系建模，维度建模，码表，业务指标以及流程架构。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2943,7 +3238,7 @@ public class DataArtsStudioClient {
     /**
      * 查询导入结果
      *
-     * 查询导入excel的处理结果
+     * 查询导入excel的处理结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2957,7 +3252,7 @@ public class DataArtsStudioClient {
     /**
      * 查询导入结果
      *
-     * 查询导入excel的处理结果
+     * 查询导入excel的处理结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2971,7 +3266,7 @@ public class DataArtsStudioClient {
     /**
      * 初始化数据标准模板
      *
-     * 初始化模板
+     * 初始化数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2985,7 +3280,7 @@ public class DataArtsStudioClient {
     /**
      * 初始化数据标准模板
      *
-     * 初始化模板
+     * 初始化数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3000,7 +3295,7 @@ public class DataArtsStudioClient {
     /**
      * 查找汇总表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3014,7 +3309,7 @@ public class DataArtsStudioClient {
     /**
      * 查找汇总表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3056,9 +3351,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 获取数据标准
+     * 获取数据标准集合
      *
-     * 获取数据标准
+     * 根据查询条件分页获取数据标准集合，按修改时间降序排序。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3070,9 +3365,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 获取数据标准
+     * 获取数据标准集合
      *
-     * 获取数据标准
+     * 根据查询条件分页获取数据标准集合，按修改时间降序排序。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3087,7 +3382,7 @@ public class DataArtsStudioClient {
     /**
      * 查询多种类型的表信息
      *
-     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3101,7 +3396,7 @@ public class DataArtsStudioClient {
     /**
      * 查询多种类型的表信息
      *
-     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表
+     * 从信息架构中查询多种类型的表信息，包括逻辑实体、物理表、维度表、事实表、汇总表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3286,7 +3581,7 @@ public class DataArtsStudioClient {
     /**
      * 查询审批人列表
      *
-     * 查询审批人列表
+     * 查询审批人列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3300,7 +3595,7 @@ public class DataArtsStudioClient {
     /**
      * 查询审批人列表
      *
-     * 查询审批人列表
+     * 查询审批人列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3370,7 +3665,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标维度信息
      *
-     * 查看指标维度信息
+     * 查看指标维度信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3384,7 +3679,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标维度信息
      *
-     * 查看指标维度信息
+     * 查看指标维度信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3399,7 +3694,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标指标责任人信息
      *
-     * 查看指标指标责任人信息
+     * 查看指标指标责任人信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3413,7 +3708,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标指标责任人信息
      *
-     * 查看指标指标责任人信息
+     * 查看指标指标责任人信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3428,7 +3723,7 @@ public class DataArtsStudioClient {
     /**
      * 查询业务指标信息
      *
-     * 通过名称、创建者、修改时间分页查找业务指标信息
+     * 通过名称、创建者、修改时间分页查找业务指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3442,7 +3737,7 @@ public class DataArtsStudioClient {
     /**
      * 查询业务指标信息
      *
-     * 通过名称、创建者、修改时间分页查找业务指标信息
+     * 通过名称、创建者、修改时间分页查找业务指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3457,7 +3752,7 @@ public class DataArtsStudioClient {
     /**
      * 获取主题树信息
      *
-     * 获取数据资产主题树信息l1，l2，l3
+     * 获取数据资产主题树信息l1，l2，l3。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3471,7 +3766,7 @@ public class DataArtsStudioClient {
     /**
      * 获取主题树信息
      *
-     * 获取数据资产主题树信息l1，l2，l3
+     * 获取数据资产主题树信息l1，l2，l3。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3514,7 +3809,7 @@ public class DataArtsStudioClient {
     /**
      * 获取所有流程架构目录树
      *
-     * 获取所有目录树
+     * 获取所有目录树。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3528,7 +3823,7 @@ public class DataArtsStudioClient {
     /**
      * 获取所有流程架构目录树
      *
-     * 获取所有目录树
+     * 获取所有目录树。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3599,7 +3894,7 @@ public class DataArtsStudioClient {
     /**
      * 查找复合指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找复合指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找复合指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3613,7 +3908,7 @@ public class DataArtsStudioClient {
     /**
      * 查找复合指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找复合指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找复合指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3628,7 +3923,7 @@ public class DataArtsStudioClient {
     /**
      * 查找业务限定
      *
-     * 通过中英文名称、描述、创建者、审核人、限定分组id、修改时间状态分页查找限定信息
+     * 通过中英文名称、描述、创建者、审核人、限定分组id、修改时间状态分页查找限定信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3642,7 +3937,7 @@ public class DataArtsStudioClient {
     /**
      * 查找业务限定
      *
-     * 通过中英文名称、描述、创建者、审核人、限定分组id、修改时间状态分页查找限定信息
+     * 通过中英文名称、描述、创建者、审核人、限定分组id、修改时间状态分页查找限定信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3800,7 +4095,7 @@ public class DataArtsStudioClient {
     /**
      * 查找衍生指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找衍生指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找衍生指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3814,7 +4109,7 @@ public class DataArtsStudioClient {
     /**
      * 查找衍生指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找衍生指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间、l3Id分页查找衍生指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3829,7 +4124,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度颗粒度
      *
-     * 查询维度颗粒度, 依据tableId查询涉及所有维度，不传tableId查询所有维度组颗粒度
+     * 查询维度颗粒度，依据tableId查询涉及所有维度，不传tableId查询所有维度组颗粒度。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3843,7 +4138,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度颗粒度
      *
-     * 查询维度颗粒度, 依据tableId查询涉及所有维度，不传tableId查询所有维度组颗粒度
+     * 查询维度颗粒度，依据tableId查询涉及所有维度，不传tableId查询所有维度组颗粒度。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3858,7 +4153,7 @@ public class DataArtsStudioClient {
     /**
      * 查找维度表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找维度表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找维度表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3872,7 +4167,7 @@ public class DataArtsStudioClient {
     /**
      * 查找维度表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找维度表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找维度表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3887,7 +4182,7 @@ public class DataArtsStudioClient {
     /**
      * 查找维度
      *
-     * 通过中英文名称、描述、创建者、审核人、状态、l3Id、派生指标idList、修改时间分页查找维度信息
+     * 通过中英文名称、描述、创建者、审核人、状态、l3Id、衍生指标idList、修改时间分页查找维度信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3901,7 +4196,7 @@ public class DataArtsStudioClient {
     /**
      * 查找维度
      *
-     * 通过中英文名称、描述、创建者、审核人、状态、l3Id、派生指标idList、修改时间分页查找维度信息
+     * 通过中英文名称、描述、创建者、审核人、状态、l3Id、衍生指标idList、修改时间分页查找维度信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3916,7 +4211,7 @@ public class DataArtsStudioClient {
     /**
      * 获取所有目录
      *
-     * 获取所有目录
+     * 获取所有目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3930,7 +4225,7 @@ public class DataArtsStudioClient {
     /**
      * 获取所有目录
      *
-     * 获取所有目录
+     * 获取所有目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3945,7 +4240,7 @@ public class DataArtsStudioClient {
     /**
      * 查找事实表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找事实表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找事实表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3959,7 +4254,7 @@ public class DataArtsStudioClient {
     /**
      * 查找事实表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找事实表信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找事实表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4234,7 +4529,7 @@ public class DataArtsStudioClient {
     /**
      * 获取指标关联信息
      *
-     * 获取当前指标图谱
+     * 获取当前指标图谱。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4248,7 +4543,7 @@ public class DataArtsStudioClient {
     /**
      * 获取指标关联信息
      *
-     * 获取当前指标图谱
+     * 获取当前指标图谱。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4348,7 +4643,7 @@ public class DataArtsStudioClient {
     /**
      * 关系
      *
-     * 通过名称、等分页查找关系信息
+     * 通过名称、等分页查找关系信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4362,7 +4657,7 @@ public class DataArtsStudioClient {
     /**
      * 关系
      *
-     * 通过名称、等分页查找关系信息
+     * 通过名称、等分页查找关系信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4700,7 +4995,7 @@ public class DataArtsStudioClient {
     /**
      * 获取主题层级
      *
-     * 获取主题层级
+     * 获取主题层级。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4714,7 +5009,7 @@ public class DataArtsStudioClient {
     /**
      * 获取主题层级
      *
-     * 获取主题层级
+     * 获取主题层级。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4729,7 +5024,7 @@ public class DataArtsStudioClient {
     /**
      * 查询模型下所有关系
      *
-     * 查询模型下所有关系
+     * 查询模型下所有关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4743,7 +5038,7 @@ public class DataArtsStudioClient {
     /**
      * 查询模型下所有关系
      *
-     * 查询模型下所有关系
+     * 查询模型下所有关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4756,9 +5051,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 查找模型实体列表
+     * 查找表模型列表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找模型实体信息，包含逻辑实体、表或属性。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找关系建模中的表模型信息，包括逻辑实体、物理表和其属性。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4770,9 +5065,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 查找模型实体列表
+     * 查找表模型列表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找模型实体信息，包含逻辑实体、表或属性。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找关系建模中的表模型信息，包括逻辑实体、物理表和其属性。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4816,7 +5111,7 @@ public class DataArtsStudioClient {
     /**
      * 获取模型
      *
-     * 获取模型
+     * 获取模型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4830,7 +5125,7 @@ public class DataArtsStudioClient {
     /**
      * 获取模型
      *
-     * 获取模型
+     * 获取模型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4931,7 +5226,7 @@ public class DataArtsStudioClient {
     /**
      * 修改自定义项
      *
-     * 修改自定义项
+     * 修改自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4945,7 +5240,7 @@ public class DataArtsStudioClient {
     /**
      * 修改自定义项
      *
-     * 修改自定义项
+     * 修改自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5016,6 +5311,64 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 删除标签
+     *
+     * 根据资产（表或属性）的ID删除资产标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveDesignEntityTagsRequest 请求对象
+     * @return RemoveDesignEntityTagsResponse
+     */
+    public RemoveDesignEntityTagsResponse removeDesignEntityTags(RemoveDesignEntityTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.removeDesignEntityTags);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 根据资产（表或属性）的ID删除资产标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveDesignEntityTagsRequest 请求对象
+     * @return SyncInvoker<RemoveDesignEntityTagsRequest, RemoveDesignEntityTagsResponse>
+     */
+    public SyncInvoker<RemoveDesignEntityTagsRequest, RemoveDesignEntityTagsResponse> removeDesignEntityTagsInvoker(
+        RemoveDesignEntityTagsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.removeDesignEntityTags, hcClient);
+    }
+
+    /**
+     * 清空质量规则
+     *
+     * 清空表的质量规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveDesignQualityInfosRequest 请求对象
+     * @return RemoveDesignQualityInfosResponse
+     */
+    public RemoveDesignQualityInfosResponse removeDesignQualityInfos(RemoveDesignQualityInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.removeDesignQualityInfos);
+    }
+
+    /**
+     * 清空质量规则
+     *
+     * 清空表的质量规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveDesignQualityInfosRequest 请求对象
+     * @return SyncInvoker<RemoveDesignQualityInfosRequest, RemoveDesignQualityInfosResponse>
+     */
+    public SyncInvoker<RemoveDesignQualityInfosRequest, RemoveDesignQualityInfosResponse> removeDesignQualityInfosInvoker(
+        RemoveDesignQualityInfosRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.removeDesignQualityInfos, hcClient);
+    }
+
+    /**
      * 指定字段采集概要
      *
      * 指定字段采集概要信息接口
@@ -5047,7 +5400,7 @@ public class DataArtsStudioClient {
     /**
      * 关联属性与数据标准
      *
-     * 关联属性与数据标准
+     * 关联属性与数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5062,7 +5415,7 @@ public class DataArtsStudioClient {
     /**
      * 关联属性与数据标准
      *
-     * 关联属性与数据标准
+     * 关联属性与数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5077,7 +5430,7 @@ public class DataArtsStudioClient {
     /**
      * 撤回审批单
      *
-     * 撤回审批单
+     * 撤回审批单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5091,7 +5444,7 @@ public class DataArtsStudioClient {
     /**
      * 撤回审批单
      *
-     * 撤回审批单
+     * 撤回审批单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5106,7 +5459,7 @@ public class DataArtsStudioClient {
     /**
      * 获取审批单
      *
-     * 获取审批单
+     * 获取审批单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5120,7 +5473,7 @@ public class DataArtsStudioClient {
     /**
      * 获取审批单
      *
-     * 获取审批单
+     * 获取审批单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5135,7 +5488,7 @@ public class DataArtsStudioClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5149,7 +5502,7 @@ public class DataArtsStudioClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5221,7 +5574,7 @@ public class DataArtsStudioClient {
     /**
      * 查询流程架构列表
      *
-     * 查询流程架构列表
+     * 查询流程架构列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5235,7 +5588,7 @@ public class DataArtsStudioClient {
     /**
      * 查询流程架构列表
      *
-     * 查询流程架构列表
+     * 查询流程架构列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5250,7 +5603,7 @@ public class DataArtsStudioClient {
     /**
      * 查看码表字段值
      *
-     * 查看码表字段值
+     * 查看码表字段值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5264,7 +5617,7 @@ public class DataArtsStudioClient {
     /**
      * 查看码表字段值
      *
-     * 查看码表字段值
+     * 查看码表字段值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5279,7 +5632,7 @@ public class DataArtsStudioClient {
     /**
      * 查询码表列表
      *
-     * 查询码表列表
+     * 查询码表列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5293,7 +5646,7 @@ public class DataArtsStudioClient {
     /**
      * 查询码表列表
      *
-     * 查询码表列表
+     * 查询码表列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5308,7 +5661,7 @@ public class DataArtsStudioClient {
     /**
      * 查询自定义项
      *
-     * 查询自定义项
+     * 查询自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5322,7 +5675,7 @@ public class DataArtsStudioClient {
     /**
      * 查询自定义项
      *
-     * 查询自定义项
+     * 查询自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5335,9 +5688,39 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 获取下展信息与已发布实体的差异
+     *
+     * 当已发布的实体被编辑时，其会生成下展，该接口用于获取下展信息与已发布实体的差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDesignLatestApprovalDiffRequest 请求对象
+     * @return SearchDesignLatestApprovalDiffResponse
+     */
+    public SearchDesignLatestApprovalDiffResponse searchDesignLatestApprovalDiff(
+        SearchDesignLatestApprovalDiffRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.searchDesignLatestApprovalDiff);
+    }
+
+    /**
+     * 获取下展信息与已发布实体的差异
+     *
+     * 当已发布的实体被编辑时，其会生成下展，该接口用于获取下展信息与已发布实体的差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDesignLatestApprovalDiffRequest 请求对象
+     * @return SyncInvoker<SearchDesignLatestApprovalDiffRequest, SearchDesignLatestApprovalDiffResponse>
+     */
+    public SyncInvoker<SearchDesignLatestApprovalDiffRequest, SearchDesignLatestApprovalDiffResponse> searchDesignLatestApprovalDiffInvoker(
+        SearchDesignLatestApprovalDiffRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.searchDesignLatestApprovalDiff, hcClient);
+    }
+
+    /**
      * 获取数据连接信息
      *
-     * 获取指定类型下的数据连接信息
+     * 获取指定类型下的数据连接信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5351,7 +5734,7 @@ public class DataArtsStudioClient {
     /**
      * 获取数据连接信息
      *
-     * 获取指定类型下的数据连接信息
+     * 获取指定类型下的数据连接信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5361,6 +5744,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<SearchDwByTypeRequest, SearchDwByTypeResponse> searchDwByTypeInvoker(
         SearchDwByTypeRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.searchDwByType, hcClient);
+    }
+
+    /**
+     * 查询目的表和字段(待下线)
+     *
+     * 查询目的表和字段(待下线)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchFieldsForRelationRequest 请求对象
+     * @return SearchFieldsForRelationResponse
+     */
+    public SearchFieldsForRelationResponse searchFieldsForRelation(SearchFieldsForRelationRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.searchFieldsForRelation);
+    }
+
+    /**
+     * 查询目的表和字段(待下线)
+     *
+     * 查询目的表和字段(待下线)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchFieldsForRelationRequest 请求对象
+     * @return SyncInvoker<SearchFieldsForRelationRequest, SearchFieldsForRelationResponse>
+     */
+    public SyncInvoker<SearchFieldsForRelationRequest, SearchFieldsForRelationResponse> searchFieldsForRelationInvoker(
+        SearchFieldsForRelationRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.searchFieldsForRelation, hcClient);
     }
 
     /**
@@ -5395,7 +5807,7 @@ public class DataArtsStudioClient {
     /**
      * 查找主题列表
      *
-     * 通过名称、创建者、责任人、状态、修改时间分页查找主题
+     * 通过名称、创建者、责任人、状态、修改时间分页查找主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5409,7 +5821,7 @@ public class DataArtsStudioClient {
     /**
      * 查找主题列表
      *
-     * 通过名称、创建者、责任人、状态、修改时间分页查找主题
+     * 通过名称、创建者、责任人、状态、修改时间分页查找主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5423,7 +5835,7 @@ public class DataArtsStudioClient {
     /**
      * 查找主题列表(新)
      *
-     * 查找主题(新)
+     * 查找主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5437,7 +5849,7 @@ public class DataArtsStudioClient {
     /**
      * 查找主题列表(新)
      *
-     * 查找主题(新)
+     * 查找主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5452,7 +5864,7 @@ public class DataArtsStudioClient {
     /**
      * 查找版本信息
      *
-     * 通过名称、创建者、修改时间查找版本信息
+     * 通过名称、创建者、修改时间查找版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5466,7 +5878,7 @@ public class DataArtsStudioClient {
     /**
      * 查找版本信息
      *
-     * 通过名称、创建者、修改时间查找版本信息
+     * 通过名称、创建者、修改时间查找版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5508,7 +5920,7 @@ public class DataArtsStudioClient {
     /**
      * 查看汇总表详情
      *
-     * 通过id查看汇总表的详情信息
+     * 通过ID查看汇总表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5523,7 +5935,7 @@ public class DataArtsStudioClient {
     /**
      * 查看汇总表详情
      *
-     * 通过id查看汇总表的详情信息
+     * 通过ID查看汇总表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5798,7 +6210,7 @@ public class DataArtsStudioClient {
     /**
      * 查看原子指标详情
      *
-     * 通过id获取指标详情信息
+     * 通过ID获取指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5812,7 +6224,7 @@ public class DataArtsStudioClient {
     /**
      * 查看原子指标详情
      *
-     * 通过id获取指标详情信息
+     * 通过ID获取指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5827,7 +6239,7 @@ public class DataArtsStudioClient {
     /**
      * 查找流程架构详情
      *
-     * 查找流程架构详情
+     * 查找流程架构详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5841,7 +6253,7 @@ public class DataArtsStudioClient {
     /**
      * 查找流程架构详情
      *
-     * 查找流程架构详情
+     * 查找流程架构详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5856,7 +6268,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标详情
      *
-     * 通过id查看指标的详情信息
+     * 通过ID查看指标的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5870,7 +6282,7 @@ public class DataArtsStudioClient {
     /**
      * 查看指标详情
      *
-     * 通过id查看指标的详情信息
+     * 通过ID查看指标的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6001,7 +6413,7 @@ public class DataArtsStudioClient {
     /**
      * 查看码表详情
      *
-     * 通过id查看码表的详情信息
+     * 通过ID查看码表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6015,7 +6427,7 @@ public class DataArtsStudioClient {
     /**
      * 查看码表详情
      *
-     * 通过id查看码表的详情信息
+     * 通过ID查看码表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6030,7 +6442,7 @@ public class DataArtsStudioClient {
     /**
      * 查看复合指标详情
      *
-     * 通过id获取复合指标详情信息
+     * 通过ID获取复合指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6044,7 +6456,7 @@ public class DataArtsStudioClient {
     /**
      * 查看复合指标详情
      *
-     * 通过id获取复合指标详情信息
+     * 通过ID获取复合指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6059,7 +6471,7 @@ public class DataArtsStudioClient {
     /**
      * 查看限定详情
      *
-     * 通过id查看限定详情信息
+     * 通过ID查看限定详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6073,7 +6485,7 @@ public class DataArtsStudioClient {
     /**
      * 查看限定详情
      *
-     * 通过id查看限定详情信息
+     * 通过ID查看限定详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6261,7 +6673,7 @@ public class DataArtsStudioClient {
     /**
      * 查看衍生指标详情
      *
-     * 通过id获取衍生详情信息
+     * 通过ID获取衍生详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6275,7 +6687,7 @@ public class DataArtsStudioClient {
     /**
      * 查看衍生指标详情
      *
-     * 通过id获取衍生详情信息
+     * 通过ID获取衍生详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6290,7 +6702,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度详情
      *
-     * 通过id查看维度详情信息
+     * 通过ID查看维度详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6304,7 +6716,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度详情
      *
-     * 通过id查看维度详情信息
+     * 通过ID查看维度详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6319,7 +6731,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度表详情
      *
-     * 通过id查看维度表的详情信息
+     * 通过ID查看维度表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6333,7 +6745,7 @@ public class DataArtsStudioClient {
     /**
      * 查看维度表详情
      *
-     * 通过id查看维度表的详情信息
+     * 通过ID查看维度表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6405,7 +6817,7 @@ public class DataArtsStudioClient {
     /**
      * 查看事实表详情
      *
-     * 通过id查看事实表的详情信息
+     * 通过ID查看事实表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6419,7 +6831,7 @@ public class DataArtsStudioClient {
     /**
      * 查看事实表详情
      *
-     * 通过id查看事实表的详情信息
+     * 通过ID查看事实表的详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6895,7 +7307,7 @@ public class DataArtsStudioClient {
     /**
      * 查看关系详情
      *
-     * 通过id获取关系详情信息
+     * 通过ID获取关系详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6909,7 +7321,7 @@ public class DataArtsStudioClient {
     /**
      * 查看关系详情
      *
-     * 通过id获取关系详情信息
+     * 通过ID获取关系详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7042,7 +7454,7 @@ public class DataArtsStudioClient {
     /**
      * 查看数据标准详情
      *
-     * 通过id获取数据标准详情信息
+     * 通过ID获取数据标准详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7056,7 +7468,7 @@ public class DataArtsStudioClient {
     /**
      * 查看数据标准详情
      *
-     * 通过id获取数据标准详情信息
+     * 通过ID获取数据标准详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7071,7 +7483,7 @@ public class DataArtsStudioClient {
     /**
      * 查询数据标准模板
      *
-     * 查询数据标准模板
+     * 查询数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7085,7 +7497,7 @@ public class DataArtsStudioClient {
     /**
      * 查询数据标准模板
      *
-     * 查询数据标准模板
+     * 查询数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7100,7 +7512,7 @@ public class DataArtsStudioClient {
     /**
      * 查看表模型详情
      *
-     * 通过id获取模型表详情信息
+     * 通过ID获取模型表详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7114,7 +7526,7 @@ public class DataArtsStudioClient {
     /**
      * 查看表模型详情
      *
-     * 通过id获取模型表详情信息
+     * 通过ID获取模型表详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7329,7 +7741,7 @@ public class DataArtsStudioClient {
     /**
      * 查询模型详情
      *
-     * 查询物理模型或逻辑模型的工作区空间详情
+     * 查询物理模型或逻辑模型的工作区空间详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7343,7 +7755,7 @@ public class DataArtsStudioClient {
     /**
      * 查询模型详情
      *
-     * 查询物理模型或逻辑模型的工作区空间详情
+     * 查询物理模型或逻辑模型的工作区空间详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7416,7 +7828,7 @@ public class DataArtsStudioClient {
     /**
      * 更新业务指标
      *
-     * 更新业务指标
+     * 更新业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7430,7 +7842,7 @@ public class DataArtsStudioClient {
     /**
      * 更新业务指标
      *
-     * 更新业务指标
+     * 更新业务指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7473,7 +7885,7 @@ public class DataArtsStudioClient {
     /**
      * 修改码表
      *
-     * 修改码表
+     * 修改码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7487,7 +7899,7 @@ public class DataArtsStudioClient {
     /**
      * 修改码表
      *
-     * 修改码表
+     * 修改码表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7502,7 +7914,7 @@ public class DataArtsStudioClient {
     /**
      * 编辑码表字段值
      *
-     * 编辑码表字段值
+     * 编辑码表字段值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7516,7 +7928,7 @@ public class DataArtsStudioClient {
     /**
      * 编辑码表字段值
      *
-     * 编辑码表字段值
+     * 编辑码表字段值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7558,9 +7970,97 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 更新汇总表
+     *
+     * 更新汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignAggregationLogicTableRequest 请求对象
+     * @return UpdateDesignAggregationLogicTableResponse
+     */
+    public UpdateDesignAggregationLogicTableResponse updateDesignAggregationLogicTable(
+        UpdateDesignAggregationLogicTableRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDesignAggregationLogicTable);
+    }
+
+    /**
+     * 更新汇总表
+     *
+     * 更新汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignAggregationLogicTableRequest 请求对象
+     * @return SyncInvoker<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse>
+     */
+    public SyncInvoker<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse> updateDesignAggregationLogicTableInvoker(
+        UpdateDesignAggregationLogicTableRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDesignAggregationLogicTable, hcClient);
+    }
+
+    /**
+     * 更新原子指标
+     *
+     * 更新单个原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignAtomicIndexRequest 请求对象
+     * @return UpdateDesignAtomicIndexResponse
+     */
+    public UpdateDesignAtomicIndexResponse updateDesignAtomicIndex(UpdateDesignAtomicIndexRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDesignAtomicIndex);
+    }
+
+    /**
+     * 更新原子指标
+     *
+     * 更新单个原子指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignAtomicIndexRequest 请求对象
+     * @return SyncInvoker<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse>
+     */
+    public SyncInvoker<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse> updateDesignAtomicIndexInvoker(
+        UpdateDesignAtomicIndexRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDesignAtomicIndex, hcClient);
+    }
+
+    /**
+     * 更新表的异常数据输出配置
+     *
+     * 更新表的异常数据输出配置，包括是否生成异常数据、设置异常数据数据库或Schema、设置异常表表前缀/表后缀。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignTableQualityRequest 请求对象
+     * @return UpdateDesignTableQualityResponse
+     */
+    public UpdateDesignTableQualityResponse updateDesignTableQuality(UpdateDesignTableQualityRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDesignTableQuality);
+    }
+
+    /**
+     * 更新表的异常数据输出配置
+     *
+     * 更新表的异常数据输出配置，包括是否生成异常数据、设置异常数据数据库或Schema、设置异常表表前缀/表后缀。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignTableQualityRequest 请求对象
+     * @return SyncInvoker<UpdateDesignTableQualityRequest, UpdateDesignTableQualityResponse>
+     */
+    public SyncInvoker<UpdateDesignTableQualityRequest, UpdateDesignTableQualityResponse> updateDesignTableQualityInvoker(
+        UpdateDesignTableQualityRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDesignTableQuality, hcClient);
+    }
+
+    /**
      * 修改目录
      *
-     * 修改目录
+     * 修改目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7574,7 +8074,7 @@ public class DataArtsStudioClient {
     /**
      * 修改目录
      *
-     * 修改目录
+     * 修改目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7766,7 +8266,7 @@ public class DataArtsStudioClient {
     /**
      * 修改数据标准
      *
-     * 修改数据标准
+     * 修改数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7780,7 +8280,7 @@ public class DataArtsStudioClient {
     /**
      * 修改数据标准
      *
-     * 修改数据标准
+     * 修改数据标准。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7795,7 +8295,7 @@ public class DataArtsStudioClient {
     /**
      * 修改数据标准模板
      *
-     * 修改数据标准模板
+     * 修改数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7809,7 +8309,7 @@ public class DataArtsStudioClient {
     /**
      * 修改数据标准模板
      *
-     * 修改数据标准模板
+     * 修改数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7824,7 +8324,7 @@ public class DataArtsStudioClient {
     /**
      * 修改主题
      *
-     * 修改主题
+     * 修改主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7838,7 +8338,7 @@ public class DataArtsStudioClient {
     /**
      * 修改主题
      *
-     * 修改主题
+     * 修改主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7852,7 +8352,7 @@ public class DataArtsStudioClient {
     /**
      * 修改主题(新)
      *
-     * 修改主题(新)
+     * 修改主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7866,7 +8366,7 @@ public class DataArtsStudioClient {
     /**
      * 修改主题(新)
      *
-     * 修改主题(新)
+     * 修改主题(新)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7879,9 +8379,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 更新模型实体
+     * 更新表模型
      *
-     * 更新一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中更新一个表模型及其属性，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7893,9 +8393,9 @@ public class DataArtsStudioClient {
     }
 
     /**
-     * 更新模型实体
+     * 更新表模型
      *
-     * 更新一个模型实体，包括逻辑实体或物理数据表。
+     * 在关系建模中更新一个表模型及其属性，包括逻辑实体和物理表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7997,7 +8497,7 @@ public class DataArtsStudioClient {
     /**
      * 更新模型工作区
      *
-     * 更新模型工作区
+     * 更新模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8011,7 +8511,7 @@ public class DataArtsStudioClient {
     /**
      * 更新模型工作区
      *
-     * 更新模型工作区
+     * 更新模型工作区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -915,7 +915,7 @@ public class KafkaMeta {
         // requests
         builder.<ListInstancesRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstancesRequest.EngineEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getEngine, ListInstancesRequest::setEngine));
         builder.<String>withRequestField("name",

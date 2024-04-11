@@ -173,6 +173,21 @@ public class ConfigsGetBody {
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sni")
+
+    private Sni sni;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_url_rewrite")
+
+    private List<RequestUrlRewrite> requestUrlRewrite = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "browser_cache_rules")
+
+    private List<BrowserCacheRules> browserCacheRules = null;
+
     public ConfigsGetBody withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
@@ -990,6 +1005,98 @@ public class ConfigsGetBody {
         this.errorCodeRedirectRules = errorCodeRedirectRules;
     }
 
+    public ConfigsGetBody withSni(Sni sni) {
+        this.sni = sni;
+        return this;
+    }
+
+    public ConfigsGetBody withSni(Consumer<Sni> sniSetter) {
+        if (this.sni == null) {
+            this.sni = new Sni();
+            sniSetter.accept(this.sni);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sni
+     * @return sni
+     */
+    public Sni getSni() {
+        return sni;
+    }
+
+    public void setSni(Sni sni) {
+        this.sni = sni;
+    }
+
+    public ConfigsGetBody withRequestUrlRewrite(List<RequestUrlRewrite> requestUrlRewrite) {
+        this.requestUrlRewrite = requestUrlRewrite;
+        return this;
+    }
+
+    public ConfigsGetBody addRequestUrlRewriteItem(RequestUrlRewrite requestUrlRewriteItem) {
+        if (this.requestUrlRewrite == null) {
+            this.requestUrlRewrite = new ArrayList<>();
+        }
+        this.requestUrlRewrite.add(requestUrlRewriteItem);
+        return this;
+    }
+
+    public ConfigsGetBody withRequestUrlRewrite(Consumer<List<RequestUrlRewrite>> requestUrlRewriteSetter) {
+        if (this.requestUrlRewrite == null) {
+            this.requestUrlRewrite = new ArrayList<>();
+        }
+        requestUrlRewriteSetter.accept(this.requestUrlRewrite);
+        return this;
+    }
+
+    /**
+     * 访问URL重写。
+     * @return requestUrlRewrite
+     */
+    public List<RequestUrlRewrite> getRequestUrlRewrite() {
+        return requestUrlRewrite;
+    }
+
+    public void setRequestUrlRewrite(List<RequestUrlRewrite> requestUrlRewrite) {
+        this.requestUrlRewrite = requestUrlRewrite;
+    }
+
+    public ConfigsGetBody withBrowserCacheRules(List<BrowserCacheRules> browserCacheRules) {
+        this.browserCacheRules = browserCacheRules;
+        return this;
+    }
+
+    public ConfigsGetBody addBrowserCacheRulesItem(BrowserCacheRules browserCacheRulesItem) {
+        if (this.browserCacheRules == null) {
+            this.browserCacheRules = new ArrayList<>();
+        }
+        this.browserCacheRules.add(browserCacheRulesItem);
+        return this;
+    }
+
+    public ConfigsGetBody withBrowserCacheRules(Consumer<List<BrowserCacheRules>> browserCacheRulesSetter) {
+        if (this.browserCacheRules == null) {
+            this.browserCacheRules = new ArrayList<>();
+        }
+        browserCacheRulesSetter.accept(this.browserCacheRules);
+        return this;
+    }
+
+    /**
+     * 浏览器缓存过期时间。
+     * @return browserCacheRules
+     */
+    public List<BrowserCacheRules> getBrowserCacheRules() {
+        return browserCacheRules;
+    }
+
+    public void setBrowserCacheRules(List<BrowserCacheRules> browserCacheRules) {
+        this.browserCacheRules = browserCacheRules;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1023,7 +1130,9 @@ public class ConfigsGetBody {
             && Objects.equals(this.requestLimitRules, that.requestLimitRules)
             && Objects.equals(this.ipFrequencyLimit, that.ipFrequencyLimit) && Objects.equals(this.hsts, that.hsts)
             && Objects.equals(this.quic, that.quic)
-            && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
+            && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules)
+            && Objects.equals(this.sni, that.sni) && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
+            && Objects.equals(this.browserCacheRules, that.browserCacheRules);
     }
 
     @Override
@@ -1059,7 +1168,10 @@ public class ConfigsGetBody {
             ipFrequencyLimit,
             hsts,
             quic,
-            errorCodeRedirectRules);
+            errorCodeRedirectRules,
+            sni,
+            requestUrlRewrite,
+            browserCacheRules);
     }
 
     @Override
@@ -1098,6 +1210,9 @@ public class ConfigsGetBody {
         sb.append("    hsts: ").append(toIndentedString(hsts)).append("\n");
         sb.append("    quic: ").append(toIndentedString(quic)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
+        sb.append("    sni: ").append(toIndentedString(sni)).append("\n");
+        sb.append("    requestUrlRewrite: ").append(toIndentedString(requestUrlRewrite)).append("\n");
+        sb.append("    browserCacheRules: ").append(toIndentedString(browserCacheRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

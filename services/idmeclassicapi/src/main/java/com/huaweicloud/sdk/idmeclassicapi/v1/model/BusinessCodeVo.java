@@ -21,7 +21,7 @@ public class BusinessCodeVo {
     }
 
     /**
-     * 策略集编码。
+     * 业务编码。
      * @return code
      */
     public String getCode() {

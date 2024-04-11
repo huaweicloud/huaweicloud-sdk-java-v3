@@ -17,6 +17,11 @@ public class InitializeStandardTemplateRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action-id")
 
     private String actionId;
@@ -32,7 +37,7 @@ public class InitializeStandardTemplateRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -41,6 +46,25 @@ public class InitializeStandardTemplateRequest {
 
     public void setWorkspace(String workspace) {
         this.workspace = workspace;
+    }
+
+    public InitializeStandardTemplateRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
     }
 
     public InitializeStandardTemplateRequest withActionId(String actionId) {
@@ -95,13 +119,13 @@ public class InitializeStandardTemplateRequest {
             return false;
         }
         InitializeStandardTemplateRequest that = (InitializeStandardTemplateRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.actionId, that.actionId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, actionId, body);
+        return Objects.hash(workspace, xProjectId, actionId, body);
     }
 
     @Override
@@ -109,6 +133,7 @@ public class InitializeStandardTemplateRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class InitializeStandardTemplateRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 业务版本管理.
+ * 业务版本管理。
  */
 public class BizVersionManageVO {
 
@@ -57,7 +57,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * ID信息
+     * ID信息。
      * @return id
      */
     public Long getId() {
@@ -91,7 +91,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 业务id
+     * 业务ID。
      * @return bizId
      */
     public Long getBizId() {
@@ -108,7 +108,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 业务对象信息
+     * 业务对象信息。
      * @return bizInfo
      */
     public String getBizInfo() {
@@ -142,7 +142,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 业务版本
+     * 业务版本。
      * @return bizVersion
      */
     public Integer getBizVersion() {
@@ -159,7 +159,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -176,7 +176,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

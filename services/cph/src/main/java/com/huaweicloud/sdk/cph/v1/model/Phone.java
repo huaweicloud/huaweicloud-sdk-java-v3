@@ -37,6 +37,11 @@ public class Phone {
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_version")
+
+    private String imageVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnc_enable")
 
     private String vncEnable;
@@ -50,6 +55,26 @@ public class Phone {
     @JsonProperty(value = "type")
 
     private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "imei")
+
+    private String imei;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_type")
+
+    private String trafficType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_mode")
+
+    private Integer volumeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -151,6 +176,23 @@ public class Phone {
         this.imageId = imageId;
     }
 
+    public Phone withImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+        return this;
+    }
+
+    /**
+     * 镜像版本。
+     * @return imageVersion
+     */
+    public String getImageVersion() {
+        return imageVersion;
+    }
+
+    public void setImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+    }
+
     public Phone withVncEnable(String vncEnable) {
         this.vncEnable = vncEnable;
         return this;
@@ -204,6 +246,76 @@ public class Phone {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public Phone withImei(String imei) {
+        this.imei = imei;
+        return this;
+    }
+
+    /**
+     * imei码。
+     * @return imei
+     */
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
+
+    public Phone withTrafficType(String trafficType) {
+        this.trafficType = trafficType;
+        return this;
+    }
+
+    /**
+     * 手机路由类型。 - direct：默认路由 - routing：路由到编码容器
+     * @return trafficType
+     */
+    public String getTrafficType() {
+        return trafficType;
+    }
+
+    public void setTrafficType(String trafficType) {
+        this.trafficType = trafficType;
+    }
+
+    public Phone withVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+        return this;
+    }
+
+    /**
+     * 手机物理磁盘是否独立。 - 0：不独立 - 1：独立
+     * minimum: 0
+     * maximum: 100
+     * @return volumeMode
+     */
+    public Integer getVolumeMode() {
+        return volumeMode;
+    }
+
+    public void setVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+    }
+
+    public Phone withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 云手机服务器所在的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public Phone withMetadata(PhoneMetadata metadata) {
@@ -277,8 +389,11 @@ public class Phone {
         Phone that = (Phone) obj;
         return Objects.equals(this.phoneName, that.phoneName) && Objects.equals(this.serverId, that.serverId)
             && Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.phoneModelName, that.phoneModelName)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.vncEnable, that.vncEnable)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageVersion, that.imageVersion)
+            && Objects.equals(this.vncEnable, that.vncEnable) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.imei, that.imei)
+            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.volumeMode, that.volumeMode)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime);
     }
@@ -290,9 +405,14 @@ public class Phone {
             phoneId,
             phoneModelName,
             imageId,
+            imageVersion,
             vncEnable,
             status,
             type,
+            imei,
+            trafficType,
+            volumeMode,
+            availabilityZone,
             metadata,
             createTime,
             updateTime);
@@ -307,9 +427,14 @@ public class Phone {
         sb.append("    phoneId: ").append(toIndentedString(phoneId)).append("\n");
         sb.append("    phoneModelName: ").append(toIndentedString(phoneModelName)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
         sb.append("    vncEnable: ").append(toIndentedString(vncEnable)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
+        sb.append("    trafficType: ").append(toIndentedString(trafficType)).append("\n");
+        sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

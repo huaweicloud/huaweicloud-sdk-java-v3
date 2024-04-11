@@ -41,6 +41,10 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionRequest;
@@ -67,6 +71,10 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionRequest;
@@ -97,6 +105,10 @@ import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
@@ -137,6 +149,10 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
@@ -163,6 +179,10 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionRequest;
@@ -539,6 +559,156 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommandAsyncInvoker(
         ShowAsyncDeviceCommandRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.showAsyncDeviceCommand, hcClient);
+    }
+
+    /**
+     * 新建数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoutingBacklogPolicyRequest 请求对象
+     * @return CompletableFuture<CreateRoutingBacklogPolicyResponse>
+     */
+    public CompletableFuture<CreateRoutingBacklogPolicyResponse> createRoutingBacklogPolicyAsync(
+        CreateRoutingBacklogPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createRoutingBacklogPolicy);
+    }
+
+    /**
+     * 新建数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoutingBacklogPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateRoutingBacklogPolicyRequest, CreateRoutingBacklogPolicyResponse>
+     */
+    public AsyncInvoker<CreateRoutingBacklogPolicyRequest, CreateRoutingBacklogPolicyResponse> createRoutingBacklogPolicyAsyncInvoker(
+        CreateRoutingBacklogPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createRoutingBacklogPolicy, hcClient);
+    }
+
+    /**
+     * 删除数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台删除指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRoutingBacklogPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteRoutingBacklogPolicyResponse>
+     */
+    public CompletableFuture<DeleteRoutingBacklogPolicyResponse> deleteRoutingBacklogPolicyAsync(
+        DeleteRoutingBacklogPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteRoutingBacklogPolicy);
+    }
+
+    /**
+     * 删除数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台删除指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRoutingBacklogPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteRoutingBacklogPolicyRequest, DeleteRoutingBacklogPolicyResponse>
+     */
+    public AsyncInvoker<DeleteRoutingBacklogPolicyRequest, DeleteRoutingBacklogPolicyResponse> deleteRoutingBacklogPolicyAsyncInvoker(
+        DeleteRoutingBacklogPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteRoutingBacklogPolicy, hcClient);
+    }
+
+    /**
+     * 查询数据流转积压策略列表
+     *
+     * 应用服务器可调用此接口查询在物联网平台设置的数据流转积压策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRoutingBacklogPolicyRequest 请求对象
+     * @return CompletableFuture<ListRoutingBacklogPolicyResponse>
+     */
+    public CompletableFuture<ListRoutingBacklogPolicyResponse> listRoutingBacklogPolicyAsync(
+        ListRoutingBacklogPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listRoutingBacklogPolicy);
+    }
+
+    /**
+     * 查询数据流转积压策略列表
+     *
+     * 应用服务器可调用此接口查询在物联网平台设置的数据流转积压策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRoutingBacklogPolicyRequest 请求对象
+     * @return AsyncInvoker<ListRoutingBacklogPolicyRequest, ListRoutingBacklogPolicyResponse>
+     */
+    public AsyncInvoker<ListRoutingBacklogPolicyRequest, ListRoutingBacklogPolicyResponse> listRoutingBacklogPolicyAsyncInvoker(
+        ListRoutingBacklogPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listRoutingBacklogPolicy, hcClient);
+    }
+
+    /**
+     * 查询数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRoutingBacklogPolicyRequest 请求对象
+     * @return CompletableFuture<ShowRoutingBacklogPolicyResponse>
+     */
+    public CompletableFuture<ShowRoutingBacklogPolicyResponse> showRoutingBacklogPolicyAsync(
+        ShowRoutingBacklogPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showRoutingBacklogPolicy);
+    }
+
+    /**
+     * 查询数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRoutingBacklogPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowRoutingBacklogPolicyRequest, ShowRoutingBacklogPolicyResponse>
+     */
+    public AsyncInvoker<ShowRoutingBacklogPolicyRequest, ShowRoutingBacklogPolicyResponse> showRoutingBacklogPolicyAsyncInvoker(
+        ShowRoutingBacklogPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showRoutingBacklogPolicy, hcClient);
+    }
+
+    /**
+     * 修改数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台修改指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRoutingBacklogPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateRoutingBacklogPolicyResponse>
+     */
+    public CompletableFuture<UpdateRoutingBacklogPolicyResponse> updateRoutingBacklogPolicyAsync(
+        UpdateRoutingBacklogPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateRoutingBacklogPolicy);
+    }
+
+    /**
+     * 修改数据流转积压策略
+     *
+     * 应用服务器可调用此接口在物联网平台修改指定数据流转积压策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRoutingBacklogPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse>
+     */
+    public AsyncInvoker<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse> updateRoutingBacklogPolicyAsyncInvoker(
+        UpdateRoutingBacklogPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateRoutingBacklogPolicy, hcClient);
     }
 
     /**
@@ -1834,6 +2004,156 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> updateDeviceShadowDesiredDataAsyncInvoker(
         UpdateDeviceShadowDesiredDataRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.updateDeviceShadowDesiredData, hcClient);
+    }
+
+    /**
+     * 新建数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoutingFlowControlPolicyRequest 请求对象
+     * @return CompletableFuture<CreateRoutingFlowControlPolicyResponse>
+     */
+    public CompletableFuture<CreateRoutingFlowControlPolicyResponse> createRoutingFlowControlPolicyAsync(
+        CreateRoutingFlowControlPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createRoutingFlowControlPolicy);
+    }
+
+    /**
+     * 新建数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRoutingFlowControlPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse>
+     */
+    public AsyncInvoker<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse> createRoutingFlowControlPolicyAsyncInvoker(
+        CreateRoutingFlowControlPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createRoutingFlowControlPolicy, hcClient);
+    }
+
+    /**
+     * 删除数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台删除指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRoutingFlowControlPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteRoutingFlowControlPolicyResponse>
+     */
+    public CompletableFuture<DeleteRoutingFlowControlPolicyResponse> deleteRoutingFlowControlPolicyAsync(
+        DeleteRoutingFlowControlPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteRoutingFlowControlPolicy);
+    }
+
+    /**
+     * 删除数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台删除指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRoutingFlowControlPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteRoutingFlowControlPolicyRequest, DeleteRoutingFlowControlPolicyResponse>
+     */
+    public AsyncInvoker<DeleteRoutingFlowControlPolicyRequest, DeleteRoutingFlowControlPolicyResponse> deleteRoutingFlowControlPolicyAsyncInvoker(
+        DeleteRoutingFlowControlPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteRoutingFlowControlPolicy, hcClient);
+    }
+
+    /**
+     * 查询数据流转流控策略列表
+     *
+     * 应用服务器可调用此接口查询在物联网平台设置的数据流转流控策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRoutingFlowControlPolicyRequest 请求对象
+     * @return CompletableFuture<ListRoutingFlowControlPolicyResponse>
+     */
+    public CompletableFuture<ListRoutingFlowControlPolicyResponse> listRoutingFlowControlPolicyAsync(
+        ListRoutingFlowControlPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listRoutingFlowControlPolicy);
+    }
+
+    /**
+     * 查询数据流转流控策略列表
+     *
+     * 应用服务器可调用此接口查询在物联网平台设置的数据流转流控策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRoutingFlowControlPolicyRequest 请求对象
+     * @return AsyncInvoker<ListRoutingFlowControlPolicyRequest, ListRoutingFlowControlPolicyResponse>
+     */
+    public AsyncInvoker<ListRoutingFlowControlPolicyRequest, ListRoutingFlowControlPolicyResponse> listRoutingFlowControlPolicyAsyncInvoker(
+        ListRoutingFlowControlPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listRoutingFlowControlPolicy, hcClient);
+    }
+
+    /**
+     * 查询数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRoutingFlowControlPolicyRequest 请求对象
+     * @return CompletableFuture<ShowRoutingFlowControlPolicyResponse>
+     */
+    public CompletableFuture<ShowRoutingFlowControlPolicyResponse> showRoutingFlowControlPolicyAsync(
+        ShowRoutingFlowControlPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showRoutingFlowControlPolicy);
+    }
+
+    /**
+     * 查询数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRoutingFlowControlPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowRoutingFlowControlPolicyRequest, ShowRoutingFlowControlPolicyResponse>
+     */
+    public AsyncInvoker<ShowRoutingFlowControlPolicyRequest, ShowRoutingFlowControlPolicyResponse> showRoutingFlowControlPolicyAsyncInvoker(
+        ShowRoutingFlowControlPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showRoutingFlowControlPolicy, hcClient);
+    }
+
+    /**
+     * 修改数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台修改指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRoutingFlowControlPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateRoutingFlowControlPolicyResponse>
+     */
+    public CompletableFuture<UpdateRoutingFlowControlPolicyResponse> updateRoutingFlowControlPolicyAsync(
+        UpdateRoutingFlowControlPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateRoutingFlowControlPolicy);
+    }
+
+    /**
+     * 修改数据流转流控策略
+     *
+     * 应用服务器可调用此接口在物联网平台修改指定数据流转流控策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRoutingFlowControlPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse>
+     */
+    public AsyncInvoker<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse> updateRoutingFlowControlPolicyAsyncInvoker(
+        UpdateRoutingFlowControlPolicyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateRoutingFlowControlPolicy, hcClient);
     }
 
     /**

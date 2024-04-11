@@ -21,10 +21,10 @@ public class IdsParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     /**
-     * 删除物理表
+     * 删除物理表。PHYSICAL_TABLE(关系建模)。
      */
     public static final class DelTypesEnum {
 
@@ -92,12 +92,12 @@ public class IdsParam {
 
     private DelTypesEnum delTypes;
 
-    public IdsParam withIds(List<Long> ids) {
+    public IdsParam withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public IdsParam addIdsItem(Long idsItem) {
+    public IdsParam addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -105,7 +105,7 @@ public class IdsParam {
         return this;
     }
 
-    public IdsParam withIds(Consumer<List<Long>> idsSetter) {
+    public IdsParam withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -114,14 +114,14 @@ public class IdsParam {
     }
 
     /**
-     * ID列表
+     * ID列表。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 
@@ -131,7 +131,7 @@ public class IdsParam {
     }
 
     /**
-     * 删除物理表
+     * 删除物理表。PHYSICAL_TABLE(关系建模)。
      * @return delTypes
      */
     public DelTypesEnum getDelTypes() {

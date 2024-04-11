@@ -49,7 +49,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 目标字段ID,当前表的某个字段
+     * 目标字段ID，当前表的某个字段。
      * @return targetFieldId
      */
     public Long getTargetFieldId() {
@@ -66,7 +66,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 目标字段编码
+     * 目标字段编码。
      * @return targetFieldName
      */
     public String getTargetFieldName() {
@@ -83,7 +83,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 来源字段id,多个id以逗号分隔
+     * 来源字段ID，多个ID以逗号分隔。
      * @return fieldIds
      */
     public String getFieldIds() {
@@ -100,7 +100,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 转换表达式
+     * 转换表达式。
      * @return transformExpression
      */
     public String getTransformExpression() {
@@ -133,7 +133,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 来源字段名称列表
+     * 来源字段名称列表。
      * @return fieldNames
      */
     public List<String> getFieldNames() {
@@ -150,7 +150,7 @@ public class MappingSourceFieldVO {
     }
 
     /**
-     * 字段是否发生变化
+     * 字段是否发生变化。
      * @return changed
      */
     public Boolean getChanged() {

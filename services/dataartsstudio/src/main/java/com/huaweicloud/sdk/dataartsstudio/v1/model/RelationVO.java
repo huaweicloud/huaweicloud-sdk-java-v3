@@ -95,7 +95,7 @@ public class RelationVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -112,7 +112,7 @@ public class RelationVO {
     }
 
     /**
-     * 源表id
+     * 源表ID。
      * @return sourceTableId
      */
     public Long getSourceTableId() {
@@ -129,7 +129,7 @@ public class RelationVO {
     }
 
     /**
-     * 目标表id
+     * 目标表ID。
      * @return targetTableId
      */
     public Long getTargetTableId() {
@@ -146,7 +146,7 @@ public class RelationVO {
     }
 
     /**
-     * 关系名称
+     * 关系名称。
      * @return name
      */
     public String getName() {
@@ -163,7 +163,7 @@ public class RelationVO {
     }
 
     /**
-     * 源表名称
+     * 源表名称。
      * @return sourceTableName
      */
     public String getSourceTableName() {
@@ -180,7 +180,7 @@ public class RelationVO {
     }
 
     /**
-     * 目的表名称
+     * 目的表名称。
      * @return targetTableName
      */
     public String getTargetTableName() {
@@ -197,7 +197,7 @@ public class RelationVO {
     }
 
     /**
-     * 角色
+     * 角色。
      * @return role
      */
     public String getRole() {
@@ -214,7 +214,7 @@ public class RelationVO {
     }
 
     /**
-     * 租户id
+     * 租户ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -265,7 +265,7 @@ public class RelationVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -282,7 +282,7 @@ public class RelationVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -299,7 +299,7 @@ public class RelationVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -316,7 +316,7 @@ public class RelationVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -349,7 +349,7 @@ public class RelationVO {
     }
 
     /**
-     * 表属性信息
+     * 表属性信息。
      * @return mappings
      */
     public List<RelationMappingVO> getMappings() {

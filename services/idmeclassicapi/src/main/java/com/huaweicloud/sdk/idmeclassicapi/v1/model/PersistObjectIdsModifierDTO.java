@@ -45,7 +45,7 @@ public class PersistObjectIdsModifierDTO {
     }
 
     /**
-     * ID列表。
+     * 数据实例ID列表。
      * @return ids
      */
     public List<String> getIds() {

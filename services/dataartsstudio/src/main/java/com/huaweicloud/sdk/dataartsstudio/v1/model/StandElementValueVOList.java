@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 属性值列表
+ * 属性值列表。
  */
 public class StandElementValueVOList {
 
@@ -55,6 +55,11 @@ public class StandElementValueVOList {
     private BizVersionManageVO newBiz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from_public")
+
+    private Boolean fromPublic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_by")
 
     private String createBy;
@@ -96,7 +101,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 属性信息
+     * 属性信息。
      * @return values
      */
     public List<StandElementValueVO> getValues() {
@@ -130,7 +135,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 标准所属目录
+     * 标准所属目录。
      * @return directoryId
      */
     public Long getDirectoryId() {
@@ -147,7 +152,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 目录树
+     * 目录树。
      * @return directoryPath
      */
     public String getDirectoryPath() {
@@ -164,7 +169,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 标准行的id
+     * 标准行的ID。
      * @return rowId
      */
     public Long getRowId() {
@@ -244,13 +249,30 @@ public class StandElementValueVOList {
         this.newBiz = newBiz;
     }
 
+    public StandElementValueVOList withFromPublic(Boolean fromPublic) {
+        this.fromPublic = fromPublic;
+        return this;
+    }
+
+    /**
+     * 是否来自公共层。
+     * @return fromPublic
+     */
+    public Boolean getFromPublic() {
+        return fromPublic;
+    }
+
+    public void setFromPublic(Boolean fromPublic) {
+        this.fromPublic = fromPublic;
+    }
+
     public StandElementValueVOList withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -267,7 +289,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -284,7 +306,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -301,7 +323,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -325,9 +347,9 @@ public class StandElementValueVOList {
             && Objects.equals(this.directoryId, that.directoryId)
             && Objects.equals(this.directoryPath, that.directoryPath) && Objects.equals(this.rowId, that.rowId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.approvalInfo, that.approvalInfo)
-            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.createBy, that.createBy)
-            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.fromPublic, that.fromPublic)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -340,6 +362,7 @@ public class StandElementValueVOList {
             status,
             approvalInfo,
             newBiz,
+            fromPublic,
             createBy,
             updateBy,
             createTime,
@@ -358,6 +381,7 @@ public class StandElementValueVOList {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    approvalInfo: ").append(toIndentedString(approvalInfo)).append("\n");
         sb.append("    newBiz: ").append(toIndentedString(newBiz)).append("\n");
+        sb.append("    fromPublic: ").append(toIndentedString(fromPublic)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
         sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

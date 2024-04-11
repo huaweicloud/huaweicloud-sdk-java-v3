@@ -155,7 +155,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -172,7 +172,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 字段名
+     * 字段名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -189,7 +189,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 业务属性
+     * 业务属性。
      * @return nameCh
      */
     public String getNameCh() {
@@ -206,7 +206,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * Get description
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -223,7 +223,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 颗粒度id
+     * 颗粒度ID。
      * @return dimensionGroup
      */
     public String getDimensionGroup() {
@@ -240,7 +240,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 颗粒度名称
+     * 颗粒度名称。
      * @return groupName
      */
     public String getGroupName() {
@@ -257,7 +257,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 颗粒度编码
+     * 颗粒度编码。
      * @return groupCode
      */
     public String getGroupCode() {
@@ -290,7 +290,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 指标信息
+     * 指标信息。
      * @return metricIds
      */
     public List<Long> getMetricIds() {
@@ -323,7 +323,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 指标名称信息
+     * 指标名称信息。
      * @return metricNames
      */
     public List<String> getMetricNames() {
@@ -356,7 +356,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 引用函数id
+     * 引用函数ID。
      * @return calFnIds
      */
     public List<Long> getCalFnIds() {
@@ -373,7 +373,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 计算表达式, ${index_id} + ${index_id}
+     * 计算表达式，形如${index_id} + ${compound#index_id}，其中index_id代表引用的衍生指标ID，compound#index_id代表引用的复合指标ID。
      * @return calExp
      */
     public String getCalExp() {
@@ -390,7 +390,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
     public Long getL1Id() {
@@ -407,7 +407,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -424,7 +424,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 业务对象id
+     * 业务对象ID。
      * @return l3Id
      */
     public Long getL3Id() {
@@ -441,7 +441,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 字段类型
+     * 字段类型。
      * @return dataType
      */
     public String getDataType() {
@@ -458,7 +458,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -475,7 +475,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -509,7 +509,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -526,7 +526,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -621,7 +621,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -638,7 +638,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -655,7 +655,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {
@@ -672,7 +672,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 汇总表id
+     * 汇总表ID。
      * @return summaryTableId
      */
     public Long getSummaryTableId() {

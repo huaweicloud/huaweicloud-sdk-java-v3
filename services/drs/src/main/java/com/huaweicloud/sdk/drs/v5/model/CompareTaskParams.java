@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -116,6 +118,11 @@ public class CompareTaskParams {
     @JsonProperty(value = "db_object")
 
     private Map<String, DatabaseObject> dbObject = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_process_info")
+
+    private List<DataProcessInfo> dataProcessInfo = null;
 
     public CompareTaskParams withCompareTaskId(String compareTaskId) {
         this.compareTaskId = compareTaskId;
@@ -234,6 +241,39 @@ public class CompareTaskParams {
         this.dbObject = dbObject;
     }
 
+    public CompareTaskParams withDataProcessInfo(List<DataProcessInfo> dataProcessInfo) {
+        this.dataProcessInfo = dataProcessInfo;
+        return this;
+    }
+
+    public CompareTaskParams addDataProcessInfoItem(DataProcessInfo dataProcessInfoItem) {
+        if (this.dataProcessInfo == null) {
+            this.dataProcessInfo = new ArrayList<>();
+        }
+        this.dataProcessInfo.add(dataProcessInfoItem);
+        return this;
+    }
+
+    public CompareTaskParams withDataProcessInfo(Consumer<List<DataProcessInfo>> dataProcessInfoSetter) {
+        if (this.dataProcessInfo == null) {
+            this.dataProcessInfo = new ArrayList<>();
+        }
+        dataProcessInfoSetter.accept(this.dataProcessInfo);
+        return this;
+    }
+
+    /**
+     * 更新数据加工规则请求体
+     * @return dataProcessInfo
+     */
+    public List<DataProcessInfo> getDataProcessInfo() {
+        return dataProcessInfo;
+    }
+
+    public void setDataProcessInfo(List<DataProcessInfo> dataProcessInfo) {
+        this.dataProcessInfo = dataProcessInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,12 +285,13 @@ public class CompareTaskParams {
         CompareTaskParams that = (CompareTaskParams) obj;
         return Objects.equals(this.compareTaskId, that.compareTaskId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.option, that.option)
-            && Objects.equals(this.dbObject, that.dbObject);
+            && Objects.equals(this.dbObject, that.dbObject)
+            && Objects.equals(this.dataProcessInfo, that.dataProcessInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(compareTaskId, type, startTime, option, dbObject);
+        return Objects.hash(compareTaskId, type, startTime, option, dbObject, dataProcessInfo);
     }
 
     @Override
@@ -262,6 +303,7 @@ public class CompareTaskParams {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    option: ").append(toIndentedString(option)).append("\n");
         sb.append("    dbObject: ").append(toIndentedString(dbObject)).append("\n");
+        sb.append("    dataProcessInfo: ").append(toIndentedString(dataProcessInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

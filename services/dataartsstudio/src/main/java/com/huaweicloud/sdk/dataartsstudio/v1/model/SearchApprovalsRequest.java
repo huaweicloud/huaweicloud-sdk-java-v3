@@ -21,6 +21,11 @@ public class SearchApprovalsRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
     private Long bizId;
@@ -41,7 +46,7 @@ public class SearchApprovalsRequest {
     private String approver;
 
     /**
-     * 查询待审批，已审批
+     * 审批单状态。DEVELOPING(待审批)、FINISHED(已审批)。
      */
     public static final class ApprovalStatusEnum {
 
@@ -116,7 +121,7 @@ public class SearchApprovalsRequest {
     private ApprovalStatusEnum approvalStatus;
 
     /**
-     * 查询待审批，已审批
+     * 审批单状态。DEVELOPING(待审批)、APPROVED(审批通过)、REJECT(审批驳回)。
      */
     public static final class ApprovalStatusDetailEnum {
 
@@ -197,7 +202,7 @@ public class SearchApprovalsRequest {
     private ApprovalStatusDetailEnum approvalStatusDetail;
 
     /**
-     * 业务审核类型
+     * 业务审核类型。PUBLISH(发布)、OFFLINE(下线)。
      */
     public static final class ApprovalTypeEnum {
 
@@ -302,7 +307,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -313,13 +318,32 @@ public class SearchApprovalsRequest {
         this.workspace = workspace;
     }
 
+    public SearchApprovalsRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public SearchApprovalsRequest withBizId(Long bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务定义id
+     * 业务定义ID。
      * @return bizId
      */
     public Long getBizId() {
@@ -336,7 +360,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 按名称或编码模糊查询
+     * 按名称或编码模糊查询。
      * @return name
      */
     public String getName() {
@@ -353,7 +377,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 按创建者查询
+     * 按创建者查询。
      * @return createBy
      */
     public String getCreateBy() {
@@ -370,7 +394,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 按审核人查询
+     * 按审核人查询。
      * @return approver
      */
     public String getApprover() {
@@ -387,7 +411,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 查询待审批，已审批
+     * 审批单状态。DEVELOPING(待审批)、FINISHED(已审批)。
      * @return approvalStatus
      */
     public ApprovalStatusEnum getApprovalStatus() {
@@ -404,7 +428,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 查询待审批，已审批
+     * 审批单状态。DEVELOPING(待审批)、APPROVED(审批通过)、REJECT(审批驳回)。
      * @return approvalStatusDetail
      */
     public ApprovalStatusDetailEnum getApprovalStatusDetail() {
@@ -421,7 +445,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 业务审核类型
+     * 业务审核类型。PUBLISH(发布)、OFFLINE(下线)。
      * @return approvalType
      */
     public ApprovalTypeEnum getApprovalType() {
@@ -438,7 +462,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 按业务类型查询
+     * 按业务类型查询。
      * @return bizType
      */
     public String getBizType() {
@@ -455,7 +479,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 时间过滤左边界,与end_time一起使用,只支持时间范围过滤,单边过滤无效
+     * 时间过滤左边界，与end_time一起使用，只支持时间范围过滤，单边过滤无效。格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -472,7 +496,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 时间过滤右边界,与begin_time一起使用只支持时间范围过滤,单边过滤无效
+     * 时间过滤右边界，与begin_time一起使用只支持时间范围过滤，单边过滤无效。格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return endTime
      */
     public String getEndTime() {
@@ -489,7 +513,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -507,7 +531,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -527,9 +551,10 @@ public class SearchApprovalsRequest {
             return false;
         }
         SearchApprovalsRequest that = (SearchApprovalsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.bizId, that.bizId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.createBy, that.createBy)
-            && Objects.equals(this.approver, that.approver) && Objects.equals(this.approvalStatus, that.approvalStatus)
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.approvalStatus, that.approvalStatus)
             && Objects.equals(this.approvalStatusDetail, that.approvalStatusDetail)
             && Objects.equals(this.approvalType, that.approvalType) && Objects.equals(this.bizType, that.bizType)
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
@@ -539,6 +564,7 @@ public class SearchApprovalsRequest {
     @Override
     public int hashCode() {
         return Objects.hash(workspace,
+            xProjectId,
             bizId,
             name,
             createBy,
@@ -558,6 +584,7 @@ public class SearchApprovalsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class SearchApprovalsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    bizId: ").append(toIndentedString(bizId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");

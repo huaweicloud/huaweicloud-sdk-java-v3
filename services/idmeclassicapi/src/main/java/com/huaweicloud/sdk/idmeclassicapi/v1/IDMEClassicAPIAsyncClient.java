@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutAndUpdateRequest;
@@ -29,6 +31,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchRemoveChildNodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchRemoveChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndCheckinRequest;
@@ -55,6 +59,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
@@ -75,6 +81,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceRequest;
@@ -87,14 +95,28 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListBatchQueryRelatedObjectsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListBatchQueryRelatedObjectsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetAllParentListRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetAllParentListResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
@@ -107,6 +129,10 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowFindUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowFindUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetByUniqueKeyRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetByUniqueKeyResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostRequest;
@@ -152,9 +178,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 添加标签
+     * 绑定标签
      *
-     * 给模型实例数据添加标签数据。
+     * 调用该接口为指定模型的数据实例绑定标签。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -166,9 +192,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 添加标签
+     * 绑定标签
      *
-     * 给模型实例数据添加标签数据。
+     * 调用该接口为指定模型的数据实例绑定标签。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -177,6 +203,35 @@ public class IDMEClassicAPIAsyncClient {
      */
     public AsyncInvoker<AddTagRequest, AddTagResponse> addTagAsyncInvoker(AddTagRequest request) {
         return new AsyncInvoker<>(request, IDMEClassicAPIMeta.addTag, hcClient);
+    }
+
+    /**
+     * 批量添加实例的子节点
+     *
+     * 调用该接口批量为指定数据实例添加子节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddChildNodeRequest 请求对象
+     * @return CompletableFuture<BatchAddChildNodeResponse>
+     */
+    public CompletableFuture<BatchAddChildNodeResponse> batchAddChildNodeAsync(BatchAddChildNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.batchAddChildNode);
+    }
+
+    /**
+     * 批量添加实例的子节点
+     *
+     * 调用该接口批量为指定数据实例添加子节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddChildNodeRequest 请求对象
+     * @return AsyncInvoker<BatchAddChildNodeRequest, BatchAddChildNodeResponse>
+     */
+    public AsyncInvoker<BatchAddChildNodeRequest, BatchAddChildNodeResponse> batchAddChildNodeAsyncInvoker(
+        BatchAddChildNodeRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.batchAddChildNode, hcClient);
     }
 
     /**
@@ -357,9 +412,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 批量创建视图
+     * 批量创建多维视图
      *
-     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 调用该接口批量创建指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -371,9 +426,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 批量创建视图
+     * 批量创建多维视图
      *
-     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 调用该接口批量创建指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -539,6 +594,36 @@ public class IDMEClassicAPIAsyncClient {
     public AsyncInvoker<BatchExecuteReviseRequest, BatchExecuteReviseResponse> batchExecuteReviseAsyncInvoker(
         BatchExecuteReviseRequest request) {
         return new AsyncInvoker<>(request, IDMEClassicAPIMeta.batchExecuteRevise, hcClient);
+    }
+
+    /**
+     * 批量移除实例的子节点
+     *
+     * 调用该接口批量移除指定数据实例的所有子节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveChildNodeRequest 请求对象
+     * @return CompletableFuture<BatchRemoveChildNodeResponse>
+     */
+    public CompletableFuture<BatchRemoveChildNodeResponse> batchRemoveChildNodeAsync(
+        BatchRemoveChildNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.batchRemoveChildNode);
+    }
+
+    /**
+     * 批量移除实例的子节点
+     *
+     * 调用该接口批量移除指定数据实例的所有子节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveChildNodeRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveChildNodeRequest, BatchRemoveChildNodeResponse>
+     */
+    public AsyncInvoker<BatchRemoveChildNodeRequest, BatchRemoveChildNodeResponse> batchRemoveChildNodeAsyncInvoker(
+        BatchRemoveChildNodeRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.batchRemoveChildNode, hcClient);
     }
 
     /**
@@ -863,9 +948,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 统计模型历史数据
+     * 获取模型的统计信息
      *
-     * 根据开始时间&amp;结束时间统计这段时间内各操作类型（创建、更新、软删除、硬删除）的数据量。
+     * 输入指定模型的统计时间区间（开始时间和结束时间），即可获取该模型的统计数据，包含创建实例、删除实例、软删除实例和更新实例的数据。在调用该接口前请确保数据模型具有“系统版本”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -877,9 +962,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 统计模型历史数据
+     * 获取模型的统计信息
      *
-     * 根据开始时间&amp;结束时间统计这段时间内各操作类型（创建、更新、软删除、硬删除）的数据量。
+     * 输入指定模型的统计时间区间（开始时间和结束时间），即可获取该模型的统计数据，包含创建实例、删除实例、软删除实例和更新实例的数据。在调用该接口前请确保数据模型具有“系统版本”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -919,6 +1004,35 @@ public class IDMEClassicAPIAsyncClient {
     public AsyncInvoker<CompareBusinessVersionRequest, CompareBusinessVersionResponse> compareBusinessVersionAsyncInvoker(
         CompareBusinessVersionRequest request) {
         return new AsyncInvoker<>(request, IDMEClassicAPIMeta.compareBusinessVersion, hcClient);
+    }
+
+    /**
+     * 对比数据实例
+     *
+     * 通过此接口可以对比某个模型数据实例的不同版本的属性和关系。建议使用数据建模引擎（xDM Foundation，简称xDM-F）新增的差异对比功能，即使用instance-attrs-comparison和instance-relation-comparison接口，更多内容可在应用运行态的“数据服务管理 &gt; 全量数据服务 &gt; 系统管理API &gt; 属性对比API”中查看。在调用该接口前请确保数据模型具有“系统版本”功能。。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareVersionRequest 请求对象
+     * @return CompletableFuture<CompareVersionResponse>
+     */
+    public CompletableFuture<CompareVersionResponse> compareVersionAsync(CompareVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.compareVersion);
+    }
+
+    /**
+     * 对比数据实例
+     *
+     * 通过此接口可以对比某个模型数据实例的不同版本的属性和关系。建议使用数据建模引擎（xDM Foundation，简称xDM-F）新增的差异对比功能，即使用instance-attrs-comparison和instance-relation-comparison接口，更多内容可在应用运行态的“数据服务管理 &gt; 全量数据服务 &gt; 系统管理API &gt; 属性对比API”中查看。在调用该接口前请确保数据模型具有“系统版本”功能。。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareVersionRequest 请求对象
+     * @return AsyncInvoker<CompareVersionRequest, CompareVersionResponse>
+     */
+    public AsyncInvoker<CompareVersionRequest, CompareVersionResponse> compareVersionAsyncInvoker(
+        CompareVersionRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.compareVersion, hcClient);
     }
 
     /**
@@ -1009,9 +1123,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 创建视图
+     * 创建多维视图
      *
-     * 通过模型版本对象ID和视图对象ID创建模型多视图。
+     * 调用该接口创建指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1023,9 +1137,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 创建视图
+     * 创建多维视图
      *
-     * 通过模型版本对象ID和视图对象ID创建模型多视图。
+     * 调用该接口创建指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1218,6 +1332,35 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
+     * 通过目标模型删除关系实体的数据实例
+     *
+     * 调用该接口输入源模型的数据实例ID和目标模型的英文名称，删除对应关系实体的数据实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTargetRequest 请求对象
+     * @return CompletableFuture<DeleteTargetResponse>
+     */
+    public CompletableFuture<DeleteTargetResponse> deleteTargetAsync(DeleteTargetRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.deleteTarget);
+    }
+
+    /**
+     * 通过目标模型删除关系实体的数据实例
+     *
+     * 调用该接口输入源模型的数据实例ID和目标模型的英文名称，删除对应关系实体的数据实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTargetRequest 请求对象
+     * @return AsyncInvoker<DeleteTargetRequest, DeleteTargetResponse>
+     */
+    public AsyncInvoker<DeleteTargetRequest, DeleteTargetResponse> deleteTargetAsyncInvoker(
+        DeleteTargetRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.deleteTarget, hcClient);
+    }
+
+    /**
      * 删除实例
      *
      * 根据数据实例的唯一编码，删除指定数据模型中的一个数据实例。
@@ -1253,7 +1396,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 失效模型数据实例
      *
-     * 根据对象ID失效对应实例数据，返回失效成功数量。
+     * 调用该接口失效指定模型的数据实例，同时返回失效成功的实例数量。在调用该接口前请确保数据模型具有“失效管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1267,7 +1410,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 失效模型数据实例
      *
-     * 根据对象ID失效对应实例数据，返回失效成功数量。
+     * 调用该接口失效指定模型的数据实例，同时返回失效成功的实例数量。在调用该接口前请确保数据模型具有“失效管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1282,7 +1425,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 生效模型数据实例
      *
-     * 根据对象ID生效对应实例数据，返回生效成功数量。
+     * 调用该接口生效指定模型的数据实例，同时返回生效成功的实例数量。在调用该接口前请确保数据模型具有“失效管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1296,7 +1439,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 生效模型数据实例
      *
-     * 根据对象ID生效对应实例数据，返回生效成功数量。
+     * 调用该接口生效指定模型的数据实例，同时返回生效成功的实例数量。在调用该接口前请确保数据模型具有“失效管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1340,7 +1483,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 新增模型业务编码
      *
-     * 调用接口生成模型业务编码。
+     * 调用该接口为指定模型的数据实例生成业务编码。在调用该接口前请确保数据模型具有“业务编码生成器”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1355,7 +1498,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 新增模型业务编码
      *
-     * 调用接口生成模型业务编码。
+     * 调用该接口为指定模型的数据实例生成业务编码。在调用该接口前请确保数据模型具有“业务编码生成器”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1397,9 +1540,98 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
+     * 批量查询关系实体关联模型的信息
+     *
+     * 调用该接口批量查询指定关系实体所关联的源/目标模型的所有实例信息，包含具体的属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBatchQueryRelatedObjectsRequest 请求对象
+     * @return CompletableFuture<ListBatchQueryRelatedObjectsResponse>
+     */
+    public CompletableFuture<ListBatchQueryRelatedObjectsResponse> listBatchQueryRelatedObjectsAsync(
+        ListBatchQueryRelatedObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listBatchQueryRelatedObjects);
+    }
+
+    /**
+     * 批量查询关系实体关联模型的信息
+     *
+     * 调用该接口批量查询指定关系实体所关联的源/目标模型的所有实例信息，包含具体的属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBatchQueryRelatedObjectsRequest 请求对象
+     * @return AsyncInvoker<ListBatchQueryRelatedObjectsRequest, ListBatchQueryRelatedObjectsResponse>
+     */
+    public AsyncInvoker<ListBatchQueryRelatedObjectsRequest, ListBatchQueryRelatedObjectsResponse> listBatchQueryRelatedObjectsAsyncInvoker(
+        ListBatchQueryRelatedObjectsRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listBatchQueryRelatedObjects, hcClient);
+    }
+
+    /**
+     * 获取所有父节点
+     *
+     * 调用该接口获取指定数据实例的所有父节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGetAllParentListRequest 请求对象
+     * @return CompletableFuture<ListGetAllParentListResponse>
+     */
+    public CompletableFuture<ListGetAllParentListResponse> listGetAllParentListAsync(
+        ListGetAllParentListRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listGetAllParentList);
+    }
+
+    /**
+     * 获取所有父节点
+     *
+     * 调用该接口获取指定数据实例的所有父节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGetAllParentListRequest 请求对象
+     * @return AsyncInvoker<ListGetAllParentListRequest, ListGetAllParentListResponse>
+     */
+    public AsyncInvoker<ListGetAllParentListRequest, ListGetAllParentListResponse> listGetAllParentListAsyncInvoker(
+        ListGetAllParentListRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listGetAllParentList, hcClient);
+    }
+
+    /**
+     * 获取子节点
+     *
+     * 调用该接口获取指定数据实例的子节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGetChildListRequest 请求对象
+     * @return CompletableFuture<ListGetChildListResponse>
+     */
+    public CompletableFuture<ListGetChildListResponse> listGetChildListAsync(ListGetChildListRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listGetChildList);
+    }
+
+    /**
+     * 获取子节点
+     *
+     * 调用该接口获取指定数据实例的子节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGetChildListRequest 请求对象
+     * @return AsyncInvoker<ListGetChildListRequest, ListGetChildListResponse>
+     */
+    public AsyncInvoker<ListGetChildListRequest, ListGetChildListResponse> listGetChildListAsyncInvoker(
+        ListGetChildListRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listGetChildList, hcClient);
+    }
+
+    /**
      * 分页查询模型历史版本信息
      *
-     * 根据对象入参分页查询满足条件的系统版本详细信息
+     * 调用该接口输入指定模型的统计时间区间（开始时间和结束时间）后，会以数据实例的最后修改时间作为查询条件，分页查询该实例的历史版本信息。在调用该接口前请确保数据模型具有“系统版本”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1413,7 +1645,7 @@ public class IDMEClassicAPIAsyncClient {
     /**
      * 分页查询模型历史版本信息
      *
-     * 根据对象入参分页查询满足条件的系统版本详细信息
+     * 调用该接口输入指定模型的统计时间区间（开始时间和结束时间）后，会以数据实例的最后修改时间作为查询条件，分页查询该实例的历史版本信息。在调用该接口前请确保数据模型具有“系统版本”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1423,6 +1655,99 @@ public class IDMEClassicAPIAsyncClient {
     public AsyncInvoker<ListHistoryDataRequest, ListHistoryDataResponse> listHistoryDataAsyncInvoker(
         ListHistoryDataRequest request) {
         return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listHistoryData, hcClient);
+    }
+
+    /**
+     * 查询关系实体关联模型的信息
+     *
+     * 调用该接口查询指定关系实体所关联的源/目标模型的所有实例信息，包含具体的属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryRelatedObjectsRequest 请求对象
+     * @return CompletableFuture<ListQueryRelatedObjectsResponse>
+     */
+    public CompletableFuture<ListQueryRelatedObjectsResponse> listQueryRelatedObjectsAsync(
+        ListQueryRelatedObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listQueryRelatedObjects);
+    }
+
+    /**
+     * 查询关系实体关联模型的信息
+     *
+     * 调用该接口查询指定关系实体所关联的源/目标模型的所有实例信息，包含具体的属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryRelatedObjectsRequest 请求对象
+     * @return AsyncInvoker<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse>
+     */
+    public AsyncInvoker<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse> listQueryRelatedObjectsAsyncInvoker(
+        ListQueryRelatedObjectsRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listQueryRelatedObjects, hcClient);
+    }
+
+    /**
+     * 查询关系实体的数据实例
+     *
+     * 调用该接口输入数据实例的ID和对应的关系角色（源/目标模型），查询并返回对应关系实体的数据实例。
+     * 如果对应的关系实体存在“参考对象”类型属性，且参考的数据模型为抽象模型，返回信息仅返回对应模型的英文名称和ID。如果参考的数据模型为实体模型，返回空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryRelationshipRequest 请求对象
+     * @return CompletableFuture<ListQueryRelationshipResponse>
+     */
+    public CompletableFuture<ListQueryRelationshipResponse> listQueryRelationshipAsync(
+        ListQueryRelationshipRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listQueryRelationship);
+    }
+
+    /**
+     * 查询关系实体的数据实例
+     *
+     * 调用该接口输入数据实例的ID和对应的关系角色（源/目标模型），查询并返回对应关系实体的数据实例。
+     * 如果对应的关系实体存在“参考对象”类型属性，且参考的数据模型为抽象模型，返回信息仅返回对应模型的英文名称和ID。如果参考的数据模型为实体模型，返回空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryRelationshipRequest 请求对象
+     * @return AsyncInvoker<ListQueryRelationshipRequest, ListQueryRelationshipResponse>
+     */
+    public AsyncInvoker<ListQueryRelationshipRequest, ListQueryRelationshipResponse> listQueryRelationshipAsyncInvoker(
+        ListQueryRelationshipRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listQueryRelationship, hcClient);
+    }
+
+    /**
+     * 通过源模型实例ID查询关联的目标模型实例
+     *
+     * 调用该接口输入源模型的数据实例ID，查询并返回与该实例关联的目标模型数据实例的信息，实例信息包含对应数据实例的“列表属性”。
+     * 如果目标模型存在“参考对象”类型的属性，且参考的数据模型为抽象模型，返回信息仅返回对应模型的英文名称和ID。如果参考的数据模型为实体模型，返回空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryTargetRequest 请求对象
+     * @return CompletableFuture<ListQueryTargetResponse>
+     */
+    public CompletableFuture<ListQueryTargetResponse> listQueryTargetAsync(ListQueryTargetRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.listQueryTarget);
+    }
+
+    /**
+     * 通过源模型实例ID查询关联的目标模型实例
+     *
+     * 调用该接口输入源模型的数据实例ID，查询并返回与该实例关联的目标模型数据实例的信息，实例信息包含对应数据实例的“列表属性”。
+     * 如果目标模型存在“参考对象”类型的属性，且参考的数据模型为抽象模型，返回信息仅返回对应模型的英文名称和ID。如果参考的数据模型为实体模型，返回空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryTargetRequest 请求对象
+     * @return AsyncInvoker<ListQueryTargetRequest, ListQueryTargetResponse>
+     */
+    public AsyncInvoker<ListQueryTargetRequest, ListQueryTargetResponse> listQueryTargetAsyncInvoker(
+        ListQueryTargetRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.listQueryTarget, hcClient);
     }
 
     /**
@@ -1513,9 +1838,39 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 删除标签
+     * 刷新树形节点
      *
-     * 删除模型实例数据绑定的标签数据。
+     * 调用该接口刷新指定数据实例对应的节点全路径。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 调用该接口时，如果未指定数据实例或指定的数据实例为父节点，则刷新整颗树的所有节点全路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RefreshRequest 请求对象
+     * @return CompletableFuture<RefreshResponse>
+     */
+    public CompletableFuture<RefreshResponse> refreshAsync(RefreshRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.refresh);
+    }
+
+    /**
+     * 刷新树形节点
+     *
+     * 调用该接口刷新指定数据实例对应的节点全路径。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 调用该接口时，如果未指定数据实例或指定的数据实例为父节点，则刷新整颗树的所有节点全路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RefreshRequest 请求对象
+     * @return AsyncInvoker<RefreshRequest, RefreshResponse>
+     */
+    public AsyncInvoker<RefreshRequest, RefreshResponse> refreshAsyncInvoker(RefreshRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.refresh, hcClient);
+    }
+
+    /**
+     * 解绑标签
+     *
+     * 调用该接口为指定数据模型的数据实例解绑标签。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1527,9 +1882,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 删除标签
+     * 解绑标签
      *
-     * 删除模型实例数据绑定的标签数据。
+     * 调用该接口为指定数据模型的数据实例解绑标签。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1694,6 +2049,63 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
+     * 获取父节点
+     *
+     * 调用该接口获取指定数据实例的父节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetParentRequest 请求对象
+     * @return CompletableFuture<ShowGetParentResponse>
+     */
+    public CompletableFuture<ShowGetParentResponse> showGetParentAsync(ShowGetParentRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.showGetParent);
+    }
+
+    /**
+     * 获取父节点
+     *
+     * 调用该接口获取指定数据实例的父节点，同时返回其列表属性。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetParentRequest 请求对象
+     * @return AsyncInvoker<ShowGetParentRequest, ShowGetParentResponse>
+     */
+    public AsyncInvoker<ShowGetParentRequest, ShowGetParentResponse> showGetParentAsyncInvoker(
+        ShowGetParentRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.showGetParent, hcClient);
+    }
+
+    /**
+     * 获取根节点
+     *
+     * 调用该接口获取指定数据实例的根节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetRootRequest 请求对象
+     * @return CompletableFuture<ShowGetRootResponse>
+     */
+    public CompletableFuture<ShowGetRootResponse> showGetRootAsync(ShowGetRootRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.showGetRoot);
+    }
+
+    /**
+     * 获取根节点
+     *
+     * 调用该接口获取指定数据实例的根节点。在调用该接口前请确保数据模型具有“树形结构”功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetRootRequest 请求对象
+     * @return AsyncInvoker<ShowGetRootRequest, ShowGetRootResponse>
+     */
+    public AsyncInvoker<ShowGetRootRequest, ShowGetRootResponse> showGetRootAsyncInvoker(ShowGetRootRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.showGetRoot, hcClient);
+    }
+
+    /**
      * 查询实例
      *
      * 根据一个数据实例的唯一编码，查询实例的详细信息。
@@ -1821,9 +2233,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 查询实例标签详细信息
+     * 查询指定数据实例的标签详情
      *
-     * 根据对象ID获取数据实例标签信息。
+     * 调用该接口查询指定模型的数据实例对应标签信息。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1835,9 +2247,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 查询实例标签详细信息
+     * 查询指定数据实例的标签详情
      *
-     * 根据对象ID获取数据实例标签信息。
+     * 调用该接口查询指定模型的数据实例对应标签信息。在调用该接口前请确保数据模型具有“标签管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1878,9 +2290,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 切换模型生命周期模板或状态
+     * 切换生命周期模板
      *
-     * 根据对象ID重新分配生命周期模板&amp;状态。
+     * 调用该接口切换指定模型的数据实例绑定的生命周期模板。切换生命周期模板时，需为数据实例指定生命周期的状态。在调用该接口前请确保数据模型具有“生命周期管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1893,9 +2305,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 切换模型生命周期模板或状态
+     * 切换生命周期模板
      *
-     * 根据对象ID重新分配生命周期模板&amp;状态。
+     * 调用该接口切换指定模型的数据实例绑定的生命周期模板。切换生命周期模板时，需为数据实例指定生命周期的状态。在调用该接口前请确保数据模型具有“生命周期管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2025,9 +2437,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 设置模型生命周期状态
+     * 设置生命周期的状态
      *
-     * 根据对象实例ID设置指定生命周期状态。
+     * 调用该接口修改或切换数据实例绑定的生命周期状态。在调用该接口前请确保数据模型具有“生命周期管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2039,9 +2451,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 设置模型生命周期状态
+     * 设置生命周期的状态
      *
-     * 根据对象实例ID设置指定生命周期状态。
+     * 调用该接口修改或切换数据实例绑定的生命周期状态。在调用该接口前请确保数据模型具有“生命周期管理”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2082,9 +2494,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 批量创建视图
+     * 更新多维视图
      *
-     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 调用该接口更新指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2096,9 +2508,9 @@ public class IDMEClassicAPIAsyncClient {
     }
 
     /**
-     * 批量创建视图
+     * 更新多维视图
      *
-     * 通过模型版本对象ID和视图对象ID批量创建模型多视图。
+     * 调用该接口更新指定M-V模型实体的多维视图。在调用该接口前请确保数据模型具有“多维视图&amp;多维分支”功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

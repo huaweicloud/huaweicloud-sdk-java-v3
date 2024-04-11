@@ -46,7 +46,7 @@ public class ApproverParam {
     }
 
     /**
-     * 审批人姓名
+     * 审批人姓名。
      * @return approverName
      */
     public String getApproverName() {
@@ -63,7 +63,7 @@ public class ApproverParam {
     }
 
     /**
-     * 审批人user_id
+     * 审批人ID。
      * @return userId
      */
     public String getUserId() {
@@ -80,7 +80,7 @@ public class ApproverParam {
     }
 
     /**
-     * Get email
+     * 邮箱地址。
      * @return email
      */
     public String getEmail() {
@@ -97,7 +97,7 @@ public class ApproverParam {
     }
 
     /**
-     * 电话号码
+     * 电话号码。
      * @return phoneNumber
      */
     public String getPhoneNumber() {
@@ -114,7 +114,7 @@ public class ApproverParam {
     }
 
     /**
-     * 邮件通知
+     * 邮件通知。
      * @return emailNotify
      */
     public Boolean getEmailNotify() {
@@ -131,7 +131,7 @@ public class ApproverParam {
     }
 
     /**
-     * 短信通知
+     * 短信通知。
      * @return smsNotify
      */
     public Boolean getSmsNotify() {

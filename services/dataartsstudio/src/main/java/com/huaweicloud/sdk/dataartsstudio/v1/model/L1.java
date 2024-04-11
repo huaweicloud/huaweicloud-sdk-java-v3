@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.dataartsstudio.v1.model;
 import java.util.Objects;
 
 /**
- * 主题域分组中文名
+ * 主题域分组中文名，只读，创建和更新时无需填写。
  */
 public class L1 {
 

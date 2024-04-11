@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CompoundMetricVOSearchResultData
+ * 返回数据。
  */
 public class CompoundMetricVOSearchResultData {
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ListAggregationLogicTablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private AggregationLogicTableVOSearchResultData data;
 
-    public ListAggregationLogicTablesResponse withData(Object data) {
+    public ListAggregationLogicTablesResponse withData(AggregationLogicTableVOSearchResultData data) {
         this.data = data;
         return this;
     }
 
+    public ListAggregationLogicTablesResponse withData(Consumer<AggregationLogicTableVOSearchResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new AggregationLogicTableVOSearchResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public AggregationLogicTableVOSearchResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(AggregationLogicTableVOSearchResultData data) {
         this.data = data;
     }
 

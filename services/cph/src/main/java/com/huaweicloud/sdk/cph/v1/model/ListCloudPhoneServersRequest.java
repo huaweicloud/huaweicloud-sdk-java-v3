@@ -35,6 +35,26 @@ public class ListCloudPhoneServersRequest {
 
     private String networkVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_model_name")
+
+    private String phoneModelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_since")
+
+    private Long createSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_until")
+
+    private Long createUntil;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
     public ListCloudPhoneServersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -124,6 +144,80 @@ public class ListCloudPhoneServersRequest {
         this.networkVersion = networkVersion;
     }
 
+    public ListCloudPhoneServersRequest withPhoneModelName(String phoneModelName) {
+        this.phoneModelName = phoneModelName;
+        return this;
+    }
+
+    /**
+     * 手机规格名称。
+     * @return phoneModelName
+     */
+    public String getPhoneModelName() {
+        return phoneModelName;
+    }
+
+    public void setPhoneModelName(String phoneModelName) {
+        this.phoneModelName = phoneModelName;
+    }
+
+    public ListCloudPhoneServersRequest withCreateSince(Long createSince) {
+        this.createSince = createSince;
+        return this;
+    }
+
+    /**
+     * 查询的起始时间戳。
+     * minimum: 0
+     * maximum: 20000000000000
+     * @return createSince
+     */
+    public Long getCreateSince() {
+        return createSince;
+    }
+
+    public void setCreateSince(Long createSince) {
+        this.createSince = createSince;
+    }
+
+    public ListCloudPhoneServersRequest withCreateUntil(Long createUntil) {
+        this.createUntil = createUntil;
+        return this;
+    }
+
+    /**
+     * 查询的结束时间戳。
+     * minimum: 0
+     * maximum: 20000000000000
+     * @return createUntil
+     */
+    public Long getCreateUntil() {
+        return createUntil;
+    }
+
+    public void setCreateUntil(Long createUntil) {
+        this.createUntil = createUntil;
+    }
+
+    public ListCloudPhoneServersRequest withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 服务器状态。 - 0、1、3、4：创建中 - 2：异常 - 5：正常 - 8：冻结 - 10：关机 - 11：关机中 - 12：关机失败 - 13：开机中
+     * minimum: 0
+     * maximum: 128
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +229,23 @@ public class ListCloudPhoneServersRequest {
         ListCloudPhoneServersRequest that = (ListCloudPhoneServersRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.serverId, that.serverId)
-            && Objects.equals(this.networkVersion, that.networkVersion);
+            && Objects.equals(this.networkVersion, that.networkVersion)
+            && Objects.equals(this.phoneModelName, that.phoneModelName)
+            && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.createUntil, that.createUntil)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, serverName, serverId, networkVersion);
+        return Objects.hash(offset,
+            limit,
+            serverName,
+            serverId,
+            networkVersion,
+            phoneModelName,
+            createSince,
+            createUntil,
+            status);
     }
 
     @Override
@@ -152,6 +257,10 @@ public class ListCloudPhoneServersRequest {
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    networkVersion: ").append(toIndentedString(networkVersion)).append("\n");
+        sb.append("    phoneModelName: ").append(toIndentedString(phoneModelName)).append("\n");
+        sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
+        sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

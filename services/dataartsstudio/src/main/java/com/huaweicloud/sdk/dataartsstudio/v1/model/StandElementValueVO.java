@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 标准属性值
+ * 标准属性值。
  */
 public class StandElementValueVO {
 
@@ -72,7 +72,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 属性名称
+     * 属性名称。
      * @return fdName
      */
     public String getFdName() {
@@ -89,7 +89,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 属性值
+     * 属性值。
      * @return fdValue
      */
     public String getFdValue() {
@@ -106,7 +106,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 属性定义的id
+     * 属性定义的ID。
      * @return fdId
      */
     public Long getFdId() {
@@ -123,7 +123,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 标准所属目录
+     * 标准所属目录。
      * @return directoryId
      */
     public Long getDirectoryId() {
@@ -140,7 +140,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 标准所属行
+     * 标准所属行。
      * @return rowId
      */
     public Long getRowId() {
@@ -157,7 +157,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * ID
+     * 数据标准的ID。
      * @return id
      */
     public Long getId() {
@@ -191,7 +191,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -208,7 +208,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -225,7 +225,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -242,7 +242,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

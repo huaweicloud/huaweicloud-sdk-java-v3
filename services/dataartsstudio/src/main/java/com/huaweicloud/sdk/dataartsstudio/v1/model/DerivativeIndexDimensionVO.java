@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 维度分组(颗粒度)
+ * 维度分组(颗粒度)。
  */
 public class DerivativeIndexDimensionVO {
 
@@ -104,7 +104,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度分组id
+     * 维度分组ID。
      * @return groupId
      */
     public String getGroupId() {
@@ -121,7 +121,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度角色
+     * 维度角色。
      * @return role
      */
     public String getRole() {
@@ -138,7 +138,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度id
+     * 维度ID。
      * @return dimensionId
      */
     public Long getDimensionId() {
@@ -155,7 +155,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度层级id
+     * 维度层级ID。
      * @return hierarchiesId
      */
     public Long getHierarchiesId() {
@@ -172,7 +172,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 序号
+     * 序号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -189,7 +189,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度分组名称
+     * 维度分组名称。
      * @return groupName
      */
     public String getGroupName() {
@@ -206,7 +206,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度分组编码
+     * 维度分组编码。
      * @return groupCode
      */
     public String getGroupCode() {
@@ -256,7 +256,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 层级属性
+     * 层级属性。
      * @return hierarchies
      */
     public List<DimensionHierarchiesVO> getHierarchies() {
@@ -273,7 +273,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -290,7 +290,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -307,7 +307,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {
@@ -324,7 +324,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
     public Long getL1Id() {
@@ -341,7 +341,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -358,7 +358,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 业务对象id
+     * 业务对象ID。
      * @return l3Id
      */
     public Long getL3Id() {
@@ -375,7 +375,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型。
      * @return dwType
      */
     public String getDwType() {

@@ -110,7 +110,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -127,7 +127,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return mappingId
      */
     public String getMappingId() {
@@ -144,7 +144,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 目的字段id
+     * 目的字段ID。
      * @return targetAttrId
      */
     public Long getTargetAttrId() {
@@ -161,7 +161,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 目的字段排序
+     * 目的字段排序。
      * @return targetAttrName
      */
     public String getTargetAttrName() {
@@ -178,7 +178,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表id, 通过,join
+     * 源表ID。
      * @return srcTableIds
      */
     public String getSrcTableIds() {
@@ -211,7 +211,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表名称数组
+     * 源表名称数组。
      * @return srcTableNames
      */
     public List<String> getSrcTableNames() {
@@ -244,7 +244,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表db名称数组
+     * 源表db名称数组。
      * @return srcTableDbNames
      */
     public List<String> getSrcTableDbNames() {
@@ -277,7 +277,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表模型id数组
+     * 源表在关系建模中的模型ID数组。
      * @return srcTableModelIds
      */
     public List<Long> getSrcTableModelIds() {
@@ -310,7 +310,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表id数组
+     * 源表ID数组。
      * @return srcTableIdList
      */
     public List<Long> getSrcTableIdList() {
@@ -327,7 +327,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段id, 通过,join
+     * 源表字段ID。
      * @return srcAttrIds
      */
     public String getSrcAttrIds() {
@@ -360,7 +360,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段名称数组
+     * 源表字段名称数组。
      * @return srcAttrNames
      */
     public List<String> getSrcAttrNames() {
@@ -393,7 +393,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段id数组
+     * 源表字段ID数组。
      * @return srcAttrIdList
      */
     public List<Long> getSrcAttrIdList() {
@@ -410,7 +410,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return remark
      */
     public String getRemark() {
@@ -427,7 +427,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -444,7 +444,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -461,7 +461,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -478,7 +478,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -495,7 +495,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 目标属性
+     * 目标属性。
      * @return targetAttr
      */
     public Object getTargetAttr() {

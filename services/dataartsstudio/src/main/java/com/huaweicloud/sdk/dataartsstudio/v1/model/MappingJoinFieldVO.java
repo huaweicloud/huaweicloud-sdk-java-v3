@@ -36,7 +36,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 属性id
+     * 属性1ID。
      * @return field1Id
      */
     public Long getField1Id() {
@@ -53,7 +53,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 属性id
+     * 属性2ID。
      * @return field2Id
      */
     public Long getField2Id() {
@@ -70,7 +70,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 名称
+     * 属性1名称。
      * @return field1Name
      */
     public String getField1Name() {
@@ -87,7 +87,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 名称
+     * 属性2名称。
      * @return field2Name
      */
     public String getField2Name() {

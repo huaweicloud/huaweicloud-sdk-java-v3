@@ -9,6 +9,7 @@ import com.huaweicloud.sdk.iotda.v5.model.AddActionReq;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplication;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddBacklogPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDevice;
@@ -17,6 +18,7 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddFlowControlPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.AddProduct;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
@@ -57,6 +59,10 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionRequest;
@@ -83,6 +89,10 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionRequest;
@@ -117,6 +127,10 @@ import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
@@ -164,6 +178,10 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
@@ -183,6 +201,7 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateActionReq;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateBacklogPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDesireds;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
@@ -192,11 +211,16 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateFlowControlPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProduct;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionRequest;
@@ -582,6 +606,197 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getInstanceId,
                 ShowAsyncDeviceCommandRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoutingBacklogPolicyRequest, CreateRoutingBacklogPolicyResponse> createRoutingBacklogPolicy =
+        genForCreateRoutingBacklogPolicy();
+
+    private static HttpRequestDef<CreateRoutingBacklogPolicyRequest, CreateRoutingBacklogPolicyResponse> genForCreateRoutingBacklogPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateRoutingBacklogPolicyRequest, CreateRoutingBacklogPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRoutingBacklogPolicyRequest.class,
+                    CreateRoutingBacklogPolicyResponse.class)
+                .withName("CreateRoutingBacklogPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/backlog-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoutingBacklogPolicyRequest::getInstanceId,
+                CreateRoutingBacklogPolicyRequest::setInstanceId));
+        builder.<AddBacklogPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddBacklogPolicy.class),
+            f -> f.withMarshaller(CreateRoutingBacklogPolicyRequest::getBody,
+                CreateRoutingBacklogPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRoutingBacklogPolicyRequest, DeleteRoutingBacklogPolicyResponse> deleteRoutingBacklogPolicy =
+        genForDeleteRoutingBacklogPolicy();
+
+    private static HttpRequestDef<DeleteRoutingBacklogPolicyRequest, DeleteRoutingBacklogPolicyResponse> genForDeleteRoutingBacklogPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoutingBacklogPolicyRequest, DeleteRoutingBacklogPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRoutingBacklogPolicyRequest.class,
+                    DeleteRoutingBacklogPolicyResponse.class)
+                .withName("DeleteRoutingBacklogPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutingBacklogPolicyRequest::getPolicyId,
+                DeleteRoutingBacklogPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutingBacklogPolicyRequest::getInstanceId,
+                DeleteRoutingBacklogPolicyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingBacklogPolicyResponse::getBody,
+                DeleteRoutingBacklogPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoutingBacklogPolicyRequest, ListRoutingBacklogPolicyResponse> listRoutingBacklogPolicy =
+        genForListRoutingBacklogPolicy();
+
+    private static HttpRequestDef<ListRoutingBacklogPolicyRequest, ListRoutingBacklogPolicyResponse> genForListRoutingBacklogPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListRoutingBacklogPolicyRequest, ListRoutingBacklogPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListRoutingBacklogPolicyRequest.class, ListRoutingBacklogPolicyResponse.class)
+                .withName("ListRoutingBacklogPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/backlog-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingBacklogPolicyRequest::getPolicyName,
+                ListRoutingBacklogPolicyRequest::setPolicyName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutingBacklogPolicyRequest::getLimit,
+                ListRoutingBacklogPolicyRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingBacklogPolicyRequest::getMarker,
+                ListRoutingBacklogPolicyRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutingBacklogPolicyRequest::getOffset,
+                ListRoutingBacklogPolicyRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingBacklogPolicyRequest::getInstanceId,
+                ListRoutingBacklogPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRoutingBacklogPolicyRequest, ShowRoutingBacklogPolicyResponse> showRoutingBacklogPolicy =
+        genForShowRoutingBacklogPolicy();
+
+    private static HttpRequestDef<ShowRoutingBacklogPolicyRequest, ShowRoutingBacklogPolicyResponse> genForShowRoutingBacklogPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRoutingBacklogPolicyRequest, ShowRoutingBacklogPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRoutingBacklogPolicyRequest.class, ShowRoutingBacklogPolicyResponse.class)
+                .withName("ShowRoutingBacklogPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoutingBacklogPolicyRequest::getPolicyId,
+                ShowRoutingBacklogPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoutingBacklogPolicyRequest::getInstanceId,
+                ShowRoutingBacklogPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse> updateRoutingBacklogPolicy =
+        genForUpdateRoutingBacklogPolicy();
+
+    private static HttpRequestDef<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse> genForUpdateRoutingBacklogPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateRoutingBacklogPolicyRequest.class,
+                    UpdateRoutingBacklogPolicyResponse.class)
+                .withName("UpdateRoutingBacklogPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/backlog-policy/{policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutingBacklogPolicyRequest::getPolicyId,
+                UpdateRoutingBacklogPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutingBacklogPolicyRequest::getInstanceId,
+                UpdateRoutingBacklogPolicyRequest::setInstanceId));
+        builder.<UpdateBacklogPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBacklogPolicy.class),
+            f -> f.withMarshaller(UpdateRoutingBacklogPolicyRequest::getBody,
+                UpdateRoutingBacklogPolicyRequest::setBody));
 
         // response
 
@@ -1856,6 +2071,213 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(UpdateDesireds.class),
             f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getBody,
                 UpdateDeviceShadowDesiredDataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse> createRoutingFlowControlPolicy =
+        genForCreateRoutingFlowControlPolicy();
+
+    private static HttpRequestDef<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse> genForCreateRoutingFlowControlPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRoutingFlowControlPolicyRequest.class,
+                    CreateRoutingFlowControlPolicyResponse.class)
+                .withName("CreateRoutingFlowControlPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/flowcontrol-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoutingFlowControlPolicyRequest::getInstanceId,
+                CreateRoutingFlowControlPolicyRequest::setInstanceId));
+        builder.<AddFlowControlPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddFlowControlPolicy.class),
+            f -> f.withMarshaller(CreateRoutingFlowControlPolicyRequest::getBody,
+                CreateRoutingFlowControlPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRoutingFlowControlPolicyRequest, DeleteRoutingFlowControlPolicyResponse> deleteRoutingFlowControlPolicy =
+        genForDeleteRoutingFlowControlPolicy();
+
+    private static HttpRequestDef<DeleteRoutingFlowControlPolicyRequest, DeleteRoutingFlowControlPolicyResponse> genForDeleteRoutingFlowControlPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoutingFlowControlPolicyRequest, DeleteRoutingFlowControlPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRoutingFlowControlPolicyRequest.class,
+                    DeleteRoutingFlowControlPolicyResponse.class)
+                .withName("DeleteRoutingFlowControlPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutingFlowControlPolicyRequest::getPolicyId,
+                DeleteRoutingFlowControlPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoutingFlowControlPolicyRequest::getInstanceId,
+                DeleteRoutingFlowControlPolicyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingFlowControlPolicyResponse::getBody,
+                DeleteRoutingFlowControlPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoutingFlowControlPolicyRequest, ListRoutingFlowControlPolicyResponse> listRoutingFlowControlPolicy =
+        genForListRoutingFlowControlPolicy();
+
+    private static HttpRequestDef<ListRoutingFlowControlPolicyRequest, ListRoutingFlowControlPolicyResponse> genForListRoutingFlowControlPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListRoutingFlowControlPolicyRequest, ListRoutingFlowControlPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRoutingFlowControlPolicyRequest.class,
+                    ListRoutingFlowControlPolicyResponse.class)
+                .withName("ListRoutingFlowControlPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/flowcontrol-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getScope,
+                ListRoutingFlowControlPolicyRequest::setScope));
+        builder.<String>withRequestField("scope_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getScopeValue,
+                ListRoutingFlowControlPolicyRequest::setScopeValue));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getPolicyName,
+                ListRoutingFlowControlPolicyRequest::setPolicyName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getLimit,
+                ListRoutingFlowControlPolicyRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getMarker,
+                ListRoutingFlowControlPolicyRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getOffset,
+                ListRoutingFlowControlPolicyRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutingFlowControlPolicyRequest::getInstanceId,
+                ListRoutingFlowControlPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRoutingFlowControlPolicyRequest, ShowRoutingFlowControlPolicyResponse> showRoutingFlowControlPolicy =
+        genForShowRoutingFlowControlPolicy();
+
+    private static HttpRequestDef<ShowRoutingFlowControlPolicyRequest, ShowRoutingFlowControlPolicyResponse> genForShowRoutingFlowControlPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRoutingFlowControlPolicyRequest, ShowRoutingFlowControlPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRoutingFlowControlPolicyRequest.class,
+                    ShowRoutingFlowControlPolicyResponse.class)
+                .withName("ShowRoutingFlowControlPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoutingFlowControlPolicyRequest::getPolicyId,
+                ShowRoutingFlowControlPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoutingFlowControlPolicyRequest::getInstanceId,
+                ShowRoutingFlowControlPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse> updateRoutingFlowControlPolicy =
+        genForUpdateRoutingFlowControlPolicy();
+
+    private static HttpRequestDef<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse> genForUpdateRoutingFlowControlPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateRoutingFlowControlPolicyRequest.class,
+                    UpdateRoutingFlowControlPolicyResponse.class)
+                .withName("UpdateRoutingFlowControlPolicy")
+                .withUri("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutingFlowControlPolicyRequest::getPolicyId,
+                UpdateRoutingFlowControlPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoutingFlowControlPolicyRequest::getInstanceId,
+                UpdateRoutingFlowControlPolicyRequest::setInstanceId));
+        builder.<UpdateFlowControlPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlowControlPolicy.class),
+            f -> f.withMarshaller(UpdateRoutingFlowControlPolicyRequest::getBody,
+                UpdateRoutingFlowControlPolicyRequest::setBody));
 
         // response
 

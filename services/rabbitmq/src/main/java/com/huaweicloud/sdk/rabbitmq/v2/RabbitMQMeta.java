@@ -337,10 +337,10 @@ public class RabbitMQMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ListInstancesDetailsRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.EngineEnum.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getEngine, ListInstancesDetailsRequest::setEngine));
         builder.<String>withRequestField("name",
             LocationType.Query,

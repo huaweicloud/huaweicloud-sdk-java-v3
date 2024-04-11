@@ -69,6 +69,21 @@ public class CreateNet2CloudPhoneServerRequestBody {
     private CreateNet2CloudPhoneServerRequestBodyPublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_count_per_ip")
+
+    private Integer phoneCountPerIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_data_volume")
+
+    private CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_share_data_volume")
+
+    private CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume serverShareDataVolume;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width")
 
     private CreateNet2CloudPhoneServerRequestBodyBandWidth bandWidth;
@@ -84,7 +99,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机服务器名称，  不超过60个字符，只支持英文字母、数字、汉字、下划线和中划线。  批量购买会在服务器名称后自动添加序号，比如设置此参数为server-1，那么创建的云手机服务器名称会自动按序增加数字后缀，比如为server-1-0001。
+     * 云手机服务器名称，  不超过60个字符，只支持英文字母、数字、汉字、下划线和中划线。  批量[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)会在服务器名称后自动添加序号，比如设置此参数为server-1，那么创建的云手机服务器名称会自动按序增加数字后缀，比如为server-1-0001。
      * @return serverName
      */
     public String getServerName() {
@@ -152,7 +167,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 购买的云手机服务器个数，最多可购买10台。
+     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的云手机服务器个数，最多可[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)10台。
      * minimum: 0
      * maximum: 1024
      * @return count
@@ -320,6 +335,82 @@ public class CreateNet2CloudPhoneServerRequestBody {
         this.publicIp = publicIp;
     }
 
+    public CreateNet2CloudPhoneServerRequestBody withPhoneCountPerIp(Integer phoneCountPerIp) {
+        this.phoneCountPerIp = phoneCountPerIp;
+        return this;
+    }
+
+    /**
+     * 多少个手机共用一个vip。默认为手机开数，表示所有手机共享1个vip。取值范围：1到手机规格开数。
+     * minimum: 0
+     * maximum: 65535
+     * @return phoneCountPerIp
+     */
+    public Integer getPhoneCountPerIp() {
+        return phoneCountPerIp;
+    }
+
+    public void setPhoneCountPerIp(Integer phoneCountPerIp) {
+        this.phoneCountPerIp = phoneCountPerIp;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBody withPhoneDataVolume(
+        CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
+        this.phoneDataVolume = phoneDataVolume;
+        return this;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBody withPhoneDataVolume(
+        Consumer<CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume> phoneDataVolumeSetter) {
+        if (this.phoneDataVolume == null) {
+            this.phoneDataVolume = new CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume();
+            phoneDataVolumeSetter.accept(this.phoneDataVolume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get phoneDataVolume
+     * @return phoneDataVolume
+     */
+    public CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume getPhoneDataVolume() {
+        return phoneDataVolume;
+    }
+
+    public void setPhoneDataVolume(CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
+        this.phoneDataVolume = phoneDataVolume;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBody withServerShareDataVolume(
+        CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume serverShareDataVolume) {
+        this.serverShareDataVolume = serverShareDataVolume;
+        return this;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBody withServerShareDataVolume(
+        Consumer<CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume> serverShareDataVolumeSetter) {
+        if (this.serverShareDataVolume == null) {
+            this.serverShareDataVolume = new CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume();
+            serverShareDataVolumeSetter.accept(this.serverShareDataVolume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverShareDataVolume
+     * @return serverShareDataVolume
+     */
+    public CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume getServerShareDataVolume() {
+        return serverShareDataVolume;
+    }
+
+    public void setServerShareDataVolume(
+        CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume serverShareDataVolume) {
+        this.serverShareDataVolume = serverShareDataVolume;
+    }
+
     public CreateNet2CloudPhoneServerRequestBody withBandWidth(
         CreateNet2CloudPhoneServerRequestBodyBandWidth bandWidth) {
         this.bandWidth = bandWidth;
@@ -354,7 +445,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称。
+     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称。如上海一可用区1为cn-east-3a。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -380,7 +471,11 @@ public class CreateNet2CloudPhoneServerRequestBody {
             && Objects.equals(this.count, that.count) && Objects.equals(this.keypairName, that.keypairName)
             && Objects.equals(this.ports, that.ports) && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.tenantVpcId, that.tenantVpcId) && Objects.equals(this.nics, that.nics)
-            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.bandWidth, that.bandWidth)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.phoneCountPerIp, that.phoneCountPerIp)
+            && Objects.equals(this.phoneDataVolume, that.phoneDataVolume)
+            && Objects.equals(this.serverShareDataVolume, that.serverShareDataVolume)
+            && Objects.equals(this.bandWidth, that.bandWidth)
             && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
@@ -397,6 +492,9 @@ public class CreateNet2CloudPhoneServerRequestBody {
             tenantVpcId,
             nics,
             publicIp,
+            phoneCountPerIp,
+            phoneDataVolume,
+            serverShareDataVolume,
             bandWidth,
             availabilityZone);
     }
@@ -416,6 +514,9 @@ public class CreateNet2CloudPhoneServerRequestBody {
         sb.append("    tenantVpcId: ").append(toIndentedString(tenantVpcId)).append("\n");
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    phoneCountPerIp: ").append(toIndentedString(phoneCountPerIp)).append("\n");
+        sb.append("    phoneDataVolume: ").append(toIndentedString(phoneDataVolume)).append("\n");
+        sb.append("    serverShareDataVolume: ").append(toIndentedString(serverShareDataVolume)).append("\n");
         sb.append("    bandWidth: ").append(toIndentedString(bandWidth)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");

@@ -46,6 +46,11 @@ public class DeployStackSetRequestBody {
 
     private VarOverridesPrimitiveTypeHolderVarOverrides varOverrides;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_preferences")
+
+    private OperationPreferences operationPreferences;
+
     public DeployStackSetRequestBody withStackSetId(String stackSetId) {
         this.stackSetId = stackSetId;
         return this;
@@ -184,6 +189,33 @@ public class DeployStackSetRequestBody {
         this.varOverrides = varOverrides;
     }
 
+    public DeployStackSetRequestBody withOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+        return this;
+    }
+
+    public DeployStackSetRequestBody withOperationPreferences(
+        Consumer<OperationPreferences> operationPreferencesSetter) {
+        if (this.operationPreferences == null) {
+            this.operationPreferences = new OperationPreferences();
+            operationPreferencesSetter.accept(this.operationPreferences);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get operationPreferences
+     * @return operationPreferences
+     */
+    public OperationPreferences getOperationPreferences() {
+        return operationPreferences;
+    }
+
+    public void setOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,12 +229,20 @@ public class DeployStackSetRequestBody {
             && Objects.equals(this.deploymentTargets, that.deploymentTargets)
             && Objects.equals(this.templateBody, that.templateBody)
             && Objects.equals(this.templateUri, that.templateUri) && Objects.equals(this.varsUri, that.varsUri)
-            && Objects.equals(this.varsBody, that.varsBody) && Objects.equals(this.varOverrides, that.varOverrides);
+            && Objects.equals(this.varsBody, that.varsBody) && Objects.equals(this.varOverrides, that.varOverrides)
+            && Objects.equals(this.operationPreferences, that.operationPreferences);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stackSetId, deploymentTargets, templateBody, templateUri, varsUri, varsBody, varOverrides);
+        return Objects.hash(stackSetId,
+            deploymentTargets,
+            templateBody,
+            templateUri,
+            varsUri,
+            varsBody,
+            varOverrides,
+            operationPreferences);
     }
 
     @Override
@@ -216,6 +256,7 @@ public class DeployStackSetRequestBody {
         sb.append("    varsUri: ").append(toIndentedString(varsUri)).append("\n");
         sb.append("    varsBody: ").append(toIndentedString(varsBody)).append("\n");
         sb.append("    varOverrides: ").append(toIndentedString(varOverrides)).append("\n");
+        sb.append("    operationPreferences: ").append(toIndentedString(operationPreferences)).append("\n");
         sb.append("}");
         return sb.toString();
     }

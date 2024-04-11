@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 码表属性信息
+ * 码表属性信息。
  */
 public class CodeTableFieldVO {
 
@@ -79,7 +79,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * ID
+     * 码表字段ID。
      * @return id
      */
     public Long getId() {
@@ -96,7 +96,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 所属码表id
+     * 所属码表ID。
      * @return codeTableId
      */
     public Long getCodeTableId() {
@@ -113,7 +113,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 序号
+     * 序号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -130,7 +130,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 字段名，英文
+     * 字段名，英文。
      * @return nameEn
      */
     public String getNameEn() {
@@ -147,7 +147,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 字段名，中文
+     * 字段名，中文。
      * @return nameCh
      */
     public String getNameCh() {
@@ -164,7 +164,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -181,7 +181,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 字段类型
+     * 字段类型。
      * @return dataType
      */
     public String getDataType() {
@@ -215,7 +215,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 数据类型扩展字段
+     * 数据类型扩展字段。
      * @return dataTypeExtend
      */
     public String getDataTypeExtend() {
@@ -232,7 +232,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 是否唯一
+     * 是否唯一。
      * @return isUniqueKey
      */
     public Boolean getIsUniqueKey() {
@@ -265,7 +265,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 码表属性值
+     * 码表属性值。
      * @return codeTableFieldValues
      */
     public List<CodeTableFieldValueVO> getCodeTableFieldValues() {
@@ -282,7 +282,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 码表属性值总数
+     * 码表属性值总数。
      * @return countFieldValues
      */
     public Integer getCountFieldValues() {

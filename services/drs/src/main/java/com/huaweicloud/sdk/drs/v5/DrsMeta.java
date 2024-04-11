@@ -89,6 +89,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ModifyParameterReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyStartPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
@@ -138,6 +140,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
@@ -1457,6 +1461,48 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse> listsAgencyPermissions =
+        genForListsAgencyPermissions();
+
+    private static HttpRequestDef<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse> genForListsAgencyPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListsAgencyPermissionsRequest.class, ListsAgencyPermissionsResponse.class)
+            .withName("ListsAgencyPermissions")
+            .withUri("/v5/{project_id}/agency/permissions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("source_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListsAgencyPermissionsRequest::getSourceType,
+                ListsAgencyPermissionsRequest::setSourceType));
+        builder.<String>withRequestField("target_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListsAgencyPermissionsRequest::getTargetType,
+                ListsAgencyPermissionsRequest::setTargetType));
+        builder.<Boolean>withRequestField("is_non_dbs",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListsAgencyPermissionsRequest::getIsNonDbs,
+                ListsAgencyPermissionsRequest::setIsNonDbs));
+        builder.<ListsAgencyPermissionsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListsAgencyPermissionsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListsAgencyPermissionsRequest::getXLanguage,
+                ListsAgencyPermissionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowActionsRequest, ShowActionsResponse> showActions = genForShowActions();
 
     private static HttpRequestDef<ShowActionsRequest, ShowActionsResponse> genForShowActions() {
@@ -2274,6 +2320,74 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowProgressDataRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowProgressDataRequest::getXLanguage, ShowProgressDataRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReplayResultsRequest, ShowReplayResultsResponse> showReplayResults =
+        genForShowReplayResults();
+
+    private static HttpRequestDef<ShowReplayResultsRequest, ShowReplayResultsResponse> genForShowReplayResults() {
+        // basic
+        HttpRequestDef.Builder<ShowReplayResultsRequest, ShowReplayResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReplayResultsRequest.class, ShowReplayResultsResponse.class)
+                .withName("ShowReplayResults")
+                .withUri("/v5/{project_id}/jobs/{job_id}/replay-results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getJobId, ShowReplayResultsRequest::setJobId));
+        builder.<ShowReplayResultsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowReplayResultsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getType, ShowReplayResultsRequest::setType));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getStartTime, ShowReplayResultsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getEndTime, ShowReplayResultsRequest::setEndTime));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getOffset, ShowReplayResultsRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getLimit, ShowReplayResultsRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getSortKey, ShowReplayResultsRequest::setSortKey));
+        builder.<ShowReplayResultsRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowReplayResultsRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getSortDir, ShowReplayResultsRequest::setSortDir));
+        builder.<ShowReplayResultsRequest.TargetNameEnum>withRequestField("target_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowReplayResultsRequest.TargetNameEnum.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getTargetName, ShowReplayResultsRequest::setTargetName));
+        builder.<ShowReplayResultsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowReplayResultsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getXLanguage, ShowReplayResultsRequest::setXLanguage));
 
         // response
 

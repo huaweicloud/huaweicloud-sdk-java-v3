@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 自定义项信息
+ * 自定义项信息。
  */
 public class CustomizedFieldsVO {
 
@@ -42,7 +42,7 @@ public class CustomizedFieldsVO {
     private String optionalValues;
 
     /**
-     * 自定义项类型：TABLE, ATTRIBUTE, SUBJECT, METRIC
+     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
      */
     public static final class TypeEnum {
 
@@ -164,7 +164,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -181,7 +181,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 中文名称
+     * 中文名称。
      * @return nameCh
      */
     public String getNameCh() {
@@ -198,7 +198,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 英文名称
+     * 英文名称。
      * @return nameEn
      */
     public String getNameEn() {
@@ -215,7 +215,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 是否必填
+     * 是否必填。
      * @return notNull
      */
     public Boolean getNotNull() {
@@ -232,7 +232,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 可选值。分号分隔
+     * 可选值。分号分隔。
      * @return optionalValues
      */
     public String getOptionalValues() {
@@ -249,7 +249,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 自定义项类型：TABLE, ATTRIBUTE, SUBJECT, METRIC
+     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
      * @return type
      */
     public TypeEnum getType() {
@@ -266,7 +266,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 顺序
+     * 顺序。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -283,7 +283,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -300,7 +300,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -317,7 +317,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -334,7 +334,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -351,7 +351,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

@@ -225,7 +225,7 @@ public class DataProfileRO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obsconfig")
 
-    private Object obsconfig;
+    private OBSCommonConfig obsconfig;
 
     public DataProfileRO withDwId(String dwId) {
         this.dwId = dwId;
@@ -497,20 +497,29 @@ public class DataProfileRO {
         this.autoStop = autoStop;
     }
 
-    public DataProfileRO withObsconfig(Object obsconfig) {
+    public DataProfileRO withObsconfig(OBSCommonConfig obsconfig) {
         this.obsconfig = obsconfig;
         return this;
     }
 
+    public DataProfileRO withObsconfig(Consumer<OBSCommonConfig> obsconfigSetter) {
+        if (this.obsconfig == null) {
+            this.obsconfig = new OBSCommonConfig();
+            obsconfigSetter.accept(this.obsconfig);
+        }
+
+        return this;
+    }
+
     /**
-     * obs配置，概要采集不涉及
+     * Get obsconfig
      * @return obsconfig
      */
-    public Object getObsconfig() {
+    public OBSCommonConfig getObsconfig() {
         return obsconfig;
     }
 
-    public void setObsconfig(Object obsconfig) {
+    public void setObsconfig(OBSCommonConfig obsconfig) {
         this.obsconfig = obsconfig;
     }
 

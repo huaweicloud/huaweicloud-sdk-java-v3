@@ -15,10 +15,74 @@ import java.util.Objects;
  */
 public class ListInstancesDetailsRequest {
 
+    /**
+     * 引擎类型：rabbitmq。
+     */
+    public static final class EngineEnum {
+
+        /**
+         * Enum RABBITMQ for value: "rabbitmq"
+         */
+        public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
+
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("rabbitmq", RABBITMQ);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
+        }
+
+        public static EngineEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineEnum) {
+                return this.value.equals(((EngineEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private String engine;
+    private EngineEnum engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -348,20 +412,20 @@ public class ListInstancesDetailsRequest {
 
     private String limit;
 
-    public ListInstancesDetailsRequest withEngine(String engine) {
+    public ListInstancesDetailsRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 引擎类型：rabbitmq，参数缺失查询所有实例。
+     * 引擎类型：rabbitmq。
      * @return engine
      */
-    public String getEngine() {
+    public EngineEnum getEngine() {
         return engine;
     }
 
-    public void setEngine(String engine) {
+    public void setEngine(EngineEnum engine) {
         this.engine = engine;
     }
 

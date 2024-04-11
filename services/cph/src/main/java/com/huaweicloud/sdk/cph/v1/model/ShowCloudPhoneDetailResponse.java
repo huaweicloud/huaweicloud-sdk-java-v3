@@ -40,6 +40,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_version")
+
+    private String imageVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vnc_enable")
 
     private String vncEnable;
@@ -68,6 +73,31 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonProperty(value = "metadata")
 
     private ShowCloudPhoneDetailResponseBodyMetadata metadata;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_data_volume")
+
+    private PhoneDataVolume phoneDataVolume;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "imei")
+
+    private String imei;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_type")
+
+    private String trafficType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_mode")
+
+    private Integer volumeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -164,6 +194,23 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.imageId = imageId;
     }
 
+    public ShowCloudPhoneDetailResponse withImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+        return this;
+    }
+
+    /**
+     * 镜像版本。
+     * @return imageVersion
+     */
+    public String getImageVersion() {
+        return imageVersion;
+    }
+
+    public void setImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+    }
+
     public ShowCloudPhoneDetailResponse withVncEnable(String vncEnable) {
         this.vncEnable = vncEnable;
         return this;
@@ -204,7 +251,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机状态。 - 0：创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * 云手机状态。 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
      * minimum: -128
      * maximum: 128
      * @return status
@@ -294,6 +341,102 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    public ShowCloudPhoneDetailResponse withPhoneDataVolume(PhoneDataVolume phoneDataVolume) {
+        this.phoneDataVolume = phoneDataVolume;
+        return this;
+    }
+
+    public ShowCloudPhoneDetailResponse withPhoneDataVolume(Consumer<PhoneDataVolume> phoneDataVolumeSetter) {
+        if (this.phoneDataVolume == null) {
+            this.phoneDataVolume = new PhoneDataVolume();
+            phoneDataVolumeSetter.accept(this.phoneDataVolume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get phoneDataVolume
+     * @return phoneDataVolume
+     */
+    public PhoneDataVolume getPhoneDataVolume() {
+        return phoneDataVolume;
+    }
+
+    public void setPhoneDataVolume(PhoneDataVolume phoneDataVolume) {
+        this.phoneDataVolume = phoneDataVolume;
+    }
+
+    public ShowCloudPhoneDetailResponse withImei(String imei) {
+        this.imei = imei;
+        return this;
+    }
+
+    /**
+     * imei码。
+     * @return imei
+     */
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
+
+    public ShowCloudPhoneDetailResponse withTrafficType(String trafficType) {
+        this.trafficType = trafficType;
+        return this;
+    }
+
+    /**
+     * 手机路由类型。 - direct：默认路由 - routing：路由到编码容器
+     * @return trafficType
+     */
+    public String getTrafficType() {
+        return trafficType;
+    }
+
+    public void setTrafficType(String trafficType) {
+        this.trafficType = trafficType;
+    }
+
+    public ShowCloudPhoneDetailResponse withVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+        return this;
+    }
+
+    /**
+     * 手机物理磁盘是否独立。 - 0：不独立 - 1：独立
+     * minimum: 0
+     * maximum: 100
+     * @return volumeMode
+     */
+    public Integer getVolumeMode() {
+        return volumeMode;
+    }
+
+    public void setVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+    }
+
+    public ShowCloudPhoneDetailResponse withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 云手机服务器所在的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     public ShowCloudPhoneDetailResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -339,11 +482,15 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         ShowCloudPhoneDetailResponse that = (ShowCloudPhoneDetailResponse) obj;
         return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.phoneName, that.phoneName)
             && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.phoneId, that.phoneId)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.vncEnable, that.vncEnable)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageVersion, that.imageVersion)
+            && Objects.equals(this.vncEnable, that.vncEnable)
             && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.status, that.status)
             && Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.property, that.property)
-            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.phoneDataVolume, that.phoneDataVolume) && Objects.equals(this.imei, that.imei)
+            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.volumeMode, that.volumeMode)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -353,12 +500,18 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
             serverId,
             phoneId,
             imageId,
+            imageVersion,
             vncEnable,
             phoneModelName,
             status,
             accessInfos,
             property,
             metadata,
+            phoneDataVolume,
+            imei,
+            trafficType,
+            volumeMode,
+            availabilityZone,
             createTime,
             updateTime);
     }
@@ -372,12 +525,18 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    phoneId: ").append(toIndentedString(phoneId)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
         sb.append("    vncEnable: ").append(toIndentedString(vncEnable)).append("\n");
         sb.append("    phoneModelName: ").append(toIndentedString(phoneModelName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    accessInfos: ").append(toIndentedString(accessInfos)).append("\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    phoneDataVolume: ").append(toIndentedString(phoneDataVolume)).append("\n");
+        sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
+        sb.append("    trafficType: ").append(toIndentedString(trafficType)).append("\n");
+        sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

@@ -20,6 +20,11 @@ public class ResizeFlavorObject {
 
     private Boolean isAutoPay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_delay")
+
+    private Boolean isDelay;
+
     public ResizeFlavorObject withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -54,6 +59,23 @@ public class ResizeFlavorObject {
         this.isAutoPay = isAutoPay;
     }
 
+    public ResizeFlavorObject withIsDelay(Boolean isDelay) {
+        this.isDelay = isDelay;
+        return this;
+    }
+
+    /**
+     * 是否定时变更。 - true，为定时在运维时间窗做变更。 - false，为立即变更，默认该方式。
+     * @return isDelay
+     */
+    public Boolean getIsDelay() {
+        return isDelay;
+    }
+
+    public void setIsDelay(Boolean isDelay) {
+        this.isDelay = isDelay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ResizeFlavorObject {
             return false;
         }
         ResizeFlavorObject that = (ResizeFlavorObject) obj;
-        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.isAutoPay, that.isAutoPay);
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isDelay, that.isDelay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, isAutoPay);
+        return Objects.hash(specCode, isAutoPay, isDelay);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ResizeFlavorObject {
         sb.append("class ResizeFlavorObject {\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    isDelay: ").append(toIndentedString(isDelay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

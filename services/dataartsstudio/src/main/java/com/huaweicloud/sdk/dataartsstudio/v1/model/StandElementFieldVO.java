@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 属性
+ * 属性。
  */
 public class StandElementFieldVO {
 
@@ -77,7 +77,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 属性名称
+     * 属性名称。
      * @return fdName
      */
     public String getFdName() {
@@ -94,7 +94,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 属性描述
+     * 属性描述。
      * @return description
      */
     public String getDescription() {
@@ -111,7 +111,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * ID
+     * 数据标准ID。
      * @return id
      */
     public Long getId() {
@@ -128,7 +128,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 是否显示，系统默认项必然显示不允许修改
+     * 是否显示，系统默认项必然显示不允许修改。
      * @return actived
      */
     public Boolean getActived() {
@@ -145,7 +145,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 是否必填
+     * 是否必填。
      * @return required
      */
     public Boolean getRequired() {
@@ -162,7 +162,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 是否可搜索
+     * 是否可搜索。
      * @return searchable
      */
     public Boolean getSearchable() {
@@ -179,7 +179,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 前端展示名
+     * 前端展示名。
      * @return displayedName
      */
     public String getDisplayedName() {
@@ -196,7 +196,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 前端展示名英文
+     * 前端展示名英文。
      * @return displayedNameEn
      */
     public String getDisplayedNameEn() {
@@ -213,7 +213,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -230,7 +230,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -247,7 +247,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -264,7 +264,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 码表结构
+ * 码表结构。
  */
 public class CodeTableVO {
 
@@ -90,7 +90,7 @@ public class CodeTableVO {
     }
 
     /**
-     * ID
+     * 码表ID。
      * @return id
      */
     public Long getId() {
@@ -107,7 +107,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 表名称，英文名
+     * 表名称，英文名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -124,7 +124,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 表名称，中文名
+     * 表名称，中文名。
      * @return nameCh
      */
     public String getNameCh() {
@@ -141,7 +141,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 表版本
+     * 表版本。
      * @return tbVersion
      */
     public Integer getTbVersion() {
@@ -158,7 +158,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 目录ID
+     * 目录ID。
      * @return directoryId
      */
     public Long getDirectoryId() {
@@ -175,7 +175,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 目录树
+     * 目录树。
      * @return directoryPath
      */
     public String getDirectoryPath() {
@@ -192,7 +192,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -209,7 +209,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -243,7 +243,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -260,7 +260,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -345,7 +345,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 码表属性信息
+     * 码表属性信息。
      * @return codeTableFields
      */
     public List<CodeTableFieldVO> getCodeTableFields() {

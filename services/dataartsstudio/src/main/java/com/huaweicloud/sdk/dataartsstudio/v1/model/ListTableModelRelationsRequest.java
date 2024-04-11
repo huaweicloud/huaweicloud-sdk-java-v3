@@ -21,6 +21,11 @@ public class ListTableModelRelationsRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_id")
 
     private String modelId;
@@ -31,7 +36,7 @@ public class ListTableModelRelationsRequest {
     private String tableIds;
 
     /**
-     * 表类型
+     * 表类型。TABLE_MODEL(关系建模：逻辑实体/物理表)、FACT_LOGIC_TABLE(事实表)。
      */
     public static final class BizTypeEnum {
 
@@ -121,7 +126,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -132,13 +137,32 @@ public class ListTableModelRelationsRequest {
         this.workspace = workspace;
     }
 
+    public ListTableModelRelationsRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public ListTableModelRelationsRequest withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
 
     /**
-     * 依据workspace id查工作区
+     * 所属关系建模的模型ID。
      * @return modelId
      */
     public String getModelId() {
@@ -172,7 +196,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 表类型
+     * 表类型。TABLE_MODEL(关系建模：逻辑实体/物理表)、FACT_LOGIC_TABLE(事实表)。
      * @return bizType
      */
     public BizTypeEnum getBizType() {
@@ -189,7 +213,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -207,7 +231,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -227,14 +251,15 @@ public class ListTableModelRelationsRequest {
             return false;
         }
         ListTableModelRelationsRequest that = (ListTableModelRelationsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.modelId, that.modelId)
-            && Objects.equals(this.tableIds, that.tableIds) && Objects.equals(this.bizType, that.bizType)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.modelId, that.modelId) && Objects.equals(this.tableIds, that.tableIds)
+            && Objects.equals(this.bizType, that.bizType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, modelId, tableIds, bizType, limit, offset);
+        return Objects.hash(workspace, xProjectId, modelId, tableIds, bizType, limit, offset);
     }
 
     @Override
@@ -242,6 +267,7 @@ public class ListTableModelRelationsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTableModelRelationsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
         sb.append("    tableIds: ").append(toIndentedString(tableIds)).append("\n");
         sb.append("    bizType: ").append(toIndentedString(bizType)).append("\n");

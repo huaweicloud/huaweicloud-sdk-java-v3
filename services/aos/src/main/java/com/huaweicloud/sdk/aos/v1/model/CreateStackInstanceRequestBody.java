@@ -26,6 +26,11 @@ public class CreateStackInstanceRequestBody {
 
     private VarOverridesPrimitiveTypeHolderVarOverrides varOverrides;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_preferences")
+
+    private OperationPreferences operationPreferences;
+
     public CreateStackInstanceRequestBody withStackSetId(String stackSetId) {
         this.stackSetId = stackSetId;
         return this;
@@ -96,6 +101,33 @@ public class CreateStackInstanceRequestBody {
         this.varOverrides = varOverrides;
     }
 
+    public CreateStackInstanceRequestBody withOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+        return this;
+    }
+
+    public CreateStackInstanceRequestBody withOperationPreferences(
+        Consumer<OperationPreferences> operationPreferencesSetter) {
+        if (this.operationPreferences == null) {
+            this.operationPreferences = new OperationPreferences();
+            operationPreferencesSetter.accept(this.operationPreferences);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get operationPreferences
+     * @return operationPreferences
+     */
+    public OperationPreferences getOperationPreferences() {
+        return operationPreferences;
+    }
+
+    public void setOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,12 +139,13 @@ public class CreateStackInstanceRequestBody {
         CreateStackInstanceRequestBody that = (CreateStackInstanceRequestBody) obj;
         return Objects.equals(this.stackSetId, that.stackSetId)
             && Objects.equals(this.deploymentTargets, that.deploymentTargets)
-            && Objects.equals(this.varOverrides, that.varOverrides);
+            && Objects.equals(this.varOverrides, that.varOverrides)
+            && Objects.equals(this.operationPreferences, that.operationPreferences);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stackSetId, deploymentTargets, varOverrides);
+        return Objects.hash(stackSetId, deploymentTargets, varOverrides, operationPreferences);
     }
 
     @Override
@@ -122,6 +155,7 @@ public class CreateStackInstanceRequestBody {
         sb.append("    stackSetId: ").append(toIndentedString(stackSetId)).append("\n");
         sb.append("    deploymentTargets: ").append(toIndentedString(deploymentTargets)).append("\n");
         sb.append("    varOverrides: ").append(toIndentedString(varOverrides)).append("\n");
+        sb.append("    operationPreferences: ").append(toIndentedString(operationPreferences)).append("\n");
         sb.append("}");
         return sb.toString();
     }

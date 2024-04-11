@@ -126,7 +126,7 @@ public class VersionModelVersionCheckoutAndUpdateDTOVersionModel {
     }
 
     /**
-     * 小版本ID。
+     * 主对象ID。
      * @return masterId
      */
     public String getMasterId() {

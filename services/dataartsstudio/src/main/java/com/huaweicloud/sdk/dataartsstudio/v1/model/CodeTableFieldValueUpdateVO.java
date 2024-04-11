@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 码表属性值修改内容
+ * 码表属性值修改内容。
  */
 public class CodeTableFieldValueUpdateVO {
 
@@ -50,7 +50,7 @@ public class CodeTableFieldValueUpdateVO {
     }
 
     /**
-     * 新增码表属性、属性值列表
+     * 新增码表属性、属性值列表。
      * @return toAdd
      */
     public List<CodeTableFieldVO> getToAdd() {
@@ -83,7 +83,7 @@ public class CodeTableFieldValueUpdateVO {
     }
 
     /**
-     * 编辑码表属性值列表
+     * 编辑码表属性值列表。
      * @return toModify
      */
     public List<CodeTableFieldVO> getToModify() {
@@ -116,7 +116,7 @@ public class CodeTableFieldValueUpdateVO {
     }
 
     /**
-     * 删除码表属性id列表
+     * 删除码表属性ID列表。
      * @return toRemove
      */
     public List<CodeTableFieldVO> getToRemove() {

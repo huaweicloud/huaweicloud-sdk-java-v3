@@ -97,7 +97,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 编码
+     * 编码ID。
      * @return id
      */
     public Long getId() {
@@ -114,7 +114,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 表id
+     * 表ID。
      * @return tableId
      */
     public Long getTableId() {
@@ -131,7 +131,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 属性id
+     * 属性ID。
      * @return attrId
      */
     public Long getAttrId() {
@@ -165,7 +165,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 质量id
+     * 质量ID。
      * @return dataQualityId
      */
     public Long getDataQualityId() {
@@ -182,7 +182,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 是否要显示  正则表达式
+     * 是否要显示正则表达式。
      * @return showControl
      */
     public Integer getShowControl() {
@@ -199,7 +199,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 质量名称
+     * 质量名称。
      * @return dataQualityName
      */
     public String getDataQualityName() {
@@ -216,7 +216,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 告警配置
+     * 告警配置。
      * @return alertConf
      */
     public String getAlertConf() {
@@ -233,7 +233,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 正则相关校验规则中正则配置
+     * 正则相关校验规则中正则配置。
      * @return expression
      */
     public String getExpression() {
@@ -250,7 +250,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 扩展信息
+     * 扩展信息。
      * @return extendInfo
      */
     public String getExtendInfo() {
@@ -267,7 +267,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 是否来源于数据标准质量配置
+     * 是否来源于数据标准质量配置。
      * @return fromStandard
      */
     public Boolean getFromStandard() {
@@ -284,7 +284,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 结果说明
+     * 结果说明。
      * @return resultDescription
      */
     public String getResultDescription() {
@@ -301,7 +301,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -318,7 +318,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -335,7 +335,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -352,7 +352,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

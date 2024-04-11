@@ -95,7 +95,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -112,7 +112,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -129,7 +129,7 @@ public class TableMappingVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -146,7 +146,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 目的表id
+     * 目的表ID。
      * @return targetTableId
      */
     public Long getTargetTableId() {
@@ -163,7 +163,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 来源表所属模型id
+     * 来源表在关系建模中的模型ID。
      * @return srcModelId
      */
     public Long getSrcModelId() {
@@ -180,7 +180,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 来源模型名称
+     * 来源模型名称。
      * @return srcModelName
      */
     public String getSrcModelName() {
@@ -197,7 +197,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 采集的视图来源，dws视图逆向使用
+     * 采集的视图来源，dws视图逆向使用。
      * @return viewText
      */
     public String getViewText() {
@@ -214,7 +214,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 目的表名称
+     * 目的表名称。
      * @return targetTableName
      */
     public String getTargetTableName() {
@@ -247,7 +247,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 详情
+     * 详情。
      * @return details
      */
     public List<TableMappingDetailVO> getDetails() {
@@ -280,7 +280,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 映射的表信息
+     * 映射的表信息。
      * @return sourceTables
      */
     public List<MappingSourceTableVO> getSourceTables() {
@@ -313,7 +313,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 映射的字段信息
+     * 映射的字段信息。
      * @return sourceFields
      */
     public List<MappingSourceFieldVO> getSourceFields() {
@@ -330,7 +330,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -347,7 +347,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -364,7 +364,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -381,7 +381,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {

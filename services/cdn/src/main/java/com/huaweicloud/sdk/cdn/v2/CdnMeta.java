@@ -58,6 +58,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowIpInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
@@ -1242,6 +1244,23 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLogsRequest::getEnterpriseProjectId, ShowLogsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
+
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v1.0/cdn/quota")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

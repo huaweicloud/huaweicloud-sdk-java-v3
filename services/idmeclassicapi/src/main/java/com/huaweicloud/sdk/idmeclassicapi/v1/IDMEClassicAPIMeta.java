@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutAndUpdateRequest;
@@ -31,6 +33,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchRemoveChildNodeRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchRemoveChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndCheckinRequest;
@@ -57,6 +61,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CollectHistoryDataResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareBusinessVersionResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
@@ -77,6 +83,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DisableDataInstanceRequest;
@@ -89,15 +97,33 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.GenerateBusinessCodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListAllVersionsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListBatchQueryRelatedObjectsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListBatchQueryRelatedObjectsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetAllParentListRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetAllParentListResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOBatchOperateChildDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOCompareVersionVO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVODeleteByConditionVo;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkBatchQueryDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkQueryDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkTypeDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkTypeModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOLifecycleManagedModelLifecycleTemplateSwitchDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListMultiViewModelVersionViewCreateDTO;
@@ -120,12 +146,15 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelVersi
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDecryptDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdModifierDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdsDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdsDecryptDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdsModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelSaveAsDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelUniqueKeyDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelUpdateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryChildListDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryParentDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestCountVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestSelectedVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestStaticsVo;
@@ -147,6 +176,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersion
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionUndoCheckOutDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionUpdateAndCheckinDTOVersionModel;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
@@ -159,6 +190,10 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowFindUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowFindUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetByUniqueKeyRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetByUniqueKeyResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostRequest;
@@ -217,6 +252,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOTagOperationDTO.class),
             f -> f.withMarshaller(AddTagRequest::getBody, AddTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAddChildNodeRequest, BatchAddChildNodeResponse> batchAddChildNode =
+        genForBatchAddChildNode();
+
+    private static HttpRequestDef<BatchAddChildNodeRequest, BatchAddChildNodeResponse> genForBatchAddChildNode() {
+        // basic
+        HttpRequestDef.Builder<BatchAddChildNodeRequest, BatchAddChildNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchAddChildNodeRequest.class, BatchAddChildNodeResponse.class)
+                .withName("BatchAddChildNode")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/batchAddChildNode")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddChildNodeRequest::getIdentifier, BatchAddChildNodeRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddChildNodeRequest::getModelName, BatchAddChildNodeRequest::setModelName));
+        builder.<RDMParamVOBatchOperateChildDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOBatchOperateChildDTO.class),
+            f -> f.withMarshaller(BatchAddChildNodeRequest::getBody, BatchAddChildNodeRequest::setBody));
 
         // response
 
@@ -630,6 +698,41 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListVersionModelVersionReviseDTO.class),
             f -> f.withMarshaller(BatchExecuteReviseRequest::getBody, BatchExecuteReviseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRemoveChildNodeRequest, BatchRemoveChildNodeResponse> batchRemoveChildNode =
+        genForBatchRemoveChildNode();
+
+    private static HttpRequestDef<BatchRemoveChildNodeRequest, BatchRemoveChildNodeResponse> genForBatchRemoveChildNode() {
+        // basic
+        HttpRequestDef.Builder<BatchRemoveChildNodeRequest, BatchRemoveChildNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchRemoveChildNodeRequest.class, BatchRemoveChildNodeResponse.class)
+            .withName("BatchRemoveChildNode")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/batchRemoveChildNode")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveChildNodeRequest::getIdentifier,
+                BatchRemoveChildNodeRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveChildNodeRequest::getModelName,
+                BatchRemoveChildNodeRequest::setModelName));
+        builder.<RDMParamVOBatchOperateChildDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOBatchOperateChildDTO.class),
+            f -> f.withMarshaller(BatchRemoveChildNodeRequest::getBody, BatchRemoveChildNodeRequest::setBody));
 
         // response
 
@@ -1073,6 +1176,39 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CompareVersionRequest, CompareVersionResponse> compareVersion =
+        genForCompareVersion();
+
+    private static HttpRequestDef<CompareVersionRequest, CompareVersionResponse> genForCompareVersion() {
+        // basic
+        HttpRequestDef.Builder<CompareVersionRequest, CompareVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CompareVersionRequest.class, CompareVersionResponse.class)
+                .withName("CompareVersion")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/compareVersion")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CompareVersionRequest::getIdentifier, CompareVersionRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CompareVersionRequest::getModelName, CompareVersionRequest::setModelName));
+        builder.<RDMParamVOCompareVersionVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOCompareVersionVO.class),
+            f -> f.withMarshaller(CompareVersionRequest::getBody, CompareVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountUsingPostRequest, CountUsingPostResponse> countUsingPost =
         genForCountUsingPost();
 
@@ -1410,6 +1546,38 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTargetRequest, DeleteTargetResponse> deleteTarget = genForDeleteTarget();
+
+    private static HttpRequestDef<DeleteTargetRequest, DeleteTargetResponse> genForDeleteTarget() {
+        // basic
+        HttpRequestDef.Builder<DeleteTargetRequest, DeleteTargetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteTargetRequest.class, DeleteTargetResponse.class)
+                .withName("DeleteTarget")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/deleteTarget")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTargetRequest::getIdentifier, DeleteTargetRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTargetRequest::getModelName, DeleteTargetRequest::setModelName));
+        builder.<RDMParamVOGenericLinkTypeModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOGenericLinkTypeModifierDTO.class),
+            f -> f.withMarshaller(DeleteTargetRequest::getBody, DeleteTargetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteUsingPostRequest, DeleteUsingPostResponse> deleteUsingPost =
         genForDeleteUsingPost();
 
@@ -1652,6 +1820,214 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBatchQueryRelatedObjectsRequest, ListBatchQueryRelatedObjectsResponse> listBatchQueryRelatedObjects =
+        genForListBatchQueryRelatedObjects();
+
+    private static HttpRequestDef<ListBatchQueryRelatedObjectsRequest, ListBatchQueryRelatedObjectsResponse> genForListBatchQueryRelatedObjects() {
+        // basic
+        HttpRequestDef.Builder<ListBatchQueryRelatedObjectsRequest, ListBatchQueryRelatedObjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListBatchQueryRelatedObjectsRequest.class,
+                    ListBatchQueryRelatedObjectsResponse.class)
+                .withName("ListBatchQueryRelatedObjects")
+                .withUri(
+                    "/rdm_{identifier}_app/publicservices/api/{modelName}/batchQueryRelatedObjects/{pageSizePath}/{curPagePath}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getIdentifier,
+                ListBatchQueryRelatedObjectsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getModelName,
+                ListBatchQueryRelatedObjectsRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getPageSizePath,
+                ListBatchQueryRelatedObjectsRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getCurPagePath,
+                ListBatchQueryRelatedObjectsRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getCurPage,
+                ListBatchQueryRelatedObjectsRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getEndIndex,
+                ListBatchQueryRelatedObjectsRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getMaxPageSize,
+                ListBatchQueryRelatedObjectsRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getPageSize,
+                ListBatchQueryRelatedObjectsRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getStartIndex,
+                ListBatchQueryRelatedObjectsRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getTotalPages,
+                ListBatchQueryRelatedObjectsRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getTotalRows,
+                ListBatchQueryRelatedObjectsRequest::setTotalRows));
+        builder.<RDMParamVOGenericLinkBatchQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOGenericLinkBatchQueryDTO.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getBody,
+                ListBatchQueryRelatedObjectsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGetAllParentListRequest, ListGetAllParentListResponse> listGetAllParentList =
+        genForListGetAllParentList();
+
+    private static HttpRequestDef<ListGetAllParentListRequest, ListGetAllParentListResponse> genForListGetAllParentList() {
+        // basic
+        HttpRequestDef.Builder<ListGetAllParentListRequest, ListGetAllParentListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListGetAllParentListRequest.class, ListGetAllParentListResponse.class)
+            .withName("ListGetAllParentList")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/getAllParentList")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetAllParentListRequest::getIdentifier,
+                ListGetAllParentListRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetAllParentListRequest::getModelName,
+                ListGetAllParentListRequest::setModelName));
+        builder.<RDMParamVOQueryParentDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryParentDTO.class),
+            f -> f.withMarshaller(ListGetAllParentListRequest::getBody, ListGetAllParentListRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGetChildListRequest, ListGetChildListResponse> listGetChildList =
+        genForListGetChildList();
+
+    private static HttpRequestDef<ListGetChildListRequest, ListGetChildListResponse> genForListGetChildList() {
+        // basic
+        HttpRequestDef.Builder<ListGetChildListRequest, ListGetChildListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListGetChildListRequest.class, ListGetChildListResponse.class)
+                .withName("ListGetChildList")
+                .withUri(
+                    "/rdm_{identifier}_app/publicservices/api/{modelName}/getChildList/{pageSizePath}/{curPagePath}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getIdentifier, ListGetChildListRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getModelName, ListGetChildListRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getPageSizePath, ListGetChildListRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getCurPagePath, ListGetChildListRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getCurPage, ListGetChildListRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getEndIndex, ListGetChildListRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getMaxPageSize, ListGetChildListRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getPageSize, ListGetChildListRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getStartIndex, ListGetChildListRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getTotalPages, ListGetChildListRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getTotalRows, ListGetChildListRequest::setTotalRows));
+        builder.<RDMParamVOQueryChildListDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryChildListDTO.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getBody, ListGetChildListRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHistoryDataRequest, ListHistoryDataResponse> listHistoryData =
         genForListHistoryData();
 
@@ -1720,6 +2096,264 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOMongPageRequest.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getBody, ListHistoryDataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse> listQueryRelatedObjects =
+        genForListQueryRelatedObjects();
+
+    private static HttpRequestDef<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse> genForListQueryRelatedObjects() {
+        // basic
+        HttpRequestDef.Builder<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListQueryRelatedObjectsRequest.class, ListQueryRelatedObjectsResponse.class)
+            .withName("ListQueryRelatedObjects")
+            .withUri(
+                "/rdm_{identifier}_app/publicservices/api/{modelName}/queryRelatedObjects/{pageSizePath}/{curPagePath}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getIdentifier,
+                ListQueryRelatedObjectsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getModelName,
+                ListQueryRelatedObjectsRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getPageSizePath,
+                ListQueryRelatedObjectsRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getCurPagePath,
+                ListQueryRelatedObjectsRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getCurPage,
+                ListQueryRelatedObjectsRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getEndIndex,
+                ListQueryRelatedObjectsRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getMaxPageSize,
+                ListQueryRelatedObjectsRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getPageSize,
+                ListQueryRelatedObjectsRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getStartIndex,
+                ListQueryRelatedObjectsRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getTotalPages,
+                ListQueryRelatedObjectsRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getTotalRows,
+                ListQueryRelatedObjectsRequest::setTotalRows));
+        builder.<RDMParamVOGenericLinkQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOGenericLinkQueryDTO.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getBody, ListQueryRelatedObjectsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueryRelationshipRequest, ListQueryRelationshipResponse> listQueryRelationship =
+        genForListQueryRelationship();
+
+    private static HttpRequestDef<ListQueryRelationshipRequest, ListQueryRelationshipResponse> genForListQueryRelationship() {
+        // basic
+        HttpRequestDef.Builder<ListQueryRelationshipRequest, ListQueryRelationshipResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListQueryRelationshipRequest.class, ListQueryRelationshipResponse.class)
+            .withName("ListQueryRelationship")
+            .withUri(
+                "/rdm_{identifier}_app/publicservices/api/{modelName}/queryRelationship/{pageSizePath}/{curPagePath}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getIdentifier,
+                ListQueryRelationshipRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getModelName,
+                ListQueryRelationshipRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getPageSizePath,
+                ListQueryRelationshipRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getCurPagePath,
+                ListQueryRelationshipRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getCurPage, ListQueryRelationshipRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getEndIndex,
+                ListQueryRelationshipRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getMaxPageSize,
+                ListQueryRelationshipRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getPageSize,
+                ListQueryRelationshipRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getStartIndex,
+                ListQueryRelationshipRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getTotalPages,
+                ListQueryRelationshipRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getTotalRows,
+                ListQueryRelationshipRequest::setTotalRows));
+        builder.<RDMParamVOGenericLinkQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOGenericLinkQueryDTO.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getBody, ListQueryRelationshipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueryTargetRequest, ListQueryTargetResponse> listQueryTarget =
+        genForListQueryTarget();
+
+    private static HttpRequestDef<ListQueryTargetRequest, ListQueryTargetResponse> genForListQueryTarget() {
+        // basic
+        HttpRequestDef.Builder<ListQueryTargetRequest, ListQueryTargetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListQueryTargetRequest.class, ListQueryTargetResponse.class)
+                .withName("ListQueryTarget")
+                .withUri(
+                    "/rdm_{identifier}_app/publicservices/api/{modelName}/queryTarget/{pageSizePath}/{curPagePath}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getIdentifier, ListQueryTargetRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getModelName, ListQueryTargetRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getPageSizePath, ListQueryTargetRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getCurPagePath, ListQueryTargetRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getCurPage, ListQueryTargetRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getEndIndex, ListQueryTargetRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getMaxPageSize, ListQueryTargetRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getPageSize, ListQueryTargetRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getStartIndex, ListQueryTargetRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getTotalPages, ListQueryTargetRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getTotalRows, ListQueryTargetRequest::setTotalRows));
+        builder.<RDMParamVOGenericLinkTypeDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOGenericLinkTypeDTO.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getBody, ListQueryTargetRequest::setBody));
 
         // response
 
@@ -1969,6 +2603,38 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RefreshRequest, RefreshResponse> refresh = genForRefresh();
+
+    private static HttpRequestDef<RefreshRequest, RefreshResponse> genForRefresh() {
+        // basic
+        HttpRequestDef.Builder<RefreshRequest, RefreshResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RefreshRequest.class, RefreshResponse.class)
+                .withName("Refresh")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/refresh")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RefreshRequest::getIdentifier, RefreshRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RefreshRequest::getModelName, RefreshRequest::setModelName));
+        builder.<RDMParamVOPersistObjectIdsDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsDTO.class),
+            f -> f.withMarshaller(RefreshRequest::getBody, RefreshRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveTagRequest, RemoveTagResponse> removeTag = genForRemoveTag();
 
     private static HttpRequestDef<RemoveTagRequest, RemoveTagResponse> genForRemoveTag() {
@@ -2212,6 +2878,71 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistableModelUniqueKeyDTO.class),
             f -> f.withMarshaller(ShowGetByUniqueKeyRequest::getBody, ShowGetByUniqueKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGetParentRequest, ShowGetParentResponse> showGetParent =
+        genForShowGetParent();
+
+    private static HttpRequestDef<ShowGetParentRequest, ShowGetParentResponse> genForShowGetParent() {
+        // basic
+        HttpRequestDef.Builder<ShowGetParentRequest, ShowGetParentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowGetParentRequest.class, ShowGetParentResponse.class)
+                .withName("ShowGetParent")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/getParent")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetParentRequest::getIdentifier, ShowGetParentRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetParentRequest::getModelName, ShowGetParentRequest::setModelName));
+        builder.<RDMParamVOQueryParentDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryParentDTO.class),
+            f -> f.withMarshaller(ShowGetParentRequest::getBody, ShowGetParentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGetRootRequest, ShowGetRootResponse> showGetRoot = genForShowGetRoot();
+
+    private static HttpRequestDef<ShowGetRootRequest, ShowGetRootResponse> genForShowGetRoot() {
+        // basic
+        HttpRequestDef.Builder<ShowGetRootRequest, ShowGetRootResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowGetRootRequest.class, ShowGetRootResponse.class)
+                .withName("ShowGetRoot")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/getRoot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetRootRequest::getIdentifier, ShowGetRootRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetRootRequest::getModelName, ShowGetRootRequest::setModelName));
+        builder.<RDMParamVOPersistObjectIdDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdDTO.class),
+            f -> f.withMarshaller(ShowGetRootRequest::getBody, ShowGetRootRequest::setBody));
 
         // response
 

@@ -26,7 +26,7 @@ public class BizInfoVO {
     }
 
     /**
-     * 业务ID
+     * 业务ID。
      * @return bizId
      */
     public Long getBizId() {

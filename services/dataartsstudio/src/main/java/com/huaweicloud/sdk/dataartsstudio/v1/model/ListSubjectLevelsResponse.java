@@ -41,7 +41,7 @@ public class ListSubjectLevelsResponse extends SdkResponse {
     }
 
     /**
-     * 主题层级信息
+     * 主题层级信息。
      * @return levels
      */
     public List<CatalogLevelVO> getLevels() {

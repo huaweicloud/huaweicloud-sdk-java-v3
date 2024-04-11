@@ -1089,7 +1089,7 @@ public class SwrMeta {
             f -> f.withMarshaller(ListSharedReposDetailsRequest::getName, ListSharedReposDetailsRequest::setName));
         builder.<String>withRequestField("center",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSharedReposDetailsRequest::getCenter, ListSharedReposDetailsRequest::setCenter));
         builder.<String>withRequestField("limit",

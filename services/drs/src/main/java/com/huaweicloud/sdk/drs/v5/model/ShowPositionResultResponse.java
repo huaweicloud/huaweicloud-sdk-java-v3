@@ -27,7 +27,7 @@ public class ShowPositionResultResponse extends SdkResponse {
     private String position;
 
     /**
-     * 查询状态。
+     * 查询状态
      */
     public static final class StatusEnum {
 
@@ -147,7 +147,7 @@ public class ShowPositionResultResponse extends SdkResponse {
     }
 
     /**
-     * 查询状态。
+     * 查询状态
      * @return status
      */
     public StatusEnum getStatus() {

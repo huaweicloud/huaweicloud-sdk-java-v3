@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * AtomicIndexVOSearchResultDataValue
+ * 返回的数据信息。
  */
 public class AtomicIndexVOSearchResultDataValue {
 
@@ -45,7 +45,7 @@ public class AtomicIndexVOSearchResultDataValue {
     }
 
     /**
-     * AtomicIndexVO数组
+     * AtomicIndexVO数组。
      * @return records
      */
     public List<AtomicIndexVO> getRecords() {
@@ -62,7 +62,7 @@ public class AtomicIndexVOSearchResultDataValue {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return total
      */
     public Integer getTotal() {

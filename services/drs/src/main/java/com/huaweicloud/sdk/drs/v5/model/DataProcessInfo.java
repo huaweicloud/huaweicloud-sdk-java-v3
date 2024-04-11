@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.drs.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,6 +62,81 @@ public class DataProcessInfo {
     @JsonProperty(value = "is_synchronized")
 
     private Boolean isSynchronized;
+
+    /**
+     * 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+     */
+    public static final class SourceEnum {
+
+        /**
+         * Enum JOB for value: "job"
+         */
+        public static final SourceEnum JOB = new SourceEnum("job");
+
+        /**
+         * Enum COMPARE for value: "compare"
+         */
+        public static final SourceEnum COMPARE = new SourceEnum("compare");
+
+        private static final Map<String, SourceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SourceEnum> createStaticFields() {
+            Map<String, SourceEnum> map = new HashMap<>();
+            map.put("job", JOB);
+            map.put("compare", COMPARE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SourceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SourceEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceEnum(value));
+        }
+
+        public static SourceEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SourceEnum) {
+                return this.value.equals(((SourceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private SourceEnum source;
 
     public DataProcessInfo withFilterConditions(List<DataFilteringCondition> filterConditions) {
         this.filterConditions = filterConditions;
@@ -288,6 +366,23 @@ public class DataProcessInfo {
         this.isSynchronized = isSynchronized;
     }
 
+    public DataProcessInfo withSource(SourceEnum source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * 对比的来源 - job 表示数据同步时的过滤 - compare 表示数据对比的过滤
+     * @return source
+     */
+    public SourceEnum getSource() {
+        return source;
+    }
+
+    public void setSource(SourceEnum source) {
+        this.source = source;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -303,7 +398,8 @@ public class DataProcessInfo {
             && Objects.equals(this.dmlOperation, that.dmlOperation)
             && Objects.equals(this.dbObjectColumnInfo, that.dbObjectColumnInfo)
             && Objects.equals(this.dbOrTableRenameRule, that.dbOrTableRenameRule)
-            && Objects.equals(this.dbObject, that.dbObject) && Objects.equals(this.isSynchronized, that.isSynchronized);
+            && Objects.equals(this.dbObject, that.dbObject) && Objects.equals(this.isSynchronized, that.isSynchronized)
+            && Objects.equals(this.source, that.source);
     }
 
     @Override
@@ -316,7 +412,8 @@ public class DataProcessInfo {
             dbObjectColumnInfo,
             dbOrTableRenameRule,
             dbObject,
-            isSynchronized);
+            isSynchronized,
+            source);
     }
 
     @Override
@@ -332,6 +429,7 @@ public class DataProcessInfo {
         sb.append("    dbOrTableRenameRule: ").append(toIndentedString(dbOrTableRenameRule)).append("\n");
         sb.append("    dbObject: ").append(toIndentedString(dbObject)).append("\n");
         sb.append("    isSynchronized: ").append(toIndentedString(isSynchronized)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("}");
         return sb.toString();
     }

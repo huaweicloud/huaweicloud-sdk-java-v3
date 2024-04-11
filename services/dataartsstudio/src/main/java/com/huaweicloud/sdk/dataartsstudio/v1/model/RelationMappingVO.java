@@ -67,7 +67,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -84,7 +84,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 关系id
+     * 关系ID。
      * @return relationId
      */
     public Long getRelationId() {
@@ -101,7 +101,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 源字段id
+     * 源字段ID。
      * @return sourceFieldId
      */
     public Long getSourceFieldId() {
@@ -118,7 +118,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 目标字段id
+     * 目标字段ID。
      * @return targetFieldId
      */
     public Long getTargetFieldId() {
@@ -135,7 +135,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 源表名称
+     * 源表名称。
      * @return sourceFieldName
      */
     public String getSourceFieldName() {
@@ -152,7 +152,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 目的表名称
+     * 目的表名称。
      * @return targetFieldName
      */
     public String getTargetFieldName() {
@@ -169,7 +169,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -186,7 +186,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -203,7 +203,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -220,7 +220,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

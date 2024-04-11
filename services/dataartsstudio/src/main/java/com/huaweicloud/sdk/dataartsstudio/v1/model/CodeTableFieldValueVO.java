@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 码表属性值
+ * 码表属性值。
  */
 public class CodeTableFieldValueVO {
 
@@ -58,7 +58,7 @@ public class CodeTableFieldValueVO {
     }
 
     /**
-     * 所属码表属性id
+     * 所属码表属性ID。
      * @return fdId
      */
     public Long getFdId() {
@@ -75,7 +75,7 @@ public class CodeTableFieldValueVO {
     }
 
     /**
-     * 码表属性值
+     * 码表属性值。
      * @return fdValue
      */
     public String getFdValue() {
@@ -92,7 +92,7 @@ public class CodeTableFieldValueVO {
     }
 
     /**
-     * 序号
+     * 序号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -109,7 +109,7 @@ public class CodeTableFieldValueVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

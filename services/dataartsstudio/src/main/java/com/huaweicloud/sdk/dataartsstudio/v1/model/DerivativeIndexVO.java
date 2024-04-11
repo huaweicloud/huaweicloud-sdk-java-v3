@@ -155,7 +155,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -172,7 +172,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 字段名
+     * 字段名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -189,7 +189,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 中文名
+     * 中文名。
      * @return nameCh
      */
     public String getNameCh() {
@@ -206,7 +206,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -223,7 +223,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -240,7 +240,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 字段类型
+     * 字段类型。
      * @return dataType
      */
     public String getDataType() {
@@ -257,7 +257,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
     public Long getL1Id() {
@@ -274,7 +274,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -291,7 +291,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 业务对象guid
+     * 业务对象guid。
      * @return l3Id
      */
     public Long getL3Id() {
@@ -325,7 +325,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 原子指标id
+     * 原子指标ID。
      * @return atomicIndexId
      */
     public Long getAtomicIndexId() {
@@ -342,7 +342,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定id
+     * 时间限定ID。
      * @return timeConditionId
      */
     public Long getTimeConditionId() {
@@ -359,7 +359,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定关联字段id
+     * 时间限定关联字段ID。
      * @return timeFieldId
      */
     public Long getTimeFieldId() {
@@ -376,7 +376,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定关联字段名称
+     * 时间限定关联字段名称。
      * @return timeFieldName
      */
     public String getTimeFieldName() {
@@ -409,7 +409,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 通用限定信息
+     * 通用限定信息。
      * @return commonConditions
      */
     public List<CommonConditionVO> getCommonConditions() {
@@ -442,7 +442,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 维度组(颗粒度)
+     * 维度组(颗粒度)。
      * @return dimensionGroups
      */
     public List<DerivativeIndexDimensionVO> getDimensionGroups() {
@@ -511,7 +511,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定名称
+     * 时间限定名称。
      * @return timeConditionName
      */
     public String getTimeConditionName() {
@@ -528,7 +528,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -545,7 +545,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -562,7 +562,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -579,7 +579,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -596,7 +596,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {
@@ -613,7 +613,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 汇总表id
+     * 汇总表ID。
      * @return summaryTableId
      */
     public Long getSummaryTableId() {

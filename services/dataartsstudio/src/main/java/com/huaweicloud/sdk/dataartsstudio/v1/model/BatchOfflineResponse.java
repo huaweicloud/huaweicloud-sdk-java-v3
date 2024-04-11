@@ -22,7 +22,7 @@ public class BatchOfflineResponse extends SdkResponse {
     }
 
     /**
-     * 返回的数据信息
+     * 返回的数据信息。
      * @return data
      */
     public Object getData() {

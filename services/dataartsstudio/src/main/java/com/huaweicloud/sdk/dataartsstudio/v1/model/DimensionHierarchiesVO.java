@@ -55,7 +55,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -72,7 +72,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 层级名称
+     * 层级名称。
      * @return name
      */
     public String getName() {
@@ -105,7 +105,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * Get attrs
+     * 层级包含的属性。
      * @return attrs
      */
     public List<HierarchiesAttrVO> getAttrs() {
@@ -122,7 +122,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -139,7 +139,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -156,7 +156,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -173,7 +173,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {

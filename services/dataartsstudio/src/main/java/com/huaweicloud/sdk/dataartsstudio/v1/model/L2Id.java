@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.dataartsstudio.v1.model;
 import java.util.Objects;
 
 /**
- * L2Id
+ * 主题域ID，只读，创建和更新时无需填写。
  */
 public class L2Id {
 

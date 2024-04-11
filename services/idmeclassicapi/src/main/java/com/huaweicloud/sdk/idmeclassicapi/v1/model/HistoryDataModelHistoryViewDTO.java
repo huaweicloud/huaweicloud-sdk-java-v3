@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.idmeclassicapi.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -46,98 +41,10 @@ public class HistoryDataModelHistoryViewDTO {
 
     private Integer rdmVersion;
 
-    /**
-     * 操作类型，用于存储MONGO。
-     */
-    public static final class RdmOperationTypeEnum {
-
-        /**
-         * Enum CREATE for value: "CREATE"
-         */
-        public static final RdmOperationTypeEnum CREATE = new RdmOperationTypeEnum("CREATE");
-
-        /**
-         * Enum UPDATE for value: "UPDATE"
-         */
-        public static final RdmOperationTypeEnum UPDATE = new RdmOperationTypeEnum("UPDATE");
-
-        /**
-         * Enum LOGICALDELETE for value: "LOGICALDELETE"
-         */
-        public static final RdmOperationTypeEnum LOGICALDELETE = new RdmOperationTypeEnum("LOGICALDELETE");
-
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
-        public static final RdmOperationTypeEnum DELETE = new RdmOperationTypeEnum("DELETE");
-
-        /**
-         * Enum CASCADE for value: "CASCADE"
-         */
-        public static final RdmOperationTypeEnum CASCADE = new RdmOperationTypeEnum("CASCADE");
-
-        private static final Map<String, RdmOperationTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RdmOperationTypeEnum> createStaticFields() {
-            Map<String, RdmOperationTypeEnum> map = new HashMap<>();
-            map.put("CREATE", CREATE);
-            map.put("UPDATE", UPDATE);
-            map.put("LOGICALDELETE", LOGICALDELETE);
-            map.put("DELETE", DELETE);
-            map.put("CASCADE", CASCADE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RdmOperationTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RdmOperationTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RdmOperationTypeEnum(value));
-        }
-
-        public static RdmOperationTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RdmOperationTypeEnum) {
-                return this.value.equals(((RdmOperationTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rdmOperationType")
 
-    private RdmOperationTypeEnum rdmOperationType;
+    private String rdmOperationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rdmExtensionType")
@@ -250,7 +157,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 系统版本，用于存储MONGO。
+     * 系统版本。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -261,20 +168,20 @@ public class HistoryDataModelHistoryViewDTO {
         this.rdmVersion = rdmVersion;
     }
 
-    public HistoryDataModelHistoryViewDTO withRdmOperationType(RdmOperationTypeEnum rdmOperationType) {
+    public HistoryDataModelHistoryViewDTO withRdmOperationType(String rdmOperationType) {
         this.rdmOperationType = rdmOperationType;
         return this;
     }
 
     /**
-     * 操作类型，用于存储MONGO。
+     * 操作类型。 - CREATE：创建操作。 - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。
      * @return rdmOperationType
      */
-    public RdmOperationTypeEnum getRdmOperationType() {
+    public String getRdmOperationType() {
         return rdmOperationType;
     }
 
-    public void setRdmOperationType(RdmOperationTypeEnum rdmOperationType) {
+    public void setRdmOperationType(String rdmOperationType) {
         this.rdmOperationType = rdmOperationType;
     }
 

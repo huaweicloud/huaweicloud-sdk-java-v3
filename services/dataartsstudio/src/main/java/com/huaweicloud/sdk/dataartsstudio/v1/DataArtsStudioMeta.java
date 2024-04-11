@@ -5,10 +5,13 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddTagToAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddTagToAssetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddWorkSpaceUsersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddWorkSpaceUsersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AggregationLogicTableVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.Api;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiActionDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiCatalogCreateParaDTO;
@@ -33,6 +36,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEnti
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateSecurityLevelToEntitieResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AtomicIndexVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceRequest;
@@ -114,6 +118,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
@@ -186,6 +194,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
@@ -224,6 +238,13 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.GatewayDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.IdsParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
@@ -406,6 +427,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueryTaskRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardRequest;
@@ -431,8 +456,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchCustomizedFieldsRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchCustomizedFieldsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDebugInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDebugInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDesignLatestApprovalDiffResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchFieldsForRelationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchParameter;
@@ -604,6 +633,13 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityParam;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
@@ -645,6 +681,50 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DataArtsStudioMeta {
+
+    public static final HttpRequestDef<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse> addDesignEntityTags =
+        genForAddDesignEntityTags();
+
+    private static HttpRequestDef<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse> genForAddDesignEntityTags() {
+        // basic
+        HttpRequestDef.Builder<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddDesignEntityTagsRequest.class, AddDesignEntityTagsResponse.class)
+                .withName("AddDesignEntityTags")
+                .withUri("/v2/{project_id}/design/{entity_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("entity_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesignEntityTagsRequest::getEntityId, AddDesignEntityTagsRequest::setEntityId));
+        builder.<String>withRequestField("attr_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesignEntityTagsRequest::getAttrId, AddDesignEntityTagsRequest::setAttrId));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(AddDesignEntityTagsRequest::getTags, AddDesignEntityTagsRequest::setTags));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesignEntityTagsRequest::getWorkspace, AddDesignEntityTagsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesignEntityTagsRequest::getXProjectId,
+                AddDesignEntityTagsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddTagToAssetRequest, AddTagToAssetResponse> addTagToAsset =
         genForAddTagToAsset();
@@ -1073,6 +1153,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchOfflineRequest::getWorkspace, BatchOfflineRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchOfflineRequest::getXProjectId, BatchOfflineRequest::setXProjectId));
         builder.<ApprovalBatchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1100,6 +1185,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchPublishRequest::getWorkspace, BatchPublishRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchPublishRequest::getXProjectId, BatchPublishRequest::setXProjectId));
         builder.<ApprovalBatchParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1180,6 +1270,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeCatalogRequest::getWorkspace, ChangeCatalogRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeCatalogRequest::getXProjectId, ChangeCatalogRequest::setXProjectId));
         builder.<BizCatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1231,6 +1326,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeSubjectsRequest::getWorkspace, ChangeSubjectsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeSubjectsRequest::getXProjectId, ChangeSubjectsRequest::setXProjectId));
         builder.<CatalogLevelVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1260,6 +1360,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckDimensionStatusRequest::getWorkspace,
                 CheckDimensionStatusRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDimensionStatusRequest::getXProjectId,
+                CheckDimensionStatusRequest::setXProjectId));
 
         // response
 
@@ -1287,6 +1393,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckFactLogicTableStatusRequest::getWorkspace,
                 CheckFactLogicTableStatusRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckFactLogicTableStatusRequest::getXProjectId,
+                CheckFactLogicTableStatusRequest::setXProjectId));
 
         // response
 
@@ -1315,6 +1427,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmApprovalsRequest::getWorkspace, ConfirmApprovalsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmApprovalsRequest::getXProjectId, ConfirmApprovalsRequest::setXProjectId));
         builder.<ApprovalInfoParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1376,6 +1493,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountAllModelsRequest::getWorkspace, CountAllModelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAllModelsRequest::getXProjectId, CountAllModelsRequest::setXProjectId));
 
         // response
 
@@ -1399,6 +1521,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountOverviewsRequest::getWorkspace, CountOverviewsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountOverviewsRequest::getXProjectId, CountOverviewsRequest::setXProjectId));
 
         // response
 
@@ -1432,6 +1559,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountStandardsRequest::getWorkspace, CountStandardsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountStandardsRequest::getXProjectId, CountStandardsRequest::setXProjectId));
 
         // response
 
@@ -1460,6 +1592,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountTableModelsRequest::getWorkspace, CountTableModelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTableModelsRequest::getXProjectId, CountTableModelsRequest::setXProjectId));
 
         // response
 
@@ -1515,6 +1652,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateApproverRequest::getWorkspace, CreateApproverRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateApproverRequest::getXProjectId, CreateApproverRequest::setXProjectId));
         builder.<ApproverParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1543,6 +1685,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBizMetricRequest::getWorkspace, CreateBizMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBizMetricRequest::getXProjectId, CreateBizMetricRequest::setXProjectId));
         builder.<BizMetricVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1571,6 +1718,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateCatalogRequest::getWorkspace, CreateCatalogRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCatalogRequest::getXProjectId, CreateCatalogRequest::setXProjectId));
         builder.<BizCatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1599,6 +1751,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateCodeTableRequest::getWorkspace, CreateCodeTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCodeTableRequest::getXProjectId, CreateCodeTableRequest::setXProjectId));
         builder.<CodeTableVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1638,6 +1795,80 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDesignAggregationLogicTableRequest, CreateDesignAggregationLogicTableResponse> createDesignAggregationLogicTable =
+        genForCreateDesignAggregationLogicTable();
+
+    private static HttpRequestDef<CreateDesignAggregationLogicTableRequest, CreateDesignAggregationLogicTableResponse> genForCreateDesignAggregationLogicTable() {
+        // basic
+        HttpRequestDef.Builder<CreateDesignAggregationLogicTableRequest, CreateDesignAggregationLogicTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDesignAggregationLogicTableRequest.class,
+                    CreateDesignAggregationLogicTableResponse.class)
+                .withName("CreateDesignAggregationLogicTable")
+                .withUri("/v2/{project_id}/design/aggregation-logic-tables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignAggregationLogicTableRequest::getWorkspace,
+                CreateDesignAggregationLogicTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignAggregationLogicTableRequest::getXProjectId,
+                CreateDesignAggregationLogicTableRequest::setXProjectId));
+        builder.<AggregationLogicTableVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AggregationLogicTableVO.class),
+            f -> f.withMarshaller(CreateDesignAggregationLogicTableRequest::getBody,
+                CreateDesignAggregationLogicTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse> createDesignAtomicIndex =
+        genForCreateDesignAtomicIndex();
+
+    private static HttpRequestDef<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse> genForCreateDesignAtomicIndex() {
+        // basic
+        HttpRequestDef.Builder<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDesignAtomicIndexRequest.class, CreateDesignAtomicIndexResponse.class)
+            .withName("CreateDesignAtomicIndex")
+            .withUri("/v2/{project_id}/design/atomic-indexs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignAtomicIndexRequest::getWorkspace,
+                CreateDesignAtomicIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignAtomicIndexRequest::getXProjectId,
+                CreateDesignAtomicIndexRequest::setXProjectId));
+        builder.<AtomicIndexVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AtomicIndexVO.class),
+            f -> f.withMarshaller(CreateDesignAtomicIndexRequest::getBody, CreateDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDirectoryRequest, CreateDirectoryResponse> createDirectory =
         genForCreateDirectory();
 
@@ -1655,6 +1886,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDirectoryRequest::getWorkspace, CreateDirectoryRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDirectoryRequest::getXProjectId, CreateDirectoryRequest::setXProjectId));
         builder.<DirectoryVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2085,6 +2321,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateStandardRequest::getWorkspace, CreateStandardRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStandardRequest::getXProjectId, CreateStandardRequest::setXProjectId));
         builder.<StandElementValueVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2114,6 +2355,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateStandardTemplateRequest::getWorkspace,
                 CreateStandardTemplateRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStandardTemplateRequest::getXProjectId,
+                CreateStandardTemplateRequest::setXProjectId));
         builder.<StandElementFieldVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2142,6 +2389,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubjectRequest::getWorkspace, CreateSubjectRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubjectRequest::getXProjectId, CreateSubjectRequest::setXProjectId));
         builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2170,6 +2422,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubjectNewRequest::getWorkspace, CreateSubjectNewRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubjectNewRequest::getXProjectId, CreateSubjectNewRequest::setXProjectId));
         builder.<SubjectParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2198,6 +2455,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTableModelRequest::getWorkspace, CreateTableModelRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTableModelRequest::getXProjectId, CreateTableModelRequest::setXProjectId));
         builder.<TableModelVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2281,6 +2543,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateWorkspaceRequest::getWorkspace, CreateWorkspaceRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkspaceRequest::getXProjectId, CreateWorkspaceRequest::setXProjectId));
         builder.<WorkspaceVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2374,6 +2641,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApproverRequest::getWorkspace, DeleteApproverRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteApproverRequest::getXProjectId, DeleteApproverRequest::setXProjectId));
 
         // response
 
@@ -2424,6 +2696,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBizMetricRequest::getWorkspace, DeleteBizMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBizMetricRequest::getXProjectId, DeleteBizMetricRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2452,6 +2729,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCatalogRequest::getWorkspace, DeleteCatalogRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCatalogRequest::getXProjectId, DeleteCatalogRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2519,6 +2801,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCodeTableRequest::getWorkspace, DeleteCodeTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCodeTableRequest::getXProjectId, DeleteCodeTableRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2560,6 +2847,125 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse> deleteDesignAggregationLogicTable =
+        genForDeleteDesignAggregationLogicTable();
+
+    private static HttpRequestDef<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse> genForDeleteDesignAggregationLogicTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignAggregationLogicTableRequest, DeleteDesignAggregationLogicTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignAggregationLogicTableRequest.class,
+                    DeleteDesignAggregationLogicTableResponse.class)
+                .withName("DeleteDesignAggregationLogicTable")
+                .withUri("/v2/{project_id}/design/aggregation-logic-tables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignAggregationLogicTableRequest::getWorkspace,
+                DeleteDesignAggregationLogicTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignAggregationLogicTableRequest::getXProjectId,
+                DeleteDesignAggregationLogicTableRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignAggregationLogicTableRequest::getBody,
+                DeleteDesignAggregationLogicTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse> deleteDesignAtomicIndex =
+        genForDeleteDesignAtomicIndex();
+
+    private static HttpRequestDef<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse> genForDeleteDesignAtomicIndex() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDesignAtomicIndexRequest.class, DeleteDesignAtomicIndexResponse.class)
+            .withName("DeleteDesignAtomicIndex")
+            .withUri("/v2/{project_id}/design/atomic-indexs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignAtomicIndexRequest::getWorkspace,
+                DeleteDesignAtomicIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignAtomicIndexRequest::getXProjectId,
+                DeleteDesignAtomicIndexRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignAtomicIndexRequest::getBody, DeleteDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignLatestApprovalRequest, DeleteDesignLatestApprovalResponse> deleteDesignLatestApproval =
+        genForDeleteDesignLatestApproval();
+
+    private static HttpRequestDef<DeleteDesignLatestApprovalRequest, DeleteDesignLatestApprovalResponse> genForDeleteDesignLatestApproval() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignLatestApprovalRequest, DeleteDesignLatestApprovalResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignLatestApprovalRequest.class,
+                    DeleteDesignLatestApprovalResponse.class)
+                .withName("DeleteDesignLatestApproval")
+                .withUri("/v2/{project_id}/design/approvals/business/{biz_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("biz_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignLatestApprovalRequest::getBizId,
+                DeleteDesignLatestApprovalRequest::setBizId));
+        builder.<DeleteDesignLatestApprovalRequest.BizTypeEnum>withRequestField("biz_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDesignLatestApprovalRequest.BizTypeEnum.class),
+            f -> f.withMarshaller(DeleteDesignLatestApprovalRequest::getBizType,
+                DeleteDesignLatestApprovalRequest::setBizType));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignLatestApprovalRequest::getWorkspace,
+                DeleteDesignLatestApprovalRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignLatestApprovalRequest::getXProjectId,
+                DeleteDesignLatestApprovalRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectory =
         genForDeleteDirectory();
 
@@ -2582,6 +2988,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDirectoryRequest::getWorkspace, DeleteDirectoryRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDirectoryRequest::getXProjectId, DeleteDirectoryRequest::setXProjectId));
 
         // response
 
@@ -2770,6 +3181,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStandardRequest::getWorkspace, DeleteStandardRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStandardRequest::getXProjectId, DeleteStandardRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2804,6 +3220,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStandardTemplateRequest::getWorkspace,
                 DeleteStandardTemplateRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStandardTemplateRequest::getXProjectId,
+                DeleteStandardTemplateRequest::setXProjectId));
 
         // response
 
@@ -2827,6 +3249,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubjectRequest::getWorkspace, DeleteSubjectRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubjectRequest::getXProjectId, DeleteSubjectRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2855,6 +3282,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubjectNewRequest::getWorkspace, DeleteSubjectNewRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubjectNewRequest::getXProjectId, DeleteSubjectNewRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2883,6 +3315,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTableModelRequest::getWorkspace, DeleteTableModelRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTableModelRequest::getXProjectId, DeleteTableModelRequest::setXProjectId));
         builder.<IdsParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2944,6 +3381,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWorkspacesRequest::getWorkspace, DeleteWorkspacesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkspacesRequest::getXProjectId, DeleteWorkspacesRequest::setXProjectId));
 
         // response
 
@@ -3041,6 +3483,123 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportDesignModelTableDdlRequest, ExportDesignModelTableDdlResponse> exportDesignModelTableDdl =
+        genForExportDesignModelTableDdl();
+
+    private static HttpRequestDef<ExportDesignModelTableDdlRequest, ExportDesignModelTableDdlResponse> genForExportDesignModelTableDdl() {
+        // basic
+        HttpRequestDef.Builder<ExportDesignModelTableDdlRequest, ExportDesignModelTableDdlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ExportDesignModelTableDdlRequest.class,
+                    ExportDesignModelTableDdlResponse.class)
+                .withName("ExportDesignModelTableDdl")
+                .withUri("/v2/{project_id}/design/workspaces/{model_id}/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("model_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignModelTableDdlRequest::getModelId,
+                ExportDesignModelTableDdlRequest::setModelId));
+        builder.<List<String>>withRequestField("tb_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ExportDesignModelTableDdlRequest::getTbNames,
+                ExportDesignModelTableDdlRequest::setTbNames));
+        builder.<Boolean>withRequestField("with_db",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExportDesignModelTableDdlRequest::getWithDb,
+                ExportDesignModelTableDdlRequest::setWithDb));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignModelTableDdlRequest::getWorkspace,
+                ExportDesignModelTableDdlRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignModelTableDdlRequest::getXProjectId,
+                ExportDesignModelTableDdlRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportDesignModelsRequest, ExportDesignModelsResponse> exportDesignModels =
+        genForExportDesignModels();
+
+    private static HttpRequestDef<ExportDesignModelsRequest, ExportDesignModelsResponse> genForExportDesignModels() {
+        // basic
+        HttpRequestDef.Builder<ExportDesignModelsRequest, ExportDesignModelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportDesignModelsRequest.class, ExportDesignModelsResponse.class)
+                .withName("ExportDesignModels")
+                .withUri("/v2/{project_id}/design/export-model")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignModelsRequest::getWorkspace, ExportDesignModelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignModelsRequest::getXProjectId, ExportDesignModelsRequest::setXProjectId));
+        builder.<ExportParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportParam.class),
+            f -> f.withMarshaller(ExportDesignModelsRequest::getBody, ExportDesignModelsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportDesignResultRequest, ExportDesignResultResponse> exportDesignResult =
+        genForExportDesignResult();
+
+    private static HttpRequestDef<ExportDesignResultRequest, ExportDesignResultResponse> genForExportDesignResult() {
+        // basic
+        HttpRequestDef.Builder<ExportDesignResultRequest, ExportDesignResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExportDesignResultRequest.class, ExportDesignResultResponse.class)
+                .withName("ExportDesignResult")
+                .withUri("/v2/{project_id}/design/export-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("uuid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignResultRequest::getUuid, ExportDesignResultRequest::setUuid));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignResultRequest::getWorkspace, ExportDesignResultRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDesignResultRequest::getXProjectId, ExportDesignResultRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogs =
         genForImportCatalogs();
 
@@ -3068,6 +3627,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ImportCatalogsRequest::getWorkspace, ImportCatalogsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportCatalogsRequest::getXProjectId, ImportCatalogsRequest::setXProjectId));
         builder.<ImportCatalogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3150,6 +3714,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ImportModelsRequest::getWorkspace, ImportModelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportModelsRequest::getXProjectId, ImportModelsRequest::setXProjectId));
         builder.<ImportModelsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3182,6 +3751,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ImportResultRequest::getWorkspace, ImportResultRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResultRequest::getXProjectId, ImportResultRequest::setXProjectId));
 
         // response
 
@@ -3215,6 +3789,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(InitializeStandardTemplateRequest::getWorkspace,
                 InitializeStandardTemplateRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InitializeStandardTemplateRequest::getXProjectId,
+                InitializeStandardTemplateRequest::setXProjectId));
         builder.<StandElementFieldVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3332,6 +3912,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAggregationLogicTablesRequest::getWorkspace,
                 ListAggregationLogicTablesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAggregationLogicTablesRequest::getXProjectId,
+                ListAggregationLogicTablesRequest::setXProjectId));
 
         // response
 
@@ -3423,6 +4009,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllStandardsRequest::getWorkspace, ListAllStandardsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllStandardsRequest::getXProjectId, ListAllStandardsRequest::setXProjectId));
 
         // response
 
@@ -3507,6 +4098,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllTablesRequest::getWorkspace, ListAllTablesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTablesRequest::getXProjectId, ListAllTablesRequest::setXProjectId));
 
         // response
 
@@ -3845,6 +4441,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApproversRequest::getWorkspace, ListApproversRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApproversRequest::getXProjectId, ListApproversRequest::setXProjectId));
 
         // response
 
@@ -3979,6 +4580,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBizMetricDimensionsRequest::getWorkspace,
                 ListBizMetricDimensionsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBizMetricDimensionsRequest::getXProjectId,
+                ListBizMetricDimensionsRequest::setXProjectId));
 
         // response
 
@@ -4012,6 +4619,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBizMetricOwnersRequest::getWorkspace, ListBizMetricOwnersRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBizMetricOwnersRequest::getXProjectId,
+                ListBizMetricOwnersRequest::setXProjectId));
 
         // response
 
@@ -4090,6 +4703,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBizMetricsRequest::getWorkspace, ListBizMetricsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBizMetricsRequest::getXProjectId, ListBizMetricsRequest::setXProjectId));
 
         // response
 
@@ -4122,6 +4740,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBusinessRequest::getWorkspace, ListBusinessRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBusinessRequest::getXProjectId, ListBusinessRequest::setXProjectId));
 
         // response
 
@@ -4188,6 +4811,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCatalogTreeRequest::getWorkspace, ListCatalogTreeRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCatalogTreeRequest::getXProjectId, ListCatalogTreeRequest::setXProjectId));
 
         // response
 
@@ -4353,6 +4981,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCompoundMetricsRequest::getWorkspace, ListCompoundMetricsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCompoundMetricsRequest::getXProjectId,
+                ListCompoundMetricsRequest::setXProjectId));
 
         // response
 
@@ -4416,6 +5050,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConditionRequest::getWorkspace, ListConditionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConditionRequest::getXProjectId, ListConditionRequest::setXProjectId));
 
         // response
 
@@ -4744,6 +5383,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDerivativeIndexesRequest::getWorkspace,
                 ListDerivativeIndexesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDerivativeIndexesRequest::getXProjectId,
+                ListDerivativeIndexesRequest::setXProjectId));
 
         // response
 
@@ -4787,6 +5432,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDimensionGroupsRequest::getWorkspace, ListDimensionGroupsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDimensionGroupsRequest::getXProjectId,
+                ListDimensionGroupsRequest::setXProjectId));
 
         // response
 
@@ -4900,6 +5551,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDimensionLogicTablesRequest::getWorkspace,
                 ListDimensionLogicTablesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDimensionLogicTablesRequest::getXProjectId,
+                ListDimensionLogicTablesRequest::setXProjectId));
 
         // response
 
@@ -4988,6 +5645,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDimensionsRequest::getWorkspace, ListDimensionsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDimensionsRequest::getXProjectId, ListDimensionsRequest::setXProjectId));
 
         // response
 
@@ -5026,6 +5688,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDirectoriesRequest::getWorkspace, ListDirectoriesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDirectoriesRequest::getXProjectId, ListDirectoriesRequest::setXProjectId));
 
         // response
 
@@ -5116,6 +5783,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactLogicTablesRequest::getWorkspace, ListFactLogicTablesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactLogicTablesRequest::getXProjectId,
+                ListFactLogicTablesRequest::setXProjectId));
 
         // response
 
@@ -5569,6 +6242,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricRelationsRequest::getWorkspace, ListMetricRelationsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricRelationsRequest::getXProjectId,
+                ListMetricRelationsRequest::setXProjectId));
 
         // response
 
@@ -5830,6 +6509,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRelationsRequest::getWorkspace, ListRelationsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRelationsRequest::getXProjectId, ListRelationsRequest::setXProjectId));
 
         // response
 
@@ -6561,6 +7245,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubjectLevelsRequest::getWorkspace, ListSubjectLevelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubjectLevelsRequest::getXProjectId, ListSubjectLevelsRequest::setXProjectId));
 
         // response
 
@@ -6614,6 +7303,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableModelRelationsRequest::getWorkspace,
                 ListTableModelRelationsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableModelRelationsRequest::getXProjectId,
+                ListTableModelRelationsRequest::setXProjectId));
 
         // response
 
@@ -6697,6 +7392,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableModelsRequest::getWorkspace, ListTableModelsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableModelsRequest::getXProjectId, ListTableModelsRequest::setXProjectId));
 
         // response
 
@@ -6775,6 +7475,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkspacesRequest::getWorkspace, ListWorkspacesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getXProjectId, ListWorkspacesRequest::setXProjectId));
 
         // response
 
@@ -6903,6 +7608,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getWorkspace,
                 ModifyCustomizedFieldsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getXProjectId,
+                ModifyCustomizedFieldsRequest::setXProjectId));
         builder.<CustomizedFieldsVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -6970,6 +7681,97 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RemoveDesignEntityTagsRequest, RemoveDesignEntityTagsResponse> removeDesignEntityTags =
+        genForRemoveDesignEntityTags();
+
+    private static HttpRequestDef<RemoveDesignEntityTagsRequest, RemoveDesignEntityTagsResponse> genForRemoveDesignEntityTags() {
+        // basic
+        HttpRequestDef.Builder<RemoveDesignEntityTagsRequest, RemoveDesignEntityTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, RemoveDesignEntityTagsRequest.class, RemoveDesignEntityTagsResponse.class)
+            .withName("RemoveDesignEntityTags")
+            .withUri("/v2/{project_id}/design/{entity_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("entity_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignEntityTagsRequest::getEntityId,
+                RemoveDesignEntityTagsRequest::setEntityId));
+        builder.<String>withRequestField("attr_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignEntityTagsRequest::getAttrId, RemoveDesignEntityTagsRequest::setAttrId));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignEntityTagsRequest::getTag, RemoveDesignEntityTagsRequest::setTag));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignEntityTagsRequest::getWorkspace,
+                RemoveDesignEntityTagsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignEntityTagsRequest::getXProjectId,
+                RemoveDesignEntityTagsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveDesignQualityInfosRequest, RemoveDesignQualityInfosResponse> removeDesignQualityInfos =
+        genForRemoveDesignQualityInfos();
+
+    private static HttpRequestDef<RemoveDesignQualityInfosRequest, RemoveDesignQualityInfosResponse> genForRemoveDesignQualityInfos() {
+        // basic
+        HttpRequestDef.Builder<RemoveDesignQualityInfosRequest, RemoveDesignQualityInfosResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    RemoveDesignQualityInfosRequest.class,
+                    RemoveDesignQualityInfosResponse.class)
+                .withName("RemoveDesignQualityInfos")
+                .withUri("/v2/{project_id}/design/{table_id}/qualities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignQualityInfosRequest::getTableId,
+                RemoveDesignQualityInfosRequest::setTableId));
+        builder.<String>withRequestField("table_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignQualityInfosRequest::getTableType,
+                RemoveDesignQualityInfosRequest::setTableType));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignQualityInfosRequest::getWorkspace,
+                RemoveDesignQualityInfosRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveDesignQualityInfosRequest::getXProjectId,
+                RemoveDesignQualityInfosRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RenewDataProfileRequest, RenewDataProfileResponse> renewDataProfile =
         genForRenewDataProfile();
 
@@ -7019,6 +7821,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getWorkspace,
                 ResetLinkAttributeAndStandardRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getXProjectId,
+                ResetLinkAttributeAndStandardRequest::setXProjectId));
         builder.<LinkAttributeAndElementVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7053,6 +7861,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RollbackApprovalRequest::getWorkspace, RollbackApprovalRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackApprovalRequest::getXProjectId, RollbackApprovalRequest::setXProjectId));
 
         // response
 
@@ -7138,6 +7951,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchApprovalsRequest::getWorkspace, SearchApprovalsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchApprovalsRequest::getXProjectId, SearchApprovalsRequest::setXProjectId));
 
         // response
 
@@ -7211,6 +8029,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchAtomicIndexesRequest::getWorkspace, SearchAtomicIndexesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchAtomicIndexesRequest::getXProjectId,
+                SearchAtomicIndexesRequest::setXProjectId));
 
         // response
 
@@ -7355,6 +8179,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchCatalogsRequest::getWorkspace, SearchCatalogsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCatalogsRequest::getXProjectId, SearchCatalogsRequest::setXProjectId));
 
         // response
 
@@ -7394,6 +8223,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchCodeTableValuesRequest::getWorkspace,
                 SearchCodeTableValuesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCodeTableValuesRequest::getXProjectId,
+                SearchCodeTableValuesRequest::setXProjectId));
 
         // response
 
@@ -7462,6 +8297,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchCodeTablesRequest::getWorkspace, SearchCodeTablesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCodeTablesRequest::getXProjectId, SearchCodeTablesRequest::setXProjectId));
 
         // response
 
@@ -7501,6 +8341,57 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchCustomizedFieldsRequest::getWorkspace,
                 SearchCustomizedFieldsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCustomizedFieldsRequest::getXProjectId,
+                SearchCustomizedFieldsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchDesignLatestApprovalDiffRequest, SearchDesignLatestApprovalDiffResponse> searchDesignLatestApprovalDiff =
+        genForSearchDesignLatestApprovalDiff();
+
+    private static HttpRequestDef<SearchDesignLatestApprovalDiffRequest, SearchDesignLatestApprovalDiffResponse> genForSearchDesignLatestApprovalDiff() {
+        // basic
+        HttpRequestDef.Builder<SearchDesignLatestApprovalDiffRequest, SearchDesignLatestApprovalDiffResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchDesignLatestApprovalDiffRequest.class,
+                    SearchDesignLatestApprovalDiffResponse.class)
+                .withName("SearchDesignLatestApprovalDiff")
+                .withUri("/v2/{project_id}/design/approvals/business/{biz_id}/diff")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("biz_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDesignLatestApprovalDiffRequest::getBizId,
+                SearchDesignLatestApprovalDiffRequest::setBizId));
+        builder.<SearchDesignLatestApprovalDiffRequest.BizTypeEnum>withRequestField("biz_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchDesignLatestApprovalDiffRequest.BizTypeEnum.class),
+            f -> f.withMarshaller(SearchDesignLatestApprovalDiffRequest::getBizType,
+                SearchDesignLatestApprovalDiffRequest::setBizType));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDesignLatestApprovalDiffRequest::getWorkspace,
+                SearchDesignLatestApprovalDiffRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDesignLatestApprovalDiffRequest::getXProjectId,
+                SearchDesignLatestApprovalDiffRequest::setXProjectId));
 
         // response
 
@@ -7544,6 +8435,47 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchDwByTypeRequest::getWorkspace, SearchDwByTypeRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDwByTypeRequest::getXProjectId, SearchDwByTypeRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchFieldsForRelationRequest, SearchFieldsForRelationResponse> searchFieldsForRelation =
+        genForSearchFieldsForRelation();
+
+    private static HttpRequestDef<SearchFieldsForRelationRequest, SearchFieldsForRelationResponse> genForSearchFieldsForRelation() {
+        // basic
+        HttpRequestDef.Builder<SearchFieldsForRelationRequest, SearchFieldsForRelationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, SearchFieldsForRelationRequest.class, SearchFieldsForRelationResponse.class)
+            .withName("SearchFieldsForRelation")
+            .withUri("/v2/{project_id}/design/{model_id}/table-model/relation/fields")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("model_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchFieldsForRelationRequest::getModelId,
+                SearchFieldsForRelationRequest::setModelId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchFieldsForRelationRequest::getWorkspace,
+                SearchFieldsForRelationRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchFieldsForRelationRequest::getXProjectId,
+                SearchFieldsForRelationRequest::setXProjectId));
 
         // response
 
@@ -7655,6 +8587,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchSubjectRequest::getWorkspace, SearchSubjectRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSubjectRequest::getXProjectId, SearchSubjectRequest::setXProjectId));
 
         // response
 
@@ -7723,6 +8660,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchSubjectNewRequest::getWorkspace, SearchSubjectNewRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSubjectNewRequest::getXProjectId, SearchSubjectNewRequest::setXProjectId));
 
         // response
 
@@ -7786,6 +8728,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchVersionsRequest::getWorkspace, SearchVersionsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchVersionsRequest::getXProjectId, SearchVersionsRequest::setXProjectId));
 
         // response
 
@@ -7869,6 +8816,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getWorkspace,
                 ShowAggregationLogicTableByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAggregationLogicTableByIdRequest::getXProjectId,
+                ShowAggregationLogicTableByIdRequest::setXProjectId));
 
         // response
 
@@ -8318,6 +9271,12 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getWorkspace, ShowAtomicIndexByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAtomicIndexByIdRequest::getXProjectId,
+                ShowAtomicIndexByIdRequest::setXProjectId));
 
         // response
 
@@ -8347,6 +9306,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBizCatalogDetailRequest::getWorkspace,
                 ShowBizCatalogDetailRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBizCatalogDetailRequest::getXProjectId,
+                ShowBizCatalogDetailRequest::setXProjectId));
 
         // response
 
@@ -8380,6 +9345,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBizMetricByIdRequest::getWorkspace, ShowBizMetricByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBizMetricByIdRequest::getXProjectId, ShowBizMetricByIdRequest::setXProjectId));
 
         // response
 
@@ -8537,6 +9507,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCodeTableByIdRequest::getWorkspace, ShowCodeTableByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCodeTableByIdRequest::getXProjectId, ShowCodeTableByIdRequest::setXProjectId));
 
         // response
 
@@ -8571,6 +9546,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getWorkspace,
                 ShowCompoundMetricByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompoundMetricByIdRequest::getXProjectId,
+                ShowCompoundMetricByIdRequest::setXProjectId));
 
         // response
 
@@ -8604,6 +9585,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConditionByIdRequest::getWorkspace, ShowConditionByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConditionByIdRequest::getXProjectId, ShowConditionByIdRequest::setXProjectId));
 
         // response
 
@@ -8867,6 +9853,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getWorkspace,
                 ShowDerivativeIndexByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDerivativeIndexByIdRequest::getXProjectId,
+                ShowDerivativeIndexByIdRequest::setXProjectId));
 
         // response
 
@@ -8900,6 +9892,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDimensionByIdRequest::getWorkspace, ShowDimensionByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDimensionByIdRequest::getXProjectId, ShowDimensionByIdRequest::setXProjectId));
 
         // response
 
@@ -8939,6 +9936,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getWorkspace,
                 ShowDimensionLogicTableByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDimensionLogicTableByIdRequest::getXProjectId,
+                ShowDimensionLogicTableByIdRequest::setXProjectId));
 
         // response
 
@@ -9029,6 +10032,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getWorkspace,
                 ShowFactLogicTableByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactLogicTableByIdRequest::getXProjectId,
+                ShowFactLogicTableByIdRequest::setXProjectId));
 
         // response
 
@@ -9696,6 +10705,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRelationByIdRequest::getWorkspace, ShowRelationByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRelationByIdRequest::getXProjectId, ShowRelationByIdRequest::setXProjectId));
 
         // response
 
@@ -9853,6 +10867,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStandardByIdRequest::getWorkspace, ShowStandardByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStandardByIdRequest::getXProjectId, ShowStandardByIdRequest::setXProjectId));
 
         // response
 
@@ -9887,6 +10906,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStandardTemplateRequest::getWorkspace,
                 ShowStandardTemplateRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStandardTemplateRequest::getXProjectId,
+                ShowStandardTemplateRequest::setXProjectId));
 
         // response
 
@@ -9920,6 +10945,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTableModelByIdRequest::getWorkspace, ShowTableModelByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableModelByIdRequest::getXProjectId, ShowTableModelByIdRequest::setXProjectId));
 
         // response
 
@@ -10160,6 +11190,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getWorkspace,
                 ShowWorkspaceDetailByIdRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkspaceDetailByIdRequest::getXProjectId,
+                ShowWorkspaceDetailByIdRequest::setXProjectId));
 
         // response
 
@@ -10259,6 +11295,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBizMetricRequest::getWorkspace, UpdateBizMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBizMetricRequest::getXProjectId, UpdateBizMetricRequest::setXProjectId));
         builder.<BizMetricVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10330,6 +11371,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCodeTableRequest::getWorkspace, UpdateCodeTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCodeTableRequest::getXProjectId, UpdateCodeTableRequest::setXProjectId));
         builder.<CodeTableVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10364,6 +11410,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCodeTableValuesRequest::getWorkspace,
                 UpdateCodeTableValuesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCodeTableValuesRequest::getXProjectId,
+                UpdateCodeTableValuesRequest::setXProjectId));
         builder.<CodeTableFieldValueUpdateVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10410,6 +11462,122 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse> updateDesignAggregationLogicTable =
+        genForUpdateDesignAggregationLogicTable();
+
+    private static HttpRequestDef<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse> genForUpdateDesignAggregationLogicTable() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignAggregationLogicTableRequest, UpdateDesignAggregationLogicTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDesignAggregationLogicTableRequest.class,
+                    UpdateDesignAggregationLogicTableResponse.class)
+                .withName("UpdateDesignAggregationLogicTable")
+                .withUri("/v2/{project_id}/design/aggregation-logic-tables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignAggregationLogicTableRequest::getWorkspace,
+                UpdateDesignAggregationLogicTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignAggregationLogicTableRequest::getXProjectId,
+                UpdateDesignAggregationLogicTableRequest::setXProjectId));
+        builder.<AggregationLogicTableVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AggregationLogicTableVO.class),
+            f -> f.withMarshaller(UpdateDesignAggregationLogicTableRequest::getBody,
+                UpdateDesignAggregationLogicTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse> updateDesignAtomicIndex =
+        genForUpdateDesignAtomicIndex();
+
+    private static HttpRequestDef<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse> genForUpdateDesignAtomicIndex() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDesignAtomicIndexRequest.class, UpdateDesignAtomicIndexResponse.class)
+            .withName("UpdateDesignAtomicIndex")
+            .withUri("/v2/{project_id}/design/atomic-indexs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignAtomicIndexRequest::getWorkspace,
+                UpdateDesignAtomicIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignAtomicIndexRequest::getXProjectId,
+                UpdateDesignAtomicIndexRequest::setXProjectId));
+        builder.<AtomicIndexVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AtomicIndexVO.class),
+            f -> f.withMarshaller(UpdateDesignAtomicIndexRequest::getBody, UpdateDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignTableQualityRequest, UpdateDesignTableQualityResponse> updateDesignTableQuality =
+        genForUpdateDesignTableQuality();
+
+    private static HttpRequestDef<UpdateDesignTableQualityRequest, UpdateDesignTableQualityResponse> genForUpdateDesignTableQuality() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignTableQualityRequest, UpdateDesignTableQualityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateDesignTableQualityRequest.class, UpdateDesignTableQualityResponse.class)
+                .withName("UpdateDesignTableQuality")
+                .withUri("/v2/{project_id}/design/{table_id}/qualities")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignTableQualityRequest::getTableId,
+                UpdateDesignTableQualityRequest::setTableId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignTableQualityRequest::getWorkspace,
+                UpdateDesignTableQualityRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignTableQualityRequest::getXProjectId,
+                UpdateDesignTableQualityRequest::setXProjectId));
+        builder.<UpdateDesignTableQualityParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDesignTableQualityParam.class),
+            f -> f.withMarshaller(UpdateDesignTableQualityRequest::getBody, UpdateDesignTableQualityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectory =
         genForUpdateDirectory();
 
@@ -10427,6 +11595,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDirectoryRequest::getWorkspace, UpdateDirectoryRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDirectoryRequest::getXProjectId, UpdateDirectoryRequest::setXProjectId));
         builder.<DirectoryVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10705,6 +11878,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateStandardRequest::getWorkspace, UpdateStandardRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStandardRequest::getXProjectId, UpdateStandardRequest::setXProjectId));
         builder.<StandElementValueVOList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10734,6 +11912,12 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateStandardTemplateRequest::getWorkspace,
                 UpdateStandardTemplateRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStandardTemplateRequest::getXProjectId,
+                UpdateStandardTemplateRequest::setXProjectId));
         builder.<StandElementFieldVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10762,6 +11946,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubjectRequest::getWorkspace, UpdateSubjectRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubjectRequest::getXProjectId, UpdateSubjectRequest::setXProjectId));
         builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10790,6 +11979,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubjectNewRequest::getWorkspace, UpdateSubjectNewRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubjectNewRequest::getXProjectId, UpdateSubjectNewRequest::setXProjectId));
         builder.<SubjectParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10818,6 +12012,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTableModelRequest::getWorkspace, UpdateTableModelRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableModelRequest::getXProjectId, UpdateTableModelRequest::setXProjectId));
         builder.<TableModelUpdateVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10951,6 +12150,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspace, UpdateWorkspaceRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getXProjectId, UpdateWorkspaceRequest::setXProjectId));
         builder.<WorkspaceVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

@@ -27,7 +27,7 @@ public class CatalogEntityVO {
     }
 
     /**
-     * 类型名称,填写“BusinessCatalog”即可
+     * 类型名称，填写“BusinessCatalog”即可。
      * @return typeName
      */
     public String getTypeName() {

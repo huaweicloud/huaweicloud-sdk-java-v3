@@ -129,7 +129,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 路径
+     * 路径。
      * @return path
      */
     public String getPath() {
@@ -146,7 +146,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return qualifiedName
      */
     public String getQualifiedName() {
@@ -163,7 +163,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 主题所属层级
+     * 主题所属层级。
      * @return level
      */
     public String getLevel() {
@@ -180,7 +180,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -197,7 +197,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 英文名称
+     * 英文名称。
      * @return nameEng
      */
     public String getNameEng() {
@@ -214,7 +214,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 别名
+     * 别名。
      * @return alias
      */
     public String getAlias() {
@@ -231,7 +231,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -248,7 +248,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 数据主体
+     * 数据主体。
      * @return dataOwner
      */
     public String getDataOwner() {
@@ -265,7 +265,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 责任人
+     * 责任人。
      * @return owner
      */
     public String getOwner() {
@@ -298,7 +298,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 数据主体列表
+     * 数据主体列表。
      * @return dataOwnerList
      */
     public List<String> getDataOwnerList() {
@@ -315,7 +315,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 创建时间，时间戳
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public String getCreateTime() {
@@ -332,7 +332,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -349,7 +349,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 更新时间，时间戳
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -366,7 +366,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -409,7 +409,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 父节点ID
+     * 父节点ID。
      * @return parentId
      */
     public String getParentId() {
@@ -426,7 +426,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L1层
+     * 是否为L1层。
      * @return l1
      */
     public Boolean getL1() {
@@ -443,7 +443,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L2层
+     * 是否为L2层。
      * @return l2
      */
     public Boolean getL2() {
@@ -460,7 +460,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L3层
+     * 是否为L3层。
      * @return l3
      */
     public Boolean getL3() {
@@ -477,7 +477,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 顺序编号
+     * 顺序编号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -494,7 +494,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 租户ID
+     * 租户ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -527,7 +527,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 自定义项
+     * 自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

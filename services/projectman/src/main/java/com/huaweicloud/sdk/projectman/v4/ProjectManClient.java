@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CancelProjectDomainRequest;
@@ -1063,6 +1065,35 @@ public class ProjectManClient {
     public SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4Invoker(
         BatchDeleteIterationsV4Request request) {
         return new SyncInvoker<>(request, ProjectManMeta.batchDeleteIterationsV4, hcClient);
+    }
+
+    /**
+     * 查询当前项目下已经关联的工作项
+     *
+     * 查询当前项目下已经关联的工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListAssociatedIssuesRequest 请求对象
+     * @return BatchListAssociatedIssuesResponse
+     */
+    public BatchListAssociatedIssuesResponse batchListAssociatedIssues(BatchListAssociatedIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchListAssociatedIssues);
+    }
+
+    /**
+     * 查询当前项目下已经关联的工作项
+     *
+     * 查询当前项目下已经关联的工作项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListAssociatedIssuesRequest 请求对象
+     * @return SyncInvoker<BatchListAssociatedIssuesRequest, BatchListAssociatedIssuesResponse>
+     */
+    public SyncInvoker<BatchListAssociatedIssuesRequest, BatchListAssociatedIssuesResponse> batchListAssociatedIssuesInvoker(
+        BatchListAssociatedIssuesRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.batchListAssociatedIssues, hcClient);
     }
 
     /**

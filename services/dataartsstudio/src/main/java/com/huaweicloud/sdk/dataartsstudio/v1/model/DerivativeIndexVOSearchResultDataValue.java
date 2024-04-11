@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * DerivativeIndexVOSearchResultDataValue
+ * 返回的数据信息。
  */
 public class DerivativeIndexVOSearchResultDataValue {
 
@@ -45,7 +45,7 @@ public class DerivativeIndexVOSearchResultDataValue {
     }
 
     /**
-     * DerivativeIndexVO数组
+     * DerivativeIndexVO数组。
      * @return records
      */
     public List<DerivativeIndexVO> getRecords() {
@@ -62,7 +62,7 @@ public class DerivativeIndexVOSearchResultDataValue {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return total
      */
     public Integer getTotal() {

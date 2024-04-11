@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 表自定义项
+ * 表自定义项。
  */
 public class SelfDefinedFieldVO {
 
@@ -36,7 +36,7 @@ public class SelfDefinedFieldVO {
     }
 
     /**
-     * 自定义项中文名
+     * 自定义项中文名。
      * @return fdNameCh
      */
     public String getFdNameCh() {
@@ -53,7 +53,7 @@ public class SelfDefinedFieldVO {
     }
 
     /**
-     * 自定义项英文名
+     * 自定义项英文名。
      * @return fdNameEn
      */
     public String getFdNameEn() {
@@ -70,7 +70,7 @@ public class SelfDefinedFieldVO {
     }
 
     /**
-     * 是否必填
+     * 是否必填。
      * @return notNull
      */
     public Boolean getNotNull() {
@@ -87,7 +87,7 @@ public class SelfDefinedFieldVO {
     }
 
     /**
-     * 属性值
+     * 属性值。
      * @return fdValue
      */
     public String getFdValue() {

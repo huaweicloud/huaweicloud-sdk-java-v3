@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ShowTopicsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "default_topic_urn")
 
     private String defaultTopicUrn;
@@ -28,6 +33,23 @@ public class ShowTopicsResponse extends SdkResponse {
     @JsonProperty(value = "topics")
 
     private List<TopicBean> topics = null;
+
+    public ShowTopicsResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * DSC告警主题ID（非消息通知服务主题ID）
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public ShowTopicsResponse withDefaultTopicUrn(String defaultTopicUrn) {
         this.defaultTopicUrn = defaultTopicUrn;
@@ -105,19 +127,20 @@ public class ShowTopicsResponse extends SdkResponse {
             return false;
         }
         ShowTopicsResponse that = (ShowTopicsResponse) obj;
-        return Objects.equals(this.defaultTopicUrn, that.defaultTopicUrn)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.defaultTopicUrn, that.defaultTopicUrn)
             && Objects.equals(this.topicCount, that.topicCount) && Objects.equals(this.topics, that.topics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(defaultTopicUrn, topicCount, topics);
+        return Objects.hash(id, defaultTopicUrn, topicCount, topics);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTopicsResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    defaultTopicUrn: ").append(toIndentedString(defaultTopicUrn)).append("\n");
         sb.append("    topicCount: ").append(toIndentedString(topicCount)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");

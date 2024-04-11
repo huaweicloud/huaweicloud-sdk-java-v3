@@ -16,6 +16,11 @@ public class ListApproversRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approver_name")
 
     private String approverName;
@@ -36,7 +41,7 @@ public class ListApproversRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -45,6 +50,25 @@ public class ListApproversRequest {
 
     public void setWorkspace(String workspace) {
         this.workspace = workspace;
+    }
+
+    public ListApproversRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
     }
 
     public ListApproversRequest withApproverName(String approverName) {
@@ -70,7 +94,7 @@ public class ListApproversRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -88,7 +112,7 @@ public class ListApproversRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -108,13 +132,14 @@ public class ListApproversRequest {
             return false;
         }
         ListApproversRequest that = (ListApproversRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.approverName, that.approverName)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.approverName, that.approverName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, approverName, limit, offset);
+        return Objects.hash(workspace, xProjectId, approverName, limit, offset);
     }
 
     @Override
@@ -122,6 +147,7 @@ public class ListApproversRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApproversRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    approverName: ").append(toIndentedString(approverName)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

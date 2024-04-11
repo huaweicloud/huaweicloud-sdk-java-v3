@@ -135,7 +135,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -152,7 +152,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 维度id
+     * 维度ID。
      * @return dimensionId
      */
     public Long getDimensionId() {
@@ -169,7 +169,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 码表属性id
+     * 码表属性ID。
      * @return codeTableFieldId
      */
     public Long getCodeTableFieldId() {
@@ -186,7 +186,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 字段名
+     * 字段名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -203,7 +203,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 业务属性
+     * 业务属性。
      * @return nameCh
      */
     public String getNameCh() {
@@ -220,7 +220,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -237,7 +237,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -254,7 +254,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 字段类型
+     * 字段类型。
      * @return dataType
      */
     public String getDataType() {
@@ -288,7 +288,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 数据类型扩展字段
+     * 数据类型扩展字段。
      * @return dataTypeExtend
      */
     public String getDataTypeExtend() {
@@ -305,7 +305,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 是否主键
+     * 是否主键。
      * @return isPrimaryKey
      */
     public Boolean getIsPrimaryKey() {
@@ -322,7 +322,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 是否业务主键
+     * 是否业务主键。
      * @return isBizPrimary
      */
     public Boolean getIsBizPrimary() {
@@ -339,7 +339,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 是否分区
+     * 是否分区。
      * @return isPartitionKey
      */
     public Boolean getIsPartitionKey() {
@@ -356,7 +356,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 序号
+     * 序号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -373,7 +373,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 是否不为空
+     * 是否不为空。
      * @return notNull
      */
     public Boolean getNotNull() {
@@ -390,7 +390,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 关联的数据标准的id
+     * 关联的数据标准的ID。
      * @return standRowId
      */
     public Long getStandRowId() {
@@ -407,7 +407,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * Get standRowName
+     * 关联的数据标准名称。
      * @return standRowName
      */
     public String getStandRowName() {
@@ -440,7 +440,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 质量信息
+     * 质量信息。
      * @return qualityInfos
      */
     public List<QualityInfoVO> getQualityInfos() {
@@ -474,7 +474,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -491,7 +491,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -541,7 +541,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 自定义项
+     * 自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

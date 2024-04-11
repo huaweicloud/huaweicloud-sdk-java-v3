@@ -39,7 +39,7 @@ public class MappingSourceTableVO {
     private String table2Name;
 
     /**
-     * 关联类型，左外连接，右外连接，内连接，全连接
+     * 关联类型。LEFT(左外连接)、RIGHT(右外连接)、INNER(内连接)、FULL(全连接)。
      */
     public static final class JoinTypeEnum {
 
@@ -136,7 +136,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表id
+     * 表1ID。
      * @return table1Id
      */
     public Long getTable1Id() {
@@ -153,7 +153,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表id
+     * 表2ID。
      * @return table2Id
      */
     public Long getTable2Id() {
@@ -170,7 +170,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表1名称
+     * 表1名称。
      * @return table1Name
      */
     public String getTable1Name() {
@@ -187,7 +187,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表2名称
+     * 表2名称。
      * @return table2Name
      */
     public String getTable2Name() {
@@ -204,7 +204,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 关联类型，左外连接，右外连接，内连接，全连接
+     * 关联类型。LEFT(左外连接)、RIGHT(右外连接)、INNER(内连接)、FULL(全连接)。
      * @return joinType
      */
     public JoinTypeEnum getJoinType() {
@@ -237,7 +237,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * on条件
+     * on条件。
      * @return joinFields
      */
     public List<MappingJoinFieldVO> getJoinFields() {

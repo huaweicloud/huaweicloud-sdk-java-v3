@@ -295,7 +295,7 @@ public class TableModelUpdateVO {
     private Long qualityId;
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
      */
     public static final class DistributeEnum {
 
@@ -425,7 +425,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -442,7 +442,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 模型id
+     * 所属关系建模的模型ID。
      * @return modelId
      */
     public Long getModelId() {
@@ -459,7 +459,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 父表id
+     * 父表ID。
      * @return parentTableId
      */
     public Long getParentTableId() {
@@ -476,7 +476,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 父表名称
+     * 父表名称。
      * @return parentTableName
      */
     public String getParentTableName() {
@@ -493,7 +493,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 父表编码
+     * 父表编码。
      * @return parentTableCode
      */
     public String getParentTableCode() {
@@ -536,7 +536,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据格式
+     * 数据格式。
      * @return dataFormat
      */
     public String getDataFormat() {
@@ -553,7 +553,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * obs桶
+     * obs桶。
      * @return obsBucket
      */
     public String getObsBucket() {
@@ -570,7 +570,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * obs路径
+     * obs路径。
      * @return obsLocation
      */
     public String getObsLocation() {
@@ -587,7 +587,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 其他配置
+     * 其他配置。
      * @return configs
      */
     public String getConfigs() {
@@ -604,7 +604,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表类型
+     * 表类型。
      * @return tableType
      */
     public String getTableType() {
@@ -621,7 +621,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * Get owner
+     * 责任人。
      * @return owner
      */
     public String getOwner() {
@@ -638,7 +638,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表名
+     * 表名。
      * @return tbName
      */
     public String getTbName() {
@@ -655,7 +655,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据连接id
+     * 数据连接ID。
      * @return dwId
      */
     public String getDwId() {
@@ -672,7 +672,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据库名
+     * 数据库名。
      * @return dbName
      */
     public String getDbName() {
@@ -689,7 +689,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * dli数据连接执行sql所需的队列，数据连接类型为DLI时必须
+     * dli数据连接执行sql所需的队列，数据连接类型为DLI时必须。
      * @return queueName
      */
     public String getQueueName() {
@@ -706,7 +706,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * DWS类型需要
+     * DWS类型需要。
      * @return schema
      */
     public String getSchema() {
@@ -723,7 +723,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 扩展信息
+     * 扩展信息。
      * @return extendInfo
      */
     public String getExtendInfo() {
@@ -740,7 +740,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表物化后的guid
+     * 表物化后的guid。
      * @return tbGuid
      */
     public String getTbGuid() {
@@ -757,7 +757,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据表id
+     * 数据表ID。
      * @return tbId
      */
     public String getTbId() {
@@ -774,7 +774,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 逻辑实体名
+     * 逻辑实体名。
      * @return logicTbName
      */
     public String getLogicTbName() {
@@ -791,7 +791,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 逻辑实体的guid
+     * 逻辑实体的guid。
      * @return logicTbGuid
      */
     public String getLogicTbGuid() {
@@ -808,7 +808,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -842,7 +842,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 逻辑实体的id
+     * 逻辑实体的ID。
      * @return logicTbId
      */
     public Long getLogicTbId() {
@@ -859,7 +859,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 归属的业务分类的id
+     * 归属的业务分类的ID。
      * @return bizCatalogId
      */
     public Long getBizCatalogId() {
@@ -876,7 +876,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 归属的业务分类的路径 {\"l1Id\":\"\",\"l2Id\":\"\",\"l3Id\":\"\"}
+     * 归属的业务分类的路径 {\"l1Id\":\"\",\"l2Id\":\"\",\"l3Id\":\"\"}。
      * @return catalogPath
      */
     public String getCatalogPath() {
@@ -893,7 +893,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -910,7 +910,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -927,7 +927,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -944,7 +944,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -977,7 +977,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表标签
+     * 表标签。
      * @return tags
      */
     public List<TagVO> getTags() {
@@ -1062,7 +1062,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表属性信息
+     * 表属性信息。
      * @return attributes
      */
     public List<TableModelAttributeVO> getAttributes() {
@@ -1095,7 +1095,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 表映射信息
+     * 表映射信息。
      * @return mappings
      */
     public List<TableMappingVO> getMappings() {
@@ -1128,7 +1128,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 关系
+     * 关系。
      * @return relations
      */
     public List<RelationVO> getRelations() {
@@ -1145,7 +1145,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型，对应表所在的数仓类型，取值可以为DLI、DWS、MRS_HIVE、POSTGRESQL、MRS_SPARK、CLICKHOUSE、MYSQL、ORACLE和DORIS等。
      * @return dwType
      */
     public String getDwType() {
@@ -1162,7 +1162,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 数据连接名称
+     * 数据连接名称，只读，创建和更新时无需填写。
      * @return dwName
      */
     public String getDwName() {
@@ -1179,7 +1179,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -1196,7 +1196,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -1213,7 +1213,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {
@@ -1230,7 +1230,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
     public Long getL1Id() {
@@ -1247,7 +1247,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -1264,7 +1264,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 业务对象id
+     * 业务对象ID。
      * @return l3Id
      */
     public Long getL3Id() {
@@ -1298,7 +1298,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * DLF 作业 ID
+     * DLF作业ID。
      * @return dlfTaskId
      */
     public String getDlfTaskId() {
@@ -1315,7 +1315,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 是否使用最新分区
+     * 是否使用最新分区。
      * @return useRecentlyPartition
      */
     public Boolean getUseRecentlyPartition() {
@@ -1332,7 +1332,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 是否是逆向的
+     * 是否是逆向的。
      * @return reversed
      */
     public Boolean getReversed() {
@@ -1349,7 +1349,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 异常数据输出开关
+     * 异常数据输出开关。
      * @return dirtyOutSwitch
      */
     public Boolean getDirtyOutSwitch() {
@@ -1366,7 +1366,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 异常数据输出库
+     * 异常数据输出库。
      * @return dirtyOutDatabase
      */
     public String getDirtyOutDatabase() {
@@ -1383,7 +1383,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 异常表前缀
+     * 异常表前缀。
      * @return dirtyOutPrefix
      */
     public String getDirtyOutPrefix() {
@@ -1400,7 +1400,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 异常表后缀
+     * 异常表后缀。
      * @return dirtyOutSuffix
      */
     public String getDirtyOutSuffix() {
@@ -1417,7 +1417,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 质量责任人
+     * 质量责任人。
      * @return qualityOwner
      */
     public String getQualityOwner() {
@@ -1434,7 +1434,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 质量id
+     * 质量ID。
      * @return qualityId
      */
     public Long getQualityId() {
@@ -1451,7 +1451,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
      * @return distribute
      */
     public DistributeEnum getDistribute() {
@@ -1468,7 +1468,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * DISTRIBUTE BY HASH column
+     * DISTRIBUTE BY HASH column.
      * @return distributeColumn
      */
     public String getDistributeColumn() {
@@ -1485,7 +1485,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 是否分区表
+     * 是否分区表。
      * @return isPartition
      */
     public Boolean getIsPartition() {
@@ -1604,7 +1604,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 别名
+     * 别名。
      * @return alias
      */
     public String getAlias() {
@@ -1637,7 +1637,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 自定义项
+     * 自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

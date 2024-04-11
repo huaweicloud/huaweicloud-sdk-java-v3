@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 数据治理分层
+ * 数据治理分层。SDI(贴源数据层)、DWI(数据整合层)、DWR(数据报告层)、DM(数据集市层)。
  */
 public class ModelLevel {
 

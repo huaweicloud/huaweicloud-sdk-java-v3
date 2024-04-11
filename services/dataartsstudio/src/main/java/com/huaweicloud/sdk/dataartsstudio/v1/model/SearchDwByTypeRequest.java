@@ -16,6 +16,11 @@ public class SearchDwByTypeRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_refresh")
 
     private Boolean forceRefresh;
@@ -41,7 +46,7 @@ public class SearchDwByTypeRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -52,13 +57,32 @@ public class SearchDwByTypeRequest {
         this.workspace = workspace;
     }
 
+    public SearchDwByTypeRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public SearchDwByTypeRequest withForceRefresh(Boolean forceRefresh) {
         this.forceRefresh = forceRefresh;
         return this;
     }
 
     /**
-     * 是否查询最新的
+     * 是否查询最新的。
      * @return forceRefresh
      */
     public Boolean getForceRefresh() {
@@ -75,7 +99,7 @@ public class SearchDwByTypeRequest {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型。
      * @return dwType
      */
     public String getDwType() {
@@ -129,14 +153,14 @@ public class SearchDwByTypeRequest {
             return false;
         }
         SearchDwByTypeRequest that = (SearchDwByTypeRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.forceRefresh, that.forceRefresh)
-            && Objects.equals(this.dwType, that.dwType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.forceRefresh, that.forceRefresh) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, forceRefresh, dwType, limit, offset);
+        return Objects.hash(workspace, xProjectId, forceRefresh, dwType, limit, offset);
     }
 
     @Override
@@ -144,6 +168,7 @@ public class SearchDwByTypeRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class SearchDwByTypeRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    forceRefresh: ").append(toIndentedString(forceRefresh)).append("\n");
         sb.append("    dwType: ").append(toIndentedString(dwType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

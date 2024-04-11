@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4RequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildUserNickNamesRequestBody;
@@ -1084,6 +1086,45 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteIterationsV4RequestBody.class),
             f -> f.withMarshaller(BatchDeleteIterationsV4Request::getBody, BatchDeleteIterationsV4Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListAssociatedIssuesRequest, BatchListAssociatedIssuesResponse> batchListAssociatedIssues =
+        genForBatchListAssociatedIssues();
+
+    private static HttpRequestDef<BatchListAssociatedIssuesRequest, BatchListAssociatedIssuesResponse> genForBatchListAssociatedIssues() {
+        // basic
+        HttpRequestDef.Builder<BatchListAssociatedIssuesRequest, BatchListAssociatedIssuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    BatchListAssociatedIssuesRequest.class,
+                    BatchListAssociatedIssuesResponse.class)
+                .withName("BatchListAssociatedIssues")
+                .withUri("/v4/projects/{project_id}/issues/batch-associated-issues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListAssociatedIssuesRequest::getProjectId,
+                BatchListAssociatedIssuesRequest::setProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListAssociatedIssuesRequest::getLimit,
+                BatchListAssociatedIssuesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListAssociatedIssuesRequest::getOffset,
+                BatchListAssociatedIssuesRequest::setOffset));
 
         // response
 

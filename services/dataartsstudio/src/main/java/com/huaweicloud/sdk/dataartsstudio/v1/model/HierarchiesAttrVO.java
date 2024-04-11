@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 层级属性
+ * 层级属性。
  */
 public class HierarchiesAttrVO {
 
@@ -74,7 +74,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -91,7 +91,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 层级id
+     * 层级ID。
      * @return hierarchiesId
      */
     public Long getHierarchiesId() {
@@ -108,7 +108,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 属性id
+     * 属性ID。
      * @return attrId
      */
     public Long getAttrId() {
@@ -125,7 +125,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 层次
+     * 层次。
      * @return level
      */
     public Integer getLevel() {
@@ -142,7 +142,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 引用属性编码
+     * 引用属性编码。
      * @return attrNameEn
      */
     public String getAttrNameEn() {
@@ -159,7 +159,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 引用属性名称
+     * 引用属性名称。
      * @return attrNameCh
      */
     public String getAttrNameCh() {
@@ -192,7 +192,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性id
+     * 详情属性ID。
      * @return detailAttrIds
      */
     public List<Long> getDetailAttrIds() {
@@ -225,7 +225,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性英文
+     * 详情属性英文。
      * @return detailAttrNameEns
      */
     public List<String> getDetailAttrNameEns() {
@@ -258,7 +258,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性中文
+     * 详情属性中文。
      * @return detailAttrNameChs
      */
     public List<String> getDetailAttrNameChs() {
@@ -317,7 +317,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情字段
+     * 详情字段。
      * @return detailAttrs
      */
     public List<DimensionAttributeVO> getDetailAttrs() {

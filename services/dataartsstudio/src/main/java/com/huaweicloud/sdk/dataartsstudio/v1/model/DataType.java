@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.dataartsstudio.v1.model;
 import java.util.Objects;
 
 /**
- * 字段类型
+ * 字段类型。
  */
 public class DataType {
 

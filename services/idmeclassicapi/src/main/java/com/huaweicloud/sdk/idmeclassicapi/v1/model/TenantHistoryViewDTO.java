@@ -345,7 +345,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * 操作类型，用于存储MONGO。 - CASCADE：级联。 - CREATE：级联。 - DELETE：创建。 - LOGICALDELETE：软删除。 - UPDATE：更新。
+     * 操作类型。 - CREATE：创建操作。  - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。
      * @return rdmOperationType
      */
     public String getRdmOperationType() {

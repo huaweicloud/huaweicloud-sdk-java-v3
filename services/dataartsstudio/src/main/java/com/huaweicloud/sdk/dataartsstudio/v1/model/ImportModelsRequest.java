@@ -21,8 +21,13 @@ public class ImportModelsRequest {
 
     private String workspace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
     /**
-     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作
+     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。import_relation(导入关系模型：逻辑实体/物理表)、import_dimension( 导入维度表、事实表)、import_codetable(导入码表)、import_datastandard(导入数据标准)、import_bizmetric(导入业务指标)、import_bizcatalog(导入流程架构)、import_atomic(导入原子指标)、import_derivative(导入衍生指标)、import_compound(导入复合指标)、import_aggregation(导入汇总表)。
      */
     public static final class ActionIdEnum {
 
@@ -170,7 +175,7 @@ public class ImportModelsRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -181,13 +186,32 @@ public class ImportModelsRequest {
         this.workspace = workspace;
     }
 
+    public ImportModelsRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public ImportModelsRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
 
     /**
-     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作
+     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。import_relation(导入关系模型：逻辑实体/物理表)、import_dimension( 导入维度表、事实表)、import_codetable(导入码表)、import_datastandard(导入数据标准)、import_bizmetric(导入业务指标)、import_bizcatalog(导入流程架构)、import_atomic(导入原子指标)、import_derivative(导入衍生指标)、import_compound(导入复合指标)、import_aggregation(导入汇总表)。
      * @return actionId
      */
     public ActionIdEnum getActionId() {
@@ -204,7 +228,7 @@ public class ImportModelsRequest {
     }
 
     /**
-     * 模型id，在导入模型（import_relation）时必填
+     * 关系建模的模型ID，在导入模型（import_relation）时必填。
      * @return modelId
      */
     public String getModelId() {
@@ -221,7 +245,7 @@ public class ImportModelsRequest {
     }
 
     /**
-     * 导入的目录id，在导入码表（import_datastandard）和数据标准（import_datastandard）时生效，选填
+     * 导入的目录id，在导入码表（import_datastandard）和数据标准（import_datastandard）时生效，选填。
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -238,7 +262,7 @@ public class ImportModelsRequest {
     }
 
     /**
-     * 是否需要覆盖更新已有的实体
+     * 是否需要覆盖更新已有的实体。
      * @return skipExist
      */
     public Boolean getSkipExist() {
@@ -284,14 +308,15 @@ public class ImportModelsRequest {
             return false;
         }
         ImportModelsRequest that = (ImportModelsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.actionId, that.actionId)
-            && Objects.equals(this.modelId, that.modelId) && Objects.equals(this.directoryId, that.directoryId)
-            && Objects.equals(this.skipExist, that.skipExist) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.skipExist, that.skipExist)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, actionId, modelId, directoryId, skipExist, body);
+        return Objects.hash(workspace, xProjectId, actionId, modelId, directoryId, skipExist, body);
     }
 
     @Override
@@ -299,6 +324,7 @@ public class ImportModelsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportModelsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
         sb.append("    directoryId: ").append(toIndentedString(directoryId)).append("\n");

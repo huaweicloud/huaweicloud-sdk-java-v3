@@ -36,7 +36,7 @@ public class CatalogLevelVO {
     }
 
     /**
-     * 编号
+     * 编号。
      * @return id
      */
     public Long getId() {
@@ -53,7 +53,7 @@ public class CatalogLevelVO {
     }
 
     /**
-     * 层级
+     * 层级。
      * @return level
      */
     public Integer getLevel() {
@@ -70,7 +70,7 @@ public class CatalogLevelVO {
     }
 
     /**
-     * 中文名称
+     * 中文名称。
      * @return nameCh
      */
     public String getNameCh() {
@@ -87,7 +87,7 @@ public class CatalogLevelVO {
     }
 
     /**
-     * 英文名称
+     * 英文名称。
      * @return nameEn
      */
     public String getNameEn() {

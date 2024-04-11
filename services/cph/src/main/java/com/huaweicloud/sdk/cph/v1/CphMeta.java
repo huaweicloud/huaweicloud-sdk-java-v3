@@ -20,9 +20,15 @@ import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
+import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
@@ -238,6 +244,35 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeCloudPhoneServerRequest, ChangeCloudPhoneServerResponse> changeCloudPhoneServer =
+        genForChangeCloudPhoneServer();
+
+    private static HttpRequestDef<ChangeCloudPhoneServerRequest, ChangeCloudPhoneServerResponse> genForChangeCloudPhoneServer() {
+        // basic
+        HttpRequestDef.Builder<ChangeCloudPhoneServerRequest, ChangeCloudPhoneServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeCloudPhoneServerRequest.class, ChangeCloudPhoneServerResponse.class)
+            .withName("ChangeCloudPhoneServer")
+            .withUri("/v2/{project_id}/cloud-phone/servers/{server_id}/change")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeCloudPhoneServerRequest::getServerId,
+                ChangeCloudPhoneServerRequest::setServerId));
+        builder.<ChangeCloudPhoneServerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeCloudPhoneServerRequestBody.class),
+            f -> f.withMarshaller(ChangeCloudPhoneServerRequest::getBody, ChangeCloudPhoneServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModel =
         genForChangeCloudPhoneServerModel();
 
@@ -286,6 +321,29 @@ public class CphMeta {
             TypeCasts.uncheckedConversion(CreateNet2CloudPhoneServerRequestBody.class),
             f -> f.withMarshaller(CreateNet2CloudPhoneServerRequest::getBody,
                 CreateNet2CloudPhoneServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCloudPhoneServerRequest, DeleteCloudPhoneServerResponse> deleteCloudPhoneServer =
+        genForDeleteCloudPhoneServer();
+
+    private static HttpRequestDef<DeleteCloudPhoneServerRequest, DeleteCloudPhoneServerResponse> genForDeleteCloudPhoneServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteCloudPhoneServerRequest, DeleteCloudPhoneServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCloudPhoneServerRequest.class, DeleteCloudPhoneServerResponse.class)
+            .withName("DeleteCloudPhoneServer")
+            .withUri("/v2/{project_id}/cloud-phone/servers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteCloudPhoneServerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteCloudPhoneServerRequestBody.class),
+            f -> f.withMarshaller(DeleteCloudPhoneServerRequest::getBody, DeleteCloudPhoneServerRequest::setBody));
 
         // response
 
@@ -479,6 +537,29 @@ public class CphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCloudPhoneServersRequest::getNetworkVersion,
                 ListCloudPhoneServersRequest::setNetworkVersion));
+        builder.<String>withRequestField("phone_model_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getPhoneModelName,
+                ListCloudPhoneServersRequest::setPhoneModelName));
+        builder.<Long>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getCreateSince,
+                ListCloudPhoneServersRequest::setCreateSince));
+        builder.<Long>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getCreateUntil,
+                ListCloudPhoneServersRequest::setCreateUntil));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudPhoneServersRequest::getStatus, ListCloudPhoneServersRequest::setStatus));
 
         // response
 

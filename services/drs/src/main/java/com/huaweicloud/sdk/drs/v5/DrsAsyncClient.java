@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
@@ -115,6 +117,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
@@ -1190,6 +1194,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 查询委托的权限列表
+     *
+     * 根据源库类型，目标库类型，是否自建，获取委托所需要的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListsAgencyPermissionsRequest 请求对象
+     * @return CompletableFuture<ListsAgencyPermissionsResponse>
+     */
+    public CompletableFuture<ListsAgencyPermissionsResponse> listsAgencyPermissionsAsync(
+        ListsAgencyPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listsAgencyPermissions);
+    }
+
+    /**
+     * 查询委托的权限列表
+     *
+     * 根据源库类型，目标库类型，是否自建，获取委托所需要的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListsAgencyPermissionsRequest 请求对象
+     * @return AsyncInvoker<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse>
+     */
+    public AsyncInvoker<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse> listsAgencyPermissionsAsyncInvoker(
+        ListsAgencyPermissionsRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listsAgencyPermissions, hcClient);
+    }
+
+    /**
      * 获取指定任务操作信息
      *
      * 获取指定任务允许、不允许、当前操作信息。
@@ -1816,6 +1850,35 @@ public class DrsAsyncClient {
     public AsyncInvoker<ShowProgressDataRequest, ShowProgressDataResponse> showProgressDataAsyncInvoker(
         ShowProgressDataRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showProgressData, hcClient);
+    }
+
+    /**
+     * 查询录制回放结果
+     *
+     * 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayResultsRequest 请求对象
+     * @return CompletableFuture<ShowReplayResultsResponse>
+     */
+    public CompletableFuture<ShowReplayResultsResponse> showReplayResultsAsync(ShowReplayResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showReplayResults);
+    }
+
+    /**
+     * 查询录制回放结果
+     *
+     * 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayResultsRequest 请求对象
+     * @return AsyncInvoker<ShowReplayResultsRequest, ShowReplayResultsResponse>
+     */
+    public AsyncInvoker<ShowReplayResultsRequest, ShowReplayResultsResponse> showReplayResultsAsyncInvoker(
+        ShowReplayResultsRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.showReplayResults, hcClient);
     }
 
     /**

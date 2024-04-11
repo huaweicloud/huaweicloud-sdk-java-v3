@@ -16,6 +16,11 @@ public class ListBusinessRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -31,7 +36,7 @@ public class ListBusinessRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -42,13 +47,32 @@ public class ListBusinessRequest {
         this.workspace = workspace;
     }
 
+    public ListBusinessRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public ListBusinessRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -66,7 +90,7 @@ public class ListBusinessRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -86,13 +110,13 @@ public class ListBusinessRequest {
             return false;
         }
         ListBusinessRequest that = (ListBusinessRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, limit, offset);
+        return Objects.hash(workspace, xProjectId, limit, offset);
     }
 
     @Override
@@ -100,6 +124,7 @@ public class ListBusinessRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBusinessRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

@@ -15,24 +15,24 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * TableModelVO
+ * 表的详情信息。
  */
 public class TableModelVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_id")
 
-    private Long modelId;
+    private String modelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_table_id")
 
-    private Long parentTableId;
+    private String parentTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_table_name")
@@ -142,12 +142,12 @@ public class TableModelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logic_tb_id")
 
-    private Long logicTbId;
+    private String logicTbId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_id")
 
-    private Long bizCatalogId;
+    private String bizCatalogId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog_path")
@@ -177,7 +177,7 @@ public class TableModelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagVO> tags = null;
+    private List<TagRecordVO> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approval_info")
@@ -232,7 +232,7 @@ public class TableModelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l1_id")
 
-    private Long l1Id;
+    private String l1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
@@ -242,7 +242,7 @@ public class TableModelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_conf")
@@ -292,10 +292,10 @@ public class TableModelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_id")
 
-    private Long qualityId;
+    private String qualityId;
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
      */
     public static final class DistributeEnum {
 
@@ -419,54 +419,54 @@ public class TableModelVO {
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
-    public TableModelVO withId(Long id) {
+    public TableModelVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public TableModelVO withModelId(Long modelId) {
+    public TableModelVO withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
 
     /**
-     * 模型id
+     * 所属关系建模的模型ID。
      * @return modelId
      */
-    public Long getModelId() {
+    public String getModelId() {
         return modelId;
     }
 
-    public void setModelId(Long modelId) {
+    public void setModelId(String modelId) {
         this.modelId = modelId;
     }
 
-    public TableModelVO withParentTableId(Long parentTableId) {
+    public TableModelVO withParentTableId(String parentTableId) {
         this.parentTableId = parentTableId;
         return this;
     }
 
     /**
-     * 父表id
+     * 父表ID。
      * @return parentTableId
      */
-    public Long getParentTableId() {
+    public String getParentTableId() {
         return parentTableId;
     }
 
-    public void setParentTableId(Long parentTableId) {
+    public void setParentTableId(String parentTableId) {
         this.parentTableId = parentTableId;
     }
 
@@ -476,7 +476,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表名称
+     * 父表名称。
      * @return parentTableName
      */
     public String getParentTableName() {
@@ -493,7 +493,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表编码
+     * 父表编码。
      * @return parentTableCode
      */
     public String getParentTableCode() {
@@ -536,7 +536,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据格式
+     * 数据格式。
      * @return dataFormat
      */
     public String getDataFormat() {
@@ -553,7 +553,7 @@ public class TableModelVO {
     }
 
     /**
-     * obs桶
+     * obs桶。
      * @return obsBucket
      */
     public String getObsBucket() {
@@ -570,7 +570,7 @@ public class TableModelVO {
     }
 
     /**
-     * obs路径
+     * obs路径。
      * @return obsLocation
      */
     public String getObsLocation() {
@@ -587,7 +587,7 @@ public class TableModelVO {
     }
 
     /**
-     * 其他配置
+     * 其他配置。
      * @return configs
      */
     public String getConfigs() {
@@ -604,7 +604,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表类型
+     * 表类型。
      * @return tableType
      */
     public String getTableType() {
@@ -621,7 +621,7 @@ public class TableModelVO {
     }
 
     /**
-     * Get owner
+     * 负责人。
      * @return owner
      */
     public String getOwner() {
@@ -638,7 +638,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表名
+     * 表名。
      * @return tbName
      */
     public String getTbName() {
@@ -655,7 +655,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据连接id
+     * 数据连接ID。
      * @return dwId
      */
     public String getDwId() {
@@ -672,7 +672,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据库名
+     * 数据库名。
      * @return dbName
      */
     public String getDbName() {
@@ -689,7 +689,7 @@ public class TableModelVO {
     }
 
     /**
-     * dli数据连接执行sql所需的队列，数据连接类型为DLI时必须
+     * dli数据连接执行sql所需的队列，数据连接类型为DLI时必须。
      * @return queueName
      */
     public String getQueueName() {
@@ -706,7 +706,7 @@ public class TableModelVO {
     }
 
     /**
-     * DWS类型需要
+     * DWS类型需要。
      * @return schema
      */
     public String getSchema() {
@@ -723,7 +723,7 @@ public class TableModelVO {
     }
 
     /**
-     * 扩展信息
+     * 扩展信息。
      * @return extendInfo
      */
     public String getExtendInfo() {
@@ -740,7 +740,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表物化后的guid
+     * 表物化后的guid。
      * @return tbGuid
      */
     public String getTbGuid() {
@@ -757,7 +757,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据表id
+     * 数据表ID。
      * @return tbId
      */
     public String getTbId() {
@@ -774,7 +774,7 @@ public class TableModelVO {
     }
 
     /**
-     * 逻辑实体名
+     * 逻辑实体名。
      * @return logicTbName
      */
     public String getLogicTbName() {
@@ -791,7 +791,7 @@ public class TableModelVO {
     }
 
     /**
-     * 逻辑实体的guid
+     * 逻辑实体的guid。
      * @return logicTbGuid
      */
     public String getLogicTbGuid() {
@@ -808,7 +808,7 @@ public class TableModelVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -836,37 +836,37 @@ public class TableModelVO {
         this.status = status;
     }
 
-    public TableModelVO withLogicTbId(Long logicTbId) {
+    public TableModelVO withLogicTbId(String logicTbId) {
         this.logicTbId = logicTbId;
         return this;
     }
 
     /**
-     * 逻辑实体的id
+     * 逻辑实体的ID。
      * @return logicTbId
      */
-    public Long getLogicTbId() {
+    public String getLogicTbId() {
         return logicTbId;
     }
 
-    public void setLogicTbId(Long logicTbId) {
+    public void setLogicTbId(String logicTbId) {
         this.logicTbId = logicTbId;
     }
 
-    public TableModelVO withBizCatalogId(Long bizCatalogId) {
+    public TableModelVO withBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
         return this;
     }
 
     /**
-     * 归属的业务分类的id
+     * 归属的业务分类的id。
      * @return bizCatalogId
      */
-    public Long getBizCatalogId() {
+    public String getBizCatalogId() {
         return bizCatalogId;
     }
 
-    public void setBizCatalogId(Long bizCatalogId) {
+    public void setBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
     }
 
@@ -876,7 +876,7 @@ public class TableModelVO {
     }
 
     /**
-     * 归属的业务分类的路径 {\"l1Id\":\"\",\"l2Id\":\"\",\"l3Id\":\"\"}
+     * 归属的业务分类的路径 {\"l1Id\":\"\",\"l2Id\":\"\",\"l3Id\":\"\"}。
      * @return catalogPath
      */
     public String getCatalogPath() {
@@ -893,7 +893,7 @@ public class TableModelVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -910,7 +910,7 @@ public class TableModelVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -927,7 +927,7 @@ public class TableModelVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -944,7 +944,7 @@ public class TableModelVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -955,12 +955,12 @@ public class TableModelVO {
         this.updateTime = updateTime;
     }
 
-    public TableModelVO withTags(List<TagVO> tags) {
+    public TableModelVO withTags(List<TagRecordVO> tags) {
         this.tags = tags;
         return this;
     }
 
-    public TableModelVO addTagsItem(TagVO tagsItem) {
+    public TableModelVO addTagsItem(TagRecordVO tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -968,7 +968,7 @@ public class TableModelVO {
         return this;
     }
 
-    public TableModelVO withTags(Consumer<List<TagVO>> tagsSetter) {
+    public TableModelVO withTags(Consumer<List<TagRecordVO>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -977,14 +977,14 @@ public class TableModelVO {
     }
 
     /**
-     * 表标签
+     * 表标签。
      * @return tags
      */
-    public List<TagVO> getTags() {
+    public List<TagRecordVO> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagVO> tags) {
+    public void setTags(List<TagRecordVO> tags) {
         this.tags = tags;
     }
 
@@ -1062,7 +1062,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表属性信息
+     * 表属性信息。
      * @return attributes
      */
     public List<TableModelAttributeVO> getAttributes() {
@@ -1095,7 +1095,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表映射信息
+     * 表映射信息。
      * @return mappings
      */
     public List<TableMappingVO> getMappings() {
@@ -1128,7 +1128,7 @@ public class TableModelVO {
     }
 
     /**
-     * 关系
+     * 关系。
      * @return relations
      */
     public List<RelationVO> getRelations() {
@@ -1145,7 +1145,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型，对应表所在的数仓类型，取值可以为DLI、DWS、MRS_HIVE、POSTGRESQL、MRS_SPARK、CLICKHOUSE、MYSQL、ORACLE和DORIS等。
      * @return dwType
      */
     public String getDwType() {
@@ -1162,7 +1162,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据连接名称
+     * 数据连接名称，只读，创建和更新时无需填写。
      * @return dwName
      */
     public String getDwName() {
@@ -1179,7 +1179,7 @@ public class TableModelVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -1196,7 +1196,7 @@ public class TableModelVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -1213,7 +1213,7 @@ public class TableModelVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {
@@ -1224,20 +1224,20 @@ public class TableModelVO {
         this.l3 = l3;
     }
 
-    public TableModelVO withL1Id(Long l1Id) {
+    public TableModelVO withL1Id(String l1Id) {
         this.l1Id = l1Id;
         return this;
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
-    public Long getL1Id() {
+    public String getL1Id() {
         return l1Id;
     }
 
-    public void setL1Id(Long l1Id) {
+    public void setL1Id(String l1Id) {
         this.l1Id = l1Id;
     }
 
@@ -1247,7 +1247,7 @@ public class TableModelVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -1258,20 +1258,20 @@ public class TableModelVO {
         this.l2Id = l2Id;
     }
 
-    public TableModelVO withL3Id(Long l3Id) {
+    public TableModelVO withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象id
+     * 业务对象ID。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -1281,7 +1281,7 @@ public class TableModelVO {
     }
 
     /**
-     * 分区表达式
+     * 分区表达式。
      * @return partitionConf
      */
     public String getPartitionConf() {
@@ -1298,7 +1298,7 @@ public class TableModelVO {
     }
 
     /**
-     * DLF 作业 ID
+     * DLF作业ID。
      * @return dlfTaskId
      */
     public String getDlfTaskId() {
@@ -1315,7 +1315,7 @@ public class TableModelVO {
     }
 
     /**
-     * 是否使用最新分区
+     * 是否使用最新分区。
      * @return useRecentlyPartition
      */
     public Boolean getUseRecentlyPartition() {
@@ -1332,7 +1332,7 @@ public class TableModelVO {
     }
 
     /**
-     * 是否是逆向的
+     * 是否是逆向的。
      * @return reversed
      */
     public Boolean getReversed() {
@@ -1349,7 +1349,7 @@ public class TableModelVO {
     }
 
     /**
-     * 异常数据输出开关
+     * 异常数据输出开关。
      * @return dirtyOutSwitch
      */
     public Boolean getDirtyOutSwitch() {
@@ -1366,7 +1366,7 @@ public class TableModelVO {
     }
 
     /**
-     * 异常数据输出库
+     * 异常数据输出库。
      * @return dirtyOutDatabase
      */
     public String getDirtyOutDatabase() {
@@ -1383,7 +1383,7 @@ public class TableModelVO {
     }
 
     /**
-     * 异常表前缀
+     * 异常表前缀。
      * @return dirtyOutPrefix
      */
     public String getDirtyOutPrefix() {
@@ -1400,7 +1400,7 @@ public class TableModelVO {
     }
 
     /**
-     * 异常表后缀
+     * 异常表后缀。
      * @return dirtyOutSuffix
      */
     public String getDirtyOutSuffix() {
@@ -1417,7 +1417,7 @@ public class TableModelVO {
     }
 
     /**
-     * 质量责任人
+     * 质量责任人。
      * @return qualityOwner
      */
     public String getQualityOwner() {
@@ -1428,20 +1428,20 @@ public class TableModelVO {
         this.qualityOwner = qualityOwner;
     }
 
-    public TableModelVO withQualityId(Long qualityId) {
+    public TableModelVO withQualityId(String qualityId) {
         this.qualityId = qualityId;
         return this;
     }
 
     /**
-     * 质量id
+     * 质量ID。
      * @return qualityId
      */
-    public Long getQualityId() {
+    public String getQualityId() {
         return qualityId;
     }
 
-    public void setQualityId(Long qualityId) {
+    public void setQualityId(String qualityId) {
         this.qualityId = qualityId;
     }
 
@@ -1451,7 +1451,7 @@ public class TableModelVO {
     }
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
      * @return distribute
      */
     public DistributeEnum getDistribute() {
@@ -1468,7 +1468,7 @@ public class TableModelVO {
     }
 
     /**
-     * DISTRIBUTE BY HASH column
+     * DISTRIBUTE BY HASH column.
      * @return distributeColumn
      */
     public String getDistributeColumn() {
@@ -1485,7 +1485,7 @@ public class TableModelVO {
     }
 
     /**
-     * 是否分区表
+     * 是否分区表。
      * @return isPartition
      */
     public Boolean getIsPartition() {
@@ -1604,7 +1604,7 @@ public class TableModelVO {
     }
 
     /**
-     * 别名
+     * 别名。
      * @return alias
      */
     public String getAlias() {
@@ -1637,7 +1637,7 @@ public class TableModelVO {
     }
 
     /**
-     * 自定义项
+     * 自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

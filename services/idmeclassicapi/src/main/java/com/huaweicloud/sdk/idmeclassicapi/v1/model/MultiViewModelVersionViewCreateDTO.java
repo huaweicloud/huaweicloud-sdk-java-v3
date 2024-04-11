@@ -29,7 +29,7 @@ public class MultiViewModelVersionViewCreateDTO {
     private String versionId;
 
     /**
-     * 关系COPY类型,默认值为全复制（BOTH），如果需要传默认值，请不要传该字段或者传BOTH，如果传null会报错。
+     * 关系的复制类型。 BOTH：复制当前M-V模型作为源端与目标端的关系。 CUSTOM：自定义复制当前M-V模型的关系。 NONE：不复制当前M-V模型的关系。 SOURCE：仅复制当前M-V模型作为源端的关系。 TARGET：仅复制当前M-V模型作为目标端的关系。
      */
     public static final class WorkCopyTypeEnum {
 
@@ -142,7 +142,7 @@ public class MultiViewModelVersionViewCreateDTO {
     }
 
     /**
-     * 更新人。
+     * 修改人。
      * @return modifier
      */
     public String getModifier() {
@@ -176,7 +176,7 @@ public class MultiViewModelVersionViewCreateDTO {
     }
 
     /**
-     * 关系COPY类型,默认值为全复制（BOTH），如果需要传默认值，请不要传该字段或者传BOTH，如果传null会报错。
+     * 关系的复制类型。 BOTH：复制当前M-V模型作为源端与目标端的关系。 CUSTOM：自定义复制当前M-V模型的关系。 NONE：不复制当前M-V模型的关系。 SOURCE：仅复制当前M-V模型作为源端的关系。 TARGET：仅复制当前M-V模型作为目标端的关系。
      * @return workCopyType
      */
     public WorkCopyTypeEnum getWorkCopyType() {

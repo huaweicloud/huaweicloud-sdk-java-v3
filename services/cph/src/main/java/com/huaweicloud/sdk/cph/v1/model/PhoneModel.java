@@ -70,6 +70,26 @@ public class PhoneModel {
 
     private Integer productType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_model_version")
+
+    private Integer phoneModelVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dpi")
+
+    private Integer dpi;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fps")
+
+    private String fps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_mode")
+
+    private Integer volumeMode;
+
     public PhoneModel withServerModelName(String serverModelName) {
         this.serverModelName = serverModelName;
         return this;
@@ -256,7 +276,7 @@ public class PhoneModel {
     }
 
     /**
-     * 镜像类型，只支持如下类型： - qemu_phone - cloud_phone - cloud_game
+     * 镜像类型，只支持如下类型： - qemu_phone - cloud_phone - cloud_phone_1620 - cloud_game - cloud_game_1620
      * @return imageLabel
      */
     public String getImageLabel() {
@@ -286,6 +306,80 @@ public class PhoneModel {
         this.productType = productType;
     }
 
+    public PhoneModel withPhoneModelVersion(Integer phoneModelVersion) {
+        this.phoneModelVersion = phoneModelVersion;
+        return this;
+    }
+
+    /**
+     * 规格版本： - 0：规格1.0 - 1：规格2.0
+     * minimum: 0
+     * maximum: 65535
+     * @return phoneModelVersion
+     */
+    public Integer getPhoneModelVersion() {
+        return phoneModelVersion;
+    }
+
+    public void setPhoneModelVersion(Integer phoneModelVersion) {
+        this.phoneModelVersion = phoneModelVersion;
+    }
+
+    public PhoneModel withDpi(Integer dpi) {
+        this.dpi = dpi;
+        return this;
+    }
+
+    /**
+     * 每英寸点数。
+     * minimum: 0
+     * maximum: 65535
+     * @return dpi
+     */
+    public Integer getDpi() {
+        return dpi;
+    }
+
+    public void setDpi(Integer dpi) {
+        this.dpi = dpi;
+    }
+
+    public PhoneModel withFps(String fps) {
+        this.fps = fps;
+        return this;
+    }
+
+    /**
+     * 渲染帧率。
+     * @return fps
+     */
+    public String getFps() {
+        return fps;
+    }
+
+    public void setFps(String fps) {
+        this.fps = fps;
+    }
+
+    public PhoneModel withVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+        return this;
+    }
+
+    /**
+     * 手机物理磁盘是否独立。 - 0：不独立 - 1：独立
+     * minimum: 0
+     * maximum: 100
+     * @return volumeMode
+     */
+    public Integer getVolumeMode() {
+        return volumeMode;
+    }
+
+    public void setVolumeMode(Integer volumeMode) {
+        this.volumeMode = volumeMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -301,7 +395,9 @@ public class PhoneModel {
             && Objects.equals(this.disk, that.disk) && Objects.equals(this.resolution, that.resolution)
             && Objects.equals(this.extendSpec, that.extendSpec) && Objects.equals(this.specCode, that.specCode)
             && Objects.equals(this.phoneCapacity, that.phoneCapacity)
-            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.productType, that.productType);
+            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.phoneModelVersion, that.phoneModelVersion) && Objects.equals(this.dpi, that.dpi)
+            && Objects.equals(this.fps, that.fps) && Objects.equals(this.volumeMode, that.volumeMode);
     }
 
     @Override
@@ -317,7 +413,11 @@ public class PhoneModel {
             specCode,
             phoneCapacity,
             imageLabel,
-            productType);
+            productType,
+            phoneModelVersion,
+            dpi,
+            fps,
+            volumeMode);
     }
 
     @Override
@@ -336,6 +436,10 @@ public class PhoneModel {
         sb.append("    phoneCapacity: ").append(toIndentedString(phoneCapacity)).append("\n");
         sb.append("    imageLabel: ").append(toIndentedString(imageLabel)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+        sb.append("    phoneModelVersion: ").append(toIndentedString(phoneModelVersion)).append("\n");
+        sb.append("    dpi: ").append(toIndentedString(dpi)).append("\n");
+        sb.append("    fps: ").append(toIndentedString(fps)).append("\n");
+        sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

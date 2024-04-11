@@ -45,7 +45,7 @@ public class ApprovalInfoParam {
     }
 
     /**
-     * 审批单id列表
+     * 审批单ID列表。
      * @return ids
      */
     public List<Long> getIds() {
@@ -62,7 +62,7 @@ public class ApprovalInfoParam {
     }
 
     /**
-     * 审批单信息
+     * 审批单信息。
      * @return msg
      */
     public String getMsg() {

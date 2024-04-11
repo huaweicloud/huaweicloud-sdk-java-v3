@@ -21,6 +21,11 @@ public class ListCompoundMetricsRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -36,7 +41,7 @@ public class ListCompoundMetricsRequest {
     private String approver;
 
     /**
-     * 业务状态
+     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
      */
     public static final class StatusEnum {
 
@@ -175,7 +180,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -186,13 +191,32 @@ public class ListCompoundMetricsRequest {
         this.workspace = workspace;
     }
 
+    public ListCompoundMetricsRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public ListCompoundMetricsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 按名称或编码模糊查询
+     * 按名称或编码模糊查询。
      * @return name
      */
     public String getName() {
@@ -209,7 +233,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 按创建者查询
+     * 按创建者查询。
      * @return createBy
      */
     public String getCreateBy() {
@@ -226,7 +250,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 按审核人查询
+     * 按审核人查询。
      * @return approver
      */
     public String getApprover() {
@@ -243,7 +267,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 业务状态
+     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -260,7 +284,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 依据维度颗粒度查维度属性
+     * 依据维度颗粒度查维度属性。
      * @return dimensionGroup
      */
     public String getDimensionGroup() {
@@ -277,7 +301,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 依据原子指标id查维度属性
+     * 依据原子指标ID查维度属性。
      * @return atomicIndexId
      */
     public Long getAtomicIndexId() {
@@ -294,7 +318,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 业务对象l3 id
+     * 业务对象l3的ID。
      * @return l3Id
      */
     public Long getL3Id() {
@@ -311,7 +335,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 时间过滤左边界,与end_time一起使用,只支持时间范围过滤,单边过滤无效
+     * 时间过滤左边界，与end_time一起使用，只支持时间范围过滤，单边过滤无效。格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -328,7 +352,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 时间过滤右边界,与begin_time一起使用只支持时间范围过滤,单边过滤无效
+     * 时间过滤右边界，与begin_time一起使用只支持时间范围过滤，单边过滤无效。格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return endTime
      */
     public String getEndTime() {
@@ -345,7 +369,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -363,7 +387,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -383,9 +407,10 @@ public class ListCompoundMetricsRequest {
             return false;
         }
         ListCompoundMetricsRequest that = (ListCompoundMetricsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.dimensionGroup, that.dimensionGroup)
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.approver, that.approver) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dimensionGroup, that.dimensionGroup)
             && Objects.equals(this.atomicIndexId, that.atomicIndexId) && Objects.equals(this.l3Id, that.l3Id)
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
@@ -394,6 +419,7 @@ public class ListCompoundMetricsRequest {
     @Override
     public int hashCode() {
         return Objects.hash(workspace,
+            xProjectId,
             name,
             createBy,
             approver,
@@ -412,6 +438,7 @@ public class ListCompoundMetricsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCompoundMetricsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
         sb.append("    approver: ").append(toIndentedString(approver)).append("\n");

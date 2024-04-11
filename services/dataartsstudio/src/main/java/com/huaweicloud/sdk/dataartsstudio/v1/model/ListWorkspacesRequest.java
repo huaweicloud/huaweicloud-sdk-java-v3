@@ -20,8 +20,13 @@ public class ListWorkspacesRequest {
 
     private String workspace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+
+    private String xProjectId;
+
     /**
-     * Gets or Sets workspaceType
+     * 模型工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
      */
     public static final class WorkspaceTypeEnum {
 
@@ -116,7 +121,7 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * DataArts Studio工作空间ID
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -127,13 +132,32 @@ public class ListWorkspacesRequest {
         this.workspace = workspace;
     }
 
+    public ListWorkspacesRequest withXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+        return this;
+    }
+
+    /**
+     * 项目ID，获取方法请参见[项目ID和账号ID](projectid_accountid.xml)。  多project场景采用AK/SK认证的接口请求，则该字段必选。
+     * @return xProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Project-Id")
+    public String getXProjectId() {
+        return xProjectId;
+    }
+
+    public void setXProjectId(String xProjectId) {
+        this.xProjectId = xProjectId;
+    }
+
     public ListWorkspacesRequest withWorkspaceType(WorkspaceTypeEnum workspaceType) {
         this.workspaceType = workspaceType;
         return this;
     }
 
     /**
-     * Get workspaceType
+     * 模型工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
      * @return workspaceType
      */
     public WorkspaceTypeEnum getWorkspaceType() {
@@ -150,7 +174,7 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]
+     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -168,7 +192,7 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整。默认值0
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
      * @return offset
      */
     public Integer getOffset() {
@@ -205,14 +229,14 @@ public class ListWorkspacesRequest {
             return false;
         }
         ListWorkspacesRequest that = (ListWorkspacesRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.workspaceType, that.workspaceType)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.dwType, that.dwType);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.workspaceType, that.workspaceType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.dwType, that.dwType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, workspaceType, limit, offset, dwType);
+        return Objects.hash(workspace, xProjectId, workspaceType, limit, offset, dwType);
     }
 
     @Override
@@ -220,6 +244,7 @@ public class ListWorkspacesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkspacesRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    workspaceType: ").append(toIndentedString(workspaceType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

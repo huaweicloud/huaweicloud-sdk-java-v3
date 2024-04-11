@@ -21,6 +21,11 @@ public class ListPostgresqlDatabasesRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db")
+
+    private String db;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -64,6 +69,23 @@ public class ListPostgresqlDatabasesRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ListPostgresqlDatabasesRequest withDb(String db) {
+        this.db = db;
+        return this;
+    }
+
+    /**
+     * 数据库名称；忽略大小写模糊查询。
+     * @return db
+     */
+    public String getDb() {
+        return db;
+    }
+
+    public void setDb(String db) {
+        this.db = db;
     }
 
     public ListPostgresqlDatabasesRequest withPage(Integer page) {
@@ -110,12 +132,13 @@ public class ListPostgresqlDatabasesRequest {
         }
         ListPostgresqlDatabasesRequest that = (ListPostgresqlDatabasesRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.db, that.db) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, page, limit);
+        return Objects.hash(xLanguage, instanceId, db, page, limit);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class ListPostgresqlDatabasesRequest {
         sb.append("class ListPostgresqlDatabasesRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    db: ").append(toIndentedString(db)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

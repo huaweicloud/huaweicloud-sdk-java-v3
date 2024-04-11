@@ -16,20 +16,20 @@ import java.util.Objects;
 public class ListInstancesRequest {
 
     /**
-     * 消息引擎。
+     * 消息引擎：rocketmq。
      */
     public static final class EngineEnum {
 
         /**
-         * Enum RELIABILITY for value: "reliability"
+         * Enum ROCKETMQ for value: "rocketmq"
          */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
+        public static final EngineEnum ROCKETMQ = new EngineEnum("rocketmq");
 
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineEnum> createStaticFields() {
             Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
+            map.put("rocketmq", ROCKETMQ);
             return Collections.unmodifiableMap(map);
         }
 
@@ -418,7 +418,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 消息引擎。
+     * 消息引擎：rocketmq。
      * @return engine
      */
     public EngineEnum getEngine() {

@@ -7,14 +7,14 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * ApprovalVO
+ * 审批信息,只读参数。业务对象最近一次的审批信息，包括审批的业务详情、审核人信息、审核时间等。
  */
 public class ApprovalVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
@@ -34,7 +34,7 @@ public class ApprovalVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
@@ -121,20 +121,20 @@ public class ApprovalVO {
 
     private String directoryPath;
 
-    public ApprovalVO withId(Long id) {
+    public ApprovalVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID
+     * 审批单ID。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -144,7 +144,7 @@ public class ApprovalVO {
     }
 
     /**
-     * tenant id
+     * 项目ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -161,7 +161,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务中文名
+     * 业务中文名。
      * @return nameCh
      */
     public String getNameCh() {
@@ -178,7 +178,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务英文名
+     * 业务英文名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -189,20 +189,20 @@ public class ApprovalVO {
         this.nameEn = nameEn;
     }
 
-    public ApprovalVO withBizId(Long bizId) {
+    public ApprovalVO withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务ID
+     * 业务ID。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -229,7 +229,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务详情
+     * 业务详情。
      * @return bizInfo
      */
     public String getBizInfo() {
@@ -246,7 +246,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务详情
+     * 业务详情。
      * @return bizInfoObj
      */
     public Object getBizInfoObj() {
@@ -263,7 +263,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务版本
+     * 业务版本。
      * @return bizVersion
      */
     public Integer getBizVersion() {
@@ -331,7 +331,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 提交时间
+     * 提交时间。
      * @return submitTime
      */
     public OffsetDateTime getSubmitTime() {
@@ -348,7 +348,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 创建者
+     * 创建者。
      * @return createBy
      */
     public String getCreateBy() {
@@ -365,7 +365,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 主题域分组
+     * 主题域分组。
      * @return l1
      */
     public String getL1() {
@@ -382,7 +382,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 主题域
+     * 主题域。
      * @return l2
      */
     public String getL2() {
@@ -399,7 +399,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务对象
+     * 业务对象。
      * @return l3
      */
     public String getL3() {
@@ -416,7 +416,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审核时间
+     * 审核时间。
      * @return approvalTime
      */
     public OffsetDateTime getApprovalTime() {
@@ -433,7 +433,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审核人
+     * 审核人。
      * @return approver
      */
     public String getApprover() {
@@ -450,7 +450,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审核人邮箱
+     * 审核人邮箱。
      * @return email
      */
     public String getEmail() {
@@ -467,7 +467,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审核信息
+     * 审核信息。
      * @return msg
      */
     public String getMsg() {
@@ -484,7 +484,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 目录树
+     * 目录树。
      * @return directoryPath
      */
     public String getDirectoryPath() {

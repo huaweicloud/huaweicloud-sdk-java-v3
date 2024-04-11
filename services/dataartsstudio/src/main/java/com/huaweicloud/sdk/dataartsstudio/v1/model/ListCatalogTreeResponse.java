@@ -101,7 +101,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 流程名称
+     * 流程名称。
      * @return name
      */
     public String getName() {
@@ -118,7 +118,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -135,7 +135,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 对应资产中id
+     * 对应资产中ID。
      * @return guid
      */
     public String getGuid() {
@@ -152,7 +152,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 责任人
+     * 责任人。
      * @return owner
      */
     public String getOwner() {
@@ -169,7 +169,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 父目录id，没有则为根目录
+     * 父目录ID，没有则为根目录。
      * @return parentId
      */
     public Long getParentId() {
@@ -186,7 +186,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 上个节点ID,没有则为首节点
+     * 上个节点ID，没有则为首节点。
      * @return prevId
      */
     public Long getPrevId() {
@@ -203,7 +203,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 下个节点ID,没有则为尾节点
+     * 下个节点ID，没有则为尾节点。
      * @return nextId
      */
     public Long getNextId() {
@@ -220,7 +220,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 创建时传空，更新时必填
+     * 创建时传空，更新时必填。
      * @return id
      */
     public Long getId() {
@@ -237,7 +237,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 认证ID，自动生成
+     * 认证ID，自动生成。
      * @return qualifiedId
      */
     public String getQualifiedId() {
@@ -254,7 +254,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -271,7 +271,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -288,7 +288,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -305,7 +305,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -322,7 +322,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 拥有业务指标数量，前端不传
+     * 拥有业务指标数量，前端不传。
      * @return bizmetricNum
      */
     public Integer getBizmetricNum() {
@@ -339,7 +339,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 拥有子流程的数量，不包括子流程的子流程
+     * 拥有子流程的数量，不包括子流程的子流程。
      * @return childrenNum
      */
     public Integer getChildrenNum() {
@@ -372,7 +372,7 @@ public class ListCatalogTreeResponse extends SdkResponse {
     }
 
     /**
-     * 下层子目录
+     * 下层子目录。
      * @return children
      */
     public List<BizCatalogVO> getChildren() {

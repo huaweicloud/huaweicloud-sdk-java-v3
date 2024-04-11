@@ -26,7 +26,7 @@ public class TagOperationDTO {
     }
 
     /**
-     * 模型对象ID。
+     * 数据实例ID。
      * @return objectId
      */
     public String getObjectId() {

@@ -69,7 +69,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 编码。更新时必填，创建时可以为空
+     * 编码。更新时必填，创建时可以为空。
      * @return id
      */
     public Long getId() {
@@ -86,7 +86,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 中文名称
+     * 中文名称。
      * @return nameCh
      */
     public String getNameCh() {
@@ -103,7 +103,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 英文名称
+     * 英文名称。
      * @return nameEn
      */
     public String getNameEn() {
@@ -120,7 +120,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 描述信息, 业务对象必填
+     * 描述信息，业务对象必填。
      * @return description
      */
     public String getDescription() {
@@ -137,7 +137,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 别名
+     * 别名。
      * @return alias
      */
     public String getAlias() {
@@ -154,7 +154,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 数据owner部门
+     * 数据owner部门。
      * @return dataOwner
      */
     public String getDataOwner() {
@@ -171,7 +171,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 数据owner人员
+     * 数据owner人员。
      * @return dataOwnerList
      */
     public String getDataOwnerList() {
@@ -188,7 +188,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 层级
+     * 层级。
      * @return level
      */
     public Integer getLevel() {
@@ -205,7 +205,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 上层主题id，首层则为空
+     * 上层主题ID，首层则为空。
      * @return parentId
      */
     public Long getParentId() {
@@ -238,7 +238,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 属性自定义项
+     * 属性自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

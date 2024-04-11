@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateStackSetRequestBody
@@ -134,6 +135,11 @@ public class CreateStackSetRequestBody {
 
     private String administrationAgencyUrn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "managed_operation")
+
+    private ManagedOperation managedOperation;
+
     public CreateStackSetRequestBody withStackSetName(String stackSetName) {
         this.stackSetName = stackSetName;
         return this;
@@ -191,7 +197,7 @@ public class CreateStackSetRequestBody {
     }
 
     /**
-     * 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收v3委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
+     * 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
      * @return administrationAgencyName
      */
     public String getAdministrationAgencyName() {
@@ -310,7 +316,7 @@ public class CreateStackSetRequestBody {
     }
 
     /**
-     * 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收普通委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
+     * 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
      * @return administrationAgencyUrn
      */
     public String getAdministrationAgencyUrn() {
@@ -319,6 +325,32 @@ public class CreateStackSetRequestBody {
 
     public void setAdministrationAgencyUrn(String administrationAgencyUrn) {
         this.administrationAgencyUrn = administrationAgencyUrn;
+    }
+
+    public CreateStackSetRequestBody withManagedOperation(ManagedOperation managedOperation) {
+        this.managedOperation = managedOperation;
+        return this;
+    }
+
+    public CreateStackSetRequestBody withManagedOperation(Consumer<ManagedOperation> managedOperationSetter) {
+        if (this.managedOperation == null) {
+            this.managedOperation = new ManagedOperation();
+            managedOperationSetter.accept(this.managedOperation);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get managedOperation
+     * @return managedOperation
+     */
+    public ManagedOperation getManagedOperation() {
+        return managedOperation;
+    }
+
+    public void setManagedOperation(ManagedOperation managedOperation) {
+        this.managedOperation = managedOperation;
     }
 
     @Override
@@ -339,7 +371,8 @@ public class CreateStackSetRequestBody {
             && Objects.equals(this.templateUri, that.templateUri) && Objects.equals(this.varsUri, that.varsUri)
             && Objects.equals(this.varsBody, that.varsBody)
             && Objects.equals(this.initialStackDescription, that.initialStackDescription)
-            && Objects.equals(this.administrationAgencyUrn, that.administrationAgencyUrn);
+            && Objects.equals(this.administrationAgencyUrn, that.administrationAgencyUrn)
+            && Objects.equals(this.managedOperation, that.managedOperation);
     }
 
     @Override
@@ -354,7 +387,8 @@ public class CreateStackSetRequestBody {
             varsUri,
             varsBody,
             initialStackDescription,
-            administrationAgencyUrn);
+            administrationAgencyUrn,
+            managedOperation);
     }
 
     @Override
@@ -372,6 +406,7 @@ public class CreateStackSetRequestBody {
         sb.append("    varsBody: ").append(toIndentedString(varsBody)).append("\n");
         sb.append("    initialStackDescription: ").append(toIndentedString(initialStackDescription)).append("\n");
         sb.append("    administrationAgencyUrn: ").append(toIndentedString(administrationAgencyUrn)).append("\n");
+        sb.append("    managedOperation: ").append(toIndentedString(managedOperation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

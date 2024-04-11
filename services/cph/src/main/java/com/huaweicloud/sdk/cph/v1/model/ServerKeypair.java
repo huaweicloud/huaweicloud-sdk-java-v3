@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器秘钥对。
+ * 服务器密钥对。
  */
 public class ServerKeypair {
 

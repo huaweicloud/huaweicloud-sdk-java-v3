@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CompoundMetricVOSearchResultDataValue
+ * 返回的数据信息。
  */
 public class CompoundMetricVOSearchResultDataValue {
 
@@ -45,7 +45,7 @@ public class CompoundMetricVOSearchResultDataValue {
     }
 
     /**
-     * CompoundMetricVO数组
+     * CompoundMetricVO数组。
      * @return records
      */
     public List<CompoundMetricVO> getRecords() {
@@ -62,7 +62,7 @@ public class CompoundMetricVOSearchResultDataValue {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return total
      */
     public Integer getTotal() {

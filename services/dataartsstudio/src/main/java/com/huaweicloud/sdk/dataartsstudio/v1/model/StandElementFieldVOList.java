@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 属性列表
+ * 属性列表。
  */
 public class StandElementFieldVOList {
 
@@ -40,7 +40,7 @@ public class StandElementFieldVOList {
     }
 
     /**
-     * 属性信息
+     * 属性信息。
      * @return fields
      */
     public List<StandElementFieldVO> getFields() {

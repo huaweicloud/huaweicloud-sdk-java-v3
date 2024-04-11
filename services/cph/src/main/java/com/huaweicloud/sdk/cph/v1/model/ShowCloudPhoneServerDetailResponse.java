@@ -105,6 +105,11 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     private List<Volume> volumes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_volume_info")
+
+    private ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo shareVolumeInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_version")
 
     private String networkVersion;
@@ -495,6 +500,34 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
         this.volumes = volumes;
     }
 
+    public ShowCloudPhoneServerDetailResponse withShareVolumeInfo(
+        ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo shareVolumeInfo) {
+        this.shareVolumeInfo = shareVolumeInfo;
+        return this;
+    }
+
+    public ShowCloudPhoneServerDetailResponse withShareVolumeInfo(
+        Consumer<ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo> shareVolumeInfoSetter) {
+        if (this.shareVolumeInfo == null) {
+            this.shareVolumeInfo = new ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo();
+            shareVolumeInfoSetter.accept(this.shareVolumeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get shareVolumeInfo
+     * @return shareVolumeInfo
+     */
+    public ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo getShareVolumeInfo() {
+        return shareVolumeInfo;
+    }
+
+    public void setShareVolumeInfo(ShowCloudPhoneServerDetailResponseBodyShareVolumeInfo shareVolumeInfo) {
+        this.shareVolumeInfo = shareVolumeInfo;
+    }
+
     public ShowCloudPhoneServerDetailResponse withNetworkVersion(String networkVersion) {
         this.networkVersion = networkVersion;
         return this;
@@ -617,6 +650,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
             && Objects.equals(this.resourceProjectId, that.resourceProjectId)
             && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.addresses, that.addresses)
             && Objects.equals(this.bandWidths, that.bandWidths) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.shareVolumeInfo, that.shareVolumeInfo)
             && Objects.equals(this.networkVersion, that.networkVersion)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.securityGroups, that.securityGroups)
@@ -643,6 +677,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
             addresses,
             bandWidths,
             volumes,
+            shareVolumeInfo,
             networkVersion,
             enterpriseProjectId,
             securityGroups,
@@ -672,6 +707,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    bandWidths: ").append(toIndentedString(bandWidths)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
+        sb.append("    shareVolumeInfo: ").append(toIndentedString(shareVolumeInfo)).append("\n");
         sb.append("    networkVersion: ").append(toIndentedString(networkVersion)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");

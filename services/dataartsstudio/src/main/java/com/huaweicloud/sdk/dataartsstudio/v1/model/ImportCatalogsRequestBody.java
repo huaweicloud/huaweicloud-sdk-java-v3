@@ -25,7 +25,7 @@ public class ImportCatalogsRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 导入主题用的excel文件，大小必须小于4MB，且行数小于3000行
+     * 导入主题用的excel文件，大小必须小于4MB，且行数小于3000行。
      * @return file
      */
     public FormDataFilePart getFile() {

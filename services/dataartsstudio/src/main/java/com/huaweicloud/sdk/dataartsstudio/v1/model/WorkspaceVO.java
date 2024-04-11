@@ -80,7 +80,7 @@ public class WorkspaceVO {
     private String updateBy;
 
     /**
-     * 工作区类型枚举
+     * 工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
      */
     public static final class TypeEnum {
 
@@ -170,7 +170,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 编号
+     * 编号。
      * @return id
      */
     public Long getId() {
@@ -187,7 +187,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 工作区名字
+     * 工作区名字。
      * @return name
      */
     public String getName() {
@@ -204,7 +204,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -221,7 +221,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 是否为物理表
+     * 是否为物理表。
      * @return isPhysical
      */
     public Boolean getIsPhysical() {
@@ -238,7 +238,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 是否为常用
+     * 是否为常用。
      * @return frequent
      */
     public Boolean getFrequent() {
@@ -255,7 +255,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 分层治理
+     * 分层治理。
      * @return top
      */
     public Boolean getTop() {
@@ -289,7 +289,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型，对应表所在的数仓类型，取值可以为DLI、DWS、MRS_HIVE、POSTGRESQL、MRS_SPARK、CLICKHOUSE、MYSQL、ORACLE和DORIS等。
      * @return dwType
      */
     public String getDwType() {
@@ -306,7 +306,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -323,7 +323,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -340,7 +340,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -357,7 +357,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -374,7 +374,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 工作区类型枚举
+     * 工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
      * @return type
      */
     public TypeEnum getType() {
@@ -391,7 +391,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 关联的业务分层的id列表 {\"l1Ids\":[],\"l2Ids\":[],\"l3Ids\":[]}
+     * 关联的业务分层的ID列表 {\"l1Ids\":[],\"l2Ids\":[],\"l3Ids\":[]}。
      * @return bizCatalogIds
      */
     public String getBizCatalogIds() {
@@ -424,7 +424,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 数据库名称数组
+     * 数据库名称数组。
      * @return databases
      */
     public List<String> getDatabases() {

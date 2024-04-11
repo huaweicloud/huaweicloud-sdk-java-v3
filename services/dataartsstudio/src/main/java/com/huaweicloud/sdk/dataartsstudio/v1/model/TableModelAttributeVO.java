@@ -17,7 +17,7 @@ public class TableModelAttributeVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -139,20 +139,20 @@ public class TableModelAttributeVO {
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
-    public TableModelAttributeVO withId(Long id) {
+    public TableModelAttributeVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -162,7 +162,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 字段名
+     * 字段名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -179,7 +179,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 业务属性
+     * 业务属性。
      * @return nameCh
      */
     public String getNameCh() {
@@ -196,7 +196,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -213,7 +213,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * obs路径，子路径
+     * obs路径，子路径。
      * @return obsLocation
      */
     public String getObsLocation() {
@@ -230,7 +230,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -247,7 +247,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -264,7 +264,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 字段类型
+     * 字段类型。
      * @return dataType
      */
     public String getDataType() {
@@ -298,7 +298,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 数据类型扩展字段
+     * 数据类型扩展字段。
      * @return dataTypeExtend
      */
     public String getDataTypeExtend() {
@@ -315,7 +315,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 是否主键
+     * 是否主键。
      * @return isPrimaryKey
      */
     public Boolean getIsPrimaryKey() {
@@ -332,7 +332,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 是否分区键
+     * 是否分区键。
      * @return isPartitionKey
      */
     public Boolean getIsPartitionKey() {
@@ -349,7 +349,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 是否外键
+     * 是否外键。
      * @return isForeignKey
      */
     public Boolean getIsForeignKey() {
@@ -366,7 +366,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 是否继承的属性
+     * 是否继承的属性。
      * @return extendField
      */
     public Boolean getExtendField() {
@@ -383,7 +383,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 是否不为空
+     * 是否不为空。
      * @return notNull
      */
     public Boolean getNotNull() {
@@ -400,7 +400,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 序号
+     * 序号。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -417,7 +417,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 所属表模型id
+     * 所属关系建模的模型ID。
      * @return tableModelId
      */
     public Long getTableModelId() {
@@ -434,7 +434,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -451,7 +451,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -484,7 +484,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 表标签
+     * 表标签。
      * @return tags
      */
     public List<TagVO> getTags() {
@@ -501,7 +501,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 关联的数据标准的id
+     * 关联的数据标准的ID。
      * @return standRowId
      */
     public Long getStandRowId() {
@@ -518,7 +518,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * Get standRowName
+     * 关联的数据标准名称。
      * @return standRowName
      */
     public String getStandRowName() {
@@ -551,7 +551,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 质量信息
+     * 质量信息。
      * @return qualityInfos
      */
     public List<QualityInfoVO> getQualityInfos() {
@@ -568,7 +568,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 别名
+     * 别名。
      * @return alias
      */
     public String getAlias() {
@@ -601,7 +601,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 自定义项
+     * 自定义项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

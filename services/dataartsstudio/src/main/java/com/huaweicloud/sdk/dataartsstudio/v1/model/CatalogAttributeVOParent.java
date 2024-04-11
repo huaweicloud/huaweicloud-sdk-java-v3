@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 父节点
+ * 父节点。
  */
 public class CatalogAttributeVOParent {
 
@@ -21,7 +21,7 @@ public class CatalogAttributeVOParent {
     }
 
     /**
-     * 父节点ID
+     * 父节点ID。
      * @return id
      */
     public String getId() {

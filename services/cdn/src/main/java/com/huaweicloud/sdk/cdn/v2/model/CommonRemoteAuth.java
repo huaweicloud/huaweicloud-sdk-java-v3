@@ -19,7 +19,7 @@ public class CommonRemoteAuth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_auth_rules")
 
-    private RemoteAuthRuleVo remoteAuthRules;
+    private RemoteAuthRule remoteAuthRules;
 
     public CommonRemoteAuth withRemoteAuthentication(String remoteAuthentication) {
         this.remoteAuthentication = remoteAuthentication;
@@ -38,14 +38,14 @@ public class CommonRemoteAuth {
         this.remoteAuthentication = remoteAuthentication;
     }
 
-    public CommonRemoteAuth withRemoteAuthRules(RemoteAuthRuleVo remoteAuthRules) {
+    public CommonRemoteAuth withRemoteAuthRules(RemoteAuthRule remoteAuthRules) {
         this.remoteAuthRules = remoteAuthRules;
         return this;
     }
 
-    public CommonRemoteAuth withRemoteAuthRules(Consumer<RemoteAuthRuleVo> remoteAuthRulesSetter) {
+    public CommonRemoteAuth withRemoteAuthRules(Consumer<RemoteAuthRule> remoteAuthRulesSetter) {
         if (this.remoteAuthRules == null) {
-            this.remoteAuthRules = new RemoteAuthRuleVo();
+            this.remoteAuthRules = new RemoteAuthRule();
             remoteAuthRulesSetter.accept(this.remoteAuthRules);
         }
 
@@ -56,11 +56,11 @@ public class CommonRemoteAuth {
      * Get remoteAuthRules
      * @return remoteAuthRules
      */
-    public RemoteAuthRuleVo getRemoteAuthRules() {
+    public RemoteAuthRule getRemoteAuthRules() {
         return remoteAuthRules;
     }
 
-    public void setRemoteAuthRules(RemoteAuthRuleVo remoteAuthRules) {
+    public void setRemoteAuthRules(RemoteAuthRule remoteAuthRules) {
         this.remoteAuthRules = remoteAuthRules;
     }
 

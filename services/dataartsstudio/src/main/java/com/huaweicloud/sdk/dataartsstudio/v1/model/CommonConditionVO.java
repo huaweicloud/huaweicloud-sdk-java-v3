@@ -54,7 +54,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -87,7 +87,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 字段id信息， 格式：table_id.field_id
+     * 字段id信息，格式：table_id.field_id。
      * @return fieldIds
      */
     public List<String> getFieldIds() {
@@ -120,7 +120,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 字段名称信息， 格式：表名称.字段名称
+     * 字段名称信息，格式：表名称.字段名称。
      * @return fieldNames
      */
     public List<String> getFieldNames() {
@@ -137,7 +137,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 计算表达式
+     * 计算表达式，形如'${table_id.column_id} > 1'，其中table_id表示引用字段所属表ID，column_id表示引用字段ID。
      * @return calExp
      */
     public String getCalExp() {
@@ -170,7 +170,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 计算表达式id
+     * 引用函数ID。
      * @return calFnIds
      */
     public List<Long> getCalFnIds() {
@@ -187,7 +187,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 前端表达式配置，用于前端数据恢复
+     * 前端表达式配置，用于前端数据恢复。
      * @return frontConfigs
      */
     public String getFrontConfigs() {

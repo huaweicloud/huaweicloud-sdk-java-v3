@@ -17,7 +17,7 @@ public class AtomicIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -62,12 +62,12 @@ public class AtomicIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
-    private Long tableId;
+    private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tb_name")
@@ -134,20 +134,20 @@ public class AtomicIndexVO {
 
     private BizVersionManageVO newBiz;
 
-    public AtomicIndexVO withId(Long id) {
+    public AtomicIndexVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -157,7 +157,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段名
+     * 字段名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -174,7 +174,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 业务属性
+     * 业务属性。
      * @return nameCh
      */
     public String getNameCh() {
@@ -191,7 +191,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * Get description
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -208,7 +208,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -225,7 +225,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 计算表达式
+     * 计算表达式，形如'sum(${fact_column_id})'，其中fact_column_id表示引用事实表中的字段ID
      * @return calExp
      */
     public String getCalExp() {
@@ -258,7 +258,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 计算表达式id
+     * 引用函数ID。
      * @return calFnIds
      */
     public List<Long> getCalFnIds() {
@@ -275,7 +275,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 主题域分组id
+     * 主题域分组ID。
      * @return l1Id
      */
     public Long getL1Id() {
@@ -292,7 +292,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * Get l2Id
+     * 主题域ID，只读，创建和更新时无需填写。
      * @return l2Id
      */
     public String getL2Id() {
@@ -303,37 +303,37 @@ public class AtomicIndexVO {
         this.l2Id = l2Id;
     }
 
-    public AtomicIndexVO withL3Id(Long l3Id) {
+    public AtomicIndexVO withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象guid
+     * 业务对象guid。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
-    public AtomicIndexVO withTableId(Long tableId) {
+    public AtomicIndexVO withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
 
     /**
-     * 表id
+     * 表ID。
      * @return tableId
      */
-    public Long getTableId() {
+    public String getTableId() {
         return tableId;
     }
 
-    public void setTableId(Long tableId) {
+    public void setTableId(String tableId) {
         this.tableId = tableId;
     }
 
@@ -343,7 +343,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 表名称
+     * 表名称。
      * @return tbName
      */
     public String getTbName() {
@@ -360,7 +360,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 数据连接类型
+     * 数据连接类型，对应表所在的数仓类型，取值可以为DLI、DWS、MRS_HIVE、POSTGRESQL、MRS_SPARK、CLICKHOUSE、MYSQL、ORACLE和DORIS等。
      * @return dwType
      */
     public String getDwType() {
@@ -393,7 +393,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段id信息
+     * 字段ID信息。
      * @return fieldIds
      */
     public List<Long> getFieldIds() {
@@ -426,7 +426,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段名称信息
+     * 字段名称信息。
      * @return fieldNames
      */
     public List<String> getFieldNames() {
@@ -477,7 +477,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -494,7 +494,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -511,7 +511,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -528,7 +528,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -545,7 +545,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {

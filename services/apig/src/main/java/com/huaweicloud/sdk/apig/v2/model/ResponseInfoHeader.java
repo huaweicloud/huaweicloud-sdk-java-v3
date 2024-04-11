@@ -18,7 +18,7 @@ public class ResponseInfoHeader {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Object value;
+    private String value;
 
     public ResponseInfoHeader withKey(String key) {
         this.key = key;
@@ -37,7 +37,7 @@ public class ResponseInfoHeader {
         this.key = key;
     }
 
-    public ResponseInfoHeader withValue(Object value) {
+    public ResponseInfoHeader withValue(String value) {
         this.value = value;
         return this;
     }
@@ -46,11 +46,11 @@ public class ResponseInfoHeader {
      * 分组自定义响应的响应头的value，为长度为1到1024位的字符串
      * @return value
      */
-    public Object getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

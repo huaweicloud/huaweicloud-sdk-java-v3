@@ -169,7 +169,7 @@ public class ServerModel {
     }
 
     /**
-     * 服务器磁盘的免费配额。
+     * 服务器磁盘的免费配额，单位G。
      * minimum: 0
      * maximum: 100000
      * @return freeSize

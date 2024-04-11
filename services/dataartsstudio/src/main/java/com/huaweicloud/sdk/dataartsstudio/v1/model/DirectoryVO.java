@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 目录
+ * 目录。
  */
 public class DirectoryVO {
 
@@ -30,7 +30,7 @@ public class DirectoryVO {
     private String description;
 
     /**
-     * 目录类型
+     * 目录类型。STANDARD_ELEMENT(数据标准)、CODE(码表)。
      */
     public static final class TypeEnum {
 
@@ -38,11 +38,6 @@ public class DirectoryVO {
          * Enum STANDARD_ELEMENT for value: "STANDARD_ELEMENT"
          */
         public static final TypeEnum STANDARD_ELEMENT = new TypeEnum("STANDARD_ELEMENT");
-
-        /**
-         * Enum TAG for value: "TAG"
-         */
-        public static final TypeEnum TAG = new TypeEnum("TAG");
 
         /**
          * Enum CODE for value: "CODE"
@@ -54,7 +49,6 @@ public class DirectoryVO {
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("STANDARD_ELEMENT", STANDARD_ELEMENT);
-            map.put("TAG", TAG);
             map.put("CODE", CODE);
             return Collections.unmodifiableMap(map);
         }
@@ -166,7 +160,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -183,7 +177,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -200,7 +194,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 目录类型
+     * 目录类型。STANDARD_ELEMENT(数据标准)、CODE(码表)。
      * @return type
      */
     public TypeEnum getType() {
@@ -217,7 +211,7 @@ public class DirectoryVO {
     }
 
     /**
-     * ID
+     * ID，创建时可不传，更新时必填。
      * @return id
      */
     public Long getId() {
@@ -234,7 +228,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 父目录ID,根节点没有此ID
+     * 父目录ID，首层传null。
      * @return parentId
      */
     public Long getParentId() {
@@ -251,7 +245,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 上个节点ID,首节点没有
+     * 上个节点ID，首节点传null。
      * @return prevId
      */
     public Long getPrevId() {
@@ -268,7 +262,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 根节点ID,根节点此ID为自身ID
+     * 根节点ID，根节点此ID为自身ID。
      * @return rootId
      */
     public Long getRootId() {
@@ -285,7 +279,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 所属目录
+     * 所属目录。
      * @return qualifiedName
      */
     public String getQualifiedName() {
@@ -302,7 +296,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -319,7 +313,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -336,7 +330,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -353,7 +347,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -386,7 +380,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 子目录
+     * 子目录。
      * @return children
      */
     public List<DirectoryVO> getChildren() {

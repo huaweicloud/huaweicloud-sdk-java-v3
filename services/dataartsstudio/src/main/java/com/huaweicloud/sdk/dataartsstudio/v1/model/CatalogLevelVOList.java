@@ -40,7 +40,7 @@ public class CatalogLevelVOList {
     }
 
     /**
-     * 主题层级信息
+     * 主题层级信息。
      * @return levels
      */
     public List<CatalogLevelVO> getLevels() {

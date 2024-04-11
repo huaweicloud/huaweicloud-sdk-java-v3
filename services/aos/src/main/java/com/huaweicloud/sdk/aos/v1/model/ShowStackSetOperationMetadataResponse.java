@@ -265,6 +265,11 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_preferences")
+
+    private OperationPreferences operationPreferences;
+
     public ShowStackSetOperationMetadataResponse withStackSetOperationId(String stackSetOperationId) {
         this.stackSetOperationId = stackSetOperationId;
         return this;
@@ -373,7 +378,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收v3委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
+     * 管理委托名称  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有iam:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。  [[创建委托及授权方式](https://support.huaweicloud.com/usermanual-iam/iam_06_0002.html)](tag:hws) [[创建委托及授权方式](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam/iam_06_0002.html)](tag:hws_hk) [[创建委托及授权方式](https://support.huaweicloud.com/eu/usermanual-iam/iam_06_0002.html)](tag:hws_eu)
      * @return administrationAgencyName
      */
     public String getAdministrationAgencyName() {
@@ -390,7 +395,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给予administration_agency_urn，administration_agency_name只支持接收普通委托名称，若给予了v5委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
+     * 管理委托URN  资源编排服务使用该委托获取成员账号委托给管理账号的权限。该委托中必须含有sts:tokens:assume权限，用以后续获取被管理委托凭证。如果不包含，则会在新增或者部署实例时报错。  当用户定义SELF_MANAGED权限类型时，administration_agency_name和administration_agency_urn 必须有且只有一个存在。  推荐用户在使用信任委托时给予administration_agency_urn，administration_agency_name只支持接收委托名称，若给予了信任委托名称，则会在部署模板时失败。  当用户使用SERVICE_MANAGED权限类型时，指定该参数将报错400。
      * @return administrationAgencyUrn
      */
     public String getAdministrationAgencyUrn() {
@@ -479,6 +484,33 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    public ShowStackSetOperationMetadataResponse withOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+        return this;
+    }
+
+    public ShowStackSetOperationMetadataResponse withOperationPreferences(
+        Consumer<OperationPreferences> operationPreferencesSetter) {
+        if (this.operationPreferences == null) {
+            this.operationPreferences = new OperationPreferences();
+            operationPreferencesSetter.accept(this.operationPreferences);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get operationPreferences
+     * @return operationPreferences
+     */
+    public OperationPreferences getOperationPreferences() {
+        return operationPreferences;
+    }
+
+    public void setOperationPreferences(OperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -496,7 +528,8 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
             && Objects.equals(this.administrationAgencyUrn, that.administrationAgencyUrn)
             && Objects.equals(this.managedAgencyName, that.managedAgencyName)
             && Objects.equals(this.deploymentTargets, that.deploymentTargets)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.operationPreferences, that.operationPreferences);
     }
 
     @Override
@@ -512,7 +545,8 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
             managedAgencyName,
             deploymentTargets,
             createTime,
-            updateTime);
+            updateTime,
+            operationPreferences);
     }
 
     @Override
@@ -531,6 +565,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
         sb.append("    deploymentTargets: ").append(toIndentedString(deploymentTargets)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    operationPreferences: ").append(toIndentedString(operationPreferences)).append("\n");
         sb.append("}");
         return sb.toString();
     }

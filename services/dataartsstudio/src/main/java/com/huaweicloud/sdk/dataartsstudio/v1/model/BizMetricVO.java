@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BizMetricVO
+ * 业务指标信息。
  */
 public class BizMetricVO {
 
@@ -93,7 +93,7 @@ public class BizMetricVO {
     private String generalFilters;
 
     /**
-     * 刷新频率
+     * 刷新频率。MINUTE(每分钟)、HOUR(每小时)、DAY(每天)、WEEK(每周)、MONTH(每月)、YEAR(每年)、REAL_TIME(实时)、HALF_HOUR(每半小时)、QUART(每15分钟)、DOUBLE_WEEK(每两周)、HALF_YEAR(每半年)、HALF_DAY(每半天)。
      */
     public static final class IntervalTypeEnum {
 
@@ -338,7 +338,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 编码
+     * 编码，更新时必填，创建是为空。
      * @return id
      */
     public Long getId() {
@@ -355,7 +355,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标名称, 支持中英文, 数字, 下划线, 中划线, 中英文括号()（）/
+     * 指标名称。
      * @return name
      */
     public String getName() {
@@ -372,7 +372,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标编码
+     * 指标编码。
      * @return code
      */
     public String getCode() {
@@ -389,7 +389,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标名称, 支持中英文, 数字, 下划线, 中划线, 中英文括号()（）/
+     * 指标别名。
      * @return nameAlias
      */
     public String getNameAlias() {
@@ -440,7 +440,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 归属的流程架构的id
+     * 归属的流程架构的ID。
      * @return bizCatalogId
      */
     public Long getBizCatalogId() {
@@ -457,7 +457,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 归属的流程架构路径
+     * 归属的流程架构路径。
      * @return bizCatalogPath
      */
     public String getBizCatalogPath() {
@@ -474,7 +474,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 创建人
+     * 创建人。
      * @return createBy
      */
     public String getCreateBy() {
@@ -491,7 +491,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 更新人
+     * 更新人。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -508,7 +508,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 数据来源
+     * 数据来源。
      * @return dataOrigin
      */
     public String getDataOrigin() {
@@ -525,7 +525,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 计量单位
+     * 计量单位。
      * @return unit
      */
     public String getUnit() {
@@ -542,7 +542,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 统计周期(时间限定)
+     * 统计周期(时间限定)。
      * @return timeFilters
      */
     public String getTimeFilters() {
@@ -559,7 +559,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 统计维度
+     * 统计维度。
      * @return dimensions
      */
     public String getDimensions() {
@@ -576,7 +576,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 统计口径/修饰词（通用限定）
+     * 统计口径和修饰词。
      * @return generalFilters
      */
     public String getGeneralFilters() {
@@ -593,7 +593,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 刷新频率
+     * 刷新频率。MINUTE(每分钟)、HOUR(每小时)、DAY(每天)、WEEK(每周)、MONTH(每月)、YEAR(每年)、REAL_TIME(实时)、HALF_HOUR(每半小时)、QUART(每15分钟)、DOUBLE_WEEK(每两周)、HALF_YEAR(每半年)、HALF_DAY(每半天)。
      * @return intervalType
      */
     public IntervalTypeEnum getIntervalType() {
@@ -610,7 +610,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 应用场景
+     * 应用场景。
      * @return applyScenario
      */
     public String getApplyScenario() {
@@ -627,7 +627,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 关联技术指标
+     * 关联技术指标。
      * @return technicalMetric
      */
     public Long getTechnicalMetric() {
@@ -644,7 +644,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 关联技术指标名称
+     * 关联技术指标名称。
      * @return technicalMetricName
      */
     public String getTechnicalMetricName() {
@@ -678,7 +678,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 度量对象
+     * 度量对象。
      * @return measure
      */
     public String getMeasure() {
@@ -695,7 +695,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 负责人，指标解释人
+     * 指标责任人。
      * @return owner
      */
     public String getOwner() {
@@ -712,7 +712,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标管理部门, 支持中英文, 数字, 下划线, 中划线, 中英文括号()（）/, 空格
+     * 指标管理部门。
      * @return ownerDepartment
      */
     public String getOwnerDepartment() {
@@ -729,7 +729,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 设置目的
+     * 设置目的。
      * @return destination
      */
     public String getDestination() {
@@ -746,7 +746,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 资产同步后的guid
+     * 资产同步后的guid。
      * @return guid
      */
     public String getGuid() {
@@ -763,7 +763,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标定义
+     * 指标定义。
      * @return definition
      */
     public String getDefinition() {
@@ -780,7 +780,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 计算公式
+     * 计算公式。
      * @return expression
      */
     public String getExpression() {
@@ -797,7 +797,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 备注
+     * 备注。
      * @return remark
      */
     public String getRemark() {
@@ -866,7 +866,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 创建时间
+     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -883,7 +883,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 更新时间
+     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -900,7 +900,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 主题域分组中文名
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -917,7 +917,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 主题域中文名
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -934,7 +934,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 业务对象中文名
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {

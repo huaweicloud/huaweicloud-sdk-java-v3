@@ -54,7 +54,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 编码
+     * 编码。
      * @return id
      */
     public Long getId() {
@@ -87,7 +87,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 其他指标id
+     * 其他指标ID。
      * @return otherMetricIds
      */
     public List<Long> getOtherMetricIds() {
@@ -120,7 +120,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 其他指标名称
+     * 其他指标名称。
      * @return otherMetricNames
      */
     public List<String> getOtherMetricNames() {
@@ -137,7 +137,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 告警表达式
+     * 告警表达式。
      * @return expression
      */
     public String getExpression() {
@@ -154,7 +154,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 挂载指标id
+     * 挂载指ID。
      * @return metricId
      */
     public Long getMetricId() {
@@ -171,7 +171,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 前端表达式配置，用于前端数据恢复
+     * 前端表达式配置，用于前端数据恢复。
      * @return frontConfigs
      */
     public String getFrontConfigs() {

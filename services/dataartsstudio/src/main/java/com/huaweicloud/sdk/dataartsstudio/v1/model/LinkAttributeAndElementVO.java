@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 属性id列表
+ * 属性ID列表。
  */
 public class LinkAttributeAndElementVO {
 
@@ -34,7 +34,7 @@ public class LinkAttributeAndElementVO {
     private Long tableId;
 
     /**
-     * 表类型:维度、事实表、汇总表、业务表(默认)
+     * 表类型，默认是TABLE_MODEL。TABLE_MODEL(关系模型（逻辑模型/物理模型）)、AGGREGATION_LOGIC_TABLE(汇总表)、FACT_LOGIC_TABLE(事实表)、DIMENSION(维度)、DIMENSION_LOGIC_TABLE(维度表)。
      */
     public static final class BizTypeEnum {
 
@@ -148,7 +148,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 属性id列表
+     * 属性ID列表。
      * @return ids
      */
     public List<Long> getIds() {
@@ -165,7 +165,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 关联的数据标准的id
+     * 关联的数据标准的ID。
      * @return standRowId
      */
     public Long getStandRowId() {
@@ -182,7 +182,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 表id
+     * 表ID。
      * @return tableId
      */
     public Long getTableId() {
@@ -199,7 +199,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 表类型:维度、事实表、汇总表、业务表(默认)
+     * 表类型，默认是TABLE_MODEL。TABLE_MODEL(关系模型（逻辑模型/物理模型）)、AGGREGATION_LOGIC_TABLE(汇总表)、FACT_LOGIC_TABLE(事实表)、DIMENSION(维度)、DIMENSION_LOGIC_TABLE(维度表)。
      * @return bizType
      */
     public BizTypeEnum getBizType() {
