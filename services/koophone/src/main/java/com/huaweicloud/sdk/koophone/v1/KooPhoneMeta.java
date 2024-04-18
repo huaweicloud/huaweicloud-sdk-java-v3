@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceAsyncCommandsReq;
@@ -105,6 +107,31 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceStatusReq.class),
             f -> f.withMarshaller(BatchShowInstanceRequest::getBody, BatchShowInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteInstanceAuthTokenRequest, ExecuteInstanceAuthTokenResponse> executeInstanceAuthToken =
+        genForExecuteInstanceAuthToken();
+
+    private static HttpRequestDef<ExecuteInstanceAuthTokenRequest, ExecuteInstanceAuthTokenResponse> genForExecuteInstanceAuthToken() {
+        // basic
+        HttpRequestDef.Builder<ExecuteInstanceAuthTokenRequest, ExecuteInstanceAuthTokenResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExecuteInstanceAuthTokenRequest.class, ExecuteInstanceAuthTokenResponse.class)
+                .withName("ExecuteInstanceAuthToken")
+                .withUri("/v1/instances/{instance_id}/auth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteInstanceAuthTokenRequest::getInstanceId,
+                ExecuteInstanceAuthTokenRequest::setInstanceId));
 
         // response
 

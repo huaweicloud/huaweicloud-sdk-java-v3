@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
@@ -79,6 +81,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesDetailsRequest;
@@ -101,6 +105,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
@@ -129,6 +135,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceDiskRequest;
@@ -137,8 +145,6 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstancesStatisticsRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstancesStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasRequest;
@@ -643,6 +649,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteInstance, hcClient);
+    }
+
+    /**
+     * 删除实例标签
+     *
+     * 删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceTagRequest 请求对象
+     * @return DeleteInstanceTagResponse
+     */
+    public DeleteInstanceTagResponse deleteInstanceTag(DeleteInstanceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteInstanceTag);
+    }
+
+    /**
+     * 删除实例标签
+     *
+     * 删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceTagRequest 请求对象
+     * @return SyncInvoker<DeleteInstanceTagRequest, DeleteInstanceTagResponse>
+     */
+    public SyncInvoker<DeleteInstanceTagRequest, DeleteInstanceTagResponse> deleteInstanceTagInvoker(
+        DeleteInstanceTagRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteInstanceTag, hcClient);
     }
 
     /**
@@ -1276,6 +1311,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询错误日志下载链接
+     *
+     * 查询数据库错误日志下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceErrorLogsRequest 请求对象
+     * @return ListInstanceErrorLogsResponse
+     */
+    public ListInstanceErrorLogsResponse listInstanceErrorLogs(ListInstanceErrorLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstanceErrorLogs);
+    }
+
+    /**
+     * 查询错误日志下载链接
+     *
+     * 查询数据库错误日志下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceErrorLogsRequest 请求对象
+     * @return SyncInvoker<ListInstanceErrorLogsRequest, ListInstanceErrorLogsResponse>
+     */
+    public SyncInvoker<ListInstanceErrorLogsRequest, ListInstanceErrorLogsResponse> listInstanceErrorLogsInvoker(
+        ListInstanceErrorLogsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceErrorLogs, hcClient);
+    }
+
+    /**
      * 查询实例标签
      *
      * 查询指定实例的用户标签信息。
@@ -1592,6 +1656,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listTasks, hcClient);
+    }
+
+    /**
+     * 查询Top IO列表
+     *
+     * 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopIoTrafficsRequest 请求对象
+     * @return ListTopIoTrafficsResponse
+     */
+    public ListTopIoTrafficsResponse listTopIoTraffics(ListTopIoTrafficsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listTopIoTraffics);
+    }
+
+    /**
+     * 查询Top IO列表
+     *
+     * 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopIoTrafficsRequest 请求对象
+     * @return SyncInvoker<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse>
+     */
+    public SyncInvoker<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse> listTopIoTrafficsInvoker(
+        ListTopIoTrafficsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listTopIoTraffics, hcClient);
     }
 
     /**
@@ -1999,6 +2092,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询错误日志采集开关状态
+     *
+     * 查询数据库错误日志采集的开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowErrorLogSwitchStatusRequest 请求对象
+     * @return ShowErrorLogSwitchStatusResponse
+     */
+    public ShowErrorLogSwitchStatusResponse showErrorLogSwitchStatus(ShowErrorLogSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showErrorLogSwitchStatus);
+    }
+
+    /**
+     * 查询错误日志采集开关状态
+     *
+     * 查询数据库错误日志采集的开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowErrorLogSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ShowErrorLogSwitchStatusRequest, ShowErrorLogSwitchStatusResponse>
+     */
+    public SyncInvoker<ShowErrorLogSwitchStatusRequest, ShowErrorLogSwitchStatusResponse> showErrorLogSwitchStatusInvoker(
+        ShowErrorLogSwitchStatusRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showErrorLogSwitchStatus, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数模板
      *
      * 获取指定实例的参数模板。
@@ -2112,35 +2234,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshotInvoker(
         ShowInstanceSnapshotRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceSnapshot, hcClient);
-    }
-
-    /**
-     * 实例统计
-     *
-     * 实例统计
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstancesStatisticsRequest 请求对象
-     * @return ShowInstancesStatisticsResponse
-     */
-    public ShowInstancesStatisticsResponse showInstancesStatistics(ShowInstancesStatisticsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstancesStatistics);
-    }
-
-    /**
-     * 实例统计
-     *
-     * 实例统计
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstancesStatisticsRequest 请求对象
-     * @return SyncInvoker<ShowInstancesStatisticsRequest, ShowInstancesStatisticsResponse>
-     */
-    public SyncInvoker<ShowInstancesStatisticsRequest, ShowInstancesStatisticsResponse> showInstancesStatisticsInvoker(
-        ShowInstancesStatisticsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstancesStatistics, hcClient);
     }
 
     /**

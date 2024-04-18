@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ControlSmartLiveReq {
 
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：PlayTextInfo - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO:插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - SHOW_LAYER：显示导播素材，用于直播导播。params结构定义：LiveGuideRuleInfo - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
+     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：PlayTextInfo - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO:插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - SHOW_LAYER：显示导播素材，用于直播导播。params结构定义：LiveGuideRuleInfo - REFRESH_OUTPUT_URL: 更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
      */
     public static final class CommandEnum {
 
@@ -47,6 +47,11 @@ public class ControlSmartLiveReq {
         public static final CommandEnum GET_CURRENT_PLAYING_SCRIPTS = new CommandEnum("GET_CURRENT_PLAYING_SCRIPTS");
 
         /**
+         * Enum REFRESH_OUTPUT_URL for value: "REFRESH_OUTPUT_URL"
+         */
+        public static final CommandEnum REFRESH_OUTPUT_URL = new CommandEnum("REFRESH_OUTPUT_URL");
+
+        /**
          * Enum GET_LIVE_JOB_CONFIG_INFO for value: "GET_LIVE_JOB_CONFIG_INFO"
          */
         public static final CommandEnum GET_LIVE_JOB_CONFIG_INFO = new CommandEnum("GET_LIVE_JOB_CONFIG_INFO");
@@ -60,6 +65,7 @@ public class ControlSmartLiveReq {
             map.put("INSERT_PLAY_AUDIO", INSERT_PLAY_AUDIO);
             map.put("REWRITE_INTERACTION_RULES", REWRITE_INTERACTION_RULES);
             map.put("GET_CURRENT_PLAYING_SCRIPTS", GET_CURRENT_PLAYING_SCRIPTS);
+            map.put("REFRESH_OUTPUT_URL", REFRESH_OUTPUT_URL);
             map.put("GET_LIVE_JOB_CONFIG_INFO", GET_LIVE_JOB_CONFIG_INFO);
             return Collections.unmodifiableMap(map);
         }
@@ -131,7 +137,7 @@ public class ControlSmartLiveReq {
     }
 
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：PlayTextInfo - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO:插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - SHOW_LAYER：显示导播素材，用于直播导播。params结构定义：LiveGuideRuleInfo - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
+     * 命令名称。 - INSERT_PLAY_SCRIPT: 插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：PlayTextInfo - REWRITE_PLAY_SCRIPT: 动态编辑未播放剧本。params结构定义：scene_scripts - INSERT_PLAY_AUDIO:插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo - REWRITE_INTERACTION_RULES: 动态修改互动规则。params结构定义：interaction_rules - GET_CURRENT_PLAYING_SCRIPTS: 查询本轮剧本列表。响应为LivePlayingScriptList结构 - SHOW_LAYER：显示导播素材，用于直播导播。params结构定义：LiveGuideRuleInfo - REFRESH_OUTPUT_URL: 更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo
      * @return command
      */
     public CommandEnum getCommand() {

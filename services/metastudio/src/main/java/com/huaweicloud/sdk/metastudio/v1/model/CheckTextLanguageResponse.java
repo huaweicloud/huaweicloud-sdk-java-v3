@@ -17,7 +17,7 @@ import java.util.Objects;
 public class CheckTextLanguageResponse extends SdkResponse {
 
     /**
-     * 语言检测状态
+     * 语言检测状态。 * MATCHED: 匹配 * UNMATCHED: 不匹配
      */
     public static final class ResultEnum {
 
@@ -97,7 +97,7 @@ public class CheckTextLanguageResponse extends SdkResponse {
     }
 
     /**
-     * 语言检测状态
+     * 语言检测状态。 * MATCHED: 匹配 * UNMATCHED: 不匹配
      * @return result
      */
     public ResultEnum getResult() {

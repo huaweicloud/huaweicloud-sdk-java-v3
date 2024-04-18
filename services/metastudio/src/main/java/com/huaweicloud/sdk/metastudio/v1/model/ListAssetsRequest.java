@@ -16,11 +16,6 @@ import java.util.Objects;
 public class ListAssetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-REAL-IP")
-
-    private String xRealIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Authorization")
 
     private String authorization;
@@ -281,25 +276,6 @@ public class ListAssetsRequest {
 
     private RoleEnum role;
 
-    public ListAssetsRequest withXRealIp(String xRealIp) {
-        this.xRealIp = xRealIp;
-        return this;
-    }
-
-    /**
-     * 客户端IP
-     * @return xRealIp
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-REAL-IP")
-    public String getXRealIp() {
-        return xRealIp;
-    }
-
-    public void setXRealIp(String xRealIp) {
-        this.xRealIp = xRealIp;
-    }
-
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -342,7 +318,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 第三方用户ID。不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -654,7 +630,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 分身数字人是否资产走动。仅在分身数字人模型查询时有效。
+     * 分身数字人是否支持走动。仅在分身数字人模型查询时有效。
      * @return isMovable
      */
     public Boolean getIsMovable() {
@@ -671,7 +647,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 可取值HUAWEI_METASTUDIO, MOBVOI。 HUAWEI_METASTUDIO：MetaStudio自研音色 MOBVOI：出门问问音色
+     * 取值：HUAWEI_METASTUDIO、MOBVOI。 HUAWEI_METASTUDIO：MetaStudio自研音色 MOBVOI：出门问问音色
      * @return voiceProvider
      */
     public String getVoiceProvider() {
@@ -708,16 +684,16 @@ public class ListAssetsRequest {
             return false;
         }
         ListAssetsRequest that = (ListAssetsRequest) obj;
-        return Objects.equals(this.xRealIp, that.xRealIp) && Objects.equals(this.authorization, that.authorization)
-            && Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.assetSource, that.assetSource)
-            && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.styleId, that.styleId)
-            && Objects.equals(this.renderEngine, that.renderEngine) && Objects.equals(this.sex, that.sex)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.systemProperty, that.systemProperty)
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.assetType, that.assetType)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.systemProperty, that.systemProperty)
             && Objects.equals(this.actionEditable, that.actionEditable)
             && Objects.equals(this.isMovable, that.isMovable) && Objects.equals(this.voiceProvider, that.voiceProvider)
             && Objects.equals(this.role, that.role);
@@ -725,8 +701,7 @@ public class ListAssetsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(xRealIp,
-            authorization,
+        return Objects.hash(authorization,
             xSdkDate,
             xAppUserId,
             limit,
@@ -755,7 +730,6 @@ public class ListAssetsRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAssetsRequest {\n");
-        sb.append("    xRealIp: ").append(toIndentedString(xRealIp)).append("\n");
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");

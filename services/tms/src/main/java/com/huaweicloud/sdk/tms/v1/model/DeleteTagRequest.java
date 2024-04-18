@@ -15,6 +15,11 @@ public class DeleteTagRequest {
 
     private String key;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "value")
+
+    private String value;
+
     public DeleteTagRequest withKey(String key) {
         this.key = key;
         return this;
@@ -32,6 +37,23 @@ public class DeleteTagRequest {
         this.key = key;
     }
 
+    public DeleteTagRequest withValue(String value) {
+        this.value = value;
+        return this;
+    }
+
+    /**
+     *   值。 最大长度43个字符，可以为空字符串。 字符集：A-Z，a-z ， 0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
+     * @return value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class DeleteTagRequest {
             return false;
         }
         DeleteTagRequest that = (DeleteTagRequest) obj;
-        return Objects.equals(this.key, that.key);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key);
+        return Objects.hash(key, value);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class DeleteTagRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteTagRequest {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }

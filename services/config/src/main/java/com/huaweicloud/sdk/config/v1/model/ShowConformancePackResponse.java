@@ -54,6 +54,21 @@ public class ShowConformancePackResponse extends SdkResponse {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_key")
+
+    private String templateKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_uri")
+
+    private String templateUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
     /**
      * 合规规则包部署状态。
      */
@@ -99,6 +114,21 @@ public class ShowConformancePackResponse extends SdkResponse {
          */
         public static final StatusEnum ROLLBACK_FAILED = new StatusEnum("ROLLBACK_FAILED");
 
+        /**
+         * Enum UPDATE_SUCCESSFUL for value: "UPDATE_SUCCESSFUL"
+         */
+        public static final StatusEnum UPDATE_SUCCESSFUL = new StatusEnum("UPDATE_SUCCESSFUL");
+
+        /**
+         * Enum UPDATE_IN_PROGRESS for value: "UPDATE_IN_PROGRESS"
+         */
+        public static final StatusEnum UPDATE_IN_PROGRESS = new StatusEnum("UPDATE_IN_PROGRESS");
+
+        /**
+         * Enum UPDATE_FAILED for value: "UPDATE_FAILED"
+         */
+        public static final StatusEnum UPDATE_FAILED = new StatusEnum("UPDATE_FAILED");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -111,6 +141,9 @@ public class ShowConformancePackResponse extends SdkResponse {
             map.put("ROLLBACK_SUCCESSFUL", ROLLBACK_SUCCESSFUL);
             map.put("ROLLBACK_IN_PROGRESS", ROLLBACK_IN_PROGRESS);
             map.put("ROLLBACK_FAILED", ROLLBACK_FAILED);
+            map.put("UPDATE_SUCCESSFUL", UPDATE_SUCCESSFUL);
+            map.put("UPDATE_IN_PROGRESS", UPDATE_IN_PROGRESS);
+            map.put("UPDATE_FAILED", UPDATE_FAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -299,6 +332,57 @@ public class ShowConformancePackResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    public ShowConformancePackResponse withTemplateKey(String templateKey) {
+        this.templateKey = templateKey;
+        return this;
+    }
+
+    /**
+     * 预定义合规规则包模板名称。
+     * @return templateKey
+     */
+    public String getTemplateKey() {
+        return templateKey;
+    }
+
+    public void setTemplateKey(String templateKey) {
+        this.templateKey = templateKey;
+    }
+
+    public ShowConformancePackResponse withTemplateUri(String templateUri) {
+        this.templateUri = templateUri;
+        return this;
+    }
+
+    /**
+     * 合规规则包模板OBS地址
+     * @return templateUri
+     */
+    public String getTemplateUri() {
+        return templateUri;
+    }
+
+    public void setTemplateUri(String templateUri) {
+        this.templateUri = templateUri;
+    }
+
+    public ShowConformancePackResponse withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 委托名称
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
     public ShowConformancePackResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -395,8 +479,9 @@ public class ShowConformancePackResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.stackId, that.stackId) && Objects.equals(this.stackName, that.stackName)
             && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.templateKey, that.templateKey)
+            && Objects.equals(this.templateUri, that.templateUri) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorMessage, that.errorMessage)
             && Objects.equals(this.varsStructure, that.varsStructure) && Objects.equals(this.createdBy, that.createdBy);
     }
 
@@ -409,6 +494,9 @@ public class ShowConformancePackResponse extends SdkResponse {
             deploymentId,
             createdAt,
             updatedAt,
+            templateKey,
+            templateUri,
+            agencyName,
             status,
             errorMessage,
             varsStructure,
@@ -426,6 +514,9 @@ public class ShowConformancePackResponse extends SdkResponse {
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    templateKey: ").append(toIndentedString(templateKey)).append("\n");
+        sb.append("    templateUri: ").append(toIndentedString(templateUri)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");

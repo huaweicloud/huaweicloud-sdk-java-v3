@@ -224,6 +224,7 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeReq;
@@ -1064,11 +1065,6 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAssetsRequest.RoleEnum.class),
             f -> f.withMarshaller(ListAssetsRequest::getRole, ListAssetsRequest::setRole));
-        builder.<String>withRequestField("X-REAL-IP",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsRequest::getXRealIp, ListAssetsRequest::setXRealIp));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2709,6 +2705,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRobotRequest::getLimit, ListRobotRequest::setLimit));
+        builder.<String>withRequestField("room_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRobotRequest::getRoomId, ListRobotRequest::setRoomId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4875,11 +4876,6 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(List2dModelTrainingJobRequest::getLimit, List2dModelTrainingJobRequest::setLimit));
-        builder.<String>withRequestField("state",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(List2dModelTrainingJobRequest::getState, List2dModelTrainingJobRequest::setState));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4904,6 +4900,17 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(List2dModelTrainingJobRequest::getCreateSince,
                 List2dModelTrainingJobRequest::setCreateSince));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getState, List2dModelTrainingJobRequest::setState));
+        builder.<String>withRequestField("query_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getQueryProjectId,
+                List2dModelTrainingJobRequest::setQueryProjectId));
         builder.<String>withRequestField("batch_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4925,6 +4932,12 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(List2dModelTrainingJobRequest::getName, List2dModelTrainingJobRequest::setName));
+        builder.<String>withRequestField("model_resolution",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getModelResolution,
+                List2dModelTrainingJobRequest::setModelResolution));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -5057,10 +5070,10 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(Update2dModelTrainingJobRequest::getXAppUserId,
                 Update2dModelTrainingJobRequest::setXAppUserId));
-        builder.<Create2dModelTrainingJobReq>withRequestField("body",
+        builder.<Update2dModelTrainingJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Create2dModelTrainingJobReq.class),
+            TypeCasts.uncheckedConversion(Update2dModelTrainingJobReq.class),
             f -> f.withMarshaller(Update2dModelTrainingJobRequest::getBody, Update2dModelTrainingJobRequest::setBody));
 
         // response

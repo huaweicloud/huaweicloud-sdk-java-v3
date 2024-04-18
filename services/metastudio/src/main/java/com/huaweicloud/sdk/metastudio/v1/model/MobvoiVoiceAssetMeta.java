@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 出门问问 TTS音色元数据。
+ * 出门问问TTS音色元数据。
  */
 public class MobvoiVoiceAssetMeta {
 

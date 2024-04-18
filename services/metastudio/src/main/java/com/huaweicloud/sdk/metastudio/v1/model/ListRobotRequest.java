@@ -40,6 +40,11 @@ public class ListRobotRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_id")
+
+    private String roomId;
+
     public ListRobotRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -101,7 +106,7 @@ public class ListRobotRequest {
     }
 
     /**
-     * 开发者应用作为资产权属的可选字段。
+     * 第三方用户ID。不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,6 +157,23 @@ public class ListRobotRequest {
         this.limit = limit;
     }
 
+    public ListRobotRequest withRoomId(String roomId) {
+        this.roomId = roomId;
+        return this;
+    }
+
+    /**
+     * 智能交互对话房间ID。
+     * @return roomId
+     */
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +185,13 @@ public class ListRobotRequest {
         ListRobotRequest that = (ListRobotRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.roomId, that.roomId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit, roomId);
     }
 
     @Override
@@ -181,6 +204,7 @@ public class ListRobotRequest {
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

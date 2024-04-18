@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
@@ -34,7 +36,10 @@ public class KooPhoneAsyncClient {
     /**
      * 实例执行异步命令
      *
-     * 实例执行异步命令
+     * 实例执行异步命令接口。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 可以通过调用该接口实现对自己的koophone云手机实例进行异步adb指令操作。
+     * 调用完该接口后携带该接口返回的task_id去调用实例执行任务查询接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -48,7 +53,10 @@ public class KooPhoneAsyncClient {
     /**
      * 实例执行异步命令
      *
-     * 实例执行异步命令
+     * 实例执行异步命令接口。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 可以通过调用该接口实现对自己的koophone云手机实例进行异步adb指令操作。
+     * 调用完该接口后携带该接口返回的task_id去调用实例执行任务查询接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -63,7 +71,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例批量重置
      *
-     * 实例批量重置
+     * 实例批量重置，
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口后，当前实例会被初始化。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -77,7 +87,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例批量重置
      *
-     * 实例批量重置
+     * 实例批量重置，
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口后，当前实例会被初始化。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -92,7 +104,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例状态批量查询
      *
-     * 实例状态批量查询
+     * 实例状态批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 接口返回实例当前的状态：云机状态，0：未知，1： 已停止，2：运行中，3：下线中，4：启动中， 5：已关机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -106,7 +120,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例状态批量查询
      *
-     * 实例状态批量查询
+     * 实例状态批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 接口返回实例当前的状态：云机状态，0：未知，1： 已停止，2：运行中，3：下线中，4：启动中， 5：已关机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -119,9 +135,45 @@ public class KooPhoneAsyncClient {
     }
 
     /**
+     * 租户实例串流前获取设备的device_token
+     *
+     * 租户实例串流前获取设备的device_token，
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用反参中的信令地址（signaling_url）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteInstanceAuthTokenRequest 请求对象
+     * @return CompletableFuture<ExecuteInstanceAuthTokenResponse>
+     */
+    public CompletableFuture<ExecuteInstanceAuthTokenResponse> executeInstanceAuthTokenAsync(
+        ExecuteInstanceAuthTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.executeInstanceAuthToken);
+    }
+
+    /**
+     * 租户实例串流前获取设备的device_token
+     *
+     * 租户实例串流前获取设备的device_token，
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用反参中的信令地址（signaling_url）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteInstanceAuthTokenRequest 请求对象
+     * @return AsyncInvoker<ExecuteInstanceAuthTokenRequest, ExecuteInstanceAuthTokenResponse>
+     */
+    public AsyncInvoker<ExecuteInstanceAuthTokenRequest, ExecuteInstanceAuthTokenResponse> executeInstanceAuthTokenAsyncInvoker(
+        ExecuteInstanceAuthTokenRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.executeInstanceAuthToken, hcClient);
+    }
+
+    /**
      * 实例执行任务查询
      *
-     * 实例执行任务查询
+     * 实例执行任务批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 该接口需要和实例执行异步命令接口一起使用，使用实例执行异步命令接口返回的task_id作为路径上的参数以此获取异步命令执行的结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -135,7 +187,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例执行任务查询
      *
-     * 实例执行任务查询
+     * 实例执行任务批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 该接口需要和实例执行异步命令接口一起使用，使用实例执行异步命令接口返回的task_id作为路径上的参数以此获取异步命令执行的结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -149,7 +203,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例视频设置
      *
-     * 实例视频设置
+     * 实例视频设置。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 使用该接口可以设置实例每一个清晰度对应的码率和出流的帧率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -163,7 +219,9 @@ public class KooPhoneAsyncClient {
     /**
      * 实例视频设置
      *
-     * 实例视频设置
+     * 实例视频设置。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 使用该接口可以设置实例每一个清晰度对应的码率和出流的帧率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -177,7 +235,8 @@ public class KooPhoneAsyncClient {
     /**
      * 实例执行同步命令
      *
-     * 实例执行同步命令
+     * 实例执行同步命令接口。调用此api的前提条件是租户需要先购买koophone云手机实例。可以通过调用该接口实现对自己的koophone云手机实例进行adb指令操作。
+     * 该接口是同步操作接口，如果有耗时adb操作建议使用实例执行异步命令接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -191,7 +250,8 @@ public class KooPhoneAsyncClient {
     /**
      * 实例执行同步命令
      *
-     * 实例执行同步命令
+     * 实例执行同步命令接口。调用此api的前提条件是租户需要先购买koophone云手机实例。可以通过调用该接口实现对自己的koophone云手机实例进行adb指令操作。
+     * 该接口是同步操作接口，如果有耗时adb操作建议使用实例执行异步命令接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -205,6 +205,11 @@ public class CreateDigitalAssetRequestBody {
 
     private SharedConfig sharedConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_need_generate_cover")
+
+    private Boolean isNeedGenerateCover;
+
     public CreateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -417,6 +422,23 @@ public class CreateDigitalAssetRequestBody {
         this.sharedConfig = sharedConfig;
     }
 
+    public CreateDigitalAssetRequestBody withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
+        return this;
+    }
+
+    /**
+     * 是否需要生成封面。
+     * @return isNeedGenerateCover
+     */
+    public Boolean getIsNeedGenerateCover() {
+        return isNeedGenerateCover;
+    }
+
+    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -432,7 +454,8 @@ public class CreateDigitalAssetRequestBody {
             && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties)
-            && Objects.equals(this.sharedConfig, that.sharedConfig);
+            && Objects.equals(this.sharedConfig, that.sharedConfig)
+            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover);
     }
 
     @Override
@@ -445,7 +468,8 @@ public class CreateDigitalAssetRequestBody {
             tags,
             assetExtraMeta,
             systemProperties,
-            sharedConfig);
+            sharedConfig,
+            isNeedGenerateCover);
     }
 
     @Override
@@ -461,6 +485,7 @@ public class CreateDigitalAssetRequestBody {
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
+        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("}");
         return sb.toString();
     }

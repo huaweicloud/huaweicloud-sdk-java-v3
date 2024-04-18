@@ -41,7 +41,7 @@ public class ShowProductdataOfferingInfosResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * 商品数据列表
      * @return body
      */
     public List<ResourceProductDataObjectInfo> getBody() {

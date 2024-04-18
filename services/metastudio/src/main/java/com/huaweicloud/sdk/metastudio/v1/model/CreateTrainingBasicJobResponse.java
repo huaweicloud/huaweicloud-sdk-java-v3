@@ -55,7 +55,7 @@ public class CreateTrainingBasicJobResponse extends SdkResponse {
     }
 
     /**
-     * 上传的训练数据地址,用户需要将训练数据打成zip包后上传到该url,create_type为pakcage时设置。 > * 通过该obs地址上传时需设置content-type为application/zip
+     * 上传训练数据的地址。训练数据需打包成zip文件后，上传至该url。  create_type取值为package时设置。 > 通过该obs地址上传时，需设置content-type为application/zip。
      * @return trainingDataUploadingUrl
      */
     public String getTrainingDataUploadingUrl() {

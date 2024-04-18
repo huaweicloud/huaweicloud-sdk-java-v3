@@ -16,6 +16,8 @@ public class KooPhoneRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://koophone.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://koophone.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("KOOPHONE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -23,6 +25,7 @@ public class KooPhoneRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("cn-north-4", CN_NORTH_4);
         return Collections.unmodifiableMap(map);
     }
 

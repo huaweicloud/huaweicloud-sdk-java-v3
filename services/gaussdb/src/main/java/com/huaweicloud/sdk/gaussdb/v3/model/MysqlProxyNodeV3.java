@@ -150,7 +150,7 @@ public class MysqlProxyNodeV3 {
     }
 
     /**
-     * 可用区信息。
+     * 主实例所有节点的可用区信息。
      * @return availabilityZone
      */
     public List<MysqlProxyAvailable> getAvailabilityZone() {

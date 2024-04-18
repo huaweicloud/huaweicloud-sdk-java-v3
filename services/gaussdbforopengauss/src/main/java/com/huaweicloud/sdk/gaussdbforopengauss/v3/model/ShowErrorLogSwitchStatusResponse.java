@@ -2,31 +2,27 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * InstancesStatisticsResponseBodyInstancesStatistics
+ * Response Object
  */
-public class InstancesStatisticsResponseBodyInstancesStatistics {
+public class ShowErrorLogSwitchStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    public InstancesStatisticsResponseBodyInstancesStatistics withStatus(String status) {
+    public ShowErrorLogSwitchStatusResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 实例状态
+     * 采集状态
      * @return status
      */
     public String getStatus() {
@@ -37,23 +33,6 @@ public class InstancesStatisticsResponseBodyInstancesStatistics {
         this.status = status;
     }
 
-    public InstancesStatisticsResponseBodyInstancesStatistics withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * 实例数量
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,22 +41,20 @@ public class InstancesStatisticsResponseBodyInstancesStatistics {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstancesStatisticsResponseBodyInstancesStatistics that =
-            (InstancesStatisticsResponseBodyInstancesStatistics) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.count, that.count);
+        ShowErrorLogSwitchStatusResponse that = (ShowErrorLogSwitchStatusResponse) obj;
+        return Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, count);
+        return Objects.hash(status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class InstancesStatisticsResponseBodyInstancesStatistics {\n");
+        sb.append("class ShowErrorLogSwitchStatusResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

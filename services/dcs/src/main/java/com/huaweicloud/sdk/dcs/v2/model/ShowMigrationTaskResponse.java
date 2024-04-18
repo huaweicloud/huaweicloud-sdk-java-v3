@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -376,6 +378,51 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "released_at")
+
+    private String releasedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resume_mode")
+
+    private String resumeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_features")
+
+    private List<String> supportedFeatures = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_vpc_id")
+
+    private String tenantVpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_subnet_id")
+
+    private String tenantSubnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_security_group_id")
+
+    private String tenantSecurityGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_limit_mb")
+
+    private String bandwidthLimitMb;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_status")
+
+    private String taskStatus;
+
     public ShowMigrationTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -624,6 +671,175 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    public ShowMigrationTaskResponse withReleasedAt(String releasedAt) {
+        this.releasedAt = releasedAt;
+        return this;
+    }
+
+    /**
+     * 迁移机释放时间。
+     * @return releasedAt
+     */
+    public String getReleasedAt() {
+        return releasedAt;
+    }
+
+    public void setReleasedAt(String releasedAt) {
+        this.releasedAt = releasedAt;
+    }
+
+    public ShowMigrationTaskResponse withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 版本。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public ShowMigrationTaskResponse withResumeMode(String resumeMode) {
+        this.resumeMode = resumeMode;
+        return this;
+    }
+
+    /**
+     * 操作模式，分为auto和manual。
+     * @return resumeMode
+     */
+    public String getResumeMode() {
+        return resumeMode;
+    }
+
+    public void setResumeMode(String resumeMode) {
+        this.resumeMode = resumeMode;
+    }
+
+    public ShowMigrationTaskResponse withSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
+        return this;
+    }
+
+    public ShowMigrationTaskResponse addSupportedFeaturesItem(String supportedFeaturesItem) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        this.supportedFeatures.add(supportedFeaturesItem);
+        return this;
+    }
+
+    public ShowMigrationTaskResponse withSupportedFeatures(Consumer<List<String>> supportedFeaturesSetter) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        supportedFeaturesSetter.accept(this.supportedFeatures);
+        return this;
+    }
+
+    /**
+     * 支持的特性。
+     * @return supportedFeatures
+     */
+    public List<String> getSupportedFeatures() {
+        return supportedFeatures;
+    }
+
+    public void setSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
+    }
+
+    public ShowMigrationTaskResponse withTenantVpcId(String tenantVpcId) {
+        this.tenantVpcId = tenantVpcId;
+        return this;
+    }
+
+    /**
+     * 租户VPC ID。
+     * @return tenantVpcId
+     */
+    public String getTenantVpcId() {
+        return tenantVpcId;
+    }
+
+    public void setTenantVpcId(String tenantVpcId) {
+        this.tenantVpcId = tenantVpcId;
+    }
+
+    public ShowMigrationTaskResponse withTenantSubnetId(String tenantSubnetId) {
+        this.tenantSubnetId = tenantSubnetId;
+        return this;
+    }
+
+    /**
+     * 租户子网ID。
+     * @return tenantSubnetId
+     */
+    public String getTenantSubnetId() {
+        return tenantSubnetId;
+    }
+
+    public void setTenantSubnetId(String tenantSubnetId) {
+        this.tenantSubnetId = tenantSubnetId;
+    }
+
+    public ShowMigrationTaskResponse withTenantSecurityGroupId(String tenantSecurityGroupId) {
+        this.tenantSecurityGroupId = tenantSecurityGroupId;
+        return this;
+    }
+
+    /**
+     * 租户安全组ID。
+     * @return tenantSecurityGroupId
+     */
+    public String getTenantSecurityGroupId() {
+        return tenantSecurityGroupId;
+    }
+
+    public void setTenantSecurityGroupId(String tenantSecurityGroupId) {
+        this.tenantSecurityGroupId = tenantSecurityGroupId;
+    }
+
+    public ShowMigrationTaskResponse withBandwidthLimitMb(String bandwidthLimitMb) {
+        this.bandwidthLimitMb = bandwidthLimitMb;
+        return this;
+    }
+
+    /**
+     * 带宽限制速度。
+     * @return bandwidthLimitMb
+     */
+    public String getBandwidthLimitMb() {
+        return bandwidthLimitMb;
+    }
+
+    public void setBandwidthLimitMb(String bandwidthLimitMb) {
+        this.bandwidthLimitMb = bandwidthLimitMb;
+    }
+
+    public ShowMigrationTaskResponse withTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+        return this;
+    }
+
+    /**
+     * 任务状态。
+     * @return taskStatus
+     */
+    public String getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -641,7 +857,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             && Objects.equals(this.backupFiles, that.backupFiles) && Objects.equals(this.networkType, that.networkType)
             && Objects.equals(this.sourceInstance, that.sourceInstance)
             && Objects.equals(this.targetInstance, that.targetInstance)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.releasedAt, that.releasedAt) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.resumeMode, that.resumeMode)
+            && Objects.equals(this.supportedFeatures, that.supportedFeatures)
+            && Objects.equals(this.tenantVpcId, that.tenantVpcId)
+            && Objects.equals(this.tenantSubnetId, that.tenantSubnetId)
+            && Objects.equals(this.tenantSecurityGroupId, that.tenantSecurityGroupId)
+            && Objects.equals(this.bandwidthLimitMb, that.bandwidthLimitMb)
+            && Objects.equals(this.taskStatus, that.taskStatus);
     }
 
     @Override
@@ -658,7 +882,16 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             sourceInstance,
             targetInstance,
             createdAt,
-            updatedAt);
+            updatedAt,
+            releasedAt,
+            version,
+            resumeMode,
+            supportedFeatures,
+            tenantVpcId,
+            tenantSubnetId,
+            tenantSecurityGroupId,
+            bandwidthLimitMb,
+            taskStatus);
     }
 
     @Override
@@ -678,6 +911,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         sb.append("    targetInstance: ").append(toIndentedString(targetInstance)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    releasedAt: ").append(toIndentedString(releasedAt)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    resumeMode: ").append(toIndentedString(resumeMode)).append("\n");
+        sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
+        sb.append("    tenantVpcId: ").append(toIndentedString(tenantVpcId)).append("\n");
+        sb.append("    tenantSubnetId: ").append(toIndentedString(tenantSubnetId)).append("\n");
+        sb.append("    tenantSecurityGroupId: ").append(toIndentedString(tenantSecurityGroupId)).append("\n");
+        sb.append("    bandwidthLimitMb: ").append(toIndentedString(bandwidthLimitMb)).append("\n");
+        sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

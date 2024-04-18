@@ -60,6 +60,21 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
          */
         public static final StateEnum DELETE_FAILED = new StateEnum("DELETE_FAILED");
 
+        /**
+         * Enum UPDATE_SUCCESSFUL for value: "UPDATE_SUCCESSFUL"
+         */
+        public static final StateEnum UPDATE_SUCCESSFUL = new StateEnum("UPDATE_SUCCESSFUL");
+
+        /**
+         * Enum UPDATE_IN_PROGRESS for value: "UPDATE_IN_PROGRESS"
+         */
+        public static final StateEnum UPDATE_IN_PROGRESS = new StateEnum("UPDATE_IN_PROGRESS");
+
+        /**
+         * Enum UPDATE_FAILED for value: "UPDATE_FAILED"
+         */
+        public static final StateEnum UPDATE_FAILED = new StateEnum("UPDATE_FAILED");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -69,6 +84,9 @@ public class ShowOrganizationConformancePackDetailedStatusesRequest {
             map.put("CREATE_FAILED", CREATE_FAILED);
             map.put("DELETE_IN_PROGRESS", DELETE_IN_PROGRESS);
             map.put("DELETE_FAILED", DELETE_FAILED);
+            map.put("UPDATE_SUCCESSFUL", UPDATE_SUCCESSFUL);
+            map.put("UPDATE_IN_PROGRESS", UPDATE_IN_PROGRESS);
+            map.put("UPDATE_FAILED", UPDATE_FAILED);
             return Collections.unmodifiableMap(map);
         }
 

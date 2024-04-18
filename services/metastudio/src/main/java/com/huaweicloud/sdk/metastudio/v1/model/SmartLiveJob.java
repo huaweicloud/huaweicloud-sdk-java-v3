@@ -486,7 +486,7 @@ public class SmartLiveJob {
     }
 
     /**
-     * 直播间封面图UR
+     * 直播间封面图URL
      * @return coverUrl
      */
     public String getCoverUrl() {

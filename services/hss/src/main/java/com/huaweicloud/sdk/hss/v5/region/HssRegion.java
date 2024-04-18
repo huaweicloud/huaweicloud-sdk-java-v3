@@ -70,6 +70,8 @@ public class HssRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://hss.eu-west-101.myhuaweicloud.eu");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://hss.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("HSS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -101,6 +103,7 @@ public class HssRegion {
         map.put("cn-east-5", CN_EAST_5);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

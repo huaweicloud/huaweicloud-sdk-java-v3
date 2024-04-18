@@ -111,6 +111,29 @@ public class TestAKSKSigner {
     }
 
     @Test
+    public void testAKSKSigner3() {
+        BasicCredentials credentials = new BasicCredentials()
+                .withAk(AK)
+                .withSk(SK);
+
+        HttpRequest.HttpRequestBuilder requestBuilder = HttpRequest.newBuilder();
+        HttpRequest httpRequest = requestBuilder
+                .withEndpoint("https://service.region.example.com")
+                .withMethod(HttpMethod.GET)
+                .addHeader("Host", "example.com")
+                .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .build();
+
+        Map<String, String> header = AKSKSigner.getInstance().sign(httpRequest, credentials);
+        Assert.assertEquals("SDK-HMAC-SHA256 "
+                        + "Access=AccessKey, "
+                        + "SignedHeaders=host;x-sdk-date, "
+                        + "Signature=919ad8b75d4ad49da0d377e63ee21c4a7a54b752f6bf2878b4adbe9c19927da6",
+                header.get("Authorization"));
+        Assert.assertEquals(header.get("Host"), "example.com");
+    }
+
+    @Test
     public void testDerivedAKSKSigner() {
         BasicCredentials credentials = new BasicCredentials()
                 .withAk(AK)
@@ -184,6 +207,31 @@ public class TestAKSKSigner {
                         + "SignedHeaders=host;x-sdk-date, "
                         + "Signature=e69d85082ec803f89f2e93b500106ae69cd5667c866d6aa6f3e44fc66558d8fb",
                 derivedHeaders.get("Authorization"));
+    }
+
+    @Test
+    public void testDerivedAKSKSigner3() {
+        BasicCredentials credentials = new BasicCredentials()
+                .withAk(AK)
+                .withSk(SK);
+
+        HttpRequest exclusiveRequest = HttpRequest.newBuilder()
+                .withEndpoint("https://service.region.example.com")
+                .withMethod(HttpMethod.GET)
+                .withContentType(CONTENT_TYPE)
+                .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
+                .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("Host", "example.com")
+                .build();
+        credentials.processDerivedAuthParams("service", "region-id-1");
+
+        Map<String, String> derivedHeaders = signForDerivedAuth(exclusiveRequest, credentials);
+        Assert.assertEquals("V11-HMAC-SHA256 "
+                        + "Credential=AccessKey/20191115/region-id-1/service, "
+                        + "SignedHeaders=host;x-sdk-date, "
+                        + "Signature=5ba93d159e81cf6b1550585721ac2e2223793cee3a06f1c9fb245985608d5d0f",
+                derivedHeaders.get("Authorization"));
+        Assert.assertEquals("example.com", derivedHeaders.get("Host"));
     }
 
     @Test

@@ -120,7 +120,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框高度 > * 字幕框宽度固定为屏幕宽度的80% > * 参数h用于方便前端计算字幕框左上角坐标，后台不使用该参数
+     * 字幕框高度 > * 参数h用于方便前端计算字幕框左上角坐标，后台不使用该参数
      * minimum: 0
      * maximum: 1920
      * @return h
@@ -139,7 +139,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框宽度
+     * 字幕框宽度 > * 字幕框宽度固定为屏幕宽度的80% > * 参数w用于方便前端计算字幕框左上角坐标，后台不使用该参数
      * minimum: 0
      * maximum: 1920
      * @return w

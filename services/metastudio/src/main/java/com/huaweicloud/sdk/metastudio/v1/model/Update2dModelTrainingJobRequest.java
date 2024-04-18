@@ -39,7 +39,7 @@ public class Update2dModelTrainingJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Create2dModelTrainingJobReq body;
+    private Update2dModelTrainingJobReq body;
 
     public Update2dModelTrainingJobRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -119,7 +119,7 @@ public class Update2dModelTrainingJobRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 第三方用户ID。不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,14 +132,14 @@ public class Update2dModelTrainingJobRequest {
         this.xAppUserId = xAppUserId;
     }
 
-    public Update2dModelTrainingJobRequest withBody(Create2dModelTrainingJobReq body) {
+    public Update2dModelTrainingJobRequest withBody(Update2dModelTrainingJobReq body) {
         this.body = body;
         return this;
     }
 
-    public Update2dModelTrainingJobRequest withBody(Consumer<Create2dModelTrainingJobReq> bodySetter) {
+    public Update2dModelTrainingJobRequest withBody(Consumer<Update2dModelTrainingJobReq> bodySetter) {
         if (this.body == null) {
-            this.body = new Create2dModelTrainingJobReq();
+            this.body = new Update2dModelTrainingJobReq();
             bodySetter.accept(this.body);
         }
 
@@ -150,11 +150,11 @@ public class Update2dModelTrainingJobRequest {
      * Get body
      * @return body
      */
-    public Create2dModelTrainingJobReq getBody() {
+    public Update2dModelTrainingJobReq getBody() {
         return body;
     }
 
-    public void setBody(Create2dModelTrainingJobReq body) {
+    public void setBody(Update2dModelTrainingJobReq body) {
         this.body = body;
     }
 

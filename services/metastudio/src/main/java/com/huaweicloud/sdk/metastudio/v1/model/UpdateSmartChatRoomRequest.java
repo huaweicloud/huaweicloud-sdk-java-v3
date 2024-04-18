@@ -47,7 +47,7 @@ public class UpdateSmartChatRoomRequest {
     }
 
     /**
-     * 剧本ID。
+     * 智能交互对话ID。获取方法请参考[创建智能交互对话](CreateSmartChatRoom.xml)。
      * @return roomId
      */
     public String getRoomId() {
@@ -119,7 +119,7 @@ public class UpdateSmartChatRoomRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 第三方用户ID。不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

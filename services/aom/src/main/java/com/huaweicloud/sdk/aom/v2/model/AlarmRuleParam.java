@@ -273,9 +273,9 @@ public class AlarmRuleParam {
         public static final PeriodEnum NUMBER_900000 = new PeriodEnum(900000);
 
         /**
-         * Enum NUMBER_36000000 for value: 36000000
+         * Enum NUMBER_3600000 for value: 3600000
          */
-        public static final PeriodEnum NUMBER_36000000 = new PeriodEnum(36000000);
+        public static final PeriodEnum NUMBER_3600000 = new PeriodEnum(3600000);
 
         private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -284,7 +284,7 @@ public class AlarmRuleParam {
             map.put(60000, NUMBER_60000);
             map.put(300000, NUMBER_300000);
             map.put(900000, NUMBER_900000);
-            map.put(36000000, NUMBER_36000000);
+            map.put(3600000, NUMBER_3600000);
             return Collections.unmodifiableMap(map);
         }
 

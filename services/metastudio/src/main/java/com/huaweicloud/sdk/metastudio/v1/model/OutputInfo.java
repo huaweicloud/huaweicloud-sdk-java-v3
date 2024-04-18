@@ -30,6 +30,11 @@ public class OutputInfo {
 
     private Integer sessionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_data_version")
+
+    private String outputDataVersion;
+
     public OutputInfo withFaceAddr(String faceAddr) {
         this.faceAddr = faceAddr;
         return this;
@@ -100,6 +105,23 @@ public class OutputInfo {
         this.sessionId = sessionId;
     }
 
+    public OutputInfo withOutputDataVersion(String outputDataVersion) {
+        this.outputDataVersion = outputDataVersion;
+        return this;
+    }
+
+    /**
+     * 输出数据的格式版本，如请求中无此参数，则输出数据格式为1.0，可选值有： 1.0: 对应的输出为：         动作数据：75个骨骼旋转值         表情数据：52ARkit表情及参数 2.0: 对应的输出为：         动作数据：55个骨骼旋转值+骨骼3D坐标         表情数据：178个控制器的数据
+     * @return outputDataVersion
+     */
+    public String getOutputDataVersion() {
+        return outputDataVersion;
+    }
+
+    public void setOutputDataVersion(String outputDataVersion) {
+        this.outputDataVersion = outputDataVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,13 @@ public class OutputInfo {
         }
         OutputInfo that = (OutputInfo) obj;
         return Objects.equals(this.faceAddr, that.faceAddr) && Objects.equals(this.bodyAddr, that.bodyAddr)
-            && Objects.equals(this.audioAddr, that.audioAddr) && Objects.equals(this.sessionId, that.sessionId);
+            && Objects.equals(this.audioAddr, that.audioAddr) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.outputDataVersion, that.outputDataVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceAddr, bodyAddr, audioAddr, sessionId);
+        return Objects.hash(faceAddr, bodyAddr, audioAddr, sessionId, outputDataVersion);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class OutputInfo {
         sb.append("    bodyAddr: ").append(toIndentedString(bodyAddr)).append("\n");
         sb.append("    audioAddr: ").append(toIndentedString(audioAddr)).append("\n");
         sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+        sb.append("    outputDataVersion: ").append(toIndentedString(outputDataVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

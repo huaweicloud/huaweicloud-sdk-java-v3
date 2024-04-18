@@ -27,7 +27,7 @@ public class BatchResetInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 响应码，错误码规范KP.API.0001，数字递增
+     * 响应码，KOOPHONE.API.0001，数字递增
      * @return errorCode
      */
     public String getErrorCode() {

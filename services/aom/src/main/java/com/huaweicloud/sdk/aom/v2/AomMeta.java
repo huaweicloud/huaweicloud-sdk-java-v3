@@ -570,6 +570,12 @@ public class AomMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEventsRequest.TypeEnum.class),
             f -> f.withMarshaller(ListEventsRequest::getType, ListEventsRequest::setType));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getEnterpriseProjectId,
+                ListEventsRequest::setEnterpriseProjectId));
         builder.<EventQueryParam2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

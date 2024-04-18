@@ -46,7 +46,7 @@ public class CreateTrainingJobRspSegmentUploadingUrl {
     }
 
     /**
-     * 音频上传的地址。 > * 通过该obs地址上传时需设置content-type为audio/wav
+     * 音频上传的地址。  通过该obs地址上传时，需设置content-type为audio/wav
      * @return audioUploadingUrl
      */
     public List<String> getAudioUploadingUrl() {
@@ -79,7 +79,7 @@ public class CreateTrainingJobRspSegmentUploadingUrl {
     }
 
     /**
-     * 文本上传的地址。 > * 通过该obs地址上传时需设置content-type为text/plain
+     * 文本上传的地址。  通过该obs地址上传时需设置content-type为text/plain
      * @return txtUploadingUrl
      */
     public List<String> getTxtUploadingUrl() {

@@ -22,9 +22,9 @@ public class UpdateRobotReq {
     private Integer appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "concurrency")
+    @JsonProperty(value = "room_id")
 
-    private Integer concurrency;
+    private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
@@ -87,23 +87,21 @@ public class UpdateRobotReq {
         this.appType = appType;
     }
 
-    public UpdateRobotReq withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
+    public UpdateRobotReq withRoomId(String roomId) {
+        this.roomId = roomId;
         return this;
     }
 
     /**
-     * 对话的并发数
-     * minimum: 1
-     * maximum: 512
-     * @return concurrency
+     * 智能交互对话房间ID。
+     * @return roomId
      */
-    public Integer getConcurrency() {
-        return concurrency;
+    public String getRoomId() {
+        return roomId;
     }
 
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
     }
 
     public UpdateRobotReq withLanguage(LanguageEnum language) {
@@ -237,7 +235,7 @@ public class UpdateRobotReq {
         }
         UpdateRobotReq that = (UpdateRobotReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.concurrency, that.concurrency) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.language, that.language)
             && Objects.equals(this.huaweiEiCbs, that.huaweiEiCbs)
             && Objects.equals(this.iflytekAiuiConfig, that.iflytekAiuiConfig)
             && Objects.equals(this.iflytekSpark, that.iflytekSpark)
@@ -246,14 +244,8 @@ public class UpdateRobotReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
-            appType,
-            concurrency,
-            language,
-            huaweiEiCbs,
-            iflytekAiuiConfig,
-            iflytekSpark,
-            thirdPartyModelConfig);
+        return Objects
+            .hash(name, appType, roomId, language, huaweiEiCbs, iflytekAiuiConfig, iflytekSpark, thirdPartyModelConfig);
     }
 
     @Override
@@ -262,7 +254,7 @@ public class UpdateRobotReq {
         sb.append("class UpdateRobotReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    huaweiEiCbs: ").append(toIndentedString(huaweiEiCbs)).append("\n");
         sb.append("    iflytekAiuiConfig: ").append(toIndentedString(iflytekAiuiConfig)).append("\n");

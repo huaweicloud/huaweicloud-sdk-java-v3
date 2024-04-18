@@ -24,7 +24,7 @@ public class LiveEventCallBackConfig {
     private String liveEventTypeCallbackUrl;
 
     /**
-     * 认证类型。 * NONE。URL中自带认证。 * MSS_A。HMACSHA256签名模式，在URL中追加参数:hwSecret,hwTime。取值方式：hwSecret=hmac_sha256(Key, URI（live_event_callback_url）+ hwTime)&hwTime=hex(timestamp)
+     * 认证类型。 * NONE。URL中自带认证。 * MSS_A。HMACSHA256签名模式，在URL中追加参数:hwSecret,hwTime。取值方式：hwSecret=hmac_sha256(Key, URI（live_event_callback_url）+ hwTime)&hwTime=hex(timestamp) * RTMP_STREAM_STATE_CHANGE。 RTMP链接发生变化回调事件 * MEITUAN_DEFAULT。仅用于美团平台调用回调使用。
      */
     public static final class AuthTypeEnum {
 
@@ -38,12 +38,24 @@ public class LiveEventCallBackConfig {
          */
         public static final AuthTypeEnum MSS_A = new AuthTypeEnum("MSS_A");
 
+        /**
+         * Enum RTMP_STREAM_STATE_CHANGE for value: "RTMP_STREAM_STATE_CHANGE"
+         */
+        public static final AuthTypeEnum RTMP_STREAM_STATE_CHANGE = new AuthTypeEnum("RTMP_STREAM_STATE_CHANGE");
+
+        /**
+         * Enum MEITUAN_DEFAULT for value: "MEITUAN_DEFAULT"
+         */
+        public static final AuthTypeEnum MEITUAN_DEFAULT = new AuthTypeEnum("MEITUAN_DEFAULT");
+
         private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AuthTypeEnum> createStaticFields() {
             Map<String, AuthTypeEnum> map = new HashMap<>();
             map.put("NONE", NONE);
             map.put("MSS_A", MSS_A);
+            map.put("RTMP_STREAM_STATE_CHANGE", RTMP_STREAM_STATE_CHANGE);
+            map.put("MEITUAN_DEFAULT", MEITUAN_DEFAULT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -131,7 +143,7 @@ public class LiveEventCallBackConfig {
     }
 
     /**
-     * 认证类型。 * NONE。URL中自带认证。 * MSS_A。HMACSHA256签名模式，在URL中追加参数:hwSecret,hwTime。取值方式：hwSecret=hmac_sha256(Key, URI（live_event_callback_url）+ hwTime)&hwTime=hex(timestamp)
+     * 认证类型。 * NONE。URL中自带认证。 * MSS_A。HMACSHA256签名模式，在URL中追加参数:hwSecret,hwTime。取值方式：hwSecret=hmac_sha256(Key, URI（live_event_callback_url）+ hwTime)&hwTime=hex(timestamp) * RTMP_STREAM_STATE_CHANGE。 RTMP链接发生变化回调事件 * MEITUAN_DEFAULT。仅用于美团平台调用回调使用。
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -181,7 +193,7 @@ public class LiveEventCallBackConfig {
     }
 
     /**
-     * 回调的直播事件类型列表
+     * 回调的直播事件类型列表。  当前仅支持取值：   SHOOT_SCRIPT_SWITCH，剧本段落切换事件。    RTMP_STREAM_STATE_CHANGE， RTMP链接发生变化回调事件。 回调事件结构体定义： * event_type: 事件类型。 * message: 事件描述。 SHOOT_SCRIPT_SWITCH事件回调定义如下： ```json {   \"event_type\":  \"SHOOT_SCRIPT_SWITCH\",   \"message\":\"{\\\"room_id\\\":\\\"26f065244f754b3aa853b649a21aaf66\\\",\\\"job_id\\\":\\\"e87104f76d7546ce8a46ac6b04c49c3c\\\",\\\"scene_script_name\\\":\\\"商品1\\\",\\\"shoot_script_sequence_no\\\":\\\"2\\\",\\\"shoot_script_title\\\":\\\"段落2\\\"}\" } ``` RTMP_STREAM_STATE_CHANGE回调定义如下： ```json {   \"event_type\":  \"RTMP_STREAM_STATE_CHANGE\",   \"message\":\"{\\\"room_id\\\":\\\"26f065244f754b3aa853b649a21aaf66\\\",\\\"job_id\\\":\\\"e87104f76d7546ce8a46ac6b04c49c3c\\\",\\\"output_url\\\":\\\"rtmp://xxx/xx/xx\\\",\\\"stream_key\\\":\\\"xxxxx\\\",\\\"state\\\":\\\"CONNECTED\\\"}\" } ``` 其中state取值： CONNECTING 链路连接中, CONNECTED 链路已连接，DISCONNECTED 链路已断开，RECONNECTING 链路重连中, END 联络不再重连，链路已结束
      * @return callbackEventType
      */
     public List<String> getCallbackEventType() {

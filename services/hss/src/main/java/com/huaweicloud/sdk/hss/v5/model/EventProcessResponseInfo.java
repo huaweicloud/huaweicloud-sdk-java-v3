@@ -205,6 +205,21 @@ public class EventProcessResponseInfo {
 
     private String processHash;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_file_hash")
+
+    private String processFileHash;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_process_file_hash")
+
+    private String parentProcessFileHash;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block")
+
+    private Integer block;
+
     public EventProcessResponseInfo withProcessName(String processName) {
         this.processName = processName;
         return this;
@@ -906,6 +921,59 @@ public class EventProcessResponseInfo {
         this.processHash = processHash;
     }
 
+    public EventProcessResponseInfo withProcessFileHash(String processFileHash) {
+        this.processFileHash = processFileHash;
+        return this;
+    }
+
+    /**
+     * 进程文件hash
+     * @return processFileHash
+     */
+    public String getProcessFileHash() {
+        return processFileHash;
+    }
+
+    public void setProcessFileHash(String processFileHash) {
+        this.processFileHash = processFileHash;
+    }
+
+    public EventProcessResponseInfo withParentProcessFileHash(String parentProcessFileHash) {
+        this.parentProcessFileHash = parentProcessFileHash;
+        return this;
+    }
+
+    /**
+     * 父进程文件hash
+     * @return parentProcessFileHash
+     */
+    public String getParentProcessFileHash() {
+        return parentProcessFileHash;
+    }
+
+    public void setParentProcessFileHash(String parentProcessFileHash) {
+        this.parentProcessFileHash = parentProcessFileHash;
+    }
+
+    public EventProcessResponseInfo withBlock(Integer block) {
+        this.block = block;
+        return this;
+    }
+
+    /**
+     * 是否阻断成功，1阻断成功 0阻断失败
+     * minimum: 0
+     * maximum: 1
+     * @return block
+     */
+    public Integer getBlock() {
+        return block;
+    }
+
+    public void setBlock(Integer block) {
+        this.block = block;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -948,7 +1016,10 @@ public class EventProcessResponseInfo {
             && Objects.equals(this.childProcessEuid, that.childProcessEuid)
             && Objects.equals(this.virtCmd, that.virtCmd) && Objects.equals(this.virtProcessName, that.virtProcessName)
             && Objects.equals(this.escapeMode, that.escapeMode) && Objects.equals(this.escapeCmd, that.escapeCmd)
-            && Objects.equals(this.processHash, that.processHash);
+            && Objects.equals(this.processHash, that.processHash)
+            && Objects.equals(this.processFileHash, that.processFileHash)
+            && Objects.equals(this.parentProcessFileHash, that.parentProcessFileHash)
+            && Objects.equals(this.block, that.block);
     }
 
     @Override
@@ -991,7 +1062,10 @@ public class EventProcessResponseInfo {
             virtProcessName,
             escapeMode,
             escapeCmd,
-            processHash);
+            processHash,
+            processFileHash,
+            parentProcessFileHash,
+            block);
     }
 
     @Override
@@ -1037,6 +1111,9 @@ public class EventProcessResponseInfo {
         sb.append("    escapeMode: ").append(toIndentedString(escapeMode)).append("\n");
         sb.append("    escapeCmd: ").append(toIndentedString(escapeCmd)).append("\n");
         sb.append("    processHash: ").append(toIndentedString(processHash)).append("\n");
+        sb.append("    processFileHash: ").append(toIndentedString(processFileHash)).append("\n");
+        sb.append("    parentProcessFileHash: ").append(toIndentedString(parentProcessFileHash)).append("\n");
+        sb.append("    block: ").append(toIndentedString(block)).append("\n");
         sb.append("}");
         return sb.toString();
     }

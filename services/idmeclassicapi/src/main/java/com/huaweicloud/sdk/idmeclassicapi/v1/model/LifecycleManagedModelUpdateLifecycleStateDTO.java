@@ -32,7 +32,7 @@ public class LifecycleManagedModelUpdateLifecycleStateDTO {
     }
 
     /**
-     * 唯一标识。
+     * 数据实例ID。
      * @return id
      */
     public String getId() {

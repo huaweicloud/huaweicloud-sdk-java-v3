@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询迁移任务列表
@@ -26,7 +29,7 @@ public class MigrationTaskList {
     private String taskName;
 
     /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+     * 迁移任务状态，这个字段的值包括：SUCCESS（成功）, FAILED（失败）, MIGRATING（迁移中），TERMINATED（已结束）。
      */
     public static final class StatusEnum {
 
@@ -113,7 +116,7 @@ public class MigrationTaskList {
     private StatusEnum status;
 
     /**
-     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+     * 迁移任务类型，包括备份文件导入和在线迁移两种类型。
      */
     public static final class MigrationTypeEnum {
 
@@ -304,6 +307,66 @@ public class MigrationTaskList {
 
     private String createdAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_instance_status")
+
+    private String sourceInstanceStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_instance_status")
+
+    private String targetInstanceStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_instance_subnet_id")
+
+    private String sourceInstanceSubnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_instance_subnet_id")
+
+    private String targetInstanceSubnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_instance_spec_code")
+
+    private String sourceInstanceSpecCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_instance_spec_code")
+
+    private String targetInstanceSpecCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_message")
+
+    private String errorMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "released_at")
+
+    private String releasedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resume_mode")
+
+    private String resumeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_features")
+
+    private List<String> supportedFeatures = null;
+
     public MigrationTaskList withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -344,7 +407,7 @@ public class MigrationTaskList {
     }
 
     /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+     * 迁移任务状态，这个字段的值包括：SUCCESS（成功）, FAILED（失败）, MIGRATING（迁移中），TERMINATED（已结束）。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -361,7 +424,7 @@ public class MigrationTaskList {
     }
 
     /**
-     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+     * 迁移任务类型，包括备份文件导入和在线迁移两种类型。
      * @return migrationType
      */
     public MigrationTypeEnum getMigrationType() {
@@ -395,7 +458,7 @@ public class MigrationTaskList {
     }
 
     /**
-     * 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单
+     * 迁移机租户侧私有IP，与目的/源redis私有IP处于同VPC，可将此IP加入白名单。
      * @return ecsTenantPrivateIp
      */
     public String getEcsTenantPrivateIp() {
@@ -412,7 +475,7 @@ public class MigrationTaskList {
     }
 
     /**
-     * 数据源，格式为ip:port或者桶名。
+     * 源redis地址，格式为ip:port或者桶名。
      * @return dataSource
      */
     public String getDataSource() {
@@ -514,7 +577,7 @@ public class MigrationTaskList {
     }
 
     /**
-     * 迁移任务创建时间
+     * 迁移任务创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -523,6 +586,226 @@ public class MigrationTaskList {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public MigrationTaskList withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 迁移任务描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public MigrationTaskList withSourceInstanceStatus(String sourceInstanceStatus) {
+        this.sourceInstanceStatus = sourceInstanceStatus;
+        return this;
+    }
+
+    /**
+     * 源实例状态，若自建redis则为空。
+     * @return sourceInstanceStatus
+     */
+    public String getSourceInstanceStatus() {
+        return sourceInstanceStatus;
+    }
+
+    public void setSourceInstanceStatus(String sourceInstanceStatus) {
+        this.sourceInstanceStatus = sourceInstanceStatus;
+    }
+
+    public MigrationTaskList withTargetInstanceStatus(String targetInstanceStatus) {
+        this.targetInstanceStatus = targetInstanceStatus;
+        return this;
+    }
+
+    /**
+     * 目标实例状态。
+     * @return targetInstanceStatus
+     */
+    public String getTargetInstanceStatus() {
+        return targetInstanceStatus;
+    }
+
+    public void setTargetInstanceStatus(String targetInstanceStatus) {
+        this.targetInstanceStatus = targetInstanceStatus;
+    }
+
+    public MigrationTaskList withSourceInstanceSubnetId(String sourceInstanceSubnetId) {
+        this.sourceInstanceSubnetId = sourceInstanceSubnetId;
+        return this;
+    }
+
+    /**
+     * 源实例子网ID，若自建redis则为空。
+     * @return sourceInstanceSubnetId
+     */
+    public String getSourceInstanceSubnetId() {
+        return sourceInstanceSubnetId;
+    }
+
+    public void setSourceInstanceSubnetId(String sourceInstanceSubnetId) {
+        this.sourceInstanceSubnetId = sourceInstanceSubnetId;
+    }
+
+    public MigrationTaskList withTargetInstanceSubnetId(String targetInstanceSubnetId) {
+        this.targetInstanceSubnetId = targetInstanceSubnetId;
+        return this;
+    }
+
+    /**
+     * 目标实例子网ID。
+     * @return targetInstanceSubnetId
+     */
+    public String getTargetInstanceSubnetId() {
+        return targetInstanceSubnetId;
+    }
+
+    public void setTargetInstanceSubnetId(String targetInstanceSubnetId) {
+        this.targetInstanceSubnetId = targetInstanceSubnetId;
+    }
+
+    public MigrationTaskList withSourceInstanceSpecCode(String sourceInstanceSpecCode) {
+        this.sourceInstanceSpecCode = sourceInstanceSpecCode;
+        return this;
+    }
+
+    /**
+     * 源实例规格编码，若自建redis则为空。
+     * @return sourceInstanceSpecCode
+     */
+    public String getSourceInstanceSpecCode() {
+        return sourceInstanceSpecCode;
+    }
+
+    public void setSourceInstanceSpecCode(String sourceInstanceSpecCode) {
+        this.sourceInstanceSpecCode = sourceInstanceSpecCode;
+    }
+
+    public MigrationTaskList withTargetInstanceSpecCode(String targetInstanceSpecCode) {
+        this.targetInstanceSpecCode = targetInstanceSpecCode;
+        return this;
+    }
+
+    /**
+     * 目标实例规格编码。
+     * @return targetInstanceSpecCode
+     */
+    public String getTargetInstanceSpecCode() {
+        return targetInstanceSpecCode;
+    }
+
+    public void setTargetInstanceSpecCode(String targetInstanceSpecCode) {
+        this.targetInstanceSpecCode = targetInstanceSpecCode;
+    }
+
+    public MigrationTaskList withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public MigrationTaskList withReleasedAt(String releasedAt) {
+        this.releasedAt = releasedAt;
+        return this;
+    }
+
+    /**
+     * 迁移机释放时间。
+     * @return releasedAt
+     */
+    public String getReleasedAt() {
+        return releasedAt;
+    }
+
+    public void setReleasedAt(String releasedAt) {
+        this.releasedAt = releasedAt;
+    }
+
+    public MigrationTaskList withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 版本。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public MigrationTaskList withResumeMode(String resumeMode) {
+        this.resumeMode = resumeMode;
+        return this;
+    }
+
+    /**
+     * 操作模式，分为auto和manual。
+     * @return resumeMode
+     */
+    public String getResumeMode() {
+        return resumeMode;
+    }
+
+    public void setResumeMode(String resumeMode) {
+        this.resumeMode = resumeMode;
+    }
+
+    public MigrationTaskList withSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
+        return this;
+    }
+
+    public MigrationTaskList addSupportedFeaturesItem(String supportedFeaturesItem) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        this.supportedFeatures.add(supportedFeaturesItem);
+        return this;
+    }
+
+    public MigrationTaskList withSupportedFeatures(Consumer<List<String>> supportedFeaturesSetter) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        supportedFeaturesSetter.accept(this.supportedFeatures);
+        return this;
+    }
+
+    /**
+     * 支持的特性。
+     * @return supportedFeatures
+     */
+    public List<String> getSupportedFeatures() {
+        return supportedFeatures;
+    }
+
+    public void setSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
     }
 
     @Override
@@ -544,7 +827,16 @@ public class MigrationTaskList {
             && Objects.equals(this.targetInstanceAddrs, that.targetInstanceAddrs)
             && Objects.equals(this.targetInstanceName, that.targetInstanceName)
             && Objects.equals(this.targetInstanceId, that.targetInstanceId)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceInstanceStatus, that.sourceInstanceStatus)
+            && Objects.equals(this.targetInstanceStatus, that.targetInstanceStatus)
+            && Objects.equals(this.sourceInstanceSubnetId, that.sourceInstanceSubnetId)
+            && Objects.equals(this.targetInstanceSubnetId, that.targetInstanceSubnetId)
+            && Objects.equals(this.sourceInstanceSpecCode, that.sourceInstanceSpecCode)
+            && Objects.equals(this.targetInstanceSpecCode, that.targetInstanceSpecCode)
+            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.releasedAt, that.releasedAt)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.resumeMode, that.resumeMode)
+            && Objects.equals(this.supportedFeatures, that.supportedFeatures);
     }
 
     @Override
@@ -561,7 +853,19 @@ public class MigrationTaskList {
             targetInstanceAddrs,
             targetInstanceName,
             targetInstanceId,
-            createdAt);
+            createdAt,
+            description,
+            sourceInstanceStatus,
+            targetInstanceStatus,
+            sourceInstanceSubnetId,
+            targetInstanceSubnetId,
+            sourceInstanceSpecCode,
+            targetInstanceSpecCode,
+            errorMessage,
+            releasedAt,
+            version,
+            resumeMode,
+            supportedFeatures);
     }
 
     @Override
@@ -581,6 +885,18 @@ public class MigrationTaskList {
         sb.append("    targetInstanceName: ").append(toIndentedString(targetInstanceName)).append("\n");
         sb.append("    targetInstanceId: ").append(toIndentedString(targetInstanceId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    sourceInstanceStatus: ").append(toIndentedString(sourceInstanceStatus)).append("\n");
+        sb.append("    targetInstanceStatus: ").append(toIndentedString(targetInstanceStatus)).append("\n");
+        sb.append("    sourceInstanceSubnetId: ").append(toIndentedString(sourceInstanceSubnetId)).append("\n");
+        sb.append("    targetInstanceSubnetId: ").append(toIndentedString(targetInstanceSubnetId)).append("\n");
+        sb.append("    sourceInstanceSpecCode: ").append(toIndentedString(sourceInstanceSpecCode)).append("\n");
+        sb.append("    targetInstanceSpecCode: ").append(toIndentedString(targetInstanceSpecCode)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    releasedAt: ").append(toIndentedString(releasedAt)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    resumeMode: ").append(toIndentedString(resumeMode)).append("\n");
+        sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,6 +63,11 @@ public class CssRegion {
 
     public static final Region CN_EAST_5 = new Region("cn-east-5", "https://css.cn-east-5.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://css.my-kualalumpur-1.myhuaweicloud.com");
+
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://css.eu-west-101.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CSS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -91,6 +96,8 @@ public class CssRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ae-ad-1", AE_AD_1);
         map.put("cn-east-5", CN_EAST_5);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

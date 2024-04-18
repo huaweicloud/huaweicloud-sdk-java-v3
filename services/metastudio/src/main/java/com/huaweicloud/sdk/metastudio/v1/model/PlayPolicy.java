@@ -193,6 +193,11 @@ public class PlayPolicy {
 
     private RandomPlayModeEnum randomPlayMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_independent_capture_client")
+
+    private Boolean needIndependentCaptureClient;
+
     public PlayPolicy withRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
         return this;
@@ -263,6 +268,23 @@ public class PlayPolicy {
         this.randomPlayMode = randomPlayMode;
     }
 
+    public PlayPolicy withNeedIndependentCaptureClient(Boolean needIndependentCaptureClient) {
+        this.needIndependentCaptureClient = needIndependentCaptureClient;
+        return this;
+    }
+
+    /**
+     * 是否需要独立采集端
+     * @return needIndependentCaptureClient
+     */
+    public Boolean getNeedIndependentCaptureClient() {
+        return needIndependentCaptureClient;
+    }
+
+    public void setNeedIndependentCaptureClient(Boolean needIndependentCaptureClient) {
+        this.needIndependentCaptureClient = needIndependentCaptureClient;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -274,12 +296,13 @@ public class PlayPolicy {
         PlayPolicy that = (PlayPolicy) obj;
         return Objects.equals(this.repeatCount, that.repeatCount)
             && Objects.equals(this.autoPlayScript, that.autoPlayScript) && Objects.equals(this.playMode, that.playMode)
-            && Objects.equals(this.randomPlayMode, that.randomPlayMode);
+            && Objects.equals(this.randomPlayMode, that.randomPlayMode)
+            && Objects.equals(this.needIndependentCaptureClient, that.needIndependentCaptureClient);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repeatCount, autoPlayScript, playMode, randomPlayMode);
+        return Objects.hash(repeatCount, autoPlayScript, playMode, randomPlayMode, needIndependentCaptureClient);
     }
 
     @Override
@@ -290,6 +313,9 @@ public class PlayPolicy {
         sb.append("    autoPlayScript: ").append(toIndentedString(autoPlayScript)).append("\n");
         sb.append("    playMode: ").append(toIndentedString(playMode)).append("\n");
         sb.append("    randomPlayMode: ").append(toIndentedString(randomPlayMode)).append("\n");
+        sb.append("    needIndependentCaptureClient: ")
+            .append(toIndentedString(needIndependentCaptureClient))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

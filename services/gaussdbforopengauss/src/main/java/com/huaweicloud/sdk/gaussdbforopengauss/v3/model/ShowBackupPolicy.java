@@ -33,7 +33,7 @@ public class ShowBackupPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "differential_period")
 
-    private String differentialPeriod;
+    private Integer differentialPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rate_limit")
@@ -130,7 +130,7 @@ public class ShowBackupPolicy {
         this.differentialPriod = differentialPriod;
     }
 
-    public ShowBackupPolicy withDifferentialPeriod(String differentialPeriod) {
+    public ShowBackupPolicy withDifferentialPeriod(Integer differentialPeriod) {
         this.differentialPeriod = differentialPeriod;
         return this;
     }
@@ -139,11 +139,11 @@ public class ShowBackupPolicy {
      * 差量备份周期配置。自动差量备份将每隔周期分钟执行。
      * @return differentialPeriod
      */
-    public String getDifferentialPeriod() {
+    public Integer getDifferentialPeriod() {
         return differentialPeriod;
     }
 
-    public void setDifferentialPeriod(String differentialPeriod) {
+    public void setDifferentialPeriod(Integer differentialPeriod) {
         this.differentialPeriod = differentialPeriod;
     }
 

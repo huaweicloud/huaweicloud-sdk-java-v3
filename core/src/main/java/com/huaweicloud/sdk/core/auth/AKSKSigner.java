@@ -86,8 +86,9 @@ public class AKSKSigner implements IAKSKSigner {
 
         // Step 1: add basic headers required by V4
         URL url = request.getUrl();
-        // Step 1.1: Add Host header
-        String canonicalHost = url.getAuthority();
+        // Step 1.1: Add Host header if not exists
+        String canonicalHost = request.haveHeader(Constants.HOST) ?
+                request.getHeader(Constants.HOST) : url.getAuthority();
         authenticationHeaders.put(Constants.HOST, canonicalHost);
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp = extractTimeStamp(request, authenticationHeaders);
@@ -157,6 +158,7 @@ public class AKSKSigner implements IAKSKSigner {
                                                     Map<String, String> authenticationHeaders) {
         Map<String, String> allHeaders = new TreeMap<>();
 
+        // filter out content-type header
         allHeaders.putAll(request.getHeaders()
                 .entrySet().stream()
                 .filter(entry -> !entry.getKey().equalsIgnoreCase(Constants.CONTENT_TYPE))

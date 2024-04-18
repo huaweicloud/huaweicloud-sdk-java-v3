@@ -23,6 +23,11 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     private SelectorConfigBody selector;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retention_period_in_days")
+
+    private Integer retentionPeriodInDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_name")
 
     private String agencyName;
@@ -79,6 +84,23 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         this.selector = selector;
     }
 
+    public ShowTrackerConfigResponse withRetentionPeriodInDays(Integer retentionPeriodInDays) {
+        this.retentionPeriodInDays = retentionPeriodInDays;
+        return this;
+    }
+
+    /**
+     * 存储历史信息的天数
+     * @return retentionPeriodInDays
+     */
+    public Integer getRetentionPeriodInDays() {
+        return retentionPeriodInDays;
+    }
+
+    public void setRetentionPeriodInDays(Integer retentionPeriodInDays) {
+        this.retentionPeriodInDays = retentionPeriodInDays;
+    }
+
     public ShowTrackerConfigResponse withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -106,12 +128,13 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         }
         ShowTrackerConfigResponse that = (ShowTrackerConfigResponse) obj;
         return Objects.equals(this.channel, that.channel) && Objects.equals(this.selector, that.selector)
+            && Objects.equals(this.retentionPeriodInDays, that.retentionPeriodInDays)
             && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(channel, selector, agencyName);
+        return Objects.hash(channel, selector, retentionPeriodInDays, agencyName);
     }
 
     @Override
@@ -120,6 +143,7 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         sb.append("class ShowTrackerConfigResponse {\n");
         sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
         sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
+        sb.append("    retentionPeriodInDays: ").append(toIndentedString(retentionPeriodInDays)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("}");
         return sb.toString();

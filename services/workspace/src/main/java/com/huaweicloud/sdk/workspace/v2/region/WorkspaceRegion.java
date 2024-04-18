@@ -35,6 +35,9 @@ public class WorkspaceRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://workspace.cn-north-9.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://workspace.ap-southeast-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("WORKSPACE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -50,6 +53,7 @@ public class WorkspaceRegion {
         map.put("la-north-2", LA_NORTH_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
         return Collections.unmodifiableMap(map);
     }
 

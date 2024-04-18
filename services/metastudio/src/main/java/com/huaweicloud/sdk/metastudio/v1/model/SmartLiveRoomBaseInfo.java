@@ -321,7 +321,7 @@ public class SmartLiveRoomBaseInfo {
     private String lastJobEndTime;
 
     /**
-     * 当前直播状态 - WAITING：任务等待执行 - PROCESSING：任务执行中 - SUCCEED：任务处理成功 - FAILED：任务处理时变 - CANCELED：任务取消
+     * 当前直播状态 - WAITING：任务等待执行 - PROCESSING：任务执行中 - SUCCEED：任务处理成功 - FAILED：任务处理时变 - CANCELED：任务取消 - BLOCKED：任务被冻结
      */
     public static final class LastJobStatusEnum {
 
@@ -731,7 +731,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 当前直播状态 - WAITING：任务等待执行 - PROCESSING：任务执行中 - SUCCEED：任务处理成功 - FAILED：任务处理时变 - CANCELED：任务取消
+     * 当前直播状态 - WAITING：任务等待执行 - PROCESSING：任务执行中 - SUCCEED：任务处理成功 - FAILED：任务处理时变 - CANCELED：任务取消 - BLOCKED：任务被冻结
      * @return lastJobStatus
      */
     public LastJobStatusEnum getLastJobStatus() {

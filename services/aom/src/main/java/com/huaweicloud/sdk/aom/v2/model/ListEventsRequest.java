@@ -92,6 +92,11 @@ public class ListEventsRequest {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Enterprise-Project-Id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private EventQueryParam2 body;
@@ -111,6 +116,23 @@ public class ListEventsRequest {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public ListEventsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。 - 查询所有企业项目下实例，填写“all_granted_eps”。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ListEventsRequest withBody(EventQueryParam2 body) {
@@ -148,12 +170,14 @@ public class ListEventsRequest {
             return false;
         }
         ListEventsRequest that = (ListEventsRequest) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, body);
+        return Objects.hash(type, enterpriseProjectId, body);
     }
 
     @Override
@@ -161,6 +185,7 @@ public class ListEventsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventsRequest {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

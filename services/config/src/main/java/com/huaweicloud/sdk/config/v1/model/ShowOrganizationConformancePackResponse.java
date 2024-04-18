@@ -59,6 +59,16 @@ public class ShowOrganizationConformancePackResponse extends SdkResponse {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_key")
+
+    private String templateKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_uri")
+
+    private String templateUri;
+
     public ShowOrganizationConformancePackResponse withOrgConformancePackId(String orgConformancePackId) {
         this.orgConformancePackId = orgConformancePackId;
         return this;
@@ -245,6 +255,40 @@ public class ShowOrganizationConformancePackResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    public ShowOrganizationConformancePackResponse withTemplateKey(String templateKey) {
+        this.templateKey = templateKey;
+        return this;
+    }
+
+    /**
+     * 预定义合规规则包模板名称。
+     * @return templateKey
+     */
+    public String getTemplateKey() {
+        return templateKey;
+    }
+
+    public void setTemplateKey(String templateKey) {
+        this.templateKey = templateKey;
+    }
+
+    public ShowOrganizationConformancePackResponse withTemplateUri(String templateUri) {
+        this.templateUri = templateUri;
+        return this;
+    }
+
+    /**
+     * 合规规则包模板OBS地址
+     * @return templateUri
+     */
+    public String getTemplateUri() {
+        return templateUri;
+    }
+
+    public void setTemplateUri(String templateUri) {
+        this.templateUri = templateUri;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -260,7 +304,8 @@ public class ShowOrganizationConformancePackResponse extends SdkResponse {
             && Objects.equals(this.orgConformancePackUrn, that.orgConformancePackUrn)
             && Objects.equals(this.excludedAccounts, that.excludedAccounts)
             && Objects.equals(this.varsStructure, that.varsStructure) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.templateKey, that.templateKey)
+            && Objects.equals(this.templateUri, that.templateUri);
     }
 
     @Override
@@ -273,7 +318,9 @@ public class ShowOrganizationConformancePackResponse extends SdkResponse {
             excludedAccounts,
             varsStructure,
             createdAt,
-            updatedAt);
+            updatedAt,
+            templateKey,
+            templateUri);
     }
 
     @Override
@@ -289,6 +336,8 @@ public class ShowOrganizationConformancePackResponse extends SdkResponse {
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    templateKey: ").append(toIndentedString(templateKey)).append("\n");
+        sb.append("    templateUri: ").append(toIndentedString(templateUri)).append("\n");
         sb.append("}");
         return sb.toString();
     }

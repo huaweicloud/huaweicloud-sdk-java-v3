@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.idmeclassicapi.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,98 +23,10 @@ public class MultiViewModelVersionViewCreateDTO {
 
     private String versionId;
 
-    /**
-     * 关系的复制类型。 BOTH：复制当前M-V模型作为源端与目标端的关系。 CUSTOM：自定义复制当前M-V模型的关系。 NONE：不复制当前M-V模型的关系。 SOURCE：仅复制当前M-V模型作为源端的关系。 TARGET：仅复制当前M-V模型作为目标端的关系。
-     */
-    public static final class WorkCopyTypeEnum {
-
-        /**
-         * Enum BOTH for value: "BOTH"
-         */
-        public static final WorkCopyTypeEnum BOTH = new WorkCopyTypeEnum("BOTH");
-
-        /**
-         * Enum SOURCE for value: "SOURCE"
-         */
-        public static final WorkCopyTypeEnum SOURCE = new WorkCopyTypeEnum("SOURCE");
-
-        /**
-         * Enum TARGET for value: "TARGET"
-         */
-        public static final WorkCopyTypeEnum TARGET = new WorkCopyTypeEnum("TARGET");
-
-        /**
-         * Enum NONE for value: "NONE"
-         */
-        public static final WorkCopyTypeEnum NONE = new WorkCopyTypeEnum("NONE");
-
-        /**
-         * Enum CUSTOM for value: "CUSTOM"
-         */
-        public static final WorkCopyTypeEnum CUSTOM = new WorkCopyTypeEnum("CUSTOM");
-
-        private static final Map<String, WorkCopyTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, WorkCopyTypeEnum> createStaticFields() {
-            Map<String, WorkCopyTypeEnum> map = new HashMap<>();
-            map.put("BOTH", BOTH);
-            map.put("SOURCE", SOURCE);
-            map.put("TARGET", TARGET);
-            map.put("NONE", NONE);
-            map.put("CUSTOM", CUSTOM);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        WorkCopyTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static WorkCopyTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WorkCopyTypeEnum(value));
-        }
-
-        public static WorkCopyTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof WorkCopyTypeEnum) {
-                return this.value.equals(((WorkCopyTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workCopyType")
 
-    private WorkCopyTypeEnum workCopyType;
+    private String workCopyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customLinkSet")
@@ -170,20 +77,20 @@ public class MultiViewModelVersionViewCreateDTO {
         this.versionId = versionId;
     }
 
-    public MultiViewModelVersionViewCreateDTO withWorkCopyType(WorkCopyTypeEnum workCopyType) {
+    public MultiViewModelVersionViewCreateDTO withWorkCopyType(String workCopyType) {
         this.workCopyType = workCopyType;
         return this;
     }
 
     /**
-     * 关系的复制类型。 BOTH：复制当前M-V模型作为源端与目标端的关系。 CUSTOM：自定义复制当前M-V模型的关系。 NONE：不复制当前M-V模型的关系。 SOURCE：仅复制当前M-V模型作为源端的关系。 TARGET：仅复制当前M-V模型作为目标端的关系。
+     * 关系的复制类型。 - BOTH：复制当前M-V模型作为源端与目标端的关系。 - CUSTOM：自定义复制当前M-V模型的关系。 - NONE：不复制当前M-V模型的关系。 - SOURCE：仅复制当前M-V模型作为源端的关系。 - TARGET：仅复制当前M-V模型作为目标端的关系。
      * @return workCopyType
      */
-    public WorkCopyTypeEnum getWorkCopyType() {
+    public String getWorkCopyType() {
         return workCopyType;
     }
 
-    public void setWorkCopyType(WorkCopyTypeEnum workCopyType) {
+    public void setWorkCopyType(String workCopyType) {
         this.workCopyType = workCopyType;
     }
 

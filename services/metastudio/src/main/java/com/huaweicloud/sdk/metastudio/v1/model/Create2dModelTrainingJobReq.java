@@ -123,6 +123,87 @@ public class Create2dModelTrainingJobReq {
 
     private List<String> tags = null;
 
+    /**
+     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型 > * V2版本已废弃不用
+     */
+    public static final class ModelVersionEnum {
+
+        /**
+         * Enum V2 for value: "V2"
+         */
+        public static final ModelVersionEnum V2 = new ModelVersionEnum("V2");
+
+        /**
+         * Enum V3 for value: "V3"
+         */
+        public static final ModelVersionEnum V3 = new ModelVersionEnum("V3");
+
+        /**
+         * Enum V3_2 for value: "V3.2"
+         */
+        public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
+
+        private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModelVersionEnum> createStaticFields() {
+            Map<String, ModelVersionEnum> map = new HashMap<>();
+            map.put("V2", V2);
+            map.put("V3", V3);
+            map.put("V3.2", V3_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ModelVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ModelVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModelVersionEnum(value));
+        }
+
+        public static ModelVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ModelVersionEnum) {
+                return this.value.equals(((ModelVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_version")
+
+    private ModelVersionEnum modelVersion;
+
     public Create2dModelTrainingJobReq withName(String name) {
         this.name = name;
         return this;
@@ -260,6 +341,23 @@ public class Create2dModelTrainingJobReq {
         this.tags = tags;
     }
 
+    public Create2dModelTrainingJobReq withModelVersion(ModelVersionEnum modelVersion) {
+        this.modelVersion = modelVersion;
+        return this;
+    }
+
+    /**
+     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型 > * V2版本已废弃不用
+     * @return modelVersion
+     */
+    public ModelVersionEnum getModelVersion() {
+        return modelVersion;
+    }
+
+    public void setModelVersion(ModelVersionEnum modelVersion) {
+        this.modelVersion = modelVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -273,13 +371,20 @@ public class Create2dModelTrainingJobReq {
             && Objects.equals(this.commandMessage, that.commandMessage)
             && Objects.equals(this.videoMultipartCount, that.videoMultipartCount)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
-            && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.modelVersion, that.modelVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, contact, commandMessage, videoMultipartCount, isBackgroundReplacement, batchName, tags);
+        return Objects.hash(name,
+            contact,
+            commandMessage,
+            videoMultipartCount,
+            isBackgroundReplacement,
+            batchName,
+            tags,
+            modelVersion);
     }
 
     @Override
@@ -293,6 +398,7 @@ public class Create2dModelTrainingJobReq {
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

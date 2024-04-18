@@ -22,6 +22,11 @@ public class ShowRobotResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_id")
+
+    private String roomId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -30,11 +35,6 @@ public class ShowRobotResponse extends SdkResponse {
     @JsonProperty(value = "app_type")
 
     private Integer appType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "concurrency")
-
-    private Integer concurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
@@ -115,6 +115,23 @@ public class ShowRobotResponse extends SdkResponse {
         this.name = name;
     }
 
+    public ShowRobotResponse withRoomId(String roomId) {
+        this.roomId = roomId;
+        return this;
+    }
+
+    /**
+     * 智能交互对话房间ID。
+     * @return roomId
+     */
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
     public ShowRobotResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -149,25 +166,6 @@ public class ShowRobotResponse extends SdkResponse {
 
     public void setAppType(Integer appType) {
         this.appType = appType;
-    }
-
-    public ShowRobotResponse withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-        return this;
-    }
-
-    /**
-     * 对话的并发数
-     * minimum: 1
-     * maximum: 512
-     * @return concurrency
-     */
-    public Integer getConcurrency() {
-        return concurrency;
-    }
-
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
     }
 
     public ShowRobotResponse withLanguage(LanguageEnum language) {
@@ -339,8 +337,8 @@ public class ShowRobotResponse extends SdkResponse {
         }
         ShowRobotResponse that = (ShowRobotResponse) obj;
         return Objects.equals(this.robotId, that.robotId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.concurrency, that.concurrency) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.language, that.language)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.region, that.region) && Objects.equals(this.cbsProjectId, that.cbsProjectId)
             && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
@@ -351,9 +349,9 @@ public class ShowRobotResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(robotId,
             name,
+            roomId,
             appId,
             appType,
-            concurrency,
             language,
             createTime,
             updateTime,
@@ -371,9 +369,9 @@ public class ShowRobotResponse extends SdkResponse {
         sb.append("class ShowRobotResponse {\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

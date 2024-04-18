@@ -46,6 +46,21 @@ public class AssetExtraMeta {
 
     private HumanModel2DAssetMeta humanModel2dMeta;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_meta")
+
+    private ImageAssetMeta imageMeta;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_meta")
+
+    private VideoAssetMeta videoMeta;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_meta")
+
+    private AudioAssetMeta audioMeta;
+
     public AssetExtraMeta withHumanModelMeta(HumanModelAssetMeta humanModelMeta) {
         this.humanModelMeta = humanModelMeta;
         return this;
@@ -228,6 +243,84 @@ public class AssetExtraMeta {
         this.humanModel2dMeta = humanModel2dMeta;
     }
 
+    public AssetExtraMeta withImageMeta(ImageAssetMeta imageMeta) {
+        this.imageMeta = imageMeta;
+        return this;
+    }
+
+    public AssetExtraMeta withImageMeta(Consumer<ImageAssetMeta> imageMetaSetter) {
+        if (this.imageMeta == null) {
+            this.imageMeta = new ImageAssetMeta();
+            imageMetaSetter.accept(this.imageMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get imageMeta
+     * @return imageMeta
+     */
+    public ImageAssetMeta getImageMeta() {
+        return imageMeta;
+    }
+
+    public void setImageMeta(ImageAssetMeta imageMeta) {
+        this.imageMeta = imageMeta;
+    }
+
+    public AssetExtraMeta withVideoMeta(VideoAssetMeta videoMeta) {
+        this.videoMeta = videoMeta;
+        return this;
+    }
+
+    public AssetExtraMeta withVideoMeta(Consumer<VideoAssetMeta> videoMetaSetter) {
+        if (this.videoMeta == null) {
+            this.videoMeta = new VideoAssetMeta();
+            videoMetaSetter.accept(this.videoMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get videoMeta
+     * @return videoMeta
+     */
+    public VideoAssetMeta getVideoMeta() {
+        return videoMeta;
+    }
+
+    public void setVideoMeta(VideoAssetMeta videoMeta) {
+        this.videoMeta = videoMeta;
+    }
+
+    public AssetExtraMeta withAudioMeta(AudioAssetMeta audioMeta) {
+        this.audioMeta = audioMeta;
+        return this;
+    }
+
+    public AssetExtraMeta withAudioMeta(Consumer<AudioAssetMeta> audioMetaSetter) {
+        if (this.audioMeta == null) {
+            this.audioMeta = new AudioAssetMeta();
+            audioMetaSetter.accept(this.audioMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get audioMeta
+     * @return audioMeta
+     */
+    public AudioAssetMeta getAudioMeta() {
+        return audioMeta;
+    }
+
+    public void setAudioMeta(AudioAssetMeta audioMeta) {
+        this.audioMeta = audioMeta;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,13 +334,23 @@ public class AssetExtraMeta {
             && Objects.equals(this.voiceModelMeta, that.voiceModelMeta) && Objects.equals(this.pptMeta, that.pptMeta)
             && Objects.equals(this.animationMeta, that.animationMeta) && Objects.equals(this.sceneMeta, that.sceneMeta)
             && Objects.equals(this.materialMeta, that.materialMeta)
-            && Objects.equals(this.humanModel2dMeta, that.humanModel2dMeta);
+            && Objects.equals(this.humanModel2dMeta, that.humanModel2dMeta)
+            && Objects.equals(this.imageMeta, that.imageMeta) && Objects.equals(this.videoMeta, that.videoMeta)
+            && Objects.equals(this.audioMeta, that.audioMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(humanModelMeta, voiceModelMeta, pptMeta, animationMeta, sceneMeta, materialMeta, humanModel2dMeta);
+        return Objects.hash(humanModelMeta,
+            voiceModelMeta,
+            pptMeta,
+            animationMeta,
+            sceneMeta,
+            materialMeta,
+            humanModel2dMeta,
+            imageMeta,
+            videoMeta,
+            audioMeta);
     }
 
     @Override
@@ -261,6 +364,9 @@ public class AssetExtraMeta {
         sb.append("    sceneMeta: ").append(toIndentedString(sceneMeta)).append("\n");
         sb.append("    materialMeta: ").append(toIndentedString(materialMeta)).append("\n");
         sb.append("    humanModel2dMeta: ").append(toIndentedString(humanModel2dMeta)).append("\n");
+        sb.append("    imageMeta: ").append(toIndentedString(imageMeta)).append("\n");
+        sb.append("    videoMeta: ").append(toIndentedString(videoMeta)).append("\n");
+        sb.append("    audioMeta: ").append(toIndentedString(audioMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

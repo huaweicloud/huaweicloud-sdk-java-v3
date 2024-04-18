@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 微服务引擎专享版规格及描述
@@ -19,6 +20,11 @@ public class FlavorBrief {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec")
+
+    private EngineSpec spec;
 
     public FlavorBrief withFlavor(String flavor) {
         this.flavor = flavor;
@@ -54,6 +60,32 @@ public class FlavorBrief {
         this.description = description;
     }
 
+    public FlavorBrief withSpec(EngineSpec spec) {
+        this.spec = spec;
+        return this;
+    }
+
+    public FlavorBrief withSpec(Consumer<EngineSpec> specSetter) {
+        if (this.spec == null) {
+            this.spec = new EngineSpec();
+            specSetter.accept(this.spec);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get spec
+     * @return spec
+     */
+    public EngineSpec getSpec() {
+        return spec;
+    }
+
+    public void setSpec(EngineSpec spec) {
+        this.spec = spec;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +95,13 @@ public class FlavorBrief {
             return false;
         }
         FlavorBrief that = (FlavorBrief) obj;
-        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.description, that.description);
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spec, that.spec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavor, description);
+        return Objects.hash(flavor, description, spec);
     }
 
     @Override
@@ -77,6 +110,7 @@ public class FlavorBrief {
         sb.append("class FlavorBrief {\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("}");
         return sb.toString();
     }

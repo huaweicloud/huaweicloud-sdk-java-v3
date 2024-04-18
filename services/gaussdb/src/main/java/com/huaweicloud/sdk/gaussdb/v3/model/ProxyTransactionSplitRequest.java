@@ -62,7 +62,7 @@ public class ProxyTransactionSplitRequest {
     }
 
     /**
-     * 实例的proxy列表
+     * 实例的数据库代理列表，仅支持单proxy使用。
      * @return proxyIdList
      */
     public List<String> getProxyIdList() {

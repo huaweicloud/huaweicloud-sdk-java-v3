@@ -160,6 +160,10 @@ import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentRequest;
@@ -1235,6 +1239,66 @@ public class ConfigAsyncClient {
     public AsyncInvoker<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> showOrganizationConformancePackDetailedStatusesAsyncInvoker(
         ShowOrganizationConformancePackDetailedStatusesRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.showOrganizationConformancePackDetailedStatuses, hcClient);
+    }
+
+    /**
+     * 更新合规规则包
+     *
+     * 更新用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateConformancePackRequest 请求对象
+     * @return CompletableFuture<UpdateConformancePackResponse>
+     */
+    public CompletableFuture<UpdateConformancePackResponse> updateConformancePackAsync(
+        UpdateConformancePackRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.updateConformancePack);
+    }
+
+    /**
+     * 更新合规规则包
+     *
+     * 更新用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateConformancePackRequest 请求对象
+     * @return AsyncInvoker<UpdateConformancePackRequest, UpdateConformancePackResponse>
+     */
+    public AsyncInvoker<UpdateConformancePackRequest, UpdateConformancePackResponse> updateConformancePackAsyncInvoker(
+        UpdateConformancePackRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.updateConformancePack, hcClient);
+    }
+
+    /**
+     * 更新组织合规规则包
+     *
+     * 更新用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationConformancePackRequest 请求对象
+     * @return CompletableFuture<UpdateOrganizationConformancePackResponse>
+     */
+    public CompletableFuture<UpdateOrganizationConformancePackResponse> updateOrganizationConformancePackAsync(
+        UpdateOrganizationConformancePackRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.updateOrganizationConformancePack);
+    }
+
+    /**
+     * 更新组织合规规则包
+     *
+     * 更新用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrganizationConformancePackRequest 请求对象
+     * @return AsyncInvoker<UpdateOrganizationConformancePackRequest, UpdateOrganizationConformancePackResponse>
+     */
+    public AsyncInvoker<UpdateOrganizationConformancePackRequest, UpdateOrganizationConformancePackResponse> updateOrganizationConformancePackAsyncInvoker(
+        UpdateOrganizationConformancePackRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.updateOrganizationConformancePack, hcClient);
     }
 
     /**

@@ -273,7 +273,7 @@ public class ListSwrImageRepositoryRequest {
     }
 
     /**
-     * 扫描状态，包含如下:   - unscan : 未扫描   - success : 扫描完成   - scanning : 扫描中   - failed : 扫描失败   - download_failed : 下载失败   - image_oversized : 镜像超大
+     * 扫描状态，包含如下:   - unscan : 未扫描   - success : 扫描完成   - scanning : 扫描中   - failed : 扫描失败   - waiting_for_scan : 等待扫描
      * @return scanStatus
      */
     public String getScanStatus() {

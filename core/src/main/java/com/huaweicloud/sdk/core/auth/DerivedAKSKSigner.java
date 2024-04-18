@@ -76,7 +76,8 @@ public class DerivedAKSKSigner extends AKSKSigner {
 
         HashMap<String, String> authenticationHeaders = new HashMap<>();
         URL url = request.getUrl();
-        String canonicalHost = url.getAuthority();
+        String canonicalHost = request.haveHeader(Constants.HOST) ?
+                request.getHeader(Constants.HOST) : url.getAuthority();
         authenticationHeaders.put(Constants.HOST, canonicalHost);
 
         String dateTimeStamp = extractTimeStamp(request, authenticationHeaders);

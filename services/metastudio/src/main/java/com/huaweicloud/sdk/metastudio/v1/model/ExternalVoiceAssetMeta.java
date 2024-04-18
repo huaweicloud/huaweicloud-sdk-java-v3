@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ExternalVoiceAssetMeta {
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: EI TTS * MOBVOI: 出门问问 TTSS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：EI TTS * MOBVOI：出门问问TTS
      */
     public static final class ProviderEnum {
 
@@ -108,7 +108,7 @@ public class ExternalVoiceAssetMeta {
     }
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: EI TTS * MOBVOI: 出门问问 TTSS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：EI TTS * MOBVOI：出门问问TTS
      * @return provider
      */
     public ProviderEnum getProvider() {

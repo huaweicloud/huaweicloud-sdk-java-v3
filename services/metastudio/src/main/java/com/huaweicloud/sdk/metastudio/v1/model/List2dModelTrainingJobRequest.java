@@ -41,11 +41,6 @@ public class List2dModelTrainingJobRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
-
-    private String state;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
     private String sortKey;
@@ -66,6 +61,16 @@ public class List2dModelTrainingJobRequest {
     private String createSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_project_id")
+
+    private String queryProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_name")
 
     private String batchName;
@@ -84,6 +89,11 @@ public class List2dModelTrainingJobRequest {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_resolution")
+
+    private String modelResolution;
 
     public List2dModelTrainingJobRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -146,7 +156,7 @@ public class List2dModelTrainingJobRequest {
     }
 
     /**
-     * 第三方用户ID。 > * 不允许输入中文。
+     * 第三方用户ID。不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -195,23 +205,6 @@ public class List2dModelTrainingJobRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
-    }
-
-    public List2dModelTrainingJobRequest withState(String state) {
-        this.state = state;
-        return this;
-    }
-
-    /**
-     * 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state=CREATING,PUBLISHED
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public List2dModelTrainingJobRequest withSortKey(String sortKey) {
@@ -282,6 +275,40 @@ public class List2dModelTrainingJobRequest {
         this.createSince = createSince;
     }
 
+    public List2dModelTrainingJobRequest withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state=CREATING,PUBLISHED
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public List2dModelTrainingJobRequest withQueryProjectId(String queryProjectId) {
+        this.queryProjectId = queryProjectId;
+        return this;
+    }
+
+    /**
+     * 查询租户id。
+     * @return queryProjectId
+     */
+    public String getQueryProjectId() {
+        return queryProjectId;
+    }
+
+    public void setQueryProjectId(String queryProjectId) {
+        this.queryProjectId = queryProjectId;
+    }
+
     public List2dModelTrainingJobRequest withBatchName(String batchName) {
         this.batchName = batchName;
         return this;
@@ -350,6 +377,23 @@ public class List2dModelTrainingJobRequest {
         this.name = name;
     }
 
+    public List2dModelTrainingJobRequest withModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+        return this;
+    }
+
+    /**
+     * 模型分辨率
+     * @return modelResolution
+     */
+    public String getModelResolution() {
+        return modelResolution;
+    }
+
+    public void setModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -362,11 +406,12 @@ public class List2dModelTrainingJobRequest {
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
-            && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.batchName, that.batchName)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.name, that.name);
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.queryProjectId, that.queryProjectId)
+            && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.modelResolution, that.modelResolution);
     }
 
     @Override
@@ -377,15 +422,17 @@ public class List2dModelTrainingJobRequest {
             xAppUserId,
             offset,
             limit,
-            state,
             sortKey,
             sortDir,
             createUntil,
             createSince,
+            state,
+            queryProjectId,
             batchName,
             tag,
             jobId,
-            name);
+            name,
+            modelResolution);
     }
 
     @Override
@@ -398,15 +445,17 @@ public class List2dModelTrainingJobRequest {
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    queryProjectId: ").append(toIndentedString(queryProjectId)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("}");
         return sb.toString();
     }

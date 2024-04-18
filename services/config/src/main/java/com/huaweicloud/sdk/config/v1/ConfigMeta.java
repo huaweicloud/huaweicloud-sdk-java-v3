@@ -178,6 +178,12 @@ import com.huaweicloud.sdk.config.v1.model.StoredQueryRequestBody;
 import com.huaweicloud.sdk.config.v1.model.TrackerConfigBody;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackRequestBody;
+import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrgConformancePackRequestBody;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdatePolicyAssignmentRequest;
@@ -1397,7 +1403,7 @@ public class ConfigMeta {
                 ShowOrganizationConformancePackDetailedStatusesRequest::setOrganizationId));
         builder.<String>withRequestField("conformance_pack_name",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getConformancePackName,
                 ShowOrganizationConformancePackDetailedStatusesRequest::setConformancePackName));
@@ -1426,6 +1432,74 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationConformancePackDetailedStatusesRequest::getMarker,
                 ShowOrganizationConformancePackDetailedStatusesRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConformancePackRequest, UpdateConformancePackResponse> updateConformancePack =
+        genForUpdateConformancePack();
+
+    private static HttpRequestDef<UpdateConformancePackRequest, UpdateConformancePackResponse> genForUpdateConformancePack() {
+        // basic
+        HttpRequestDef.Builder<UpdateConformancePackRequest, UpdateConformancePackResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateConformancePackRequest.class, UpdateConformancePackResponse.class)
+            .withName("UpdateConformancePack")
+            .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/{conformance_pack_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConformancePackRequest::getConformancePackId,
+                UpdateConformancePackRequest::setConformancePackId));
+        builder.<UpdateConformancePackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateConformancePackRequestBody.class),
+            f -> f.withMarshaller(UpdateConformancePackRequest::getBody, UpdateConformancePackRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOrganizationConformancePackRequest, UpdateOrganizationConformancePackResponse> updateOrganizationConformancePack =
+        genForUpdateOrganizationConformancePack();
+
+    private static HttpRequestDef<UpdateOrganizationConformancePackRequest, UpdateOrganizationConformancePackResponse> genForUpdateOrganizationConformancePack() {
+        // basic
+        HttpRequestDef.Builder<UpdateOrganizationConformancePackRequest, UpdateOrganizationConformancePackResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateOrganizationConformancePackRequest.class,
+                    UpdateOrganizationConformancePackResponse.class)
+                .withName("UpdateOrganizationConformancePack")
+                .withUri("/v1/resource-manager/organizations/{organization_id}/conformance-packs/{conformance_pack_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationConformancePackRequest::getOrganizationId,
+                UpdateOrganizationConformancePackRequest::setOrganizationId));
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationConformancePackRequest::getConformancePackId,
+                UpdateOrganizationConformancePackRequest::setConformancePackId));
+        builder.<UpdateOrgConformancePackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOrgConformancePackRequestBody.class),
+            f -> f.withMarshaller(UpdateOrganizationConformancePackRequest::getBody,
+                UpdateOrganizationConformancePackRequest::setBody));
 
         // response
 
@@ -2057,7 +2131,7 @@ public class ConfigMeta {
                 ShowOrganizationPolicyAssignmentDetailedStatusRequest::setOrganizationId));
         builder.<String>withRequestField("organization_policy_assignment_name",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(
                 ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationPolicyAssignmentName,

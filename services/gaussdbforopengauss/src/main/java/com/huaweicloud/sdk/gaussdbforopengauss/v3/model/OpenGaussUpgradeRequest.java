@@ -16,9 +16,9 @@ public class OpenGaussUpgradeRequest {
     private String upgradeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "upgrde_action")
+    @JsonProperty(value = "upgrade_action")
 
-    private String upgrdeAction;
+    private String upgradeAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_version")
@@ -34,11 +34,6 @@ public class OpenGaussUpgradeRequest {
     @JsonProperty(value = "upgrade_az")
 
     private String upgradeAz;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_parallel_upgrade")
-
-    private Boolean isParallelUpgrade;
 
     public OpenGaussUpgradeRequest withUpgradeType(String upgradeType) {
         this.upgradeType = upgradeType;
@@ -57,21 +52,21 @@ public class OpenGaussUpgradeRequest {
         this.upgradeType = upgradeType;
     }
 
-    public OpenGaussUpgradeRequest withUpgrdeAction(String upgrdeAction) {
-        this.upgrdeAction = upgrdeAction;
+    public OpenGaussUpgradeRequest withUpgradeAction(String upgradeAction) {
+        this.upgradeAction = upgradeAction;
         return this;
     }
 
     /**
      * 实例升级操作，就地升级无需传值。灰度升级包括升级自动提交，升级待观察，提交升级，升级回退四种。热补丁升级包括升级自动提交，升级回退两种。详见接口描述。  upgradeAutoCommit 升级自动提交  upgrade 升级待观察  commit 提交升级  rollback 升级回退。
-     * @return upgrdeAction
+     * @return upgradeAction
      */
-    public String getUpgrdeAction() {
-        return upgrdeAction;
+    public String getUpgradeAction() {
+        return upgradeAction;
     }
 
-    public void setUpgrdeAction(String upgrdeAction) {
-        this.upgrdeAction = upgrdeAction;
+    public void setUpgradeAction(String upgradeAction) {
+        this.upgradeAction = upgradeAction;
     }
 
     public OpenGaussUpgradeRequest withTargetVersion(String targetVersion) {
@@ -125,23 +120,6 @@ public class OpenGaussUpgradeRequest {
         this.upgradeAz = upgradeAz;
     }
 
-    public OpenGaussUpgradeRequest withIsParallelUpgrade(Boolean isParallelUpgrade) {
-        this.isParallelUpgrade = isParallelUpgrade;
-        return this;
-    }
-
-    /**
-     * 支持AZ内并行升级，升级时先升级所有备DN，再并行升级各分片主DN，最后并行升级CN。仅在灰度升级下有效且需要数据库版本大于等于3.200。
-     * @return isParallelUpgrade
-     */
-    public Boolean getIsParallelUpgrade() {
-        return isParallelUpgrade;
-    }
-
-    public void setIsParallelUpgrade(Boolean isParallelUpgrade) {
-        this.isParallelUpgrade = isParallelUpgrade;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -152,16 +130,15 @@ public class OpenGaussUpgradeRequest {
         }
         OpenGaussUpgradeRequest that = (OpenGaussUpgradeRequest) obj;
         return Objects.equals(this.upgradeType, that.upgradeType)
-            && Objects.equals(this.upgrdeAction, that.upgrdeAction)
+            && Objects.equals(this.upgradeAction, that.upgradeAction)
             && Objects.equals(this.targetVersion, that.targetVersion)
             && Objects.equals(this.upgradeShardNum, that.upgradeShardNum)
-            && Objects.equals(this.upgradeAz, that.upgradeAz)
-            && Objects.equals(this.isParallelUpgrade, that.isParallelUpgrade);
+            && Objects.equals(this.upgradeAz, that.upgradeAz);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(upgradeType, upgrdeAction, targetVersion, upgradeShardNum, upgradeAz, isParallelUpgrade);
+        return Objects.hash(upgradeType, upgradeAction, targetVersion, upgradeShardNum, upgradeAz);
     }
 
     @Override
@@ -169,11 +146,10 @@ public class OpenGaussUpgradeRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpenGaussUpgradeRequest {\n");
         sb.append("    upgradeType: ").append(toIndentedString(upgradeType)).append("\n");
-        sb.append("    upgrdeAction: ").append(toIndentedString(upgrdeAction)).append("\n");
+        sb.append("    upgradeAction: ").append(toIndentedString(upgradeAction)).append("\n");
         sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
         sb.append("    upgradeShardNum: ").append(toIndentedString(upgradeShardNum)).append("\n");
         sb.append("    upgradeAz: ").append(toIndentedString(upgradeAz)).append("\n");
-        sb.append("    isParallelUpgrade: ").append(toIndentedString(isParallelUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

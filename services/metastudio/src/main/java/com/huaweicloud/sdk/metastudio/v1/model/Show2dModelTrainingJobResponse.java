@@ -30,7 +30,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String name;
 
     /**
-     * 任务的状态。 * WAIT_FILE_UPLOAD: 待上传文件 * AUTO_VERIFYING: 自动审核中 * AUTO_VERIFY_FAILED: 自动审核失败 * MANUAL_VERIFYING: 人工审核中 * MANUAL_VERIFY_FAILED: 人工审核失败 * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中 * TRAINING: 训练中 * TRAIN_FAILED: 训练失败 * TRAIN_SUCCESS: 训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS: 完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回 * JOB_PENDING：挂起 * JOB_FINISH：结束，最终状态，不可再做改变
+     * 任务的状态。 * WAIT_FILE_UPLOAD：待上传文件 * AUTO_VERIFYING：自动审核中 * AUTO_VERIFY_FAILED：自动审核失败 * MANUAL_VERIFYING：人工审核中 * MANUAL_VERIFY_FAILED：人工审核失败 * MANUAL_VERIFY_SUCCESS：审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED：训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS：训练数据预处理完成，等待训练资源中 * TRAINING：训练中 * TRAIN_FAILED：训练失败 * TRAIN_SUCCESS：训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * WAIT_MASK_UPLOAD：等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS：训练任务完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回任务 * JOB_PENDING：挂起任务 * JOB_FINISH：任务结束，是最终状态，不支持修改此状态。
      */
     public static final class StateEnum {
 
@@ -262,7 +262,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private List<String> tags = null;
 
     /**
-     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型
+     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型
      */
     public static final class ModelVersionEnum {
 
@@ -276,12 +276,18 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
          */
         public static final ModelVersionEnum V3 = new ModelVersionEnum("V3");
 
+        /**
+         * Enum V3_2 for value: "V3.2"
+         */
+        public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
             Map<String, ModelVersionEnum> map = new HashMap<>();
             map.put("V2", V2);
             map.put("V3", V3);
+            map.put("V3.2", V3_2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -412,6 +418,16 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private MattingTypeEnum mattingType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_resolution")
+
+    private String modelResolution;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_user_id")
+
+    private String appUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "training_video_download_url")
 
     private String trainingVideoDownloadUrl;
@@ -472,14 +488,19 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private InferenceActionMarkInfo inferenceDataProcessActionMarkInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inference_data_process_eye_correction_mark_info")
+
+    private InferenceEyeCorrectionMarkInfo inferenceDataProcessEyeCorrectionMarkInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_background_replacement")
 
     private Boolean isBackgroundReplacement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "model_resolution")
+    @JsonProperty(value = "worker_type")
 
-    private String modelResolution;
+    private List<String> workerType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -526,7 +547,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务的状态。 * WAIT_FILE_UPLOAD: 待上传文件 * AUTO_VERIFYING: 自动审核中 * AUTO_VERIFY_FAILED: 自动审核失败 * MANUAL_VERIFYING: 人工审核中 * MANUAL_VERIFY_FAILED: 人工审核失败 * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中 * TRAINING: 训练中 * TRAIN_FAILED: 训练失败 * TRAIN_SUCCESS: 训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS: 完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回 * JOB_PENDING：挂起 * JOB_FINISH：结束，最终状态，不可再做改变
+     * 任务的状态。 * WAIT_FILE_UPLOAD：待上传文件 * AUTO_VERIFYING：自动审核中 * AUTO_VERIFY_FAILED：自动审核失败 * MANUAL_VERIFYING：人工审核中 * MANUAL_VERIFY_FAILED：人工审核失败 * MANUAL_VERIFY_SUCCESS：审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED：训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS：训练数据预处理完成，等待训练资源中 * TRAINING：训练中 * TRAIN_FAILED：训练失败 * TRAIN_SUCCESS：训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * WAIT_MASK_UPLOAD：等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS：训练任务完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回任务 * JOB_PENDING：挂起任务 * JOB_FINISH：任务结束，是最终状态，不支持修改此状态。
      * @return state
      */
     public StateEnum getState() {
@@ -695,7 +716,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     }
 
     /**
-     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型
+     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {
@@ -721,6 +742,40 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setMattingType(MattingTypeEnum mattingType) {
         this.mattingType = mattingType;
+    }
+
+    public Show2dModelTrainingJobResponse withModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+        return this;
+    }
+
+    /**
+     * 分身数字人模型分辨率。默认是1080P。 * 1080P：1080P。支持1080P及720P的视频输出。 * 4K：4K。支持4K、1080P及720P的视频输出。
+     * @return modelResolution
+     */
+    public String getModelResolution() {
+        return modelResolution;
+    }
+
+    public void setModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+    }
+
+    public Show2dModelTrainingJobResponse withAppUserId(String appUserId) {
+        this.appUserId = appUserId;
+        return this;
+    }
+
+    /**
+     * 自定义用户id（如创建任务时设置了X-App-UserId则会携带）。
+     * @return appUserId
+     */
+    public String getAppUserId() {
+        return appUserId;
+    }
+
+    public void setAppUserId(String appUserId) {
+        this.appUserId = appUserId;
     }
 
     public Show2dModelTrainingJobResponse withTrainingVideoDownloadUrl(String trainingVideoDownloadUrl) {
@@ -981,6 +1036,35 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.inferenceDataProcessActionMarkInfo = inferenceDataProcessActionMarkInfo;
     }
 
+    public Show2dModelTrainingJobResponse withInferenceDataProcessEyeCorrectionMarkInfo(
+        InferenceEyeCorrectionMarkInfo inferenceDataProcessEyeCorrectionMarkInfo) {
+        this.inferenceDataProcessEyeCorrectionMarkInfo = inferenceDataProcessEyeCorrectionMarkInfo;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withInferenceDataProcessEyeCorrectionMarkInfo(
+        Consumer<InferenceEyeCorrectionMarkInfo> inferenceDataProcessEyeCorrectionMarkInfoSetter) {
+        if (this.inferenceDataProcessEyeCorrectionMarkInfo == null) {
+            this.inferenceDataProcessEyeCorrectionMarkInfo = new InferenceEyeCorrectionMarkInfo();
+            inferenceDataProcessEyeCorrectionMarkInfoSetter.accept(this.inferenceDataProcessEyeCorrectionMarkInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get inferenceDataProcessEyeCorrectionMarkInfo
+     * @return inferenceDataProcessEyeCorrectionMarkInfo
+     */
+    public InferenceEyeCorrectionMarkInfo getInferenceDataProcessEyeCorrectionMarkInfo() {
+        return inferenceDataProcessEyeCorrectionMarkInfo;
+    }
+
+    public void setInferenceDataProcessEyeCorrectionMarkInfo(
+        InferenceEyeCorrectionMarkInfo inferenceDataProcessEyeCorrectionMarkInfo) {
+        this.inferenceDataProcessEyeCorrectionMarkInfo = inferenceDataProcessEyeCorrectionMarkInfo;
+    }
+
     public Show2dModelTrainingJobResponse withIsBackgroundReplacement(Boolean isBackgroundReplacement) {
         this.isBackgroundReplacement = isBackgroundReplacement;
         return this;
@@ -998,21 +1082,37 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.isBackgroundReplacement = isBackgroundReplacement;
     }
 
-    public Show2dModelTrainingJobResponse withModelResolution(String modelResolution) {
-        this.modelResolution = modelResolution;
+    public Show2dModelTrainingJobResponse withWorkerType(List<String> workerType) {
+        this.workerType = workerType;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse addWorkerTypeItem(String workerTypeItem) {
+        if (this.workerType == null) {
+            this.workerType = new ArrayList<>();
+        }
+        this.workerType.add(workerTypeItem);
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withWorkerType(Consumer<List<String>> workerTypeSetter) {
+        if (this.workerType == null) {
+            this.workerType = new ArrayList<>();
+        }
+        workerTypeSetter.accept(this.workerType);
         return this;
     }
 
     /**
-     * 分身数字人模型分辨率。默认是1080P。 * 1080P：1080P。支持1080P及720P的视频输出。 * 4K：4K。支持4K、1080P及720P的视频输出。
-     * @return modelResolution
+     * 转编译任务机型
+     * @return workerType
      */
-    public String getModelResolution() {
-        return modelResolution;
+    public List<String> getWorkerType() {
+        return workerType;
     }
 
-    public void setModelResolution(String modelResolution) {
-        this.modelResolution = modelResolution;
+    public void setWorkerType(List<String> workerType) {
+        this.workerType = workerType;
     }
 
     public Show2dModelTrainingJobResponse withXRequestId(String xRequestId) {
@@ -1052,6 +1152,8 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.modelVersion, that.modelVersion)
             && Objects.equals(this.mattingType, that.mattingType)
+            && Objects.equals(this.modelResolution, that.modelResolution)
+            && Objects.equals(this.appUserId, that.appUserId)
             && Objects.equals(this.trainingVideoDownloadUrl, that.trainingVideoDownloadUrl)
             && Objects.equals(this.idCardImage1DownloadUrl, that.idCardImage1DownloadUrl)
             && Objects.equals(this.idCardImage2DownloadUrl, that.idCardImage2DownloadUrl)
@@ -1064,9 +1166,10 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.markableVideoDownloadUrl, that.markableVideoDownloadUrl)
             && Objects.equals(this.inferenceDataProcessVideoMarkInfo, that.inferenceDataProcessVideoMarkInfo)
             && Objects.equals(this.inferenceDataProcessActionMarkInfo, that.inferenceDataProcessActionMarkInfo)
+            && Objects.equals(this.inferenceDataProcessEyeCorrectionMarkInfo,
+                that.inferenceDataProcessEyeCorrectionMarkInfo)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
-            && Objects.equals(this.modelResolution, that.modelResolution)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.workerType, that.workerType) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -1084,6 +1187,8 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             tags,
             modelVersion,
             mattingType,
+            modelResolution,
+            appUserId,
             trainingVideoDownloadUrl,
             idCardImage1DownloadUrl,
             idCardImage2DownloadUrl,
@@ -1096,8 +1201,9 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             markableVideoDownloadUrl,
             inferenceDataProcessVideoMarkInfo,
             inferenceDataProcessActionMarkInfo,
+            inferenceDataProcessEyeCorrectionMarkInfo,
             isBackgroundReplacement,
-            modelResolution,
+            workerType,
             xRequestId);
     }
 
@@ -1118,6 +1224,8 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
         sb.append("    mattingType: ").append(toIndentedString(mattingType)).append("\n");
+        sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
+        sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("    trainingVideoDownloadUrl: ").append(toIndentedString(trainingVideoDownloadUrl)).append("\n");
         sb.append("    idCardImage1DownloadUrl: ").append(toIndentedString(idCardImage1DownloadUrl)).append("\n");
         sb.append("    idCardImage2DownloadUrl: ").append(toIndentedString(idCardImage2DownloadUrl)).append("\n");
@@ -1134,8 +1242,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    inferenceDataProcessActionMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessActionMarkInfo))
             .append("\n");
+        sb.append("    inferenceDataProcessEyeCorrectionMarkInfo: ")
+            .append(toIndentedString(inferenceDataProcessEyeCorrectionMarkInfo))
+            .append("\n");
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
-        sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
+        sb.append("    workerType: ").append(toIndentedString(workerType)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
