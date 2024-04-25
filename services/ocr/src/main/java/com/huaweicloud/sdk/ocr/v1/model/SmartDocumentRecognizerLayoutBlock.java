@@ -82,7 +82,7 @@ public class SmartDocumentRecognizerLayoutBlock {
     }
 
     /**
-     * 文档区域类别，包含text、table、figure等类别。        
+     * 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory共15个类别。     
      * @return type
      */
     public String getType() {

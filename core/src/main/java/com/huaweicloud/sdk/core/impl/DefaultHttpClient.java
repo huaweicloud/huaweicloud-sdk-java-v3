@@ -116,6 +116,10 @@ public class DefaultHttpClient implements HttpClient {
         if (Objects.nonNull(httpConfig.getSSLSocketFactory()) && Objects.nonNull(httpConfig.getX509TrustManager())) {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
         }
+        if (Objects.nonNull(httpConfig.getHostnameVerifier())) {
+            clientBuilder.hostnameVerifier(httpConfig.getHostnameVerifier());
+        }
+
         if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
                     .sslSocketFactory(

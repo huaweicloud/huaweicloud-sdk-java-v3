@@ -151,6 +151,11 @@ public class TaskV2Info {
     private Boolean canCreateEnv;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_disable")
+
+    private Boolean canDisable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_component_list")
 
     private List<AppComponentDao> appComponentList = null;
@@ -164,6 +169,11 @@ public class TaskV2Info {
     @JsonProperty(value = "app_id")
 
     private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_disable")
+
+    private Boolean isDisable;
 
     public TaskV2Info withId(String id) {
         this.id = id;
@@ -640,6 +650,23 @@ public class TaskV2Info {
         this.canCreateEnv = canCreateEnv;
     }
 
+    public TaskV2Info withCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+        return this;
+    }
+
+    /**
+     * 是否有禁用应用的权限
+     * @return canDisable
+     */
+    public Boolean getCanDisable() {
+        return canDisable;
+    }
+
+    public void setCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+    }
+
     public TaskV2Info withAppComponentList(List<AppComponentDao> appComponentList) {
         this.appComponentList = appComponentList;
         return this;
@@ -707,6 +734,23 @@ public class TaskV2Info {
         this.appId = appId;
     }
 
+    public TaskV2Info withIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
+        return this;
+    }
+
+    /**
+     * 当前应用是否被禁用
+     * @return isDisable
+     */
+    public Boolean getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -730,9 +774,10 @@ public class TaskV2Info {
             && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
             && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
             && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
-            && Objects.equals(this.canCreateEnv, that.canCreateEnv)
+            && Objects.equals(this.canCreateEnv, that.canCreateEnv) && Objects.equals(this.canDisable, that.canDisable)
             && Objects.equals(this.appComponentList, that.appComponentList)
-            && Objects.equals(this.releaseId, that.releaseId) && Objects.equals(this.appId, that.appId);
+            && Objects.equals(this.releaseId, that.releaseId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.isDisable, that.isDisable);
     }
 
     @Override
@@ -764,9 +809,11 @@ public class TaskV2Info {
             canCopy,
             canManage,
             canCreateEnv,
+            canDisable,
             appComponentList,
             releaseId,
-            appId);
+            appId,
+            isDisable);
     }
 
     @Override
@@ -800,9 +847,11 @@ public class TaskV2Info {
         sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
         sb.append("    canCreateEnv: ").append(toIndentedString(canCreateEnv)).append("\n");
+        sb.append("    canDisable: ").append(toIndentedString(canDisable)).append("\n");
         sb.append("    appComponentList: ").append(toIndentedString(appComponentList)).append("\n");
         sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    isDisable: ").append(toIndentedString(isDisable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

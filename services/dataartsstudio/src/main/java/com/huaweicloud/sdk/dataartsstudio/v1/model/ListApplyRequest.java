@@ -21,7 +21,7 @@ public class ListApplyRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -121,7 +121,7 @@ public class ListApplyRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -138,7 +138,7 @@ public class ListApplyRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -172,7 +172,7 @@ public class ListApplyRequest {
     }
 
     /**
-     * 查询条数, 即查询Y条数据
+     * 查询条数, 即查询Y条数据。
      * @return limit
      */
     public Integer getLimit() {
@@ -189,7 +189,7 @@ public class ListApplyRequest {
     }
 
     /**
-     * api名称
+     * api名称。
      * @return apiName
      */
     public String getApiName() {
@@ -206,7 +206,7 @@ public class ListApplyRequest {
     }
 
     /**
-     * 查询类型, 0:收到的申请(待审核), 1:收到的申请(已审核), 2:发出的申请(开发), 3:发出的申请(调用)
+     * 查询类型, 0:收到的申请(待审核), 1:收到的申请(已审核), 2:发出的申请(开发), 3:发出的申请(调用)。
      * @return queryType
      */
     public Integer getQueryType() {

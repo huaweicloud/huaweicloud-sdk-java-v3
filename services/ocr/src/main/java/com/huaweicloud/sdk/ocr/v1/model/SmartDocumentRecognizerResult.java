@@ -36,6 +36,11 @@ public class SmartDocumentRecognizerResult {
 
     private SmartDocumentRecognizerFormResult formResult;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "formula_result")
+
+    private SmartDocumentRecognizerFormulaResult formulaResult;
+
     public SmartDocumentRecognizerResult withOcrResult(SmartDocumentRecognizerOcrResult ocrResult) {
         this.ocrResult = ocrResult;
         return this;
@@ -168,6 +173,33 @@ public class SmartDocumentRecognizerResult {
         this.formResult = formResult;
     }
 
+    public SmartDocumentRecognizerResult withFormulaResult(SmartDocumentRecognizerFormulaResult formulaResult) {
+        this.formulaResult = formulaResult;
+        return this;
+    }
+
+    public SmartDocumentRecognizerResult withFormulaResult(
+        Consumer<SmartDocumentRecognizerFormulaResult> formulaResultSetter) {
+        if (this.formulaResult == null) {
+            this.formulaResult = new SmartDocumentRecognizerFormulaResult();
+            formulaResultSetter.accept(this.formulaResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get formulaResult
+     * @return formulaResult
+     */
+    public SmartDocumentRecognizerFormulaResult getFormulaResult() {
+        return formulaResult;
+    }
+
+    public void setFormulaResult(SmartDocumentRecognizerFormulaResult formulaResult) {
+        this.formulaResult = formulaResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,12 +211,13 @@ public class SmartDocumentRecognizerResult {
         SmartDocumentRecognizerResult that = (SmartDocumentRecognizerResult) obj;
         return Objects.equals(this.ocrResult, that.ocrResult) && Objects.equals(this.kvResult, that.kvResult)
             && Objects.equals(this.tableResult, that.tableResult)
-            && Objects.equals(this.layoutResult, that.layoutResult) && Objects.equals(this.formResult, that.formResult);
+            && Objects.equals(this.layoutResult, that.layoutResult) && Objects.equals(this.formResult, that.formResult)
+            && Objects.equals(this.formulaResult, that.formulaResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ocrResult, kvResult, tableResult, layoutResult, formResult);
+        return Objects.hash(ocrResult, kvResult, tableResult, layoutResult, formResult, formulaResult);
     }
 
     @Override
@@ -196,6 +229,7 @@ public class SmartDocumentRecognizerResult {
         sb.append("    tableResult: ").append(toIndentedString(tableResult)).append("\n");
         sb.append("    layoutResult: ").append(toIndentedString(layoutResult)).append("\n");
         sb.append("    formResult: ").append(toIndentedString(formResult)).append("\n");
+        sb.append("    formulaResult: ").append(toIndentedString(formulaResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

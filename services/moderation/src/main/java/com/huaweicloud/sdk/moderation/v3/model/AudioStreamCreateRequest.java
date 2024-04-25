@@ -33,6 +33,11 @@ public class AudioStreamCreateRequest {
 
     private String callback;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "seed")
+
+    private String seed;
+
     public AudioStreamCreateRequest withData(AudioStreamCreateRequestData data) {
         this.data = data;
         return this;
@@ -126,6 +131,23 @@ public class AudioStreamCreateRequest {
         this.callback = callback;
     }
 
+    public AudioStreamCreateRequest withSeed(String seed) {
+        this.seed = seed;
+        return this;
+    }
+
+    /**
+     * 用于回调通知时校验请求由华为云内容安全服务发起，由您自定义。随机字符串，由英文字母、数字、下划线组成，不超过64个字符。 说明：当seed非空时，headers中将包含X-Auth-Signature字段，字段的值使用HmacSHA256算法生成，待加密字符串由create_time、job_id、request_id、seed按照顺序拼接而成，密钥为seed。
+     * @return seed
+     */
+    public String getSeed() {
+        return seed;
+    }
+
+    public void setSeed(String seed) {
+        this.seed = seed;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +158,13 @@ public class AudioStreamCreateRequest {
         }
         AudioStreamCreateRequest that = (AudioStreamCreateRequest) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.eventType, that.eventType)
-            && Objects.equals(this.categories, that.categories) && Objects.equals(this.callback, that.callback);
+            && Objects.equals(this.categories, that.categories) && Objects.equals(this.callback, that.callback)
+            && Objects.equals(this.seed, that.seed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, eventType, categories, callback);
+        return Objects.hash(data, eventType, categories, callback, seed);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class AudioStreamCreateRequest {
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
         sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
+        sb.append("    seed: ").append(toIndentedString(seed)).append("\n");
         sb.append("}");
         return sb.toString();
     }

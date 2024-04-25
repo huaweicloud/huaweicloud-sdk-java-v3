@@ -16,7 +16,7 @@ public class Table {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
@@ -31,7 +31,7 @@ public class Table {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_access_time")
 
-    private Integer lastAccessTime;
+    private Long lastAccessTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
@@ -51,7 +51,7 @@ public class Table {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_size")
 
-    private Integer tableSize;
+    private Long tableSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_type")
@@ -73,7 +73,7 @@ public class Table {
 
     private Integer currentPage;
 
-    public Table withCreateTime(Integer createTime) {
+    public Table withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -82,11 +82,11 @@ public class Table {
      * 表创建时间。是单位为“毫秒”的时间戳。
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
@@ -124,7 +124,7 @@ public class Table {
         this.dataLocation = dataLocation;
     }
 
-    public Table withLastAccessTime(Integer lastAccessTime) {
+    public Table withLastAccessTime(Long lastAccessTime) {
         this.lastAccessTime = lastAccessTime;
         return this;
     }
@@ -133,11 +133,11 @@ public class Table {
      * 最近更新时间。是单位为“毫秒”的时间戳。
      * @return lastAccessTime
      */
-    public Integer getLastAccessTime() {
+    public Long getLastAccessTime() {
         return lastAccessTime;
     }
 
-    public void setLastAccessTime(Integer lastAccessTime) {
+    public void setLastAccessTime(Long lastAccessTime) {
         this.lastAccessTime = lastAccessTime;
     }
 
@@ -192,7 +192,7 @@ public class Table {
         this.tableName = tableName;
     }
 
-    public Table withTableSize(Integer tableSize) {
+    public Table withTableSize(Long tableSize) {
         this.tableSize = tableSize;
         return this;
     }
@@ -201,11 +201,11 @@ public class Table {
      * DLI表的大小。非DLI表该参数值为0。
      * @return tableSize
      */
-    public Integer getTableSize() {
+    public Long getTableSize() {
         return tableSize;
     }
 
-    public void setTableSize(Integer tableSize) {
+    public void setTableSize(Long tableSize) {
         this.tableSize = tableSize;
     }
 

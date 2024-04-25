@@ -28,7 +28,7 @@ public class ListMetricsDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<Map<String, String>> data = null;
+    private List<Map<String, Object>> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -69,12 +69,12 @@ public class ListMetricsDataResponse extends SdkResponse {
         this.msg = msg;
     }
 
-    public ListMetricsDataResponse withData(List<Map<String, String>> data) {
+    public ListMetricsDataResponse withData(List<Map<String, Object>> data) {
         this.data = data;
         return this;
     }
 
-    public ListMetricsDataResponse addDataItem(Map<String, String> dataItem) {
+    public ListMetricsDataResponse addDataItem(Map<String, Object> dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -82,7 +82,7 @@ public class ListMetricsDataResponse extends SdkResponse {
         return this;
     }
 
-    public ListMetricsDataResponse withData(Consumer<List<Map<String, String>>> dataSetter) {
+    public ListMetricsDataResponse withData(Consumer<List<Map<String, Object>>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -94,11 +94,11 @@ public class ListMetricsDataResponse extends SdkResponse {
      * 指标采集数据列表。
      * @return data
      */
-    public List<Map<String, String>> getData() {
+    public List<Map<String, Object>> getData() {
         return data;
     }
 
-    public void setData(List<Map<String, String>> data) {
+    public void setData(List<Map<String, Object>> data) {
         this.data = data;
     }
 

@@ -25,6 +25,31 @@ public class TargetInstanceBody {
 
     private String password;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private String port;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addrs")
+
+    private String addrs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_multi_db")
+
+    private Boolean proxyMultiDb;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db")
+
+    private String db;
+
     public TargetInstanceBody withId(String id) {
         this.id = id;
         return this;
@@ -76,6 +101,91 @@ public class TargetInstanceBody {
         this.password = password;
     }
 
+    public TargetInstanceBody withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * Redis IP地址。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public TargetInstanceBody withPort(String port) {
+        this.port = port;
+        return this;
+    }
+
+    /**
+     * Redis端口。
+     * @return port
+     */
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    public TargetInstanceBody withAddrs(String addrs) {
+        this.addrs = addrs;
+        return this;
+    }
+
+    /**
+     * Redis实例地址。
+     * @return addrs
+     */
+    public String getAddrs() {
+        return addrs;
+    }
+
+    public void setAddrs(String addrs) {
+        this.addrs = addrs;
+    }
+
+    public TargetInstanceBody withProxyMultiDb(Boolean proxyMultiDb) {
+        this.proxyMultiDb = proxyMultiDb;
+        return this;
+    }
+
+    /**
+     * proxy实例是否开启了多DB。
+     * @return proxyMultiDb
+     */
+    public Boolean getProxyMultiDb() {
+        return proxyMultiDb;
+    }
+
+    public void setProxyMultiDb(Boolean proxyMultiDb) {
+        this.proxyMultiDb = proxyMultiDb;
+    }
+
+    public TargetInstanceBody withDb(String db) {
+        this.db = db;
+        return this;
+    }
+
+    /**
+     * Redis数据库。
+     * @return db
+     */
+    public String getDb() {
+        return db;
+    }
+
+    public void setDb(String db) {
+        this.db = db;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +196,14 @@ public class TargetInstanceBody {
         }
         TargetInstanceBody that = (TargetInstanceBody) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.password, that.password);
+            && Objects.equals(this.password, that.password) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.addrs, that.addrs)
+            && Objects.equals(this.proxyMultiDb, that.proxyMultiDb) && Objects.equals(this.db, that.db);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, password);
+        return Objects.hash(id, name, password, ip, port, addrs, proxyMultiDb, db);
     }
 
     @Override
@@ -101,6 +213,11 @@ public class TargetInstanceBody {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");
+        sb.append("    proxyMultiDb: ").append(toIndentedString(proxyMultiDb)).append("\n");
+        sb.append("    db: ").append(toIndentedString(db)).append("\n");
         sb.append("}");
         return sb.toString();
     }

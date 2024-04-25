@@ -27,6 +27,7 @@ import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
@@ -77,6 +78,8 @@ public class HttpConfig {
 
     private Dispatcher dispatcher;
 
+    private HostnameVerifier hostnameVerifier;
+
 
     public int getTimeout() {
         return timeout;
@@ -88,6 +91,19 @@ public class HttpConfig {
 
     public HttpConfig withTimeout(int timeout) {
         this.timeout = timeout;
+        return this;
+    }
+
+    public HostnameVerifier getHostnameVerifier() {
+        return hostnameVerifier;
+    }
+
+    public void setHostnameVerifier(HostnameVerifier hostnameVerifier) {
+        this.hostnameVerifier = hostnameVerifier;
+    }
+
+    public HttpConfig withHostnameVerifier(HostnameVerifier hostnameVerifier) {
+        this.hostnameVerifier = hostnameVerifier;
         return this;
     }
 

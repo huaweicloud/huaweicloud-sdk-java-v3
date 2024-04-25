@@ -133,6 +133,11 @@ public class ListInstancesResult {
 
     private String lbPort;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
@@ -591,6 +596,23 @@ public class ListInstancesResult {
         this.lbPort = lbPort;
     }
 
+    public ListInstancesResult withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 实例可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -614,7 +636,8 @@ public class ListInstancesResult {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.actions, that.actions)
-            && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort);
+            && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -642,7 +665,8 @@ public class ListInstancesResult {
             timeZone,
             actions,
             lbIpAddress,
-            lbPort);
+            lbPort,
+            availabilityZone);
     }
 
     @Override
@@ -673,6 +697,7 @@ public class ListInstancesResult {
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    lbIpAddress: ").append(toIndentedString(lbIpAddress)).append("\n");
         sb.append("    lbPort: ").append(toIndentedString(lbPort)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

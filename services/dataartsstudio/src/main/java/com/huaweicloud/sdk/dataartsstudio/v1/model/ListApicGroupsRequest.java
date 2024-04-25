@@ -21,7 +21,7 @@ public class ListApicGroupsRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -101,9 +101,14 @@ public class ListApicGroupsRequest {
     private String apigInstanceId;
 
     /**
-     * 网关类型
+     * 网关类型。
      */
     public static final class ApigTypeEnum {
+
+        /**
+         * Enum APIG for value: "APIG"
+         */
+        public static final ApigTypeEnum APIG = new ApigTypeEnum("APIG");
 
         /**
          * Enum APIGW for value: "APIGW"
@@ -119,6 +124,7 @@ public class ListApicGroupsRequest {
 
         private static Map<String, ApigTypeEnum> createStaticFields() {
             Map<String, ApigTypeEnum> map = new HashMap<>();
+            map.put("APIG", APIG);
             map.put("APIGW", APIGW);
             map.put("ROMA_APIC", ROMA_APIC);
             return Collections.unmodifiableMap(map);
@@ -191,7 +197,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -208,7 +214,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -225,7 +231,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * 网关实例编号
+     * 网关实例编号，共享版为固定值：APIG。
      * @return apigInstanceId
      */
     public String getApigInstanceId() {
@@ -242,7 +248,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * 网关类型
+     * 网关类型。
      * @return apigType
      */
     public ApigTypeEnum getApigType() {
@@ -259,7 +265,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * limit
+     * limit。
      * @return limit
      */
     public Integer getLimit() {
@@ -276,7 +282,7 @@ public class ListApicGroupsRequest {
     }
 
     /**
-     * offset
+     * offset。
      * @return offset
      */
     public Integer getOffset() {

@@ -34,6 +34,11 @@ public class AppDetailInfo {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_disable")
+
+    private Boolean isDisable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_type")
 
     private String createType;
@@ -92,6 +97,11 @@ public class AppDetailInfo {
     @JsonProperty(value = "can_create_env")
 
     private Boolean canCreateEnv;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_disable")
+
+    private Boolean canDisable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner_tenant_id")
@@ -194,6 +204,23 @@ public class AppDetailInfo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public AppDetailInfo withIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
+        return this;
+    }
+
+    /**
+     * 当前应用是否被禁用
+     * @return isDisable
+     */
+    public Boolean getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
     }
 
     public AppDetailInfo withCreateType(String createType) {
@@ -400,6 +427,23 @@ public class AppDetailInfo {
         this.canCreateEnv = canCreateEnv;
     }
 
+    public AppDetailInfo withCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+        return this;
+    }
+
+    /**
+     * 是否有禁用应用的权限
+     * @return canDisable
+     */
+    public Boolean getCanDisable() {
+        return canDisable;
+    }
+
+    public void setCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+    }
+
     public AppDetailInfo withOwnerTenantId(String ownerTenantId) {
         this.ownerTenantId = ownerTenantId;
         return this;
@@ -546,13 +590,13 @@ public class AppDetailInfo {
         AppDetailInfo that = (AppDetailInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.region, that.region) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.createType, that.createType) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.isDisable, that.isDisable) && Objects.equals(this.createType, that.createType)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
             && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.isCare, that.isCare)
             && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
             && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
             && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
-            && Objects.equals(this.canCreateEnv, that.canCreateEnv)
+            && Objects.equals(this.canCreateEnv, that.canCreateEnv) && Objects.equals(this.canDisable, that.canDisable)
             && Objects.equals(this.ownerTenantId, that.ownerTenantId)
             && Objects.equals(this.createUserId, that.createUserId)
             && Objects.equals(this.createTenantId, that.createTenantId)
@@ -567,6 +611,7 @@ public class AppDetailInfo {
             name,
             region,
             description,
+            isDisable,
             createType,
             projectId,
             projectName,
@@ -579,6 +624,7 @@ public class AppDetailInfo {
             canCopy,
             canManage,
             canCreateEnv,
+            canDisable,
             ownerTenantId,
             createUserId,
             createTenantId,
@@ -596,6 +642,7 @@ public class AppDetailInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isDisable: ").append(toIndentedString(isDisable)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
@@ -608,6 +655,7 @@ public class AppDetailInfo {
         sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
         sb.append("    canCreateEnv: ").append(toIndentedString(canCreateEnv)).append("\n");
+        sb.append("    canDisable: ").append(toIndentedString(canDisable)).append("\n");
         sb.append("    ownerTenantId: ").append(toIndentedString(ownerTenantId)).append("\n");
         sb.append("    createUserId: ").append(toIndentedString(createUserId)).append("\n");
         sb.append("    createTenantId: ").append(toIndentedString(createTenantId)).append("\n");

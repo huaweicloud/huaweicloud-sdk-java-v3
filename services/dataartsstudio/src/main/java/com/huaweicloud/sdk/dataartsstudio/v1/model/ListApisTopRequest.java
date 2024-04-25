@@ -21,7 +21,7 @@ public class ListApisTopRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -111,7 +111,7 @@ public class ListApisTopRequest {
     private Long endTime;
 
     /**
-     * 时间单位
+     * 时间单位。
      */
     public static final class TimeUnitEnum {
 
@@ -191,7 +191,7 @@ public class ListApisTopRequest {
     private Integer topNum;
 
     /**
-     * 排序条件
+     * 排序条件。
      */
     public static final class OrderByEnum {
 
@@ -331,7 +331,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -348,7 +348,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -365,7 +365,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 集群编号
+     * 集群编号。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -382,7 +382,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 开始时间（13位时间戳）
+     * 开始时间（13位时间戳）。
      * @return startTime
      */
     public Long getStartTime() {
@@ -399,7 +399,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 结束时间（13位时间戳）
+     * 结束时间（13位时间戳）。
      * @return endTime
      */
     public Long getEndTime() {
@@ -416,7 +416,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 时间单位
+     * 时间单位。
      * @return timeUnit
      */
     public TimeUnitEnum getTimeUnit() {
@@ -433,7 +433,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 前几名
+     * 前几名。
      * @return topNum
      */
     public Integer getTopNum() {
@@ -450,7 +450,7 @@ public class ListApisTopRequest {
     }
 
     /**
-     * 排序条件
+     * 排序条件。
      * @return orderBy
      */
     public OrderByEnum getOrderBy() {

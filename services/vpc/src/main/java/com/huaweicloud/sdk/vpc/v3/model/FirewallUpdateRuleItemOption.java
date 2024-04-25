@@ -70,6 +70,11 @@ public class FirewallUpdateRuleItemOption {
 
     private String destinationAddressGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
     public FirewallUpdateRuleItemOption withId(String id) {
         this.id = id;
         return this;
@@ -274,6 +279,23 @@ public class FirewallUpdateRuleItemOption {
         this.destinationAddressGroupId = destinationAddressGroupId;
     }
 
+    public FirewallUpdateRuleItemOption withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否启用ACL规则。 取值范围：true，表示启用；false，表示停用。 默认值：true。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,7 +313,8 @@ public class FirewallUpdateRuleItemOption {
             && Objects.equals(this.sourcePort, that.sourcePort)
             && Objects.equals(this.destinationPort, that.destinationPort)
             && Objects.equals(this.sourceAddressGroupId, that.sourceAddressGroupId)
-            && Objects.equals(this.destinationAddressGroupId, that.destinationAddressGroupId);
+            && Objects.equals(this.destinationAddressGroupId, that.destinationAddressGroupId)
+            && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
@@ -307,7 +330,8 @@ public class FirewallUpdateRuleItemOption {
             sourcePort,
             destinationPort,
             sourceAddressGroupId,
-            destinationAddressGroupId);
+            destinationAddressGroupId,
+            enabled);
     }
 
     @Override
@@ -326,6 +350,7 @@ public class FirewallUpdateRuleItemOption {
         sb.append("    destinationPort: ").append(toIndentedString(destinationPort)).append("\n");
         sb.append("    sourceAddressGroupId: ").append(toIndentedString(sourceAddressGroupId)).append("\n");
         sb.append("    destinationAddressGroupId: ").append(toIndentedString(destinationAddressGroupId)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

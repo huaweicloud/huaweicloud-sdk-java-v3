@@ -21,7 +21,7 @@ public class ListInstanceListRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -101,7 +101,7 @@ public class ListInstanceListRequest {
     private String apiId;
 
     /**
-     * api操作
+     * api操作。
      */
     public static final class ActionEnum {
 
@@ -235,7 +235,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -252,7 +252,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -269,7 +269,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * api编号
+     * api编号。
      * @return apiId
      */
     public String getApiId() {
@@ -286,7 +286,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * api操作
+     * api操作。
      * @return action
      */
     public ActionEnum getAction() {
@@ -303,7 +303,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * 全部展示(包括不可执行当前操作的实例)
+     * 全部展示(包括不可执行当前操作的实例)。
      * @return showAll
      */
     public Boolean getShowAll() {
@@ -320,7 +320,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * 校验api状态
+     * 校验api状态。
      * @return checkStatus
      */
     public Boolean getCheckStatus() {
@@ -337,7 +337,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * 校验api调试状态
+     * 校验api调试状态。
      * @return checkDebug
      */
     public Boolean getCheckDebug() {
@@ -354,7 +354,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * app编号(用于判断授权操作app可选的实例)
+     * app编号(用于判断授权操作app可选的实例)。
      * @return appId
      */
     public String getAppId() {
@@ -371,7 +371,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * limit
+     * limit。
      * @return limit
      */
     public Integer getLimit() {
@@ -388,7 +388,7 @@ public class ListInstanceListRequest {
     }
 
     /**
-     * offset
+     * offset。
      * @return offset
      */
     public Integer getOffset() {

@@ -81,7 +81,7 @@ public class PurchaseCertificateRequestBody {
     }
 
     /**
-     * 证书类型，取值如下： - DV_SSL_CERT - DV_SSL_CERT_BASIC - EV_SSL_CERT - EV_SSL_CERT_PRO - OV_SSL_CERT - OV_SSL_CERT_PRO
+     * 证书品牌，取值如下： - GEOTRUST - GLOBALSIGN - SYMANTEC - CFCA - TRUSTASIA - VTRUS
      * @return certBrand
      */
     public String getCertBrand() {

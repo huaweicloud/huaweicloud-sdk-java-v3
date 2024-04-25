@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBusinessCardRequest;
@@ -181,6 +183,36 @@ public class OcrAsyncClient {
     public AsyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassificationAsyncInvoker(
         RecognizeAutoClassificationRequest request) {
         return new AsyncInvoker<>(request, OcrMeta.recognizeAutoClassification, hcClient);
+    }
+
+    /**
+     * 银行回单识别
+     *
+     * 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeBankReceiptRequest 请求对象
+     * @return CompletableFuture<RecognizeBankReceiptResponse>
+     */
+    public CompletableFuture<RecognizeBankReceiptResponse> recognizeBankReceiptAsync(
+        RecognizeBankReceiptRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeBankReceipt);
+    }
+
+    /**
+     * 银行回单识别
+     *
+     * 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeBankReceiptRequest 请求对象
+     * @return AsyncInvoker<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse>
+     */
+    public AsyncInvoker<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse> recognizeBankReceiptAsyncInvoker(
+        RecognizeBankReceiptRequest request) {
+        return new AsyncInvoker<>(request, OcrMeta.recognizeBankReceipt, hcClient);
     }
 
     /**

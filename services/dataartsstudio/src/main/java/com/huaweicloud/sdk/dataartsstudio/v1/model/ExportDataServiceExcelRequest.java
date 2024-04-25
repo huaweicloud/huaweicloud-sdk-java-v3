@@ -4,9 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -14,7 +18,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class PublishApiRequest {
+public class ExportDataServiceExcelRequest implements ProgressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace")
@@ -22,7 +26,7 @@ public class PublishApiRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -99,15 +103,39 @@ public class PublishApiRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private OpenApiParaForPublish body;
+    private List<String> body = null;
 
-    public PublishApiRequest withWorkspace(String workspace) {
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
+
+    public ExportDataServiceExcelRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -118,13 +146,13 @@ public class PublishApiRequest {
         this.workspace = workspace;
     }
 
-    public PublishApiRequest withDlmType(DlmTypeEnum dlmType) {
+    public ExportDataServiceExcelRequest withDlmType(DlmTypeEnum dlmType) {
         this.dlmType = dlmType;
         return this;
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -135,29 +163,36 @@ public class PublishApiRequest {
         this.dlmType = dlmType;
     }
 
-    public PublishApiRequest withBody(OpenApiParaForPublish body) {
+    public ExportDataServiceExcelRequest withBody(List<String> body) {
         this.body = body;
         return this;
     }
 
-    public PublishApiRequest withBody(Consumer<OpenApiParaForPublish> bodySetter) {
+    public ExportDataServiceExcelRequest addBodyItem(String bodyItem) {
         if (this.body == null) {
-            this.body = new OpenApiParaForPublish();
-            bodySetter.accept(this.body);
+            this.body = new ArrayList<>();
         }
+        this.body.add(bodyItem);
+        return this;
+    }
 
+    public ExportDataServiceExcelRequest withBody(Consumer<List<String>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * Get body
+     * API导出ID列表。
      * @return body
      */
-    public OpenApiParaForPublish getBody() {
+    public List<String> getBody() {
         return body;
     }
 
-    public void setBody(OpenApiParaForPublish body) {
+    public void setBody(List<String> body) {
         this.body = body;
     }
 
@@ -169,7 +204,7 @@ public class PublishApiRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishApiRequest that = (PublishApiRequest) obj;
+        ExportDataServiceExcelRequest that = (ExportDataServiceExcelRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
             && Objects.equals(this.body, that.body);
     }
@@ -182,7 +217,7 @@ public class PublishApiRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class PublishApiRequest {\n");
+        sb.append("class ExportDataServiceExcelRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    dlmType: ").append(toIndentedString(dlmType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

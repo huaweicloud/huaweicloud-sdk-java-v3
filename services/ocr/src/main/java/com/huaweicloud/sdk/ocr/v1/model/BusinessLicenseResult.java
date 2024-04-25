@@ -41,6 +41,11 @@ public class BusinessLicenseResult {
     private String registeredCapital;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organization_form")
+
+    private String organizationForm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "found_date")
 
     private String foundDate;
@@ -71,7 +76,7 @@ public class BusinessLicenseResult {
     }
 
     /**
-     *   - 老版本营业执照对应注册号。  - 新三证合一版本营业执照对应社会保障号。 
+     * - 老版本营业执照对应注册号。 - 新三证合一版本营业执照对应社会保障号。 
      * @return registrationNumber
      */
     public String getRegistrationNumber() {
@@ -105,7 +110,7 @@ public class BusinessLicenseResult {
     }
 
     /**
-     * 公司/企业类型/主体类型。 
+     * 公司/企业类型/主体类型/类型。 
      * @return type
      */
     public String getType() {
@@ -122,7 +127,7 @@ public class BusinessLicenseResult {
     }
 
     /**
-     * 住所/营业场所/企业住所。 
+     * 住所/营业场所/企业住所/主要经营场所/经营场所。 
      * @return address
      */
     public String getAddress() {
@@ -139,7 +144,7 @@ public class BusinessLicenseResult {
     }
 
     /**
-     * 法定代表人/负责人。 
+     * 法定代表人/负责人/执行事务合伙人/投资人/经营者。 
      * @return legalRepresentative
      */
     public String getLegalRepresentative() {
@@ -156,7 +161,7 @@ public class BusinessLicenseResult {
     }
 
     /**
-     * 注册资本。 
+     * 注册资本/出资额。 
      * @return registeredCapital
      */
     public String getRegisteredCapital() {
@@ -167,13 +172,30 @@ public class BusinessLicenseResult {
         this.registeredCapital = registeredCapital;
     }
 
+    public BusinessLicenseResult withOrganizationForm(String organizationForm) {
+        this.organizationForm = organizationForm;
+        return this;
+    }
+
+    /**
+     * 组成形式。 
+     * @return organizationForm
+     */
+    public String getOrganizationForm() {
+        return organizationForm;
+    }
+
+    public void setOrganizationForm(String organizationForm) {
+        this.organizationForm = organizationForm;
+    }
+
     public BusinessLicenseResult withFoundDate(String foundDate) {
         this.foundDate = foundDate;
         return this;
     }
 
     /**
-     * 成立日期。 
+     * 成立日期/注册日期。 
      * @return foundDate
      */
     public String getFoundDate() {
@@ -265,6 +287,7 @@ public class BusinessLicenseResult {
             && Objects.equals(this.type, that.type) && Objects.equals(this.address, that.address)
             && Objects.equals(this.legalRepresentative, that.legalRepresentative)
             && Objects.equals(this.registeredCapital, that.registeredCapital)
+            && Objects.equals(this.organizationForm, that.organizationForm)
             && Objects.equals(this.foundDate, that.foundDate) && Objects.equals(this.businessTerm, that.businessTerm)
             && Objects.equals(this.businessScope, that.businessScope) && Objects.equals(this.issueDate, that.issueDate)
             && Objects.equals(this.confidence, that.confidence);
@@ -278,6 +301,7 @@ public class BusinessLicenseResult {
             address,
             legalRepresentative,
             registeredCapital,
+            organizationForm,
             foundDate,
             businessTerm,
             businessScope,
@@ -295,6 +319,7 @@ public class BusinessLicenseResult {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    legalRepresentative: ").append(toIndentedString(legalRepresentative)).append("\n");
         sb.append("    registeredCapital: ").append(toIndentedString(registeredCapital)).append("\n");
+        sb.append("    organizationForm: ").append(toIndentedString(organizationForm)).append("\n");
         sb.append("    foundDate: ").append(toIndentedString(foundDate)).append("\n");
         sb.append("    businessTerm: ").append(toIndentedString(businessTerm)).append("\n");
         sb.append("    businessScope: ").append(toIndentedString(businessScope)).append("\n");

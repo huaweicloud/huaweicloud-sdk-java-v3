@@ -16,6 +16,7 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDevice;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupDTO;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddDeviceProxy;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddFlowControlPolicy;
@@ -50,6 +51,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCertificateDTO;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -79,6 +82,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
@@ -115,6 +120,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
@@ -164,6 +171,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowRequest;
@@ -207,6 +216,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxy;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
@@ -2004,6 +2016,176 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDevice.class),
             f -> f.withMarshaller(UpdateDeviceRequest::getBody, UpdateDeviceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDeviceProxyRequest, CreateDeviceProxyResponse> createDeviceProxy =
+        genForCreateDeviceProxy();
+
+    private static HttpRequestDef<CreateDeviceProxyRequest, CreateDeviceProxyResponse> genForCreateDeviceProxy() {
+        // basic
+        HttpRequestDef.Builder<CreateDeviceProxyRequest, CreateDeviceProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDeviceProxyRequest.class, CreateDeviceProxyResponse.class)
+                .withName("CreateDeviceProxy")
+                .withUri("/v5/iot/{project_id}/device-proxies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeviceProxyRequest::getInstanceId, CreateDeviceProxyRequest::setInstanceId));
+        builder.<AddDeviceProxy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddDeviceProxy.class),
+            f -> f.withMarshaller(CreateDeviceProxyRequest::getBody, CreateDeviceProxyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceProxyRequest, DeleteDeviceProxyResponse> deleteDeviceProxy =
+        genForDeleteDeviceProxy();
+
+    private static HttpRequestDef<DeleteDeviceProxyRequest, DeleteDeviceProxyResponse> genForDeleteDeviceProxy() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceProxyRequest, DeleteDeviceProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceProxyRequest.class, DeleteDeviceProxyResponse.class)
+                .withName("DeleteDeviceProxy")
+                .withUri("/v5/iot/{project_id}/device-proxies/{proxy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceProxyRequest::getProxyId, DeleteDeviceProxyRequest::setProxyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceProxyRequest::getInstanceId, DeleteDeviceProxyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceProxyResponse::getBody, DeleteDeviceProxyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceProxiesRequest, ListDeviceProxiesResponse> listDeviceProxies =
+        genForListDeviceProxies();
+
+    private static HttpRequestDef<ListDeviceProxiesRequest, ListDeviceProxiesResponse> genForListDeviceProxies() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceProxiesRequest, ListDeviceProxiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDeviceProxiesRequest.class, ListDeviceProxiesResponse.class)
+                .withName("ListDeviceProxies")
+                .withUri("/v5/iot/{project_id}/device-proxies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getAppId, ListDeviceProxiesRequest::setAppId));
+        builder.<String>withRequestField("proxy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getProxyName, ListDeviceProxiesRequest::setProxyName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getLimit, ListDeviceProxiesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getMarker, ListDeviceProxiesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getOffset, ListDeviceProxiesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceProxiesRequest::getInstanceId, ListDeviceProxiesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeviceProxyRequest, ShowDeviceProxyResponse> showDeviceProxy =
+        genForShowDeviceProxy();
+
+    private static HttpRequestDef<ShowDeviceProxyRequest, ShowDeviceProxyResponse> genForShowDeviceProxy() {
+        // basic
+        HttpRequestDef.Builder<ShowDeviceProxyRequest, ShowDeviceProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDeviceProxyRequest.class, ShowDeviceProxyResponse.class)
+                .withName("ShowDeviceProxy")
+                .withUri("/v5/iot/{project_id}/device-proxies/{proxy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceProxyRequest::getProxyId, ShowDeviceProxyRequest::setProxyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceProxyRequest::getInstanceId, ShowDeviceProxyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDeviceProxyRequest, UpdateDeviceProxyResponse> updateDeviceProxy =
+        genForUpdateDeviceProxy();
+
+    private static HttpRequestDef<UpdateDeviceProxyRequest, UpdateDeviceProxyResponse> genForUpdateDeviceProxy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDeviceProxyRequest, UpdateDeviceProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceProxyRequest.class, UpdateDeviceProxyResponse.class)
+                .withName("UpdateDeviceProxy")
+                .withUri("/v5/iot/{project_id}/device-proxies/{proxy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceProxyRequest::getProxyId, UpdateDeviceProxyRequest::setProxyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceProxyRequest::getInstanceId, UpdateDeviceProxyRequest::setInstanceId));
+        builder.<UpdateDeviceProxy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDeviceProxy.class),
+            f -> f.withMarshaller(UpdateDeviceProxyRequest::getBody, UpdateDeviceProxyRequest::setBody));
 
         // response
 

@@ -104,6 +104,20 @@ public class TestExtractErrorMessage {
         Assert.assertEquals("97e2***11df", sdkErrorMessage.getRequestId());
     }
 
+    @Test
+    public void testExtractErrorMessage6() {
+        String errorMessage = "{\"error_code\":\"XXX.0001\"," +
+                "\"error_msg\":\"Some errors occurred.\"," +
+                "\"encoded_authorization_message\":null}";
+        HttpResponse response = new ErrorResponse(errorMessage);
+        SdkErrorMessage sdkErrorMessage = ExceptionUtils.extractErrorMessage(response);
+        Assert.assertNull(sdkErrorMessage.getEncodedAuthorizationMessage());
+        Assert.assertEquals(400, sdkErrorMessage.getHttpStatusCode());
+        Assert.assertEquals("XXX.0001", sdkErrorMessage.getErrorCode());
+        Assert.assertEquals("Some errors occurred.", sdkErrorMessage.getErrorMsg());
+        Assert.assertEquals("97e2***11df", sdkErrorMessage.getRequestId());
+    }
+
     static class ErrorResponse implements HttpResponse {
 
         private final Map<String, String> headers = new HashMap<String, String>() {

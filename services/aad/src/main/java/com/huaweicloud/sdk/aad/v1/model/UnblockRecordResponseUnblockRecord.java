@@ -28,7 +28,7 @@ public class UnblockRecordResponseUnblockRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "block_id")
 
-    private String blockId;
+    private Long blockId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "blocking_time")
@@ -235,20 +235,22 @@ public class UnblockRecordResponseUnblockRecord {
         this.executor = executor;
     }
 
-    public UnblockRecordResponseUnblockRecord withBlockId(String blockId) {
+    public UnblockRecordResponseUnblockRecord withBlockId(Long blockId) {
         this.blockId = blockId;
         return this;
     }
 
     /**
      * 封堵id
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return blockId
      */
-    public String getBlockId() {
+    public Long getBlockId() {
         return blockId;
     }
 
-    public void setBlockId(String blockId) {
+    public void setBlockId(Long blockId) {
         this.blockId = blockId;
     }
 

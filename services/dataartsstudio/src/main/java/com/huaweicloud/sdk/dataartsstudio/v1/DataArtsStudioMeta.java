@@ -20,6 +20,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiCatalogUpdateParaDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiMoveParaDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiParaForAuthToInstance;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiParaForAuthorizeToInstance;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApiTestDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApigChangeResourceReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApigDataSourceVo;
@@ -66,6 +67,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BehaviorRestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BizCatalogVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BizMetricVO;
@@ -176,6 +179,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugSecurityDlfDataWareHousesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteAppRequest;
@@ -238,6 +243,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceExcelRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceExcelResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceExcelTemplateRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceExcelTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceZipRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceZipResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelTableDdlResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsRequest;
@@ -245,11 +256,15 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportParam;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.FgacUpdateReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.GatewayDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.IdsParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequest;
@@ -376,6 +391,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceConfigu
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceConfigurationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
@@ -386,6 +403,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsRequest;
@@ -408,7 +427,6 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ObjectIdInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForCheckMessage;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForPublish;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApplyIdsForApproveApply;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenBulkClassifications;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenClassification;
@@ -422,8 +440,6 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionUpdateDTO;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiRequest;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueryTaskRequest;
@@ -1086,7 +1102,7 @@ public class DataArtsStudioMeta {
                     BatchDeleteSecuritySecrecyLevelsRequest.class,
                     BatchDeleteSecuritySecrecyLevelsResponse.class)
                 .withName("BatchDeleteSecuritySecrecyLevels")
-                .withUri("/v1/{project_id}/dls/data-classification/secrecy-level/batch-delete")
+                .withUri("/v1/{project_id}/security/data-classification/secrecy-level/batch-delete")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -1218,6 +1234,39 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogMetaDataEventRequest.class),
             f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, BatchSyncMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateSecurityDlfDataWareHousesRequest, BatchUpdateSecurityDlfDataWareHousesResponse> batchUpdateSecurityDlfDataWareHouses =
+        genForBatchUpdateSecurityDlfDataWareHouses();
+
+    private static HttpRequestDef<BatchUpdateSecurityDlfDataWareHousesRequest, BatchUpdateSecurityDlfDataWareHousesResponse> genForBatchUpdateSecurityDlfDataWareHouses() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateSecurityDlfDataWareHousesRequest, BatchUpdateSecurityDlfDataWareHousesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateSecurityDlfDataWareHousesRequest.class,
+                    BatchUpdateSecurityDlfDataWareHousesResponse.class)
+                .withName("BatchUpdateSecurityDlfDataWareHouses")
+                .withUri("/v1/{project_id}/security/fgac/dlf/datawarehouses")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateSecurityDlfDataWareHousesRequest::getWorkspace,
+                BatchUpdateSecurityDlfDataWareHousesRequest::setWorkspace));
+        builder.<FgacUpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FgacUpdateReq.class),
+            f -> f.withMarshaller(BatchUpdateSecurityDlfDataWareHousesRequest::getBody,
+                BatchUpdateSecurityDlfDataWareHousesRequest::setBody));
 
         // response
 
@@ -2581,6 +2630,39 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApigDataSourceVo.class),
             f -> f.withMarshaller(DebugDataconnectionRequest::getBody, DebugDataconnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DebugSecurityDlfDataWareHousesRequest, DebugSecurityDlfDataWareHousesResponse> debugSecurityDlfDataWareHouses =
+        genForDebugSecurityDlfDataWareHouses();
+
+    private static HttpRequestDef<DebugSecurityDlfDataWareHousesRequest, DebugSecurityDlfDataWareHousesResponse> genForDebugSecurityDlfDataWareHouses() {
+        // basic
+        HttpRequestDef.Builder<DebugSecurityDlfDataWareHousesRequest, DebugSecurityDlfDataWareHousesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DebugSecurityDlfDataWareHousesRequest.class,
+                    DebugSecurityDlfDataWareHousesResponse.class)
+                .withName("DebugSecurityDlfDataWareHouses")
+                .withUri("/v1/{project_id}/security/fgac/dlf/datawarehouses/{dw_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DebugSecurityDlfDataWareHousesRequest::getDwId,
+                DebugSecurityDlfDataWareHousesRequest::setDwId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DebugSecurityDlfDataWareHousesRequest::getWorkspace,
+                DebugSecurityDlfDataWareHousesRequest::setWorkspace));
 
         // response
 
@@ -6859,6 +6941,33 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityDlfDataWareHousesRequest, ListSecurityDlfDataWareHousesResponse> listSecurityDlfDataWareHouses =
+        genForListSecurityDlfDataWareHouses();
+
+    private static HttpRequestDef<ListSecurityDlfDataWareHousesRequest, ListSecurityDlfDataWareHousesResponse> genForListSecurityDlfDataWareHouses() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityDlfDataWareHousesRequest, ListSecurityDlfDataWareHousesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityDlfDataWareHousesRequest.class,
+                    ListSecurityDlfDataWareHousesResponse.class)
+                .withName("ListSecurityDlfDataWareHouses")
+                .withUri("/v1/{project_id}/security/fgac/dlf/datawarehouses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDlfDataWareHousesRequest::getWorkspace,
+                ListSecurityDlfDataWareHousesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> listSecurityPermissionSetMembers =
         genForListSecurityPermissionSetMembers();
 
@@ -7212,6 +7321,63 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecuritySecrecyLevelsRequest::getWorkspace,
                 ListSecuritySecrecyLevelsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecuritySensitiveDataOverviewsRequest, ListSecuritySensitiveDataOverviewsResponse> listSecuritySensitiveDataOverviews =
+        genForListSecuritySensitiveDataOverviews();
+
+    private static HttpRequestDef<ListSecuritySensitiveDataOverviewsRequest, ListSecuritySensitiveDataOverviewsResponse> genForListSecuritySensitiveDataOverviews() {
+        // basic
+        HttpRequestDef.Builder<ListSecuritySensitiveDataOverviewsRequest, ListSecuritySensitiveDataOverviewsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecuritySensitiveDataOverviewsRequest.class,
+                    ListSecuritySensitiveDataOverviewsResponse.class)
+                .withName("ListSecuritySensitiveDataOverviews")
+                .withUri("/v1/{project_id}/security/sensitive-data/result/overview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListSecuritySensitiveDataOverviewsRequest.DatasourceEnum>withRequestField("datasource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecuritySensitiveDataOverviewsRequest.DatasourceEnum.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getDatasource,
+                ListSecuritySensitiveDataOverviewsRequest::setDatasource));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getClusterName,
+                ListSecuritySensitiveDataOverviewsRequest::setClusterName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getDatabaseName,
+                ListSecuritySensitiveDataOverviewsRequest::setDatabaseName));
+        builder.<String>withRequestField("schema_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getSchemaName,
+                ListSecuritySensitiveDataOverviewsRequest::setSchemaName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getTableName,
+                ListSecuritySensitiveDataOverviewsRequest::setTableName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getWorkspace,
+                ListSecuritySensitiveDataOverviewsRequest::setWorkspace));
 
         // response
 
@@ -12338,7 +12504,7 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApiRequest::getWorkspace, DeleteApiRequest::setWorkspace));
         builder.<DeleteApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
@@ -12403,6 +12569,144 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportDataServiceExcelRequest, ExportDataServiceExcelResponse> exportDataServiceExcel =
+        genForExportDataServiceExcel();
+
+    private static HttpRequestDef<ExportDataServiceExcelRequest, ExportDataServiceExcelResponse> genForExportDataServiceExcel() {
+        // basic
+        HttpRequestDef.Builder<ExportDataServiceExcelRequest, ExportDataServiceExcelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportDataServiceExcelRequest.class, ExportDataServiceExcelResponse.class)
+            .withName("ExportDataServiceExcel")
+            .withUri("/v1/{project_id}/service/export/excel")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDataServiceExcelRequest::getWorkspace,
+                ExportDataServiceExcelRequest::setWorkspace));
+        builder.<ExportDataServiceExcelRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportDataServiceExcelRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ExportDataServiceExcelRequest::getDlmType,
+                ExportDataServiceExcelRequest::setDlmType));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ExportDataServiceExcelRequest::getBody, ExportDataServiceExcelRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportDataServiceExcelTemplateRequest, ExportDataServiceExcelTemplateResponse> exportDataServiceExcelTemplate =
+        genForExportDataServiceExcelTemplate();
+
+    private static HttpRequestDef<ExportDataServiceExcelTemplateRequest, ExportDataServiceExcelTemplateResponse> genForExportDataServiceExcelTemplate() {
+        // basic
+        HttpRequestDef.Builder<ExportDataServiceExcelTemplateRequest, ExportDataServiceExcelTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ExportDataServiceExcelTemplateRequest.class,
+                    ExportDataServiceExcelTemplateResponse.class)
+                .withName("ExportDataServiceExcelTemplate")
+                .withUri("/v1/{project_id}/service/export/excel-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDataServiceExcelTemplateRequest::getWorkspace,
+                ExportDataServiceExcelTemplateRequest::setWorkspace));
+        builder.<ExportDataServiceExcelTemplateRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportDataServiceExcelTemplateRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ExportDataServiceExcelTemplateRequest::getDlmType,
+                ExportDataServiceExcelTemplateRequest::setDlmType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportDataServiceZipRequest, ExportDataServiceZipResponse> exportDataServiceZip =
+        genForExportDataServiceZip();
+
+    private static HttpRequestDef<ExportDataServiceZipRequest, ExportDataServiceZipResponse> genForExportDataServiceZip() {
+        // basic
+        HttpRequestDef.Builder<ExportDataServiceZipRequest, ExportDataServiceZipResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportDataServiceZipRequest.class, ExportDataServiceZipResponse.class)
+            .withName("ExportDataServiceZip")
+            .withUri("/v1/{project_id}/service/export/zip")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportDataServiceZipRequest::getWorkspace,
+                ExportDataServiceZipRequest::setWorkspace));
+        builder.<ExportDataServiceZipRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportDataServiceZipRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ExportDataServiceZipRequest::getDlmType, ExportDataServiceZipRequest::setDlmType));
+        builder.<ApiParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiParam.class),
+            f -> f.withMarshaller(ExportDataServiceZipRequest::getBody, ExportDataServiceZipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportDataServiceExcelRequest, ImportDataServiceExcelResponse> importDataServiceExcel =
+        genForImportDataServiceExcel();
+
+    private static HttpRequestDef<ImportDataServiceExcelRequest, ImportDataServiceExcelResponse> genForImportDataServiceExcel() {
+        // basic
+        HttpRequestDef.Builder<ImportDataServiceExcelRequest, ImportDataServiceExcelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ImportDataServiceExcelRequest.class, ImportDataServiceExcelResponse.class)
+            .withName("ImportDataServiceExcel")
+            .withUri("/v1/{project_id}/service/import/excel")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportDataServiceExcelRequest::getWorkspace,
+                ImportDataServiceExcelRequest::setWorkspace));
+        builder.<ImportDataServiceExcelRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ImportDataServiceExcelRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ImportDataServiceExcelRequest::getDlmType,
+                ImportDataServiceExcelRequest::setDlmType));
+        builder.<ImportDataServiceExcelRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportDataServiceExcelRequestBody.class),
+            f -> f.withMarshaller(ImportDataServiceExcelRequest::getBody, ImportDataServiceExcelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApisRequest, ListApisResponse> listApis = genForListApis();
 
     private static HttpRequestDef<ListApisRequest, ListApisResponse> genForListApis() {
@@ -12424,6 +12728,51 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApisRequest::getLimit, ListApisRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getName, ListApisRequest::setName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getDescription, ListApisRequest::setDescription));
+        builder.<String>withRequestField("create_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getCreateUser, ListApisRequest::setCreateUser));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getStartTime, ListApisRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getEndTime, ListApisRequest::setEndTime));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListApisRequest::getTags, ListApisRequest::setTags));
+        builder.<ListApisRequest.ApiTypeEnum>withRequestField("api_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListApisRequest.ApiTypeEnum.class),
+            f -> f.withMarshaller(ListApisRequest::getApiType, ListApisRequest::setApiType));
+        builder.<ListApisRequest.PublishStatusEnum>withRequestField("publish_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListApisRequest.PublishStatusEnum.class),
+            f -> f.withMarshaller(ListApisRequest::getPublishStatus, ListApisRequest::setPublishStatus));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getTableName, ListApisRequest::setTableName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -12508,38 +12857,6 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstanceListRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListInstanceListRequest::getDlmType, ListInstanceListRequest::setDlmType));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<PublishApiRequest, PublishApiResponse> publishApi = genForPublishApi();
-
-    private static HttpRequestDef<PublishApiRequest, PublishApiResponse> genForPublishApi() {
-        // basic
-        HttpRequestDef.Builder<PublishApiRequest, PublishApiResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, PublishApiRequest.class, PublishApiResponse.class)
-                .withName("PublishApi")
-                .withUri("/v1/{project_id}/service/apis/publish")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PublishApiRequest::getWorkspace, PublishApiRequest::setWorkspace));
-        builder.<PublishApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(PublishApiRequest.DlmTypeEnum.class),
-            f -> f.withMarshaller(PublishApiRequest::getDlmType, PublishApiRequest::setDlmType));
-        builder.<OpenApiParaForPublish>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OpenApiParaForPublish.class),
-            f -> f.withMarshaller(PublishApiRequest::getBody, PublishApiRequest::setBody));
 
         // response
 

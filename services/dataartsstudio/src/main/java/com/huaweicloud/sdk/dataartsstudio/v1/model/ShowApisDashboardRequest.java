@@ -21,7 +21,7 @@ public class ShowApisDashboardRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -111,7 +111,7 @@ public class ShowApisDashboardRequest {
     private Long endTime;
 
     /**
-     * 时间单位
+     * 时间单位。
      */
     public static final class TimeUnitEnum {
 
@@ -201,7 +201,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -218,7 +218,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -235,7 +235,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * 集群编号
+     * 集群编号。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -252,7 +252,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * 开始时间（13位时间戳）
+     * 开始时间（13位时间戳）。
      * @return startTime
      */
     public Long getStartTime() {
@@ -269,7 +269,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * 结束时间（13位时间戳）
+     * 结束时间（13位时间戳）。
      * @return endTime
      */
     public Long getEndTime() {
@@ -286,7 +286,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * 时间单位
+     * 时间单位。
      * @return timeUnit
      */
     public TimeUnitEnum getTimeUnit() {
@@ -303,7 +303,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * limit
+     * limit。
      * @return limit
      */
     public Integer getLimit() {
@@ -320,7 +320,7 @@ public class ShowApisDashboardRequest {
     }
 
     /**
-     * offset
+     * offset。
      * @return offset
      */
     public Integer getOffset() {

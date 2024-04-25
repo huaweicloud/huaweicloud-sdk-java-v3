@@ -368,10 +368,11 @@ VpcClient client = VpcClient.newBuilder()
 Customized configuration:
 
 ```java
-// Configure SSLSocketFactory and TrustManager, user implementation is required.
+// Configure SSLSocketFactory, TrustManager and HostnameVerifier, user implementation is required.
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     .withSSLSocketFactory(sslSocketFactory)
-    .withX509TrustManager(trustManager);
+    .withX509TrustManager(trustManager)
+    .withHostnameVerifier(hostnameVerifier);
 
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)

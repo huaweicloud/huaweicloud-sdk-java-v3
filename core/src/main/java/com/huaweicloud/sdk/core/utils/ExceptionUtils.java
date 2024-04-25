@@ -80,9 +80,9 @@ public final class ExceptionUtils {
     }
 
     private static void processErrorMessage(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
-        if (errResult.containsKey(Constants.ENCODED_AUTHORIZATION_MESSAGE)) {
-            sdkErrorMessage.setEncodedAuthorizationMessage(
-                    errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE).toString());
+        Object encodedAuthMsg = errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE);
+        if (Objects.nonNull(encodedAuthMsg)) {
+            sdkErrorMessage.setEncodedAuthorizationMessage(encodedAuthMsg.toString());
         }
 
         if (errResult.containsKey(Constants.ERROR_CODE) && errResult.containsKey(Constants.ERROR_MSG)) {

@@ -21,7 +21,7 @@ public class SearchBindApiRequest {
     private String workspace;
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      */
     public static final class DlmTypeEnum {
 
@@ -116,7 +116,7 @@ public class SearchBindApiRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID，获取方法请参见[实例ID和工作空间ID](dataartsstudio_02_0350.xml)。
      * @return workspace
      */
     public String getWorkspace() {
@@ -133,7 +133,7 @@ public class SearchBindApiRequest {
     }
 
     /**
-     * dlm版本类型
+     * 数据服务的版本类型，指定SHARED共享版或EXCLUSIVE专享版。
      * @return dlmType
      */
     public DlmTypeEnum getDlmType() {
@@ -150,7 +150,7 @@ public class SearchBindApiRequest {
     }
 
     /**
-     * app编号
+     * app编号。
      * @return appId
      */
     public String getAppId() {
@@ -167,7 +167,7 @@ public class SearchBindApiRequest {
     }
 
     /**
-     * 查询起始坐标, 即跳过前X条数据。仅支持0或limit的整数倍，不满足则向下取整
+     * 查询起始坐标, 即跳过前X条数据。仅支持0或limit的整数倍，不满足则向下取整。
      * @return offset
      */
     public Integer getOffset() {
@@ -184,7 +184,7 @@ public class SearchBindApiRequest {
     }
 
     /**
-     * 查询条数, 即查询Y条数据
+     * 查询条数, 即查询Y条数据。
      * @return limit
      */
     public Integer getLimit() {

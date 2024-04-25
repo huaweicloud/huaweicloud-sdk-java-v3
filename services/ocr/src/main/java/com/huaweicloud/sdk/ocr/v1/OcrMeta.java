@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ocr.v1.model.AcceptanceBillRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.AutoClassificationRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.BankReceiptRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BankcardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BusinessCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BusinessLicenseRequestBody;
@@ -44,6 +45,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBusinessCardRequest;
@@ -215,6 +218,35 @@ public class OcrMeta {
             TypeCasts.uncheckedConversion(AutoClassificationRequestBody.class),
             f -> f.withMarshaller(RecognizeAutoClassificationRequest::getBody,
                 RecognizeAutoClassificationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse> recognizeBankReceipt =
+        genForRecognizeBankReceipt();
+
+    private static HttpRequestDef<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse> genForRecognizeBankReceipt() {
+        // basic
+        HttpRequestDef.Builder<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeBankReceiptRequest.class, RecognizeBankReceiptResponse.class)
+            .withName("RecognizeBankReceipt")
+            .withUri("/v2/{project_id}/ocr/bank-receipt")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeBankReceiptRequest::getEnterpriseProjectId,
+                RecognizeBankReceiptRequest::setEnterpriseProjectId));
+        builder.<BankReceiptRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BankReceiptRequestBody.class),
+            f -> f.withMarshaller(RecognizeBankReceiptRequest::getBody, RecognizeBankReceiptRequest::setBody));
 
         // response
 

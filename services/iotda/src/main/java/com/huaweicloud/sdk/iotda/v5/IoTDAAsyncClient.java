@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -61,6 +63,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
@@ -93,6 +97,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
@@ -135,6 +141,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowRequest;
@@ -171,6 +179,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
@@ -1903,6 +1913,155 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(
         UpdateDeviceRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.updateDevice, hcClient);
+    }
+
+    /**
+     * 创建设备代理
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个动态设备代理规则，用于子设备自主选择网关设备上线和上报消息，即代理组下的任意网关下的子设备均可以通过代理组里其他设备上线([[网关更新子设备状态](https://support.huaweicloud.com/api-iothub/iot_06_v5_3022.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3022.html)](tag:hws_hk))然后进行数据上报([[网关批量设备属性上报](https://support.huaweicloud.com/api-iothub/iot_06_v5_3006.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3006.html)](tag:hws_hk))。
+     * - 单实例最多可以配置10个设备代理
+     * - 单账号调用该接口的 TPS 限制最大为1/S(每秒1次请求数)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceProxyRequest 请求对象
+     * @return CompletableFuture<CreateDeviceProxyResponse>
+     */
+    public CompletableFuture<CreateDeviceProxyResponse> createDeviceProxyAsync(CreateDeviceProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createDeviceProxy);
+    }
+
+    /**
+     * 创建设备代理
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个动态设备代理规则，用于子设备自主选择网关设备上线和上报消息，即代理组下的任意网关下的子设备均可以通过代理组里其他设备上线([[网关更新子设备状态](https://support.huaweicloud.com/api-iothub/iot_06_v5_3022.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3022.html)](tag:hws_hk))然后进行数据上报([[网关批量设备属性上报](https://support.huaweicloud.com/api-iothub/iot_06_v5_3006.html)](tag:hws) [[网关更新子设备状态](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_3006.html)](tag:hws_hk))。
+     * - 单实例最多可以配置10个设备代理
+     * - 单账号调用该接口的 TPS 限制最大为1/S(每秒1次请求数)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceProxyRequest 请求对象
+     * @return AsyncInvoker<CreateDeviceProxyRequest, CreateDeviceProxyResponse>
+     */
+    public AsyncInvoker<CreateDeviceProxyRequest, CreateDeviceProxyResponse> createDeviceProxyAsyncInvoker(
+        CreateDeviceProxyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createDeviceProxy, hcClient);
+    }
+
+    /**
+     * 删除设备代理
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定设备代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceProxyRequest 请求对象
+     * @return CompletableFuture<DeleteDeviceProxyResponse>
+     */
+    public CompletableFuture<DeleteDeviceProxyResponse> deleteDeviceProxyAsync(DeleteDeviceProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteDeviceProxy);
+    }
+
+    /**
+     * 删除设备代理
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定设备代理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceProxyRequest 请求对象
+     * @return AsyncInvoker<DeleteDeviceProxyRequest, DeleteDeviceProxyResponse>
+     */
+    public AsyncInvoker<DeleteDeviceProxyRequest, DeleteDeviceProxyResponse> deleteDeviceProxyAsyncInvoker(
+        DeleteDeviceProxyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteDeviceProxy, hcClient);
+    }
+
+    /**
+     * 查询设备代理列表
+     *
+     * 应用服务器可调用此接口查询物联网平台中的设备代理列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceProxiesRequest 请求对象
+     * @return CompletableFuture<ListDeviceProxiesResponse>
+     */
+    public CompletableFuture<ListDeviceProxiesResponse> listDeviceProxiesAsync(ListDeviceProxiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listDeviceProxies);
+    }
+
+    /**
+     * 查询设备代理列表
+     *
+     * 应用服务器可调用此接口查询物联网平台中的设备代理列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceProxiesRequest 请求对象
+     * @return AsyncInvoker<ListDeviceProxiesRequest, ListDeviceProxiesResponse>
+     */
+    public AsyncInvoker<ListDeviceProxiesRequest, ListDeviceProxiesResponse> listDeviceProxiesAsyncInvoker(
+        ListDeviceProxiesRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listDeviceProxies, hcClient);
+    }
+
+    /**
+     * 查询设备代理详情
+     *
+     * 应用服务器可调用此接口查询物联网平台中指定设备代理的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceProxyRequest 请求对象
+     * @return CompletableFuture<ShowDeviceProxyResponse>
+     */
+    public CompletableFuture<ShowDeviceProxyResponse> showDeviceProxyAsync(ShowDeviceProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showDeviceProxy);
+    }
+
+    /**
+     * 查询设备代理详情
+     *
+     * 应用服务器可调用此接口查询物联网平台中指定设备代理的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceProxyRequest 请求对象
+     * @return AsyncInvoker<ShowDeviceProxyRequest, ShowDeviceProxyResponse>
+     */
+    public AsyncInvoker<ShowDeviceProxyRequest, ShowDeviceProxyResponse> showDeviceProxyAsyncInvoker(
+        ShowDeviceProxyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showDeviceProxy, hcClient);
+    }
+
+    /**
+     * 修改设备代理
+     *
+     * 应用服务器可调用此接口修改物联网平台中指定设备代理的基本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceProxyRequest 请求对象
+     * @return CompletableFuture<UpdateDeviceProxyResponse>
+     */
+    public CompletableFuture<UpdateDeviceProxyResponse> updateDeviceProxyAsync(UpdateDeviceProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateDeviceProxy);
+    }
+
+    /**
+     * 修改设备代理
+     *
+     * 应用服务器可调用此接口修改物联网平台中指定设备代理的基本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceProxyRequest 请求对象
+     * @return AsyncInvoker<UpdateDeviceProxyRequest, UpdateDeviceProxyResponse>
+     */
+    public AsyncInvoker<UpdateDeviceProxyRequest, UpdateDeviceProxyResponse> updateDeviceProxyAsyncInvoker(
+        UpdateDeviceProxyRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateDeviceProxy, hcClient);
     }
 
     /**

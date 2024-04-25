@@ -247,7 +247,7 @@ public class ApplyCertificateRequestBody {
     }
 
     /**
-     * 申请人的姓名。字符长度为0~63位。
+     * 申请人的姓名。请输入中文、英文字符，下划线，中划线，英文逗号，英文句点，且长度为4到100字节。
      * @return applicantName
      */
     public String getApplicantName() {

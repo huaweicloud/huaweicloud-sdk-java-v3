@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.dataartsstudio.v1.model;
 
-import com.huaweicloud.sdk.core.SdkResponse;
+import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class PublishApiResponse extends SdkResponse {
+public class ExportDataServiceExcelTemplateResponse extends SdkStreamResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -28,7 +28,7 @@ public class PublishApiResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class PublishApiResponse {\n");
+        sb.append("class ExportDataServiceExcelTemplateResponse {\n");
         sb.append("}");
         return sb.toString();
     }

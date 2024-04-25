@@ -214,6 +214,11 @@ public class TaskInfo {
     private Boolean canManage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_disable")
+
+    private Boolean canDisable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_component_list")
 
     private List<AppComponentDao> appComponentList = null;
@@ -232,6 +237,11 @@ public class TaskInfo {
     @JsonProperty(value = "release_id")
 
     private Integer releaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_disable")
+
+    private Boolean isDisable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
@@ -683,6 +693,23 @@ public class TaskInfo {
         this.canManage = canManage;
     }
 
+    public TaskInfo withCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+        return this;
+    }
+
+    /**
+     * 是否有禁用应用的权限
+     * @return canDisable
+     */
+    public Boolean getCanDisable() {
+        return canDisable;
+    }
+
+    public void setCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+    }
+
     public TaskInfo withAppComponentList(List<AppComponentDao> appComponentList) {
         this.appComponentList = appComponentList;
         return this;
@@ -765,6 +792,23 @@ public class TaskInfo {
 
     public void setReleaseId(Integer releaseId) {
         this.releaseId = releaseId;
+    }
+
+    public TaskInfo withIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
+        return this;
+    }
+
+    /**
+     * 当前应用是否被禁用
+     * @return isDisable
+     */
+    public Boolean getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
     }
 
     public TaskInfo withDuration(String duration) {
@@ -891,9 +935,11 @@ public class TaskInfo {
             && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
             && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
             && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
+            && Objects.equals(this.canDisable, that.canDisable)
             && Objects.equals(this.appComponentList, that.appComponentList) && Objects.equals(this.roleId, that.roleId)
             && Objects.equals(this.id, that.id) && Objects.equals(this.releaseId, that.releaseId)
-            && Objects.equals(this.duration, that.duration) && Objects.equals(this.executionState, that.executionState)
+            && Objects.equals(this.isDisable, that.isDisable) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.executionState, that.executionState)
             && Objects.equals(this.executorId, that.executorId)
             && Objects.equals(this.executorNickName, that.executorNickName) && Objects.equals(this.steps, that.steps);
     }
@@ -925,10 +971,12 @@ public class TaskInfo {
             canExecute,
             canCopy,
             canManage,
+            canDisable,
             appComponentList,
             roleId,
             id,
             releaseId,
+            isDisable,
             duration,
             executionState,
             executorId,
@@ -965,10 +1013,12 @@ public class TaskInfo {
         sb.append("    canExecute: ").append(toIndentedString(canExecute)).append("\n");
         sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
+        sb.append("    canDisable: ").append(toIndentedString(canDisable)).append("\n");
         sb.append("    appComponentList: ").append(toIndentedString(appComponentList)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
+        sb.append("    isDisable: ").append(toIndentedString(isDisable)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    executionState: ").append(toIndentedString(executionState)).append("\n");
         sb.append("    executorId: ").append(toIndentedString(executorId)).append("\n");

@@ -20,6 +20,41 @@ public class SourceInstanceBody {
 
     private String password;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_status")
+
+    private String taskStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private String port;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_multi_db")
+
+    private Boolean proxyMultiDb;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db")
+
+    private String db;
+
     public SourceInstanceBody withAddrs(String addrs) {
         this.addrs = addrs;
         return this;
@@ -54,6 +89,125 @@ public class SourceInstanceBody {
         this.password = password;
     }
 
+    public SourceInstanceBody withTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+        return this;
+    }
+
+    /**
+     * 任务状态。
+     * @return taskStatus
+     */
+    public String getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public SourceInstanceBody withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Redis实例ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public SourceInstanceBody withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * Redis IP地址。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public SourceInstanceBody withPort(String port) {
+        this.port = port;
+        return this;
+    }
+
+    /**
+     * Redis端口。
+     * @return port
+     */
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    public SourceInstanceBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * Redis名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public SourceInstanceBody withProxyMultiDb(Boolean proxyMultiDb) {
+        this.proxyMultiDb = proxyMultiDb;
+        return this;
+    }
+
+    /**
+     * proxy实例是否开启了多DB。
+     * @return proxyMultiDb
+     */
+    public Boolean getProxyMultiDb() {
+        return proxyMultiDb;
+    }
+
+    public void setProxyMultiDb(Boolean proxyMultiDb) {
+        this.proxyMultiDb = proxyMultiDb;
+    }
+
+    public SourceInstanceBody withDb(String db) {
+        this.db = db;
+        return this;
+    }
+
+    /**
+     * Redis数据库。
+     * @return db
+     */
+    public String getDb() {
+        return db;
+    }
+
+    public void setDb(String db) {
+        this.db = db;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +217,16 @@ public class SourceInstanceBody {
             return false;
         }
         SourceInstanceBody that = (SourceInstanceBody) obj;
-        return Objects.equals(this.addrs, that.addrs) && Objects.equals(this.password, that.password);
+        return Objects.equals(this.addrs, that.addrs) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.proxyMultiDb, that.proxyMultiDb)
+            && Objects.equals(this.db, that.db);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addrs, password);
+        return Objects.hash(addrs, password, taskStatus, id, ip, port, name, proxyMultiDb, db);
     }
 
     @Override
@@ -77,6 +235,13 @@ public class SourceInstanceBody {
         sb.append("class SourceInstanceBody {\n");
         sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    proxyMultiDb: ").append(toIndentedString(proxyMultiDb)).append("\n");
+        sb.append("    db: ").append(toIndentedString(db)).append("\n");
         sb.append("}");
         return sb.toString();
     }

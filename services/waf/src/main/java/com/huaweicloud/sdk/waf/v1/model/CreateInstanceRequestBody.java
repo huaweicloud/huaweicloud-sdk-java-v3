@@ -169,7 +169,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 独享引擎版本规格   - waf.instance.enterprise：企业版，对应控制台WI-100规格   - waf.instance.professional：专业版，对应控制台WI-500规格
+     * 独享引擎版本规格   - waf.instance.enterprise：企业版，对应控制台WI-500规格   - waf.instance.professional：专业版，对应控制台WI-100规格
      * @return specification
      */
     public String getSpecification() {

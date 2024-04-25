@@ -61,6 +61,11 @@ public class UpdatePolicyRuleStatusRequest {
          */
         public static final RuletypeEnum IGNORE = new RuletypeEnum("ignore");
 
+        /**
+         * Enum CC for value: "cc"
+         */
+        public static final RuletypeEnum CC = new RuletypeEnum("cc");
+
         private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuletypeEnum> createStaticFields() {
@@ -71,6 +76,7 @@ public class UpdatePolicyRuleStatusRequest {
             map.put("antitamper", ANTITAMPER);
             map.put("custom", CUSTOM);
             map.put("ignore", IGNORE);
+            map.put("cc", CC);
             return Collections.unmodifiableMap(map);
         }
 

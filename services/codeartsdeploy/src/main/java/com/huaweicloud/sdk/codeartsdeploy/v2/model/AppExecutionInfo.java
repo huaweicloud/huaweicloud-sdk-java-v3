@@ -29,6 +29,11 @@ public class AppExecutionInfo {
     private String duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_disable")
+
+    private Boolean isDisable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -77,6 +82,11 @@ public class AppExecutionInfo {
     @JsonProperty(value = "can_create_env")
 
     private Boolean canCreateEnv;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_disable")
+
+    private Boolean canDisable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_system")
@@ -187,6 +197,23 @@ public class AppExecutionInfo {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public AppExecutionInfo withIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
+        return this;
+    }
+
+    /**
+     * 当前应用是否被禁用
+     * @return isDisable
+     */
+    public Boolean getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Boolean isDisable) {
+        this.isDisable = isDisable;
     }
 
     public AppExecutionInfo withProjectId(String projectId) {
@@ -357,6 +384,23 @@ public class AppExecutionInfo {
 
     public void setCanCreateEnv(Boolean canCreateEnv) {
         this.canCreateEnv = canCreateEnv;
+    }
+
+    public AppExecutionInfo withCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
+        return this;
+    }
+
+    /**
+     * 是否有禁用应用的权限
+     * @return canDisable
+     */
+    public Boolean getCanDisable() {
+        return canDisable;
+    }
+
+    public void setCanDisable(Boolean canDisable) {
+        this.canDisable = canDisable;
     }
 
     public AppExecutionInfo withDeploySystem(String deploySystem) {
@@ -589,13 +633,13 @@ public class AppExecutionInfo {
         }
         AppExecutionInfo that = (AppExecutionInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.duration, that.duration) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.isCare, that.isCare)
-            && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
-            && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
-            && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
-            && Objects.equals(this.canCreateEnv, that.canCreateEnv)
-            && Objects.equals(this.deploySystem, that.deploySystem)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.isDisable, that.isDisable)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.isCare, that.isCare) && Objects.equals(this.canModify, that.canModify)
+            && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.canView, that.canView)
+            && Objects.equals(this.canExecute, that.canExecute) && Objects.equals(this.canCopy, that.canCopy)
+            && Objects.equals(this.canManage, that.canManage) && Objects.equals(this.canCreateEnv, that.canCreateEnv)
+            && Objects.equals(this.canDisable, that.canDisable) && Objects.equals(this.deploySystem, that.deploySystem)
             && Objects.equals(this.createUserId, that.createUserId)
             && Objects.equals(this.createTenantId, that.createTenantId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -611,6 +655,7 @@ public class AppExecutionInfo {
         return Objects.hash(id,
             name,
             duration,
+            isDisable,
             projectId,
             projectName,
             isCare,
@@ -621,6 +666,7 @@ public class AppExecutionInfo {
             canCopy,
             canManage,
             canCreateEnv,
+            canDisable,
             deploySystem,
             createUserId,
             createTenantId,
@@ -642,6 +688,7 @@ public class AppExecutionInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    isDisable: ").append(toIndentedString(isDisable)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    isCare: ").append(toIndentedString(isCare)).append("\n");
@@ -652,6 +699,7 @@ public class AppExecutionInfo {
         sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
         sb.append("    canCreateEnv: ").append(toIndentedString(canCreateEnv)).append("\n");
+        sb.append("    canDisable: ").append(toIndentedString(canDisable)).append("\n");
         sb.append("    deploySystem: ").append(toIndentedString(deploySystem)).append("\n");
         sb.append("    createUserId: ").append(toIndentedString(createUserId)).append("\n");
         sb.append("    createTenantId: ").append(toIndentedString(createTenantId)).append("\n");

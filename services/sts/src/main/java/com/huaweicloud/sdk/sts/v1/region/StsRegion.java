@@ -20,8 +20,6 @@ public class StsRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://sts.cn-east-3.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://sts.cn-north-9.myhuaweicloud.com");
-
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://sts.cn-southwest-2.myhuaweicloud.com");
 
@@ -45,8 +43,6 @@ public class StsRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://sts.tr-west-1.myhuaweicloud.com");
 
-    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://sts.cn-south-4.myhuaweicloud.com");
-
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("STS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -56,7 +52,6 @@ public class StsRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-3", CN_EAST_3);
-        map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
@@ -66,7 +61,6 @@ public class StsRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("tr-west-1", TR_WEST_1);
-        map.put("cn-south-4", CN_SOUTH_4);
         return Collections.unmodifiableMap(map);
     }
 

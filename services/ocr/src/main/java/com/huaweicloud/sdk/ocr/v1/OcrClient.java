@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBusinessCardRequest;
@@ -177,6 +179,35 @@ public class OcrClient {
     public SyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassificationInvoker(
         RecognizeAutoClassificationRequest request) {
         return new SyncInvoker<>(request, OcrMeta.recognizeAutoClassification, hcClient);
+    }
+
+    /**
+     * 银行回单识别
+     *
+     * 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeBankReceiptRequest 请求对象
+     * @return RecognizeBankReceiptResponse
+     */
+    public RecognizeBankReceiptResponse recognizeBankReceipt(RecognizeBankReceiptRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeBankReceipt);
+    }
+
+    /**
+     * 银行回单识别
+     *
+     * 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeBankReceiptRequest 请求对象
+     * @return SyncInvoker<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse>
+     */
+    public SyncInvoker<RecognizeBankReceiptRequest, RecognizeBankReceiptResponse> recognizeBankReceiptInvoker(
+        RecognizeBankReceiptRequest request) {
+        return new SyncInvoker<>(request, OcrMeta.recognizeBankReceipt, hcClient);
     }
 
     /**

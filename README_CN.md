@@ -369,10 +369,11 @@ VpcClient client = VpcClient.newBuilder()
 自定义配置：
 
 ```java
-// 自定义SSLSocketFactory和TrustManager，需要用户自行实现
+// 自定义SSLSocketFactory、TrustManager和HostnameVerifier，需要用户自行实现
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     .withSSLSocketFactory(sslSocketFactory)
-    .withX509TrustManager(trustManager);
+    .withX509TrustManager(trustManager)
+    .withHostnameVerifier(hostnameVerifier);
     
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)

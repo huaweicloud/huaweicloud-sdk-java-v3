@@ -46,6 +46,11 @@ public class SmartDocumentRecognizerRequestBody {
     private Boolean form;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "formula")
+
+    private Boolean formula;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kv_map")
 
     private String kvMap;
@@ -169,6 +174,23 @@ public class SmartDocumentRecognizerRequestBody {
         this.form = form;
     }
 
+    public SmartDocumentRecognizerRequestBody withFormula(Boolean formula) {
+        this.formula = formula;
+        return this;
+    }
+
+    /**
+     * 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+     * @return formula
+     */
+    public Boolean getFormula() {
+        return formula;
+    }
+
+    public void setFormula(Boolean formula) {
+        this.formula = formula;
+    }
+
     public SmartDocumentRecognizerRequestBody withKvMap(String kvMap) {
         this.kvMap = kvMap;
         return this;
@@ -198,12 +220,13 @@ public class SmartDocumentRecognizerRequestBody {
         return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
             && Objects.equals(this.kv, that.kv) && Objects.equals(this.table, that.table)
             && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel)
-            && Objects.equals(this.form, that.form) && Objects.equals(this.kvMap, that.kvMap);
+            && Objects.equals(this.form, that.form) && Objects.equals(this.formula, that.formula)
+            && Objects.equals(this.kvMap, that.kvMap);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url, kv, table, layout, returnExcel, form, kvMap);
+        return Objects.hash(data, url, kv, table, layout, returnExcel, form, formula, kvMap);
     }
 
     @Override
@@ -217,6 +240,7 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    layout: ").append(toIndentedString(layout)).append("\n");
         sb.append("    returnExcel: ").append(toIndentedString(returnExcel)).append("\n");
         sb.append("    form: ").append(toIndentedString(form)).append("\n");
+        sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
         sb.append("    kvMap: ").append(toIndentedString(kvMap)).append("\n");
         sb.append("}");
         return sb.toString();
