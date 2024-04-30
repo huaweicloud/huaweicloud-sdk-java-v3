@@ -33,7 +33,7 @@ public class CssIndex {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_data_size")
 
-    private Integer indexDataSize;
+    private Double indexDataSize;
 
     public CssIndex withIndexName(String indexName) {
         this.indexName = indexName;
@@ -103,7 +103,7 @@ public class CssIndex {
         this.indexDocCount = indexDocCount;
     }
 
-    public CssIndex withIndexDataSize(Integer indexDataSize) {
+    public CssIndex withIndexDataSize(Double indexDataSize) {
         this.indexDataSize = indexDataSize;
         return this;
     }
@@ -112,11 +112,11 @@ public class CssIndex {
      * 索引数据量大小
      * @return indexDataSize
      */
-    public Integer getIndexDataSize() {
+    public Double getIndexDataSize() {
         return indexDataSize;
     }
 
-    public void setIndexDataSize(Integer indexDataSize) {
+    public void setIndexDataSize(Double indexDataSize) {
         this.indexDataSize = indexDataSize;
     }
 

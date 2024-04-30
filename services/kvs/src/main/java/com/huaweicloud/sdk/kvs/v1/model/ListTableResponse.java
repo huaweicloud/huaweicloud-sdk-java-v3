@@ -70,7 +70,7 @@ public class ListTableResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * 返回的表名列表。 - 长度：最大_100
+     * 返回的表名列表。 - 长度：最大100
      * @return tableNames
      */
     public List<String> getTableNames() {

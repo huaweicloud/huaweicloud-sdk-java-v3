@@ -9,6 +9,10 @@ import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CloseAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CloseAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitRequest;
@@ -128,6 +132,64 @@ public class OrganizationsAsyncClient {
         ClientBuilder<OrganizationsAsyncClient> clientBuilder =
             new ClientBuilder<>(OrganizationsAsyncClient::new, "GlobalCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 关闭账号
+     *
+     * 关闭账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseAccountRequest 请求对象
+     * @return CompletableFuture<CloseAccountResponse>
+     */
+    public CompletableFuture<CloseAccountResponse> closeAccountAsync(CloseAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.closeAccount);
+    }
+
+    /**
+     * 关闭账号
+     *
+     * 关闭账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseAccountRequest 请求对象
+     * @return AsyncInvoker<CloseAccountRequest, CloseAccountResponse>
+     */
+    public AsyncInvoker<CloseAccountRequest, CloseAccountResponse> closeAccountAsyncInvoker(
+        CloseAccountRequest request) {
+        return new AsyncInvoker<>(request, OrganizationsMeta.closeAccount, hcClient);
+    }
+
+    /**
+     * 创建账号
+     *
+     * 创建一个账号，生成的账号将自动成为调用此接口的账号所属组织的成员。此操作只能由组织的管理账号调用。组织云服务将在新账号中创建所需的服务关联委托和账号访问委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccountRequest 请求对象
+     * @return CompletableFuture<CreateAccountResponse>
+     */
+    public CompletableFuture<CreateAccountResponse> createAccountAsync(CreateAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.createAccount);
+    }
+
+    /**
+     * 创建账号
+     *
+     * 创建一个账号，生成的账号将自动成为调用此接口的账号所属组织的成员。此操作只能由组织的管理账号调用。组织云服务将在新账号中创建所需的服务关联委托和账号访问委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccountRequest 请求对象
+     * @return AsyncInvoker<CreateAccountRequest, CreateAccountResponse>
+     */
+    public AsyncInvoker<CreateAccountRequest, CreateAccountResponse> createAccountAsyncInvoker(
+        CreateAccountRequest request) {
+        return new AsyncInvoker<>(request, OrganizationsMeta.createAccount, hcClient);
     }
 
     /**

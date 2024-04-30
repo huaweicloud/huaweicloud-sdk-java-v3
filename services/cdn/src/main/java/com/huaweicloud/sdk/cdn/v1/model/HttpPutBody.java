@@ -119,7 +119,7 @@ public class HttpPutBody {
     }
 
     /**
-     * 证书来源,1：华为云托管证书,0：自有证书, 默认值0。  > 证书开启时必传
+     * 证书来源,0：自有证书。  > 证书开启时必传
      * @return certificateSource
      */
     public Integer getCertificateSource() {

@@ -50,7 +50,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * 返回的文档数量，为_0_不表示结束。 - 如果filtered_count超过_500_仍无匹配，则返回_0。 -  长度：4
+     * 返回的文档数量，为0不表示结束。 - 如果filtered_count超过500仍无匹配，则返回0。 -  长度：4
      * @return returnedCount
      */
     public Integer getReturnedCount() {

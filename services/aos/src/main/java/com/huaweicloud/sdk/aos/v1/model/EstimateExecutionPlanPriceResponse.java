@@ -1,16 +1,11 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,100 +14,30 @@ import java.util.function.Consumer;
  */
 public class EstimateExecutionPlanPriceResponse extends SdkResponse {
 
-    /**
-     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种
-     */
-    public static final class CurrencyEnum {
-
-        /**
-         * Enum CNY for value: "CNY"
-         */
-        public static final CurrencyEnum CNY = new CurrencyEnum("CNY");
-
-        /**
-         * Enum USD for value: "USD"
-         */
-        public static final CurrencyEnum USD = new CurrencyEnum("USD");
-
-        private static final Map<String, CurrencyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, CurrencyEnum> createStaticFields() {
-            Map<String, CurrencyEnum> map = new HashMap<>();
-            map.put("CNY", CNY);
-            map.put("USD", USD);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        CurrencyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static CurrencyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CurrencyEnum(value));
-        }
-
-        public static CurrencyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof CurrencyEnum) {
-                return this.value.equals(((CurrencyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currency")
 
-    private CurrencyEnum currency;
+    private String currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<ItemsResponse> items = null;
 
-    public EstimateExecutionPlanPriceResponse withCurrency(CurrencyEnum currency) {
+    public EstimateExecutionPlanPriceResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
     /**
-     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种
+     * 币种，枚举值   * [`CNY` - 元，中国站返回的币种](tag:hws)[`USD` - 美元，国际站返回的币种](tag:hws_hk)[`USD` - 美元，欧洲站返回的币种](tag:hws_eu)
      * @return currency
      */
-    public CurrencyEnum getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(CurrencyEnum currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 

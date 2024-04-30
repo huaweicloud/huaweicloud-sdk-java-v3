@@ -47,7 +47,7 @@ public class ListTableRequestBody {
     }
 
     /**
-     * 响应返回的表个数。 - 长度：最大_100
+     * 响应返回的表个数。 - 长度：最大100
      * @return limit
      */
     public Integer getLimit() {

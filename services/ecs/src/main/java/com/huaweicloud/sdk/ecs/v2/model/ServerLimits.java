@@ -96,7 +96,7 @@ public class ServerLimits {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalRAMUsed")
 
-    private Integer totalRAMUsed;
+    private Long totalRAMUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalSecurityGroupsUsed")
@@ -415,7 +415,7 @@ public class ServerLimits {
         this.totalInstancesUsed = totalInstancesUsed;
     }
 
-    public ServerLimits withTotalRAMUsed(Integer totalRAMUsed) {
+    public ServerLimits withTotalRAMUsed(Long totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
         return this;
     }
@@ -424,11 +424,11 @@ public class ServerLimits {
      * 当前内存使用容量（单位：MB）。
      * @return totalRAMUsed
      */
-    public Integer getTotalRAMUsed() {
+    public Long getTotalRAMUsed() {
         return totalRAMUsed;
     }
 
-    public void setTotalRAMUsed(Integer totalRAMUsed) {
+    public void setTotalRAMUsed(Long totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
     }
 

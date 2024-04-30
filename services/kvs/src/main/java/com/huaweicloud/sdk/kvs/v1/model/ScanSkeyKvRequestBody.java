@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -58,18 +56,6 @@ public class ScanSkeyKvRequestBody {
 
     private ConditionExpression filterExpression;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_fields")
-    @BsonProperty(value = "projection_fields")
-
-    private List<String> projectionFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_blob")
-    @BsonProperty(value = "projection_blob")
-
-    private ProjectionBlob projectionBlob;
-
     public ScanSkeyKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -110,7 +96,7 @@ public class ScanSkeyKvRequestBody {
     }
 
     /**
-     * 数据量不超过_1_mb时，返回的文档个数，最大_100_个，默认_1_mb_或者_100_个文档。
+     * 数据量不超过1mb时，返回的文档个数，最大100个，默认1mb或者100个文档。
      * maximum: 100
      * @return limit
      */
@@ -199,65 +185,6 @@ public class ScanSkeyKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
-    public ScanSkeyKvRequestBody withProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-        return this;
-    }
-
-    public ScanSkeyKvRequestBody addProjectionFieldsItem(String projectionFieldsItem) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        this.projectionFields.add(projectionFieldsItem);
-        return this;
-    }
-
-    public ScanSkeyKvRequestBody withProjectionFields(Consumer<List<String>> projectionFieldsSetter) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        projectionFieldsSetter.accept(this.projectionFields);
-        return this;
-    }
-
-    /**
-     * 对kv_doc有效，返回哪些字段列表，默认全部。 - 数组元素的字段名或嵌套字段路径用'/'分割，e_name为下标。
-     * @return projectionFields
-     */
-    public List<String> getProjectionFields() {
-        return projectionFields;
-    }
-
-    public void setProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-    }
-
-    public ScanSkeyKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-        return this;
-    }
-
-    public ScanSkeyKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
-        if (this.projectionBlob == null) {
-            this.projectionBlob = new ProjectionBlob();
-            projectionBlobSetter.accept(this.projectionBlob);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get projectionBlob
-     * @return projectionBlob
-     */
-    public ProjectionBlob getProjectionBlob() {
-        return projectionBlob;
-    }
-
-    public void setProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -270,22 +197,12 @@ public class ScanSkeyKvRequestBody {
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.shardKey, that.shardKey)
             && Objects.equals(this.startSortKey, that.startSortKey) && Objects.equals(this.endSortKey, that.endSortKey)
-            && Objects.equals(this.filterExpression, that.filterExpression)
-            && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.projectionBlob, that.projectionBlob);
+            && Objects.equals(this.filterExpression, that.filterExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName,
-            hintIndexName,
-            limit,
-            shardKey,
-            startSortKey,
-            endSortKey,
-            filterExpression,
-            projectionFields,
-            projectionBlob);
+        return Objects.hash(tableName, hintIndexName, limit, shardKey, startSortKey, endSortKey, filterExpression);
     }
 
     @Override
@@ -299,8 +216,6 @@ public class ScanSkeyKvRequestBody {
         sb.append("    startSortKey: ").append(toIndentedString(startSortKey)).append("\n");
         sb.append("    endSortKey: ").append(toIndentedString(endSortKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
-        sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
-        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

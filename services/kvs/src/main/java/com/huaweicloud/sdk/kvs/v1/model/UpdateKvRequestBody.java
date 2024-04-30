@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -47,22 +45,10 @@ public class UpdateKvRequestBody {
     private UpdateFields updateFields;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_fields")
-    @BsonProperty(value = "projection_fields")
-
-    private List<String> projectionFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_blob")
     @BsonProperty(value = "update_blob")
 
     private UpdateBlob updateBlob;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_blob")
-    @BsonProperty(value = "projection_blob")
-
-    private ProjectionBlob projectionBlob;
 
     public UpdateKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -176,39 +162,6 @@ public class UpdateKvRequestBody {
         this.updateFields = updateFields;
     }
 
-    public UpdateKvRequestBody withProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-        return this;
-    }
-
-    public UpdateKvRequestBody addProjectionFieldsItem(String projectionFieldsItem) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        this.projectionFields.add(projectionFieldsItem);
-        return this;
-    }
-
-    public UpdateKvRequestBody withProjectionFields(Consumer<List<String>> projectionFieldsSetter) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        projectionFieldsSetter.accept(this.projectionFields);
-        return this;
-    }
-
-    /**
-     * 对kv_doc有效，返回哪些字段列表，默认全部。 > 字段名或嵌套字段路径用'/'分割 ，e_name为下标。
-     * @return projectionFields
-     */
-    public List<String> getProjectionFields() {
-        return projectionFields;
-    }
-
-    public void setProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-    }
-
     public UpdateKvRequestBody withUpdateBlob(UpdateBlob updateBlob) {
         this.updateBlob = updateBlob;
         return this;
@@ -235,32 +188,6 @@ public class UpdateKvRequestBody {
         this.updateBlob = updateBlob;
     }
 
-    public UpdateKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-        return this;
-    }
-
-    public UpdateKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
-        if (this.projectionBlob == null) {
-            this.projectionBlob = new ProjectionBlob();
-            projectionBlobSetter.accept(this.projectionBlob);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get projectionBlob
-     * @return projectionBlob
-     */
-    public ProjectionBlob getProjectionBlob() {
-        return projectionBlob;
-    }
-
-    public void setProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -273,21 +200,12 @@ public class UpdateKvRequestBody {
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.primaryKey, that.primaryKey)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
             && Objects.equals(this.kvOptions, that.kvOptions) && Objects.equals(this.updateFields, that.updateFields)
-            && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.updateBlob, that.updateBlob)
-            && Objects.equals(this.projectionBlob, that.projectionBlob);
+            && Objects.equals(this.updateBlob, that.updateBlob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName,
-            primaryKey,
-            conditionExpression,
-            kvOptions,
-            updateFields,
-            projectionFields,
-            updateBlob,
-            projectionBlob);
+        return Objects.hash(tableName, primaryKey, conditionExpression, kvOptions, updateFields, updateBlob);
     }
 
     @Override
@@ -299,9 +217,7 @@ public class UpdateKvRequestBody {
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
         sb.append("    kvOptions: ").append(toIndentedString(kvOptions)).append("\n");
         sb.append("    updateFields: ").append(toIndentedString(updateFields)).append("\n");
-        sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
         sb.append("    updateBlob: ").append(toIndentedString(updateBlob)).append("\n");
-        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

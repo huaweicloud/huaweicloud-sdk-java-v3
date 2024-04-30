@@ -33,7 +33,7 @@ public class ObsFolder {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
 
-    private Integer dataSize;
+    private Double dataSize;
 
     public ObsFolder withFolderName(String folderName) {
         this.folderName = folderName;
@@ -103,7 +103,7 @@ public class ObsFolder {
         this.objectCount = objectCount;
     }
 
-    public ObsFolder withDataSize(Integer dataSize) {
+    public ObsFolder withDataSize(Double dataSize) {
         this.dataSize = dataSize;
         return this;
     }
@@ -112,11 +112,11 @@ public class ObsFolder {
      * 数据量
      * @return dataSize
      */
-    public Integer getDataSize() {
+    public Double getDataSize() {
         return dataSize;
     }
 
-    public void setDataSize(Integer dataSize) {
+    public void setDataSize(Double dataSize) {
         this.dataSize = dataSize;
     }
 

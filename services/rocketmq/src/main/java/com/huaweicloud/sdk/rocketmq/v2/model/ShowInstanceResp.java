@@ -184,6 +184,11 @@ public class ShowInstanceResp {
     private List<String> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zone_names")
+
+    private List<String> availableZoneNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
     private String userId;
@@ -337,6 +342,11 @@ public class ShowInstanceResp {
     @JsonProperty(value = "public_grpc_address")
 
     private String publicGrpcAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -495,7 +505,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
+     * [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -681,7 +691,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * IO未售罄的可用区列表。
+     * 可用区ID列表。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -690,6 +700,39 @@ public class ShowInstanceResp {
 
     public void setAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
+    }
+
+    public ShowInstanceResp withAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
+        return this;
+    }
+
+    public ShowInstanceResp addAvailableZoneNamesItem(String availableZoneNamesItem) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        this.availableZoneNames.add(availableZoneNamesItem);
+        return this;
+    }
+
+    public ShowInstanceResp withAvailableZoneNames(Consumer<List<String>> availableZoneNamesSetter) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        availableZoneNamesSetter.accept(this.availableZoneNames);
+        return this;
+    }
+
+    /**
+     * 可用区名称列表。
+     * @return availableZoneNames
+     */
+    public List<String> getAvailableZoneNames() {
+        return availableZoneNames;
+    }
+
+    public void setAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
     }
 
     public ShowInstanceResp withUserId(String userId) {
@@ -1219,6 +1262,23 @@ public class ShowInstanceResp {
         this.publicGrpcAddress = publicGrpcAddress;
     }
 
+    public ShowInstanceResp withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ShowInstanceResp withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
@@ -1306,8 +1366,10 @@ public class ShowInstanceResp {
             && Objects.equals(this.securityGroupName, that.securityGroupName)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.subnetName, that.subnetName)
             && Objects.equals(this.subnetCidr, that.subnetCidr)
-            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.userId, that.userId)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.availableZoneNames, that.availableZoneNames)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
             && Objects.equals(this.maintainEnd, that.maintainEnd)
             && Objects.equals(this.enableLogCollection, that.enableLogCollection)
             && Objects.equals(this.storageSpace, that.storageSpace)
@@ -1330,8 +1392,9 @@ public class ShowInstanceResp {
             && Objects.equals(this.publicNamesrvAddress, that.publicNamesrvAddress)
             && Objects.equals(this.publicBrokerAddress, that.publicBrokerAddress)
             && Objects.equals(this.grpcAddress, that.grpcAddress)
-            && Objects.equals(this.publicGrpcAddress, that.publicGrpcAddress) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
+            && Objects.equals(this.publicGrpcAddress, that.publicGrpcAddress)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
@@ -1356,6 +1419,7 @@ public class ShowInstanceResp {
             subnetName,
             subnetCidr,
             availableZones,
+            availableZoneNames,
             userId,
             userName,
             maintainBegin,
@@ -1387,6 +1451,7 @@ public class ShowInstanceResp {
             publicBrokerAddress,
             grpcAddress,
             publicGrpcAddress,
+            enterpriseProjectId,
             tags,
             totalStorageSpace,
             resourceSpecCode);
@@ -1415,6 +1480,7 @@ public class ShowInstanceResp {
         sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
         sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
+        sb.append("    availableZoneNames: ").append(toIndentedString(availableZoneNames)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
@@ -1446,6 +1512,7 @@ public class ShowInstanceResp {
         sb.append("    publicBrokerAddress: ").append(toIndentedString(publicBrokerAddress)).append("\n");
         sb.append("    grpcAddress: ").append(toIndentedString(grpcAddress)).append("\n");
         sb.append("    publicGrpcAddress: ").append(toIndentedString(publicGrpcAddress)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");

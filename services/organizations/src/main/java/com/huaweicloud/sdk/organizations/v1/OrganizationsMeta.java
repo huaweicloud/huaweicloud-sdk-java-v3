@@ -11,6 +11,11 @@ import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CloseAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CloseAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateAccountReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.CreateAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitReqBody;
@@ -133,6 +138,51 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class OrganizationsMeta {
+
+    public static final HttpRequestDef<CloseAccountRequest, CloseAccountResponse> closeAccount = genForCloseAccount();
+
+    private static HttpRequestDef<CloseAccountRequest, CloseAccountResponse> genForCloseAccount() {
+        // basic
+        HttpRequestDef.Builder<CloseAccountRequest, CloseAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CloseAccountRequest.class, CloseAccountResponse.class)
+                .withName("CloseAccount")
+                .withUri("/v1/organizations/accounts/{account_id}/close")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseAccountRequest::getAccountId, CloseAccountRequest::setAccountId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAccountRequest, CreateAccountResponse> createAccount =
+        genForCreateAccount();
+
+    private static HttpRequestDef<CreateAccountRequest, CreateAccountResponse> genForCreateAccount() {
+        // basic
+        HttpRequestDef.Builder<CreateAccountRequest, CreateAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccountRequest.class, CreateAccountResponse.class)
+                .withName("CreateAccount")
+                .withUri("/v1/organizations/accounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAccountReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAccountReqBody.class),
+            f -> f.withMarshaller(CreateAccountRequest::getBody, CreateAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<InviteAccountRequest, InviteAccountResponse> inviteAccount =
         genForInviteAccount();

@@ -34,8 +34,13 @@ public class CreateTopicReq {
 
     private BigDecimal queueNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queues")
+
+    private List<CreateTopicReqQueues> queues = null;
+
     /**
-     * 权限。
+     * 权限（仅RocketMQ实例4.8.0版本需要填写此参数）。 取值范围：   - pub（发布）   - sub（订阅）   - all（发布+订阅）
      */
     public static final class PermissionEnum {
 
@@ -116,7 +121,7 @@ public class CreateTopicReq {
     private PermissionEnum permission;
 
     /**
-     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
+     * 消息类型（仅RocketMQ实例5.x版本需要填写此参数）。 取值范围：   - NORMAL（普通消息）   - FIFO（顺序消息）   - DELAY（定时消息）   - TRANSACTION（事务消息）
      */
     public static final class MessageTypeEnum {
 
@@ -241,7 +246,7 @@ public class CreateTopicReq {
     }
 
     /**
-     * 关联的代理。
+     * 关联的代理（仅RocketMQ实例4.8.0版本需要填写此参数）。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -269,13 +274,46 @@ public class CreateTopicReq {
         this.queueNum = queueNum;
     }
 
+    public CreateTopicReq withQueues(List<CreateTopicReqQueues> queues) {
+        this.queues = queues;
+        return this;
+    }
+
+    public CreateTopicReq addQueuesItem(CreateTopicReqQueues queuesItem) {
+        if (this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
+        this.queues.add(queuesItem);
+        return this;
+    }
+
+    public CreateTopicReq withQueues(Consumer<List<CreateTopicReqQueues>> queuesSetter) {
+        if (this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
+        queuesSetter.accept(this.queues);
+        return this;
+    }
+
+    /**
+     * 队列（仅RocketMQ实例4.8.0版本需要填写此参数）。
+     * @return queues
+     */
+    public List<CreateTopicReqQueues> getQueues() {
+        return queues;
+    }
+
+    public void setQueues(List<CreateTopicReqQueues> queues) {
+        this.queues = queues;
+    }
+
     public CreateTopicReq withPermission(PermissionEnum permission) {
         this.permission = permission;
         return this;
     }
 
     /**
-     * 权限。
+     * 权限（仅RocketMQ实例4.8.0版本需要填写此参数）。 取值范围：   - pub（发布）   - sub（订阅）   - all（发布+订阅）
      * @return permission
      */
     public PermissionEnum getPermission() {
@@ -292,7 +330,7 @@ public class CreateTopicReq {
     }
 
     /**
-     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
+     * 消息类型（仅RocketMQ实例5.x版本需要填写此参数）。 取值范围：   - NORMAL（普通消息）   - FIFO（顺序消息）   - DELAY（定时消息）   - TRANSACTION（事务消息）
      * @return messageType
      */
     public MessageTypeEnum getMessageType() {
@@ -313,13 +351,13 @@ public class CreateTopicReq {
         }
         CreateTopicReq that = (CreateTopicReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.brokers, that.brokers)
-            && Objects.equals(this.queueNum, that.queueNum) && Objects.equals(this.permission, that.permission)
-            && Objects.equals(this.messageType, that.messageType);
+            && Objects.equals(this.queueNum, that.queueNum) && Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.messageType, that.messageType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, brokers, queueNum, permission, messageType);
+        return Objects.hash(name, brokers, queueNum, queues, permission, messageType);
     }
 
     @Override
@@ -329,6 +367,7 @@ public class CreateTopicReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    queueNum: ").append(toIndentedString(queueNum)).append("\n");
+        sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
         sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
         sb.append("}");

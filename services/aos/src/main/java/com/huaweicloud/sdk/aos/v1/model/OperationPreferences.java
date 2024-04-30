@@ -119,7 +119,7 @@ public class OperationPreferences {
     private Long maxConcurrentPercentage;
 
     /**
-     * 资源栈集操作部署的失败容忍模式，分为两种，STRICT_FAILURE_TOLERANCE和SOFT_FAILURE_TOLERANCE，区分大小写，默认值为STRICT_FAILURE_TOLERANCE。  详细介绍：  * `STRICT_FAILURE_TOLERANCE`：此选项会动态降低并发级别，以确保同region下部署失败的账户数量永远不超过 failure_tolerance_count + 1。当用户指定failure_tolerance_percentage时，确保同region下部署失败的账户数量不超过 failure_tolerance_percentage * 资源栈实例数 + 1。  * 初始实际最大并发数为max_concurrent_count，如果用户指定的是max_concurrent_percentage，则初始实际最大并发数为 max_concurrent_percentage * 资源栈实例数，随后，实际最大并发数会根据失败次数增加而减少。  * `SOFT_FAILURE_TOLERANCE`：此选项将failure_tolerance_count与实际并发数分离开。该参数允许资源栈集操作始终以指定的 max_concurrent_count 或 max_concurrent_percentage 操作资源栈实例。  * 此时不保证资源栈实例失败总数小于 failure_tolerance_count + 1，如果用户指定的是failure_tolerance_percentage的值，则部署失败次数不会超过 failure_tolerance_percentage * 资源栈实例数 + 1。
+     * 资源栈集操作部署的失败容忍模式，分为两种，STRICT_FAILURE_TOLERANCE和SOFT_FAILURE_TOLERANCE，区分大小写，默认值为STRICT_FAILURE_TOLERANCE。  详细介绍：  * `STRICT_FAILURE_TOLERANCE`：此选项会动态降低并发级别，以确保同region下部署失败的账户数量永远不超过 failure_tolerance_count + 1。当用户指定failure_tolerance_percentage时，确保同region下部署失败的账户数量不超过 failure_tolerance_percentage * 资源栈实例数 + 1。  * 初始实际最大并发数为max_concurrent_count，如果用户指定的是max_concurrent_percentage，则初始实际最大并发数为 max_concurrent_percentage * 资源栈实例数，随后，实际最大并发数会根据失败次数增加而减少。  * `SOFT_FAILURE_TOLERANCE`：此选项将failure_tolerance_count (failure_tolerance_percentage) 与实际并发数分离开。该参数允许资源栈集操作始终以指定的 max_concurrent_count 或 max_concurrent_percentage 操作资源栈实例。  * 此时不保证资源栈实例失败总数小于 failure_tolerance_count + 1，如果用户指定的是failure_tolerance_percentage的值，则不保证资源栈实例失败总数小于 failure_tolerance_percentage * 资源栈实例数 + 1。
      */
     public static final class FailureToleranceModeEnum {
 
@@ -234,7 +234,7 @@ public class OperationPreferences {
     }
 
     /**
-     * 区域（region）部署顺序。只有当用户指定region_concurrency_type为SEQUENTIAL时才会允许指定该参数。用户指定部署region的顺序，不允许出现资源栈集管理之外的region。  若不指定，实际部署region顺序随机。部署顺序仅在当次部署时生效，应该包含且仅包含本次部署的所有region。
+     * 区域（region）部署顺序。只有当用户指定region_concurrency_type为SEQUENTIAL时才会允许指定该参数。用户指定部署region的顺序，不允许出现资源栈集管理之外的region。  如果不指定，实际部署region顺序随机。部署顺序仅在当次部署时生效，应该包含且仅包含本次部署的所有region。
      * @return regionOrder
      */
     public List<String> getRegionOrder() {
@@ -270,7 +270,7 @@ public class OperationPreferences {
     }
 
     /**
-     * 容错百分比。定义每个区域（region）下，允许部署失败的资源栈实例数占该region下所有资源栈实例数的百分比。该参数取值默认为0，限定0和正整数。  通过容错百分比*资源栈实例数，并向下取整，得到实际容错次数。  当concurrency_mode指定为STRICT_FAILURE_TOLERANCE时，实际最大并发账户数最多比实际容错次数多1。  failure_tolerance_count  和 failure_tolerance_percentage 仅能有一个存在。
+     * 容错百分比。定义每个区域（region）下，允许部署失败的资源栈实例数占该region下所有资源栈实例数的百分比。该参数取值默认为0，限定0和正整数。  通过容错百分比*资源栈实例数，并向下取整，得到实际容错次数。  failure_tolerance_count  和 failure_tolerance_percentage 仅能有一个存在。
      * minimum: 0
      * maximum: 100
      * @return failureTolerancePercentage
@@ -308,7 +308,7 @@ public class OperationPreferences {
     }
 
     /**
-     * 最大并发账户百分比，每个区域（region）中可同时部署的资源栈实例的最大账户百分比。该参数取值默认为1，限定正整数。  RFS根据百分比 *（每个region下资源栈实例数）得到的值，再向下取整，得到实际最大并发账户数。若实际最大并发账户数向下取整值为0时，则默认选择最大并发账户数为1。  通过百分比计算得到的实际最大并发账户数最多比容错次数多1。如果用户指定failure_tolerance_percentage，实际最大并发账户数最多比 failure_tolerance_percentage * 资源栈实例数多1。保证部署在所需的容错级别停止。  max_concurrent_count 和 max_concurrent_percentage 仅能有一个存在。
+     * 最大并发账户百分比，每个区域（region）中可同时部署的资源栈实例的最大账户百分比。该参数取值默认为1，限定正整数。  RFS根据百分比 *（每个region下资源栈实例数）得到的值，再向下取整，得到实际最大并发账户数。如果实际最大并发账户数向下取整值为0时，则默认选择最大并发账户数为1。  通过百分比计算得到的实际最大并发账户数最多比容错次数多1。如果用户指定failure_tolerance_percentage，实际最大并发账户数最多比 failure_tolerance_percentage * 资源栈实例数多1。保证部署在所需的容错级别停止。  max_concurrent_count 和 max_concurrent_percentage 仅能有一个存在。
      * minimum: 1
      * maximum: 100
      * @return maxConcurrentPercentage
@@ -327,7 +327,7 @@ public class OperationPreferences {
     }
 
     /**
-     * 资源栈集操作部署的失败容忍模式，分为两种，STRICT_FAILURE_TOLERANCE和SOFT_FAILURE_TOLERANCE，区分大小写，默认值为STRICT_FAILURE_TOLERANCE。  详细介绍：  * `STRICT_FAILURE_TOLERANCE`：此选项会动态降低并发级别，以确保同region下部署失败的账户数量永远不超过 failure_tolerance_count + 1。当用户指定failure_tolerance_percentage时，确保同region下部署失败的账户数量不超过 failure_tolerance_percentage * 资源栈实例数 + 1。  * 初始实际最大并发数为max_concurrent_count，如果用户指定的是max_concurrent_percentage，则初始实际最大并发数为 max_concurrent_percentage * 资源栈实例数，随后，实际最大并发数会根据失败次数增加而减少。  * `SOFT_FAILURE_TOLERANCE`：此选项将failure_tolerance_count与实际并发数分离开。该参数允许资源栈集操作始终以指定的 max_concurrent_count 或 max_concurrent_percentage 操作资源栈实例。  * 此时不保证资源栈实例失败总数小于 failure_tolerance_count + 1，如果用户指定的是failure_tolerance_percentage的值，则部署失败次数不会超过 failure_tolerance_percentage * 资源栈实例数 + 1。
+     * 资源栈集操作部署的失败容忍模式，分为两种，STRICT_FAILURE_TOLERANCE和SOFT_FAILURE_TOLERANCE，区分大小写，默认值为STRICT_FAILURE_TOLERANCE。  详细介绍：  * `STRICT_FAILURE_TOLERANCE`：此选项会动态降低并发级别，以确保同region下部署失败的账户数量永远不超过 failure_tolerance_count + 1。当用户指定failure_tolerance_percentage时，确保同region下部署失败的账户数量不超过 failure_tolerance_percentage * 资源栈实例数 + 1。  * 初始实际最大并发数为max_concurrent_count，如果用户指定的是max_concurrent_percentage，则初始实际最大并发数为 max_concurrent_percentage * 资源栈实例数，随后，实际最大并发数会根据失败次数增加而减少。  * `SOFT_FAILURE_TOLERANCE`：此选项将failure_tolerance_count (failure_tolerance_percentage) 与实际并发数分离开。该参数允许资源栈集操作始终以指定的 max_concurrent_count 或 max_concurrent_percentage 操作资源栈实例。  * 此时不保证资源栈实例失败总数小于 failure_tolerance_count + 1，如果用户指定的是failure_tolerance_percentage的值，则不保证资源栈实例失败总数小于 failure_tolerance_percentage * 资源栈实例数 + 1。
      * @return failureToleranceMode
      */
     public FailureToleranceModeEnum getFailureToleranceMode() {

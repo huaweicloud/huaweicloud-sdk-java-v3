@@ -55,7 +55,7 @@ public class KvBlob {
     }
 
     /**
-     * 属性信息，最大_2_kb。
+     * 属性信息，最大2kb。
      * @return xblob
      */
     public Binary getXblob() {

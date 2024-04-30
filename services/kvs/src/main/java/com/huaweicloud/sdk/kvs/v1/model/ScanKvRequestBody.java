@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -51,18 +49,6 @@ public class ScanKvRequestBody {
     @BsonProperty(value = "filter_expression")
 
     private ConditionExpression filterExpression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_fields")
-    @BsonProperty(value = "projection_fields")
-
-    private List<String> projectionFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projection_blob")
-    @BsonProperty(value = "projection_blob")
-
-    private ProjectionBlob projectionBlob;
 
     public ScanKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -176,65 +162,6 @@ public class ScanKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
-    public ScanKvRequestBody withProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-        return this;
-    }
-
-    public ScanKvRequestBody addProjectionFieldsItem(String projectionFieldsItem) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        this.projectionFields.add(projectionFieldsItem);
-        return this;
-    }
-
-    public ScanKvRequestBody withProjectionFields(Consumer<List<String>> projectionFieldsSetter) {
-        if (this.projectionFields == null) {
-            this.projectionFields = new ArrayList<>();
-        }
-        projectionFieldsSetter.accept(this.projectionFields);
-        return this;
-    }
-
-    /**
-     * 对kv_doc有效，返回哪些字段列表，默认全部。
-     * @return projectionFields
-     */
-    public List<String> getProjectionFields() {
-        return projectionFields;
-    }
-
-    public void setProjectionFields(List<String> projectionFields) {
-        this.projectionFields = projectionFields;
-    }
-
-    public ScanKvRequestBody withProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-        return this;
-    }
-
-    public ScanKvRequestBody withProjectionBlob(Consumer<ProjectionBlob> projectionBlobSetter) {
-        if (this.projectionBlob == null) {
-            this.projectionBlob = new ProjectionBlob();
-            projectionBlobSetter.accept(this.projectionBlob);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get projectionBlob
-     * @return projectionBlob
-     */
-    public ProjectionBlob getProjectionBlob() {
-        return projectionBlob;
-    }
-
-    public void setProjectionBlob(ProjectionBlob projectionBlob) {
-        this.projectionBlob = projectionBlob;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -246,21 +173,12 @@ public class ScanKvRequestBody {
         ScanKvRequestBody that = (ScanKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.startKey, that.startKey)
-            && Objects.equals(this.endKey, that.endKey) && Objects.equals(this.filterExpression, that.filterExpression)
-            && Objects.equals(this.projectionFields, that.projectionFields)
-            && Objects.equals(this.projectionBlob, that.projectionBlob);
+            && Objects.equals(this.endKey, that.endKey) && Objects.equals(this.filterExpression, that.filterExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName,
-            hintIndexName,
-            limit,
-            startKey,
-            endKey,
-            filterExpression,
-            projectionFields,
-            projectionBlob);
+        return Objects.hash(tableName, hintIndexName, limit, startKey, endKey, filterExpression);
     }
 
     @Override
@@ -273,8 +191,6 @@ public class ScanKvRequestBody {
         sb.append("    startKey: ").append(toIndentedString(startKey)).append("\n");
         sb.append("    endKey: ").append(toIndentedString(endKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
-        sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
-        sb.append("    projectionBlob: ").append(toIndentedString(projectionBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

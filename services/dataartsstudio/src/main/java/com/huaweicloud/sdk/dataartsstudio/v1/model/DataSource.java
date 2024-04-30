@@ -86,7 +86,7 @@ public class DataSource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
 
-    private Integer dataSize;
+    private Double dataSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "databases")
@@ -351,7 +351,7 @@ public class DataSource {
         this.tableCount = tableCount;
     }
 
-    public DataSource withDataSize(Integer dataSize) {
+    public DataSource withDataSize(Double dataSize) {
         this.dataSize = dataSize;
         return this;
     }
@@ -360,11 +360,11 @@ public class DataSource {
      * 数据大小
      * @return dataSize
      */
-    public Integer getDataSize() {
+    public Double getDataSize() {
         return dataSize;
     }
 
-    public void setDataSize(Integer dataSize) {
+    public void setDataSize(Double dataSize) {
         this.dataSize = dataSize;
     }
 

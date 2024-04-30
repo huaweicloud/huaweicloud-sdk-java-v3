@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 某个表的行操作数组， 可以是多个文档的_put_kv或delete_kv。
+ * 某个表的行操作数组， 可以是多个文档的put_kv或delete_kv。
  */
 public class TableOperIds {
 

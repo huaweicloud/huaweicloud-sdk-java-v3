@@ -33,7 +33,7 @@ public class Database {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_size")
 
-    private Integer dataSize;
+    private Double dataSize;
 
     public Database withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -103,7 +103,7 @@ public class Database {
         this.tableCount = tableCount;
     }
 
-    public Database withDataSize(Integer dataSize) {
+    public Database withDataSize(Double dataSize) {
         this.dataSize = dataSize;
         return this;
     }
@@ -112,11 +112,11 @@ public class Database {
      * 数据量大小
      * @return dataSize
      */
-    public Integer getDataSize() {
+    public Double getDataSize() {
         return dataSize;
     }
 
-    public void setDataSize(Integer dataSize) {
+    public void setDataSize(Double dataSize) {
         this.dataSize = dataSize;
     }
 

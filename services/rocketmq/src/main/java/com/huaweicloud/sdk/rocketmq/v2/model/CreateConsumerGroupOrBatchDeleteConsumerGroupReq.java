@@ -125,7 +125,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 关联的代理列表。
+     * 关联的代理列表（仅RocketMQ实例4.8.0版本需要填写此参数）。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -193,7 +193,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 是否按序消费。
+     * 是否按序消费（仅RocketMQ实例5.x版本需要填写此参数）。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {
