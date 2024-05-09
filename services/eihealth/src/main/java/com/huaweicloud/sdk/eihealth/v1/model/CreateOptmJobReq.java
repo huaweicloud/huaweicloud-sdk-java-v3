@@ -34,6 +34,11 @@ public class CreateOptmJobReq {
     private BindSiteDto bindingSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binding_sites")
+
+    private List<BindSiteDto> bindingSites = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_constraints")
 
     private List<WeakConstraintDto> weakConstraints = null;
@@ -151,6 +156,39 @@ public class CreateOptmJobReq {
 
     public void setBindingSite(BindSiteDto bindingSite) {
         this.bindingSite = bindingSite;
+    }
+
+    public CreateOptmJobReq withBindingSites(List<BindSiteDto> bindingSites) {
+        this.bindingSites = bindingSites;
+        return this;
+    }
+
+    public CreateOptmJobReq addBindingSitesItem(BindSiteDto bindingSitesItem) {
+        if (this.bindingSites == null) {
+            this.bindingSites = new ArrayList<>();
+        }
+        this.bindingSites.add(bindingSitesItem);
+        return this;
+    }
+
+    public CreateOptmJobReq withBindingSites(Consumer<List<BindSiteDto>> bindingSitesSetter) {
+        if (this.bindingSites == null) {
+            this.bindingSites = new ArrayList<>();
+        }
+        bindingSitesSetter.accept(this.bindingSites);
+        return this;
+    }
+
+    /**
+     * 受体列表和受体是二选一的关系，受体列表优先级最高
+     * @return bindingSites
+     */
+    public List<BindSiteDto> getBindingSites() {
+        return bindingSites;
+    }
+
+    public void setBindingSites(List<BindSiteDto> bindingSites) {
+        this.bindingSites = bindingSites;
     }
 
     public CreateOptmJobReq withWeakConstraints(List<WeakConstraintDto> weakConstraints) {
@@ -302,6 +340,7 @@ public class CreateOptmJobReq {
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
             && Objects.equals(this.moleculeFile, that.moleculeFile)
             && Objects.equals(this.bindingSite, that.bindingSite)
+            && Objects.equals(this.bindingSites, that.bindingSites)
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
             && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
@@ -314,6 +353,7 @@ public class CreateOptmJobReq {
             smiles,
             moleculeFile,
             bindingSite,
+            bindingSites,
             weakConstraints,
             strongConstraints,
             samplerMixinWeight,
@@ -329,6 +369,7 @@ public class CreateOptmJobReq {
         sb.append("    smiles: ").append(toIndentedString(smiles)).append("\n");
         sb.append("    moleculeFile: ").append(toIndentedString(moleculeFile)).append("\n");
         sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
+        sb.append("    bindingSites: ").append(toIndentedString(bindingSites)).append("\n");
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
         sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");

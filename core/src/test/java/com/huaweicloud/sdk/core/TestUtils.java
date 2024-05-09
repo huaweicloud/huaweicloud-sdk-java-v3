@@ -41,7 +41,7 @@ public class TestUtils {
 
     public static HcClient createHcClient(Logger logger, String endpoint) {
         return new HcClient(new HttpConfig().withIgnoreSSLVerification(true)
-                .withTimeout(600)
+                .withConnectionTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(
                         responseListener -> logger.debug("RESPONSE: [{} {}] {} {} {} {} {}ms",
                                 responseListener.exchange().getApiReference().getName(),

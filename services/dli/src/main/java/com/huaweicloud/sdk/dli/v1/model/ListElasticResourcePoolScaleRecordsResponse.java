@@ -17,7 +17,7 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    private Integer count;
+    private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
@@ -29,7 +29,7 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
 
     private String xAuthToken;
 
-    public ListElasticResourcePoolScaleRecordsResponse withCount(Integer count) {
+    public ListElasticResourcePoolScaleRecordsResponse withCount(Long count) {
         this.count = count;
         return this;
     }
@@ -38,11 +38,11 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
      * 返回数组长度
      * @return count
      */
-    public Integer getCount() {
+    public Long getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(Long count) {
         this.count = count;
     }
 

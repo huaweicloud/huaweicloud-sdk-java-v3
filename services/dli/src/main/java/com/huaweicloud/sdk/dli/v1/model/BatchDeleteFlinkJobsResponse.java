@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,47 +15,41 @@ import java.util.Objects;
 public class BatchDeleteFlinkJobsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_success")
+    @JsonProperty(value = "body")
 
-    private Boolean isSuccess;
+    private List<FlinkSuccessResponse> body = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "message")
+    public BatchDeleteFlinkJobsResponse withBody(List<FlinkSuccessResponse> body) {
+        this.body = body;
+        return this;
+    }
 
-    private String message;
+    public BatchDeleteFlinkJobsResponse addBodyItem(FlinkSuccessResponse bodyItem) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        this.body.add(bodyItem);
+        return this;
+    }
 
-    public BatchDeleteFlinkJobsResponse withIsSuccess(Boolean isSuccess) {
-        this.isSuccess = isSuccess;
+    public BatchDeleteFlinkJobsResponse withBody(Consumer<List<FlinkSuccessResponse>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * 执行请求是否成功。“true”表示请求执行成功。
-     * @return isSuccess
+     * Get body
+     * @return body
      */
-    public Boolean getIsSuccess() {
-        return isSuccess;
+    public List<FlinkSuccessResponse> getBody() {
+        return body;
     }
 
-    public void setIsSuccess(Boolean isSuccess) {
-        this.isSuccess = isSuccess;
-    }
-
-    public BatchDeleteFlinkJobsResponse withMessage(String message) {
-        this.message = message;
-        return this;
-    }
-
-    /**
-     * 系统提示信息，执行成功时，信息可能为空。
-     * @return message
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setBody(List<FlinkSuccessResponse> body) {
+        this.body = body;
     }
 
     @Override
@@ -64,20 +61,19 @@ public class BatchDeleteFlinkJobsResponse extends SdkResponse {
             return false;
         }
         BatchDeleteFlinkJobsResponse that = (BatchDeleteFlinkJobsResponse) obj;
-        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isSuccess, message);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteFlinkJobsResponse {\n");
-        sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

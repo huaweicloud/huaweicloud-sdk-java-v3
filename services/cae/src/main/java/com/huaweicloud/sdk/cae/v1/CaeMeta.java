@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteCertificateRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.ExecuteActionRequest;
 import com.huaweicloud.sdk.cae.v1.model.ExecuteActionRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.ExecuteActionResponse;
@@ -74,6 +78,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.MonitorSystemRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobResponse;
@@ -101,6 +107,7 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.VpcEgressRequestBody;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -1621,6 +1628,105 @@ public class CaeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVolumesRequest::getXEnvironmentID, ListVolumesRequest::setXEnvironmentID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcEgressRequest, CreateVpcEgressResponse> createVpcEgress =
+        genForCreateVpcEgress();
+
+    private static HttpRequestDef<CreateVpcEgressRequest, CreateVpcEgressResponse> genForCreateVpcEgress() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcEgressRequest, CreateVpcEgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcEgressRequest.class, CreateVpcEgressResponse.class)
+                .withName("CreateVpcEgress")
+                .withUri("/v1/{project_id}/cae/vpc-egress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVpcEgressRequest::getXEnterpriseProjectID,
+                CreateVpcEgressRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVpcEgressRequest::getXEnvironmentID,
+                CreateVpcEgressRequest::setXEnvironmentID));
+        builder.<VpcEgressRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpcEgressRequestBody.class),
+            f -> f.withMarshaller(CreateVpcEgressRequest::getBody, CreateVpcEgressRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcEgressRequest, DeleteVpcEgressResponse> deleteVpcEgress =
+        genForDeleteVpcEgress();
+
+    private static HttpRequestDef<DeleteVpcEgressRequest, DeleteVpcEgressResponse> genForDeleteVpcEgress() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcEgressRequest, DeleteVpcEgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcEgressRequest.class, DeleteVpcEgressResponse.class)
+                .withName("DeleteVpcEgress")
+                .withUri("/v1/{project_id}/cae/vpc-egress/{vpc_egress_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_egress_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcEgressRequest::getVpcEgressId, DeleteVpcEgressRequest::setVpcEgressId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcEgressRequest::getXEnterpriseProjectID,
+                DeleteVpcEgressRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpcEgressRequest::getXEnvironmentID,
+                DeleteVpcEgressRequest::setXEnvironmentID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcEgressRequest, ListVpcEgressResponse> listVpcEgress =
+        genForListVpcEgress();
+
+    private static HttpRequestDef<ListVpcEgressRequest, ListVpcEgressResponse> genForListVpcEgress() {
+        // basic
+        HttpRequestDef.Builder<ListVpcEgressRequest, ListVpcEgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcEgressRequest.class, ListVpcEgressResponse.class)
+                .withName("ListVpcEgress")
+                .withUri("/v1/{project_id}/cae/vpc-egress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcEgressRequest::getXEnterpriseProjectID,
+                ListVpcEgressRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcEgressRequest::getXEnvironmentID, ListVpcEgressRequest::setXEnvironmentID));
 
         // response
 

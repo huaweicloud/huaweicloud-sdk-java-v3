@@ -586,7 +586,7 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 帐号ID,对应华为云控制台用户名->我的凭证->帐号ID
+     * 账号ID,对应华为云控制台用户名->我的凭证->账号ID
      * @return domainid
      */
     public String getDomainid() {

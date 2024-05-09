@@ -107,12 +107,16 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.ExecuteFlinkJobSavepointRequest;
+import com.huaweicloud.sdk.dli.v1.model.ExecuteFlinkJobSavepointResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableResponse;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobSavepointRequest;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobSavepointResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequest;
@@ -2885,6 +2889,35 @@ public class DliClient {
     }
 
     /**
+     * 触发Flink作业保存点
+     *
+     * 触发Flink作业保存点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteFlinkJobSavepointRequest 请求对象
+     * @return ExecuteFlinkJobSavepointResponse
+     */
+    public ExecuteFlinkJobSavepointResponse executeFlinkJobSavepoint(ExecuteFlinkJobSavepointRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.executeFlinkJobSavepoint);
+    }
+
+    /**
+     * 触发Flink作业保存点
+     *
+     * 触发Flink作业保存点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteFlinkJobSavepointRequest 请求对象
+     * @return SyncInvoker<ExecuteFlinkJobSavepointRequest, ExecuteFlinkJobSavepointResponse>
+     */
+    public SyncInvoker<ExecuteFlinkJobSavepointRequest, ExecuteFlinkJobSavepointResponse> executeFlinkJobSavepointInvoker(
+        ExecuteFlinkJobSavepointRequest request) {
+        return new SyncInvoker<>(request, DliMeta.executeFlinkJobSavepoint, hcClient);
+    }
+
+    /**
      * flink作业导出
      *
      * 通过POST方式，导出flink作业，请求体为JSON格式。
@@ -2911,6 +2944,35 @@ public class DliClient {
     public SyncInvoker<ExportFlinkJobsRequest, ExportFlinkJobsResponse> exportFlinkJobsInvoker(
         ExportFlinkJobsRequest request) {
         return new SyncInvoker<>(request, DliMeta.exportFlinkJobs, hcClient);
+    }
+
+    /**
+     * 导入Flink作业保存点
+     *
+     * 导入Flink作业保存点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportFlinkJobSavepointRequest 请求对象
+     * @return ImportFlinkJobSavepointResponse
+     */
+    public ImportFlinkJobSavepointResponse importFlinkJobSavepoint(ImportFlinkJobSavepointRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.importFlinkJobSavepoint);
+    }
+
+    /**
+     * 导入Flink作业保存点
+     *
+     * 导入Flink作业保存点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportFlinkJobSavepointRequest 请求对象
+     * @return SyncInvoker<ImportFlinkJobSavepointRequest, ImportFlinkJobSavepointResponse>
+     */
+    public SyncInvoker<ImportFlinkJobSavepointRequest, ImportFlinkJobSavepointResponse> importFlinkJobSavepointInvoker(
+        ImportFlinkJobSavepointRequest request) {
+        return new SyncInvoker<>(request, DliMeta.importFlinkJobSavepoint, hcClient);
     }
 
     /**

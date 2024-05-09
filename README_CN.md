@@ -190,8 +190,12 @@ public class Application {
         HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
         // 配置是否忽略SSL证书校验， 默认不忽略
         httpConfig.withIgnoreSSLVerification(true);
-        // 默认超时时间为60秒，可根据需要配置
+        // 默认连接超时时间为60秒，可根据需要配置（v3.1.94及之前的版本）
         httpConfig.withTimeout(60);
+        // 默认连接超时时间为60秒，可根据需要配置（v3.1.95版本起，优先使用withConnectionTimeout）
+        httpConfig.withConnectionTimeout(60);
+        // 默认读取超时时间为120秒，可根据需要配置
+        httpConfig.withReadTimeout(120);
         // 根据需要配置网络代理，网络代理默认的协议为 `http` 协议
         // 请根据实际情况替换示例中的代理地址和端口号
         httpConfig.withProxyHost("proxy.huaweicloud.com")
@@ -345,8 +349,14 @@ VpcClient client = VpcClient.newBuilder()
 #### 1.3 超时配置 [:top:](#用户手册-top)
 
 ``` java 
-// 默认连接超时时间为60秒，可根据需要调整
-HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withTimeout(60);
+
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+// 默认连接超时时间为60秒，可根据需要配置（v3.1.94及之前的版本）
+.withTimeout(60);
+// 默认连接超时时间为60秒，可根据需要调整（v3.1.95版本起，优先使用withConnectionTimeout）
+.withConnectionTimeout(60)
+// 默认读取超时时间为120秒，可根据需要调整
+.withReadTimeout(120);
 
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)

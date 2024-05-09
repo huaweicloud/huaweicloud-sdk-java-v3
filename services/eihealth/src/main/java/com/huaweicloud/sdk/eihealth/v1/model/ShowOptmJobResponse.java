@@ -40,6 +40,11 @@ public class ShowOptmJobResponse extends SdkResponse {
     private BindSiteDto bindingSite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binding_sites")
+
+    private List<BindSiteDto> bindingSites = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_constraints")
 
     private List<WeakConstraintDto> weakConstraints = null;
@@ -176,6 +181,39 @@ public class ShowOptmJobResponse extends SdkResponse {
 
     public void setBindingSite(BindSiteDto bindingSite) {
         this.bindingSite = bindingSite;
+    }
+
+    public ShowOptmJobResponse withBindingSites(List<BindSiteDto> bindingSites) {
+        this.bindingSites = bindingSites;
+        return this;
+    }
+
+    public ShowOptmJobResponse addBindingSitesItem(BindSiteDto bindingSitesItem) {
+        if (this.bindingSites == null) {
+            this.bindingSites = new ArrayList<>();
+        }
+        this.bindingSites.add(bindingSitesItem);
+        return this;
+    }
+
+    public ShowOptmJobResponse withBindingSites(Consumer<List<BindSiteDto>> bindingSitesSetter) {
+        if (this.bindingSites == null) {
+            this.bindingSites = new ArrayList<>();
+        }
+        bindingSitesSetter.accept(this.bindingSites);
+        return this;
+    }
+
+    /**
+     * 受体列表和受体是二选一的关系，受体列表优先级最高
+     * @return bindingSites
+     */
+    public List<BindSiteDto> getBindingSites() {
+        return bindingSites;
+    }
+
+    public void setBindingSites(List<BindSiteDto> bindingSites) {
+        this.bindingSites = bindingSites;
     }
 
     public ShowOptmJobResponse withWeakConstraints(List<WeakConstraintDto> weakConstraints) {
@@ -332,6 +370,7 @@ public class ShowOptmJobResponse extends SdkResponse {
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
             && Objects.equals(this.moleculeFile, that.moleculeFile) && Objects.equals(this.numTrials, that.numTrials)
             && Objects.equals(this.bindingSite, that.bindingSite)
+            && Objects.equals(this.bindingSites, that.bindingSites)
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
             && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
@@ -345,6 +384,7 @@ public class ShowOptmJobResponse extends SdkResponse {
             moleculeFile,
             numTrials,
             bindingSite,
+            bindingSites,
             weakConstraints,
             strongConstraints,
             samplerMixinWeight,
@@ -361,6 +401,7 @@ public class ShowOptmJobResponse extends SdkResponse {
         sb.append("    moleculeFile: ").append(toIndentedString(moleculeFile)).append("\n");
         sb.append("    numTrials: ").append(toIndentedString(numTrials)).append("\n");
         sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
+        sb.append("    bindingSites: ").append(toIndentedString(bindingSites)).append("\n");
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
         sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");

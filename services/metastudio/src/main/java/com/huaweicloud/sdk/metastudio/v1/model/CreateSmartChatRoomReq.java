@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -67,6 +72,87 @@ public class CreateSmartChatRoomReq {
     @JsonProperty(value = "chat_subtitle_config")
 
     private ChatSubtitleConfig chatSubtitleConfig;
+
+    /**
+     * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
+     */
+    public static final class ChatVideoTypeEnum {
+
+        /**
+         * Enum COMPUTER for value: "COMPUTER"
+         */
+        public static final ChatVideoTypeEnum COMPUTER = new ChatVideoTypeEnum("COMPUTER");
+
+        /**
+         * Enum MOBILE for value: "MOBILE"
+         */
+        public static final ChatVideoTypeEnum MOBILE = new ChatVideoTypeEnum("MOBILE");
+
+        /**
+         * Enum HUB for value: "HUB"
+         */
+        public static final ChatVideoTypeEnum HUB = new ChatVideoTypeEnum("HUB");
+
+        private static final Map<String, ChatVideoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChatVideoTypeEnum> createStaticFields() {
+            Map<String, ChatVideoTypeEnum> map = new HashMap<>();
+            map.put("COMPUTER", COMPUTER);
+            map.put("MOBILE", MOBILE);
+            map.put("HUB", HUB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChatVideoTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChatVideoTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChatVideoTypeEnum(value));
+        }
+
+        public static ChatVideoTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChatVideoTypeEnum) {
+                return this.value.equals(((ChatVideoTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_video_type")
+
+    private ChatVideoTypeEnum chatVideoType;
 
     public CreateSmartChatRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
@@ -318,6 +404,23 @@ public class CreateSmartChatRoomReq {
         this.chatSubtitleConfig = chatSubtitleConfig;
     }
 
+    public CreateSmartChatRoomReq withChatVideoType(ChatVideoTypeEnum chatVideoType) {
+        this.chatVideoType = chatVideoType;
+        return this;
+    }
+
+    /**
+     * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
+     * @return chatVideoType
+     */
+    public ChatVideoTypeEnum getChatVideoType() {
+        return chatVideoType;
+    }
+
+    public void setChatVideoType(ChatVideoTypeEnum chatVideoType) {
+        this.chatVideoType = chatVideoType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -336,7 +439,8 @@ public class CreateSmartChatRoomReq {
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig);
+            && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
+            && Objects.equals(this.chatVideoType, that.chatVideoType);
     }
 
     @Override
@@ -351,7 +455,8 @@ public class CreateSmartChatRoomReq {
             backgroundConfig,
             layerConfig,
             reviewConfig,
-            chatSubtitleConfig);
+            chatSubtitleConfig,
+            chatVideoType);
     }
 
     @Override
@@ -369,6 +474,7 @@ public class CreateSmartChatRoomReq {
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
+        sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

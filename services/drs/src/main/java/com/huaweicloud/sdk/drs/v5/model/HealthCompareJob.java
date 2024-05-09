@@ -63,7 +63,7 @@ public class HealthCompareJob {
     }
 
     /**
-     * 对比类型。 - object：对象对比 - lines：行对比 - contents：内容对比 - account：用户对比
+     * 对比类型： - object_comparison：对象对比。 - lines：行对比。 - account：用户对比。
      * @return type
      */
     public String getType() {
@@ -97,7 +97,7 @@ public class HealthCompareJob {
     }
 
     /**
-     * 对比开始时间。
+     * 对比开始时间，UTC时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -114,7 +114,7 @@ public class HealthCompareJob {
     }
 
     /**
-     * 对比结束时间。
+     * 对比结束时间，UTC时间。
      * @return endTime
      */
     public String getEndTime() {

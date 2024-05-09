@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupRequest;
@@ -664,6 +666,34 @@ public class EcsAsyncClient {
     public AsyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse> changeServerOsWithoutCloudInitAsyncInvoker(
         ChangeServerOsWithoutCloudInitRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.changeServerOsWithoutCloudInit, hcClient);
+    }
+
+    /**
+     * 云服务器切换虚拟私有云
+     *
+     * 云服务器切换虚拟私有云。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVpcRequest 请求对象
+     * @return CompletableFuture<ChangeVpcResponse>
+     */
+    public CompletableFuture<ChangeVpcResponse> changeVpcAsync(ChangeVpcRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.changeVpc);
+    }
+
+    /**
+     * 云服务器切换虚拟私有云
+     *
+     * 云服务器切换虚拟私有云。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVpcRequest 请求对象
+     * @return AsyncInvoker<ChangeVpcRequest, ChangeVpcResponse>
+     */
+    public AsyncInvoker<ChangeVpcRequest, ChangeVpcResponse> changeVpcAsyncInvoker(ChangeVpcRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.changeVpc, hcClient);
     }
 
     /**

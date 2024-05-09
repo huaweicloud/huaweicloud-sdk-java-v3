@@ -32,6 +32,11 @@ public class Region {
 
     private List<String> endpoints;
 
+    public Region(String id, String endpoint) {
+        this.id = id;
+        this.endpoints = Arrays.asList(endpoint);
+    }
+
     public Region(String id, String... endpoints) {
         this.id = id;
         this.endpoints = Arrays.asList(endpoints);

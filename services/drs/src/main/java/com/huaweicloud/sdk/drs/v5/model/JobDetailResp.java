@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.drs.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,6 +167,81 @@ public class JobDetailResp {
     @JsonProperty(value = "children")
 
     private List<FailedToBindEipChildInfo> children = null;
+
+    /**
+     * 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+     */
+    public static final class IsWritableEnum {
+
+        /**
+         * Enum PENDING for value: "pending"
+         */
+        public static final IsWritableEnum PENDING = new IsWritableEnum("pending");
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final IsWritableEnum SUCCESS = new IsWritableEnum("success");
+
+        private static final Map<String, IsWritableEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsWritableEnum> createStaticFields() {
+            Map<String, IsWritableEnum> map = new HashMap<>();
+            map.put("pending", PENDING);
+            map.put("success", SUCCESS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IsWritableEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsWritableEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsWritableEnum(value));
+        }
+
+        public static IsWritableEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IsWritableEnum) {
+                return this.value.equals(((IsWritableEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_writable")
+
+    private IsWritableEnum isWritable;
 
     public JobDetailResp withId(String id) {
         this.id = id;
@@ -939,6 +1017,23 @@ public class JobDetailResp {
         this.children = children;
     }
 
+    public JobDetailResp withIsWritable(IsWritableEnum isWritable) {
+        this.isWritable = isWritable;
+        return this;
+    }
+
+    /**
+     * 解除目标库只读操作后，目标库解除只读是否成功。 - pending：目标库解除操作进行中。 - success：目标库解除只读操作成功。
+     * @return isWritable
+     */
+    public IsWritableEnum getIsWritable() {
+        return isWritable;
+    }
+
+    public void setIsWritable(IsWritableEnum isWritable) {
+        this.isWritable = isWritable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -969,7 +1064,7 @@ public class JobDetailResp {
             && Objects.equals(this.connectionManagement, that.connectionManagement)
             && Objects.equals(this.publicIpList, that.publicIpList)
             && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
-            && Objects.equals(this.children, that.children);
+            && Objects.equals(this.children, that.children) && Objects.equals(this.isWritable, that.isWritable);
     }
 
     @Override
@@ -1003,7 +1098,8 @@ public class JobDetailResp {
             connectionManagement,
             publicIpList,
             bindPublicIpState,
-            children);
+            children,
+            isWritable);
     }
 
     @Override
@@ -1042,6 +1138,7 @@ public class JobDetailResp {
         sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
         sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
+        sb.append("    isWritable: ").append(toIndentedString(isWritable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -294,6 +294,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Integer gpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
     private Integer cpu;
@@ -652,11 +657,6 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Boolean enableClassIsolation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gpu_type")
-
-    private String gpuType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_ephemeral_storage")
 
     private Boolean allowEphemeralStorage;
@@ -890,6 +890,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     public void setGpuMemory(Integer gpuMemory) {
         this.gpuMemory = gpuMemory;
+    }
+
+    public ShowFunctionConfigResponse withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
     }
 
     public ShowFunctionConfigResponse withCpu(Integer cpu) {
@@ -1656,23 +1673,6 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.enableClassIsolation = enableClassIsolation;
     }
 
-    public ShowFunctionConfigResponse withGpuType(String gpuType) {
-        this.gpuType = gpuType;
-        return this;
-    }
-
-    /**
-     * 显卡类型。
-     * @return gpuType
-     */
-    public String getGpuType() {
-        return gpuType;
-    }
-
-    public void setGpuType(String gpuType) {
-        this.gpuType = gpuType;
-    }
-
     public ShowFunctionConfigResponse withAllowEphemeralStorage(Boolean allowEphemeralStorage) {
         this.allowEphemeralStorage = allowEphemeralStorage;
         return this;
@@ -1748,10 +1748,10 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
             && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
-            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.cpu, that.cpu)
-            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
-            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
-            && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData)
             && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
@@ -1780,7 +1780,6 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.apigRouteEnable, that.apigRouteEnable)
             && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
             && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
-            && Objects.equals(this.gpuType, that.gpuType)
             && Objects.equals(this.allowEphemeralStorage, that.allowEphemeralStorage)
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.isReturnStream, that.isReturnStream);
@@ -1801,6 +1800,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             handler,
             memorySize,
             gpuMemory,
+            gpuType,
             cpu,
             codeType,
             codeUrl,
@@ -1841,7 +1841,6 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             apigRouteEnable,
             heartbeatHandler,
             enableClassIsolation,
-            gpuType,
             allowEphemeralStorage,
             networkController,
             isReturnStream);
@@ -1864,6 +1863,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
@@ -1904,7 +1904,6 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    apigRouteEnable: ").append(toIndentedString(apigRouteEnable)).append("\n");
         sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
         sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
-        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("    allowEphemeralStorage: ").append(toIndentedString(allowEphemeralStorage)).append("\n");
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");

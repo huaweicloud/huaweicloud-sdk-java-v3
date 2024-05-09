@@ -16,14 +16,14 @@ public class FlinkJobList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private Integer totalCount;
+    private Long totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
     private List<FlinkJob> jobs = null;
 
-    public FlinkJobList withTotalCount(Integer totalCount) {
+    public FlinkJobList withTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -32,11 +32,11 @@ public class FlinkJobList {
      * 作业查询结果条数。
      * @return totalCount
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(Integer totalCount) {
+    public void setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
     }
 

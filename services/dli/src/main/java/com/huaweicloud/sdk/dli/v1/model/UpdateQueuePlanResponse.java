@@ -19,7 +19,7 @@ public class UpdateQueuePlanResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plan_id")
 
-    private String planId;
+    private Long planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
@@ -48,7 +48,7 @@ public class UpdateQueuePlanResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
-    public UpdateQueuePlanResponse withPlanId(String planId) {
+    public UpdateQueuePlanResponse withPlanId(Long planId) {
         this.planId = planId;
         return this;
     }
@@ -57,11 +57,11 @@ public class UpdateQueuePlanResponse extends SdkResponse {
      * 扩缩容计划的ID编号
      * @return planId
      */
-    public String getPlanId() {
+    public Long getPlanId() {
         return planId;
     }
 
-    public void setPlanId(String planId) {
+    public void setPlanId(Long planId) {
         this.planId = planId;
     }
 

@@ -21,9 +21,13 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificatio
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequestBody;
@@ -57,6 +61,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplication;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DbConfigCheckRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
@@ -82,6 +90,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteScheduleTasKResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplication;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
@@ -137,6 +148,14 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
@@ -250,6 +269,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchProxySSLRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchSSLRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.TableConfigCheckRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyInstanceMonitorRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusProxyScaleRequest;
@@ -4806,6 +4826,315 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(UpgradeDatabaseRequest.class),
             f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getBody,
                 UpgradeGaussMySqlInstanceDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckDataBaseConfigRequest, CheckDataBaseConfigResponse> checkDataBaseConfig =
+        genForCheckDataBaseConfig();
+
+    private static HttpRequestDef<CheckDataBaseConfigRequest, CheckDataBaseConfigResponse> genForCheckDataBaseConfig() {
+        // basic
+        HttpRequestDef.Builder<CheckDataBaseConfigRequest, CheckDataBaseConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckDataBaseConfigRequest.class, CheckDataBaseConfigResponse.class)
+                .withName("CheckDataBaseConfig")
+                .withUri(
+                    "/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-config-check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDataBaseConfigRequest::getInstanceId,
+                CheckDataBaseConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDataBaseConfigRequest::getXLanguage, CheckDataBaseConfigRequest::setXLanguage));
+        builder.<DbConfigCheckRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DbConfigCheckRequestV3.class),
+            f -> f.withMarshaller(CheckDataBaseConfigRequest::getBody, CheckDataBaseConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckTableConfigRequest, CheckTableConfigResponse> checkTableConfig =
+        genForCheckTableConfig();
+
+    private static HttpRequestDef<CheckTableConfigRequest, CheckTableConfigResponse> genForCheckTableConfig() {
+        // basic
+        HttpRequestDef.Builder<CheckTableConfigRequest, CheckTableConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckTableConfigRequest.class, CheckTableConfigResponse.class)
+                .withName("CheckTableConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/table-config-check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckTableConfigRequest::getInstanceId, CheckTableConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckTableConfigRequest::getXLanguage, CheckTableConfigRequest::setXLanguage));
+        builder.<TableConfigCheckRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TableConfigCheckRequestV3.class),
+            f -> f.withMarshaller(CheckTableConfigRequest::getBody, CheckTableConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStarRocksDataReplicationRequest, CreateStarRocksDataReplicationResponse> createStarRocksDataReplication =
+        genForCreateStarRocksDataReplication();
+
+    private static HttpRequestDef<CreateStarRocksDataReplicationRequest, CreateStarRocksDataReplicationResponse> genForCreateStarRocksDataReplication() {
+        // basic
+        HttpRequestDef.Builder<CreateStarRocksDataReplicationRequest, CreateStarRocksDataReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateStarRocksDataReplicationRequest.class,
+                    CreateStarRocksDataReplicationResponse.class)
+                .withName("CreateStarRocksDataReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarRocksDataReplicationRequest::getInstanceId,
+                CreateStarRocksDataReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarRocksDataReplicationRequest::getXLanguage,
+                CreateStarRocksDataReplicationRequest::setXLanguage));
+        builder.<CreateStarRocksDataReplication>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateStarRocksDataReplication.class),
+            f -> f.withMarshaller(CreateStarRocksDataReplicationRequest::getBody,
+                CreateStarRocksDataReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication =
+        genForDeleteStarRocksDataReplication();
+
+    private static HttpRequestDef<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> genForDeleteStarRocksDataReplication() {
+        // basic
+        HttpRequestDef.Builder<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteStarRocksDataReplicationRequest.class,
+                    DeleteStarRocksDataReplicationResponse.class)
+                .withName("DeleteStarRocksDataReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarRocksDataReplicationRequest::getInstanceId,
+                DeleteStarRocksDataReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarRocksDataReplicationRequest::getXLanguage,
+                DeleteStarRocksDataReplicationRequest::setXLanguage));
+        builder.<DeleteStarRocksDataReplication>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteStarRocksDataReplication.class),
+            f -> f.withMarshaller(DeleteStarRocksDataReplicationRequest::getBody,
+                DeleteStarRocksDataReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStarRocksDataBasesRequest, ListStarRocksDataBasesResponse> listStarRocksDataBases =
+        genForListStarRocksDataBases();
+
+    private static HttpRequestDef<ListStarRocksDataBasesRequest, ListStarRocksDataBasesResponse> genForListStarRocksDataBases() {
+        // basic
+        HttpRequestDef.Builder<ListStarRocksDataBasesRequest, ListStarRocksDataBasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListStarRocksDataBasesRequest.class, ListStarRocksDataBasesResponse.class)
+            .withName("ListStarRocksDataBases")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataBasesRequest::getInstanceId,
+                ListStarRocksDataBasesRequest::setInstanceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataBasesRequest::getLimit, ListStarRocksDataBasesRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataBasesRequest::getOffset, ListStarRocksDataBasesRequest::setOffset));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataBasesRequest::getDatabaseName,
+                ListStarRocksDataBasesRequest::setDatabaseName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataBasesRequest::getXLanguage,
+                ListStarRocksDataBasesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStarRocksDataReplicationConfigRequest, ListStarRocksDataReplicationConfigResponse> listStarRocksDataReplicationConfig =
+        genForListStarRocksDataReplicationConfig();
+
+    private static HttpRequestDef<ListStarRocksDataReplicationConfigRequest, ListStarRocksDataReplicationConfigResponse> genForListStarRocksDataReplicationConfig() {
+        // basic
+        HttpRequestDef.Builder<ListStarRocksDataReplicationConfigRequest, ListStarRocksDataReplicationConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListStarRocksDataReplicationConfigRequest.class,
+                    ListStarRocksDataReplicationConfigResponse.class)
+                .withName("ListStarRocksDataReplicationConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigRequest::getInstanceId,
+                ListStarRocksDataReplicationConfigRequest::setInstanceId));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigRequest::getTaskName,
+                ListStarRocksDataReplicationConfigRequest::setTaskName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigRequest::getXLanguage,
+                ListStarRocksDataReplicationConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStarRocksDataReplicationsRequest, ListStarRocksDataReplicationsResponse> listStarRocksDataReplications =
+        genForListStarRocksDataReplications();
+
+    private static HttpRequestDef<ListStarRocksDataReplicationsRequest, ListStarRocksDataReplicationsResponse> genForListStarRocksDataReplications() {
+        // basic
+        HttpRequestDef.Builder<ListStarRocksDataReplicationsRequest, ListStarRocksDataReplicationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListStarRocksDataReplicationsRequest.class,
+                    ListStarRocksDataReplicationsResponse.class)
+                .withName("ListStarRocksDataReplications")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationsRequest::getInstanceId,
+                ListStarRocksDataReplicationsRequest::setInstanceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationsRequest::getLimit,
+                ListStarRocksDataReplicationsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationsRequest::getOffset,
+                ListStarRocksDataReplicationsRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationsRequest::getXLanguage,
+                ListStarRocksDataReplicationsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStarRocksDbParametersRequest, ListStarRocksDbParametersResponse> listStarRocksDbParameters =
+        genForListStarRocksDbParameters();
+
+    private static HttpRequestDef<ListStarRocksDbParametersRequest, ListStarRocksDbParametersResponse> genForListStarRocksDbParameters() {
+        // basic
+        HttpRequestDef.Builder<ListStarRocksDbParametersRequest, ListStarRocksDbParametersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListStarRocksDbParametersRequest.class,
+                    ListStarRocksDbParametersResponse.class)
+                .withName("ListStarRocksDbParameters")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-parameters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDbParametersRequest::getInstanceId,
+                ListStarRocksDbParametersRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDbParametersRequest::getXLanguage,
+                ListStarRocksDbParametersRequest::setXLanguage));
 
         // response
 

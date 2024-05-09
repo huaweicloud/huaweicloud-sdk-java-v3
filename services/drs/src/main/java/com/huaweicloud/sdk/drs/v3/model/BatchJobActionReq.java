@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 任务动作请求体
+ * 任务动作请求体。
  */
 public class BatchJobActionReq {
 
@@ -134,7 +134,7 @@ public class BatchJobActionReq {
     }
 
     /**
-     * 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/zh-cn_topic_0295171516.html)
+     * 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/drs_03_0106.html)
      * @return property
      */
     public String getProperty() {

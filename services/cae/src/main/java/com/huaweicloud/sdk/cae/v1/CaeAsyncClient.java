@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteCertificateRequest;
@@ -36,6 +38,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.ExecuteActionRequest;
 import com.huaweicloud.sdk.cae.v1.model.ExecuteActionResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListAgenciesRequest;
@@ -64,6 +68,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListVpcEgressRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListVpcEgressResponse;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowApplicationRequest;
@@ -1349,6 +1355,93 @@ public class CaeAsyncClient {
      */
     public AsyncInvoker<ListVolumesRequest, ListVolumesResponse> listVolumesAsyncInvoker(ListVolumesRequest request) {
         return new AsyncInvoker<>(request, CaeMeta.listVolumes, hcClient);
+    }
+
+    /**
+     * 创建CAE环境访问VPC配置
+     *
+     * 创建CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVpcEgressRequest 请求对象
+     * @return CompletableFuture<CreateVpcEgressResponse>
+     */
+    public CompletableFuture<CreateVpcEgressResponse> createVpcEgressAsync(CreateVpcEgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.createVpcEgress);
+    }
+
+    /**
+     * 创建CAE环境访问VPC配置
+     *
+     * 创建CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVpcEgressRequest 请求对象
+     * @return AsyncInvoker<CreateVpcEgressRequest, CreateVpcEgressResponse>
+     */
+    public AsyncInvoker<CreateVpcEgressRequest, CreateVpcEgressResponse> createVpcEgressAsyncInvoker(
+        CreateVpcEgressRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.createVpcEgress, hcClient);
+    }
+
+    /**
+     * 删除CAE环境访问VPC配置
+     *
+     * 删除CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpcEgressRequest 请求对象
+     * @return CompletableFuture<DeleteVpcEgressResponse>
+     */
+    public CompletableFuture<DeleteVpcEgressResponse> deleteVpcEgressAsync(DeleteVpcEgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.deleteVpcEgress);
+    }
+
+    /**
+     * 删除CAE环境访问VPC配置
+     *
+     * 删除CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpcEgressRequest 请求对象
+     * @return AsyncInvoker<DeleteVpcEgressRequest, DeleteVpcEgressResponse>
+     */
+    public AsyncInvoker<DeleteVpcEgressRequest, DeleteVpcEgressResponse> deleteVpcEgressAsyncInvoker(
+        DeleteVpcEgressRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.deleteVpcEgress, hcClient);
+    }
+
+    /**
+     * 获取CAE环境访问VPC配置
+     *
+     * 获取CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpcEgressRequest 请求对象
+     * @return CompletableFuture<ListVpcEgressResponse>
+     */
+    public CompletableFuture<ListVpcEgressResponse> listVpcEgressAsync(ListVpcEgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.listVpcEgress);
+    }
+
+    /**
+     * 获取CAE环境访问VPC配置
+     *
+     * 获取CAE环境访问VPC配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpcEgressRequest 请求对象
+     * @return AsyncInvoker<ListVpcEgressRequest, ListVpcEgressResponse>
+     */
+    public AsyncInvoker<ListVpcEgressRequest, ListVpcEgressResponse> listVpcEgressAsyncInvoker(
+        ListVpcEgressRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.listVpcEgress, hcClient);
     }
 
 }

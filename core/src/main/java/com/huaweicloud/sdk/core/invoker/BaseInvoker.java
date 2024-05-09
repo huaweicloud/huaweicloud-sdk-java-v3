@@ -68,15 +68,15 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     /**
      * The default constructor for BaseInvoker.
      *
-     * @param req original request
-     * @param meta definitions for request and response used to build original HttpRequest
-     * and extract original HttpResponse
+     * @param req      original request
+     * @param meta     definitions for request and response used to build original HttpRequest
+     *                 and extract original HttpResponse
      * @param hcClient encapsulated client before default http client
      */
     public BaseInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
         exchange = new SdkExchange().withApiReference(apiReference -> apiReference.withName(meta.getName())
-            .withMethod(meta.getMethod().toString())
-            .withUri(meta.getUri()));
+                .withMethod(meta.getMethod().toString())
+                .withUri(meta.getUri()));
         this.hcClient = hcClient;
         this.meta = meta;
         this.req = req;
@@ -85,9 +85,9 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     /**
      * 重新构造一个临时鉴权对象进行重置
      *
-     * @param <T> type of credential
+     * @param <T>   type of credential
      * @param clazz class of credential
-     * @param func function that handle credential
+     * @param func  function that handle credential
      * @return DeriveT
      */
     @SuppressWarnings("unchecked")
@@ -103,7 +103,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     /**
      * 在http请求中增加header
      *
-     * @param headerKey key of header
+     * @param headerKey   key of header
      * @param headerValue value of header
      * @return DerivedT
      */
@@ -132,7 +132,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
      * The user could use .withRetry() method to set retry infos.
      *
      * @param retryTimes the max times could be retried
-     * @param func retry condition
+     * @param func       retry condition
      * @return DerivedT
      */
     public D withRetry(int retryTimes, BiFunction<S, SdkException, Boolean> func) {
@@ -142,8 +142,8 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     /**
      * The user could use .withRetry() method to set retry infos.
      *
-     * @param retryTimes the max times could be retried
-     * @param func retry condition
+     * @param retryTimes      the max times could be retried
+     * @param func            retry condition
      * @param backoffStrategy strategy to be backoff
      * @return DerivedT
      */

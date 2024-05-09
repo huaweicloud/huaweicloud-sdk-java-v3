@@ -147,7 +147,9 @@ public class ListDataLevelTableCompareJobsRequest {
     }
 
     /**
-     * 每页显示的条目数量。
+     * 每页显示的条目数量，最大值1000。
+     * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {

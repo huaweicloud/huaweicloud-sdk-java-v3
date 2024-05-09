@@ -51,7 +51,7 @@ public class FlinkJobConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_id")
 
-    private Integer rootId;
+    private Long rootId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager_cu_number")
@@ -323,7 +323,7 @@ public class FlinkJobConfig {
         this.edgeGroupIds = edgeGroupIds;
     }
 
-    public FlinkJobConfig withRootId(Integer rootId) {
+    public FlinkJobConfig withRootId(Long rootId) {
         this.rootId = rootId;
         return this;
     }
@@ -332,11 +332,11 @@ public class FlinkJobConfig {
      * 父作业ID。
      * @return rootId
      */
-    public Integer getRootId() {
+    public Long getRootId() {
         return rootId;
     }
 
-    public void setRootId(Integer rootId) {
+    public void setRootId(Long rootId) {
         this.rootId = rootId;
     }
 

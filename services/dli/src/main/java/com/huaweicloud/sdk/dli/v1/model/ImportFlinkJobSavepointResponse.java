@@ -2,25 +2,26 @@ package com.huaweicloud.sdk.dli.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * SuccessResponse
+ * Response Object
  */
-public class SuccessResponse {
+public class ImportFlinkJobSavepointResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    private Boolean isSuccess;
+    private String isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
     private String message;
 
-    public SuccessResponse withIsSuccess(Boolean isSuccess) {
+    public ImportFlinkJobSavepointResponse withIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
         return this;
     }
@@ -29,15 +30,15 @@ public class SuccessResponse {
      * 执行请求是否成功。“true”表示请求执行成功。
      * @return isSuccess
      */
-    public Boolean getIsSuccess() {
+    public String getIsSuccess() {
         return isSuccess;
     }
 
-    public void setIsSuccess(Boolean isSuccess) {
+    public void setIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
     }
 
-    public SuccessResponse withMessage(String message) {
+    public ImportFlinkJobSavepointResponse withMessage(String message) {
         this.message = message;
         return this;
     }
@@ -62,7 +63,7 @@ public class SuccessResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SuccessResponse that = (SuccessResponse) obj;
+        ImportFlinkJobSavepointResponse that = (ImportFlinkJobSavepointResponse) obj;
         return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
@@ -74,7 +75,7 @@ public class SuccessResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SuccessResponse {\n");
+        sb.append("class ImportFlinkJobSavepointResponse {\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");

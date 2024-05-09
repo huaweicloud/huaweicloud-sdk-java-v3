@@ -14,12 +14,12 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private Boolean status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_grp_status")
 
-    private String securityGrpStatus;
+    private Boolean securityGrpStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firewall_status")
@@ -31,47 +31,37 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
 
     private Boolean publicEipStatus;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nics")
-
-    private Boolean nics;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_eip_statu")
-
-    private Boolean publicEipStatu;
-
-    public ChangeInstanceNetworkResponse withStatus(String status) {
+    public ChangeInstanceNetworkResponse withStatus(Boolean status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 状态
+     * 云堡垒机实例网络状态。下面3个正常则正常，有一个不正常，网络状态为失败。
      * @return status
      */
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 
-    public ChangeInstanceNetworkResponse withSecurityGrpStatus(String securityGrpStatus) {
+    public ChangeInstanceNetworkResponse withSecurityGrpStatus(Boolean securityGrpStatus) {
         this.securityGrpStatus = securityGrpStatus;
         return this;
     }
 
     /**
-     * 安全组
+     * 云堡垒机实例安全组状态。 - true  正常 - false 失败
      * @return securityGrpStatus
      */
-    public String getSecurityGrpStatus() {
+    public Boolean getSecurityGrpStatus() {
         return securityGrpStatus;
     }
 
-    public void setSecurityGrpStatus(String securityGrpStatus) {
+    public void setSecurityGrpStatus(Boolean securityGrpStatus) {
         this.securityGrpStatus = securityGrpStatus;
     }
 
@@ -81,7 +71,7 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
     }
 
     /**
-     * 防火墙状态
+     * 云堡垒机实例防火墙状态。 - true  正常 - false 失败
      * @return firewallStatus
      */
     public Boolean getFirewallStatus() {
@@ -98,7 +88,7 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
     }
 
     /**
-     * 公共EIP状态
+     * 云堡垒机实例公网IP状态。 - true  正常 - false 失败
      * @return publicEipStatus
      */
     public Boolean getPublicEipStatus() {
@@ -107,40 +97,6 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
 
     public void setPublicEipStatus(Boolean publicEipStatus) {
         this.publicEipStatus = publicEipStatus;
-    }
-
-    public ChangeInstanceNetworkResponse withNics(Boolean nics) {
-        this.nics = nics;
-        return this;
-    }
-
-    /**
-     * 防火墙状态(兼容)
-     * @return nics
-     */
-    public Boolean getNics() {
-        return nics;
-    }
-
-    public void setNics(Boolean nics) {
-        this.nics = nics;
-    }
-
-    public ChangeInstanceNetworkResponse withPublicEipStatu(Boolean publicEipStatu) {
-        this.publicEipStatu = publicEipStatu;
-        return this;
-    }
-
-    /**
-     * 公共EIP状态(兼容)
-     * @return publicEipStatu
-     */
-    public Boolean getPublicEipStatu() {
-        return publicEipStatu;
-    }
-
-    public void setPublicEipStatu(Boolean publicEipStatu) {
-        this.publicEipStatu = publicEipStatu;
     }
 
     @Override
@@ -155,13 +111,12 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
         return Objects.equals(this.status, that.status)
             && Objects.equals(this.securityGrpStatus, that.securityGrpStatus)
             && Objects.equals(this.firewallStatus, that.firewallStatus)
-            && Objects.equals(this.publicEipStatus, that.publicEipStatus) && Objects.equals(this.nics, that.nics)
-            && Objects.equals(this.publicEipStatu, that.publicEipStatu);
+            && Objects.equals(this.publicEipStatus, that.publicEipStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, securityGrpStatus, firewallStatus, publicEipStatus, nics, publicEipStatu);
+        return Objects.hash(status, securityGrpStatus, firewallStatus, publicEipStatus);
     }
 
     @Override
@@ -172,8 +127,6 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
         sb.append("    securityGrpStatus: ").append(toIndentedString(securityGrpStatus)).append("\n");
         sb.append("    firewallStatus: ").append(toIndentedString(firewallStatus)).append("\n");
         sb.append("    publicEipStatus: ").append(toIndentedString(publicEipStatus)).append("\n");
-        sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
-        sb.append("    publicEipStatu: ").append(toIndentedString(publicEipStatu)).append("\n");
         sb.append("}");
         return sb.toString();
     }

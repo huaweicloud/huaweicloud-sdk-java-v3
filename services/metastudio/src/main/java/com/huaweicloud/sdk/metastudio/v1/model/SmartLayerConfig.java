@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class SmartLayerConfig {
 
     /**
-     * 图层类型。 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层
+     * 图层类型。 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层 - TEXT: 文本图层
      */
     public static final class LayerTypeEnum {
 
@@ -31,12 +31,18 @@ public class SmartLayerConfig {
          */
         public static final LayerTypeEnum VIDEO = new LayerTypeEnum("VIDEO");
 
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
+        public static final LayerTypeEnum TEXT = new LayerTypeEnum("TEXT");
+
         private static final Map<String, LayerTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LayerTypeEnum> createStaticFields() {
             Map<String, LayerTypeEnum> map = new HashMap<>();
             map.put("IMAGE", IMAGE);
             map.put("VIDEO", VIDEO);
+            map.put("TEXT", TEXT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,13 +122,18 @@ public class SmartLayerConfig {
 
     private SmartVideoLayerConfig videoConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_config")
+
+    private SmartTextLayerConfig textConfig;
+
     public SmartLayerConfig withLayerType(LayerTypeEnum layerType) {
         this.layerType = layerType;
         return this;
     }
 
     /**
-     * 图层类型。 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层
+     * 图层类型。 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层 - TEXT: 文本图层
      * @return layerType
      */
     public LayerTypeEnum getLayerType() {
@@ -254,6 +265,32 @@ public class SmartLayerConfig {
         this.videoConfig = videoConfig;
     }
 
+    public SmartLayerConfig withTextConfig(SmartTextLayerConfig textConfig) {
+        this.textConfig = textConfig;
+        return this;
+    }
+
+    public SmartLayerConfig withTextConfig(Consumer<SmartTextLayerConfig> textConfigSetter) {
+        if (this.textConfig == null) {
+            this.textConfig = new SmartTextLayerConfig();
+            textConfigSetter.accept(this.textConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get textConfig
+     * @return textConfig
+     */
+    public SmartTextLayerConfig getTextConfig() {
+        return textConfig;
+    }
+
+    public void setTextConfig(SmartTextLayerConfig textConfig) {
+        this.textConfig = textConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -265,12 +302,13 @@ public class SmartLayerConfig {
         SmartLayerConfig that = (SmartLayerConfig) obj;
         return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.assetId, that.assetId)
             && Objects.equals(this.position, that.position) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig);
+            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.textConfig, that.textConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(layerType, assetId, position, size, imageConfig, videoConfig);
+        return Objects.hash(layerType, assetId, position, size, imageConfig, videoConfig, textConfig);
     }
 
     @Override
@@ -283,6 +321,7 @@ public class SmartLayerConfig {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    imageConfig: ").append(toIndentedString(imageConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
+        sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

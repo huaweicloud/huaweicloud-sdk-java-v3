@@ -166,6 +166,87 @@ public class ShowSmartChatJobResponse extends SdkResponse {
 
     private ChatVideoConfigRsp videoConfig;
 
+    /**
+     * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
+     */
+    public static final class ChatVideoTypeEnum {
+
+        /**
+         * Enum COMPUTER for value: "COMPUTER"
+         */
+        public static final ChatVideoTypeEnum COMPUTER = new ChatVideoTypeEnum("COMPUTER");
+
+        /**
+         * Enum MOBILE for value: "MOBILE"
+         */
+        public static final ChatVideoTypeEnum MOBILE = new ChatVideoTypeEnum("MOBILE");
+
+        /**
+         * Enum HUB for value: "HUB"
+         */
+        public static final ChatVideoTypeEnum HUB = new ChatVideoTypeEnum("HUB");
+
+        private static final Map<String, ChatVideoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChatVideoTypeEnum> createStaticFields() {
+            Map<String, ChatVideoTypeEnum> map = new HashMap<>();
+            map.put("COMPUTER", COMPUTER);
+            map.put("MOBILE", MOBILE);
+            map.put("HUB", HUB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChatVideoTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChatVideoTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChatVideoTypeEnum(value));
+        }
+
+        public static ChatVideoTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChatVideoTypeEnum) {
+                return this.value.equals(((ChatVideoTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_video_type")
+
+    private ChatVideoTypeEnum chatVideoType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
@@ -396,6 +477,23 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.videoConfig = videoConfig;
     }
 
+    public ShowSmartChatJobResponse withChatVideoType(ChatVideoTypeEnum chatVideoType) {
+        this.chatVideoType = chatVideoType;
+        return this;
+    }
+
+    /**
+     * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
+     * @return chatVideoType
+     */
+    public ChatVideoTypeEnum getChatVideoType() {
+        return chatVideoType;
+    }
+
+    public void setChatVideoType(ChatVideoTypeEnum chatVideoType) {
+        this.chatVideoType = chatVideoType;
+    }
+
     public ShowSmartChatJobResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -431,7 +529,9 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
-            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.chatVideoType, that.chatVideoType)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -447,6 +547,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             rtcRoomInfo,
             chatSubtitleConfig,
             videoConfig,
+            chatVideoType,
             xRequestId);
     }
 
@@ -465,6 +566,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
+        sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

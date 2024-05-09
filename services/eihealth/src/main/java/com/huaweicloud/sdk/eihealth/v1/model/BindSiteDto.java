@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class BindSiteDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receptor")
 
     private ReceptorDrugFile receptor;
@@ -40,6 +45,23 @@ public class BindSiteDto {
     @JsonProperty(value = "add_hydrogen")
 
     private Boolean addHydrogen;
+
+    public BindSiteDto withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 靶点名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public BindSiteDto withReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
@@ -170,21 +192,23 @@ public class BindSiteDto {
             return false;
         }
         BindSiteDto that = (BindSiteDto) obj;
-        return Objects.equals(this.receptor, that.receptor) && Objects.equals(this.boundingBox, that.boundingBox)
-            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.receptor, that.receptor)
+            && Objects.equals(this.boundingBox, that.boundingBox) && Objects.equals(this.removeIon, that.removeIon)
+            && Objects.equals(this.removeWater, that.removeWater)
             && Objects.equals(this.removeLigand, that.removeLigand)
             && Objects.equals(this.addHydrogen, that.addHydrogen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receptor, boundingBox, removeIon, removeWater, removeLigand, addHydrogen);
+        return Objects.hash(name, receptor, boundingBox, removeIon, removeWater, removeLigand, addHydrogen);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BindSiteDto {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    receptor: ").append(toIndentedString(receptor)).append("\n");
         sb.append("    boundingBox: ").append(toIndentedString(boundingBox)).append("\n");
         sb.append("    removeIon: ").append(toIndentedString(removeIon)).append("\n");

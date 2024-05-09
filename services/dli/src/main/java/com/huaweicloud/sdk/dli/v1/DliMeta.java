@@ -143,6 +143,9 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.ExecuteFlinkJobSavepointRequest;
+import com.huaweicloud.sdk.dli.v1.model.ExecuteFlinkJobSavepointRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.ExecuteFlinkJobSavepointResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsResponse;
@@ -152,6 +155,10 @@ import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ExportTableResponse;
+import com.huaweicloud.sdk.dli.v1.model.FlinkSuccessResponse;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobSavepointRequest;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobSavepointRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobSavepointResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsResponse;
@@ -282,7 +289,6 @@ import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.SuccessResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoResponse;
@@ -2514,6 +2520,12 @@ public class DliMeta {
             f -> f.withMarshaller(BatchDeleteFlinkJobsRequest::getBody, BatchDeleteFlinkJobsRequest::setBody));
 
         // response
+        builder.<List<FlinkSuccessResponse>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchDeleteFlinkJobsResponse::getBody, BatchDeleteFlinkJobsResponse::setBody)
+                .withInnerContainerType(FlinkSuccessResponse.class));
 
         return builder.build();
     }
@@ -2537,12 +2549,12 @@ public class DliMeta {
             f -> f.withMarshaller(BatchRunFlinkJobsRequest::getBody, BatchRunFlinkJobsRequest::setBody));
 
         // response
-        builder.<List<SuccessResponse>>withResponseField("body",
+        builder.<List<FlinkSuccessResponse>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchRunFlinkJobsResponse::getBody, BatchRunFlinkJobsResponse::setBody)
-                .withInnerContainerType(SuccessResponse.class));
+                .withInnerContainerType(FlinkSuccessResponse.class));
 
         return builder.build();
     }
@@ -2566,12 +2578,12 @@ public class DliMeta {
             f -> f.withMarshaller(BatchStopFlinkJobsRequest::getBody, BatchStopFlinkJobsRequest::setBody));
 
         // response
-        builder.<List<SuccessResponse>>withResponseField("body",
+        builder.<List<FlinkSuccessResponse>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchStopFlinkJobsResponse::getBody, BatchStopFlinkJobsResponse::setBody)
-                .withInnerContainerType(SuccessResponse.class));
+                .withInnerContainerType(FlinkSuccessResponse.class));
 
         return builder.build();
     }
@@ -2773,6 +2785,36 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteFlinkJobSavepointRequest, ExecuteFlinkJobSavepointResponse> executeFlinkJobSavepoint =
+        genForExecuteFlinkJobSavepoint();
+
+    private static HttpRequestDef<ExecuteFlinkJobSavepointRequest, ExecuteFlinkJobSavepointResponse> genForExecuteFlinkJobSavepoint() {
+        // basic
+        HttpRequestDef.Builder<ExecuteFlinkJobSavepointRequest, ExecuteFlinkJobSavepointResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExecuteFlinkJobSavepointRequest.class, ExecuteFlinkJobSavepointResponse.class)
+                .withName("ExecuteFlinkJobSavepoint")
+                .withUri("/v1.0/{project_id}/streaming/jobs/{job_id}/savepoint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteFlinkJobSavepointRequest::getJobId,
+                ExecuteFlinkJobSavepointRequest::setJobId));
+        builder.<ExecuteFlinkJobSavepointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteFlinkJobSavepointRequestBody.class),
+            f -> f.withMarshaller(ExecuteFlinkJobSavepointRequest::getBody, ExecuteFlinkJobSavepointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportFlinkJobsRequest, ExportFlinkJobsResponse> exportFlinkJobs =
         genForExportFlinkJobs();
 
@@ -2790,6 +2832,34 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportFlinkJobsRequestBody.class),
             f -> f.withMarshaller(ExportFlinkJobsRequest::getBody, ExportFlinkJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportFlinkJobSavepointRequest, ImportFlinkJobSavepointResponse> importFlinkJobSavepoint =
+        genForImportFlinkJobSavepoint();
+
+    private static HttpRequestDef<ImportFlinkJobSavepointRequest, ImportFlinkJobSavepointResponse> genForImportFlinkJobSavepoint() {
+        // basic
+        HttpRequestDef.Builder<ImportFlinkJobSavepointRequest, ImportFlinkJobSavepointResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ImportFlinkJobSavepointRequest.class, ImportFlinkJobSavepointResponse.class)
+            .withName("ImportFlinkJobSavepoint")
+            .withUri("/v1.0/{project_id}/streaming/jobs/{job_id}/import-savepoint")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportFlinkJobSavepointRequest::getJobId, ImportFlinkJobSavepointRequest::setJobId));
+        builder.<ImportFlinkJobSavepointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportFlinkJobSavepointRequestBody.class),
+            f -> f.withMarshaller(ImportFlinkJobSavepointRequest::getBody, ImportFlinkJobSavepointRequest::setBody));
 
         // response
 

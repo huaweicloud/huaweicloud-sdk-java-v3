@@ -20,6 +20,11 @@ public class DeleteGraph2Request {
 
     private Boolean keepBackup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_eip")
+
+    private Boolean deleteEip;
+
     public DeleteGraph2Request withGraphId(String graphId) {
         this.graphId = graphId;
         return this;
@@ -54,6 +59,23 @@ public class DeleteGraph2Request {
         this.keepBackup = keepBackup;
     }
 
+    public DeleteGraph2Request withDeleteEip(Boolean deleteEip) {
+        this.deleteEip = deleteEip;
+        return this;
+    }
+
+    /**
+     * 是否同时删除EIP。
+     * @return deleteEip
+     */
+    public Boolean getDeleteEip() {
+        return deleteEip;
+    }
+
+    public void setDeleteEip(Boolean deleteEip) {
+        this.deleteEip = deleteEip;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class DeleteGraph2Request {
             return false;
         }
         DeleteGraph2Request that = (DeleteGraph2Request) obj;
-        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.keepBackup, that.keepBackup);
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.keepBackup, that.keepBackup)
+            && Objects.equals(this.deleteEip, that.deleteEip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(graphId, keepBackup);
+        return Objects.hash(graphId, keepBackup, deleteEip);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class DeleteGraph2Request {
         sb.append("class DeleteGraph2Request {\n");
         sb.append("    graphId: ").append(toIndentedString(graphId)).append("\n");
         sb.append("    keepBackup: ").append(toIndentedString(keepBackup)).append("\n");
+        sb.append("    deleteEip: ").append(toIndentedString(deleteEip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

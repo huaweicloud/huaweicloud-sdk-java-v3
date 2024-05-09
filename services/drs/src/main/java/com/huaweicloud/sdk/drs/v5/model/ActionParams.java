@@ -58,6 +58,11 @@ public class ActionParams {
 
     private PublicIpConfig publicIpConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replay_config")
+
+    private ReplayConfigInfo replayConfig;
+
     public ActionParams withEndpoints(List<JobEndpointInfo> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -254,6 +259,32 @@ public class ActionParams {
         this.publicIpConfig = publicIpConfig;
     }
 
+    public ActionParams withReplayConfig(ReplayConfigInfo replayConfig) {
+        this.replayConfig = replayConfig;
+        return this;
+    }
+
+    public ActionParams withReplayConfig(Consumer<ReplayConfigInfo> replayConfigSetter) {
+        if (this.replayConfig == null) {
+            this.replayConfig = new ReplayConfigInfo();
+            replayConfigSetter.accept(this.replayConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get replayConfig
+     * @return replayConfig
+     */
+    public ReplayConfigInfo getReplayConfig() {
+        return replayConfig;
+    }
+
+    public void setReplayConfig(ReplayConfigInfo replayConfig) {
+        this.replayConfig = replayConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -269,7 +300,8 @@ public class ActionParams {
             && Objects.equals(this.compareTaskParam, that.compareTaskParam)
             && Objects.equals(this.isSyncReEdit, that.isSyncReEdit)
             && Objects.equals(this.forceDelete, that.forceDelete)
-            && Objects.equals(this.publicIpConfig, that.publicIpConfig);
+            && Objects.equals(this.publicIpConfig, that.publicIpConfig)
+            && Objects.equals(this.replayConfig, that.replayConfig);
     }
 
     @Override
@@ -282,7 +314,8 @@ public class ActionParams {
             compareTaskParam,
             isSyncReEdit,
             forceDelete,
-            publicIpConfig);
+            publicIpConfig,
+            replayConfig);
     }
 
     @Override
@@ -298,6 +331,7 @@ public class ActionParams {
         sb.append("    isSyncReEdit: ").append(toIndentedString(isSyncReEdit)).append("\n");
         sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("    publicIpConfig: ").append(toIndentedString(publicIpConfig)).append("\n");
+        sb.append("    replayConfig: ").append(toIndentedString(replayConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

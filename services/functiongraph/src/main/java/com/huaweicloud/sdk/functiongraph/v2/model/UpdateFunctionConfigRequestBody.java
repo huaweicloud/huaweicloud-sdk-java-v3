@@ -255,6 +255,11 @@ public class UpdateFunctionConfigRequestBody {
     private Integer gpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
     private String userData;
@@ -384,11 +389,6 @@ public class UpdateFunctionConfigRequestBody {
 
     private Boolean enableClassIsolation;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gpu_type")
-
-    private String gpuType;
-
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -489,6 +489,23 @@ public class UpdateFunctionConfigRequestBody {
 
     public void setGpuMemory(Integer gpuMemory) {
         this.gpuMemory = gpuMemory;
+    }
+
+    public UpdateFunctionConfigRequestBody withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
     }
 
     public UpdateFunctionConfigRequestBody withUserData(String userData) {
@@ -988,23 +1005,6 @@ public class UpdateFunctionConfigRequestBody {
         this.enableClassIsolation = enableClassIsolation;
     }
 
-    public UpdateFunctionConfigRequestBody withGpuType(String gpuType) {
-        this.gpuType = gpuType;
-        return this;
-    }
-
-    /**
-     * 显卡类型。
-     * @return gpuType
-     */
-    public String getGpuType() {
-        return gpuType;
-    }
-
-    public void setGpuType(String gpuType) {
-        this.gpuType = gpuType;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1017,7 +1017,7 @@ public class UpdateFunctionConfigRequestBody {
         return Objects.equals(this.funcName, that.funcName) && Objects.equals(this.runtime, that.runtime)
             && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.handler, that.handler)
             && Objects.equals(this.memorySize, that.memorySize) && Objects.equals(this.gpuMemory, that.gpuMemory)
-            && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.gpuType, that.gpuType) && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData) && Objects.equals(this.xrole, that.xrole)
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
             && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.mountConfig, that.mountConfig)
@@ -1039,8 +1039,7 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.restoreHookHandler, that.restoreHookHandler)
             && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout)
             && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
-            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
-            && Objects.equals(this.gpuType, that.gpuType);
+            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation);
     }
 
     @Override
@@ -1051,6 +1050,7 @@ public class UpdateFunctionConfigRequestBody {
             handler,
             memorySize,
             gpuMemory,
+            gpuType,
             userData,
             encryptedUserData,
             xrole,
@@ -1076,8 +1076,7 @@ public class UpdateFunctionConfigRequestBody {
             restoreHookHandler,
             restoreHookTimeout,
             heartbeatHandler,
-            enableClassIsolation,
-            gpuType);
+            enableClassIsolation);
     }
 
     @Override
@@ -1090,6 +1089,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
@@ -1116,7 +1116,6 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    restoreHookTimeout: ").append(toIndentedString(restoreHookTimeout)).append("\n");
         sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
         sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
-        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

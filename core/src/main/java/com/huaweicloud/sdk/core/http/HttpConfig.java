@@ -44,7 +44,11 @@ import java.util.concurrent.TimeUnit;
 public class HttpConfig {
     private static final int DEFAULT_CONNECTION_TIMEOUT = 60;
 
-    private int timeout = DEFAULT_CONNECTION_TIMEOUT;
+    private static final int DEFAULT_READ_TIMEOUT = 120;
+
+    private int connectionTimeout = DEFAULT_CONNECTION_TIMEOUT;
+
+    private int readTimeout = DEFAULT_READ_TIMEOUT;
 
     private boolean ignoreSSLVerification = false;
 
@@ -80,17 +84,75 @@ public class HttpConfig {
 
     private HostnameVerifier hostnameVerifier;
 
-
+    /**
+     * @deprecated
+     * use {@link #getConnectionTimeout()} instead
+     */
+    @Deprecated
     public int getTimeout() {
-        return timeout;
+        return connectionTimeout;
     }
 
+    /**
+     * @deprecated
+     * use {@link #setConnectionTimeout(int connectionTimeout)} instead
+     */
+    @Deprecated
     public void setTimeout(int timeout) {
-        this.timeout = timeout;
+        this.connectionTimeout = timeout;
     }
 
+    /**
+     * @deprecated
+     * use {@link #withConnectionTimeout(int connectionTimeout)} instead
+     */
+    @Deprecated
     public HttpConfig withTimeout(int timeout) {
-        this.timeout = timeout;
+        this.connectionTimeout = timeout;
+        return this;
+    }
+
+    /**
+     * @return Connection time out seconds.
+     */
+    public int getConnectionTimeout() {
+        return connectionTimeout;
+    }
+
+    /**
+     * @param connectionTimeout Set connection time out seconds.
+     */
+    public void setConnectionTimeout(int connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+    }
+
+    /**
+     * @param connectionTimeout Set connection time out seconds.
+     */
+    public HttpConfig withConnectionTimeout(int connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+        return this;
+    }
+
+    /**
+     * @return Read time out seconds.
+     */
+    public int getReadTimeout() {
+        return readTimeout;
+    }
+
+    /**
+     * @param readTimeout Set read time out seconds.
+     */
+    public void setReadTimeout(int readTimeout) {
+        this.readTimeout = readTimeout;
+    }
+
+    /**
+     * @param readTimeout Set read time out seconds.
+     */
+    public HttpConfig withReadTimeout(int readTimeout) {
+        this.readTimeout = readTimeout;
         return this;
     }
 

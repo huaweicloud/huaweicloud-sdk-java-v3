@@ -53,6 +53,9 @@ import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersResponse;
@@ -628,6 +631,33 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(ChangeServerOsWithoutCloudInitRequestBody.class),
             f -> f.withMarshaller(ChangeServerOsWithoutCloudInitRequest::getBody,
                 ChangeServerOsWithoutCloudInitRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeVpcRequest, ChangeVpcResponse> changeVpc = genForChangeVpc();
+
+    private static HttpRequestDef<ChangeVpcRequest, ChangeVpcResponse> genForChangeVpc() {
+        // basic
+        HttpRequestDef.Builder<ChangeVpcRequest, ChangeVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeVpcRequest.class, ChangeVpcResponse.class)
+                .withName("ChangeVpc")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/changevpc")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeVpcRequest::getServerId, ChangeVpcRequest::setServerId));
+        builder.<ChangeVpcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeVpcRequestBody.class),
+            f -> f.withMarshaller(ChangeVpcRequest::getBody, ChangeVpcRequest::setBody));
 
         // response
 

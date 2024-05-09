@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ChangeEnterpriseRealnameAuthenticati
 import com.huaweicloud.sdk.bssintl.v2.model.ChangeEnterpriseRealnameAuthenticationResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreatePersonalRealnameAuthRequest;
@@ -64,6 +66,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomersRequest;
@@ -288,6 +292,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse> checkUserIdentityAsyncInvoker(
         CheckUserIdentityRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.checkUserIdentity, hcClient);
+    }
+
+    /**
+     * 开通客户企业项目权限
+     *
+     * 客户在自建平台开通客户企业项目权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
+     * @return CompletableFuture<CreateEnterpriseProjectAuthResponse>
+     */
+    public CompletableFuture<CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthAsync(
+        CreateEnterpriseProjectAuthRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.createEnterpriseProjectAuth);
+    }
+
+    /**
+     * 开通客户企业项目权限
+     *
+     * 客户在自建平台开通客户企业项目权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
+     * @return AsyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>
+     */
+    public AsyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthAsyncInvoker(
+        CreateEnterpriseProjectAuthRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.createEnterpriseProjectAuth, hcClient);
     }
 
     /**
@@ -1060,6 +1094,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypesAsyncInvoker(
         ListServiceTypesRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listServiceTypes, hcClient);
+    }
+
+    /**
+     * 批量查询客户预算
+     *
+     * 功能描述：批量查询客户预算
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRequest 请求对象
+     * @return CompletableFuture<ListSubCustomerBudgetResponse>
+     */
+    public CompletableFuture<ListSubCustomerBudgetResponse> listSubCustomerBudgetAsync(
+        ListSubCustomerBudgetRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listSubCustomerBudget);
+    }
+
+    /**
+     * 批量查询客户预算
+     *
+     * 功能描述：批量查询客户预算
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRequest 请求对象
+     * @return AsyncInvoker<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse>
+     */
+    public AsyncInvoker<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> listSubCustomerBudgetAsyncInvoker(
+        ListSubCustomerBudgetRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.listSubCustomerBudget, hcClient);
     }
 
     /**

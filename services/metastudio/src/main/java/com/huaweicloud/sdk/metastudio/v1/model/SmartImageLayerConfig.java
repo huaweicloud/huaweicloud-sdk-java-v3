@@ -43,7 +43,7 @@ public class SmartImageLayerConfig {
     }
 
     /**
-     * 图片显示时长。单位s * 0表示一直显示。
+     * 图片显示时长。单位s * 0 显示时长规则：若携带reply_texts，reply_audios，与播放语音内容时长保持一致； 未携带场景，与匹配的关键词语音内容时长保持一致。
      * minimum: 0
      * maximum: 3600
      * @return displayDuration

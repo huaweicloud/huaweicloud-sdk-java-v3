@@ -91,6 +91,7 @@ import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyComparePolicyReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyParameterReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyStartPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
@@ -122,8 +123,12 @@ import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthObjectCompareJobOverviewRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthObjectCompareJobOverviewResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowIncrementComponentsDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowIncrementComponentsDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowInstanceTagsRequest;
@@ -155,6 +160,8 @@ import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDriverReq;
@@ -1963,6 +1970,45 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHealthCompareJobDetailRequest, ShowHealthCompareJobDetailResponse> showHealthCompareJobDetail =
+        genForShowHealthCompareJobDetail();
+
+    private static HttpRequestDef<ShowHealthCompareJobDetailRequest, ShowHealthCompareJobDetailResponse> genForShowHealthCompareJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowHealthCompareJobDetailRequest, ShowHealthCompareJobDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHealthCompareJobDetailRequest.class,
+                    ShowHealthCompareJobDetailResponse.class)
+                .withName("ShowHealthCompareJobDetail")
+                .withUri("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/{compare_job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHealthCompareJobDetailRequest::getJobId,
+                ShowHealthCompareJobDetailRequest::setJobId));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHealthCompareJobDetailRequest::getCompareJobId,
+                ShowHealthCompareJobDetailRequest::setCompareJobId));
+        builder.<ShowHealthCompareJobDetailRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHealthCompareJobDetailRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowHealthCompareJobDetailRequest::getXLanguage,
+                ShowHealthCompareJobDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> showHealthCompareJobList =
         genForShowHealthCompareJobList();
 
@@ -2006,6 +2052,45 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowHealthCompareJobListRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowHealthCompareJobListRequest::getXLanguage,
                 ShowHealthCompareJobListRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHealthObjectCompareJobOverviewRequest, ShowHealthObjectCompareJobOverviewResponse> showHealthObjectCompareJobOverview =
+        genForShowHealthObjectCompareJobOverview();
+
+    private static HttpRequestDef<ShowHealthObjectCompareJobOverviewRequest, ShowHealthObjectCompareJobOverviewResponse> genForShowHealthObjectCompareJobOverview() {
+        // basic
+        HttpRequestDef.Builder<ShowHealthObjectCompareJobOverviewRequest, ShowHealthObjectCompareJobOverviewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHealthObjectCompareJobOverviewRequest.class,
+                    ShowHealthObjectCompareJobOverviewResponse.class)
+                .withName("ShowHealthObjectCompareJobOverview")
+                .withUri("/v5/{project_id}/jobs/{job_id}/health-compare-jobs/object/{compare_job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHealthObjectCompareJobOverviewRequest::getJobId,
+                ShowHealthObjectCompareJobOverviewRequest::setJobId));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHealthObjectCompareJobOverviewRequest::getCompareJobId,
+                ShowHealthObjectCompareJobOverviewRequest::setCompareJobId));
+        builder.<ShowHealthObjectCompareJobOverviewRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHealthObjectCompareJobOverviewRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowHealthObjectCompareJobOverviewRequest::getXLanguage,
+                ShowHealthObjectCompareJobOverviewRequest::setXLanguage));
 
         // response
 
@@ -2557,6 +2642,39 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAsyncUpdateJobReq.class),
             f -> f.withMarshaller(UpdateBatchAsyncJobsRequest::getBody, UpdateBatchAsyncJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateComparePolicyRequest, UpdateComparePolicyResponse> updateComparePolicy =
+        genForUpdateComparePolicy();
+
+    private static HttpRequestDef<UpdateComparePolicyRequest, UpdateComparePolicyResponse> genForUpdateComparePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateComparePolicyRequest, UpdateComparePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateComparePolicyRequest.class, UpdateComparePolicyResponse.class)
+                .withName("UpdateComparePolicy")
+                .withUri("/v5/{project_id}/jobs/{job_id}/compare-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateComparePolicyRequest::getJobId, UpdateComparePolicyRequest::setJobId));
+        builder.<UpdateComparePolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateComparePolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateComparePolicyRequest::getXLanguage, UpdateComparePolicyRequest::setXLanguage));
+        builder.<ModifyComparePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyComparePolicyReq.class),
+            f -> f.withMarshaller(UpdateComparePolicyRequest::getBody, UpdateComparePolicyRequest::setBody));
 
         // response
 

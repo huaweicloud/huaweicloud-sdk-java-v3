@@ -24,7 +24,7 @@ public class CreateConnectivityTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private String taskId;
+    private Long taskId;
 
     public CreateConnectivityTaskResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -60,7 +60,7 @@ public class CreateConnectivityTaskResponse extends SdkResponse {
         this.message = message;
     }
 
-    public CreateConnectivityTaskResponse withTaskId(String taskId) {
+    public CreateConnectivityTaskResponse withTaskId(Long taskId) {
         this.taskId = taskId;
         return this;
     }
@@ -69,11 +69,11 @@ public class CreateConnectivityTaskResponse extends SdkResponse {
      * 请求id
      * @return taskId
      */
-    public String getTaskId() {
+    public Long getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(String taskId) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 

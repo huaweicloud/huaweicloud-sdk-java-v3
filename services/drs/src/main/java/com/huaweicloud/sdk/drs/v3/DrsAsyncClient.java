@@ -55,12 +55,18 @@ import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsRequest;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsResponse;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsRequest;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsResponse;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareResultFileRequest;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareResultFileResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelTableCompareJobRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelTableCompareJobResponse;
+import com.huaweicloud.sdk.drs.v3.model.CreateObjectLevelCompareJobRequest;
+import com.huaweicloud.sdk.drs.v3.model.CreateObjectLevelCompareJobResponse;
 import com.huaweicloud.sdk.drs.v3.model.DeleteCompareJobRequest;
 import com.huaweicloud.sdk.drs.v3.model.DeleteCompareJobResponse;
+import com.huaweicloud.sdk.drs.v3.model.DownloadCompareResultFileRequest;
+import com.huaweicloud.sdk.drs.v3.model.DownloadCompareResultFileResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneRequest;
@@ -69,6 +75,8 @@ import com.huaweicloud.sdk.drs.v3.model.ListCompareResultRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListCompareResultResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDetailRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDetailResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDifferenceRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDifferenceResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListDataCompareDetailRequest;
@@ -77,6 +85,10 @@ import com.huaweicloud.sdk.drs.v3.model.ListDataCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListDataCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListDataLevelTableCompareJobsRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListDataLevelTableCompareJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareDetailRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareDetailResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListRequest;
@@ -880,6 +892,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 导出对比任务结果文件
+     *
+     * 导出对比任务结果文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCompareResultFileRequest 请求对象
+     * @return CompletableFuture<CreateCompareResultFileResponse>
+     */
+    public CompletableFuture<CreateCompareResultFileResponse> createCompareResultFileAsync(
+        CreateCompareResultFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.createCompareResultFile);
+    }
+
+    /**
+     * 导出对比任务结果文件
+     *
+     * 导出对比任务结果文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCompareResultFileRequest 请求对象
+     * @return AsyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse>
+     */
+    public AsyncInvoker<CreateCompareResultFileRequest, CreateCompareResultFileResponse> createCompareResultFileAsyncInvoker(
+        CreateCompareResultFileRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.createCompareResultFile, hcClient);
+    }
+
+    /**
      * 创建对比任务
      *
      * 创建对比任务。
@@ -939,6 +981,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 创建对象级对比任务
+     *
+     * 创建对象级对比任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectLevelCompareJobRequest 请求对象
+     * @return CompletableFuture<CreateObjectLevelCompareJobResponse>
+     */
+    public CompletableFuture<CreateObjectLevelCompareJobResponse> createObjectLevelCompareJobAsync(
+        CreateObjectLevelCompareJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.createObjectLevelCompareJob);
+    }
+
+    /**
+     * 创建对象级对比任务
+     *
+     * 创建对象级对比任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectLevelCompareJobRequest 请求对象
+     * @return AsyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse>
+     */
+    public AsyncInvoker<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> createObjectLevelCompareJobAsyncInvoker(
+        CreateObjectLevelCompareJobRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.createObjectLevelCompareJob, hcClient);
+    }
+
+    /**
      * 取消对比任务
      *
      * 取消对比任务。
@@ -965,6 +1037,36 @@ public class DrsAsyncClient {
     public AsyncInvoker<DeleteCompareJobRequest, DeleteCompareJobResponse> deleteCompareJobAsyncInvoker(
         DeleteCompareJobRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.deleteCompareJob, hcClient);
+    }
+
+    /**
+     * 下载对比任务结果文件
+     *
+     * 下载对比任务结果文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadCompareResultFileRequest 请求对象
+     * @return CompletableFuture<DownloadCompareResultFileResponse>
+     */
+    public CompletableFuture<DownloadCompareResultFileResponse> downloadCompareResultFileAsync(
+        DownloadCompareResultFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.downloadCompareResultFile);
+    }
+
+    /**
+     * 下载对比任务结果文件
+     *
+     * 下载对比任务结果文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadCompareResultFileRequest 请求对象
+     * @return AsyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse>
+     */
+    public AsyncInvoker<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> downloadCompareResultFileAsyncInvoker(
+        DownloadCompareResultFileRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.downloadCompareResultFile, hcClient);
     }
 
     /**
@@ -1086,6 +1188,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 查询内容对比差异
+     *
+     * 查询内容对比差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListContentCompareDifferenceRequest 请求对象
+     * @return CompletableFuture<ListContentCompareDifferenceResponse>
+     */
+    public CompletableFuture<ListContentCompareDifferenceResponse> listContentCompareDifferenceAsync(
+        ListContentCompareDifferenceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listContentCompareDifference);
+    }
+
+    /**
+     * 查询内容对比差异
+     *
+     * 查询内容对比差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListContentCompareDifferenceRequest 请求对象
+     * @return AsyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse>
+     */
+    public AsyncInvoker<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> listContentCompareDifferenceAsyncInvoker(
+        ListContentCompareDifferenceRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listContentCompareDifference, hcClient);
+    }
+
+    /**
      * 查询内容对比总览
      *
      * 查询内容对比总览。
@@ -1203,6 +1335,66 @@ public class DrsAsyncClient {
     public AsyncInvoker<ListDataLevelTableCompareJobsRequest, ListDataLevelTableCompareJobsResponse> listDataLevelTableCompareJobsAsyncInvoker(
         ListDataLevelTableCompareJobsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listDataLevelTableCompareJobs, hcClient);
+    }
+
+    /**
+     * 查询对象对比任务详情
+     *
+     * 查询对象对比任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObejectLevelCompareDetailRequest 请求对象
+     * @return CompletableFuture<ListObejectLevelCompareDetailResponse>
+     */
+    public CompletableFuture<ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetailAsync(
+        ListObejectLevelCompareDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listObejectLevelCompareDetail);
+    }
+
+    /**
+     * 查询对象对比任务详情
+     *
+     * 查询对象对比任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObejectLevelCompareDetailRequest 请求对象
+     * @return AsyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse>
+     */
+    public AsyncInvoker<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetailAsyncInvoker(
+        ListObejectLevelCompareDetailRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listObejectLevelCompareDetail, hcClient);
+    }
+
+    /**
+     * 查询对象对比任务概览
+     *
+     * 查询对象对比任务概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObejectLevelCompareOverviewRequest 请求对象
+     * @return CompletableFuture<ListObejectLevelCompareOverviewResponse>
+     */
+    public CompletableFuture<ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverviewAsync(
+        ListObejectLevelCompareOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listObejectLevelCompareOverview);
+    }
+
+    /**
+     * 查询对象对比任务概览
+     *
+     * 查询对象对比任务概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObejectLevelCompareOverviewRequest 请求对象
+     * @return AsyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse>
+     */
+    public AsyncInvoker<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverviewAsyncInvoker(
+        ListObejectLevelCompareOverviewRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listObejectLevelCompareOverview, hcClient);
     }
 
     /**

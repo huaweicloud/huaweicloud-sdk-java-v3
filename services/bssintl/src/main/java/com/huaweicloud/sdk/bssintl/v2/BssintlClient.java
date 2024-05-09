@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ChangeEnterpriseRealnameAuthenticati
 import com.huaweicloud.sdk.bssintl.v2.model.ChangeEnterpriseRealnameAuthenticationResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreatePersonalRealnameAuthRequest;
@@ -64,6 +66,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomersRequest;
@@ -282,6 +286,35 @@ public class BssintlClient {
     public SyncInvoker<CheckUserIdentityRequest, CheckUserIdentityResponse> checkUserIdentityInvoker(
         CheckUserIdentityRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.checkUserIdentity, hcClient);
+    }
+
+    /**
+     * 开通客户企业项目权限
+     *
+     * 客户在自建平台开通客户企业项目权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
+     * @return CreateEnterpriseProjectAuthResponse
+     */
+    public CreateEnterpriseProjectAuthResponse createEnterpriseProjectAuth(CreateEnterpriseProjectAuthRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.createEnterpriseProjectAuth);
+    }
+
+    /**
+     * 开通客户企业项目权限
+     *
+     * 客户在自建平台开通客户企业项目权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEnterpriseProjectAuthRequest 请求对象
+     * @return SyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse>
+     */
+    public SyncInvoker<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuthInvoker(
+        CreateEnterpriseProjectAuthRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.createEnterpriseProjectAuth, hcClient);
     }
 
     /**
@@ -1044,6 +1077,35 @@ public class BssintlClient {
     public SyncInvoker<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypesInvoker(
         ListServiceTypesRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.listServiceTypes, hcClient);
+    }
+
+    /**
+     * 批量查询客户预算
+     *
+     * 功能描述：批量查询客户预算
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRequest 请求对象
+     * @return ListSubCustomerBudgetResponse
+     */
+    public ListSubCustomerBudgetResponse listSubCustomerBudget(ListSubCustomerBudgetRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listSubCustomerBudget);
+    }
+
+    /**
+     * 批量查询客户预算
+     *
+     * 功能描述：批量查询客户预算
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRequest 请求对象
+     * @return SyncInvoker<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse>
+     */
+    public SyncInvoker<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> listSubCustomerBudgetInvoker(
+        ListSubCustomerBudgetRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.listSubCustomerBudget, hcClient);
     }
 
     /**

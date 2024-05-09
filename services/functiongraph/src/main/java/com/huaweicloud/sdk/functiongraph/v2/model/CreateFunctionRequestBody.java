@@ -271,6 +271,11 @@ public class CreateFunctionRequestBody {
 
     private Integer gpuMemory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_type")
+
+    private String gpuType;
+
     /**
      * 函数代码类型，取值有5种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 Custom-Image-Swr: 函数代码来源与SWR自定义镜像。
      */
@@ -712,6 +717,23 @@ public class CreateFunctionRequestBody {
         this.gpuMemory = gpuMemory;
     }
 
+    public CreateFunctionRequestBody withGpuType(String gpuType) {
+        this.gpuType = gpuType;
+        return this;
+    }
+
+    /**
+     * 显卡类型。
+     * @return gpuType
+     */
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
     public CreateFunctionRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -1128,8 +1150,9 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.handler, that.handler)
             && Objects.equals(this.dependVersionList, that.dependVersionList)
             && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.memorySize, that.memorySize)
-            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.codeType, that.codeType)
-            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.codeFilename, that.codeFilename)
             && Objects.equals(this.customImage, that.customImage) && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData) && Objects.equals(this.xrole, that.xrole)
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
@@ -1156,6 +1179,7 @@ public class CreateFunctionRequestBody {
             funcVpc,
             memorySize,
             gpuMemory,
+            gpuType,
             codeType,
             codeUrl,
             codeFilename,
@@ -1192,6 +1216,7 @@ public class CreateFunctionRequestBody {
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
+        sb.append("    gpuType: ").append(toIndentedString(gpuType)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");

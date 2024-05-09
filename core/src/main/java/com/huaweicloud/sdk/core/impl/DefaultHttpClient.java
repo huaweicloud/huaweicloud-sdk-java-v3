@@ -89,8 +89,6 @@ public class DefaultHttpClient implements HttpClient {
 
     private static final int PROXY_AUTHENTICATION_REQUIRED = 407;
 
-    private static final int DEFAULT_READ_TIMEOUT = 120;
-
     private OkHttpClient client;
 
     private HttpConfig httpConfig;
@@ -110,8 +108,8 @@ public class DefaultHttpClient implements HttpClient {
         if (Objects.nonNull(httpConfig.getDispatcher())) {
             clientBuilder.dispatcher(httpConfig.getDispatcher());
         }
-        clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS).readTimeout(DEFAULT_READ_TIMEOUT,
-                TimeUnit.SECONDS);
+        clientBuilder.connectTimeout(httpConfig.getConnectionTimeout(), TimeUnit.SECONDS)
+                .readTimeout(httpConfig.getReadTimeout(), TimeUnit.SECONDS);
 
         if (Objects.nonNull(httpConfig.getSSLSocketFactory()) && Objects.nonNull(httpConfig.getX509TrustManager())) {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());

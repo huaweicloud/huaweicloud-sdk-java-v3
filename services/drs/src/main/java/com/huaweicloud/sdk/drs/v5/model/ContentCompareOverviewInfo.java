@@ -26,7 +26,7 @@ public class ContentCompareOverviewInfo {
     private String targetDb;
 
     /**
-     * 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。
+     * 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。 - WAIT_FOR_COMPARE：命令已下发，等待对比结果 - CANCELED：已取消
      */
     public static final class StatusEnum {
 
@@ -65,6 +65,16 @@ public class ContentCompareOverviewInfo {
          */
         public static final StatusEnum CAN_NOT_COMPARE = new StatusEnum("CAN_NOT_COMPARE");
 
+        /**
+         * Enum WAIT_FOR_COMPARE for value: "WAIT_FOR_COMPARE"
+         */
+        public static final StatusEnum WAIT_FOR_COMPARE = new StatusEnum("WAIT_FOR_COMPARE");
+
+        /**
+         * Enum CANCELED for value: "CANCELED"
+         */
+        public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -76,6 +86,8 @@ public class ContentCompareOverviewInfo {
             map.put("FAILED_TO_COMPARE", FAILED_TO_COMPARE);
             map.put("TARGET_DB_NOT_EXIST", TARGET_DB_NOT_EXIST);
             map.put("CAN_NOT_COMPARE", CAN_NOT_COMPARE);
+            map.put("WAIT_FOR_COMPARE", WAIT_FOR_COMPARE);
+            map.put("CANCELED", CANCELED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -175,7 +187,7 @@ public class ContentCompareOverviewInfo {
     }
 
     /**
-     * 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。
+     * 对比结果。取值： - CONSISTENT：一致。 - INCONSISTENT：不一致。 - COMPARING：正在对比。 - WAITING_FOR_COMPARISON：等待对比。 - FAILED_TO_COMPARE：对比失败。 - TARGET_DB_NOT_EXIST：目标库不存在。 - CAN_NOT_COMPARE：无法对比。 - WAIT_FOR_COMPARE：命令已下发，等待对比结果 - CANCELED：已取消
      * @return status
      */
     public StatusEnum getStatus() {

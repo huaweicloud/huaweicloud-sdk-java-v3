@@ -118,6 +118,11 @@ public class CreateGraphReqGraph {
 
     private Integer capacityRatio;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_dynamic_graph")
+
+    private Boolean isDynamicGraph;
+
     public CreateGraphReqGraph withName(String name) {
         this.name = name;
         return this;
@@ -544,6 +549,23 @@ public class CreateGraphReqGraph {
         this.capacityRatio = capacityRatio;
     }
 
+    public CreateGraphReqGraph withIsDynamicGraph(Boolean isDynamicGraph) {
+        this.isDynamicGraph = isDynamicGraph;
+        return this;
+    }
+
+    /**
+     * 是否为动态图
+     * @return isDynamicGraph
+     */
+    public Boolean getIsDynamicGraph() {
+        return isDynamicGraph;
+    }
+
+    public void setIsDynamicGraph(Boolean isDynamicGraph) {
+        this.isDynamicGraph = isDynamicGraph;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -568,7 +590,8 @@ public class CreateGraphReqGraph {
             && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.productType, that.productType)
             && Objects.equals(this.vertexIdType, that.vertexIdType)
             && Objects.equals(this.enableMultiLabel, that.enableMultiLabel)
-            && Objects.equals(this.capacityRatio, that.capacityRatio);
+            && Objects.equals(this.capacityRatio, that.capacityRatio)
+            && Objects.equals(this.isDynamicGraph, that.isDynamicGraph);
     }
 
     @Override
@@ -593,7 +616,8 @@ public class CreateGraphReqGraph {
             productType,
             vertexIdType,
             enableMultiLabel,
-            capacityRatio);
+            capacityRatio,
+            isDynamicGraph);
     }
 
     @Override
@@ -621,6 +645,7 @@ public class CreateGraphReqGraph {
         sb.append("    vertexIdType: ").append(toIndentedString(vertexIdType)).append("\n");
         sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("    capacityRatio: ").append(toIndentedString(capacityRatio)).append("\n");
+        sb.append("    isDynamicGraph: ").append(toIndentedString(isDynamicGraph)).append("\n");
         sb.append("}");
         return sb.toString();
     }

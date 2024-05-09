@@ -189,8 +189,12 @@ public class Application {
         HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig();
         // Configure whether to ignore the SSL certificate verification, default is false
         httpConfig.withIgnoreSSLVerification(true);
-        // Configure timeout as needed, default timeout is 60 seconds
+        // Configure connection time out as needed, default is 60 seconds (v3.1.94 and earlier versions)
         httpConfig.withTimeout(60);
+        // Configure connection time out as needed, default is 60 seconds (since v3.1.95, withConnectionTimeout is preferred)
+        httpConfig.withConnectionTimeout(60);
+        // Configure read time out as needed, default is 120 seconds
+        httpConfig.withReadTimeout(120);
         // Configure proxy as needed, the default protocol is `http`
         // Replace the proxy host and port in the example according to the actual situation
         httpConfig.withProxyHost("proxy.huaweicloud.com")
@@ -344,8 +348,14 @@ VpcClient client = VpcClient.newBuilder()
 #### 1.3 Timeout Configuration [:top:](#user-manual-top)
 
 ``` java
-// The default connection timeout is 60 seconds, change it if needed
-HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withTimeout(60);
+
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+// The default connection time out is 60 seconds, change it if needed (v3.1.94 and earlier versions)
+.withTimeout(60)
+// The default connection time out is 60 seconds, change it if needed (since v3.1.95, withConnectionTimeout is preferred)
+.withConnectionTimeout(60)
+// The default read time out is 120 seconds, change it if needed
+.withReadTimeout(120);
 
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)

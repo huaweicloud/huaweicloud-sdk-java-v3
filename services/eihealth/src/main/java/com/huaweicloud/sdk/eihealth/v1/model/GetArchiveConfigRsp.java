@@ -20,11 +20,6 @@ public class GetArchiveConfigRsp {
 
     private Boolean currentRegion;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bucket_name")
-
-    private String bucketName;
-
     public GetArchiveConfigRsp withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -59,23 +54,6 @@ public class GetArchiveConfigRsp {
         this.currentRegion = currentRegion;
     }
 
-    public GetArchiveConfigRsp withBucketName(String bucketName) {
-        this.bucketName = bucketName;
-        return this;
-    }
-
-    /**
-     * 归档桶名称
-     * @return bucketName
-     */
-    public String getBucketName() {
-        return bucketName;
-    }
-
-    public void setBucketName(String bucketName) {
-        this.bucketName = bucketName;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,13 +63,12 @@ public class GetArchiveConfigRsp {
             return false;
         }
         GetArchiveConfigRsp that = (GetArchiveConfigRsp) obj;
-        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.currentRegion, that.currentRegion)
-            && Objects.equals(this.bucketName, that.bucketName);
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.currentRegion, that.currentRegion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionId, currentRegion, bucketName);
+        return Objects.hash(regionId, currentRegion);
     }
 
     @Override
@@ -100,7 +77,6 @@ public class GetArchiveConfigRsp {
         sb.append("class GetArchiveConfigRsp {\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    currentRegion: ").append(toIndentedString(currentRegion)).append("\n");
-        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

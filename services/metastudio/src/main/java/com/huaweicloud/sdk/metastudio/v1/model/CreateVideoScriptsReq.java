@@ -28,6 +28,81 @@ public class CreateVideoScriptsReq {
 
     private String scriptDescription;
 
+    /**
+     * 横竖屏类型。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     */
+    public static final class ViewModeEnum {
+
+        /**
+         * Enum LANDSCAPE for value: "LANDSCAPE"
+         */
+        public static final ViewModeEnum LANDSCAPE = new ViewModeEnum("LANDSCAPE");
+
+        /**
+         * Enum VERTICAL for value: "VERTICAL"
+         */
+        public static final ViewModeEnum VERTICAL = new ViewModeEnum("VERTICAL");
+
+        private static final Map<String, ViewModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ViewModeEnum> createStaticFields() {
+            Map<String, ViewModeEnum> map = new HashMap<>();
+            map.put("LANDSCAPE", LANDSCAPE);
+            map.put("VERTICAL", VERTICAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ViewModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ViewModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewModeEnum(value));
+        }
+
+        public static ViewModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ViewModeEnum) {
+                return this.value.equals(((ViewModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "view_mode")
+
+    private ViewModeEnum viewMode;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_asset_id")
 
@@ -175,6 +250,23 @@ public class CreateVideoScriptsReq {
 
     public void setScriptDescription(String scriptDescription) {
         this.scriptDescription = scriptDescription;
+    }
+
+    public CreateVideoScriptsReq withViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
+        return this;
+    }
+
+    /**
+     * 横竖屏类型。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * @return viewMode
+     */
+    public ViewModeEnum getViewMode() {
+        return viewMode;
+    }
+
+    public void setViewMode(ViewModeEnum viewMode) {
+        this.viewMode = viewMode;
     }
 
     public CreateVideoScriptsReq withModelAssetId(String modelAssetId) {
@@ -394,7 +486,7 @@ public class CreateVideoScriptsReq {
         CreateVideoScriptsReq that = (CreateVideoScriptsReq) obj;
         return Objects.equals(this.scriptName, that.scriptName)
             && Objects.equals(this.scriptDescription, that.scriptDescription)
-            && Objects.equals(this.modelAssetId, that.modelAssetId)
+            && Objects.equals(this.viewMode, that.viewMode) && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.modelAssetType, that.modelAssetType)
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.sceneAssetId, that.sceneAssetId) && Objects.equals(this.privData, that.privData)
@@ -407,6 +499,7 @@ public class CreateVideoScriptsReq {
     public int hashCode() {
         return Objects.hash(scriptName,
             scriptDescription,
+            viewMode,
             modelAssetId,
             modelAssetType,
             voiceConfig,
@@ -424,6 +517,7 @@ public class CreateVideoScriptsReq {
         sb.append("class CreateVideoScriptsReq {\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    scriptDescription: ").append(toIndentedString(scriptDescription)).append("\n");
+        sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
         sb.append("    modelAssetType: ").append(toIndentedString(modelAssetType)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");

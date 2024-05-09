@@ -96,7 +96,7 @@ public class ShowJobDetailRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
      */
     public static final class TypeEnum {
 
@@ -140,6 +140,16 @@ public class ShowJobDetailRequest {
          */
         public static final TypeEnum FILE = new TypeEnum("file");
 
+        /**
+         * Enum IS_WRITABLE for value: "is_writable"
+         */
+        public static final TypeEnum IS_WRITABLE = new TypeEnum("is_writable");
+
+        /**
+         * Enum CLOUD_CONNECTION for value: "cloud_connection"
+         */
+        public static final TypeEnum CLOUD_CONNECTION = new TypeEnum("cloud_connection");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -152,6 +162,8 @@ public class ShowJobDetailRequest {
             map.put("log", LOG);
             map.put("compare", COMPARE);
             map.put("file", FILE);
+            map.put("is_writable", IS_WRITABLE);
+            map.put("cloud_connection", CLOUD_CONNECTION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -608,7 +620,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
      * @return type
      */
     public TypeEnum getType() {

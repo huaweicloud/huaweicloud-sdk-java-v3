@@ -110,6 +110,11 @@ public class TriggerProcess {
     private SmartLayerConfig layerConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_layer_config")
+
+    private SmartLayerConfig extraLayerConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reply_texts")
 
     private List<String> replyTexts = null;
@@ -331,6 +336,32 @@ public class TriggerProcess {
         this.layerConfig = layerConfig;
     }
 
+    public TriggerProcess withExtraLayerConfig(SmartLayerConfig extraLayerConfig) {
+        this.extraLayerConfig = extraLayerConfig;
+        return this;
+    }
+
+    public TriggerProcess withExtraLayerConfig(Consumer<SmartLayerConfig> extraLayerConfigSetter) {
+        if (this.extraLayerConfig == null) {
+            this.extraLayerConfig = new SmartLayerConfig();
+            extraLayerConfigSetter.accept(this.extraLayerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extraLayerConfig
+     * @return extraLayerConfig
+     */
+    public SmartLayerConfig getExtraLayerConfig() {
+        return extraLayerConfig;
+    }
+
+    public void setExtraLayerConfig(SmartLayerConfig extraLayerConfig) {
+        this.extraLayerConfig = extraLayerConfig;
+    }
+
     public TriggerProcess withReplyTexts(List<String> replyTexts) {
         this.replyTexts = replyTexts;
         return this;
@@ -441,14 +472,16 @@ public class TriggerProcess {
         }
         TriggerProcess that = (TriggerProcess) obj;
         return Objects.equals(this.timeWindow, that.timeWindow) && Objects.equals(this.replyMode, that.replyMode)
-            && Objects.equals(this.layerConfig, that.layerConfig) && Objects.equals(this.replyTexts, that.replyTexts)
-            && Objects.equals(this.replyAudios, that.replyAudios) && Objects.equals(this.replyOrder, that.replyOrder)
-            && Objects.equals(this.replyRole, that.replyRole);
+            && Objects.equals(this.layerConfig, that.layerConfig)
+            && Objects.equals(this.extraLayerConfig, that.extraLayerConfig)
+            && Objects.equals(this.replyTexts, that.replyTexts) && Objects.equals(this.replyAudios, that.replyAudios)
+            && Objects.equals(this.replyOrder, that.replyOrder) && Objects.equals(this.replyRole, that.replyRole);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeWindow, replyMode, layerConfig, replyTexts, replyAudios, replyOrder, replyRole);
+        return Objects
+            .hash(timeWindow, replyMode, layerConfig, extraLayerConfig, replyTexts, replyAudios, replyOrder, replyRole);
     }
 
     @Override
@@ -458,6 +491,7 @@ public class TriggerProcess {
         sb.append("    timeWindow: ").append(toIndentedString(timeWindow)).append("\n");
         sb.append("    replyMode: ").append(toIndentedString(replyMode)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
+        sb.append("    extraLayerConfig: ").append(toIndentedString(extraLayerConfig)).append("\n");
         sb.append("    replyTexts: ").append(toIndentedString(replyTexts)).append("\n");
         sb.append("    replyAudios: ").append(toIndentedString(replyAudios)).append("\n");
         sb.append("    replyOrder: ").append(toIndentedString(replyOrder)).append("\n");

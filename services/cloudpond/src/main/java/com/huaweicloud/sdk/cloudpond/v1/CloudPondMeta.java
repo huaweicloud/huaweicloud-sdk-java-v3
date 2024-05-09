@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsResponse;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesRequest;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowRackRequest;
@@ -406,6 +408,49 @@ public class CloudPondMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStoragePoolRequest::getId, ShowStoragePoolRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSupportedZonesRequest, ListSupportedZonesResponse> listSupportedZones =
+        genForListSupportedZones();
+
+    private static HttpRequestDef<ListSupportedZonesRequest, ListSupportedZonesResponse> genForListSupportedZones() {
+        // basic
+        HttpRequestDef.Builder<ListSupportedZonesRequest, ListSupportedZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSupportedZonesRequest.class, ListSupportedZonesResponse.class)
+                .withName("ListSupportedZones")
+                .withUri("/v1/{domain_id}/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupportedZonesRequest::getLimit, ListSupportedZonesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupportedZonesRequest::getMarker, ListSupportedZonesRequest::setMarker));
+        builder.<List<String>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSupportedZonesRequest::getSortKey, ListSupportedZonesRequest::setSortKey));
+        builder.<List<String>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSupportedZonesRequest::getSortDir, ListSupportedZonesRequest::setSortDir));
+        builder.<ListSupportedZonesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupportedZonesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSupportedZonesRequest::getXLanguage, ListSupportedZonesRequest::setXLanguage));
 
         // response
 

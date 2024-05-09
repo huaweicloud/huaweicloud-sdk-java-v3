@@ -17,7 +17,7 @@ public class ExportFlinkJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    private Boolean isSuccess;
+    private String isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
@@ -29,7 +29,7 @@ public class ExportFlinkJobsResponse extends SdkResponse {
 
     private List<String> zipFile = null;
 
-    public ExportFlinkJobsResponse withIsSuccess(Boolean isSuccess) {
+    public ExportFlinkJobsResponse withIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
         return this;
     }
@@ -38,11 +38,11 @@ public class ExportFlinkJobsResponse extends SdkResponse {
      * 执行请求是否成功。“true”表示请求执行成功。
      * @return isSuccess
      */
-    public Boolean getIsSuccess() {
+    public String getIsSuccess() {
         return isSuccess;
     }
 
-    public void setIsSuccess(Boolean isSuccess) {
+    public void setIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
     }
 

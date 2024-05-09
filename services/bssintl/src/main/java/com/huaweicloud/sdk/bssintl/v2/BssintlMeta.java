@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.CheckSubcustomerUserReq;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CheckUserIdentityResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateCustomerV2Req;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseProjectAuthResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.CreateEnterpriseRealnameAuthenticationResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CreatePersonalRealnameAuthRequest;
@@ -75,6 +77,9 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetReq;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomersRequest;
@@ -271,6 +276,27 @@ public class BssintlMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckSubcustomerUserReq.class),
             f -> f.withMarshaller(CheckUserIdentityRequest::getBody, CheckUserIdentityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuth =
+        genForCreateEnterpriseProjectAuth();
+
+    private static HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> genForCreateEnterpriseProjectAuth() {
+        // basic
+        HttpRequestDef.Builder<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateEnterpriseProjectAuthRequest.class,
+                    CreateEnterpriseProjectAuthResponse.class)
+                .withName("CreateEnterpriseProjectAuth")
+                .withUri("/v2/enterprises/enterprise-projects/authority")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1188,6 +1214,29 @@ public class BssintlMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceTypesRequest::getXLanguage, ListServiceTypesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> listSubCustomerBudget =
+        genForListSubCustomerBudget();
+
+    private static HttpRequestDef<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> genForListSubCustomerBudget() {
+        // basic
+        HttpRequestDef.Builder<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSubCustomerBudgetRequest.class, ListSubCustomerBudgetResponse.class)
+            .withName("ListSubCustomerBudget")
+            .withUri("/v2/partners/sub-customers/budget/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListSubCustomerBudgetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSubCustomerBudgetReq.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRequest::getBody, ListSubCustomerBudgetRequest::setBody));
 
         // response
 

@@ -170,7 +170,7 @@ public class CbhMeta {
         // requests
         builder.<BigDecimal>withRequestField("instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BigDecimal.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 

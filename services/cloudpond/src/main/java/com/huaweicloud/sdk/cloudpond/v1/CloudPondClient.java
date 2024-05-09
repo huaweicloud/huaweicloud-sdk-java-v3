@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsResponse;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesRequest;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowRackRequest;
@@ -386,6 +388,37 @@ public class CloudPondClient {
     public SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolInvoker(
         ShowStoragePoolRequest request) {
         return new SyncInvoker<>(request, CloudPondMeta.showStoragePool, hcClient);
+    }
+
+    /**
+     * 查询支持的地区列表
+     *
+     * 查询支持智能边缘小站接入的华为云地区列表。
+     * - 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ies:zone:list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedZonesRequest 请求对象
+     * @return ListSupportedZonesResponse
+     */
+    public ListSupportedZonesResponse listSupportedZones(ListSupportedZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPondMeta.listSupportedZones);
+    }
+
+    /**
+     * 查询支持的地区列表
+     *
+     * 查询支持智能边缘小站接入的华为云地区列表。
+     * - 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ies:zone:list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedZonesRequest 请求对象
+     * @return SyncInvoker<ListSupportedZonesRequest, ListSupportedZonesResponse>
+     */
+    public SyncInvoker<ListSupportedZonesRequest, ListSupportedZonesResponse> listSupportedZonesInvoker(
+        ListSupportedZonesRequest request) {
+        return new SyncInvoker<>(request, CloudPondMeta.listSupportedZones, hcClient);
     }
 
 }

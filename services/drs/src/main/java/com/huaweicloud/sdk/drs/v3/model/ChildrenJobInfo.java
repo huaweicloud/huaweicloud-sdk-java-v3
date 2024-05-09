@@ -233,9 +233,9 @@ public class ChildrenJobInfo {
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
 
         /**
-         * Enum NON_DBS for value: "non-dbs"
+         * Enum NO_DBS for value: "no-dbs"
          */
-        public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
+        public static final JobDirectionEnum NO_DBS = new JobDirectionEnum("no-dbs");
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -243,7 +243,7 @@ public class ChildrenJobInfo {
             Map<String, JobDirectionEnum> map = new HashMap<>();
             map.put("up", UP);
             map.put("down", DOWN);
-            map.put("non-dbs", NON_DBS);
+            map.put("no-dbs", NO_DBS);
             return Collections.unmodifiableMap(map);
         }
 

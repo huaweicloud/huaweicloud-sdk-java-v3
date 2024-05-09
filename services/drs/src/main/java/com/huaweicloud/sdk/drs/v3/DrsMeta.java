@@ -81,14 +81,22 @@ import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsRequest;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsResponse;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsRequest;
 import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsResponse;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareResultFileRequest;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareResultFileResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskReq;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskResponse;
 import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelTableCompareJobReq;
 import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelTableCompareJobRequest;
 import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelTableCompareJobResponse;
+import com.huaweicloud.sdk.drs.v3.model.CreateObjectCompareJobReq;
+import com.huaweicloud.sdk.drs.v3.model.CreateObjectLevelCompareJobRequest;
+import com.huaweicloud.sdk.drs.v3.model.CreateObjectLevelCompareJobResponse;
 import com.huaweicloud.sdk.drs.v3.model.DeleteCompareJobRequest;
 import com.huaweicloud.sdk.drs.v3.model.DeleteCompareJobResponse;
+import com.huaweicloud.sdk.drs.v3.model.DownloadCompareResultFileRequest;
+import com.huaweicloud.sdk.drs.v3.model.DownloadCompareResultFileResponse;
+import com.huaweicloud.sdk.drs.v3.model.ExportCompareResultReq;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableNodeTypesResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneRequest;
@@ -97,6 +105,8 @@ import com.huaweicloud.sdk.drs.v3.model.ListCompareResultRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListCompareResultResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDetailRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDetailResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDifferenceRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListContentCompareDifferenceResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListContentCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListDataCompareDetailRequest;
@@ -105,6 +115,10 @@ import com.huaweicloud.sdk.drs.v3.model.ListDataCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListDataCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListDataLevelTableCompareJobsRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListDataLevelTableCompareJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareDetailRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareDetailResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
 import com.huaweicloud.sdk.drs.v3.model.ModifyTargetParamsReq;
@@ -870,6 +884,46 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCompareResultFileRequest, CreateCompareResultFileResponse> createCompareResultFile =
+        genForCreateCompareResultFile();
+
+    private static HttpRequestDef<CreateCompareResultFileRequest, CreateCompareResultFileResponse> genForCreateCompareResultFile() {
+        // basic
+        HttpRequestDef.Builder<CreateCompareResultFileRequest, CreateCompareResultFileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCompareResultFileRequest.class, CreateCompareResultFileResponse.class)
+            .withName("CreateCompareResultFile")
+            .withUri("/v3/{project_id}/jobs/{job_id}/compare/result/file")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCompareResultFileRequest::getJobId, CreateCompareResultFileRequest::setJobId));
+        builder.<CreateCompareResultFileRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateCompareResultFileRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateCompareResultFileRequest::getXLanguage,
+                CreateCompareResultFileRequest::setXLanguage));
+        builder.<String>withRequestField("Region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCompareResultFileRequest::getRegion,
+                CreateCompareResultFileRequest::setRegion));
+        builder.<ExportCompareResultReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportCompareResultReq.class),
+            f -> f.withMarshaller(CreateCompareResultFileRequest::getBody, CreateCompareResultFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTask =
         genForCreateCompareTask();
 
@@ -937,6 +991,45 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> createObjectLevelCompareJob =
+        genForCreateObjectLevelCompareJob();
+
+    private static HttpRequestDef<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> genForCreateObjectLevelCompareJob() {
+        // basic
+        HttpRequestDef.Builder<CreateObjectLevelCompareJobRequest, CreateObjectLevelCompareJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateObjectLevelCompareJobRequest.class,
+                    CreateObjectLevelCompareJobResponse.class)
+                .withName("CreateObjectLevelCompareJob")
+                .withUri("/v3/{project_id}/jobs/{job_id}/object/compare")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateObjectLevelCompareJobRequest::getJobId,
+                CreateObjectLevelCompareJobRequest::setJobId));
+        builder.<CreateObjectLevelCompareJobRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateObjectLevelCompareJobRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateObjectLevelCompareJobRequest::getXLanguage,
+                CreateObjectLevelCompareJobRequest::setXLanguage));
+        builder.<CreateObjectCompareJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateObjectCompareJobReq.class),
+            f -> f.withMarshaller(CreateObjectLevelCompareJobRequest::getBody,
+                CreateObjectLevelCompareJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteCompareJobRequest, DeleteCompareJobResponse> deleteCompareJob =
         genForDeleteCompareJob();
 
@@ -964,6 +1057,63 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteCompareJobRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteCompareJobRequest::getXLanguage, DeleteCompareJobRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> downloadCompareResultFile =
+        genForDownloadCompareResultFile();
+
+    private static HttpRequestDef<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> genForDownloadCompareResultFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadCompareResultFileRequest, DownloadCompareResultFileResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    DownloadCompareResultFileRequest.class,
+                    DownloadCompareResultFileResponse.class)
+                .withName("DownloadCompareResultFile")
+                .withUri("/v3/{project_id}/jobs/{job_id}/compare/result/file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getJobId,
+                DownloadCompareResultFileRequest::setJobId));
+        builder.<String>withRequestField("compare_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getCompareType,
+                DownloadCompareResultFileRequest::setCompareType));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getCompareJobId,
+                DownloadCompareResultFileRequest::setCompareJobId));
+        builder.<DownloadCompareResultFileRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DownloadCompareResultFileRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getXLanguage,
+                DownloadCompareResultFileRequest::setXLanguage));
+        builder.<String>withRequestField("Region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getRegion,
+                DownloadCompareResultFileRequest::setRegion));
+        builder.<ExportCompareResultReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportCompareResultReq.class),
+            f -> f.withMarshaller(DownloadCompareResultFileRequest::getBody,
+                DownloadCompareResultFileRequest::setBody));
 
         // response
 
@@ -1140,6 +1290,69 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ListContentCompareDetailRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListContentCompareDetailRequest::getXLanguage,
                 ListContentCompareDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> listContentCompareDifference =
+        genForListContentCompareDifference();
+
+    private static HttpRequestDef<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> genForListContentCompareDifference() {
+        // basic
+        HttpRequestDef.Builder<ListContentCompareDifferenceRequest, ListContentCompareDifferenceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListContentCompareDifferenceRequest.class,
+                    ListContentCompareDifferenceResponse.class)
+                .withName("ListContentCompareDifference")
+                .withUri("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-difference")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getJobId,
+                ListContentCompareDifferenceRequest::setJobId));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getCompareJobId,
+                ListContentCompareDifferenceRequest::setCompareJobId));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getTableName,
+                ListContentCompareDifferenceRequest::setTableName));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getDbName,
+                ListContentCompareDifferenceRequest::setDbName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getLimit,
+                ListContentCompareDifferenceRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getOffset,
+                ListContentCompareDifferenceRequest::setOffset));
+        builder.<ListContentCompareDifferenceRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListContentCompareDifferenceRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListContentCompareDifferenceRequest::getXLanguage,
+                ListContentCompareDifferenceRequest::setXLanguage));
 
         // response
 
@@ -1360,6 +1573,96 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ListDataLevelTableCompareJobsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListDataLevelTableCompareJobsRequest::getXLanguage,
                 ListDataLevelTableCompareJobsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> listObejectLevelCompareDetail =
+        genForListObejectLevelCompareDetail();
+
+    private static HttpRequestDef<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> genForListObejectLevelCompareDetail() {
+        // basic
+        HttpRequestDef.Builder<ListObejectLevelCompareDetailRequest, ListObejectLevelCompareDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListObejectLevelCompareDetailRequest.class,
+                    ListObejectLevelCompareDetailResponse.class)
+                .withName("ListObejectLevelCompareDetail")
+                .withUri("/v3/{project_id}/jobs/{job_id}/object/compare/{compare_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getJobId,
+                ListObejectLevelCompareDetailRequest::setJobId));
+        builder.<String>withRequestField("compare_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getCompareType,
+                ListObejectLevelCompareDetailRequest::setCompareType));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getCompareJobId,
+                ListObejectLevelCompareDetailRequest::setCompareJobId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getLimit,
+                ListObejectLevelCompareDetailRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getOffset,
+                ListObejectLevelCompareDetailRequest::setOffset));
+        builder.<ListObejectLevelCompareDetailRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListObejectLevelCompareDetailRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListObejectLevelCompareDetailRequest::getXLanguage,
+                ListObejectLevelCompareDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> listObejectLevelCompareOverview =
+        genForListObejectLevelCompareOverview();
+
+    private static HttpRequestDef<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> genForListObejectLevelCompareOverview() {
+        // basic
+        HttpRequestDef.Builder<ListObejectLevelCompareOverviewRequest, ListObejectLevelCompareOverviewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListObejectLevelCompareOverviewRequest.class,
+                    ListObejectLevelCompareOverviewResponse.class)
+                .withName("ListObejectLevelCompareOverview")
+                .withUri("/v3/{project_id}/jobs/{job_id}/object/compare")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObejectLevelCompareOverviewRequest::getJobId,
+                ListObejectLevelCompareOverviewRequest::setJobId));
+        builder.<ListObejectLevelCompareOverviewRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListObejectLevelCompareOverviewRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListObejectLevelCompareOverviewRequest::getXLanguage,
+                ListObejectLevelCompareOverviewRequest::setXLanguage));
 
         // response
 

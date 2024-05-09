@@ -48,6 +48,11 @@ public class CompareResultInfo {
 
     private List<ContentCompareDetailInfo> contentCompareDetailInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content_diff_detail_info")
+
+    private ContentDiffDetailInfo contentDiffDetailInfo;
+
     public CompareResultInfo withObjectsCompareOverviewInfo(ObjectsCompareTaskInfo objectsCompareOverviewInfo) {
         this.objectsCompareOverviewInfo = objectsCompareOverviewInfo;
         return this;
@@ -280,6 +285,32 @@ public class CompareResultInfo {
         this.contentCompareDetailInfos = contentCompareDetailInfos;
     }
 
+    public CompareResultInfo withContentDiffDetailInfo(ContentDiffDetailInfo contentDiffDetailInfo) {
+        this.contentDiffDetailInfo = contentDiffDetailInfo;
+        return this;
+    }
+
+    public CompareResultInfo withContentDiffDetailInfo(Consumer<ContentDiffDetailInfo> contentDiffDetailInfoSetter) {
+        if (this.contentDiffDetailInfo == null) {
+            this.contentDiffDetailInfo = new ContentDiffDetailInfo();
+            contentDiffDetailInfoSetter.accept(this.contentDiffDetailInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get contentDiffDetailInfo
+     * @return contentDiffDetailInfo
+     */
+    public ContentDiffDetailInfo getContentDiffDetailInfo() {
+        return contentDiffDetailInfo;
+    }
+
+    public void setContentDiffDetailInfo(ContentDiffDetailInfo contentDiffDetailInfo) {
+        this.contentDiffDetailInfo = contentDiffDetailInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,7 +326,8 @@ public class CompareResultInfo {
             && Objects.equals(this.lineCompareOverviewInfos, that.lineCompareOverviewInfos)
             && Objects.equals(this.lineCompareDetailInfos, that.lineCompareDetailInfos)
             && Objects.equals(this.contentCompareOverviewInfos, that.contentCompareOverviewInfos)
-            && Objects.equals(this.contentCompareDetailInfos, that.contentCompareDetailInfos);
+            && Objects.equals(this.contentCompareDetailInfos, that.contentCompareDetailInfos)
+            && Objects.equals(this.contentDiffDetailInfo, that.contentDiffDetailInfo);
     }
 
     @Override
@@ -306,7 +338,8 @@ public class CompareResultInfo {
             lineCompareOverviewInfos,
             lineCompareDetailInfos,
             contentCompareOverviewInfos,
-            contentCompareDetailInfos);
+            contentCompareDetailInfos,
+            contentDiffDetailInfo);
     }
 
     @Override
@@ -322,6 +355,7 @@ public class CompareResultInfo {
             .append(toIndentedString(contentCompareOverviewInfos))
             .append("\n");
         sb.append("    contentCompareDetailInfos: ").append(toIndentedString(contentCompareDetailInfos)).append("\n");
+        sb.append("    contentDiffDetailInfo: ").append(toIndentedString(contentDiffDetailInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

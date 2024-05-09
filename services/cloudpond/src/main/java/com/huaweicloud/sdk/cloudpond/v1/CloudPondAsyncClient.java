@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListStoragePoolsResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedRegionsResponse;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesRequest;
+import com.huaweicloud.sdk.cloudpond.v1.model.ListSupportedZonesResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteRequest;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowEdgeSiteResponse;
 import com.huaweicloud.sdk.cloudpond.v1.model.ShowRackRequest;
@@ -392,6 +394,37 @@ public class CloudPondAsyncClient {
     public AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolAsyncInvoker(
         ShowStoragePoolRequest request) {
         return new AsyncInvoker<>(request, CloudPondMeta.showStoragePool, hcClient);
+    }
+
+    /**
+     * 查询支持的地区列表
+     *
+     * 查询支持智能边缘小站接入的华为云地区列表。
+     * - 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ies:zone:list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedZonesRequest 请求对象
+     * @return CompletableFuture<ListSupportedZonesResponse>
+     */
+    public CompletableFuture<ListSupportedZonesResponse> listSupportedZonesAsync(ListSupportedZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPondMeta.listSupportedZones);
+    }
+
+    /**
+     * 查询支持的地区列表
+     *
+     * 查询支持智能边缘小站接入的华为云地区列表。
+     * - 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ies:zone:list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportedZonesRequest 请求对象
+     * @return AsyncInvoker<ListSupportedZonesRequest, ListSupportedZonesResponse>
+     */
+    public AsyncInvoker<ListSupportedZonesRequest, ListSupportedZonesResponse> listSupportedZonesAsyncInvoker(
+        ListSupportedZonesRequest request) {
+        return new AsyncInvoker<>(request, CloudPondMeta.listSupportedZones, hcClient);
     }
 
 }

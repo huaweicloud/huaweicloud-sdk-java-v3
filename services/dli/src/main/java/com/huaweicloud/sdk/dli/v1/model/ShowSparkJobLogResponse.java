@@ -22,7 +22,7 @@ public class ShowSparkJobLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
-    private String from;
+    private Integer from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
@@ -51,7 +51,7 @@ public class ShowSparkJobLogResponse extends SdkResponse {
         this.id = id;
     }
 
-    public ShowSparkJobLogResponse withFrom(String from) {
+    public ShowSparkJobLogResponse withFrom(Integer from) {
         this.from = from;
         return this;
     }
@@ -60,11 +60,11 @@ public class ShowSparkJobLogResponse extends SdkResponse {
      * 日志起始索引。
      * @return from
      */
-    public String getFrom() {
+    public Integer getFrom() {
         return from;
     }
 
-    public void setFrom(String from) {
+    public void setFrom(Integer from) {
         this.from = from;
     }
 

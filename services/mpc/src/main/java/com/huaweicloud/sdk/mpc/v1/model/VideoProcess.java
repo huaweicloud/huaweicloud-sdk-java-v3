@@ -191,6 +191,81 @@ public class VideoProcess {
 
     private Integer upsample;
 
+    /**
+     * HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 
+     */
+    public static final class HlsSegmentTypeEnum {
+
+        /**
+         * Enum MPEGTS for value: "mpegts"
+         */
+        public static final HlsSegmentTypeEnum MPEGTS = new HlsSegmentTypeEnum("mpegts");
+
+        /**
+         * Enum FMP4 for value: "fmp4"
+         */
+        public static final HlsSegmentTypeEnum FMP4 = new HlsSegmentTypeEnum("fmp4");
+
+        private static final Map<String, HlsSegmentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HlsSegmentTypeEnum> createStaticFields() {
+            Map<String, HlsSegmentTypeEnum> map = new HashMap<>();
+            map.put("mpegts", MPEGTS);
+            map.put("fmp4", FMP4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HlsSegmentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HlsSegmentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HlsSegmentTypeEnum(value));
+        }
+
+        public static HlsSegmentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HlsSegmentTypeEnum) {
+                return this.value.equals(((HlsSegmentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_segment_type")
+
+    private HlsSegmentTypeEnum hlsSegmentType;
+
     public VideoProcess withHlsInitCount(Integer hlsInitCount) {
         this.hlsInitCount = hlsInitCount;
         return this;
@@ -301,6 +376,23 @@ public class VideoProcess {
         this.upsample = upsample;
     }
 
+    public VideoProcess withHlsSegmentType(HlsSegmentTypeEnum hlsSegmentType) {
+        this.hlsSegmentType = hlsSegmentType;
+        return this;
+    }
+
+    /**
+     * HLS切片类型。  取值如下所示： - mpegts：ts切片 - fmp4：fmp4切片  不设置默认为ts切片。 
+     * @return hlsSegmentType
+     */
+    public HlsSegmentTypeEnum getHlsSegmentType() {
+        return hlsSegmentType;
+    }
+
+    public void setHlsSegmentType(HlsSegmentTypeEnum hlsSegmentType) {
+        this.hlsSegmentType = hlsSegmentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -313,12 +405,14 @@ public class VideoProcess {
         return Objects.equals(this.hlsInitCount, that.hlsInitCount)
             && Objects.equals(this.hlsInitInterval, that.hlsInitInterval)
             && Objects.equals(this.hlsStorageType, that.hlsStorageType) && Objects.equals(this.rotate, that.rotate)
-            && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.upsample, that.upsample);
+            && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.upsample, that.upsample)
+            && Objects.equals(this.hlsSegmentType, that.hlsSegmentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hlsInitCount, hlsInitInterval, hlsStorageType, rotate, adaptation, upsample);
+        return Objects
+            .hash(hlsInitCount, hlsInitInterval, hlsStorageType, rotate, adaptation, upsample, hlsSegmentType);
     }
 
     @Override
@@ -331,6 +425,7 @@ public class VideoProcess {
         sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
         sb.append("    adaptation: ").append(toIndentedString(adaptation)).append("\n");
         sb.append("    upsample: ").append(toIndentedString(upsample)).append("\n");
+        sb.append("    hlsSegmentType: ").append(toIndentedString(hlsSegmentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

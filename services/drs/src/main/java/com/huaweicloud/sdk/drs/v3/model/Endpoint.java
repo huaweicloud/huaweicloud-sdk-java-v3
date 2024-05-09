@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库信息体
@@ -293,6 +294,11 @@ public class Endpoint {
     @JsonProperty(value = "cluster_mode")
 
     private ClusterModeEnum clusterMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_security_config")
+
+    private KafkaSecurity kafkaSecurityConfig;
 
     public Endpoint withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
@@ -685,6 +691,32 @@ public class Endpoint {
         this.clusterMode = clusterMode;
     }
 
+    public Endpoint withKafkaSecurityConfig(KafkaSecurity kafkaSecurityConfig) {
+        this.kafkaSecurityConfig = kafkaSecurityConfig;
+        return this;
+    }
+
+    public Endpoint withKafkaSecurityConfig(Consumer<KafkaSecurity> kafkaSecurityConfigSetter) {
+        if (this.kafkaSecurityConfig == null) {
+            this.kafkaSecurityConfig = new KafkaSecurity();
+            kafkaSecurityConfigSetter.accept(this.kafkaSecurityConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kafkaSecurityConfig
+     * @return kafkaSecurityConfig
+     */
+    public KafkaSecurity getKafkaSecurityConfig() {
+        return kafkaSecurityConfig;
+    }
+
+    public void setKafkaSecurityConfig(KafkaSecurity kafkaSecurityConfig) {
+        this.kafkaSecurityConfig = kafkaSecurityConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -707,7 +739,8 @@ public class Endpoint {
             && Objects.equals(this.sslCertCheckSum, that.sslCertCheckSum)
             && Objects.equals(this.sslCertKey, that.sslCertKey) && Objects.equals(this.sslCertName, that.sslCertName)
             && Objects.equals(this.sslLink, that.sslLink) && Objects.equals(this.topic, that.topic)
-            && Objects.equals(this.clusterMode, that.clusterMode);
+            && Objects.equals(this.clusterMode, that.clusterMode)
+            && Objects.equals(this.kafkaSecurityConfig, that.kafkaSecurityConfig);
     }
 
     @Override
@@ -734,7 +767,8 @@ public class Endpoint {
             sslCertName,
             sslLink,
             topic,
-            clusterMode);
+            clusterMode,
+            kafkaSecurityConfig);
     }
 
     @Override
@@ -764,6 +798,7 @@ public class Endpoint {
         sb.append("    sslLink: ").append(toIndentedString(sslLink)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    clusterMode: ").append(toIndentedString(clusterMode)).append("\n");
+        sb.append("    kafkaSecurityConfig: ").append(toIndentedString(kafkaSecurityConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

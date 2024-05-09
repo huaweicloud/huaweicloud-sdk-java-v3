@@ -99,8 +99,12 @@ import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthObjectCompareJobOverviewRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowHealthObjectCompareJobOverviewResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowIncrementComponentsDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowIncrementComponentsDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowInstanceTagsRequest;
@@ -129,6 +133,8 @@ import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsRequest;
@@ -1559,6 +1565,35 @@ public class DrsClient {
     }
 
     /**
+     * 查询健康对比任务详情
+     *
+     * 查询健康对比任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthCompareJobDetailRequest 请求对象
+     * @return ShowHealthCompareJobDetailResponse
+     */
+    public ShowHealthCompareJobDetailResponse showHealthCompareJobDetail(ShowHealthCompareJobDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showHealthCompareJobDetail);
+    }
+
+    /**
+     * 查询健康对比任务详情
+     *
+     * 查询健康对比任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthCompareJobDetailRequest 请求对象
+     * @return SyncInvoker<ShowHealthCompareJobDetailRequest, ShowHealthCompareJobDetailResponse>
+     */
+    public SyncInvoker<ShowHealthCompareJobDetailRequest, ShowHealthCompareJobDetailResponse> showHealthCompareJobDetailInvoker(
+        ShowHealthCompareJobDetailRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showHealthCompareJobDetail, hcClient);
+    }
+
+    /**
      * 查询健康对比列表
      *
      * 查询健康对比列表。
@@ -1585,6 +1620,36 @@ public class DrsClient {
     public SyncInvoker<ShowHealthCompareJobListRequest, ShowHealthCompareJobListResponse> showHealthCompareJobListInvoker(
         ShowHealthCompareJobListRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showHealthCompareJobList, hcClient);
+    }
+
+    /**
+     * 获取健康对比对象级对比概览
+     *
+     * 获取健康对比对象级对比概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthObjectCompareJobOverviewRequest 请求对象
+     * @return ShowHealthObjectCompareJobOverviewResponse
+     */
+    public ShowHealthObjectCompareJobOverviewResponse showHealthObjectCompareJobOverview(
+        ShowHealthObjectCompareJobOverviewRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showHealthObjectCompareJobOverview);
+    }
+
+    /**
+     * 获取健康对比对象级对比概览
+     *
+     * 获取健康对比对象级对比概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthObjectCompareJobOverviewRequest 请求对象
+     * @return SyncInvoker<ShowHealthObjectCompareJobOverviewRequest, ShowHealthObjectCompareJobOverviewResponse>
+     */
+    public SyncInvoker<ShowHealthObjectCompareJobOverviewRequest, ShowHealthObjectCompareJobOverviewResponse> showHealthObjectCompareJobOverviewInvoker(
+        ShowHealthObjectCompareJobOverviewRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showHealthObjectCompareJobOverview, hcClient);
     }
 
     /**
@@ -2002,6 +2067,35 @@ public class DrsClient {
     public SyncInvoker<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> updateBatchAsyncJobsInvoker(
         UpdateBatchAsyncJobsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.updateBatchAsyncJobs, hcClient);
+    }
+
+    /**
+     * 修改对比策略
+     *
+     * 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateComparePolicyRequest 请求对象
+     * @return UpdateComparePolicyResponse
+     */
+    public UpdateComparePolicyResponse updateComparePolicy(UpdateComparePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.updateComparePolicy);
+    }
+
+    /**
+     * 修改对比策略
+     *
+     * 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateComparePolicyRequest 请求对象
+     * @return SyncInvoker<UpdateComparePolicyRequest, UpdateComparePolicyResponse>
+     */
+    public SyncInvoker<UpdateComparePolicyRequest, UpdateComparePolicyResponse> updateComparePolicyInvoker(
+        UpdateComparePolicyRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.updateComparePolicy, hcClient);
     }
 
     /**

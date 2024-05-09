@@ -146,7 +146,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 背景文件的URL。 > * 仅直播支持外部URL，其他业务通过资产库查询获取，不支持外部URL。 > * background_type=COLOR时需要填写。
+     * 背景文件的URL。 > * 仅直播支持外部URL，其他业务通过资产库查询获取，不支持外部URL。 > * background_type=IMAGE时需要填写。
      * @return backgroundConfig
      */
     public String getBackgroundConfig() {
@@ -163,7 +163,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 纯色背景的RGB颜色值。 > * background_type=IMAGE时需要填写。
+     * 纯色背景的RGB颜色值。 > * background_type=COLOR时需要填写。
      * @return backgroundColorConfig
      */
     public String getBackgroundColorConfig() {

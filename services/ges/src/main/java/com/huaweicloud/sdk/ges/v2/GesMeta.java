@@ -273,6 +273,11 @@ public class GesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteGraph2Request::getKeepBackup, DeleteGraph2Request::setKeepBackup));
+        builder.<Boolean>withRequestField("delete_eip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteGraph2Request::getDeleteEip, DeleteGraph2Request::setDeleteEip));
 
         // response
 

@@ -29,14 +29,8 @@ import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.internal.Iam;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
 import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
-import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequest;
-import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectResponse;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsResponse;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsRequest;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 import com.huaweicloud.sdk.core.internal.model.Project;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
@@ -131,7 +125,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             if (projects.size() == 1) {
                 projectId = projects.get(0).getId();
             } else if (projects.size() < 1) {
-                projectId = keystoneCreateProject(inner, regionId);
+                throw new SdkException("no project id found, please specify one when initializing the credentials: " +
+                        "BasicCredentials cred = " +
+                        "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId)");
             } else {
                 String projectIds = projects.stream().map(Project::getId).collect(Collectors.joining(","));
                 throw new SdkException(String.format(Locale.ROOT, "multiple project ids found: [%s], " +
@@ -146,67 +142,6 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
             return this;
         }, hcClient.getHttpConfig().getExecutorService());
-    }
-
-    private String keystoneCreateProject(HcClient client, String regionId) {
-        List<String> supportedRegions = getSupportedRegions(client);
-        if (Objects.isNull(supportedRegions) || supportedRegions.size() == 0) {
-            throw new SdkException("failed to list regions");
-        }
-        if (!supportedRegions.contains(regionId)) {
-            throw new SdkException("the region input is not supported to create project automatically");
-        }
-
-        String domainId = getDomainId(client);
-        if (StringUtils.isEmpty(domainId)) {
-            throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
-        }
-
-        return getCreateProjectId(client, regionId, domainId);
-    }
-
-    private List<String> getSupportedRegions(HcClient hcClient) {
-        final String publicRegionType = "public";
-        KeystoneListRegionsRequest request = new KeystoneListRegionsRequest();
-        KeystoneListRegionsResponse response = hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_REGIONS);
-        if (Objects.isNull(response)) {
-            throw new SdkException("failed to list all regions");
-        }
-
-        return response.getRegions().stream().map(region -> {
-            if (publicRegionType.equals(region.getType())) {
-                return region.getId();
-            }
-            return null;
-        }).filter(Objects::nonNull).collect(Collectors.toList());
-    }
-
-    private String getDomainId(HcClient hcClient) {
-        KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
-                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
-        if (Objects.isNull(response)) {
-            throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
-        }
-        return response.getDomains().get(0).getId();
-    }
-
-    private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
-        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk()).withSk(getSk())
-                .withDomainId(domainId);
-        HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
-        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest()
-                .withBody(body -> body.withProject(project -> {
-                    project.withName(regionId);
-                    project.withDomainId(domainId);
-                }));
-        KeystoneCreateProjectResponse response = innerGlobal.syncInvokeHttp(request,
-                InnerIamMeta.KEYSTONE_CREATE_PROJECT);
-
-        if (Objects.isNull(response.getProject())) {
-            throw new SdkException("failed to create project");
-        }
-        return response.getProject().getId();
     }
 
     @Override
