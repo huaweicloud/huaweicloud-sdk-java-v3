@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -95,10 +95,23 @@ public interface HttpRequest {
         }
 
         public HttpRequestBuilder addHeader(String key, String value) {
-            if (httpRequest.headers.containsKey(key) && Objects.nonNull(httpRequest.headers.get(key))) {
-                httpRequest.headers.get(key).add(value);
+            if (!httpRequest.headers.containsKey(key)) {
+                httpRequest.headers.put(key, new ArrayList<String>() {
+
+                    private static final long serialVersionUID = 1L;
+
+                    {
+                        add(value);
+                    }
+                });
             } else {
-                httpRequest.headers.put(key, Collections.singletonList(value));
+                List<String> values = httpRequest.headers.get(key);
+                if (Objects.isNull(values)) {
+                    values = new ArrayList<>();
+                }
+                if (!values.contains(value)) {
+                    values.add(value);
+                }
             }
             return this;
         }
@@ -322,10 +335,10 @@ public interface HttpRequest {
         private Impl buildPathParamsString() {
             this.pathParamsString = Objects.isNull(path) ? "" : path;
             pathParams.forEach((key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
-                value.toString()));
-            autoFilledPathParams.forEach(
-                (key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
                     value.toString()));
+            autoFilledPathParams.forEach(
+                    (key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
+                            value.toString()));
             return this;
         }
 

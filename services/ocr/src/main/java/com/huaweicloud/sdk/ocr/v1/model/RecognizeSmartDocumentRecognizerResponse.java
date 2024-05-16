@@ -19,6 +19,11 @@ public class RecognizeSmartDocumentRecognizerResponse extends SdkResponse {
 
     private List<SmartDocumentRecognizerResult> result = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public RecognizeSmartDocumentRecognizerResponse withResult(List<SmartDocumentRecognizerResult> result) {
         this.result = result;
         return this;
@@ -53,6 +58,25 @@ public class RecognizeSmartDocumentRecognizerResponse extends SdkResponse {
         this.result = result;
     }
 
+    public RecognizeSmartDocumentRecognizerResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,12 +86,12 @@ public class RecognizeSmartDocumentRecognizerResponse extends SdkResponse {
             return false;
         }
         RecognizeSmartDocumentRecognizerResponse that = (RecognizeSmartDocumentRecognizerResponse) obj;
-        return Objects.equals(this.result, that.result);
+        return Objects.equals(this.result, that.result) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result);
+        return Objects.hash(result, xRequestId);
     }
 
     @Override
@@ -75,6 +99,7 @@ public class RecognizeSmartDocumentRecognizerResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class RecognizeSmartDocumentRecognizerResponse {\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

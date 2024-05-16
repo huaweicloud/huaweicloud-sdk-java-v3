@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SearchAutoEnlargePolicyRequest;
@@ -1829,6 +1831,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(
         RestartInstanceRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    }
+
+    /**
+     * 备份恢复到当前实例
+     *
+     * 备份恢复到当前实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreInstanceRequest 请求对象
+     * @return RestoreInstanceResponse
+     */
+    public RestoreInstanceResponse restoreInstance(RestoreInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.restoreInstance);
+    }
+
+    /**
+     * 备份恢复到当前实例
+     *
+     * 备份恢复到当前实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreInstanceRequest 请求对象
+     * @return SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
+     */
+    public SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceInvoker(
+        RestoreInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.restoreInstance, hcClient);
     }
 
     /**

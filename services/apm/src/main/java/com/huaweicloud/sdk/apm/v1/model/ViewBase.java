@@ -141,7 +141,7 @@ public class ViewBase {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "latest")
 
-    private String latest;
+    private Boolean latest;
 
     /**
      * 视图类型。
@@ -410,7 +410,7 @@ public class ViewBase {
         this.orderBy = orderBy;
     }
 
-    public ViewBase withLatest(String latest) {
+    public ViewBase withLatest(Boolean latest) {
         this.latest = latest;
         return this;
     }
@@ -419,11 +419,11 @@ public class ViewBase {
      * 是否只展示最近一笔数据。
      * @return latest
      */
-    public String getLatest() {
+    public Boolean getLatest() {
         return latest;
     }
 
-    public void setLatest(String latest) {
+    public void setLatest(Boolean latest) {
         this.latest = latest;
     }
 

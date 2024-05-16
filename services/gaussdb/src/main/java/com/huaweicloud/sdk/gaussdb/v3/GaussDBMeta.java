@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
@@ -64,6 +66,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplication;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DbConfigCheckRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
@@ -93,6 +99,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplication;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
@@ -132,6 +142,14 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapDataStoreRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapDataStoreResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapFlavorRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapFlavorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapInstanceInfoRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapStorageTypeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapStorageTypeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceConfigurationsRequest;
@@ -156,6 +174,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
@@ -192,11 +212,16 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordReque
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResourceCheck;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartNodeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreRequest;
@@ -255,9 +280,15 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksCreateRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksDatabaseUserInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksDatabaseUserPSinfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksDatabaseUserPWinfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchAccessControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchAccessControlRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchAccessControlResponse;
@@ -330,6 +361,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeDatabaseRequest;
@@ -4867,6 +4902,35 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckStarRocksResourceRequest, CheckStarRocksResourceResponse> checkStarRocksResource =
+        genForCheckStarRocksResource();
+
+    private static HttpRequestDef<CheckStarRocksResourceRequest, CheckStarRocksResourceResponse> genForCheckStarRocksResource() {
+        // basic
+        HttpRequestDef.Builder<CheckStarRocksResourceRequest, CheckStarRocksResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckStarRocksResourceRequest.class, CheckStarRocksResourceResponse.class)
+            .withName("CheckStarRocksResource")
+            .withUri("/v3/{project_id}/starrocks/resource-check")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckStarRocksResourceRequest::getXLanguage,
+                CheckStarRocksResourceRequest::setXLanguage));
+        builder.<ResourceCheck>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceCheck.class),
+            f -> f.withMarshaller(CheckStarRocksResourceRequest::getBody, CheckStarRocksResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckTableConfigRequest, CheckTableConfigResponse> checkTableConfig =
         genForCheckTableConfig();
 
@@ -4939,6 +5003,80 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateStarRocksDatabaseUserRequest, CreateStarRocksDatabaseUserResponse> createStarRocksDatabaseUser =
+        genForCreateStarRocksDatabaseUser();
+
+    private static HttpRequestDef<CreateStarRocksDatabaseUserRequest, CreateStarRocksDatabaseUserResponse> genForCreateStarRocksDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<CreateStarRocksDatabaseUserRequest, CreateStarRocksDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateStarRocksDatabaseUserRequest.class,
+                    CreateStarRocksDatabaseUserResponse.class)
+                .withName("CreateStarRocksDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarRocksDatabaseUserRequest::getInstanceId,
+                CreateStarRocksDatabaseUserRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarRocksDatabaseUserRequest::getXLanguage,
+                CreateStarRocksDatabaseUserRequest::setXLanguage));
+        builder.<StarRocksDatabaseUserInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StarRocksDatabaseUserInfo.class),
+            f -> f.withMarshaller(CreateStarRocksDatabaseUserRequest::getBody,
+                CreateStarRocksDatabaseUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStarrocksInstanceRequest, CreateStarrocksInstanceResponse> createStarrocksInstance =
+        genForCreateStarrocksInstance();
+
+    private static HttpRequestDef<CreateStarrocksInstanceRequest, CreateStarrocksInstanceResponse> genForCreateStarrocksInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateStarrocksInstanceRequest, CreateStarrocksInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateStarrocksInstanceRequest.class, CreateStarrocksInstanceResponse.class)
+            .withName("CreateStarrocksInstance")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarrocksInstanceRequest::getInstanceId,
+                CreateStarrocksInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStarrocksInstanceRequest::getXLanguage,
+                CreateStarrocksInstanceRequest::setXLanguage));
+        builder.<StarRocksCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StarRocksCreateRequest.class),
+            f -> f.withMarshaller(CreateStarrocksInstanceRequest::getBody, CreateStarrocksInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication =
         genForDeleteStarRocksDataReplication();
 
@@ -4972,6 +5110,217 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(DeleteStarRocksDataReplication.class),
             f -> f.withMarshaller(DeleteStarRocksDataReplicationRequest::getBody,
                 DeleteStarRocksDataReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStarRocksDatabaseUserRequest, DeleteStarRocksDatabaseUserResponse> deleteStarRocksDatabaseUser =
+        genForDeleteStarRocksDatabaseUser();
+
+    private static HttpRequestDef<DeleteStarRocksDatabaseUserRequest, DeleteStarRocksDatabaseUserResponse> genForDeleteStarRocksDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteStarRocksDatabaseUserRequest, DeleteStarRocksDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteStarRocksDatabaseUserRequest.class,
+                    DeleteStarRocksDatabaseUserResponse.class)
+                .withName("DeleteStarRocksDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarRocksDatabaseUserRequest::getInstanceId,
+                DeleteStarRocksDatabaseUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarRocksDatabaseUserRequest::getUserName,
+                DeleteStarRocksDatabaseUserRequest::setUserName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarRocksDatabaseUserRequest::getXLanguage,
+                DeleteStarRocksDatabaseUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse> deleteStarrocksInstance =
+        genForDeleteStarrocksInstance();
+
+    private static HttpRequestDef<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse> genForDeleteStarrocksInstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteStarrocksInstanceRequest.class, DeleteStarrocksInstanceResponse.class)
+            .withName("DeleteStarrocksInstance")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarrocksInstanceRequest::getInstanceId,
+                DeleteStarrocksInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("starrocks_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarrocksInstanceRequest::getStarrocksInstanceId,
+                DeleteStarrocksInstanceRequest::setStarrocksInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStarrocksInstanceRequest::getXLanguage,
+                DeleteStarrocksInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHtapDataStoreRequest, ListHtapDataStoreResponse> listHtapDataStore =
+        genForListHtapDataStore();
+
+    private static HttpRequestDef<ListHtapDataStoreRequest, ListHtapDataStoreResponse> genForListHtapDataStore() {
+        // basic
+        HttpRequestDef.Builder<ListHtapDataStoreRequest, ListHtapDataStoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHtapDataStoreRequest.class, ListHtapDataStoreResponse.class)
+                .withName("ListHtapDataStore")
+                .withUri("/v3/{project_id}/htap/datastores/{engine_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapDataStoreRequest::getEngineName, ListHtapDataStoreRequest::setEngineName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapDataStoreRequest::getXLanguage, ListHtapDataStoreRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHtapFlavorRequest, ListHtapFlavorResponse> listHtapFlavor =
+        genForListHtapFlavor();
+
+    private static HttpRequestDef<ListHtapFlavorRequest, ListHtapFlavorResponse> genForListHtapFlavor() {
+        // basic
+        HttpRequestDef.Builder<ListHtapFlavorRequest, ListHtapFlavorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHtapFlavorRequest.class, ListHtapFlavorResponse.class)
+                .withName("ListHtapFlavor")
+                .withUri("/v3/{project_id}/htap/flavors/{engine_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapFlavorRequest::getEngineName, ListHtapFlavorRequest::setEngineName));
+        builder.<String>withRequestField("availability_zone_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapFlavorRequest::getAvailabilityZoneMode,
+                ListHtapFlavorRequest::setAvailabilityZoneMode));
+        builder.<String>withRequestField("spec_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapFlavorRequest::getSpecCode, ListHtapFlavorRequest::setSpecCode));
+        builder.<String>withRequestField("version_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapFlavorRequest::getVersionName, ListHtapFlavorRequest::setVersionName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapFlavorRequest::getXLanguage, ListHtapFlavorRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHtapInstanceInfoRequest, ListHtapInstanceInfoResponse> listHtapInstanceInfo =
+        genForListHtapInstanceInfo();
+
+    private static HttpRequestDef<ListHtapInstanceInfoRequest, ListHtapInstanceInfoResponse> genForListHtapInstanceInfo() {
+        // basic
+        HttpRequestDef.Builder<ListHtapInstanceInfoRequest, ListHtapInstanceInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListHtapInstanceInfoRequest.class, ListHtapInstanceInfoResponse.class)
+            .withName("ListHtapInstanceInfo")
+            .withUri("/v3/{project_id}/instances/{instance_id}/htap")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapInstanceInfoRequest::getInstanceId,
+                ListHtapInstanceInfoRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapInstanceInfoRequest::getXLanguage,
+                ListHtapInstanceInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHtapStorageTypeRequest, ListHtapStorageTypeResponse> listHtapStorageType =
+        genForListHtapStorageType();
+
+    private static HttpRequestDef<ListHtapStorageTypeRequest, ListHtapStorageTypeResponse> genForListHtapStorageType() {
+        // basic
+        HttpRequestDef.Builder<ListHtapStorageTypeRequest, ListHtapStorageTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHtapStorageTypeRequest.class, ListHtapStorageTypeResponse.class)
+                .withName("ListHtapStorageType")
+                .withUri("/v3/{project_id}/htap/storage-type/{database}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapStorageTypeRequest::getDatabase, ListHtapStorageTypeRequest::setDatabase));
+        builder.<String>withRequestField("version_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapStorageTypeRequest::getVersionName,
+                ListHtapStorageTypeRequest::setVersionName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHtapStorageTypeRequest::getXLanguage, ListHtapStorageTypeRequest::setXLanguage));
 
         // response
 
@@ -5135,6 +5484,241 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStarRocksDbParametersRequest::getXLanguage,
                 ListStarRocksDbParametersRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfo =
+        genForListStarrocksInstanceInfo();
+
+    private static HttpRequestDef<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse> genForListStarrocksInstanceInfo() {
+        // basic
+        HttpRequestDef.Builder<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListStarrocksInstanceInfoRequest.class,
+                    ListStarrocksInstanceInfoResponse.class)
+                .withName("ListStarrocksInstanceInfo")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarrocksInstanceInfoRequest::getInstanceId,
+                ListStarrocksInstanceInfoRequest::setInstanceId));
+        builder.<String>withRequestField("starrocks_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarrocksInstanceInfoRequest::getStarrocksInstanceId,
+                ListStarrocksInstanceInfoRequest::setStarrocksInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarrocksInstanceInfoRequest::getXLanguage,
+                ListStarrocksInstanceInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> restartStarrocksInstance =
+        genForRestartStarrocksInstance();
+
+    private static HttpRequestDef<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> genForRestartStarrocksInstance() {
+        // basic
+        HttpRequestDef.Builder<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, RestartStarrocksInstanceRequest.class, RestartStarrocksInstanceResponse.class)
+                .withName("RestartStarrocksInstance")
+                .withUri("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("starrocks_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartStarrocksInstanceRequest::getStarrocksInstanceId,
+                RestartStarrocksInstanceRequest::setStarrocksInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartStarrocksInstanceRequest::getXLanguage,
+                RestartStarrocksInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartStarrocksNodeRequest, RestartStarrocksNodeResponse> restartStarrocksNode =
+        genForRestartStarrocksNode();
+
+    private static HttpRequestDef<RestartStarrocksNodeRequest, RestartStarrocksNodeResponse> genForRestartStarrocksNode() {
+        // basic
+        HttpRequestDef.Builder<RestartStarrocksNodeRequest, RestartStarrocksNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, RestartStarrocksNodeRequest.class, RestartStarrocksNodeResponse.class)
+            .withName("RestartStarrocksNode")
+            .withUri("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/{starrocks_node_id}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("starrocks_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartStarrocksNodeRequest::getStarrocksNodeId,
+                RestartStarrocksNodeRequest::setStarrocksNodeId));
+        builder.<String>withRequestField("starrocks_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartStarrocksNodeRequest::getStarrocksInstanceId,
+                RestartStarrocksNodeRequest::setStarrocksInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartStarrocksNodeRequest::getXLanguage,
+                RestartStarrocksNodeRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUser =
+        genForShowStarRocksDatabaseUser();
+
+    private static HttpRequestDef<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> genForShowStarRocksDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowStarRocksDatabaseUserRequest.class,
+                    ShowStarRocksDatabaseUserResponse.class)
+                .withName("ShowStarRocksDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getInstanceId,
+                ShowStarRocksDatabaseUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getUserName,
+                ShowStarRocksDatabaseUserRequest::setUserName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getLimit,
+                ShowStarRocksDatabaseUserRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getOffset,
+                ShowStarRocksDatabaseUserRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getXLanguage,
+                ShowStarRocksDatabaseUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStarRocksDatabaseUserPasswordRequest, UpdateStarRocksDatabaseUserPasswordResponse> updateStarRocksDatabaseUserPassword =
+        genForUpdateStarRocksDatabaseUserPassword();
+
+    private static HttpRequestDef<UpdateStarRocksDatabaseUserPasswordRequest, UpdateStarRocksDatabaseUserPasswordResponse> genForUpdateStarRocksDatabaseUserPassword() {
+        // basic
+        HttpRequestDef.Builder<UpdateStarRocksDatabaseUserPasswordRequest, UpdateStarRocksDatabaseUserPasswordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateStarRocksDatabaseUserPasswordRequest.class,
+                    UpdateStarRocksDatabaseUserPasswordResponse.class)
+                .withName("UpdateStarRocksDatabaseUserPassword")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users/password")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPasswordRequest::getInstanceId,
+                UpdateStarRocksDatabaseUserPasswordRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPasswordRequest::getXLanguage,
+                UpdateStarRocksDatabaseUserPasswordRequest::setXLanguage));
+        builder.<StarRocksDatabaseUserPWinfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StarRocksDatabaseUserPWinfo.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPasswordRequest::getBody,
+                UpdateStarRocksDatabaseUserPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStarRocksDatabaseUserPermissionRequest, UpdateStarRocksDatabaseUserPermissionResponse> updateStarRocksDatabaseUserPermission =
+        genForUpdateStarRocksDatabaseUserPermission();
+
+    private static HttpRequestDef<UpdateStarRocksDatabaseUserPermissionRequest, UpdateStarRocksDatabaseUserPermissionResponse> genForUpdateStarRocksDatabaseUserPermission() {
+        // basic
+        HttpRequestDef.Builder<UpdateStarRocksDatabaseUserPermissionRequest, UpdateStarRocksDatabaseUserPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateStarRocksDatabaseUserPermissionRequest.class,
+                    UpdateStarRocksDatabaseUserPermissionResponse.class)
+                .withName("UpdateStarRocksDatabaseUserPermission")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPermissionRequest::getInstanceId,
+                UpdateStarRocksDatabaseUserPermissionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPermissionRequest::getXLanguage,
+                UpdateStarRocksDatabaseUserPermissionRequest::setXLanguage));
+        builder.<StarRocksDatabaseUserPSinfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StarRocksDatabaseUserPSinfo.class),
+            f -> f.withMarshaller(UpdateStarRocksDatabaseUserPermissionRequest::getBody,
+                UpdateStarRocksDatabaseUserPermissionRequest::setBody));
 
         // response
 

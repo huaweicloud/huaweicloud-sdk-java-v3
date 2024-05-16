@@ -354,7 +354,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 项目ID。 > * 仅管理员帐号可设置此参数。
+     * 项目ID。 > * 仅管理员账号可设置此参数。
      * @return assetOwner
      */
     public String getAssetOwner() {

@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.apm.v1;
 
+import com.huaweicloud.sdk.apm.v1.model.AccessPointModel;
 import com.huaweicloud.sdk.apm.v1.model.AgentDeleteParam;
 import com.huaweicloud.sdk.apm.v1.model.AgentSearchParam;
 import com.huaweicloud.sdk.apm.v1.model.AgentStatusChangeParam;
@@ -13,6 +14,9 @@ import com.huaweicloud.sdk.apm.v1.model.ChangeAgentStatusResponse;
 import com.huaweicloud.sdk.apm.v1.model.CreateAkSkRequest;
 import com.huaweicloud.sdk.apm.v1.model.CreateAkSkResponse;
 import com.huaweicloud.sdk.apm.v1.model.CreateAkskModel;
+import com.huaweicloud.sdk.apm.v1.model.CreateBusinessModel;
+import com.huaweicloud.sdk.apm.v1.model.CreateBusinessRequest;
+import com.huaweicloud.sdk.apm.v1.model.CreateBusinessResponse;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAgentRequest;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAgentResponse;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAkSkRequest;
@@ -20,6 +24,7 @@ import com.huaweicloud.sdk.apm.v1.model.DeleteAkSkResponse;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAppRequest;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAppResponse;
 import com.huaweicloud.sdk.apm.v1.model.EnvTopoRequest;
+import com.huaweicloud.sdk.apm.v1.model.FlameLineTreeInfo;
 import com.huaweicloud.sdk.apm.v1.model.GetClobDetailParam;
 import com.huaweicloud.sdk.apm.v1.model.GetEnvMonitorItemListParam;
 import com.huaweicloud.sdk.apm.v1.model.InstanceSearchParam;
@@ -63,6 +68,8 @@ import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigRequest;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigResponse;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionRequest;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowAccessPointRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowAccessPointResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowAkSksRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowAkSksResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowBusinessDetailRequest;
@@ -73,8 +80,12 @@ import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowFlameLineTreeRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowFlameLineTreeResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemDetailResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowRawTableRequest;
@@ -85,6 +96,8 @@ import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowSumTableRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowSumTableResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTokenRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTokenResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyTreeRequest;
@@ -663,6 +676,29 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFlameLineTreeRequest, ShowFlameLineTreeResponse> showFlameLineTree =
+        genForShowFlameLineTree();
+
+    private static HttpRequestDef<ShowFlameLineTreeRequest, ShowFlameLineTreeResponse> genForShowFlameLineTree() {
+        // basic
+        HttpRequestDef.Builder<ShowFlameLineTreeRequest, ShowFlameLineTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowFlameLineTreeRequest.class, ShowFlameLineTreeResponse.class)
+                .withName("ShowFlameLineTree")
+                .withUri("/v1/apm2/openapi/view/profiling/flame-line-tree")
+                .withContentType("application/json");
+
+        // requests
+        builder.<FlameLineTreeInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FlameLineTreeInfo.class),
+            f -> f.withMarshaller(ShowFlameLineTreeRequest::getBody, ShowFlameLineTreeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOpenRegionRequest, ListOpenRegionResponse> listOpenRegion =
         genForListOpenRegion();
 
@@ -750,6 +786,89 @@ public class ApmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvTopoRequest.class),
             f -> f.withMarshaller(SearchEnvTopologyRequest::getBody, SearchEnvTopologyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBusinessRequest, CreateBusinessResponse> createBusiness =
+        genForCreateBusiness();
+
+    private static HttpRequestDef<CreateBusinessRequest, CreateBusinessResponse> genForCreateBusiness() {
+        // basic
+        HttpRequestDef.Builder<CreateBusinessRequest, CreateBusinessResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBusinessRequest.class, CreateBusinessResponse.class)
+                .withName("CreateBusiness")
+                .withUri("/v1/apm2/openapi/tracing/business/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateBusinessModel>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBusinessModel.class),
+            f -> f.withMarshaller(CreateBusinessRequest::getBody, CreateBusinessRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAccessPointRequest, ShowAccessPointResponse> showAccessPoint =
+        genForShowAccessPoint();
+
+    private static HttpRequestDef<ShowAccessPointRequest, ShowAccessPointResponse> genForShowAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessPointRequest, ShowAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowAccessPointRequest.class, ShowAccessPointResponse.class)
+                .withName("ShowAccessPoint")
+                .withUri("/v1/apm2/openapi/tracing/access/get-access-point/{business_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("business_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessPointRequest::getBusinessId, ShowAccessPointRequest::setBusinessId));
+        builder.<Integer>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAccessPointRequest::getXBusinessId, ShowAccessPointRequest::setXBusinessId));
+        builder.<AccessPointModel>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AccessPointModel.class),
+            f -> f.withMarshaller(ShowAccessPointRequest::getBody, ShowAccessPointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTokenRequest, ShowTokenResponse> showToken = genForShowToken();
+
+    private static HttpRequestDef<ShowTokenRequest, ShowTokenResponse> genForShowToken() {
+        // basic
+        HttpRequestDef.Builder<ShowTokenRequest, ShowTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTokenRequest.class, ShowTokenResponse.class)
+                .withName("ShowToken")
+                .withUri("/v1/apm2/openapi/tracing/business/token/{business_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("business_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTokenRequest::getBusinessId, ShowTokenRequest::setBusinessId));
+        builder.<Integer>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTokenRequest::getXBusinessId, ShowTokenRequest::setXBusinessId));
 
         // response
 
@@ -989,6 +1108,46 @@ public class ApmMeta {
             f -> f.withMarshaller(ShowEventDetailRequest::getEnvId, ShowEventDetailRequest::setEnvId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMonitorItemDetailRequest, ShowMonitorItemDetailResponse> showMonitorItemDetail =
+        genForShowMonitorItemDetail();
+
+    private static HttpRequestDef<ShowMonitorItemDetailRequest, ShowMonitorItemDetailResponse> genForShowMonitorItemDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowMonitorItemDetailRequest, ShowMonitorItemDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMonitorItemDetailRequest.class, ShowMonitorItemDetailResponse.class)
+            .withName("ShowMonitorItemDetail")
+            .withUri("/v1/apm2/openapi/apm-service/monitor-item-mgr/get-monitor-item-detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("monitor_item_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowMonitorItemDetailRequest::getMonitorItemId,
+                ShowMonitorItemDetailRequest::setMonitorItemId));
+        builder.<Long>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowMonitorItemDetailRequest::getEnvId, ShowMonitorItemDetailRequest::setEnvId));
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowMonitorItemDetailRequest::getXBusinessId,
+                ShowMonitorItemDetailRequest::setXBusinessId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMonitorItemDetailResponse::getBody, ShowMonitorItemDetailResponse::setBody));
 
         return builder.build();
     }

@@ -1,8 +1,17 @@
 package com.huaweicloud.sdk.codeartsinspector.v3;
 
+import com.huaweicloud.sdk.codeartsinspector.v3.model.AddGroupRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.AddGroupRequestBody;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.AddGroupResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.AuthorizeDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.AuthorizeDomainsRequestBody;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.AuthorizeDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchCreateHostsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchCreateHostsRequestBody;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchCreateHostsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchStartHostTasksRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchStartHostTasksRequestBody;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchStartHostTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CancelTasksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CancelTasksRequestBody;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CancelTasksResponse;
@@ -14,6 +23,10 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.CreateTasksRequestBody;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CreateTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteGroupRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteGroupResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteHostRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteHostResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DownloadTaskReportRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DownloadTaskReportResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ExecuteGenerateReportRequest;
@@ -23,6 +36,12 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.ListBusinessRisksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListBusinessRisksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListGroupsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListGroupsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostResultsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostResultsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostsResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListPortResultsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListPortResultsResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListTaskHistoriesRequest;
@@ -49,6 +68,215 @@ import com.huaweicloud.sdk.core.http.LocationType;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsInspectorMeta {
+
+    public static final HttpRequestDef<AddGroupRequest, AddGroupResponse> addGroup = genForAddGroup();
+
+    private static HttpRequestDef<AddGroupRequest, AddGroupResponse> genForAddGroup() {
+        // basic
+        HttpRequestDef.Builder<AddGroupRequest, AddGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddGroupRequest.class, AddGroupResponse.class)
+                .withName("AddGroup")
+                .withUri("/v3/{project_id}/hostscan/groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AddGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddGroupRequestBody.class),
+            f -> f.withMarshaller(AddGroupRequest::getBody, AddGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> deleteGroup = genForDeleteGroup();
+
+    private static HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> genForDeleteGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteGroupRequest, DeleteGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGroupRequest.class, DeleteGroupResponse.class)
+                .withName("DeleteGroup")
+                .withUri("/v3/{project_id}/hostscan/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGroupRequest::getGroupId, DeleteGroupRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGroupsRequest, ListGroupsResponse> listGroups = genForListGroups();
+
+    private static HttpRequestDef<ListGroupsRequest, ListGroupsResponse> genForListGroups() {
+        // basic
+        HttpRequestDef.Builder<ListGroupsRequest, ListGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGroupsRequest.class, ListGroupsResponse.class)
+                .withName("ListGroups")
+                .withUri("/v3/{project_id}/hostscan/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGroupsRequest::getOffset, ListGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGroupsRequest::getLimit, ListGroupsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostResultsRequest, ListHostResultsResponse> listHostResults =
+        genForListHostResults();
+
+    private static HttpRequestDef<ListHostResultsRequest, ListHostResultsResponse> genForListHostResults() {
+        // basic
+        HttpRequestDef.Builder<ListHostResultsRequest, ListHostResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHostResultsRequest.class, ListHostResultsResponse.class)
+                .withName("ListHostResults")
+                .withUri("/v3/{project_id}/hostscan/hosts/{host_id}/sys-vulns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostResultsRequest::getHostId, ListHostResultsRequest::setHostId));
+        builder.<String>withRequestField("scan_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostResultsRequest::getScanId, ListHostResultsRequest::setScanId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostResultsRequest::getOffset, ListHostResultsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostResultsRequest::getLimit, ListHostResultsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchStartHostTasksRequest, BatchStartHostTasksResponse> batchStartHostTasks =
+        genForBatchStartHostTasks();
+
+    private static HttpRequestDef<BatchStartHostTasksRequest, BatchStartHostTasksResponse> genForBatchStartHostTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchStartHostTasksRequest, BatchStartHostTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchStartHostTasksRequest.class, BatchStartHostTasksResponse.class)
+                .withName("BatchStartHostTasks")
+                .withUri("/v3/{project_id}/hostscan/hosts/scan")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<BatchStartHostTasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchStartHostTasksRequestBody.class),
+            f -> f.withMarshaller(BatchStartHostTasksRequest::getBody, BatchStartHostTasksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateHostsRequest, BatchCreateHostsResponse> batchCreateHosts =
+        genForBatchCreateHosts();
+
+    private static HttpRequestDef<BatchCreateHostsRequest, BatchCreateHostsResponse> genForBatchCreateHosts() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateHostsRequest, BatchCreateHostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateHostsRequest.class, BatchCreateHostsResponse.class)
+                .withName("BatchCreateHosts")
+                .withUri("/v3/{project_id}/hostscan/hosts")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<BatchCreateHostsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateHostsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateHostsRequest::getBody, BatchCreateHostsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHostRequest, DeleteHostResponse> deleteHost = genForDeleteHost();
+
+    private static HttpRequestDef<DeleteHostRequest, DeleteHostResponse> genForDeleteHost() {
+        // basic
+        HttpRequestDef.Builder<DeleteHostRequest, DeleteHostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHostRequest.class, DeleteHostResponse.class)
+                .withName("DeleteHost")
+                .withUri("/v3/{project_id}/hostscan/hosts/delete/{host_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHostRequest::getHostId, DeleteHostRequest::setHostId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostsRequest, ListHostsResponse> listHosts = genForListHosts();
+
+    private static HttpRequestDef<ListHostsRequest, ListHostsResponse> genForListHosts() {
+        // basic
+        HttpRequestDef.Builder<ListHostsRequest, ListHostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHostsRequest.class, ListHostsResponse.class)
+                .withName("ListHosts")
+                .withUri("/v3/{project_id}/hostscan/hosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostsRequest::getGroupId, ListHostsRequest::setGroupId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostsRequest::getOffset, ListHostsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostsRequest::getLimit, ListHostsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<DownloadTaskReportRequest, DownloadTaskReportResponse> downloadTaskReport =
         genForDownloadTaskReport();

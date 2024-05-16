@@ -97,6 +97,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
@@ -157,6 +159,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityRequest;
@@ -315,6 +319,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesRequest;
@@ -327,6 +333,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
@@ -513,6 +521,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificatio
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySecrecyLevelRequest;
@@ -565,6 +575,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
@@ -1891,6 +1903,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 分配队列资源给指定空间
+     *
+     * 分配队列资源给指定空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityAssignedQueueRequest 请求对象
+     * @return CreateSecurityAssignedQueueResponse
+     */
+    public CreateSecurityAssignedQueueResponse createSecurityAssignedQueue(CreateSecurityAssignedQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createSecurityAssignedQueue);
+    }
+
+    /**
+     * 分配队列资源给指定空间
+     *
+     * 分配队列资源给指定空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityAssignedQueueRequest 请求对象
+     * @return SyncInvoker<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse>
+     */
+    public SyncInvoker<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse> createSecurityAssignedQueueInvoker(
+        CreateSecurityAssignedQueueRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createSecurityAssignedQueue, hcClient);
+    }
+
+    /**
      * 创建识别规则
      *
      * 创建识别规则
@@ -2701,6 +2742,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectoryInvoker(
         DeleteDirectoryRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.deleteDirectory, hcClient);
+    }
+
+    /**
+     * 删除当前空间下分配的队列资源
+     *
+     * 删除当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityAssignedQueueRequest 请求对象
+     * @return DeleteSecurityAssignedQueueResponse
+     */
+    public DeleteSecurityAssignedQueueResponse deleteSecurityAssignedQueue(DeleteSecurityAssignedQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.deleteSecurityAssignedQueue);
+    }
+
+    /**
+     * 删除当前空间下分配的队列资源
+     *
+     * 删除当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityAssignedQueueRequest 请求对象
+     * @return SyncInvoker<DeleteSecurityAssignedQueueRequest, DeleteSecurityAssignedQueueResponse>
+     */
+    public SyncInvoker<DeleteSecurityAssignedQueueRequest, DeleteSecurityAssignedQueueResponse> deleteSecurityAssignedQueueInvoker(
+        DeleteSecurityAssignedQueueRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.deleteSecurityAssignedQueue, hcClient);
     }
 
     /**
@@ -4775,6 +4845,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询当前空间下分配的队列资源
+     *
+     * 查询当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityAssignedQueuesRequest 请求对象
+     * @return ListSecurityAssignedQueuesResponse
+     */
+    public ListSecurityAssignedQueuesResponse listSecurityAssignedQueues(ListSecurityAssignedQueuesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listSecurityAssignedQueues);
+    }
+
+    /**
+     * 查询当前空间下分配的队列资源
+     *
+     * 查询当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityAssignedQueuesRequest 请求对象
+     * @return SyncInvoker<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse>
+     */
+    public SyncInvoker<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse> listSecurityAssignedQueuesInvoker(
+        ListSecurityAssignedQueuesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listSecurityAssignedQueues, hcClient);
+    }
+
+    /**
      * 查询规则组列表
      *
      * 查询规则组列表
@@ -4951,6 +5050,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListSecurityDlfDataWareHousesRequest, ListSecurityDlfDataWareHousesResponse> listSecurityDlfDataWareHousesInvoker(
         ListSecurityDlfDataWareHousesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listSecurityDlfDataWareHouses, hcClient);
+    }
+
+    /**
+     * 查询用户同步列表
+     *
+     * 查询用户同步列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityMemberSyncTasksRequest 请求对象
+     * @return ListSecurityMemberSyncTasksResponse
+     */
+    public ListSecurityMemberSyncTasksResponse listSecurityMemberSyncTasks(ListSecurityMemberSyncTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listSecurityMemberSyncTasks);
+    }
+
+    /**
+     * 查询用户同步列表
+     *
+     * 查询用户同步列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityMemberSyncTasksRequest 请求对象
+     * @return SyncInvoker<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse>
+     */
+    public SyncInvoker<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> listSecurityMemberSyncTasksInvoker(
+        ListSecurityMemberSyncTasksRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listSecurityMemberSyncTasks, hcClient);
     }
 
     /**
@@ -7538,6 +7666,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 查询单个用户同步任务
+     *
+     * 查询单个用户同步任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityMemberSyncTaskRequest 请求对象
+     * @return ShowSecurityMemberSyncTaskResponse
+     */
+    public ShowSecurityMemberSyncTaskResponse showSecurityMemberSyncTask(ShowSecurityMemberSyncTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showSecurityMemberSyncTask);
+    }
+
+    /**
+     * 查询单个用户同步任务
+     *
+     * 查询单个用户同步任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityMemberSyncTaskRequest 请求对象
+     * @return SyncInvoker<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse>
+     */
+    public SyncInvoker<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse> showSecurityMemberSyncTaskInvoker(
+        ShowSecurityMemberSyncTaskRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showSecurityMemberSyncTask, hcClient);
+    }
+
+    /**
      * 查询权限集
      *
      * 查询权限集
@@ -8257,6 +8414,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> updateFactoryJobNameInvoker(
         UpdateFactoryJobNameRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.updateFactoryJobName, hcClient);
+    }
+
+    /**
+     * 修改当前空间下分配的队列资源
+     *
+     * 修改当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityAssignedQueueRequest 请求对象
+     * @return UpdateSecurityAssignedQueueResponse
+     */
+    public UpdateSecurityAssignedQueueResponse updateSecurityAssignedQueue(UpdateSecurityAssignedQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateSecurityAssignedQueue);
+    }
+
+    /**
+     * 修改当前空间下分配的队列资源
+     *
+     * 修改当前空间下分配的队列资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityAssignedQueueRequest 请求对象
+     * @return SyncInvoker<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse>
+     */
+    public SyncInvoker<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse> updateSecurityAssignedQueueInvoker(
+        UpdateSecurityAssignedQueueRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateSecurityAssignedQueue, hcClient);
     }
 
     /**

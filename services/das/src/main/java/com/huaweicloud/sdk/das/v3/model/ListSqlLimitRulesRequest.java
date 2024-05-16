@@ -40,11 +40,17 @@ public class ListSqlLimitRulesRequest {
          */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
 
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
+        public static final DatastoreTypeEnum POSTGRESQL = new DatastoreTypeEnum("PostgreSQL");
+
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
             map.put("MySQL", MYSQL);
+            map.put("PostgreSQL", POSTGRESQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -98,6 +104,11 @@ public class ListSqlLimitRulesRequest {
     @JsonProperty(value = "datastore_type")
 
     private DatastoreTypeEnum datastoreType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_name")
+
+    private String databaseName;
 
     /**
      * 语言
@@ -242,6 +253,23 @@ public class ListSqlLimitRulesRequest {
         this.datastoreType = datastoreType;
     }
 
+    public ListSqlLimitRulesRequest withDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+        return this;
+    }
+
+    /**
+     * 数据库名（PostgreSQL必填）
+     * @return databaseName
+     */
+    public String getDatabaseName() {
+        return databaseName;
+    }
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
     public ListSqlLimitRulesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -272,12 +300,12 @@ public class ListSqlLimitRulesRequest {
         ListSqlLimitRulesRequest that = (ListSqlLimitRulesRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.datastoreType, that.datastoreType)
-            && Objects.equals(this.xLanguage, that.xLanguage);
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, datastoreType, xLanguage);
+        return Objects.hash(instanceId, offset, limit, datastoreType, databaseName, xLanguage);
     }
 
     @Override
@@ -288,6 +316,7 @@ public class ListSqlLimitRulesRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();

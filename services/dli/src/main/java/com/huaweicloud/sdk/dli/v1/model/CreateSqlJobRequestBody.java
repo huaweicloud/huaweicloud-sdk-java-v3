@@ -99,6 +99,11 @@ public class CreateSqlJobRequestBody {
     private EngineTypeEnum engineType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_catalog")
+
+    private String currentCatalog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "currentdb")
 
     private String currentdb;
@@ -150,6 +155,23 @@ public class CreateSqlJobRequestBody {
 
     public void setEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
+    }
+
+    public CreateSqlJobRequestBody withCurrentCatalog(String currentCatalog) {
+        this.currentCatalog = currentCatalog;
+        return this;
+    }
+
+    /**
+     * 待提交作业的表默认catalog。
+     * @return currentCatalog
+     */
+    public String getCurrentCatalog() {
+        return currentCatalog;
+    }
+
+    public void setCurrentCatalog(String currentCatalog) {
+        this.currentCatalog = currentCatalog;
     }
 
     public CreateSqlJobRequestBody withCurrentdb(String currentdb) {
@@ -262,13 +284,14 @@ public class CreateSqlJobRequestBody {
         }
         CreateSqlJobRequestBody that = (CreateSqlJobRequestBody) obj;
         return Objects.equals(this.sql, that.sql) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.currentCatalog, that.currentCatalog)
             && Objects.equals(this.currentdb, that.currentdb) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this.conf, that.conf) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sql, engineType, currentdb, queueName, conf, tags);
+        return Objects.hash(sql, engineType, currentCatalog, currentdb, queueName, conf, tags);
     }
 
     @Override
@@ -277,6 +300,7 @@ public class CreateSqlJobRequestBody {
         sb.append("class CreateSqlJobRequestBody {\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
+        sb.append("    currentCatalog: ").append(toIndentedString(currentCatalog)).append("\n");
         sb.append("    currentdb: ").append(toIndentedString(currentdb)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    conf: ").append(toIndentedString(conf)).append("\n");

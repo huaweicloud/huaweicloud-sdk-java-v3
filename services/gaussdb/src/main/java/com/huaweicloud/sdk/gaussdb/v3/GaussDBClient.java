@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequest;
@@ -47,6 +49,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlBackupRequest;
@@ -69,6 +75,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
@@ -105,6 +115,14 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapDataStoreRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapDataStoreResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapFlavorRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapFlavorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapInstanceInfoRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapStorageTypeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListHtapStorageTypeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceConfigurationsRequest;
@@ -129,6 +147,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
@@ -143,6 +163,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
@@ -199,6 +223,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchAccessControlRequest;
@@ -255,6 +281,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRequest;
@@ -3680,6 +3710,35 @@ public class GaussDBClient {
     }
 
     /**
+     * StarRocks资源检查
+     *
+     * StarRocks资源检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckStarRocksResourceRequest 请求对象
+     * @return CheckStarRocksResourceResponse
+     */
+    public CheckStarRocksResourceResponse checkStarRocksResource(CheckStarRocksResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.checkStarRocksResource);
+    }
+
+    /**
+     * StarRocks资源检查
+     *
+     * StarRocks资源检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckStarRocksResourceRequest 请求对象
+     * @return SyncInvoker<CheckStarRocksResourceRequest, CheckStarRocksResourceResponse>
+     */
+    public SyncInvoker<CheckStarRocksResourceRequest, CheckStarRocksResourceResponse> checkStarRocksResourceInvoker(
+        CheckStarRocksResourceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.checkStarRocksResource, hcClient);
+    }
+
+    /**
      * HTAP数据同步表配置校验
      *
      * HTAP数据同步表配置校验。
@@ -3739,6 +3798,64 @@ public class GaussDBClient {
     }
 
     /**
+     * 创建数据库账号
+     *
+     * 创建StarRocks数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStarRocksDatabaseUserRequest 请求对象
+     * @return CreateStarRocksDatabaseUserResponse
+     */
+    public CreateStarRocksDatabaseUserResponse createStarRocksDatabaseUser(CreateStarRocksDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createStarRocksDatabaseUser);
+    }
+
+    /**
+     * 创建数据库账号
+     *
+     * 创建StarRocks数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStarRocksDatabaseUserRequest 请求对象
+     * @return SyncInvoker<CreateStarRocksDatabaseUserRequest, CreateStarRocksDatabaseUserResponse>
+     */
+    public SyncInvoker<CreateStarRocksDatabaseUserRequest, CreateStarRocksDatabaseUserResponse> createStarRocksDatabaseUserInvoker(
+        CreateStarRocksDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.createStarRocksDatabaseUser, hcClient);
+    }
+
+    /**
+     * 创建StarRocks实例
+     *
+     * 创建StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStarrocksInstanceRequest 请求对象
+     * @return CreateStarrocksInstanceResponse
+     */
+    public CreateStarrocksInstanceResponse createStarrocksInstance(CreateStarrocksInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createStarrocksInstance);
+    }
+
+    /**
+     * 创建StarRocks实例
+     *
+     * 创建StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStarrocksInstanceRequest 请求对象
+     * @return SyncInvoker<CreateStarrocksInstanceRequest, CreateStarrocksInstanceResponse>
+     */
+    public SyncInvoker<CreateStarrocksInstanceRequest, CreateStarrocksInstanceResponse> createStarrocksInstanceInvoker(
+        CreateStarrocksInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.createStarrocksInstance, hcClient);
+    }
+
+    /**
      * 删除StarRocks数据同步
      *
      * 删除StarRocks数据同步。
@@ -3766,6 +3883,180 @@ public class GaussDBClient {
     public SyncInvoker<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplicationInvoker(
         DeleteStarRocksDataReplicationRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.deleteStarRocksDataReplication, hcClient);
+    }
+
+    /**
+     * 删除数据库账户
+     *
+     * 删除StarRocks数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStarRocksDatabaseUserRequest 请求对象
+     * @return DeleteStarRocksDatabaseUserResponse
+     */
+    public DeleteStarRocksDatabaseUserResponse deleteStarRocksDatabaseUser(DeleteStarRocksDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteStarRocksDatabaseUser);
+    }
+
+    /**
+     * 删除数据库账户
+     *
+     * 删除StarRocks数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStarRocksDatabaseUserRequest 请求对象
+     * @return SyncInvoker<DeleteStarRocksDatabaseUserRequest, DeleteStarRocksDatabaseUserResponse>
+     */
+    public SyncInvoker<DeleteStarRocksDatabaseUserRequest, DeleteStarRocksDatabaseUserResponse> deleteStarRocksDatabaseUserInvoker(
+        DeleteStarRocksDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteStarRocksDatabaseUser, hcClient);
+    }
+
+    /**
+     * 删除StarRocks实例
+     *
+     * 删除StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStarrocksInstanceRequest 请求对象
+     * @return DeleteStarrocksInstanceResponse
+     */
+    public DeleteStarrocksInstanceResponse deleteStarrocksInstance(DeleteStarrocksInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteStarrocksInstance);
+    }
+
+    /**
+     * 删除StarRocks实例
+     *
+     * 删除StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteStarrocksInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse>
+     */
+    public SyncInvoker<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse> deleteStarrocksInstanceInvoker(
+        DeleteStarrocksInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteStarrocksInstance, hcClient);
+    }
+
+    /**
+     * HTAP引擎资源查询
+     *
+     * HTAP引擎资源查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapDataStoreRequest 请求对象
+     * @return ListHtapDataStoreResponse
+     */
+    public ListHtapDataStoreResponse listHtapDataStore(ListHtapDataStoreRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listHtapDataStore);
+    }
+
+    /**
+     * HTAP引擎资源查询
+     *
+     * HTAP引擎资源查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapDataStoreRequest 请求对象
+     * @return SyncInvoker<ListHtapDataStoreRequest, ListHtapDataStoreResponse>
+     */
+    public SyncInvoker<ListHtapDataStoreRequest, ListHtapDataStoreResponse> listHtapDataStoreInvoker(
+        ListHtapDataStoreRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listHtapDataStore, hcClient);
+    }
+
+    /**
+     * HTAP查询规格信息
+     *
+     * HTAP查询规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapFlavorRequest 请求对象
+     * @return ListHtapFlavorResponse
+     */
+    public ListHtapFlavorResponse listHtapFlavor(ListHtapFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listHtapFlavor);
+    }
+
+    /**
+     * HTAP查询规格信息
+     *
+     * HTAP查询规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapFlavorRequest 请求对象
+     * @return SyncInvoker<ListHtapFlavorRequest, ListHtapFlavorResponse>
+     */
+    public SyncInvoker<ListHtapFlavorRequest, ListHtapFlavorResponse> listHtapFlavorInvoker(
+        ListHtapFlavorRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listHtapFlavor, hcClient);
+    }
+
+    /**
+     * 查询HTAP实例列表
+     *
+     * 查询HTAP实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapInstanceInfoRequest 请求对象
+     * @return ListHtapInstanceInfoResponse
+     */
+    public ListHtapInstanceInfoResponse listHtapInstanceInfo(ListHtapInstanceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listHtapInstanceInfo);
+    }
+
+    /**
+     * 查询HTAP实例列表
+     *
+     * 查询HTAP实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapInstanceInfoRequest 请求对象
+     * @return SyncInvoker<ListHtapInstanceInfoRequest, ListHtapInstanceInfoResponse>
+     */
+    public SyncInvoker<ListHtapInstanceInfoRequest, ListHtapInstanceInfoResponse> listHtapInstanceInfoInvoker(
+        ListHtapInstanceInfoRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listHtapInstanceInfo, hcClient);
+    }
+
+    /**
+     * 获取HTAP实例存储类型
+     *
+     * 获取HTAP实例存储类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapStorageTypeRequest 请求对象
+     * @return ListHtapStorageTypeResponse
+     */
+    public ListHtapStorageTypeResponse listHtapStorageType(ListHtapStorageTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listHtapStorageType);
+    }
+
+    /**
+     * 获取HTAP实例存储类型
+     *
+     * 获取HTAP实例存储类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHtapStorageTypeRequest 请求对象
+     * @return SyncInvoker<ListHtapStorageTypeRequest, ListHtapStorageTypeResponse>
+     */
+    public SyncInvoker<ListHtapStorageTypeRequest, ListHtapStorageTypeResponse> listHtapStorageTypeInvoker(
+        ListHtapStorageTypeRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listHtapStorageType, hcClient);
     }
 
     /**
@@ -3884,6 +4175,182 @@ public class GaussDBClient {
     public SyncInvoker<ListStarRocksDbParametersRequest, ListStarRocksDbParametersResponse> listStarRocksDbParametersInvoker(
         ListStarRocksDbParametersRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.listStarRocksDbParameters, hcClient);
+    }
+
+    /**
+     * 查询StarRocks实例
+     *
+     * 查询StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStarrocksInstanceInfoRequest 请求对象
+     * @return ListStarrocksInstanceInfoResponse
+     */
+    public ListStarrocksInstanceInfoResponse listStarrocksInstanceInfo(ListStarrocksInstanceInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listStarrocksInstanceInfo);
+    }
+
+    /**
+     * 查询StarRocks实例
+     *
+     * 查询StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStarrocksInstanceInfoRequest 请求对象
+     * @return SyncInvoker<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse>
+     */
+    public SyncInvoker<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfoInvoker(
+        ListStarrocksInstanceInfoRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listStarrocksInstanceInfo, hcClient);
+    }
+
+    /**
+     * 重启StarRocks实例
+     *
+     * 重启StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartStarrocksInstanceRequest 请求对象
+     * @return RestartStarrocksInstanceResponse
+     */
+    public RestartStarrocksInstanceResponse restartStarrocksInstance(RestartStarrocksInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.restartStarrocksInstance);
+    }
+
+    /**
+     * 重启StarRocks实例
+     *
+     * 重启StarRocks实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartStarrocksInstanceRequest 请求对象
+     * @return SyncInvoker<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse>
+     */
+    public SyncInvoker<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> restartStarrocksInstanceInvoker(
+        RestartStarrocksInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.restartStarrocksInstance, hcClient);
+    }
+
+    /**
+     * 重启StarRocks节点
+     *
+     * 重启StarRocks节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartStarrocksNodeRequest 请求对象
+     * @return RestartStarrocksNodeResponse
+     */
+    public RestartStarrocksNodeResponse restartStarrocksNode(RestartStarrocksNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.restartStarrocksNode);
+    }
+
+    /**
+     * 重启StarRocks节点
+     *
+     * 重启StarRocks节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartStarrocksNodeRequest 请求对象
+     * @return SyncInvoker<RestartStarrocksNodeRequest, RestartStarrocksNodeResponse>
+     */
+    public SyncInvoker<RestartStarrocksNodeRequest, RestartStarrocksNodeResponse> restartStarrocksNodeInvoker(
+        RestartStarrocksNodeRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.restartStarrocksNode, hcClient);
+    }
+
+    /**
+     * 查询数据库账户
+     *
+     * 查询StarRocks数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStarRocksDatabaseUserRequest 请求对象
+     * @return ShowStarRocksDatabaseUserResponse
+     */
+    public ShowStarRocksDatabaseUserResponse showStarRocksDatabaseUser(ShowStarRocksDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showStarRocksDatabaseUser);
+    }
+
+    /**
+     * 查询数据库账户
+     *
+     * 查询StarRocks数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStarRocksDatabaseUserRequest 请求对象
+     * @return SyncInvoker<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse>
+     */
+    public SyncInvoker<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUserInvoker(
+        ShowStarRocksDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showStarRocksDatabaseUser, hcClient);
+    }
+
+    /**
+     * 修改数据库账号密码
+     *
+     * 修改StarRocks数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStarRocksDatabaseUserPasswordRequest 请求对象
+     * @return UpdateStarRocksDatabaseUserPasswordResponse
+     */
+    public UpdateStarRocksDatabaseUserPasswordResponse updateStarRocksDatabaseUserPassword(
+        UpdateStarRocksDatabaseUserPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateStarRocksDatabaseUserPassword);
+    }
+
+    /**
+     * 修改数据库账号密码
+     *
+     * 修改StarRocks数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStarRocksDatabaseUserPasswordRequest 请求对象
+     * @return SyncInvoker<UpdateStarRocksDatabaseUserPasswordRequest, UpdateStarRocksDatabaseUserPasswordResponse>
+     */
+    public SyncInvoker<UpdateStarRocksDatabaseUserPasswordRequest, UpdateStarRocksDatabaseUserPasswordResponse> updateStarRocksDatabaseUserPasswordInvoker(
+        UpdateStarRocksDatabaseUserPasswordRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateStarRocksDatabaseUserPassword, hcClient);
+    }
+
+    /**
+     * 修改数据库账号权限
+     *
+     * 修改StarRocks数据库账号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStarRocksDatabaseUserPermissionRequest 请求对象
+     * @return UpdateStarRocksDatabaseUserPermissionResponse
+     */
+    public UpdateStarRocksDatabaseUserPermissionResponse updateStarRocksDatabaseUserPermission(
+        UpdateStarRocksDatabaseUserPermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateStarRocksDatabaseUserPermission);
+    }
+
+    /**
+     * 修改数据库账号权限
+     *
+     * 修改StarRocks数据库账号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStarRocksDatabaseUserPermissionRequest 请求对象
+     * @return SyncInvoker<UpdateStarRocksDatabaseUserPermissionRequest, UpdateStarRocksDatabaseUserPermissionResponse>
+     */
+    public SyncInvoker<UpdateStarRocksDatabaseUserPermissionRequest, UpdateStarRocksDatabaseUserPermissionResponse> updateStarRocksDatabaseUserPermissionInvoker(
+        UpdateStarRocksDatabaseUserPermissionRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateStarRocksDatabaseUserPermission, hcClient);
     }
 
     /**

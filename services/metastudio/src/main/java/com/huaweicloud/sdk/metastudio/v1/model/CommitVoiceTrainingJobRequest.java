@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -34,6 +35,11 @@ public class CommitVoiceTrainingJobRequest {
     @JsonProperty(value = "job_id")
 
     private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private CommitJobReq body;
 
     public CommitVoiceTrainingJobRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -126,6 +132,32 @@ public class CommitVoiceTrainingJobRequest {
         this.jobId = jobId;
     }
 
+    public CommitVoiceTrainingJobRequest withBody(CommitJobReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public CommitVoiceTrainingJobRequest withBody(Consumer<CommitJobReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CommitJobReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public CommitJobReq getBody() {
+        return body;
+    }
+
+    public void setBody(CommitJobReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +169,12 @@ public class CommitVoiceTrainingJobRequest {
         CommitVoiceTrainingJobRequest that = (CommitVoiceTrainingJobRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, jobId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, jobId, body);
     }
 
     @Override
@@ -154,6 +186,7 @@ public class CommitVoiceTrainingJobRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

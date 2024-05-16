@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 扩容图请求体
+ * 变更图规格请求体
  */
 public class ResizeGraphReq {
 

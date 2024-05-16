@@ -30,6 +30,11 @@ public class SqlLimitRule {
 
     private Integer maxConcurrency;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_waiting")
+
+    private Integer maxWaiting;
+
     public SqlLimitRule withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class SqlLimitRule {
         this.maxConcurrency = maxConcurrency;
     }
 
+    public SqlLimitRule withMaxWaiting(Integer maxWaiting) {
+        this.maxWaiting = maxWaiting;
+        return this;
+    }
+
+    /**
+     * 最大等待时间
+     * @return maxWaiting
+     */
+    public Integer getMaxWaiting() {
+        return maxWaiting;
+    }
+
+    public void setMaxWaiting(Integer maxWaiting) {
+        this.maxWaiting = maxWaiting;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class SqlLimitRule {
         }
         SqlLimitRule that = (SqlLimitRule) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.sqlType, that.sqlType)
-            && Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency);
+            && Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency)
+            && Objects.equals(this.maxWaiting, that.maxWaiting);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, sqlType, pattern, maxConcurrency);
+        return Objects.hash(id, sqlType, pattern, maxConcurrency, maxWaiting);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class SqlLimitRule {
         sb.append("    sqlType: ").append(toIndentedString(sqlType)).append("\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
         sb.append("    maxConcurrency: ").append(toIndentedString(maxConcurrency)).append("\n");
+        sb.append("    maxWaiting: ").append(toIndentedString(maxWaiting)).append("\n");
         sb.append("}");
         return sb.toString();
     }

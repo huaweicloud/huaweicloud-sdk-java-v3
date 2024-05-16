@@ -90,6 +90,11 @@ public class TrainingJobInfo {
 
     private JobTag tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone")
+
+    private String phone;
+
     public TrainingJobInfo withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -368,6 +373,23 @@ public class TrainingJobInfo {
         this.tag = tag;
     }
 
+    public TrainingJobInfo withPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    /**
+     * 手机号
+     * @return phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -386,7 +408,8 @@ public class TrainingJobInfo {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.voiceAuthorizationUrl, that.voiceAuthorizationUrl)
-            && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.phone, that.phone);
     }
 
     @Override
@@ -406,7 +429,8 @@ public class TrainingJobInfo {
             lastupdateTime,
             voiceAuthorizationUrl,
             createType,
-            tag);
+            tag,
+            phone);
     }
 
     @Override
@@ -429,6 +453,7 @@ public class TrainingJobInfo {
         sb.append("    voiceAuthorizationUrl: ").append(toIndentedString(voiceAuthorizationUrl)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

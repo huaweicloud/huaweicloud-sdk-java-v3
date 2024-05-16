@@ -14,7 +14,8 @@ import java.util.stream.Collectors;
 
 public class ConfigRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://rms.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://rms.myhuaweicloud.com", "https://rms.myhuaweicloud.cn");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CONFIG");
 

@@ -96,6 +96,7 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlDefaultValuesReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlReleaseReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlSetReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeNodeCreation;
@@ -120,6 +121,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsRequest;
@@ -435,6 +438,45 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getBody, ExecuteDeviceControlsSetRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetDeviceControlDefaultValuesRequest, SetDeviceControlDefaultValuesResponse> setDeviceControlDefaultValues =
+        genForSetDeviceControlDefaultValues();
+
+    private static HttpRequestDef<SetDeviceControlDefaultValuesRequest, SetDeviceControlDefaultValuesResponse> genForSetDeviceControlDefaultValues() {
+        // basic
+        HttpRequestDef.Builder<SetDeviceControlDefaultValuesRequest, SetDeviceControlDefaultValuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SetDeviceControlDefaultValuesRequest.class,
+                    SetDeviceControlDefaultValuesResponse.class)
+                .withName("SetDeviceControlDefaultValues")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/devices/controls/default-values")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDeviceControlDefaultValuesRequest::getEdgeNodeId,
+                SetDeviceControlDefaultValuesRequest::setEdgeNodeId));
+        builder.<DeviceControlDefaultValuesReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeviceControlDefaultValuesReqDTO.class),
+            f -> f.withMarshaller(SetDeviceControlDefaultValuesRequest::getBody,
+                SetDeviceControlDefaultValuesRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDeviceControlDefaultValuesResponse::getBody,
+                SetDeviceControlDefaultValuesResponse::setBody));
 
         return builder.build();
     }

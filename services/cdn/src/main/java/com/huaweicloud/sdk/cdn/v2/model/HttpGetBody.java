@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cdn.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 证书配置查询响应体。
@@ -14,6 +17,16 @@ public class HttpGetBody {
     @JsonProperty(value = "https_status")
 
     private String httpsStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_type")
+
+    private String certificateType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_source")
+
+    private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_name")
@@ -31,14 +44,14 @@ public class HttpGetBody {
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificate_source")
+    @JsonProperty(value = "enc_certificate_value")
 
-    private Integer certificateSource;
+    private String encCertificateValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "certificate_type")
+    @JsonProperty(value = "certificates")
 
-    private String certificateType;
+    private List<CertificatesGetBody> certificates = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "http2_status")
@@ -70,6 +83,40 @@ public class HttpGetBody {
 
     public void setHttpsStatus(String httpsStatus) {
         this.httpsStatus = httpsStatus;
+    }
+
+    public HttpGetBody withCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+        return this;
+    }
+
+    /**
+     * 证书类型。server：国际证书；server_sm：国密证书。
+     * @return certificateType
+     */
+    public String getCertificateType() {
+        return certificateType;
+    }
+
+    public void setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+    }
+
+    public HttpGetBody withCertificateSource(Integer certificateSource) {
+        this.certificateSource = certificateSource;
+        return this;
+    }
+
+    /**
+     * 证书来源，1：华为云托管证书，0：自有证书。
+     * @return certificateSource
+     */
+    public Integer getCertificateSource() {
+        return certificateSource;
+    }
+
+    public void setCertificateSource(Integer certificateSource) {
+        this.certificateSource = certificateSource;
     }
 
     public HttpGetBody withCertificateName(String certificateName) {
@@ -123,38 +170,54 @@ public class HttpGetBody {
         this.expireTime = expireTime;
     }
 
-    public HttpGetBody withCertificateSource(Integer certificateSource) {
-        this.certificateSource = certificateSource;
+    public HttpGetBody withEncCertificateValue(String encCertificateValue) {
+        this.encCertificateValue = encCertificateValue;
         return this;
     }
 
     /**
-     * 证书来源,0：自有证书。
-     * @return certificateSource
+     * 国密证书加密证书内容，PEM编码格式。
+     * @return encCertificateValue
      */
-    public Integer getCertificateSource() {
-        return certificateSource;
+    public String getEncCertificateValue() {
+        return encCertificateValue;
     }
 
-    public void setCertificateSource(Integer certificateSource) {
-        this.certificateSource = certificateSource;
+    public void setEncCertificateValue(String encCertificateValue) {
+        this.encCertificateValue = encCertificateValue;
     }
 
-    public HttpGetBody withCertificateType(String certificateType) {
-        this.certificateType = certificateType;
+    public HttpGetBody withCertificates(List<CertificatesGetBody> certificates) {
+        this.certificates = certificates;
+        return this;
+    }
+
+    public HttpGetBody addCertificatesItem(CertificatesGetBody certificatesItem) {
+        if (this.certificates == null) {
+            this.certificates = new ArrayList<>();
+        }
+        this.certificates.add(certificatesItem);
+        return this;
+    }
+
+    public HttpGetBody withCertificates(Consumer<List<CertificatesGetBody>> certificatesSetter) {
+        if (this.certificates == null) {
+            this.certificates = new ArrayList<>();
+        }
+        certificatesSetter.accept(this.certificates);
         return this;
     }
 
     /**
-     * 证书类型。server：国际证书；server_sm：国密证书。
-     * @return certificateType
+     * Get certificates
+     * @return certificates
      */
-    public String getCertificateType() {
-        return certificateType;
+    public List<CertificatesGetBody> getCertificates() {
+        return certificates;
     }
 
-    public void setCertificateType(String certificateType) {
-        this.certificateType = certificateType;
+    public void setCertificates(List<CertificatesGetBody> certificates) {
+        this.certificates = certificates;
     }
 
     public HttpGetBody withHttp2Status(String http2Status) {
@@ -218,11 +281,13 @@ public class HttpGetBody {
         }
         HttpGetBody that = (HttpGetBody) obj;
         return Objects.equals(this.httpsStatus, that.httpsStatus)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.certificateSource, that.certificateSource)
             && Objects.equals(this.certificateName, that.certificateName)
             && Objects.equals(this.certificateValue, that.certificateValue)
             && Objects.equals(this.expireTime, that.expireTime)
-            && Objects.equals(this.certificateSource, that.certificateSource)
-            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.encCertificateValue, that.encCertificateValue)
+            && Objects.equals(this.certificates, that.certificates)
             && Objects.equals(this.http2Status, that.http2Status) && Objects.equals(this.tlsVersion, that.tlsVersion)
             && Objects.equals(this.ocspStaplingStatus, that.ocspStaplingStatus);
     }
@@ -230,11 +295,13 @@ public class HttpGetBody {
     @Override
     public int hashCode() {
         return Objects.hash(httpsStatus,
+            certificateType,
+            certificateSource,
             certificateName,
             certificateValue,
             expireTime,
-            certificateSource,
-            certificateType,
+            encCertificateValue,
+            certificates,
             http2Status,
             tlsVersion,
             ocspStaplingStatus);
@@ -245,11 +312,13 @@ public class HttpGetBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class HttpGetBody {\n");
         sb.append("    httpsStatus: ").append(toIndentedString(httpsStatus)).append("\n");
+        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
+        sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
         sb.append("    certificateName: ").append(toIndentedString(certificateName)).append("\n");
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
-        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
+        sb.append("    encCertificateValue: ").append(toIndentedString(encCertificateValue)).append("\n");
+        sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
         sb.append("    http2Status: ").append(toIndentedString(http2Status)).append("\n");
         sb.append("    tlsVersion: ").append(toIndentedString(tlsVersion)).append("\n");
         sb.append("    ocspStaplingStatus: ").append(toIndentedString(ocspStaplingStatus)).append("\n");

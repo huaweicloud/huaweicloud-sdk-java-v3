@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
@@ -35,8 +37,20 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
@@ -67,6 +81,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobReques
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateWelcomeSpeechRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
@@ -77,8 +93,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
@@ -89,12 +113,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
@@ -109,8 +137,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
@@ -135,6 +171,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListWelcomeSpeechRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
@@ -153,10 +191,18 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
@@ -183,6 +229,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
@@ -197,12 +247,22 @@ import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
@@ -211,6 +271,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchResponse;
 
 public class MetaStudioClient {
 
@@ -1250,6 +1314,35 @@ public class MetaStudioClient {
     }
 
     /**
+     * 创建大文件
+     *
+     * 该接口用于创建大文件（超过5G），获取分段上传URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLargeFileRequest 请求对象
+     * @return CreateLargeFileResponse
+     */
+    public CreateLargeFileResponse createLargeFile(CreateLargeFileRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createLargeFile);
+    }
+
+    /**
+     * 创建大文件
+     *
+     * 该接口用于创建大文件（超过5G），获取分段上传URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLargeFileRequest 请求对象
+     * @return SyncInvoker<CreateLargeFileRequest, CreateLargeFileResponse>
+     */
+    public SyncInvoker<CreateLargeFileRequest, CreateLargeFileResponse> createLargeFileInvoker(
+        CreateLargeFileRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createLargeFile, hcClient);
+    }
+
+    /**
      * 删除文件
      *
      * 该接口用于删除媒体资产库中指定的文件。
@@ -1275,6 +1368,704 @@ public class MetaStudioClient {
      */
     public SyncInvoker<DeleteFileRequest, DeleteFileResponse> deleteFileInvoker(DeleteFileRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.deleteFile, hcClient);
+    }
+
+    /**
+     * 创建热点问题
+     *
+     * 该接口用于创建热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHotQuestionRequest 请求对象
+     * @return CreateHotQuestionResponse
+     */
+    public CreateHotQuestionResponse createHotQuestion(CreateHotQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createHotQuestion);
+    }
+
+    /**
+     * 创建热点问题
+     *
+     * 该接口用于创建热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHotQuestionRequest 请求对象
+     * @return SyncInvoker<CreateHotQuestionRequest, CreateHotQuestionResponse>
+     */
+    public SyncInvoker<CreateHotQuestionRequest, CreateHotQuestionResponse> createHotQuestionInvoker(
+        CreateHotQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createHotQuestion, hcClient);
+    }
+
+    /**
+     * 删除热点问题
+     *
+     * 该接口用于删除热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHotQuestionRequest 请求对象
+     * @return DeleteHotQuestionResponse
+     */
+    public DeleteHotQuestionResponse deleteHotQuestion(DeleteHotQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteHotQuestion);
+    }
+
+    /**
+     * 删除热点问题
+     *
+     * 该接口用于删除热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHotQuestionRequest 请求对象
+     * @return SyncInvoker<DeleteHotQuestionRequest, DeleteHotQuestionResponse>
+     */
+    public SyncInvoker<DeleteHotQuestionRequest, DeleteHotQuestionResponse> deleteHotQuestionInvoker(
+        DeleteHotQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteHotQuestion, hcClient);
+    }
+
+    /**
+     * 查询热点问题列表
+     *
+     * 该接口用于查询热点问题列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotQuestionRequest 请求对象
+     * @return ListHotQuestionResponse
+     */
+    public ListHotQuestionResponse listHotQuestion(ListHotQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listHotQuestion);
+    }
+
+    /**
+     * 查询热点问题列表
+     *
+     * 该接口用于查询热点问题列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotQuestionRequest 请求对象
+     * @return SyncInvoker<ListHotQuestionRequest, ListHotQuestionResponse>
+     */
+    public SyncInvoker<ListHotQuestionRequest, ListHotQuestionResponse> listHotQuestionInvoker(
+        ListHotQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listHotQuestion, hcClient);
+    }
+
+    /**
+     * 查询热点问题详情
+     *
+     * 该接口用于查询热点问题详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotQuestionRequest 请求对象
+     * @return ShowHotQuestionResponse
+     */
+    public ShowHotQuestionResponse showHotQuestion(ShowHotQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showHotQuestion);
+    }
+
+    /**
+     * 查询热点问题详情
+     *
+     * 该接口用于查询热点问题详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotQuestionRequest 请求对象
+     * @return SyncInvoker<ShowHotQuestionRequest, ShowHotQuestionResponse>
+     */
+    public SyncInvoker<ShowHotQuestionRequest, ShowHotQuestionResponse> showHotQuestionInvoker(
+        ShowHotQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showHotQuestion, hcClient);
+    }
+
+    /**
+     * 修改热点问题
+     *
+     * 该接口用于修改热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotQuestionRequest 请求对象
+     * @return UpdateHotQuestionResponse
+     */
+    public UpdateHotQuestionResponse updateHotQuestion(UpdateHotQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateHotQuestion);
+    }
+
+    /**
+     * 修改热点问题
+     *
+     * 该接口用于修改热点问题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotQuestionRequest 请求对象
+     * @return SyncInvoker<UpdateHotQuestionRequest, UpdateHotQuestionResponse>
+     */
+    public SyncInvoker<UpdateHotQuestionRequest, UpdateHotQuestionResponse> updateHotQuestionInvoker(
+        UpdateHotQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateHotQuestion, hcClient);
+    }
+
+    /**
+     * 创建知识库意图和问法
+     *
+     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIntentAndQuestionRequest 请求对象
+     * @return CreateIntentAndQuestionResponse
+     */
+    public CreateIntentAndQuestionResponse createIntentAndQuestion(CreateIntentAndQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createIntentAndQuestion);
+    }
+
+    /**
+     * 创建知识库意图和问法
+     *
+     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIntentAndQuestionRequest 请求对象
+     * @return SyncInvoker<CreateIntentAndQuestionRequest, CreateIntentAndQuestionResponse>
+     */
+    public SyncInvoker<CreateIntentAndQuestionRequest, CreateIntentAndQuestionResponse> createIntentAndQuestionInvoker(
+        CreateIntentAndQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createIntentAndQuestion, hcClient);
+    }
+
+    /**
+     * 创建知识库意图
+     *
+     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeIntentRequest 请求对象
+     * @return CreateKnowledgeIntentResponse
+     */
+    public CreateKnowledgeIntentResponse createKnowledgeIntent(CreateKnowledgeIntentRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createKnowledgeIntent);
+    }
+
+    /**
+     * 创建知识库意图
+     *
+     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeIntentRequest 请求对象
+     * @return SyncInvoker<CreateKnowledgeIntentRequest, CreateKnowledgeIntentResponse>
+     */
+    public SyncInvoker<CreateKnowledgeIntentRequest, CreateKnowledgeIntentResponse> createKnowledgeIntentInvoker(
+        CreateKnowledgeIntentRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createKnowledgeIntent, hcClient);
+    }
+
+    /**
+     * 删除知识库意图
+     *
+     * 该接口用于删除知识库意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeIntentRequest 请求对象
+     * @return DeleteKnowledgeIntentResponse
+     */
+    public DeleteKnowledgeIntentResponse deleteKnowledgeIntent(DeleteKnowledgeIntentRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteKnowledgeIntent);
+    }
+
+    /**
+     * 删除知识库意图
+     *
+     * 该接口用于删除知识库意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeIntentRequest 请求对象
+     * @return SyncInvoker<DeleteKnowledgeIntentRequest, DeleteKnowledgeIntentResponse>
+     */
+    public SyncInvoker<DeleteKnowledgeIntentRequest, DeleteKnowledgeIntentResponse> deleteKnowledgeIntentInvoker(
+        DeleteKnowledgeIntentRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteKnowledgeIntent, hcClient);
+    }
+
+    /**
+     * 查询知识库意图列表
+     *
+     * 该接口用于查询知识库意图列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeIntentRequest 请求对象
+     * @return ListKnowledgeIntentResponse
+     */
+    public ListKnowledgeIntentResponse listKnowledgeIntent(ListKnowledgeIntentRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listKnowledgeIntent);
+    }
+
+    /**
+     * 查询知识库意图列表
+     *
+     * 该接口用于查询知识库意图列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeIntentRequest 请求对象
+     * @return SyncInvoker<ListKnowledgeIntentRequest, ListKnowledgeIntentResponse>
+     */
+    public SyncInvoker<ListKnowledgeIntentRequest, ListKnowledgeIntentResponse> listKnowledgeIntentInvoker(
+        ListKnowledgeIntentRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listKnowledgeIntent, hcClient);
+    }
+
+    /**
+     * 查询知识库意图详情
+     *
+     * 该接口用于查询知识库意图详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeIntentRequest 请求对象
+     * @return ShowKnowledgeIntentResponse
+     */
+    public ShowKnowledgeIntentResponse showKnowledgeIntent(ShowKnowledgeIntentRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showKnowledgeIntent);
+    }
+
+    /**
+     * 查询知识库意图详情
+     *
+     * 该接口用于查询知识库意图详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeIntentRequest 请求对象
+     * @return SyncInvoker<ShowKnowledgeIntentRequest, ShowKnowledgeIntentResponse>
+     */
+    public SyncInvoker<ShowKnowledgeIntentRequest, ShowKnowledgeIntentResponse> showKnowledgeIntentInvoker(
+        ShowKnowledgeIntentRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showKnowledgeIntent, hcClient);
+    }
+
+    /**
+     * 修改知识库意图
+     *
+     * 该接口用于修改知识库意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeIntentRequest 请求对象
+     * @return UpdateKnowledgeIntentResponse
+     */
+    public UpdateKnowledgeIntentResponse updateKnowledgeIntent(UpdateKnowledgeIntentRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateKnowledgeIntent);
+    }
+
+    /**
+     * 修改知识库意图
+     *
+     * 该接口用于修改知识库意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeIntentRequest 请求对象
+     * @return SyncInvoker<UpdateKnowledgeIntentRequest, UpdateKnowledgeIntentResponse>
+     */
+    public SyncInvoker<UpdateKnowledgeIntentRequest, UpdateKnowledgeIntentResponse> updateKnowledgeIntentInvoker(
+        UpdateKnowledgeIntentRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateKnowledgeIntent, hcClient);
+    }
+
+    /**
+     * 批量创建知识库问法
+     *
+     * 该接口用于批量创建知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBatchKnowledgeQuestionRequest 请求对象
+     * @return CreateBatchKnowledgeQuestionResponse
+     */
+    public CreateBatchKnowledgeQuestionResponse createBatchKnowledgeQuestion(
+        CreateBatchKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createBatchKnowledgeQuestion);
+    }
+
+    /**
+     * 批量创建知识库问法
+     *
+     * 该接口用于批量创建知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBatchKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<CreateBatchKnowledgeQuestionRequest, CreateBatchKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<CreateBatchKnowledgeQuestionRequest, CreateBatchKnowledgeQuestionResponse> createBatchKnowledgeQuestionInvoker(
+        CreateBatchKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createBatchKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 创建知识库问法
+     *
+     * 该接口用于创建知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeQuestionRequest 请求对象
+     * @return CreateKnowledgeQuestionResponse
+     */
+    public CreateKnowledgeQuestionResponse createKnowledgeQuestion(CreateKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createKnowledgeQuestion);
+    }
+
+    /**
+     * 创建知识库问法
+     *
+     * 该接口用于创建知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<CreateKnowledgeQuestionRequest, CreateKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<CreateKnowledgeQuestionRequest, CreateKnowledgeQuestionResponse> createKnowledgeQuestionInvoker(
+        CreateKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 删除知识库问法
+     *
+     * 该接口用于删除知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeQuestionRequest 请求对象
+     * @return DeleteKnowledgeQuestionResponse
+     */
+    public DeleteKnowledgeQuestionResponse deleteKnowledgeQuestion(DeleteKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteKnowledgeQuestion);
+    }
+
+    /**
+     * 删除知识库问法
+     *
+     * 该接口用于删除知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<DeleteKnowledgeQuestionRequest, DeleteKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<DeleteKnowledgeQuestionRequest, DeleteKnowledgeQuestionResponse> deleteKnowledgeQuestionInvoker(
+        DeleteKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 查询知识库问法列表
+     *
+     * 该接口用于查询知识库问法列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeQuestionRequest 请求对象
+     * @return ListKnowledgeQuestionResponse
+     */
+    public ListKnowledgeQuestionResponse listKnowledgeQuestion(ListKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listKnowledgeQuestion);
+    }
+
+    /**
+     * 查询知识库问法列表
+     *
+     * 该接口用于查询知识库问法列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<ListKnowledgeQuestionRequest, ListKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<ListKnowledgeQuestionRequest, ListKnowledgeQuestionResponse> listKnowledgeQuestionInvoker(
+        ListKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 查询知识库问法详情
+     *
+     * 该接口用于查询知识库问法详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeQuestionRequest 请求对象
+     * @return ShowKnowledgeQuestionResponse
+     */
+    public ShowKnowledgeQuestionResponse showKnowledgeQuestion(ShowKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showKnowledgeQuestion);
+    }
+
+    /**
+     * 查询知识库问法详情
+     *
+     * 该接口用于查询知识库问法详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<ShowKnowledgeQuestionRequest, ShowKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<ShowKnowledgeQuestionRequest, ShowKnowledgeQuestionResponse> showKnowledgeQuestionInvoker(
+        ShowKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 批量修改知识库问法
+     *
+     * 该接口用于批量修改知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBatchKnowledgeQuestionRequest 请求对象
+     * @return UpdateBatchKnowledgeQuestionResponse
+     */
+    public UpdateBatchKnowledgeQuestionResponse updateBatchKnowledgeQuestion(
+        UpdateBatchKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateBatchKnowledgeQuestion);
+    }
+
+    /**
+     * 批量修改知识库问法
+     *
+     * 该接口用于批量修改知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBatchKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<UpdateBatchKnowledgeQuestionRequest, UpdateBatchKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<UpdateBatchKnowledgeQuestionRequest, UpdateBatchKnowledgeQuestionResponse> updateBatchKnowledgeQuestionInvoker(
+        UpdateBatchKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateBatchKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 修改知识库问法
+     *
+     * 该接口用于修改知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeQuestionRequest 请求对象
+     * @return UpdateKnowledgeQuestionResponse
+     */
+    public UpdateKnowledgeQuestionResponse updateKnowledgeQuestion(UpdateKnowledgeQuestionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateKnowledgeQuestion);
+    }
+
+    /**
+     * 修改知识库问法
+     *
+     * 该接口用于修改知识库问法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeQuestionRequest 请求对象
+     * @return SyncInvoker<UpdateKnowledgeQuestionRequest, UpdateKnowledgeQuestionResponse>
+     */
+    public SyncInvoker<UpdateKnowledgeQuestionRequest, UpdateKnowledgeQuestionResponse> updateKnowledgeQuestionInvoker(
+        UpdateKnowledgeQuestionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateKnowledgeQuestion, hcClient);
+    }
+
+    /**
+     * 创建知识库技能
+     *
+     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeSkillRequest 请求对象
+     * @return CreateKnowledgeSkillResponse
+     */
+    public CreateKnowledgeSkillResponse createKnowledgeSkill(CreateKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createKnowledgeSkill);
+    }
+
+    /**
+     * 创建知识库技能
+     *
+     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<CreateKnowledgeSkillRequest, CreateKnowledgeSkillResponse>
+     */
+    public SyncInvoker<CreateKnowledgeSkillRequest, CreateKnowledgeSkillResponse> createKnowledgeSkillInvoker(
+        CreateKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createKnowledgeSkill, hcClient);
+    }
+
+    /**
+     * 删除知识库技能
+     *
+     * 该接口用于删除知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeSkillRequest 请求对象
+     * @return DeleteKnowledgeSkillResponse
+     */
+    public DeleteKnowledgeSkillResponse deleteKnowledgeSkill(DeleteKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteKnowledgeSkill);
+    }
+
+    /**
+     * 删除知识库技能
+     *
+     * 该接口用于删除知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<DeleteKnowledgeSkillRequest, DeleteKnowledgeSkillResponse>
+     */
+    public SyncInvoker<DeleteKnowledgeSkillRequest, DeleteKnowledgeSkillResponse> deleteKnowledgeSkillInvoker(
+        DeleteKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteKnowledgeSkill, hcClient);
+    }
+
+    /**
+     * 导出知识库技能
+     *
+     * 该接口用于导出知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportKnowledgeSkillRequest 请求对象
+     * @return ExportKnowledgeSkillResponse
+     */
+    public ExportKnowledgeSkillResponse exportKnowledgeSkill(ExportKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.exportKnowledgeSkill);
+    }
+
+    /**
+     * 导出知识库技能
+     *
+     * 该接口用于导出知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<ExportKnowledgeSkillRequest, ExportKnowledgeSkillResponse>
+     */
+    public SyncInvoker<ExportKnowledgeSkillRequest, ExportKnowledgeSkillResponse> exportKnowledgeSkillInvoker(
+        ExportKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.exportKnowledgeSkill, hcClient);
+    }
+
+    /**
+     * 查询知识库技能列表
+     *
+     * 该接口用于查询知识库技能列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeSkillRequest 请求对象
+     * @return ListKnowledgeSkillResponse
+     */
+    public ListKnowledgeSkillResponse listKnowledgeSkill(ListKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listKnowledgeSkill);
+    }
+
+    /**
+     * 查询知识库技能列表
+     *
+     * 该接口用于查询知识库技能列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<ListKnowledgeSkillRequest, ListKnowledgeSkillResponse>
+     */
+    public SyncInvoker<ListKnowledgeSkillRequest, ListKnowledgeSkillResponse> listKnowledgeSkillInvoker(
+        ListKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listKnowledgeSkill, hcClient);
+    }
+
+    /**
+     * 查询知识库技能详情
+     *
+     * 该接口用于查询知识库技能详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeSkillRequest 请求对象
+     * @return ShowKnowledgeSkillResponse
+     */
+    public ShowKnowledgeSkillResponse showKnowledgeSkill(ShowKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showKnowledgeSkill);
+    }
+
+    /**
+     * 查询知识库技能详情
+     *
+     * 该接口用于查询知识库技能详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<ShowKnowledgeSkillRequest, ShowKnowledgeSkillResponse>
+     */
+    public SyncInvoker<ShowKnowledgeSkillRequest, ShowKnowledgeSkillResponse> showKnowledgeSkillInvoker(
+        ShowKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showKnowledgeSkill, hcClient);
+    }
+
+    /**
+     * 修改知识库技能
+     *
+     * 该接口用于修改知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeSkillRequest 请求对象
+     * @return UpdateKnowledgeSkillResponse
+     */
+    public UpdateKnowledgeSkillResponse updateKnowledgeSkill(UpdateKnowledgeSkillRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateKnowledgeSkill);
+    }
+
+    /**
+     * 修改知识库技能
+     *
+     * 该接口用于修改知识库技能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKnowledgeSkillRequest 请求对象
+     * @return SyncInvoker<UpdateKnowledgeSkillRequest, UpdateKnowledgeSkillResponse>
+     */
+    public SyncInvoker<UpdateKnowledgeSkillRequest, UpdateKnowledgeSkillResponse> updateKnowledgeSkillInvoker(
+        UpdateKnowledgeSkillRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateKnowledgeSkill, hcClient);
     }
 
     /**
@@ -3276,6 +4067,209 @@ public class MetaStudioClient {
     public SyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse> updateVideoScriptInvoker(
         UpdateVideoScriptRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.updateVideoScript, hcClient);
+    }
+
+    /**
+     * 创建欢迎词
+     *
+     * 该接口用于创建欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWelcomeSpeechRequest 请求对象
+     * @return CreateWelcomeSpeechResponse
+     */
+    public CreateWelcomeSpeechResponse createWelcomeSpeech(CreateWelcomeSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createWelcomeSpeech);
+    }
+
+    /**
+     * 创建欢迎词
+     *
+     * 该接口用于创建欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWelcomeSpeechRequest 请求对象
+     * @return SyncInvoker<CreateWelcomeSpeechRequest, CreateWelcomeSpeechResponse>
+     */
+    public SyncInvoker<CreateWelcomeSpeechRequest, CreateWelcomeSpeechResponse> createWelcomeSpeechInvoker(
+        CreateWelcomeSpeechRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createWelcomeSpeech, hcClient);
+    }
+
+    /**
+     * 删除欢迎词
+     *
+     * 该接口用于删除欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWelcomeSpeechRequest 请求对象
+     * @return DeleteWelcomeSpeechResponse
+     */
+    public DeleteWelcomeSpeechResponse deleteWelcomeSpeech(DeleteWelcomeSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteWelcomeSpeech);
+    }
+
+    /**
+     * 删除欢迎词
+     *
+     * 该接口用于删除欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWelcomeSpeechRequest 请求对象
+     * @return SyncInvoker<DeleteWelcomeSpeechRequest, DeleteWelcomeSpeechResponse>
+     */
+    public SyncInvoker<DeleteWelcomeSpeechRequest, DeleteWelcomeSpeechResponse> deleteWelcomeSpeechInvoker(
+        DeleteWelcomeSpeechRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteWelcomeSpeech, hcClient);
+    }
+
+    /**
+     * 查询欢迎词列表
+     *
+     * 该接口用于查询欢迎词列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWelcomeSpeechRequest 请求对象
+     * @return ListWelcomeSpeechResponse
+     */
+    public ListWelcomeSpeechResponse listWelcomeSpeech(ListWelcomeSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listWelcomeSpeech);
+    }
+
+    /**
+     * 查询欢迎词列表
+     *
+     * 该接口用于查询欢迎词列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWelcomeSpeechRequest 请求对象
+     * @return SyncInvoker<ListWelcomeSpeechRequest, ListWelcomeSpeechResponse>
+     */
+    public SyncInvoker<ListWelcomeSpeechRequest, ListWelcomeSpeechResponse> listWelcomeSpeechInvoker(
+        ListWelcomeSpeechRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listWelcomeSpeech, hcClient);
+    }
+
+    /**
+     * 查询欢迎词详情
+     *
+     * 该接口用于查询欢迎词详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWelcomeSpeechRequest 请求对象
+     * @return ShowWelcomeSpeechResponse
+     */
+    public ShowWelcomeSpeechResponse showWelcomeSpeech(ShowWelcomeSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showWelcomeSpeech);
+    }
+
+    /**
+     * 查询欢迎词详情
+     *
+     * 该接口用于查询欢迎词详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWelcomeSpeechRequest 请求对象
+     * @return SyncInvoker<ShowWelcomeSpeechRequest, ShowWelcomeSpeechResponse>
+     */
+    public SyncInvoker<ShowWelcomeSpeechRequest, ShowWelcomeSpeechResponse> showWelcomeSpeechInvoker(
+        ShowWelcomeSpeechRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showWelcomeSpeech, hcClient);
+    }
+
+    /**
+     * 查询欢迎词功能开关
+     *
+     * 该接口用于查询欢迎词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWelcomeSpeechSwitchRequest 请求对象
+     * @return ShowWelcomeSpeechSwitchResponse
+     */
+    public ShowWelcomeSpeechSwitchResponse showWelcomeSpeechSwitch(ShowWelcomeSpeechSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showWelcomeSpeechSwitch);
+    }
+
+    /**
+     * 查询欢迎词功能开关
+     *
+     * 该接口用于查询欢迎词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWelcomeSpeechSwitchRequest 请求对象
+     * @return SyncInvoker<ShowWelcomeSpeechSwitchRequest, ShowWelcomeSpeechSwitchResponse>
+     */
+    public SyncInvoker<ShowWelcomeSpeechSwitchRequest, ShowWelcomeSpeechSwitchResponse> showWelcomeSpeechSwitchInvoker(
+        ShowWelcomeSpeechSwitchRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showWelcomeSpeechSwitch, hcClient);
+    }
+
+    /**
+     * 修改欢迎词
+     *
+     * 该接口用于修改欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWelcomeSpeechRequest 请求对象
+     * @return UpdateWelcomeSpeechResponse
+     */
+    public UpdateWelcomeSpeechResponse updateWelcomeSpeech(UpdateWelcomeSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateWelcomeSpeech);
+    }
+
+    /**
+     * 修改欢迎词
+     *
+     * 该接口用于修改欢迎词。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWelcomeSpeechRequest 请求对象
+     * @return SyncInvoker<UpdateWelcomeSpeechRequest, UpdateWelcomeSpeechResponse>
+     */
+    public SyncInvoker<UpdateWelcomeSpeechRequest, UpdateWelcomeSpeechResponse> updateWelcomeSpeechInvoker(
+        UpdateWelcomeSpeechRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateWelcomeSpeech, hcClient);
+    }
+
+    /**
+     * 修改欢迎词功能开关
+     *
+     * 该接口用于修改欢迎词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWelcomeSpeechSwitchRequest 请求对象
+     * @return UpdateWelcomeSpeechSwitchResponse
+     */
+    public UpdateWelcomeSpeechSwitchResponse updateWelcomeSpeechSwitch(UpdateWelcomeSpeechSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateWelcomeSpeechSwitch);
+    }
+
+    /**
+     * 修改欢迎词功能开关
+     *
+     * 该接口用于修改欢迎词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWelcomeSpeechSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateWelcomeSpeechSwitchRequest, UpdateWelcomeSpeechSwitchResponse>
+     */
+    public SyncInvoker<UpdateWelcomeSpeechSwitchRequest, UpdateWelcomeSpeechSwitchResponse> updateWelcomeSpeechSwitchInvoker(
+        UpdateWelcomeSpeechSwitchRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateWelcomeSpeechSwitch, hcClient);
     }
 
 }

@@ -35,6 +35,16 @@ public class CreateSqlLimitRuleOption {
          */
         public static final SqlTypeEnum DELETE = new SqlTypeEnum("DELETE");
 
+        /**
+         * Enum QUERY_ID for value: "QUERY_ID"
+         */
+        public static final SqlTypeEnum QUERY_ID = new SqlTypeEnum("QUERY_ID");
+
+        /**
+         * Enum QUERY_STR for value: "QUERY_STR"
+         */
+        public static final SqlTypeEnum QUERY_STR = new SqlTypeEnum("QUERY_STR");
+
         private static final Map<String, SqlTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SqlTypeEnum> createStaticFields() {
@@ -42,6 +52,8 @@ public class CreateSqlLimitRuleOption {
             map.put("SELECT", SELECT);
             map.put("UPDATE", UPDATE);
             map.put("DELETE", DELETE);
+            map.put("QUERY_ID", QUERY_ID);
+            map.put("QUERY_STR", QUERY_STR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -102,6 +114,11 @@ public class CreateSqlLimitRuleOption {
     private Integer maxConcurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_waiting")
+
+    private Integer maxWaiting;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pattern")
 
     private String pattern;
@@ -140,6 +157,23 @@ public class CreateSqlLimitRuleOption {
         this.maxConcurrency = maxConcurrency;
     }
 
+    public CreateSqlLimitRuleOption withMaxWaiting(Integer maxWaiting) {
+        this.maxWaiting = maxWaiting;
+        return this;
+    }
+
+    /**
+     * 最大等待时间
+     * @return maxWaiting
+     */
+    public Integer getMaxWaiting() {
+        return maxWaiting;
+    }
+
+    public void setMaxWaiting(Integer maxWaiting) {
+        this.maxWaiting = maxWaiting;
+    }
+
     public CreateSqlLimitRuleOption withPattern(String pattern) {
         this.pattern = pattern;
         return this;
@@ -167,12 +201,12 @@ public class CreateSqlLimitRuleOption {
         }
         CreateSqlLimitRuleOption that = (CreateSqlLimitRuleOption) obj;
         return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.maxConcurrency, that.maxConcurrency)
-            && Objects.equals(this.pattern, that.pattern);
+            && Objects.equals(this.maxWaiting, that.maxWaiting) && Objects.equals(this.pattern, that.pattern);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlType, maxConcurrency, pattern);
+        return Objects.hash(sqlType, maxConcurrency, maxWaiting, pattern);
     }
 
     @Override
@@ -181,6 +215,7 @@ public class CreateSqlLimitRuleOption {
         sb.append("class CreateSqlLimitRuleOption {\n");
         sb.append("    sqlType: ").append(toIndentedString(sqlType)).append("\n");
         sb.append("    maxConcurrency: ").append(toIndentedString(maxConcurrency)).append("\n");
+        sb.append("    maxWaiting: ").append(toIndentedString(maxWaiting)).append("\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
         sb.append("}");
         return sb.toString();

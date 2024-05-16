@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -24,6 +29,81 @@ public class ListUpdatableVersionRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    /**
+     * 升级类型 cluster:集群升级 hotpatch:热补丁升级
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum CLUSTER for value: "cluster"
+         */
+        public static final TypeEnum CLUSTER = new TypeEnum("cluster");
+
+        /**
+         * Enum HOTPATCH for value: "hotpatch"
+         */
+        public static final TypeEnum HOTPATCH = new TypeEnum("hotpatch");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("cluster", CLUSTER);
+            map.put("hotpatch", HOTPATCH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
 
     public ListUpdatableVersionRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -76,6 +156,23 @@ public class ListUpdatableVersionRequest {
         this.limit = limit;
     }
 
+    public ListUpdatableVersionRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 升级类型 cluster:集群升级 hotpatch:热补丁升级
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +183,12 @@ public class ListUpdatableVersionRequest {
         }
         ListUpdatableVersionRequest that = (ListUpdatableVersionRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, offset, limit);
+        return Objects.hash(clusterId, offset, limit, type);
     }
 
     @Override
@@ -101,6 +198,7 @@ public class ListUpdatableVersionRequest {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

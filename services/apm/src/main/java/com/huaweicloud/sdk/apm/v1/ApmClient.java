@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.apm.v1.model.ChangeAgentStatusRequest;
 import com.huaweicloud.sdk.apm.v1.model.ChangeAgentStatusResponse;
 import com.huaweicloud.sdk.apm.v1.model.CreateAkSkRequest;
 import com.huaweicloud.sdk.apm.v1.model.CreateAkSkResponse;
+import com.huaweicloud.sdk.apm.v1.model.CreateBusinessRequest;
+import com.huaweicloud.sdk.apm.v1.model.CreateBusinessResponse;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAgentRequest;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAgentResponse;
 import com.huaweicloud.sdk.apm.v1.model.DeleteAkSkRequest;
@@ -48,6 +50,8 @@ import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigRequest;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigResponse;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionRequest;
 import com.huaweicloud.sdk.apm.v1.model.SearchTransactionResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowAccessPointRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowAccessPointResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowAkSksRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowAkSksResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowBusinessDetailRequest;
@@ -58,8 +62,12 @@ import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowFlameLineTreeRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowFlameLineTreeResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemDetailResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowRawTableRequest;
@@ -70,6 +78,8 @@ import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowSumTableRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowSumTableResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTokenRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTokenResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyRequest;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyResponse;
 import com.huaweicloud.sdk.apm.v1.model.ShowTopologyTreeRequest;
@@ -695,6 +705,33 @@ public class ApmClient {
     }
 
     /**
+     * 
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlameLineTreeRequest 请求对象
+     * @return ShowFlameLineTreeResponse
+     */
+    public ShowFlameLineTreeResponse showFlameLineTree(ShowFlameLineTreeRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showFlameLineTree);
+    }
+
+    /**
+     * 
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlameLineTreeRequest 请求对象
+     * @return SyncInvoker<ShowFlameLineTreeRequest, ShowFlameLineTreeResponse>
+     */
+    public SyncInvoker<ShowFlameLineTreeRequest, ShowFlameLineTreeResponse> showFlameLineTreeInvoker(
+        ShowFlameLineTreeRequest request) {
+        return new SyncInvoker<>(request, ApmMeta.showFlameLineTree, hcClient);
+    }
+
+    /**
      * 查询开通的region
      *
      * 该接口用于查询用户开通的region信息。
@@ -808,6 +845,92 @@ public class ApmClient {
     public SyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse> searchEnvTopologyInvoker(
         SearchEnvTopologyRequest request) {
         return new SyncInvoker<>(request, ApmMeta.searchEnvTopology, hcClient);
+    }
+
+    /**
+     * 创建链路追踪应用
+     *
+     * 创建链路追踪应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBusinessRequest 请求对象
+     * @return CreateBusinessResponse
+     */
+    public CreateBusinessResponse createBusiness(CreateBusinessRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.createBusiness);
+    }
+
+    /**
+     * 创建链路追踪应用
+     *
+     * 创建链路追踪应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBusinessRequest 请求对象
+     * @return SyncInvoker<CreateBusinessRequest, CreateBusinessResponse>
+     */
+    public SyncInvoker<CreateBusinessRequest, CreateBusinessResponse> createBusinessInvoker(
+        CreateBusinessRequest request) {
+        return new SyncInvoker<>(request, ApmMeta.createBusiness, hcClient);
+    }
+
+    /**
+     * 获取链路追踪应用接入地址
+     *
+     * 获取链路追踪应用接入地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessPointRequest 请求对象
+     * @return ShowAccessPointResponse
+     */
+    public ShowAccessPointResponse showAccessPoint(ShowAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showAccessPoint);
+    }
+
+    /**
+     * 获取链路追踪应用接入地址
+     *
+     * 获取链路追踪应用接入地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessPointRequest 请求对象
+     * @return SyncInvoker<ShowAccessPointRequest, ShowAccessPointResponse>
+     */
+    public SyncInvoker<ShowAccessPointRequest, ShowAccessPointResponse> showAccessPointInvoker(
+        ShowAccessPointRequest request) {
+        return new SyncInvoker<>(request, ApmMeta.showAccessPoint, hcClient);
+    }
+
+    /**
+     * 获取链路追踪应用的token
+     *
+     * 获取链路追踪应用的token
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTokenRequest 请求对象
+     * @return ShowTokenResponse
+     */
+    public ShowTokenResponse showToken(ShowTokenRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showToken);
+    }
+
+    /**
+     * 获取链路追踪应用的token
+     *
+     * 获取链路追踪应用的token
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTokenRequest 请求对象
+     * @return SyncInvoker<ShowTokenRequest, ShowTokenResponse>
+     */
+    public SyncInvoker<ShowTokenRequest, ShowTokenResponse> showTokenInvoker(ShowTokenRequest request) {
+        return new SyncInvoker<>(request, ApmMeta.showToken, hcClient);
     }
 
     /**
@@ -1040,6 +1163,35 @@ public class ApmClient {
     public SyncInvoker<ShowEventDetailRequest, ShowEventDetailResponse> showEventDetailInvoker(
         ShowEventDetailRequest request) {
         return new SyncInvoker<>(request, ApmMeta.showEventDetail, hcClient);
+    }
+
+    /**
+     * 获取一个监控项的详情
+     *
+     * 获取一个监控项的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMonitorItemDetailRequest 请求对象
+     * @return ShowMonitorItemDetailResponse
+     */
+    public ShowMonitorItemDetailResponse showMonitorItemDetail(ShowMonitorItemDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.showMonitorItemDetail);
+    }
+
+    /**
+     * 获取一个监控项的详情
+     *
+     * 获取一个监控项的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMonitorItemDetailRequest 请求对象
+     * @return SyncInvoker<ShowMonitorItemDetailRequest, ShowMonitorItemDetailResponse>
+     */
+    public SyncInvoker<ShowMonitorItemDetailRequest, ShowMonitorItemDetailResponse> showMonitorItemDetailInvoker(
+        ShowMonitorItemDetailRequest request) {
+        return new SyncInvoker<>(request, ApmMeta.showMonitorItemDetail, hcClient);
     }
 
     /**

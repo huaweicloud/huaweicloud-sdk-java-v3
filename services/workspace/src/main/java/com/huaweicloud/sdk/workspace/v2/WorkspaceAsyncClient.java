@@ -173,6 +173,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowJobRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
@@ -1771,6 +1773,34 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListItaSubJobsRequest, ListItaSubJobsResponse> listItaSubJobsAsyncInvoker(
         ListItaSubJobsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listItaSubJobs, hcClient);
+    }
+
+    /**
+     * 查询任务详情
+     *
+     * 该接口用于查询异步任务的执行情况，比如查询创建桌面任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobRequest 请求对象
+     * @return CompletableFuture<ShowJobResponse>
+     */
+    public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showJob);
+    }
+
+    /**
+     * 查询任务详情
+     *
+     * 该接口用于查询异步任务的执行情况，比如查询创建桌面任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobRequest 请求对象
+     * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
+     */
+    public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showJob, hcClient);
     }
 
     /**

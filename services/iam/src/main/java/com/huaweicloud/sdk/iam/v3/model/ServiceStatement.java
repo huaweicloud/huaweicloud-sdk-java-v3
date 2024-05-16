@@ -106,7 +106,7 @@ public class ServiceStatement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Resource")
 
-    private List<String> resource = null;
+    private Object resource;
 
     public ServiceStatement withAction(List<String> action) {
         this.action = action;
@@ -191,24 +191,8 @@ public class ServiceStatement {
         this.condition = condition;
     }
 
-    public ServiceStatement withResource(List<String> resource) {
+    public ServiceStatement withResource(Object resource) {
         this.resource = resource;
-        return this;
-    }
-
-    public ServiceStatement addResourceItem(String resourceItem) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
-        this.resource.add(resourceItem);
-        return this;
-    }
-
-    public ServiceStatement withResource(Consumer<List<String>> resourceSetter) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
-        resourceSetter.accept(this.resource);
         return this;
     }
 
@@ -216,11 +200,11 @@ public class ServiceStatement {
      * 资源。规则如下： > - 可填 * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > - region字段为*或用户可访问的region。service必须存在且resource属于对应service。
      * @return resource
      */
-    public List<String> getResource() {
+    public Object getResource() {
         return resource;
     }
 
-    public void setResource(List<String> resource) {
+    public void setResource(Object resource) {
         this.resource = resource;
     }
 

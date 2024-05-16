@@ -22,7 +22,7 @@ public class ResizeGraph2Response extends SdkResponse {
     }
 
     /**
-     * 扩容图任务ID。请求失败时字段为空。
+     * 变更图规格任务ID。请求失败时字段为空。
      * @return jobId
      */
     public String getJobId() {

@@ -55,6 +55,11 @@ public class SmartDocumentRecognizerRequestBody {
 
     private String kvMap;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pdf_page_number")
+
+    private Integer pdfPageNumber;
+
     public SmartDocumentRecognizerRequestBody withData(String data) {
         this.data = data;
         return this;
@@ -208,6 +213,23 @@ public class SmartDocumentRecognizerRequestBody {
         this.kvMap = kvMap;
     }
 
+    public SmartDocumentRecognizerRequestBody withPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+        return this;
+    }
+
+    /**
+     * 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
+     * @return pdfPageNumber
+     */
+    public Integer getPdfPageNumber() {
+        return pdfPageNumber;
+    }
+
+    public void setPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -221,12 +243,12 @@ public class SmartDocumentRecognizerRequestBody {
             && Objects.equals(this.kv, that.kv) && Objects.equals(this.table, that.table)
             && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel)
             && Objects.equals(this.form, that.form) && Objects.equals(this.formula, that.formula)
-            && Objects.equals(this.kvMap, that.kvMap);
+            && Objects.equals(this.kvMap, that.kvMap) && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url, kv, table, layout, returnExcel, form, formula, kvMap);
+        return Objects.hash(data, url, kv, table, layout, returnExcel, form, formula, kvMap, pdfPageNumber);
     }
 
     @Override
@@ -242,6 +264,7 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    form: ").append(toIndentedString(form)).append("\n");
         sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
         sb.append("    kvMap: ").append(toIndentedString(kvMap)).append("\n");
+        sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

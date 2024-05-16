@@ -46,6 +46,7 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -127,6 +128,13 @@ public class TestHcClient {
 
         wireMockRule.stubFor(WireMock.get("/user-agent")
                 .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0"))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("")
+                        .withStatus(200)));
+
+        wireMockRule.stubFor(WireMock.get("/host")
+                .withHeader("Host", equalTo("www.example.com"))
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
                         .withBody("")
@@ -252,6 +260,18 @@ public class TestHcClient {
                 .withUri("/user-agent")
                 .withContentType("application/json").build();
         SdkResponse response = (SdkResponse) hcClient.syncInvokeHttp(new Object(), reqDef);
+        Assert.assertEquals(200, response.getHttpStatusCode());
+    }
+
+    @Test
+    public void testHostHeader() {
+        HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
+                .withName("TestHost")
+                .withUri("/host")
+                .withContentType("application/json").build();
+        Map<String, String> map = new HashMap<>();
+        map.put("Host", "www.example.com");
+        SdkResponse response = (SdkResponse) hcClient.preInvoke(map).syncInvokeHttp(new Object(), reqDef);
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 

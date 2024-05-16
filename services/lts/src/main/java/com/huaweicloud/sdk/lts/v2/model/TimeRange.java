@@ -18,12 +18,12 @@ public class TimeRange {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private String startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time_gt")
@@ -52,37 +52,37 @@ public class TimeRange {
         this.sqlTimeZone = sqlTimeZone;
     }
 
-    public TimeRange withStartTime(String startTime) {
+    public TimeRange withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 搜索起始时间（UTC时间，毫秒级）。
+     * 搜索起始时间（UTC时间，毫秒级）
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public TimeRange withEndTime(String endTime) {
+    public TimeRange withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
-     * 搜索起始时间（UTC时间，毫秒级）。
+     * 搜索结束时间（UTC时间，毫秒级）。
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

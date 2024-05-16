@@ -483,6 +483,7 @@ public class CdnClient {
      * @param request ShowDomainFullConfigRequest 请求对象
      * @return ShowDomainFullConfigResponse
      */
+    @Deprecated
     public ShowDomainFullConfigResponse showDomainFullConfig(ShowDomainFullConfigRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainFullConfig);
     }
@@ -498,6 +499,7 @@ public class CdnClient {
      * @param request ShowDomainFullConfigRequest 请求对象
      * @return SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfigInvoker(
         ShowDomainFullConfigRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showDomainFullConfig, hcClient);
@@ -1152,6 +1154,7 @@ public class CdnClient {
      * @param request UpdateDomainFullConfigRequest 请求对象
      * @return UpdateDomainFullConfigResponse
      */
+    @Deprecated
     public UpdateDomainFullConfigResponse updateDomainFullConfig(UpdateDomainFullConfigRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateDomainFullConfig);
     }
@@ -1167,6 +1170,7 @@ public class CdnClient {
      * @param request UpdateDomainFullConfigRequest 请求对象
      * @return SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigInvoker(
         UpdateDomainFullConfigRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateDomainFullConfig, hcClient);

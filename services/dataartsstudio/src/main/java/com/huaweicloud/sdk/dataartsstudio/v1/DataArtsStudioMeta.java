@@ -141,6 +141,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecrecyLevelDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
@@ -207,6 +209,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityRequest;
@@ -381,6 +385,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListReleasePackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesRequest;
@@ -393,6 +399,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
@@ -443,6 +451,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionUpdate
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueryTaskRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignEntity;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosRequest;
@@ -597,6 +608,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificatio
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySecrecyLevelRequest;
@@ -662,6 +675,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecrecyLevelDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
@@ -2142,6 +2157,47 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse> createSecurityAssignedQueue =
+        genForCreateSecurityAssignedQueue();
+
+    private static HttpRequestDef<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse> genForCreateSecurityAssignedQueue() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityAssignedQueueRequest.class,
+                    CreateSecurityAssignedQueueResponse.class)
+                .withName("CreateSecurityAssignedQueue")
+                .withUri("/v1/{project_id}/security/permission/queue/assigned-source")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityAssignedQueueRequest::getWorkspace,
+                CreateSecurityAssignedQueueRequest::setWorkspace));
+        builder.<QueueSrcAssignCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueueSrcAssignCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityAssignedQueueRequest::getBody,
+                CreateSecurityAssignedQueueRequest::setBody));
+
+        // response
+        builder.<List<QueueSrcAssignEntity>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(CreateSecurityAssignedQueueResponse::getBody,
+                    CreateSecurityAssignedQueueResponse::setBody)
+                .withInnerContainerType(QueueSrcAssignEntity.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRule =
         genForCreateSecurityDataClassificationRule();
 
@@ -3075,6 +3131,39 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDirectoryRequest::getXProjectId, DeleteDirectoryRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecurityAssignedQueueRequest, DeleteSecurityAssignedQueueResponse> deleteSecurityAssignedQueue =
+        genForDeleteSecurityAssignedQueue();
+
+    private static HttpRequestDef<DeleteSecurityAssignedQueueRequest, DeleteSecurityAssignedQueueResponse> genForDeleteSecurityAssignedQueue() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityAssignedQueueRequest, DeleteSecurityAssignedQueueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSecurityAssignedQueueRequest.class,
+                    DeleteSecurityAssignedQueueResponse.class)
+                .withName("DeleteSecurityAssignedQueue")
+                .withUri("/v1/{project_id}/security/permission/queue/assigned-source/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityAssignedQueueRequest::getId,
+                DeleteSecurityAssignedQueueRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityAssignedQueueRequest::getWorkspace,
+                DeleteSecurityAssignedQueueRequest::setWorkspace));
 
         // response
 
@@ -6644,6 +6733,57 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse> listSecurityAssignedQueues =
+        genForListSecurityAssignedQueues();
+
+    private static HttpRequestDef<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse> genForListSecurityAssignedQueues() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityAssignedQueuesRequest.class,
+                    ListSecurityAssignedQueuesResponse.class)
+                .withName("ListSecurityAssignedQueues")
+                .withUri("/v1/{project_id}/security/permission/queue/assigned-source")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getType,
+                ListSecurityAssignedQueuesRequest::setType));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getClusterId,
+                ListSecurityAssignedQueuesRequest::setClusterId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getLimit,
+                ListSecurityAssignedQueuesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getOffset,
+                ListSecurityAssignedQueuesRequest::setOffset));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getWorkspace,
+                ListSecurityAssignedQueuesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> listSecurityDataClassificationRuleGroups =
         genForListSecurityDataClassificationRuleGroups();
 
@@ -6962,6 +7102,81 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityDlfDataWareHousesRequest::getWorkspace,
                 ListSecurityDlfDataWareHousesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> listSecurityMemberSyncTasks =
+        genForListSecurityMemberSyncTasks();
+
+    private static HttpRequestDef<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> genForListSecurityMemberSyncTasks() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityMemberSyncTasksRequest.class,
+                    ListSecurityMemberSyncTasksResponse.class)
+                .withName("ListSecurityMemberSyncTasks")
+                .withUri("/v1/{project_id}/security/member-sync-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getLimit,
+                ListSecurityMemberSyncTasksRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getOffset,
+                ListSecurityMemberSyncTasksRequest::setOffset));
+        builder.<ListSecurityMemberSyncTasksRequest.ClusterTypeEnum>withRequestField("cluster_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberSyncTasksRequest.ClusterTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getClusterType,
+                ListSecurityMemberSyncTasksRequest::setClusterType));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getClusterName,
+                ListSecurityMemberSyncTasksRequest::setClusterName));
+        builder.<ListSecurityMemberSyncTasksRequest.SyncStatusEnum>withRequestField("sync_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberSyncTasksRequest.SyncStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getSyncStatus,
+                ListSecurityMemberSyncTasksRequest::setSyncStatus));
+        builder.<ListSecurityMemberSyncTasksRequest.ScheduleStatusEnum>withRequestField("schedule_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberSyncTasksRequest.ScheduleStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getScheduleStatus,
+                ListSecurityMemberSyncTasksRequest::setScheduleStatus));
+        builder.<ListSecurityMemberSyncTasksRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberSyncTasksRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getOrderBy,
+                ListSecurityMemberSyncTasksRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getOrderByAsc,
+                ListSecurityMemberSyncTasksRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getWorkspace,
+                ListSecurityMemberSyncTasksRequest::setWorkspace));
 
         // response
 
@@ -10948,6 +11163,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse> showSecurityMemberSyncTask =
+        genForShowSecurityMemberSyncTask();
+
+    private static HttpRequestDef<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse> genForShowSecurityMemberSyncTask() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityMemberSyncTaskRequest.class,
+                    ShowSecurityMemberSyncTaskResponse.class)
+                .withName("ShowSecurityMemberSyncTask")
+                .withUri("/v1/{project_id}/security/member-sync-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityMemberSyncTaskRequest::getTaskId,
+                ShowSecurityMemberSyncTaskRequest::setTaskId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityMemberSyncTaskRequest::getWorkspace,
+                ShowSecurityMemberSyncTaskRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> showSecurityPermissionSet =
         genForShowSecurityPermissionSet();
 
@@ -11816,6 +12064,45 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFactoryJobNameRequestBody.class),
             f -> f.withMarshaller(UpdateFactoryJobNameRequest::getBody, UpdateFactoryJobNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse> updateSecurityAssignedQueue =
+        genForUpdateSecurityAssignedQueue();
+
+    private static HttpRequestDef<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse> genForUpdateSecurityAssignedQueue() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityAssignedQueueRequest.class,
+                    UpdateSecurityAssignedQueueResponse.class)
+                .withName("UpdateSecurityAssignedQueue")
+                .withUri("/v1/{project_id}/security/permission/queue/assigned-source/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityAssignedQueueRequest::getId,
+                UpdateSecurityAssignedQueueRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityAssignedQueueRequest::getWorkspace,
+                UpdateSecurityAssignedQueueRequest::setWorkspace));
+        builder.<QueueSrcAssignUpdateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueueSrcAssignUpdateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityAssignedQueueRequest::getBody,
+                UpdateSecurityAssignedQueueRequest::setBody));
 
         // response
 

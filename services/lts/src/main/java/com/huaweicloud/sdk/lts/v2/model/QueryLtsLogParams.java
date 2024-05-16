@@ -47,6 +47,11 @@ public class QueryLtsLogParams {
     private String lineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__time__")
+
+    private String time;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_desc")
 
     private Boolean isDesc;
@@ -259,6 +264,25 @@ public class QueryLtsLogParams {
         this.lineNum = lineNum;
     }
 
+    public QueryLtsLogParams withTime(String time) {
+        this.time = time;
+        return this;
+    }
+
+    /**
+     * 若已开启自定义时间功能，需要使用该字段进行分页查询。
+     * @return time
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__time__")
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public QueryLtsLogParams withIsDesc(Boolean isDesc) {
         this.isDesc = isDesc;
         return this;
@@ -358,9 +382,9 @@ public class QueryLtsLogParams {
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.isCount, that.isCount)
             && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.lineNum, that.lineNum)
-            && Objects.equals(this.isDesc, that.isDesc) && Objects.equals(this.searchType, that.searchType)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.highlight, that.highlight)
-            && Objects.equals(this.isIterative, that.isIterative);
+            && Objects.equals(this.time, that.time) && Objects.equals(this.isDesc, that.isDesc)
+            && Objects.equals(this.searchType, that.searchType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.highlight, that.highlight) && Objects.equals(this.isIterative, that.isIterative);
     }
 
     @Override
@@ -371,6 +395,7 @@ public class QueryLtsLogParams {
             isCount,
             keywords,
             lineNum,
+            time,
             isDesc,
             searchType,
             limit,
@@ -388,6 +413,7 @@ public class QueryLtsLogParams {
         sb.append("    isCount: ").append(toIndentedString(isCount)).append("\n");
         sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
         sb.append("    lineNum: ").append(toIndentedString(lineNum)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    isDesc: ").append(toIndentedString(isDesc)).append("\n");
         sb.append("    searchType: ").append(toIndentedString(searchType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

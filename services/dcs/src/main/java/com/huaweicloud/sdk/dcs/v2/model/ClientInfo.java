@@ -48,7 +48,7 @@ public class ClientInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "idle")
 
-    private String idle;
+    private Integer idle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db")
@@ -292,7 +292,7 @@ public class ClientInfo {
         this.age = age;
     }
 
-    public ClientInfo withIdle(String idle) {
+    public ClientInfo withIdle(Integer idle) {
         this.idle = idle;
         return this;
     }
@@ -301,11 +301,11 @@ public class ClientInfo {
      * 空闲时长（单位：秒）
      * @return idle
      */
-    public String getIdle() {
+    public Integer getIdle() {
         return idle;
     }
 
-    public void setIdle(String idle) {
+    public void setIdle(Integer idle) {
         this.idle = idle;
     }
 

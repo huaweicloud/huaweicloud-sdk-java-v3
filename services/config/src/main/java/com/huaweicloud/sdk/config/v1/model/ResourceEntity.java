@@ -79,6 +79,11 @@ public class ResourceEntity {
     private String provisioningState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private Map<String, String> tags = null;
@@ -309,6 +314,23 @@ public class ResourceEntity {
         this.provisioningState = provisioningState;
     }
 
+    public ResourceEntity withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 资源状态，保有中（Normal）/已删除(Deleted)
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public ResourceEntity withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -390,8 +412,8 @@ public class ResourceEntity {
             && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.epId, that.epId)
             && Objects.equals(this.epName, that.epName) && Objects.equals(this.checksum, that.checksum)
             && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
-            && Objects.equals(this.provisioningState, that.provisioningState) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.properties, that.properties);
+            && Objects.equals(this.provisioningState, that.provisioningState) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.properties, that.properties);
     }
 
     @Override
@@ -409,6 +431,7 @@ public class ResourceEntity {
             created,
             updated,
             provisioningState,
+            state,
             tags,
             properties);
     }
@@ -430,6 +453,7 @@ public class ResourceEntity {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    provisioningState: ").append(toIndentedString(provisioningState)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");

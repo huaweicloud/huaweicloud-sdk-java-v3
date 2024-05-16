@@ -50,6 +50,16 @@ public class AccessAkskVO {
 
     private String descp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gmt_create_timestamp")
+
+    private Long gmtCreateTimestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gmt_modify_timestamp")
+
+    private Long gmtModifyTimestamp;
+
     public AccessAkskVO withId(Integer id) {
         this.id = id;
         return this;
@@ -186,6 +196,40 @@ public class AccessAkskVO {
         this.descp = descp;
     }
 
+    public AccessAkskVO withGmtCreateTimestamp(Long gmtCreateTimestamp) {
+        this.gmtCreateTimestamp = gmtCreateTimestamp;
+        return this;
+    }
+
+    /**
+     * ak/sk的生成时间戳。
+     * @return gmtCreateTimestamp
+     */
+    public Long getGmtCreateTimestamp() {
+        return gmtCreateTimestamp;
+    }
+
+    public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+        this.gmtCreateTimestamp = gmtCreateTimestamp;
+    }
+
+    public AccessAkskVO withGmtModifyTimestamp(Long gmtModifyTimestamp) {
+        this.gmtModifyTimestamp = gmtModifyTimestamp;
+        return this;
+    }
+
+    /**
+     * ak/sk的修改时间戳。
+     * @return gmtModifyTimestamp
+     */
+    public Long getGmtModifyTimestamp() {
+        return gmtModifyTimestamp;
+    }
+
+    public void setGmtModifyTimestamp(Long gmtModifyTimestamp) {
+        this.gmtModifyTimestamp = gmtModifyTimestamp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -198,12 +242,23 @@ public class AccessAkskVO {
         return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
             && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this.innerDomainId, that.innerDomainId)
             && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.descp, that.descp);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.descp, that.descp)
+            && Objects.equals(this.gmtCreateTimestamp, that.gmtCreateTimestamp)
+            && Objects.equals(this.gmtModifyTimestamp, that.gmtModifyTimestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, gmtCreate, gmtModify, innerDomainId, ak, sk, status, descp);
+        return Objects.hash(id,
+            gmtCreate,
+            gmtModify,
+            innerDomainId,
+            ak,
+            sk,
+            status,
+            descp,
+            gmtCreateTimestamp,
+            gmtModifyTimestamp);
     }
 
     @Override
@@ -218,6 +273,8 @@ public class AccessAkskVO {
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    descp: ").append(toIndentedString(descp)).append("\n");
+        sb.append("    gmtCreateTimestamp: ").append(toIndentedString(gmtCreateTimestamp)).append("\n");
+        sb.append("    gmtModifyTimestamp: ").append(toIndentedString(gmtModifyTimestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

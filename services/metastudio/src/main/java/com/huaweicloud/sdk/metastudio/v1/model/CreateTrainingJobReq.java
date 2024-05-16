@@ -185,6 +185,11 @@ public class CreateTrainingJobReq {
 
     private CreateType createType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone")
+
+    private String phone;
+
     public CreateTrainingJobReq withTag(JobTag tag) {
         this.tag = tag;
         return this;
@@ -287,6 +292,23 @@ public class CreateTrainingJobReq {
         this.createType = createType;
     }
 
+    public CreateTrainingJobReq withPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    /**
+     * 手机号
+     * @return phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,12 +320,13 @@ public class CreateTrainingJobReq {
         CreateTrainingJobReq that = (CreateTrainingJobReq) obj;
         return Objects.equals(this.tag, that.tag) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.voiceName, that.voiceName)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.createType, that.createType);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.createType, that.createType)
+            && Objects.equals(this.phone, that.phone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, description, sex, voiceName, language, createType);
+        return Objects.hash(tag, description, sex, voiceName, language, createType, phone);
     }
 
     @Override
@@ -316,6 +339,7 @@ public class CreateTrainingJobReq {
         sb.append("    voiceName: ").append(toIndentedString(voiceName)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
+        sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

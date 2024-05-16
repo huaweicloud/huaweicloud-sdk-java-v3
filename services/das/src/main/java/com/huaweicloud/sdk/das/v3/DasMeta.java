@@ -36,6 +36,9 @@ import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequestBody;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
@@ -83,6 +86,9 @@ import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesBody;
+import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
 
 @SuppressWarnings("unchecked")
 public class DasMeta {
@@ -507,6 +513,41 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportSlowQueryLogsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getXLanguage, ExportSlowQueryLogsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSlowSqlStatisticsRequest, ExportSlowSqlStatisticsResponse> exportSlowSqlStatistics =
+        genForExportSlowSqlStatistics();
+
+    private static HttpRequestDef<ExportSlowSqlStatisticsRequest, ExportSlowSqlStatisticsResponse> genForExportSlowSqlStatistics() {
+        // basic
+        HttpRequestDef.Builder<ExportSlowSqlStatisticsRequest, ExportSlowSqlStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportSlowSqlStatisticsRequest.class, ExportSlowSqlStatisticsResponse.class)
+            .withName("ExportSlowSqlStatistics")
+            .withUri("/v3/{project_id}/instances/{instance_id}/slow-sql-statistics")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportSlowSqlStatisticsRequest::getInstanceId,
+                ExportSlowSqlStatisticsRequest::setInstanceId));
+        builder.<ExportSlowSqlStatisticsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportSlowSqlStatisticsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportSlowSqlStatisticsRequest::getXLanguage,
+                ExportSlowSqlStatisticsRequest::setXLanguage));
+        builder.<ExportSlowSqlStatisticsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportSlowSqlStatisticsRequestBody.class),
+            f -> f.withMarshaller(ExportSlowSqlStatisticsRequest::getBody, ExportSlowSqlStatisticsRequest::setBody));
 
         // response
 
@@ -1052,6 +1093,12 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ListSqlLimitRulesRequest.DatastoreTypeEnum.class),
             f -> f.withMarshaller(ListSqlLimitRulesRequest::getDatastoreType,
                 ListSqlLimitRulesRequest::setDatastoreType));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlLimitRulesRequest::getDatabaseName,
+                ListSqlLimitRulesRequest::setDatabaseName));
         builder.<ListSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1402,6 +1449,40 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDbUserRequestBody.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getBody, UpdateDbUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlLimitRulesRequest, UpdateSqlLimitRulesResponse> updateSqlLimitRules =
+        genForUpdateSqlLimitRules();
+
+    private static HttpRequestDef<UpdateSqlLimitRulesRequest, UpdateSqlLimitRulesResponse> genForUpdateSqlLimitRules() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlLimitRulesRequest, UpdateSqlLimitRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSqlLimitRulesRequest.class, UpdateSqlLimitRulesResponse.class)
+                .withName("UpdateSqlLimitRules")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlLimitRulesRequest::getInstanceId,
+                UpdateSqlLimitRulesRequest::setInstanceId));
+        builder.<UpdateSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateSqlLimitRulesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateSqlLimitRulesRequest::getXLanguage, UpdateSqlLimitRulesRequest::setXLanguage));
+        builder.<UpdateSqlLimitRulesBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSqlLimitRulesBody.class),
+            f -> f.withMarshaller(UpdateSqlLimitRulesRequest::getBody, UpdateSqlLimitRulesRequest::setBody));
 
         // response
 

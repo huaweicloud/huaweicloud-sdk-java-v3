@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.apm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * TagParam
@@ -14,39 +11,9 @@ import java.util.function.Consumer;
 public class TagParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tag_id")
-
-    private Long tagId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tag_name")
-
-    private String tagName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "env_id")
-
-    private Long envId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "descp")
-
-    private String descp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_id")
 
     private Long businessId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "env_id_list")
-
-    private List<Long> envIdList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tag_id_list")
-
-    private List<Long> tagIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keyword")
@@ -68,94 +35,6 @@ public class TagParam {
 
     private Integer pageSize;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "add_env_id_list")
-
-    private List<Long> addEnvIdList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "add_tag_id_list")
-
-    private List<Long> addTagIdList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remove_tag_id_list")
-
-    private List<Long> removeTagIdList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remove_env_id_list")
-
-    private List<Long> removeEnvIdList = null;
-
-    public TagParam withTagId(Long tagId) {
-        this.tagId = tagId;
-        return this;
-    }
-
-    /**
-     * 环境标签id。
-     * @return tagId
-     */
-    public Long getTagId() {
-        return tagId;
-    }
-
-    public void setTagId(Long tagId) {
-        this.tagId = tagId;
-    }
-
-    public TagParam withTagName(String tagName) {
-        this.tagName = tagName;
-        return this;
-    }
-
-    /**
-     * 环境标签名称。
-     * @return tagName
-     */
-    public String getTagName() {
-        return tagName;
-    }
-
-    public void setTagName(String tagName) {
-        this.tagName = tagName;
-    }
-
-    public TagParam withEnvId(Long envId) {
-        this.envId = envId;
-        return this;
-    }
-
-    /**
-     * 环境id。
-     * @return envId
-     */
-    public Long getEnvId() {
-        return envId;
-    }
-
-    public void setEnvId(Long envId) {
-        this.envId = envId;
-    }
-
-    public TagParam withDescp(String descp) {
-        this.descp = descp;
-        return this;
-    }
-
-    /**
-     * 描述信息。
-     * @return descp
-     */
-    public String getDescp() {
-        return descp;
-    }
-
-    public void setDescp(String descp) {
-        this.descp = descp;
-    }
-
     public TagParam withBusinessId(Long businessId) {
         this.businessId = businessId;
         return this;
@@ -171,72 +50,6 @@ public class TagParam {
 
     public void setBusinessId(Long businessId) {
         this.businessId = businessId;
-    }
-
-    public TagParam withEnvIdList(List<Long> envIdList) {
-        this.envIdList = envIdList;
-        return this;
-    }
-
-    public TagParam addEnvIdListItem(Long envIdListItem) {
-        if (this.envIdList == null) {
-            this.envIdList = new ArrayList<>();
-        }
-        this.envIdList.add(envIdListItem);
-        return this;
-    }
-
-    public TagParam withEnvIdList(Consumer<List<Long>> envIdListSetter) {
-        if (this.envIdList == null) {
-            this.envIdList = new ArrayList<>();
-        }
-        envIdListSetter.accept(this.envIdList);
-        return this;
-    }
-
-    /**
-     * 环境id列表。
-     * @return envIdList
-     */
-    public List<Long> getEnvIdList() {
-        return envIdList;
-    }
-
-    public void setEnvIdList(List<Long> envIdList) {
-        this.envIdList = envIdList;
-    }
-
-    public TagParam withTagIdList(List<Long> tagIdList) {
-        this.tagIdList = tagIdList;
-        return this;
-    }
-
-    public TagParam addTagIdListItem(Long tagIdListItem) {
-        if (this.tagIdList == null) {
-            this.tagIdList = new ArrayList<>();
-        }
-        this.tagIdList.add(tagIdListItem);
-        return this;
-    }
-
-    public TagParam withTagIdList(Consumer<List<Long>> tagIdListSetter) {
-        if (this.tagIdList == null) {
-            this.tagIdList = new ArrayList<>();
-        }
-        tagIdListSetter.accept(this.tagIdList);
-        return this;
-    }
-
-    /**
-     * 环境标签id列表。
-     * @return tagIdList
-     */
-    public List<Long> getTagIdList() {
-        return tagIdList;
-    }
-
-    public void setTagIdList(List<Long> tagIdList) {
-        this.tagIdList = tagIdList;
     }
 
     public TagParam withKeyword(String keyword) {
@@ -307,138 +120,6 @@ public class TagParam {
         this.pageSize = pageSize;
     }
 
-    public TagParam withAddEnvIdList(List<Long> addEnvIdList) {
-        this.addEnvIdList = addEnvIdList;
-        return this;
-    }
-
-    public TagParam addAddEnvIdListItem(Long addEnvIdListItem) {
-        if (this.addEnvIdList == null) {
-            this.addEnvIdList = new ArrayList<>();
-        }
-        this.addEnvIdList.add(addEnvIdListItem);
-        return this;
-    }
-
-    public TagParam withAddEnvIdList(Consumer<List<Long>> addEnvIdListSetter) {
-        if (this.addEnvIdList == null) {
-            this.addEnvIdList = new ArrayList<>();
-        }
-        addEnvIdListSetter.accept(this.addEnvIdList);
-        return this;
-    }
-
-    /**
-     * 新增环境id列表。
-     * @return addEnvIdList
-     */
-    public List<Long> getAddEnvIdList() {
-        return addEnvIdList;
-    }
-
-    public void setAddEnvIdList(List<Long> addEnvIdList) {
-        this.addEnvIdList = addEnvIdList;
-    }
-
-    public TagParam withAddTagIdList(List<Long> addTagIdList) {
-        this.addTagIdList = addTagIdList;
-        return this;
-    }
-
-    public TagParam addAddTagIdListItem(Long addTagIdListItem) {
-        if (this.addTagIdList == null) {
-            this.addTagIdList = new ArrayList<>();
-        }
-        this.addTagIdList.add(addTagIdListItem);
-        return this;
-    }
-
-    public TagParam withAddTagIdList(Consumer<List<Long>> addTagIdListSetter) {
-        if (this.addTagIdList == null) {
-            this.addTagIdList = new ArrayList<>();
-        }
-        addTagIdListSetter.accept(this.addTagIdList);
-        return this;
-    }
-
-    /**
-     * 新增环境标签id列表。
-     * @return addTagIdList
-     */
-    public List<Long> getAddTagIdList() {
-        return addTagIdList;
-    }
-
-    public void setAddTagIdList(List<Long> addTagIdList) {
-        this.addTagIdList = addTagIdList;
-    }
-
-    public TagParam withRemoveTagIdList(List<Long> removeTagIdList) {
-        this.removeTagIdList = removeTagIdList;
-        return this;
-    }
-
-    public TagParam addRemoveTagIdListItem(Long removeTagIdListItem) {
-        if (this.removeTagIdList == null) {
-            this.removeTagIdList = new ArrayList<>();
-        }
-        this.removeTagIdList.add(removeTagIdListItem);
-        return this;
-    }
-
-    public TagParam withRemoveTagIdList(Consumer<List<Long>> removeTagIdListSetter) {
-        if (this.removeTagIdList == null) {
-            this.removeTagIdList = new ArrayList<>();
-        }
-        removeTagIdListSetter.accept(this.removeTagIdList);
-        return this;
-    }
-
-    /**
-     * 移除环境标签id列表。
-     * @return removeTagIdList
-     */
-    public List<Long> getRemoveTagIdList() {
-        return removeTagIdList;
-    }
-
-    public void setRemoveTagIdList(List<Long> removeTagIdList) {
-        this.removeTagIdList = removeTagIdList;
-    }
-
-    public TagParam withRemoveEnvIdList(List<Long> removeEnvIdList) {
-        this.removeEnvIdList = removeEnvIdList;
-        return this;
-    }
-
-    public TagParam addRemoveEnvIdListItem(Long removeEnvIdListItem) {
-        if (this.removeEnvIdList == null) {
-            this.removeEnvIdList = new ArrayList<>();
-        }
-        this.removeEnvIdList.add(removeEnvIdListItem);
-        return this;
-    }
-
-    public TagParam withRemoveEnvIdList(Consumer<List<Long>> removeEnvIdListSetter) {
-        if (this.removeEnvIdList == null) {
-            this.removeEnvIdList = new ArrayList<>();
-        }
-        removeEnvIdListSetter.accept(this.removeEnvIdList);
-        return this;
-    }
-
-    /**
-     * 移除的环境id列表。
-     * @return removeEnvIdList
-     */
-    public List<Long> getRemoveEnvIdList() {
-        return removeEnvIdList;
-    }
-
-    public void setRemoveEnvIdList(List<Long> removeEnvIdList) {
-        this.removeEnvIdList = removeEnvIdList;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -448,55 +129,25 @@ public class TagParam {
             return false;
         }
         TagParam that = (TagParam) obj;
-        return Objects.equals(this.tagId, that.tagId) && Objects.equals(this.tagName, that.tagName)
-            && Objects.equals(this.envId, that.envId) && Objects.equals(this.descp, that.descp)
-            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.envIdList, that.envIdList)
-            && Objects.equals(this.tagIdList, that.tagIdList) && Objects.equals(this.keyword, that.keyword)
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.keyword, that.keyword)
             && Objects.equals(this.pageEnable, that.pageEnable) && Objects.equals(this.pageNumber, that.pageNumber)
-            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.addEnvIdList, that.addEnvIdList)
-            && Objects.equals(this.addTagIdList, that.addTagIdList)
-            && Objects.equals(this.removeTagIdList, that.removeTagIdList)
-            && Objects.equals(this.removeEnvIdList, that.removeEnvIdList);
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tagId,
-            tagName,
-            envId,
-            descp,
-            businessId,
-            envIdList,
-            tagIdList,
-            keyword,
-            pageEnable,
-            pageNumber,
-            pageSize,
-            addEnvIdList,
-            addTagIdList,
-            removeTagIdList,
-            removeEnvIdList);
+        return Objects.hash(businessId, keyword, pageEnable, pageNumber, pageSize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TagParam {\n");
-        sb.append("    tagId: ").append(toIndentedString(tagId)).append("\n");
-        sb.append("    tagName: ").append(toIndentedString(tagName)).append("\n");
-        sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
-        sb.append("    descp: ").append(toIndentedString(descp)).append("\n");
         sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
-        sb.append("    envIdList: ").append(toIndentedString(envIdList)).append("\n");
-        sb.append("    tagIdList: ").append(toIndentedString(tagIdList)).append("\n");
         sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
         sb.append("    pageEnable: ").append(toIndentedString(pageEnable)).append("\n");
         sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    addEnvIdList: ").append(toIndentedString(addEnvIdList)).append("\n");
-        sb.append("    addTagIdList: ").append(toIndentedString(addTagIdList)).append("\n");
-        sb.append("    removeTagIdList: ").append(toIndentedString(removeTagIdList)).append("\n");
-        sb.append("    removeEnvIdList: ").append(toIndentedString(removeEnvIdList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,6 +25,11 @@ public class ListTrackedResourceTagsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_deleted")
+
+    private Boolean resourceDeleted;
+
     public ListTrackedResourceTagsRequest withKey(String key) {
         this.key = key;
         return this;
@@ -78,6 +83,23 @@ public class ListTrackedResourceTagsRequest {
         this.limit = limit;
     }
 
+    public ListTrackedResourceTagsRequest withResourceDeleted(Boolean resourceDeleted) {
+        this.resourceDeleted = resourceDeleted;
+        return this;
+    }
+
+    /**
+     * 是否查询已删除的资源。默认为false，不查询已删除的资源
+     * @return resourceDeleted
+     */
+    public Boolean getResourceDeleted() {
+        return resourceDeleted;
+    }
+
+    public void setResourceDeleted(Boolean resourceDeleted) {
+        this.resourceDeleted = resourceDeleted;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,12 @@ public class ListTrackedResourceTagsRequest {
         }
         ListTrackedResourceTagsRequest that = (ListTrackedResourceTagsRequest) obj;
         return Objects.equals(this.key, that.key) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.resourceDeleted, that.resourceDeleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, marker, limit);
+        return Objects.hash(key, marker, limit, resourceDeleted);
     }
 
     @Override
@@ -103,6 +125,7 @@ public class ListTrackedResourceTagsRequest {
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    resourceDeleted: ").append(toIndentedString(resourceDeleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

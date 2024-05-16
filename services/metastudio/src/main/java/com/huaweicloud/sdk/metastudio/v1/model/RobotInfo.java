@@ -36,6 +36,11 @@ public class RobotInfo {
     private Integer appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_key")
+
+    private String appKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
     private LanguageEnum language;
@@ -74,6 +79,11 @@ public class RobotInfo {
     @JsonProperty(value = "chat_rounds")
 
     private Integer chatRounds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role_id")
+
+    private String roleId;
 
     public RobotInfo withRobotId(String robotId) {
         this.robotId = robotId;
@@ -149,7 +159,7 @@ public class RobotInfo {
     }
 
     /**
-     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型
+     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型；8：奇妙问
      * minimum: 0
      * maximum: 32
      * @return appType
@@ -160,6 +170,23 @@ public class RobotInfo {
 
     public void setAppType(Integer appType) {
         this.appType = appType;
+    }
+
+    public RobotInfo withAppKey(String appKey) {
+        this.appKey = appKey;
+        return this;
+    }
+
+    /**
+     * 应用的AccessKey或帐号。
+     * @return appKey
+     */
+    public String getAppKey() {
+        return appKey;
+    }
+
+    public void setAppKey(String appKey) {
+        this.appKey = appKey;
     }
 
     public RobotInfo withLanguage(LanguageEnum language) {
@@ -302,6 +329,23 @@ public class RobotInfo {
         this.chatRounds = chatRounds;
     }
 
+    public RobotInfo withRoleId(String roleId) {
+        this.roleId = roleId;
+        return this;
+    }
+
+    /**
+     * 奇妙问角色ID。
+     * @return roleId
+     */
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -313,11 +357,12 @@ public class RobotInfo {
         RobotInfo that = (RobotInfo) obj;
         return Objects.equals(this.robotId, that.robotId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.appType, that.appType) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.cbsProjectId, that.cbsProjectId)
-            && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
-            && Objects.equals(this.chatRounds, that.chatRounds);
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.llmUrl, that.llmUrl)
+            && Objects.equals(this.isStream, that.isStream) && Objects.equals(this.chatRounds, that.chatRounds)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override
@@ -327,6 +372,7 @@ public class RobotInfo {
             roomId,
             appId,
             appType,
+            appKey,
             language,
             createTime,
             updateTime,
@@ -334,7 +380,8 @@ public class RobotInfo {
             cbsProjectId,
             llmUrl,
             isStream,
-            chatRounds);
+            chatRounds,
+            roleId);
     }
 
     @Override
@@ -346,6 +393,7 @@ public class RobotInfo {
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
@@ -354,6 +402,7 @@ public class RobotInfo {
         sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
         sb.append("    isStream: ").append(toIndentedString(isStream)).append("\n");
         sb.append("    chatRounds: ").append(toIndentedString(chatRounds)).append("\n");
+        sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

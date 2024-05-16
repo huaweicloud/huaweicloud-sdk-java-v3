@@ -53,6 +53,11 @@ public class ListTrackedResourcesRequest {
 
     private List<String> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_deleted")
+
+    private Boolean resourceDeleted;
+
     public ListTrackedResourcesRequest withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -207,6 +212,23 @@ public class ListTrackedResourcesRequest {
         this.tags = tags;
     }
 
+    public ListTrackedResourcesRequest withResourceDeleted(Boolean resourceDeleted) {
+        this.resourceDeleted = resourceDeleted;
+        return this;
+    }
+
+    /**
+     * 是否查询已删除的资源。默认为false，不查询已删除的资源
+     * @return resourceDeleted
+     */
+    public Boolean getResourceDeleted() {
+        return resourceDeleted;
+    }
+
+    public void setResourceDeleted(Boolean resourceDeleted) {
+        this.resourceDeleted = resourceDeleted;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -219,12 +241,13 @@ public class ListTrackedResourcesRequest {
         return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceDeleted, that.resourceDeleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionId, epId, type, limit, marker, id, name, tags);
+        return Objects.hash(regionId, epId, type, limit, marker, id, name, tags, resourceDeleted);
     }
 
     @Override
@@ -239,6 +262,7 @@ public class ListTrackedResourcesRequest {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    resourceDeleted: ").append(toIndentedString(resourceDeleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

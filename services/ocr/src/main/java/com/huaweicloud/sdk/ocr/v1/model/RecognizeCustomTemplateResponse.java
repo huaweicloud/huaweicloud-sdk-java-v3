@@ -21,6 +21,11 @@ public class RecognizeCustomTemplateResponse extends SdkResponse {
 
     private String templateId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public RecognizeCustomTemplateResponse withResult(Object result) {
         this.result = result;
         return this;
@@ -55,6 +60,25 @@ public class RecognizeCustomTemplateResponse extends SdkResponse {
         this.templateId = templateId;
     }
 
+    public RecognizeCustomTemplateResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +88,13 @@ public class RecognizeCustomTemplateResponse extends SdkResponse {
             return false;
         }
         RecognizeCustomTemplateResponse that = (RecognizeCustomTemplateResponse) obj;
-        return Objects.equals(this.result, that.result) && Objects.equals(this.templateId, that.templateId);
+        return Objects.equals(this.result, that.result) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result, templateId);
+        return Objects.hash(result, templateId, xRequestId);
     }
 
     @Override
@@ -78,6 +103,7 @@ public class RecognizeCustomTemplateResponse extends SdkResponse {
         sb.append("class RecognizeCustomTemplateResponse {\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

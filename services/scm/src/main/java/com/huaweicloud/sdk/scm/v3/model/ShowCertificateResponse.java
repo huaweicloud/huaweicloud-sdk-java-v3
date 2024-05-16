@@ -90,6 +90,11 @@ public class ShowCertificateResponse extends SdkResponse {
     private String domainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "multi_domain_type")
+
+    private String multiDomainType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -381,6 +386,23 @@ public class ShowCertificateResponse extends SdkResponse {
         this.domainType = domainType;
     }
 
+    public ShowCertificateResponse withMultiDomainType(String multiDomainType) {
+        this.multiDomainType = multiDomainType;
+        return this;
+    }
+
+    /**
+     * 多域名类型，取值如下： - primary_single 主单 - primary_wildcard 主泛
+     * @return multiDomainType
+     */
+    public String getMultiDomainType() {
+        return multiDomainType;
+    }
+
+    public void setMultiDomainType(String multiDomainType) {
+        this.multiDomainType = multiDomainType;
+    }
+
     public ShowCertificateResponse withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -538,7 +560,8 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.issueTime, that.issueTime) && Objects.equals(this.notBefore, that.notBefore)
             && Objects.equals(this.notAfter, that.notAfter) && Objects.equals(this.validityPeriod, that.validityPeriod)
             && Objects.equals(this.validationMethod, that.validationMethod)
-            && Objects.equals(this.domainType, that.domainType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.multiDomainType, that.multiDomainType) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.sans, that.sans) && Objects.equals(this.domainCount, that.domainCount)
             && Objects.equals(this.wildcardCount, that.wildcardCount)
             && Objects.equals(this.fingerprint, that.fingerprint)
@@ -563,6 +586,7 @@ public class ShowCertificateResponse extends SdkResponse {
             validityPeriod,
             validationMethod,
             domainType,
+            multiDomainType,
             domain,
             sans,
             domainCount,
@@ -591,6 +615,7 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    validityPeriod: ").append(toIndentedString(validityPeriod)).append("\n");
         sb.append("    validationMethod: ").append(toIndentedString(validationMethod)).append("\n");
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
+        sb.append("    multiDomainType: ").append(toIndentedString(multiDomainType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    sans: ").append(toIndentedString(sans)).append("\n");
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");

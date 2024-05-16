@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsRequest;
@@ -374,6 +376,36 @@ public class IoTEdgeAsyncClient {
     public AsyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSetAsyncInvoker(
         ExecuteDeviceControlsSetRequest request) {
         return new AsyncInvoker<>(request, IoTEdgeMeta.executeDeviceControlsSet, hcClient);
+    }
+
+    /**
+     * 设备控制默认值
+     *
+     * 设备控制默认值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDeviceControlDefaultValuesRequest 请求对象
+     * @return CompletableFuture<SetDeviceControlDefaultValuesResponse>
+     */
+    public CompletableFuture<SetDeviceControlDefaultValuesResponse> setDeviceControlDefaultValuesAsync(
+        SetDeviceControlDefaultValuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.setDeviceControlDefaultValues);
+    }
+
+    /**
+     * 设备控制默认值
+     *
+     * 设备控制默认值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDeviceControlDefaultValuesRequest 请求对象
+     * @return AsyncInvoker<SetDeviceControlDefaultValuesRequest, SetDeviceControlDefaultValuesResponse>
+     */
+    public AsyncInvoker<SetDeviceControlDefaultValuesRequest, SetDeviceControlDefaultValuesResponse> setDeviceControlDefaultValuesAsyncInvoker(
+        SetDeviceControlDefaultValuesRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.setDeviceControlDefaultValues, hcClient);
     }
 
     /**

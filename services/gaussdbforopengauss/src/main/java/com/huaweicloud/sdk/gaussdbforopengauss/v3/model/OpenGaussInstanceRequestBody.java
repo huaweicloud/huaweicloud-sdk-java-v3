@@ -196,6 +196,11 @@ public class OpenGaussInstanceRequestBody {
 
     private Boolean enableForceSwitch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_single_float_ip")
+
+    private Boolean enableSingleFloatIp;
+
     public OpenGaussInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -615,6 +620,23 @@ public class OpenGaussInstanceRequestBody {
         this.enableForceSwitch = enableForceSwitch;
     }
 
+    public OpenGaussInstanceRequestBody withEnableSingleFloatIp(Boolean enableSingleFloatIp) {
+        this.enableSingleFloatIp = enableSingleFloatIp;
+        return this;
+    }
+
+    /**
+     * 单浮动IP策略，仅主备版支持。默认值是false，表示不开启单浮动IP策略。 取值范围： true：开启单浮动IP策略，实例将只有一个浮动IP绑定主节点，如果发生主备倒换，浮动IP不会发生变化。 false：不开启单浮动IP策略，每个节点都会绑定一个浮动IP，如果发生主备倒换，浮动IP会发生变化。 说明： 仅支持3.206及以上版本的主备版实例。
+     * @return enableSingleFloatIp
+     */
+    public Boolean getEnableSingleFloatIp() {
+        return enableSingleFloatIp;
+    }
+
+    public void setEnableSingleFloatIp(Boolean enableSingleFloatIp) {
+        this.enableSingleFloatIp = enableSingleFloatIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -638,7 +660,8 @@ public class OpenGaussInstanceRequestBody {
             && Objects.equals(this.shardingNum, that.shardingNum)
             && Objects.equals(this.coordinatorNum, that.coordinatorNum)
             && Objects.equals(this.replicaNum, that.replicaNum)
-            && Objects.equals(this.enableForceSwitch, that.enableForceSwitch);
+            && Objects.equals(this.enableForceSwitch, that.enableForceSwitch)
+            && Objects.equals(this.enableSingleFloatIp, that.enableSingleFloatIp);
     }
 
     @Override
@@ -664,7 +687,8 @@ public class OpenGaussInstanceRequestBody {
             shardingNum,
             coordinatorNum,
             replicaNum,
-            enableForceSwitch);
+            enableForceSwitch,
+            enableSingleFloatIp);
     }
 
     @Override
@@ -693,6 +717,7 @@ public class OpenGaussInstanceRequestBody {
         sb.append("    coordinatorNum: ").append(toIndentedString(coordinatorNum)).append("\n");
         sb.append("    replicaNum: ").append(toIndentedString(replicaNum)).append("\n");
         sb.append("    enableForceSwitch: ").append(toIndentedString(enableForceSwitch)).append("\n");
+        sb.append("    enableSingleFloatIp: ").append(toIndentedString(enableSingleFloatIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

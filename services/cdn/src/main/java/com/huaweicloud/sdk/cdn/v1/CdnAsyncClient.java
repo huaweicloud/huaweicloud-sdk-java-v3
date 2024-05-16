@@ -491,6 +491,7 @@ public class CdnAsyncClient {
      * @param request ShowDomainFullConfigRequest 请求对象
      * @return CompletableFuture<ShowDomainFullConfigResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainFullConfigResponse> showDomainFullConfigAsync(
         ShowDomainFullConfigRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainFullConfig);
@@ -507,6 +508,7 @@ public class CdnAsyncClient {
      * @param request ShowDomainFullConfigRequest 请求对象
      * @return AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfigAsyncInvoker(
         ShowDomainFullConfigRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showDomainFullConfig, hcClient);
@@ -1166,6 +1168,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainFullConfigRequest 请求对象
      * @return CompletableFuture<UpdateDomainFullConfigResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateDomainFullConfigResponse> updateDomainFullConfigAsync(
         UpdateDomainFullConfigRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainFullConfig);
@@ -1182,6 +1185,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainFullConfigRequest 请求对象
      * @return AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigAsyncInvoker(
         UpdateDomainFullConfigRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateDomainFullConfig, hcClient);

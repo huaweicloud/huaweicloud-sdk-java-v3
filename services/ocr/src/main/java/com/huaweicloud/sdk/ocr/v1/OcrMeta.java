@@ -188,6 +188,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeAcceptanceBillResponse::getXRequestId,
+                RecognizeAcceptanceBillResponse::setXRequestId));
         return builder.build();
     }
 
@@ -221,6 +227,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeAutoClassificationResponse::getXRequestId,
+                RecognizeAutoClassificationResponse::setXRequestId));
         return builder.build();
     }
 
@@ -250,6 +262,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeBankReceiptResponse::getXRequestId,
+                RecognizeBankReceiptResponse::setXRequestId));
         return builder.build();
     }
 
@@ -279,6 +297,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeBankcardResponse::getXRequestId, RecognizeBankcardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -308,6 +331,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeBusinessCardResponse::getXRequestId,
+                RecognizeBusinessCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -338,6 +367,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeBusinessLicenseResponse::getXRequestId,
+                RecognizeBusinessLicenseResponse::setXRequestId));
         return builder.build();
     }
 
@@ -368,6 +403,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeCambodianIdCardResponse::getXRequestId,
+                RecognizeCambodianIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -397,6 +438,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeChileIdCardResponse::getXRequestId,
+                RecognizeChileIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -426,6 +473,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeColombiaIdCardResponse::getXRequestId,
+                RecognizeColombiaIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -455,6 +508,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeDriverLicenseResponse::getXRequestId,
+                RecognizeDriverLicenseResponse::setXRequestId));
         return builder.build();
     }
 
@@ -485,6 +544,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeExitEntryPermitResponse::getXRequestId,
+                RecognizeExitEntryPermitResponse::setXRequestId));
         return builder.build();
     }
 
@@ -518,6 +583,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeFinancialStatementResponse::getXRequestId,
+                RecognizeFinancialStatementResponse::setXRequestId));
         return builder.build();
     }
 
@@ -548,6 +619,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeFlightItineraryResponse::getXRequestId,
+                RecognizeFlightItineraryResponse::setXRequestId));
         return builder.build();
     }
 
@@ -577,6 +654,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeGeneralTableResponse::getXRequestId,
+                RecognizeGeneralTableResponse::setXRequestId));
         return builder.build();
     }
 
@@ -606,6 +689,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeGeneralTextResponse::getXRequestId,
+                RecognizeGeneralTextResponse::setXRequestId));
         return builder.build();
     }
 
@@ -635,6 +724,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeHandwritingResponse::getXRequestId,
+                RecognizeHandwritingResponse::setXRequestId));
         return builder.build();
     }
 
@@ -664,6 +759,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeHealthCodeResponse::getXRequestId,
+                RecognizeHealthCodeResponse::setXRequestId));
         return builder.build();
     }
 
@@ -693,6 +794,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeHkIdCardResponse::getXRequestId, RecognizeHkIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -726,6 +832,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeHouseholdRegisterResponse::getXRequestId,
+                RecognizeHouseholdRegisterResponse::setXRequestId));
         return builder.build();
     }
 
@@ -755,6 +867,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeIdCardResponse::getXRequestId, RecognizeIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -784,6 +901,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeIdDocumentResponse::getXRequestId,
+                RecognizeIdDocumentResponse::setXRequestId));
         return builder.build();
     }
 
@@ -814,6 +937,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeInsurancePolicyResponse::getXRequestId,
+                RecognizeInsurancePolicyResponse::setXRequestId));
         return builder.build();
     }
 
@@ -847,6 +976,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeInvoiceVerificationResponse::getXRequestId,
+                RecognizeInvoiceVerificationResponse::setXRequestId));
         return builder.build();
     }
 
@@ -876,6 +1011,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeLicensePlateResponse::getXRequestId,
+                RecognizeLicensePlateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -905,6 +1046,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeMacaoIdCardResponse::getXRequestId,
+                RecognizeMacaoIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -938,6 +1085,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeMainlandTravelPermitResponse::getXRequestId,
+                RecognizeMainlandTravelPermitResponse::setXRequestId));
         return builder.build();
     }
 
@@ -967,6 +1120,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeMvsInvoiceResponse::getXRequestId,
+                RecognizeMvsInvoiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1000,6 +1159,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeMyanmarDriverLicenseResponse::getXRequestId,
+                RecognizeMyanmarDriverLicenseResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1029,6 +1194,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeMyanmarIdcardResponse::getXRequestId,
+                RecognizeMyanmarIdcardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1058,6 +1229,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizePassportResponse::getXRequestId, RecognizePassportResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1087,6 +1263,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizePcrTestRecordResponse::getXRequestId,
+                RecognizePcrTestRecordResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1116,6 +1298,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizePeruIdCardResponse::getXRequestId,
+                RecognizePeruIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1149,6 +1337,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeQualificationCertificateResponse::getXRequestId,
+                RecognizeQualificationCertificateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1178,6 +1372,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeQuotaInvoiceResponse::getXRequestId,
+                RecognizeQuotaInvoiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1211,6 +1411,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeRealEstateCertificateResponse::getXRequestId,
+                RecognizeRealEstateCertificateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1240,6 +1446,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeSealResponse::getXRequestId, RecognizeSealResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1273,6 +1484,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeSmartDocumentRecognizerResponse::getXRequestId,
+                RecognizeSmartDocumentRecognizerResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1302,6 +1519,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeTaxiInvoiceResponse::getXRequestId,
+                RecognizeTaxiInvoiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1331,6 +1554,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeThailandIdcardResponse::getXRequestId,
+                RecognizeThailandIdcardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1364,6 +1593,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeThailandLicensePlateResponse::getXRequestId,
+                RecognizeThailandLicensePlateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1393,6 +1628,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeTollInvoiceResponse::getXRequestId,
+                RecognizeTollInvoiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1422,6 +1663,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeTrainTicketResponse::getXRequestId,
+                RecognizeTrainTicketResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1455,6 +1702,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeTransportationLicenseResponse::getXRequestId,
+                RecognizeTransportationLicenseResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1484,6 +1737,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeVatInvoiceResponse::getXRequestId,
+                RecognizeVatInvoiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1517,6 +1776,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeVehicleCertificateResponse::getXRequestId,
+                RecognizeVehicleCertificateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1546,6 +1811,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeVehicleLicenseResponse::getXRequestId,
+                RecognizeVehicleLicenseResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1575,6 +1846,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeVietnamIdCardResponse::getXRequestId,
+                RecognizeVietnamIdCardResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1608,6 +1885,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeWaybillElectronicResponse::getXRequestId,
+                RecognizeWaybillElectronicResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1637,6 +1920,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeWebImageResponse::getXRequestId, RecognizeWebImageResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1666,6 +1954,12 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeCustomTemplateResponse::getXRequestId,
+                RecognizeCustomTemplateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1694,6 +1988,11 @@ public class OcrMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeVinResponse::getXRequestId, RecognizeVinResponse::setXRequestId));
         return builder.build();
     }
 

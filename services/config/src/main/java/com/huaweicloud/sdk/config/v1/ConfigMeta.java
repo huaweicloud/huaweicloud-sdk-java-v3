@@ -2736,6 +2736,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getTags,
                 CollectTrackedResourcesSummaryRequest::setTags));
+        builder.<Boolean>withRequestField("resource_deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getResourceDeleted,
+                CollectTrackedResourcesSummaryRequest::setResourceDeleted));
 
         // response
         builder.<List<ResourceSummaryResponseItem>>withResponseField("body",
@@ -2852,6 +2858,12 @@ public class ConfigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CountTrackedResourcesRequest::getTags, CountTrackedResourcesRequest::setTags));
+        builder.<Boolean>withRequestField("resource_deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getResourceDeleted,
+                CountTrackedResourcesRequest::setResourceDeleted));
 
         // response
 
@@ -3067,6 +3079,12 @@ public class ConfigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTrackedResourceTagsRequest::getLimit, ListTrackedResourceTagsRequest::setLimit));
+        builder.<Boolean>withRequestField("resource_deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getResourceDeleted,
+                ListTrackedResourceTagsRequest::setResourceDeleted));
 
         // response
 
@@ -3125,6 +3143,12 @@ public class ConfigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTrackedResourcesRequest::getTags, ListTrackedResourcesRequest::setTags));
+        builder.<Boolean>withRequestField("resource_deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getResourceDeleted,
+                ListTrackedResourcesRequest::setResourceDeleted));
 
         // response
 

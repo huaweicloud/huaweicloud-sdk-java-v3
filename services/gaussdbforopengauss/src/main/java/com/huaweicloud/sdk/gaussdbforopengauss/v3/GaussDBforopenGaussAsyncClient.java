@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SearchAutoEnlargePolicyRequest;
@@ -1855,6 +1857,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(
         RestartInstanceRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    }
+
+    /**
+     * 备份恢复到当前实例
+     *
+     * 备份恢复到当前实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreInstanceResponse>
+     */
+    public CompletableFuture<RestoreInstanceResponse> restoreInstanceAsync(RestoreInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.restoreInstance);
+    }
+
+    /**
+     * 备份恢复到当前实例
+     *
+     * 备份恢复到当前实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
+     */
+    public AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceAsyncInvoker(
+        RestoreInstanceRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.restoreInstance, hcClient);
     }
 
     /**

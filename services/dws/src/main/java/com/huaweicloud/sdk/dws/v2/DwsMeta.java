@@ -3652,6 +3652,11 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUpdatableVersionRequest::getLimit, ListUpdatableVersionRequest::setLimit));
+        builder.<ListUpdatableVersionRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUpdatableVersionRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListUpdatableVersionRequest::getType, ListUpdatableVersionRequest::setType));
 
         // response
 

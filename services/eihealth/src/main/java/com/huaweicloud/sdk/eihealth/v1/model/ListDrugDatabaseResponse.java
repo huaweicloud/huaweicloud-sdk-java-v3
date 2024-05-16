@@ -24,6 +24,11 @@ public class ListDrugDatabaseResponse extends SdkResponse {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cur_user_count")
+
+    private Integer curUserCount;
+
     public ListDrugDatabaseResponse withDatabases(List<DrugDatabaseDto> databases) {
         this.databases = databases;
         return this;
@@ -74,6 +79,23 @@ public class ListDrugDatabaseResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListDrugDatabaseResponse withCurUserCount(Integer curUserCount) {
+        this.curUserCount = curUserCount;
+        return this;
+    }
+
+    /**
+     * 当前用户数据库总数
+     * @return curUserCount
+     */
+    public Integer getCurUserCount() {
+        return curUserCount;
+    }
+
+    public void setCurUserCount(Integer curUserCount) {
+        this.curUserCount = curUserCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ListDrugDatabaseResponse extends SdkResponse {
             return false;
         }
         ListDrugDatabaseResponse that = (ListDrugDatabaseResponse) obj;
-        return Objects.equals(this.databases, that.databases) && Objects.equals(this.count, that.count);
+        return Objects.equals(this.databases, that.databases) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.curUserCount, that.curUserCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(databases, count);
+        return Objects.hash(databases, count, curUserCount);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListDrugDatabaseResponse extends SdkResponse {
         sb.append("class ListDrugDatabaseResponse {\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    curUserCount: ").append(toIndentedString(curUserCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

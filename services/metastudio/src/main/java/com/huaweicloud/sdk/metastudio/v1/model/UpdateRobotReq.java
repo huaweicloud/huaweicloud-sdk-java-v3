@@ -51,6 +51,11 @@ public class UpdateRobotReq {
 
     private ThirdPartyModelConfig thirdPartyModelConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mobvoi_config")
+
+    private MobvoiConfig mobvoiConfig;
+
     public UpdateRobotReq withName(String name) {
         this.name = name;
         return this;
@@ -74,7 +79,7 @@ public class UpdateRobotReq {
     }
 
     /**
-     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型
+     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型；8：奇妙问
      * minimum: 0
      * maximum: 32
      * @return appType
@@ -225,6 +230,32 @@ public class UpdateRobotReq {
         this.thirdPartyModelConfig = thirdPartyModelConfig;
     }
 
+    public UpdateRobotReq withMobvoiConfig(MobvoiConfig mobvoiConfig) {
+        this.mobvoiConfig = mobvoiConfig;
+        return this;
+    }
+
+    public UpdateRobotReq withMobvoiConfig(Consumer<MobvoiConfig> mobvoiConfigSetter) {
+        if (this.mobvoiConfig == null) {
+            this.mobvoiConfig = new MobvoiConfig();
+            mobvoiConfigSetter.accept(this.mobvoiConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mobvoiConfig
+     * @return mobvoiConfig
+     */
+    public MobvoiConfig getMobvoiConfig() {
+        return mobvoiConfig;
+    }
+
+    public void setMobvoiConfig(MobvoiConfig mobvoiConfig) {
+        this.mobvoiConfig = mobvoiConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -239,13 +270,21 @@ public class UpdateRobotReq {
             && Objects.equals(this.huaweiEiCbs, that.huaweiEiCbs)
             && Objects.equals(this.iflytekAiuiConfig, that.iflytekAiuiConfig)
             && Objects.equals(this.iflytekSpark, that.iflytekSpark)
-            && Objects.equals(this.thirdPartyModelConfig, that.thirdPartyModelConfig);
+            && Objects.equals(this.thirdPartyModelConfig, that.thirdPartyModelConfig)
+            && Objects.equals(this.mobvoiConfig, that.mobvoiConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, appType, roomId, language, huaweiEiCbs, iflytekAiuiConfig, iflytekSpark, thirdPartyModelConfig);
+        return Objects.hash(name,
+            appType,
+            roomId,
+            language,
+            huaweiEiCbs,
+            iflytekAiuiConfig,
+            iflytekSpark,
+            thirdPartyModelConfig,
+            mobvoiConfig);
     }
 
     @Override
@@ -260,6 +299,7 @@ public class UpdateRobotReq {
         sb.append("    iflytekAiuiConfig: ").append(toIndentedString(iflytekAiuiConfig)).append("\n");
         sb.append("    iflytekSpark: ").append(toIndentedString(iflytekSpark)).append("\n");
         sb.append("    thirdPartyModelConfig: ").append(toIndentedString(thirdPartyModelConfig)).append("\n");
+        sb.append("    mobvoiConfig: ").append(toIndentedString(mobvoiConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,7 +1,13 @@
 package com.huaweicloud.sdk.codeartsinspector.v3;
 
+import com.huaweicloud.sdk.codeartsinspector.v3.model.AddGroupRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.AddGroupResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.AuthorizeDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.AuthorizeDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchCreateHostsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchCreateHostsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchStartHostTasksRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.BatchStartHostTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CancelTasksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CancelTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CreateDomainsRequest;
@@ -10,6 +16,10 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.CreateTasksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.CreateTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteGroupRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteGroupResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteHostRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.DeleteHostResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DownloadTaskReportRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.DownloadTaskReportResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ExecuteGenerateReportRequest;
@@ -18,6 +28,12 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.ListBusinessRisksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListBusinessRisksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListDomainsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListDomainsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListGroupsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListGroupsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostResultsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostResultsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostsRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ListHostsResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListPortResultsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListPortResultsResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ListTaskHistoriesRequest;
@@ -52,6 +68,233 @@ public class CodeArtsInspectorAsyncClient {
         ClientBuilder<CodeArtsInspectorAsyncClient> clientBuilder =
             new ClientBuilder<>(CodeArtsInspectorAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 批量创建主机组
+     *
+     * 批量创建主机组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddGroupRequest 请求对象
+     * @return CompletableFuture<AddGroupResponse>
+     */
+    public CompletableFuture<AddGroupResponse> addGroupAsync(AddGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.addGroup);
+    }
+
+    /**
+     * 批量创建主机组
+     *
+     * 批量创建主机组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddGroupRequest 请求对象
+     * @return AsyncInvoker<AddGroupRequest, AddGroupResponse>
+     */
+    public AsyncInvoker<AddGroupRequest, AddGroupResponse> addGroupAsyncInvoker(AddGroupRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.addGroup, hcClient);
+    }
+
+    /**
+     * 删除主机组
+     *
+     * 删除主机组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGroupRequest 请求对象
+     * @return CompletableFuture<DeleteGroupResponse>
+     */
+    public CompletableFuture<DeleteGroupResponse> deleteGroupAsync(DeleteGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.deleteGroup);
+    }
+
+    /**
+     * 删除主机组
+     *
+     * 删除主机组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteGroupRequest, DeleteGroupResponse>
+     */
+    public AsyncInvoker<DeleteGroupRequest, DeleteGroupResponse> deleteGroupAsyncInvoker(DeleteGroupRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.deleteGroup, hcClient);
+    }
+
+    /**
+     * 获取主机组列表
+     *
+     * 获取主机组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupsRequest 请求对象
+     * @return CompletableFuture<ListGroupsResponse>
+     */
+    public CompletableFuture<ListGroupsResponse> listGroupsAsync(ListGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.listGroups);
+    }
+
+    /**
+     * 获取主机组列表
+     *
+     * 获取主机组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupsRequest 请求对象
+     * @return AsyncInvoker<ListGroupsRequest, ListGroupsResponse>
+     */
+    public AsyncInvoker<ListGroupsRequest, ListGroupsResponse> listGroupsAsyncInvoker(ListGroupsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.listGroups, hcClient);
+    }
+
+    /**
+     * 获取主机漏洞扫描结果
+     *
+     * 获取主机漏洞扫描结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostResultsRequest 请求对象
+     * @return CompletableFuture<ListHostResultsResponse>
+     */
+    public CompletableFuture<ListHostResultsResponse> listHostResultsAsync(ListHostResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.listHostResults);
+    }
+
+    /**
+     * 获取主机漏洞扫描结果
+     *
+     * 获取主机漏洞扫描结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostResultsRequest 请求对象
+     * @return AsyncInvoker<ListHostResultsRequest, ListHostResultsResponse>
+     */
+    public AsyncInvoker<ListHostResultsRequest, ListHostResultsResponse> listHostResultsAsyncInvoker(
+        ListHostResultsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.listHostResults, hcClient);
+    }
+
+    /**
+     * 批量启动或取消主机扫描任务
+     *
+     * 批量启动或取消主机漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStartHostTasksRequest 请求对象
+     * @return CompletableFuture<BatchStartHostTasksResponse>
+     */
+    public CompletableFuture<BatchStartHostTasksResponse> batchStartHostTasksAsync(BatchStartHostTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.batchStartHostTasks);
+    }
+
+    /**
+     * 批量启动或取消主机扫描任务
+     *
+     * 批量启动或取消主机漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStartHostTasksRequest 请求对象
+     * @return AsyncInvoker<BatchStartHostTasksRequest, BatchStartHostTasksResponse>
+     */
+    public AsyncInvoker<BatchStartHostTasksRequest, BatchStartHostTasksResponse> batchStartHostTasksAsyncInvoker(
+        BatchStartHostTasksRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.batchStartHostTasks, hcClient);
+    }
+
+    /**
+     * 批量创建主机资产
+     *
+     * 批量创建租户的主机资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateHostsRequest 请求对象
+     * @return CompletableFuture<BatchCreateHostsResponse>
+     */
+    public CompletableFuture<BatchCreateHostsResponse> batchCreateHostsAsync(BatchCreateHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.batchCreateHosts);
+    }
+
+    /**
+     * 批量创建主机资产
+     *
+     * 批量创建租户的主机资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateHostsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateHostsRequest, BatchCreateHostsResponse>
+     */
+    public AsyncInvoker<BatchCreateHostsRequest, BatchCreateHostsResponse> batchCreateHostsAsyncInvoker(
+        BatchCreateHostsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.batchCreateHosts, hcClient);
+    }
+
+    /**
+     * 删除主机资产
+     *
+     * 删除租户的主机资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHostRequest 请求对象
+     * @return CompletableFuture<DeleteHostResponse>
+     */
+    public CompletableFuture<DeleteHostResponse> deleteHostAsync(DeleteHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.deleteHost);
+    }
+
+    /**
+     * 删除主机资产
+     *
+     * 删除租户的主机资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHostRequest 请求对象
+     * @return AsyncInvoker<DeleteHostRequest, DeleteHostResponse>
+     */
+    public AsyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostAsyncInvoker(DeleteHostRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.deleteHost, hcClient);
+    }
+
+    /**
+     * 获取主机资产
+     *
+     * 获取租户的主机资产列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostsRequest 请求对象
+     * @return CompletableFuture<ListHostsResponse>
+     */
+    public CompletableFuture<ListHostsResponse> listHostsAsync(ListHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsInspectorMeta.listHosts);
+    }
+
+    /**
+     * 获取主机资产
+     *
+     * 获取租户的主机资产列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostsRequest 请求对象
+     * @return AsyncInvoker<ListHostsRequest, ListHostsResponse>
+     */
+    public AsyncInvoker<ListHostsRequest, ListHostsResponse> listHostsAsyncInvoker(ListHostsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsInspectorMeta.listHosts, hcClient);
     }
 
     /**

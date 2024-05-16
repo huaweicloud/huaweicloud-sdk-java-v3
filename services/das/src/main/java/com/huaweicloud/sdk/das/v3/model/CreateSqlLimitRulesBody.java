@@ -28,11 +28,17 @@ public class CreateSqlLimitRulesBody {
          */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
 
+        /**
+         * Enum POSTGRESQL for value: "PostgreSQL"
+         */
+        public static final DatastoreTypeEnum POSTGRESQL = new DatastoreTypeEnum("PostgreSQL");
+
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
             map.put("MySQL", MYSQL);
+            map.put("PostgreSQL", POSTGRESQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -92,6 +98,11 @@ public class CreateSqlLimitRulesBody {
 
     private List<CreateSqlLimitRuleOption> sqlLimitRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_name")
+
+    private String databaseName;
+
     public CreateSqlLimitRulesBody withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
         return this;
@@ -142,6 +153,23 @@ public class CreateSqlLimitRulesBody {
         this.sqlLimitRules = sqlLimitRules;
     }
 
+    public CreateSqlLimitRulesBody withDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+        return this;
+    }
+
+    /**
+     * 数据库名（PostgreSQL必填）
+     * @return databaseName
+     */
+    public String getDatabaseName() {
+        return databaseName;
+    }
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -152,12 +180,13 @@ public class CreateSqlLimitRulesBody {
         }
         CreateSqlLimitRulesBody that = (CreateSqlLimitRulesBody) obj;
         return Objects.equals(this.datastoreType, that.datastoreType)
-            && Objects.equals(this.sqlLimitRules, that.sqlLimitRules);
+            && Objects.equals(this.sqlLimitRules, that.sqlLimitRules)
+            && Objects.equals(this.databaseName, that.databaseName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreType, sqlLimitRules);
+        return Objects.hash(datastoreType, sqlLimitRules, databaseName);
     }
 
     @Override
@@ -166,6 +195,7 @@ public class CreateSqlLimitRulesBody {
         sb.append("class CreateSqlLimitRulesBody {\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    sqlLimitRules: ").append(toIndentedString(sqlLimitRules)).append("\n");
+        sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
