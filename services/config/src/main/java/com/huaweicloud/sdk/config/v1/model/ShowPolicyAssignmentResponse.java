@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -146,6 +148,11 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
     @JsonProperty(value = "parameters")
 
     private Map<String, PolicyParameterValue> parameters = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_by")
@@ -390,6 +397,39 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         this.parameters = parameters;
     }
 
+    public ShowPolicyAssignmentResponse withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowPolicyAssignmentResponse addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowPolicyAssignmentResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     public ShowPolicyAssignmentResponse withCreatedBy(String createdBy) {
         this.createdBy = createdBy;
         return this;
@@ -423,7 +463,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
             && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
             && Objects.equals(this.customPolicy, that.customPolicy) && Objects.equals(this.parameters, that.parameters)
-            && Objects.equals(this.createdBy, that.createdBy);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdBy, that.createdBy);
     }
 
     @Override
@@ -440,6 +480,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
             policyDefinitionId,
             customPolicy,
             parameters,
+            tags,
             createdBy);
     }
 
@@ -459,6 +500,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("}");
         return sb.toString();

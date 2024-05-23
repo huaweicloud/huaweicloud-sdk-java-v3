@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
+import com.huaweicloud.sdk.config.v1.model.CountResourcesByTagRequest;
+import com.huaweicloud.sdk.config.v1.model.CountResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
@@ -92,12 +94,18 @@ import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagRequest;
+import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasResponse;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceTypeRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceTypeResponse;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesRequest;
@@ -158,6 +166,10 @@ import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
+import com.huaweicloud.sdk.config.v1.model.TagResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.TagResourceResponse;
+import com.huaweicloud.sdk.config.v1.model.UnTagResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.UnTagResourceResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackRequest;
@@ -2658,6 +2670,180 @@ public class ConfigAsyncClient {
     public AsyncInvoker<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> showTrackedResourceDetailAsyncInvoker(
         ShowTrackedResourceDetailRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.showTrackedResourceDetail, hcClient);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 使用标签过滤实例，标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力。注意：tags, tags_any, not_tags, not_tags_any等字段支持的tag的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return CompletableFuture<CountResourcesByTagResponse>
+     */
+    public CompletableFuture<CountResourcesByTagResponse> countResourcesByTagAsync(CountResourcesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.countResourcesByTag);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 使用标签过滤实例，标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力。注意：tags, tags_any, not_tags, not_tags_any等字段支持的tag的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagRequest 请求对象
+     * @return AsyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse>
+     */
+    public AsyncInvoker<CountResourcesByTagRequest, CountResourcesByTagResponse> countResourcesByTagAsyncInvoker(
+        CountResourcesByTagRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.countResourcesByTag, hcClient);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 使用标签过滤实例，标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力。注意：tags, tags_any, not_tags, not_tags_any等字段支持的tag的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return CompletableFuture<ListResourcesByTagResponse>
+     */
+    public CompletableFuture<ListResourcesByTagResponse> listResourcesByTagAsync(ListResourcesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listResourcesByTag);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 使用标签过滤实例，标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力。注意：tags, tags_any, not_tags, not_tags_any等字段支持的tag的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagRequest 请求对象
+     * @return AsyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse>
+     */
+    public AsyncInvoker<ListResourcesByTagRequest, ListResourcesByTagResponse> listResourcesByTagAsyncInvoker(
+        ListResourcesByTagRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listResourcesByTag, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息。标签管理服务需要使用该接口查询指定实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsForResourceRequest 请求对象
+     * @return CompletableFuture<ListTagsForResourceResponse>
+     */
+    public CompletableFuture<ListTagsForResourceResponse> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listTagsForResource);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询指定实例的标签信息。标签管理服务需要使用该接口查询指定实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsForResourceRequest 请求对象
+     * @return AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse>
+     */
+    public AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse> listTagsForResourceAsyncInvoker(
+        ListTagsForResourceRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listTagsForResource, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合。标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务Console打资源标签和过滤实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsForResourceTypeRequest 请求对象
+     * @return CompletableFuture<ListTagsForResourceTypeResponse>
+     */
+    public CompletableFuture<ListTagsForResourceTypeResponse> listTagsForResourceTypeAsync(
+        ListTagsForResourceTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listTagsForResourceType);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合。标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务Console打资源标签和过滤实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsForResourceTypeRequest 请求对象
+     * @return AsyncInvoker<ListTagsForResourceTypeRequest, ListTagsForResourceTypeResponse>
+     */
+    public AsyncInvoker<ListTagsForResourceTypeRequest, ListTagsForResourceTypeResponse> listTagsForResourceTypeAsyncInvoker(
+        ListTagsForResourceTypeRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listTagsForResourceType, hcClient);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 此接口为幂等接口。为指定实例批量添加或删除标签，标签管理服务需要使用该接口批量管理实例的标签。一个资源上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TagResourceRequest 请求对象
+     * @return CompletableFuture<TagResourceResponse>
+     */
+    public CompletableFuture<TagResourceResponse> tagResourceAsync(TagResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.tagResource);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 此接口为幂等接口。为指定实例批量添加或删除标签，标签管理服务需要使用该接口批量管理实例的标签。一个资源上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TagResourceRequest 请求对象
+     * @return AsyncInvoker<TagResourceRequest, TagResourceResponse>
+     */
+    public AsyncInvoker<TagResourceRequest, TagResourceResponse> tagResourceAsyncInvoker(TagResourceRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.tagResource, hcClient);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 此接口为幂等接口。为指定实例批量添加或删除标签，标签管理服务需要使用该接口批量管理实例的标签。一个资源上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnTagResourceRequest 请求对象
+     * @return CompletableFuture<UnTagResourceResponse>
+     */
+    public CompletableFuture<UnTagResourceResponse> unTagResourceAsync(UnTagResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.unTagResource);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 此接口为幂等接口。为指定实例批量添加或删除标签，标签管理服务需要使用该接口批量管理实例的标签。一个资源上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnTagResourceRequest 请求对象
+     * @return AsyncInvoker<UnTagResourceRequest, UnTagResourceResponse>
+     */
+    public AsyncInvoker<UnTagResourceRequest, UnTagResourceResponse> unTagResourceAsyncInvoker(
+        UnTagResourceRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.unTagResource, hcClient);
     }
 
     /**

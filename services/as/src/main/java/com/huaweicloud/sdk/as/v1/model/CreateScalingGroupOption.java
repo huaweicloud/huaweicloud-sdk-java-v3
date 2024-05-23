@@ -360,6 +360,11 @@ public class CreateScalingGroupOption {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsSingleValue> tags = null;
+
     public CreateScalingGroupOption withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -834,6 +839,39 @@ public class CreateScalingGroupOption {
         this.description = description;
     }
 
+    public CreateScalingGroupOption withTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateScalingGroupOption addTagsItem(TagsSingleValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateScalingGroupOption withTags(Consumer<List<TagsSingleValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 创建特定标签并将其添加到伸缩组。每个伸缩组最多添加10个标签。
+     * @return tags
+     */
+    public List<TagsSingleValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -863,7 +901,7 @@ public class CreateScalingGroupOption {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.multiAzPriorityPolicy, that.multiAzPriorityPolicy)
             && Objects.equals(this.iamAgencyName, that.iamAgencyName)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -890,7 +928,8 @@ public class CreateScalingGroupOption {
             enterpriseProjectId,
             multiAzPriorityPolicy,
             iamAgencyName,
-            description);
+            description,
+            tags);
     }
 
     @Override
@@ -922,6 +961,7 @@ public class CreateScalingGroupOption {
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
         sb.append("    iamAgencyName: ").append(toIndentedString(iamAgencyName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

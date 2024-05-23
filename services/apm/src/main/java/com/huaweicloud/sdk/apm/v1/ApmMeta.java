@@ -1143,11 +1143,6 @@ public class ApmMeta {
                 ShowMonitorItemDetailRequest::setXBusinessId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowMonitorItemDetailResponse::getBody, ShowMonitorItemDetailResponse::setBody));
 
         return builder.build();
     }

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.cbh.v2.model.CbsGetResourceIdTags;
 import com.huaweicloud.sdk.cbh.v2.model.CbsGetSpecInfo;
 import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceRequestBody;
 import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceSecurityGroups;
+import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceTypeRequest;
+import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceTypeResponse;
 import com.huaweicloud.sdk.cbh.v2.model.CommonCbhRequestBody;
 import com.huaweicloud.sdk.cbh.v2.model.CountInstancesByTagRequest;
 import com.huaweicloud.sdk.cbh.v2.model.CountInstancesByTagResponse;
@@ -28,6 +30,8 @@ import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminRequest;
+import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminResponse;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceResponse;
 import com.huaweicloud.sdk.cbh.v2.model.OperateEipRequestBody;
@@ -62,6 +66,9 @@ import com.huaweicloud.sdk.cbh.v2.model.StartInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.StartInstanceResponse;
 import com.huaweicloud.sdk.cbh.v2.model.StopInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.StopInstanceResponse;
+import com.huaweicloud.sdk.cbh.v2.model.SwitchInstanceVpcRequest;
+import com.huaweicloud.sdk.cbh.v2.model.SwitchInstanceVpcResponse;
+import com.huaweicloud.sdk.cbh.v2.model.SwitchVirtualPrivateCloudRequestBody;
 import com.huaweicloud.sdk.cbh.v2.model.UninstallInstanceEipRequest;
 import com.huaweicloud.sdk.cbh.v2.model.UninstallInstanceEipResponse;
 import com.huaweicloud.sdk.cbh.v2.model.UpdateInstanceSecurityGroupRequest;
@@ -104,6 +111,40 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CbsGetResourceIdTags.class),
             f -> f.withMarshaller(BatchCreateInstanceTagRequest::getBody, BatchCreateInstanceTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeInstanceTypeRequest, ChangeInstanceTypeResponse> changeInstanceType =
+        genForChangeInstanceType();
+
+    private static HttpRequestDef<ChangeInstanceTypeRequest, ChangeInstanceTypeResponse> genForChangeInstanceType() {
+        // basic
+        HttpRequestDef.Builder<ChangeInstanceTypeRequest, ChangeInstanceTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeInstanceTypeRequest.class, ChangeInstanceTypeResponse.class)
+                .withName("ChangeInstanceType")
+                .withUri("/v2/{project_id}/cbs/instance/type")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceTypeRequest::getServerId, ChangeInstanceTypeRequest::setServerId));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceTypeRequest::getAvailabilityZone,
+                ChangeInstanceTypeRequest::setAvailabilityZone));
+        builder.<Integer>withRequestField("is_auto_pay",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ChangeInstanceTypeRequest::getIsAutoPay, ChangeInstanceTypeRequest::setIsAutoPay));
 
         // response
 
@@ -349,6 +390,29 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CommonCbhRequestBody.class),
             f -> f.withMarshaller(LoginInstanceRequest::getBody, LoginInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<LoginInstanceAdminRequest, LoginInstanceAdminResponse> loginInstanceAdmin =
+        genForLoginInstanceAdmin();
+
+    private static HttpRequestDef<LoginInstanceAdminRequest, LoginInstanceAdminResponse> genForLoginInstanceAdmin() {
+        // basic
+        HttpRequestDef.Builder<LoginInstanceAdminRequest, LoginInstanceAdminResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, LoginInstanceAdminRequest.class, LoginInstanceAdminResponse.class)
+                .withName("LoginInstanceAdmin")
+                .withUri("/v2/{project_id}/cbs/instances/{server_id}/admin-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LoginInstanceAdminRequest::getServerId, LoginInstanceAdminRequest::setServerId));
 
         // response
 
@@ -673,6 +737,29 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CommonCbhRequestBody.class),
             f -> f.withMarshaller(StopInstanceRequest::getBody, StopInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchInstanceVpcRequest, SwitchInstanceVpcResponse> switchInstanceVpc =
+        genForSwitchInstanceVpc();
+
+    private static HttpRequestDef<SwitchInstanceVpcRequest, SwitchInstanceVpcResponse> genForSwitchInstanceVpc() {
+        // basic
+        HttpRequestDef.Builder<SwitchInstanceVpcRequest, SwitchInstanceVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchInstanceVpcRequest.class, SwitchInstanceVpcResponse.class)
+                .withName("SwitchInstanceVpc")
+                .withUri("/v2/{project_id}/cbs/instance/vpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SwitchVirtualPrivateCloudRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchVirtualPrivateCloudRequestBody.class),
+            f -> f.withMarshaller(SwitchInstanceVpcRequest::getBody, SwitchInstanceVpcRequest::setBody));
 
         // response
 

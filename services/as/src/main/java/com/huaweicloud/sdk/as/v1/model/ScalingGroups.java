@@ -423,6 +423,11 @@ public class ScalingGroups {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsSingleValue> tags = null;
+
     public ScalingGroups withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -1049,6 +1054,39 @@ public class ScalingGroups {
         this.description = description;
     }
 
+    public ScalingGroups withTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ScalingGroups addTagsItem(TagsSingleValue tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ScalingGroups withTags(Consumer<List<TagsSingleValue>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 添加到伸缩组的标签。
+     * @return tags
+     */
+    public List<TagsSingleValue> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsSingleValue> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1086,7 +1124,7 @@ public class ScalingGroups {
             && Objects.equals(this.activityType, that.activityType)
             && Objects.equals(this.multiAzPriorityPolicy, that.multiAzPriorityPolicy)
             && Objects.equals(this.iamAgencyName, that.iamAgencyName)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -1122,7 +1160,8 @@ public class ScalingGroups {
             activityType,
             multiAzPriorityPolicy,
             iamAgencyName,
-            description);
+            description,
+            tags);
     }
 
     @Override
@@ -1163,6 +1202,7 @@ public class ScalingGroups {
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
         sb.append("    iamAgencyName: ").append(toIndentedString(iamAgencyName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

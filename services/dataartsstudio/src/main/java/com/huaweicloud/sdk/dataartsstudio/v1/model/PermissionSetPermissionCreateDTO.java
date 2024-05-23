@@ -330,6 +330,11 @@ public class PermissionSetPermissionCreateDTO {
 
     private String rowLevelSecurity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "url")
+
+    private String url;
+
     public PermissionSetPermissionCreateDTO withDwId(String dwId) {
         this.dwId = dwId;
         return this;
@@ -489,7 +494,7 @@ public class PermissionSetPermissionCreateDTO {
     }
 
     /**
-     * 命名空间
+     * 命名空间。无效参数，待下线。
      * @return namespace
      */
     public String getNamespace() {
@@ -540,7 +545,7 @@ public class PermissionSetPermissionCreateDTO {
     }
 
     /**
-     * 行级策略
+     * 行级策略。无效参数，待下线。
      * @return rowLevelSecurity
      */
     public String getRowLevelSecurity() {
@@ -549,6 +554,23 @@ public class PermissionSetPermissionCreateDTO {
 
     public void setRowLevelSecurity(String rowLevelSecurity) {
         this.rowLevelSecurity = rowLevelSecurity;
+    }
+
+    public PermissionSetPermissionCreateDTO withUrl(String url) {
+        this.url = url;
+        return this;
+    }
+
+    /**
+     * url路径名称, MRS存算分离或者HIVE指定location场景下使用。
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
@@ -567,7 +589,7 @@ public class PermissionSetPermissionCreateDTO {
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.schemaName, that.schemaName)
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.columnName, that.columnName)
-            && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity);
+            && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity) && Objects.equals(this.url, that.url);
     }
 
     @Override
@@ -583,7 +605,8 @@ public class PermissionSetPermissionCreateDTO {
             namespace,
             tableName,
             columnName,
-            rowLevelSecurity);
+            rowLevelSecurity,
+            url);
     }
 
     @Override
@@ -602,6 +625,7 @@ public class PermissionSetPermissionCreateDTO {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
         sb.append("    rowLevelSecurity: ").append(toIndentedString(rowLevelSecurity)).append("\n");
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("}");
         return sb.toString();
     }

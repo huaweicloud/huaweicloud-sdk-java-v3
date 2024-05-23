@@ -177,12 +177,16 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPasswordlessConfigRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPasswordlessConfigResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRequest;
@@ -211,6 +215,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationR
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpgradeDbVersionRequest;
@@ -2734,6 +2740,36 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 获取GeminiDB Redis的免密配置
+     *
+     * 获取GeminiDB Redis的免密配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPasswordlessConfigRequest 请求对象
+     * @return CompletableFuture<ShowPasswordlessConfigResponse>
+     */
+    public CompletableFuture<ShowPasswordlessConfigResponse> showPasswordlessConfigAsync(
+        ShowPasswordlessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showPasswordlessConfig);
+    }
+
+    /**
+     * 获取GeminiDB Redis的免密配置
+     *
+     * 获取GeminiDB Redis的免密配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPasswordlessConfigRequest 请求对象
+     * @return AsyncInvoker<ShowPasswordlessConfigRequest, ShowPasswordlessConfigResponse>
+     */
+    public AsyncInvoker<ShowPasswordlessConfigRequest, ShowPasswordlessConfigResponse> showPasswordlessConfigAsyncInvoker(
+        ShowPasswordlessConfigRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showPasswordlessConfig, hcClient);
+    }
+
+    /**
      * 获取容灾实例数据同步状态
      *
      * 获取容灾实例数据同步状态，主备实例id，数据同步指标值，以及倒换和切换场景下的RPO，RTO指标值。
@@ -2818,6 +2854,35 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyAsyncInvoker(
         ShowRecyclePolicyRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 查询Redis实例的大key
+     *
+     * 支持查询Redis实例的大key。value长度大于bigkeys-string-threshold参数的string类型的key或者元素数大于bigkeys-composite-threshold参数的hash/list/zset/set/stream类型key，会被判断为大key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisBigKeysRequest 请求对象
+     * @return CompletableFuture<ShowRedisBigKeysResponse>
+     */
+    public CompletableFuture<ShowRedisBigKeysResponse> showRedisBigKeysAsync(ShowRedisBigKeysRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showRedisBigKeys);
+    }
+
+    /**
+     * 查询Redis实例的大key
+     *
+     * 支持查询Redis实例的大key。value长度大于bigkeys-string-threshold参数的string类型的key或者元素数大于bigkeys-composite-threshold参数的hash/list/zset/set/stream类型key，会被判断为大key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisBigKeysRequest 请求对象
+     * @return AsyncInvoker<ShowRedisBigKeysRequest, ShowRedisBigKeysResponse>
+     */
+    public AsyncInvoker<ShowRedisBigKeysRequest, ShowRedisBigKeysResponse> showRedisBigKeysAsyncInvoker(
+        ShowRedisBigKeysRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showRedisBigKeys, hcClient);
     }
 
     /**
@@ -3227,6 +3292,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameAsyncInvoker(
         UpdateInstanceNameRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceName, hcClient);
+    }
+
+    /**
+     * 支持修改GeminiDB Redis的免密配置
+     *
+     * 支持修改GeminiDB Redis的免密配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePasswordlessConfigRequest 请求对象
+     * @return CompletableFuture<UpdatePasswordlessConfigResponse>
+     */
+    public CompletableFuture<UpdatePasswordlessConfigResponse> updatePasswordlessConfigAsync(
+        UpdatePasswordlessConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updatePasswordlessConfig);
+    }
+
+    /**
+     * 支持修改GeminiDB Redis的免密配置
+     *
+     * 支持修改GeminiDB Redis的免密配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePasswordlessConfigRequest 请求对象
+     * @return AsyncInvoker<UpdatePasswordlessConfigRequest, UpdatePasswordlessConfigResponse>
+     */
+    public AsyncInvoker<UpdatePasswordlessConfigRequest, UpdatePasswordlessConfigResponse> updatePasswordlessConfigAsyncInvoker(
+        UpdatePasswordlessConfigRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updatePasswordlessConfig, hcClient);
     }
 
     /**

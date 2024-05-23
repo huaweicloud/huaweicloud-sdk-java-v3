@@ -46,7 +46,6 @@ import com.huaweicloud.sdk.core.progress.ProgressInputStream;
 import com.huaweicloud.sdk.core.progress.ProgressRequest;
 import com.huaweicloud.sdk.core.progress.SimpleProgressManager;
 import com.huaweicloud.sdk.core.utils.CastUtils;
-import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.HttpUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
@@ -446,16 +445,6 @@ public class HcClient implements CustomizationConfigure {
             res.put(key + "[" + entryKey + "]", Collections.singletonList(convertToStringParams(entryValue)));
         }
         return res;
-    }
-
-    private void handleException(HttpRequest httpRequest, HttpResponse httpResponse) {
-        if (httpResponse.getStatusCode() >= Constants.StatusCode.CLIENT_ERROR) {
-            ServiceResponseException currException = ServiceResponseException.mapException(httpResponse.getStatusCode(),
-                    ExceptionUtils.extractErrorMessage(httpResponse));
-            logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                    httpRequest.getUrl().getAuthority(), httpRequest.getUrl(), currException.toString());
-            throw currException;
-        }
     }
 
     private <S> S processTextBasedType(HttpResponse httpResponse, HttpRequestDef<?, S> reqDef)

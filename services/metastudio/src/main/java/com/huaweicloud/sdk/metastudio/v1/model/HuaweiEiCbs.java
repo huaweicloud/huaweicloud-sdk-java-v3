@@ -25,6 +25,16 @@ public class HuaweiEiCbs {
 
     private String cbsProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_region")
+
+    private Integer sisRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_project_id")
+
+    private String sisProjectId;
+
     public HuaweiEiCbs withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -78,6 +88,42 @@ public class HuaweiEiCbs {
         this.cbsProjectId = cbsProjectId;
     }
 
+    public HuaweiEiCbs withSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+        return this;
+    }
+
+    /**
+     * SIS所在区域
+     * minimum: 0
+     * maximum: 32
+     * @return sisRegion
+     */
+    public Integer getSisRegion() {
+        return sisRegion;
+    }
+
+    public void setSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+    }
+
+    public HuaweiEiCbs withSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
+        return this;
+    }
+
+    /**
+     * SIS所在区域的projectId
+     * @return sisProjectId
+     */
+    public String getSisProjectId() {
+        return sisProjectId;
+    }
+
+    public void setSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +134,13 @@ public class HuaweiEiCbs {
         }
         HuaweiEiCbs that = (HuaweiEiCbs) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.cbsProjectId, that.cbsProjectId);
+            && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.sisRegion, that.sisRegion)
+            && Objects.equals(this.sisProjectId, that.sisProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, region, cbsProjectId);
+        return Objects.hash(appId, region, cbsProjectId, sisRegion, sisProjectId);
     }
 
     @Override
@@ -103,6 +150,8 @@ public class HuaweiEiCbs {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    cbsProjectId: ").append(toIndentedString(cbsProjectId)).append("\n");
+        sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
+        sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

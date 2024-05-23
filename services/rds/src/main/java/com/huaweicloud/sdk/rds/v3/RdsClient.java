@@ -105,6 +105,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
+import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
@@ -1270,6 +1272,35 @@ public class RdsClient {
     public SyncInvoker<DeleteSqlLimitRequest, DeleteSqlLimitResponse> deleteSqlLimitInvoker(
         DeleteSqlLimitRequest request) {
         return new SyncInvoker<>(request, RdsMeta.deleteSqlLimit, hcClient);
+    }
+
+    /**
+     * 获取错误日志下载链接
+     *
+     * 获取错误日志下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadErrorlogRequest 请求对象
+     * @return DownloadErrorlogResponse
+     */
+    public DownloadErrorlogResponse downloadErrorlog(DownloadErrorlogRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.downloadErrorlog);
+    }
+
+    /**
+     * 获取错误日志下载链接
+     *
+     * 获取错误日志下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadErrorlogRequest 请求对象
+     * @return SyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse>
+     */
+    public SyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlogInvoker(
+        DownloadErrorlogRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.downloadErrorlog, hcClient);
     }
 
     /**

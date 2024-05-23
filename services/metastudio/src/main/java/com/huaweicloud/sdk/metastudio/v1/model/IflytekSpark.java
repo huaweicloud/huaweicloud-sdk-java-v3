@@ -25,6 +25,11 @@ public class IflytekSpark {
 
     private String apiSecret;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_production")
+
+    private Boolean isProduction;
+
     public IflytekSpark withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -76,6 +81,23 @@ public class IflytekSpark {
         this.apiSecret = apiSecret;
     }
 
+    public IflytekSpark withIsProduction(Boolean isProduction) {
+        this.isProduction = isProduction;
+        return this;
+    }
+
+    /**
+     * 是否为正式环境
+     * @return isProduction
+     */
+    public Boolean getIsProduction() {
+        return isProduction;
+    }
+
+    public void setIsProduction(Boolean isProduction) {
+        this.isProduction = isProduction;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class IflytekSpark {
         }
         IflytekSpark that = (IflytekSpark) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.appKey, that.appKey)
-            && Objects.equals(this.apiSecret, that.apiSecret);
+            && Objects.equals(this.apiSecret, that.apiSecret) && Objects.equals(this.isProduction, that.isProduction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appKey, apiSecret);
+        return Objects.hash(appId, appKey, apiSecret, isProduction);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class IflytekSpark {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    apiSecret: ").append(toIndentedString(apiSecret)).append("\n");
+        sb.append("    isProduction: ").append(toIndentedString(isProduction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

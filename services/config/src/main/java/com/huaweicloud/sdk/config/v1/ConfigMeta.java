@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.config.v1.model.ConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.ConformancePackRequestBody;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
+import com.huaweicloud.sdk.config.v1.model.CountResourcesByTagRequest;
+import com.huaweicloud.sdk.config.v1.model.CountResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
@@ -102,12 +104,18 @@ import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagRequest;
+import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasResponse;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceTypeRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTagsForResourceTypeResponse;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesRequest;
@@ -117,6 +125,7 @@ import com.huaweicloud.sdk.config.v1.model.OrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.PolicyAssignmentRequestBody;
 import com.huaweicloud.sdk.config.v1.model.PolicyStateRequestBody;
 import com.huaweicloud.sdk.config.v1.model.QueryRunRequestBody;
+import com.huaweicloud.sdk.config.v1.model.ResourceInstancesReq;
 import com.huaweicloud.sdk.config.v1.model.ResourceSummaryResponseItem;
 import com.huaweicloud.sdk.config.v1.model.RunAggregateResourceQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.RunAggregateResourceQueryResponse;
@@ -175,7 +184,13 @@ import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
 import com.huaweicloud.sdk.config.v1.model.StoredQueryRequestBody;
+import com.huaweicloud.sdk.config.v1.model.TagResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.TagResourceResponse;
+import com.huaweicloud.sdk.config.v1.model.TagsReq;
 import com.huaweicloud.sdk.config.v1.model.TrackerConfigBody;
+import com.huaweicloud.sdk.config.v1.model.UnTagResourceRequest;
+import com.huaweicloud.sdk.config.v1.model.UnTagResourceResponse;
+import com.huaweicloud.sdk.config.v1.model.UnTagsReq;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConformancePackRequest;
@@ -3233,6 +3248,204 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTrackedResourceDetailRequest::getResourceId,
                 ShowTrackedResourceDetailRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountResourcesByTagRequest, CountResourcesByTagResponse> countResourcesByTag =
+        genForCountResourcesByTag();
+
+    private static HttpRequestDef<CountResourcesByTagRequest, CountResourcesByTagResponse> genForCountResourcesByTag() {
+        // basic
+        HttpRequestDef.Builder<CountResourcesByTagRequest, CountResourcesByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CountResourcesByTagRequest.class, CountResourcesByTagResponse.class)
+                .withName("CountResourcesByTag")
+                .withUri("/v1/resource-manager/{resource_type}/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CountResourcesByTagRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CountResourcesByTagRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(CountResourcesByTagRequest::getResourceType,
+                CountResourcesByTagRequest::setResourceType));
+        builder.<ResourceInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceInstancesReq.class),
+            f -> f.withMarshaller(CountResourcesByTagRequest::getBody, CountResourcesByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourcesByTagRequest, ListResourcesByTagResponse> listResourcesByTag =
+        genForListResourcesByTag();
+
+    private static HttpRequestDef<ListResourcesByTagRequest, ListResourcesByTagResponse> genForListResourcesByTag() {
+        // basic
+        HttpRequestDef.Builder<ListResourcesByTagRequest, ListResourcesByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagRequest.class, ListResourcesByTagResponse.class)
+                .withName("ListResourcesByTag")
+                .withUri("/v1/resource-manager/{resource_type}/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourcesByTagRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getResourceType,
+                ListResourcesByTagRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getLimit, ListResourcesByTagRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getOffset, ListResourcesByTagRequest::setOffset));
+        builder.<ResourceInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceInstancesReq.class),
+            f -> f.withMarshaller(ListResourcesByTagRequest::getBody, ListResourcesByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> listTagsForResource =
+        genForListTagsForResource();
+
+    private static HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> genForListTagsForResource() {
+        // basic
+        HttpRequestDef.Builder<ListTagsForResourceRequest, ListTagsForResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsForResourceRequest.class, ListTagsForResourceResponse.class)
+                .withName("ListTagsForResource")
+                .withUri("/v1/resource-manager/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListTagsForResourceRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagsForResourceRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListTagsForResourceRequest::getResourceType,
+                ListTagsForResourceRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsForResourceRequest::getResourceId,
+                ListTagsForResourceRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsForResourceTypeRequest, ListTagsForResourceTypeResponse> listTagsForResourceType =
+        genForListTagsForResourceType();
+
+    private static HttpRequestDef<ListTagsForResourceTypeRequest, ListTagsForResourceTypeResponse> genForListTagsForResourceType() {
+        // basic
+        HttpRequestDef.Builder<ListTagsForResourceTypeRequest, ListTagsForResourceTypeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTagsForResourceTypeRequest.class, ListTagsForResourceTypeResponse.class)
+            .withName("ListTagsForResourceType")
+            .withUri("/v1/resource-manager/{resource_type}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListTagsForResourceTypeRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagsForResourceTypeRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListTagsForResourceTypeRequest::getResourceType,
+                ListTagsForResourceTypeRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsForResourceTypeRequest::getLimit, ListTagsForResourceTypeRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsForResourceTypeRequest::getOffset,
+                ListTagsForResourceTypeRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TagResourceRequest, TagResourceResponse> tagResource = genForTagResource();
+
+    private static HttpRequestDef<TagResourceRequest, TagResourceResponse> genForTagResource() {
+        // basic
+        HttpRequestDef.Builder<TagResourceRequest, TagResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TagResourceRequest.class, TagResourceResponse.class)
+                .withName("TagResource")
+                .withUri("/v1/resource-manager/{resource_type}/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<TagResourceRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagResourceRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(TagResourceRequest::getResourceType, TagResourceRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TagResourceRequest::getResourceId, TagResourceRequest::setResourceId));
+        builder.<TagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagsReq.class),
+            f -> f.withMarshaller(TagResourceRequest::getBody, TagResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnTagResourceRequest, UnTagResourceResponse> unTagResource =
+        genForUnTagResource();
+
+    private static HttpRequestDef<UnTagResourceRequest, UnTagResourceResponse> genForUnTagResource() {
+        // basic
+        HttpRequestDef.Builder<UnTagResourceRequest, UnTagResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnTagResourceRequest.class, UnTagResourceResponse.class)
+                .withName("UnTagResource")
+                .withUri("/v1/resource-manager/{resource_type}/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UnTagResourceRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnTagResourceRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(UnTagResourceRequest::getResourceType, UnTagResourceRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnTagResourceRequest::getResourceId, UnTagResourceRequest::setResourceId));
+        builder.<UnTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnTagsReq.class),
+            f -> f.withMarshaller(UnTagResourceRequest::getBody, UnTagResourceRequest::setBody));
 
         // response
 

@@ -65,7 +65,7 @@ public class CelebrityRecognitionReq {
     }
 
     /**
-     * 置信度的阈值（0~1），低于此置信数的标签，将不会返回。  默认值：0.48。 
+     * 置信度的阈值（0~1），低于此置信数的标签，将不会返回。  默认值：0.9。 
      * @return threshold
      */
     public Float getThreshold() {

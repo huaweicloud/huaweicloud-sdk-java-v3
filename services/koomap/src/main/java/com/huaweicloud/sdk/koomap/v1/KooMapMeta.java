@@ -14,6 +14,9 @@ import com.huaweicloud.sdk.koomap.v1.model.CreateCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateCommonWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateMarkerInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateMarkerInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DSubTaskDto;
+import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DTaskDto;
 import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DTaskResponse;
@@ -25,6 +28,10 @@ import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DRefineProductRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DRefineProductResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteSpurPointRequest;
@@ -42,6 +49,10 @@ import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequestBody;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DRefineProductsRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DRefineProductsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DSubTasksRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DSubTasksResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListTaskInfoRequest;
@@ -65,6 +76,8 @@ import com.huaweicloud.sdk.koomap.v1.model.SpurInfo;
 import com.huaweicloud.sdk.koomap.v1.model.SpurQueryParaInfo;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartReal3DTaskBody;
 import com.huaweicloud.sdk.koomap.v1.model.StartReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartReal3DTaskResponse;
@@ -72,6 +85,8 @@ import com.huaweicloud.sdk.koomap.v1.model.StartTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartVpsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartVpsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StopReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StopReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StopReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskRequest;
@@ -164,6 +179,40 @@ public class KooMapMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateMarkerInfoResponse::getBody, CreateMarkerInfoResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReal3DSubTaskRequest, CreateReal3DSubTaskResponse> createReal3DSubTask =
+        genForCreateReal3DSubTask();
+
+    private static HttpRequestDef<CreateReal3DSubTaskRequest, CreateReal3DSubTaskResponse> genForCreateReal3DSubTask() {
+        // basic
+        HttpRequestDef.Builder<CreateReal3DSubTaskRequest, CreateReal3DSubTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateReal3DSubTaskRequest.class, CreateReal3DSubTaskResponse.class)
+                .withName("CreateReal3DSubTask")
+                .withUri("/v1/real3d/{workspace_id}/tasks/{task_id}/subtasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReal3DSubTaskRequest::getWorkspaceId,
+                CreateReal3DSubTaskRequest::setWorkspaceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReal3DSubTaskRequest::getTaskId, CreateReal3DSubTaskRequest::setTaskId));
+        builder.<CreateReal3DSubTaskDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateReal3DSubTaskDto.class),
+            f -> f.withMarshaller(CreateReal3DSubTaskRequest::getBody, CreateReal3DSubTaskRequest::setBody));
+
+        // response
 
         return builder.build();
     }
@@ -281,6 +330,89 @@ public class KooMapMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteReal3DProductResponse::getBody, DeleteReal3DProductResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReal3DRefineProductRequest, DeleteReal3DRefineProductResponse> deleteReal3DRefineProduct =
+        genForDeleteReal3DRefineProduct();
+
+    private static HttpRequestDef<DeleteReal3DRefineProductRequest, DeleteReal3DRefineProductResponse> genForDeleteReal3DRefineProduct() {
+        // basic
+        HttpRequestDef.Builder<DeleteReal3DRefineProductRequest, DeleteReal3DRefineProductResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteReal3DRefineProductRequest.class,
+                    DeleteReal3DRefineProductResponse.class)
+                .withName("DeleteReal3DRefineProduct")
+                .withUri("/v1/real3d/refineproducts/{refine_product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("refine_product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReal3DRefineProductRequest::getRefineProductId,
+                DeleteReal3DRefineProductRequest::setRefineProductId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(DeleteReal3DRefineProductRequest::getBody,
+                DeleteReal3DRefineProductRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteReal3DRefineProductResponse::getBody,
+                DeleteReal3DRefineProductResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReal3DSubTaskRequest, DeleteReal3DSubTaskResponse> deleteReal3DSubTask =
+        genForDeleteReal3DSubTask();
+
+    private static HttpRequestDef<DeleteReal3DSubTaskRequest, DeleteReal3DSubTaskResponse> genForDeleteReal3DSubTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteReal3DSubTaskRequest, DeleteReal3DSubTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteReal3DSubTaskRequest.class, DeleteReal3DSubTaskResponse.class)
+            .withName("DeleteReal3DSubTask")
+            .withUri("/v1/real3d/{workspace_id}/tasks/{task_id}/subtasks/{subtask_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subtask_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReal3DSubTaskRequest::getSubtaskId, DeleteReal3DSubTaskRequest::setSubtaskId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReal3DSubTaskRequest::getTaskId, DeleteReal3DSubTaskRequest::setTaskId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReal3DSubTaskRequest::getWorkspaceId,
+                DeleteReal3DSubTaskRequest::setWorkspaceId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(DeleteReal3DSubTaskRequest::getBody, DeleteReal3DSubTaskRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteReal3DSubTaskResponse::getBody, DeleteReal3DSubTaskResponse::setBody));
 
         return builder.build();
     }
@@ -530,6 +662,165 @@ public class KooMapMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListReal3DProductsRequest::getProductId, ListReal3DProductsRequest::setProductId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReal3DRefineProductsRequest, ListReal3DRefineProductsResponse> listReal3DRefineProducts =
+        genForListReal3DRefineProducts();
+
+    private static HttpRequestDef<ListReal3DRefineProductsRequest, ListReal3DRefineProductsResponse> genForListReal3DRefineProducts() {
+        // basic
+        HttpRequestDef.Builder<ListReal3DRefineProductsRequest, ListReal3DRefineProductsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListReal3DRefineProductsRequest.class, ListReal3DRefineProductsResponse.class)
+                .withName("ListReal3DRefineProducts")
+                .withUri("/v1/real3d/refineproducts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getOffset,
+                ListReal3DRefineProductsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getLimit,
+                ListReal3DRefineProductsRequest::setLimit));
+        builder.<String>withRequestField("refine_product_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getRefineProductId,
+                ListReal3DRefineProductsRequest::setRefineProductId));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getTaskName,
+                ListReal3DRefineProductsRequest::setTaskName));
+        builder.<String>withRequestField("subtask_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getSubtaskName,
+                ListReal3DRefineProductsRequest::setSubtaskName));
+        builder.<String>withRequestField("subtask_create_time_from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getSubtaskCreateTimeFrom,
+                ListReal3DRefineProductsRequest::setSubtaskCreateTimeFrom));
+        builder.<String>withRequestField("subtask_create_time_to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getSubtaskCreateTimeTo,
+                ListReal3DRefineProductsRequest::setSubtaskCreateTimeTo));
+        builder.<String>withRequestField("subtask_completed_time_from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getSubtaskCompletedTimeFrom,
+                ListReal3DRefineProductsRequest::setSubtaskCompletedTimeFrom));
+        builder.<String>withRequestField("subtask_completed_time_to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getSubtaskCompletedTimeTo,
+                ListReal3DRefineProductsRequest::setSubtaskCompletedTimeTo));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DRefineProductsRequest::getOrderBy,
+                ListReal3DRefineProductsRequest::setOrderBy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReal3DSubTasksRequest, ListReal3DSubTasksResponse> listReal3DSubTasks =
+        genForListReal3DSubTasks();
+
+    private static HttpRequestDef<ListReal3DSubTasksRequest, ListReal3DSubTasksResponse> genForListReal3DSubTasks() {
+        // basic
+        HttpRequestDef.Builder<ListReal3DSubTasksRequest, ListReal3DSubTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReal3DSubTasksRequest.class, ListReal3DSubTasksResponse.class)
+                .withName("ListReal3DSubTasks")
+                .withUri("/v1/real3d/{workspace_id}/tasks/{task_id}/subtasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getWorkspaceId,
+                ListReal3DSubTasksRequest::setWorkspaceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getTaskId, ListReal3DSubTasksRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getOffset, ListReal3DSubTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getLimit, ListReal3DSubTasksRequest::setLimit));
+        builder.<String>withRequestField("subtask_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getSubtaskId, ListReal3DSubTasksRequest::setSubtaskId));
+        builder.<String>withRequestField("subtask_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getSubtaskName,
+                ListReal3DSubTasksRequest::setSubtaskName));
+        builder.<List<String>>withRequestField("subtask_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getSubtaskStatus,
+                ListReal3DSubTasksRequest::setSubtaskStatus));
+        builder.<String>withRequestField("create_time_from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getCreateTimeFrom,
+                ListReal3DSubTasksRequest::setCreateTimeFrom));
+        builder.<String>withRequestField("create_time_to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getCreateTimeTo,
+                ListReal3DSubTasksRequest::setCreateTimeTo));
+        builder.<String>withRequestField("update_time_from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getUpdateTimeFrom,
+                ListReal3DSubTasksRequest::setUpdateTimeFrom));
+        builder.<String>withRequestField("update_time_to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReal3DSubTasksRequest::getUpdateTimeTo,
+                ListReal3DSubTasksRequest::setUpdateTimeTo));
 
         // response
 
@@ -872,6 +1163,45 @@ public class KooMapMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartReal3DSubTaskRequest, StartReal3DSubTaskResponse> startReal3DSubTask =
+        genForStartReal3DSubTask();
+
+    private static HttpRequestDef<StartReal3DSubTaskRequest, StartReal3DSubTaskResponse> genForStartReal3DSubTask() {
+        // basic
+        HttpRequestDef.Builder<StartReal3DSubTaskRequest, StartReal3DSubTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartReal3DSubTaskRequest.class, StartReal3DSubTaskResponse.class)
+                .withName("StartReal3DSubTask")
+                .withUri("/v1/real3d/{workspace_id}/tasks/{task_id}/subtasks/{subtask_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartReal3DSubTaskRequest::getWorkspaceId,
+                StartReal3DSubTaskRequest::setWorkspaceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartReal3DSubTaskRequest::getTaskId, StartReal3DSubTaskRequest::setTaskId));
+        builder.<String>withRequestField("subtask_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartReal3DSubTaskRequest::getSubtaskId, StartReal3DSubTaskRequest::setSubtaskId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(StartReal3DSubTaskRequest::getBody, StartReal3DSubTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartReal3DTaskRequest, StartReal3DTaskResponse> startReal3DTask =
         genForStartReal3DTask();
 
@@ -976,6 +1306,49 @@ public class KooMapMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(StartVpsResponse::getXTraceId, StartVpsResponse::setXTraceId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopReal3DSubTaskRequest, StopReal3DSubTaskResponse> stopReal3DSubTask =
+        genForStopReal3DSubTask();
+
+    private static HttpRequestDef<StopReal3DSubTaskRequest, StopReal3DSubTaskResponse> genForStopReal3DSubTask() {
+        // basic
+        HttpRequestDef.Builder<StopReal3DSubTaskRequest, StopReal3DSubTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopReal3DSubTaskRequest.class, StopReal3DSubTaskResponse.class)
+                .withName("StopReal3DSubTask")
+                .withUri("/v1/real3d/{workspace_id}/tasks/{task_id}/subtasks/{subtask_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subtask_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopReal3DSubTaskRequest::getSubtaskId, StopReal3DSubTaskRequest::setSubtaskId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopReal3DSubTaskRequest::getTaskId, StopReal3DSubTaskRequest::setTaskId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopReal3DSubTaskRequest::getWorkspaceId, StopReal3DSubTaskRequest::setWorkspaceId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(StopReal3DSubTaskRequest::getBody, StopReal3DSubTaskRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopReal3DSubTaskResponse::getBody, StopReal3DSubTaskResponse::setBody));
+
         return builder.build();
     }
 

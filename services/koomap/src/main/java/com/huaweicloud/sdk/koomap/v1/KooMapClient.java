@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.koomap.v1.model.CreateCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateCommonWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateMarkerInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateMarkerInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.CreateTaskRequest;
@@ -17,6 +19,10 @@ import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteCommonWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DProductResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DRefineProductRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DRefineProductResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.DeleteSpurPointRequest;
@@ -31,6 +37,10 @@ import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListReal3DProductsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DRefineProductsRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DRefineProductsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DSubTasksRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListReal3DSubTasksResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListSpurPointsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListTaskInfoRequest;
@@ -49,12 +59,16 @@ import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartNaviResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartVpsRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartVpsResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StopReal3DSubTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StopReal3DSubTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopReal3DTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StopReal3DTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskRequest;
@@ -176,6 +190,35 @@ public class KooMapClient {
     }
 
     /**
+     * 创建实景三维精修后处理任务
+     *
+     * 每个精修后处理任务必须绑定一个已完成的建模类型为“显式辐射场”的任务，且单个任务允许创建的精修后处理任务上限为10个、名称不能重复（大小写不敏感）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReal3DSubTaskRequest 请求对象
+     * @return CreateReal3DSubTaskResponse
+     */
+    public CreateReal3DSubTaskResponse createReal3DSubTask(CreateReal3DSubTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.createReal3DSubTask);
+    }
+
+    /**
+     * 创建实景三维精修后处理任务
+     *
+     * 每个精修后处理任务必须绑定一个已完成的建模类型为“显式辐射场”的任务，且单个任务允许创建的精修后处理任务上限为10个、名称不能重复（大小写不敏感）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReal3DSubTaskRequest 请求对象
+     * @return SyncInvoker<CreateReal3DSubTaskRequest, CreateReal3DSubTaskResponse>
+     */
+    public SyncInvoker<CreateReal3DSubTaskRequest, CreateReal3DSubTaskResponse> createReal3DSubTaskInvoker(
+        CreateReal3DSubTaskRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.createReal3DSubTask, hcClient);
+    }
+
+    /**
      * 创建实景三维建模任务
      *
      * 创建实景三维建模任务时，必须绑定工作共享空间。每个工作共享空间内可绑定的任务上限为500个，任务名称需唯一，不能重复（大小写不敏感）。
@@ -288,6 +331,68 @@ public class KooMapClient {
     public SyncInvoker<DeleteReal3DProductRequest, DeleteReal3DProductResponse> deleteReal3DProductInvoker(
         DeleteReal3DProductRequest request) {
         return new SyncInvoker<>(request, KooMapMeta.deleteReal3DProduct, hcClient);
+    }
+
+    /**
+     * 删除实景三维精修后处理成果数据
+     *
+     * 调用该接口可删除实景三维精修后处理成果数据。当前仅支持成果数据状态为“available”时才可以删除。执行该接口后，成果数据状态更新为“deleting”。
+     * 
+     * &gt; 成果数据删除后不可恢复，请做好数据备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReal3DRefineProductRequest 请求对象
+     * @return DeleteReal3DRefineProductResponse
+     */
+    public DeleteReal3DRefineProductResponse deleteReal3DRefineProduct(DeleteReal3DRefineProductRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.deleteReal3DRefineProduct);
+    }
+
+    /**
+     * 删除实景三维精修后处理成果数据
+     *
+     * 调用该接口可删除实景三维精修后处理成果数据。当前仅支持成果数据状态为“available”时才可以删除。执行该接口后，成果数据状态更新为“deleting”。
+     * 
+     * &gt; 成果数据删除后不可恢复，请做好数据备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReal3DRefineProductRequest 请求对象
+     * @return SyncInvoker<DeleteReal3DRefineProductRequest, DeleteReal3DRefineProductResponse>
+     */
+    public SyncInvoker<DeleteReal3DRefineProductRequest, DeleteReal3DRefineProductResponse> deleteReal3DRefineProductInvoker(
+        DeleteReal3DRefineProductRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.deleteReal3DRefineProduct, hcClient);
+    }
+
+    /**
+     * 删除实景三维精修后处理任务
+     *
+     * 该接口可用于删除状态为初始化（INIT）、上传成功（UPLOAD_SUCCESS）、上传失败（UPLOAD_FAILED）、启动失败（START_FAILED）、运行成功（SUCCESS）、运行失败（FAILED）或已停止（STOP_SUCCESS）的精修后处理任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReal3DSubTaskRequest 请求对象
+     * @return DeleteReal3DSubTaskResponse
+     */
+    public DeleteReal3DSubTaskResponse deleteReal3DSubTask(DeleteReal3DSubTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.deleteReal3DSubTask);
+    }
+
+    /**
+     * 删除实景三维精修后处理任务
+     *
+     * 该接口可用于删除状态为初始化（INIT）、上传成功（UPLOAD_SUCCESS）、上传失败（UPLOAD_FAILED）、启动失败（START_FAILED）、运行成功（SUCCESS）、运行失败（FAILED）或已停止（STOP_SUCCESS）的精修后处理任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReal3DSubTaskRequest 请求对象
+     * @return SyncInvoker<DeleteReal3DSubTaskRequest, DeleteReal3DSubTaskResponse>
+     */
+    public SyncInvoker<DeleteReal3DSubTaskRequest, DeleteReal3DSubTaskResponse> deleteReal3DSubTaskInvoker(
+        DeleteReal3DSubTaskRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.deleteReal3DSubTask, hcClient);
     }
 
     /**
@@ -507,6 +612,98 @@ public class KooMapClient {
     public SyncInvoker<ListReal3DProductsRequest, ListReal3DProductsResponse> listReal3DProductsInvoker(
         ListReal3DProductsRequest request) {
         return new SyncInvoker<>(request, KooMapMeta.listReal3DProducts, hcClient);
+    }
+
+    /**
+     * 查询实景三维精修后处理成果数据列表
+     *
+     * 查询实景三维精修后处理成果的数据列表。支持的过滤参数：
+     * 
+     * - refine_product_id：精修后处理成果数据ID。
+     * - task_name：原始实景三维建模任务名称。
+     * - subtask_name：精修后处理任务别名。
+     * - subtask_create_time_from：精修后处理任务创建起始时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_create_time_to：精修后处理任务创建截止时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_completed_time_from：精修后处理任务完成起始时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_completed_time_to：精修后处理任务完成截止时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - offset：分页参数，偏移量，缺省值为0。
+     * - limit：分页参数，每页数量，缺省值为10。
+     * - order_by：排序参数，支持task_name_asc（原始任务名称增序）、task_name_desc（原始任务名称降序）、subtask_name_asc（后处理任务别名增序）、subtask_name_desc（后处理任务别名降序）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReal3DRefineProductsRequest 请求对象
+     * @return ListReal3DRefineProductsResponse
+     */
+    public ListReal3DRefineProductsResponse listReal3DRefineProducts(ListReal3DRefineProductsRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.listReal3DRefineProducts);
+    }
+
+    /**
+     * 查询实景三维精修后处理成果数据列表
+     *
+     * 查询实景三维精修后处理成果的数据列表。支持的过滤参数：
+     * 
+     * - refine_product_id：精修后处理成果数据ID。
+     * - task_name：原始实景三维建模任务名称。
+     * - subtask_name：精修后处理任务别名。
+     * - subtask_create_time_from：精修后处理任务创建起始时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_create_time_to：精修后处理任务创建截止时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_completed_time_from：精修后处理任务完成起始时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - subtask_completed_time_to：精修后处理任务完成截止时间，为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - offset：分页参数，偏移量，缺省值为0。
+     * - limit：分页参数，每页数量，缺省值为10。
+     * - order_by：排序参数，支持task_name_asc（原始任务名称增序）、task_name_desc（原始任务名称降序）、subtask_name_asc（后处理任务别名增序）、subtask_name_desc（后处理任务别名降序）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReal3DRefineProductsRequest 请求对象
+     * @return SyncInvoker<ListReal3DRefineProductsRequest, ListReal3DRefineProductsResponse>
+     */
+    public SyncInvoker<ListReal3DRefineProductsRequest, ListReal3DRefineProductsResponse> listReal3DRefineProductsInvoker(
+        ListReal3DRefineProductsRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.listReal3DRefineProducts, hcClient);
+    }
+
+    /**
+     * 分页查询实景三维精修后处理任务列表
+     *
+     * 对单个实景三维建模任务内的精修后处理任务进行分页查询，支持过滤条件：
+     * - 实景三维精修后处理任务ID（subtask_id）：支持根据ID查询特定精修后处理任务。
+     * - 实景三维精修后处理任务别名（subtask_name）：支持根据精修后处理任务别名进行模糊查询。
+     * - 实景三维精修后处理任务状态（subtask_status）：支持同时查询多种状态的精修后处理任务。
+     * - 实景三维精修后处理任务创建时间范围（create_time_from和create_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - 实景三维精修后处理任务更新时间范围（update_time_from和update_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - 分页参数：偏移量offset（缺省值为0）、每页数量limit（缺省值为10）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReal3DSubTasksRequest 请求对象
+     * @return ListReal3DSubTasksResponse
+     */
+    public ListReal3DSubTasksResponse listReal3DSubTasks(ListReal3DSubTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.listReal3DSubTasks);
+    }
+
+    /**
+     * 分页查询实景三维精修后处理任务列表
+     *
+     * 对单个实景三维建模任务内的精修后处理任务进行分页查询，支持过滤条件：
+     * - 实景三维精修后处理任务ID（subtask_id）：支持根据ID查询特定精修后处理任务。
+     * - 实景三维精修后处理任务别名（subtask_name）：支持根据精修后处理任务别名进行模糊查询。
+     * - 实景三维精修后处理任务状态（subtask_status）：支持同时查询多种状态的精修后处理任务。
+     * - 实景三维精修后处理任务创建时间范围（create_time_from和create_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - 实景三维精修后处理任务更新时间范围（update_time_from和update_time_to）：为UTC时间格式字符串，格式为yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+     * - 分页参数：偏移量offset（缺省值为0）、每页数量limit（缺省值为10）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReal3DSubTasksRequest 请求对象
+     * @return SyncInvoker<ListReal3DSubTasksRequest, ListReal3DSubTasksResponse>
+     */
+    public SyncInvoker<ListReal3DSubTasksRequest, ListReal3DSubTasksResponse> listReal3DSubTasksInvoker(
+        ListReal3DSubTasksRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.listReal3DSubTasks, hcClient);
     }
 
     /**
@@ -803,6 +1000,39 @@ public class KooMapClient {
     }
 
     /**
+     * 启动实景三维精修后处理任务
+     *
+     * 该接口用于启动精修后处理任务。该接口运行成功后，任务状态更新为等待中（PENDING），此时任务添加到启动队列中等待运行资源就绪，资源就绪后状态更新为启动中（STARTING），启动成功后状态更新为运行中（RUNNING），若启动失败则状态更新为启动失败（START_FAILED）。
+     * 
+     * 精修后处理任务允许启动的状态为：上传成功（UPLOAD_SUCCESS）、已停止（STOP_SUCCESS）、运行失败（FAILED）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartReal3DSubTaskRequest 请求对象
+     * @return StartReal3DSubTaskResponse
+     */
+    public StartReal3DSubTaskResponse startReal3DSubTask(StartReal3DSubTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.startReal3DSubTask);
+    }
+
+    /**
+     * 启动实景三维精修后处理任务
+     *
+     * 该接口用于启动精修后处理任务。该接口运行成功后，任务状态更新为等待中（PENDING），此时任务添加到启动队列中等待运行资源就绪，资源就绪后状态更新为启动中（STARTING），启动成功后状态更新为运行中（RUNNING），若启动失败则状态更新为启动失败（START_FAILED）。
+     * 
+     * 精修后处理任务允许启动的状态为：上传成功（UPLOAD_SUCCESS）、已停止（STOP_SUCCESS）、运行失败（FAILED）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartReal3DSubTaskRequest 请求对象
+     * @return SyncInvoker<StartReal3DSubTaskRequest, StartReal3DSubTaskResponse>
+     */
+    public SyncInvoker<StartReal3DSubTaskRequest, StartReal3DSubTaskResponse> startReal3DSubTaskInvoker(
+        StartReal3DSubTaskRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.startReal3DSubTask, hcClient);
+    }
+
+    /**
      * 启动实景三维建模任务
      *
      * 该接口用于启动任务。该接口运行成功后，任务状态更新为等待中（PENDING），此时任务添加到启动队列中等待运行资源就绪。资源就绪后任务状态更新为启动中（STARTING），启动成功后任务状态更新为运行中（RUNNING），若启动失败则任务状态更新为启动失败（START_FAILED）。当建模任务类型为有控建模时，为了提升刺点效率需要先对影像进行空三建模。执行空三建模需要设置请求体的“run_AT_only”为“true”，空三建模成功后，任务状态更新为空三建模成功（BUNDLE_SUCCESS）。
@@ -889,6 +1119,35 @@ public class KooMapClient {
      */
     public SyncInvoker<StartVpsRequest, StartVpsResponse> startVpsInvoker(StartVpsRequest request) {
         return new SyncInvoker<>(request, KooMapMeta.startVps, hcClient);
+    }
+
+    /**
+     * 停止实景三维精修后处理任务
+     *
+     * 该接口用于停止状态为等待中（PENDING）、启动中（STARTING）或者运行中（RUNNING）的精修后处理任务。任务停止后，状态更新规则如下：
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopReal3DSubTaskRequest 请求对象
+     * @return StopReal3DSubTaskResponse
+     */
+    public StopReal3DSubTaskResponse stopReal3DSubTask(StopReal3DSubTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMapMeta.stopReal3DSubTask);
+    }
+
+    /**
+     * 停止实景三维精修后处理任务
+     *
+     * 该接口用于停止状态为等待中（PENDING）、启动中（STARTING）或者运行中（RUNNING）的精修后处理任务。任务停止后，状态更新规则如下：
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopReal3DSubTaskRequest 请求对象
+     * @return SyncInvoker<StopReal3DSubTaskRequest, StopReal3DSubTaskResponse>
+     */
+    public SyncInvoker<StopReal3DSubTaskRequest, StopReal3DSubTaskResponse> stopReal3DSubTaskInvoker(
+        StopReal3DSubTaskRequest request) {
+        return new SyncInvoker<>(request, KooMapMeta.stopReal3DSubTask, hcClient);
     }
 
     /**

@@ -136,6 +136,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
+import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DropDatabaseV3Req;
@@ -1413,6 +1415,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSqlLimitRuleReqV3.class),
             f -> f.withMarshaller(DeleteSqlLimitRequest::getBody, DeleteSqlLimitRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlog =
+        genForDownloadErrorlog();
+
+    private static HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> genForDownloadErrorlog() {
+        // basic
+        HttpRequestDef.Builder<DownloadErrorlogRequest, DownloadErrorlogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadErrorlogRequest.class, DownloadErrorlogResponse.class)
+                .withName("DownloadErrorlog")
+                .withUri("/v3/{project_id}/instances/{instance_id}/errorlog-download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadErrorlogRequest::getInstanceId, DownloadErrorlogRequest::setInstanceId));
+        builder.<DownloadErrorlogRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DownloadErrorlogRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DownloadErrorlogRequest::getXLanguage, DownloadErrorlogRequest::setXLanguage));
 
         // response
 

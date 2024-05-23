@@ -32,6 +32,11 @@ public class CreateRobotReq {
     private LanguageEnum language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tail_silence_time")
+
+    private Integer tailSilenceTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huawei_ei_cbs")
 
     private HuaweiEiCbs huaweiEiCbs;
@@ -124,6 +129,25 @@ public class CreateRobotReq {
 
     public void setLanguage(LanguageEnum language) {
         this.language = language;
+    }
+
+    public CreateRobotReq withTailSilenceTime(Integer tailSilenceTime) {
+        this.tailSilenceTime = tailSilenceTime;
+        return this;
+    }
+
+    /**
+     * 语音识别后端点静音时长默认500ms
+     * minimum: 0
+     * maximum: 3000
+     * @return tailSilenceTime
+     */
+    public Integer getTailSilenceTime() {
+        return tailSilenceTime;
+    }
+
+    public void setTailSilenceTime(Integer tailSilenceTime) {
+        this.tailSilenceTime = tailSilenceTime;
     }
 
     public CreateRobotReq withHuaweiEiCbs(HuaweiEiCbs huaweiEiCbs) {
@@ -267,6 +291,7 @@ public class CreateRobotReq {
         CreateRobotReq that = (CreateRobotReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.tailSilenceTime, that.tailSilenceTime)
             && Objects.equals(this.huaweiEiCbs, that.huaweiEiCbs)
             && Objects.equals(this.iflytekAiuiConfig, that.iflytekAiuiConfig)
             && Objects.equals(this.iflytekSpark, that.iflytekSpark)
@@ -280,6 +305,7 @@ public class CreateRobotReq {
             appType,
             roomId,
             language,
+            tailSilenceTime,
             huaweiEiCbs,
             iflytekAiuiConfig,
             iflytekSpark,
@@ -295,6 +321,7 @@ public class CreateRobotReq {
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    tailSilenceTime: ").append(toIndentedString(tailSilenceTime)).append("\n");
         sb.append("    huaweiEiCbs: ").append(toIndentedString(huaweiEiCbs)).append("\n");
         sb.append("    iflytekAiuiConfig: ").append(toIndentedString(iflytekAiuiConfig)).append("\n");
         sb.append("    iflytekSpark: ").append(toIndentedString(iflytekSpark)).append("\n");

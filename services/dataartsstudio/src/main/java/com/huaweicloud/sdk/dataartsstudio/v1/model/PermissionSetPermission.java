@@ -453,6 +453,11 @@ public class PermissionSetPermission {
 
     private String syncMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "url")
+
+    private String url;
+
     public PermissionSetPermission withId(String id) {
         this.id = id;
         return this;
@@ -795,6 +800,23 @@ public class PermissionSetPermission {
         this.syncMsg = syncMsg;
     }
 
+    public PermissionSetPermission withUrl(String url) {
+        this.url = url;
+        return this;
+    }
+
+    /**
+     * url路径名称。
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -816,7 +838,8 @@ public class PermissionSetPermission {
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.columnName, that.columnName)
             && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity)
-            && Objects.equals(this.syncStatus, that.syncStatus) && Objects.equals(this.syncMsg, that.syncMsg);
+            && Objects.equals(this.syncStatus, that.syncStatus) && Objects.equals(this.syncMsg, that.syncMsg)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override
@@ -839,7 +862,8 @@ public class PermissionSetPermission {
             columnName,
             rowLevelSecurity,
             syncStatus,
-            syncMsg);
+            syncMsg,
+            url);
     }
 
     @Override
@@ -865,6 +889,7 @@ public class PermissionSetPermission {
         sb.append("    rowLevelSecurity: ").append(toIndentedString(rowLevelSecurity)).append("\n");
         sb.append("    syncStatus: ").append(toIndentedString(syncStatus)).append("\n");
         sb.append("    syncMsg: ").append(toIndentedString(syncMsg)).append("\n");
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("}");
         return sb.toString();
     }

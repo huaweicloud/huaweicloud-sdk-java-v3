@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,37 +11,37 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Response Object
+ * Request Object
  */
-public class CheckTextLanguageResponse extends SdkResponse {
+public class DeleteAgencyWithRoleTypeRequest {
 
     /**
-     * 语言检测状态。 * MATCHED: 匹配 * UNMATCHED: 不匹配
+     * 委托授权类型 * CBS:对话机器人服务（CBS）访客 * SIS:语音交互服务(SIS)调用
      */
-    public static final class ResultEnum {
+    public static final class RoleTypeEnum {
 
         /**
-         * Enum MATCHED for value: "MATCHED"
+         * Enum CBS for value: "CBS"
          */
-        public static final ResultEnum MATCHED = new ResultEnum("MATCHED");
+        public static final RoleTypeEnum CBS = new RoleTypeEnum("CBS");
 
         /**
-         * Enum UNMATCHED for value: "UNMATCHED"
+         * Enum SIS for value: "SIS"
          */
-        public static final ResultEnum UNMATCHED = new ResultEnum("UNMATCHED");
+        public static final RoleTypeEnum SIS = new RoleTypeEnum("SIS");
 
-        private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, RoleTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, ResultEnum> createStaticFields() {
-            Map<String, ResultEnum> map = new HashMap<>();
-            map.put("MATCHED", MATCHED);
-            map.put("UNMATCHED", UNMATCHED);
+        private static Map<String, RoleTypeEnum> createStaticFields() {
+            Map<String, RoleTypeEnum> map = new HashMap<>();
+            map.put("CBS", CBS);
+            map.put("SIS", SIS);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        ResultEnum(String value) {
+        RoleTypeEnum(String value) {
             this.value = value;
         }
 
@@ -57,14 +56,14 @@ public class CheckTextLanguageResponse extends SdkResponse {
         }
 
         @JsonCreator
-        public static ResultEnum fromValue(String value) {
+        public static RoleTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleTypeEnum(value));
         }
 
-        public static ResultEnum valueOf(String value) {
+        public static RoleTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -74,8 +73,8 @@ public class CheckTextLanguageResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ResultEnum) {
-                return this.value.equals(((ResultEnum) obj).value);
+            if (obj instanceof RoleTypeEnum) {
+                return this.value.equals(((RoleTypeEnum) obj).value);
             }
             return false;
         }
@@ -87,25 +86,25 @@ public class CheckTextLanguageResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result")
+    @JsonProperty(value = "role_type")
 
-    private ResultEnum result;
+    private RoleTypeEnum roleType;
 
-    public CheckTextLanguageResponse withResult(ResultEnum result) {
-        this.result = result;
+    public DeleteAgencyWithRoleTypeRequest withRoleType(RoleTypeEnum roleType) {
+        this.roleType = roleType;
         return this;
     }
 
     /**
-     * 语言检测状态。 * MATCHED: 匹配 * UNMATCHED: 不匹配
-     * @return result
+     * 委托授权类型 * CBS:对话机器人服务（CBS）访客 * SIS:语音交互服务(SIS)调用
+     * @return roleType
      */
-    public ResultEnum getResult() {
-        return result;
+    public RoleTypeEnum getRoleType() {
+        return roleType;
     }
 
-    public void setResult(ResultEnum result) {
-        this.result = result;
+    public void setRoleType(RoleTypeEnum roleType) {
+        this.roleType = roleType;
     }
 
     @Override
@@ -116,20 +115,20 @@ public class CheckTextLanguageResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTextLanguageResponse that = (CheckTextLanguageResponse) obj;
-        return Objects.equals(this.result, that.result);
+        DeleteAgencyWithRoleTypeRequest that = (DeleteAgencyWithRoleTypeRequest) obj;
+        return Objects.equals(this.roleType, that.roleType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result);
+        return Objects.hash(roleType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckTextLanguageResponse {\n");
-        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("class DeleteAgencyWithRoleTypeRequest {\n");
+        sb.append("    roleType: ").append(toIndentedString(roleType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

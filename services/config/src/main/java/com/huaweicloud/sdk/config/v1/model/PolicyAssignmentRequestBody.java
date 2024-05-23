@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -214,6 +216,11 @@ public class PolicyAssignmentRequestBody {
 
     private Map<String, PolicyParameterValue> parameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
     public PolicyAssignmentRequestBody withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
         this.policyAssignmentType = policyAssignmentType;
         return this;
@@ -384,6 +391,39 @@ public class PolicyAssignmentRequestBody {
         this.parameters = parameters;
     }
 
+    public PolicyAssignmentRequestBody withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PolicyAssignmentRequestBody addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PolicyAssignmentRequestBody withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -398,7 +438,7 @@ public class PolicyAssignmentRequestBody {
             && Objects.equals(this.period, that.period) && Objects.equals(this.policyFilter, that.policyFilter)
             && Objects.equals(this.customPolicy, that.customPolicy)
             && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
-            && Objects.equals(this.parameters, that.parameters);
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -410,7 +450,8 @@ public class PolicyAssignmentRequestBody {
             policyFilter,
             customPolicy,
             policyDefinitionId,
-            parameters);
+            parameters,
+            tags);
     }
 
     @Override
@@ -425,6 +466,7 @@ public class PolicyAssignmentRequestBody {
         sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,6 +35,16 @@ public class ThirdPartyModelConfig {
 
     private Integer chatRounds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_region")
+
+    private Integer sisRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_project_id")
+
+    private String sisProjectId;
+
     public ThirdPartyModelConfig withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -122,6 +132,42 @@ public class ThirdPartyModelConfig {
         this.chatRounds = chatRounds;
     }
 
+    public ThirdPartyModelConfig withSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+        return this;
+    }
+
+    /**
+     * SIS所在区域
+     * minimum: 0
+     * maximum: 32
+     * @return sisRegion
+     */
+    public Integer getSisRegion() {
+        return sisRegion;
+    }
+
+    public void setSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+    }
+
+    public ThirdPartyModelConfig withSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
+        return this;
+    }
+
+    /**
+     * SIS所在区域的projectId
+     * @return sisProjectId
+     */
+    public String getSisProjectId() {
+        return sisProjectId;
+    }
+
+    public void setSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -133,12 +179,13 @@ public class ThirdPartyModelConfig {
         ThirdPartyModelConfig that = (ThirdPartyModelConfig) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.appKey, that.appKey)
             && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
-            && Objects.equals(this.chatRounds, that.chatRounds);
+            && Objects.equals(this.chatRounds, that.chatRounds) && Objects.equals(this.sisRegion, that.sisRegion)
+            && Objects.equals(this.sisProjectId, that.sisProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appKey, llmUrl, isStream, chatRounds);
+        return Objects.hash(appId, appKey, llmUrl, isStream, chatRounds, sisRegion, sisProjectId);
     }
 
     @Override
@@ -150,6 +197,8 @@ public class ThirdPartyModelConfig {
         sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
         sb.append("    isStream: ").append(toIndentedString(isStream)).append("\n");
         sb.append("    chatRounds: ").append(toIndentedString(chatRounds)).append("\n");
+        sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
+        sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

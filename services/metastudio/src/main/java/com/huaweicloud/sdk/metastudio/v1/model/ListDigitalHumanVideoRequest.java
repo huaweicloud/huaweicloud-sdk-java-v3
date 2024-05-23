@@ -80,6 +80,11 @@ public class ListDigitalHumanVideoRequest {
 
     private String jobType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public ListDigitalHumanVideoRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -328,6 +333,23 @@ public class ListDigitalHumanVideoRequest {
         this.jobType = jobType;
     }
 
+    public ListDigitalHumanVideoRequest withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 任务ID。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -343,7 +365,8 @@ public class ListDigitalHumanVideoRequest {
             && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
             && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.scriptId, that.scriptId)
-            && Objects.equals(this.assetName, that.assetName) && Objects.equals(this.jobType, that.jobType);
+            && Objects.equals(this.assetName, that.assetName) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
@@ -361,7 +384,8 @@ public class ListDigitalHumanVideoRequest {
             createSince,
             scriptId,
             assetName,
-            jobType);
+            jobType,
+            jobId);
     }
 
     @Override
@@ -382,6 +406,7 @@ public class ListDigitalHumanVideoRequest {
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

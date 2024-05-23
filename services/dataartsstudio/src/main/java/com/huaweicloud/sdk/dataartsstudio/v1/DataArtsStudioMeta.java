@@ -7096,6 +7096,18 @@ public class DataArtsStudioMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDlfDataWareHousesRequest::getOffset,
+                ListSecurityDlfDataWareHousesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDlfDataWareHousesRequest::getLimit,
+                ListSecurityDlfDataWareHousesRequest::setLimit));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

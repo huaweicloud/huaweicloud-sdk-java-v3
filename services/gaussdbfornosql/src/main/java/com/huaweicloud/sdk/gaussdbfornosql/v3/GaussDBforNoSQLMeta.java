@@ -220,12 +220,17 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPasswordlessConfigRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPasswordlessConfigResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRequest;
@@ -264,6 +269,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationR
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupResponse;
@@ -2875,6 +2883,40 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPasswordlessConfigRequest, ShowPasswordlessConfigResponse> showPasswordlessConfig =
+        genForShowPasswordlessConfig();
+
+    private static HttpRequestDef<ShowPasswordlessConfigRequest, ShowPasswordlessConfigResponse> genForShowPasswordlessConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowPasswordlessConfigRequest, ShowPasswordlessConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPasswordlessConfigRequest.class, ShowPasswordlessConfigResponse.class)
+            .withName("ShowPasswordlessConfig")
+            .withUri("/v3/{project_id}/instances/{instance_id}/passwordless-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPasswordlessConfigRequest::getInstanceId,
+                ShowPasswordlessConfigRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPasswordlessConfigRequest::getOffset, ShowPasswordlessConfigRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPasswordlessConfigRequest::getLimit, ShowPasswordlessConfigRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutus =
         genForShowPauseResumeStutus();
 
@@ -2943,6 +2985,34 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, ShowRecyclePolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRedisBigKeysRequest, ShowRedisBigKeysResponse> showRedisBigKeys =
+        genForShowRedisBigKeys();
+
+    private static HttpRequestDef<ShowRedisBigKeysRequest, ShowRedisBigKeysResponse> genForShowRedisBigKeys() {
+        // basic
+        HttpRequestDef.Builder<ShowRedisBigKeysRequest, ShowRedisBigKeysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowRedisBigKeysRequest.class, ShowRedisBigKeysResponse.class)
+                .withName("ShowRedisBigKeys")
+                .withUri("/v3/{project_id}/instances/{instance_id}/big-keys")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRedisBigKeysRequest::getInstanceId, ShowRedisBigKeysRequest::setInstanceId));
+        builder.<ShowRedisBigKeysRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowRedisBigKeysRequestBody.class),
+            f -> f.withMarshaller(ShowRedisBigKeysRequest::getBody, ShowRedisBigKeysRequest::setBody));
 
         // response
 
@@ -3345,6 +3415,36 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceNameRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, UpdateInstanceNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePasswordlessConfigRequest, UpdatePasswordlessConfigResponse> updatePasswordlessConfig =
+        genForUpdatePasswordlessConfig();
+
+    private static HttpRequestDef<UpdatePasswordlessConfigRequest, UpdatePasswordlessConfigResponse> genForUpdatePasswordlessConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdatePasswordlessConfigRequest, UpdatePasswordlessConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdatePasswordlessConfigRequest.class, UpdatePasswordlessConfigResponse.class)
+                .withName("UpdatePasswordlessConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/passwordless-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePasswordlessConfigRequest::getInstanceId,
+                UpdatePasswordlessConfigRequest::setInstanceId));
+        builder.<UpdatePasswordlessConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePasswordlessConfigRequestBody.class),
+            f -> f.withMarshaller(UpdatePasswordlessConfigRequest::getBody, UpdatePasswordlessConfigRequest::setBody));
 
         // response
 

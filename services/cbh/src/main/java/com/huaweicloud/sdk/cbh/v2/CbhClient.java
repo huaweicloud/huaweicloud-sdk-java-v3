@@ -2,6 +2,8 @@ package com.huaweicloud.sdk.cbh.v2;
 
 import com.huaweicloud.sdk.cbh.v2.model.BatchCreateInstanceTagRequest;
 import com.huaweicloud.sdk.cbh.v2.model.BatchCreateInstanceTagResponse;
+import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceTypeRequest;
+import com.huaweicloud.sdk.cbh.v2.model.ChangeInstanceTypeResponse;
 import com.huaweicloud.sdk.cbh.v2.model.CountInstancesByTagRequest;
 import com.huaweicloud.sdk.cbh.v2.model.CountInstancesByTagResponse;
 import com.huaweicloud.sdk.cbh.v2.model.CreateInstanceRequest;
@@ -20,6 +22,8 @@ import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminRequest;
+import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminResponse;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceResponse;
 import com.huaweicloud.sdk.cbh.v2.model.RebootInstanceRequest;
@@ -50,6 +54,8 @@ import com.huaweicloud.sdk.cbh.v2.model.StartInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.StartInstanceResponse;
 import com.huaweicloud.sdk.cbh.v2.model.StopInstanceRequest;
 import com.huaweicloud.sdk.cbh.v2.model.StopInstanceResponse;
+import com.huaweicloud.sdk.cbh.v2.model.SwitchInstanceVpcRequest;
+import com.huaweicloud.sdk.cbh.v2.model.SwitchInstanceVpcResponse;
 import com.huaweicloud.sdk.cbh.v2.model.UninstallInstanceEipRequest;
 import com.huaweicloud.sdk.cbh.v2.model.UninstallInstanceEipResponse;
 import com.huaweicloud.sdk.cbh.v2.model.UpdateInstanceSecurityGroupRequest;
@@ -100,6 +106,35 @@ public class CbhClient {
     public SyncInvoker<BatchCreateInstanceTagRequest, BatchCreateInstanceTagResponse> batchCreateInstanceTagInvoker(
         BatchCreateInstanceTagRequest request) {
         return new SyncInvoker<>(request, CbhMeta.batchCreateInstanceTag, hcClient);
+    }
+
+    /**
+     * 修改单机堡垒机实例类型
+     *
+     * 修改单机堡垒机实例类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeInstanceTypeRequest 请求对象
+     * @return ChangeInstanceTypeResponse
+     */
+    public ChangeInstanceTypeResponse changeInstanceType(ChangeInstanceTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.changeInstanceType);
+    }
+
+    /**
+     * 修改单机堡垒机实例类型
+     *
+     * 修改单机堡垒机实例类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeInstanceTypeRequest 请求对象
+     * @return SyncInvoker<ChangeInstanceTypeRequest, ChangeInstanceTypeResponse>
+     */
+    public SyncInvoker<ChangeInstanceTypeRequest, ChangeInstanceTypeResponse> changeInstanceTypeInvoker(
+        ChangeInstanceTypeRequest request) {
+        return new SyncInvoker<>(request, CbhMeta.changeInstanceType, hcClient);
     }
 
     /**
@@ -387,6 +422,35 @@ public class CbhClient {
      */
     public SyncInvoker<LoginInstanceRequest, LoginInstanceResponse> loginInstanceInvoker(LoginInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.loginInstance, hcClient);
+    }
+
+    /**
+     * 用户登录堡垒机实例admin的console
+     *
+     * 用户登录堡垒机实例admin的console。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginInstanceAdminRequest 请求对象
+     * @return LoginInstanceAdminResponse
+     */
+    public LoginInstanceAdminResponse loginInstanceAdmin(LoginInstanceAdminRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.loginInstanceAdmin);
+    }
+
+    /**
+     * 用户登录堡垒机实例admin的console
+     *
+     * 用户登录堡垒机实例admin的console。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginInstanceAdminRequest 请求对象
+     * @return SyncInvoker<LoginInstanceAdminRequest, LoginInstanceAdminResponse>
+     */
+    public SyncInvoker<LoginInstanceAdminRequest, LoginInstanceAdminResponse> loginInstanceAdminInvoker(
+        LoginInstanceAdminRequest request) {
+        return new SyncInvoker<>(request, CbhMeta.loginInstanceAdmin, hcClient);
     }
 
     /**
@@ -788,6 +852,35 @@ public class CbhClient {
      */
     public SyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceInvoker(StopInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.stopInstance, hcClient);
+    }
+
+    /**
+     * 切换堡垒机虚拟私有云
+     *
+     * 切换堡垒机虚拟私有云
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchInstanceVpcRequest 请求对象
+     * @return SwitchInstanceVpcResponse
+     */
+    public SwitchInstanceVpcResponse switchInstanceVpc(SwitchInstanceVpcRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.switchInstanceVpc);
+    }
+
+    /**
+     * 切换堡垒机虚拟私有云
+     *
+     * 切换堡垒机虚拟私有云
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchInstanceVpcRequest 请求对象
+     * @return SyncInvoker<SwitchInstanceVpcRequest, SwitchInstanceVpcResponse>
+     */
+    public SyncInvoker<SwitchInstanceVpcRequest, SwitchInstanceVpcResponse> switchInstanceVpcInvoker(
+        SwitchInstanceVpcRequest request) {
+        return new SyncInvoker<>(request, CbhMeta.switchInstanceVpc, hcClient);
     }
 
     /**

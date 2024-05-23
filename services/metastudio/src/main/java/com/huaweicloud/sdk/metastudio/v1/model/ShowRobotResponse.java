@@ -82,9 +82,29 @@ public class ShowRobotResponse extends SdkResponse {
     private Integer chatRounds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ifly_production")
+
+    private Boolean isIflyProduction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tail_silence_time")
+
+    private Integer tailSilenceTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role_id")
 
     private String roleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_region")
+
+    private Integer sisRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sis_project_id")
+
+    private String sisProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -335,6 +355,42 @@ public class ShowRobotResponse extends SdkResponse {
         this.chatRounds = chatRounds;
     }
 
+    public ShowRobotResponse withIsIflyProduction(Boolean isIflyProduction) {
+        this.isIflyProduction = isIflyProduction;
+        return this;
+    }
+
+    /**
+     * 是否为正式环境
+     * @return isIflyProduction
+     */
+    public Boolean getIsIflyProduction() {
+        return isIflyProduction;
+    }
+
+    public void setIsIflyProduction(Boolean isIflyProduction) {
+        this.isIflyProduction = isIflyProduction;
+    }
+
+    public ShowRobotResponse withTailSilenceTime(Integer tailSilenceTime) {
+        this.tailSilenceTime = tailSilenceTime;
+        return this;
+    }
+
+    /**
+     * 语音识别后端点静音时长默认500ms
+     * minimum: 0
+     * maximum: 3000
+     * @return tailSilenceTime
+     */
+    public Integer getTailSilenceTime() {
+        return tailSilenceTime;
+    }
+
+    public void setTailSilenceTime(Integer tailSilenceTime) {
+        this.tailSilenceTime = tailSilenceTime;
+    }
+
     public ShowRobotResponse withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -350,6 +406,42 @@ public class ShowRobotResponse extends SdkResponse {
 
     public void setRoleId(String roleId) {
         this.roleId = roleId;
+    }
+
+    public ShowRobotResponse withSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+        return this;
+    }
+
+    /**
+     * SIS所在区域
+     * minimum: 0
+     * maximum: 32
+     * @return sisRegion
+     */
+    public Integer getSisRegion() {
+        return sisRegion;
+    }
+
+    public void setSisRegion(Integer sisRegion) {
+        this.sisRegion = sisRegion;
+    }
+
+    public ShowRobotResponse withSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
+        return this;
+    }
+
+    /**
+     * SIS所在区域的projectId
+     * @return sisProjectId
+     */
+    public String getSisProjectId() {
+        return sisProjectId;
+    }
+
+    public void setSisProjectId(String sisProjectId) {
+        this.sisProjectId = sisProjectId;
     }
 
     public ShowRobotResponse withXRequestId(String xRequestId) {
@@ -387,7 +479,10 @@ public class ShowRobotResponse extends SdkResponse {
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.region, that.region)
             && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.llmUrl, that.llmUrl)
             && Objects.equals(this.isStream, that.isStream) && Objects.equals(this.chatRounds, that.chatRounds)
-            && Objects.equals(this.roleId, that.roleId) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.isIflyProduction, that.isIflyProduction)
+            && Objects.equals(this.tailSilenceTime, that.tailSilenceTime) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -406,7 +501,11 @@ public class ShowRobotResponse extends SdkResponse {
             llmUrl,
             isStream,
             chatRounds,
+            isIflyProduction,
+            tailSilenceTime,
             roleId,
+            sisRegion,
+            sisProjectId,
             xRequestId);
     }
 
@@ -428,7 +527,11 @@ public class ShowRobotResponse extends SdkResponse {
         sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
         sb.append("    isStream: ").append(toIndentedString(isStream)).append("\n");
         sb.append("    chatRounds: ").append(toIndentedString(chatRounds)).append("\n");
+        sb.append("    isIflyProduction: ").append(toIndentedString(isIflyProduction)).append("\n");
+        sb.append("    tailSilenceTime: ").append(toIndentedString(tailSilenceTime)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
+        sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

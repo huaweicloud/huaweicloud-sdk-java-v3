@@ -109,7 +109,7 @@ public class ImageMediaTaggingReq {
     }
 
     /**
-     * 最多返回的tag数（取值范围：1~150），默认值： 50
+     * 最多返回的tag数（取值范围：1~150），默认值： 10。
      * @return limit
      */
     public Integer getLimit() {

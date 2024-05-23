@@ -36,7 +36,7 @@ public class CreateBusinessModel {
     private String descp;
 
     /**
-     * 新建类型
+     * 默认值为SKYWALKING。
      */
     public static final class CmdbDatasourceTypeEnum {
 
@@ -133,7 +133,7 @@ public class CreateBusinessModel {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，默认值为“0”，表示默认项目的ID。
      * @return epsId
      */
     public String getEpsId() {
@@ -184,7 +184,7 @@ public class CreateBusinessModel {
     }
 
     /**
-     * 新建类型
+     * 默认值为SKYWALKING。
      * @return cmdbDatasourceType
      */
     public CmdbDatasourceTypeEnum getCmdbDatasourceType() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 训练类型。 * LLM_MAJOR: 大模型中英文版 * LLM_MINOR: 大模型中小语种版 * BASIC: 基础版(20句话) * MIDDLE: 进阶版(100句话) * ADVANCE: 高级版 * THIRD_PARTY: 第三方训练版
+ * 训练类型。 * LLM_MAJOR: 大模型中英文版 * LLM_MINOR: 大模型中小语种版 * BASIC: 基础版(20句话) * MIDDLE: 进阶版(100句话) * ADVANCE: 高级版 * THIRD_PARTY: 第三方出门问问训练版
  */
 public class JobType {
 

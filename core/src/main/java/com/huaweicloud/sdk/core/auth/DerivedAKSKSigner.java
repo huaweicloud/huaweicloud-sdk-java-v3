@@ -184,10 +184,11 @@ public class DerivedAKSKSigner extends AKSKSigner {
                 for (int i = 1; i <= ceil; ++i) {
                     temp = expandOnce(info, mac, temp, i);
 
-                    ByteArrayOutputStream combineBytes = new ByteArrayOutputStream();
-                    combineBytes.write(rawResult);
-                    combineBytes.write(temp);
-                    rawResult = combineBytes.toByteArray();
+                    try (ByteArrayOutputStream combineBytes = new ByteArrayOutputStream()) {
+                        combineBytes.write(rawResult);
+                        combineBytes.write(temp);
+                        rawResult = combineBytes.toByteArray();
+                    }
                 }
             }
 
@@ -208,11 +209,12 @@ public class DerivedAKSKSigner extends AKSKSigner {
         }
 
         private static byte[] expandOnce(byte[] info, Mac mac, byte[] preTemp, int i) throws IOException {
-            ByteArrayOutputStream hashBytes = new ByteArrayOutputStream();
-            hashBytes.write(preTemp);
-            hashBytes.write(info);
-            hashBytes.write(i);
-            return mac.doFinal(hashBytes.toByteArray());
+            try (ByteArrayOutputStream hashBytes = new ByteArrayOutputStream()) {
+                hashBytes.write(preTemp);
+                hashBytes.write(info);
+                hashBytes.write(i);
+                return mac.doFinal(hashBytes.toByteArray());
+            }
         }
 
         private static int getHashLen(String hmacAlgorithm) {

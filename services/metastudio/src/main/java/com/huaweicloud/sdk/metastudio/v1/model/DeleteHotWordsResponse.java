@@ -2,44 +2,37 @@ package com.huaweicloud.sdk.metastudio.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * Request Object
+ * Response Object
  */
-public class CheckTextLanguageRequest {
+public class DeleteHotWordsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "X-Request-Id")
 
-    private LanguageCheckInfoReq body;
+    private String xRequestId;
 
-    public CheckTextLanguageRequest withBody(LanguageCheckInfoReq body) {
-        this.body = body;
-        return this;
-    }
-
-    public CheckTextLanguageRequest withBody(Consumer<LanguageCheckInfoReq> bodySetter) {
-        if (this.body == null) {
-            this.body = new LanguageCheckInfoReq();
-            bodySetter.accept(this.body);
-        }
-
+    public DeleteHotWordsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * Get xRequestId
+     * @return xRequestId
      */
-    public LanguageCheckInfoReq getBody() {
-        return body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
     }
 
-    public void setBody(LanguageCheckInfoReq body) {
-        this.body = body;
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -50,20 +43,20 @@ public class CheckTextLanguageRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTextLanguageRequest that = (CheckTextLanguageRequest) obj;
-        return Objects.equals(this.body, that.body);
+        DeleteHotWordsResponse that = (DeleteHotWordsResponse) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckTextLanguageRequest {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("class DeleteHotWordsResponse {\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

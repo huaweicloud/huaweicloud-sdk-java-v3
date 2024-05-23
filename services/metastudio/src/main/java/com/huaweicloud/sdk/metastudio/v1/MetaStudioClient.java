@@ -7,8 +7,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
@@ -23,6 +21,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateHotWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Delete2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -95,6 +99,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentRequest;
@@ -139,6 +145,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
@@ -185,6 +193,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
@@ -193,6 +203,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardReque
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
@@ -255,6 +269,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentRequest;
@@ -461,6 +479,92 @@ public class MetaStudioClient {
     public SyncInvoker<UpdateActiveCodeRequest, UpdateActiveCodeResponse> updateActiveCodeInvoker(
         UpdateActiveCodeRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.updateActiveCode, hcClient);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 该接口用于创建委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyWithRoleTypeRequest 请求对象
+     * @return CreateAgencyWithRoleTypeResponse
+     */
+    public CreateAgencyWithRoleTypeResponse createAgencyWithRoleType(CreateAgencyWithRoleTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createAgencyWithRoleType);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 该接口用于创建委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyWithRoleTypeRequest 请求对象
+     * @return SyncInvoker<CreateAgencyWithRoleTypeRequest, CreateAgencyWithRoleTypeResponse>
+     */
+    public SyncInvoker<CreateAgencyWithRoleTypeRequest, CreateAgencyWithRoleTypeResponse> createAgencyWithRoleTypeInvoker(
+        CreateAgencyWithRoleTypeRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createAgencyWithRoleType, hcClient);
+    }
+
+    /**
+     * 删除委托
+     *
+     * 该接口用于删除项目下委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgencyWithRoleTypeRequest 请求对象
+     * @return DeleteAgencyWithRoleTypeResponse
+     */
+    public DeleteAgencyWithRoleTypeResponse deleteAgencyWithRoleType(DeleteAgencyWithRoleTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteAgencyWithRoleType);
+    }
+
+    /**
+     * 删除委托
+     *
+     * 该接口用于删除项目下委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgencyWithRoleTypeRequest 请求对象
+     * @return SyncInvoker<DeleteAgencyWithRoleTypeRequest, DeleteAgencyWithRoleTypeResponse>
+     */
+    public SyncInvoker<DeleteAgencyWithRoleTypeRequest, DeleteAgencyWithRoleTypeResponse> deleteAgencyWithRoleTypeInvoker(
+        DeleteAgencyWithRoleTypeRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteAgencyWithRoleType, hcClient);
+    }
+
+    /**
+     * 查询委托
+     *
+     * 该接口用于查询项目下委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return ShowAgencyResponse
+     */
+    public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showAgency);
+    }
+
+    /**
+     * 查询委托
+     *
+     * 该接口用于查询项目下委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showAgency, hcClient);
     }
 
     /**
@@ -1513,6 +1617,207 @@ public class MetaStudioClient {
     public SyncInvoker<UpdateHotQuestionRequest, UpdateHotQuestionResponse> updateHotQuestionInvoker(
         UpdateHotQuestionRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.updateHotQuestion, hcClient);
+    }
+
+    /**
+     * 创建热词记录
+     *
+     * 该接口用于创建热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHotWordsRequest 请求对象
+     * @return CreateHotWordsResponse
+     */
+    public CreateHotWordsResponse createHotWords(CreateHotWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createHotWords);
+    }
+
+    /**
+     * 创建热词记录
+     *
+     * 该接口用于创建热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHotWordsRequest 请求对象
+     * @return SyncInvoker<CreateHotWordsRequest, CreateHotWordsResponse>
+     */
+    public SyncInvoker<CreateHotWordsRequest, CreateHotWordsResponse> createHotWordsInvoker(
+        CreateHotWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createHotWords, hcClient);
+    }
+
+    /**
+     * 删除热词记录
+     *
+     * 该接口用于删除热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHotWordsRequest 请求对象
+     * @return DeleteHotWordsResponse
+     */
+    public DeleteHotWordsResponse deleteHotWords(DeleteHotWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteHotWords);
+    }
+
+    /**
+     * 删除热词记录
+     *
+     * 该接口用于删除热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHotWordsRequest 请求对象
+     * @return SyncInvoker<DeleteHotWordsRequest, DeleteHotWordsResponse>
+     */
+    public SyncInvoker<DeleteHotWordsRequest, DeleteHotWordsResponse> deleteHotWordsInvoker(
+        DeleteHotWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteHotWords, hcClient);
+    }
+
+    /**
+     * 查询热词记录列表
+     *
+     * 该接口用于查询热词记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotWordsRequest 请求对象
+     * @return ListHotWordsResponse
+     */
+    public ListHotWordsResponse listHotWords(ListHotWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listHotWords);
+    }
+
+    /**
+     * 查询热词记录列表
+     *
+     * 该接口用于查询热词记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHotWordsRequest 请求对象
+     * @return SyncInvoker<ListHotWordsRequest, ListHotWordsResponse>
+     */
+    public SyncInvoker<ListHotWordsRequest, ListHotWordsResponse> listHotWordsInvoker(ListHotWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listHotWords, hcClient);
+    }
+
+    /**
+     * 查询配置热词记录详情
+     *
+     * 该接口用于查询热词记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotWordsRequest 请求对象
+     * @return ShowHotWordsResponse
+     */
+    public ShowHotWordsResponse showHotWords(ShowHotWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showHotWords);
+    }
+
+    /**
+     * 查询配置热词记录详情
+     *
+     * 该接口用于查询热词记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotWordsRequest 请求对象
+     * @return SyncInvoker<ShowHotWordsRequest, ShowHotWordsResponse>
+     */
+    public SyncInvoker<ShowHotWordsRequest, ShowHotWordsResponse> showHotWordsInvoker(ShowHotWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showHotWords, hcClient);
+    }
+
+    /**
+     * 查询热词功能开关
+     *
+     * 该接口用于查询热词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotWordsSwitchRequest 请求对象
+     * @return ShowHotWordsSwitchResponse
+     */
+    public ShowHotWordsSwitchResponse showHotWordsSwitch(ShowHotWordsSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showHotWordsSwitch);
+    }
+
+    /**
+     * 查询热词功能开关
+     *
+     * 该接口用于查询热词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotWordsSwitchRequest 请求对象
+     * @return SyncInvoker<ShowHotWordsSwitchRequest, ShowHotWordsSwitchResponse>
+     */
+    public SyncInvoker<ShowHotWordsSwitchRequest, ShowHotWordsSwitchResponse> showHotWordsSwitchInvoker(
+        ShowHotWordsSwitchRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showHotWordsSwitch, hcClient);
+    }
+
+    /**
+     * 修改热词记录
+     *
+     * 该接口用于修改热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotWordsRequest 请求对象
+     * @return UpdateHotWordsResponse
+     */
+    public UpdateHotWordsResponse updateHotWords(UpdateHotWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateHotWords);
+    }
+
+    /**
+     * 修改热词记录
+     *
+     * 该接口用于修改热词记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotWordsRequest 请求对象
+     * @return SyncInvoker<UpdateHotWordsRequest, UpdateHotWordsResponse>
+     */
+    public SyncInvoker<UpdateHotWordsRequest, UpdateHotWordsResponse> updateHotWordsInvoker(
+        UpdateHotWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateHotWords, hcClient);
+    }
+
+    /**
+     * 修改热词功能开关
+     *
+     * 该接口用于修改热词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotWordsSwitchRequest 请求对象
+     * @return UpdateHotWordsSwitchResponse
+     */
+    public UpdateHotWordsSwitchResponse updateHotWordsSwitch(UpdateHotWordsSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateHotWordsSwitch);
+    }
+
+    /**
+     * 修改热词功能开关
+     *
+     * 该接口用于修改热词功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHotWordsSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateHotWordsSwitchRequest, UpdateHotWordsSwitchResponse>
+     */
+    public SyncInvoker<UpdateHotWordsSwitchRequest, UpdateHotWordsSwitchResponse> updateHotWordsSwitchInvoker(
+        UpdateHotWordsSwitchRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateHotWordsSwitch, hcClient);
     }
 
     /**
@@ -2699,35 +3004,6 @@ public class MetaStudioClient {
      */
     public SyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse> stopSmartLiveInvoker(StopSmartLiveRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.stopSmartLive, hcClient);
-    }
-
-    /**
-     * 检测音色与文本的语言一致性
-     *
-     * 检测音色与文本的语言一致性，音色与文本不一致会导致报错
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckTextLanguageRequest 请求对象
-     * @return CheckTextLanguageResponse
-     */
-    public CheckTextLanguageResponse checkTextLanguage(CheckTextLanguageRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.checkTextLanguage);
-    }
-
-    /**
-     * 检测音色与文本的语言一致性
-     *
-     * 检测音色与文本的语言一致性，音色与文本不一致会导致报错
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckTextLanguageRequest 请求对象
-     * @return SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse>
-     */
-    public SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse> checkTextLanguageInvoker(
-        CheckTextLanguageRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.checkTextLanguage, hcClient);
     }
 
     /**
