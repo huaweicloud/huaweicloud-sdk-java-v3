@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ListBizMetricDimensionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private ListBizMetricDimensionsResultData data;
 
-    public ListBizMetricDimensionsResponse withData(Object data) {
+    public ListBizMetricDimensionsResponse withData(ListBizMetricDimensionsResultData data) {
         this.data = data;
         return this;
     }
 
+    public ListBizMetricDimensionsResponse withData(Consumer<ListBizMetricDimensionsResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new ListBizMetricDimensionsResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public ListBizMetricDimensionsResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(ListBizMetricDimensionsResultData data) {
         this.data = data;
     }
 

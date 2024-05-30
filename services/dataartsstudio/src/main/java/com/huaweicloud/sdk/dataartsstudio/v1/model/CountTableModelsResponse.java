@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class CountTableModelsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private CountTableModelsResultData data;
 
-    public CountTableModelsResponse withData(Object data) {
+    public CountTableModelsResponse withData(CountTableModelsResultData data) {
         this.data = data;
         return this;
     }
 
+    public CountTableModelsResponse withData(Consumer<CountTableModelsResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new CountTableModelsResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public CountTableModelsResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(CountTableModelsResultData data) {
         this.data = data;
     }
 

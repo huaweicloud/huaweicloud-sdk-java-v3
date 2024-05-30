@@ -36,7 +36,7 @@ public class EntrypointItem {
     private String slaveEntrypointIpv6;
 
     /**
-     * 微服务引擎专享版组件类型
+     * 微服务引擎组件类型
      */
     public static final class TypeEnum {
 
@@ -116,7 +116,7 @@ public class EntrypointItem {
     }
 
     /**
-     * 微服务引擎专享版组件的ipv4主接入地址
+     * 微服务引擎组件的ipv4主接入地址
      * @return masterEntrypoint
      */
     public String getMasterEntrypoint() {
@@ -133,7 +133,7 @@ public class EntrypointItem {
     }
 
     /**
-     * 微服务引擎专享版组件的ipv6主接入地址
+     * 微服务引擎组件的ipv6主接入地址
      * @return masterEntrypointIpv6
      */
     public String getMasterEntrypointIpv6() {
@@ -150,7 +150,7 @@ public class EntrypointItem {
     }
 
     /**
-     * 微服务引擎专享版组件的ipv4备接入地址
+     * 微服务引擎组件的ipv4备接入地址
      * @return slaveEntrypoint
      */
     public String getSlaveEntrypoint() {
@@ -167,7 +167,7 @@ public class EntrypointItem {
     }
 
     /**
-     * 微服务引擎专享版组件的ipv6备接入地址
+     * 微服务引擎组件的ipv6备接入地址
      * @return slaveEntrypointIpv6
      */
     public String getSlaveEntrypointIpv6() {
@@ -184,7 +184,7 @@ public class EntrypointItem {
     }
 
     /**
-     * 微服务引擎专享版组件类型
+     * 微服务引擎组件类型
      * @return type
      */
     public TypeEnum getType() {

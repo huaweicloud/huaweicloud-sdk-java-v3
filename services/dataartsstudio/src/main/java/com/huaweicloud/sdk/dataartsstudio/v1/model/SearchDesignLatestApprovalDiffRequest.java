@@ -31,7 +31,7 @@ public class SearchDesignLatestApprovalDiffRequest {
     private String bizId;
 
     /**
-     * 待比较下展的实体类型。ATOMIC_INDEX(原子指标)、DERIVATIVE_INDEX(衍生指标)、DIMENSION(维度)、FACT_LOGIC_TABLE(事实表)、TABLE_MODEL(业务表：逻辑实体/物理表)、STANDARD_ELEMENT(数据标准)、AGGREGATION_LOGIC_TABLE(汇总表)、CODE_TABLE(码表)、BIZ_METRIC(业务指标)、COMPOUND_METRIC(复合指标)。
+     * 待删除下展的实体类型。 枚举值：   - ATOMIC_INDEX: 原子指标   - DERIVATIVE_INDEX: 衍生指标   - DIMENSION: 维度   - FACT_LOGIC_TABLE: 事实表   - TABLE_MODEL:关系建模：逻辑实体/物理表   - STANDARD_ELEMENT: 数据标准   - AGGREGATION_LOGIC_TABLE: 汇总表   - CODE_TABLE: 码表   - BIZ_METRIC: 业务指标   - COMPOUND_METRIC: 复合指标 
      */
     public static final class BizTypeEnum {
 
@@ -195,7 +195,7 @@ public class SearchDesignLatestApprovalDiffRequest {
     }
 
     /**
-     * 待比较下展的实体ID。
+     * 待比较下展的实体ID，填写String类型替代Long类型。
      * @return bizId
      */
     public String getBizId() {
@@ -212,7 +212,7 @@ public class SearchDesignLatestApprovalDiffRequest {
     }
 
     /**
-     * 待比较下展的实体类型。ATOMIC_INDEX(原子指标)、DERIVATIVE_INDEX(衍生指标)、DIMENSION(维度)、FACT_LOGIC_TABLE(事实表)、TABLE_MODEL(业务表：逻辑实体/物理表)、STANDARD_ELEMENT(数据标准)、AGGREGATION_LOGIC_TABLE(汇总表)、CODE_TABLE(码表)、BIZ_METRIC(业务指标)、COMPOUND_METRIC(复合指标)。
+     * 待删除下展的实体类型。 枚举值：   - ATOMIC_INDEX: 原子指标   - DERIVATIVE_INDEX: 衍生指标   - DIMENSION: 维度   - FACT_LOGIC_TABLE: 事实表   - TABLE_MODEL:关系建模：逻辑实体/物理表   - STANDARD_ELEMENT: 数据标准   - AGGREGATION_LOGIC_TABLE: 汇总表   - CODE_TABLE: 码表   - BIZ_METRIC: 业务指标   - COMPOUND_METRIC: 复合指标 
      * @return bizType
      */
     public BizTypeEnum getBizType() {

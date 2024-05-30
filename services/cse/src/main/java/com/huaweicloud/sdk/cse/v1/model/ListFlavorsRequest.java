@@ -21,7 +21,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 微服务引擎专享版应用部署类型，查询CSE微服务引擎专享版需要将该值设置为CSE2。
+     * 微服务引擎应用部署类型，查询ServiceComb引擎专享版需要将该值设置为CSE2，查询注册配置中心需要将该值设置为Nacos2，查询网关需要将该值设置为MicroGateway。
      * @return specType
      */
     public String getSpecType() {

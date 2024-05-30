@@ -73,7 +73,7 @@ public class InitializeStandardTemplateRequest {
     }
 
     /**
-     * action-id=init
+     * action-id=init，初始化数据标准模板时固定参数。
      * @return actionId
      */
     public String getActionId() {

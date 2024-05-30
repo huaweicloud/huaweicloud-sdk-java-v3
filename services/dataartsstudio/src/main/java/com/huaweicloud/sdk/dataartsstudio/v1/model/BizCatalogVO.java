@@ -37,22 +37,22 @@ public class BizCatalogVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    private Long parentId;
+    private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prev_id")
 
-    private Long prevId;
+    private String prevId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_id")
 
-    private Long nextId;
+    private String nextId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qualified_id")
@@ -162,71 +162,71 @@ public class BizCatalogVO {
         this.owner = owner;
     }
 
-    public BizCatalogVO withParentId(Long parentId) {
+    public BizCatalogVO withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
     /**
-     * 父目录ID，没有则为根目录。
+     * 父目录ID，没有则为根目录。填写String类型替代Long类型。
      * @return parentId
      */
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
-    public BizCatalogVO withPrevId(Long prevId) {
+    public BizCatalogVO withPrevId(String prevId) {
         this.prevId = prevId;
         return this;
     }
 
     /**
-     * 上个节点ID，没有则为首节点。
+     * 上个节点ID，没有则为首节点。填写String类型替代Long类型。
      * @return prevId
      */
-    public Long getPrevId() {
+    public String getPrevId() {
         return prevId;
     }
 
-    public void setPrevId(Long prevId) {
+    public void setPrevId(String prevId) {
         this.prevId = prevId;
     }
 
-    public BizCatalogVO withNextId(Long nextId) {
+    public BizCatalogVO withNextId(String nextId) {
         this.nextId = nextId;
         return this;
     }
 
     /**
-     * 下个节点ID，没有则为尾节点。
+     * 下个节点ID，没有则为尾节点。填写String类型替代Long类型。
      * @return nextId
      */
-    public Long getNextId() {
+    public String getNextId() {
         return nextId;
     }
 
-    public void setNextId(Long nextId) {
+    public void setNextId(String nextId) {
         this.nextId = nextId;
     }
 
-    public BizCatalogVO withId(Long id) {
+    public BizCatalogVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 创建时传空，更新时必填。
+     * 创建时传空，更新时必填。填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -287,7 +287,7 @@ public class BizCatalogVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -304,7 +304,7 @@ public class BizCatalogVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -371,7 +371,7 @@ public class BizCatalogVO {
     }
 
     /**
-     * 下层子目录。
+     * 下层子目录，只读。
      * @return children
      */
     public List<BizCatalogVO> getChildren() {

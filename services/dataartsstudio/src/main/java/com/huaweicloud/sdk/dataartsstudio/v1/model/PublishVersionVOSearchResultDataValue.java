@@ -45,7 +45,7 @@ public class PublishVersionVOSearchResultDataValue {
     }
 
     /**
-     * 查询到的的版本值对象（PublishVersionVO）数组。
+     * 查询到的版本值对象（PublishVersionVO）数组。
      * @return records
      */
     public List<PublishVersionVO> getRecords() {

@@ -47,12 +47,12 @@ public class AtomicIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cal_fn_ids")
 
-    private List<Long> calFnIds = null;
+    private List<String> calFnIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l1_id")
 
-    private Long l1Id;
+    private String l1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
@@ -82,7 +82,7 @@ public class AtomicIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_ids")
 
-    private List<Long> fieldIds = null;
+    private List<String> fieldIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field_names")
@@ -140,7 +140,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -157,7 +157,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段名。
+     * 原子指标英文名。
      * @return nameEn
      */
     public String getNameEn() {
@@ -174,7 +174,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 业务属性。
+     * 原子指标英文名。
      * @return nameCh
      */
     public String getNameCh() {
@@ -236,12 +236,12 @@ public class AtomicIndexVO {
         this.calExp = calExp;
     }
 
-    public AtomicIndexVO withCalFnIds(List<Long> calFnIds) {
+    public AtomicIndexVO withCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
         return this;
     }
 
-    public AtomicIndexVO addCalFnIdsItem(Long calFnIdsItem) {
+    public AtomicIndexVO addCalFnIdsItem(String calFnIdsItem) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -249,7 +249,7 @@ public class AtomicIndexVO {
         return this;
     }
 
-    public AtomicIndexVO withCalFnIds(Consumer<List<Long>> calFnIdsSetter) {
+    public AtomicIndexVO withCalFnIds(Consumer<List<String>> calFnIdsSetter) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -258,31 +258,31 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 引用函数ID。
+     * 引用函数ID，填写String类型替代Long类型。
      * @return calFnIds
      */
-    public List<Long> getCalFnIds() {
+    public List<String> getCalFnIds() {
         return calFnIds;
     }
 
-    public void setCalFnIds(List<Long> calFnIds) {
+    public void setCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
     }
 
-    public AtomicIndexVO withL1Id(Long l1Id) {
+    public AtomicIndexVO withL1Id(String l1Id) {
         this.l1Id = l1Id;
         return this;
     }
 
     /**
-     * 主题域分组ID。
+     * 主题域分组ID，只读，填写String类型替代Long类型。
      * @return l1Id
      */
-    public Long getL1Id() {
+    public String getL1Id() {
         return l1Id;
     }
 
-    public void setL1Id(Long l1Id) {
+    public void setL1Id(String l1Id) {
         this.l1Id = l1Id;
     }
 
@@ -309,7 +309,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 业务对象guid。
+     * 业务对象guid，填写String类型替代Long类型。
      * @return l3Id
      */
     public String getL3Id() {
@@ -326,7 +326,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 表ID。
+     * 事实表ID，填写String类型替代Long类型。
      * @return tableId
      */
     public String getTableId() {
@@ -343,7 +343,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 表名称。
+     * 事实表名称。
      * @return tbName
      */
     public String getTbName() {
@@ -371,12 +371,12 @@ public class AtomicIndexVO {
         this.dwType = dwType;
     }
 
-    public AtomicIndexVO withFieldIds(List<Long> fieldIds) {
+    public AtomicIndexVO withFieldIds(List<String> fieldIds) {
         this.fieldIds = fieldIds;
         return this;
     }
 
-    public AtomicIndexVO addFieldIdsItem(Long fieldIdsItem) {
+    public AtomicIndexVO addFieldIdsItem(String fieldIdsItem) {
         if (this.fieldIds == null) {
             this.fieldIds = new ArrayList<>();
         }
@@ -384,7 +384,7 @@ public class AtomicIndexVO {
         return this;
     }
 
-    public AtomicIndexVO withFieldIds(Consumer<List<Long>> fieldIdsSetter) {
+    public AtomicIndexVO withFieldIds(Consumer<List<String>> fieldIdsSetter) {
         if (this.fieldIds == null) {
             this.fieldIds = new ArrayList<>();
         }
@@ -393,14 +393,14 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段ID信息。
+     * 字段ID信息，填写String类型替代Long类型。
      * @return fieldIds
      */
-    public List<Long> getFieldIds() {
+    public List<String> getFieldIds() {
         return fieldIds;
     }
 
-    public void setFieldIds(List<Long> fieldIds) {
+    public void setFieldIds(List<String> fieldIds) {
         this.fieldIds = fieldIds;
     }
 
@@ -477,7 +477,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -494,7 +494,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

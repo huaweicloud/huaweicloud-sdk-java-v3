@@ -26,7 +26,7 @@ public class ListWorkspacesRequest {
     private String xProjectId;
 
     /**
-     * 模型工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
+     * 模型工作区类型枚举。 枚举值：   - THIRD_NF: 关系建模   - DIMENSION: 维度建模 
      */
     public static final class WorkspaceTypeEnum {
 
@@ -157,7 +157,7 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 模型工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
+     * 模型工作区类型枚举。 枚举值：   - THIRD_NF: 关系建模   - DIMENSION: 维度建模 
      * @return workspaceType
      */
     public WorkspaceTypeEnum getWorkspaceType() {
@@ -174,7 +174,7 @@ public class ListWorkspacesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

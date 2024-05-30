@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.vpc.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.vpc.v3.model.AddClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequest;
@@ -13,12 +15,18 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
@@ -37,6 +45,10 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
@@ -59,6 +71,14 @@ import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
@@ -87,6 +107,10 @@ import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
@@ -107,6 +131,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesRequest;
@@ -1533,6 +1559,394 @@ public class VpcAsyncClient {
     public AsyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> updateFirewallRulesAsyncInvoker(
         UpdateFirewallRulesRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.updateFirewallRules, hcClient);
+    }
+
+    /**
+     * 添加Clouddcn子网标签
+     *
+     * 添加Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddClouddcnSubnetsTagsRequest 请求对象
+     * @return CompletableFuture<AddClouddcnSubnetsTagsResponse>
+     */
+    public CompletableFuture<AddClouddcnSubnetsTagsResponse> addClouddcnSubnetsTagsAsync(
+        AddClouddcnSubnetsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.addClouddcnSubnetsTags);
+    }
+
+    /**
+     * 添加Clouddcn子网标签
+     *
+     * 添加Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddClouddcnSubnetsTagsRequest 请求对象
+     * @return AsyncInvoker<AddClouddcnSubnetsTagsRequest, AddClouddcnSubnetsTagsResponse>
+     */
+    public AsyncInvoker<AddClouddcnSubnetsTagsRequest, AddClouddcnSubnetsTagsResponse> addClouddcnSubnetsTagsAsyncInvoker(
+        AddClouddcnSubnetsTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.addClouddcnSubnetsTags, hcClient);
+    }
+
+    /**
+     * 批量添加Clouddcn子网标签
+     *
+     * 批量添加Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateClouddcnSubnetsTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateClouddcnSubnetsTagsResponse>
+     */
+    public CompletableFuture<BatchCreateClouddcnSubnetsTagsResponse> batchCreateClouddcnSubnetsTagsAsync(
+        BatchCreateClouddcnSubnetsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateClouddcnSubnetsTags);
+    }
+
+    /**
+     * 批量添加Clouddcn子网标签
+     *
+     * 批量添加Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateClouddcnSubnetsTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateClouddcnSubnetsTagsRequest, BatchCreateClouddcnSubnetsTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateClouddcnSubnetsTagsRequest, BatchCreateClouddcnSubnetsTagsResponse> batchCreateClouddcnSubnetsTagsAsyncInvoker(
+        BatchCreateClouddcnSubnetsTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchCreateClouddcnSubnetsTags, hcClient);
+    }
+
+    /**
+     * 批量删除Clouddcn子网标签
+     *
+     * 批量删除Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteClouddcnSubnetsTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteClouddcnSubnetsTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteClouddcnSubnetsTagsResponse> batchDeleteClouddcnSubnetsTagsAsync(
+        BatchDeleteClouddcnSubnetsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeleteClouddcnSubnetsTags);
+    }
+
+    /**
+     * 批量删除Clouddcn子网标签
+     *
+     * 批量删除Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteClouddcnSubnetsTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteClouddcnSubnetsTagsRequest, BatchDeleteClouddcnSubnetsTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteClouddcnSubnetsTagsRequest, BatchDeleteClouddcnSubnetsTagsResponse> batchDeleteClouddcnSubnetsTagsAsyncInvoker(
+        BatchDeleteClouddcnSubnetsTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchDeleteClouddcnSubnetsTags, hcClient);
+    }
+
+    /**
+     * 创建clouddcn子网
+     *
+     * 创建clouddcn子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClouddcnSubnetRequest 请求对象
+     * @return CompletableFuture<CreateClouddcnSubnetResponse>
+     */
+    public CompletableFuture<CreateClouddcnSubnetResponse> createClouddcnSubnetAsync(
+        CreateClouddcnSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createClouddcnSubnet);
+    }
+
+    /**
+     * 创建clouddcn子网
+     *
+     * 创建clouddcn子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClouddcnSubnetRequest 请求对象
+     * @return AsyncInvoker<CreateClouddcnSubnetRequest, CreateClouddcnSubnetResponse>
+     */
+    public AsyncInvoker<CreateClouddcnSubnetRequest, CreateClouddcnSubnetResponse> createClouddcnSubnetAsyncInvoker(
+        CreateClouddcnSubnetRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.createClouddcnSubnet, hcClient);
+    }
+
+    /**
+     * 删除clouddcn子网
+     *
+     * 删除clouddcn子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClouddcnSubnetRequest 请求对象
+     * @return CompletableFuture<DeleteClouddcnSubnetResponse>
+     */
+    public CompletableFuture<DeleteClouddcnSubnetResponse> deleteClouddcnSubnetAsync(
+        DeleteClouddcnSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteClouddcnSubnet);
+    }
+
+    /**
+     * 删除clouddcn子网
+     *
+     * 删除clouddcn子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClouddcnSubnetRequest 请求对象
+     * @return AsyncInvoker<DeleteClouddcnSubnetRequest, DeleteClouddcnSubnetResponse>
+     */
+    public AsyncInvoker<DeleteClouddcnSubnetRequest, DeleteClouddcnSubnetResponse> deleteClouddcnSubnetAsyncInvoker(
+        DeleteClouddcnSubnetRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.deleteClouddcnSubnet, hcClient);
+    }
+
+    /**
+     * 删除Clouddcn子网标签
+     *
+     * 删除Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClouddcnSubnetsTagRequest 请求对象
+     * @return CompletableFuture<DeleteClouddcnSubnetsTagResponse>
+     */
+    public CompletableFuture<DeleteClouddcnSubnetsTagResponse> deleteClouddcnSubnetsTagAsync(
+        DeleteClouddcnSubnetsTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteClouddcnSubnetsTag);
+    }
+
+    /**
+     * 删除Clouddcn子网标签
+     *
+     * 删除Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClouddcnSubnetsTagRequest 请求对象
+     * @return AsyncInvoker<DeleteClouddcnSubnetsTagRequest, DeleteClouddcnSubnetsTagResponse>
+     */
+    public AsyncInvoker<DeleteClouddcnSubnetsTagRequest, DeleteClouddcnSubnetsTagResponse> deleteClouddcnSubnetsTagAsyncInvoker(
+        DeleteClouddcnSubnetsTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.deleteClouddcnSubnetsTag, hcClient);
+    }
+
+    /**
+     * 查询clouddcn子网列表
+     *
+     * 查询clouddcn子网列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsRequest 请求对象
+     * @return CompletableFuture<ListClouddcnSubnetsResponse>
+     */
+    public CompletableFuture<ListClouddcnSubnetsResponse> listClouddcnSubnetsAsync(ListClouddcnSubnetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listClouddcnSubnets);
+    }
+
+    /**
+     * 查询clouddcn子网列表
+     *
+     * 查询clouddcn子网列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsRequest 请求对象
+     * @return AsyncInvoker<ListClouddcnSubnetsRequest, ListClouddcnSubnetsResponse>
+     */
+    public AsyncInvoker<ListClouddcnSubnetsRequest, ListClouddcnSubnetsResponse> listClouddcnSubnetsAsyncInvoker(
+        ListClouddcnSubnetsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listClouddcnSubnets, hcClient);
+    }
+
+    /**
+     * 查询资源实例列表数目
+     *
+     * 查询资源实例列表数目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsCountFilterTagsRequest 请求对象
+     * @return CompletableFuture<ListClouddcnSubnetsCountFilterTagsResponse>
+     */
+    public CompletableFuture<ListClouddcnSubnetsCountFilterTagsResponse> listClouddcnSubnetsCountFilterTagsAsync(
+        ListClouddcnSubnetsCountFilterTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listClouddcnSubnetsCountFilterTags);
+    }
+
+    /**
+     * 查询资源实例列表数目
+     *
+     * 查询资源实例列表数目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsCountFilterTagsRequest 请求对象
+     * @return AsyncInvoker<ListClouddcnSubnetsCountFilterTagsRequest, ListClouddcnSubnetsCountFilterTagsResponse>
+     */
+    public AsyncInvoker<ListClouddcnSubnetsCountFilterTagsRequest, ListClouddcnSubnetsCountFilterTagsResponse> listClouddcnSubnetsCountFilterTagsAsyncInvoker(
+        ListClouddcnSubnetsCountFilterTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listClouddcnSubnetsCountFilterTags, hcClient);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsFilterTagsRequest 请求对象
+     * @return CompletableFuture<ListClouddcnSubnetsFilterTagsResponse>
+     */
+    public CompletableFuture<ListClouddcnSubnetsFilterTagsResponse> listClouddcnSubnetsFilterTagsAsync(
+        ListClouddcnSubnetsFilterTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listClouddcnSubnetsFilterTags);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsFilterTagsRequest 请求对象
+     * @return AsyncInvoker<ListClouddcnSubnetsFilterTagsRequest, ListClouddcnSubnetsFilterTagsResponse>
+     */
+    public AsyncInvoker<ListClouddcnSubnetsFilterTagsRequest, ListClouddcnSubnetsFilterTagsResponse> listClouddcnSubnetsFilterTagsAsyncInvoker(
+        ListClouddcnSubnetsFilterTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listClouddcnSubnetsFilterTags, hcClient);
+    }
+
+    /**
+     * 查询Clouddcn子网项目标签
+     *
+     * 查询Clouddcn子网的项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsTagsRequest 请求对象
+     * @return CompletableFuture<ListClouddcnSubnetsTagsResponse>
+     */
+    public CompletableFuture<ListClouddcnSubnetsTagsResponse> listClouddcnSubnetsTagsAsync(
+        ListClouddcnSubnetsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listClouddcnSubnetsTags);
+    }
+
+    /**
+     * 查询Clouddcn子网项目标签
+     *
+     * 查询Clouddcn子网的项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClouddcnSubnetsTagsRequest 请求对象
+     * @return AsyncInvoker<ListClouddcnSubnetsTagsRequest, ListClouddcnSubnetsTagsResponse>
+     */
+    public AsyncInvoker<ListClouddcnSubnetsTagsRequest, ListClouddcnSubnetsTagsResponse> listClouddcnSubnetsTagsAsyncInvoker(
+        ListClouddcnSubnetsTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listClouddcnSubnetsTags, hcClient);
+    }
+
+    /**
+     * 查询clouddcn子网
+     *
+     * 查询clouddcn子网详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClouddcnSubnetRequest 请求对象
+     * @return CompletableFuture<ShowClouddcnSubnetResponse>
+     */
+    public CompletableFuture<ShowClouddcnSubnetResponse> showClouddcnSubnetAsync(ShowClouddcnSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showClouddcnSubnet);
+    }
+
+    /**
+     * 查询clouddcn子网
+     *
+     * 查询clouddcn子网详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClouddcnSubnetRequest 请求对象
+     * @return AsyncInvoker<ShowClouddcnSubnetRequest, ShowClouddcnSubnetResponse>
+     */
+    public AsyncInvoker<ShowClouddcnSubnetRequest, ShowClouddcnSubnetResponse> showClouddcnSubnetAsyncInvoker(
+        ShowClouddcnSubnetRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.showClouddcnSubnet, hcClient);
+    }
+
+    /**
+     * 查询Clouddcn子网标签
+     *
+     * 查询Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClouddcnSubnetsTagsRequest 请求对象
+     * @return CompletableFuture<ShowClouddcnSubnetsTagsResponse>
+     */
+    public CompletableFuture<ShowClouddcnSubnetsTagsResponse> showClouddcnSubnetsTagsAsync(
+        ShowClouddcnSubnetsTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showClouddcnSubnetsTags);
+    }
+
+    /**
+     * 查询Clouddcn子网标签
+     *
+     * 查询Clouddcn子网的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClouddcnSubnetsTagsRequest 请求对象
+     * @return AsyncInvoker<ShowClouddcnSubnetsTagsRequest, ShowClouddcnSubnetsTagsResponse>
+     */
+    public AsyncInvoker<ShowClouddcnSubnetsTagsRequest, ShowClouddcnSubnetsTagsResponse> showClouddcnSubnetsTagsAsyncInvoker(
+        ShowClouddcnSubnetsTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.showClouddcnSubnetsTags, hcClient);
+    }
+
+    /**
+     * 更新clouddcn子网
+     *
+     * 更新clouddcn子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClouddcnSubnetRequest 请求对象
+     * @return CompletableFuture<UpdateClouddcnSubnetResponse>
+     */
+    public CompletableFuture<UpdateClouddcnSubnetResponse> updateClouddcnSubnetAsync(
+        UpdateClouddcnSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.updateClouddcnSubnet);
+    }
+
+    /**
+     * 更新clouddcn子网
+     *
+     * 更新clouddcn子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClouddcnSubnetRequest 请求对象
+     * @return AsyncInvoker<UpdateClouddcnSubnetRequest, UpdateClouddcnSubnetResponse>
+     */
+    public AsyncInvoker<UpdateClouddcnSubnetRequest, UpdateClouddcnSubnetResponse> updateClouddcnSubnetAsyncInvoker(
+        UpdateClouddcnSubnetRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.updateClouddcnSubnet, hcClient);
     }
 
     /**

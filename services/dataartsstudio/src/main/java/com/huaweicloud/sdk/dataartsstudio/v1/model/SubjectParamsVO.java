@@ -16,7 +16,7 @@ public class SubjectParamsVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_ch")
@@ -56,27 +56,27 @@ public class SubjectParamsVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    private Long parentId;
+    private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "self_defined_fields")
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
-    public SubjectParamsVO withId(Long id) {
+    public SubjectParamsVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。更新时必填，创建时可以为空。
+     * 编码。更新时必填，创建时可以为空，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -171,7 +171,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 数据owner人员。
+     * 数据owner人员。拼接成数组格式：[\"user_1\",\"user_2\"]。
      * @return dataOwnerList
      */
     public String getDataOwnerList() {
@@ -188,7 +188,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 层级。
+     * 层级。取值范围1-7。
      * @return level
      */
     public Integer getLevel() {
@@ -199,20 +199,20 @@ public class SubjectParamsVO {
         this.level = level;
     }
 
-    public SubjectParamsVO withParentId(Long parentId) {
+    public SubjectParamsVO withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
     /**
-     * 上层主题ID，首层则为空。
+     * 上层主题ID，首层则为空，填写String类型替代Long类型。
      * @return parentId
      */
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
@@ -238,7 +238,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 属性自定义项。
+     * 自定义项。主题的自定义属性。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 微服务引擎专享版的CCE规格
+ * 微服务引擎的CCE规格
  */
 public class Spec {
 
@@ -27,32 +27,32 @@ public class Spec {
     private String engineId;
 
     /**
-     * 微服务引擎专享版CCE集群部署类型
+     * 微服务引擎的集群部署类型
      */
     public static final class SpecTypeEnum {
 
         /**
-         * Enum CCE for value: "CCE"
+         * Enum CSE2 for value: "CSE2"
          */
-        public static final SpecTypeEnum CCE = new SpecTypeEnum("CCE");
+        public static final SpecTypeEnum CSE2 = new SpecTypeEnum("CSE2");
 
         /**
-         * Enum CSE for value: "CSE"
+         * Enum NACOS2 for value: "Nacos2"
          */
-        public static final SpecTypeEnum CSE = new SpecTypeEnum("CSE");
+        public static final SpecTypeEnum NACOS2 = new SpecTypeEnum("Nacos2");
 
         /**
-         * Enum SPRINGCLOUD for value: "SpringCloud"
+         * Enum MICROGATEWAY for value: "MicroGateway"
          */
-        public static final SpecTypeEnum SPRINGCLOUD = new SpecTypeEnum("SpringCloud");
+        public static final SpecTypeEnum MICROGATEWAY = new SpecTypeEnum("MicroGateway");
 
         private static final Map<String, SpecTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecTypeEnum> createStaticFields() {
             Map<String, SpecTypeEnum> map = new HashMap<>();
-            map.put("CCE", CCE);
-            map.put("CSE", CSE);
-            map.put("SpringCloud", SPRINGCLOUD);
+            map.put("CSE2", CSE2);
+            map.put("Nacos2", NACOS2);
+            map.put("MicroGateway", MICROGATEWAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -148,7 +148,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE规格ID
+     * 微服务引擎CCE规格ID
      * @return id
      */
     public Long getId() {
@@ -165,7 +165,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版ID
+     * 微服务引擎ID
      * @return engineId
      */
     public String getEngineId() {
@@ -182,7 +182,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群部署类型
+     * 微服务引擎的集群部署类型
      * @return specType
      */
     public SpecTypeEnum getSpecType() {
@@ -199,7 +199,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群信息，目前为null
+     * 微服务引擎的CCE集群信息，目前为null
      * @return cluster
      */
     public String getCluster() {
@@ -216,7 +216,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群ID
+     * 微服务引擎的CCE集群ID
      * @return clusterId
      */
     public String getClusterId() {
@@ -259,7 +259,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群规格
+     * 微服务引擎的CCE集群规格
      * @return flavor
      */
     public String getFlavor() {
@@ -276,7 +276,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群所在region
+     * 微服务引擎的CCE集群所在region
      * @return region
      */
     public String getRegion() {
@@ -293,7 +293,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群版本
+     * 微服务引擎的CCE集群版本
      * @return version
      */
     public String getVersion() {
@@ -310,7 +310,7 @@ public class Spec {
     }
 
     /**
-     * 微服务引擎专享版CCE集群附加参数
+     * 微服务引擎的CCE集群附加参数
      * @return extendParam
      */
     public String getExtendParam() {

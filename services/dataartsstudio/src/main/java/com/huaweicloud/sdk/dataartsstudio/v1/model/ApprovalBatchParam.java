@@ -43,6 +43,11 @@ public class ApprovalBatchParam {
 
     private String scheduleTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env_type")
+
+    private EnvTypeEnum envType;
+
     public ApprovalBatchParam withBizInfos(List<BizInfoVO> bizInfos) {
         this.bizInfos = bizInfos;
         return this;
@@ -116,7 +121,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 审批人邮箱。
+     * 审批人邮箱，仅在创建审批人时填写。
      * @return email
      */
     public String getEmail() {
@@ -150,7 +155,7 @@ public class ApprovalBatchParam {
     }
 
     /**
-     * 作业调度时间。
+     * 作业调度时间。格式参照：30_18，表示18点30分。
      * @return scheduleTime
      */
     public String getScheduleTime() {
@@ -159,6 +164,23 @@ public class ApprovalBatchParam {
 
     public void setScheduleTime(String scheduleTime) {
         this.scheduleTime = scheduleTime;
+    }
+
+    public ApprovalBatchParam withEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+        return this;
+    }
+
+    /**
+     * Get envType
+     * @return envType
+     */
+    public EnvTypeEnum getEnvType() {
+        return envType;
+    }
+
+    public void setEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
     }
 
     @Override
@@ -173,12 +195,12 @@ public class ApprovalBatchParam {
         return Objects.equals(this.bizInfos, that.bizInfos) && Objects.equals(this.approverUserId, that.approverUserId)
             && Objects.equals(this.approverUserName, that.approverUserName) && Objects.equals(this.email, that.email)
             && Objects.equals(this.fastApproval, that.fastApproval)
-            && Objects.equals(this.scheduleTime, that.scheduleTime);
+            && Objects.equals(this.scheduleTime, that.scheduleTime) && Objects.equals(this.envType, that.envType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bizInfos, approverUserId, approverUserName, email, fastApproval, scheduleTime);
+        return Objects.hash(bizInfos, approverUserId, approverUserName, email, fastApproval, scheduleTime, envType);
     }
 
     @Override
@@ -191,6 +213,7 @@ public class ApprovalBatchParam {
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    fastApproval: ").append(toIndentedString(fastApproval)).append("\n");
         sb.append("    scheduleTime: ").append(toIndentedString(scheduleTime)).append("\n");
+        sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -44,7 +44,7 @@ public class PhoneDataVolume {
 
     /**
      * 云手机数据盘大小。
-     * minimum: 0
+     * minimum: 10
      * maximum: 4096
      * @return volumeSize
      */

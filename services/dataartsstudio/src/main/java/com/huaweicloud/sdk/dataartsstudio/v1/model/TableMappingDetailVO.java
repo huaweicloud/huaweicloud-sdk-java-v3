@@ -17,7 +17,7 @@ public class TableMappingDetailVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mapping_id")
@@ -27,7 +27,7 @@ public class TableMappingDetailVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_attr_id")
 
-    private Long targetAttrId;
+    private String targetAttrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_attr_name")
@@ -52,12 +52,12 @@ public class TableMappingDetailVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_table_model_ids")
 
-    private List<Long> srcTableModelIds = null;
+    private List<String> srcTableModelIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_table_id_list")
 
-    private List<Long> srcTableIdList = null;
+    private List<String> srcTableIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_attr_ids")
@@ -72,7 +72,7 @@ public class TableMappingDetailVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_attr_id_list")
 
-    private List<Long> srcAttrIdList = null;
+    private List<String> srcAttrIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
@@ -104,20 +104,20 @@ public class TableMappingDetailVO {
 
     private Object targetAttr;
 
-    public TableMappingDetailVO withId(Long id) {
+    public TableMappingDetailVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -138,20 +138,20 @@ public class TableMappingDetailVO {
         this.mappingId = mappingId;
     }
 
-    public TableMappingDetailVO withTargetAttrId(Long targetAttrId) {
+    public TableMappingDetailVO withTargetAttrId(String targetAttrId) {
         this.targetAttrId = targetAttrId;
         return this;
     }
 
     /**
-     * 目的字段ID。
+     * 目的字段ID，填写String类型替代Long类型。
      * @return targetAttrId
      */
-    public Long getTargetAttrId() {
+    public String getTargetAttrId() {
         return targetAttrId;
     }
 
-    public void setTargetAttrId(Long targetAttrId) {
+    public void setTargetAttrId(String targetAttrId) {
         this.targetAttrId = targetAttrId;
     }
 
@@ -211,7 +211,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表名称数组。
+     * 源表名称数组，只读。
      * @return srcTableNames
      */
     public List<String> getSrcTableNames() {
@@ -244,7 +244,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表db名称数组。
+     * 源表db名称数组，只读。
      * @return srcTableDbNames
      */
     public List<String> getSrcTableDbNames() {
@@ -255,12 +255,12 @@ public class TableMappingDetailVO {
         this.srcTableDbNames = srcTableDbNames;
     }
 
-    public TableMappingDetailVO withSrcTableModelIds(List<Long> srcTableModelIds) {
+    public TableMappingDetailVO withSrcTableModelIds(List<String> srcTableModelIds) {
         this.srcTableModelIds = srcTableModelIds;
         return this;
     }
 
-    public TableMappingDetailVO addSrcTableModelIdsItem(Long srcTableModelIdsItem) {
+    public TableMappingDetailVO addSrcTableModelIdsItem(String srcTableModelIdsItem) {
         if (this.srcTableModelIds == null) {
             this.srcTableModelIds = new ArrayList<>();
         }
@@ -268,7 +268,7 @@ public class TableMappingDetailVO {
         return this;
     }
 
-    public TableMappingDetailVO withSrcTableModelIds(Consumer<List<Long>> srcTableModelIdsSetter) {
+    public TableMappingDetailVO withSrcTableModelIds(Consumer<List<String>> srcTableModelIdsSetter) {
         if (this.srcTableModelIds == null) {
             this.srcTableModelIds = new ArrayList<>();
         }
@@ -277,23 +277,23 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表在关系建模中的模型ID数组。
+     * 源表在关系建模中的模型ID数组，只读，填写String类型替代Long类型。
      * @return srcTableModelIds
      */
-    public List<Long> getSrcTableModelIds() {
+    public List<String> getSrcTableModelIds() {
         return srcTableModelIds;
     }
 
-    public void setSrcTableModelIds(List<Long> srcTableModelIds) {
+    public void setSrcTableModelIds(List<String> srcTableModelIds) {
         this.srcTableModelIds = srcTableModelIds;
     }
 
-    public TableMappingDetailVO withSrcTableIdList(List<Long> srcTableIdList) {
+    public TableMappingDetailVO withSrcTableIdList(List<String> srcTableIdList) {
         this.srcTableIdList = srcTableIdList;
         return this;
     }
 
-    public TableMappingDetailVO addSrcTableIdListItem(Long srcTableIdListItem) {
+    public TableMappingDetailVO addSrcTableIdListItem(String srcTableIdListItem) {
         if (this.srcTableIdList == null) {
             this.srcTableIdList = new ArrayList<>();
         }
@@ -301,7 +301,7 @@ public class TableMappingDetailVO {
         return this;
     }
 
-    public TableMappingDetailVO withSrcTableIdList(Consumer<List<Long>> srcTableIdListSetter) {
+    public TableMappingDetailVO withSrcTableIdList(Consumer<List<String>> srcTableIdListSetter) {
         if (this.srcTableIdList == null) {
             this.srcTableIdList = new ArrayList<>();
         }
@@ -310,14 +310,14 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表ID数组。
+     * 源表ID数组，只读，填写String类型替代Long类型。
      * @return srcTableIdList
      */
-    public List<Long> getSrcTableIdList() {
+    public List<String> getSrcTableIdList() {
         return srcTableIdList;
     }
 
-    public void setSrcTableIdList(List<Long> srcTableIdList) {
+    public void setSrcTableIdList(List<String> srcTableIdList) {
         this.srcTableIdList = srcTableIdList;
     }
 
@@ -360,7 +360,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段名称数组。
+     * 源表字段名称数组，只读。
      * @return srcAttrNames
      */
     public List<String> getSrcAttrNames() {
@@ -371,12 +371,12 @@ public class TableMappingDetailVO {
         this.srcAttrNames = srcAttrNames;
     }
 
-    public TableMappingDetailVO withSrcAttrIdList(List<Long> srcAttrIdList) {
+    public TableMappingDetailVO withSrcAttrIdList(List<String> srcAttrIdList) {
         this.srcAttrIdList = srcAttrIdList;
         return this;
     }
 
-    public TableMappingDetailVO addSrcAttrIdListItem(Long srcAttrIdListItem) {
+    public TableMappingDetailVO addSrcAttrIdListItem(String srcAttrIdListItem) {
         if (this.srcAttrIdList == null) {
             this.srcAttrIdList = new ArrayList<>();
         }
@@ -384,7 +384,7 @@ public class TableMappingDetailVO {
         return this;
     }
 
-    public TableMappingDetailVO withSrcAttrIdList(Consumer<List<Long>> srcAttrIdListSetter) {
+    public TableMappingDetailVO withSrcAttrIdList(Consumer<List<String>> srcAttrIdListSetter) {
         if (this.srcAttrIdList == null) {
             this.srcAttrIdList = new ArrayList<>();
         }
@@ -393,14 +393,14 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段ID数组。
+     * 源表字段ID数组，只读，填写String类型替代Long类型。
      * @return srcAttrIdList
      */
-    public List<Long> getSrcAttrIdList() {
+    public List<String> getSrcAttrIdList() {
         return srcAttrIdList;
     }
 
-    public void setSrcAttrIdList(List<Long> srcAttrIdList) {
+    public void setSrcAttrIdList(List<String> srcAttrIdList) {
         this.srcAttrIdList = srcAttrIdList;
     }
 
@@ -427,7 +427,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -444,7 +444,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

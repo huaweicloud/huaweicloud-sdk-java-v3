@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 返回数据。
+ * 接口返回的数据。
  */
 public class PublishVersionVODetailData {
 

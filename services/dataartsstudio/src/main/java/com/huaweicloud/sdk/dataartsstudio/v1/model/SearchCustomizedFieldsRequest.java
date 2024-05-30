@@ -36,7 +36,7 @@ public class SearchCustomizedFieldsRequest {
     private Integer offset;
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      */
     public static final class TypeEnum {
 
@@ -164,7 +164,7 @@ public class SearchCustomizedFieldsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -199,7 +199,7 @@ public class SearchCustomizedFieldsRequest {
     }
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      * @return type
      */
     public TypeEnum getType() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 微服务引擎专享版相关参数。
+ * 微服务引擎相关参数。
  */
 public class EngineSpec {
 

@@ -35,6 +35,16 @@ public class GaussDBforOpenGaussListDatabase {
 
     private String size;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datctype")
+
+    private String datctype;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compatibility_type")
+
+    private String compatibilityType;
+
     public GaussDBforOpenGaussListDatabase withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +130,40 @@ public class GaussDBforOpenGaussListDatabase {
         this.size = size;
     }
 
+    public GaussDBforOpenGaussListDatabase withDatctype(String datctype) {
+        this.datctype = datctype;
+        return this;
+    }
+
+    /**
+     * 数据库使用的字符分类，例如en_US.UTF-8等。
+     * @return datctype
+     */
+    public String getDatctype() {
+        return datctype;
+    }
+
+    public void setDatctype(String datctype) {
+        this.datctype = datctype;
+    }
+
+    public GaussDBforOpenGaussListDatabase withCompatibilityType(String compatibilityType) {
+        this.compatibilityType = compatibilityType;
+        return this;
+    }
+
+    /**
+     * 数据库兼容的类型，如GaussDB，M。
+     * @return compatibilityType
+     */
+    public String getCompatibilityType() {
+        return compatibilityType;
+    }
+
+    public void setCompatibilityType(String compatibilityType) {
+        this.compatibilityType = compatibilityType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,13 @@ public class GaussDBforOpenGaussListDatabase {
         GaussDBforOpenGaussListDatabase that = (GaussDBforOpenGaussListDatabase) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.characterSet, that.characterSet) && Objects.equals(this.collateSet, that.collateSet)
-            && Objects.equals(this.size, that.size);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.datctype, that.datctype)
+            && Objects.equals(this.compatibilityType, that.compatibilityType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, owner, characterSet, collateSet, size);
+        return Objects.hash(name, owner, characterSet, collateSet, size, datctype, compatibilityType);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class GaussDBforOpenGaussListDatabase {
         sb.append("    characterSet: ").append(toIndentedString(characterSet)).append("\n");
         sb.append("    collateSet: ").append(toIndentedString(collateSet)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    datctype: ").append(toIndentedString(datctype)).append("\n");
+        sb.append("    compatibilityType: ").append(toIndentedString(compatibilityType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,7 +30,7 @@ public class ListEnginesResponse extends SdkResponse {
     }
 
     /**
-     * 当前符合查询条件的微服务引擎专享版总个数
+     * 当前符合查询条件的微服务引擎个数
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListEnginesResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版详情
+     * 微服务引擎详情
      * @return data
      */
     public List<EngineSimpleInfo> getData() {

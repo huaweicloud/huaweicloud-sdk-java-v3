@@ -7,14 +7,14 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 业务版本管理。
+ * 业务版本管理，只读。
  */
 public class BizVersionManageVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
@@ -24,7 +24,7 @@ public class BizVersionManageVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_info")
@@ -51,20 +51,20 @@ public class BizVersionManageVO {
 
     private OffsetDateTime updateTime;
 
-    public BizVersionManageVO withId(Long id) {
+    public BizVersionManageVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID信息。
+     * ID信息，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -85,20 +85,20 @@ public class BizVersionManageVO {
         this.bizType = bizType;
     }
 
-    public BizVersionManageVO withBizId(Long bizId) {
+    public BizVersionManageVO withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务ID。
+     * 业务ID，填写String类型替代Long类型。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -142,7 +142,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 业务版本。
+     * 业务版本，只读。
      * @return bizVersion
      */
     public Integer getBizVersion() {
@@ -159,7 +159,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -176,7 +176,7 @@ public class BizVersionManageVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

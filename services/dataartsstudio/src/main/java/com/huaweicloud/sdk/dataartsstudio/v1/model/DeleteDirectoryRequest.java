@@ -26,7 +26,7 @@ public class DeleteDirectoryRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     public DeleteDirectoryRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -64,12 +64,12 @@ public class DeleteDirectoryRequest {
         this.xProjectId = xProjectId;
     }
 
-    public DeleteDirectoryRequest withIds(List<Long> ids) {
+    public DeleteDirectoryRequest withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public DeleteDirectoryRequest addIdsItem(Long idsItem) {
+    public DeleteDirectoryRequest addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -77,7 +77,7 @@ public class DeleteDirectoryRequest {
         return this;
     }
 
-    public DeleteDirectoryRequest withIds(Consumer<List<Long>> idsSetter) {
+    public DeleteDirectoryRequest withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -86,14 +86,14 @@ public class DeleteDirectoryRequest {
     }
 
     /**
-     * 实体ID数组。
+     * 实体ID数组，填写String类型替代Long类型。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 

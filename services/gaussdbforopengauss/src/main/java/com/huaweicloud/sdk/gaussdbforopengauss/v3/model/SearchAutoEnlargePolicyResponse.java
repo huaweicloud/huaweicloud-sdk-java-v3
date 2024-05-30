@@ -44,6 +44,16 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
 
     private List<Integer> percents = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "step_size")
+
+    private Integer stepSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "step_percent")
+
+    private Integer stepPercent;
+
     public SearchAutoEnlargePolicyResponse withSwitchOption(Boolean switchOption) {
         this.switchOption = switchOption;
         return this;
@@ -162,6 +172,40 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
         this.percents = percents;
     }
 
+    public SearchAutoEnlargePolicyResponse withStepSize(Integer stepSize) {
+        this.stepSize = stepSize;
+        return this;
+    }
+
+    /**
+     * 扩容步长，固定大小扩容方式。
+     * @return stepSize
+     */
+    public Integer getStepSize() {
+        return stepSize;
+    }
+
+    public void setStepSize(Integer stepSize) {
+        this.stepSize = stepSize;
+    }
+
+    public SearchAutoEnlargePolicyResponse withStepPercent(Integer stepPercent) {
+        this.stepPercent = stepPercent;
+        return this;
+    }
+
+    /**
+     * 扩容步长，百分比扩容方式。
+     * @return stepPercent
+     */
+    public Integer getStepPercent() {
+        return stepPercent;
+    }
+
+    public void setStepPercent(Integer stepPercent) {
+        this.stepPercent = stepPercent;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,13 +220,20 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
             && Objects.equals(this.minVolumeSize, that.minVolumeSize)
             && Objects.equals(this.maxVolumeSize, that.maxVolumeSize)
             && Objects.equals(this.triggerAvailablePercent, that.triggerAvailablePercent)
-            && Objects.equals(this.percents, that.percents);
+            && Objects.equals(this.percents, that.percents) && Objects.equals(this.stepSize, that.stepSize)
+            && Objects.equals(this.stepPercent, that.stepPercent);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(switchOption, limitVolumeSize, minVolumeSize, maxVolumeSize, triggerAvailablePercent, percents);
+        return Objects.hash(switchOption,
+            limitVolumeSize,
+            minVolumeSize,
+            maxVolumeSize,
+            triggerAvailablePercent,
+            percents,
+            stepSize,
+            stepPercent);
     }
 
     @Override
@@ -195,6 +246,8 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
         sb.append("    maxVolumeSize: ").append(toIndentedString(maxVolumeSize)).append("\n");
         sb.append("    triggerAvailablePercent: ").append(toIndentedString(triggerAvailablePercent)).append("\n");
         sb.append("    percents: ").append(toIndentedString(percents)).append("\n");
+        sb.append("    stepSize: ").append(toIndentedString(stepSize)).append("\n");
+        sb.append("    stepPercent: ").append(toIndentedString(stepPercent)).append("\n");
         sb.append("}");
         return sb.toString();
     }

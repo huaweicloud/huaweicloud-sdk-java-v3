@@ -44,7 +44,7 @@ public class CreateNet2CloudPhoneServerRequestBodyServerShareDataVolume {
 
     /**
      * 磁盘大小，单位GB，取值范围[0，32768]。
-     * minimum: 0
+     * minimum: 10
      * maximum: 32768
      * @return size
      */

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.rgc.v1.model;
+package com.huaweicloud.sdk.vpc.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,12 +8,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class ListControlsForOrganizationUnitRequest {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "managed_organization_unit_id")
-
-    private String managedOrganizationUnitId;
+public class ListClouddcnSubnetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -25,32 +20,18 @@ public class ListControlsForOrganizationUnitRequest {
 
     private String marker;
 
-    public ListControlsForOrganizationUnitRequest withManagedOrganizationUnitId(String managedOrganizationUnitId) {
-        this.managedOrganizationUnitId = managedOrganizationUnitId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
 
-    /**
-     * 注册OU ID。
-     * @return managedOrganizationUnitId
-     */
-    public String getManagedOrganizationUnitId() {
-        return managedOrganizationUnitId;
-    }
+    private String vpcId;
 
-    public void setManagedOrganizationUnitId(String managedOrganizationUnitId) {
-        this.managedOrganizationUnitId = managedOrganizationUnitId;
-    }
-
-    public ListControlsForOrganizationUnitRequest withLimit(Integer limit) {
+    public ListClouddcnSubnetsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 分页页面的最大值。
-     * minimum: 1
-     * maximum: 2000
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -61,13 +42,13 @@ public class ListControlsForOrganizationUnitRequest {
         this.limit = limit;
     }
 
-    public ListControlsForOrganizationUnitRequest withMarker(String marker) {
+    public ListClouddcnSubnetsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
     /**
-     * 页面标记。
+     * 分页查询起始的资源id，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -78,6 +59,23 @@ public class ListControlsForOrganizationUnitRequest {
         this.marker = marker;
     }
 
+    public ListClouddcnSubnetsRequest withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * 按照vpc_id过滤查询 企业项目细粒度授权场景下，该字段必传
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,23 +84,23 @@ public class ListControlsForOrganizationUnitRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListControlsForOrganizationUnitRequest that = (ListControlsForOrganizationUnitRequest) obj;
-        return Objects.equals(this.managedOrganizationUnitId, that.managedOrganizationUnitId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
+        ListClouddcnSubnetsRequest that = (ListClouddcnSubnetsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managedOrganizationUnitId, limit, marker);
+        return Objects.hash(limit, marker, vpcId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListControlsForOrganizationUnitRequest {\n");
-        sb.append("    managedOrganizationUnitId: ").append(toIndentedString(managedOrganizationUnitId)).append("\n");
+        sb.append("class ListClouddcnSubnetsRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

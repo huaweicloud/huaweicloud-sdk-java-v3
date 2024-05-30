@@ -53,11 +53,6 @@ public class CcCondition {
          */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
 
-        /**
-         * Enum RESPONSE_CODE for value: "response_code"
-         */
-        public static final CategoryEnum RESPONSE_CODE = new CategoryEnum("response_code");
-
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CategoryEnum> createStaticFields() {
@@ -68,7 +63,6 @@ public class CcCondition {
             map.put("params", PARAMS);
             map.put("cookie", COOKIE);
             map.put("header", HEADER);
-            map.put("response_code", RESPONSE_CODE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -166,7 +160,7 @@ public class CcCondition {
     }
 
     /**
-     * 条件列表匹配逻辑。   -  如果字段类型category是url， 匹配逻辑可以为：contain、 not_contain、 equal、 not_equal、 prefix、 not_prefix、 suffix、 not_suffix、 contain_any、 not_contain_all、 equal_any、 not_equal_all、 equal_any、 not_equal_all、 prefix_any、 not_prefix_all、 suffix_any、 not_suffix_all、 len_greater、 len_less、len_equal或者len_not_equal   - 如果字段类型category是ip或者ipv6，匹配逻辑可以为： equal、not_equal、equal_any或者not_equal_all   - 如果字段类型category是response_code，匹配逻辑可以为： equal或者not_equal   - 如果字段类型category是params、cookie或者header, 匹配逻辑可以为：contain、 not_contain、 equal、 not_equal、 prefix、 not_prefix、 suffix、 not_suffix、 contain_any、 not_contain_all、 equal_any、not_equal_all、 equal_any、 not_equal_all、 prefix_any、 not_prefix_all、 suffix_any、 not_suffix_all、 len_greater、 len_less、len_equal、len_not_equal、、num_greater、num_less、num_equal、num_not_equal、exist或者not_exist
+     * 条件列表匹配逻辑。   -  如果字段类型category是url， 匹配逻辑可以为：contain、 not_contain、 equal、 not_equal、 prefix、 not_prefix、 suffix、 not_suffix、 contain_any、 not_contain_all、 equal_any、 not_equal_all、 equal_any、 not_equal_all、 prefix_any、 not_prefix_all、 suffix_any、 not_suffix_all、 len_greater、 len_less、len_equal或者len_not_equal   - 如果字段类型category是ip或者ipv6，匹配逻辑可以为： equal、not_equal、equal_any或者not_equal_all   - 如果字段类型category是params、cookie或者header, 匹配逻辑可以为：contain、 not_contain、 equal、 not_equal、 prefix、 not_prefix、 suffix、 not_suffix、 contain_any、 not_contain_all、 equal_any、not_equal_all、 equal_any、 not_equal_all、 prefix_any、 not_prefix_all、 suffix_any、 not_suffix_all、 len_greater、 len_less、len_equal、len_not_equal、、num_greater、num_less、num_equal、num_not_equal、exist或者not_exist
      * @return logicOperation
      */
     public String getLogicOperation() {

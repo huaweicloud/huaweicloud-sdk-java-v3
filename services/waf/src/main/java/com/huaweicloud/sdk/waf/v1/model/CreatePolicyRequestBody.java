@@ -15,6 +15,11 @@ public class CreatePolicyRequestBody {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_action_replaced")
+
+    private Boolean logActionReplaced;
+
     public CreatePolicyRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -32,6 +37,23 @@ public class CreatePolicyRequestBody {
         this.name = name;
     }
 
+    public CreatePolicyRequestBody withLogActionReplaced(Boolean logActionReplaced) {
+        this.logActionReplaced = logActionReplaced;
+        return this;
+    }
+
+    /**
+     * cc规则和精准防护规则“防护动作”选择“仅记录”时，Web基础防护是否命中策略规则并阻断，默认为true
+     * @return logActionReplaced
+     */
+    public Boolean getLogActionReplaced() {
+        return logActionReplaced;
+    }
+
+    public void setLogActionReplaced(Boolean logActionReplaced) {
+        this.logActionReplaced = logActionReplaced;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class CreatePolicyRequestBody {
             return false;
         }
         CreatePolicyRequestBody that = (CreatePolicyRequestBody) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.logActionReplaced, that.logActionReplaced);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, logActionReplaced);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class CreatePolicyRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePolicyRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    logActionReplaced: ").append(toIndentedString(logActionReplaced)).append("\n");
         sb.append("}");
         return sb.toString();
     }

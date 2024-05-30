@@ -115,7 +115,7 @@ public class RenewalResourcesReq {
     }
 
     /**
-     * 到期策略： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订
+     * 到期策略（字段已废弃，请勿使用该字段。此字段必填，需携带，但携带的枚举实际并不生效）： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订
      * minimum: 0
      * maximum: 3
      * @return expirePolicy

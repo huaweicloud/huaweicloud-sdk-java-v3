@@ -39,7 +39,7 @@ public class ListAllTablesRequest {
     private String createBy;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -138,7 +138,7 @@ public class ListAllTablesRequest {
     private StatusEnum status;
 
     /**
-     * 同步状态枚举。RUNNING(同步中)、NO_NEED(未同步)、SUMMARY_SUCCESS(整体成功)、SUMMARY_FAILED(整体失败)。
+     * 同步状态枚举。 枚举值：   - RUNNING: 同步中   - NO_NEED: 未同步   - SUMMARY_SUCCESS: 整体成功   - SUMMARY_FAILED: 整体失败 
      */
     public static final class SyncStatusEnum {
 
@@ -375,7 +375,7 @@ public class ListAllTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_id_list")
 
-    private List<Long> bizCatalogIdList = null;
+    private List<String> bizCatalogIdList = null;
 
     /**
      * Gets or Sets bizTypeList
@@ -546,7 +546,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -563,7 +563,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 同步状态枚举。RUNNING(同步中)、NO_NEED(未同步)、SUMMARY_SUCCESS(整体成功)、SUMMARY_FAILED(整体失败)。
+     * 同步状态枚举。 枚举值：   - RUNNING: 同步中   - NO_NEED: 未同步   - SUMMARY_SUCCESS: 整体成功   - SUMMARY_FAILED: 整体失败 
      * @return syncStatus
      */
     public SyncStatusEnum getSyncStatus() {
@@ -596,7 +596,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 同步任务类型枚举。BUSINESS_ASSET(同步业务资产)、DATA_QUALITY(创建质量作业)、TECHNICAL_ASSET(同步技术资产)、META_DATA_LINK(资产关联)、PHYSICAL_TABLE(创建表（生产环境）)、DEV_PHYSICAL_TABLE(创建表（开发环境）)、DLF_TASK(创建数据开发作业)、MATERIALIZATION(数值落库（码表）)、PUBLISH_TO_DLM(发布数据服务API)、SUMMARY_STATUS(整体状态)。
+     * 同步任务类型枚举。 枚举值：   - BUSINESS_ASSET: 同步业务资产   - DATA_QUALITY: 创建质量作业   - TECHNICAL_ASSET: 同步技术资产   - META_DATA_LINK: 资产关联   - PHYSICAL_TABLE: 创建表（生产环境）   - DEV_PHYSICAL_TABLE: 创建表（开发环境）   - DLF_TASK: 创建数据开发作业   - MATERIALIZATION: 数值落库（码表）   - PUBLISH_TO_DLM: 发布数据服务API   - SUMMARY_STATUS: 整体状态 
      * @return syncKey
      */
     public List<SyncKeyEnum> getSyncKey() {
@@ -664,7 +664,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -693,12 +693,12 @@ public class ListAllTablesRequest {
         this.offset = offset;
     }
 
-    public ListAllTablesRequest withBizCatalogIdList(List<Long> bizCatalogIdList) {
+    public ListAllTablesRequest withBizCatalogIdList(List<String> bizCatalogIdList) {
         this.bizCatalogIdList = bizCatalogIdList;
         return this;
     }
 
-    public ListAllTablesRequest addBizCatalogIdListItem(Long bizCatalogIdListItem) {
+    public ListAllTablesRequest addBizCatalogIdListItem(String bizCatalogIdListItem) {
         if (this.bizCatalogIdList == null) {
             this.bizCatalogIdList = new ArrayList<>();
         }
@@ -706,7 +706,7 @@ public class ListAllTablesRequest {
         return this;
     }
 
-    public ListAllTablesRequest withBizCatalogIdList(Consumer<List<Long>> bizCatalogIdListSetter) {
+    public ListAllTablesRequest withBizCatalogIdList(Consumer<List<String>> bizCatalogIdListSetter) {
         if (this.bizCatalogIdList == null) {
             this.bizCatalogIdList = new ArrayList<>();
         }
@@ -715,14 +715,14 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 所属主题的ID列表。
+     * 所属主题的ID列表，填写String类型替代Long类型。
      * @return bizCatalogIdList
      */
-    public List<Long> getBizCatalogIdList() {
+    public List<String> getBizCatalogIdList() {
         return bizCatalogIdList;
     }
 
-    public void setBizCatalogIdList(List<Long> bizCatalogIdList) {
+    public void setBizCatalogIdList(List<String> bizCatalogIdList) {
         this.bizCatalogIdList = bizCatalogIdList;
     }
 
@@ -748,7 +748,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 查询的表类型，必填。TABLE_MODEL_LOGIC(逻辑实体)、TABLE_MODEL(物理表)、DIMENSION_LOGIC_TABLE(维度表)、FACT_LOGIC_TABLE(事实表)、AGGREGATION_LOGIC_TABLE(汇总表)。
+     * 查询的表类型，必填。 枚举值：   - TABLE_MODEL_LOGIC: 逻辑实体   - TABLE_MODEL: 物理表   - DIMENSION_LOGIC_TABLE: 维度表   - FACT_LOGIC_TABLE: 事实表   - AGGREGATION_LOGIC_TABLE: 汇总表 
      * @return bizTypeList
      */
     public List<BizTypeListEnum> getBizTypeList() {

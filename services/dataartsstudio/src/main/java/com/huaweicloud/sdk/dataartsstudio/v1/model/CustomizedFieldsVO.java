@@ -19,7 +19,7 @@ public class CustomizedFieldsVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_ch")
@@ -42,7 +42,7 @@ public class CustomizedFieldsVO {
     private String optionalValues;
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      */
     public static final class TypeEnum {
 
@@ -158,20 +158,20 @@ public class CustomizedFieldsVO {
 
     private OffsetDateTime updateTime;
 
-    public CustomizedFieldsVO withId(Long id) {
+    public CustomizedFieldsVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -181,7 +181,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 中文名称。
+     * 自定义项中文名称。
      * @return nameCh
      */
     public String getNameCh() {
@@ -198,7 +198,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 英文名称。
+     * 自定义项英文名称。
      * @return nameEn
      */
     public String getNameEn() {
@@ -232,7 +232,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 可选值。分号分隔。
+     * 可选值。当可选值有多个时，用分号分隔。
      * @return optionalValues
      */
     public String getOptionalValues() {
@@ -249,7 +249,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      * @return type
      */
     public TypeEnum getType() {
@@ -266,7 +266,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 顺序。
+     * 系统排序字段，新建、修改时不需要填写。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -283,7 +283,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 描述。
+     * 自定义项描述。
      * @return description
      */
     public String getDescription() {
@@ -300,7 +300,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -317,7 +317,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 更新人。
+     * 更新人，只读。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -334,7 +334,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -351,7 +351,7 @@ public class CustomizedFieldsVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

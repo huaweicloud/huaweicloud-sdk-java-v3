@@ -45,7 +45,7 @@ public class DeleteManualBackupRequest {
     }
 
     /**
-     * 备份ID。
+     * 手动备份ID。
      * @return backupId
      */
     public String getBackupId() {

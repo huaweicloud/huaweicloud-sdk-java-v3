@@ -107,6 +107,11 @@ public class SourceWithPort {
     private OriginTypeEnum originType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_bucket_type")
+
+    private String obsBucketType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_standby")
 
     private Integer activeStandby;
@@ -175,6 +180,23 @@ public class SourceWithPort {
 
     public void setOriginType(OriginTypeEnum originType) {
         this.originType = originType;
+    }
+
+    public SourceWithPort withObsBucketType(String obsBucketType) {
+        this.obsBucketType = obsBucketType;
+        return this;
+    }
+
+    /**
+     * OBS桶类型。   - private: 私有桶（除桶ACL授权外的其他用户无桶的访问权限）。   - public: 公有桶（任何用户都可以对桶内对象进行读操作）。
+     * @return obsBucketType
+     */
+    public String getObsBucketType() {
+        return obsBucketType;
+    }
+
+    public void setObsBucketType(String obsBucketType) {
+        this.obsBucketType = obsBucketType;
     }
 
     public SourceWithPort withActiveStandby(Integer activeStandby) {
@@ -256,6 +278,7 @@ public class SourceWithPort {
         SourceWithPort that = (SourceWithPort) obj;
         return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.ipOrDomain, that.ipOrDomain)
             && Objects.equals(this.originType, that.originType)
+            && Objects.equals(this.obsBucketType, that.obsBucketType)
             && Objects.equals(this.activeStandby, that.activeStandby)
             && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting)
             && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort);
@@ -263,7 +286,14 @@ public class SourceWithPort {
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, ipOrDomain, originType, activeStandby, enableObsWebHosting, httpPort, httpsPort);
+        return Objects.hash(domainId,
+            ipOrDomain,
+            originType,
+            obsBucketType,
+            activeStandby,
+            enableObsWebHosting,
+            httpPort,
+            httpsPort);
     }
 
     @Override
@@ -273,6 +303,7 @@ public class SourceWithPort {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
+        sb.append("    obsBucketType: ").append(toIndentedString(obsBucketType)).append("\n");
         sb.append("    activeStandby: ").append(toIndentedString(activeStandby)).append("\n");
         sb.append("    enableObsWebHosting: ").append(toIndentedString(enableObsWebHosting)).append("\n");
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");

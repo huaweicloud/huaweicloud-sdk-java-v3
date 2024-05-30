@@ -36,7 +36,7 @@ public class CommonConditionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cal_fn_ids")
 
-    private List<Long> calFnIds = null;
+    private List<String> calFnIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front_configs")
@@ -46,7 +46,7 @@ public class CommonConditionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     public CommonConditionVO withName(String name) {
         this.name = name;
@@ -148,12 +148,12 @@ public class CommonConditionVO {
         this.calExp = calExp;
     }
 
-    public CommonConditionVO withCalFnIds(List<Long> calFnIds) {
+    public CommonConditionVO withCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
         return this;
     }
 
-    public CommonConditionVO addCalFnIdsItem(Long calFnIdsItem) {
+    public CommonConditionVO addCalFnIdsItem(String calFnIdsItem) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -161,7 +161,7 @@ public class CommonConditionVO {
         return this;
     }
 
-    public CommonConditionVO withCalFnIds(Consumer<List<Long>> calFnIdsSetter) {
+    public CommonConditionVO withCalFnIds(Consumer<List<String>> calFnIdsSetter) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -170,14 +170,14 @@ public class CommonConditionVO {
     }
 
     /**
-     * 引用函数ID。
+     * 引用函数ID，填写String类型替代Long类型。
      * @return calFnIds
      */
-    public List<Long> getCalFnIds() {
+    public List<String> getCalFnIds() {
         return calFnIds;
     }
 
-    public void setCalFnIds(List<Long> calFnIds) {
+    public void setCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
     }
 
@@ -198,20 +198,20 @@ public class CommonConditionVO {
         this.frontConfigs = frontConfigs;
     }
 
-    public CommonConditionVO withId(Long id) {
+    public CommonConditionVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * id
+     * 通用限定ID，只读，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

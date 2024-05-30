@@ -17,7 +17,7 @@ public class TableMappingVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -32,12 +32,12 @@ public class TableMappingVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_table_id")
 
-    private Long targetTableId;
+    private String targetTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_model_id")
 
-    private Long srcModelId;
+    private String srcModelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_model_name")
@@ -89,20 +89,20 @@ public class TableMappingVO {
 
     private String updateBy;
 
-    public TableMappingVO withId(Long id) {
+    public TableMappingVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -140,37 +140,37 @@ public class TableMappingVO {
         this.description = description;
     }
 
-    public TableMappingVO withTargetTableId(Long targetTableId) {
+    public TableMappingVO withTargetTableId(String targetTableId) {
         this.targetTableId = targetTableId;
         return this;
     }
 
     /**
-     * 目的表ID。
+     * 目的表ID，填写String类型替代Long类型。
      * @return targetTableId
      */
-    public Long getTargetTableId() {
+    public String getTargetTableId() {
         return targetTableId;
     }
 
-    public void setTargetTableId(Long targetTableId) {
+    public void setTargetTableId(String targetTableId) {
         this.targetTableId = targetTableId;
     }
 
-    public TableMappingVO withSrcModelId(Long srcModelId) {
+    public TableMappingVO withSrcModelId(String srcModelId) {
         this.srcModelId = srcModelId;
         return this;
     }
 
     /**
-     * 来源表在关系建模中的模型ID。
+     * 来源表在关系建模中的模型ID，填写String类型替代Long类型。
      * @return srcModelId
      */
-    public Long getSrcModelId() {
+    public String getSrcModelId() {
         return srcModelId;
     }
 
-    public void setSrcModelId(Long srcModelId) {
+    public void setSrcModelId(String srcModelId) {
         this.srcModelId = srcModelId;
     }
 

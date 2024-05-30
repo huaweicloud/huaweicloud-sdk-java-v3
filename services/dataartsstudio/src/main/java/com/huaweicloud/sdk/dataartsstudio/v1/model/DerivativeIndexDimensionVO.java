@@ -26,12 +26,12 @@ public class DerivativeIndexDimensionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension_id")
 
-    private Long dimensionId;
+    private String dimensionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hierarchies_id")
 
-    private Long hierarchiesId;
+    private String hierarchiesId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ordinal")
@@ -76,7 +76,7 @@ public class DerivativeIndexDimensionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l1_id")
 
-    private Long l1Id;
+    private String l1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
@@ -86,7 +86,7 @@ public class DerivativeIndexDimensionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dw_type")
@@ -96,7 +96,7 @@ public class DerivativeIndexDimensionVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     public DerivativeIndexDimensionVO withGroupId(String groupId) {
         this.groupId = groupId;
@@ -132,37 +132,37 @@ public class DerivativeIndexDimensionVO {
         this.role = role;
     }
 
-    public DerivativeIndexDimensionVO withDimensionId(Long dimensionId) {
+    public DerivativeIndexDimensionVO withDimensionId(String dimensionId) {
         this.dimensionId = dimensionId;
         return this;
     }
 
     /**
-     * 维度ID。
+     * 维度ID，填写String类型替代Long类型。
      * @return dimensionId
      */
-    public Long getDimensionId() {
+    public String getDimensionId() {
         return dimensionId;
     }
 
-    public void setDimensionId(Long dimensionId) {
+    public void setDimensionId(String dimensionId) {
         this.dimensionId = dimensionId;
     }
 
-    public DerivativeIndexDimensionVO withHierarchiesId(Long hierarchiesId) {
+    public DerivativeIndexDimensionVO withHierarchiesId(String hierarchiesId) {
         this.hierarchiesId = hierarchiesId;
         return this;
     }
 
     /**
-     * 维度层级ID。
+     * 维度层级ID，填写String类型替代Long类型。
      * @return hierarchiesId
      */
-    public Long getHierarchiesId() {
+    public String getHierarchiesId() {
         return hierarchiesId;
     }
 
-    public void setHierarchiesId(Long hierarchiesId) {
+    public void setHierarchiesId(String hierarchiesId) {
         this.hierarchiesId = hierarchiesId;
     }
 
@@ -172,7 +172,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 序号。
+     * 序号，只读。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -256,7 +256,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 层级属性。
+     * 层级属性，只读。
      * @return hierarchies
      */
     public List<DimensionHierarchiesVO> getHierarchies() {
@@ -318,20 +318,20 @@ public class DerivativeIndexDimensionVO {
         this.l3 = l3;
     }
 
-    public DerivativeIndexDimensionVO withL1Id(Long l1Id) {
+    public DerivativeIndexDimensionVO withL1Id(String l1Id) {
         this.l1Id = l1Id;
         return this;
     }
 
     /**
-     * 主题域分组ID。
+     * 主题域分组ID，只读，填写String类型替代Long类型。
      * @return l1Id
      */
-    public Long getL1Id() {
+    public String getL1Id() {
         return l1Id;
     }
 
-    public void setL1Id(Long l1Id) {
+    public void setL1Id(String l1Id) {
         this.l1Id = l1Id;
     }
 
@@ -352,20 +352,20 @@ public class DerivativeIndexDimensionVO {
         this.l2Id = l2Id;
     }
 
-    public DerivativeIndexDimensionVO withL3Id(Long l3Id) {
+    public DerivativeIndexDimensionVO withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象ID。
+     * 业务对象ID，只读，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -386,20 +386,20 @@ public class DerivativeIndexDimensionVO {
         this.dwType = dwType;
     }
 
-    public DerivativeIndexDimensionVO withId(Long id) {
+    public DerivativeIndexDimensionVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * id
+     * 层级的ID，只读，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

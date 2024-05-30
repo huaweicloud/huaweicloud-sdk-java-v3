@@ -129,7 +129,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 路径。
+     * 路径。用“/”作为分隔，如：运营领域/云学院/云学院培训方案。
      * @return path
      */
     public String getPath() {
@@ -146,7 +146,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 名称。
+     * 资产名称。
      * @return qualifiedName
      */
     public String getQualifiedName() {
@@ -426,7 +426,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L1层。
+     * 是否为L1层。主题域分组。
      * @return l1
      */
     public Boolean getL1() {
@@ -443,7 +443,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L2层。
+     * 是否为L2层。主题域。
      * @return l2
      */
     public Boolean getL2() {
@@ -460,7 +460,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 是否为L3层。
+     * 是否为L3层。业务对象。
      * @return l3
      */
     public Boolean getL3() {
@@ -477,7 +477,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 顺序编号。
+     * 顺序编号。主题返回时根据此编号由小到大排序。
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -494,7 +494,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 租户ID。
+     * 租户ID。获取方式参考此接口的路径参数“project_id”获取。
      * @return tenantId
      */
     public String getTenantId() {
@@ -527,7 +527,7 @@ public class CatalogAttributeVO {
     }
 
     /**
-     * 自定义项。
+     * 自定义项。主题的自定义属性项。
      * @return selfDefinedFields
      */
     public List<SelfDefinedFieldVO> getSelfDefinedFields() {

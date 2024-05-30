@@ -14,17 +14,17 @@ public class QualityInfoVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
-    private Long tableId;
+    private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_id")
 
-    private Long attrId;
+    private String attrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
@@ -34,7 +34,7 @@ public class QualityInfoVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_quality_id")
 
-    private Long dataQualityId;
+    private String dataQualityId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_control")
@@ -91,54 +91,54 @@ public class QualityInfoVO {
 
     private OffsetDateTime updateTime;
 
-    public QualityInfoVO withId(Long id) {
+    public QualityInfoVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码ID。
+     * 编码ID，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public QualityInfoVO withTableId(Long tableId) {
+    public QualityInfoVO withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
 
     /**
-     * 表ID。
+     * 表ID，只读，填写String类型替代Long类型。
      * @return tableId
      */
-    public Long getTableId() {
+    public String getTableId() {
         return tableId;
     }
 
-    public void setTableId(Long tableId) {
+    public void setTableId(String tableId) {
         this.tableId = tableId;
     }
 
-    public QualityInfoVO withAttrId(Long attrId) {
+    public QualityInfoVO withAttrId(String attrId) {
         this.attrId = attrId;
         return this;
     }
 
     /**
-     * 属性ID。
+     * 属性ID，只读，填写String类型替代Long类型。
      * @return attrId
      */
-    public Long getAttrId() {
+    public String getAttrId() {
         return attrId;
     }
 
-    public void setAttrId(Long attrId) {
+    public void setAttrId(String attrId) {
         this.attrId = attrId;
     }
 
@@ -159,20 +159,20 @@ public class QualityInfoVO {
         this.bizType = bizType;
     }
 
-    public QualityInfoVO withDataQualityId(Long dataQualityId) {
+    public QualityInfoVO withDataQualityId(String dataQualityId) {
         this.dataQualityId = dataQualityId;
         return this;
     }
 
     /**
-     * 质量ID。
+     * 质量ID，填写String类型替代Long类型。
      * @return dataQualityId
      */
-    public Long getDataQualityId() {
+    public String getDataQualityId() {
         return dataQualityId;
     }
 
-    public void setDataQualityId(Long dataQualityId) {
+    public void setDataQualityId(String dataQualityId) {
         this.dataQualityId = dataQualityId;
     }
 
@@ -267,7 +267,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 是否来源于数据标准质量配置。
+     * 是否来源于数据标准质量配置，只读。
      * @return fromStandard
      */
     public Boolean getFromStandard() {
@@ -301,7 +301,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -318,7 +318,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 更新人。
+     * 更新人，只读。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -335,7 +335,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -352,7 +352,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

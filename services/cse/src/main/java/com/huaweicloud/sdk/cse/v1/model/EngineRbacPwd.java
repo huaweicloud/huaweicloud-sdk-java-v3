@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 操作微服务引擎专享版安全认证信息
+ * 操作ServiceComb引擎专享版安全认证信息
  */
 public class EngineRbacPwd {
 
@@ -21,7 +21,7 @@ public class EngineRbacPwd {
     }
 
     /**
-     * 开启安全认证的微服务引擎专享版默认root帐号的密码
+     * 开启安全认证的ServiceComb引擎专享版默认root帐号的密码
      * @return pwd
      */
     public String getPwd() {

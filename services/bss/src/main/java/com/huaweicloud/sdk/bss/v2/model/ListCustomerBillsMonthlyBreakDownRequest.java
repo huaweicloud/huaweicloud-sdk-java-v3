@@ -173,9 +173,9 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 计费模式。1：包年/包月3：按需10：预留实例此参数不携带或携带值为空时，不作为筛选条件。
+     * 计费模式。1：包年/包月3：按需10：预留实例11：节省计划此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 0
-     * maximum: 10
+     * maximum: 11
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -192,7 +192,7 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     /**
-     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更 此参数不携带或携带值为空时，不作为筛选条件。
+     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更23：消费-节省计划抵扣24：退款-包年/包月转按需此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 1
      * maximum: 102
      * @return billType

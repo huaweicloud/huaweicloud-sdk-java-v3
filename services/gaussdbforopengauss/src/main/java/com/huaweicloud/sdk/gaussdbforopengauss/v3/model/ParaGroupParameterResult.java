@@ -41,7 +41,7 @@ public class ParaGroupParameterResult {
     private String valueRange;
 
     /**
-     * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+     * 参数类型，取值为“string”、“integer”、“boolean”、“list”、\"all\"或“float”之一。
      */
     public static final class DataTypeEnum {
 
@@ -229,7 +229,7 @@ public class ParaGroupParameterResult {
     }
 
     /**
-     * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
+     * 参数类型，取值为“string”、“integer”、“boolean”、“list”、\"all\"或“float”之一。
      * @return dataType
      */
     public DataTypeEnum getDataType() {

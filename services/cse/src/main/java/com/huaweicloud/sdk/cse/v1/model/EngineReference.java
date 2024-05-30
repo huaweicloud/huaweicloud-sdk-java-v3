@@ -104,7 +104,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版部署的可用区列表
+     * 微服务引擎部署的可用区列表
      * @return azList
      */
     public List<String> getAzList() {
@@ -121,7 +121,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版子网网络ID
+     * 微服务引擎子网网络ID
      * @return networkId
      */
     public String getNetworkId() {
@@ -138,7 +138,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版ipv4子网划分
+     * 微服务引擎ipv4子网划分
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -155,7 +155,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版ipv6子网划分
+     * 微服务引擎ipv6子网划分
      * @return subnetCidrV6
      */
     public String getSubnetCidrV6() {
@@ -172,7 +172,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版子网网关
+     * 微服务引擎子网网关
      * @return subnetGateway
      */
     public String getSubnetGateway() {
@@ -189,7 +189,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版公网地址ID
+     * 微服务引擎公网地址ID
      * @return publicIpId
      */
     public String getPublicIpId() {
@@ -206,7 +206,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版可支持的微服务总数
+     * 微服务引擎可支持的微服务总数
      * @return serviceLimit
      */
     public Integer getServiceLimit() {
@@ -223,7 +223,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版可支持的实例总数
+     * 微服务引擎可支持的实例总数
      * @return instanceLimit
      */
     public Integer getInstanceLimit() {
@@ -256,7 +256,7 @@ public class EngineReference {
     }
 
     /**
-     * 微服务引擎专享版附加参数
+     * 微服务引擎附加参数
      * @return inputs
      */
     public Map<String, String> getInputs() {

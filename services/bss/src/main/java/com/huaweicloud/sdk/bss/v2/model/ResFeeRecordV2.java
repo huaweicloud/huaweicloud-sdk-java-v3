@@ -313,7 +313,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更23：消费-节省计划抵扣24：退款-包年/包月转按需
      * @return billType
      */
     public Integer getBillType() {
@@ -653,7 +653,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 唯一标识。
+     * 唯一标识。 按账期类型统计时不返回唯一标识。
      * @return id
      */
     public String getId() {
@@ -721,7 +721,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 计费模式。 1：包年/包月3：按需10：预留实例
+     * 计费模式。 1：包年/包月3：按需10：预留实例11：节省计划
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -789,7 +789,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 资源的使用量。
+     * 资源的使用量。  说明： 查询包周期资源，不返回资源的使用量。
      * @return usage
      */
     public Double getUsage() {
@@ -806,7 +806,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
+     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。  说明： 查询包周期资源，不返回资源使用量的度量单位。
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {
@@ -891,7 +891,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 产品的单价。 按需产品的单价，只有简单定价，不分档的场景会返回。 包周期产品的单价，只有包周期的如下场景会返回：包周期订购/续订/降配/升配/扩容简单定价，不分档 预留实例的单价，只有如下场景下会返回：订购/续订/降配/升配/扩容/按时计费简单定价，不分档
+     * 产品的单价。 按需产品的单价，只有简单定价，不分档的场景会返回。 包周期产品的单价，只有包周期的如下场景会返回：包周期订购/续订/降配/升配/扩容简单定价，不分档 预留实例的单价，只有如下场景下会返回：订购/续订/降配/升配/扩容/按时计费简单定价，不分档  说明： 当statistic_type入参为1，按账期，查询包周期产品时，不返回单价。
      * @return unitPrice
      */
     public Double getUnitPrice() {
@@ -908,7 +908,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 产品的单价单位。 线性产品的单价单位为“元/{线性单位}/月”或“元/{线性单位}/小时”等。非线性产品的单价单位为“元/月”或“元/小时”等。  说明： “线性单位”为线性产品（即订购时需要指定大小的产品）的大小的单位，比如硬盘的线性单位为GB，带宽的线性单位为Mbps。
+     * 产品的单价单位。 线性产品的单价单位为“元/{线性单位}/月”或“元/{线性单位}/小时”等。非线性产品的单价单位为“元/月”或“元/小时”等。  说明： “线性单位”为线性产品（即订购时需要指定大小的产品）的大小的单位，比如硬盘的线性单位为GB，带宽的线性单位为Mbps。当statistic_type入参为1，按账期，查询包周期产品时，不返回单价单位。
      * @return unit
      */
     public String getUnit() {
@@ -1129,7 +1129,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 实付金额计算公式。当前只包含如下场景： 按需简单定价 按需线性定价 包年包月新购和续费的简单定价 包年包月新购和续费的线性定价  说明： 实付金额计算公式得到的金额值等于amount - coupon_amount的差值。
+     * 实付金额计算公式。当前只包含如下场景： 按需非线性定价{使用量}【使用量】/{单位转化率}【单位转换】*{单价}【单价】-{优惠金额}【优惠金额】-{抹零金额}【抹零金额】-{代金券抵扣}【代金券抵扣】 按需线性定价{使用量}【使用量】/{单位转化率}【单位转换】*{线性大小}【规格】*{单价}【单价】-{优惠金额}【优惠金额】-{抹零金额}【抹零金额】-{代金券抵扣}【代金券抵扣】 包年包月新购和续订非线性定价{周期数}【周期数】/{周期转化率}【周期转换】*{单价}【单价】-{优惠金额}【优惠金额】-{代金券抵扣}【代金券抵扣】 包年包月新购和续订线性定价{周期数}【周期数】/{周期转化率}【周期转换】*{线性大小}【规格】*{单价}【单价】-{优惠金额}【优惠金额】-{代金券抵扣}【代金券抵扣】 包年包月（一次性）新购和续订非线性定价{单价}【单价】-{优惠金额}【优惠金额】-{代金券抵扣}【代金券抵扣】 包年包月（一次性）新购和续订线性定价{线性大小}【规格】*{单价}【单价】-{优惠金额}【优惠金额】-{代金券抵扣}【代金券抵扣】  说明： 实付金额计算公式得到的金额值等于amount - coupon_amount的差值。按账期类型查询时不返回计算公式。
      * @return formula
      */
     public String getFormula() {
@@ -1146,7 +1146,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的云服务类型编码。
      * @return subServiceTypeCode
      */
     public String getSubServiceTypeCode() {
@@ -1163,7 +1163,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的云服务类型名称。
      * @return subServiceTypeName
      */
     public String getSubServiceTypeName() {
@@ -1180,7 +1180,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的资源类型编码。
      * @return subResourceTypeCode
      */
     public String getSubResourceTypeCode() {
@@ -1197,7 +1197,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的资源类型名称。
      * @return subResourceTypeName
      */
     public String getSubResourceTypeName() {
@@ -1214,7 +1214,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的资源ID，资源标识。（如果为预留实例，则为预留实例标识）
      * @return subResourceId
      */
     public String getSubResourceId() {
@@ -1231,7 +1231,7 @@ public class ResFeeRecordV2 {
     }
 
     /**
-     * 该字段为预留字段。
+     * 整机的子云服务的自身的资源名称，资源标识。（如果为预留实例，则为预留实例标识）
      * @return subResourceName
      */
     public String getSubResourceName() {

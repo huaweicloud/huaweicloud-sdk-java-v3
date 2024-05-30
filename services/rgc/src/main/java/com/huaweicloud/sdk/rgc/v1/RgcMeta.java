@@ -10,8 +10,8 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitRequest;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateResponse;
 
@@ -64,39 +64,39 @@ public class RgcMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnit =
-        genForListControlsForOrganizationUnit();
+    public static final HttpRequestDef<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse> listControlsForOrganizationalUnit =
+        genForListControlsForOrganizationalUnit();
 
-    private static HttpRequestDef<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> genForListControlsForOrganizationUnit() {
+    private static HttpRequestDef<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse> genForListControlsForOrganizationalUnit() {
         // basic
-        HttpRequestDef.Builder<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> builder =
+        HttpRequestDef.Builder<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.GET,
-                    ListControlsForOrganizationUnitRequest.class,
-                    ListControlsForOrganizationUnitResponse.class)
-                .withName("ListControlsForOrganizationUnit")
-                .withUri("/v1/governance/managed-organization-units/{managed_organization_unit_id}/controls")
+                    ListControlsForOrganizationalUnitRequest.class,
+                    ListControlsForOrganizationalUnitResponse.class)
+                .withName("ListControlsForOrganizationalUnit")
+                .withUri("/v1/governance/managed-organizational-units/{managed_organizational_unit_id}/controls")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("managed_organization_unit_id",
+        builder.<String>withRequestField("managed_organizational_unit_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getManagedOrganizationUnitId,
-                ListControlsForOrganizationUnitRequest::setManagedOrganizationUnitId));
+            f -> f.withMarshaller(ListControlsForOrganizationalUnitRequest::getManagedOrganizationalUnitId,
+                ListControlsForOrganizationalUnitRequest::setManagedOrganizationalUnitId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getLimit,
-                ListControlsForOrganizationUnitRequest::setLimit));
+            f -> f.withMarshaller(ListControlsForOrganizationalUnitRequest::getLimit,
+                ListControlsForOrganizationalUnitRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListControlsForOrganizationUnitRequest::getMarker,
-                ListControlsForOrganizationUnitRequest::setMarker));
+            f -> f.withMarshaller(ListControlsForOrganizationalUnitRequest::getMarker,
+                ListControlsForOrganizationalUnitRequest::setMarker));
 
         // response
 

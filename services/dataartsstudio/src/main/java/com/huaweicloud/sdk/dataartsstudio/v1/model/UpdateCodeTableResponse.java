@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class UpdateCodeTableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private CreateCodeTableResultData data;
 
-    public UpdateCodeTableResponse withData(Object data) {
+    public UpdateCodeTableResponse withData(CreateCodeTableResultData data) {
         this.data = data;
         return this;
     }
 
+    public UpdateCodeTableResponse withData(Consumer<CreateCodeTableResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new CreateCodeTableResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public CreateCodeTableResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(CreateCodeTableResultData data) {
         this.data = data;
     }
 

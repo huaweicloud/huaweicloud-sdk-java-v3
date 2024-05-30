@@ -41,7 +41,7 @@ public class SearchAtomicIndexesRequest {
     private String approver;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -152,12 +152,12 @@ public class SearchAtomicIndexesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
-    private Long tableId;
+    private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -262,7 +262,7 @@ public class SearchAtomicIndexesRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -307,37 +307,37 @@ public class SearchAtomicIndexesRequest {
         this.endTime = endTime;
     }
 
-    public SearchAtomicIndexesRequest withL3Id(Long l3Id) {
+    public SearchAtomicIndexesRequest withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象l3的ID。
+     * 业务对象l3的ID，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
-    public SearchAtomicIndexesRequest withTableId(Long tableId) {
+    public SearchAtomicIndexesRequest withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
 
     /**
-     * 关联表的ID。
+     * 关联表的ID，填写String类型替代Long类型。
      * @return tableId
      */
-    public Long getTableId() {
+    public String getTableId() {
         return tableId;
     }
 
-    public void setTableId(Long tableId) {
+    public void setTableId(String tableId) {
         this.tableId = tableId;
     }
 
@@ -347,7 +347,7 @@ public class SearchAtomicIndexesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

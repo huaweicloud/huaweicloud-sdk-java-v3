@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class SearchApprovalsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private SearchApprovalsResultData data;
 
-    public SearchApprovalsResponse withData(Object data) {
+    public SearchApprovalsResponse withData(SearchApprovalsResultData data) {
         this.data = data;
         return this;
     }
 
+    public SearchApprovalsResponse withData(Consumer<SearchApprovalsResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new SearchApprovalsResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public SearchApprovalsResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(SearchApprovalsResultData data) {
         this.data = data;
     }
 

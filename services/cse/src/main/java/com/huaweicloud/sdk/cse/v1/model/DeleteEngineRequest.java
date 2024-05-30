@@ -45,7 +45,7 @@ public class DeleteEngineRequest {
     }
 
     /**
-     * 微服务引擎专享版ID
+     * 微服务引擎ID
      * @return engineId
      */
     public String getEngineId() {

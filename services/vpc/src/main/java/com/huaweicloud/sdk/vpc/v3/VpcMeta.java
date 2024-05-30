@@ -5,9 +5,12 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.vpc.v3.model.AddClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AddResourceTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsResponse;
@@ -20,15 +23,24 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
@@ -55,6 +67,10 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
@@ -78,8 +94,17 @@ import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListResourcesByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -111,6 +136,10 @@ import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
@@ -132,6 +161,9 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateClouddcnSubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateClouddcnSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallResponse;
@@ -1766,6 +1798,375 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFirewallRulesRequestBody.class),
             f -> f.withMarshaller(UpdateFirewallRulesRequest::getBody, UpdateFirewallRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddClouddcnSubnetsTagsRequest, AddClouddcnSubnetsTagsResponse> addClouddcnSubnetsTags =
+        genForAddClouddcnSubnetsTags();
+
+    private static HttpRequestDef<AddClouddcnSubnetsTagsRequest, AddClouddcnSubnetsTagsResponse> genForAddClouddcnSubnetsTags() {
+        // basic
+        HttpRequestDef.Builder<AddClouddcnSubnetsTagsRequest, AddClouddcnSubnetsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddClouddcnSubnetsTagsRequest.class, AddClouddcnSubnetsTagsResponse.class)
+            .withName("AddClouddcnSubnetsTags")
+            .withUri("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddClouddcnSubnetsTagsRequest::getResourceId,
+                AddClouddcnSubnetsTagsRequest::setResourceId));
+        builder.<AddResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddResourceTagsRequestBody.class),
+            f -> f.withMarshaller(AddClouddcnSubnetsTagsRequest::getBody, AddClouddcnSubnetsTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateClouddcnSubnetsTagsRequest, BatchCreateClouddcnSubnetsTagsResponse> batchCreateClouddcnSubnetsTags =
+        genForBatchCreateClouddcnSubnetsTags();
+
+    private static HttpRequestDef<BatchCreateClouddcnSubnetsTagsRequest, BatchCreateClouddcnSubnetsTagsResponse> genForBatchCreateClouddcnSubnetsTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateClouddcnSubnetsTagsRequest, BatchCreateClouddcnSubnetsTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateClouddcnSubnetsTagsRequest.class,
+                    BatchCreateClouddcnSubnetsTagsResponse.class)
+                .withName("BatchCreateClouddcnSubnetsTags")
+                .withUri("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateClouddcnSubnetsTagsRequest::getResourceId,
+                BatchCreateClouddcnSubnetsTagsRequest::setResourceId));
+        builder.<BatchCreateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateRequestBody.class),
+            f -> f.withMarshaller(BatchCreateClouddcnSubnetsTagsRequest::getBody,
+                BatchCreateClouddcnSubnetsTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteClouddcnSubnetsTagsRequest, BatchDeleteClouddcnSubnetsTagsResponse> batchDeleteClouddcnSubnetsTags =
+        genForBatchDeleteClouddcnSubnetsTags();
+
+    private static HttpRequestDef<BatchDeleteClouddcnSubnetsTagsRequest, BatchDeleteClouddcnSubnetsTagsResponse> genForBatchDeleteClouddcnSubnetsTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteClouddcnSubnetsTagsRequest, BatchDeleteClouddcnSubnetsTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteClouddcnSubnetsTagsRequest.class,
+                    BatchDeleteClouddcnSubnetsTagsResponse.class)
+                .withName("BatchDeleteClouddcnSubnetsTags")
+                .withUri("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteClouddcnSubnetsTagsRequest::getResourceId,
+                BatchDeleteClouddcnSubnetsTagsRequest::setResourceId));
+        builder.<BatchDeleteRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteClouddcnSubnetsTagsRequest::getBody,
+                BatchDeleteClouddcnSubnetsTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClouddcnSubnetRequest, CreateClouddcnSubnetResponse> createClouddcnSubnet =
+        genForCreateClouddcnSubnet();
+
+    private static HttpRequestDef<CreateClouddcnSubnetRequest, CreateClouddcnSubnetResponse> genForCreateClouddcnSubnet() {
+        // basic
+        HttpRequestDef.Builder<CreateClouddcnSubnetRequest, CreateClouddcnSubnetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateClouddcnSubnetRequest.class, CreateClouddcnSubnetResponse.class)
+            .withName("CreateClouddcnSubnet")
+            .withUri("/v3/{project_id}/vpc/clouddcn-subnets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateClouddcnSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClouddcnSubnetRequestBody.class),
+            f -> f.withMarshaller(CreateClouddcnSubnetRequest::getBody, CreateClouddcnSubnetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClouddcnSubnetRequest, DeleteClouddcnSubnetResponse> deleteClouddcnSubnet =
+        genForDeleteClouddcnSubnet();
+
+    private static HttpRequestDef<DeleteClouddcnSubnetRequest, DeleteClouddcnSubnetResponse> genForDeleteClouddcnSubnet() {
+        // basic
+        HttpRequestDef.Builder<DeleteClouddcnSubnetRequest, DeleteClouddcnSubnetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteClouddcnSubnetRequest.class, DeleteClouddcnSubnetResponse.class)
+            .withName("DeleteClouddcnSubnet")
+            .withUri("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clouddcn_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClouddcnSubnetRequest::getClouddcnSubnetId,
+                DeleteClouddcnSubnetRequest::setClouddcnSubnetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClouddcnSubnetsTagRequest, DeleteClouddcnSubnetsTagResponse> deleteClouddcnSubnetsTag =
+        genForDeleteClouddcnSubnetsTag();
+
+    private static HttpRequestDef<DeleteClouddcnSubnetsTagRequest, DeleteClouddcnSubnetsTagResponse> genForDeleteClouddcnSubnetsTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteClouddcnSubnetsTagRequest, DeleteClouddcnSubnetsTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClouddcnSubnetsTagRequest.class,
+                    DeleteClouddcnSubnetsTagResponse.class)
+                .withName("DeleteClouddcnSubnetsTag")
+                .withUri("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/{tag_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClouddcnSubnetsTagRequest::getResourceId,
+                DeleteClouddcnSubnetsTagRequest::setResourceId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClouddcnSubnetsTagRequest::getTagKey,
+                DeleteClouddcnSubnetsTagRequest::setTagKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClouddcnSubnetsRequest, ListClouddcnSubnetsResponse> listClouddcnSubnets =
+        genForListClouddcnSubnets();
+
+    private static HttpRequestDef<ListClouddcnSubnetsRequest, ListClouddcnSubnetsResponse> genForListClouddcnSubnets() {
+        // basic
+        HttpRequestDef.Builder<ListClouddcnSubnetsRequest, ListClouddcnSubnetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClouddcnSubnetsRequest.class, ListClouddcnSubnetsResponse.class)
+                .withName("ListClouddcnSubnets")
+                .withUri("/v3/{project_id}/vpc/clouddcn-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsRequest::getLimit, ListClouddcnSubnetsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsRequest::getMarker, ListClouddcnSubnetsRequest::setMarker));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsRequest::getVpcId, ListClouddcnSubnetsRequest::setVpcId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClouddcnSubnetsCountFilterTagsRequest, ListClouddcnSubnetsCountFilterTagsResponse> listClouddcnSubnetsCountFilterTags =
+        genForListClouddcnSubnetsCountFilterTags();
+
+    private static HttpRequestDef<ListClouddcnSubnetsCountFilterTagsRequest, ListClouddcnSubnetsCountFilterTagsResponse> genForListClouddcnSubnetsCountFilterTags() {
+        // basic
+        HttpRequestDef.Builder<ListClouddcnSubnetsCountFilterTagsRequest, ListClouddcnSubnetsCountFilterTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListClouddcnSubnetsCountFilterTagsRequest.class,
+                    ListClouddcnSubnetsCountFilterTagsResponse.class)
+                .withName("ListClouddcnSubnetsCountFilterTags")
+                .withUri("/v3/{project_id}/clouddcn-subnets/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourcesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagsRequestBody.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsCountFilterTagsRequest::getBody,
+                ListClouddcnSubnetsCountFilterTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClouddcnSubnetsFilterTagsRequest, ListClouddcnSubnetsFilterTagsResponse> listClouddcnSubnetsFilterTags =
+        genForListClouddcnSubnetsFilterTags();
+
+    private static HttpRequestDef<ListClouddcnSubnetsFilterTagsRequest, ListClouddcnSubnetsFilterTagsResponse> genForListClouddcnSubnetsFilterTags() {
+        // basic
+        HttpRequestDef.Builder<ListClouddcnSubnetsFilterTagsRequest, ListClouddcnSubnetsFilterTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListClouddcnSubnetsFilterTagsRequest.class,
+                    ListClouddcnSubnetsFilterTagsResponse.class)
+                .withName("ListClouddcnSubnetsFilterTags")
+                .withUri("/v3/{project_id}/clouddcn-subnets/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsFilterTagsRequest::getLimit,
+                ListClouddcnSubnetsFilterTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsFilterTagsRequest::getOffset,
+                ListClouddcnSubnetsFilterTagsRequest::setOffset));
+        builder.<ListResourcesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagsRequestBody.class),
+            f -> f.withMarshaller(ListClouddcnSubnetsFilterTagsRequest::getBody,
+                ListClouddcnSubnetsFilterTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClouddcnSubnetsTagsRequest, ListClouddcnSubnetsTagsResponse> listClouddcnSubnetsTags =
+        genForListClouddcnSubnetsTags();
+
+    private static HttpRequestDef<ListClouddcnSubnetsTagsRequest, ListClouddcnSubnetsTagsResponse> genForListClouddcnSubnetsTags() {
+        // basic
+        HttpRequestDef.Builder<ListClouddcnSubnetsTagsRequest, ListClouddcnSubnetsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClouddcnSubnetsTagsRequest.class, ListClouddcnSubnetsTagsResponse.class)
+            .withName("ListClouddcnSubnetsTags")
+            .withUri("/v3/{project_id}/clouddcn-subnets/tags")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClouddcnSubnetRequest, ShowClouddcnSubnetResponse> showClouddcnSubnet =
+        genForShowClouddcnSubnet();
+
+    private static HttpRequestDef<ShowClouddcnSubnetRequest, ShowClouddcnSubnetResponse> genForShowClouddcnSubnet() {
+        // basic
+        HttpRequestDef.Builder<ShowClouddcnSubnetRequest, ShowClouddcnSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClouddcnSubnetRequest.class, ShowClouddcnSubnetResponse.class)
+                .withName("ShowClouddcnSubnet")
+                .withUri("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clouddcn_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClouddcnSubnetRequest::getClouddcnSubnetId,
+                ShowClouddcnSubnetRequest::setClouddcnSubnetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClouddcnSubnetsTagsRequest, ShowClouddcnSubnetsTagsResponse> showClouddcnSubnetsTags =
+        genForShowClouddcnSubnetsTags();
+
+    private static HttpRequestDef<ShowClouddcnSubnetsTagsRequest, ShowClouddcnSubnetsTagsResponse> genForShowClouddcnSubnetsTags() {
+        // basic
+        HttpRequestDef.Builder<ShowClouddcnSubnetsTagsRequest, ShowClouddcnSubnetsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClouddcnSubnetsTagsRequest.class, ShowClouddcnSubnetsTagsResponse.class)
+            .withName("ShowClouddcnSubnetsTags")
+            .withUri("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClouddcnSubnetsTagsRequest::getResourceId,
+                ShowClouddcnSubnetsTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClouddcnSubnetRequest, UpdateClouddcnSubnetResponse> updateClouddcnSubnet =
+        genForUpdateClouddcnSubnet();
+
+    private static HttpRequestDef<UpdateClouddcnSubnetRequest, UpdateClouddcnSubnetResponse> genForUpdateClouddcnSubnet() {
+        // basic
+        HttpRequestDef.Builder<UpdateClouddcnSubnetRequest, UpdateClouddcnSubnetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateClouddcnSubnetRequest.class, UpdateClouddcnSubnetResponse.class)
+            .withName("UpdateClouddcnSubnet")
+            .withUri("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clouddcn_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClouddcnSubnetRequest::getClouddcnSubnetId,
+                UpdateClouddcnSubnetRequest::setClouddcnSubnetId));
+        builder.<UpdateClouddcnSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClouddcnSubnetRequestBody.class),
+            f -> f.withMarshaller(UpdateClouddcnSubnetRequest::getBody, UpdateClouddcnSubnetRequest::setBody));
 
         // response
 

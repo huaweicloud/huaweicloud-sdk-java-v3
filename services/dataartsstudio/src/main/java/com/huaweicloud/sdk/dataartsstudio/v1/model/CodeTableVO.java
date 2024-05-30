@@ -17,7 +17,7 @@ public class CodeTableVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -37,7 +37,7 @@ public class CodeTableVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_id")
 
-    private Long directoryId;
+    private String directoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_path")
@@ -84,20 +84,20 @@ public class CodeTableVO {
 
     private List<CodeTableFieldVO> codeTableFields = null;
 
-    public CodeTableVO withId(Long id) {
+    public CodeTableVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 码表ID。
+     * 码表ID，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -152,20 +152,20 @@ public class CodeTableVO {
         this.tbVersion = tbVersion;
     }
 
-    public CodeTableVO withDirectoryId(Long directoryId) {
+    public CodeTableVO withDirectoryId(String directoryId) {
         this.directoryId = directoryId;
         return this;
     }
 
     /**
-     * 目录ID。
+     * 目录ID，填写String类型替代Long类型。
      * @return directoryId
      */
-    public Long getDirectoryId() {
+    public String getDirectoryId() {
         return directoryId;
     }
 
-    public void setDirectoryId(Long directoryId) {
+    public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
 
@@ -243,7 +243,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -260,7 +260,7 @@ public class CodeTableVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

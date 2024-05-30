@@ -17,17 +17,17 @@ public class DimensionAttributeVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimension_id")
 
-    private Long dimensionId;
+    private String dimensionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_table_field_id")
 
-    private Long codeTableFieldId;
+    private String codeTableFieldId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -92,7 +92,7 @@ public class DimensionAttributeVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_id")
 
-    private Long standRowId;
+    private String standRowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_name")
@@ -103,6 +103,11 @@ public class DimensionAttributeVO {
     @JsonProperty(value = "quality_infos")
 
     private List<QualityInfoVO> qualityInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secrecy_levels")
+
+    private List<SecrecyLevelVO> secrecyLevels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -129,54 +134,54 @@ public class DimensionAttributeVO {
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
-    public DimensionAttributeVO withId(Long id) {
+    public DimensionAttributeVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public DimensionAttributeVO withDimensionId(Long dimensionId) {
+    public DimensionAttributeVO withDimensionId(String dimensionId) {
         this.dimensionId = dimensionId;
         return this;
     }
 
     /**
-     * 维度ID。
+     * 维度ID，只读，填写String类型替代Long类型。
      * @return dimensionId
      */
-    public Long getDimensionId() {
+    public String getDimensionId() {
         return dimensionId;
     }
 
-    public void setDimensionId(Long dimensionId) {
+    public void setDimensionId(String dimensionId) {
         this.dimensionId = dimensionId;
     }
 
-    public DimensionAttributeVO withCodeTableFieldId(Long codeTableFieldId) {
+    public DimensionAttributeVO withCodeTableFieldId(String codeTableFieldId) {
         this.codeTableFieldId = codeTableFieldId;
         return this;
     }
 
     /**
-     * 码表属性ID。
+     * 码表属性ID，填写String类型替代Long类型。
      * @return codeTableFieldId
      */
-    public Long getCodeTableFieldId() {
+    public String getCodeTableFieldId() {
         return codeTableFieldId;
     }
 
-    public void setCodeTableFieldId(Long codeTableFieldId) {
+    public void setCodeTableFieldId(String codeTableFieldId) {
         this.codeTableFieldId = codeTableFieldId;
     }
 
@@ -384,20 +389,20 @@ public class DimensionAttributeVO {
         this.notNull = notNull;
     }
 
-    public DimensionAttributeVO withStandRowId(Long standRowId) {
+    public DimensionAttributeVO withStandRowId(String standRowId) {
         this.standRowId = standRowId;
         return this;
     }
 
     /**
-     * 关联的数据标准的ID。
+     * 关联的数据标准的ID，填写String类型替代Long类型。
      * @return standRowId
      */
-    public Long getStandRowId() {
+    public String getStandRowId() {
         return standRowId;
     }
 
-    public void setStandRowId(Long standRowId) {
+    public void setStandRowId(String standRowId) {
         this.standRowId = standRowId;
     }
 
@@ -407,7 +412,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 关联的数据标准名称。
+     * 关联的数据标准名称，只读。
      * @return standRowName
      */
     public String getStandRowName() {
@@ -440,7 +445,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 质量信息。
+     * 质量信息，只读。
      * @return qualityInfos
      */
     public List<QualityInfoVO> getQualityInfos() {
@@ -449,6 +454,39 @@ public class DimensionAttributeVO {
 
     public void setQualityInfos(List<QualityInfoVO> qualityInfos) {
         this.qualityInfos = qualityInfos;
+    }
+
+    public DimensionAttributeVO withSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
+        return this;
+    }
+
+    public DimensionAttributeVO addSecrecyLevelsItem(SecrecyLevelVO secrecyLevelsItem) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        this.secrecyLevels.add(secrecyLevelsItem);
+        return this;
+    }
+
+    public DimensionAttributeVO withSecrecyLevels(Consumer<List<SecrecyLevelVO>> secrecyLevelsSetter) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        secrecyLevelsSetter.accept(this.secrecyLevels);
+        return this;
+    }
+
+    /**
+     * 密级
+     * @return secrecyLevels
+     */
+    public List<SecrecyLevelVO> getSecrecyLevels() {
+        return secrecyLevels;
+    }
+
+    public void setSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
     }
 
     public DimensionAttributeVO withStatus(BizStatusEnum status) {
@@ -474,7 +512,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -491,7 +529,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -572,7 +610,8 @@ public class DimensionAttributeVO {
             && Objects.equals(this.isPartitionKey, that.isPartitionKey) && Objects.equals(this.ordinal, that.ordinal)
             && Objects.equals(this.notNull, that.notNull) && Objects.equals(this.standRowId, that.standRowId)
             && Objects.equals(this.standRowName, that.standRowName)
-            && Objects.equals(this.qualityInfos, that.qualityInfos) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.qualityInfos, that.qualityInfos)
+            && Objects.equals(this.secrecyLevels, that.secrecyLevels) && Objects.equals(this.status, that.status)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.alias, that.alias) && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
@@ -597,6 +636,7 @@ public class DimensionAttributeVO {
             standRowId,
             standRowName,
             qualityInfos,
+            secrecyLevels,
             status,
             createTime,
             updateTime,
@@ -626,6 +666,7 @@ public class DimensionAttributeVO {
         sb.append("    standRowId: ").append(toIndentedString(standRowId)).append("\n");
         sb.append("    standRowName: ").append(toIndentedString(standRowName)).append("\n");
         sb.append("    qualityInfos: ").append(toIndentedString(qualityInfos)).append("\n");
+        sb.append("    secrecyLevels: ").append(toIndentedString(secrecyLevels)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

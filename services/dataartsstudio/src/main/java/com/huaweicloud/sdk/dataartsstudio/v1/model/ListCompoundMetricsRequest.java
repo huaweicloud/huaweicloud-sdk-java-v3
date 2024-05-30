@@ -41,7 +41,7 @@ public class ListCompoundMetricsRequest {
     private String approver;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -147,12 +147,12 @@ public class ListCompoundMetricsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "atomic_index_id")
 
-    private Long atomicIndexId;
+    private String atomicIndexId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -267,7 +267,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -295,37 +295,37 @@ public class ListCompoundMetricsRequest {
         this.dimensionGroup = dimensionGroup;
     }
 
-    public ListCompoundMetricsRequest withAtomicIndexId(Long atomicIndexId) {
+    public ListCompoundMetricsRequest withAtomicIndexId(String atomicIndexId) {
         this.atomicIndexId = atomicIndexId;
         return this;
     }
 
     /**
-     * 依据原子指标ID查维度属性。
+     * 依据原子指标ID查维度属性，填写String类型替代Long类型。
      * @return atomicIndexId
      */
-    public Long getAtomicIndexId() {
+    public String getAtomicIndexId() {
         return atomicIndexId;
     }
 
-    public void setAtomicIndexId(Long atomicIndexId) {
+    public void setAtomicIndexId(String atomicIndexId) {
         this.atomicIndexId = atomicIndexId;
     }
 
-    public ListCompoundMetricsRequest withL3Id(Long l3Id) {
+    public ListCompoundMetricsRequest withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象l3的ID。
+     * 业务对象l3的ID，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -369,7 +369,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

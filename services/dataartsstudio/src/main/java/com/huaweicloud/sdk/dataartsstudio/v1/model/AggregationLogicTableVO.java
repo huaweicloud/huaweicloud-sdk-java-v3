@@ -60,6 +60,16 @@ public class AggregationLogicTableVO {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_type")
+
+    private SecretTypeEnum secretType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_bg")
+
+    private ApplyBgEnum applyBg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_by")
 
     private String createBy;
@@ -220,7 +230,7 @@ public class AggregationLogicTableVO {
     private SyncStatusEnum summaryStatus;
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。 枚举值：   - HASH: 对指定的列进行Hash，通过映射，把数据分布到指定DN   - REPLICATION: 表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据 
      */
     public static final class DistributeEnum {
 
@@ -300,7 +310,7 @@ public class AggregationLogicTableVO {
     private String distributeColumn;
 
     /**
-     * DWS数据压缩等级，列压缩等级为no/low/middle/high，行压缩等级为no/yes。
+     * DWS数据压缩等级，列压缩等级为no/low/middle/high，行压缩等级为no/yes。 枚举值：   - \"NO\": 不压缩   - \"YES\": 压缩   - \"LOW\": 低等级压缩   - \"MIDDLE\": 中等级压缩   - \"HIGH\": 高等级压缩 
      */
     public static final class CompressionEnum {
 
@@ -477,13 +487,38 @@ public class AggregationLogicTableVO {
 
     private String sql;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_version")
+
+    private String devVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prod_version")
+
+    private String prodVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_version_name")
+
+    private String devVersionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prod_version_name")
+
+    private String prodVersionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env_type")
+
+    private EnvTypeEnum envType;
+
     public AggregationLogicTableVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 汇总表的唯一系统ID，更新时必填，创建时不须填写。
+     * 汇总表的唯一系统ID，更新时必填，创建时不须填写，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -534,7 +569,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 主题域分组ID，只读，创建和更新时无需填写。
+     * 主题域分组ID，只读，创建和更新时无需填写，填写String类型替代Long类型。
      * @return l1Id
      */
     public String getL1Id() {
@@ -568,7 +603,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 汇总表所属主题的ID，必填。
+     * 汇总表所属主题的ID，必填，填写String类型替代Long类型。
      * @return l3Id
      */
     public String getL3Id() {
@@ -611,6 +646,40 @@ public class AggregationLogicTableVO {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public AggregationLogicTableVO withSecretType(SecretTypeEnum secretType) {
+        this.secretType = secretType;
+        return this;
+    }
+
+    /**
+     * Get secretType
+     * @return secretType
+     */
+    public SecretTypeEnum getSecretType() {
+        return secretType;
+    }
+
+    public void setSecretType(SecretTypeEnum secretType) {
+        this.secretType = secretType;
+    }
+
+    public AggregationLogicTableVO withApplyBg(ApplyBgEnum applyBg) {
+        this.applyBg = applyBg;
+        return this;
+    }
+
+    /**
+     * Get applyBg
+     * @return applyBg
+     */
+    public ApplyBgEnum getApplyBg() {
+        return applyBg;
+    }
+
+    public void setApplyBg(ApplyBgEnum applyBg) {
+        this.applyBg = applyBg;
     }
 
     public AggregationLogicTableVO withCreateBy(String createBy) {
@@ -960,7 +1029,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 颗粒度名称。
+     * 颗粒度名称，只读。
      * @return groupName
      */
     public String getGroupName() {
@@ -977,7 +1046,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 颗粒度编码。
+     * 颗粒度编码，只读。
      * @return groupCode
      */
     public String getGroupCode() {
@@ -1207,7 +1276,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。 枚举值：   - HASH: 对指定的列进行Hash，通过映射，把数据分布到指定DN   - REPLICATION: 表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据 
      * @return distribute
      */
     public DistributeEnum getDistribute() {
@@ -1241,7 +1310,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * DWS数据压缩等级，列压缩等级为no/low/middle/high，行压缩等级为no/yes。
+     * DWS数据压缩等级，列压缩等级为no/low/middle/high，行压缩等级为no/yes。 枚举值：   - \"NO\": 不压缩   - \"YES\": 压缩   - \"LOW\": 低等级压缩   - \"MIDDLE\": 中等级压缩   - \"HIGH\": 高等级压缩 
      * @return compression
      */
     public CompressionEnum getCompression() {
@@ -1326,7 +1395,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 质量ID。
+     * 质量ID，填写String类型替代Long类型。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1343,7 +1412,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 是否是逆向的。
+     * 是否是逆向的，只读。
      * @return reversed
      */
     public Boolean getReversed() {
@@ -1360,7 +1429,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 为2时，表示汇总表是汇总生成的。
+     * 为2时，表示汇总表是汇总生成的，只读。
      * @return tableVersion
      */
     public Integer getTableVersion() {
@@ -1557,6 +1626,91 @@ public class AggregationLogicTableVO {
         this.sql = sql;
     }
 
+    public AggregationLogicTableVO withDevVersion(String devVersion) {
+        this.devVersion = devVersion;
+        return this;
+    }
+
+    /**
+     * 开发环境版本，填写String类型替代Long类型。
+     * @return devVersion
+     */
+    public String getDevVersion() {
+        return devVersion;
+    }
+
+    public void setDevVersion(String devVersion) {
+        this.devVersion = devVersion;
+    }
+
+    public AggregationLogicTableVO withProdVersion(String prodVersion) {
+        this.prodVersion = prodVersion;
+        return this;
+    }
+
+    /**
+     * 生产环境版本，填写String类型替代Long类型。
+     * @return prodVersion
+     */
+    public String getProdVersion() {
+        return prodVersion;
+    }
+
+    public void setProdVersion(String prodVersion) {
+        this.prodVersion = prodVersion;
+    }
+
+    public AggregationLogicTableVO withDevVersionName(String devVersionName) {
+        this.devVersionName = devVersionName;
+        return this;
+    }
+
+    /**
+     * 开发环境版本名称
+     * @return devVersionName
+     */
+    public String getDevVersionName() {
+        return devVersionName;
+    }
+
+    public void setDevVersionName(String devVersionName) {
+        this.devVersionName = devVersionName;
+    }
+
+    public AggregationLogicTableVO withProdVersionName(String prodVersionName) {
+        this.prodVersionName = prodVersionName;
+        return this;
+    }
+
+    /**
+     * 生产环境版本名称
+     * @return prodVersionName
+     */
+    public String getProdVersionName() {
+        return prodVersionName;
+    }
+
+    public void setProdVersionName(String prodVersionName) {
+        this.prodVersionName = prodVersionName;
+    }
+
+    public AggregationLogicTableVO withEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+        return this;
+    }
+
+    /**
+     * Get envType
+     * @return envType
+     */
+    public EnvTypeEnum getEnvType() {
+        return envType;
+    }
+
+    public void setEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1570,6 +1724,7 @@ public class AggregationLogicTableVO {
             && Objects.equals(this.tbLogicName, that.tbLogicName) && Objects.equals(this.l1Id, that.l1Id)
             && Objects.equals(this.l2Id, that.l2Id) && Objects.equals(this.l3Id, that.l3Id)
             && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.secretType, that.secretType) && Objects.equals(this.applyBg, that.applyBg)
             && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this.dwId, that.dwId) && Objects.equals(this.dbName, that.dbName)
             && Objects.equals(this.tbId, that.tbId) && Objects.equals(this.schema, that.schema)
@@ -1605,7 +1760,10 @@ public class AggregationLogicTableVO {
             && Objects.equals(this.dirtyOutSuffix, that.dirtyOutSuffix) && Objects.equals(this.alias, that.alias)
             && Objects.equals(this.configs, that.configs)
             && Objects.equals(this.selfDefinedFields, that.selfDefinedFields) && Objects.equals(this.apiId, that.apiId)
-            && Objects.equals(this.sql, that.sql);
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.devVersion, that.devVersion)
+            && Objects.equals(this.prodVersion, that.prodVersion)
+            && Objects.equals(this.devVersionName, that.devVersionName)
+            && Objects.equals(this.prodVersionName, that.prodVersionName) && Objects.equals(this.envType, that.envType);
     }
 
     @Override
@@ -1618,6 +1776,8 @@ public class AggregationLogicTableVO {
             l3Id,
             description,
             owner,
+            secretType,
+            applyBg,
             createBy,
             queueName,
             dwId,
@@ -1669,7 +1829,12 @@ public class AggregationLogicTableVO {
             configs,
             selfDefinedFields,
             apiId,
-            sql);
+            sql,
+            devVersion,
+            prodVersion,
+            devVersionName,
+            prodVersionName,
+            envType);
     }
 
     @Override
@@ -1684,6 +1849,8 @@ public class AggregationLogicTableVO {
         sb.append("    l3Id: ").append(toIndentedString(l3Id)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    secretType: ").append(toIndentedString(secretType)).append("\n");
+        sb.append("    applyBg: ").append(toIndentedString(applyBg)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    dwId: ").append(toIndentedString(dwId)).append("\n");
@@ -1736,6 +1903,11 @@ public class AggregationLogicTableVO {
         sb.append("    selfDefinedFields: ").append(toIndentedString(selfDefinedFields)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
+        sb.append("    devVersion: ").append(toIndentedString(devVersion)).append("\n");
+        sb.append("    prodVersion: ").append(toIndentedString(prodVersion)).append("\n");
+        sb.append("    devVersionName: ").append(toIndentedString(devVersionName)).append("\n");
+        sb.append("    prodVersionName: ").append(toIndentedString(prodVersionName)).append("\n");
+        sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

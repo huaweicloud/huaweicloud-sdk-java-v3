@@ -41,7 +41,7 @@ public class ClusterNode {
     }
 
     /**
-     * 微服务引擎专享版CCE节点ID
+     * 微服务引擎CCE节点ID
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class ClusterNode {
     }
 
     /**
-     * 微服务引擎专享版CCE节点所属可用区
+     * 微服务引擎CCE节点所属可用区
      * @return az
      */
     public String getAz() {
@@ -75,7 +75,7 @@ public class ClusterNode {
     }
 
     /**
-     * 微服务引擎专享版CCE节点IP
+     * 微服务引擎CCE节点IP
      * @return ip
      */
     public String getIp() {
@@ -92,7 +92,7 @@ public class ClusterNode {
     }
 
     /**
-     * 微服务引擎专享版CCE节点标签
+     * 微服务引擎CCE节点标签
      * @return label
      */
     public String getLabel() {
@@ -109,7 +109,7 @@ public class ClusterNode {
     }
 
     /**
-     * 微服务引擎专享版CCE节点状态
+     * 微服务引擎CCE节点状态
      * @return status
      */
     public String getStatus() {

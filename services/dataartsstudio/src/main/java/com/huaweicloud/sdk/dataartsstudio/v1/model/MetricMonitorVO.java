@@ -16,17 +16,27 @@ public class MetricMonitorVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "other_metric_ids")
 
-    private List<Long> otherMetricIds = null;
+    private List<String> otherMetricIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "other_metric_names")
 
     private List<String> otherMetricNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "other_compound_metric_ids")
+
+    private List<String> otherCompoundMetricIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "other_compound_metric_names")
+
+    private List<String> otherCompoundMetricNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
@@ -36,7 +46,7 @@ public class MetricMonitorVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_id")
 
-    private Long metricId;
+    private String metricId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front_configs")
@@ -48,29 +58,29 @@ public class MetricMonitorVO {
 
     private BizTypeEnum metricType;
 
-    public MetricMonitorVO withId(Long id) {
+    public MetricMonitorVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public MetricMonitorVO withOtherMetricIds(List<Long> otherMetricIds) {
+    public MetricMonitorVO withOtherMetricIds(List<String> otherMetricIds) {
         this.otherMetricIds = otherMetricIds;
         return this;
     }
 
-    public MetricMonitorVO addOtherMetricIdsItem(Long otherMetricIdsItem) {
+    public MetricMonitorVO addOtherMetricIdsItem(String otherMetricIdsItem) {
         if (this.otherMetricIds == null) {
             this.otherMetricIds = new ArrayList<>();
         }
@@ -78,7 +88,7 @@ public class MetricMonitorVO {
         return this;
     }
 
-    public MetricMonitorVO withOtherMetricIds(Consumer<List<Long>> otherMetricIdsSetter) {
+    public MetricMonitorVO withOtherMetricIds(Consumer<List<String>> otherMetricIdsSetter) {
         if (this.otherMetricIds == null) {
             this.otherMetricIds = new ArrayList<>();
         }
@@ -87,14 +97,14 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 其他指标ID。
+     * 其他指标ID，填写String类型替代Long类型。
      * @return otherMetricIds
      */
-    public List<Long> getOtherMetricIds() {
+    public List<String> getOtherMetricIds() {
         return otherMetricIds;
     }
 
-    public void setOtherMetricIds(List<Long> otherMetricIds) {
+    public void setOtherMetricIds(List<String> otherMetricIds) {
         this.otherMetricIds = otherMetricIds;
     }
 
@@ -120,7 +130,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 其他指标名称。
+     * 其他指标名称，只读。
      * @return otherMetricNames
      */
     public List<String> getOtherMetricNames() {
@@ -129,6 +139,72 @@ public class MetricMonitorVO {
 
     public void setOtherMetricNames(List<String> otherMetricNames) {
         this.otherMetricNames = otherMetricNames;
+    }
+
+    public MetricMonitorVO withOtherCompoundMetricIds(List<String> otherCompoundMetricIds) {
+        this.otherCompoundMetricIds = otherCompoundMetricIds;
+        return this;
+    }
+
+    public MetricMonitorVO addOtherCompoundMetricIdsItem(String otherCompoundMetricIdsItem) {
+        if (this.otherCompoundMetricIds == null) {
+            this.otherCompoundMetricIds = new ArrayList<>();
+        }
+        this.otherCompoundMetricIds.add(otherCompoundMetricIdsItem);
+        return this;
+    }
+
+    public MetricMonitorVO withOtherCompoundMetricIds(Consumer<List<String>> otherCompoundMetricIdsSetter) {
+        if (this.otherCompoundMetricIds == null) {
+            this.otherCompoundMetricIds = new ArrayList<>();
+        }
+        otherCompoundMetricIdsSetter.accept(this.otherCompoundMetricIds);
+        return this;
+    }
+
+    /**
+     * 其他复合指标ID。
+     * @return otherCompoundMetricIds
+     */
+    public List<String> getOtherCompoundMetricIds() {
+        return otherCompoundMetricIds;
+    }
+
+    public void setOtherCompoundMetricIds(List<String> otherCompoundMetricIds) {
+        this.otherCompoundMetricIds = otherCompoundMetricIds;
+    }
+
+    public MetricMonitorVO withOtherCompoundMetricNames(List<String> otherCompoundMetricNames) {
+        this.otherCompoundMetricNames = otherCompoundMetricNames;
+        return this;
+    }
+
+    public MetricMonitorVO addOtherCompoundMetricNamesItem(String otherCompoundMetricNamesItem) {
+        if (this.otherCompoundMetricNames == null) {
+            this.otherCompoundMetricNames = new ArrayList<>();
+        }
+        this.otherCompoundMetricNames.add(otherCompoundMetricNamesItem);
+        return this;
+    }
+
+    public MetricMonitorVO withOtherCompoundMetricNames(Consumer<List<String>> otherCompoundMetricNamesSetter) {
+        if (this.otherCompoundMetricNames == null) {
+            this.otherCompoundMetricNames = new ArrayList<>();
+        }
+        otherCompoundMetricNamesSetter.accept(this.otherCompoundMetricNames);
+        return this;
+    }
+
+    /**
+     * 其他复合指标名称。
+     * @return otherCompoundMetricNames
+     */
+    public List<String> getOtherCompoundMetricNames() {
+        return otherCompoundMetricNames;
+    }
+
+    public void setOtherCompoundMetricNames(List<String> otherCompoundMetricNames) {
+        this.otherCompoundMetricNames = otherCompoundMetricNames;
     }
 
     public MetricMonitorVO withExpression(String expression) {
@@ -148,20 +224,20 @@ public class MetricMonitorVO {
         this.expression = expression;
     }
 
-    public MetricMonitorVO withMetricId(Long metricId) {
+    public MetricMonitorVO withMetricId(String metricId) {
         this.metricId = metricId;
         return this;
     }
 
     /**
-     * 挂载指ID。
+     * 挂载指ID，填写String类型替代Long类型。
      * @return metricId
      */
-    public Long getMetricId() {
+    public String getMetricId() {
         return metricId;
     }
 
-    public void setMetricId(Long metricId) {
+    public void setMetricId(String metricId) {
         this.metricId = metricId;
     }
 
@@ -210,13 +286,23 @@ public class MetricMonitorVO {
         MetricMonitorVO that = (MetricMonitorVO) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.otherMetricIds, that.otherMetricIds)
             && Objects.equals(this.otherMetricNames, that.otherMetricNames)
+            && Objects.equals(this.otherCompoundMetricIds, that.otherCompoundMetricIds)
+            && Objects.equals(this.otherCompoundMetricNames, that.otherCompoundMetricNames)
             && Objects.equals(this.expression, that.expression) && Objects.equals(this.metricId, that.metricId)
             && Objects.equals(this.frontConfigs, that.frontConfigs) && Objects.equals(this.metricType, that.metricType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, otherMetricIds, otherMetricNames, expression, metricId, frontConfigs, metricType);
+        return Objects.hash(id,
+            otherMetricIds,
+            otherMetricNames,
+            otherCompoundMetricIds,
+            otherCompoundMetricNames,
+            expression,
+            metricId,
+            frontConfigs,
+            metricType);
     }
 
     @Override
@@ -226,6 +312,8 @@ public class MetricMonitorVO {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    otherMetricIds: ").append(toIndentedString(otherMetricIds)).append("\n");
         sb.append("    otherMetricNames: ").append(toIndentedString(otherMetricNames)).append("\n");
+        sb.append("    otherCompoundMetricIds: ").append(toIndentedString(otherCompoundMetricIds)).append("\n");
+        sb.append("    otherCompoundMetricNames: ").append(toIndentedString(otherCompoundMetricNames)).append("\n");
         sb.append("    expression: ").append(toIndentedString(expression)).append("\n");
         sb.append("    metricId: ").append(toIndentedString(metricId)).append("\n");
         sb.append("    frontConfigs: ").append(toIndentedString(frontConfigs)).append("\n");

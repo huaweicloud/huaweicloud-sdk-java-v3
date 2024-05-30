@@ -26,7 +26,7 @@ public class RecycleInstancesDetailResult {
     private String name;
 
     /**
-     * 部署形态。
+     * 部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。
      */
     public static final class HaModeEnum {
 
@@ -382,7 +382,7 @@ public class RecycleInstancesDetailResult {
     private RecycleStatusEnum recycleStatus;
 
     /**
-     * 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
+     * 产品类型（basic：基础版；standard：标准版；enterprise：企业版）。
      */
     public static final class ModeEnum {
 
@@ -502,7 +502,7 @@ public class RecycleInstancesDetailResult {
     }
 
     /**
-     * 部署形态。
+     * 部署形态(Ha:主备版;Independent:独立部署;Combined:混合部署)。
      * @return haMode
      */
     public HaModeEnum getHaMode() {
@@ -740,7 +740,7 @@ public class RecycleInstancesDetailResult {
     }
 
     /**
-     * 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
+     * 产品类型（basic：基础版；standard：标准版；enterprise：企业版）。
      * @return mode
      */
     public ModeEnum getMode() {

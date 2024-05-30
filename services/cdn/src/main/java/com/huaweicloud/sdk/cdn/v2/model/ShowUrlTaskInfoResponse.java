@@ -57,7 +57,7 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     }
 
     /**
-     * 当前查询到的总页数。
+     * 当前页查询到的总数。
      * @return count
      */
     public Integer getCount() {

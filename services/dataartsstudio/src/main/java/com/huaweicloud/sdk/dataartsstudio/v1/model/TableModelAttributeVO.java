@@ -97,7 +97,7 @@ public class TableModelAttributeVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_model_id")
 
-    private Long tableModelId;
+    private String tableModelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -115,9 +115,14 @@ public class TableModelAttributeVO {
     private List<TagVO> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secrecy_levels")
+
+    private List<SecrecyLevelVO> secrecyLevels = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_id")
 
-    private Long standRowId;
+    private String standRowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_name")
@@ -139,13 +144,33 @@ public class TableModelAttributeVO {
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_attr_id")
+
+    private String relatedLogicAttrId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_attr_name")
+
+    private String relatedLogicAttrName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_attr_name_en")
+
+    private String relatedLogicAttrNameEn;
+
     public TableModelAttributeVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -411,20 +436,20 @@ public class TableModelAttributeVO {
         this.ordinal = ordinal;
     }
 
-    public TableModelAttributeVO withTableModelId(Long tableModelId) {
+    public TableModelAttributeVO withTableModelId(String tableModelId) {
         this.tableModelId = tableModelId;
         return this;
     }
 
     /**
-     * 所属关系建模的模型ID。
+     * 所属关系建模的模型ID，填写String类型替代Long类型。
      * @return tableModelId
      */
-    public Long getTableModelId() {
+    public String getTableModelId() {
         return tableModelId;
     }
 
-    public void setTableModelId(Long tableModelId) {
+    public void setTableModelId(String tableModelId) {
         this.tableModelId = tableModelId;
     }
 
@@ -434,7 +459,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -451,7 +476,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -484,7 +509,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 表标签。
+     * 表标签，只读。
      * @return tags
      */
     public List<TagVO> getTags() {
@@ -495,20 +520,53 @@ public class TableModelAttributeVO {
         this.tags = tags;
     }
 
-    public TableModelAttributeVO withStandRowId(Long standRowId) {
+    public TableModelAttributeVO withSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
+        return this;
+    }
+
+    public TableModelAttributeVO addSecrecyLevelsItem(SecrecyLevelVO secrecyLevelsItem) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        this.secrecyLevels.add(secrecyLevelsItem);
+        return this;
+    }
+
+    public TableModelAttributeVO withSecrecyLevels(Consumer<List<SecrecyLevelVO>> secrecyLevelsSetter) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        secrecyLevelsSetter.accept(this.secrecyLevels);
+        return this;
+    }
+
+    /**
+     * 密级
+     * @return secrecyLevels
+     */
+    public List<SecrecyLevelVO> getSecrecyLevels() {
+        return secrecyLevels;
+    }
+
+    public void setSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
+    }
+
+    public TableModelAttributeVO withStandRowId(String standRowId) {
         this.standRowId = standRowId;
         return this;
     }
 
     /**
-     * 关联的数据标准的ID。
+     * 关联的数据标准的ID，填写String类型替代Long类型。
      * @return standRowId
      */
-    public Long getStandRowId() {
+    public String getStandRowId() {
         return standRowId;
     }
 
-    public void setStandRowId(Long standRowId) {
+    public void setStandRowId(String standRowId) {
         this.standRowId = standRowId;
     }
 
@@ -518,7 +576,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 关联的数据标准名称。
+     * 关联的数据标准名称，只读。
      * @return standRowName
      */
     public String getStandRowName() {
@@ -551,7 +609,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 质量信息。
+     * 质量信息，只读。
      * @return qualityInfos
      */
     public List<QualityInfoVO> getQualityInfos() {
@@ -612,6 +670,74 @@ public class TableModelAttributeVO {
         this.selfDefinedFields = selfDefinedFields;
     }
 
+    public TableModelAttributeVO withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * 逻辑属性编码
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public TableModelAttributeVO withRelatedLogicAttrId(String relatedLogicAttrId) {
+        this.relatedLogicAttrId = relatedLogicAttrId;
+        return this;
+    }
+
+    /**
+     * 关联逻辑属性ID，填写String类型替代Long类型。
+     * @return relatedLogicAttrId
+     */
+    public String getRelatedLogicAttrId() {
+        return relatedLogicAttrId;
+    }
+
+    public void setRelatedLogicAttrId(String relatedLogicAttrId) {
+        this.relatedLogicAttrId = relatedLogicAttrId;
+    }
+
+    public TableModelAttributeVO withRelatedLogicAttrName(String relatedLogicAttrName) {
+        this.relatedLogicAttrName = relatedLogicAttrName;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体属性中文名称
+     * @return relatedLogicAttrName
+     */
+    public String getRelatedLogicAttrName() {
+        return relatedLogicAttrName;
+    }
+
+    public void setRelatedLogicAttrName(String relatedLogicAttrName) {
+        this.relatedLogicAttrName = relatedLogicAttrName;
+    }
+
+    public TableModelAttributeVO withRelatedLogicAttrNameEn(String relatedLogicAttrNameEn) {
+        this.relatedLogicAttrNameEn = relatedLogicAttrNameEn;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体属性英文名称
+     * @return relatedLogicAttrNameEn
+     */
+    public String getRelatedLogicAttrNameEn() {
+        return relatedLogicAttrNameEn;
+    }
+
+    public void setRelatedLogicAttrNameEn(String relatedLogicAttrNameEn) {
+        this.relatedLogicAttrNameEn = relatedLogicAttrNameEn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -633,10 +759,13 @@ public class TableModelAttributeVO {
             && Objects.equals(this.extendField, that.extendField) && Objects.equals(this.notNull, that.notNull)
             && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.tableModelId, that.tableModelId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.standRowId, that.standRowId)
-            && Objects.equals(this.standRowName, that.standRowName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.secrecyLevels, that.secrecyLevels)
+            && Objects.equals(this.standRowId, that.standRowId) && Objects.equals(this.standRowName, that.standRowName)
             && Objects.equals(this.qualityInfos, that.qualityInfos) && Objects.equals(this.alias, that.alias)
-            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.relatedLogicAttrId, that.relatedLogicAttrId)
+            && Objects.equals(this.relatedLogicAttrName, that.relatedLogicAttrName)
+            && Objects.equals(this.relatedLogicAttrNameEn, that.relatedLogicAttrNameEn);
     }
 
     @Override
@@ -661,11 +790,16 @@ public class TableModelAttributeVO {
             createTime,
             updateTime,
             tags,
+            secrecyLevels,
             standRowId,
             standRowName,
             qualityInfos,
             alias,
-            selfDefinedFields);
+            selfDefinedFields,
+            code,
+            relatedLogicAttrId,
+            relatedLogicAttrName,
+            relatedLogicAttrNameEn);
     }
 
     @Override
@@ -692,11 +826,16 @@ public class TableModelAttributeVO {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    secrecyLevels: ").append(toIndentedString(secrecyLevels)).append("\n");
         sb.append("    standRowId: ").append(toIndentedString(standRowId)).append("\n");
         sb.append("    standRowName: ").append(toIndentedString(standRowName)).append("\n");
         sb.append("    qualityInfos: ").append(toIndentedString(qualityInfos)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    selfDefinedFields: ").append(toIndentedString(selfDefinedFields)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    relatedLogicAttrId: ").append(toIndentedString(relatedLogicAttrId)).append("\n");
+        sb.append("    relatedLogicAttrName: ").append(toIndentedString(relatedLogicAttrName)).append("\n");
+        sb.append("    relatedLogicAttrNameEn: ").append(toIndentedString(relatedLogicAttrNameEn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

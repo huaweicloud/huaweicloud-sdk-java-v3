@@ -23,7 +23,7 @@ public class ListDimensionGroupsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
-    private Long tableId;
+    private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
@@ -76,20 +76,20 @@ public class ListDimensionGroupsRequest {
         this.xProjectId = xProjectId;
     }
 
-    public ListDimensionGroupsRequest withTableId(Long tableId) {
+    public ListDimensionGroupsRequest withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
 
     /**
-     * 关联表的ID。
+     * 关联表的ID，填写String类型替代Long类型。
      * @return tableId
      */
-    public Long getTableId() {
+    public String getTableId() {
         return tableId;
     }
 
-    public void setTableId(Long tableId) {
+    public void setTableId(String tableId) {
         this.tableId = tableId;
     }
 
@@ -99,7 +99,7 @@ public class ListDimensionGroupsRequest {
     }
 
     /**
-     * 按业务类型查询。
+     * 按业务类型查询，可选业务类型有：ATOMIC_INDEX（原子指标）、DERIVATIVE_INDEX（衍生指标）、DIMENSION（维度）、TIME_CONDITION（时间限定）、DIMENSION_LOGIC_TABLE（维度表）、FACT_LOGIC_TABLE（事实表）、AGGREGATION_LOGIC_TABLE（汇总表）、TABLE_MODEL（关系建模表）、CODE_TABLE（码表）、STANDARD_ELEMENT）（数据标准）、BIZ_METRIC（业务指标）、COMPOUND_METRIC（复合指标）、SUBJECT（主题）、ATOMIC_METRIC（原子指标（新））、DERIVED_METRIC（衍生指标（新））、COMPOSITE_METRIC（复合指标（新））。
      * @return bizType
      */
     public String getBizType() {
@@ -116,7 +116,7 @@ public class ListDimensionGroupsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

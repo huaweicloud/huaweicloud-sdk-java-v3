@@ -32,7 +32,7 @@ public class CreateEngineResponse extends SdkResponse {
     }
 
     /**
-     * 创建的微服务引擎专享版ID
+     * 创建的微服务引擎ID
      * @return id
      */
     public String getId() {
@@ -49,7 +49,7 @@ public class CreateEngineResponse extends SdkResponse {
     }
 
     /**
-     * 创建的微服务引擎专享版名称
+     * 创建的微服务引擎名称
      * @return name
      */
     public String getName() {
@@ -66,7 +66,7 @@ public class CreateEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版执行的任务ID
+     * 微服务引擎执行的任务ID
      * @return jobId
      */
     public Integer getJobId() {

@@ -90,6 +90,11 @@ public class ListCustomerselfResourceRecordsRequest {
 
     private String billDateEnd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistic_type")
+
+    private Integer statisticType;
+
     public ListCustomerselfResourceRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -166,7 +171,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 计费模式。1：包年/包月3：按需10：预留实例。此参数不携带时，不作为筛选条件。
+     * 计费模式。1：包年/包月3：按需10：预留实例11：节省计划。此参数不携带时，不作为筛选条件。
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -183,7 +188,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿 12：消费-按时计费 14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明： 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。20：退款-变更100：退款-退订税金101：调账-补偿税金102：调账-扣费税金。此参数不携带或携带值为空时，不作为筛选条件。
+     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿 12：消费-按时计费 14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额 说明： 保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴顾问销售类子客户，且为后付费用户。20：退款-变更100：退款-退订税金23：消费-节省计划抵扣 24：退款-包年/包月转按需101：调账-补偿税金102：调账-扣费税金。此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 0
      * maximum: 127
      * @return billType
@@ -370,6 +375,25 @@ public class ListCustomerselfResourceRecordsRequest {
         this.billDateEnd = billDateEnd;
     }
 
+    public ListCustomerselfResourceRecordsRequest withStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
+        return this;
+    }
+
+    /**
+     * |参数名称：统计类型。| |参数的约束及描述：统计类型。非必填，默认值为3。1：按账期 3：按明细|
+     * minimum: 1
+     * maximum: 3
+     * @return statisticType
+     */
+    public Integer getStatisticType() {
+        return statisticType;
+    }
+
+    public void setStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -388,7 +412,8 @@ public class ListCustomerselfResourceRecordsRequest {
             && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
             && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
             && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.billDateBegin, that.billDateBegin)
-            && Objects.equals(this.billDateEnd, that.billDateEnd);
+            && Objects.equals(this.billDateEnd, that.billDateEnd)
+            && Objects.equals(this.statisticType, that.statisticType);
     }
 
     @Override
@@ -408,7 +433,8 @@ public class ListCustomerselfResourceRecordsRequest {
             subCustomerId,
             tradeId,
             billDateBegin,
-            billDateEnd);
+            billDateEnd,
+            statisticType);
     }
 
     @Override
@@ -431,6 +457,7 @@ public class ListCustomerselfResourceRecordsRequest {
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
         sb.append("    billDateBegin: ").append(toIndentedString(billDateBegin)).append("\n");
         sb.append("    billDateEnd: ").append(toIndentedString(billDateEnd)).append("\n");
+        sb.append("    statisticType: ").append(toIndentedString(statisticType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

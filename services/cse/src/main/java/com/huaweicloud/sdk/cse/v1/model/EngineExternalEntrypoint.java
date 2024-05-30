@@ -39,7 +39,7 @@ public class EngineExternalEntrypoint {
     }
 
     /**
-     * 微服务引擎专享版暴露的IP地址。
+     * 微服务引擎暴露的IP地址。
      * @return externalAddress
      */
     public String getExternalAddress() {
@@ -56,7 +56,7 @@ public class EngineExternalEntrypoint {
     }
 
     /**
-     * 微服务引擎专享版的公网地址。
+     * 微服务引擎的公网地址。
      * @return publicAddress
      */
     public String getPublicAddress() {
@@ -89,7 +89,7 @@ public class EngineExternalEntrypoint {
     }
 
     /**
-     * 微服务引擎专享版组件的访问地址。
+     * 微服务引擎组件的访问地址。
      * @return serviceEndpoint
      */
     public Map<String, EntrypointItem> getServiceEndpoint() {
@@ -123,7 +123,7 @@ public class EngineExternalEntrypoint {
     }
 
     /**
-     * 微服务引擎专享版组件的公网地址。
+     * 微服务引擎组件的公网地址。
      * @return publicServiceEndpoint
      */
     public Map<String, EntrypointItem> getPublicServiceEndpoint() {

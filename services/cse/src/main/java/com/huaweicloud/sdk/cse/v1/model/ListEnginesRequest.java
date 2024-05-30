@@ -20,6 +20,11 @@ public class ListEnginesRequest {
 
     private String limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ListEnginesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -54,6 +59,23 @@ public class ListEnginesRequest {
         this.limit = limit;
     }
 
+    public ListEnginesRequest withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 查询所有微服务引擎需要将该值设置为ALL，查询ServiceComb引擎专享版需要将该值设置为CSE，查询注册配置中心需要将该值设置为Nacos，查询网关需要将该值设置为MicroGateway。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ListEnginesRequest {
             return false;
         }
         ListEnginesRequest that = (ListEnginesRequest) obj;
-        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit);
+        return Objects.hash(offset, limit, type);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ListEnginesRequest {
         sb.append("class ListEnginesRequest {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

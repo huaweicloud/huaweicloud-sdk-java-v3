@@ -21,12 +21,12 @@ public class MappingSourceTableVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table1_id")
 
-    private Long table1Id;
+    private String table1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table2_id")
 
-    private Long table2Id;
+    private String table2Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table1_name")
@@ -39,7 +39,7 @@ public class MappingSourceTableVO {
     private String table2Name;
 
     /**
-     * 关联类型。LEFT(左外连接)、RIGHT(右外连接)、INNER(内连接)、FULL(全连接)。
+     * 关联类型。 枚举值：   - LEFT: 左外连接   - RIGHT: 右外连接   - INNER: 内连接   - FULL: 全连接 
      */
     public static final class JoinTypeEnum {
 
@@ -130,37 +130,37 @@ public class MappingSourceTableVO {
 
     private List<MappingJoinFieldVO> joinFields = null;
 
-    public MappingSourceTableVO withTable1Id(Long table1Id) {
+    public MappingSourceTableVO withTable1Id(String table1Id) {
         this.table1Id = table1Id;
         return this;
     }
 
     /**
-     * 表1ID。
+     * 表1ID，填写String类型替代Long类型。
      * @return table1Id
      */
-    public Long getTable1Id() {
+    public String getTable1Id() {
         return table1Id;
     }
 
-    public void setTable1Id(Long table1Id) {
+    public void setTable1Id(String table1Id) {
         this.table1Id = table1Id;
     }
 
-    public MappingSourceTableVO withTable2Id(Long table2Id) {
+    public MappingSourceTableVO withTable2Id(String table2Id) {
         this.table2Id = table2Id;
         return this;
     }
 
     /**
-     * 表2ID。
+     * 表2ID，填写String类型替代Long类型。
      * @return table2Id
      */
-    public Long getTable2Id() {
+    public String getTable2Id() {
         return table2Id;
     }
 
-    public void setTable2Id(Long table2Id) {
+    public void setTable2Id(String table2Id) {
         this.table2Id = table2Id;
     }
 
@@ -204,7 +204,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 关联类型。LEFT(左外连接)、RIGHT(右外连接)、INNER(内连接)、FULL(全连接)。
+     * 关联类型。 枚举值：   - LEFT: 左外连接   - RIGHT: 右外连接   - INNER: 内连接   - FULL: 全连接 
      * @return joinType
      */
     public JoinTypeEnum getJoinType() {

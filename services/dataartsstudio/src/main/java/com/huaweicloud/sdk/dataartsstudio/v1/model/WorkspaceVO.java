@@ -22,7 +22,7 @@ public class WorkspaceVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -80,7 +80,7 @@ public class WorkspaceVO {
     private String updateBy;
 
     /**
-     * 工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
+     * 工作区类型枚举。 枚举值：   - THIRD_NF: 关系建模   - DIMENSION: 维度建模 
      */
     public static final class TypeEnum {
 
@@ -164,20 +164,25 @@ public class WorkspaceVO {
 
     private List<String> databases = null;
 
-    public WorkspaceVO withId(Long id) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_model_prefix")
+
+    private String tableModelPrefix;
+
+    public WorkspaceVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编号。
+     * 编号，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -306,7 +311,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -323,7 +328,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -374,7 +379,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 工作区类型枚举。THIRD_NF(关系建模)、DIMENSION(维度建模)。
+     * 工作区类型枚举。 枚举值：   - THIRD_NF: 关系建模   - DIMENSION: 维度建模 
      * @return type
      */
     public TypeEnum getType() {
@@ -435,6 +440,23 @@ public class WorkspaceVO {
         this.databases = databases;
     }
 
+    public WorkspaceVO withTableModelPrefix(String tableModelPrefix) {
+        this.tableModelPrefix = tableModelPrefix;
+        return this;
+    }
+
+    /**
+     * 模型校验前缀，长度不超过100，数字字母下划线组成，字母开头
+     * @return tableModelPrefix
+     */
+    public String getTableModelPrefix() {
+        return tableModelPrefix;
+    }
+
+    public void setTableModelPrefix(String tableModelPrefix) {
+        this.tableModelPrefix = tableModelPrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -451,7 +473,8 @@ public class WorkspaceVO {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
             && Objects.equals(this.type, that.type) && Objects.equals(this.bizCatalogIds, that.bizCatalogIds)
-            && Objects.equals(this.databases, that.databases);
+            && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.tableModelPrefix, that.tableModelPrefix);
     }
 
     @Override
@@ -470,7 +493,8 @@ public class WorkspaceVO {
             updateBy,
             type,
             bizCatalogIds,
-            databases);
+            databases,
+            tableModelPrefix);
     }
 
     @Override
@@ -492,6 +516,7 @@ public class WorkspaceVO {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    bizCatalogIds: ").append(toIndentedString(bizCatalogIds)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
+        sb.append("    tableModelPrefix: ").append(toIndentedString(tableModelPrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

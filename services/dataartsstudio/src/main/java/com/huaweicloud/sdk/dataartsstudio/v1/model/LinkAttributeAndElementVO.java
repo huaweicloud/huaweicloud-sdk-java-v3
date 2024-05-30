@@ -21,20 +21,20 @@ public class LinkAttributeAndElementVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_id")
 
-    private Long standRowId;
+    private String standRowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_id")
 
-    private Long tableId;
+    private String tableId;
 
     /**
-     * 表类型，默认是TABLE_MODEL。TABLE_MODEL(关系模型（逻辑模型/物理模型）)、AGGREGATION_LOGIC_TABLE(汇总表)、FACT_LOGIC_TABLE(事实表)、DIMENSION(维度)、DIMENSION_LOGIC_TABLE(维度表)。
+     * 表类型，默认是TABLE_MODEL。 枚举值：   - TABLE_MODEL: 关系模型（逻辑模型/物理模型）   - AGGREGATION_LOGIC_TABLE: 汇总表   - FACT_LOGIC_TABLE: 事实表   - DIMENSION: 维度   - DIMENSION_LOGIC_TABLE: 维度表 
      */
     public static final class BizTypeEnum {
 
@@ -126,12 +126,12 @@ public class LinkAttributeAndElementVO {
 
     private BizTypeEnum bizType;
 
-    public LinkAttributeAndElementVO withIds(List<Long> ids) {
+    public LinkAttributeAndElementVO withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public LinkAttributeAndElementVO addIdsItem(Long idsItem) {
+    public LinkAttributeAndElementVO addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -139,7 +139,7 @@ public class LinkAttributeAndElementVO {
         return this;
     }
 
-    public LinkAttributeAndElementVO withIds(Consumer<List<Long>> idsSetter) {
+    public LinkAttributeAndElementVO withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -148,48 +148,48 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 属性ID列表。
+     * 属性ID列表，填写String类型替代Long类型。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 
-    public LinkAttributeAndElementVO withStandRowId(Long standRowId) {
+    public LinkAttributeAndElementVO withStandRowId(String standRowId) {
         this.standRowId = standRowId;
         return this;
     }
 
     /**
-     * 关联的数据标准的ID。
+     * 关联的数据标准的ID，填写String类型替代Long类型。
      * @return standRowId
      */
-    public Long getStandRowId() {
+    public String getStandRowId() {
         return standRowId;
     }
 
-    public void setStandRowId(Long standRowId) {
+    public void setStandRowId(String standRowId) {
         this.standRowId = standRowId;
     }
 
-    public LinkAttributeAndElementVO withTableId(Long tableId) {
+    public LinkAttributeAndElementVO withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
 
     /**
-     * 表ID。
+     * 表ID，填写String类型替代Long类型。
      * @return tableId
      */
-    public Long getTableId() {
+    public String getTableId() {
         return tableId;
     }
 
-    public void setTableId(Long tableId) {
+    public void setTableId(String tableId) {
         this.tableId = tableId;
     }
 
@@ -199,7 +199,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 表类型，默认是TABLE_MODEL。TABLE_MODEL(关系模型（逻辑模型/物理模型）)、AGGREGATION_LOGIC_TABLE(汇总表)、FACT_LOGIC_TABLE(事实表)、DIMENSION(维度)、DIMENSION_LOGIC_TABLE(维度表)。
+     * 表类型，默认是TABLE_MODEL。 枚举值：   - TABLE_MODEL: 关系模型（逻辑模型/物理模型）   - AGGREGATION_LOGIC_TABLE: 汇总表   - FACT_LOGIC_TABLE: 事实表   - DIMENSION: 维度   - DIMENSION_LOGIC_TABLE: 维度表 
      * @return bizType
      */
     public BizTypeEnum getBizType() {

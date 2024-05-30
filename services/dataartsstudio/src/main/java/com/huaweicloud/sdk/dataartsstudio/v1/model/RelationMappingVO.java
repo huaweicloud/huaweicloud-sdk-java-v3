@@ -14,22 +14,22 @@ public class RelationMappingVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_id")
 
-    private Long relationId;
+    private String relationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_field_id")
 
-    private Long sourceFieldId;
+    private String sourceFieldId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_field_id")
 
-    private Long targetFieldId;
+    private String targetFieldId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_field_name")
@@ -61,71 +61,71 @@ public class RelationMappingVO {
 
     private OffsetDateTime updateTime;
 
-    public RelationMappingVO withId(Long id) {
+    public RelationMappingVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public RelationMappingVO withRelationId(Long relationId) {
+    public RelationMappingVO withRelationId(String relationId) {
         this.relationId = relationId;
         return this;
     }
 
     /**
-     * 关系ID。
+     * 关系ID，填写String类型替代Long类型。
      * @return relationId
      */
-    public Long getRelationId() {
+    public String getRelationId() {
         return relationId;
     }
 
-    public void setRelationId(Long relationId) {
+    public void setRelationId(String relationId) {
         this.relationId = relationId;
     }
 
-    public RelationMappingVO withSourceFieldId(Long sourceFieldId) {
+    public RelationMappingVO withSourceFieldId(String sourceFieldId) {
         this.sourceFieldId = sourceFieldId;
         return this;
     }
 
     /**
-     * 源字段ID。
+     * 源字段ID，填写String类型替代Long类型。
      * @return sourceFieldId
      */
-    public Long getSourceFieldId() {
+    public String getSourceFieldId() {
         return sourceFieldId;
     }
 
-    public void setSourceFieldId(Long sourceFieldId) {
+    public void setSourceFieldId(String sourceFieldId) {
         this.sourceFieldId = sourceFieldId;
     }
 
-    public RelationMappingVO withTargetFieldId(Long targetFieldId) {
+    public RelationMappingVO withTargetFieldId(String targetFieldId) {
         this.targetFieldId = targetFieldId;
         return this;
     }
 
     /**
-     * 目标字段ID。
+     * 目标字段ID，填写String类型替代Long类型。
      * @return targetFieldId
      */
-    public Long getTargetFieldId() {
+    public String getTargetFieldId() {
         return targetFieldId;
     }
 
-    public void setTargetFieldId(Long targetFieldId) {
+    public void setTargetFieldId(String targetFieldId) {
         this.targetFieldId = targetFieldId;
     }
 
@@ -203,7 +203,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -220,7 +220,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

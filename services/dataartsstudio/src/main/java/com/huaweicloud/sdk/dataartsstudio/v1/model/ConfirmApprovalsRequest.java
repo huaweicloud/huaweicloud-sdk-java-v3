@@ -27,7 +27,7 @@ public class ConfirmApprovalsRequest {
     private String xProjectId;
 
     /**
-     * 处理审批单结果类型。reject(审批驳回)、resolve(审批通过)。
+     * 处理审批单结果类型。 枚举值：   - reject: 审批驳回   - resolve: 审批通过 
      */
     public static final class ActionIdEnum {
 
@@ -148,7 +148,7 @@ public class ConfirmApprovalsRequest {
     }
 
     /**
-     * 处理审批单结果类型。reject(审批驳回)、resolve(审批通过)。
+     * 处理审批单结果类型。 枚举值：   - reject: 审批驳回   - resolve: 审批通过 
      * @return actionId
      */
     public ActionIdEnum getActionId() {

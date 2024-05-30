@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ApproverParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_name")
+
+    private String appName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approver_name")
 
     private String approverName;
@@ -39,6 +44,23 @@ public class ApproverParam {
     @JsonProperty(value = "sms_notify")
 
     private Boolean smsNotify;
+
+    public ApproverParam withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    /**
+     * 调用审核系统的应用名称，开发人员自己定。
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
 
     public ApproverParam withApproverName(String approverName) {
         this.approverName = approverName;
@@ -151,20 +173,22 @@ public class ApproverParam {
             return false;
         }
         ApproverParam that = (ApproverParam) obj;
-        return Objects.equals(this.approverName, that.approverName) && Objects.equals(this.userId, that.userId)
-            && Objects.equals(this.email, that.email) && Objects.equals(this.phoneNumber, that.phoneNumber)
-            && Objects.equals(this.emailNotify, that.emailNotify) && Objects.equals(this.smsNotify, that.smsNotify);
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.approverName, that.approverName)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.phoneNumber, that.phoneNumber) && Objects.equals(this.emailNotify, that.emailNotify)
+            && Objects.equals(this.smsNotify, that.smsNotify);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(approverName, userId, email, phoneNumber, emailNotify, smsNotify);
+        return Objects.hash(appName, approverName, userId, email, phoneNumber, emailNotify, smsNotify);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApproverParam {\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    approverName: ").append(toIndentedString(approverName)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");

@@ -78,7 +78,7 @@ public class ImportCatalogsRequest {
     }
 
     /**
-     * 需要执行的动作。start-import(开始导入)。
+     * 需要执行的动作。 枚举值：   - start-import: 开始导入 
      * @return actionId
      */
     public String getActionId() {

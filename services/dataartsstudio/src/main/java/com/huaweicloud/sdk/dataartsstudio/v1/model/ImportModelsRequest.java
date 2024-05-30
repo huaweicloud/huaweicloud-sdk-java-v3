@@ -26,8 +26,13 @@ public class ImportModelsRequest {
 
     private String xProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
     /**
-     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。import_relation(导入关系模型：逻辑实体/物理表)、import_dimension( 导入维度表、事实表)、import_codetable(导入码表)、import_datastandard(导入数据标准)、import_bizmetric(导入业务指标)、import_bizcatalog(导入流程架构)、import_atomic(导入原子指标)、import_derivative(导入衍生指标)、import_compound(导入复合指标)、import_aggregation(导入汇总表)。
+     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。 枚举值：   - import_relation: 导入关系模型：逻辑实体/物理表   - import_dimension: 导入维度表、事实表   - import_codetable: 导入码表   - import_datastandard: 导入数据标准   - import_bizmetric: 导入业务指标   - import_bizcatalog: 导入流程架构   - import_atomic: 导入原子指标   - import_derivative: 导入衍生指标   - import_compound: 导入复合指标   - import_aggregation: 导入汇总表 
      */
     public static final class ActionIdEnum {
 
@@ -205,13 +210,32 @@ public class ImportModelsRequest {
         this.xProjectId = xProjectId;
     }
 
+    public ImportModelsRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 默认值：en-us 可选，导入导出接口必填，可选值有：zh-cn、en-us，分别表示中文、英文。
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
+
     public ImportModelsRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
 
     /**
-     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。import_relation(导入关系模型：逻辑实体/物理表)、import_dimension( 导入维度表、事实表)、import_codetable(导入码表)、import_datastandard(导入数据标准)、import_bizmetric(导入业务指标)、import_bizcatalog(导入流程架构)、import_atomic(导入原子指标)、import_derivative(导入衍生指标)、import_compound(导入复合指标)、import_aggregation(导入汇总表)。
+     * 需要执行的动作，根据导入的对象不同而选择不同的导入动作。 枚举值：   - import_relation: 导入关系模型：逻辑实体/物理表   - import_dimension: 导入维度表、事实表   - import_codetable: 导入码表   - import_datastandard: 导入数据标准   - import_bizmetric: 导入业务指标   - import_bizcatalog: 导入流程架构   - import_atomic: 导入原子指标   - import_derivative: 导入衍生指标   - import_compound: 导入复合指标   - import_aggregation: 导入汇总表 
      * @return actionId
      */
     public ActionIdEnum getActionId() {
@@ -245,7 +269,7 @@ public class ImportModelsRequest {
     }
 
     /**
-     * 导入的目录id，在导入码表（import_datastandard）和数据标准（import_datastandard）时生效，选填。
+     * 导入的目录id，在导入码表（import_codetable）和数据标准（import_datastandard）时生效，选填。
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -309,14 +333,14 @@ public class ImportModelsRequest {
         }
         ImportModelsRequest that = (ImportModelsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
-            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.modelId, that.modelId)
-            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.skipExist, that.skipExist)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.modelId, that.modelId) && Objects.equals(this.directoryId, that.directoryId)
+            && Objects.equals(this.skipExist, that.skipExist) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, xProjectId, actionId, modelId, directoryId, skipExist, body);
+        return Objects.hash(workspace, xProjectId, xLanguage, actionId, modelId, directoryId, skipExist, body);
     }
 
     @Override
@@ -325,6 +349,7 @@ public class ImportModelsRequest {
         sb.append("class ImportModelsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
         sb.append("    directoryId: ").append(toIndentedString(directoryId)).append("\n");

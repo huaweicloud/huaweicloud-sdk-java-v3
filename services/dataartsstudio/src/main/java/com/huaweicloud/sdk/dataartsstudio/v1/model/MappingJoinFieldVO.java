@@ -13,12 +13,12 @@ public class MappingJoinFieldVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field1_id")
 
-    private Long field1Id;
+    private String field1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field2_id")
 
-    private Long field2Id;
+    private String field2Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "field1_name")
@@ -30,37 +30,37 @@ public class MappingJoinFieldVO {
 
     private String field2Name;
 
-    public MappingJoinFieldVO withField1Id(Long field1Id) {
+    public MappingJoinFieldVO withField1Id(String field1Id) {
         this.field1Id = field1Id;
         return this;
     }
 
     /**
-     * 属性1ID。
+     * 属性1ID，填写String类型替代Long类型。
      * @return field1Id
      */
-    public Long getField1Id() {
+    public String getField1Id() {
         return field1Id;
     }
 
-    public void setField1Id(Long field1Id) {
+    public void setField1Id(String field1Id) {
         this.field1Id = field1Id;
     }
 
-    public MappingJoinFieldVO withField2Id(Long field2Id) {
+    public MappingJoinFieldVO withField2Id(String field2Id) {
         this.field2Id = field2Id;
         return this;
     }
 
     /**
-     * 属性2ID。
+     * 属性2ID，填写String类型替代Long类型。
      * @return field2Id
      */
-    public Long getField2Id() {
+    public String getField2Id() {
         return field2Id;
     }
 
-    public void setField2Id(Long field2Id) {
+    public void setField2Id(String field2Id) {
         this.field2Id = field2Id;
     }
 

@@ -30,7 +30,7 @@ public class ListFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版规格总个数
+     * 微服务引擎规格总个数
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版规格详情
+     * 微服务引擎规格详情
      * @return data
      */
     public List<FlavorBrief> getData() {

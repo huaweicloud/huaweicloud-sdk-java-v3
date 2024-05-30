@@ -77,7 +77,7 @@ public class ShowCustomerOrderDetailsRequest {
     }
 
     /**
-     * 每页大小。默认值为10。
+     * 每页大小。默认值为10。此参数不携带或携带值为空或携带值为null，取默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -96,7 +96,7 @@ public class ShowCustomerOrderDetailsRequest {
     }
 
     /**
-     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * 偏移量，从0开始。默认值为0。此参数不携带或携带值为空或携带值为null，取默认值0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
      * minimum: 0
      * maximum: 2147483647
      * @return offset

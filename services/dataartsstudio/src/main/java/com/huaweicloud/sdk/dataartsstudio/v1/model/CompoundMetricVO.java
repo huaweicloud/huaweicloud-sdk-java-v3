@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.dataartsstudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,7 +22,7 @@ public class CompoundMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -49,10 +54,174 @@ public class CompoundMetricVO {
 
     private String groupCode;
 
+    /**
+     * 复合指标类型。 枚举值：   - EXPRESSION: 表达式   - PERIODICITY_VALUED_COMPARISON: 环比   - INTERVAL_VALUED_COMPARISON: 同比 
+     */
+    public static final class CompoundTypeEnum {
+
+        /**
+         * Enum EXPRESSION for value: "EXPRESSION"
+         */
+        public static final CompoundTypeEnum EXPRESSION = new CompoundTypeEnum("EXPRESSION");
+
+        /**
+         * Enum PERIODICITY_VALUED_COMPARISON for value: "PERIODICITY_VALUED_COMPARISON"
+         */
+        public static final CompoundTypeEnum PERIODICITY_VALUED_COMPARISON =
+            new CompoundTypeEnum("PERIODICITY_VALUED_COMPARISON");
+
+        /**
+         * Enum INTERVAL_VALUED_COMPARISON for value: "INTERVAL_VALUED_COMPARISON"
+         */
+        public static final CompoundTypeEnum INTERVAL_VALUED_COMPARISON =
+            new CompoundTypeEnum("INTERVAL_VALUED_COMPARISON");
+
+        private static final Map<String, CompoundTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CompoundTypeEnum> createStaticFields() {
+            Map<String, CompoundTypeEnum> map = new HashMap<>();
+            map.put("EXPRESSION", EXPRESSION);
+            map.put("PERIODICITY_VALUED_COMPARISON", PERIODICITY_VALUED_COMPARISON);
+            map.put("INTERVAL_VALUED_COMPARISON", INTERVAL_VALUED_COMPARISON);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CompoundTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CompoundTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompoundTypeEnum(value));
+        }
+
+        public static CompoundTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CompoundTypeEnum) {
+                return this.value.equals(((CompoundTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compound_type")
+
+    private CompoundTypeEnum compoundType;
+
+    /**
+     * 比较类型。 枚举值：   - YEAR_TO_YEAR: 年同比   - MONTH_TO_MONTH: 月同比   - WEEK_TO_WEEK: 周同比 
+     */
+    public static final class ComparisonTypeEnum {
+
+        /**
+         * Enum YEAR_TO_YEAR for value: "YEAR_TO_YEAR"
+         */
+        public static final ComparisonTypeEnum YEAR_TO_YEAR = new ComparisonTypeEnum("YEAR_TO_YEAR");
+
+        /**
+         * Enum MONTH_TO_MONTH for value: "MONTH_TO_MONTH"
+         */
+        public static final ComparisonTypeEnum MONTH_TO_MONTH = new ComparisonTypeEnum("MONTH_TO_MONTH");
+
+        /**
+         * Enum WEEK_TO_WEEK for value: "WEEK_TO_WEEK"
+         */
+        public static final ComparisonTypeEnum WEEK_TO_WEEK = new ComparisonTypeEnum("WEEK_TO_WEEK");
+
+        private static final Map<String, ComparisonTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ComparisonTypeEnum> createStaticFields() {
+            Map<String, ComparisonTypeEnum> map = new HashMap<>();
+            map.put("YEAR_TO_YEAR", YEAR_TO_YEAR);
+            map.put("MONTH_TO_MONTH", MONTH_TO_MONTH);
+            map.put("WEEK_TO_WEEK", WEEK_TO_WEEK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ComparisonTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ComparisonTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComparisonTypeEnum(value));
+        }
+
+        public static ComparisonTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ComparisonTypeEnum) {
+                return this.value.equals(((ComparisonTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comparison_type")
+
+    private ComparisonTypeEnum comparisonType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_ids")
 
-    private List<Long> metricIds = null;
+    private List<String> metricIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_names")
@@ -60,9 +229,19 @@ public class CompoundMetricVO {
     private List<String> metricNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compound_metric_ids")
+
+    private List<String> compoundMetricIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compound_metric_names")
+
+    private List<String> compoundMetricNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cal_fn_ids")
 
-    private List<Long> calFnIds = null;
+    private List<String> calFnIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cal_exp")
@@ -72,7 +251,7 @@ public class CompoundMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l1_id")
 
-    private Long l1Id;
+    private String l1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
@@ -82,7 +261,7 @@ public class CompoundMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_type")
@@ -147,22 +326,22 @@ public class CompoundMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary_table_id")
 
-    private Long summaryTableId;
+    private String summaryTableId;
 
-    public CompoundMetricVO withId(Long id) {
+    public CompoundMetricVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -240,7 +419,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 颗粒度名称。
+     * 颗粒度名称，只读。
      * @return groupName
      */
     public String getGroupName() {
@@ -257,7 +436,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 颗粒度编码。
+     * 颗粒度编码，只读。
      * @return groupCode
      */
     public String getGroupCode() {
@@ -268,12 +447,46 @@ public class CompoundMetricVO {
         this.groupCode = groupCode;
     }
 
-    public CompoundMetricVO withMetricIds(List<Long> metricIds) {
+    public CompoundMetricVO withCompoundType(CompoundTypeEnum compoundType) {
+        this.compoundType = compoundType;
+        return this;
+    }
+
+    /**
+     * 复合指标类型。 枚举值：   - EXPRESSION: 表达式   - PERIODICITY_VALUED_COMPARISON: 环比   - INTERVAL_VALUED_COMPARISON: 同比 
+     * @return compoundType
+     */
+    public CompoundTypeEnum getCompoundType() {
+        return compoundType;
+    }
+
+    public void setCompoundType(CompoundTypeEnum compoundType) {
+        this.compoundType = compoundType;
+    }
+
+    public CompoundMetricVO withComparisonType(ComparisonTypeEnum comparisonType) {
+        this.comparisonType = comparisonType;
+        return this;
+    }
+
+    /**
+     * 比较类型。 枚举值：   - YEAR_TO_YEAR: 年同比   - MONTH_TO_MONTH: 月同比   - WEEK_TO_WEEK: 周同比 
+     * @return comparisonType
+     */
+    public ComparisonTypeEnum getComparisonType() {
+        return comparisonType;
+    }
+
+    public void setComparisonType(ComparisonTypeEnum comparisonType) {
+        this.comparisonType = comparisonType;
+    }
+
+    public CompoundMetricVO withMetricIds(List<String> metricIds) {
         this.metricIds = metricIds;
         return this;
     }
 
-    public CompoundMetricVO addMetricIdsItem(Long metricIdsItem) {
+    public CompoundMetricVO addMetricIdsItem(String metricIdsItem) {
         if (this.metricIds == null) {
             this.metricIds = new ArrayList<>();
         }
@@ -281,7 +494,7 @@ public class CompoundMetricVO {
         return this;
     }
 
-    public CompoundMetricVO withMetricIds(Consumer<List<Long>> metricIdsSetter) {
+    public CompoundMetricVO withMetricIds(Consumer<List<String>> metricIdsSetter) {
         if (this.metricIds == null) {
             this.metricIds = new ArrayList<>();
         }
@@ -290,14 +503,14 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 指标信息。
+     * 指标信息，填写String类型替代Long类型。
      * @return metricIds
      */
-    public List<Long> getMetricIds() {
+    public List<String> getMetricIds() {
         return metricIds;
     }
 
-    public void setMetricIds(List<Long> metricIds) {
+    public void setMetricIds(List<String> metricIds) {
         this.metricIds = metricIds;
     }
 
@@ -334,12 +547,78 @@ public class CompoundMetricVO {
         this.metricNames = metricNames;
     }
 
-    public CompoundMetricVO withCalFnIds(List<Long> calFnIds) {
+    public CompoundMetricVO withCompoundMetricIds(List<String> compoundMetricIds) {
+        this.compoundMetricIds = compoundMetricIds;
+        return this;
+    }
+
+    public CompoundMetricVO addCompoundMetricIdsItem(String compoundMetricIdsItem) {
+        if (this.compoundMetricIds == null) {
+            this.compoundMetricIds = new ArrayList<>();
+        }
+        this.compoundMetricIds.add(compoundMetricIdsItem);
+        return this;
+    }
+
+    public CompoundMetricVO withCompoundMetricIds(Consumer<List<String>> compoundMetricIdsSetter) {
+        if (this.compoundMetricIds == null) {
+            this.compoundMetricIds = new ArrayList<>();
+        }
+        compoundMetricIdsSetter.accept(this.compoundMetricIds);
+        return this;
+    }
+
+    /**
+     * 复合指标信息，填写String类型替代Long类型。
+     * @return compoundMetricIds
+     */
+    public List<String> getCompoundMetricIds() {
+        return compoundMetricIds;
+    }
+
+    public void setCompoundMetricIds(List<String> compoundMetricIds) {
+        this.compoundMetricIds = compoundMetricIds;
+    }
+
+    public CompoundMetricVO withCompoundMetricNames(List<String> compoundMetricNames) {
+        this.compoundMetricNames = compoundMetricNames;
+        return this;
+    }
+
+    public CompoundMetricVO addCompoundMetricNamesItem(String compoundMetricNamesItem) {
+        if (this.compoundMetricNames == null) {
+            this.compoundMetricNames = new ArrayList<>();
+        }
+        this.compoundMetricNames.add(compoundMetricNamesItem);
+        return this;
+    }
+
+    public CompoundMetricVO withCompoundMetricNames(Consumer<List<String>> compoundMetricNamesSetter) {
+        if (this.compoundMetricNames == null) {
+            this.compoundMetricNames = new ArrayList<>();
+        }
+        compoundMetricNamesSetter.accept(this.compoundMetricNames);
+        return this;
+    }
+
+    /**
+     * 复合指标名称信息
+     * @return compoundMetricNames
+     */
+    public List<String> getCompoundMetricNames() {
+        return compoundMetricNames;
+    }
+
+    public void setCompoundMetricNames(List<String> compoundMetricNames) {
+        this.compoundMetricNames = compoundMetricNames;
+    }
+
+    public CompoundMetricVO withCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
         return this;
     }
 
-    public CompoundMetricVO addCalFnIdsItem(Long calFnIdsItem) {
+    public CompoundMetricVO addCalFnIdsItem(String calFnIdsItem) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -347,7 +626,7 @@ public class CompoundMetricVO {
         return this;
     }
 
-    public CompoundMetricVO withCalFnIds(Consumer<List<Long>> calFnIdsSetter) {
+    public CompoundMetricVO withCalFnIds(Consumer<List<String>> calFnIdsSetter) {
         if (this.calFnIds == null) {
             this.calFnIds = new ArrayList<>();
         }
@@ -356,14 +635,14 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 引用函数ID。
+     * 引用函数ID，填写String类型替代Long类型。
      * @return calFnIds
      */
-    public List<Long> getCalFnIds() {
+    public List<String> getCalFnIds() {
         return calFnIds;
     }
 
-    public void setCalFnIds(List<Long> calFnIds) {
+    public void setCalFnIds(List<String> calFnIds) {
         this.calFnIds = calFnIds;
     }
 
@@ -384,20 +663,20 @@ public class CompoundMetricVO {
         this.calExp = calExp;
     }
 
-    public CompoundMetricVO withL1Id(Long l1Id) {
+    public CompoundMetricVO withL1Id(String l1Id) {
         this.l1Id = l1Id;
         return this;
     }
 
     /**
-     * 主题域分组ID。
+     * 主题域分组ID，只读，填写String类型替代Long类型。
      * @return l1Id
      */
-    public Long getL1Id() {
+    public String getL1Id() {
         return l1Id;
     }
 
-    public void setL1Id(Long l1Id) {
+    public void setL1Id(String l1Id) {
         this.l1Id = l1Id;
     }
 
@@ -418,20 +697,20 @@ public class CompoundMetricVO {
         this.l2Id = l2Id;
     }
 
-    public CompoundMetricVO withL3Id(Long l3Id) {
+    public CompoundMetricVO withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象ID。
+     * 业务对象ID，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -509,7 +788,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -526,7 +805,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -666,20 +945,20 @@ public class CompoundMetricVO {
         this.l3 = l3;
     }
 
-    public CompoundMetricVO withSummaryTableId(Long summaryTableId) {
+    public CompoundMetricVO withSummaryTableId(String summaryTableId) {
         this.summaryTableId = summaryTableId;
         return this;
     }
 
     /**
-     * 汇总表ID。
+     * 汇总表ID，只读，填写String类型替代Long类型。
      * @return summaryTableId
      */
-    public Long getSummaryTableId() {
+    public String getSummaryTableId() {
         return summaryTableId;
     }
 
-    public void setSummaryTableId(Long summaryTableId) {
+    public void setSummaryTableId(String summaryTableId) {
         this.summaryTableId = summaryTableId;
     }
 
@@ -696,7 +975,11 @@ public class CompoundMetricVO {
             && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.description, that.description)
             && Objects.equals(this.dimensionGroup, that.dimensionGroup)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupCode, that.groupCode)
+            && Objects.equals(this.compoundType, that.compoundType)
+            && Objects.equals(this.comparisonType, that.comparisonType)
             && Objects.equals(this.metricIds, that.metricIds) && Objects.equals(this.metricNames, that.metricNames)
+            && Objects.equals(this.compoundMetricIds, that.compoundMetricIds)
+            && Objects.equals(this.compoundMetricNames, that.compoundMetricNames)
             && Objects.equals(this.calFnIds, that.calFnIds) && Objects.equals(this.calExp, that.calExp)
             && Objects.equals(this.l1Id, that.l1Id) && Objects.equals(this.l2Id, that.l2Id)
             && Objects.equals(this.l3Id, that.l3Id) && Objects.equals(this.dataType, that.dataType)
@@ -717,8 +1000,12 @@ public class CompoundMetricVO {
             dimensionGroup,
             groupName,
             groupCode,
+            compoundType,
+            comparisonType,
             metricIds,
             metricNames,
+            compoundMetricIds,
+            compoundMetricNames,
             calFnIds,
             calExp,
             l1Id,
@@ -750,8 +1037,12 @@ public class CompoundMetricVO {
         sb.append("    dimensionGroup: ").append(toIndentedString(dimensionGroup)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupCode: ").append(toIndentedString(groupCode)).append("\n");
+        sb.append("    compoundType: ").append(toIndentedString(compoundType)).append("\n");
+        sb.append("    comparisonType: ").append(toIndentedString(comparisonType)).append("\n");
         sb.append("    metricIds: ").append(toIndentedString(metricIds)).append("\n");
         sb.append("    metricNames: ").append(toIndentedString(metricNames)).append("\n");
+        sb.append("    compoundMetricIds: ").append(toIndentedString(compoundMetricIds)).append("\n");
+        sb.append("    compoundMetricNames: ").append(toIndentedString(compoundMetricNames)).append("\n");
         sb.append("    calFnIds: ").append(toIndentedString(calFnIds)).append("\n");
         sb.append("    calExp: ").append(toIndentedString(calExp)).append("\n");
         sb.append("    l1Id: ").append(toIndentedString(l1Id)).append("\n");

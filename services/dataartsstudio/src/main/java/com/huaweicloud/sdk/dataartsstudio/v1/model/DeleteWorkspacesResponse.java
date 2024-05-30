@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class DeleteWorkspacesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private DeleteResultData data;
 
-    public DeleteWorkspacesResponse withData(Object data) {
+    public DeleteWorkspacesResponse withData(DeleteResultData data) {
         this.data = data;
         return this;
     }
 
+    public DeleteWorkspacesResponse withData(Consumer<DeleteResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new DeleteResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public DeleteResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(DeleteResultData data) {
         this.data = data;
     }
 

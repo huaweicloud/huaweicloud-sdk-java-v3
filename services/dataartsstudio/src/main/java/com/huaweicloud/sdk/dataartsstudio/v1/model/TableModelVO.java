@@ -45,6 +45,26 @@ public class TableModelVO {
     private String parentTableCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_table_id")
+
+    private String relatedLogicTableId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_table_name")
+
+    private String relatedLogicTableName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_table_model_id")
+
+    private String relatedLogicTableModelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_logic_table_model_name")
+
+    private String relatedLogicTableModelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model")
 
     private WorkspaceVO model;
@@ -295,7 +315,7 @@ public class TableModelVO {
     private String qualityId;
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。 枚举值：   - HASH: 对指定的列进行Hash，通过映射，把数据分布到指定DN   - REPLICATION: 表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据 
      */
     public static final class DistributeEnum {
 
@@ -385,6 +405,11 @@ public class TableModelVO {
     private SyncStatusEnum physicalTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_physical_table")
+
+    private SyncStatusEnum devPhysicalTable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "technical_asset")
 
     private SyncStatusEnum technicalAsset;
@@ -410,6 +435,31 @@ public class TableModelVO {
     private SyncStatusEnum summaryStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_version")
+
+    private String devVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prod_version")
+
+    private String prodVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_version_name")
+
+    private String devVersionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prod_version_name")
+
+    private String prodVersionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env_type")
+
+    private EnvTypeEnum envType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alias")
 
     private String alias;
@@ -419,13 +469,28 @@ public class TableModelVO {
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_related_physical_table")
+
+    private Boolean hasRelatedPhysicalTable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_related_logic_table")
+
+    private Boolean hasRelatedLogicTable;
+
     public TableModelVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -442,7 +507,7 @@ public class TableModelVO {
     }
 
     /**
-     * 所属关系建模的模型ID。
+     * 所属关系建模的模型ID，填写String类型替代Long类型。
      * @return modelId
      */
     public String getModelId() {
@@ -459,7 +524,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表ID。
+     * 父表ID，填写String类型替代Long类型。
      * @return parentTableId
      */
     public String getParentTableId() {
@@ -476,7 +541,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表名称。
+     * 父表名称，只读。
      * @return parentTableName
      */
     public String getParentTableName() {
@@ -493,7 +558,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表编码。
+     * 父表编码，只读。
      * @return parentTableCode
      */
     public String getParentTableCode() {
@@ -502,6 +567,74 @@ public class TableModelVO {
 
     public void setParentTableCode(String parentTableCode) {
         this.parentTableCode = parentTableCode;
+    }
+
+    public TableModelVO withRelatedLogicTableId(String relatedLogicTableId) {
+        this.relatedLogicTableId = relatedLogicTableId;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体的ID，填写String类型替代Long类型。
+     * @return relatedLogicTableId
+     */
+    public String getRelatedLogicTableId() {
+        return relatedLogicTableId;
+    }
+
+    public void setRelatedLogicTableId(String relatedLogicTableId) {
+        this.relatedLogicTableId = relatedLogicTableId;
+    }
+
+    public TableModelVO withRelatedLogicTableName(String relatedLogicTableName) {
+        this.relatedLogicTableName = relatedLogicTableName;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体的名称。
+     * @return relatedLogicTableName
+     */
+    public String getRelatedLogicTableName() {
+        return relatedLogicTableName;
+    }
+
+    public void setRelatedLogicTableName(String relatedLogicTableName) {
+        this.relatedLogicTableName = relatedLogicTableName;
+    }
+
+    public TableModelVO withRelatedLogicTableModelId(String relatedLogicTableModelId) {
+        this.relatedLogicTableModelId = relatedLogicTableModelId;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体的模型ID，填写String类型替代Long类型。
+     * @return relatedLogicTableModelId
+     */
+    public String getRelatedLogicTableModelId() {
+        return relatedLogicTableModelId;
+    }
+
+    public void setRelatedLogicTableModelId(String relatedLogicTableModelId) {
+        this.relatedLogicTableModelId = relatedLogicTableModelId;
+    }
+
+    public TableModelVO withRelatedLogicTableModelName(String relatedLogicTableModelName) {
+        this.relatedLogicTableModelName = relatedLogicTableModelName;
+        return this;
+    }
+
+    /**
+     * 关联逻辑实体的模型名称。
+     * @return relatedLogicTableModelName
+     */
+    public String getRelatedLogicTableModelName() {
+        return relatedLogicTableModelName;
+    }
+
+    public void setRelatedLogicTableModelName(String relatedLogicTableModelName) {
+        this.relatedLogicTableModelName = relatedLogicTableModelName;
     }
 
     public TableModelVO withModel(WorkspaceVO model) {
@@ -570,7 +703,7 @@ public class TableModelVO {
     }
 
     /**
-     * obs路径。
+     * 外表路径
      * @return obsLocation
      */
     public String getObsLocation() {
@@ -604,7 +737,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表类型。
+     * 表类型，只读。
      * @return tableType
      */
     public String getTableType() {
@@ -740,7 +873,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表物化后的guid。
+     * 表物化后的guid，只读。
      * @return tbGuid
      */
     public String getTbGuid() {
@@ -757,7 +890,7 @@ public class TableModelVO {
     }
 
     /**
-     * 数据表ID。
+     * 数据表ID，只读。
      * @return tbId
      */
     public String getTbId() {
@@ -791,7 +924,7 @@ public class TableModelVO {
     }
 
     /**
-     * 逻辑实体的guid。
+     * 逻辑实体的guid，只读。
      * @return logicTbGuid
      */
     public String getLogicTbGuid() {
@@ -842,7 +975,7 @@ public class TableModelVO {
     }
 
     /**
-     * 逻辑实体的ID。
+     * 逻辑实体的ID，填写String类型替代Long类型。
      * @return logicTbId
      */
     public String getLogicTbId() {
@@ -859,7 +992,7 @@ public class TableModelVO {
     }
 
     /**
-     * 归属的业务分类的id。
+     * 归属的业务分类的id，填写String类型替代Long类型。
      * @return bizCatalogId
      */
     public String getBizCatalogId() {
@@ -893,7 +1026,7 @@ public class TableModelVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -910,7 +1043,7 @@ public class TableModelVO {
     }
 
     /**
-     * 更新人。
+     * 更新人，只读。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -927,7 +1060,7 @@ public class TableModelVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -944,7 +1077,7 @@ public class TableModelVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -977,7 +1110,7 @@ public class TableModelVO {
     }
 
     /**
-     * 表标签。
+     * 表标签，只读。
      * @return tags
      */
     public List<TagRecordVO> getTags() {
@@ -1230,7 +1363,7 @@ public class TableModelVO {
     }
 
     /**
-     * 主题域分组ID。
+     * 主题域分组ID，只读，填写String类型替代Long类型。
      * @return l1Id
      */
     public String getL1Id() {
@@ -1264,7 +1397,7 @@ public class TableModelVO {
     }
 
     /**
-     * 业务对象ID。
+     * 业务对象ID，只读，填写String类型替代Long类型。
      * @return l3Id
      */
     public String getL3Id() {
@@ -1434,7 +1567,7 @@ public class TableModelVO {
     }
 
     /**
-     * 质量ID。
+     * 质量ID，填写String类型替代Long类型。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1451,7 +1584,7 @@ public class TableModelVO {
     }
 
     /**
-     * DISTRIBUTE BY [HASH(column)|REPLICATION]。HASH(对指定的列进行Hash，通过映射，把数据分布到指定DN)、REPLICATION(表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据)。
+     * DISTRIBUTE BY [HASH(column)|REPLICATION]。 枚举值：   - HASH: 对指定的列进行Hash，通过映射，把数据分布到指定DN   - REPLICATION: 表的每一行存在所有数据节点（DN）中，即每个数据节点都有完整的表数据 
      * @return distribute
      */
     public DistributeEnum getDistribute() {
@@ -1485,7 +1618,7 @@ public class TableModelVO {
     }
 
     /**
-     * 是否分区表。
+     * 是否分区表，只读。
      * @return isPartition
      */
     public Boolean getIsPartition() {
@@ -1511,6 +1644,23 @@ public class TableModelVO {
 
     public void setPhysicalTable(SyncStatusEnum physicalTable) {
         this.physicalTable = physicalTable;
+    }
+
+    public TableModelVO withDevPhysicalTable(SyncStatusEnum devPhysicalTable) {
+        this.devPhysicalTable = devPhysicalTable;
+        return this;
+    }
+
+    /**
+     * Get devPhysicalTable
+     * @return devPhysicalTable
+     */
+    public SyncStatusEnum getDevPhysicalTable() {
+        return devPhysicalTable;
+    }
+
+    public void setDevPhysicalTable(SyncStatusEnum devPhysicalTable) {
+        this.devPhysicalTable = devPhysicalTable;
     }
 
     public TableModelVO withTechnicalAsset(SyncStatusEnum technicalAsset) {
@@ -1598,6 +1748,91 @@ public class TableModelVO {
         this.summaryStatus = summaryStatus;
     }
 
+    public TableModelVO withDevVersion(String devVersion) {
+        this.devVersion = devVersion;
+        return this;
+    }
+
+    /**
+     * 开发环境版本，填写String类型替代Long类型。
+     * @return devVersion
+     */
+    public String getDevVersion() {
+        return devVersion;
+    }
+
+    public void setDevVersion(String devVersion) {
+        this.devVersion = devVersion;
+    }
+
+    public TableModelVO withProdVersion(String prodVersion) {
+        this.prodVersion = prodVersion;
+        return this;
+    }
+
+    /**
+     * 生产环境版本，填写String类型替代Long类型。
+     * @return prodVersion
+     */
+    public String getProdVersion() {
+        return prodVersion;
+    }
+
+    public void setProdVersion(String prodVersion) {
+        this.prodVersion = prodVersion;
+    }
+
+    public TableModelVO withDevVersionName(String devVersionName) {
+        this.devVersionName = devVersionName;
+        return this;
+    }
+
+    /**
+     * 开发环境版本名称。
+     * @return devVersionName
+     */
+    public String getDevVersionName() {
+        return devVersionName;
+    }
+
+    public void setDevVersionName(String devVersionName) {
+        this.devVersionName = devVersionName;
+    }
+
+    public TableModelVO withProdVersionName(String prodVersionName) {
+        this.prodVersionName = prodVersionName;
+        return this;
+    }
+
+    /**
+     * 生产环境版本名称。
+     * @return prodVersionName
+     */
+    public String getProdVersionName() {
+        return prodVersionName;
+    }
+
+    public void setProdVersionName(String prodVersionName) {
+        this.prodVersionName = prodVersionName;
+    }
+
+    public TableModelVO withEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+        return this;
+    }
+
+    /**
+     * Get envType
+     * @return envType
+     */
+    public EnvTypeEnum getEnvType() {
+        return envType;
+    }
+
+    public void setEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+    }
+
     public TableModelVO withAlias(String alias) {
         this.alias = alias;
         return this;
@@ -1648,6 +1883,57 @@ public class TableModelVO {
         this.selfDefinedFields = selfDefinedFields;
     }
 
+    public TableModelVO withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * 编码
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public TableModelVO withHasRelatedPhysicalTable(Boolean hasRelatedPhysicalTable) {
+        this.hasRelatedPhysicalTable = hasRelatedPhysicalTable;
+        return this;
+    }
+
+    /**
+     * 是否存在关联物理表。
+     * @return hasRelatedPhysicalTable
+     */
+    public Boolean getHasRelatedPhysicalTable() {
+        return hasRelatedPhysicalTable;
+    }
+
+    public void setHasRelatedPhysicalTable(Boolean hasRelatedPhysicalTable) {
+        this.hasRelatedPhysicalTable = hasRelatedPhysicalTable;
+    }
+
+    public TableModelVO withHasRelatedLogicTable(Boolean hasRelatedLogicTable) {
+        this.hasRelatedLogicTable = hasRelatedLogicTable;
+        return this;
+    }
+
+    /**
+     * 是否存在关联逻辑实体。
+     * @return hasRelatedLogicTable
+     */
+    public Boolean getHasRelatedLogicTable() {
+        return hasRelatedLogicTable;
+    }
+
+    public void setHasRelatedLogicTable(Boolean hasRelatedLogicTable) {
+        this.hasRelatedLogicTable = hasRelatedLogicTable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1660,17 +1946,22 @@ public class TableModelVO {
         return Objects.equals(this.id, that.id) && Objects.equals(this.modelId, that.modelId)
             && Objects.equals(this.parentTableId, that.parentTableId)
             && Objects.equals(this.parentTableName, that.parentTableName)
-            && Objects.equals(this.parentTableCode, that.parentTableCode) && Objects.equals(this.model, that.model)
-            && Objects.equals(this.dataFormat, that.dataFormat) && Objects.equals(this.obsBucket, that.obsBucket)
-            && Objects.equals(this.obsLocation, that.obsLocation) && Objects.equals(this.configs, that.configs)
-            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.tbName, that.tbName) && Objects.equals(this.dwId, that.dwId)
-            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.queueName, that.queueName)
-            && Objects.equals(this.schema, that.schema) && Objects.equals(this.extendInfo, that.extendInfo)
-            && Objects.equals(this.tbGuid, that.tbGuid) && Objects.equals(this.tbId, that.tbId)
-            && Objects.equals(this.logicTbName, that.logicTbName) && Objects.equals(this.logicTbGuid, that.logicTbGuid)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.logicTbId, that.logicTbId) && Objects.equals(this.bizCatalogId, that.bizCatalogId)
+            && Objects.equals(this.parentTableCode, that.parentTableCode)
+            && Objects.equals(this.relatedLogicTableId, that.relatedLogicTableId)
+            && Objects.equals(this.relatedLogicTableName, that.relatedLogicTableName)
+            && Objects.equals(this.relatedLogicTableModelId, that.relatedLogicTableModelId)
+            && Objects.equals(this.relatedLogicTableModelName, that.relatedLogicTableModelName)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.dataFormat, that.dataFormat)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.obsLocation, that.obsLocation)
+            && Objects.equals(this.configs, that.configs) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.tbName, that.tbName)
+            && Objects.equals(this.dwId, that.dwId) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.extendInfo, that.extendInfo) && Objects.equals(this.tbGuid, that.tbGuid)
+            && Objects.equals(this.tbId, that.tbId) && Objects.equals(this.logicTbName, that.logicTbName)
+            && Objects.equals(this.logicTbGuid, that.logicTbGuid) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.logicTbId, that.logicTbId)
+            && Objects.equals(this.bizCatalogId, that.bizCatalogId)
             && Objects.equals(this.catalogPath, that.catalogPath) && Objects.equals(this.createBy, that.createBy)
             && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.tags, that.tags)
@@ -1692,12 +1983,19 @@ public class TableModelVO {
             && Objects.equals(this.distributeColumn, that.distributeColumn)
             && Objects.equals(this.isPartition, that.isPartition)
             && Objects.equals(this.physicalTable, that.physicalTable)
+            && Objects.equals(this.devPhysicalTable, that.devPhysicalTable)
             && Objects.equals(this.technicalAsset, that.technicalAsset)
             && Objects.equals(this.businessAsset, that.businessAsset)
             && Objects.equals(this.metaDataLink, that.metaDataLink)
             && Objects.equals(this.dataQuality, that.dataQuality)
-            && Objects.equals(this.summaryStatus, that.summaryStatus) && Objects.equals(this.alias, that.alias)
-            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
+            && Objects.equals(this.summaryStatus, that.summaryStatus)
+            && Objects.equals(this.devVersion, that.devVersion) && Objects.equals(this.prodVersion, that.prodVersion)
+            && Objects.equals(this.devVersionName, that.devVersionName)
+            && Objects.equals(this.prodVersionName, that.prodVersionName) && Objects.equals(this.envType, that.envType)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.selfDefinedFields, that.selfDefinedFields)
+            && Objects.equals(this.code, that.code)
+            && Objects.equals(this.hasRelatedPhysicalTable, that.hasRelatedPhysicalTable)
+            && Objects.equals(this.hasRelatedLogicTable, that.hasRelatedLogicTable);
     }
 
     @Override
@@ -1707,6 +2005,10 @@ public class TableModelVO {
             parentTableId,
             parentTableName,
             parentTableCode,
+            relatedLogicTableId,
+            relatedLogicTableName,
+            relatedLogicTableModelId,
+            relatedLogicTableModelName,
             model,
             dataFormat,
             obsBucket,
@@ -1761,13 +2063,22 @@ public class TableModelVO {
             distributeColumn,
             isPartition,
             physicalTable,
+            devPhysicalTable,
             technicalAsset,
             businessAsset,
             metaDataLink,
             dataQuality,
             summaryStatus,
+            devVersion,
+            prodVersion,
+            devVersionName,
+            prodVersionName,
+            envType,
             alias,
-            selfDefinedFields);
+            selfDefinedFields,
+            code,
+            hasRelatedPhysicalTable,
+            hasRelatedLogicTable);
     }
 
     @Override
@@ -1779,6 +2090,10 @@ public class TableModelVO {
         sb.append("    parentTableId: ").append(toIndentedString(parentTableId)).append("\n");
         sb.append("    parentTableName: ").append(toIndentedString(parentTableName)).append("\n");
         sb.append("    parentTableCode: ").append(toIndentedString(parentTableCode)).append("\n");
+        sb.append("    relatedLogicTableId: ").append(toIndentedString(relatedLogicTableId)).append("\n");
+        sb.append("    relatedLogicTableName: ").append(toIndentedString(relatedLogicTableName)).append("\n");
+        sb.append("    relatedLogicTableModelId: ").append(toIndentedString(relatedLogicTableModelId)).append("\n");
+        sb.append("    relatedLogicTableModelName: ").append(toIndentedString(relatedLogicTableModelName)).append("\n");
         sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    dataFormat: ").append(toIndentedString(dataFormat)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
@@ -1833,13 +2148,22 @@ public class TableModelVO {
         sb.append("    distributeColumn: ").append(toIndentedString(distributeColumn)).append("\n");
         sb.append("    isPartition: ").append(toIndentedString(isPartition)).append("\n");
         sb.append("    physicalTable: ").append(toIndentedString(physicalTable)).append("\n");
+        sb.append("    devPhysicalTable: ").append(toIndentedString(devPhysicalTable)).append("\n");
         sb.append("    technicalAsset: ").append(toIndentedString(technicalAsset)).append("\n");
         sb.append("    businessAsset: ").append(toIndentedString(businessAsset)).append("\n");
         sb.append("    metaDataLink: ").append(toIndentedString(metaDataLink)).append("\n");
         sb.append("    dataQuality: ").append(toIndentedString(dataQuality)).append("\n");
         sb.append("    summaryStatus: ").append(toIndentedString(summaryStatus)).append("\n");
+        sb.append("    devVersion: ").append(toIndentedString(devVersion)).append("\n");
+        sb.append("    prodVersion: ").append(toIndentedString(prodVersion)).append("\n");
+        sb.append("    devVersionName: ").append(toIndentedString(devVersionName)).append("\n");
+        sb.append("    prodVersionName: ").append(toIndentedString(prodVersionName)).append("\n");
+        sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    selfDefinedFields: ").append(toIndentedString(selfDefinedFields)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    hasRelatedPhysicalTable: ").append(toIndentedString(hasRelatedPhysicalTable)).append("\n");
+        sb.append("    hasRelatedLogicTable: ").append(toIndentedString(hasRelatedLogicTable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -84,7 +84,7 @@ public class CouponRecordV2 {
     }
 
     /**
-     * 操作类型。 1：发放2：手动回收3：解绑自动回收
+     * 操作类型。 1：发放2：手动回收3：解绑自动回收4：过期回收5：退订回收6：退款充值撤销7：建立关联回收
      * @return operationType
      */
     public String getOperationType() {

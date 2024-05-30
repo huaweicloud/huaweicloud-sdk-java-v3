@@ -28,6 +28,11 @@ public class ListRenewRateOnPeriodReq {
 
     private Integer periodNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_relative_resources")
+
+    private Boolean includeRelativeResources;
+
     public ListRenewRateOnPeriodReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -99,6 +104,23 @@ public class ListRenewRateOnPeriodReq {
         this.periodNum = periodNum;
     }
 
+    public ListRenewRateOnPeriodReq withIncludeRelativeResources(Boolean includeRelativeResources) {
+        this.includeRelativeResources = includeRelativeResources;
+        return this;
+    }
+
+    /**
+     * |参数名称：是否包含关联资源一起询价| |参数的约束及描述：该参数非必填，true:包含。false:不包含|
+     * @return includeRelativeResources
+     */
+    public Boolean getIncludeRelativeResources() {
+        return includeRelativeResources;
+    }
+
+    public void setIncludeRelativeResources(Boolean includeRelativeResources) {
+        this.includeRelativeResources = includeRelativeResources;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +131,13 @@ public class ListRenewRateOnPeriodReq {
         }
         ListRenewRateOnPeriodReq that = (ListRenewRateOnPeriodReq) obj;
         return Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.periodType, that.periodType)
-            && Objects.equals(this.periodNum, that.periodNum);
+            && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.includeRelativeResources, that.includeRelativeResources);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceIds, periodType, periodNum);
+        return Objects.hash(resourceIds, periodType, periodNum, includeRelativeResources);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class ListRenewRateOnPeriodReq {
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    includeRelativeResources: ").append(toIndentedString(includeRelativeResources)).append("\n");
         sb.append("}");
         return sb.toString();
     }

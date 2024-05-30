@@ -35,7 +35,7 @@ public class ShowEngineResponse extends SdkResponse {
     private String description;
 
     /**
-     * 微服务引擎专享版认证类型
+     * 微服务引擎认证类型
      */
     public static final class AuthTypeEnum {
 
@@ -130,7 +130,7 @@ public class ShowEngineResponse extends SdkResponse {
     private String latestVersion;
 
     /**
-     * 微服务引擎专享版状态
+     * 微服务引擎状态
      */
     public static final class StatusEnum {
 
@@ -398,32 +398,32 @@ public class ShowEngineResponse extends SdkResponse {
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎应用部署类型
      */
     public static final class SpecTypeEnum {
 
         /**
-         * Enum CCE for value: "CCE"
+         * Enum CSE2 for value: "CSE2"
          */
-        public static final SpecTypeEnum CCE = new SpecTypeEnum("CCE");
+        public static final SpecTypeEnum CSE2 = new SpecTypeEnum("CSE2");
 
         /**
-         * Enum CSE for value: "CSE"
+         * Enum NACOS2 for value: "Nacos2"
          */
-        public static final SpecTypeEnum CSE = new SpecTypeEnum("CSE");
+        public static final SpecTypeEnum NACOS2 = new SpecTypeEnum("Nacos2");
 
         /**
-         * Enum SPRINGCLOUD for value: "SpringCloud"
+         * Enum MICROGATEWAY for value: "MicroGateway"
          */
-        public static final SpecTypeEnum SPRINGCLOUD = new SpecTypeEnum("SpringCloud");
+        public static final SpecTypeEnum MICROGATEWAY = new SpecTypeEnum("MicroGateway");
 
         private static final Map<String, SpecTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecTypeEnum> createStaticFields() {
             Map<String, SpecTypeEnum> map = new HashMap<>();
-            map.put("CCE", CCE);
-            map.put("CSE", CSE);
-            map.put("SpringCloud", SPRINGCLOUD);
+            map.put("CSE2", CSE2);
+            map.put("Nacos2", NACOS2);
+            map.put("MicroGateway", MICROGATEWAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -479,7 +479,7 @@ public class ShowEngineResponse extends SdkResponse {
     private SpecTypeEnum specType;
 
     /**
-     * 微服务引擎类型，CSE表示专享版，CSE_Share表示专业版
+     * 微服务引擎类型，CSE表示专享版，NACOS表示注册配置中心，MICROGATEWAY表示网关
      */
     public static final class TypeEnum {
 
@@ -489,16 +489,22 @@ public class ShowEngineResponse extends SdkResponse {
         public static final TypeEnum CSE = new TypeEnum("CSE");
 
         /**
-         * Enum CSE_SHARE for value: "CSE_Share"
+         * Enum NACOS for value: "NACOS"
          */
-        public static final TypeEnum CSE_SHARE = new TypeEnum("CSE_Share");
+        public static final TypeEnum NACOS = new TypeEnum("NACOS");
+
+        /**
+         * Enum MICROGATEWAY for value: "MICROGATEWAY"
+         */
+        public static final TypeEnum MICROGATEWAY = new TypeEnum("MICROGATEWAY");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("CSE", CSE);
-            map.put("CSE_Share", CSE_SHARE);
+            map.put("NACOS", NACOS);
+            map.put("MICROGATEWAY", MICROGATEWAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -569,7 +575,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版ID
+     * 微服务引擎ID
      * @return id
      */
     public String getId() {
@@ -586,7 +592,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版名称
+     * 微服务引擎名称
      * @return name
      */
     public String getName() {
@@ -603,7 +609,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版描述
+     * 微服务引擎描述
      * @return description
      */
     public String getDescription() {
@@ -620,7 +626,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版认证类型
+     * 微服务引擎认证类型
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -637,7 +643,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版规格
+     * 微服务引擎规格
      * @return flavor
      */
     public String getFlavor() {
@@ -654,7 +660,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版计费方式
+     * 微服务引擎计费方式
      * @return payment
      */
     public String getPayment() {
@@ -671,7 +677,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版当前版本
+     * 微服务引擎当前版本
      * @return version
      */
     public String getVersion() {
@@ -688,7 +694,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版最新版本
+     * 微服务引擎最新版本
      * @return latestVersion
      */
     public String getLatestVersion() {
@@ -705,7 +711,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版状态
+     * 微服务引擎状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -739,7 +745,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版创建者
+     * 微服务引擎创建者
      * @return createUser
      */
     public String getCreateUser() {
@@ -756,7 +762,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版创建时间
+     * 微服务引擎创建时间
      * @return createTime
      */
     public Long getCreateTime() {
@@ -851,7 +857,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版最近的任务ID
+     * 微服务引擎最近的任务ID
      * @return latestJobId
      */
     public Integer getLatestJobId() {
@@ -868,7 +874,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版所属企业项目ID
+     * 微服务引擎所属企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -885,7 +891,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版所属企业项目名称
+     * 微服务引擎所属企业项目名称
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -919,7 +925,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版允许的附加操作
+     * 微服务引擎允许的附加操作
      * @return engineAdditionalActions
      */
     public List<EngineAdditionalActionsEnum> getEngineAdditionalActions() {
@@ -936,7 +942,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎应用部署类型
      * @return specType
      */
     public SpecTypeEnum getSpecType() {
@@ -953,7 +959,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎类型，CSE表示专享版，CSE_Share表示专业版
+     * 微服务引擎类型，CSE表示专享版，NACOS表示注册配置中心，MICROGATEWAY表示网关
      * @return type
      */
     public TypeEnum getType() {
@@ -970,7 +976,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     /**
-     * 微服务引擎专享版所属项目ID
+     * 微服务引擎所属项目ID
      * @return projectId
      */
     public String getProjectId() {

@@ -31,6 +31,11 @@ public class LogicalVolumes {
     private Integer inodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inode_nums")
+
+    private Long inodeNums;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
     private String deviceUse;
@@ -132,6 +137,25 @@ public class LogicalVolumes {
 
     public void setInodeSize(Integer inodeSize) {
         this.inodeSize = inodeSize;
+    }
+
+    public LogicalVolumes withInodeNums(Long inodeNums) {
+        this.inodeNums = inodeNums;
+        return this;
+    }
+
+    /**
+     * inode节点数量
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return inodeNums
+     */
+    public Long getInodeNums() {
+        return inodeNums;
+    }
+
+    public void setInodeNums(Long inodeNums) {
+        this.inodeNums = inodeNums;
     }
 
     public LogicalVolumes withDeviceUse(String deviceUse) {
@@ -253,15 +277,25 @@ public class LogicalVolumes {
         LogicalVolumes that = (LogicalVolumes) obj;
         return Objects.equals(this.blockCount, that.blockCount) && Objects.equals(this.blockSize, that.blockSize)
             && Objects.equals(this.fileSystem, that.fileSystem) && Objects.equals(this.inodeSize, that.inodeSize)
-            && Objects.equals(this.deviceUse, that.deviceUse) && Objects.equals(this.mountPoint, that.mountPoint)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.usedSize, that.usedSize) && Objects.equals(this.freeSize, that.freeSize);
+            && Objects.equals(this.inodeNums, that.inodeNums) && Objects.equals(this.deviceUse, that.deviceUse)
+            && Objects.equals(this.mountPoint, that.mountPoint) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.usedSize, that.usedSize)
+            && Objects.equals(this.freeSize, that.freeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(blockCount, blockSize, fileSystem, inodeSize, deviceUse, mountPoint, name, size, usedSize, freeSize);
+        return Objects.hash(blockCount,
+            blockSize,
+            fileSystem,
+            inodeSize,
+            inodeNums,
+            deviceUse,
+            mountPoint,
+            name,
+            size,
+            usedSize,
+            freeSize);
     }
 
     @Override
@@ -272,6 +306,7 @@ public class LogicalVolumes {
         sb.append("    blockSize: ").append(toIndentedString(blockSize)).append("\n");
         sb.append("    fileSystem: ").append(toIndentedString(fileSystem)).append("\n");
         sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
+        sb.append("    inodeNums: ").append(toIndentedString(inodeNums)).append("\n");
         sb.append("    deviceUse: ").append(toIndentedString(deviceUse)).append("\n");
         sb.append("    mountPoint: ").append(toIndentedString(mountPoint)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

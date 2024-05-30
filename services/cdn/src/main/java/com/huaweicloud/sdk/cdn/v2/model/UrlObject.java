@@ -40,6 +40,16 @@ public class UrlObject {
 
     private String taskType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_classify")
+
+    private String failClassify;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_desc")
+
+    private String failDesc;
+
     public UrlObject withId(String id) {
         this.id = id;
         return this;
@@ -142,6 +152,40 @@ public class UrlObject {
         this.taskType = taskType;
     }
 
+    public UrlObject withFailClassify(String failClassify) {
+        this.failClassify = failClassify;
+        return this;
+    }
+
+    /**
+     * 失败原因，url状态为failed时返回。   - ORIGIN_ERROR：源站错误。   - INNER_ERROR：内部错误。   - UNKNOWN_ERROR：未知错误。
+     * @return failClassify
+     */
+    public String getFailClassify() {
+        return failClassify;
+    }
+
+    public void setFailClassify(String failClassify) {
+        this.failClassify = failClassify;
+    }
+
+    public UrlObject withFailDesc(String failDesc) {
+        this.failDesc = failDesc;
+        return this;
+    }
+
+    /**
+     * 刷新预热失败描述。
+     * @return failDesc
+     */
+    public String getFailDesc() {
+        return failDesc;
+    }
+
+    public void setFailDesc(String failDesc) {
+        this.failDesc = failDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +197,13 @@ public class UrlObject {
         UrlObject that = (UrlObject) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
             && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskType, that.taskType);
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.failClassify, that.failClassify) && Objects.equals(this.failDesc, that.failDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, url, status, createTime, taskId, taskType);
+        return Objects.hash(id, url, status, createTime, taskId, taskType, failClassify, failDesc);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class UrlObject {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    failClassify: ").append(toIndentedString(failClassify)).append("\n");
+        sb.append("    failDesc: ").append(toIndentedString(failDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

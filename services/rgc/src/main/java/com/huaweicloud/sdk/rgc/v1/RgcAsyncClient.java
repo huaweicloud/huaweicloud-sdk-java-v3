@@ -7,8 +7,8 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitRequest;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateResponse;
 
@@ -92,12 +92,12 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListControlsForOrganizationUnitRequest 请求对象
-     * @return CompletableFuture<ListControlsForOrganizationUnitResponse>
+     * @param request ListControlsForOrganizationalUnitRequest 请求对象
+     * @return CompletableFuture<ListControlsForOrganizationalUnitResponse>
      */
-    public CompletableFuture<ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitAsync(
-        ListControlsForOrganizationUnitRequest request) {
-        return hcClient.asyncInvokeHttp(request, RgcMeta.listControlsForOrganizationUnit);
+    public CompletableFuture<ListControlsForOrganizationalUnitResponse> listControlsForOrganizationalUnitAsync(
+        ListControlsForOrganizationalUnitRequest request) {
+        return hcClient.asyncInvokeHttp(request, RgcMeta.listControlsForOrganizationalUnit);
     }
 
     /**
@@ -107,12 +107,12 @@ public class RgcAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListControlsForOrganizationUnitRequest 请求对象
-     * @return AsyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>
+     * @param request ListControlsForOrganizationalUnitRequest 请求对象
+     * @return AsyncInvoker<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse>
      */
-    public AsyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitAsyncInvoker(
-        ListControlsForOrganizationUnitRequest request) {
-        return new AsyncInvoker<>(request, RgcMeta.listControlsForOrganizationUnit, hcClient);
+    public AsyncInvoker<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse> listControlsForOrganizationalUnitAsyncInvoker(
+        ListControlsForOrganizationalUnitRequest request) {
+        return new AsyncInvoker<>(request, RgcMeta.listControlsForOrganizationalUnit, hcClient);
     }
 
     /**

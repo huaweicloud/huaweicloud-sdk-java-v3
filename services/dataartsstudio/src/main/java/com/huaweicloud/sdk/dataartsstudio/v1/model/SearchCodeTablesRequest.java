@@ -43,10 +43,10 @@ public class SearchCodeTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_id")
 
-    private Long directoryId;
+    private String directoryId;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -251,20 +251,20 @@ public class SearchCodeTablesRequest {
         this.approver = approver;
     }
 
-    public SearchCodeTablesRequest withDirectoryId(Long directoryId) {
+    public SearchCodeTablesRequest withDirectoryId(String directoryId) {
         this.directoryId = directoryId;
         return this;
     }
 
     /**
-     * 目录ID
+     * 目录ID，填写String类型替代Long类型。
      * @return directoryId
      */
-    public Long getDirectoryId() {
+    public String getDirectoryId() {
         return directoryId;
     }
 
-    public void setDirectoryId(Long directoryId) {
+    public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
 
@@ -274,7 +274,7 @@ public class SearchCodeTablesRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -325,7 +325,7 @@ public class SearchCodeTablesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

@@ -50,6 +50,11 @@ public class SecurityGroupInfo {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_rules")
 
     private List<SecurityGroupRule> securityGroupRules = null;
@@ -173,6 +178,39 @@ public class SecurityGroupInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public SecurityGroupInfo withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public SecurityGroupInfo addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public SecurityGroupInfo withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 功能描述：安全组的标签信息
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     public SecurityGroupInfo withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
         return this;
@@ -219,13 +257,20 @@ public class SecurityGroupInfo {
             && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.securityGroupRules, that.securityGroupRules);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.securityGroupRules, that.securityGroupRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, description, projectId, createdAt, updatedAt, enterpriseProjectId, securityGroupRules);
+        return Objects.hash(id,
+            name,
+            description,
+            projectId,
+            createdAt,
+            updatedAt,
+            enterpriseProjectId,
+            tags,
+            securityGroupRules);
     }
 
     @Override
@@ -239,6 +284,7 @@ public class SecurityGroupInfo {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    securityGroupRules: ").append(toIndentedString(securityGroupRules)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -51,6 +51,11 @@ public class PhysicalVolume {
     private Integer inodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inode_nums")
+
+    private Long inodeNums;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uuid")
 
     private String uuid;
@@ -204,6 +209,25 @@ public class PhysicalVolume {
         this.inodeSize = inodeSize;
     }
 
+    public PhysicalVolume withInodeNums(Long inodeNums) {
+        this.inodeNums = inodeNums;
+        return this;
+    }
+
+    /**
+     * inode节点数量
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return inodeNums
+     */
+    public Long getInodeNums() {
+        return inodeNums;
+    }
+
+    public void setInodeNums(Long inodeNums) {
+        this.inodeNums = inodeNums;
+    }
+
     public PhysicalVolume withUuid(String uuid) {
         this.uuid = uuid;
         return this;
@@ -253,13 +277,23 @@ public class PhysicalVolume {
             && Objects.equals(this.index, that.index) && Objects.equals(this.mountPoint, that.mountPoint)
             && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
             && Objects.equals(this.usedSize, that.usedSize) && Objects.equals(this.inodeSize, that.inodeSize)
-            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.sizePerCluster, that.sizePerCluster);
+            && Objects.equals(this.inodeNums, that.inodeNums) && Objects.equals(this.uuid, that.uuid)
+            && Objects.equals(this.sizePerCluster, that.sizePerCluster);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, inodeSize, uuid, sizePerCluster);
+        return Objects.hash(deviceUse,
+            fileSystem,
+            index,
+            mountPoint,
+            name,
+            size,
+            usedSize,
+            inodeSize,
+            inodeNums,
+            uuid,
+            sizePerCluster);
     }
 
     @Override
@@ -274,6 +308,7 @@ public class PhysicalVolume {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
         sb.append("    inodeSize: ").append(toIndentedString(inodeSize)).append("\n");
+        sb.append("    inodeNums: ").append(toIndentedString(inodeNums)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    sizePerCluster: ").append(toIndentedString(sizePerCluster)).append("\n");
         sb.append("}");

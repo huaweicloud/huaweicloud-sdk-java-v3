@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +13,34 @@ import java.util.function.Consumer;
 public class ListSubjectLevelsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "levels")
+    @JsonProperty(value = "data")
 
-    private List<CatalogLevelVO> levels = null;
+    private ListSubjectLevelsResultData data;
 
-    public ListSubjectLevelsResponse withLevels(List<CatalogLevelVO> levels) {
-        this.levels = levels;
+    public ListSubjectLevelsResponse withData(ListSubjectLevelsResultData data) {
+        this.data = data;
         return this;
     }
 
-    public ListSubjectLevelsResponse addLevelsItem(CatalogLevelVO levelsItem) {
-        if (this.levels == null) {
-            this.levels = new ArrayList<>();
+    public ListSubjectLevelsResponse withData(Consumer<ListSubjectLevelsResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new ListSubjectLevelsResultData();
+            dataSetter.accept(this.data);
         }
-        this.levels.add(levelsItem);
-        return this;
-    }
 
-    public ListSubjectLevelsResponse withLevels(Consumer<List<CatalogLevelVO>> levelsSetter) {
-        if (this.levels == null) {
-            this.levels = new ArrayList<>();
-        }
-        levelsSetter.accept(this.levels);
         return this;
     }
 
     /**
-     * 主题层级信息。
-     * @return levels
+     * Get data
+     * @return data
      */
-    public List<CatalogLevelVO> getLevels() {
-        return levels;
+    public ListSubjectLevelsResultData getData() {
+        return data;
     }
 
-    public void setLevels(List<CatalogLevelVO> levels) {
-        this.levels = levels;
+    public void setData(ListSubjectLevelsResultData data) {
+        this.data = data;
     }
 
     @Override
@@ -61,19 +52,19 @@ public class ListSubjectLevelsResponse extends SdkResponse {
             return false;
         }
         ListSubjectLevelsResponse that = (ListSubjectLevelsResponse) obj;
-        return Objects.equals(this.levels, that.levels);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(levels);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSubjectLevelsResponse {\n");
-        sb.append("    levels: ").append(toIndentedString(levels)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

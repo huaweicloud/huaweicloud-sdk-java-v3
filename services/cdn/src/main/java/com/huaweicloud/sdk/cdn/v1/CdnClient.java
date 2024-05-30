@@ -338,6 +338,7 @@ public class CdnClient {
      * @param request ListDomainsRequest 请求对象
      * @return ListDomainsResponse
      */
+    @Deprecated
     public ListDomainsResponse listDomains(ListDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.listDomains);
     }
@@ -352,6 +353,7 @@ public class CdnClient {
      * @param request ListDomainsRequest 请求对象
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.listDomains, hcClient);
     }

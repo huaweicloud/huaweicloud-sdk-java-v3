@@ -259,7 +259,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照状态： - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。
+     * 快照状态： - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。 - FROZEN： 普通冻结。 - POLICE_FROZEN： 公安冻结。
      * @return status
      */
     public String getStatus() {

@@ -37,6 +37,16 @@ public class TaskDetailResult {
     private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ended_at")
+
+    private String endedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_reason")
 
     private String failReason;
@@ -135,6 +145,40 @@ public class TaskDetailResult {
         this.process = process;
     }
 
+    public TaskDetailResult withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public TaskDetailResult withEndedAt(String endedAt) {
+        this.endedAt = endedAt;
+        return this;
+    }
+
+    /**
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * @return endedAt
+     */
+    public String getEndedAt() {
+        return endedAt;
+    }
+
+    public void setEndedAt(String endedAt) {
+        this.endedAt = endedAt;
+    }
+
     public TaskDetailResult withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
@@ -163,12 +207,13 @@ public class TaskDetailResult {
         TaskDetailResult that = (TaskDetailResult) obj;
         return Objects.equals(this.instanceInfo, that.instanceInfo) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.process, that.process) && Objects.equals(this.failReason, that.failReason);
+            && Objects.equals(this.process, that.process) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.endedAt, that.endedAt) && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceInfo, jobId, name, status, process, failReason);
+        return Objects.hash(instanceInfo, jobId, name, status, process, createdAt, endedAt, failReason);
     }
 
     @Override
@@ -180,6 +225,8 @@ public class TaskDetailResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("}");
         return sb.toString();

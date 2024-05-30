@@ -72,6 +72,11 @@ public class PublishVersionVO {
     private SyncStatusEnum physicalTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dev_physical_table")
+
+    private SyncStatusEnum devPhysicalTable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "technical_asset")
 
     private SyncStatusEnum technicalAsset;
@@ -137,7 +142,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 版本ID。
+     * 版本ID，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -171,7 +176,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 版本标记。
+     * 版本标记，只读。
      * @return versionTag
      */
     public String getVersionTag() {
@@ -205,7 +210,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 业务对象ID。
+     * 业务对象ID，填写String类型替代Long类型。
      * @return bizId
      */
     public String getBizId() {
@@ -239,7 +244,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 业务详情。
+     * 业务详情，只读。
      * @return bizInfo
      */
     public String getBizInfo() {
@@ -273,7 +278,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 影响信息。
+     * 影响信息，只读。
      * @return effectObjs
      */
     public String getEffectObjs() {
@@ -290,7 +295,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 变化信息。
+     * 变化信息，只读。
      * @return changeProps
      */
     public String getChangeProps() {
@@ -307,7 +312,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * SQL脚本。
+     * SQL脚本，只读。
      * @return sqlDdl
      */
     public String getSqlDdl() {
@@ -333,6 +338,23 @@ public class PublishVersionVO {
 
     public void setPhysicalTable(SyncStatusEnum physicalTable) {
         this.physicalTable = physicalTable;
+    }
+
+    public PublishVersionVO withDevPhysicalTable(SyncStatusEnum devPhysicalTable) {
+        this.devPhysicalTable = devPhysicalTable;
+        return this;
+    }
+
+    /**
+     * Get devPhysicalTable
+     * @return devPhysicalTable
+     */
+    public SyncStatusEnum getDevPhysicalTable() {
+        return devPhysicalTable;
+    }
+
+    public void setDevPhysicalTable(SyncStatusEnum devPhysicalTable) {
+        this.devPhysicalTable = devPhysicalTable;
     }
 
     public PublishVersionVO withTechnicalAsset(SyncStatusEnum technicalAsset) {
@@ -494,7 +516,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 是否为当前版本。
+     * 是否为当前版本，只读。
      * @return isCurrentVersion
      */
     public Boolean getIsCurrentVersion() {
@@ -511,7 +533,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -528,7 +550,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -554,6 +576,7 @@ public class PublishVersionVO {
             && Objects.equals(this.bizInfo, that.bizInfo) && Objects.equals(this.bizInfoVo, that.bizInfoVo)
             && Objects.equals(this.effectObjs, that.effectObjs) && Objects.equals(this.changeProps, that.changeProps)
             && Objects.equals(this.sqlDdl, that.sqlDdl) && Objects.equals(this.physicalTable, that.physicalTable)
+            && Objects.equals(this.devPhysicalTable, that.devPhysicalTable)
             && Objects.equals(this.technicalAsset, that.technicalAsset)
             && Objects.equals(this.businessAsset, that.businessAsset)
             && Objects.equals(this.metaDataLink, that.metaDataLink)
@@ -579,6 +602,7 @@ public class PublishVersionVO {
             changeProps,
             sqlDdl,
             physicalTable,
+            devPhysicalTable,
             technicalAsset,
             businessAsset,
             metaDataLink,
@@ -609,6 +633,7 @@ public class PublishVersionVO {
         sb.append("    changeProps: ").append(toIndentedString(changeProps)).append("\n");
         sb.append("    sqlDdl: ").append(toIndentedString(sqlDdl)).append("\n");
         sb.append("    physicalTable: ").append(toIndentedString(physicalTable)).append("\n");
+        sb.append("    devPhysicalTable: ").append(toIndentedString(devPhysicalTable)).append("\n");
         sb.append("    technicalAsset: ").append(toIndentedString(technicalAsset)).append("\n");
         sb.append("    businessAsset: ").append(toIndentedString(businessAsset)).append("\n");
         sb.append("    metaDataLink: ").append(toIndentedString(metaDataLink)).append("\n");

@@ -17,17 +17,17 @@ public class RelationVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_table_id")
 
-    private Long sourceTableId;
+    private String sourceTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_table_id")
 
-    private Long targetTableId;
+    private String targetTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -89,54 +89,54 @@ public class RelationVO {
 
     private List<RelationMappingVO> mappings = null;
 
-    public RelationVO withId(Long id) {
+    public RelationVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public RelationVO withSourceTableId(Long sourceTableId) {
+    public RelationVO withSourceTableId(String sourceTableId) {
         this.sourceTableId = sourceTableId;
         return this;
     }
 
     /**
-     * 源表ID。
+     * 源表ID，填写String类型替代Long类型。
      * @return sourceTableId
      */
-    public Long getSourceTableId() {
+    public String getSourceTableId() {
         return sourceTableId;
     }
 
-    public void setSourceTableId(Long sourceTableId) {
+    public void setSourceTableId(String sourceTableId) {
         this.sourceTableId = sourceTableId;
     }
 
-    public RelationVO withTargetTableId(Long targetTableId) {
+    public RelationVO withTargetTableId(String targetTableId) {
         this.targetTableId = targetTableId;
         return this;
     }
 
     /**
-     * 目标表ID。
+     * 目标表ID，填写String类型替代Long类型。
      * @return targetTableId
      */
-    public Long getTargetTableId() {
+    public String getTargetTableId() {
         return targetTableId;
     }
 
-    public void setTargetTableId(Long targetTableId) {
+    public void setTargetTableId(String targetTableId) {
         this.targetTableId = targetTableId;
     }
 
@@ -299,7 +299,7 @@ public class RelationVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -316,7 +316,7 @@ public class RelationVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -349,7 +349,7 @@ public class RelationVO {
     }
 
     /**
-     * 表属性信息。
+     * 表属性信息，只读。
      * @return mappings
      */
     public List<RelationMappingVO> getMappings() {

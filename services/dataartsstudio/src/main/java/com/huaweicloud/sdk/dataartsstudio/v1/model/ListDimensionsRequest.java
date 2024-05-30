@@ -44,7 +44,7 @@ public class ListDimensionsRequest {
     private String approver;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -145,12 +145,12 @@ public class ListDimensionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
 
-    private Long l2Id;
+    private String l2Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "derivative_ids")
 
-    private List<Long> derivativeIds = null;
+    private List<String> derivativeIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -165,10 +165,10 @@ public class ListDimensionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fact_logic_id")
 
-    private Long factLogicId;
+    private String factLogicId;
 
     /**
-     * 维度类型。COMMON(普通维度)、LOOKUP(码表维度)、HIERARCHIES(层级维度)。
+     * 维度类型。 枚举值： - COMMON: 普通维度 - LOOKUP: 码表维度 - HIERARCHIES: 层级维度 
      */
     public static final class DimensionTypeEnum {
 
@@ -356,7 +356,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -367,29 +367,29 @@ public class ListDimensionsRequest {
         this.status = status;
     }
 
-    public ListDimensionsRequest withL2Id(Long l2Id) {
+    public ListDimensionsRequest withL2Id(String l2Id) {
         this.l2Id = l2Id;
         return this;
     }
 
     /**
-     * 主题域l2的ID。
+     * 主题域l2的ID，填写String类型替代Long类型。
      * @return l2Id
      */
-    public Long getL2Id() {
+    public String getL2Id() {
         return l2Id;
     }
 
-    public void setL2Id(Long l2Id) {
+    public void setL2Id(String l2Id) {
         this.l2Id = l2Id;
     }
 
-    public ListDimensionsRequest withDerivativeIds(List<Long> derivativeIds) {
+    public ListDimensionsRequest withDerivativeIds(List<String> derivativeIds) {
         this.derivativeIds = derivativeIds;
         return this;
     }
 
-    public ListDimensionsRequest addDerivativeIdsItem(Long derivativeIdsItem) {
+    public ListDimensionsRequest addDerivativeIdsItem(String derivativeIdsItem) {
         if (this.derivativeIds == null) {
             this.derivativeIds = new ArrayList<>();
         }
@@ -397,7 +397,7 @@ public class ListDimensionsRequest {
         return this;
     }
 
-    public ListDimensionsRequest withDerivativeIds(Consumer<List<Long>> derivativeIdsSetter) {
+    public ListDimensionsRequest withDerivativeIds(Consumer<List<String>> derivativeIdsSetter) {
         if (this.derivativeIds == null) {
             this.derivativeIds = new ArrayList<>();
         }
@@ -406,14 +406,14 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 依据复合指标ID列表查维度。
+     * 依据复合指标ID列表查维度，填写String类型替代Long类型。
      * @return derivativeIds
      */
-    public List<Long> getDerivativeIds() {
+    public List<String> getDerivativeIds() {
         return derivativeIds;
     }
 
-    public void setDerivativeIds(List<Long> derivativeIds) {
+    public void setDerivativeIds(List<String> derivativeIds) {
         this.derivativeIds = derivativeIds;
     }
 
@@ -451,20 +451,20 @@ public class ListDimensionsRequest {
         this.endTime = endTime;
     }
 
-    public ListDimensionsRequest withFactLogicId(Long factLogicId) {
+    public ListDimensionsRequest withFactLogicId(String factLogicId) {
         this.factLogicId = factLogicId;
         return this;
     }
 
     /**
-     * 事实表ID。
+     * 事实表ID，填写String类型替代Long类型。
      * @return factLogicId
      */
-    public Long getFactLogicId() {
+    public String getFactLogicId() {
         return factLogicId;
     }
 
-    public void setFactLogicId(Long factLogicId) {
+    public void setFactLogicId(String factLogicId) {
         this.factLogicId = factLogicId;
     }
 
@@ -474,7 +474,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 维度类型。COMMON(普通维度)、LOOKUP(码表维度)、HIERARCHIES(层级维度)。
+     * 维度类型。 枚举值： - COMMON: 普通维度 - LOOKUP: 码表维度 - HIERARCHIES: 层级维度 
      * @return dimensionType
      */
     public DimensionTypeEnum getDimensionType() {
@@ -491,7 +491,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

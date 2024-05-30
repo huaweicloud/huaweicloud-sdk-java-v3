@@ -13,12 +13,12 @@ public class CodeTableFieldValueVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fd_id")
 
-    private Long fdId;
+    private String fdId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fd_value")
@@ -35,37 +35,37 @@ public class CodeTableFieldValueVO {
 
     private String description;
 
-    public CodeTableFieldValueVO withId(Long id) {
+    public CodeTableFieldValueVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID
+     * 码表字段ID，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public CodeTableFieldValueVO withFdId(Long fdId) {
+    public CodeTableFieldValueVO withFdId(String fdId) {
         this.fdId = fdId;
         return this;
     }
 
     /**
-     * 所属码表属性ID。
+     * 所属码表属性ID，填写String类型替代Long类型。
      * @return fdId
      */
-    public Long getFdId() {
+    public String getFdId() {
         return fdId;
     }
 
-    public void setFdId(Long fdId) {
+    public void setFdId(String fdId) {
         this.fdId = fdId;
     }
 

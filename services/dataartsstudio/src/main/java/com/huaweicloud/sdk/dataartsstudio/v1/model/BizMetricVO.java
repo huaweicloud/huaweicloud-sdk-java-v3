@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -20,7 +22,7 @@ public class BizMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -50,7 +52,7 @@ public class BizMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_id")
 
-    private Long bizCatalogId;
+    private String bizCatalogId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_path")
@@ -93,7 +95,7 @@ public class BizMetricVO {
     private String generalFilters;
 
     /**
-     * 刷新频率。MINUTE(每分钟)、HOUR(每小时)、DAY(每天)、WEEK(每周)、MONTH(每月)、YEAR(每年)、REAL_TIME(实时)、HALF_HOUR(每半小时)、QUART(每15分钟)、DOUBLE_WEEK(每两周)、HALF_YEAR(每半年)、HALF_DAY(每半天)。
+     * 刷新频率。 枚举值：   - MINUTE: 每分钟   - HOUR: 每小时   - DAY: 每天   - WEEK: 每周   - MONTH: 每月   - YEAR: 每年   - REAL_TIME: 实时   - HALF_HOUR: 每半小时   - QUART: 每15分钟   - DOUBLE_WEEK: 每两周   - HALF_YEAR: 每半年   - HALF_DAY: 每半天 
      */
     public static final class IntervalTypeEnum {
 
@@ -235,7 +237,7 @@ public class BizMetricVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "technical_metric")
 
-    private Long technicalMetric;
+    private String technicalMetric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "technical_metric_name")
@@ -332,20 +334,25 @@ public class BizMetricVO {
 
     private SyncStatusEnum summaryStatus;
 
-    public BizMetricVO withId(Long id) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "self_defined_fields")
+
+    private List<SelfDefinedFieldVO> selfDefinedFields = null;
+
+    public BizMetricVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码，更新时必填，创建是为空。
+     * 编码，更新时必填，创建时为空，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -372,7 +379,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 指标编码。
+     * 指标编码，只读。
      * @return code
      */
     public String getCode() {
@@ -434,20 +441,20 @@ public class BizMetricVO {
         this.status = status;
     }
 
-    public BizMetricVO withBizCatalogId(Long bizCatalogId) {
+    public BizMetricVO withBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
         return this;
     }
 
     /**
-     * 归属的流程架构的ID。
+     * 归属的流程架构的ID，填写String类型替代Long类型。
      * @return bizCatalogId
      */
-    public Long getBizCatalogId() {
+    public String getBizCatalogId() {
         return bizCatalogId;
     }
 
-    public void setBizCatalogId(Long bizCatalogId) {
+    public void setBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
     }
 
@@ -457,7 +464,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 归属的流程架构路径。
+     * 归属的流程架构路径，只读。
      * @return bizCatalogPath
      */
     public String getBizCatalogPath() {
@@ -474,7 +481,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -491,7 +498,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 更新人。
+     * 更新人，只读。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -593,7 +600,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 刷新频率。MINUTE(每分钟)、HOUR(每小时)、DAY(每天)、WEEK(每周)、MONTH(每月)、YEAR(每年)、REAL_TIME(实时)、HALF_HOUR(每半小时)、QUART(每15分钟)、DOUBLE_WEEK(每两周)、HALF_YEAR(每半年)、HALF_DAY(每半天)。
+     * 刷新频率。 枚举值：   - MINUTE: 每分钟   - HOUR: 每小时   - DAY: 每天   - WEEK: 每周   - MONTH: 每月   - YEAR: 每年   - REAL_TIME: 实时   - HALF_HOUR: 每半小时   - QUART: 每15分钟   - DOUBLE_WEEK: 每两周   - HALF_YEAR: 每半年   - HALF_DAY: 每半天 
      * @return intervalType
      */
     public IntervalTypeEnum getIntervalType() {
@@ -621,20 +628,20 @@ public class BizMetricVO {
         this.applyScenario = applyScenario;
     }
 
-    public BizMetricVO withTechnicalMetric(Long technicalMetric) {
+    public BizMetricVO withTechnicalMetric(String technicalMetric) {
         this.technicalMetric = technicalMetric;
         return this;
     }
 
     /**
-     * 关联技术指标。
+     * 关联技术指标，填写String类型替代Long类型。
      * @return technicalMetric
      */
-    public Long getTechnicalMetric() {
+    public String getTechnicalMetric() {
         return technicalMetric;
     }
 
-    public void setTechnicalMetric(Long technicalMetric) {
+    public void setTechnicalMetric(String technicalMetric) {
         this.technicalMetric = technicalMetric;
     }
 
@@ -644,7 +651,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 关联技术指标名称。
+     * 关联技术指标名称，只读。
      * @return technicalMetricName
      */
     public String getTechnicalMetricName() {
@@ -746,7 +753,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 资产同步后的guid。
+     * 资产同步后的guid，只读。
      * @return guid
      */
     public String getGuid() {
@@ -866,7 +873,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -883,7 +890,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -979,6 +986,39 @@ public class BizMetricVO {
         this.summaryStatus = summaryStatus;
     }
 
+    public BizMetricVO withSelfDefinedFields(List<SelfDefinedFieldVO> selfDefinedFields) {
+        this.selfDefinedFields = selfDefinedFields;
+        return this;
+    }
+
+    public BizMetricVO addSelfDefinedFieldsItem(SelfDefinedFieldVO selfDefinedFieldsItem) {
+        if (this.selfDefinedFields == null) {
+            this.selfDefinedFields = new ArrayList<>();
+        }
+        this.selfDefinedFields.add(selfDefinedFieldsItem);
+        return this;
+    }
+
+    public BizMetricVO withSelfDefinedFields(Consumer<List<SelfDefinedFieldVO>> selfDefinedFieldsSetter) {
+        if (this.selfDefinedFields == null) {
+            this.selfDefinedFields = new ArrayList<>();
+        }
+        selfDefinedFieldsSetter.accept(this.selfDefinedFields);
+        return this;
+    }
+
+    /**
+     * 自定义项
+     * @return selfDefinedFields
+     */
+    public List<SelfDefinedFieldVO> getSelfDefinedFields() {
+        return selfDefinedFields;
+    }
+
+    public void setSelfDefinedFields(List<SelfDefinedFieldVO> selfDefinedFields) {
+        this.selfDefinedFields = selfDefinedFields;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1010,7 +1050,8 @@ public class BizMetricVO {
             && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.l1, that.l1)
             && Objects.equals(this.l2, that.l2) && Objects.equals(this.l3, that.l3)
-            && Objects.equals(this.bizMetric, that.bizMetric) && Objects.equals(this.summaryStatus, that.summaryStatus);
+            && Objects.equals(this.bizMetric, that.bizMetric) && Objects.equals(this.summaryStatus, that.summaryStatus)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
 
     @Override
@@ -1051,7 +1092,8 @@ public class BizMetricVO {
             l2,
             l3,
             bizMetric,
-            summaryStatus);
+            summaryStatus,
+            selfDefinedFields);
     }
 
     @Override
@@ -1095,6 +1137,7 @@ public class BizMetricVO {
         sb.append("    l3: ").append(toIndentedString(l3)).append("\n");
         sb.append("    bizMetric: ").append(toIndentedString(bizMetric)).append("\n");
         sb.append("    summaryStatus: ").append(toIndentedString(summaryStatus)).append("\n");
+        sb.append("    selfDefinedFields: ").append(toIndentedString(selfDefinedFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

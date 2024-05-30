@@ -16,19 +16,19 @@ public class ApprovalInfoParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "msg")
 
     private String msg;
 
-    public ApprovalInfoParam withIds(List<Long> ids) {
+    public ApprovalInfoParam withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public ApprovalInfoParam addIdsItem(Long idsItem) {
+    public ApprovalInfoParam addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class ApprovalInfoParam {
         return this;
     }
 
-    public ApprovalInfoParam withIds(Consumer<List<Long>> idsSetter) {
+    public ApprovalInfoParam withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -45,14 +45,14 @@ public class ApprovalInfoParam {
     }
 
     /**
-     * 审批单ID列表。
+     * 审批单ID列表，填写String类型替代Long类型。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 
@@ -62,7 +62,7 @@ public class ApprovalInfoParam {
     }
 
     /**
-     * 审批单信息。
+     * 审批单信息，审批人填写的审批意见。
      * @return msg
      */
     public String getMsg() {

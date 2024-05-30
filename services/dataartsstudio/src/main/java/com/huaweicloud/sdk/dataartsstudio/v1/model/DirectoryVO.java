@@ -30,7 +30,7 @@ public class DirectoryVO {
     private String description;
 
     /**
-     * 目录类型。STANDARD_ELEMENT(数据标准)、CODE(码表)。
+     * 目录类型。 枚举值：   - STANDARD_ELEMENT: 数据标准   - CODE: 码表 
      */
     public static final class TypeEnum {
 
@@ -107,27 +107,32 @@ public class DirectoryVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    private Long parentId;
+    private String parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prev_id")
 
-    private Long prevId;
+    private String prevId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_id")
 
-    private Long rootId;
+    private String rootId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qualified_name")
 
     private String qualifiedName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from_public")
+
+    private String fromPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -150,6 +155,11 @@ public class DirectoryVO {
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref_id")
+
+    private String refId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "children")
 
     private List<DirectoryVO> children = null;
@@ -160,7 +170,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 名称。
+     * 目录名称。
      * @return name
      */
     public String getName() {
@@ -194,7 +204,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 目录类型。STANDARD_ELEMENT(数据标准)、CODE(码表)。
+     * 目录类型。 枚举值：   - STANDARD_ELEMENT: 数据标准   - CODE: 码表 
      * @return type
      */
     public TypeEnum getType() {
@@ -205,71 +215,71 @@ public class DirectoryVO {
         this.type = type;
     }
 
-    public DirectoryVO withId(Long id) {
+    public DirectoryVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID，创建时可不传，更新时必填。
+     * ID，创建时可不传，更新时必填。填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public DirectoryVO withParentId(Long parentId) {
+    public DirectoryVO withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
     /**
-     * 父目录ID，首层传null。
+     * 父目录ID，首层传null。填写String类型替代Long类型。
      * @return parentId
      */
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
-    public DirectoryVO withPrevId(Long prevId) {
+    public DirectoryVO withPrevId(String prevId) {
         this.prevId = prevId;
         return this;
     }
 
     /**
-     * 上个节点ID，首节点传null。
+     * 上个节点ID，首节点传null。填写String类型替代Long类型。
      * @return prevId
      */
-    public Long getPrevId() {
+    public String getPrevId() {
         return prevId;
     }
 
-    public void setPrevId(Long prevId) {
+    public void setPrevId(String prevId) {
         this.prevId = prevId;
     }
 
-    public DirectoryVO withRootId(Long rootId) {
+    public DirectoryVO withRootId(String rootId) {
         this.rootId = rootId;
         return this;
     }
 
     /**
-     * 根节点ID，根节点此ID为自身ID。
+     * 根节点ID，根节点此ID为自身ID，只读。填写String类型替代Long类型。
      * @return rootId
      */
-    public Long getRootId() {
+    public String getRootId() {
         return rootId;
     }
 
-    public void setRootId(Long rootId) {
+    public void setRootId(String rootId) {
         this.rootId = rootId;
     }
 
@@ -279,7 +289,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 所属目录。
+     * 目录的资产名称，只读。
      * @return qualifiedName
      */
     public String getQualifiedName() {
@@ -290,13 +300,30 @@ public class DirectoryVO {
         this.qualifiedName = qualifiedName;
     }
 
+    public DirectoryVO withFromPublic(String fromPublic) {
+        this.fromPublic = fromPublic;
+        return this;
+    }
+
+    /**
+     * 是否来自公共层，只读。
+     * @return fromPublic
+     */
+    public String getFromPublic() {
+        return fromPublic;
+    }
+
+    public void setFromPublic(String fromPublic) {
+        this.fromPublic = fromPublic;
+    }
+
     public DirectoryVO withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -313,7 +340,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -330,7 +357,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 创建人。
+     * 创建人，只读。
      * @return createBy
      */
     public String getCreateBy() {
@@ -347,7 +374,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 更新人。
+     * 更新人，只读。
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -356,6 +383,23 @@ public class DirectoryVO {
 
     public void setUpdateBy(String updateBy) {
         this.updateBy = updateBy;
+    }
+
+    public DirectoryVO withRefId(String refId) {
+        this.refId = refId;
+        return this;
+    }
+
+    /**
+     * 关联的主题ID，填写String类型替代Long类型。
+     * @return refId
+     */
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
     }
 
     public DirectoryVO withChildren(List<DirectoryVO> children) {
@@ -404,8 +448,9 @@ public class DirectoryVO {
             && Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
             && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.prevId, that.prevId)
             && Objects.equals(this.rootId, that.rootId) && Objects.equals(this.qualifiedName, that.qualifiedName)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.fromPublic, that.fromPublic) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.refId, that.refId)
             && Objects.equals(this.children, that.children);
     }
 
@@ -419,10 +464,12 @@ public class DirectoryVO {
             prevId,
             rootId,
             qualifiedName,
+            fromPublic,
             createTime,
             updateTime,
             createBy,
             updateBy,
+            refId,
             children);
     }
 
@@ -438,10 +485,12 @@ public class DirectoryVO {
         sb.append("    prevId: ").append(toIndentedString(prevId)).append("\n");
         sb.append("    rootId: ").append(toIndentedString(rootId)).append("\n");
         sb.append("    qualifiedName: ").append(toIndentedString(qualifiedName)).append("\n");
+        sb.append("    fromPublic: ").append(toIndentedString(fromPublic)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
         sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
+        sb.append("    refId: ").append(toIndentedString(refId)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -74,6 +79,81 @@ public class ListCustomerOrdersRequest {
     @JsonProperty(value = "indirect_partner_id")
 
     private String indirectPartnerId;
+
+    /**
+     * |参数名称：查询方式，oneself：客户自己订单sub_customer：客户给企业子代付订单。| |参数的约束及描述：默认为oneself。仅customer_id有值时生效。此参数不携带或携带值为空串或携带值为null时，默认值为“oneself”。|
+     */
+    public static final class MethodEnum {
+
+        /**
+         * Enum ONESELF for value: "oneself"
+         */
+        public static final MethodEnum ONESELF = new MethodEnum("oneself");
+
+        /**
+         * Enum SUB_CUSTOMER for value: "sub_customer"
+         */
+        public static final MethodEnum SUB_CUSTOMER = new MethodEnum("sub_customer");
+
+        private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MethodEnum> createStaticFields() {
+            Map<String, MethodEnum> map = new HashMap<>();
+            map.put("oneself", ONESELF);
+            map.put("sub_customer", SUB_CUSTOMER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MethodEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MethodEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
+        }
+
+        public static MethodEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MethodEnum) {
+                return this.value.equals(((MethodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "method")
+
+    private MethodEnum method;
 
     public ListCustomerOrdersRequest withOrderId(String orderId) {
         this.orderId = orderId;
@@ -302,6 +382,23 @@ public class ListCustomerOrdersRequest {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    public ListCustomerOrdersRequest withMethod(MethodEnum method) {
+        this.method = method;
+        return this;
+    }
+
+    /**
+     * |参数名称：查询方式，oneself：客户自己订单sub_customer：客户给企业子代付订单。| |参数的约束及描述：默认为oneself。仅customer_id有值时生效。此参数不携带或携带值为空串或携带值为null时，默认值为“oneself”。|
+     * @return method
+     */
+    public MethodEnum getMethod() {
+        return method;
+    }
+
+    public void setMethod(MethodEnum method) {
+        this.method = method;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -319,7 +416,8 @@ public class ListCustomerOrdersRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.orderBy, that.orderBy)
             && Objects.equals(this.paymentTimeBegin, that.paymentTimeBegin)
             && Objects.equals(this.paymentTimeEnd, that.paymentTimeEnd)
-            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.method, that.method);
     }
 
     @Override
@@ -336,7 +434,8 @@ public class ListCustomerOrdersRequest {
             orderBy,
             paymentTimeBegin,
             paymentTimeEnd,
-            indirectPartnerId);
+            indirectPartnerId,
+            method);
     }
 
     @Override
@@ -356,6 +455,7 @@ public class ListCustomerOrdersRequest {
         sb.append("    paymentTimeBegin: ").append(toIndentedString(paymentTimeBegin)).append("\n");
         sb.append("    paymentTimeEnd: ").append(toIndentedString(paymentTimeEnd)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("}");
         return sb.toString();
     }

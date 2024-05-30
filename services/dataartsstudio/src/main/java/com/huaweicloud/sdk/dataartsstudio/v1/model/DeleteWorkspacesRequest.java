@@ -26,7 +26,7 @@ public class DeleteWorkspacesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     public DeleteWorkspacesRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -64,12 +64,12 @@ public class DeleteWorkspacesRequest {
         this.xProjectId = xProjectId;
     }
 
-    public DeleteWorkspacesRequest withIds(List<Long> ids) {
+    public DeleteWorkspacesRequest withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public DeleteWorkspacesRequest addIdsItem(Long idsItem) {
+    public DeleteWorkspacesRequest addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -77,7 +77,7 @@ public class DeleteWorkspacesRequest {
         return this;
     }
 
-    public DeleteWorkspacesRequest withIds(Consumer<List<Long>> idsSetter) {
+    public DeleteWorkspacesRequest withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -86,14 +86,14 @@ public class DeleteWorkspacesRequest {
     }
 
     /**
-     * 实体ID数组。
+     * 实体ID数组，填写String类型替代Long类型。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 

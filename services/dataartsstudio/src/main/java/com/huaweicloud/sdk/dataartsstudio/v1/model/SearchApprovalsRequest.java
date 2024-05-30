@@ -28,7 +28,7 @@ public class SearchApprovalsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -46,7 +46,7 @@ public class SearchApprovalsRequest {
     private String approver;
 
     /**
-     * 审批单状态。DEVELOPING(待审批)、FINISHED(已审批)。
+     * 审批单状态。 枚举值：   - DEVELOPING: 待审批   - FINISHED: 已审批 
      */
     public static final class ApprovalStatusEnum {
 
@@ -121,7 +121,7 @@ public class SearchApprovalsRequest {
     private ApprovalStatusEnum approvalStatus;
 
     /**
-     * 审批单状态。DEVELOPING(待审批)、APPROVED(审批通过)、REJECT(审批驳回)。
+     * 审批单状态。 枚举值：   - DEVELOPING: 待审批   - APPROVED: 审批通过   - REJECT: 审批驳回 
      */
     public static final class ApprovalStatusDetailEnum {
 
@@ -202,7 +202,7 @@ public class SearchApprovalsRequest {
     private ApprovalStatusDetailEnum approvalStatusDetail;
 
     /**
-     * 业务审核类型。PUBLISH(发布)、OFFLINE(下线)。
+     * 业务审核类型。 枚举值：   - PUBLISH: 发布   - OFFLINE: 下线 
      */
     public static final class ApprovalTypeEnum {
 
@@ -337,20 +337,20 @@ public class SearchApprovalsRequest {
         this.xProjectId = xProjectId;
     }
 
-    public SearchApprovalsRequest withBizId(Long bizId) {
+    public SearchApprovalsRequest withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务定义ID。
+     * 业务定义ID，填写String类型替代Long类型。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -411,7 +411,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 审批单状态。DEVELOPING(待审批)、FINISHED(已审批)。
+     * 审批单状态。 枚举值：   - DEVELOPING: 待审批   - FINISHED: 已审批 
      * @return approvalStatus
      */
     public ApprovalStatusEnum getApprovalStatus() {
@@ -428,7 +428,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 审批单状态。DEVELOPING(待审批)、APPROVED(审批通过)、REJECT(审批驳回)。
+     * 审批单状态。 枚举值：   - DEVELOPING: 待审批   - APPROVED: 审批通过   - REJECT: 审批驳回 
      * @return approvalStatusDetail
      */
     public ApprovalStatusDetailEnum getApprovalStatusDetail() {
@@ -445,7 +445,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 业务审核类型。PUBLISH(发布)、OFFLINE(下线)。
+     * 业务审核类型。 枚举值：   - PUBLISH: 发布   - OFFLINE: 下线 
      * @return approvalType
      */
     public ApprovalTypeEnum getApprovalType() {
@@ -462,7 +462,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 按业务类型查询。
+     * 按业务类型查询，可选业务类型有：ATOMIC_INDEX（原子指标）、DERIVATIVE_INDEX（衍生指标）、DIMENSION（维度）、TIME_CONDITION（时间限定）、DIMENSION_LOGIC_TABLE（维度表）、FACT_LOGIC_TABLE（事实表）、AGGREGATION_LOGIC_TABLE（汇总表）、TABLE_MODEL（关系建模表）、CODE_TABLE（码表）、STANDARD_ELEMENT）（数据标准）、BIZ_METRIC（业务指标）、COMPOUND_METRIC（复合指标）、SUBJECT（主题）、ATOMIC_METRIC（原子指标（新））、DERIVED_METRIC（衍生指标（新））、COMPOSITE_METRIC（复合指标（新））。
      * @return bizType
      */
     public String getBizType() {
@@ -513,7 +513,7 @@ public class SearchApprovalsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

@@ -31,7 +31,7 @@ public class DeleteNacosNamespacesRequest {
     }
 
     /**
-     * 微服务引擎专享版的实例ID
+     * 微服务引擎的实例ID
      * @return xEngineId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

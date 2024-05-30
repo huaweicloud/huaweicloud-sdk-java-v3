@@ -142,7 +142,7 @@ public class UploadKieRequest {
     }
 
     /**
-     * 微服务引擎专享版ID。
+     * 微服务引擎ID。
      * @return xEngineId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

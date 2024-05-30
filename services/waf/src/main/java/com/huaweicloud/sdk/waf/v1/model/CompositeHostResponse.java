@@ -103,6 +103,11 @@ public class CompositeHostResponse {
 
     private String region;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server")
+
+    private List<WafServer> server = null;
+
     public CompositeHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -451,6 +456,39 @@ public class CompositeHostResponse {
         this.region = region;
     }
 
+    public CompositeHostResponse withServer(List<WafServer> server) {
+        this.server = server;
+        return this;
+    }
+
+    public CompositeHostResponse addServerItem(WafServer serverItem) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        this.server.add(serverItem);
+        return this;
+    }
+
+    public CompositeHostResponse withServer(Consumer<List<WafServer>> serverSetter) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        serverSetter.accept(this.server);
+        return this;
+    }
+
+    /**
+     * 防护域名的源站服务器配置信息，只有独享模式域名才返回vpc_id
+     * @return server
+     */
+    public List<WafServer> getServer() {
+        return server;
+    }
+
+    public void setServer(List<WafServer> server) {
+        this.server = server;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -470,7 +508,7 @@ public class CompositeHostResponse {
             && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.accessProgress, that.accessProgress)
             && Objects.equals(this.premiumWafInstances, that.premiumWafInstances)
             && Objects.equals(this.description, that.description) && Objects.equals(this.exclusiveIp, that.exclusiveIp)
-            && Objects.equals(this.region, that.region);
+            && Objects.equals(this.region, that.region) && Objects.equals(this.server, that.server);
     }
 
     @Override
@@ -492,7 +530,8 @@ public class CompositeHostResponse {
             premiumWafInstances,
             description,
             exclusiveIp,
-            region);
+            region,
+            server);
     }
 
     @Override
@@ -517,6 +556,7 @@ public class CompositeHostResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("}");
         return sb.toString();
     }

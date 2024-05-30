@@ -46,7 +46,7 @@ public class AggregationLogicTableVOSearchResultDataValue {
     }
 
     /**
-     * 查询到的的汇总表值对象（AggregationLogicTableVO）数组。
+     * 查询到的汇总表值对象（AggregationLogicTableVO）数组。
      * @return records
      */
     public List<AggregationLogicTableVO> getRecords() {

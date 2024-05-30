@@ -49,7 +49,7 @@ public class ListAggregationLogicTablesRequest {
     private String owner;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -148,7 +148,7 @@ public class ListAggregationLogicTablesRequest {
     private StatusEnum status;
 
     /**
-     * 同步状态枚举。RUNNING(同步中)、NO_NEED(未同步)、SUMMARY_SUCCESS(整体成功)、SUMMARY_FAILED(整体失败)。
+     * 同步状态枚举。 枚举值：   - RUNNING: 同步中   - NO_NEED: 未同步   - SUMMARY_SUCCESS: 整体成功   - SUMMARY_FAILED: 整体失败 
      */
     public static final class SyncStatusEnum {
 
@@ -360,7 +360,7 @@ public class ListAggregationLogicTablesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -502,7 +502,7 @@ public class ListAggregationLogicTablesRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -519,7 +519,7 @@ public class ListAggregationLogicTablesRequest {
     }
 
     /**
-     * 同步状态枚举。RUNNING(同步中)、NO_NEED(未同步)、SUMMARY_SUCCESS(整体成功)、SUMMARY_FAILED(整体失败)。
+     * 同步状态枚举。 枚举值：   - RUNNING: 同步中   - NO_NEED: 未同步   - SUMMARY_SUCCESS: 整体成功   - SUMMARY_FAILED: 整体失败 
      * @return syncStatus
      */
     public SyncStatusEnum getSyncStatus() {
@@ -552,7 +552,7 @@ public class ListAggregationLogicTablesRequest {
     }
 
     /**
-     * 同步任务类型枚举。BUSINESS_ASSET(同步业务资产)、DATA_QUALITY(创建质量作业)、TECHNICAL_ASSET(同步技术资产)、META_DATA_LINK(资产关联)、PHYSICAL_TABLE(创建表（生产环境）)、DEV_PHYSICAL_TABLE(创建表（开发环境）)、DLF_TASK(创建数据开发作业)、MATERIALIZATION(数值落库（码表）)、PUBLISH_TO_DLM(发布数据服务API)、SUMMARY_STATUS(整体状态)。
+     * 同步任务类型枚举。 枚举值：   - BUSINESS_ASSET: 同步业务资产   - DATA_QUALITY: 创建质量作业   - TECHNICAL_ASSET: 同步技术资产   - META_DATA_LINK: 资产关联   - PHYSICAL_TABLE: 创建表（生产环境）   - DEV_PHYSICAL_TABLE: 创建表（开发环境）   - DLF_TASK: 创建数据开发作业   - MATERIALIZATION: 数值落库（码表）   - PUBLISH_TO_DLM: 发布数据服务API   - SUMMARY_STATUS: 整体状态 
      * @return syncKey
      */
     public List<SyncKeyEnum> getSyncKey() {
@@ -563,20 +563,20 @@ public class ListAggregationLogicTablesRequest {
         this.syncKey = syncKey;
     }
 
-    public ListAggregationLogicTablesRequest withL3Id(Long l3Id) {
+    public ListAggregationLogicTablesRequest withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象l3的ID。
+     * 业务对象l3的ID，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -620,7 +620,7 @@ public class ListAggregationLogicTablesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

@@ -40,7 +40,7 @@ public class StandElementFieldVOList {
     }
 
     /**
-     * 属性信息。
+     * 属性信息，只读。
      * @return fields
      */
     public List<StandElementFieldVO> getFields() {

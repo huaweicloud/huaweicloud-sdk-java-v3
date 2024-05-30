@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ListFreeResourceInfosReq
@@ -49,6 +52,11 @@ public class ListFreeResourceInfosReq {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_code_list")
+
+    private List<String> serviceTypeCodeList = null;
 
     public ListFreeResourceInfosReq withRegionCode(String regionCode) {
         this.regionCode = regionCode;
@@ -192,6 +200,39 @@ public class ListFreeResourceInfosReq {
         this.limit = limit;
     }
 
+    public ListFreeResourceInfosReq withServiceTypeCodeList(List<String> serviceTypeCodeList) {
+        this.serviceTypeCodeList = serviceTypeCodeList;
+        return this;
+    }
+
+    public ListFreeResourceInfosReq addServiceTypeCodeListItem(String serviceTypeCodeListItem) {
+        if (this.serviceTypeCodeList == null) {
+            this.serviceTypeCodeList = new ArrayList<>();
+        }
+        this.serviceTypeCodeList.add(serviceTypeCodeListItem);
+        return this;
+    }
+
+    public ListFreeResourceInfosReq withServiceTypeCodeList(Consumer<List<String>> serviceTypeCodeListSetter) {
+        if (this.serviceTypeCodeList == null) {
+            this.serviceTypeCodeList = new ArrayList<>();
+        }
+        serviceTypeCodeListSetter.accept(this.serviceTypeCodeList);
+        return this;
+    }
+
+    /**
+     * 云服务类型编码列表，大小写不敏感。 例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。 此参数不携带或携带值为空列表或携带值为null时，不作为筛选条件，返回其他条件匹配的记录。
+     * @return serviceTypeCodeList
+     */
+    public List<String> getServiceTypeCodeList() {
+        return serviceTypeCodeList;
+    }
+
+    public void setServiceTypeCodeList(List<String> serviceTypeCodeList) {
+        this.serviceTypeCodeList = serviceTypeCodeList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +246,21 @@ public class ListFreeResourceInfosReq {
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.serviceTypeCodeList, that.serviceTypeCodeList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionCode, orderId, productId, productName, enterpriseProjectId, status, offset, limit);
+        return Objects.hash(regionCode,
+            orderId,
+            productId,
+            productName,
+            enterpriseProjectId,
+            status,
+            offset,
+            limit,
+            serviceTypeCodeList);
     }
 
     @Override
@@ -225,6 +275,7 @@ public class ListFreeResourceInfosReq {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    serviceTypeCodeList: ").append(toIndentedString(serviceTypeCodeList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

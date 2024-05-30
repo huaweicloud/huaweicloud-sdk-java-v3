@@ -67,7 +67,7 @@ public class DeleteStandardTemplateRequest {
     }
 
     /**
-     * 实体ID。
+     * 待删除的数据标准的ID集合。
      * @return ids
      */
     public String getIds() {

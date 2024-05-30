@@ -54,6 +54,11 @@ public class AggregationLogicTableAttributeVO {
     private Boolean isPartitionKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secrecy_levels")
+
+    private List<SecrecyLevelVO> secrecyLevels = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "not_null")
 
     private Boolean notNull;
@@ -84,6 +89,16 @@ public class AggregationLogicTableAttributeVO {
     private String refId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref_name_ch")
+
+    private String refNameCh;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref_name_en")
+
+    private String refNameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stand_row_id")
 
     private String standRowId;
@@ -109,7 +124,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -126,7 +141,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 所属汇总表ID。
+     * 所属汇总表ID，填写String类型替代Long类型。
      * @return aggregationLogicTableId
      */
     public String getAggregationLogicTableId() {
@@ -239,6 +254,39 @@ public class AggregationLogicTableAttributeVO {
         this.isPartitionKey = isPartitionKey;
     }
 
+    public AggregationLogicTableAttributeVO withSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
+        return this;
+    }
+
+    public AggregationLogicTableAttributeVO addSecrecyLevelsItem(SecrecyLevelVO secrecyLevelsItem) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        this.secrecyLevels.add(secrecyLevelsItem);
+        return this;
+    }
+
+    public AggregationLogicTableAttributeVO withSecrecyLevels(Consumer<List<SecrecyLevelVO>> secrecyLevelsSetter) {
+        if (this.secrecyLevels == null) {
+            this.secrecyLevels = new ArrayList<>();
+        }
+        secrecyLevelsSetter.accept(this.secrecyLevels);
+        return this;
+    }
+
+    /**
+     * 密级
+     * @return secrecyLevels
+     */
+    public List<SecrecyLevelVO> getSecrecyLevels() {
+        return secrecyLevels;
+    }
+
+    public void setSecrecyLevels(List<SecrecyLevelVO> secrecyLevels) {
+        this.secrecyLevels = secrecyLevels;
+    }
+
     public AggregationLogicTableAttributeVO withNotNull(Boolean notNull) {
         this.notNull = notNull;
         return this;
@@ -330,7 +378,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 关联ID。
+     * 属性关联对象的id
      * @return refId
      */
     public String getRefId() {
@@ -341,13 +389,47 @@ public class AggregationLogicTableAttributeVO {
         this.refId = refId;
     }
 
+    public AggregationLogicTableAttributeVO withRefNameCh(String refNameCh) {
+        this.refNameCh = refNameCh;
+        return this;
+    }
+
+    /**
+     * 属性关联对象的中文名
+     * @return refNameCh
+     */
+    public String getRefNameCh() {
+        return refNameCh;
+    }
+
+    public void setRefNameCh(String refNameCh) {
+        this.refNameCh = refNameCh;
+    }
+
+    public AggregationLogicTableAttributeVO withRefNameEn(String refNameEn) {
+        this.refNameEn = refNameEn;
+        return this;
+    }
+
+    /**
+     * 属性关联对象的英文名
+     * @return refNameEn
+     */
+    public String getRefNameEn() {
+        return refNameEn;
+    }
+
+    public void setRefNameEn(String refNameEn) {
+        this.refNameEn = refNameEn;
+    }
+
     public AggregationLogicTableAttributeVO withStandRowId(String standRowId) {
         this.standRowId = standRowId;
         return this;
     }
 
     /**
-     * 关联的数据标准的ID。
+     * 关联的数据标准的ID，填写String类型替代Long类型。
      * @return standRowId
      */
     public String getStandRowId() {
@@ -364,7 +446,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 关联的数据标准名称。
+     * 关联的数据标准名称，只读。
      * @return standRowName
      */
     public String getStandRowName() {
@@ -397,7 +479,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 质量信息。
+     * 质量信息，只读。
      * @return qualityInfos
      */
     public List<QualityInfoVO> getQualityInfos() {
@@ -439,10 +521,12 @@ public class AggregationLogicTableAttributeVO {
             && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.nameEn, that.nameEn)
             && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.attributeType, that.attributeType)
             && Objects.equals(this.isPrimaryKey, that.isPrimaryKey)
-            && Objects.equals(this.isPartitionKey, that.isPartitionKey) && Objects.equals(this.notNull, that.notNull)
+            && Objects.equals(this.isPartitionKey, that.isPartitionKey)
+            && Objects.equals(this.secrecyLevels, that.secrecyLevels) && Objects.equals(this.notNull, that.notNull)
             && Objects.equals(this.description, that.description) && Objects.equals(this.dataType, that.dataType)
             && Objects.equals(this.domainType, that.domainType)
             && Objects.equals(this.dataTypeExtend, that.dataTypeExtend) && Objects.equals(this.refId, that.refId)
+            && Objects.equals(this.refNameCh, that.refNameCh) && Objects.equals(this.refNameEn, that.refNameEn)
             && Objects.equals(this.standRowId, that.standRowId) && Objects.equals(this.standRowName, that.standRowName)
             && Objects.equals(this.qualityInfos, that.qualityInfos) && Objects.equals(this.alias, that.alias);
     }
@@ -457,12 +541,15 @@ public class AggregationLogicTableAttributeVO {
             attributeType,
             isPrimaryKey,
             isPartitionKey,
+            secrecyLevels,
             notNull,
             description,
             dataType,
             domainType,
             dataTypeExtend,
             refId,
+            refNameCh,
+            refNameEn,
             standRowId,
             standRowName,
             qualityInfos,
@@ -481,12 +568,15 @@ public class AggregationLogicTableAttributeVO {
         sb.append("    attributeType: ").append(toIndentedString(attributeType)).append("\n");
         sb.append("    isPrimaryKey: ").append(toIndentedString(isPrimaryKey)).append("\n");
         sb.append("    isPartitionKey: ").append(toIndentedString(isPartitionKey)).append("\n");
+        sb.append("    secrecyLevels: ").append(toIndentedString(secrecyLevels)).append("\n");
         sb.append("    notNull: ").append(toIndentedString(notNull)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    dataTypeExtend: ").append(toIndentedString(dataTypeExtend)).append("\n");
         sb.append("    refId: ").append(toIndentedString(refId)).append("\n");
+        sb.append("    refNameCh: ").append(toIndentedString(refNameCh)).append("\n");
+        sb.append("    refNameEn: ").append(toIndentedString(refNameEn)).append("\n");
         sb.append("    standRowId: ").append(toIndentedString(standRowId)).append("\n");
         sb.append("    standRowName: ").append(toIndentedString(standRowName)).append("\n");
         sb.append("    qualityInfos: ").append(toIndentedString(qualityInfos)).append("\n");

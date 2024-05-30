@@ -90,7 +90,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 操作类型。1：发放2：手动回收3：解绑自动回收4：过期回收5：退订回收6：退款充值撤销7：建立关联回收此参数不携带时，不作为筛选条件；携带值为空列表或携带值为空或携带值为null时，作为筛选条件。
+     * 操作类型。1：发放2：手动回收3：解绑自动回收4：过期回收5：退订回收6：退款充值撤销7：建立关联回收此参数不携带时，不作为筛选条件；携带值为空列表或携带值为null时，作为筛选条件。
      * @return operationTypes
      */
     public List<String> getOperationTypes() {
@@ -124,7 +124,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 额度类型。0：代金券额度1：现金券额度此参数不携带或携带值为空或携带值为null时，不作为筛选条件。
+     * 额度类型。0：代金券额度1：现金券额度此参数不携带或携带值为空或携带值为null时，不作为筛选条件；不支持携带值为空串。
      * minimum: 0
      * maximum: 1
      * @return quotaType
@@ -159,7 +159,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 代金券ID列表。请从“发放优惠券”接口的响应参数中获取。此参数不携带或携带值为空列表时，不作为筛选条件；携带值为空或携带值为null时，作为筛选条件。
+     * 代金券ID列表。请从“发放优惠券”接口的响应参数中获取。此参数不携带时，不作为筛选条件；携带值为空列表或携带值为null时，作为筛选条件。
      * @return couponIds
      */
     public List<String> getCouponIds() {
@@ -193,7 +193,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 操作时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间大于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
+     * 操作时间（开始）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间大于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串和携带值为null。
      * @return operationTimeBegin
      */
     public String getOperationTimeBegin() {
@@ -210,7 +210,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 操作时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间小于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件。
+     * 操作时间（结束）。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。输入这个条件，会查询出操作时间小于这个时间的记录。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串和携带值为null。
      * @return operationTimeEnd
      */
     public String getOperationTimeEnd() {
@@ -244,7 +244,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
+     * 偏移量，从0开始。默认值为0。此参数不携带或携带值为空或携带值为null时，取默认值0；不支持携带值为空串。说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -263,7 +263,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 每页记录数。默认值为10。
+     * 每页记录数。默认值为10。此参数不携带或携带值为空或携带值为null时，取默认值10；不支持携带值为空串。
      * minimum: 1
      * maximum: 100
      * @return limit

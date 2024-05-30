@@ -13,27 +13,32 @@ public class BizInfoVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
 
     private BizTypeEnum bizType;
 
-    public BizInfoVO withBizId(Long bizId) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env_type")
+
+    private EnvTypeEnum envType;
+
+    public BizInfoVO withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务ID。
+     * 业务ID，填写String类型替代Long类型。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -54,6 +59,23 @@ public class BizInfoVO {
         this.bizType = bizType;
     }
 
+    public BizInfoVO withEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+        return this;
+    }
+
+    /**
+     * Get envType
+     * @return envType
+     */
+    public EnvTypeEnum getEnvType() {
+        return envType;
+    }
+
+    public void setEnvType(EnvTypeEnum envType) {
+        this.envType = envType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class BizInfoVO {
             return false;
         }
         BizInfoVO that = (BizInfoVO) obj;
-        return Objects.equals(this.bizId, that.bizId) && Objects.equals(this.bizType, that.bizType);
+        return Objects.equals(this.bizId, that.bizId) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.envType, that.envType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bizId, bizType);
+        return Objects.hash(bizId, bizType, envType);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class BizInfoVO {
         sb.append("class BizInfoVO {\n");
         sb.append("    bizId: ").append(toIndentedString(bizId)).append("\n");
         sb.append("    bizType: ").append(toIndentedString(bizType)).append("\n");
+        sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

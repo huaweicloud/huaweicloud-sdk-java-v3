@@ -36,7 +36,7 @@ public class ListShareFilesRequest {
     }
 
     /**
-     * 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源数，默认值为0。
+     * 偏移量为一个大于等于0整数，表示查询该偏移量后面的所有的资源数，默认值为0。
      * minimum: 0
      * maximum: 8096
      * @return offset

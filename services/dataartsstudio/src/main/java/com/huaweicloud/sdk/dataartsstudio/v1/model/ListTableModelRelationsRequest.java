@@ -36,7 +36,7 @@ public class ListTableModelRelationsRequest {
     private String tableIds;
 
     /**
-     * 表类型。TABLE_MODEL(关系建模：逻辑实体/物理表)、FACT_LOGIC_TABLE(事实表)。
+     * 表类型。 枚举值：   - TABLE_MODEL: 关系建模：逻辑实体/物理表   - FACT_LOGIC_TABLE: 事实表 
      */
     public static final class BizTypeEnum {
 
@@ -162,7 +162,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 所属关系建模的模型ID。
+     * 所属关系建模的模型ID，填写String类型替代Long类型。
      * @return modelId
      */
     public String getModelId() {
@@ -179,7 +179,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 表模型ids
+     * 表模型ids，填写String类型替代Long类型。
      * @return tableIds
      */
     public String getTableIds() {
@@ -196,7 +196,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 表类型。TABLE_MODEL(关系建模：逻辑实体/物理表)、FACT_LOGIC_TABLE(事实表)。
+     * 表类型。 枚举值：   - TABLE_MODEL: 关系建模：逻辑实体/物理表   - FACT_LOGIC_TABLE: 事实表 
      * @return bizType
      */
     public BizTypeEnum getBizType() {
@@ -213,7 +213,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

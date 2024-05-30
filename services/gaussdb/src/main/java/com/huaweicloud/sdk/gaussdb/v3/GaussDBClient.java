@@ -217,6 +217,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
@@ -273,6 +277,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNameRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNameResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortRequest;
@@ -289,6 +295,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
 
 public class GaussDBClient {
 
@@ -2792,6 +2800,64 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询代理实例访问控制
+     *
+     * 查询代理实例访问控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProxyIpgroupRequest 请求对象
+     * @return ShowProxyIpgroupResponse
+     */
+    public ShowProxyIpgroupResponse showProxyIpgroup(ShowProxyIpgroupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showProxyIpgroup);
+    }
+
+    /**
+     * 查询代理实例访问控制
+     *
+     * 查询代理实例访问控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProxyIpgroupRequest 请求对象
+     * @return SyncInvoker<ShowProxyIpgroupRequest, ShowProxyIpgroupResponse>
+     */
+    public SyncInvoker<ShowProxyIpgroupRequest, ShowProxyIpgroupResponse> showProxyIpgroupInvoker(
+        ShowProxyIpgroupRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showProxyIpgroup, hcClient);
+    }
+
+    /**
+     * 查询代理实例小版本
+     *
+     * 查询代理实例小版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProxyVersionRequest 请求对象
+     * @return ShowProxyVersionResponse
+     */
+    public ShowProxyVersionResponse showProxyVersion(ShowProxyVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showProxyVersion);
+    }
+
+    /**
+     * 查询代理实例小版本
+     *
+     * 查询代理实例小版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProxyVersionRequest 请求对象
+     * @return SyncInvoker<ShowProxyVersionRequest, ShowProxyVersionResponse>
+     */
+    public SyncInvoker<ShowProxyVersionRequest, ShowProxyVersionResponse> showProxyVersionInvoker(
+        ShowProxyVersionRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showProxyVersion, hcClient);
+    }
+
+    /**
      * 查询表级时间点恢复可选表
      *
      * 查询表级时间点恢复可选表。
@@ -3532,6 +3598,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 修改代理实例名称
+     *
+     * 修改代理实例名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProxyNameRequest 请求对象
+     * @return UpdateProxyNameResponse
+     */
+    public UpdateProxyNameResponse updateProxyName(UpdateProxyNameRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateProxyName);
+    }
+
+    /**
+     * 修改代理实例名称
+     *
+     * 修改代理实例名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProxyNameRequest 请求对象
+     * @return SyncInvoker<UpdateProxyNameRequest, UpdateProxyNameResponse>
+     */
+    public SyncInvoker<UpdateProxyNameRequest, UpdateProxyNameResponse> updateProxyNameInvoker(
+        UpdateProxyNameRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateProxyName, hcClient);
+    }
+
+    /**
      * 修改代理实例参数
      *
      * 修改数据库代理参数。
@@ -3678,6 +3773,35 @@ public class GaussDBClient {
     public SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseInvoker(
         UpgradeGaussMySqlInstanceDatabaseRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
+    }
+
+    /**
+     * 升级数据库代理实例内核版本
+     *
+     * 升级数据库代理实例内核版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeProxyVersionRequest 请求对象
+     * @return UpgradeProxyVersionResponse
+     */
+    public UpgradeProxyVersionResponse upgradeProxyVersion(UpgradeProxyVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.upgradeProxyVersion);
+    }
+
+    /**
+     * 升级数据库代理实例内核版本
+     *
+     * 升级数据库代理实例内核版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeProxyVersionRequest 请求对象
+     * @return SyncInvoker<UpgradeProxyVersionRequest, UpgradeProxyVersionResponse>
+     */
+    public SyncInvoker<UpgradeProxyVersionRequest, UpgradeProxyVersionResponse> upgradeProxyVersionInvoker(
+        UpgradeProxyVersionRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.upgradeProxyVersion, hcClient);
     }
 
     /**

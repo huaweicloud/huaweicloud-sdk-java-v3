@@ -21,6 +21,16 @@ public class SearchFieldsForRelationRequest {
     private String xProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_id")
 
     private String modelId;
@@ -61,13 +71,48 @@ public class SearchFieldsForRelationRequest {
         this.xProjectId = xProjectId;
     }
 
+    public SearchFieldsForRelationRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public SearchFieldsForRelationRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 查询起始坐标，即跳过X条数据，仅支持0或limit的整数倍，不满足则向下取整，默认值0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     public SearchFieldsForRelationRequest withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
 
     /**
-     * 所属关系建模的模型ID。
+     * 所属关系建模的模型ID，填写String类型替代Long类型。
      * @return modelId
      */
     public String getModelId() {
@@ -88,12 +133,13 @@ public class SearchFieldsForRelationRequest {
         }
         SearchFieldsForRelationRequest that = (SearchFieldsForRelationRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.modelId, that.modelId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, xProjectId, modelId);
+        return Objects.hash(workspace, xProjectId, limit, offset, modelId);
     }
 
     @Override
@@ -102,6 +148,8 @@ public class SearchFieldsForRelationRequest {
         sb.append("class SearchFieldsForRelationRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
         sb.append("}");
         return sb.toString();

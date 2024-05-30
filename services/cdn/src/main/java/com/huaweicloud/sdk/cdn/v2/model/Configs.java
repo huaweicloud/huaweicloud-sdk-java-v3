@@ -188,6 +188,11 @@ public class Configs {
 
     private List<BrowserCacheRules> browserCacheRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_area_filter")
+
+    private List<AccessAreaFilter> accessAreaFilter = null;
+
     public Configs withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
@@ -1094,6 +1099,39 @@ public class Configs {
         this.browserCacheRules = browserCacheRules;
     }
 
+    public Configs withAccessAreaFilter(List<AccessAreaFilter> accessAreaFilter) {
+        this.accessAreaFilter = accessAreaFilter;
+        return this;
+    }
+
+    public Configs addAccessAreaFilterItem(AccessAreaFilter accessAreaFilterItem) {
+        if (this.accessAreaFilter == null) {
+            this.accessAreaFilter = new ArrayList<>();
+        }
+        this.accessAreaFilter.add(accessAreaFilterItem);
+        return this;
+    }
+
+    public Configs withAccessAreaFilter(Consumer<List<AccessAreaFilter>> accessAreaFilterSetter) {
+        if (this.accessAreaFilter == null) {
+            this.accessAreaFilter = new ArrayList<>();
+        }
+        accessAreaFilterSetter.accept(this.accessAreaFilter);
+        return this;
+    }
+
+    /**
+     * Get accessAreaFilter
+     * @return accessAreaFilter
+     */
+    public List<AccessAreaFilter> getAccessAreaFilter() {
+        return accessAreaFilter;
+    }
+
+    public void setAccessAreaFilter(List<AccessAreaFilter> accessAreaFilter) {
+        this.accessAreaFilter = accessAreaFilter;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1129,7 +1167,8 @@ public class Configs {
             && Objects.equals(this.quic, that.quic)
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules)
             && Objects.equals(this.sni, that.sni) && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
-            && Objects.equals(this.browserCacheRules, that.browserCacheRules);
+            && Objects.equals(this.browserCacheRules, that.browserCacheRules)
+            && Objects.equals(this.accessAreaFilter, that.accessAreaFilter);
     }
 
     @Override
@@ -1168,7 +1207,8 @@ public class Configs {
             errorCodeRedirectRules,
             sni,
             requestUrlRewrite,
-            browserCacheRules);
+            browserCacheRules,
+            accessAreaFilter);
     }
 
     @Override
@@ -1210,6 +1250,7 @@ public class Configs {
         sb.append("    sni: ").append(toIndentedString(sni)).append("\n");
         sb.append("    requestUrlRewrite: ").append(toIndentedString(requestUrlRewrite)).append("\n");
         sb.append("    browserCacheRules: ").append(toIndentedString(browserCacheRules)).append("\n");
+        sb.append("    accessAreaFilter: ").append(toIndentedString(accessAreaFilter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

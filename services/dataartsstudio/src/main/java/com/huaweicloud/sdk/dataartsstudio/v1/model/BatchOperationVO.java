@@ -14,14 +14,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchOperationVO
+ * 批量操作对象，只读。
  */
 public class BatchOperationVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
@@ -31,7 +31,7 @@ public class BatchOperationVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
-    private Long groupId;
+    private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_name")
@@ -41,10 +41,10 @@ public class BatchOperationVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     /**
-     * 操作结果类型枚举。RUNNING(运行中)、SUCCESS(操作成功)、FAILED(操作失败)。
+     * 操作结果类型枚举。RUNNING(运行中)、SUCCESS(操作成功)、FAILED(操作失败)。 枚举值：   - RUNNING: 运行中   - SUCCESS: 操作成功   - FAILED: 操作失败 
      */
     public static final class OperationStatusEnum {
 
@@ -174,20 +174,20 @@ public class BatchOperationVO {
 
     private List<BatchOperationVO> groups = null;
 
-    public BatchOperationVO withId(Long id) {
+    public BatchOperationVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 批量审批ID。
+     * 批量审批ID，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -208,20 +208,20 @@ public class BatchOperationVO {
         this.tenantId = tenantId;
     }
 
-    public BatchOperationVO withGroupId(Long groupId) {
+    public BatchOperationVO withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
     /**
-     * 组ID。
+     * 组ID，填写String类型替代Long类型。
      * @return groupId
      */
-    public Long getGroupId() {
+    public String getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(Long groupId) {
+    public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
 
@@ -242,20 +242,20 @@ public class BatchOperationVO {
         this.bizName = bizName;
     }
 
-    public BatchOperationVO withBizId(Long bizId) {
+    public BatchOperationVO withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 业务ID。
+     * 业务ID，填写String类型替代Long类型。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -265,7 +265,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 操作结果类型枚举。RUNNING(运行中)、SUCCESS(操作成功)、FAILED(操作失败)。
+     * 操作结果类型枚举。RUNNING(运行中)、SUCCESS(操作成功)、FAILED(操作失败)。 枚举值：   - RUNNING: 运行中   - SUCCESS: 操作成功   - FAILED: 操作失败 
      * @return operationStatus
      */
     public OperationStatusEnum getOperationStatus() {
@@ -367,7 +367,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 成功个数。
+     * 操作成功个数。
      * @return success
      */
     public Integer getSuccess() {
@@ -384,7 +384,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 失败个数。
+     * 操作失败个数。
      * @return failed
      */
     public Integer getFailed() {

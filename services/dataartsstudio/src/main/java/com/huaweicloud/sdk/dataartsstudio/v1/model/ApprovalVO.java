@@ -127,7 +127,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审批单ID。
+     * 审批单ID，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -144,7 +144,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 项目ID。
+     * 项目ID，获取方式参考接口路径参数“project_id”。
      * @return tenantId
      */
     public String getTenantId() {
@@ -195,7 +195,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务ID。
+     * 业务ID，填写String类型替代Long类型。
      * @return bizId
      */
     public String getBizId() {
@@ -229,7 +229,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务详情。
+     * 序列化之后的业务详情，类型是string。
      * @return bizInfo
      */
     public String getBizInfo() {
@@ -246,7 +246,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务详情。
+     * 业务详情，类型是object。
      * @return bizInfoObj
      */
     public Object getBizInfoObj() {
@@ -365,7 +365,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 主题域分组。
+     * 主题域分组中文名，只读，创建和更新时无需填写。
      * @return l1
      */
     public String getL1() {
@@ -382,7 +382,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 主题域。
+     * 主题域中文名，只读，创建和更新时无需填写。
      * @return l2
      */
     public String getL2() {
@@ -399,7 +399,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务对象。
+     * 业务对象中文名，只读，创建和更新时无需填写。
      * @return l3
      */
     public String getL3() {

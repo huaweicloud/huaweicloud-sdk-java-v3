@@ -109,6 +109,11 @@ public class UpgradeTypeInfo {
 
     private List<UpgradeActionInfo> upgradeActionList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_parallel_upgrade")
+
+    private Boolean isParallelUpgrade;
+
     public UpgradeTypeInfo withUpgradeType(UpgradeTypeEnum upgradeType) {
         this.upgradeType = upgradeType;
         return this;
@@ -176,6 +181,23 @@ public class UpgradeTypeInfo {
         this.upgradeActionList = upgradeActionList;
     }
 
+    public UpgradeTypeInfo withIsParallelUpgrade(Boolean isParallelUpgrade) {
+        this.isParallelUpgrade = isParallelUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否正在进行AZ内并行升级。 -true：当前实例处于灰度升级的升级待观察升级方式中，已选择了AZ内并行升级方式，后续无法更改。 -false：当前实例处于升级流程中，未选择AZ内并行升级的方式，后续无法更改。null：当前实例尚未处于升级流程中。
+     * @return isParallelUpgrade
+     */
+    public Boolean getIsParallelUpgrade() {
+        return isParallelUpgrade;
+    }
+
+    public void setIsParallelUpgrade(Boolean isParallelUpgrade) {
+        this.isParallelUpgrade = isParallelUpgrade;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +208,13 @@ public class UpgradeTypeInfo {
         }
         UpgradeTypeInfo that = (UpgradeTypeInfo) obj;
         return Objects.equals(this.upgradeType, that.upgradeType) && Objects.equals(this.enable, that.enable)
-            && Objects.equals(this.upgradeActionList, that.upgradeActionList);
+            && Objects.equals(this.upgradeActionList, that.upgradeActionList)
+            && Objects.equals(this.isParallelUpgrade, that.isParallelUpgrade);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(upgradeType, enable, upgradeActionList);
+        return Objects.hash(upgradeType, enable, upgradeActionList, isParallelUpgrade);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class UpgradeTypeInfo {
         sb.append("    upgradeType: ").append(toIndentedString(upgradeType)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    upgradeActionList: ").append(toIndentedString(upgradeActionList)).append("\n");
+        sb.append("    isParallelUpgrade: ").append(toIndentedString(isParallelUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

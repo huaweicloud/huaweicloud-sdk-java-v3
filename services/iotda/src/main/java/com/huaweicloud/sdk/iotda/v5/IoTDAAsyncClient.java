@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddBridgeRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupRequest;
@@ -59,6 +61,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
@@ -91,8 +95,12 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
@@ -121,6 +129,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintRequest;
@@ -177,6 +187,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyRequest;
@@ -1003,6 +1015,124 @@ public class IoTDAAsyncClient {
     }
 
     /**
+     * 创建网桥
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个网桥，仅在创建后的网桥才可以接入物联网平台。
+     * - 一个实例最多支持20个网桥。
+     * - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddBridgeRequest 请求对象
+     * @return CompletableFuture<AddBridgeResponse>
+     */
+    public CompletableFuture<AddBridgeResponse> addBridgeAsync(AddBridgeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.addBridge);
+    }
+
+    /**
+     * 创建网桥
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个网桥，仅在创建后的网桥才可以接入物联网平台。
+     * - 一个实例最多支持20个网桥。
+     * - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddBridgeRequest 请求对象
+     * @return AsyncInvoker<AddBridgeRequest, AddBridgeResponse>
+     */
+    public AsyncInvoker<AddBridgeRequest, AddBridgeResponse> addBridgeAsyncInvoker(AddBridgeRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.addBridge, hcClient);
+    }
+
+    /**
+     * 删除网桥
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定网桥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBridgeRequest 请求对象
+     * @return CompletableFuture<DeleteBridgeResponse>
+     */
+    public CompletableFuture<DeleteBridgeResponse> deleteBridgeAsync(DeleteBridgeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteBridge);
+    }
+
+    /**
+     * 删除网桥
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定网桥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBridgeRequest 请求对象
+     * @return AsyncInvoker<DeleteBridgeRequest, DeleteBridgeResponse>
+     */
+    public AsyncInvoker<DeleteBridgeRequest, DeleteBridgeResponse> deleteBridgeAsyncInvoker(
+        DeleteBridgeRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteBridge, hcClient);
+    }
+
+    /**
+     * 查询网桥列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询网桥列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBridgesRequest 请求对象
+     * @return CompletableFuture<ListBridgesResponse>
+     */
+    public CompletableFuture<ListBridgesResponse> listBridgesAsync(ListBridgesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listBridges);
+    }
+
+    /**
+     * 查询网桥列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询网桥列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBridgesRequest 请求对象
+     * @return AsyncInvoker<ListBridgesRequest, ListBridgesResponse>
+     */
+    public AsyncInvoker<ListBridgesRequest, ListBridgesResponse> listBridgesAsyncInvoker(ListBridgesRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listBridges, hcClient);
+    }
+
+    /**
+     * 重置网桥密钥
+     *
+     * 应用服务器可调用此接口在物联网平台上重置网桥密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetBridgeSecretRequest 请求对象
+     * @return CompletableFuture<ResetBridgeSecretResponse>
+     */
+    public CompletableFuture<ResetBridgeSecretResponse> resetBridgeSecretAsync(ResetBridgeSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.resetBridgeSecret);
+    }
+
+    /**
+     * 重置网桥密钥
+     *
+     * 应用服务器可调用此接口在物联网平台上重置网桥密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetBridgeSecretRequest 请求对象
+     * @return AsyncInvoker<ResetBridgeSecretRequest, ResetBridgeSecretResponse>
+     */
+    public AsyncInvoker<ResetBridgeSecretRequest, ResetBridgeSecretResponse> resetBridgeSecretAsyncInvoker(
+        ResetBridgeSecretRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.resetBridgeSecret, hcClient);
+    }
+
+    /**
      * 下发广播消息
      *
      * 应用服务器可调用此接口向订阅了指定Topic的所有在线设备发布广播消息。应用将广播消息下发给平台后，平台会先返回应用响应结果，再将消息广播给设备。
@@ -1149,6 +1279,35 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.listCertificates, hcClient);
+    }
+
+    /**
+     * 更新CA证书
+     *
+     * 应用服务器可调用此接口在物联网平台上更新CA证书。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCertificateRequest 请求对象
+     * @return CompletableFuture<UpdateCertificateResponse>
+     */
+    public CompletableFuture<UpdateCertificateResponse> updateCertificateAsync(UpdateCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateCertificate);
+    }
+
+    /**
+     * 更新CA证书
+     *
+     * 应用服务器可调用此接口在物联网平台上更新CA证书。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCertificateRequest 请求对象
+     * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
+     */
+    public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(
+        UpdateCertificateRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateCertificate, hcClient);
     }
 
     /**
@@ -1484,6 +1643,36 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<FreezeDeviceRequest, FreezeDeviceResponse> freezeDeviceAsyncInvoker(
         FreezeDeviceRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.freezeDevice, hcClient);
+    }
+
+    /**
+     * 查询指定设备加入的设备组列表
+     *
+     * 应用服务器可调用此接口查询物联网平台中的某个设备加入的设备组信息列表。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceGroupsByDeviceRequest 请求对象
+     * @return CompletableFuture<ListDeviceGroupsByDeviceResponse>
+     */
+    public CompletableFuture<ListDeviceGroupsByDeviceResponse> listDeviceGroupsByDeviceAsync(
+        ListDeviceGroupsByDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listDeviceGroupsByDevice);
+    }
+
+    /**
+     * 查询指定设备加入的设备组列表
+     *
+     * 应用服务器可调用此接口查询物联网平台中的某个设备加入的设备组信息列表。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceGroupsByDeviceRequest 请求对象
+     * @return AsyncInvoker<ListDeviceGroupsByDeviceRequest, ListDeviceGroupsByDeviceResponse>
+     */
+    public AsyncInvoker<ListDeviceGroupsByDeviceRequest, ListDeviceGroupsByDeviceResponse> listDeviceGroupsByDeviceAsyncInvoker(
+        ListDeviceGroupsByDeviceRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listDeviceGroupsByDevice, hcClient);
     }
 
     /**

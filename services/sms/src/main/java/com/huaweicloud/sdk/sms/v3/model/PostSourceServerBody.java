@@ -678,6 +678,11 @@ public class PostSourceServerBody {
 
     private StartTypeEnum startType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "io_read_wait")
+
+    private Double ioReadWait;
+
     public PostSourceServerBody withId(String id) {
         this.id = id;
         return this;
@@ -1256,6 +1261,25 @@ public class PostSourceServerBody {
         this.startType = startType;
     }
 
+    public PostSourceServerBody withIoReadWait(Double ioReadWait) {
+        this.ioReadWait = ioReadWait;
+        return this;
+    }
+
+    /**
+     * 磁盘IO读时延，单位为ms
+     * minimum: 0
+     * maximum: 1E+4
+     * @return ioReadWait
+     */
+    public Double getIoReadWait() {
+        return ioReadWait;
+    }
+
+    public void setIoReadWait(Double ioReadWait) {
+        this.ioReadWait = ioReadWait;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1283,7 +1307,8 @@ public class PostSourceServerBody {
             && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.kernelVersion, that.kernelVersion)
             && Objects.equals(this.migrationCycle, that.migrationCycle) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.oemSystem, that.oemSystem) && Objects.equals(this.startType, that.startType);
+            && Objects.equals(this.oemSystem, that.oemSystem) && Objects.equals(this.startType, that.startType)
+            && Objects.equals(this.ioReadWait, that.ioReadWait);
     }
 
     @Override
@@ -1317,7 +1342,8 @@ public class PostSourceServerBody {
             migrationCycle,
             state,
             oemSystem,
-            startType);
+            startType,
+            ioReadWait);
     }
 
     @Override
@@ -1354,6 +1380,7 @@ public class PostSourceServerBody {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    oemSystem: ").append(toIndentedString(oemSystem)).append("\n");
         sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
+        sb.append("    ioReadWait: ").append(toIndentedString(ioReadWait)).append("\n");
         sb.append("}");
         return sb.toString();
     }

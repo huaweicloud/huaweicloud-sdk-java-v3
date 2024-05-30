@@ -47,6 +47,9 @@ import com.huaweicloud.sdk.ecs.v2.model.BatchUpdateServersNameResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerChargeModeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerChargeModeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerChargeModeResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeServerNetworkInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeServerNetworkInterfaceRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeServerNetworkInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitResponse;
@@ -565,6 +568,45 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeServerChargeModeRequestBody.class),
             f -> f.withMarshaller(ChangeServerChargeModeRequest::getBody, ChangeServerChargeModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeServerNetworkInterfaceRequest, ChangeServerNetworkInterfaceResponse> changeServerNetworkInterface =
+        genForChangeServerNetworkInterface();
+
+    private static HttpRequestDef<ChangeServerNetworkInterfaceRequest, ChangeServerNetworkInterfaceResponse> genForChangeServerNetworkInterface() {
+        // basic
+        HttpRequestDef.Builder<ChangeServerNetworkInterfaceRequest, ChangeServerNetworkInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeServerNetworkInterfaceRequest.class,
+                    ChangeServerNetworkInterfaceResponse.class)
+                .withName("ChangeServerNetworkInterface")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}/change-network-interface")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeServerNetworkInterfaceRequest::getPortId,
+                ChangeServerNetworkInterfaceRequest::setPortId));
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeServerNetworkInterfaceRequest::getServerId,
+                ChangeServerNetworkInterfaceRequest::setServerId));
+        builder.<ChangeServerNetworkInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeServerNetworkInterfaceRequestBody.class),
+            f -> f.withMarshaller(ChangeServerNetworkInterfaceRequest::getBody,
+                ChangeServerNetworkInterfaceRequest::setBody));
 
         // response
 

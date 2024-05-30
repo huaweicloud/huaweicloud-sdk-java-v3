@@ -77,7 +77,7 @@ public class SearchCodeTableValuesRequest {
     }
 
     /**
-     * 实体ID
+     * 实体ID，填写String类型替代Long类型。
      * @return id
      */
     public String getId() {
@@ -94,7 +94,7 @@ public class SearchCodeTableValuesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

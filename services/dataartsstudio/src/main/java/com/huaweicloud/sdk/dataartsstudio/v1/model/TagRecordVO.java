@@ -14,12 +14,12 @@ public class TagRecordVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_id")
 
-    private Long tagId;
+    private String tagId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_name")
@@ -29,7 +29,7 @@ public class TagRecordVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_id")
 
-    private Long bizId;
+    private String bizId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_type")
@@ -56,37 +56,37 @@ public class TagRecordVO {
 
     private OffsetDateTime updateTime;
 
-    public TagRecordVO withId(Long id) {
+    public TagRecordVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public TagRecordVO withTagId(Long tagId) {
+    public TagRecordVO withTagId(String tagId) {
         this.tagId = tagId;
         return this;
     }
 
     /**
-     * 标签ID。
+     * 标签ID，填写String类型替代Long类型。
      * @return tagId
      */
-    public Long getTagId() {
+    public String getTagId() {
         return tagId;
     }
 
-    public void setTagId(Long tagId) {
+    public void setTagId(String tagId) {
         this.tagId = tagId;
     }
 
@@ -107,20 +107,20 @@ public class TagRecordVO {
         this.tagName = tagName;
     }
 
-    public TagRecordVO withBizId(Long bizId) {
+    public TagRecordVO withBizId(String bizId) {
         this.bizId = bizId;
         return this;
     }
 
     /**
-     * 实体ID。
+     * 实体ID，填写String类型替代Long类型。
      * @return bizId
      */
-    public Long getBizId() {
+    public String getBizId() {
         return bizId;
     }
 
-    public void setBizId(Long bizId) {
+    public void setBizId(String bizId) {
         this.bizId = bizId;
     }
 
@@ -181,7 +181,7 @@ public class TagRecordVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -198,7 +198,7 @@ public class TagRecordVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

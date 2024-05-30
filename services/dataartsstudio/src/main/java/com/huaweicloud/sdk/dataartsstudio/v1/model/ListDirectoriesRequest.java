@@ -36,7 +36,7 @@ public class ListDirectoriesRequest {
     private Integer offset;
 
     /**
-     * 获取该目录下的数据，如果有子目录，获取所有子目录的数据。CODE(码表目录)、STANDARD_ELEMENT(数据标准目录)。
+     * 获取该目录下的数据，如果有子目录，获取所有子目录的数据。 枚举值：   - CODE: 码表目录   - STANDARD_ELEMENT: 数据标准目录 
      */
     public static final class TypeEnum {
 
@@ -152,7 +152,7 @@ public class ListDirectoriesRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -187,7 +187,7 @@ public class ListDirectoriesRequest {
     }
 
     /**
-     * 获取该目录下的数据，如果有子目录，获取所有子目录的数据。CODE(码表目录)、STANDARD_ELEMENT(数据标准目录)。
+     * 获取该目录下的数据，如果有子目录，获取所有子目录的数据。 枚举值：   - CODE: 码表目录   - STANDARD_ELEMENT: 数据标准目录 
      * @return type
      */
     public TypeEnum getType() {

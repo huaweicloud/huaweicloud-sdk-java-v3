@@ -16,7 +16,7 @@ public class ExportParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
 
-    private List<Long> ids = null;
+    private List<String> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asyn")
@@ -31,29 +31,29 @@ public class ExportParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_id")
 
-    private Long directoryId;
+    private String directoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_id")
 
-    private Long bizCatalogId;
+    private String bizCatalogId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "biz_catalog_id_list")
 
-    private List<Long> bizCatalogIdList = null;
+    private List<String> bizCatalogIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_id")
 
-    private Long modelId;
+    private String modelId;
 
-    public ExportParam withIds(List<Long> ids) {
+    public ExportParam withIds(List<String> ids) {
         this.ids = ids;
         return this;
     }
 
-    public ExportParam addIdsItem(Long idsItem) {
+    public ExportParam addIdsItem(String idsItem) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -61,7 +61,7 @@ public class ExportParam {
         return this;
     }
 
-    public ExportParam withIds(Consumer<List<Long>> idsSetter) {
+    public ExportParam withIds(Consumer<List<String>> idsSetter) {
         if (this.ids == null) {
             this.ids = new ArrayList<>();
         }
@@ -70,14 +70,14 @@ public class ExportParam {
     }
 
     /**
-     * 导出对象ID的列表，如：某几个逻辑模型的ID。
+     * 导出对象ID的列表，如：某几个逻辑模型的ID，填写String类型替代Long类型。
      * @return ids
      */
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 
@@ -115,46 +115,46 @@ public class ExportParam {
         this.type = type;
     }
 
-    public ExportParam withDirectoryId(Long directoryId) {
+    public ExportParam withDirectoryId(String directoryId) {
         this.directoryId = directoryId;
         return this;
     }
 
     /**
-     * 所属目录ID。
+     * 所属目录ID，填写String类型替代Long类型。
      * @return directoryId
      */
-    public Long getDirectoryId() {
+    public String getDirectoryId() {
         return directoryId;
     }
 
-    public void setDirectoryId(Long directoryId) {
+    public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
 
-    public ExportParam withBizCatalogId(Long bizCatalogId) {
+    public ExportParam withBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
         return this;
     }
 
     /**
-     * 所属业务分层的ID。
+     * 所属业务分层的ID，填写String类型替代Long类型。
      * @return bizCatalogId
      */
-    public Long getBizCatalogId() {
+    public String getBizCatalogId() {
         return bizCatalogId;
     }
 
-    public void setBizCatalogId(Long bizCatalogId) {
+    public void setBizCatalogId(String bizCatalogId) {
         this.bizCatalogId = bizCatalogId;
     }
 
-    public ExportParam withBizCatalogIdList(List<Long> bizCatalogIdList) {
+    public ExportParam withBizCatalogIdList(List<String> bizCatalogIdList) {
         this.bizCatalogIdList = bizCatalogIdList;
         return this;
     }
 
-    public ExportParam addBizCatalogIdListItem(Long bizCatalogIdListItem) {
+    public ExportParam addBizCatalogIdListItem(String bizCatalogIdListItem) {
         if (this.bizCatalogIdList == null) {
             this.bizCatalogIdList = new ArrayList<>();
         }
@@ -162,7 +162,7 @@ public class ExportParam {
         return this;
     }
 
-    public ExportParam withBizCatalogIdList(Consumer<List<Long>> bizCatalogIdListSetter) {
+    public ExportParam withBizCatalogIdList(Consumer<List<String>> bizCatalogIdListSetter) {
         if (this.bizCatalogIdList == null) {
             this.bizCatalogIdList = new ArrayList<>();
         }
@@ -174,28 +174,28 @@ public class ExportParam {
      * 所属的业务分层的ID列表。
      * @return bizCatalogIdList
      */
-    public List<Long> getBizCatalogIdList() {
+    public List<String> getBizCatalogIdList() {
         return bizCatalogIdList;
     }
 
-    public void setBizCatalogIdList(List<Long> bizCatalogIdList) {
+    public void setBizCatalogIdList(List<String> bizCatalogIdList) {
         this.bizCatalogIdList = bizCatalogIdList;
     }
 
-    public ExportParam withModelId(Long modelId) {
+    public ExportParam withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
 
     /**
-     * 所属关系建模的模型ID，导出关系模型需要此参数。
+     * 所属关系建模的模型ID，导出关系模型需要此参数，填写String类型替代Long类型。
      * @return modelId
      */
-    public Long getModelId() {
+    public String getModelId() {
         return modelId;
     }
 
-    public void setModelId(Long modelId) {
+    public void setModelId(String modelId) {
         this.modelId = modelId;
     }
 

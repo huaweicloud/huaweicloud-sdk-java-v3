@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.AddImageMemberResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsResponse;
@@ -17,18 +20,25 @@ import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchShowPhoneConnectInfosRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchShowPhoneConnectInfosResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.ConnectionRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageMemberResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
@@ -53,6 +63,10 @@ import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListImageMembersRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListImageMembersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListJobsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListProjectTagsRequest;
@@ -123,6 +137,34 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameResponse;
 
 @SuppressWarnings("unchecked")
 public class CphMeta {
+
+    public static final HttpRequestDef<AddImageMemberRequest, AddImageMemberResponse> addImageMember =
+        genForAddImageMember();
+
+    private static HttpRequestDef<AddImageMemberRequest, AddImageMemberResponse> genForAddImageMember() {
+        // basic
+        HttpRequestDef.Builder<AddImageMemberRequest, AddImageMemberResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddImageMemberRequest.class, AddImageMemberResponse.class)
+                .withName("AddImageMember")
+                .withUri("/v1/{project_id}/cloud-phone/images/{image_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddImageMemberRequest::getImageId, AddImageMemberRequest::setImageId));
+        builder.<AddImageMemberRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddImageMemberRequestBody.class),
+            f -> f.withMarshaller(AddImageMemberRequest::getBody, AddImageMemberRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
         genForBatchCreateTags();
@@ -244,6 +286,33 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchShowPhoneConnectInfosRequest, BatchShowPhoneConnectInfosResponse> batchShowPhoneConnectInfos =
+        genForBatchShowPhoneConnectInfos();
+
+    private static HttpRequestDef<BatchShowPhoneConnectInfosRequest, BatchShowPhoneConnectInfosResponse> genForBatchShowPhoneConnectInfos() {
+        // basic
+        HttpRequestDef.Builder<BatchShowPhoneConnectInfosRequest, BatchShowPhoneConnectInfosResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchShowPhoneConnectInfosRequest.class,
+                    BatchShowPhoneConnectInfosResponse.class)
+                .withName("BatchShowPhoneConnectInfos")
+                .withUri("/v1/{project_id}/cloud-phone/phones/batch-connection")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ConnectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConnectionRequestBody.class),
+            f -> f.withMarshaller(BatchShowPhoneConnectInfosRequest::getBody,
+                BatchShowPhoneConnectInfosRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeCloudPhoneServerRequest, ChangeCloudPhoneServerResponse> changeCloudPhoneServer =
         genForChangeCloudPhoneServer();
 
@@ -350,6 +419,56 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteImageRequest, DeleteImageResponse> deleteImage = genForDeleteImage();
+
+    private static HttpRequestDef<DeleteImageRequest, DeleteImageResponse> genForDeleteImage() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageRequest, DeleteImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageRequest.class, DeleteImageResponse.class)
+                .withName("DeleteImage")
+                .withUri("/v1/{project_id}/cloud-phone/images/{image_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageRequest::getImageId, DeleteImageRequest::setImageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteImageMemberRequest, DeleteImageMemberResponse> deleteImageMember =
+        genForDeleteImageMember();
+
+    private static HttpRequestDef<DeleteImageMemberRequest, DeleteImageMemberResponse> genForDeleteImageMember() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageMemberRequest, DeleteImageMemberResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageMemberRequest.class, DeleteImageMemberResponse.class)
+                .withName("DeleteImageMember")
+                .withUri("/v1/{project_id}/cloud-phone/images/{image_id}/members/{member_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageMemberRequest::getImageId, DeleteImageMemberRequest::setImageId));
+        builder.<String>withRequestField("member_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageMemberRequest::getMemberId, DeleteImageMemberRequest::setMemberId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteShareAppsRequest, DeleteShareAppsResponse> deleteShareApps =
         genForDeleteShareApps();
 
@@ -431,6 +550,12 @@ public class CphMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("image_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudPhoneImagesRequest::getImageType,
+                ListCloudPhoneImagesRequest::setImageType));
 
         // response
 
@@ -651,6 +776,91 @@ public class CphMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEncodeServersRequest::getServerId, ListEncodeServersRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageMembersRequest, ListImageMembersResponse> listImageMembers =
+        genForListImageMembers();
+
+    private static HttpRequestDef<ListImageMembersRequest, ListImageMembersResponse> genForListImageMembers() {
+        // basic
+        HttpRequestDef.Builder<ListImageMembersRequest, ListImageMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageMembersRequest.class, ListImageMembersResponse.class)
+                .withName("ListImageMembers")
+                .withUri("/v1/{project_id}/cloud-phone/images/{image_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getImageId, ListImageMembersRequest::setImageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImagesRequest, ListImagesResponse> listImages = genForListImages();
+
+    private static HttpRequestDef<ListImagesRequest, ListImagesResponse> genForListImages() {
+        // basic
+        HttpRequestDef.Builder<ListImagesRequest, ListImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImagesRequest.class, ListImagesResponse.class)
+                .withName("ListImages")
+                .withUri("/v1/{project_id}/cloud-phone/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getImageType, ListImagesRequest::setImageType));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImagesRequest::getStatus, ListImagesRequest::setStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImagesRequest::getOffset, ListImagesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImagesRequest::getLimit, ListImagesRequest::setLimit));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getImageId, ListImagesRequest::setImageId));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getImageName, ListImagesRequest::setImageName));
+        builder.<Long>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImagesRequest::getCreateSince, ListImagesRequest::setCreateSince));
+        builder.<Long>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImagesRequest::getCreateUntil, ListImagesRequest::setCreateUntil));
+        builder.<String>withRequestField("src_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getSrcProjectId, ListImagesRequest::setSrcProjectId));
 
         // response
 

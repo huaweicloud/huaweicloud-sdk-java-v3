@@ -345,6 +345,7 @@ public class CdnAsyncClient {
      * @param request ListDomainsRequest 请求对象
      * @return CompletableFuture<ListDomainsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.listDomains);
     }
@@ -359,6 +360,7 @@ public class CdnAsyncClient {
      * @param request ListDomainsRequest 请求对象
      * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.listDomains, hcClient);
     }

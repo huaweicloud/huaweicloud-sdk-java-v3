@@ -13,7 +13,7 @@ public class CatalogLevelVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
@@ -30,20 +30,20 @@ public class CatalogLevelVO {
 
     private String nameEn;
 
-    public CatalogLevelVO withId(Long id) {
+    public CatalogLevelVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编号。
+     * 编号，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,7 +53,7 @@ public class CatalogLevelVO {
     }
 
     /**
-     * 层级。
+     * 层级。取值范围为1-7。
      * @return level
      */
     public Integer getLevel() {

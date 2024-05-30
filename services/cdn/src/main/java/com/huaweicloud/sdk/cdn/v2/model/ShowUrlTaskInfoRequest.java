@@ -90,7 +90,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 偏移量：特定数据字段与起始数据字段位置的距离。
+     * 偏移量：特定数据字段与起始数据字段位置的距离，默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 单次查询数据条数，上限为100。
+     * 单次查询数据条数，上限为100，默认为10。
      * @return limit
      */
     public Integer getLimit() {

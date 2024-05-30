@@ -80,7 +80,7 @@ public class ExportDesignModelTableDdlRequest {
     }
 
     /**
-     * 所属关系建模的模型ID。
+     * 所属关系建模的模型ID，填写String类型替代Long类型。
      * @return modelId
      */
     public String getModelId() {

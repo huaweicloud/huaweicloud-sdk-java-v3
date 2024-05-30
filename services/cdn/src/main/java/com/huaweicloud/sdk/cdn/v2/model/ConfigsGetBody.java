@@ -51,7 +51,7 @@ public class ConfigsGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    private List<SourcesConfig> sources = null;
+    private List<SourcesConfigResponseBody> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_protocol")
@@ -187,6 +187,11 @@ public class ConfigsGetBody {
     @JsonProperty(value = "browser_cache_rules")
 
     private List<BrowserCacheRules> browserCacheRules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_area_filter")
+
+    private List<AccessAreaFilter> accessAreaFilter = null;
 
     public ConfigsGetBody withBusinessType(String businessType) {
         this.businessType = businessType;
@@ -357,12 +362,12 @@ public class ConfigsGetBody {
         this.https = https;
     }
 
-    public ConfigsGetBody withSources(List<SourcesConfig> sources) {
+    public ConfigsGetBody withSources(List<SourcesConfigResponseBody> sources) {
         this.sources = sources;
         return this;
     }
 
-    public ConfigsGetBody addSourcesItem(SourcesConfig sourcesItem) {
+    public ConfigsGetBody addSourcesItem(SourcesConfigResponseBody sourcesItem) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -370,7 +375,7 @@ public class ConfigsGetBody {
         return this;
     }
 
-    public ConfigsGetBody withSources(Consumer<List<SourcesConfig>> sourcesSetter) {
+    public ConfigsGetBody withSources(Consumer<List<SourcesConfigResponseBody>> sourcesSetter) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -382,11 +387,11 @@ public class ConfigsGetBody {
      * 源站配置。
      * @return sources
      */
-    public List<SourcesConfig> getSources() {
+    public List<SourcesConfigResponseBody> getSources() {
         return sources;
     }
 
-    public void setSources(List<SourcesConfig> sources) {
+    public void setSources(List<SourcesConfigResponseBody> sources) {
         this.sources = sources;
     }
 
@@ -1097,6 +1102,39 @@ public class ConfigsGetBody {
         this.browserCacheRules = browserCacheRules;
     }
 
+    public ConfigsGetBody withAccessAreaFilter(List<AccessAreaFilter> accessAreaFilter) {
+        this.accessAreaFilter = accessAreaFilter;
+        return this;
+    }
+
+    public ConfigsGetBody addAccessAreaFilterItem(AccessAreaFilter accessAreaFilterItem) {
+        if (this.accessAreaFilter == null) {
+            this.accessAreaFilter = new ArrayList<>();
+        }
+        this.accessAreaFilter.add(accessAreaFilterItem);
+        return this;
+    }
+
+    public ConfigsGetBody withAccessAreaFilter(Consumer<List<AccessAreaFilter>> accessAreaFilterSetter) {
+        if (this.accessAreaFilter == null) {
+            this.accessAreaFilter = new ArrayList<>();
+        }
+        accessAreaFilterSetter.accept(this.accessAreaFilter);
+        return this;
+    }
+
+    /**
+     * Get accessAreaFilter
+     * @return accessAreaFilter
+     */
+    public List<AccessAreaFilter> getAccessAreaFilter() {
+        return accessAreaFilter;
+    }
+
+    public void setAccessAreaFilter(List<AccessAreaFilter> accessAreaFilter) {
+        this.accessAreaFilter = accessAreaFilter;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1132,7 +1170,8 @@ public class ConfigsGetBody {
             && Objects.equals(this.quic, that.quic)
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules)
             && Objects.equals(this.sni, that.sni) && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
-            && Objects.equals(this.browserCacheRules, that.browserCacheRules);
+            && Objects.equals(this.browserCacheRules, that.browserCacheRules)
+            && Objects.equals(this.accessAreaFilter, that.accessAreaFilter);
     }
 
     @Override
@@ -1171,7 +1210,8 @@ public class ConfigsGetBody {
             errorCodeRedirectRules,
             sni,
             requestUrlRewrite,
-            browserCacheRules);
+            browserCacheRules,
+            accessAreaFilter);
     }
 
     @Override
@@ -1213,6 +1253,7 @@ public class ConfigsGetBody {
         sb.append("    sni: ").append(toIndentedString(sni)).append("\n");
         sb.append("    requestUrlRewrite: ").append(toIndentedString(requestUrlRewrite)).append("\n");
         sb.append("    browserCacheRules: ").append(toIndentedString(browserCacheRules)).append("\n");
+        sb.append("    accessAreaFilter: ").append(toIndentedString(accessAreaFilter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

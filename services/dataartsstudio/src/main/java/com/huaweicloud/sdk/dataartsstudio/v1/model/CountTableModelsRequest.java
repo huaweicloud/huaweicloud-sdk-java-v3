@@ -23,7 +23,7 @@ public class CountTableModelsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_id")
 
-    private Long modelId;
+    private String modelId;
 
     public CountTableModelsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -61,20 +61,20 @@ public class CountTableModelsRequest {
         this.xProjectId = xProjectId;
     }
 
-    public CountTableModelsRequest withModelId(Long modelId) {
+    public CountTableModelsRequest withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
 
     /**
-     * 依据关系建模的模型ID查询统计信息。
+     * 依据关系建模的模型ID查询统计信息，填写String类型替代Long类型。
      * @return modelId
      */
-    public Long getModelId() {
+    public String getModelId() {
         return modelId;
     }
 
-    public void setModelId(Long modelId) {
+    public void setModelId(String modelId) {
         this.modelId = modelId;
     }
 

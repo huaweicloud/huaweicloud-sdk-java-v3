@@ -90,6 +90,11 @@ public class ListCustomerselfResourceRecordsRequest {
 
     private String billDateEnd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistic_type")
+
+    private Integer statisticType;
+
     public ListCustomerselfResourceRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -166,7 +171,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 计费模式。1：包年/包月3：按需10：预留实例 此参数不携带时，不作为筛选条件。
+     * 计费模式。1：包年/包月3：按需10：预留实例11：节省计划 此参数不携带时，不作为筛选条件；不支持携带值为空或携带值为空串或携带值为null。
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -183,7 +188,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更此参数不携带或携带值为空时，不作为筛选条件。
+     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费18：消费-按月付费20：退款-变更23：消费-节省计划抵扣24：退款-包年/包月转按需此参数不携带或携带值为空时，不作为筛选条件。
      * minimum: 0
      * maximum: 127
      * @return billType
@@ -342,7 +347,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 查询的资源消费记录的开始日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，默认值取cycle月份的第一天。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
+     * 查询的资源消费记录的开始日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，默认值取cycle月份的第一天。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。按账期类型统计时字段不生效。
      * @return billDateBegin
      */
     public String getBillDateBegin() {
@@ -359,7 +364,7 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     /**
-     * 查询的资源消费记录的结束日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，默认值取cycle月份的最后一天。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
+     * 查询的资源消费记录的结束日期，东八区时间，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，默认值取cycle月份的最后一天。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。按账期类型统计时字段不生效。
      * @return billDateEnd
      */
     public String getBillDateEnd() {
@@ -368,6 +373,25 @@ public class ListCustomerselfResourceRecordsRequest {
 
     public void setBillDateEnd(String billDateEnd) {
         this.billDateEnd = billDateEnd;
+    }
+
+    public ListCustomerselfResourceRecordsRequest withStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
+        return this;
+    }
+
+    /**
+     * 统计类型。默认值为3。1：按账期3：按明细该参数不携带或携带值为空时，取默认值3。
+     * minimum: 1
+     * maximum: 3
+     * @return statisticType
+     */
+    public Integer getStatisticType() {
+        return statisticType;
+    }
+
+    public void setStatisticType(Integer statisticType) {
+        this.statisticType = statisticType;
     }
 
     @Override
@@ -388,7 +412,8 @@ public class ListCustomerselfResourceRecordsRequest {
             && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
             && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
             && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.billDateBegin, that.billDateBegin)
-            && Objects.equals(this.billDateEnd, that.billDateEnd);
+            && Objects.equals(this.billDateEnd, that.billDateEnd)
+            && Objects.equals(this.statisticType, that.statisticType);
     }
 
     @Override
@@ -408,7 +433,8 @@ public class ListCustomerselfResourceRecordsRequest {
             subCustomerId,
             tradeId,
             billDateBegin,
-            billDateEnd);
+            billDateEnd,
+            statisticType);
     }
 
     @Override
@@ -431,6 +457,7 @@ public class ListCustomerselfResourceRecordsRequest {
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
         sb.append("    billDateBegin: ").append(toIndentedString(billDateBegin)).append("\n");
         sb.append("    billDateEnd: ").append(toIndentedString(billDateEnd)).append("\n");
+        sb.append("    statisticType: ").append(toIndentedString(statisticType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

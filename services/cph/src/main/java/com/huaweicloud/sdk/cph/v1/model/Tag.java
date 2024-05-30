@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 键。  - 最大长度127个unicode字符。  - key不能为空。
+     * 键。  - 最大长度127个unicode字符。          - 不能为空，可以包含任意语种字母、数字、空格和_.：=+-@，但首尾不能含有空所有服务均可在标签输入框下拉选择同一标格，不能以_sys_开头。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Tag {
     }
 
     /**
-     * 值列表。  - 每个值最大长度255个unicode字符。
+     * 值列表。  - 每个值最大长度255个unicode字符。 - 不能为空，可以包含任意语种字母、、数字、空格和_.：=+-@，但首尾不能含有空格。
      * @return value
      */
     public String getValue() {

@@ -85,7 +85,7 @@ public class ListCostsResponse extends SdkResponse {
     }
 
     /**
-     * 按天或按月的明细金额。
+     * 按天或按月的明细金额，具体请参见表 CostDataByDimension。
      * @return costData
      */
     public List<CostDataByDimension> getCostData() {

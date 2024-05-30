@@ -41,7 +41,7 @@ public class SearchSubjectRequest {
     private String owner;
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      */
     public static final class StatusEnum {
 
@@ -162,7 +162,7 @@ public class SearchSubjectRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    private Long parentId;
+    private String parentId;
 
     public SearchSubjectRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -257,7 +257,7 @@ public class SearchSubjectRequest {
     }
 
     /**
-     * 业务状态。DRAFT(草稿)、PUBLISH_DEVELOPING(发布待审批)、PUBLISHED(已发布)、OFFLINE_DEVELOPING(下线待审批)、OFFLINE(已下线)、REJECT(已驳回)。
+     * 业务状态。 枚举值：   - DRAFT: 草稿   - PUBLISH_DEVELOPING: 发布待审批   - PUBLISHED: 已发布   - OFFLINE_DEVELOPING: 下线待审批   - OFFLINE: 已下线   - REJECT: 已驳回 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -308,7 +308,7 @@ public class SearchSubjectRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */
@@ -337,20 +337,20 @@ public class SearchSubjectRequest {
         this.offset = offset;
     }
 
-    public SearchSubjectRequest withParentId(Long parentId) {
+    public SearchSubjectRequest withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
     /**
-     * 父目录ID，根节点没有此ID，空值为所有，-1为根节点下节点。
+     * 父目录ID，根节点没有此ID，空值为所有，-1为根节点下节点。填写String类型替代Long类型。
      * @return parentId
      */
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 

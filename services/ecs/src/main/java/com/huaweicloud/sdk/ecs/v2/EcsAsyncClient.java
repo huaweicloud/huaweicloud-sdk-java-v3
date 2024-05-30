@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.ecs.v2.model.BatchUpdateServersNameRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchUpdateServersNameResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerChargeModeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerChargeModeResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeServerNetworkInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ChangeServerNetworkInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithCloudInitResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitRequest;
@@ -598,6 +600,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<ChangeServerChargeModeRequest, ChangeServerChargeModeResponse> changeServerChargeModeAsyncInvoker(
         ChangeServerChargeModeRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.changeServerChargeMode, hcClient);
+    }
+
+    /**
+     * 更新云服务器指定网卡属性
+     *
+     * 更新云服务器指定网卡属性，当前仅支持更新网卡IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeServerNetworkInterfaceRequest 请求对象
+     * @return CompletableFuture<ChangeServerNetworkInterfaceResponse>
+     */
+    public CompletableFuture<ChangeServerNetworkInterfaceResponse> changeServerNetworkInterfaceAsync(
+        ChangeServerNetworkInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.changeServerNetworkInterface);
+    }
+
+    /**
+     * 更新云服务器指定网卡属性
+     *
+     * 更新云服务器指定网卡属性，当前仅支持更新网卡IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeServerNetworkInterfaceRequest 请求对象
+     * @return AsyncInvoker<ChangeServerNetworkInterfaceRequest, ChangeServerNetworkInterfaceResponse>
+     */
+    public AsyncInvoker<ChangeServerNetworkInterfaceRequest, ChangeServerNetworkInterfaceResponse> changeServerNetworkInterfaceAsyncInvoker(
+        ChangeServerNetworkInterfaceRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.changeServerNetworkInterface, hcClient);
     }
 
     /**

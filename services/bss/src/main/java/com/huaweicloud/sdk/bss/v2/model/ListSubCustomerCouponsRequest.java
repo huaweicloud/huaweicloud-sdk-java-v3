@@ -122,7 +122,7 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 优惠券类型：1：代金券2：折扣券3：产品券4：现金券此参数不携带或携带值为空时，不作为筛选条件。
+     * 优惠券类型：1：代金券2：折扣券3：产品券4：现金券。此参数不携带或携带值为空或携带值为null时，不作为筛选条件；不支持携带值为空串。
      * minimum: 1
      * maximum: 4
      * @return couponType
@@ -141,7 +141,7 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期此参数不携带或携带值为空时，不作为筛选条件。
+     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期。此参数不携带或携带值为空时，不作为筛选条件。 说明： 已过期优惠券，只返回12个月以内的数据。
      * minimum: 1
      * maximum: 4
      * @return status
@@ -160,7 +160,7 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
+     * 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串或携带值为null。
      * @return activeStartTime
      */
     public String getActiveStartTime() {
@@ -177,7 +177,7 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件。
+     * 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串或携带值为null。
      * @return activeEndTime
      */
     public String getActiveEndTime() {

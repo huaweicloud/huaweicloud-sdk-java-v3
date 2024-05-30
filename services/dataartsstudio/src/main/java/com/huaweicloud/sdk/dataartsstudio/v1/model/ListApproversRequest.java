@@ -77,7 +77,7 @@ public class ListApproversRequest {
     }
 
     /**
-     * 审核人名字
+     * 审核人姓名。
      * @return approverName
      */
     public String getApproverName() {
@@ -94,7 +94,7 @@ public class ListApproversRequest {
     }
 
     /**
-     * 查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
+     * 每页查询条数，即查询Y条数据。默认值50，取值范围[1,100]。
      * maximum: 100
      * @return limit
      */

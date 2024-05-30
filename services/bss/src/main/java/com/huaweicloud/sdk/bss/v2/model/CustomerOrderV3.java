@@ -199,7 +199,7 @@ public class CustomerOrderV3 {
     }
 
     /**
-     * 订单类型。 1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
+     * 订单类型。 1：开通2：续订3：变更4：退订10：包年/包月转按需11：按需转包年/包月13：试用14：转商用15：费用调整
      * @return orderType
      */
     public Integer getOrderType() {

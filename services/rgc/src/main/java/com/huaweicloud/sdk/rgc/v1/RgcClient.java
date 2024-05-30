@@ -7,8 +7,8 @@ import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitRequest;
-import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationUnitResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ListControlsForOrganizationalUnitResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowControlOperateResponse;
 
@@ -89,12 +89,12 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListControlsForOrganizationUnitRequest 请求对象
-     * @return ListControlsForOrganizationUnitResponse
+     * @param request ListControlsForOrganizationalUnitRequest 请求对象
+     * @return ListControlsForOrganizationalUnitResponse
      */
-    public ListControlsForOrganizationUnitResponse listControlsForOrganizationUnit(
-        ListControlsForOrganizationUnitRequest request) {
-        return hcClient.syncInvokeHttp(request, RgcMeta.listControlsForOrganizationUnit);
+    public ListControlsForOrganizationalUnitResponse listControlsForOrganizationalUnit(
+        ListControlsForOrganizationalUnitRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.listControlsForOrganizationalUnit);
     }
 
     /**
@@ -104,12 +104,12 @@ public class RgcClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListControlsForOrganizationUnitRequest 请求对象
-     * @return SyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse>
+     * @param request ListControlsForOrganizationalUnitRequest 请求对象
+     * @return SyncInvoker<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse>
      */
-    public SyncInvoker<ListControlsForOrganizationUnitRequest, ListControlsForOrganizationUnitResponse> listControlsForOrganizationUnitInvoker(
-        ListControlsForOrganizationUnitRequest request) {
-        return new SyncInvoker<>(request, RgcMeta.listControlsForOrganizationUnit, hcClient);
+    public SyncInvoker<ListControlsForOrganizationalUnitRequest, ListControlsForOrganizationalUnitResponse> listControlsForOrganizationalUnitInvoker(
+        ListControlsForOrganizationalUnitRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.listControlsForOrganizationalUnit, hcClient);
     }
 
     /**

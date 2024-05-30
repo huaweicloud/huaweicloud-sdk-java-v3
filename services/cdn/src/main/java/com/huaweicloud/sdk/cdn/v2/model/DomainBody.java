@@ -113,7 +113,7 @@ public class DomainBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    private List<Sources> sources = null;
+    private List<SourcesRequestBody> sources = null;
 
     /**
      * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
@@ -235,12 +235,12 @@ public class DomainBody {
         this.businessType = businessType;
     }
 
-    public DomainBody withSources(List<Sources> sources) {
+    public DomainBody withSources(List<SourcesRequestBody> sources) {
         this.sources = sources;
         return this;
     }
 
-    public DomainBody addSourcesItem(Sources sourcesItem) {
+    public DomainBody addSourcesItem(SourcesRequestBody sourcesItem) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -248,7 +248,7 @@ public class DomainBody {
         return this;
     }
 
-    public DomainBody withSources(Consumer<List<Sources>> sourcesSetter) {
+    public DomainBody withSources(Consumer<List<SourcesRequestBody>> sourcesSetter) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -260,11 +260,11 @@ public class DomainBody {
      * 源站配置。
      * @return sources
      */
-    public List<Sources> getSources() {
+    public List<SourcesRequestBody> getSources() {
         return sources;
     }
 
-    public void setSources(List<Sources> sources) {
+    public void setSources(List<SourcesRequestBody> sources) {
         this.sources = sources;
     }
 

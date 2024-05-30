@@ -91,7 +91,7 @@ public class ListStoredValueCardsRequest {
     }
 
     /**
-     * 查询的优惠券数量，默认值为10。
+     * 查询的储值卡的数量，默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit

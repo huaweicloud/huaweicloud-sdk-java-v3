@@ -16,7 +16,7 @@ public class MappingSourceFieldVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_field_id")
 
-    private Long targetFieldId;
+    private String targetFieldId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_field_name")
@@ -43,20 +43,20 @@ public class MappingSourceFieldVO {
 
     private Boolean changed;
 
-    public MappingSourceFieldVO withTargetFieldId(Long targetFieldId) {
+    public MappingSourceFieldVO withTargetFieldId(String targetFieldId) {
         this.targetFieldId = targetFieldId;
         return this;
     }
 
     /**
-     * 目标字段ID，当前表的某个字段。
+     * 目标字段ID，当前表的某个字段，填写String类型替代Long类型。
      * @return targetFieldId
      */
-    public Long getTargetFieldId() {
+    public String getTargetFieldId() {
         return targetFieldId;
     }
 
-    public void setTargetFieldId(Long targetFieldId) {
+    public void setTargetFieldId(String targetFieldId) {
         this.targetFieldId = targetFieldId;
     }
 

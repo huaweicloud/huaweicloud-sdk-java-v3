@@ -39,7 +39,7 @@ public class EngineSimpleInfo {
     private String enterpriseProjectName;
 
     /**
-     * 微服务引擎专享版的类型，CSE为专享版引擎，CSE_Share表示为专业版引擎
+     * 微服务引擎的类型，CSE为专享版引擎，CSE_Share表示为专业版引擎
      */
     public static final class TypeEnum {
 
@@ -119,7 +119,7 @@ public class EngineSimpleInfo {
     private String description;
 
     /**
-     * 微服务引擎专享版的规格
+     * 微服务引擎的规格
      */
     public static final class FlavorEnum {
 
@@ -143,6 +143,46 @@ public class EngineSimpleInfo {
          */
         public static final FlavorEnum CSE_S1_XLARGE2 = new FlavorEnum("cse.s1.xlarge2");
 
+        /**
+         * Enum CSE_NACOS2_C1_LARGE_10 for value: "cse.nacos2.c1.large.10"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_LARGE_10 = new FlavorEnum("cse.nacos2.c1.large.10");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_20 for value: "cse.nacos2.c1.xlarge.20"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_20 = new FlavorEnum("cse.nacos2.c1.xlarge.20");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_50 for value: "cse.nacos2.c1.xlarge.50"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_50 = new FlavorEnum("cse.nacos2.c1.xlarge.50");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_60 for value: "cse.nacos2.c1.xlarge.60"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_60 = new FlavorEnum("cse.nacos2.c1.xlarge.60");
+
+        /**
+         * Enum CSE_NACOS2_C1_2XLARGE_100 for value: "cse.nacos2.c1.2xlarge.100"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_2XLARGE_100 = new FlavorEnum("cse.nacos2.c1.2xlarge.100");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_SMALL_1 for value: "cse.microgateway.pro.small.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_SMALL_1 = new FlavorEnum("cse.microgateway.pro.small.1");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_MEDIUM_1 for value: "cse.microgateway.pro.medium.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_MEDIUM_1 = new FlavorEnum("cse.microgateway.pro.medium.1");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_LARGE_1 for value: "cse.microgateway.pro.large.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_LARGE_1 = new FlavorEnum("cse.microgateway.pro.large.1");
+
         private static final Map<String, FlavorEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FlavorEnum> createStaticFields() {
@@ -151,6 +191,14 @@ public class EngineSimpleInfo {
             map.put("cse.s1.medium2", CSE_S1_MEDIUM2);
             map.put("cse.s1.large2", CSE_S1_LARGE2);
             map.put("cse.s1.xlarge2", CSE_S1_XLARGE2);
+            map.put("cse.nacos2.c1.large.10", CSE_NACOS2_C1_LARGE_10);
+            map.put("cse.nacos2.c1.xlarge.20", CSE_NACOS2_C1_XLARGE_20);
+            map.put("cse.nacos2.c1.xlarge.50", CSE_NACOS2_C1_XLARGE_50);
+            map.put("cse.nacos2.c1.xlarge.60", CSE_NACOS2_C1_XLARGE_60);
+            map.put("cse.nacos2.c1.2xlarge.100", CSE_NACOS2_C1_2XLARGE_100);
+            map.put("cse.microgateway.pro.small.1", CSE_MICROGATEWAY_PRO_SMALL_1);
+            map.put("cse.microgateway.pro.medium.1", CSE_MICROGATEWAY_PRO_MEDIUM_1);
+            map.put("cse.microgateway.pro.large.1", CSE_MICROGATEWAY_PRO_LARGE_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -211,7 +259,7 @@ public class EngineSimpleInfo {
     private String payment;
 
     /**
-     * 微服务引擎专享版的认证方式，RBAC/NONE
+     * 微服务引擎的认证方式，RBAC/NONE
      */
     public static final class AuthTypeEnum {
 
@@ -286,7 +334,7 @@ public class EngineSimpleInfo {
     private AuthTypeEnum authType;
 
     /**
-     * 微服务引擎专享版当前的状态
+     * 微服务引擎当前的状态
      */
     public static final class StatusEnum {
 
@@ -569,7 +617,7 @@ public class EngineSimpleInfo {
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎应用部署类型
      */
     public static final class SpecTypeEnum {
 
@@ -660,7 +708,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的ID
+     * 微服务引擎的ID
      * @return id
      */
     public String getId() {
@@ -694,7 +742,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版所属企业项目ID
+     * 微服务引擎所属企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -711,7 +759,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版所属企业项目名称
+     * 微服务引擎所属企业项目名称
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -728,7 +776,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的类型，CSE为专享版引擎，CSE_Share表示为专业版引擎
+     * 微服务引擎的类型，CSE为专享版引擎，CSE_Share表示为专业版引擎
      * @return type
      */
     public TypeEnum getType() {
@@ -745,7 +793,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的描述
+     * 微服务引擎的描述
      * @return description
      */
     public String getDescription() {
@@ -762,7 +810,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的规格
+     * 微服务引擎的规格
      * @return flavor
      */
     public FlavorEnum getFlavor() {
@@ -779,7 +827,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的计费方式，0表示包周期，1表示按需，2表示免费
+     * 微服务引擎的计费方式，0表示包周期，1表示按需，2表示免费
      * @return payment
      */
     public String getPayment() {
@@ -796,7 +844,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的认证方式，RBAC/NONE
+     * 微服务引擎的认证方式，RBAC/NONE
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -813,7 +861,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版当前的状态
+     * 微服务引擎当前的状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -830,7 +878,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版暴露的IP地址
+     * 微服务引擎暴露的IP地址
      * @return externalAddress
      */
     public String getExternalAddress() {
@@ -863,7 +911,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版组件的访问地址。
+     * 微服务引擎组件的访问地址。
      * @return serviceEndpoint
      */
     public Map<String, EntrypointItem> getServiceEndpoint() {
@@ -880,7 +928,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的公网IP地址
+     * 微服务引擎的公网IP地址
      * @return publicAddress
      */
     public String getPublicAddress() {
@@ -914,7 +962,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版的公网接入地址
+     * 微服务引擎的公网接入地址
      * @return publicServiceEndpoint
      */
     public Map<String, EntrypointItem> getPublicServiceEndpoint() {
@@ -931,7 +979,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版可支持的实例总数
+     * 微服务引擎可支持的实例总数
      * @return totalInstance
      */
     public Integer getTotalInstance() {
@@ -982,7 +1030,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版当前版本
+     * 微服务引擎当前版本
      * @return version
      */
     public String getVersion() {
@@ -999,7 +1047,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版最新版本
+     * 微服务引擎最新版本
      * @return latestVersion
      */
     public String getLatestVersion() {
@@ -1016,7 +1064,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版创建时间
+     * 微服务引擎创建时间
      * @return createTime
      */
     public Long getCreateTime() {
@@ -1033,7 +1081,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版到期时间
+     * 微服务引擎到期时间
      * @return dueTo
      */
     public Long getDueTo() {
@@ -1050,7 +1098,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版最近的任务ID
+     * 微服务引擎最近的任务ID
      * @return latestJobId
      */
     public Integer getLatestJobId() {
@@ -1084,7 +1132,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版允许的附加操作
+     * 微服务引擎允许的附加操作
      * @return engineAdditionalActions
      */
     public List<EngineAdditionalActionsEnum> getEngineAdditionalActions() {
@@ -1101,7 +1149,7 @@ public class EngineSimpleInfo {
     }
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎应用部署类型
      * @return specType
      */
     public SpecTypeEnum getSpecType() {

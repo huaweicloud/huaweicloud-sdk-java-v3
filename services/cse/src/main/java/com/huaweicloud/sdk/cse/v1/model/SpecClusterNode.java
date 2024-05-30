@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 微服务引擎专享版CCE节点列表
+ * 微服务引擎的CCE节点列表
  */
 public class SpecClusterNode {
 

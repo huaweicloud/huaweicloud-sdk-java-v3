@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建微服务引擎专享版请求结构体
+ * 创建微服务引擎请求结构体
  */
 public class EngineCreateReq {
 
@@ -29,7 +29,7 @@ public class EngineCreateReq {
     private String description;
 
     /**
-     * 微服务引擎专享版计费方式，1表示按需
+     * 微服务引擎计费方式，1表示按需
      */
     public static final class PaymentEnum {
 
@@ -98,7 +98,7 @@ public class EngineCreateReq {
     private PaymentEnum payment;
 
     /**
-     * 微服务引擎专享版的规格
+     * 微服务引擎的规格
      */
     public static final class FlavorEnum {
 
@@ -122,6 +122,46 @@ public class EngineCreateReq {
          */
         public static final FlavorEnum CSE_S1_XLARGE2 = new FlavorEnum("cse.s1.xlarge2");
 
+        /**
+         * Enum CSE_NACOS2_C1_LARGE_10 for value: "cse.nacos2.c1.large.10"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_LARGE_10 = new FlavorEnum("cse.nacos2.c1.large.10");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_20 for value: "cse.nacos2.c1.xlarge.20"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_20 = new FlavorEnum("cse.nacos2.c1.xlarge.20");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_50 for value: "cse.nacos2.c1.xlarge.50"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_50 = new FlavorEnum("cse.nacos2.c1.xlarge.50");
+
+        /**
+         * Enum CSE_NACOS2_C1_XLARGE_60 for value: "cse.nacos2.c1.xlarge.60"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_XLARGE_60 = new FlavorEnum("cse.nacos2.c1.xlarge.60");
+
+        /**
+         * Enum CSE_NACOS2_C1_2XLARGE_100 for value: "cse.nacos2.c1.2xlarge.100"
+         */
+        public static final FlavorEnum CSE_NACOS2_C1_2XLARGE_100 = new FlavorEnum("cse.nacos2.c1.2xlarge.100");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_SMALL_1 for value: "cse.microgateway.pro.small.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_SMALL_1 = new FlavorEnum("cse.microgateway.pro.small.1");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_MEDIUM_1 for value: "cse.microgateway.pro.medium.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_MEDIUM_1 = new FlavorEnum("cse.microgateway.pro.medium.1");
+
+        /**
+         * Enum CSE_MICROGATEWAY_PRO_LARGE_1 for value: "cse.microgateway.pro.large.1"
+         */
+        public static final FlavorEnum CSE_MICROGATEWAY_PRO_LARGE_1 = new FlavorEnum("cse.microgateway.pro.large.1");
+
         private static final Map<String, FlavorEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FlavorEnum> createStaticFields() {
@@ -130,6 +170,14 @@ public class EngineCreateReq {
             map.put("cse.s1.medium2", CSE_S1_MEDIUM2);
             map.put("cse.s1.large2", CSE_S1_LARGE2);
             map.put("cse.s1.xlarge2", CSE_S1_XLARGE2);
+            map.put("cse.nacos2.c1.large.10", CSE_NACOS2_C1_LARGE_10);
+            map.put("cse.nacos2.c1.xlarge.20", CSE_NACOS2_C1_XLARGE_20);
+            map.put("cse.nacos2.c1.xlarge.50", CSE_NACOS2_C1_XLARGE_50);
+            map.put("cse.nacos2.c1.xlarge.60", CSE_NACOS2_C1_XLARGE_60);
+            map.put("cse.nacos2.c1.2xlarge.100", CSE_NACOS2_C1_2XLARGE_100);
+            map.put("cse.microgateway.pro.small.1", CSE_MICROGATEWAY_PRO_SMALL_1);
+            map.put("cse.microgateway.pro.medium.1", CSE_MICROGATEWAY_PRO_MEDIUM_1);
+            map.put("cse.microgateway.pro.large.1", CSE_MICROGATEWAY_PRO_LARGE_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -190,7 +238,7 @@ public class EngineCreateReq {
     private List<String> azList = null;
 
     /**
-     * 微服务引擎专享版认证方式，RBAC为安全认证，NONE为无认证。
+     * ServiceComb引擎专享版与注册配置中心认证方式，RBAC为安全认证，NONE为无认证。
      */
     public static final class AuthTypeEnum {
 
@@ -295,26 +343,32 @@ public class EngineCreateReq {
     private EngineRbacPwd authCred;
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎部署类型
      */
     public static final class SpecTypeEnum {
-
-        /**
-         * Enum CSE for value: "CSE"
-         */
-        public static final SpecTypeEnum CSE = new SpecTypeEnum("CSE");
 
         /**
          * Enum CSE2 for value: "CSE2"
          */
         public static final SpecTypeEnum CSE2 = new SpecTypeEnum("CSE2");
 
+        /**
+         * Enum NACOS2 for value: "Nacos2"
+         */
+        public static final SpecTypeEnum NACOS2 = new SpecTypeEnum("Nacos2");
+
+        /**
+         * Enum MICROGATEWAY for value: "MicroGateway"
+         */
+        public static final SpecTypeEnum MICROGATEWAY = new SpecTypeEnum("MicroGateway");
+
         private static final Map<String, SpecTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecTypeEnum> createStaticFields() {
             Map<String, SpecTypeEnum> map = new HashMap<>();
-            map.put("CSE", CSE);
             map.put("CSE2", CSE2);
+            map.put("Nacos2", NACOS2);
+            map.put("MicroGateway", MICROGATEWAY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -374,13 +428,78 @@ public class EngineCreateReq {
 
     private Map<String, String> inputs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enginestateInfo")
+
+    private EngineCreateReqEnginestateInfo enginestateInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "periodType")
+
+    private Integer periodType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavorType")
+
+    private EngineCreateReqFlavorType flavorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterpriseProject")
+
+    private EngineCreateReqEnterpriseProject enterpriseProject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcCidr")
+
+    private String vpcCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceParams")
+
+    private EngineCreateReqResourceParams resourceParams;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "productId")
+
+    private String productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "capacityProductId")
+
+    private String capacityProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isFree")
+
+    private Boolean isFree;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnetName")
+
+    private String subnetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maintenanceConfig")
+
+    private EngineCreateReqMaintenanceConfig maintenanceConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elbid")
+
+    private String elbid;
+
     public EngineCreateReq withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 微服务引擎专享版的名称，名称为字母开头，字母、数字、-组成，且不能以-结尾，3-24个字符。
+     * 微服务引擎的名称，名称为字母开头，字母、数字、-组成，且不能以-结尾，3-24个字符。
      * @return name
      */
     public String getName() {
@@ -397,7 +516,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版描述，长度0~255。
+     * 微服务引擎描述，长度0~255。
      * @return description
      */
     public String getDescription() {
@@ -414,7 +533,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版计费方式，1表示按需
+     * 微服务引擎计费方式，1表示按需
      * @return payment
      */
     public PaymentEnum getPayment() {
@@ -431,7 +550,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版的规格
+     * 微服务引擎的规格
      * @return flavor
      */
     public FlavorEnum getFlavor() {
@@ -464,7 +583,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 当前局点可用区列表。
+     * 当前局点可用区列表，创建ServiceComb引擎专享版需要填写。
      * @return azList
      */
     public List<String> getAzList() {
@@ -481,7 +600,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版认证方式，RBAC为安全认证，NONE为无认证。
+     * ServiceComb引擎专享版与注册配置中心认证方式，RBAC为安全认证，NONE为无认证。
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -532,7 +651,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版子网ID
+     * 微服务引擎子网ID
      * @return networkId
      */
     public String getNetworkId() {
@@ -549,7 +668,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版子网划分
+     * 微服务引擎子网划分
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -566,7 +685,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版公网地址ID，当前为null
+     * ServiceComb引擎专享版公网地址ID，当前为null
      * @return publicIpId
      */
     public String getPublicIpId() {
@@ -609,7 +728,7 @@ public class EngineCreateReq {
     }
 
     /**
-     * 微服务引擎专享版应用部署类型
+     * 微服务引擎部署类型
      * @return specType
      */
     public SpecTypeEnum getSpecType() {
@@ -653,6 +772,288 @@ public class EngineCreateReq {
         this.inputs = inputs;
     }
 
+    public EngineCreateReq withEnginestateInfo(EngineCreateReqEnginestateInfo enginestateInfo) {
+        this.enginestateInfo = enginestateInfo;
+        return this;
+    }
+
+    public EngineCreateReq withEnginestateInfo(Consumer<EngineCreateReqEnginestateInfo> enginestateInfoSetter) {
+        if (this.enginestateInfo == null) {
+            this.enginestateInfo = new EngineCreateReqEnginestateInfo();
+            enginestateInfoSetter.accept(this.enginestateInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enginestateInfo
+     * @return enginestateInfo
+     */
+    public EngineCreateReqEnginestateInfo getEnginestateInfo() {
+        return enginestateInfo;
+    }
+
+    public void setEnginestateInfo(EngineCreateReqEnginestateInfo enginestateInfo) {
+        this.enginestateInfo = enginestateInfo;
+    }
+
+    public EngineCreateReq withPeriodType(Integer periodType) {
+        this.periodType = periodType;
+        return this;
+    }
+
+    /**
+     * 创建阶段类型
+     * @return periodType
+     */
+    public Integer getPeriodType() {
+        return periodType;
+    }
+
+    public void setPeriodType(Integer periodType) {
+        this.periodType = periodType;
+    }
+
+    public EngineCreateReq withFlavorType(EngineCreateReqFlavorType flavorType) {
+        this.flavorType = flavorType;
+        return this;
+    }
+
+    public EngineCreateReq withFlavorType(Consumer<EngineCreateReqFlavorType> flavorTypeSetter) {
+        if (this.flavorType == null) {
+            this.flavorType = new EngineCreateReqFlavorType();
+            flavorTypeSetter.accept(this.flavorType);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flavorType
+     * @return flavorType
+     */
+    public EngineCreateReqFlavorType getFlavorType() {
+        return flavorType;
+    }
+
+    public void setFlavorType(EngineCreateReqFlavorType flavorType) {
+        this.flavorType = flavorType;
+    }
+
+    public EngineCreateReq withEnterpriseProject(EngineCreateReqEnterpriseProject enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+        return this;
+    }
+
+    public EngineCreateReq withEnterpriseProject(Consumer<EngineCreateReqEnterpriseProject> enterpriseProjectSetter) {
+        if (this.enterpriseProject == null) {
+            this.enterpriseProject = new EngineCreateReqEnterpriseProject();
+            enterpriseProjectSetter.accept(this.enterpriseProject);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enterpriseProject
+     * @return enterpriseProject
+     */
+    public EngineCreateReqEnterpriseProject getEnterpriseProject() {
+        return enterpriseProject;
+    }
+
+    public void setEnterpriseProject(EngineCreateReqEnterpriseProject enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+    }
+
+    public EngineCreateReq withVpcCidr(String vpcCidr) {
+        this.vpcCidr = vpcCidr;
+        return this;
+    }
+
+    /**
+     * 网关vpc划分
+     * @return vpcCidr
+     */
+    public String getVpcCidr() {
+        return vpcCidr;
+    }
+
+    public void setVpcCidr(String vpcCidr) {
+        this.vpcCidr = vpcCidr;
+    }
+
+    public EngineCreateReq withResourceParams(EngineCreateReqResourceParams resourceParams) {
+        this.resourceParams = resourceParams;
+        return this;
+    }
+
+    public EngineCreateReq withResourceParams(Consumer<EngineCreateReqResourceParams> resourceParamsSetter) {
+        if (this.resourceParams == null) {
+            this.resourceParams = new EngineCreateReqResourceParams();
+            resourceParamsSetter.accept(this.resourceParams);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceParams
+     * @return resourceParams
+     */
+    public EngineCreateReqResourceParams getResourceParams() {
+        return resourceParams;
+    }
+
+    public void setResourceParams(EngineCreateReqResourceParams resourceParams) {
+        this.resourceParams = resourceParams;
+    }
+
+    public EngineCreateReq withProductId(String productId) {
+        this.productId = productId;
+        return this;
+    }
+
+    /**
+     * 产品ID
+     * @return productId
+     */
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public EngineCreateReq withCapacityProductId(String capacityProductId) {
+        this.capacityProductId = capacityProductId;
+        return this;
+    }
+
+    /**
+     * 容量产品ID
+     * @return capacityProductId
+     */
+    public String getCapacityProductId() {
+        return capacityProductId;
+    }
+
+    public void setCapacityProductId(String capacityProductId) {
+        this.capacityProductId = capacityProductId;
+    }
+
+    public EngineCreateReq withIsFree(Boolean isFree) {
+        this.isFree = isFree;
+        return this;
+    }
+
+    /**
+     * 微服务引擎是否免费
+     * @return isFree
+     */
+    public Boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
+    }
+
+    public EngineCreateReq withSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+        return this;
+    }
+
+    /**
+     * 微服务引擎使用的子网名称
+     * @return subnetName
+     */
+    public String getSubnetName() {
+        return subnetName;
+    }
+
+    public void setSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+    }
+
+    public EngineCreateReq withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public EngineCreateReq addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public EngineCreateReq withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public EngineCreateReq withMaintenanceConfig(EngineCreateReqMaintenanceConfig maintenanceConfig) {
+        this.maintenanceConfig = maintenanceConfig;
+        return this;
+    }
+
+    public EngineCreateReq withMaintenanceConfig(Consumer<EngineCreateReqMaintenanceConfig> maintenanceConfigSetter) {
+        if (this.maintenanceConfig == null) {
+            this.maintenanceConfig = new EngineCreateReqMaintenanceConfig();
+            maintenanceConfigSetter.accept(this.maintenanceConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get maintenanceConfig
+     * @return maintenanceConfig
+     */
+    public EngineCreateReqMaintenanceConfig getMaintenanceConfig() {
+        return maintenanceConfig;
+    }
+
+    public void setMaintenanceConfig(EngineCreateReqMaintenanceConfig maintenanceConfig) {
+        this.maintenanceConfig = maintenanceConfig;
+    }
+
+    public EngineCreateReq withElbid(String elbid) {
+        this.elbid = elbid;
+        return this;
+    }
+
+    /**
+     * 微服务引擎使用的elb的id
+     * @return elbid
+     */
+    public String getElbid() {
+        return elbid;
+    }
+
+    public void setElbid(String elbid) {
+        this.elbid = elbid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -668,7 +1069,16 @@ public class EngineCreateReq {
             && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.subnetCidr, that.subnetCidr)
             && Objects.equals(this.publicIpId, that.publicIpId) && Objects.equals(this.authCred, that.authCred)
-            && Objects.equals(this.specType, that.specType) && Objects.equals(this.inputs, that.inputs);
+            && Objects.equals(this.specType, that.specType) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.enginestateInfo, that.enginestateInfo)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.flavorType, that.flavorType)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject)
+            && Objects.equals(this.vpcCidr, that.vpcCidr) && Objects.equals(this.resourceParams, that.resourceParams)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.capacityProductId, that.capacityProductId)
+            && Objects.equals(this.isFree, that.isFree) && Objects.equals(this.subnetName, that.subnetName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.maintenanceConfig, that.maintenanceConfig)
+            && Objects.equals(this.elbid, that.elbid);
     }
 
     @Override
@@ -686,7 +1096,20 @@ public class EngineCreateReq {
             publicIpId,
             authCred,
             specType,
-            inputs);
+            inputs,
+            enginestateInfo,
+            periodType,
+            flavorType,
+            enterpriseProject,
+            vpcCidr,
+            resourceParams,
+            productId,
+            capacityProductId,
+            isFree,
+            subnetName,
+            tags,
+            maintenanceConfig,
+            elbid);
     }
 
     @Override
@@ -707,6 +1130,19 @@ public class EngineCreateReq {
         sb.append("    authCred: ").append(toIndentedString(authCred)).append("\n");
         sb.append("    specType: ").append(toIndentedString(specType)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
+        sb.append("    enginestateInfo: ").append(toIndentedString(enginestateInfo)).append("\n");
+        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
+        sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
+        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    vpcCidr: ").append(toIndentedString(vpcCidr)).append("\n");
+        sb.append("    resourceParams: ").append(toIndentedString(resourceParams)).append("\n");
+        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    capacityProductId: ").append(toIndentedString(capacityProductId)).append("\n");
+        sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    maintenanceConfig: ").append(toIndentedString(maintenanceConfig)).append("\n");
+        sb.append("    elbid: ").append(toIndentedString(elbid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

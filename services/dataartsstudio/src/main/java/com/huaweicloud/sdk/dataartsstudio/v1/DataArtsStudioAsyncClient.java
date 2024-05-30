@@ -269,6 +269,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesOverviewRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesOverviewResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceMarketApisRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceMarketApisResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDatabasesRequest;
@@ -465,6 +471,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataServiceInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataServiceInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
@@ -1362,7 +1370,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 关系建模统计信息
      *
-     * 关系建模统计信息。
+     * 关系建模页面，外层的统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1376,7 +1384,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 关系建模统计信息
      *
-     * 关系建模统计信息。
+     * 关系建模页面，外层的统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1420,7 +1428,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 标准覆盖率统计信息
      *
-     * 标准覆盖率统计信息。
+     * 查看某个数据标准在所有模型字段中的覆盖率，即使用该标准的字段占总字段的百分比。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1434,7 +1442,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 标准覆盖率统计信息
      *
-     * 标准覆盖率统计信息。
+     * 查看某个数据标准在所有模型字段中的覆盖率，即使用该标准的字段占总字段的百分比。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1449,7 +1457,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 模型统计信息
      *
-     * 模型统计信息。
+     * 单个模型中的统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1463,7 +1471,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 模型统计信息
      *
-     * 模型统计信息。
+     * 单个模型中的统计信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1653,7 +1661,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 新建汇总表
      *
-     * 新建汇总表。
+     * 根据入参，手动创建汇总表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1668,7 +1676,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 新建汇总表
      *
-     * 新建汇总表。
+     * 根据入参，手动创建汇总表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1713,7 +1721,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建目录
      *
-     * 创建目录。
+     * 创建目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1727,7 +1735,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建目录
      *
-     * 创建目录。
+     * 创建目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2158,7 +2166,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建数据标准模板
      *
-     * 创建数据标准模板。
+     * 创建当前工作空间下的数据标准模板自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2173,7 +2181,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 创建数据标准模板
      *
-     * 创建数据标准模板。
+     * 创建当前工作空间下的数据标准模板自定义项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2652,7 +2660,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 删除汇总表
      *
-     * 批量删除汇总表。
+     * 批量删除汇总表，只能删除状态为草稿、已线下、已驳回的表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2667,7 +2675,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 删除汇总表
      *
-     * 批量删除汇总表。
+     * 批量删除汇总表，只能删除状态为草稿、已线下、已驳回的表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2742,7 +2750,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 删除目录
      *
-     * 删除目录。
+     * 删除目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2756,7 +2764,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 删除目录
      *
-     * 删除目录。
+     * 删除目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3305,7 +3313,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取excel导出结果
      *
-     * 根据请求导出接口（/export-model）时返回的uuid，获取excel导出结果。
+     * 根据请求导出业务数据（/export-model）时返回的uuid，获取excel导出结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3319,7 +3327,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取excel导出结果
      *
-     * 根据请求导出接口（/export-model）时返回的uuid，获取excel导出结果。
+     * 根据请求导出业务数据（/export-model）时返回的uuid，获取excel导出结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3421,7 +3429,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询导入结果
      *
-     * 查询导入excel的处理结果。
+     * 查询导入excel的处理结果（其中参数uuid获取为：/design/models/action或/design/catalogs/action接口返回结果）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3435,7 +3443,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询导入结果
      *
-     * 查询导入excel的处理结果。
+     * 查询导入excel的处理结果（其中参数uuid获取为：/design/models/action或/design/catalogs/action接口返回结果）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3480,7 +3488,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找汇总表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3495,7 +3503,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找汇总表
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找汇总表信息，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3881,9 +3889,9 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
-     * 查看指标指标责任人信息
+     * 查看指标责任人信息
      *
-     * 查看指标指标责任人信息。
+     * 查看指标责任人信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3895,9 +3903,9 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
-     * 查看指标指标责任人信息
+     * 查看指标责任人信息
      *
-     * 查看指标指标责任人信息。
+     * 查看指标责任人信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4200,6 +4208,96 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询集群详情信息列表
+     *
+     * 查询集群详情信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstancesDetailRequest 请求对象
+     * @return CompletableFuture<ListDataServiceInstancesDetailResponse>
+     */
+    public CompletableFuture<ListDataServiceInstancesDetailResponse> listDataServiceInstancesDetailAsync(
+        ListDataServiceInstancesDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listDataServiceInstancesDetail);
+    }
+
+    /**
+     * 查询集群详情信息列表
+     *
+     * 查询集群详情信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstancesDetailRequest 请求对象
+     * @return AsyncInvoker<ListDataServiceInstancesDetailRequest, ListDataServiceInstancesDetailResponse>
+     */
+    public AsyncInvoker<ListDataServiceInstancesDetailRequest, ListDataServiceInstancesDetailResponse> listDataServiceInstancesDetailAsyncInvoker(
+        ListDataServiceInstancesDetailRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listDataServiceInstancesDetail, hcClient);
+    }
+
+    /**
+     * 查询集群概览信息列表
+     *
+     * 查询集群概览信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstancesOverviewRequest 请求对象
+     * @return CompletableFuture<ListDataServiceInstancesOverviewResponse>
+     */
+    public CompletableFuture<ListDataServiceInstancesOverviewResponse> listDataServiceInstancesOverviewAsync(
+        ListDataServiceInstancesOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listDataServiceInstancesOverview);
+    }
+
+    /**
+     * 查询集群概览信息列表
+     *
+     * 查询集群概览信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstancesOverviewRequest 请求对象
+     * @return AsyncInvoker<ListDataServiceInstancesOverviewRequest, ListDataServiceInstancesOverviewResponse>
+     */
+    public AsyncInvoker<ListDataServiceInstancesOverviewRequest, ListDataServiceInstancesOverviewResponse> listDataServiceInstancesOverviewAsyncInvoker(
+        ListDataServiceInstancesOverviewRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listDataServiceInstancesOverview, hcClient);
+    }
+
+    /**
+     * 查询服务目录API列表
+     *
+     * 查询服务目录API列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceMarketApisRequest 请求对象
+     * @return CompletableFuture<ListDataServiceMarketApisResponse>
+     */
+    public CompletableFuture<ListDataServiceMarketApisResponse> listDataServiceMarketApisAsync(
+        ListDataServiceMarketApisRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listDataServiceMarketApis);
+    }
+
+    /**
+     * 查询服务目录API列表
+     *
+     * 查询服务目录API列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceMarketApisRequest 请求对象
+     * @return AsyncInvoker<ListDataServiceMarketApisRequest, ListDataServiceMarketApisResponse>
+     */
+    public AsyncInvoker<ListDataServiceMarketApisRequest, ListDataServiceMarketApisResponse> listDataServiceMarketApisAsyncInvoker(
+        ListDataServiceMarketApisRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listDataServiceMarketApis, hcClient);
+    }
+
+    /**
      * 获取数据源中的表
      *
      * 获取数据源中的表
@@ -4407,7 +4505,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取所有目录
      *
-     * 获取所有目录。
+     * 获取所有目录(数据标准、码表)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4421,7 +4519,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取所有目录
      *
-     * 获取所有目录。
+     * 获取所有目录(数据标准、码表)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4845,9 +4943,9 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
-     * 关系
+     * 查询关系
      *
-     * 通过名称、等分页查找关系信息。
+     * 通过关系名称(支持模糊查询)、创建人、开始时间、结束时间等分页查找关系信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4859,9 +4957,9 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
-     * 关系
+     * 查询关系
      *
-     * 通过名称、等分页查找关系信息。
+     * 通过关系名称(支持模糊查询)、创建人、开始时间、结束时间等分页查找关系信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5441,7 +5539,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取模型
      *
-     * 获取模型。
+     * 获取当前空间下的全部模型信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5455,7 +5553,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 获取模型
      *
-     * 获取模型。
+     * 获取当前空间下的全部模型信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5558,7 +5656,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 修改自定义项
      *
-     * 修改自定义项。
+     * 修改自定义项（包括表自定义项、属性自定义项、主题自定义项、业务指标自定义项）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5573,7 +5671,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 修改自定义项
      *
-     * 修改自定义项。
+     * 修改自定义项（包括表自定义项、属性自定义项、主题自定义项、业务指标自定义项）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5823,7 +5921,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息看，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5837,7 +5935,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找原子指标
      *
-     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息。
+     * 通过中英文名称、创建者、审核人、状态、修改时间分页查找原子指标信息看，中英文名称支持模糊查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5998,7 +6096,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询自定义项
      *
-     * 查询自定义项。
+     * 查询自定义项（包括表自定义项、属性自定义项、主题自定义项、业务指标自定义项）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6013,7 +6111,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询自定义项
      *
-     * 查询自定义项。
+     * 查询自定义项（包括表自定义项、属性自定义项、主题自定义项、业务指标自定义项）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6146,7 +6244,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找主题列表
      *
-     * 通过名称、创建者、责任人、状态、修改时间分页查找主题。
+     * 通过名称（支持模糊查询）、创建者、责任人、状态、修改时间分页查找主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6160,7 +6258,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查找主题列表
      *
-     * 通过名称、创建者、责任人、状态、修改时间分页查找主题。
+     * 通过名称（支持模糊查询）、创建者、责任人、状态、修改时间分页查找主题。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6552,7 +6650,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查看原子指标详情
      *
-     * 通过ID获取指标详情信息。
+     * 通过ID获取原子指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6566,7 +6664,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查看原子指标详情
      *
-     * 通过ID获取指标详情信息。
+     * 通过ID获取原子指标详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6929,6 +7027,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ShowDataProfileRequest, ShowDataProfileResponse> showDataProfileAsyncInvoker(
         ShowDataProfileRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.showDataProfile, hcClient);
+    }
+
+    /**
+     * 查询集群详情信息
+     *
+     * 查询集群详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDataServiceInstanceRequest 请求对象
+     * @return CompletableFuture<ShowDataServiceInstanceResponse>
+     */
+    public CompletableFuture<ShowDataServiceInstanceResponse> showDataServiceInstanceAsync(
+        ShowDataServiceInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showDataServiceInstance);
+    }
+
+    /**
+     * 查询集群详情信息
+     *
+     * 查询集群详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDataServiceInstanceRequest 请求对象
+     * @return AsyncInvoker<ShowDataServiceInstanceRequest, ShowDataServiceInstanceResponse>
+     */
+    public AsyncInvoker<ShowDataServiceInstanceRequest, ShowDataServiceInstanceResponse> showDataServiceInstanceAsyncInvoker(
+        ShowDataServiceInstanceRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showDataServiceInstance, hcClient);
     }
 
     /**
@@ -7874,7 +8002,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询数据标准模板
      *
-     * 查询数据标准模板。
+     * 查询当前工作空间下的数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7889,7 +8017,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询数据标准模板
      *
-     * 查询数据标准模板。
+     * 查询当前工作空间下的数据标准模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8461,7 +8589,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 修改目录
      *
-     * 修改目录。
+     * 修改目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8475,7 +8603,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 修改目录
      *
-     * 修改目录。
+     * 修改目录（数据标准、码表）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

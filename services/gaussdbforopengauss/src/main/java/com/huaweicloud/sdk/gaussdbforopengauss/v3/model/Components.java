@@ -30,6 +30,16 @@ public class Components {
 
     private String distributedId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private String detail;
+
     public Components withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +108,40 @@ public class Components {
         this.distributedId = distributedId;
     }
 
+    public Components withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 节点类型，包括：DN, CN, GTM, CM, ETCD。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Components withDetail(String detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    /**
+     * 详情。
+     * @return detail
+     */
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +152,13 @@ public class Components {
         }
         Components that = (Components) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.role, that.role)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.distributedId, that.distributedId);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.distributedId, that.distributedId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.detail, that.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, role, status, distributedId);
+        return Objects.hash(id, role, status, distributedId, type, detail);
     }
 
     @Override
@@ -124,6 +169,8 @@ public class Components {
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    distributedId: ").append(toIndentedString(distributedId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

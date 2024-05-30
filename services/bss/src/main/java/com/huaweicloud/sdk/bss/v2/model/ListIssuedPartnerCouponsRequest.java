@@ -86,7 +86,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 优惠券ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串或携带值为null时，作为筛选条件。
+     * 优惠券ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为null时，作为筛选条件；不支持携带值为空串。
      * @return couponId
      */
     public String getCouponId() {
@@ -120,7 +120,7 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     /**
-     * 订单ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为空串或携带值为null时，作为筛选条件。
+     * 订单ID。此参数不携带或携带值为空时，不作为筛选条件；携带值为null时，作为筛选条件；不支持携带值为空串。
      * @return orderId
      */
     public String getOrderId() {

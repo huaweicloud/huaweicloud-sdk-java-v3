@@ -17,7 +17,7 @@ public class DerivativeIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
@@ -47,7 +47,7 @@ public class DerivativeIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l1_id")
 
-    private Long l1Id;
+    private String l1Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l2_id")
@@ -57,7 +57,7 @@ public class DerivativeIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "l3_id")
 
-    private Long l3Id;
+    private String l3Id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -67,17 +67,17 @@ public class DerivativeIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "atomic_index_id")
 
-    private Long atomicIndexId;
+    private String atomicIndexId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_condition_id")
 
-    private Long timeConditionId;
+    private String timeConditionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_field_id")
 
-    private Long timeFieldId;
+    private String timeFieldId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_field_name")
@@ -137,7 +137,7 @@ public class DerivativeIndexVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary_table_id")
 
-    private Long summaryTableId;
+    private String summaryTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approval_info")
@@ -149,20 +149,20 @@ public class DerivativeIndexVO {
 
     private BizVersionManageVO newBiz;
 
-    public DerivativeIndexVO withId(Long id) {
+    public DerivativeIndexVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -206,7 +206,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 描述。
+     * 描述，只读。
      * @return description
      */
     public String getDescription() {
@@ -251,20 +251,20 @@ public class DerivativeIndexVO {
         this.dataType = dataType;
     }
 
-    public DerivativeIndexVO withL1Id(Long l1Id) {
+    public DerivativeIndexVO withL1Id(String l1Id) {
         this.l1Id = l1Id;
         return this;
     }
 
     /**
-     * 主题域分组ID。
+     * 主题域分组ID，只读，填写String类型替代Long类型。
      * @return l1Id
      */
-    public Long getL1Id() {
+    public String getL1Id() {
         return l1Id;
     }
 
-    public void setL1Id(Long l1Id) {
+    public void setL1Id(String l1Id) {
         this.l1Id = l1Id;
     }
 
@@ -285,20 +285,20 @@ public class DerivativeIndexVO {
         this.l2Id = l2Id;
     }
 
-    public DerivativeIndexVO withL3Id(Long l3Id) {
+    public DerivativeIndexVO withL3Id(String l3Id) {
         this.l3Id = l3Id;
         return this;
     }
 
     /**
-     * 业务对象guid。
+     * 业务对象guid，填写String类型替代Long类型。
      * @return l3Id
      */
-    public Long getL3Id() {
+    public String getL3Id() {
         return l3Id;
     }
 
-    public void setL3Id(Long l3Id) {
+    public void setL3Id(String l3Id) {
         this.l3Id = l3Id;
     }
 
@@ -319,54 +319,54 @@ public class DerivativeIndexVO {
         this.status = status;
     }
 
-    public DerivativeIndexVO withAtomicIndexId(Long atomicIndexId) {
+    public DerivativeIndexVO withAtomicIndexId(String atomicIndexId) {
         this.atomicIndexId = atomicIndexId;
         return this;
     }
 
     /**
-     * 原子指标ID。
+     * 原子指标ID，填写String类型替代Long类型。
      * @return atomicIndexId
      */
-    public Long getAtomicIndexId() {
+    public String getAtomicIndexId() {
         return atomicIndexId;
     }
 
-    public void setAtomicIndexId(Long atomicIndexId) {
+    public void setAtomicIndexId(String atomicIndexId) {
         this.atomicIndexId = atomicIndexId;
     }
 
-    public DerivativeIndexVO withTimeConditionId(Long timeConditionId) {
+    public DerivativeIndexVO withTimeConditionId(String timeConditionId) {
         this.timeConditionId = timeConditionId;
         return this;
     }
 
     /**
-     * 时间限定ID。
+     * 时间限定ID，填写String类型替代Long类型。
      * @return timeConditionId
      */
-    public Long getTimeConditionId() {
+    public String getTimeConditionId() {
         return timeConditionId;
     }
 
-    public void setTimeConditionId(Long timeConditionId) {
+    public void setTimeConditionId(String timeConditionId) {
         this.timeConditionId = timeConditionId;
     }
 
-    public DerivativeIndexVO withTimeFieldId(Long timeFieldId) {
+    public DerivativeIndexVO withTimeFieldId(String timeFieldId) {
         this.timeFieldId = timeFieldId;
         return this;
     }
 
     /**
-     * 时间限定关联字段ID。
+     * 时间限定关联字段ID，填写String类型替代Long类型。
      * @return timeFieldId
      */
-    public Long getTimeFieldId() {
+    public String getTimeFieldId() {
         return timeFieldId;
     }
 
-    public void setTimeFieldId(Long timeFieldId) {
+    public void setTimeFieldId(String timeFieldId) {
         this.timeFieldId = timeFieldId;
     }
 
@@ -376,7 +376,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定关联字段名称。
+     * 时间限定关联字段名称，只读。
      * @return timeFieldName
      */
     public String getTimeFieldName() {
@@ -511,7 +511,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定名称。
+     * 时间限定名称，只读。
      * @return timeConditionName
      */
     public String getTimeConditionName() {
@@ -528,7 +528,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -545,7 +545,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -607,20 +607,20 @@ public class DerivativeIndexVO {
         this.l3 = l3;
     }
 
-    public DerivativeIndexVO withSummaryTableId(Long summaryTableId) {
+    public DerivativeIndexVO withSummaryTableId(String summaryTableId) {
         this.summaryTableId = summaryTableId;
         return this;
     }
 
     /**
-     * 汇总表ID。
+     * 汇总表ID，只读，填写String类型替代Long类型。
      * @return summaryTableId
      */
-    public Long getSummaryTableId() {
+    public String getSummaryTableId() {
         return summaryTableId;
     }
 
-    public void setSummaryTableId(Long summaryTableId) {
+    public void setSummaryTableId(String summaryTableId) {
         this.summaryTableId = summaryTableId;
     }
 

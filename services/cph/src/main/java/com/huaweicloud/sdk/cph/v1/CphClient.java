@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cph.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.cph.v1.model.AddImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.AddImageMemberResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchDeleteTagsRequest;
@@ -11,6 +13,8 @@ import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchShowPhoneConnectInfosRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchShowPhoneConnectInfosResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequest;
@@ -19,6 +23,10 @@ import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageMemberResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
@@ -39,6 +47,10 @@ import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListImageMembersRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListImageMembersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListJobsRequest;
 import com.huaweicloud.sdk.cph.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.cph.v1.model.ListProjectTagsRequest;
@@ -101,6 +113,37 @@ public class CphClient {
     public static ClientBuilder<CphClient> newBuilder() {
         ClientBuilder<CphClient> clientBuilder = new ClientBuilder<>(CphClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 共享镜像给指定账号
+     *
+     * 镜像共享,共享镜像给指定账号。
+     * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddImageMemberRequest 请求对象
+     * @return AddImageMemberResponse
+     */
+    public AddImageMemberResponse addImageMember(AddImageMemberRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.addImageMember);
+    }
+
+    /**
+     * 共享镜像给指定账号
+     *
+     * 镜像共享,共享镜像给指定账号。
+     * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddImageMemberRequest 请求对象
+     * @return SyncInvoker<AddImageMemberRequest, AddImageMemberResponse>
+     */
+    public SyncInvoker<AddImageMemberRequest, AddImageMemberResponse> addImageMemberInvoker(
+        AddImageMemberRequest request) {
+        return new SyncInvoker<>(request, CphMeta.addImageMember, hcClient);
     }
 
     /**
@@ -221,6 +264,35 @@ public class CphClient {
     public SyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse> batchImportCloudPhoneDataInvoker(
         BatchImportCloudPhoneDataRequest request) {
         return new SyncInvoker<>(request, CphMeta.batchImportCloudPhoneData, hcClient);
+    }
+
+    /**
+     * 获取云手机连接信息
+     *
+     * 获取云手机连接信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowPhoneConnectInfosRequest 请求对象
+     * @return BatchShowPhoneConnectInfosResponse
+     */
+    public BatchShowPhoneConnectInfosResponse batchShowPhoneConnectInfos(BatchShowPhoneConnectInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.batchShowPhoneConnectInfos);
+    }
+
+    /**
+     * 获取云手机连接信息
+     *
+     * 获取云手机连接信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowPhoneConnectInfosRequest 请求对象
+     * @return SyncInvoker<BatchShowPhoneConnectInfosRequest, BatchShowPhoneConnectInfosResponse>
+     */
+    public SyncInvoker<BatchShowPhoneConnectInfosRequest, BatchShowPhoneConnectInfosResponse> batchShowPhoneConnectInfosInvoker(
+        BatchShowPhoneConnectInfosRequest request) {
+        return new SyncInvoker<>(request, CphMeta.batchShowPhoneConnectInfos, hcClient);
     }
 
     /**
@@ -349,6 +421,63 @@ public class CphClient {
     public SyncInvoker<DeleteCloudPhoneServerRequest, DeleteCloudPhoneServerResponse> deleteCloudPhoneServerInvoker(
         DeleteCloudPhoneServerRequest request) {
         return new SyncInvoker<>(request, CphMeta.deleteCloudPhoneServer, hcClient);
+    }
+
+    /**
+     * 删除镜像
+     *
+     * 删除镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageRequest 请求对象
+     * @return DeleteImageResponse
+     */
+    public DeleteImageResponse deleteImage(DeleteImageRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.deleteImage);
+    }
+
+    /**
+     * 删除镜像
+     *
+     * 删除镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageRequest 请求对象
+     * @return SyncInvoker<DeleteImageRequest, DeleteImageResponse>
+     */
+    public SyncInvoker<DeleteImageRequest, DeleteImageResponse> deleteImageInvoker(DeleteImageRequest request) {
+        return new SyncInvoker<>(request, CphMeta.deleteImage, hcClient);
+    }
+
+    /**
+     * 删除共享镜像
+     *
+     * 删除共享镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageMemberRequest 请求对象
+     * @return DeleteImageMemberResponse
+     */
+    public DeleteImageMemberResponse deleteImageMember(DeleteImageMemberRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.deleteImageMember);
+    }
+
+    /**
+     * 删除共享镜像
+     *
+     * 删除共享镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageMemberRequest 请求对象
+     * @return SyncInvoker<DeleteImageMemberRequest, DeleteImageMemberResponse>
+     */
+    public SyncInvoker<DeleteImageMemberRequest, DeleteImageMemberResponse> deleteImageMemberInvoker(
+        DeleteImageMemberRequest request) {
+        return new SyncInvoker<>(request, CphMeta.deleteImageMember, hcClient);
     }
 
     /**
@@ -609,6 +738,67 @@ public class CphClient {
     public SyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse> listEncodeServersInvoker(
         ListEncodeServersRequest request) {
         return new SyncInvoker<>(request, CphMeta.listEncodeServers, hcClient);
+    }
+
+    /**
+     * 获取镜像已共享账号列表
+     *
+     * 获取镜像已共享账号列表
+     * - 路径中的project_id为共享账号的租户id
+     * - 路径中的image_id为共享账号的镜像id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageMembersRequest 请求对象
+     * @return ListImageMembersResponse
+     */
+    public ListImageMembersResponse listImageMembers(ListImageMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.listImageMembers);
+    }
+
+    /**
+     * 获取镜像已共享账号列表
+     *
+     * 获取镜像已共享账号列表
+     * - 路径中的project_id为共享账号的租户id
+     * - 路径中的image_id为共享账号的镜像id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageMembersRequest 请求对象
+     * @return SyncInvoker<ListImageMembersRequest, ListImageMembersResponse>
+     */
+    public SyncInvoker<ListImageMembersRequest, ListImageMembersResponse> listImageMembersInvoker(
+        ListImageMembersRequest request) {
+        return new SyncInvoker<>(request, CphMeta.listImageMembers, hcClient);
+    }
+
+    /**
+     * 查询镜像列表
+     *
+     * 查询镜像列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImagesRequest 请求对象
+     * @return ListImagesResponse
+     */
+    public ListImagesResponse listImages(ListImagesRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.listImages);
+    }
+
+    /**
+     * 查询镜像列表
+     *
+     * 查询镜像列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImagesRequest 请求对象
+     * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
+     */
+    public SyncInvoker<ListImagesRequest, ListImagesResponse> listImagesInvoker(ListImagesRequest request) {
+        return new SyncInvoker<>(request, CphMeta.listImages, hcClient);
     }
 
     /**
@@ -935,7 +1125,7 @@ public class CphClient {
     /**
      * 查询带宽信息
      *
-     * 查询云手机使用的带宽信息。
+     * 查询云手机使用的带宽信息，本接口只适用于使用系统定义网络的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -949,7 +1139,7 @@ public class CphClient {
     /**
      * 查询带宽信息
      *
-     * 查询云手机使用的带宽信息。
+     * 查询云手机使用的带宽信息，本接口只适用于使用系统定义网络的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1079,7 +1269,7 @@ public class CphClient {
     /**
      * 修改共享带宽
      *
-     * 修改云手机使用的共享带宽大小。
+     * 修改云手机使用的共享带宽大小，本接口只适用于使用系统定义网络的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1093,7 +1283,7 @@ public class CphClient {
     /**
      * 修改共享带宽
      *
-     * 修改云手机使用的共享带宽大小。
+     * 修改云手机使用的共享带宽大小，本接口只适用于使用系统定义网络的服务器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1224,7 +1414,7 @@ public class CphClient {
      * 安装apk
      *
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
-     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
      * - 建议通过开发应用市场的方式安装apk。允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 
@@ -1241,7 +1431,7 @@ public class CphClient {
      * 安装apk
      *
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
-     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
      * - 建议通过开发应用市场的方式安装apk。允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 

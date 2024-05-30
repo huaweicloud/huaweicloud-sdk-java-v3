@@ -16,17 +16,17 @@ public class HierarchiesAttrVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hierarchies_id")
 
-    private Long hierarchiesId;
+    private String hierarchiesId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attr_id")
 
-    private Long attrId;
+    private String attrId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "level")
@@ -46,7 +46,7 @@ public class HierarchiesAttrVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_attr_ids")
 
-    private List<Long> detailAttrIds = null;
+    private List<String> detailAttrIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail_attr_name_ens")
@@ -68,54 +68,54 @@ public class HierarchiesAttrVO {
 
     private List<DimensionAttributeVO> detailAttrs = null;
 
-    public HierarchiesAttrVO withId(Long id) {
+    public HierarchiesAttrVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 编码。
+     * 编码，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public HierarchiesAttrVO withHierarchiesId(Long hierarchiesId) {
+    public HierarchiesAttrVO withHierarchiesId(String hierarchiesId) {
         this.hierarchiesId = hierarchiesId;
         return this;
     }
 
     /**
-     * 层级ID。
+     * 层级ID，填写String类型替代Long类型。
      * @return hierarchiesId
      */
-    public Long getHierarchiesId() {
+    public String getHierarchiesId() {
         return hierarchiesId;
     }
 
-    public void setHierarchiesId(Long hierarchiesId) {
+    public void setHierarchiesId(String hierarchiesId) {
         this.hierarchiesId = hierarchiesId;
     }
 
-    public HierarchiesAttrVO withAttrId(Long attrId) {
+    public HierarchiesAttrVO withAttrId(String attrId) {
         this.attrId = attrId;
         return this;
     }
 
     /**
-     * 属性ID。
+     * 属性ID，填写String类型替代Long类型。
      * @return attrId
      */
-    public Long getAttrId() {
+    public String getAttrId() {
         return attrId;
     }
 
-    public void setAttrId(Long attrId) {
+    public void setAttrId(String attrId) {
         this.attrId = attrId;
     }
 
@@ -159,7 +159,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 引用属性名称。
+     * 引用属性名称，只读。
      * @return attrNameCh
      */
     public String getAttrNameCh() {
@@ -170,12 +170,12 @@ public class HierarchiesAttrVO {
         this.attrNameCh = attrNameCh;
     }
 
-    public HierarchiesAttrVO withDetailAttrIds(List<Long> detailAttrIds) {
+    public HierarchiesAttrVO withDetailAttrIds(List<String> detailAttrIds) {
         this.detailAttrIds = detailAttrIds;
         return this;
     }
 
-    public HierarchiesAttrVO addDetailAttrIdsItem(Long detailAttrIdsItem) {
+    public HierarchiesAttrVO addDetailAttrIdsItem(String detailAttrIdsItem) {
         if (this.detailAttrIds == null) {
             this.detailAttrIds = new ArrayList<>();
         }
@@ -183,7 +183,7 @@ public class HierarchiesAttrVO {
         return this;
     }
 
-    public HierarchiesAttrVO withDetailAttrIds(Consumer<List<Long>> detailAttrIdsSetter) {
+    public HierarchiesAttrVO withDetailAttrIds(Consumer<List<String>> detailAttrIdsSetter) {
         if (this.detailAttrIds == null) {
             this.detailAttrIds = new ArrayList<>();
         }
@@ -192,14 +192,14 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性ID。
+     * 详情属性ID，填写String类型替代Long类型。
      * @return detailAttrIds
      */
-    public List<Long> getDetailAttrIds() {
+    public List<String> getDetailAttrIds() {
         return detailAttrIds;
     }
 
-    public void setDetailAttrIds(List<Long> detailAttrIds) {
+    public void setDetailAttrIds(List<String> detailAttrIds) {
         this.detailAttrIds = detailAttrIds;
     }
 
@@ -258,7 +258,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性中文。
+     * 详情属性中文，只读。
      * @return detailAttrNameChs
      */
     public List<String> getDetailAttrNameChs() {
@@ -317,7 +317,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情字段。
+     * 详情字段，只读。
      * @return detailAttrs
      */
     public List<DimensionAttributeVO> getDetailAttrs() {

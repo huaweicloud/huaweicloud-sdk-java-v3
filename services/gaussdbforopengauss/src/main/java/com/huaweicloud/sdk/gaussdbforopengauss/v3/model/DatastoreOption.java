@@ -31,6 +31,11 @@ public class DatastoreOption {
         public static final InstanceModeEnum HA = new InstanceModeEnum("ha");
 
         /**
+         * Enum HA_READONLY for value: "ha:readonly"
+         */
+        public static final InstanceModeEnum HA_READONLY = new InstanceModeEnum("ha:readonly");
+
+        /**
          * Enum INDEPENDENT for value: "independent"
          */
         public static final InstanceModeEnum INDEPENDENT = new InstanceModeEnum("independent");
@@ -40,6 +45,7 @@ public class DatastoreOption {
         private static Map<String, InstanceModeEnum> createStaticFields() {
             Map<String, InstanceModeEnum> map = new HashMap<>();
             map.put("ha", HA);
+            map.put("ha:readonly", HA_READONLY);
             map.put("independent", INDEPENDENT);
             return Collections.unmodifiableMap(map);
         }

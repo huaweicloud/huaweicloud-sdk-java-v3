@@ -53,6 +53,11 @@ public class QueryResourcesReq {
 
     private String expireTimeEnd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_code")
+
+    private String serviceTypeCode;
+
     public QueryResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -227,6 +232,23 @@ public class QueryResourcesReq {
         this.expireTimeEnd = expireTimeEnd;
     }
 
+    public QueryResourcesReq withServiceTypeCode(String serviceTypeCode) {
+        this.serviceTypeCode = serviceTypeCode;
+        return this;
+    }
+
+    /**
+     * 云服务类型编码，例如OBS的云服务类型编码为“hws.service.type.obs”。您可以调用查询云服务类型列表接口获取。 此参数不携带、携带值为null，不作为筛选条件。此参数不允许为空串，有参数校验。
+     * @return serviceTypeCode
+     */
+    public String getServiceTypeCode() {
+        return serviceTypeCode;
+    }
+
+    public void setServiceTypeCode(String serviceTypeCode) {
+        this.serviceTypeCode = serviceTypeCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -240,13 +262,21 @@ public class QueryResourcesReq {
             && Objects.equals(this.onlyMainResource, that.onlyMainResource)
             && Objects.equals(this.statusList, that.statusList) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.expireTimeBegin, that.expireTimeBegin)
-            && Objects.equals(this.expireTimeEnd, that.expireTimeEnd);
+            && Objects.equals(this.expireTimeEnd, that.expireTimeEnd)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(resourceIds, orderId, onlyMainResource, statusList, offset, limit, expireTimeBegin, expireTimeEnd);
+        return Objects.hash(resourceIds,
+            orderId,
+            onlyMainResource,
+            statusList,
+            offset,
+            limit,
+            expireTimeBegin,
+            expireTimeEnd,
+            serviceTypeCode);
     }
 
     @Override
@@ -261,6 +291,7 @@ public class QueryResourcesReq {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    expireTimeBegin: ").append(toIndentedString(expireTimeBegin)).append("\n");
         sb.append("    expireTimeEnd: ").append(toIndentedString(expireTimeEnd)).append("\n");
+        sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

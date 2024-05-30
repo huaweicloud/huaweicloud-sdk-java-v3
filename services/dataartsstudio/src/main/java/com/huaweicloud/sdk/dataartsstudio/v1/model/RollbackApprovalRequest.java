@@ -67,7 +67,7 @@ public class RollbackApprovalRequest {
     }
 
     /**
-     * 审批单ID。
+     * 审批单ID数组。
      * @return ids
      */
     public String getIds() {

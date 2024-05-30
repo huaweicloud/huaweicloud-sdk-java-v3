@@ -62,7 +62,7 @@ public class PreheatingTaskRequestBody {
     }
 
     /**
-     * 需要预热的URL必须带有“http://”或“https://”，多个URL用逗号分隔，目前不支持对目录的预热，单个url的长度限制为4096字符,单次最多输入1000个url。
+     * 需要预热的URL必须带有“http://”或“https://”，多个URL用逗号分隔（\"url1\", \"url2\"），目前不支持对目录的预热，单个url的长度限制为4096字符,单次最多输入1000个url。
      * @return urls
      */
     public List<String> getUrls() {

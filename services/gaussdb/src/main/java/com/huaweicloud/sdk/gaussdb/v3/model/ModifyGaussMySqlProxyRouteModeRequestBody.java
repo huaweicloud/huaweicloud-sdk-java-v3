@@ -131,7 +131,7 @@ public class ModifyGaussMySqlProxyRouteModeRequestBody {
     }
 
     /**
-     * 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
+     * 新增节点的读权重：    - 如果路由模式为0，新增节点自动加入为ON，取值为0~1000。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。 - 如果路由模式不为0或新增节点自动加入为OFF，则可不输入读权重。
      * @return newNodeWeight
      */
     public Integer getNewNodeWeight() {

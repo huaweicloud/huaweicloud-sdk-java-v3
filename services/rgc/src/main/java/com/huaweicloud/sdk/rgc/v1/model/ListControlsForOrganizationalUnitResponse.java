@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class ListControlsForOrganizationUnitResponse extends SdkResponse {
+public class ListControlsForOrganizationalUnitResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "control_summaries")
@@ -29,12 +29,12 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
 
     private PageInfoDto pageInfo;
 
-    public ListControlsForOrganizationUnitResponse withControlSummaries(List<TargetControl> controlSummaries) {
+    public ListControlsForOrganizationalUnitResponse withControlSummaries(List<TargetControl> controlSummaries) {
         this.controlSummaries = controlSummaries;
         return this;
     }
 
-    public ListControlsForOrganizationUnitResponse addControlSummariesItem(TargetControl controlSummariesItem) {
+    public ListControlsForOrganizationalUnitResponse addControlSummariesItem(TargetControl controlSummariesItem) {
         if (this.controlSummaries == null) {
             this.controlSummaries = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
         return this;
     }
 
-    public ListControlsForOrganizationUnitResponse withControlSummaries(
+    public ListControlsForOrganizationalUnitResponse withControlSummaries(
         Consumer<List<TargetControl>> controlSummariesSetter) {
         if (this.controlSummaries == null) {
             this.controlSummaries = new ArrayList<>();
@@ -63,7 +63,7 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
         this.controlSummaries = controlSummaries;
     }
 
-    public ListControlsForOrganizationUnitResponse withState(String state) {
+    public ListControlsForOrganizationalUnitResponse withState(String state) {
         this.state = state;
         return this;
     }
@@ -80,12 +80,12 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ListControlsForOrganizationUnitResponse withPageInfo(PageInfoDto pageInfo) {
+    public ListControlsForOrganizationalUnitResponse withPageInfo(PageInfoDto pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
-    public ListControlsForOrganizationUnitResponse withPageInfo(Consumer<PageInfoDto> pageInfoSetter) {
+    public ListControlsForOrganizationalUnitResponse withPageInfo(Consumer<PageInfoDto> pageInfoSetter) {
         if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDto();
             pageInfoSetter.accept(this.pageInfo);
@@ -114,7 +114,7 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListControlsForOrganizationUnitResponse that = (ListControlsForOrganizationUnitResponse) obj;
+        ListControlsForOrganizationalUnitResponse that = (ListControlsForOrganizationalUnitResponse) obj;
         return Objects.equals(this.controlSummaries, that.controlSummaries) && Objects.equals(this.state, that.state)
             && Objects.equals(this.pageInfo, that.pageInfo);
     }
@@ -127,7 +127,7 @@ public class ListControlsForOrganizationUnitResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListControlsForOrganizationUnitResponse {\n");
+        sb.append("class ListControlsForOrganizationalUnitResponse {\n");
         sb.append("    controlSummaries: ").append(toIndentedString(controlSummaries)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");

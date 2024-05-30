@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 微服务引擎专享版规格及描述
+ * 微服务引擎规格及描述
  */
 public class FlavorBrief {
 
@@ -32,7 +32,7 @@ public class FlavorBrief {
     }
 
     /**
-     * 微服务引擎专享版规格
+     * 微服务引擎规格
      * @return flavor
      */
     public String getFlavor() {
@@ -49,7 +49,7 @@ public class FlavorBrief {
     }
 
     /**
-     * 微服务引擎专享版规格描述
+     * 微服务引擎规格描述
      * @return description
      */
     public String getDescription() {

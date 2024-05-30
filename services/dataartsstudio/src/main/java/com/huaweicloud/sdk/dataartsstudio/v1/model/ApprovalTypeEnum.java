@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 业务审核类型。PUBLISH(发布)、OFFLINE(下线)。
+ * 业务审核类型。 枚举值：   - PUBLISH: 发布   - OFFLINE: 下线 
  */
 public class ApprovalTypeEnum {
 

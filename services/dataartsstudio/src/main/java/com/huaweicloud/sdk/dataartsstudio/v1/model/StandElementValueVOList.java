@@ -22,12 +22,12 @@ public class StandElementValueVOList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Long id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_id")
 
-    private Long directoryId;
+    private String directoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "directory_path")
@@ -37,7 +37,7 @@ public class StandElementValueVOList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "row_id")
 
-    private Long rowId;
+    private String rowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -112,37 +112,37 @@ public class StandElementValueVOList {
         this.values = values;
     }
 
-    public StandElementValueVOList withId(Long id) {
+    public StandElementValueVOList withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID
+     * 数据标准的ID，填写String类型替代Long类型。
      * @return id
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public StandElementValueVOList withDirectoryId(Long directoryId) {
+    public StandElementValueVOList withDirectoryId(String directoryId) {
         this.directoryId = directoryId;
         return this;
     }
 
     /**
-     * 标准所属目录。
+     * 标准所属目录，填写String类型替代Long类型。
      * @return directoryId
      */
-    public Long getDirectoryId() {
+    public String getDirectoryId() {
         return directoryId;
     }
 
-    public void setDirectoryId(Long directoryId) {
+    public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
 
@@ -163,20 +163,20 @@ public class StandElementValueVOList {
         this.directoryPath = directoryPath;
     }
 
-    public StandElementValueVOList withRowId(Long rowId) {
+    public StandElementValueVOList withRowId(String rowId) {
         this.rowId = rowId;
         return this;
     }
 
     /**
-     * 标准行的ID。
+     * 标准行的ID，填写String类型替代Long类型。
      * @return rowId
      */
-    public Long getRowId() {
+    public String getRowId() {
         return rowId;
     }
 
-    public void setRowId(Long rowId) {
+    public void setRowId(String rowId) {
         this.rowId = rowId;
     }
 
@@ -306,7 +306,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 创建时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -323,7 +323,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 更新时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 更新时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {

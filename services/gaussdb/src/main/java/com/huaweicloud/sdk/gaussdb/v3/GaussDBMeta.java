@@ -207,6 +207,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterControlReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterRuleReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyTransactionSplitRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpdateProxyConnectionPoolTypeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpdateProxyNameRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetDatabasePasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
@@ -274,6 +276,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
@@ -351,6 +357,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequestBod
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNameRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNameResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNewConfigurationsResponse;
@@ -370,6 +378,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeDatabaseRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
 
 @SuppressWarnings("unchecked")
 public class GaussDBMeta {
@@ -3671,6 +3681,77 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProxyIpgroupRequest, ShowProxyIpgroupResponse> showProxyIpgroup =
+        genForShowProxyIpgroup();
+
+    private static HttpRequestDef<ShowProxyIpgroupRequest, ShowProxyIpgroupResponse> genForShowProxyIpgroup() {
+        // basic
+        HttpRequestDef.Builder<ShowProxyIpgroupRequest, ShowProxyIpgroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProxyIpgroupRequest.class, ShowProxyIpgroupResponse.class)
+                .withName("ShowProxyIpgroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ipgroup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyIpgroupRequest::getInstanceId, ShowProxyIpgroupRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyIpgroupRequest::getProxyId, ShowProxyIpgroupRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyIpgroupRequest::getXLanguage, ShowProxyIpgroupRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProxyVersionRequest, ShowProxyVersionResponse> showProxyVersion =
+        genForShowProxyVersion();
+
+    private static HttpRequestDef<ShowProxyVersionRequest, ShowProxyVersionResponse> genForShowProxyVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowProxyVersionRequest, ShowProxyVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProxyVersionRequest.class, ShowProxyVersionResponse.class)
+                .withName("ShowProxyVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyVersionRequest::getInstanceId, ShowProxyVersionRequest::setInstanceId));
+        builder.<String>withRequestField("engine_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyVersionRequest::getEngineName, ShowProxyVersionRequest::setEngineName));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyVersionRequest::getProxyId, ShowProxyVersionRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProxyVersionRequest::getXLanguage, ShowProxyVersionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTables =
         genForShowRestoreTables();
 
@@ -4661,6 +4742,44 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateProxyNameRequest, UpdateProxyNameResponse> updateProxyName =
+        genForUpdateProxyName();
+
+    private static HttpRequestDef<UpdateProxyNameRequest, UpdateProxyNameResponse> genForUpdateProxyName() {
+        // basic
+        HttpRequestDef.Builder<UpdateProxyNameRequest, UpdateProxyNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProxyNameRequest.class, UpdateProxyNameResponse.class)
+                .withName("UpdateProxyName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/rename")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyNameRequest::getInstanceId, UpdateProxyNameRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyNameRequest::getProxyId, UpdateProxyNameRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyNameRequest::getXLanguage, UpdateProxyNameRequest::setXLanguage));
+        builder.<ProxyUpdateProxyNameRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProxyUpdateProxyNameRequest.class),
+            f -> f.withMarshaller(UpdateProxyNameRequest::getBody, UpdateProxyNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateProxyNewConfigurationsRequest, UpdateProxyNewConfigurationsResponse> updateProxyNewConfigurations =
         genForUpdateProxyNewConfigurations();
 
@@ -4861,6 +4980,45 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(UpgradeDatabaseRequest.class),
             f -> f.withMarshaller(UpgradeGaussMySqlInstanceDatabaseRequest::getBody,
                 UpgradeGaussMySqlInstanceDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeProxyVersionRequest, UpgradeProxyVersionResponse> upgradeProxyVersion =
+        genForUpgradeProxyVersion();
+
+    private static HttpRequestDef<UpgradeProxyVersionRequest, UpgradeProxyVersionResponse> genForUpgradeProxyVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeProxyVersionRequest, UpgradeProxyVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeProxyVersionRequest.class, UpgradeProxyVersionResponse.class)
+                .withName("UpgradeProxyVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/upgrade-version")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeProxyVersionRequest::getInstanceId,
+                UpgradeProxyVersionRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeProxyVersionRequest::getProxyId, UpgradeProxyVersionRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeProxyVersionRequest::getXLanguage, UpgradeProxyVersionRequest::setXLanguage));
+        builder.<ProxyUpgradeProxyVersionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProxyUpgradeProxyVersionRequest.class),
+            f -> f.withMarshaller(UpgradeProxyVersionRequest::getBody, UpgradeProxyVersionRequest::setBody));
 
         // response
 

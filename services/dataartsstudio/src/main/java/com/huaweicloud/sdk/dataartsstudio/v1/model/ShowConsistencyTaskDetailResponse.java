@@ -292,7 +292,7 @@ public class ShowConsistencyTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 调度间隔，注意：当调度周期为分钟、小时、天时，间隔时间为数字；而当调度周期为周时，调度间隔为星期的英文，如：每周一、周二调度时，schedule_interval为\"MONDAY,TUESDAY\"
+     * 调度间隔，注意：当调度周期为分钟、小时、天时，间隔时间为数字；而当调度周期为周时，调度间隔为星期的英文，如：每周一、周二调度时，schedule_interval为MONDAY,TUESDAY
      * @return scheduleInterval
      */
     public String getScheduleInterval() {

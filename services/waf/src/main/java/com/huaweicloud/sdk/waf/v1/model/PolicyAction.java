@@ -90,6 +90,11 @@ public class PolicyAction {
 
     private CategoryEnum category;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "followed_action_id")
+
+    private String followedActionId;
+
     public PolicyAction withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -107,6 +112,23 @@ public class PolicyAction {
         this.category = category;
     }
 
+    public PolicyAction withFollowedActionId(String followedActionId) {
+        this.followedActionId = followedActionId;
+        return this;
+    }
+
+    /**
+     * 攻击惩罚规则ID
+     * @return followedActionId
+     */
+    public String getFollowedActionId() {
+        return followedActionId;
+    }
+
+    public void setFollowedActionId(String followedActionId) {
+        this.followedActionId = followedActionId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -116,12 +138,13 @@ public class PolicyAction {
             return false;
         }
         PolicyAction that = (PolicyAction) obj;
-        return Objects.equals(this.category, that.category);
+        return Objects.equals(this.category, that.category)
+            && Objects.equals(this.followedActionId, that.followedActionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category);
+        return Objects.hash(category, followedActionId);
     }
 
     @Override
@@ -129,6 +152,7 @@ public class PolicyAction {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyAction {\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    followedActionId: ").append(toIndentedString(followedActionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class CustomizedFieldsVOList {
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      */
     public static final class TypeEnum {
 
@@ -116,7 +116,7 @@ public class CustomizedFieldsVOList {
     }
 
     /**
-     * 自定义项类型。TABLE(表自定义项)、ATTRIBUTE(属性自定义项)、SUBJECT(主题自定义项)、METRIC(业务指标自定义项)。
+     * 自定义项类型。 枚举值：   - TABLE: 表自定义项   - ATTRIBUTE: 属性自定义项   - SUBJECT: 主题自定义项   - METRIC: 业务指标自定义项 
      * @return type
      */
     public TypeEnum getType() {

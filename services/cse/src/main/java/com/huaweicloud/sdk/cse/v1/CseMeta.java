@@ -416,6 +416,11 @@ public class CseMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEnginesRequest::getLimit, ListEnginesRequest::setLimit));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnginesRequest::getType, ListEnginesRequest::setType));
 
         // response
 

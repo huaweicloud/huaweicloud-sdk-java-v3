@@ -10,6 +10,9 @@ import com.huaweicloud.sdk.iotda.v5.model.AddApplication;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddBacklogPolicy;
+import com.huaweicloud.sdk.iotda.v5.model.AddBridge;
+import com.huaweicloud.sdk.iotda.v5.model.AddBridgeRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDevice;
@@ -78,6 +81,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
@@ -114,8 +119,12 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
@@ -146,6 +155,9 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.QueryResourceByTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.QueueInfo;
+import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecret;
+import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecret;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretResponse;
@@ -211,6 +223,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateBacklogPolicy;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateDTO;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDesireds;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
@@ -1135,6 +1150,135 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddBridgeRequest, AddBridgeResponse> addBridge = genForAddBridge();
+
+    private static HttpRequestDef<AddBridgeRequest, AddBridgeResponse> genForAddBridge() {
+        // basic
+        HttpRequestDef.Builder<AddBridgeRequest, AddBridgeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddBridgeRequest.class, AddBridgeResponse.class)
+                .withName("AddBridge")
+                .withUri("/v5/iot/{project_id}/bridges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddBridgeRequest::getInstanceId, AddBridgeRequest::setInstanceId));
+        builder.<AddBridge>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddBridge.class),
+            f -> f.withMarshaller(AddBridgeRequest::getBody, AddBridgeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBridgeRequest, DeleteBridgeResponse> deleteBridge = genForDeleteBridge();
+
+    private static HttpRequestDef<DeleteBridgeRequest, DeleteBridgeResponse> genForDeleteBridge() {
+        // basic
+        HttpRequestDef.Builder<DeleteBridgeRequest, DeleteBridgeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBridgeRequest.class, DeleteBridgeResponse.class)
+                .withName("DeleteBridge")
+                .withUri("/v5/iot/{project_id}/bridges/{bridge_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bridge_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBridgeRequest::getBridgeId, DeleteBridgeRequest::setBridgeId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBridgeRequest::getInstanceId, DeleteBridgeRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBridgeResponse::getBody, DeleteBridgeResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBridgesRequest, ListBridgesResponse> listBridges = genForListBridges();
+
+    private static HttpRequestDef<ListBridgesRequest, ListBridgesResponse> genForListBridges() {
+        // basic
+        HttpRequestDef.Builder<ListBridgesRequest, ListBridgesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBridgesRequest.class, ListBridgesResponse.class)
+                .withName("ListBridges")
+                .withUri("/v5/iot/{project_id}/bridges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBridgesRequest::getLimit, ListBridgesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBridgesRequest::getMarker, ListBridgesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBridgesRequest::getOffset, ListBridgesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBridgesRequest::getInstanceId, ListBridgesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetBridgeSecretRequest, ResetBridgeSecretResponse> resetBridgeSecret =
+        genForResetBridgeSecret();
+
+    private static HttpRequestDef<ResetBridgeSecretRequest, ResetBridgeSecretResponse> genForResetBridgeSecret() {
+        // basic
+        HttpRequestDef.Builder<ResetBridgeSecretRequest, ResetBridgeSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetBridgeSecretRequest.class, ResetBridgeSecretResponse.class)
+                .withName("ResetBridgeSecret")
+                .withUri("/v5/iot/{project_id}/bridges/{bridge_id}/reset-secret")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bridge_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetBridgeSecretRequest::getBridgeId, ResetBridgeSecretRequest::setBridgeId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetBridgeSecretRequest::getInstanceId, ResetBridgeSecretRequest::setInstanceId));
+        builder.<ResetBridgeSecret>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetBridgeSecret.class),
+            f -> f.withMarshaller(ResetBridgeSecretRequest::getBody, ResetBridgeSecretRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BroadcastMessageRequest, BroadcastMessageResponse> broadcastMessage =
         genForBroadcastMessage();
 
@@ -1349,6 +1493,40 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getInstanceId, ListCertificatesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
+        genForUpdateCertificate();
+
+    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForUpdateCertificate() {
+        // basic
+        HttpRequestDef.Builder<UpdateCertificateRequest, UpdateCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
+                .withName("UpdateCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId,
+                UpdateCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getInstanceId, UpdateCertificateRequest::setInstanceId));
+        builder.<UpdateCertificateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCertificateDTO.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getBody, UpdateCertificateRequest::setBody));
 
         // response
 
@@ -1750,6 +1928,37 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(FreezeDeviceResponse::getBody, FreezeDeviceResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceGroupsByDeviceRequest, ListDeviceGroupsByDeviceResponse> listDeviceGroupsByDevice =
+        genForListDeviceGroupsByDevice();
+
+    private static HttpRequestDef<ListDeviceGroupsByDeviceRequest, ListDeviceGroupsByDeviceResponse> genForListDeviceGroupsByDevice() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceGroupsByDeviceRequest, ListDeviceGroupsByDeviceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListDeviceGroupsByDeviceRequest.class, ListDeviceGroupsByDeviceResponse.class)
+                .withName("ListDeviceGroupsByDevice")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/list-device-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceGroupsByDeviceRequest::getDeviceId,
+                ListDeviceGroupsByDeviceRequest::setDeviceId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceGroupsByDeviceRequest::getInstanceId,
+                ListDeviceGroupsByDeviceRequest::setInstanceId));
+
+        // response
 
         return builder.build();
     }

@@ -161,7 +161,7 @@ public class PeriodProductInfo {
     }
 
     /**
-     * 可用区标识，例如：“cn-north-1a”。具体请参见地区和终端节点可用分区的“可用分区名称”列的值。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
+     * 可用区标识，例如：“cn-north-1a”，大小写不敏感。具体请参见地区和终端节点可用分区的“可用分区名称”列的值。 此参数不携带或携带值为空串或携带值为null时，不作为筛选条件。
      * @return availableZone
      */
     public String getAvailableZone() {

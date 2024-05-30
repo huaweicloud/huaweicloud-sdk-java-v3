@@ -55,7 +55,7 @@ public class CostDataByDimension {
     }
 
     /**
-     * 维度列表。
+     * 维度列表，具体请参见表 DimensionGroup。
      * @return dimensions
      */
     public List<DimensionGroup> getDimensions() {
@@ -88,7 +88,7 @@ public class CostDataByDimension {
     }
 
     /**
-     * 成本值。
+     * 成本值，具体请参见表 Cost。
      * @return costs
      */
     public List<Cost> getCosts() {

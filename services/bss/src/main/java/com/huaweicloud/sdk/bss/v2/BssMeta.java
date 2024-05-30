@@ -1201,6 +1201,11 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerOrdersRequest::getIndirectPartnerId,
                 ListCustomerOrdersRequest::setIndirectPartnerId));
+        builder.<ListCustomerOrdersRequest.MethodEnum>withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCustomerOrdersRequest.MethodEnum.class),
+            f -> f.withMarshaller(ListCustomerOrdersRequest::getMethod, ListCustomerOrdersRequest::setMethod));
 
         // response
 
@@ -1249,6 +1254,12 @@ public class BssMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerselfResourceRecordDetailsRequest::getXLanguage,
+                ListCustomerselfResourceRecordDetailsRequest::setXLanguage));
         builder.<QueryResRecordsDetailReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1366,6 +1377,12 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateEnd,
                 ListCustomerselfResourceRecordsRequest::setBillDateEnd));
+        builder.<Integer>withRequestField("statistic_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getStatisticType,
+                ListCustomerselfResourceRecordsRequest::setStatisticType));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
