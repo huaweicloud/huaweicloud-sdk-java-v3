@@ -1,11 +1,13 @@
-package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
+package com.huaweicloud.sdk.gaussdb.v3.model;
+
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * 访问分析的唯一资源标识。
+ * Response Object
  */
-public class Urn {
+public class CreateLtsConfigsResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -26,7 +28,7 @@ public class Urn {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Urn {\n");
+        sb.append("class CreateLtsConfigsResponse {\n");
         sb.append("}");
         return sb.toString();
     }

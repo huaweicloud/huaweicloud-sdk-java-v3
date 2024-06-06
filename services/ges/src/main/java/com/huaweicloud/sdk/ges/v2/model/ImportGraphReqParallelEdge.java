@@ -20,6 +20,11 @@ public class ImportGraphReqParallelEdge {
 
     private Boolean ignoreLabel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key_column")
+
+    private String sortKeyColumn;
+
     public ImportGraphReqParallelEdge withAction(String action) {
         this.action = action;
         return this;
@@ -54,6 +59,23 @@ public class ImportGraphReqParallelEdge {
         this.ignoreLabel = ignoreLabel;
     }
 
+    public ImportGraphReqParallelEdge withSortKeyColumn(String sortKeyColumn) {
+        this.sortKeyColumn = sortKeyColumn;
+        return this;
+    }
+
+    /**
+     * sortKey在边文件中的位置，当前仅支持\"lastColumn\"，边文件中无sortKey时，不传此参数。
+     * @return sortKeyColumn
+     */
+    public String getSortKeyColumn() {
+        return sortKeyColumn;
+    }
+
+    public void setSortKeyColumn(String sortKeyColumn) {
+        this.sortKeyColumn = sortKeyColumn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ImportGraphReqParallelEdge {
             return false;
         }
         ImportGraphReqParallelEdge that = (ImportGraphReqParallelEdge) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.ignoreLabel, that.ignoreLabel);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.ignoreLabel, that.ignoreLabel)
+            && Objects.equals(this.sortKeyColumn, that.sortKeyColumn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, ignoreLabel);
+        return Objects.hash(action, ignoreLabel, sortKeyColumn);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ImportGraphReqParallelEdge {
         sb.append("class ImportGraphReqParallelEdge {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    ignoreLabel: ").append(toIndentedString(ignoreLabel)).append("\n");
+        sb.append("    sortKeyColumn: ").append(toIndentedString(sortKeyColumn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

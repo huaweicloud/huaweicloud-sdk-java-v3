@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -24,7 +25,7 @@ public class ShowProxyIpgroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_group")
 
-    private Object ipGroup;
+    private ProxyIpGroupDetail ipGroup;
 
     public ShowProxyIpgroupResponse withEnableIpGroup(Boolean enableIpGroup) {
         this.enableIpGroup = enableIpGroup;
@@ -60,20 +61,29 @@ public class ShowProxyIpgroupResponse extends SdkResponse {
         this.type = type;
     }
 
-    public ShowProxyIpgroupResponse withIpGroup(Object ipGroup) {
+    public ShowProxyIpgroupResponse withIpGroup(ProxyIpGroupDetail ipGroup) {
         this.ipGroup = ipGroup;
         return this;
     }
 
+    public ShowProxyIpgroupResponse withIpGroup(Consumer<ProxyIpGroupDetail> ipGroupSetter) {
+        if (this.ipGroup == null) {
+            this.ipGroup = new ProxyIpGroupDetail();
+            ipGroupSetter.accept(this.ipGroup);
+        }
+
+        return this;
+    }
+
     /**
-     * 白名单或黑名单详细信息
+     * Get ipGroup
      * @return ipGroup
      */
-    public Object getIpGroup() {
+    public ProxyIpGroupDetail getIpGroup() {
         return ipGroup;
     }
 
-    public void setIpGroup(Object ipGroup) {
+    public void setIpGroup(ProxyIpGroupDetail ipGroup) {
         this.ipGroup = ipGroup;
     }
 

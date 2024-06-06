@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
 import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListNodesResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ModifyDefaultTagsRequestBody;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowCommand;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
@@ -618,6 +620,73 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForListNodes();
+
+    private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForListNodes() {
+        // basic
+        HttpRequestDef.Builder<ListNodesRequest, ListNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNodesRequest.class, ListNodesResponse.class)
+                .withName("ListNodes")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodesRequest::getClusterId, ListNodesRequest::setClusterId));
+        builder.<String>withRequestField("node_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodesRequest::getNodeGroup, ListNodesRequest::setNodeGroup));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodesRequest::getLimit, ListNodesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodesRequest::getOffset, ListNodesRequest::setOffset));
+        builder.<String>withRequestField("node_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodesRequest::getNodeName, ListNodesRequest::setNodeName));
+        builder.<ListNodesRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNodesRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListNodesRequest::getSortKey, ListNodesRequest::setSortKey));
+        builder.<ListNodesRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNodesRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListNodesRequest::getSortDir, ListNodesRequest::setSortDir));
+        builder.<Boolean>withRequestField("query_node_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListNodesRequest::getQueryNodeDetail, ListNodesRequest::setQueryNodeDetail));
+        builder.<Boolean>withRequestField("query_ecs_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListNodesRequest::getQueryEcsDetail, ListNodesRequest::setQueryEcsDetail));
+        builder.<String>withRequestField("internal_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodesRequest::getInternalIp, ListNodesRequest::setInternalIp));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> shrinkCluster =
         genForShrinkCluster();
 
@@ -1076,6 +1145,12 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMrsFlavorsRequest::getVersionName, ShowMrsFlavorsRequest::setVersionName));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMrsFlavorsRequest::getAvailabilityZone,
+                ShowMrsFlavorsRequest::setAvailabilityZone));
 
         // response
 

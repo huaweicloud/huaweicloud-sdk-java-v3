@@ -118,6 +118,11 @@ public class Volume {
     private ResourceSubTypeEnum resourceSubType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access")
+
+    private String access;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
     private String time;
@@ -223,6 +228,23 @@ public class Volume {
         this.resourceSubType = resourceSubType;
     }
 
+    public Volume withAccess(String access) {
+        this.access = access;
+        return this;
+    }
+
+    /**
+     * 用户access key。
+     * @return access
+     */
+    public String getAccess() {
+        return access;
+    }
+
+    public void setAccess(String access) {
+        this.access = access;
+    }
+
     public Volume withTime(String time) {
         this.time = time;
         return this;
@@ -252,12 +274,13 @@ public class Volume {
         return Objects.equals(this.id, that.id) && Objects.equals(this.resourceInfo, that.resourceInfo)
             && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.resourceSubType, that.resourceSubType) && Objects.equals(this.time, that.time);
+            && Objects.equals(this.resourceSubType, that.resourceSubType) && Objects.equals(this.access, that.access)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, resourceInfo, resourceName, resourceType, resourceSubType, time);
+        return Objects.hash(id, resourceInfo, resourceName, resourceType, resourceSubType, access, time);
     }
 
     @Override
@@ -269,6 +292,7 @@ public class Volume {
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSubType: ").append(toIndentedString(resourceSubType)).append("\n");
+        sb.append("    access: ").append(toIndentedString(access)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");
         return sb.toString();

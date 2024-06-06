@@ -15,6 +15,11 @@ public class ShowMrsFlavorsRequest {
 
     private String versionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public ShowMrsFlavorsRequest withVersionName(String versionName) {
         this.versionName = versionName;
         return this;
@@ -32,6 +37,23 @@ public class ShowMrsFlavorsRequest {
         this.versionName = versionName;
     }
 
+    public ShowMrsFlavorsRequest withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 可用区id，用于查询指定可用区的可用规格
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class ShowMrsFlavorsRequest {
             return false;
         }
         ShowMrsFlavorsRequest that = (ShowMrsFlavorsRequest) obj;
-        return Objects.equals(this.versionName, that.versionName);
+        return Objects.equals(this.versionName, that.versionName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versionName);
+        return Objects.hash(versionName, availabilityZone);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ShowMrsFlavorsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMrsFlavorsRequest {\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

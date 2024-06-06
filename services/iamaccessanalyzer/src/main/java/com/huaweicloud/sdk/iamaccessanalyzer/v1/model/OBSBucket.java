@@ -26,7 +26,7 @@ public class OBSBucket {
     }
 
     /**
-     * 桶ACL xml文件的string格式
+     * 桶ACL xml文件的string格式。
      * @return bucketAcl
      */
     public String getBucketAcl() {

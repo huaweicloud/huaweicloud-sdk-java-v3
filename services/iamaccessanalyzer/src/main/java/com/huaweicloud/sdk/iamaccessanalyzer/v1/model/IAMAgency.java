@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IAM委托。
+ * IAM信任委托。
  */
 public class IAMAgency {
 

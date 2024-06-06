@@ -109,6 +109,11 @@ public class VolumeSpec {
 
     private List<String> resources = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources_credentials")
+
+    private List<ResourcesCredential> resourcesCredentials = null;
+
     public VolumeSpec withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -176,6 +181,39 @@ public class VolumeSpec {
         this.resources = resources;
     }
 
+    public VolumeSpec withResourcesCredentials(List<ResourcesCredential> resourcesCredentials) {
+        this.resourcesCredentials = resourcesCredentials;
+        return this;
+    }
+
+    public VolumeSpec addResourcesCredentialsItem(ResourcesCredential resourcesCredentialsItem) {
+        if (this.resourcesCredentials == null) {
+            this.resourcesCredentials = new ArrayList<>();
+        }
+        this.resourcesCredentials.add(resourcesCredentialsItem);
+        return this;
+    }
+
+    public VolumeSpec withResourcesCredentials(Consumer<List<ResourcesCredential>> resourcesCredentialsSetter) {
+        if (this.resourcesCredentials == null) {
+            this.resourcesCredentials = new ArrayList<>();
+        }
+        resourcesCredentialsSetter.accept(this.resourcesCredentials);
+        return this;
+    }
+
+    /**
+     * 云存储和授权凭证，获取环境列表接口响应中env_category字段为v2时需添加该字段的值。
+     * @return resourcesCredentials
+     */
+    public List<ResourcesCredential> getResourcesCredentials() {
+        return resourcesCredentials;
+    }
+
+    public void setResourcesCredentials(List<ResourcesCredential> resourcesCredentials) {
+        this.resourcesCredentials = resourcesCredentials;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -187,12 +225,13 @@ public class VolumeSpec {
         VolumeSpec that = (VolumeSpec) obj;
         return Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceSubType, that.resourceSubType)
-            && Objects.equals(this.resources, that.resources);
+            && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.resourcesCredentials, that.resourcesCredentials);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, resourceSubType, resources);
+        return Objects.hash(resourceType, resourceSubType, resources, resourcesCredentials);
     }
 
     @Override
@@ -202,6 +241,7 @@ public class VolumeSpec {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSubType: ").append(toIndentedString(resourceSubType)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    resourcesCredentials: ").append(toIndentedString(resourcesCredentials)).append("\n");
         sb.append("}");
         return sb.toString();
     }

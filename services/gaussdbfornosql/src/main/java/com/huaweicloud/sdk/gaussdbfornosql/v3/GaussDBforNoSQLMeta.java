@@ -1992,11 +1992,6 @@ public class GaussDBforNoSQLMeta {
             f -> f.withMarshaller(OfflineNodesRequest::getBody, OfflineNodesRequest::setBody));
 
         // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(OfflineNodesResponse::getBody, OfflineNodesResponse::setBody));
 
         return builder.build();
     }

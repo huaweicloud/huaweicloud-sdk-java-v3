@@ -23,6 +23,9 @@ import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleReq;
+import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
@@ -43,6 +46,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
@@ -74,6 +79,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
@@ -93,6 +100,8 @@ import com.huaweicloud.sdk.cae.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
@@ -104,6 +113,9 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleReq;
+import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
@@ -1354,6 +1366,185 @@ public class CaeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MonitorSystemRequestBody.class),
             f -> f.withMarshaller(UpdateMonitorSystemRequest::getBody, UpdateMonitorSystemRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNoticeRuleRequest, CreateNoticeRuleResponse> createNoticeRule =
+        genForCreateNoticeRule();
+
+    private static HttpRequestDef<CreateNoticeRuleRequest, CreateNoticeRuleResponse> genForCreateNoticeRule() {
+        // basic
+        HttpRequestDef.Builder<CreateNoticeRuleRequest, CreateNoticeRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNoticeRuleRequest.class, CreateNoticeRuleResponse.class)
+                .withName("CreateNoticeRule")
+                .withUri("/v1/{project_id}/cae/notice-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNoticeRuleRequest::getXEnterpriseProjectID,
+                CreateNoticeRuleRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNoticeRuleRequest::getXEnvironmentID,
+                CreateNoticeRuleRequest::setXEnvironmentID));
+        builder.<CreateNoticeRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNoticeRuleReq.class),
+            f -> f.withMarshaller(CreateNoticeRuleRequest::getBody, CreateNoticeRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNoticeRuleRequest, DeleteNoticeRuleResponse> deleteNoticeRule =
+        genForDeleteNoticeRule();
+
+    private static HttpRequestDef<DeleteNoticeRuleRequest, DeleteNoticeRuleResponse> genForDeleteNoticeRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteNoticeRuleRequest, DeleteNoticeRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNoticeRuleRequest.class, DeleteNoticeRuleResponse.class)
+                .withName("DeleteNoticeRule")
+                .withUri("/v1/{project_id}/cae/notice-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNoticeRuleRequest::getRuleId, DeleteNoticeRuleRequest::setRuleId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNoticeRuleRequest::getXEnterpriseProjectID,
+                DeleteNoticeRuleRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNoticeRuleRequest::getXEnvironmentID,
+                DeleteNoticeRuleRequest::setXEnvironmentID));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteNoticeRuleResponse::getBody, DeleteNoticeRuleResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNoticeRulesRequest, ListNoticeRulesResponse> listNoticeRules =
+        genForListNoticeRules();
+
+    private static HttpRequestDef<ListNoticeRulesRequest, ListNoticeRulesResponse> genForListNoticeRules() {
+        // basic
+        HttpRequestDef.Builder<ListNoticeRulesRequest, ListNoticeRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNoticeRulesRequest.class, ListNoticeRulesResponse.class)
+                .withName("ListNoticeRules")
+                .withUri("/v1/{project_id}/cae/notice-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNoticeRulesRequest::getXEnterpriseProjectID,
+                ListNoticeRulesRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNoticeRulesRequest::getXEnvironmentID,
+                ListNoticeRulesRequest::setXEnvironmentID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNoticeRuleRequest, ShowNoticeRuleResponse> showNoticeRule =
+        genForShowNoticeRule();
+
+    private static HttpRequestDef<ShowNoticeRuleRequest, ShowNoticeRuleResponse> genForShowNoticeRule() {
+        // basic
+        HttpRequestDef.Builder<ShowNoticeRuleRequest, ShowNoticeRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNoticeRuleRequest.class, ShowNoticeRuleResponse.class)
+                .withName("ShowNoticeRule")
+                .withUri("/v1/{project_id}/cae/notice-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNoticeRuleRequest::getRuleId, ShowNoticeRuleRequest::setRuleId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNoticeRuleRequest::getXEnterpriseProjectID,
+                ShowNoticeRuleRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNoticeRuleRequest::getXEnvironmentID, ShowNoticeRuleRequest::setXEnvironmentID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse> updateNoticeRule =
+        genForUpdateNoticeRule();
+
+    private static HttpRequestDef<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse> genForUpdateNoticeRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNoticeRuleRequest.class, UpdateNoticeRuleResponse.class)
+                .withName("UpdateNoticeRule")
+                .withUri("/v1/{project_id}/cae/notice-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNoticeRuleRequest::getRuleId, UpdateNoticeRuleRequest::setRuleId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNoticeRuleRequest::getXEnterpriseProjectID,
+                UpdateNoticeRuleRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNoticeRuleRequest::getXEnvironmentID,
+                UpdateNoticeRuleRequest::setXEnvironmentID));
+        builder.<UpdateNoticeRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNoticeRuleReq.class),
+            f -> f.withMarshaller(UpdateNoticeRuleRequest::getBody, UpdateNoticeRuleRequest::setBody));
 
         // response
 

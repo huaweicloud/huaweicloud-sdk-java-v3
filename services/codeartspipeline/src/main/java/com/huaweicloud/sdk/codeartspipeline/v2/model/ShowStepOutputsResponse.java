@@ -22,7 +22,7 @@ public class ShowStepOutputsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_system_time")
 
-    private Integer currentSystemTime;
+    private Long currentSystemTime;
 
     public ShowStepOutputsResponse withStepOutputs(List<OutputRespStepOutputs> stepOutputs) {
         this.stepOutputs = stepOutputs;
@@ -57,7 +57,7 @@ public class ShowStepOutputsResponse extends SdkResponse {
         this.stepOutputs = stepOutputs;
     }
 
-    public ShowStepOutputsResponse withCurrentSystemTime(Integer currentSystemTime) {
+    public ShowStepOutputsResponse withCurrentSystemTime(Long currentSystemTime) {
         this.currentSystemTime = currentSystemTime;
         return this;
     }
@@ -66,11 +66,11 @@ public class ShowStepOutputsResponse extends SdkResponse {
      * Get currentSystemTime
      * @return currentSystemTime
      */
-    public Integer getCurrentSystemTime() {
+    public Long getCurrentSystemTime() {
         return currentSystemTime;
     }
 
-    public void setCurrentSystemTime(Integer currentSystemTime) {
+    public void setCurrentSystemTime(Long currentSystemTime) {
         this.currentSystemTime = currentSystemTime;
     }
 

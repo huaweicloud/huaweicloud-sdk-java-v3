@@ -166,7 +166,7 @@ public class NodeGroupV11 {
     }
 
     /**
-     * 节点数据磁盘存储数目 取值范围：0～10。
+     * 节点数据磁盘存储数目 取值范围：0～20。
      * @return dataVolumeCount
      */
     public Integer getDataVolumeCount() {

@@ -142,7 +142,7 @@ public class UpdateFindingsReqBody {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 资源的唯一资源标识符。
      * @return resourceUrn
      */
     public String getResourceUrn() {

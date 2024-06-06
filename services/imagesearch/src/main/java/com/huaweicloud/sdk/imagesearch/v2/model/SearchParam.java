@@ -34,6 +34,11 @@ public class SearchParam {
         public static final SearchTypeEnum KEYWORD = new SearchTypeEnum("KEYWORD");
 
         /**
+         * Enum TEXT for value: "TEXT"
+         */
+        public static final SearchTypeEnum TEXT = new SearchTypeEnum("TEXT");
+
+        /**
          * Enum CATEGORY for value: "CATEGORY"
          */
         public static final SearchTypeEnum CATEGORY = new SearchTypeEnum("CATEGORY");
@@ -44,6 +49,7 @@ public class SearchParam {
             Map<String, SearchTypeEnum> map = new HashMap<>();
             map.put("IMAGE", IMAGE);
             map.put("KEYWORD", KEYWORD);
+            map.put("TEXT", TEXT);
             map.put("CATEGORY", CATEGORY);
             return Collections.unmodifiableMap(map);
         }
@@ -145,6 +151,11 @@ public class SearchParam {
     private List<String> keywords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text")
+
+    private String text;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optional_params")
 
     private SearchOptionalParam optionalParams;
@@ -172,9 +183,9 @@ public class SearchParam {
     }
 
     /**
-     * 返回搜索结果的数量，默认为10，取值范围为[1, 100]。
+     * 返回搜索结果的数量，默认为10，取值范围为[1, 1000]。
      * minimum: 1
-     * maximum: 100
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -381,6 +392,23 @@ public class SearchParam {
         this.keywords = keywords;
     }
 
+    public SearchParam withText(String text) {
+        this.text = text;
+        return this;
+    }
+
+    /**
+     * 文本字符串，字符长度范围为[1, 512]。
+     * @return text
+     */
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     public SearchParam withOptionalParams(SearchOptionalParam optionalParams) {
         this.optionalParams = optionalParams;
         return this;
@@ -421,7 +449,8 @@ public class SearchParam {
             && Objects.equals(this.minScore, that.minScore) && Objects.equals(this.customTags, that.customTags)
             && Objects.equals(this.customNumTags, that.customNumTags)
             && Objects.equals(this.imageBase64, that.imageBase64) && Objects.equals(this.imageUrl, that.imageUrl)
-            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.optionalParams, that.optionalParams);
+            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.text, that.text)
+            && Objects.equals(this.optionalParams, that.optionalParams);
     }
 
     @Override
@@ -436,6 +465,7 @@ public class SearchParam {
             imageBase64,
             imageUrl,
             keywords,
+            text,
             optionalParams);
     }
 
@@ -453,6 +483,7 @@ public class SearchParam {
         sb.append("    imageBase64: ").append(toIndentedString(imageBase64)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
         sb.append("    optionalParams: ").append(toIndentedString(optionalParams)).append("\n");
         sb.append("}");
         return sb.toString();

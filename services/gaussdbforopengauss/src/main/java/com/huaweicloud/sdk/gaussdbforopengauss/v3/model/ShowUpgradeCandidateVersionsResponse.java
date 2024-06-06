@@ -54,6 +54,16 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
 
     private List<String> hotfixRollbackCandidateVersions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hotfix_upgrade_infos")
+
+    private HotfixUpgradeInfos hotfixUpgradeInfos;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hotfix_rollback_infos")
+
+    private HotfixRollbackInfos hotfixRollbackInfos;
+
     public ShowUpgradeCandidateVersionsResponse withUpgradeTypeList(List<UpgradeTypeInfo> upgradeTypeList) {
         this.upgradeTypeList = upgradeTypeList;
         return this;
@@ -272,6 +282,60 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
         this.hotfixRollbackCandidateVersions = hotfixRollbackCandidateVersions;
     }
 
+    public ShowUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(HotfixUpgradeInfos hotfixUpgradeInfos) {
+        this.hotfixUpgradeInfos = hotfixUpgradeInfos;
+        return this;
+    }
+
+    public ShowUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(
+        Consumer<HotfixUpgradeInfos> hotfixUpgradeInfosSetter) {
+        if (this.hotfixUpgradeInfos == null) {
+            this.hotfixUpgradeInfos = new HotfixUpgradeInfos();
+            hotfixUpgradeInfosSetter.accept(this.hotfixUpgradeInfos);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hotfixUpgradeInfos
+     * @return hotfixUpgradeInfos
+     */
+    public HotfixUpgradeInfos getHotfixUpgradeInfos() {
+        return hotfixUpgradeInfos;
+    }
+
+    public void setHotfixUpgradeInfos(HotfixUpgradeInfos hotfixUpgradeInfos) {
+        this.hotfixUpgradeInfos = hotfixUpgradeInfos;
+    }
+
+    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(HotfixRollbackInfos hotfixRollbackInfos) {
+        this.hotfixRollbackInfos = hotfixRollbackInfos;
+        return this;
+    }
+
+    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
+        Consumer<HotfixRollbackInfos> hotfixRollbackInfosSetter) {
+        if (this.hotfixRollbackInfos == null) {
+            this.hotfixRollbackInfos = new HotfixRollbackInfos();
+            hotfixRollbackInfosSetter.accept(this.hotfixRollbackInfos);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hotfixRollbackInfos
+     * @return hotfixRollbackInfos
+     */
+    public HotfixRollbackInfos getHotfixRollbackInfos() {
+        return hotfixRollbackInfos;
+    }
+
+    public void setHotfixRollbackInfos(HotfixRollbackInfos hotfixRollbackInfos) {
+        this.hotfixRollbackInfos = hotfixRollbackInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,7 +352,9 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
             && Objects.equals(this.rollUpgradeProgress, that.rollUpgradeProgress)
             && Objects.equals(this.upgradeCandidateVersions, that.upgradeCandidateVersions)
             && Objects.equals(this.hotfixUpgradeCandidateVersions, that.hotfixUpgradeCandidateVersions)
-            && Objects.equals(this.hotfixRollbackCandidateVersions, that.hotfixRollbackCandidateVersions);
+            && Objects.equals(this.hotfixRollbackCandidateVersions, that.hotfixRollbackCandidateVersions)
+            && Objects.equals(this.hotfixUpgradeInfos, that.hotfixUpgradeInfos)
+            && Objects.equals(this.hotfixRollbackInfos, that.hotfixRollbackInfos);
     }
 
     @Override
@@ -300,7 +366,9 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
             rollUpgradeProgress,
             upgradeCandidateVersions,
             hotfixUpgradeCandidateVersions,
-            hotfixRollbackCandidateVersions);
+            hotfixRollbackCandidateVersions,
+            hotfixUpgradeInfos,
+            hotfixRollbackInfos);
     }
 
     @Override
@@ -319,6 +387,8 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
         sb.append("    hotfixRollbackCandidateVersions: ")
             .append(toIndentedString(hotfixRollbackCandidateVersions))
             .append("\n");
+        sb.append("    hotfixUpgradeInfos: ").append(toIndentedString(hotfixUpgradeInfos)).append("\n");
+        sb.append("    hotfixRollbackInfos: ").append(toIndentedString(hotfixRollbackInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,6 +21,27 @@ public class StatusReason {
     public static final class CodeEnum {
 
         /**
+         * Enum DELEGATED_ADMINISTRATOR_DEREGISTERED for value: "delegated_administrator_deregistered"
+         */
+        public static final CodeEnum DELEGATED_ADMINISTRATOR_DEREGISTERED =
+            new CodeEnum("delegated_administrator_deregistered");
+
+        /**
+         * Enum TRUSTED_SERVICE_DISABLED for value: "trusted_service_disabled"
+         */
+        public static final CodeEnum TRUSTED_SERVICE_DISABLED = new CodeEnum("trusted_service_disabled");
+
+        /**
+         * Enum INTERNAL_ERROR for value: "internal_error"
+         */
+        public static final CodeEnum INTERNAL_ERROR = new CodeEnum("internal_error");
+
+        /**
+         * Enum ORGANIZATION_DELETED for value: "organization_deleted"
+         */
+        public static final CodeEnum ORGANIZATION_DELETED = new CodeEnum("organization_deleted");
+
+        /**
          * Enum SERVICE_LINKED_AGENCY_CREATION_FAILED for value: "service_linked_agency_creation_failed"
          */
         public static final CodeEnum SERVICE_LINKED_AGENCY_CREATION_FAILED =
@@ -30,6 +51,10 @@ public class StatusReason {
 
         private static Map<String, CodeEnum> createStaticFields() {
             Map<String, CodeEnum> map = new HashMap<>();
+            map.put("delegated_administrator_deregistered", DELEGATED_ADMINISTRATOR_DEREGISTERED);
+            map.put("trusted_service_disabled", TRUSTED_SERVICE_DISABLED);
+            map.put("internal_error", INTERNAL_ERROR);
+            map.put("organization_deleted", ORGANIZATION_DELETED);
             map.put("service_linked_agency_creation_failed", SERVICE_LINKED_AGENCY_CREATION_FAILED);
             return Collections.unmodifiableMap(map);
         }

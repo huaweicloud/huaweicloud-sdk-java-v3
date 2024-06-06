@@ -39,7 +39,7 @@ public class InstancesResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    private BigDecimal version;
+    private String version;
 
     /**
      * 部署形态。
@@ -265,7 +265,7 @@ public class InstancesResult {
         this.dataVolumeSize = dataVolumeSize;
     }
 
-    public InstancesResult withVersion(BigDecimal version) {
+    public InstancesResult withVersion(String version) {
         this.version = version;
         return this;
     }
@@ -274,11 +274,11 @@ public class InstancesResult {
      * 实例版本信息。
      * @return version
      */
-    public BigDecimal getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(BigDecimal version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 

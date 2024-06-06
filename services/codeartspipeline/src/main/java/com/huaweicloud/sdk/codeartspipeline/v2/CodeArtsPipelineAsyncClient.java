@@ -144,6 +144,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoRequest;
@@ -2277,6 +2279,35 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> updatePipelineGroupAsyncInvoker(
         UpdatePipelineGroupRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineGroup, hcClient);
+    }
+
+    /**
+     * 修改流水线信息
+     *
+     * 修改流水线信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipelineInfoRequest 请求对象
+     * @return CompletableFuture<UpdatePipelineInfoResponse>
+     */
+    public CompletableFuture<UpdatePipelineInfoResponse> updatePipelineInfoAsync(UpdatePipelineInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.updatePipelineInfo);
+    }
+
+    /**
+     * 修改流水线信息
+     *
+     * 修改流水线信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipelineInfoRequest 请求对象
+     * @return AsyncInvoker<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse>
+     */
+    public AsyncInvoker<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse> updatePipelineInfoAsyncInvoker(
+        UpdatePipelineInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineInfo, hcClient);
     }
 
     /**

@@ -209,6 +209,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowLogFileRequest;
@@ -335,6 +337,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
@@ -369,6 +373,8 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
@@ -2350,6 +2356,35 @@ public class RdsClient {
     public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(
         ListRestoreTimesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listRestoreTimes, hcClient);
+    }
+
+    /**
+     * 查询共享备份列表
+     *
+     * 查询共享备份列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareBackupsRequest 请求对象
+     * @return ListShareBackupsResponse
+     */
+    public ListShareBackupsResponse listShareBackups(ListShareBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listShareBackups);
+    }
+
+    /**
+     * 查询共享备份列表
+     *
+     * 查询共享备份列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareBackupsRequest 请求对象
+     * @return SyncInvoker<ListShareBackupsRequest, ListShareBackupsResponse>
+     */
+    public SyncInvoker<ListShareBackupsRequest, ListShareBackupsResponse> listShareBackupsInvoker(
+        ListShareBackupsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listShareBackups, hcClient);
     }
 
     /**
@@ -5852,6 +5887,35 @@ public class RdsClient {
     }
 
     /**
+     * 获取wal日志延迟回放状态
+     *
+     * 获取wal日志延迟回放状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayDelayStatusRequest 请求对象
+     * @return ShowReplayDelayStatusResponse
+     */
+    public ShowReplayDelayStatusResponse showReplayDelayStatus(ShowReplayDelayStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showReplayDelayStatus);
+    }
+
+    /**
+     * 获取wal日志延迟回放状态
+     *
+     * 获取wal日志延迟回放状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayDelayStatusRequest 请求对象
+     * @return SyncInvoker<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse>
+     */
+    public SyncInvoker<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse> showReplayDelayStatusInvoker(
+        ShowReplayDelayStatusRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showReplayDelayStatus, hcClient);
+    }
+
+    /**
      * 开启数据库代理
      *
      * 为指定实例开启数据库代理。
@@ -5907,6 +5971,35 @@ public class RdsClient {
     public SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyInvoker(
         StopDatabaseProxyRequest request) {
         return new SyncInvoker<>(request, RdsMeta.stopDatabaseProxy, hcClient);
+    }
+
+    /**
+     * 中止/恢复wal日志回放
+     *
+     * 中止/恢复wal日志回放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogReplayRequest 请求对象
+     * @return SwitchLogReplayResponse
+     */
+    public SwitchLogReplayResponse switchLogReplay(SwitchLogReplayRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.switchLogReplay);
+    }
+
+    /**
+     * 中止/恢复wal日志回放
+     *
+     * 中止/恢复wal日志回放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogReplayRequest 请求对象
+     * @return SyncInvoker<SwitchLogReplayRequest, SwitchLogReplayResponse>
+     */
+    public SyncInvoker<SwitchLogReplayRequest, SwitchLogReplayResponse> switchLogReplayInvoker(
+        SwitchLogReplayRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.switchLogReplay, hcClient);
     }
 
     /**

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ecs.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -24,7 +26,7 @@ public class ChangeVpcNicBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private ChangeVpcSecurityGroups securityGroups;
+    private List<ChangeVpcSecurityGroups> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
@@ -65,29 +67,36 @@ public class ChangeVpcNicBody {
         this.subnetId = subnetId;
     }
 
-    public ChangeVpcNicBody withSecurityGroups(ChangeVpcSecurityGroups securityGroups) {
+    public ChangeVpcNicBody withSecurityGroups(List<ChangeVpcSecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public ChangeVpcNicBody withSecurityGroups(Consumer<ChangeVpcSecurityGroups> securityGroupsSetter) {
+    public ChangeVpcNicBody addSecurityGroupsItem(ChangeVpcSecurityGroups securityGroupsItem) {
         if (this.securityGroups == null) {
-            this.securityGroups = new ChangeVpcSecurityGroups();
-            securityGroupsSetter.accept(this.securityGroups);
+            this.securityGroups = new ArrayList<>();
         }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
 
+    public ChangeVpcNicBody withSecurityGroups(Consumer<List<ChangeVpcSecurityGroups>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
     /**
-     * Get securityGroups
+     * 添加网卡的安全组信息
      * @return securityGroups
      */
-    public ChangeVpcSecurityGroups getSecurityGroups() {
+    public List<ChangeVpcSecurityGroups> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(ChangeVpcSecurityGroups securityGroups) {
+    public void setSecurityGroups(List<ChangeVpcSecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

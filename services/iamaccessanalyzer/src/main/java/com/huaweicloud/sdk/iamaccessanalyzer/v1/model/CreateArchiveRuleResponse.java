@@ -44,7 +44,7 @@ public class CreateArchiveRuleResponse extends SdkResponse {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 存档规则的唯一资源标识符。
      * @return urn
      */
     public String getUrn() {

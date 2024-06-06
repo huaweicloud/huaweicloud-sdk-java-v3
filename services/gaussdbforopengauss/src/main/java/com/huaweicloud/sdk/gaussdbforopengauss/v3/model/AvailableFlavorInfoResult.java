@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class AvailableFlavorInfoResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spec_cpde")
+    @JsonProperty(value = "spec_code")
 
-    private String specCpde;
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vcpus")
@@ -33,21 +33,21 @@ public class AvailableFlavorInfoResult {
 
     private Map<String, String> azStatus = null;
 
-    public AvailableFlavorInfoResult withSpecCpde(String specCpde) {
-        this.specCpde = specCpde;
+    public AvailableFlavorInfoResult withSpecCode(String specCode) {
+        this.specCode = specCode;
         return this;
     }
 
     /**
      * 资源规格编码。
-     * @return specCpde
+     * @return specCode
      */
-    public String getSpecCpde() {
-        return specCpde;
+    public String getSpecCode() {
+        return specCode;
     }
 
-    public void setSpecCpde(String specCpde) {
-        this.specCpde = specCpde;
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
     }
 
     public AvailableFlavorInfoResult withVcpus(String vcpus) {
@@ -126,20 +126,20 @@ public class AvailableFlavorInfoResult {
             return false;
         }
         AvailableFlavorInfoResult that = (AvailableFlavorInfoResult) obj;
-        return Objects.equals(this.specCpde, that.specCpde) && Objects.equals(this.vcpus, that.vcpus)
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.vcpus, that.vcpus)
             && Objects.equals(this.ram, that.ram) && Objects.equals(this.azStatus, that.azStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCpde, vcpus, ram, azStatus);
+        return Objects.hash(specCode, vcpus, ram, azStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AvailableFlavorInfoResult {\n");
-        sb.append("    specCpde: ").append(toIndentedString(specCpde)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");

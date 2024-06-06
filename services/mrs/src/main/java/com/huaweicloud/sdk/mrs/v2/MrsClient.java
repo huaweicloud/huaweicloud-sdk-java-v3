@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListNodesResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingRequest;
@@ -599,6 +601,34 @@ public class MrsClient {
      */
     public SyncInvoker<ExpandClusterRequest, ExpandClusterResponse> expandClusterInvoker(ExpandClusterRequest request) {
         return new SyncInvoker<>(request, MrsMeta.expandCluster, hcClient);
+    }
+
+    /**
+     * 查询集群节点列表
+     *
+     * 查询集群节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodesRequest 请求对象
+     * @return ListNodesResponse
+     */
+    public ListNodesResponse listNodes(ListNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listNodes);
+    }
+
+    /**
+     * 查询集群节点列表
+     *
+     * 查询集群节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodesRequest 请求对象
+     * @return SyncInvoker<ListNodesRequest, ListNodesResponse>
+     */
+    public SyncInvoker<ListNodesRequest, ListNodesResponse> listNodesInvoker(ListNodesRequest request) {
+        return new SyncInvoker<>(request, MrsMeta.listNodes, hcClient);
     }
 
     /**

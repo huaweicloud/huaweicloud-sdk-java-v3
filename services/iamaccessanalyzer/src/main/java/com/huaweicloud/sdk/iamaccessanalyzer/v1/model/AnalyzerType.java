@@ -17,11 +17,17 @@ public class AnalyzerType {
      */
     public static final AnalyzerType ACCOUNT = new AnalyzerType("account");
 
+    /**
+     * Enum ORGANIZATION for value: "organization"
+     */
+    public static final AnalyzerType ORGANIZATION = new AnalyzerType("organization");
+
     private static final Map<String, AnalyzerType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, AnalyzerType> createStaticFields() {
         Map<String, AnalyzerType> map = new HashMap<>();
         map.put("account", ACCOUNT);
+        map.put("organization", ORGANIZATION);
         return Collections.unmodifiableMap(map);
     }
 

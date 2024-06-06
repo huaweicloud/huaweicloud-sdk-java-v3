@@ -502,6 +502,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchParameter;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchParametersExt;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
@@ -9090,6 +9092,81 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchIdByPathRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchIdByPathRequest::getDlmType, SearchIdByPathRequest::setDlmType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse> searchSgcComputeDimensions =
+        genForSearchSgcComputeDimensions();
+
+    private static HttpRequestDef<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse> genForSearchSgcComputeDimensions() {
+        // basic
+        HttpRequestDef.Builder<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchSgcComputeDimensionsRequest.class,
+                    SearchSgcComputeDimensionsResponse.class)
+                .withName("SearchSgcComputeDimensions")
+                .withUri("/v1/{project_id}/costmgmt/{instance_id}/{workspace_id}/compute-dimension")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getInstanceId,
+                SearchSgcComputeDimensionsRequest::setInstanceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getWorkspaceId,
+                SearchSgcComputeDimensionsRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getOffset,
+                SearchSgcComputeDimensionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getLimit,
+                SearchSgcComputeDimensionsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getName,
+                SearchSgcComputeDimensionsRequest::setName));
+        builder.<String>withRequestField("node_creator_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getNodeCreatorName,
+                SearchSgcComputeDimensionsRequest::setNodeCreatorName));
+        builder.<SearchSgcComputeDimensionsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SearchSgcComputeDimensionsRequest.TypeEnum.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getType,
+                SearchSgcComputeDimensionsRequest::setType));
+        builder.<SearchSgcComputeDimensionsRequest.NodeTypeEnum>withRequestField("node_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SearchSgcComputeDimensionsRequest.NodeTypeEnum.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getNodeType,
+                SearchSgcComputeDimensionsRequest::setNodeType));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSgcComputeDimensionsRequest::getOrderBy,
+                SearchSgcComputeDimensionsRequest::setOrderBy));
 
         // response
 

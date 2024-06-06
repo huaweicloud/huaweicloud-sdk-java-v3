@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class GetAccessPreviewRequest {
+public class ShowAccessPreviewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analyzer_id")
@@ -20,7 +20,7 @@ public class GetAccessPreviewRequest {
 
     private String accessPreviewId;
 
-    public GetAccessPreviewRequest withAnalyzerId(String analyzerId) {
+    public ShowAccessPreviewRequest withAnalyzerId(String analyzerId) {
         this.analyzerId = analyzerId;
         return this;
     }
@@ -37,7 +37,7 @@ public class GetAccessPreviewRequest {
         this.analyzerId = analyzerId;
     }
 
-    public GetAccessPreviewRequest withAccessPreviewId(String accessPreviewId) {
+    public ShowAccessPreviewRequest withAccessPreviewId(String accessPreviewId) {
         this.accessPreviewId = accessPreviewId;
         return this;
     }
@@ -62,7 +62,7 @@ public class GetAccessPreviewRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetAccessPreviewRequest that = (GetAccessPreviewRequest) obj;
+        ShowAccessPreviewRequest that = (ShowAccessPreviewRequest) obj;
         return Objects.equals(this.analyzerId, that.analyzerId)
             && Objects.equals(this.accessPreviewId, that.accessPreviewId);
     }
@@ -75,7 +75,7 @@ public class GetAccessPreviewRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GetAccessPreviewRequest {\n");
+        sb.append("class ShowAccessPreviewRequest {\n");
         sb.append("    analyzerId: ").append(toIndentedString(analyzerId)).append("\n");
         sb.append("    accessPreviewId: ").append(toIndentedString(accessPreviewId)).append("\n");
         sb.append("}");

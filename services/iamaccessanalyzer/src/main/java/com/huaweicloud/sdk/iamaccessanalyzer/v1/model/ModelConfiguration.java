@@ -21,6 +21,11 @@ public class ModelConfiguration {
 
     private OBSBucket obsBucket;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_cmk")
+
+    private KMSCmk kmsCmk;
+
     public ModelConfiguration withIamAgency(IAMAgency iamAgency) {
         this.iamAgency = iamAgency;
         return this;
@@ -73,6 +78,32 @@ public class ModelConfiguration {
         this.obsBucket = obsBucket;
     }
 
+    public ModelConfiguration withKmsCmk(KMSCmk kmsCmk) {
+        this.kmsCmk = kmsCmk;
+        return this;
+    }
+
+    public ModelConfiguration withKmsCmk(Consumer<KMSCmk> kmsCmkSetter) {
+        if (this.kmsCmk == null) {
+            this.kmsCmk = new KMSCmk();
+            kmsCmkSetter.accept(this.kmsCmk);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kmsCmk
+     * @return kmsCmk
+     */
+    public KMSCmk getKmsCmk() {
+        return kmsCmk;
+    }
+
+    public void setKmsCmk(KMSCmk kmsCmk) {
+        this.kmsCmk = kmsCmk;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +113,13 @@ public class ModelConfiguration {
             return false;
         }
         ModelConfiguration that = (ModelConfiguration) obj;
-        return Objects.equals(this.iamAgency, that.iamAgency) && Objects.equals(this.obsBucket, that.obsBucket);
+        return Objects.equals(this.iamAgency, that.iamAgency) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.kmsCmk, that.kmsCmk);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iamAgency, obsBucket);
+        return Objects.hash(iamAgency, obsBucket, kmsCmk);
     }
 
     @Override
@@ -96,6 +128,7 @@ public class ModelConfiguration {
         sb.append("class ModelConfiguration {\n");
         sb.append("    iamAgency: ").append(toIndentedString(iamAgency)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
+        sb.append("    kmsCmk: ").append(toIndentedString(kmsCmk)).append("\n");
         sb.append("}");
         return sb.toString();
     }

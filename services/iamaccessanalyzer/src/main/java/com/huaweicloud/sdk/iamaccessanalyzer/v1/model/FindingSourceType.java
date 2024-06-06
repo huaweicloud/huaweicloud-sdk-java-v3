@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Gets or Sets FindingSourceType
+ * 访问分析结果的来源。
  */
 public class FindingSourceType {
 

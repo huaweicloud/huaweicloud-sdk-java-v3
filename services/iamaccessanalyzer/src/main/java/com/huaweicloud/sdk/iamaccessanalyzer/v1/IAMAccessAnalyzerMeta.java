@@ -5,7 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.AnalyzerType;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewReqBody;
@@ -21,8 +20,8 @@ import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteAnalyzerRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteAnalyzerResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteArchiveRuleRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteArchiveRuleResponse;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.GetAccessPreviewRequest;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.GetAccessPreviewResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewFindingsRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewFindingsResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewsRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewsResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAnalyzersRequest;
@@ -33,8 +32,8 @@ import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListFindingsReqBody;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListFindingsRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListFindingsResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListPreviewFindingsReqBody;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListPreviewFindingsRequest;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListPreviewFindingsResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAccessPreviewRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAccessPreviewResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAnalyzerRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAnalyzerResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowArchiveRuleRequest;
@@ -131,10 +130,10 @@ public class IAMAccessAnalyzerMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAnalyzersRequest::getMarker, ListAnalyzersRequest::setMarker));
-        builder.<AnalyzerType>withRequestField("type",
+        builder.<ListAnalyzersRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(AnalyzerType.class),
+            TypeCasts.uncheckedConversion(ListAnalyzersRequest.TypeEnum.class),
             f -> f.withMarshaller(ListAnalyzersRequest::getType, ListAnalyzersRequest::setType));
 
         // response
@@ -484,15 +483,18 @@ public class IAMAccessAnalyzerMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<GetAccessPreviewRequest, GetAccessPreviewResponse> getAccessPreview =
-        genForGetAccessPreview();
+    public static final HttpRequestDef<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResponse> listAccessPreviewFindings =
+        genForListAccessPreviewFindings();
 
-    private static HttpRequestDef<GetAccessPreviewRequest, GetAccessPreviewResponse> genForGetAccessPreview() {
+    private static HttpRequestDef<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResponse> genForListAccessPreviewFindings() {
         // basic
-        HttpRequestDef.Builder<GetAccessPreviewRequest, GetAccessPreviewResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, GetAccessPreviewRequest.class, GetAccessPreviewResponse.class)
-                .withName("GetAccessPreview")
-                .withUri("/v5/analyzers/{analyzer_id}/access-previews/{access_preview_id}")
+        HttpRequestDef.Builder<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListAccessPreviewFindingsRequest.class,
+                    ListAccessPreviewFindingsResponse.class)
+                .withName("ListAccessPreviewFindings")
+                .withUri("/v5/analyzers/{analyzer_id}/access-previews/{access_preview_id}/findings")
                 .withContentType("application/json");
 
         // requests
@@ -500,13 +502,20 @@ public class IAMAccessAnalyzerMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetAccessPreviewRequest::getAnalyzerId, GetAccessPreviewRequest::setAnalyzerId));
+            f -> f.withMarshaller(ListAccessPreviewFindingsRequest::getAnalyzerId,
+                ListAccessPreviewFindingsRequest::setAnalyzerId));
         builder.<String>withRequestField("access_preview_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetAccessPreviewRequest::getAccessPreviewId,
-                GetAccessPreviewRequest::setAccessPreviewId));
+            f -> f.withMarshaller(ListAccessPreviewFindingsRequest::getAccessPreviewId,
+                ListAccessPreviewFindingsRequest::setAccessPreviewId));
+        builder.<ListPreviewFindingsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListPreviewFindingsReqBody.class),
+            f -> f.withMarshaller(ListAccessPreviewFindingsRequest::getBody,
+                ListAccessPreviewFindingsRequest::setBody));
 
         // response
 
@@ -546,15 +555,15 @@ public class IAMAccessAnalyzerMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPreviewFindingsRequest, ListPreviewFindingsResponse> listPreviewFindings =
-        genForListPreviewFindings();
+    public static final HttpRequestDef<ShowAccessPreviewRequest, ShowAccessPreviewResponse> showAccessPreview =
+        genForShowAccessPreview();
 
-    private static HttpRequestDef<ListPreviewFindingsRequest, ListPreviewFindingsResponse> genForListPreviewFindings() {
+    private static HttpRequestDef<ShowAccessPreviewRequest, ShowAccessPreviewResponse> genForShowAccessPreview() {
         // basic
-        HttpRequestDef.Builder<ListPreviewFindingsRequest, ListPreviewFindingsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListPreviewFindingsRequest.class, ListPreviewFindingsResponse.class)
-                .withName("ListPreviewFindings")
-                .withUri("/v5/analyzers/{analyzer_id}/access-previews/{access_preview_id}/findings")
+        HttpRequestDef.Builder<ShowAccessPreviewRequest, ShowAccessPreviewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccessPreviewRequest.class, ShowAccessPreviewResponse.class)
+                .withName("ShowAccessPreview")
+                .withUri("/v5/analyzers/{analyzer_id}/access-previews/{access_preview_id}")
                 .withContentType("application/json");
 
         // requests
@@ -562,19 +571,13 @@ public class IAMAccessAnalyzerMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPreviewFindingsRequest::getAnalyzerId,
-                ListPreviewFindingsRequest::setAnalyzerId));
+            f -> f.withMarshaller(ShowAccessPreviewRequest::getAnalyzerId, ShowAccessPreviewRequest::setAnalyzerId));
         builder.<String>withRequestField("access_preview_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPreviewFindingsRequest::getAccessPreviewId,
-                ListPreviewFindingsRequest::setAccessPreviewId));
-        builder.<ListPreviewFindingsReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListPreviewFindingsReqBody.class),
-            f -> f.withMarshaller(ListPreviewFindingsRequest::getBody, ListPreviewFindingsRequest::setBody));
+            f -> f.withMarshaller(ShowAccessPreviewRequest::getAccessPreviewId,
+                ShowAccessPreviewRequest::setAccessPreviewId));
 
         // response
 

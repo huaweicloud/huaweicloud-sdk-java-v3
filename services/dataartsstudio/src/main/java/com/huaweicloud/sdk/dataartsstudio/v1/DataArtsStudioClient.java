@@ -415,6 +415,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
@@ -6167,6 +6169,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<SearchIdByPathRequest, SearchIdByPathResponse> searchIdByPathInvoker(
         SearchIdByPathRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.searchIdByPath, hcClient);
+    }
+
+    /**
+     * 获取计算维度成本列表信息
+     *
+     * 获取计算维度成本列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchSgcComputeDimensionsRequest 请求对象
+     * @return SearchSgcComputeDimensionsResponse
+     */
+    public SearchSgcComputeDimensionsResponse searchSgcComputeDimensions(SearchSgcComputeDimensionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.searchSgcComputeDimensions);
+    }
+
+    /**
+     * 获取计算维度成本列表信息
+     *
+     * 获取计算维度成本列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchSgcComputeDimensionsRequest 请求对象
+     * @return SyncInvoker<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse>
+     */
+    public SyncInvoker<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse> searchSgcComputeDimensionsInvoker(
+        SearchSgcComputeDimensionsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.searchSgcComputeDimensions, hcClient);
     }
 
     /**

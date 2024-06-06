@@ -10,19 +10,19 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class GetAccessPreviewResponse extends SdkResponse {
+public class ShowAccessPreviewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_preview")
 
     private AccessPreview accessPreview;
 
-    public GetAccessPreviewResponse withAccessPreview(AccessPreview accessPreview) {
+    public ShowAccessPreviewResponse withAccessPreview(AccessPreview accessPreview) {
         this.accessPreview = accessPreview;
         return this;
     }
 
-    public GetAccessPreviewResponse withAccessPreview(Consumer<AccessPreview> accessPreviewSetter) {
+    public ShowAccessPreviewResponse withAccessPreview(Consumer<AccessPreview> accessPreviewSetter) {
         if (this.accessPreview == null) {
             this.accessPreview = new AccessPreview();
             accessPreviewSetter.accept(this.accessPreview);
@@ -51,7 +51,7 @@ public class GetAccessPreviewResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetAccessPreviewResponse that = (GetAccessPreviewResponse) obj;
+        ShowAccessPreviewResponse that = (ShowAccessPreviewResponse) obj;
         return Objects.equals(this.accessPreview, that.accessPreview);
     }
 
@@ -63,7 +63,7 @@ public class GetAccessPreviewResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GetAccessPreviewResponse {\n");
+        sb.append("class ShowAccessPreviewResponse {\n");
         sb.append("    accessPreview: ").append(toIndentedString(accessPreview)).append("\n");
         sb.append("}");
         return sb.toString();

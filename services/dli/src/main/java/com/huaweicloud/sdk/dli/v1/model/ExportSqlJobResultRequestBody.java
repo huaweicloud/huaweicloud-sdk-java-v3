@@ -125,6 +125,16 @@ public class ExportSqlJobResultRequestBody {
 
     private String encodingType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quote_char")
+
+    private String quoteChar;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "escape_char")
+
+    private String escapeChar;
+
     public ExportSqlJobResultRequestBody withDataPath(String dataPath) {
         this.dataPath = dataPath;
         return this;
@@ -261,6 +271,40 @@ public class ExportSqlJobResultRequestBody {
         this.encodingType = encodingType;
     }
 
+    public ExportSqlJobResultRequestBody withQuoteChar(String quoteChar) {
+        this.quoteChar = quoteChar;
+        return this;
+    }
+
+    /**
+     * 用户自定义引用字符
+     * @return quoteChar
+     */
+    public String getQuoteChar() {
+        return quoteChar;
+    }
+
+    public void setQuoteChar(String quoteChar) {
+        this.quoteChar = quoteChar;
+    }
+
+    public ExportSqlJobResultRequestBody withEscapeChar(String escapeChar) {
+        this.escapeChar = escapeChar;
+        return this;
+    }
+
+    /**
+     * 用户自定义转义字符
+     * @return escapeChar
+     */
+    public String getEscapeChar() {
+        return escapeChar;
+    }
+
+    public void setEscapeChar(String escapeChar) {
+        this.escapeChar = escapeChar;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -274,13 +318,22 @@ public class ExportSqlJobResultRequestBody {
             && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this.exportMode, that.exportMode)
             && Objects.equals(this.withColumnHeader, that.withColumnHeader)
-            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.encodingType, that.encodingType);
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.encodingType, that.encodingType)
+            && Objects.equals(this.quoteChar, that.quoteChar) && Objects.equals(this.escapeChar, that.escapeChar);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(dataPath, compress, dataType, queueName, exportMode, withColumnHeader, limitNum, encodingType);
+        return Objects.hash(dataPath,
+            compress,
+            dataType,
+            queueName,
+            exportMode,
+            withColumnHeader,
+            limitNum,
+            encodingType,
+            quoteChar,
+            escapeChar);
     }
 
     @Override
@@ -295,6 +348,8 @@ public class ExportSqlJobResultRequestBody {
         sb.append("    withColumnHeader: ").append(toIndentedString(withColumnHeader)).append("\n");
         sb.append("    limitNum: ").append(toIndentedString(limitNum)).append("\n");
         sb.append("    encodingType: ").append(toIndentedString(encodingType)).append("\n");
+        sb.append("    quoteChar: ").append(toIndentedString(quoteChar)).append("\n");
+        sb.append("    escapeChar: ").append(toIndentedString(escapeChar)).append("\n");
         sb.append("}");
         return sb.toString();
     }

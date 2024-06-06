@@ -253,6 +253,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowLogFileRequest;
@@ -417,6 +419,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
@@ -461,6 +465,9 @@ import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SwitchLogReplayResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitControlReqV3;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
@@ -1589,6 +1596,11 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.BackupTypeEnum.class),
             f -> f.withMarshaller(ListBackupsRequest::getBackupType, ListBackupsRequest::setBackupType));
+        builder.<ListBackupsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBackupsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListBackupsRequest::getStatus, ListBackupsRequest::setStatus));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2871,6 +2883,49 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, ListRestoreTimesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListShareBackupsRequest, ListShareBackupsResponse> listShareBackups =
+        genForListShareBackups();
+
+    private static HttpRequestDef<ListShareBackupsRequest, ListShareBackupsResponse> genForListShareBackups() {
+        // basic
+        HttpRequestDef.Builder<ListShareBackupsRequest, ListShareBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListShareBackupsRequest.class, ListShareBackupsResponse.class)
+                .withName("ListShareBackups")
+                .withUri("/v3/{project_id}/share-backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBackupsRequest::getInstanceId, ListShareBackupsRequest::setInstanceId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBackupsRequest::getInstanceName, ListShareBackupsRequest::setInstanceName));
+        builder.<String>withRequestField("backup_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBackupsRequest::getBackupName, ListShareBackupsRequest::setBackupName));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBackupsRequest::getOffset, ListShareBackupsRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBackupsRequest::getLimit, ListShareBackupsRequest::setLimit));
 
         // response
 
@@ -6997,6 +7052,36 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse> showReplayDelayStatus =
+        genForShowReplayDelayStatus();
+
+    private static HttpRequestDef<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse> genForShowReplayDelayStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowReplayDelayStatusRequest, ShowReplayDelayStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowReplayDelayStatusRequest.class, ShowReplayDelayStatusResponse.class)
+            .withName("ShowReplayDelayStatus")
+            .withUri("/v3/{project_id}/instances/{instance_id}/replay-delay/show")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayDelayStatusRequest::getInstanceId,
+                ShowReplayDelayStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayDelayStatusRequest::getXLanguage,
+                ShowReplayDelayStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxy =
         genForStartDatabaseProxy();
 
@@ -7052,6 +7137,39 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StopDatabaseProxyRequest.XLanguageEnum.class),
             f -> f.withMarshaller(StopDatabaseProxyRequest::getXLanguage, StopDatabaseProxyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchLogReplayRequest, SwitchLogReplayResponse> switchLogReplay =
+        genForSwitchLogReplay();
+
+    private static HttpRequestDef<SwitchLogReplayRequest, SwitchLogReplayResponse> genForSwitchLogReplay() {
+        // basic
+        HttpRequestDef.Builder<SwitchLogReplayRequest, SwitchLogReplayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchLogReplayRequest.class, SwitchLogReplayResponse.class)
+                .withName("SwitchLogReplay")
+                .withUri("/v3/{project_id}/instances/{instance_id}/log-replay/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLogReplayRequest::getInstanceId, SwitchLogReplayRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLogReplayRequest::getXLanguage, SwitchLogReplayRequest::setXLanguage));
+        builder.<SwitchLogReplayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchLogReplayRequestBody.class),
+            f -> f.withMarshaller(SwitchLogReplayRequest::getBody, SwitchLogReplayRequest::setBody));
 
         // response
 

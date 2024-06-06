@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import java.util.Objects;
 
 /**
- * 拥有资源的账户ID。
+ * 拥有资源的账号ID。
  */
 public class ResourceOwnerAccount {
 

@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class ListPreviewFindingsResponse extends SdkResponse {
+public class ListAccessPreviewFindingsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "findings")
@@ -24,12 +24,12 @@ public class ListPreviewFindingsResponse extends SdkResponse {
 
     private PageInfo pageInfo;
 
-    public ListPreviewFindingsResponse withFindings(List<PreviewFinding> findings) {
+    public ListAccessPreviewFindingsResponse withFindings(List<PreviewFinding> findings) {
         this.findings = findings;
         return this;
     }
 
-    public ListPreviewFindingsResponse addFindingsItem(PreviewFinding findingsItem) {
+    public ListAccessPreviewFindingsResponse addFindingsItem(PreviewFinding findingsItem) {
         if (this.findings == null) {
             this.findings = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListPreviewFindingsResponse extends SdkResponse {
         return this;
     }
 
-    public ListPreviewFindingsResponse withFindings(Consumer<List<PreviewFinding>> findingsSetter) {
+    public ListAccessPreviewFindingsResponse withFindings(Consumer<List<PreviewFinding>> findingsSetter) {
         if (this.findings == null) {
             this.findings = new ArrayList<>();
         }
@@ -57,12 +57,12 @@ public class ListPreviewFindingsResponse extends SdkResponse {
         this.findings = findings;
     }
 
-    public ListPreviewFindingsResponse withPageInfo(PageInfo pageInfo) {
+    public ListAccessPreviewFindingsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
-    public ListPreviewFindingsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+    public ListAccessPreviewFindingsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
         if (this.pageInfo == null) {
             this.pageInfo = new PageInfo();
             pageInfoSetter.accept(this.pageInfo);
@@ -91,7 +91,7 @@ public class ListPreviewFindingsResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPreviewFindingsResponse that = (ListPreviewFindingsResponse) obj;
+        ListAccessPreviewFindingsResponse that = (ListAccessPreviewFindingsResponse) obj;
         return Objects.equals(this.findings, that.findings) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
@@ -103,7 +103,7 @@ public class ListPreviewFindingsResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListPreviewFindingsResponse {\n");
+        sb.append("class ListAccessPreviewFindingsResponse {\n");
         sb.append("    findings: ").append(toIndentedString(findings)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");

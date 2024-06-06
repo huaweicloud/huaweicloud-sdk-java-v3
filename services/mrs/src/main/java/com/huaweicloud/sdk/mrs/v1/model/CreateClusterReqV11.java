@@ -1290,9 +1290,9 @@ public class CreateClusterReqV11 {
     }
 
     /**
-     * 该参数为多磁盘参数，表示Core节点数据磁盘个数。 取值范围：1～10
+     * 该参数为多磁盘参数，表示Core节点数据磁盘个数。 取值范围：1～20
      * minimum: 1
-     * maximum: 10
+     * maximum: 20
      * @return coreDataVolumeCount
      */
     public Integer getCoreDataVolumeCount() {

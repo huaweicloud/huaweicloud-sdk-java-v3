@@ -146,6 +146,11 @@ public class FlavorExtraSpec {
     private String condStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cond:storage:type")
+
+    private String condStorageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cond:compute:live_resizable")
 
     private String condComputeLiveResizable;
@@ -644,6 +649,23 @@ public class FlavorExtraSpec {
         this.condStorage = condStorage;
     }
 
+    public FlavorExtraSpec withCondStorageType(String condStorageType) {
+        this.condStorageType = condStorageType;
+        return this;
+    }
+
+    /**
+     * 存储约束  - 支持磁盘特性，不配置时以UI配置为准。
+     * @return condStorageType
+     */
+    public String getCondStorageType() {
+        return condStorageType;
+    }
+
+    public void setCondStorageType(String condStorageType) {
+        this.condStorageType = condStorageType;
+    }
+
     public FlavorExtraSpec withCondComputeLiveResizable(String condComputeLiveResizable) {
         this.condComputeLiveResizable = condComputeLiveResizable;
         return this;
@@ -815,6 +837,7 @@ public class FlavorExtraSpec {
             && Objects.equals(this.condOperationRoles, that.condOperationRoles)
             && Objects.equals(this.condSpotOperationStatus, that.condSpotOperationStatus)
             && Objects.equals(this.condNetwork, that.condNetwork) && Objects.equals(this.condStorage, that.condStorage)
+            && Objects.equals(this.condStorageType, that.condStorageType)
             && Objects.equals(this.condComputeLiveResizable, that.condComputeLiveResizable)
             && Objects.equals(this.condCompute, that.condCompute) && Objects.equals(this.infoGpuName, that.infoGpuName)
             && Objects.equals(this.infoCpuName, that.infoCpuName) && Objects.equals(this.quotaGpu, that.quotaGpu)
@@ -852,6 +875,7 @@ public class FlavorExtraSpec {
             condSpotOperationStatus,
             condNetwork,
             condStorage,
+            condStorageType,
             condComputeLiveResizable,
             condCompute,
             infoGpuName,
@@ -895,6 +919,7 @@ public class FlavorExtraSpec {
         sb.append("    condSpotOperationStatus: ").append(toIndentedString(condSpotOperationStatus)).append("\n");
         sb.append("    condNetwork: ").append(toIndentedString(condNetwork)).append("\n");
         sb.append("    condStorage: ").append(toIndentedString(condStorage)).append("\n");
+        sb.append("    condStorageType: ").append(toIndentedString(condStorageType)).append("\n");
         sb.append("    condComputeLiveResizable: ").append(toIndentedString(condComputeLiveResizable)).append("\n");
         sb.append("    condCompute: ").append(toIndentedString(condCompute)).append("\n");
         sb.append("    infoGpuName: ").append(toIndentedString(infoGpuName)).append("\n");

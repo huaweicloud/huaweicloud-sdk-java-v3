@@ -40,6 +40,11 @@ public class NodeSpecUpdate {
 
     private Login login;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverEnterpriseProjectID")
+
+    private String serverEnterpriseProjectID;
+
     public NodeSpecUpdate withTaints(List<Taint> taints) {
         this.taints = taints;
         return this;
@@ -198,6 +203,23 @@ public class NodeSpecUpdate {
         this.login = login;
     }
 
+    public NodeSpecUpdate withServerEnterpriseProjectID(String serverEnterpriseProjectID) {
+        this.serverEnterpriseProjectID = serverEnterpriseProjectID;
+        return this;
+    }
+
+    /**
+     * 服务器企业项目ID。CCE服务不实现EPS相关特性，该字段仅用于同步服务器企业项目ID。 创建节点/节点池场景：可指定已存在企业项目，当取值为空时，该字段继承集群企业项目属性。 更新节点池场景：配置修改后仅会对新增节点的服务器生效，存量节点需前往EPS界面迁移。 如果更新时不指定值，不会更新该字段。 当该字段为空时，返回集群企业项目。
+     * @return serverEnterpriseProjectID
+     */
+    public String getServerEnterpriseProjectID() {
+        return serverEnterpriseProjectID;
+    }
+
+    public void setServerEnterpriseProjectID(String serverEnterpriseProjectID) {
+        this.serverEnterpriseProjectID = serverEnterpriseProjectID;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -210,12 +232,13 @@ public class NodeSpecUpdate {
         return Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
             && Objects.equals(this.userTags, that.userTags)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
-            && Objects.equals(this.login, that.login);
+            && Objects.equals(this.login, that.login)
+            && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taints, k8sTags, userTags, initializedConditions, login);
+        return Objects.hash(taints, k8sTags, userTags, initializedConditions, login, serverEnterpriseProjectID);
     }
 
     @Override
@@ -227,6 +250,7 @@ public class NodeSpecUpdate {
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
+        sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

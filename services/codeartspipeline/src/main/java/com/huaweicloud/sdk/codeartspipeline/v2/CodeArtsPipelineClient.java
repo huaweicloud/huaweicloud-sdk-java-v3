@@ -144,6 +144,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoRequest;
@@ -2251,6 +2253,35 @@ public class CodeArtsPipelineClient {
     public SyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> updatePipelineGroupInvoker(
         UpdatePipelineGroupRequest request) {
         return new SyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineGroup, hcClient);
+    }
+
+    /**
+     * 修改流水线信息
+     *
+     * 修改流水线信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipelineInfoRequest 请求对象
+     * @return UpdatePipelineInfoResponse
+     */
+    public UpdatePipelineInfoResponse updatePipelineInfo(UpdatePipelineInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updatePipelineInfo);
+    }
+
+    /**
+     * 修改流水线信息
+     *
+     * 修改流水线信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipelineInfoRequest 请求对象
+     * @return SyncInvoker<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse>
+     */
+    public SyncInvoker<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse> updatePipelineInfoInvoker(
+        UpdatePipelineInfoRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.updatePipelineInfo, hcClient);
     }
 
     /**

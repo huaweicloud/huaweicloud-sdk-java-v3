@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class ListPreviewFindingsRequest {
+public class ListAccessPreviewFindingsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analyzer_id")
@@ -26,7 +26,7 @@ public class ListPreviewFindingsRequest {
 
     private ListPreviewFindingsReqBody body;
 
-    public ListPreviewFindingsRequest withAnalyzerId(String analyzerId) {
+    public ListAccessPreviewFindingsRequest withAnalyzerId(String analyzerId) {
         this.analyzerId = analyzerId;
         return this;
     }
@@ -43,7 +43,7 @@ public class ListPreviewFindingsRequest {
         this.analyzerId = analyzerId;
     }
 
-    public ListPreviewFindingsRequest withAccessPreviewId(String accessPreviewId) {
+    public ListAccessPreviewFindingsRequest withAccessPreviewId(String accessPreviewId) {
         this.accessPreviewId = accessPreviewId;
         return this;
     }
@@ -60,12 +60,12 @@ public class ListPreviewFindingsRequest {
         this.accessPreviewId = accessPreviewId;
     }
 
-    public ListPreviewFindingsRequest withBody(ListPreviewFindingsReqBody body) {
+    public ListAccessPreviewFindingsRequest withBody(ListPreviewFindingsReqBody body) {
         this.body = body;
         return this;
     }
 
-    public ListPreviewFindingsRequest withBody(Consumer<ListPreviewFindingsReqBody> bodySetter) {
+    public ListAccessPreviewFindingsRequest withBody(Consumer<ListPreviewFindingsReqBody> bodySetter) {
         if (this.body == null) {
             this.body = new ListPreviewFindingsReqBody();
             bodySetter.accept(this.body);
@@ -94,7 +94,7 @@ public class ListPreviewFindingsRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPreviewFindingsRequest that = (ListPreviewFindingsRequest) obj;
+        ListAccessPreviewFindingsRequest that = (ListAccessPreviewFindingsRequest) obj;
         return Objects.equals(this.analyzerId, that.analyzerId)
             && Objects.equals(this.accessPreviewId, that.accessPreviewId) && Objects.equals(this.body, that.body);
     }
@@ -107,7 +107,7 @@ public class ListPreviewFindingsRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListPreviewFindingsRequest {\n");
+        sb.append("class ListAccessPreviewFindingsRequest {\n");
         sb.append("    analyzerId: ").append(toIndentedString(analyzerId)).append("\n");
         sb.append("    accessPreviewId: ").append(toIndentedString(accessPreviewId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

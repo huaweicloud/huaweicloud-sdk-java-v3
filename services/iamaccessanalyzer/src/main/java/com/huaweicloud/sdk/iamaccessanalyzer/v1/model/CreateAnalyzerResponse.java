@@ -44,7 +44,7 @@ public class CreateAnalyzerResponse extends SdkResponse {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 分析器的唯一资源标识符。
      * @return urn
      */
     public String getUrn() {

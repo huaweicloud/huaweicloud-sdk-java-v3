@@ -117,6 +117,87 @@ public class ListBackupsRequest {
 
     private BackupTypeEnum backupType;
 
+    /**
+     * 备份状态，只支持筛选RDS for SQL Server的全量备份的状态。取值：  - “BUILDING”: 备份中 - “COMPLETED”: 备份完成 - “FAILED”: 备份失败
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum BUILDING for value: "BUILDING"
+         */
+        public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
+
+        /**
+         * Enum COMPLETED for value: "COMPLETED"
+         */
+        public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("FAILED");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("BUILDING", BUILDING);
+            map.put("COMPLETED", COMPLETED);
+            map.put("FAILED", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
@@ -207,6 +288,23 @@ public class ListBackupsRequest {
         this.backupType = backupType;
     }
 
+    public ListBackupsRequest withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 备份状态，只支持筛选RDS for SQL Server的全量备份的状态。取值：  - “BUILDING”: 备份中 - “COMPLETED”: 备份完成 - “FAILED”: 备份失败
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     public ListBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -289,13 +387,14 @@ public class ListBackupsRequest {
         ListBackupsRequest that = (ListBackupsRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupType, that.backupType)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime);
+        return Objects.hash(xLanguage, instanceId, backupId, backupType, status, offset, limit, beginTime, endTime);
     }
 
     @Override
@@ -306,6 +405,7 @@ public class ListBackupsRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");

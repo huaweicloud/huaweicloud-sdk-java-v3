@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
@@ -34,6 +36,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
@@ -64,6 +68,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
@@ -82,6 +88,8 @@ import com.huaweicloud.sdk.cae.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequest;
@@ -90,6 +98,8 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -1113,6 +1123,151 @@ public class CaeClient {
     public SyncInvoker<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> updateMonitorSystemInvoker(
         UpdateMonitorSystemRequest request) {
         return new SyncInvoker<>(request, CaeMeta.updateMonitorSystem, hcClient);
+    }
+
+    /**
+     * 创建事件通知规则。
+     *
+     * 创建事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNoticeRuleRequest 请求对象
+     * @return CreateNoticeRuleResponse
+     */
+    public CreateNoticeRuleResponse createNoticeRule(CreateNoticeRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.createNoticeRule);
+    }
+
+    /**
+     * 创建事件通知规则。
+     *
+     * 创建事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNoticeRuleRequest 请求对象
+     * @return SyncInvoker<CreateNoticeRuleRequest, CreateNoticeRuleResponse>
+     */
+    public SyncInvoker<CreateNoticeRuleRequest, CreateNoticeRuleResponse> createNoticeRuleInvoker(
+        CreateNoticeRuleRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.createNoticeRule, hcClient);
+    }
+
+    /**
+     * 删除事件通知规则。
+     *
+     * 删除事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNoticeRuleRequest 请求对象
+     * @return DeleteNoticeRuleResponse
+     */
+    public DeleteNoticeRuleResponse deleteNoticeRule(DeleteNoticeRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.deleteNoticeRule);
+    }
+
+    /**
+     * 删除事件通知规则。
+     *
+     * 删除事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNoticeRuleRequest 请求对象
+     * @return SyncInvoker<DeleteNoticeRuleRequest, DeleteNoticeRuleResponse>
+     */
+    public SyncInvoker<DeleteNoticeRuleRequest, DeleteNoticeRuleResponse> deleteNoticeRuleInvoker(
+        DeleteNoticeRuleRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.deleteNoticeRule, hcClient);
+    }
+
+    /**
+     * 查询事件通知规则列表。
+     *
+     * 查询事件通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNoticeRulesRequest 请求对象
+     * @return ListNoticeRulesResponse
+     */
+    public ListNoticeRulesResponse listNoticeRules(ListNoticeRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listNoticeRules);
+    }
+
+    /**
+     * 查询事件通知规则列表。
+     *
+     * 查询事件通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNoticeRulesRequest 请求对象
+     * @return SyncInvoker<ListNoticeRulesRequest, ListNoticeRulesResponse>
+     */
+    public SyncInvoker<ListNoticeRulesRequest, ListNoticeRulesResponse> listNoticeRulesInvoker(
+        ListNoticeRulesRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.listNoticeRules, hcClient);
+    }
+
+    /**
+     * 查询事件通知规则。
+     *
+     * 查询事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNoticeRuleRequest 请求对象
+     * @return ShowNoticeRuleResponse
+     */
+    public ShowNoticeRuleResponse showNoticeRule(ShowNoticeRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.showNoticeRule);
+    }
+
+    /**
+     * 查询事件通知规则。
+     *
+     * 查询事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNoticeRuleRequest 请求对象
+     * @return SyncInvoker<ShowNoticeRuleRequest, ShowNoticeRuleResponse>
+     */
+    public SyncInvoker<ShowNoticeRuleRequest, ShowNoticeRuleResponse> showNoticeRuleInvoker(
+        ShowNoticeRuleRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.showNoticeRule, hcClient);
+    }
+
+    /**
+     * 修改事件通知规则。
+     *
+     * 修改事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNoticeRuleRequest 请求对象
+     * @return UpdateNoticeRuleResponse
+     */
+    public UpdateNoticeRuleResponse updateNoticeRule(UpdateNoticeRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.updateNoticeRule);
+    }
+
+    /**
+     * 修改事件通知规则。
+     *
+     * 修改事件通知规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNoticeRuleRequest 请求对象
+     * @return SyncInvoker<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse>
+     */
+    public SyncInvoker<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse> updateNoticeRuleInvoker(
+        UpdateNoticeRuleRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.updateNoticeRule, hcClient);
     }
 
     /**

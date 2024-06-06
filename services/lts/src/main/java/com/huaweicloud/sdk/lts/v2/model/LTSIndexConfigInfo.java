@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class LTSIndexConfigInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logStreamId")
-
-    private String logStreamId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fullTextIndex")
 
     private LTSFullTextIndexInfo fullTextIndex;
@@ -28,22 +23,15 @@ public class LTSIndexConfigInfo {
 
     private List<LTSFieldsInfo> fields = null;
 
-    public LTSIndexConfigInfo withLogStreamId(String logStreamId) {
-        this.logStreamId = logStreamId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sqlAnalysisEnable")
 
-    /**
-     * 日志流ID
-     * @return logStreamId
-     */
-    public String getLogStreamId() {
-        return logStreamId;
-    }
+    private Boolean sqlAnalysisEnable;
 
-    public void setLogStreamId(String logStreamId) {
-        this.logStreamId = logStreamId;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logStreamId")
+
+    private String logStreamId;
 
     public LTSIndexConfigInfo withFullTextIndex(LTSFullTextIndexInfo fullTextIndex) {
         this.fullTextIndex = fullTextIndex;
@@ -104,6 +92,40 @@ public class LTSIndexConfigInfo {
         this.fields = fields;
     }
 
+    public LTSIndexConfigInfo withSqlAnalysisEnable(Boolean sqlAnalysisEnable) {
+        this.sqlAnalysisEnable = sqlAnalysisEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启可视化
+     * @return sqlAnalysisEnable
+     */
+    public Boolean getSqlAnalysisEnable() {
+        return sqlAnalysisEnable;
+    }
+
+    public void setSqlAnalysisEnable(Boolean sqlAnalysisEnable) {
+        this.sqlAnalysisEnable = sqlAnalysisEnable;
+    }
+
+    public LTSIndexConfigInfo withLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+        return this;
+    }
+
+    /**
+     * 日志流id
+     * @return logStreamId
+     */
+    public String getLogStreamId() {
+        return logStreamId;
+    }
+
+    public void setLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -113,22 +135,24 @@ public class LTSIndexConfigInfo {
             return false;
         }
         LTSIndexConfigInfo that = (LTSIndexConfigInfo) obj;
-        return Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.fullTextIndex, that.fullTextIndex) && Objects.equals(this.fields, that.fields);
+        return Objects.equals(this.fullTextIndex, that.fullTextIndex) && Objects.equals(this.fields, that.fields)
+            && Objects.equals(this.sqlAnalysisEnable, that.sqlAnalysisEnable)
+            && Objects.equals(this.logStreamId, that.logStreamId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamId, fullTextIndex, fields);
+        return Objects.hash(fullTextIndex, fields, sqlAnalysisEnable, logStreamId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LTSIndexConfigInfo {\n");
-        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    fullTextIndex: ").append(toIndentedString(fullTextIndex)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+        sb.append("    sqlAnalysisEnable: ").append(toIndentedString(sqlAnalysisEnable)).append("\n");
+        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

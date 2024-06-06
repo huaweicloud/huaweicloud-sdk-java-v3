@@ -169,9 +169,9 @@ public class NodeGroupV2 {
     }
 
     /**
-     * 节点数据磁盘存储数目，取值范围：0～10。
+     * 节点数据磁盘存储数目，取值范围：0～20。
      * minimum: 0
-     * maximum: 10
+     * maximum: 20
      * @return dataVolumeCount
      */
     public Integer getDataVolumeCount() {

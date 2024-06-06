@@ -420,7 +420,7 @@ public class NodeGroupV10 {
     /**
      * 节点数据磁盘存储数目。
      * minimum: 0
-     * maximum: 10
+     * maximum: 20
      * @return dataVolumeCount
      */
     public Integer getDataVolumeCount() {

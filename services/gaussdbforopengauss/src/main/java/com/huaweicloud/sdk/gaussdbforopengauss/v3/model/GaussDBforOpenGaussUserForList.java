@@ -17,14 +17,19 @@ public class GaussDBforOpenGaussUserForList {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attributes")
+    @JsonProperty(value = "attribute")
 
-    private GaussDBforOpenGaussUserForListAttributes attributes;
+    private GaussDBforOpenGaussUserForListAttribute attribute;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memberof")
 
     private String memberof;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lock_status")
+
+    private Boolean lockStatus;
 
     public GaussDBforOpenGaussUserForList withName(String name) {
         this.name = name;
@@ -43,31 +48,31 @@ public class GaussDBforOpenGaussUserForList {
         this.name = name;
     }
 
-    public GaussDBforOpenGaussUserForList withAttributes(GaussDBforOpenGaussUserForListAttributes attributes) {
-        this.attributes = attributes;
+    public GaussDBforOpenGaussUserForList withAttribute(GaussDBforOpenGaussUserForListAttribute attribute) {
+        this.attribute = attribute;
         return this;
     }
 
-    public GaussDBforOpenGaussUserForList withAttributes(
-        Consumer<GaussDBforOpenGaussUserForListAttributes> attributesSetter) {
-        if (this.attributes == null) {
-            this.attributes = new GaussDBforOpenGaussUserForListAttributes();
-            attributesSetter.accept(this.attributes);
+    public GaussDBforOpenGaussUserForList withAttribute(
+        Consumer<GaussDBforOpenGaussUserForListAttribute> attributeSetter) {
+        if (this.attribute == null) {
+            this.attribute = new GaussDBforOpenGaussUserForListAttribute();
+            attributeSetter.accept(this.attribute);
         }
 
         return this;
     }
 
     /**
-     * Get attributes
-     * @return attributes
+     * Get attribute
+     * @return attribute
      */
-    public GaussDBforOpenGaussUserForListAttributes getAttributes() {
-        return attributes;
+    public GaussDBforOpenGaussUserForListAttribute getAttribute() {
+        return attribute;
     }
 
-    public void setAttributes(GaussDBforOpenGaussUserForListAttributes attributes) {
-        this.attributes = attributes;
+    public void setAttribute(GaussDBforOpenGaussUserForListAttribute attribute) {
+        this.attribute = attribute;
     }
 
     public GaussDBforOpenGaussUserForList withMemberof(String memberof) {
@@ -87,6 +92,23 @@ public class GaussDBforOpenGaussUserForList {
         this.memberof = memberof;
     }
 
+    public GaussDBforOpenGaussUserForList withLockStatus(Boolean lockStatus) {
+        this.lockStatus = lockStatus;
+        return this;
+    }
+
+    /**
+     * 用户是否被锁，取值为“true”或“false”。
+     * @return lockStatus
+     */
+    public Boolean getLockStatus() {
+        return lockStatus;
+    }
+
+    public void setLockStatus(Boolean lockStatus) {
+        this.lockStatus = lockStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,13 +118,13 @@ public class GaussDBforOpenGaussUserForList {
             return false;
         }
         GaussDBforOpenGaussUserForList that = (GaussDBforOpenGaussUserForList) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.attributes, that.attributes)
-            && Objects.equals(this.memberof, that.memberof);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.attribute, that.attribute)
+            && Objects.equals(this.memberof, that.memberof) && Objects.equals(this.lockStatus, that.lockStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, attributes, memberof);
+        return Objects.hash(name, attribute, memberof, lockStatus);
     }
 
     @Override
@@ -110,8 +132,9 @@ public class GaussDBforOpenGaussUserForList {
         StringBuilder sb = new StringBuilder();
         sb.append("class GaussDBforOpenGaussUserForList {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+        sb.append("    attribute: ").append(toIndentedString(attribute)).append("\n");
         sb.append("    memberof: ").append(toIndentedString(memberof)).append("\n");
+        sb.append("    lockStatus: ").append(toIndentedString(lockStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

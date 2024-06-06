@@ -123,6 +123,11 @@ public class CreateGraphReqGraph {
 
     private Boolean isDynamicGraph;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key_type")
+
+    private String sortKeyType;
+
     public CreateGraphReqGraph withName(String name) {
         this.name = name;
         return this;
@@ -566,6 +571,23 @@ public class CreateGraphReqGraph {
         this.isDynamicGraph = isDynamicGraph;
     }
 
+    public CreateGraphReqGraph withSortKeyType(String sortKeyType) {
+        this.sortKeyType = sortKeyType;
+        return this;
+    }
+
+    /**
+     * 持久化版图数据的sortKey的类型，通过配置不同SortKey的值来区分重复边（源点，终点，Label三者都相同的边），仅持久化图需要填写。取值为： - int：整型 - string：字节长度小于等于40的字符串 - varString：不限长度字符串，过长会影响读写性能，建议长度控制在1K字节以内，最大不要超过2K字节
+     * @return sortKeyType
+     */
+    public String getSortKeyType() {
+        return sortKeyType;
+    }
+
+    public void setSortKeyType(String sortKeyType) {
+        this.sortKeyType = sortKeyType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -591,7 +613,8 @@ public class CreateGraphReqGraph {
             && Objects.equals(this.vertexIdType, that.vertexIdType)
             && Objects.equals(this.enableMultiLabel, that.enableMultiLabel)
             && Objects.equals(this.capacityRatio, that.capacityRatio)
-            && Objects.equals(this.isDynamicGraph, that.isDynamicGraph);
+            && Objects.equals(this.isDynamicGraph, that.isDynamicGraph)
+            && Objects.equals(this.sortKeyType, that.sortKeyType);
     }
 
     @Override
@@ -617,7 +640,8 @@ public class CreateGraphReqGraph {
             vertexIdType,
             enableMultiLabel,
             capacityRatio,
-            isDynamicGraph);
+            isDynamicGraph,
+            sortKeyType);
     }
 
     @Override
@@ -646,6 +670,7 @@ public class CreateGraphReqGraph {
         sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("    capacityRatio: ").append(toIndentedString(capacityRatio)).append("\n");
         sb.append("    isDynamicGraph: ").append(toIndentedString(isDynamicGraph)).append("\n");
+        sb.append("    sortKeyType: ").append(toIndentedString(sortKeyType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

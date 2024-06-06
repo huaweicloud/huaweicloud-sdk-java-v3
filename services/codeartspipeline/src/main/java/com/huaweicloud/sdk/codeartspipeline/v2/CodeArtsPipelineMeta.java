@@ -175,6 +175,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineInfoResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoRequest;
@@ -2653,6 +2655,45 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineGroupUpdateDTO.class),
             f -> f.withMarshaller(UpdatePipelineGroupRequest::getBody, UpdatePipelineGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse> updatePipelineInfo =
+        genForUpdatePipelineInfo();
+
+    private static HttpRequestDef<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse> genForUpdatePipelineInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdatePipelineInfoRequest, UpdatePipelineInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePipelineInfoRequest.class, UpdatePipelineInfoResponse.class)
+                .withName("UpdatePipelineInfo")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipelineInfoRequest::getProjectId, UpdatePipelineInfoRequest::setProjectId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipelineInfoRequest::getPipelineId, UpdatePipelineInfoRequest::setPipelineId));
+        builder.<String>withRequestField("componentId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipelineInfoRequest::getComponentId,
+                UpdatePipelineInfoRequest::setComponentId));
+        builder.<PipelineDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PipelineDTO.class),
+            f -> f.withMarshaller(UpdatePipelineInfoRequest::getBody, UpdatePipelineInfoRequest::setBody));
 
         // response
 

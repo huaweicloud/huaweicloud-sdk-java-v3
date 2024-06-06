@@ -233,6 +233,11 @@ public class ShowGraphRespGraph {
 
     private Integer capacityRatio;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key_type")
+
+    private String sortKeyType;
+
     public ShowGraphRespGraph withId(String id) {
         this.id = id;
         return this;
@@ -1086,6 +1091,23 @@ public class ShowGraphRespGraph {
         this.capacityRatio = capacityRatio;
     }
 
+    public ShowGraphRespGraph withSortKeyType(String sortKeyType) {
+        this.sortKeyType = sortKeyType;
+        return this;
+    }
+
+    /**
+     * 持久化版图边数据的sortKey类型
+     * @return sortKeyType
+     */
+    public String getSortKeyType() {
+        return sortKeyType;
+    }
+
+    public void setSortKeyType(String sortKeyType) {
+        this.sortKeyType = sortKeyType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1125,7 +1147,8 @@ public class ShowGraphRespGraph {
             && Objects.equals(this.originGraphSizeTypeIndex, that.originGraphSizeTypeIndex)
             && Objects.equals(this.expandTime, that.expandTime) && Objects.equals(this.resizeTime, that.resizeTime)
             && Objects.equals(this.enableMultiLabel, that.enableMultiLabel)
-            && Objects.equals(this.capacityRatio, that.capacityRatio);
+            && Objects.equals(this.capacityRatio, that.capacityRatio)
+            && Objects.equals(this.sortKeyType, that.sortKeyType);
     }
 
     @Override
@@ -1173,7 +1196,8 @@ public class ShowGraphRespGraph {
             expandTime,
             resizeTime,
             enableMultiLabel,
-            capacityRatio);
+            capacityRatio,
+            sortKeyType);
     }
 
     @Override
@@ -1224,6 +1248,7 @@ public class ShowGraphRespGraph {
         sb.append("    resizeTime: ").append(toIndentedString(resizeTime)).append("\n");
         sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("    capacityRatio: ").append(toIndentedString(capacityRatio)).append("\n");
+        sb.append("    sortKeyType: ").append(toIndentedString(sortKeyType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

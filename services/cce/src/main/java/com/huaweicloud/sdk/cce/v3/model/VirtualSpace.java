@@ -37,7 +37,7 @@ public class VirtualSpace {
     }
 
     /**
-     * virtualSpace的名称，当前仅支持三种类型：kubernetes、runtime、user。 - kubernetes：k8s空间配置，需配置lvmConfig； - runtime：运行时空间配置，需配置runtimeConfig； - user：用户空间配置，需配置lvmConfig 
+     * virtualSpace的名称，当前仅支持四种类型：share、kubernetes、runtime、user。 - share：共享磁盘空间配置(取消runtime和kubernetes分区)，需配置lvmConfig； - kubernetes：k8s空间配置，需配置lvmConfig； - runtime：运行时空间配置，需配置runtimeConfig； - user：用户空间配置，需配置lvmConfig 
      * @return name
      */
     public String getName() {

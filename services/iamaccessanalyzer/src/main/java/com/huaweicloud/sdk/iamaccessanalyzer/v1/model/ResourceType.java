@@ -22,12 +22,18 @@ public class ResourceType {
      */
     public static final ResourceType OBS_BUCKET = new ResourceType("obs:bucket");
 
+    /**
+     * Enum KMS_CMK for value: "kms:cmk"
+     */
+    public static final ResourceType KMS_CMK = new ResourceType("kms:cmk");
+
     private static final Map<String, ResourceType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ResourceType> createStaticFields() {
         Map<String, ResourceType> map = new HashMap<>();
         map.put("iam:agency", IAM_AGENCY);
         map.put("obs:bucket", OBS_BUCKET);
+        map.put("kms:cmk", KMS_CMK);
         return Collections.unmodifiableMap(map);
     }
 

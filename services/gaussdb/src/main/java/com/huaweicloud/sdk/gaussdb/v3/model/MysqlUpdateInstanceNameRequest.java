@@ -15,6 +15,11 @@ public class MysqlUpdateInstanceNameRequest {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_modify_node_name")
+
+    private String isModifyNodeName;
+
     public MysqlUpdateInstanceNameRequest withName(String name) {
         this.name = name;
         return this;
@@ -32,6 +37,23 @@ public class MysqlUpdateInstanceNameRequest {
         this.name = name;
     }
 
+    public MysqlUpdateInstanceNameRequest withIsModifyNodeName(String isModifyNodeName) {
+        this.isModifyNodeName = isModifyNodeName;
+        return this;
+    }
+
+    /**
+     * 是否同步修改节点名称，取值：true或false, 默认值为true。
+     * @return isModifyNodeName
+     */
+    public String getIsModifyNodeName() {
+        return isModifyNodeName;
+    }
+
+    public void setIsModifyNodeName(String isModifyNodeName) {
+        this.isModifyNodeName = isModifyNodeName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class MysqlUpdateInstanceNameRequest {
             return false;
         }
         MysqlUpdateInstanceNameRequest that = (MysqlUpdateInstanceNameRequest) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.isModifyNodeName, that.isModifyNodeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, isModifyNodeName);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class MysqlUpdateInstanceNameRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class MysqlUpdateInstanceNameRequest {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    isModifyNodeName: ").append(toIndentedString(isModifyNodeName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

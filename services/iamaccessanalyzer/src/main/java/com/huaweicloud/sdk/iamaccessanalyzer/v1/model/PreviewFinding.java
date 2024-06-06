@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PreviewFinding
+ * 包含有关访问预览分析结果的信息。
  */
 public class PreviewFinding {
 
@@ -121,7 +121,7 @@ public class PreviewFinding {
     private String existingFindingId;
 
     /**
-     * 结果的当前状态。
+     * 分析结果的当前状态。
      */
     public static final class ExistingFindingStatusEnum {
 
@@ -406,7 +406,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 生成预览访问分析结果的时间。
+     * 生成访问预览分析结果的时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -440,7 +440,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 结果的当前状态。
+     * 分析结果的当前状态。
      * @return existingFindingStatus
      */
     public ExistingFindingStatusEnum getExistingFindingStatus() {
@@ -517,7 +517,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 资源的唯一资源标识符。
      * @return resource
      */
     public String getResource() {
@@ -534,7 +534,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 拥有资源的账户ID。
+     * 拥有资源的账号ID。
      * @return resourceOwnerAccount
      */
     public String getResourceOwnerAccount() {

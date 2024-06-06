@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 用户的权限属性。
  */
-public class GaussDBforOpenGaussUserForListAttributes {
+public class GaussDBforOpenGaussUserForListAttribute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rolsuper")
@@ -50,7 +50,12 @@ public class GaussDBforOpenGaussUserForListAttributes {
 
     private Boolean rolbypassrls;
 
-    public GaussDBforOpenGaussUserForListAttributes withRolsuper(Boolean rolsuper) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rolpassworddeadline")
+
+    private String rolpassworddeadline;
+
+    public GaussDBforOpenGaussUserForListAttribute withRolsuper(Boolean rolsuper) {
         this.rolsuper = rolsuper;
         return this;
     }
@@ -67,7 +72,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolsuper = rolsuper;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolinherit(Boolean rolinherit) {
+    public GaussDBforOpenGaussUserForListAttribute withRolinherit(Boolean rolinherit) {
         this.rolinherit = rolinherit;
         return this;
     }
@@ -84,7 +89,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolinherit = rolinherit;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolcreaterole(Boolean rolcreaterole) {
+    public GaussDBforOpenGaussUserForListAttribute withRolcreaterole(Boolean rolcreaterole) {
         this.rolcreaterole = rolcreaterole;
         return this;
     }
@@ -101,7 +106,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolcreaterole = rolcreaterole;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolcreatedb(Boolean rolcreatedb) {
+    public GaussDBforOpenGaussUserForListAttribute withRolcreatedb(Boolean rolcreatedb) {
         this.rolcreatedb = rolcreatedb;
         return this;
     }
@@ -118,7 +123,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolcreatedb = rolcreatedb;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolcanlogin(Boolean rolcanlogin) {
+    public GaussDBforOpenGaussUserForListAttribute withRolcanlogin(Boolean rolcanlogin) {
         this.rolcanlogin = rolcanlogin;
         return this;
     }
@@ -135,7 +140,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolcanlogin = rolcanlogin;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolconnlimit(Integer rolconnlimit) {
+    public GaussDBforOpenGaussUserForListAttribute withRolconnlimit(Integer rolconnlimit) {
         this.rolconnlimit = rolconnlimit;
         return this;
     }
@@ -152,7 +157,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolconnlimit = rolconnlimit;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolreplication(Boolean rolreplication) {
+    public GaussDBforOpenGaussUserForListAttribute withRolreplication(Boolean rolreplication) {
         this.rolreplication = rolreplication;
         return this;
     }
@@ -169,7 +174,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolreplication = rolreplication;
     }
 
-    public GaussDBforOpenGaussUserForListAttributes withRolbypassrls(Boolean rolbypassrls) {
+    public GaussDBforOpenGaussUserForListAttribute withRolbypassrls(Boolean rolbypassrls) {
         this.rolbypassrls = rolbypassrls;
         return this;
     }
@@ -186,6 +191,23 @@ public class GaussDBforOpenGaussUserForListAttributes {
         this.rolbypassrls = rolbypassrls;
     }
 
+    public GaussDBforOpenGaussUserForListAttribute withRolpassworddeadline(String rolpassworddeadline) {
+        this.rolpassworddeadline = rolpassworddeadline;
+        return this;
+    }
+
+    /**
+     * 用户密码过期时间。
+     * @return rolpassworddeadline
+     */
+    public String getRolpassworddeadline() {
+        return rolpassworddeadline;
+    }
+
+    public void setRolpassworddeadline(String rolpassworddeadline) {
+        this.rolpassworddeadline = rolpassworddeadline;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -194,13 +216,14 @@ public class GaussDBforOpenGaussUserForListAttributes {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussUserForListAttributes that = (GaussDBforOpenGaussUserForListAttributes) obj;
+        GaussDBforOpenGaussUserForListAttribute that = (GaussDBforOpenGaussUserForListAttribute) obj;
         return Objects.equals(this.rolsuper, that.rolsuper) && Objects.equals(this.rolinherit, that.rolinherit)
             && Objects.equals(this.rolcreaterole, that.rolcreaterole)
             && Objects.equals(this.rolcreatedb, that.rolcreatedb) && Objects.equals(this.rolcanlogin, that.rolcanlogin)
             && Objects.equals(this.rolconnlimit, that.rolconnlimit)
             && Objects.equals(this.rolreplication, that.rolreplication)
-            && Objects.equals(this.rolbypassrls, that.rolbypassrls);
+            && Objects.equals(this.rolbypassrls, that.rolbypassrls)
+            && Objects.equals(this.rolpassworddeadline, that.rolpassworddeadline);
     }
 
     @Override
@@ -212,13 +235,14 @@ public class GaussDBforOpenGaussUserForListAttributes {
             rolcanlogin,
             rolconnlimit,
             rolreplication,
-            rolbypassrls);
+            rolbypassrls,
+            rolpassworddeadline);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GaussDBforOpenGaussUserForListAttributes {\n");
+        sb.append("class GaussDBforOpenGaussUserForListAttribute {\n");
         sb.append("    rolsuper: ").append(toIndentedString(rolsuper)).append("\n");
         sb.append("    rolinherit: ").append(toIndentedString(rolinherit)).append("\n");
         sb.append("    rolcreaterole: ").append(toIndentedString(rolcreaterole)).append("\n");
@@ -227,6 +251,7 @@ public class GaussDBforOpenGaussUserForListAttributes {
         sb.append("    rolconnlimit: ").append(toIndentedString(rolconnlimit)).append("\n");
         sb.append("    rolreplication: ").append(toIndentedString(rolreplication)).append("\n");
         sb.append("    rolbypassrls: ").append(toIndentedString(rolbypassrls)).append("\n");
+        sb.append("    rolpassworddeadline: ").append(toIndentedString(rolpassworddeadline)).append("\n");
         sb.append("}");
         return sb.toString();
     }

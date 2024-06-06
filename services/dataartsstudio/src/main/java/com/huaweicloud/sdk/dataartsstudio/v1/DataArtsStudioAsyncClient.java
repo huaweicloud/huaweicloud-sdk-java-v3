@@ -415,6 +415,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSgcComputeDimensionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectNewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
@@ -6239,6 +6241,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<SearchIdByPathRequest, SearchIdByPathResponse> searchIdByPathAsyncInvoker(
         SearchIdByPathRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.searchIdByPath, hcClient);
+    }
+
+    /**
+     * 获取计算维度成本列表信息
+     *
+     * 获取计算维度成本列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchSgcComputeDimensionsRequest 请求对象
+     * @return CompletableFuture<SearchSgcComputeDimensionsResponse>
+     */
+    public CompletableFuture<SearchSgcComputeDimensionsResponse> searchSgcComputeDimensionsAsync(
+        SearchSgcComputeDimensionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.searchSgcComputeDimensions);
+    }
+
+    /**
+     * 获取计算维度成本列表信息
+     *
+     * 获取计算维度成本列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchSgcComputeDimensionsRequest 请求对象
+     * @return AsyncInvoker<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse>
+     */
+    public AsyncInvoker<SearchSgcComputeDimensionsRequest, SearchSgcComputeDimensionsResponse> searchSgcComputeDimensionsAsyncInvoker(
+        SearchSgcComputeDimensionsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.searchSgcComputeDimensions, hcClient);
     }
 
     /**

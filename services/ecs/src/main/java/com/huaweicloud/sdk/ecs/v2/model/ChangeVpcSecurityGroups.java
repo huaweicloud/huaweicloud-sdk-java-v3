@@ -13,9 +13,9 @@ public class ChangeVpcSecurityGroups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Object id;
+    private String id;
 
-    public ChangeVpcSecurityGroups withId(Object id) {
+    public ChangeVpcSecurityGroups withId(String id) {
         this.id = id;
         return this;
     }
@@ -24,11 +24,11 @@ public class ChangeVpcSecurityGroups {
      * 安全组id
      * @return id
      */
-    public Object getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Object id) {
+    public void setId(String id) {
         this.id = id;
     }
 

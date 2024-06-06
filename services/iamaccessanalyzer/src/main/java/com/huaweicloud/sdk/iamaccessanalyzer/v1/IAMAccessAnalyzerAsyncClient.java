@@ -15,8 +15,8 @@ import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteAnalyzerRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteAnalyzerResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteArchiveRuleRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.DeleteArchiveRuleResponse;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.GetAccessPreviewRequest;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.GetAccessPreviewResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewFindingsRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewFindingsResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewsRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAccessPreviewsResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListAnalyzersRequest;
@@ -25,8 +25,8 @@ import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListArchiveRulesRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListArchiveRulesResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListFindingsRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListFindingsResponse;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListPreviewFindingsRequest;
-import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ListPreviewFindingsResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAccessPreviewRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAccessPreviewResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAnalyzerRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowAnalyzerResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ShowArchiveRuleRequest;
@@ -470,7 +470,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 创建访问预览
      *
-     * 创建访问预览
+     * 创建访问预览。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -484,7 +484,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 创建访问预览
      *
-     * 创建访问预览
+     * 创建访问预览。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -497,38 +497,39 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 获取相关访问预览的信息
+     * 获取相关预览生成的分析结果
      *
-     * 获取相关访问预览的信息。
+     * 获取相关预览生成的分析结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request GetAccessPreviewRequest 请求对象
-     * @return CompletableFuture<GetAccessPreviewResponse>
+     * @param request ListAccessPreviewFindingsRequest 请求对象
+     * @return CompletableFuture<ListAccessPreviewFindingsResponse>
      */
-    public CompletableFuture<GetAccessPreviewResponse> getAccessPreviewAsync(GetAccessPreviewRequest request) {
-        return hcClient.asyncInvokeHttp(request, IAMAccessAnalyzerMeta.getAccessPreview);
+    public CompletableFuture<ListAccessPreviewFindingsResponse> listAccessPreviewFindingsAsync(
+        ListAccessPreviewFindingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IAMAccessAnalyzerMeta.listAccessPreviewFindings);
     }
 
     /**
-     * 获取相关访问预览的信息
+     * 获取相关预览生成的分析结果
      *
-     * 获取相关访问预览的信息。
+     * 获取相关预览生成的分析结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request GetAccessPreviewRequest 请求对象
-     * @return AsyncInvoker<GetAccessPreviewRequest, GetAccessPreviewResponse>
+     * @param request ListAccessPreviewFindingsRequest 请求对象
+     * @return AsyncInvoker<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResponse>
      */
-    public AsyncInvoker<GetAccessPreviewRequest, GetAccessPreviewResponse> getAccessPreviewAsyncInvoker(
-        GetAccessPreviewRequest request) {
-        return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.getAccessPreview, hcClient);
+    public AsyncInvoker<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResponse> listAccessPreviewFindingsAsyncInvoker(
+        ListAccessPreviewFindingsRequest request) {
+        return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.listAccessPreviewFindings, hcClient);
     }
 
     /**
      * 获取所有访问预览
      *
-     * 获取所有访问预览
+     * 获取所有访问预览。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -542,7 +543,7 @@ public class IAMAccessAnalyzerAsyncClient {
     /**
      * 获取所有访问预览
      *
-     * 获取所有访问预览
+     * 获取所有访问预览。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -555,32 +556,32 @@ public class IAMAccessAnalyzerAsyncClient {
     }
 
     /**
-     * 获取相关预览生成的分析结果
+     * 获取相关访问预览的信息
      *
-     * 获取相关预览生成的分析结果
+     * 获取相关访问预览的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPreviewFindingsRequest 请求对象
-     * @return CompletableFuture<ListPreviewFindingsResponse>
+     * @param request ShowAccessPreviewRequest 请求对象
+     * @return CompletableFuture<ShowAccessPreviewResponse>
      */
-    public CompletableFuture<ListPreviewFindingsResponse> listPreviewFindingsAsync(ListPreviewFindingsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IAMAccessAnalyzerMeta.listPreviewFindings);
+    public CompletableFuture<ShowAccessPreviewResponse> showAccessPreviewAsync(ShowAccessPreviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, IAMAccessAnalyzerMeta.showAccessPreview);
     }
 
     /**
-     * 获取相关预览生成的分析结果
+     * 获取相关访问预览的信息
      *
-     * 获取相关预览生成的分析结果
+     * 获取相关访问预览的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPreviewFindingsRequest 请求对象
-     * @return AsyncInvoker<ListPreviewFindingsRequest, ListPreviewFindingsResponse>
+     * @param request ShowAccessPreviewRequest 请求对象
+     * @return AsyncInvoker<ShowAccessPreviewRequest, ShowAccessPreviewResponse>
      */
-    public AsyncInvoker<ListPreviewFindingsRequest, ListPreviewFindingsResponse> listPreviewFindingsAsyncInvoker(
-        ListPreviewFindingsRequest request) {
-        return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.listPreviewFindings, hcClient);
+    public AsyncInvoker<ShowAccessPreviewRequest, ShowAccessPreviewResponse> showAccessPreviewAsyncInvoker(
+        ShowAccessPreviewRequest request) {
+        return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.showAccessPreview, hcClient);
     }
 
     /**

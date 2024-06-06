@@ -44,6 +44,11 @@ public class AnalyzerSummary {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organization_id")
+
+    private String organizationId;
+
     /**
      * 分析器的状态。
      */
@@ -60,6 +65,11 @@ public class AnalyzerSummary {
         public static final StatusEnum CREATING = new StatusEnum("creating");
 
         /**
+         * Enum DISABLED for value: "disabled"
+         */
+        public static final StatusEnum DISABLED = new StatusEnum("disabled");
+
+        /**
          * Enum FAILED for value: "failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("failed");
@@ -70,6 +80,7 @@ public class AnalyzerSummary {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("active", ACTIVE);
             map.put("creating", CREATING);
+            map.put("disabled", DISABLED);
             map.put("failed", FAILED);
             return Collections.unmodifiableMap(map);
         }
@@ -185,7 +196,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 最近分析的资源的唯一资源标识符。
      * @return lastAnalyzedResource
      */
     public String getLastAnalyzedResource() {
@@ -228,6 +239,23 @@ public class AnalyzerSummary {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public AnalyzerSummary withOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+        return this;
+    }
+
+    /**
+     * 组织ID。
+     * @return organizationId
+     */
+    public String getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
     }
 
     public AnalyzerSummary withStatus(StatusEnum status) {
@@ -329,7 +357,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 分析器的唯一资源标识符。
      * @return urn
      */
     public String getUrn() {
@@ -352,9 +380,10 @@ public class AnalyzerSummary {
         return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
             && Objects.equals(this.lastAnalyzedResource, that.lastAnalyzedResource)
             && Objects.equals(this.lastResourceAnalyzedAt, that.lastResourceAnalyzedAt)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.statusReason, that.statusReason) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.urn, that.urn);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.organizationId, that.organizationId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.statusReason, that.statusReason)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.urn, that.urn);
     }
 
     @Override
@@ -364,6 +393,7 @@ public class AnalyzerSummary {
             lastAnalyzedResource,
             lastResourceAnalyzedAt,
             name,
+            organizationId,
             status,
             statusReason,
             tags,
@@ -380,6 +410,7 @@ public class AnalyzerSummary {
         sb.append("    lastAnalyzedResource: ").append(toIndentedString(lastAnalyzedResource)).append("\n");
         sb.append("    lastResourceAnalyzedAt: ").append(toIndentedString(lastResourceAnalyzedAt)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusReason: ").append(toIndentedString(statusReason)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

@@ -70,6 +70,11 @@ public class Finding {
     private String resourceOwnerAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_project_id")
+
+    private String resourceProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
     private ResourceType resourceType;
@@ -331,7 +336,7 @@ public class Finding {
     }
 
     /**
-     * 访问分析的唯一资源标识。
+     * 资源的唯一资源标识符。
      * @return resource
      */
     public String getResource() {
@@ -365,7 +370,7 @@ public class Finding {
     }
 
     /**
-     * 拥有资源的账户ID。
+     * 拥有资源的账号ID。
      * @return resourceOwnerAccount
      */
     public String getResourceOwnerAccount() {
@@ -374,6 +379,23 @@ public class Finding {
 
     public void setResourceOwnerAccount(String resourceOwnerAccount) {
         this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    public Finding withResourceProjectId(String resourceProjectId) {
+        this.resourceProjectId = resourceProjectId;
+        return this;
+    }
+
+    /**
+     * 资源所属的项目标识符
+     * @return resourceProjectId
+     */
+    public String getResourceProjectId() {
+        return resourceProjectId;
+    }
+
+    public void setResourceProjectId(String resourceProjectId) {
+        this.resourceProjectId = resourceProjectId;
     }
 
     public Finding withResourceType(ResourceType resourceType) {
@@ -475,6 +497,7 @@ public class Finding {
             && Objects.equals(this.principal, that.principal) && Objects.equals(this.resource, that.resource)
             && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourceOwnerAccount, that.resourceOwnerAccount)
+            && Objects.equals(this.resourceProjectId, that.resourceProjectId)
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sources, that.sources)
             && Objects.equals(this.status, that.status) && Objects.equals(this.updatedAt, that.updatedAt);
     }
@@ -491,6 +514,7 @@ public class Finding {
             resource,
             resourceId,
             resourceOwnerAccount,
+            resourceProjectId,
             resourceType,
             sources,
             status,
@@ -511,6 +535,7 @@ public class Finding {
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceOwnerAccount: ").append(toIndentedString(resourceOwnerAccount)).append("\n");
+        sb.append("    resourceProjectId: ").append(toIndentedString(resourceProjectId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

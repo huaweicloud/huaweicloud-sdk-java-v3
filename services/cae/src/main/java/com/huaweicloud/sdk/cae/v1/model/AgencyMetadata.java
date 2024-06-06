@@ -15,6 +15,11 @@ public class AgencyMetadata {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enum")
+
+    private Object _enum;
+
     public AgencyMetadata withName(String name) {
         this.name = name;
         return this;
@@ -32,6 +37,23 @@ public class AgencyMetadata {
         this.name = name;
     }
 
+    public AgencyMetadata withEnum(Object _enum) {
+        this._enum = _enum;
+        return this;
+    }
+
+    /**
+     * Get _enum
+     * @return _enum
+     */
+    public Object getEnum() {
+        return _enum;
+    }
+
+    public void setEnum(Object _enum) {
+        this._enum = _enum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class AgencyMetadata {
             return false;
         }
         AgencyMetadata that = (AgencyMetadata) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this._enum, that._enum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, _enum);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class AgencyMetadata {
         StringBuilder sb = new StringBuilder();
         sb.append("class AgencyMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    _enum: ").append(toIndentedString(_enum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

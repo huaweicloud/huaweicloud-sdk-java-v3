@@ -48,7 +48,7 @@ public class Position {
     }
 
     /**
-     * 位置的列号，从0开开始。
+     * 位置的列号，从0开始。
      * @return column
      */
     public Integer getColumn() {
