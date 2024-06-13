@@ -8,6 +8,12 @@ import com.huaweicloud.sdk.config.v1.model.AggregatePolicyAssignmentsRequest;
 import com.huaweicloud.sdk.config.v1.model.AggregatePolicyStatesRequest;
 import com.huaweicloud.sdk.config.v1.model.AggregateResourceConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.AggregationAuthorizationRequest;
+import com.huaweicloud.sdk.config.v1.model.BatchCreateRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.BatchCreateRemediationExceptionsRequestBody;
+import com.huaweicloud.sdk.config.v1.model.BatchCreateRemediationExceptionsResponse;
+import com.huaweicloud.sdk.config.v1.model.BatchDeleteRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.BatchDeleteRemediationExceptionsRequestBody;
+import com.huaweicloud.sdk.config.v1.model.BatchDeleteRemediationExceptionsResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
@@ -28,6 +34,8 @@ import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.CreateOrUpdateRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.CreateOrUpdateRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentRequest;
@@ -52,6 +60,8 @@ import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestReques
 import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestResponse;
 import com.huaweicloud.sdk.config.v1.model.DeletePolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.DeletePolicyAssignmentResponse;
+import com.huaweicloud.sdk.config.v1.model.DeleteRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.DeleteRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteStoredQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteStoredQueryResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteTrackerConfigRequest;
@@ -104,6 +114,10 @@ import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExceptionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExecutionStatusesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExecutionStatusesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagRequest;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesRequest;
@@ -125,6 +139,8 @@ import com.huaweicloud.sdk.config.v1.model.OrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.PolicyAssignmentRequestBody;
 import com.huaweicloud.sdk.config.v1.model.PolicyStateRequestBody;
 import com.huaweicloud.sdk.config.v1.model.QueryRunRequestBody;
+import com.huaweicloud.sdk.config.v1.model.RemediationConfigurationRequestBody;
+import com.huaweicloud.sdk.config.v1.model.RemediationRunRequestBody;
 import com.huaweicloud.sdk.config.v1.model.ResourceInstancesReq;
 import com.huaweicloud.sdk.config.v1.model.ResourceSummaryResponseItem;
 import com.huaweicloud.sdk.config.v1.model.RunAggregateResourceQueryRequest;
@@ -133,6 +149,8 @@ import com.huaweicloud.sdk.config.v1.model.RunEvaluationByPolicyAssignmentIdRequ
 import com.huaweicloud.sdk.config.v1.model.RunEvaluationByPolicyAssignmentIdResponse;
 import com.huaweicloud.sdk.config.v1.model.RunQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.RunQueryResponse;
+import com.huaweicloud.sdk.config.v1.model.RunRemediationExecutionRequest;
+import com.huaweicloud.sdk.config.v1.model.RunRemediationExecutionResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateComplianceDetailsByPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateComplianceDetailsByPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateDiscoveredResourceCountsRequest;
@@ -167,6 +185,8 @@ import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentStatu
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentStatusesResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowPolicyAssignmentResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceByIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceByIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceDetailRequest;
@@ -893,6 +913,12 @@ public class ConfigMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<CreateConformancePackRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateConformancePackRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateConformancePackRequest::getXLanguage,
+                CreateConformancePackRequest::setXLanguage));
         builder.<ConformancePackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -925,6 +951,12 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getOrganizationId,
                 CreateOrganizationConformancePackRequest::setOrganizationId));
+        builder.<CreateOrganizationConformancePackRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateOrganizationConformancePackRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateOrganizationConformancePackRequest::getXLanguage,
+                CreateOrganizationConformancePackRequest::setXLanguage));
         builder.<OrgConformancePackRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1572,6 +1604,108 @@ public class ConfigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateRemediationExceptionsRequest, BatchCreateRemediationExceptionsResponse> batchCreateRemediationExceptions =
+        genForBatchCreateRemediationExceptions();
+
+    private static HttpRequestDef<BatchCreateRemediationExceptionsRequest, BatchCreateRemediationExceptionsResponse> genForBatchCreateRemediationExceptions() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateRemediationExceptionsRequest, BatchCreateRemediationExceptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateRemediationExceptionsRequest.class,
+                    BatchCreateRemediationExceptionsResponse.class)
+                .withName("BatchCreateRemediationExceptions")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-exception/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateRemediationExceptionsRequest::getPolicyAssignmentId,
+                BatchCreateRemediationExceptionsRequest::setPolicyAssignmentId));
+        builder.<BatchCreateRemediationExceptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateRemediationExceptionsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateRemediationExceptionsRequest::getBody,
+                BatchCreateRemediationExceptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse> batchDeleteRemediationExceptions =
+        genForBatchDeleteRemediationExceptions();
+
+    private static HttpRequestDef<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse> genForBatchDeleteRemediationExceptions() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteRemediationExceptionsRequest.class,
+                    BatchDeleteRemediationExceptionsResponse.class)
+                .withName("BatchDeleteRemediationExceptions")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-exception/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteRemediationExceptionsRequest::getPolicyAssignmentId,
+                BatchDeleteRemediationExceptionsRequest::setPolicyAssignmentId));
+        builder.<BatchDeleteRemediationExceptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRemediationExceptionsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteRemediationExceptionsRequest::getBody,
+                BatchDeleteRemediationExceptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOrUpdateRemediationConfigurationRequest, CreateOrUpdateRemediationConfigurationResponse> createOrUpdateRemediationConfiguration =
+        genForCreateOrUpdateRemediationConfiguration();
+
+    private static HttpRequestDef<CreateOrUpdateRemediationConfigurationRequest, CreateOrUpdateRemediationConfigurationResponse> genForCreateOrUpdateRemediationConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CreateOrUpdateRemediationConfigurationRequest, CreateOrUpdateRemediationConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateOrUpdateRemediationConfigurationRequest.class,
+                    CreateOrUpdateRemediationConfigurationResponse.class)
+                .withName("CreateOrUpdateRemediationConfiguration")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrUpdateRemediationConfigurationRequest::getPolicyAssignmentId,
+                CreateOrUpdateRemediationConfigurationRequest::setPolicyAssignmentId));
+        builder.<RemediationConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemediationConfigurationRequestBody.class),
+            f -> f.withMarshaller(CreateOrUpdateRemediationConfigurationRequest::getBody,
+                CreateOrUpdateRemediationConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> createOrganizationPolicyAssignment =
         genForCreateOrganizationPolicyAssignment();
 
@@ -1680,6 +1814,34 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePolicyAssignmentRequest::getPolicyAssignmentId,
                 DeletePolicyAssignmentRequest::setPolicyAssignmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRemediationConfigurationRequest, DeleteRemediationConfigurationResponse> deleteRemediationConfiguration =
+        genForDeleteRemediationConfiguration();
+
+    private static HttpRequestDef<DeleteRemediationConfigurationRequest, DeleteRemediationConfigurationResponse> genForDeleteRemediationConfiguration() {
+        // basic
+        HttpRequestDef.Builder<DeleteRemediationConfigurationRequest, DeleteRemediationConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRemediationConfigurationRequest.class,
+                    DeleteRemediationConfigurationResponse.class)
+                .withName("DeleteRemediationConfiguration")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRemediationConfigurationRequest::getPolicyAssignmentId,
+                DeleteRemediationConfigurationRequest::setPolicyAssignmentId));
 
         // response
 
@@ -2000,6 +2162,110 @@ public class ConfigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRemediationExceptionsRequest, ListRemediationExceptionsResponse> listRemediationExceptions =
+        genForListRemediationExceptions();
+
+    private static HttpRequestDef<ListRemediationExceptionsRequest, ListRemediationExceptionsResponse> genForListRemediationExceptions() {
+        // basic
+        HttpRequestDef.Builder<ListRemediationExceptionsRequest, ListRemediationExceptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRemediationExceptionsRequest.class,
+                    ListRemediationExceptionsResponse.class)
+                .withName("ListRemediationExceptions")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-exception")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExceptionsRequest::getPolicyAssignmentId,
+                ListRemediationExceptionsRequest::setPolicyAssignmentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRemediationExceptionsRequest::getLimit,
+                ListRemediationExceptionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExceptionsRequest::getMarker,
+                ListRemediationExceptionsRequest::setMarker));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExceptionsRequest::getResourceId,
+                ListRemediationExceptionsRequest::setResourceId));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExceptionsRequest::getResourceName,
+                ListRemediationExceptionsRequest::setResourceName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRemediationExecutionStatusesRequest, ListRemediationExecutionStatusesResponse> listRemediationExecutionStatuses =
+        genForListRemediationExecutionStatuses();
+
+    private static HttpRequestDef<ListRemediationExecutionStatusesRequest, ListRemediationExecutionStatusesResponse> genForListRemediationExecutionStatuses() {
+        // basic
+        HttpRequestDef.Builder<ListRemediationExecutionStatusesRequest, ListRemediationExecutionStatusesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRemediationExecutionStatusesRequest.class,
+                    ListRemediationExecutionStatusesResponse.class)
+                .withName("ListRemediationExecutionStatuses")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-execution-statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExecutionStatusesRequest::getPolicyAssignmentId,
+                ListRemediationExecutionStatusesRequest::setPolicyAssignmentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRemediationExecutionStatusesRequest::getLimit,
+                ListRemediationExecutionStatusesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExecutionStatusesRequest::getMarker,
+                ListRemediationExecutionStatusesRequest::setMarker));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExecutionStatusesRequest::getResourceId,
+                ListRemediationExecutionStatusesRequest::setResourceId));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRemediationExecutionStatusesRequest::getResourceName,
+                ListRemediationExecutionStatusesRequest::setResourceName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> runEvaluationByPolicyAssignmentId =
         genForRunEvaluationByPolicyAssignmentId();
 
@@ -2022,6 +2288,36 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunEvaluationByPolicyAssignmentIdRequest::getPolicyAssignmentId,
                 RunEvaluationByPolicyAssignmentIdRequest::setPolicyAssignmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunRemediationExecutionRequest, RunRemediationExecutionResponse> runRemediationExecution =
+        genForRunRemediationExecution();
+
+    private static HttpRequestDef<RunRemediationExecutionRequest, RunRemediationExecutionResponse> genForRunRemediationExecution() {
+        // basic
+        HttpRequestDef.Builder<RunRemediationExecutionRequest, RunRemediationExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RunRemediationExecutionRequest.class, RunRemediationExecutionResponse.class)
+            .withName("RunRemediationExecution")
+            .withUri(
+                "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-execution")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunRemediationExecutionRequest::getPolicyAssignmentId,
+                RunRemediationExecutionRequest::setPolicyAssignmentId));
+        builder.<RemediationRunRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RemediationRunRequestBody.class),
+            f -> f.withMarshaller(RunRemediationExecutionRequest::getBody, RunRemediationExecutionRequest::setBody));
 
         // response
 
@@ -2251,6 +2547,34 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyAssignmentRequest::getPolicyAssignmentId,
                 ShowPolicyAssignmentRequest::setPolicyAssignmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRemediationConfigurationRequest, ShowRemediationConfigurationResponse> showRemediationConfiguration =
+        genForShowRemediationConfiguration();
+
+    private static HttpRequestDef<ShowRemediationConfigurationRequest, ShowRemediationConfigurationResponse> genForShowRemediationConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowRemediationConfigurationRequest, ShowRemediationConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRemediationConfigurationRequest.class,
+                    ShowRemediationConfigurationResponse.class)
+                .withName("ShowRemediationConfiguration")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRemediationConfigurationRequest::getPolicyAssignmentId,
+                ShowRemediationConfigurationRequest::setPolicyAssignmentId));
 
         // response
 

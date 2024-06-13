@@ -105,6 +105,16 @@ public class RobotInfo {
 
     private String sisProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_hot_words")
+
+    private Boolean enableHotWords;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_question_audit")
+
+    private Boolean enableQuestionAudit;
+
     public RobotInfo withRobotId(String robotId) {
         this.robotId = robotId;
         return this;
@@ -438,6 +448,40 @@ public class RobotInfo {
         this.sisProjectId = sisProjectId;
     }
 
+    public RobotInfo withEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+        return this;
+    }
+
+    /**
+     * 是否开启热词
+     * @return enableHotWords
+     */
+    public Boolean getEnableHotWords() {
+        return enableHotWords;
+    }
+
+    public void setEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+    }
+
+    public RobotInfo withEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
+        return this;
+    }
+
+    /**
+     * 是否开启提问文本审核开关
+     * @return enableQuestionAudit
+     */
+    public Boolean getEnableQuestionAudit() {
+        return enableQuestionAudit;
+    }
+
+    public void setEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -456,7 +500,9 @@ public class RobotInfo {
             && Objects.equals(this.isStream, that.isStream) && Objects.equals(this.chatRounds, that.chatRounds)
             && Objects.equals(this.isIflyProduction, that.isIflyProduction)
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime) && Objects.equals(this.roleId, that.roleId)
-            && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId);
+            && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId)
+            && Objects.equals(this.enableHotWords, that.enableHotWords)
+            && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit);
     }
 
     @Override
@@ -479,7 +525,9 @@ public class RobotInfo {
             tailSilenceTime,
             roleId,
             sisRegion,
-            sisProjectId);
+            sisProjectId,
+            enableHotWords,
+            enableQuestionAudit);
     }
 
     @Override
@@ -505,6 +553,8 @@ public class RobotInfo {
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
+        sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
+        sb.append("    enableQuestionAudit: ").append(toIndentedString(enableQuestionAudit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

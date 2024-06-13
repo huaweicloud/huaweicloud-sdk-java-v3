@@ -90,7 +90,7 @@ public class UpdateFields {
     }
 
     /**
-     * Get rmv
+     * 删除1个或多个字段。 - 数组元素为待删除字段名。
      * @return rmv
      */
     public List<String> getRmv() {

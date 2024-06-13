@@ -20,9 +20,14 @@ public class ListScriptResultsResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result")
+    @JsonProperty(value = "results")
 
-    private List<Result> result = null;
+    private List<Result> results = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
 
     public ListScriptResultsResponse withStatus(String status) {
         this.status = status;
@@ -30,7 +35,7 @@ public class ListScriptResultsResponse extends SdkResponse {
     }
 
     /**
-     * Get status
+     * 执行状态。 - LAUNCHING ：提交中 - RUNNING ： 运行中 - FINISHED：执行成功 - FAILED：执行失败
      * @return status
      */
     public String getStatus() {
@@ -41,37 +46,54 @@ public class ListScriptResultsResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ListScriptResultsResponse withResult(List<Result> result) {
-        this.result = result;
+    public ListScriptResultsResponse withResults(List<Result> results) {
+        this.results = results;
         return this;
     }
 
-    public ListScriptResultsResponse addResultItem(Result resultItem) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
+    public ListScriptResultsResponse addResultsItem(Result resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        this.result.add(resultItem);
+        this.results.add(resultsItem);
         return this;
     }
 
-    public ListScriptResultsResponse withResult(Consumer<List<Result>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
+    public ListScriptResultsResponse withResults(Consumer<List<Result>> resultsSetter) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        resultSetter.accept(this.result);
+        resultsSetter.accept(this.results);
         return this;
     }
 
     /**
-     * Get result
-     * @return result
+     * 执行结果
+     * @return results
      */
-    public List<Result> getResult() {
-        return result;
+    public List<Result> getResults() {
+        return results;
     }
 
-    public void setResult(List<Result> result) {
-        this.result = result;
+    public void setResults(List<Result> results) {
+        this.results = results;
+    }
+
+    public ListScriptResultsResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 执行失败消息
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -83,12 +105,13 @@ public class ListScriptResultsResponse extends SdkResponse {
             return false;
         }
         ListScriptResultsResponse that = (ListScriptResultsResponse) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.results, that.results)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, result);
+        return Objects.hash(status, results, message);
     }
 
     @Override
@@ -96,7 +119,8 @@ public class ListScriptResultsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScriptResultsResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

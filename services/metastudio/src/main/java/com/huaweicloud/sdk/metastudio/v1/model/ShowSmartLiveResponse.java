@@ -171,6 +171,11 @@ public class ShowSmartLiveResponse extends SdkResponse {
     private LiveEventCallBackConfig liveEventCallbackConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtc_callback_config")
+
+    private RTCLiveEventCallBackConfig rtcCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stream_duration")
 
     private Float streamDuration;
@@ -451,6 +456,32 @@ public class ShowSmartLiveResponse extends SdkResponse {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
     }
 
+    public ShowSmartLiveResponse withRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+        return this;
+    }
+
+    public ShowSmartLiveResponse withRtcCallbackConfig(Consumer<RTCLiveEventCallBackConfig> rtcCallbackConfigSetter) {
+        if (this.rtcCallbackConfig == null) {
+            this.rtcCallbackConfig = new RTCLiveEventCallBackConfig();
+            rtcCallbackConfigSetter.accept(this.rtcCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rtcCallbackConfig
+     * @return rtcCallbackConfig
+     */
+    public RTCLiveEventCallBackConfig getRtcCallbackConfig() {
+        return rtcCallbackConfig;
+    }
+
+    public void setRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+    }
+
     public ShowSmartLiveResponse withStreamDuration(Float streamDuration) {
         this.streamDuration = streamDuration;
         return this;
@@ -593,6 +624,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.streamDuration, that.streamDuration)
             && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
@@ -614,6 +646,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             rtcRoomInfo,
             liveEventReportUrl,
             liveEventCallbackConfig,
+            rtcCallbackConfig,
             streamDuration,
             blockReason,
             coverUrl,
@@ -639,6 +672,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    liveEventReportUrl: ").append(toIndentedString(liveEventReportUrl)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    rtcCallbackConfig: ").append(toIndentedString(rtcCallbackConfig)).append("\n");
         sb.append("    streamDuration: ").append(toIndentedString(streamDuration)).append("\n");
         sb.append("    blockReason: ").append(toIndentedString(blockReason)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");

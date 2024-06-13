@@ -14,48 +14,10 @@ import java.util.function.Consumer;
 public class Expression {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "single_kv_expression")
-    @BsonProperty(value = "single_kv_expression")
-
-    private SingleKvExpression singleKvExpression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "single_field_expression")
     @BsonProperty(value = "single_field_expression")
 
     private SingleFieldExpression singleFieldExpression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "multi_field_expression")
-    @BsonProperty(value = "multi_field_expression")
-
-    private MultiFieldExpression multiFieldExpression;
-
-    public Expression withSingleKvExpression(SingleKvExpression singleKvExpression) {
-        this.singleKvExpression = singleKvExpression;
-        return this;
-    }
-
-    public Expression withSingleKvExpression(Consumer<SingleKvExpression> singleKvExpressionSetter) {
-        if (this.singleKvExpression == null) {
-            this.singleKvExpression = new SingleKvExpression();
-            singleKvExpressionSetter.accept(this.singleKvExpression);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get singleKvExpression
-     * @return singleKvExpression
-     */
-    public SingleKvExpression getSingleKvExpression() {
-        return singleKvExpression;
-    }
-
-    public void setSingleKvExpression(SingleKvExpression singleKvExpression) {
-        this.singleKvExpression = singleKvExpression;
-    }
 
     public Expression withSingleFieldExpression(SingleFieldExpression singleFieldExpression) {
         this.singleFieldExpression = singleFieldExpression;
@@ -83,32 +45,6 @@ public class Expression {
         this.singleFieldExpression = singleFieldExpression;
     }
 
-    public Expression withMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
-        this.multiFieldExpression = multiFieldExpression;
-        return this;
-    }
-
-    public Expression withMultiFieldExpression(Consumer<MultiFieldExpression> multiFieldExpressionSetter) {
-        if (this.multiFieldExpression == null) {
-            this.multiFieldExpression = new MultiFieldExpression();
-            multiFieldExpressionSetter.accept(this.multiFieldExpression);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get multiFieldExpression
-     * @return multiFieldExpression
-     */
-    public MultiFieldExpression getMultiFieldExpression() {
-        return multiFieldExpression;
-    }
-
-    public void setMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
-        this.multiFieldExpression = multiFieldExpression;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,23 +54,19 @@ public class Expression {
             return false;
         }
         Expression that = (Expression) obj;
-        return Objects.equals(this.singleKvExpression, that.singleKvExpression)
-            && Objects.equals(this.singleFieldExpression, that.singleFieldExpression)
-            && Objects.equals(this.multiFieldExpression, that.multiFieldExpression);
+        return Objects.equals(this.singleFieldExpression, that.singleFieldExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(singleKvExpression, singleFieldExpression, multiFieldExpression);
+        return Objects.hash(singleFieldExpression);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Expression {\n");
-        sb.append("    singleKvExpression: ").append(toIndentedString(singleKvExpression)).append("\n");
         sb.append("    singleFieldExpression: ").append(toIndentedString(singleFieldExpression)).append("\n");
-        sb.append("    multiFieldExpression: ").append(toIndentedString(multiFieldExpression)).append("\n");
         sb.append("}");
         return sb.toString();
     }

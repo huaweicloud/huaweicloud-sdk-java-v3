@@ -15,6 +15,9 @@ import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationRequestBody;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
@@ -480,6 +483,51 @@ public class CaeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateComponentRequestBody.class),
             f -> f.withMarshaller(CreateComponentRequest::getBody, CreateComponentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse> createComponentWithConfiguration =
+        genForCreateComponentWithConfiguration();
+
+    private static HttpRequestDef<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse> genForCreateComponentWithConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateComponentWithConfigurationRequest.class,
+                    CreateComponentWithConfigurationResponse.class)
+                .withName("CreateComponentWithConfiguration")
+                .withUri("/v1/{project_id}/cae/applications/{application_id}/component-with-configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateComponentWithConfigurationRequest::getApplicationId,
+                CreateComponentWithConfigurationRequest::setApplicationId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateComponentWithConfigurationRequest::getXEnterpriseProjectID,
+                CreateComponentWithConfigurationRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateComponentWithConfigurationRequest::getXEnvironmentID,
+                CreateComponentWithConfigurationRequest::setXEnvironmentID));
+        builder.<CreateComponentWithConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateComponentWithConfigurationRequestBody.class),
+            f -> f.withMarshaller(CreateComponentWithConfigurationRequest::getBody,
+                CreateComponentWithConfigurationRequest::setBody));
 
         // response
 

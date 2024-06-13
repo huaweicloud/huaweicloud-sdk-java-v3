@@ -118,7 +118,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interaction_rules")
 
-    private List<InteractionRuleInfo> interactionRules = null;
+    private List<LiveRoomInteractionRuleInfo> interactionRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_policy")
@@ -149,6 +149,11 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     @JsonProperty(value = "live_event_callback_config")
 
     private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtc_callback_config")
+
+    private RTCLiveEventCallBackConfig rtcCallbackConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_config")
@@ -440,12 +445,12 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         this.sceneScripts = sceneScripts;
     }
 
-    public ShowSmartLiveRoomResponse withInteractionRules(List<InteractionRuleInfo> interactionRules) {
+    public ShowSmartLiveRoomResponse withInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
         this.interactionRules = interactionRules;
         return this;
     }
 
-    public ShowSmartLiveRoomResponse addInteractionRulesItem(InteractionRuleInfo interactionRulesItem) {
+    public ShowSmartLiveRoomResponse addInteractionRulesItem(LiveRoomInteractionRuleInfo interactionRulesItem) {
         if (this.interactionRules == null) {
             this.interactionRules = new ArrayList<>();
         }
@@ -453,7 +458,8 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         return this;
     }
 
-    public ShowSmartLiveRoomResponse withInteractionRules(Consumer<List<InteractionRuleInfo>> interactionRulesSetter) {
+    public ShowSmartLiveRoomResponse withInteractionRules(
+        Consumer<List<LiveRoomInteractionRuleInfo>> interactionRulesSetter) {
         if (this.interactionRules == null) {
             this.interactionRules = new ArrayList<>();
         }
@@ -465,11 +471,11 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
      * 互动规则列表
      * @return interactionRules
      */
-    public List<InteractionRuleInfo> getInteractionRules() {
+    public List<LiveRoomInteractionRuleInfo> getInteractionRules() {
         return interactionRules;
     }
 
-    public void setInteractionRules(List<InteractionRuleInfo> interactionRules) {
+    public void setInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
         this.interactionRules = interactionRules;
     }
 
@@ -649,6 +655,33 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
 
     public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
+    }
+
+    public ShowSmartLiveRoomResponse withRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withRtcCallbackConfig(
+        Consumer<RTCLiveEventCallBackConfig> rtcCallbackConfigSetter) {
+        if (this.rtcCallbackConfig == null) {
+            this.rtcCallbackConfig = new RTCLiveEventCallBackConfig();
+            rtcCallbackConfigSetter.accept(this.rtcCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rtcCallbackConfig
+     * @return rtcCallbackConfig
+     */
+    public RTCLiveEventCallBackConfig getRtcCallbackConfig() {
+        return rtcCallbackConfig;
+    }
+
+    public void setRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
     }
 
     public ShowSmartLiveRoomResponse withReviewConfig(ReviewConfig reviewConfig) {
@@ -910,6 +943,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
             && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig) && Objects.equals(this.roomId, that.roomId)
@@ -932,6 +966,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             streamKeys,
             backupModelAssetIds,
             liveEventCallbackConfig,
+            rtcCallbackConfig,
             reviewConfig,
             sharedConfig,
             viewMode,
@@ -961,6 +996,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
         sb.append("    backupModelAssetIds: ").append(toIndentedString(backupModelAssetIds)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    rtcCallbackConfig: ").append(toIndentedString(rtcCallbackConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");

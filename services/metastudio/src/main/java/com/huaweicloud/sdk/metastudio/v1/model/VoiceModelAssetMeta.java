@@ -413,6 +413,16 @@ public class VoiceModelAssetMeta {
     private Float volumeRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_realtime_voice")
+
+    private Boolean isRealtimeVoice;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_capability")
+
+    private VoiceCapability voiceCapability;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "external_voice_meta")
 
     private ExternalVoiceAssetMeta externalVoiceMeta;
@@ -525,6 +535,49 @@ public class VoiceModelAssetMeta {
         this.volumeRatio = volumeRatio;
     }
 
+    public VoiceModelAssetMeta withIsRealtimeVoice(Boolean isRealtimeVoice) {
+        this.isRealtimeVoice = isRealtimeVoice;
+        return this;
+    }
+
+    /**
+     * 该音色是否支持实时合成，默认是true。 > * 支持实时合成的音色，可以用于直播和智能交互场景。否则只能用于视频制作。
+     * @return isRealtimeVoice
+     */
+    public Boolean getIsRealtimeVoice() {
+        return isRealtimeVoice;
+    }
+
+    public void setIsRealtimeVoice(Boolean isRealtimeVoice) {
+        this.isRealtimeVoice = isRealtimeVoice;
+    }
+
+    public VoiceModelAssetMeta withVoiceCapability(VoiceCapability voiceCapability) {
+        this.voiceCapability = voiceCapability;
+        return this;
+    }
+
+    public VoiceModelAssetMeta withVoiceCapability(Consumer<VoiceCapability> voiceCapabilitySetter) {
+        if (this.voiceCapability == null) {
+            this.voiceCapability = new VoiceCapability();
+            voiceCapabilitySetter.accept(this.voiceCapability);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get voiceCapability
+     * @return voiceCapability
+     */
+    public VoiceCapability getVoiceCapability() {
+        return voiceCapability;
+    }
+
+    public void setVoiceCapability(VoiceCapability voiceCapability) {
+        this.voiceCapability = voiceCapability;
+    }
+
     public VoiceModelAssetMeta withExternalVoiceMeta(ExternalVoiceAssetMeta externalVoiceMeta) {
         this.externalVoiceMeta = externalVoiceMeta;
         return this;
@@ -563,12 +616,22 @@ public class VoiceModelAssetMeta {
         return Objects.equals(this.order, that.order) && Objects.equals(this.modelType, that.modelType)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
             && Objects.equals(this.speedRatio, that.speedRatio) && Objects.equals(this.volumeRatio, that.volumeRatio)
+            && Objects.equals(this.isRealtimeVoice, that.isRealtimeVoice)
+            && Objects.equals(this.voiceCapability, that.voiceCapability)
             && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(order, modelType, sex, language, speedRatio, volumeRatio, externalVoiceMeta);
+        return Objects.hash(order,
+            modelType,
+            sex,
+            language,
+            speedRatio,
+            volumeRatio,
+            isRealtimeVoice,
+            voiceCapability,
+            externalVoiceMeta);
     }
 
     @Override
@@ -581,6 +644,8 @@ public class VoiceModelAssetMeta {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    speedRatio: ").append(toIndentedString(speedRatio)).append("\n");
         sb.append("    volumeRatio: ").append(toIndentedString(volumeRatio)).append("\n");
+        sb.append("    isRealtimeVoice: ").append(toIndentedString(isRealtimeVoice)).append("\n");
+        sb.append("    voiceCapability: ").append(toIndentedString(voiceCapability)).append("\n");
         sb.append("    externalVoiceMeta: ").append(toIndentedString(externalVoiceMeta)).append("\n");
         sb.append("}");
         return sb.toString();

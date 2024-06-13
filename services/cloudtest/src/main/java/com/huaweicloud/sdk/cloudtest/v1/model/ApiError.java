@@ -26,7 +26,7 @@ public class ApiError {
     }
 
     /**
-     * 只有对外的接口才会返回此内容
+     * 业务失败的错误码
      * @return code
      */
     public String getCode() {

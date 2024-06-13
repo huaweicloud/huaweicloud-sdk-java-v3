@@ -67,7 +67,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * 被过滤掉的文档数量 - 长度：4
+     * 被过滤掉的文档数量。 - 长度：4
      * @return filteredCount
      */
     public Integer getFilteredCount() {

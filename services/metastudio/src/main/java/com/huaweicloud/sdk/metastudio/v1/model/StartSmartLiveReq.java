@@ -48,6 +48,11 @@ public class StartSmartLiveReq {
 
     private LiveEventCallBackConfig liveEventCallbackConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtc_callback_config")
+
+    private RTCLiveEventCallBackConfig rtcCallbackConfig;
+
     /**
      * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
      */
@@ -290,6 +295,32 @@ public class StartSmartLiveReq {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
     }
 
+    public StartSmartLiveReq withRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+        return this;
+    }
+
+    public StartSmartLiveReq withRtcCallbackConfig(Consumer<RTCLiveEventCallBackConfig> rtcCallbackConfigSetter) {
+        if (this.rtcCallbackConfig == null) {
+            this.rtcCallbackConfig = new RTCLiveEventCallBackConfig();
+            rtcCallbackConfigSetter.accept(this.rtcCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rtcCallbackConfig
+     * @return rtcCallbackConfig
+     */
+    public RTCLiveEventCallBackConfig getRtcCallbackConfig() {
+        return rtcCallbackConfig;
+    }
+
+    public void setRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+    }
+
     public StartSmartLiveReq withViewMode(ViewModeEnum viewMode) {
         this.viewMode = viewMode;
         return this;
@@ -346,6 +377,7 @@ public class StartSmartLiveReq {
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
             && Objects.equals(this.interactionCallbackUrl, that.interactionCallbackUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.viewMode, that.viewMode)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
     }
@@ -358,6 +390,7 @@ public class StartSmartLiveReq {
             streamKeys,
             interactionCallbackUrl,
             liveEventCallbackConfig,
+            rtcCallbackConfig,
             viewMode,
             coStreamerConfig);
     }
@@ -372,6 +405,7 @@ public class StartSmartLiveReq {
         sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
         sb.append("    interactionCallbackUrl: ").append(toIndentedString(interactionCallbackUrl)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    rtcCallbackConfig: ").append(toIndentedString(rtcCallbackConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("}");

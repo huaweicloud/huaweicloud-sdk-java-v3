@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
@@ -434,6 +436,36 @@ public class CaeClient {
     public SyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentInvoker(
         CreateComponentRequest request) {
         return new SyncInvoker<>(request, CaeMeta.createComponent, hcClient);
+    }
+
+    /**
+     * 创建、生效配置并部署组件
+     *
+     * 创建、生效配置并部署组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComponentWithConfigurationRequest 请求对象
+     * @return CreateComponentWithConfigurationResponse
+     */
+    public CreateComponentWithConfigurationResponse createComponentWithConfiguration(
+        CreateComponentWithConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.createComponentWithConfiguration);
+    }
+
+    /**
+     * 创建、生效配置并部署组件
+     *
+     * 创建、生效配置并部署组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComponentWithConfigurationRequest 请求对象
+     * @return SyncInvoker<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse>
+     */
+    public SyncInvoker<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse> createComponentWithConfigurationInvoker(
+        CreateComponentWithConfigurationRequest request) {
+        return new SyncInvoker<>(request, CaeMeta.createComponentWithConfiguration, hcClient);
     }
 
     /**

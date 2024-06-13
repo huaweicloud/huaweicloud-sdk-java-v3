@@ -65,7 +65,7 @@ public class LargeFilesCreateReq {
     /**
      * 文件总的大小，最小1，最大5368709120。
      * minimum: 1
-     * maximum: 5368709120
+     * maximum: 536870912000
      * @return fileSize
      */
     public Long getFileSize() {

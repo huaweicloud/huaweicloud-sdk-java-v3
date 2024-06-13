@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -285,6 +287,11 @@ public class ScalingV2PolicyDetail {
     private ScalingPolicyActionV2 scalingPolicyAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interval_alarm_actions")
+
+    private List<IntervalAlarmActionsV2> intervalAlarmActions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cool_down_time")
 
     private Integer coolDownTime;
@@ -475,6 +482,40 @@ public class ScalingV2PolicyDetail {
         this.scalingPolicyAction = scalingPolicyAction;
     }
 
+    public ScalingV2PolicyDetail withIntervalAlarmActions(List<IntervalAlarmActionsV2> intervalAlarmActions) {
+        this.intervalAlarmActions = intervalAlarmActions;
+        return this;
+    }
+
+    public ScalingV2PolicyDetail addIntervalAlarmActionsItem(IntervalAlarmActionsV2 intervalAlarmActionsItem) {
+        if (this.intervalAlarmActions == null) {
+            this.intervalAlarmActions = new ArrayList<>();
+        }
+        this.intervalAlarmActions.add(intervalAlarmActionsItem);
+        return this;
+    }
+
+    public ScalingV2PolicyDetail withIntervalAlarmActions(
+        Consumer<List<IntervalAlarmActionsV2>> intervalAlarmActionsSetter) {
+        if (this.intervalAlarmActions == null) {
+            this.intervalAlarmActions = new ArrayList<>();
+        }
+        intervalAlarmActionsSetter.accept(this.intervalAlarmActions);
+        return this;
+    }
+
+    /**
+     * Get intervalAlarmActions
+     * @return intervalAlarmActions
+     */
+    public List<IntervalAlarmActionsV2> getIntervalAlarmActions() {
+        return intervalAlarmActions;
+    }
+
+    public void setIntervalAlarmActions(List<IntervalAlarmActionsV2> intervalAlarmActions) {
+        this.intervalAlarmActions = intervalAlarmActions;
+    }
+
     public ScalingV2PolicyDetail withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
@@ -570,6 +611,7 @@ public class ScalingV2PolicyDetail {
             && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
             && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.scheduledPolicy, that.scheduledPolicy)
             && Objects.equals(this.scalingPolicyAction, that.scalingPolicyAction)
+            && Objects.equals(this.intervalAlarmActions, that.intervalAlarmActions)
             && Objects.equals(this.coolDownTime, that.coolDownTime) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.metaData, that.metaData) && Objects.equals(this.description, that.description);
     }
@@ -585,6 +627,7 @@ public class ScalingV2PolicyDetail {
             alarmId,
             scheduledPolicy,
             scalingPolicyAction,
+            intervalAlarmActions,
             coolDownTime,
             createTime,
             metaData,
@@ -604,6 +647,7 @@ public class ScalingV2PolicyDetail {
         sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("    scheduledPolicy: ").append(toIndentedString(scheduledPolicy)).append("\n");
         sb.append("    scalingPolicyAction: ").append(toIndentedString(scalingPolicyAction)).append("\n");
+        sb.append("    intervalAlarmActions: ").append(toIndentedString(intervalAlarmActions)).append("\n");
         sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");

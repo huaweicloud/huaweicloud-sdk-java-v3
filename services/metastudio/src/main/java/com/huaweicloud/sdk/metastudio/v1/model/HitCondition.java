@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class HitCondition {
 
     /**
-     * 条件关系；取值And或者Or
+     * 条件关系；取值And或者Or RESERVED 为兜底回复不会去判断其他命中条件
      */
     public static final class RelationEnum {
 
@@ -33,12 +33,18 @@ public class HitCondition {
          */
         public static final RelationEnum OR = new RelationEnum("OR");
 
+        /**
+         * Enum RESERVED for value: "RESERVED"
+         */
+        public static final RelationEnum RESERVED = new RelationEnum("RESERVED");
+
         private static final Map<String, RelationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RelationEnum> createStaticFields() {
             Map<String, RelationEnum> map = new HashMap<>();
             map.put("AND", AND);
             map.put("OR", OR);
+            map.put("RESERVED", RESERVED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -109,7 +115,7 @@ public class HitCondition {
     }
 
     /**
-     * 条件关系；取值And或者Or
+     * 条件关系；取值And或者Or RESERVED 为兜底回复不会去判断其他命中条件
      * @return relation
      */
     public RelationEnum getRelation() {

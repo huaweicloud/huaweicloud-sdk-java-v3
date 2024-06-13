@@ -278,7 +278,7 @@ public class UpdateDigitalAssetRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared_config")
 
-    private SharedConfig sharedConfig;
+    private AssetSharedConfig sharedConfig;
 
     public UpdateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
@@ -483,14 +483,14 @@ public class UpdateDigitalAssetRequestBody {
         this.systemProperties = systemProperties;
     }
 
-    public UpdateDigitalAssetRequestBody withSharedConfig(SharedConfig sharedConfig) {
+    public UpdateDigitalAssetRequestBody withSharedConfig(AssetSharedConfig sharedConfig) {
         this.sharedConfig = sharedConfig;
         return this;
     }
 
-    public UpdateDigitalAssetRequestBody withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+    public UpdateDigitalAssetRequestBody withSharedConfig(Consumer<AssetSharedConfig> sharedConfigSetter) {
         if (this.sharedConfig == null) {
-            this.sharedConfig = new SharedConfig();
+            this.sharedConfig = new AssetSharedConfig();
             sharedConfigSetter.accept(this.sharedConfig);
         }
 
@@ -501,11 +501,11 @@ public class UpdateDigitalAssetRequestBody {
      * Get sharedConfig
      * @return sharedConfig
      */
-    public SharedConfig getSharedConfig() {
+    public AssetSharedConfig getSharedConfig() {
         return sharedConfig;
     }
 
-    public void setSharedConfig(SharedConfig sharedConfig) {
+    public void setSharedConfig(AssetSharedConfig sharedConfig) {
         this.sharedConfig = sharedConfig;
     }
 

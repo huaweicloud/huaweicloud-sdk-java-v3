@@ -37,6 +37,11 @@ public class UpdateRobotReq {
     private Integer tailSilenceTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_question_audit")
+
+    private Boolean enableQuestionAudit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "huawei_ei_cbs")
 
     private HuaweiEiCbs huaweiEiCbs;
@@ -148,6 +153,23 @@ public class UpdateRobotReq {
 
     public void setTailSilenceTime(Integer tailSilenceTime) {
         this.tailSilenceTime = tailSilenceTime;
+    }
+
+    public UpdateRobotReq withEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
+        return this;
+    }
+
+    /**
+     * 提问文本审核开关
+     * @return enableQuestionAudit
+     */
+    public Boolean getEnableQuestionAudit() {
+        return enableQuestionAudit;
+    }
+
+    public void setEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
     }
 
     public UpdateRobotReq withHuaweiEiCbs(HuaweiEiCbs huaweiEiCbs) {
@@ -292,6 +314,7 @@ public class UpdateRobotReq {
         return Objects.equals(this.name, that.name) && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.language, that.language)
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime)
+            && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit)
             && Objects.equals(this.huaweiEiCbs, that.huaweiEiCbs)
             && Objects.equals(this.iflytekAiuiConfig, that.iflytekAiuiConfig)
             && Objects.equals(this.iflytekSpark, that.iflytekSpark)
@@ -306,6 +329,7 @@ public class UpdateRobotReq {
             roomId,
             language,
             tailSilenceTime,
+            enableQuestionAudit,
             huaweiEiCbs,
             iflytekAiuiConfig,
             iflytekSpark,
@@ -322,6 +346,7 @@ public class UpdateRobotReq {
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    tailSilenceTime: ").append(toIndentedString(tailSilenceTime)).append("\n");
+        sb.append("    enableQuestionAudit: ").append(toIndentedString(enableQuestionAudit)).append("\n");
         sb.append("    huaweiEiCbs: ").append(toIndentedString(huaweiEiCbs)).append("\n");
         sb.append("    iflytekAiuiConfig: ").append(toIndentedString(iflytekAiuiConfig)).append("\n");
         sb.append("    iflytekSpark: ").append(toIndentedString(iflytekSpark)).append("\n");

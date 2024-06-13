@@ -133,6 +133,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeAppRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeAppResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeApplicationVersionRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeApplicationVersionResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
@@ -170,6 +172,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionStateReq
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionStateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeModuleReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeModuleStateReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityResponse;
@@ -186,6 +190,7 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateNodeReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleReqDTO;
@@ -361,6 +366,58 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEdgeNodeRequest::getEdgeNodeId, ShowEdgeNodeRequest::setEdgeNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEdgeNodeHostsInfoRequest, ShowEdgeNodeHostsInfoResponse> showEdgeNodeHostsInfo =
+        genForShowEdgeNodeHostsInfo();
+
+    private static HttpRequestDef<ShowEdgeNodeHostsInfoRequest, ShowEdgeNodeHostsInfoResponse> genForShowEdgeNodeHostsInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowEdgeNodeHostsInfoRequest, ShowEdgeNodeHostsInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEdgeNodeHostsInfoRequest.class, ShowEdgeNodeHostsInfoResponse.class)
+            .withName("ShowEdgeNodeHostsInfo")
+            .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/hosts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeNodeHostsInfoRequest::getEdgeNodeId,
+                ShowEdgeNodeHostsInfoRequest::setEdgeNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> updateEdgeNode =
+        genForUpdateEdgeNode();
+
+    private static HttpRequestDef<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> genForUpdateEdgeNode() {
+        // basic
+        HttpRequestDef.Builder<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeNodeRequest.class, UpdateEdgeNodeResponse.class)
+                .withName("UpdateEdgeNode")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEdgeNodeRequest::getEdgeNodeId, UpdateEdgeNodeRequest::setEdgeNodeId));
+        builder.<UpdateNodeReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNodeReqDTO.class),
+            f -> f.withMarshaller(UpdateEdgeNodeRequest::getBody, UpdateEdgeNodeRequest::setBody));
 
         // response
 

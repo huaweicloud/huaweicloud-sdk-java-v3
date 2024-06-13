@@ -30,7 +30,7 @@ public class ListStoreRequestBody {
     }
 
     /**
-     * 上次返回的游标位置，本次响应包含该仓名。 - 长度：[3,255] - 取值字符限制：[a-zA-Z0-9_.-]+ > 如果为空，表示后面无更多。
+     * 上次返回的游标位置，本次响应包含该仓名。 - 长度：[16,52] - 取值字符限制：[a-z0-9-]+
      * @return cursorName
      */
     public String getCursorName() {
@@ -47,7 +47,7 @@ public class ListStoreRequestBody {
     }
 
     /**
-     * Get limit
+     * 响应返回的仓个数。
      * @return limit
      */
     public Integer getLimit() {

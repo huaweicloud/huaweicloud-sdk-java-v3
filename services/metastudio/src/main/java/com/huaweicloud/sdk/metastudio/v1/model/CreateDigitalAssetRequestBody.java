@@ -203,7 +203,7 @@ public class CreateDigitalAssetRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared_config")
 
-    private SharedConfig sharedConfig;
+    private AssetSharedConfig sharedConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_need_generate_cover")
@@ -396,14 +396,14 @@ public class CreateDigitalAssetRequestBody {
         this.systemProperties = systemProperties;
     }
 
-    public CreateDigitalAssetRequestBody withSharedConfig(SharedConfig sharedConfig) {
+    public CreateDigitalAssetRequestBody withSharedConfig(AssetSharedConfig sharedConfig) {
         this.sharedConfig = sharedConfig;
         return this;
     }
 
-    public CreateDigitalAssetRequestBody withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+    public CreateDigitalAssetRequestBody withSharedConfig(Consumer<AssetSharedConfig> sharedConfigSetter) {
         if (this.sharedConfig == null) {
-            this.sharedConfig = new SharedConfig();
+            this.sharedConfig = new AssetSharedConfig();
             sharedConfigSetter.accept(this.sharedConfig);
         }
 
@@ -414,11 +414,11 @@ public class CreateDigitalAssetRequestBody {
      * Get sharedConfig
      * @return sharedConfig
      */
-    public SharedConfig getSharedConfig() {
+    public AssetSharedConfig getSharedConfig() {
         return sharedConfig;
     }
 
-    public void setSharedConfig(SharedConfig sharedConfig) {
+    public void setSharedConfig(AssetSharedConfig sharedConfig) {
         this.sharedConfig = sharedConfig;
     }
 

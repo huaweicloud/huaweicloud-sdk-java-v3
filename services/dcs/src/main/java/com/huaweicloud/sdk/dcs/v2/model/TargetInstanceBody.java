@@ -26,6 +26,11 @@ public class TargetInstanceBody {
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_status")
+
+    private String taskStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
     private String ip;
@@ -99,6 +104,23 @@ public class TargetInstanceBody {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public TargetInstanceBody withTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+        return this;
+    }
+
+    /**
+     * 任务状态。
+     * @return taskStatus
+     */
+    public String getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
     }
 
     public TargetInstanceBody withIp(String ip) {
@@ -196,14 +218,15 @@ public class TargetInstanceBody {
         }
         TargetInstanceBody that = (TargetInstanceBody) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.password, that.password) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.port, that.port) && Objects.equals(this.addrs, that.addrs)
-            && Objects.equals(this.proxyMultiDb, that.proxyMultiDb) && Objects.equals(this.db, that.db);
+            && Objects.equals(this.password, that.password) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.addrs, that.addrs) && Objects.equals(this.proxyMultiDb, that.proxyMultiDb)
+            && Objects.equals(this.db, that.db);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, password, ip, port, addrs, proxyMultiDb, db);
+        return Objects.hash(id, name, password, taskStatus, ip, port, addrs, proxyMultiDb, db);
     }
 
     @Override
@@ -213,6 +236,7 @@ public class TargetInstanceBody {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");

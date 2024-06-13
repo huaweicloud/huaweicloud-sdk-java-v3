@@ -37,7 +37,7 @@ public class ListTableResponse extends SdkBsonDocResponse {
     }
 
     /**
-     * 本次响应后的游标位置，下次请求时携带，如果为空，表示后面无更多 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ > 如果为空，表示后面无更多。
+     * 本次响应后的游标位置，下次请求时携带，如果为空，表示后面无更多。 - 长度：[3, 63] - 取值字符限制：[a-z0-9_-]+ > 如果为空，表示后面无更多。
      * @return cursorName
      */
     public String getCursorName() {

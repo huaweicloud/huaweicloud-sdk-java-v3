@@ -26,7 +26,7 @@ public class UpdatePublicipOption {
     private String description;
 
     /**
-     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
      */
     public static final class AssociateInstanceTypeEnum {
 
@@ -46,9 +46,9 @@ public class UpdatePublicipOption {
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
         /**
-         * Enum EMPTY for value: ""
+         * Enum VPN for value: "VPN"
          */
-        public static final AssociateInstanceTypeEnum EMPTY = new AssociateInstanceTypeEnum("");
+        public static final AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +57,7 @@ public class UpdatePublicipOption {
             map.put("PORT", PORT);
             map.put("NATGW", NATGW);
             map.put("ELB", ELB);
-            map.put("", EMPTY);
+            map.put("VPN", VPN);
             return Collections.unmodifiableMap(map);
         }
 
@@ -157,7 +157,7 @@ public class UpdatePublicipOption {
     }
 
     /**
-     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
      * @return associateInstanceType
      */
     public AssociateInstanceTypeEnum getAssociateInstanceType() {
@@ -174,7 +174,7 @@ public class UpdatePublicipOption {
     }
 
     /**
-     * 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * 功能说明：端口所属实例ID，例如RDS实例ID 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例。 约束：associate_instance_type和associate_instance_id都为null时表示解绑实例，通过APIE调用需要切换为文本输入方式输入null值，可参考解绑请求实例。 约束：双栈公网IP不允许修改绑定的实例。
      * @return associateInstanceId
      */
     public String getAssociateInstanceId() {

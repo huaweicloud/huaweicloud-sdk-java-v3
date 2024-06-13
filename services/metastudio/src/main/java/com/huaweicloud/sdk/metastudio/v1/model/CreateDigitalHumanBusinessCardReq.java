@@ -276,6 +276,11 @@ public class CreateDigitalHumanBusinessCardReq {
 
     private ReviewConfig reviewConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "callback_config")
+
+    private CallBackConfig callbackConfig;
+
     public CreateDigitalHumanBusinessCardReq withBusinessCardType(BusinessCardTypeEnum businessCardType) {
         this.businessCardType = businessCardType;
         return this;
@@ -491,6 +496,32 @@ public class CreateDigitalHumanBusinessCardReq {
         this.reviewConfig = reviewConfig;
     }
 
+    public CreateDigitalHumanBusinessCardReq withCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+        return this;
+    }
+
+    public CreateDigitalHumanBusinessCardReq withCallbackConfig(Consumer<CallBackConfig> callbackConfigSetter) {
+        if (this.callbackConfig == null) {
+            this.callbackConfig = new CallBackConfig();
+            callbackConfigSetter.accept(this.callbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get callbackConfig
+     * @return callbackConfig
+     */
+    public CallBackConfig getCallbackConfig() {
+        return callbackConfig;
+    }
+
+    public void setCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -509,7 +540,8 @@ public class CreateDigitalHumanBusinessCardReq {
             && Objects.equals(this.voiceAssetId, that.voiceAssetId)
             && Objects.equals(this.introductionAudioAssetId, that.introductionAudioAssetId)
             && Objects.equals(this.videoAssetName, that.videoAssetName) && Objects.equals(this.gender, that.gender)
-            && Objects.equals(this.reviewConfig, that.reviewConfig);
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.callbackConfig, that.callbackConfig);
     }
 
     @Override
@@ -524,7 +556,8 @@ public class CreateDigitalHumanBusinessCardReq {
             introductionAudioAssetId,
             videoAssetName,
             gender,
-            reviewConfig);
+            reviewConfig,
+            callbackConfig);
     }
 
     @Override
@@ -542,6 +575,7 @@ public class CreateDigitalHumanBusinessCardReq {
         sb.append("    videoAssetName: ").append(toIndentedString(videoAssetName)).append("\n");
         sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

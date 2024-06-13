@@ -111,6 +111,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeAppRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeAppResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeApplicationVersionRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeApplicationVersionResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeHostsInfoResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowEdgeNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
@@ -141,6 +143,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionStateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeApplicationVersionStateResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeNodeRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeNodeResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateIaConfigRequest;
@@ -312,6 +316,64 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNodeInvoker(ShowEdgeNodeRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeNode, hcClient);
+    }
+
+    /**
+     * 查询边缘节点下的主机详情
+     *
+     * 查询边缘节点下的主机详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEdgeNodeHostsInfoRequest 请求对象
+     * @return ShowEdgeNodeHostsInfoResponse
+     */
+    public ShowEdgeNodeHostsInfoResponse showEdgeNodeHostsInfo(ShowEdgeNodeHostsInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.showEdgeNodeHostsInfo);
+    }
+
+    /**
+     * 查询边缘节点下的主机详情
+     *
+     * 查询边缘节点下的主机详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEdgeNodeHostsInfoRequest 请求对象
+     * @return SyncInvoker<ShowEdgeNodeHostsInfoRequest, ShowEdgeNodeHostsInfoResponse>
+     */
+    public SyncInvoker<ShowEdgeNodeHostsInfoRequest, ShowEdgeNodeHostsInfoResponse> showEdgeNodeHostsInfoInvoker(
+        ShowEdgeNodeHostsInfoRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.showEdgeNodeHostsInfo, hcClient);
+    }
+
+    /**
+     * 修改边缘节点
+     *
+     * 修改边缘节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEdgeNodeRequest 请求对象
+     * @return UpdateEdgeNodeResponse
+     */
+    public UpdateEdgeNodeResponse updateEdgeNode(UpdateEdgeNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateEdgeNode);
+    }
+
+    /**
+     * 修改边缘节点
+     *
+     * 修改边缘节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEdgeNodeRequest 请求对象
+     * @return SyncInvoker<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse>
+     */
+    public SyncInvoker<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse> updateEdgeNodeInvoker(
+        UpdateEdgeNodeRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.updateEdgeNode, hcClient);
     }
 
     /**

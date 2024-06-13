@@ -33,7 +33,7 @@ public class ComposedExpression {
     }
 
     /**
-     * 逻辑关系，取值如\"$and\", \"$or\", \"$nor\"
+     * 逻辑关系，取值如\"$and\", \"$or\", \"$nor\"。
      * @return logic
      */
     public String getLogic() {
@@ -66,7 +66,7 @@ public class ComposedExpression {
     }
 
     /**
-     * 多个相同优先级且相同逻辑的单字段或多字段条件
+     * 多个相同优先级且相同逻辑的单字段或多字段条件。
      * @return expressions
      */
     public List<Expression> getExpressions() {

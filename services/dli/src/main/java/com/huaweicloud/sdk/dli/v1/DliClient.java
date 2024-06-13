@@ -71,6 +71,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateStreamJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateStreamJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteAuthInfoRequest;
@@ -776,6 +778,35 @@ public class DliClient {
     public SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> createRouteToEnhancedConnectionInvoker(
         CreateRouteToEnhancedConnectionRequest request) {
         return new SyncInvoker<>(request, DliMeta.createRouteToEnhancedConnection, hcClient);
+    }
+
+    /**
+     * 提交流作业
+     *
+     * 通过 POST 方式，提交流式作业，请求体为 JSON 格式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStreamJobRequest 请求对象
+     * @return CreateStreamJobResponse
+     */
+    public CreateStreamJobResponse createStreamJob(CreateStreamJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createStreamJob);
+    }
+
+    /**
+     * 提交流作业
+     *
+     * 通过 POST 方式，提交流式作业，请求体为 JSON 格式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStreamJobRequest 请求对象
+     * @return SyncInvoker<CreateStreamJobRequest, CreateStreamJobResponse>
+     */
+    public SyncInvoker<CreateStreamJobRequest, CreateStreamJobResponse> createStreamJobInvoker(
+        CreateStreamJobRequest request) {
+        return new SyncInvoker<>(request, DliMeta.createStreamJob, hcClient);
     }
 
     /**

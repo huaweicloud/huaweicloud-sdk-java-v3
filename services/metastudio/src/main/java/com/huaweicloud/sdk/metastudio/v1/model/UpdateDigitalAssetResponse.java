@@ -20,6 +20,11 @@ import java.util.function.Consumer;
 public class UpdateDigitalAssetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
     private String assetId;
@@ -406,6 +411,23 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
 
     private String xRequestId;
 
+    public UpdateDigitalAssetResponse withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 租户id
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public UpdateDigitalAssetResponse withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -729,7 +751,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             return false;
         }
         UpdateDigitalAssetResponse that = (UpdateDigitalAssetResponse) obj;
-        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.assetType, that.assetType)
@@ -742,7 +765,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId,
+        return Objects.hash(projectId,
+            assetId,
             assetName,
             assetDescription,
             appUserId,
@@ -763,6 +787,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDigitalAssetResponse {\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");

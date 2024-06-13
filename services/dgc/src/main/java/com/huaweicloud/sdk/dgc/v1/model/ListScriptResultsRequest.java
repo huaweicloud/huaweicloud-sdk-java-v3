@@ -48,7 +48,7 @@ public class ListScriptResultsRequest {
     }
 
     /**
-     * Get scriptName
+     * 脚本名称
      * @return scriptName
      */
     public String getScriptName() {
@@ -65,7 +65,7 @@ public class ListScriptResultsRequest {
     }
 
     /**
-     * Get instanceId
+     * 脚本实例id
      * @return instanceId
      */
     public String getInstanceId() {

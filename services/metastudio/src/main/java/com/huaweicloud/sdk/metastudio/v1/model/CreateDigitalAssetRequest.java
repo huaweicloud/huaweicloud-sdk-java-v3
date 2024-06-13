@@ -27,6 +27,11 @@ public class CreateDigitalAssetRequest {
     private String xAppUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-MSS-Authorization")
+
+    private String xMSSAuthorization;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateDigitalAssetRequestBody body;
@@ -86,6 +91,25 @@ public class CreateDigitalAssetRequest {
         this.xAppUserId = xAppUserId;
     }
 
+    public CreateDigitalAssetRequest withXMSSAuthorization(String xMSSAuthorization) {
+        this.xMSSAuthorization = xMSSAuthorization;
+        return this;
+    }
+
+    /**
+     * 数字人内部token
+     * @return xMSSAuthorization
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-MSS-Authorization")
+    public String getXMSSAuthorization() {
+        return xMSSAuthorization;
+    }
+
+    public void setXMSSAuthorization(String xMSSAuthorization) {
+        this.xMSSAuthorization = xMSSAuthorization;
+    }
+
     public CreateDigitalAssetRequest withBody(CreateDigitalAssetRequestBody body) {
         this.body = body;
         return this;
@@ -122,12 +146,13 @@ public class CreateDigitalAssetRequest {
         }
         CreateDigitalAssetRequest that = (CreateDigitalAssetRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
-            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.xMSSAuthorization, that.xMSSAuthorization) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xAppUserId, body);
+        return Objects.hash(authorization, xSdkDate, xAppUserId, xMSSAuthorization, body);
     }
 
     @Override
@@ -137,6 +162,7 @@ public class CreateDigitalAssetRequest {
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
+        sb.append("    xMSSAuthorization: ").append(toIndentedString(xMSSAuthorization)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 第三方TTS音色元数据。
@@ -17,7 +16,7 @@ import java.util.function.Consumer;
 public class ExternalVoiceAssetMeta {
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：EI TTS * MOBVOI：出门问问TTS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: 华为云EI TTS * MOBVOI: 出门问问 TTSS * AUDIOX: 逻辑智能 TTSS * SINOVOICE: 捷通华声 TTSS * DATABACK: 标贝 TTSS * AISPEECH: 思必驰 TTSS
      */
     public static final class ProviderEnum {
 
@@ -36,6 +35,26 @@ public class ExternalVoiceAssetMeta {
          */
         public static final ProviderEnum MOBVOI = new ProviderEnum("MOBVOI");
 
+        /**
+         * Enum AUDIOX for value: "AUDIOX"
+         */
+        public static final ProviderEnum AUDIOX = new ProviderEnum("AUDIOX");
+
+        /**
+         * Enum SINOVOICE for value: "SINOVOICE"
+         */
+        public static final ProviderEnum SINOVOICE = new ProviderEnum("SINOVOICE");
+
+        /**
+         * Enum DATABACK for value: "DATABACK"
+         */
+        public static final ProviderEnum DATABACK = new ProviderEnum("DATABACK");
+
+        /**
+         * Enum AISPEECH for value: "AISPEECH"
+         */
+        public static final ProviderEnum AISPEECH = new ProviderEnum("AISPEECH");
+
         private static final Map<String, ProviderEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderEnum> createStaticFields() {
@@ -43,6 +62,10 @@ public class ExternalVoiceAssetMeta {
             map.put("XIMALAYA", XIMALAYA);
             map.put("HUAWEI_EI", HUAWEI_EI);
             map.put("MOBVOI", MOBVOI);
+            map.put("AUDIOX", AUDIOX);
+            map.put("SINOVOICE", SINOVOICE);
+            map.put("DATABACK", DATABACK);
+            map.put("AISPEECH", AISPEECH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -97,18 +120,13 @@ public class ExternalVoiceAssetMeta {
 
     private ProviderEnum provider;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mobvoi_voice_meta")
-
-    private MobvoiVoiceAssetMeta mobvoiVoiceMeta;
-
     public ExternalVoiceAssetMeta withProvider(ProviderEnum provider) {
         this.provider = provider;
         return this;
     }
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：EI TTS * MOBVOI：出门问问TTS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: 华为云EI TTS * MOBVOI: 出门问问 TTSS * AUDIOX: 逻辑智能 TTSS * SINOVOICE: 捷通华声 TTSS * DATABACK: 标贝 TTSS * AISPEECH: 思必驰 TTSS
      * @return provider
      */
     public ProviderEnum getProvider() {
@@ -117,32 +135,6 @@ public class ExternalVoiceAssetMeta {
 
     public void setProvider(ProviderEnum provider) {
         this.provider = provider;
-    }
-
-    public ExternalVoiceAssetMeta withMobvoiVoiceMeta(MobvoiVoiceAssetMeta mobvoiVoiceMeta) {
-        this.mobvoiVoiceMeta = mobvoiVoiceMeta;
-        return this;
-    }
-
-    public ExternalVoiceAssetMeta withMobvoiVoiceMeta(Consumer<MobvoiVoiceAssetMeta> mobvoiVoiceMetaSetter) {
-        if (this.mobvoiVoiceMeta == null) {
-            this.mobvoiVoiceMeta = new MobvoiVoiceAssetMeta();
-            mobvoiVoiceMetaSetter.accept(this.mobvoiVoiceMeta);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get mobvoiVoiceMeta
-     * @return mobvoiVoiceMeta
-     */
-    public MobvoiVoiceAssetMeta getMobvoiVoiceMeta() {
-        return mobvoiVoiceMeta;
-    }
-
-    public void setMobvoiVoiceMeta(MobvoiVoiceAssetMeta mobvoiVoiceMeta) {
-        this.mobvoiVoiceMeta = mobvoiVoiceMeta;
     }
 
     @Override
@@ -154,13 +146,12 @@ public class ExternalVoiceAssetMeta {
             return false;
         }
         ExternalVoiceAssetMeta that = (ExternalVoiceAssetMeta) obj;
-        return Objects.equals(this.provider, that.provider)
-            && Objects.equals(this.mobvoiVoiceMeta, that.mobvoiVoiceMeta);
+        return Objects.equals(this.provider, that.provider);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(provider, mobvoiVoiceMeta);
+        return Objects.hash(provider);
     }
 
     @Override
@@ -168,7 +159,6 @@ public class ExternalVoiceAssetMeta {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExternalVoiceAssetMeta {\n");
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-        sb.append("    mobvoiVoiceMeta: ").append(toIndentedString(mobvoiVoiceMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -20,9 +20,9 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "resource_name")
 
-    private String name;
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_name")
@@ -71,21 +71,21 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.id = id;
     }
 
-    public ShowDedicatedResourceInfoResponse withName(String name) {
-        this.name = name;
+    public ShowDedicatedResourceInfoResponse withResourceName(String resourceName) {
+        this.resourceName = resourceName;
         return this;
     }
 
     /**
      * 专属资源池名称。
-     * @return name
+     * @return resourceName
      */
-    public String getName() {
-        return name;
+    public String getResourceName() {
+        return resourceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     public ShowDedicatedResourceInfoResponse withEngineName(String engineName) {
@@ -235,7 +235,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
             return false;
         }
         ShowDedicatedResourceInfoResponse that = (ShowDedicatedResourceInfoResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.engineName, that.engineName)
             && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
             && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.status, that.status)
@@ -246,7 +246,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            name,
+            resourceName,
             engineName,
             availabilityZoneIds,
             architecture,
@@ -260,7 +260,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDedicatedResourceInfoResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
         sb.append("    availabilityZoneIds: ").append(toIndentedString(availabilityZoneIds)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");

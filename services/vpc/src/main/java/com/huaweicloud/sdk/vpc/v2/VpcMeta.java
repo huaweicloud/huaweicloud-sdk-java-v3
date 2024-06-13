@@ -9,12 +9,18 @@ import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringRequest;
 import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringResponse;
 import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSecurityGroupTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSecurityGroupTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsResponse;
@@ -39,6 +45,9 @@ import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupTagRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupTagResponse;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetRequestBody;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetResponse;
@@ -69,6 +78,8 @@ import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupTagResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetTagRequest;
@@ -95,6 +106,11 @@ import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetTagsRequest;
@@ -250,6 +266,8 @@ import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetTagsRequest;
@@ -338,6 +356,39 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateSecurityGroupTagsRequest, BatchCreateSecurityGroupTagsResponse> batchCreateSecurityGroupTags =
+        genForBatchCreateSecurityGroupTags();
+
+    private static HttpRequestDef<BatchCreateSecurityGroupTagsRequest, BatchCreateSecurityGroupTagsResponse> genForBatchCreateSecurityGroupTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSecurityGroupTagsRequest, BatchCreateSecurityGroupTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSecurityGroupTagsRequest.class,
+                    BatchCreateSecurityGroupTagsResponse.class)
+                .withName("BatchCreateSecurityGroupTags")
+                .withUri("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityGroupTagsRequest::getSecurityGroupId,
+                BatchCreateSecurityGroupTagsRequest::setSecurityGroupId));
+        builder.<BatchCreateSecurityGroupTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateSecurityGroupTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSecurityGroupTagsRequest::getBody,
+                BatchCreateSecurityGroupTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTags =
         genForBatchCreateSubnetTags();
 
@@ -361,6 +412,39 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateSubnetTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateSubnetTagsRequest::getBody, BatchCreateSubnetTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityGroupTagsRequest, BatchDeleteSecurityGroupTagsResponse> batchDeleteSecurityGroupTags =
+        genForBatchDeleteSecurityGroupTags();
+
+    private static HttpRequestDef<BatchDeleteSecurityGroupTagsRequest, BatchDeleteSecurityGroupTagsResponse> genForBatchDeleteSecurityGroupTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityGroupTagsRequest, BatchDeleteSecurityGroupTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityGroupTagsRequest.class,
+                    BatchDeleteSecurityGroupTagsResponse.class)
+                .withName("BatchDeleteSecurityGroupTags")
+                .withUri("/v2.0/{project_id}/security-groups/{security_group_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityGroupTagsRequest::getSecurityGroupId,
+                BatchDeleteSecurityGroupTagsRequest::setSecurityGroupId));
+        builder.<BatchDeleteSecurityGroupTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSecurityGroupTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSecurityGroupTagsRequest::getBody,
+                BatchDeleteSecurityGroupTagsRequest::setBody));
 
         // response
 
@@ -504,6 +588,35 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecurityGroupRuleRequestBody.class),
             f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, CreateSecurityGroupRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityGroupTagRequest, CreateSecurityGroupTagResponse> createSecurityGroupTag =
+        genForCreateSecurityGroupTag();
+
+    private static HttpRequestDef<CreateSecurityGroupTagRequest, CreateSecurityGroupTagResponse> genForCreateSecurityGroupTag() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityGroupTagRequest, CreateSecurityGroupTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSecurityGroupTagRequest.class, CreateSecurityGroupTagResponse.class)
+            .withName("CreateSecurityGroupTag")
+            .withUri("/v2.0/{project_id}/security-groups/{security_group_id}/tags")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityGroupTagRequest::getSecurityGroupId,
+                CreateSecurityGroupTagRequest::setSecurityGroupId));
+        builder.<CreateSecurityGroupTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSecurityGroupTagRequestBody.class),
+            f -> f.withMarshaller(CreateSecurityGroupTagRequest::getBody, CreateSecurityGroupTagRequest::setBody));
 
         // response
 
@@ -693,6 +806,35 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId,
                 DeleteSecurityGroupRuleRequest::setSecurityGroupRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecurityGroupTagRequest, DeleteSecurityGroupTagResponse> deleteSecurityGroupTag =
+        genForDeleteSecurityGroupTag();
+
+    private static HttpRequestDef<DeleteSecurityGroupTagRequest, DeleteSecurityGroupTagResponse> genForDeleteSecurityGroupTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityGroupTagRequest, DeleteSecurityGroupTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityGroupTagRequest.class, DeleteSecurityGroupTagResponse.class)
+            .withName("DeleteSecurityGroupTag")
+            .withUri("/v2.0/{project_id}/security-groups/{security_group_id}/tags/{key}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityGroupTagRequest::getKey, DeleteSecurityGroupTagRequest::setKey));
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityGroupTagRequest::getSecurityGroupId,
+                DeleteSecurityGroupTagRequest::setSecurityGroupId));
 
         // response
 
@@ -1058,6 +1200,24 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityGroupTagsRequest, ListSecurityGroupTagsResponse> listSecurityGroupTags =
+        genForListSecurityGroupTags();
+
+    private static HttpRequestDef<ListSecurityGroupTagsRequest, ListSecurityGroupTagsResponse> genForListSecurityGroupTags() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityGroupTagsRequest, ListSecurityGroupTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityGroupTagsRequest.class, ListSecurityGroupTagsResponse.class)
+            .withName("ListSecurityGroupTags")
+            .withUri("/v2.0/{project_id}/security-groups/tags")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups =
         genForListSecurityGroups();
 
@@ -1091,6 +1251,30 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId,
                 ListSecurityGroupsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityGroupsByTagsRequest, ListSecurityGroupsByTagsResponse> listSecurityGroupsByTags =
+        genForListSecurityGroupsByTags();
+
+    private static HttpRequestDef<ListSecurityGroupsByTagsRequest, ListSecurityGroupsByTagsResponse> genForListSecurityGroupsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityGroupsByTagsRequest, ListSecurityGroupsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListSecurityGroupsByTagsRequest.class, ListSecurityGroupsByTagsResponse.class)
+                .withName("ListSecurityGroupsByTags")
+                .withUri("/v2.0/{project_id}/security-groups/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListSecurityGroupsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSecurityGroupsByTagsRequestBody.class),
+            f -> f.withMarshaller(ListSecurityGroupsByTagsRequest::getBody, ListSecurityGroupsByTagsRequest::setBody));
 
         // response
 
@@ -1377,6 +1561,30 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId,
                 ShowSecurityGroupRuleRequest::setSecurityGroupRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityGroupTagsRequest, ShowSecurityGroupTagsResponse> showSecurityGroupTags =
+        genForShowSecurityGroupTags();
+
+    private static HttpRequestDef<ShowSecurityGroupTagsRequest, ShowSecurityGroupTagsResponse> genForShowSecurityGroupTags() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityGroupTagsRequest, ShowSecurityGroupTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSecurityGroupTagsRequest.class, ShowSecurityGroupTagsResponse.class)
+            .withName("ShowSecurityGroupTags")
+            .withUri("/v2.0/{project_id}/security-groups/{security_group_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityGroupTagsRequest::getSecurityGroupId,
+                ShowSecurityGroupTagsRequest::setSecurityGroupId));
 
         // response
 

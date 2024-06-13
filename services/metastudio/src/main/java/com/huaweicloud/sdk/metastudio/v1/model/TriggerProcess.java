@@ -24,7 +24,7 @@ public class TriggerProcess {
     private Integer timeWindow;
 
     /**
-     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。
+     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。 * INTELLIGENT_REPLY: 智能交互回复话术。
      */
     public static final class ReplyModeEnum {
 
@@ -43,6 +43,11 @@ public class TriggerProcess {
          */
         public static final ReplyModeEnum SHOW_LAYER = new ReplyModeEnum("SHOW_LAYER");
 
+        /**
+         * Enum INTELLIGENT_REPLY for value: "INTELLIGENT_REPLY"
+         */
+        public static final ReplyModeEnum INTELLIGENT_REPLY = new ReplyModeEnum("INTELLIGENT_REPLY");
+
         private static final Map<String, ReplyModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ReplyModeEnum> createStaticFields() {
@@ -50,6 +55,7 @@ public class TriggerProcess {
             map.put("SYSTEM_REPLY", SYSTEM_REPLY);
             map.put("CALLBACK", CALLBACK);
             map.put("SHOW_LAYER", SHOW_LAYER);
+            map.put("INTELLIGENT_REPLY", INTELLIGENT_REPLY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -274,6 +280,11 @@ public class TriggerProcess {
 
     private ReplyRoleEnum replyRole;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "robot_id")
+
+    private String robotId;
+
     public TriggerProcess withTimeWindow(Integer timeWindow) {
         this.timeWindow = timeWindow;
         return this;
@@ -299,7 +310,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。
+     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。 * INTELLIGENT_REPLY: 智能交互回复话术。
      * @return replyMode
      */
     public ReplyModeEnum getReplyMode() {
@@ -462,6 +473,23 @@ public class TriggerProcess {
         this.replyRole = replyRole;
     }
 
+    public TriggerProcess withRobotId(String robotId) {
+        this.robotId = robotId;
+        return this;
+    }
+
+    /**
+     * 机器人ID。
+     * @return robotId
+     */
+    public String getRobotId() {
+        return robotId;
+    }
+
+    public void setRobotId(String robotId) {
+        this.robotId = robotId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -475,13 +503,21 @@ public class TriggerProcess {
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.extraLayerConfig, that.extraLayerConfig)
             && Objects.equals(this.replyTexts, that.replyTexts) && Objects.equals(this.replyAudios, that.replyAudios)
-            && Objects.equals(this.replyOrder, that.replyOrder) && Objects.equals(this.replyRole, that.replyRole);
+            && Objects.equals(this.replyOrder, that.replyOrder) && Objects.equals(this.replyRole, that.replyRole)
+            && Objects.equals(this.robotId, that.robotId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(timeWindow, replyMode, layerConfig, extraLayerConfig, replyTexts, replyAudios, replyOrder, replyRole);
+        return Objects.hash(timeWindow,
+            replyMode,
+            layerConfig,
+            extraLayerConfig,
+            replyTexts,
+            replyAudios,
+            replyOrder,
+            replyRole,
+            robotId);
     }
 
     @Override
@@ -496,6 +532,7 @@ public class TriggerProcess {
         sb.append("    replyAudios: ").append(toIndentedString(replyAudios)).append("\n");
         sb.append("    replyOrder: ").append(toIndentedString(replyOrder)).append("\n");
         sb.append("    replyRole: ").append(toIndentedString(replyRole)).append("\n");
+        sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 分身模型元数据
@@ -116,6 +119,11 @@ public class HumanModel2DAssetMeta {
 
     private String modelResolution;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_names")
+
+    private List<String> deviceNames = null;
+
     public HumanModel2DAssetMeta withIsActionEditable(Boolean isActionEditable) {
         this.isActionEditable = isActionEditable;
         return this;
@@ -201,6 +209,39 @@ public class HumanModel2DAssetMeta {
         this.modelResolution = modelResolution;
     }
 
+    public HumanModel2DAssetMeta withDeviceNames(List<String> deviceNames) {
+        this.deviceNames = deviceNames;
+        return this;
+    }
+
+    public HumanModel2DAssetMeta addDeviceNamesItem(String deviceNamesItem) {
+        if (this.deviceNames == null) {
+            this.deviceNames = new ArrayList<>();
+        }
+        this.deviceNames.add(deviceNamesItem);
+        return this;
+    }
+
+    public HumanModel2DAssetMeta withDeviceNames(Consumer<List<String>> deviceNamesSetter) {
+        if (this.deviceNames == null) {
+            this.deviceNames = new ArrayList<>();
+        }
+        deviceNamesSetter.accept(this.deviceNames);
+        return this;
+    }
+
+    /**
+     * 已执行编译任务
+     * @return deviceNames
+     */
+    public List<String> getDeviceNames() {
+        return deviceNames;
+    }
+
+    public void setDeviceNames(List<String> deviceNames) {
+        this.deviceNames = deviceNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -214,12 +255,14 @@ public class HumanModel2DAssetMeta {
             && Objects.equals(this.isRealBackground, that.isRealBackground)
             && Objects.equals(this.supportLive, that.supportLive)
             && Objects.equals(this.modelVersion, that.modelVersion)
-            && Objects.equals(this.modelResolution, that.modelResolution);
+            && Objects.equals(this.modelResolution, that.modelResolution)
+            && Objects.equals(this.deviceNames, that.deviceNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isActionEditable, isRealBackground, supportLive, modelVersion, modelResolution);
+        return Objects
+            .hash(isActionEditable, isRealBackground, supportLive, modelVersion, modelResolution, deviceNames);
     }
 
     @Override
@@ -231,6 +274,7 @@ public class HumanModel2DAssetMeta {
         sb.append("    supportLive: ").append(toIndentedString(supportLive)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
+        sb.append("    deviceNames: ").append(toIndentedString(deviceNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -18,7 +18,7 @@ public class Input {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private String value;
+    private Object value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -42,7 +42,7 @@ public class Input {
         this.name = name;
     }
 
-    public Input withValue(String value) {
+    public Input withValue(Object value) {
         this.value = value;
         return this;
     }
@@ -51,11 +51,11 @@ public class Input {
      * 参数值
      * @return value
      */
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

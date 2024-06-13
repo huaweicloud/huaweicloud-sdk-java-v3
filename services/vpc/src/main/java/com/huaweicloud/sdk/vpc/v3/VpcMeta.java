@@ -25,6 +25,9 @@ import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequestBody;
@@ -34,7 +37,13 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequestBod
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
@@ -44,6 +53,9 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
@@ -73,6 +85,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
@@ -104,6 +118,11 @@ import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListResourcesByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
@@ -142,6 +161,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -1564,6 +1585,87 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateFirewallTagsRequest, BatchCreateFirewallTagsResponse> batchCreateFirewallTags =
+        genForBatchCreateFirewallTags();
+
+    private static HttpRequestDef<BatchCreateFirewallTagsRequest, BatchCreateFirewallTagsResponse> genForBatchCreateFirewallTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateFirewallTagsRequest, BatchCreateFirewallTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateFirewallTagsRequest.class, BatchCreateFirewallTagsResponse.class)
+            .withName("BatchCreateFirewallTags")
+            .withUri("/v3/{project_id}/firewalls/{firewall_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateFirewallTagsRequest::getFirewallId,
+                BatchCreateFirewallTagsRequest::setFirewallId));
+        builder.<BatchCreateFirewallTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreateFirewallTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateFirewallTagsRequest::getBody, BatchCreateFirewallTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteFirewallTagsRequest, BatchDeleteFirewallTagsResponse> batchDeleteFirewallTags =
+        genForBatchDeleteFirewallTags();
+
+    private static HttpRequestDef<BatchDeleteFirewallTagsRequest, BatchDeleteFirewallTagsResponse> genForBatchDeleteFirewallTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteFirewallTagsRequest, BatchDeleteFirewallTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteFirewallTagsRequest.class, BatchDeleteFirewallTagsResponse.class)
+            .withName("BatchDeleteFirewallTags")
+            .withUri("/v3/{project_id}/firewalls/{firewall_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteFirewallTagsRequest::getFirewallId,
+                BatchDeleteFirewallTagsRequest::setFirewallId));
+        builder.<BatchDeleteFirewallTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteFirewallTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteFirewallTagsRequest::getBody, BatchDeleteFirewallTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountFirewallsByTagsRequest, CountFirewallsByTagsResponse> countFirewallsByTags =
+        genForCountFirewallsByTags();
+
+    private static HttpRequestDef<CountFirewallsByTagsRequest, CountFirewallsByTagsResponse> genForCountFirewallsByTags() {
+        // basic
+        HttpRequestDef.Builder<CountFirewallsByTagsRequest, CountFirewallsByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CountFirewallsByTagsRequest.class, CountFirewallsByTagsResponse.class)
+            .withName("CountFirewallsByTags")
+            .withUri("/v3/{project_id}/firewalls/resource-instances/count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CountFirewallsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CountFirewallsByTagsRequestBody.class),
+            f -> f.withMarshaller(CountFirewallsByTagsRequest::getBody, CountFirewallsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
         genForCreateFirewall();
 
@@ -1587,6 +1689,34 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFirewallTagRequest, CreateFirewallTagResponse> createFirewallTag =
+        genForCreateFirewallTag();
+
+    private static HttpRequestDef<CreateFirewallTagRequest, CreateFirewallTagResponse> genForCreateFirewallTag() {
+        // basic
+        HttpRequestDef.Builder<CreateFirewallTagRequest, CreateFirewallTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFirewallTagRequest.class, CreateFirewallTagResponse.class)
+                .withName("CreateFirewallTag")
+                .withUri("/v3/{project_id}/firewalls/{firewall_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFirewallTagRequest::getFirewallId, CreateFirewallTagRequest::setFirewallId));
+        builder.<CreateFirewallTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFirewallTagRequestBody.class),
+            f -> f.withMarshaller(CreateFirewallTagRequest::getBody, CreateFirewallTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
         genForDeleteFirewall();
 
@@ -1604,6 +1734,34 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFirewallRequest::getFirewallId, DeleteFirewallRequest::setFirewallId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFirewallTagRequest, DeleteFirewallTagResponse> deleteFirewallTag =
+        genForDeleteFirewallTag();
+
+    private static HttpRequestDef<DeleteFirewallTagRequest, DeleteFirewallTagResponse> genForDeleteFirewallTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteFirewallTagRequest, DeleteFirewallTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFirewallTagRequest.class, DeleteFirewallTagResponse.class)
+                .withName("DeleteFirewallTag")
+                .withUri("/v3/{project_id}/firewalls/{firewall_id}/tags/{tag_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFirewallTagRequest::getFirewallId, DeleteFirewallTagRequest::setFirewallId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFirewallTagRequest::getTagKey, DeleteFirewallTagRequest::setTagKey));
 
         // response
 
@@ -1696,6 +1854,57 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFirewallTagsRequest, ListFirewallTagsResponse> listFirewallTags =
+        genForListFirewallTags();
+
+    private static HttpRequestDef<ListFirewallTagsRequest, ListFirewallTagsResponse> genForListFirewallTags() {
+        // basic
+        HttpRequestDef.Builder<ListFirewallTagsRequest, ListFirewallTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFirewallTagsRequest.class, ListFirewallTagsResponse.class)
+                .withName("ListFirewallTags")
+                .withUri("/v3/{project_id}/firewalls/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFirewallsByTagsRequest, ListFirewallsByTagsResponse> listFirewallsByTags =
+        genForListFirewallsByTags();
+
+    private static HttpRequestDef<ListFirewallsByTagsRequest, ListFirewallsByTagsResponse> genForListFirewallsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListFirewallsByTagsRequest, ListFirewallsByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListFirewallsByTagsRequest.class, ListFirewallsByTagsResponse.class)
+                .withName("ListFirewallsByTags")
+                .withUri("/v3/{project_id}/firewalls/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirewallsByTagsRequest::getLimit, ListFirewallsByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirewallsByTagsRequest::getOffset, ListFirewallsByTagsRequest::setOffset));
+        builder.<ListFirewallsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFirewallsByTagsRequestBody.class),
+            f -> f.withMarshaller(ListFirewallsByTagsRequest::getBody, ListFirewallsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> removeFirewallRules =
         genForRemoveFirewallRules();
 
@@ -1741,6 +1950,29 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFirewallRequest::getFirewallId, ShowFirewallRequest::setFirewallId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFirewallTagsRequest, ShowFirewallTagsResponse> showFirewallTags =
+        genForShowFirewallTags();
+
+    private static HttpRequestDef<ShowFirewallTagsRequest, ShowFirewallTagsResponse> genForShowFirewallTags() {
+        // basic
+        HttpRequestDef.Builder<ShowFirewallTagsRequest, ShowFirewallTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFirewallTagsRequest.class, ShowFirewallTagsResponse.class)
+                .withName("ShowFirewallTags")
+                .withUri("/v3/{project_id}/firewalls/{firewall_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFirewallTagsRequest::getFirewallId, ShowFirewallTagsRequest::setFirewallId));
 
         // response
 

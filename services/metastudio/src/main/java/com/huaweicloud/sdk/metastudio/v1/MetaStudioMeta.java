@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchAssetActionReq;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
@@ -32,8 +35,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
@@ -86,6 +89,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResp
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateProductRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
@@ -140,6 +146,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
@@ -193,6 +201,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListProductsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
@@ -220,12 +230,15 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.PictureModelingByUrlReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ProductAssetReleation;
 import com.huaweicloud.sdk.metastudio.v1.model.ReplicationAssetInfo;
 import com.huaweicloud.sdk.metastudio.v1.model.ReportLiveEventReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
@@ -262,6 +275,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
@@ -331,6 +346,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotResponse;
@@ -963,17 +981,64 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> createAssetbyReplicationInfo =
-        genForCreateAssetbyReplicationInfo();
+    public static final HttpRequestDef<BatchExecuteAssetActionRequest, BatchExecuteAssetActionResponse> batchExecuteAssetAction =
+        genForBatchExecuteAssetAction();
 
-    private static HttpRequestDef<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> genForCreateAssetbyReplicationInfo() {
+    private static HttpRequestDef<BatchExecuteAssetActionRequest, BatchExecuteAssetActionResponse> genForBatchExecuteAssetAction() {
         // basic
-        HttpRequestDef.Builder<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> builder =
+        HttpRequestDef.Builder<BatchExecuteAssetActionRequest, BatchExecuteAssetActionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchExecuteAssetActionRequest.class, BatchExecuteAssetActionResponse.class)
+            .withName("BatchExecuteAssetAction")
+            .withUri("/v1/{project_id}/digital-assets/batch-action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchExecuteAssetActionRequest::getAuthorization,
+                BatchExecuteAssetActionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchExecuteAssetActionRequest::getXSdkDate,
+                BatchExecuteAssetActionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchExecuteAssetActionRequest::getXAppUserId,
+                BatchExecuteAssetActionRequest::setXAppUserId));
+        builder.<BatchAssetActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAssetActionReq.class),
+            f -> f.withMarshaller(BatchExecuteAssetActionRequest::getBody, BatchExecuteAssetActionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchExecuteAssetActionResponse::getXRequestId,
+                BatchExecuteAssetActionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssetByReplicationInfoRequest, CreateAssetByReplicationInfoResponse> createAssetByReplicationInfo =
+        genForCreateAssetByReplicationInfo();
+
+    private static HttpRequestDef<CreateAssetByReplicationInfoRequest, CreateAssetByReplicationInfoResponse> genForCreateAssetByReplicationInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateAssetByReplicationInfoRequest, CreateAssetByReplicationInfoResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.POST,
-                    CreateAssetbyReplicationInfoRequest.class,
-                    CreateAssetbyReplicationInfoResponse.class)
-                .withName("CreateAssetbyReplicationInfo")
+                    CreateAssetByReplicationInfoRequest.class,
+                    CreateAssetByReplicationInfoResponse.class)
+                .withName("CreateAssetByReplicationInfo")
                 .withUri("/v1/{project_id}/digital-assets-by-replication-info")
                 .withContentType("application/json");
 
@@ -982,26 +1047,26 @@ public class MetaStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getAuthorization,
-                CreateAssetbyReplicationInfoRequest::setAuthorization));
+            f -> f.withMarshaller(CreateAssetByReplicationInfoRequest::getAuthorization,
+                CreateAssetByReplicationInfoRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getXSdkDate,
-                CreateAssetbyReplicationInfoRequest::setXSdkDate));
+            f -> f.withMarshaller(CreateAssetByReplicationInfoRequest::getXSdkDate,
+                CreateAssetByReplicationInfoRequest::setXSdkDate));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getXAppUserId,
-                CreateAssetbyReplicationInfoRequest::setXAppUserId));
+            f -> f.withMarshaller(CreateAssetByReplicationInfoRequest::getXAppUserId,
+                CreateAssetByReplicationInfoRequest::setXAppUserId));
         builder.<ReplicationAssetInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ReplicationAssetInfo.class),
-            f -> f.withMarshaller(CreateAssetbyReplicationInfoRequest::getBody,
-                CreateAssetbyReplicationInfoRequest::setBody));
+            f -> f.withMarshaller(CreateAssetByReplicationInfoRequest::getBody,
+                CreateAssetByReplicationInfoRequest::setBody));
 
         // response
 
@@ -1009,8 +1074,8 @@ public class MetaStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateAssetbyReplicationInfoResponse::getXRequestId,
-                CreateAssetbyReplicationInfoResponse::setXRequestId));
+            f -> f.withMarshaller(CreateAssetByReplicationInfoResponse::getXRequestId,
+                CreateAssetByReplicationInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1042,6 +1107,12 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDigitalAssetRequest::getXAppUserId, CreateDigitalAssetRequest::setXAppUserId));
+        builder.<String>withRequestField("X-MSS-Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDigitalAssetRequest::getXMSSAuthorization,
+                CreateDigitalAssetRequest::setXMSSAuthorization));
         builder.<CreateDigitalAssetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1221,6 +1292,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getRenderEngine, ListAssetsRequest::setRenderEngine));
+        builder.<List<String>>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAssetsRequest::getAssetId, ListAssetsRequest::setAssetId));
         builder.<String>withRequestField("sex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1256,6 +1332,27 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAssetsRequest.RoleEnum.class),
             f -> f.withMarshaller(ListAssetsRequest::getRole, ListAssetsRequest::setRole));
+        builder.<Boolean>withRequestField("is_realtime_voice",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAssetsRequest::getIsRealtimeVoice, ListAssetsRequest::setIsRealtimeVoice));
+        builder.<String>withRequestField("human_model_2d_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getHumanModel2dVersion,
+                ListAssetsRequest::setHumanModel2dVersion));
+        builder.<String>withRequestField("include_device_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getIncludeDeviceName, ListAssetsRequest::setIncludeDeviceName));
+        builder.<String>withRequestField("exclude_device_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getExcludeDeviceName, ListAssetsRequest::setExcludeDeviceName));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4511,6 +4608,342 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(ShowPictureModelingJobResponse::getXRequestId,
                 ShowPictureModelingJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
+        genForCreateProduct();
+
+    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForCreateProduct() {
+        // basic
+        HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
+                .withName("CreateProduct")
+                .withUri("/v1/{project_id}/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProductRequest::getAuthorization, CreateProductRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProductRequest::getXSdkDate, CreateProductRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProductRequest::getXProjectId, CreateProductRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProductRequest::getXAppUserId, CreateProductRequest::setXAppUserId));
+        builder.<CreateProductRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProductRequestBody.class),
+            f -> f.withMarshaller(CreateProductRequest::getBody, CreateProductRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateProductResponse::getXRequestId, CreateProductResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
+        genForDeleteProduct();
+
+    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genForDeleteProduct() {
+        // basic
+        HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
+                .withName("DeleteProduct")
+                .withUri("/v1/{project_id}/products/{product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getProductId, DeleteProductRequest::setProductId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getAuthorization, DeleteProductRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getXSdkDate, DeleteProductRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getXProjectId, DeleteProductRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getXAppUserId, DeleteProductRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteProductResponse::getXRequestId, DeleteProductResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForListProducts();
+
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForListProducts() {
+        // basic
+        HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
+                .withUri("/v1/{project_id}/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductsRequest::getOffset, ListProductsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductsRequest::getLimit, ListProductsRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getSortKey, ListProductsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getSortDir, ListProductsRequest::setSortDir));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getCreateUntil, ListProductsRequest::setCreateUntil));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getCreateSince, ListProductsRequest::setCreateSince));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getName, ListProductsRequest::setName));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getTag, ListProductsRequest::setTag));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getState, ListProductsRequest::setState));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getAuthorization, ListProductsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getXSdkDate, ListProductsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getXProjectId, ListProductsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getXAppUserId, ListProductsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsResponse::getXRequestId, ListProductsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetProductAssetRequest, SetProductAssetResponse> setProductAsset =
+        genForSetProductAsset();
+
+    private static HttpRequestDef<SetProductAssetRequest, SetProductAssetResponse> genForSetProductAsset() {
+        // basic
+        HttpRequestDef.Builder<SetProductAssetRequest, SetProductAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetProductAssetRequest.class, SetProductAssetResponse.class)
+                .withName("SetProductAsset")
+                .withUri("/v1/{project_id}/products/{product_id}/assets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getProductId, SetProductAssetRequest::setProductId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getAuthorization, SetProductAssetRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getXSdkDate, SetProductAssetRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getXProjectId, SetProductAssetRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getXAppUserId, SetProductAssetRequest::setXAppUserId));
+        builder.<ProductAssetReleation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProductAssetReleation.class),
+            f -> f.withMarshaller(SetProductAssetRequest::getBody, SetProductAssetRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetProductAssetResponse::getXRequestId, SetProductAssetResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProductRequest, ShowProductResponse> showProduct = genForShowProduct();
+
+    private static HttpRequestDef<ShowProductRequest, ShowProductResponse> genForShowProduct() {
+        // basic
+        HttpRequestDef.Builder<ShowProductRequest, ShowProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProductRequest.class, ShowProductResponse.class)
+                .withName("ShowProduct")
+                .withUri("/v1/{project_id}/products/{product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductRequest::getProductId, ShowProductRequest::setProductId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductRequest::getAuthorization, ShowProductRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductRequest::getXSdkDate, ShowProductRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductRequest::getXProjectId, ShowProductRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductRequest::getXAppUserId, ShowProductRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowProductResponse::getXRequestId, ShowProductResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProductRequest, UpdateProductResponse> updateProduct =
+        genForUpdateProduct();
+
+    private static HttpRequestDef<UpdateProductRequest, UpdateProductResponse> genForUpdateProduct() {
+        // basic
+        HttpRequestDef.Builder<UpdateProductRequest, UpdateProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProductRequest.class, UpdateProductResponse.class)
+                .withName("UpdateProduct")
+                .withUri("/v1/{project_id}/products/{product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProductRequest::getProductId, UpdateProductRequest::setProductId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProductRequest::getAuthorization, UpdateProductRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProductRequest::getXSdkDate, UpdateProductRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProductRequest::getXProjectId, UpdateProductRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProductRequest::getXAppUserId, UpdateProductRequest::setXAppUserId));
+        builder.<UpdateProductRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProductRequestBody.class),
+            f -> f.withMarshaller(UpdateProductRequest::getBody, UpdateProductRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateProductResponse::getXRequestId, UpdateProductResponse::setXRequestId));
         return builder.build();
     }
 

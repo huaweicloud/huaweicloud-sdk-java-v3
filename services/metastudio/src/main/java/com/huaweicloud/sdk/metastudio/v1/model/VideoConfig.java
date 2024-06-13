@@ -288,6 +288,11 @@ public class VideoConfig {
 
     private Integer dy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_enable_super_resolution")
+
+    private Boolean isEnableSuperResolution;
+
     public VideoConfig withClipMode(ClipModeEnum clipMode) {
         this.clipMode = clipMode;
         return this;
@@ -477,6 +482,23 @@ public class VideoConfig {
         this.dy = dy;
     }
 
+    public VideoConfig withIsEnableSuperResolution(Boolean isEnableSuperResolution) {
+        this.isEnableSuperResolution = isEnableSuperResolution;
+        return this;
+    }
+
+    /**
+     * 视频是否开启超分。 > true: 开启 > false: 不开启
+     * @return isEnableSuperResolution
+     */
+    public Boolean getIsEnableSuperResolution() {
+        return isEnableSuperResolution;
+    }
+
+    public void setIsEnableSuperResolution(Boolean isEnableSuperResolution) {
+        this.isEnableSuperResolution = isEnableSuperResolution;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -491,13 +513,23 @@ public class VideoConfig {
             && Objects.equals(this.height, that.height) && Objects.equals(this.frameRate, that.frameRate)
             && Objects.equals(this.isSubtitleEnable, that.isSubtitleEnable)
             && Objects.equals(this.subtitleConfig, that.subtitleConfig) && Objects.equals(this.dx, that.dx)
-            && Objects.equals(this.dy, that.dy);
+            && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.isEnableSuperResolution, that.isEnableSuperResolution);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(clipMode, codec, bitrate, width, height, frameRate, isSubtitleEnable, subtitleConfig, dx, dy);
+        return Objects.hash(clipMode,
+            codec,
+            bitrate,
+            width,
+            height,
+            frameRate,
+            isSubtitleEnable,
+            subtitleConfig,
+            dx,
+            dy,
+            isEnableSuperResolution);
     }
 
     @Override
@@ -514,6 +546,7 @@ public class VideoConfig {
         sb.append("    subtitleConfig: ").append(toIndentedString(subtitleConfig)).append("\n");
         sb.append("    dx: ").append(toIndentedString(dx)).append("\n");
         sb.append("    dy: ").append(toIndentedString(dy)).append("\n");
+        sb.append("    isEnableSuperResolution: ").append(toIndentedString(isEnableSuperResolution)).append("\n");
         sb.append("}");
         return sb.toString();
     }

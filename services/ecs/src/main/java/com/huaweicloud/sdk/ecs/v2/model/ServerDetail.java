@@ -133,7 +133,7 @@ public class ServerDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fault")
 
-    private ServerFault fault;
+    private Object fault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
@@ -691,29 +691,20 @@ public class ServerDetail {
         this.accessIPv6 = accessIPv6;
     }
 
-    public ServerDetail withFault(ServerFault fault) {
+    public ServerDetail withFault(Object fault) {
         this.fault = fault;
         return this;
     }
 
-    public ServerDetail withFault(Consumer<ServerFault> faultSetter) {
-        if (this.fault == null) {
-            this.fault = new ServerFault();
-            faultSetter.accept(this.fault);
-        }
-
-        return this;
-    }
-
     /**
-     * Get fault
+     * 弹性云服务器故障信息。  可选参数，在弹性云服务器状态为ERROR且存在异常的情况下返回。
      * @return fault
      */
-    public ServerFault getFault() {
+    public Object getFault() {
         return fault;
     }
 
-    public void setFault(ServerFault fault) {
+    public void setFault(Object fault) {
         this.fault = fault;
     }
 

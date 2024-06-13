@@ -117,7 +117,7 @@ public class CreateSmartLiveRoomReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interaction_rules")
 
-    private List<InteractionRuleInfo> interactionRules = null;
+    private List<LiveRoomInteractionRuleInfo> interactionRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_policy")
@@ -148,6 +148,11 @@ public class CreateSmartLiveRoomReq {
     @JsonProperty(value = "live_event_callback_config")
 
     private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtc_callback_config")
+
+    private RTCLiveEventCallBackConfig rtcCallbackConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_config")
@@ -323,12 +328,12 @@ public class CreateSmartLiveRoomReq {
         this.sceneScripts = sceneScripts;
     }
 
-    public CreateSmartLiveRoomReq withInteractionRules(List<InteractionRuleInfo> interactionRules) {
+    public CreateSmartLiveRoomReq withInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
         this.interactionRules = interactionRules;
         return this;
     }
 
-    public CreateSmartLiveRoomReq addInteractionRulesItem(InteractionRuleInfo interactionRulesItem) {
+    public CreateSmartLiveRoomReq addInteractionRulesItem(LiveRoomInteractionRuleInfo interactionRulesItem) {
         if (this.interactionRules == null) {
             this.interactionRules = new ArrayList<>();
         }
@@ -336,7 +341,8 @@ public class CreateSmartLiveRoomReq {
         return this;
     }
 
-    public CreateSmartLiveRoomReq withInteractionRules(Consumer<List<InteractionRuleInfo>> interactionRulesSetter) {
+    public CreateSmartLiveRoomReq withInteractionRules(
+        Consumer<List<LiveRoomInteractionRuleInfo>> interactionRulesSetter) {
         if (this.interactionRules == null) {
             this.interactionRules = new ArrayList<>();
         }
@@ -348,11 +354,11 @@ public class CreateSmartLiveRoomReq {
      * 互动规则列表
      * @return interactionRules
      */
-    public List<InteractionRuleInfo> getInteractionRules() {
+    public List<LiveRoomInteractionRuleInfo> getInteractionRules() {
         return interactionRules;
     }
 
-    public void setInteractionRules(List<InteractionRuleInfo> interactionRules) {
+    public void setInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
         this.interactionRules = interactionRules;
     }
 
@@ -534,6 +540,32 @@ public class CreateSmartLiveRoomReq {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
     }
 
+    public CreateSmartLiveRoomReq withRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withRtcCallbackConfig(Consumer<RTCLiveEventCallBackConfig> rtcCallbackConfigSetter) {
+        if (this.rtcCallbackConfig == null) {
+            this.rtcCallbackConfig = new RTCLiveEventCallBackConfig();
+            rtcCallbackConfigSetter.accept(this.rtcCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rtcCallbackConfig
+     * @return rtcCallbackConfig
+     */
+    public RTCLiveEventCallBackConfig getRtcCallbackConfig() {
+        return rtcCallbackConfig;
+    }
+
+    public void setRtcCallbackConfig(RTCLiveEventCallBackConfig rtcCallbackConfig) {
+        this.rtcCallbackConfig = rtcCallbackConfig;
+    }
+
     public CreateSmartLiveRoomReq withReviewConfig(ReviewConfig reviewConfig) {
         this.reviewConfig = reviewConfig;
         return this;
@@ -646,6 +678,7 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
             && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
@@ -664,6 +697,7 @@ public class CreateSmartLiveRoomReq {
             streamKeys,
             backupModelAssetIds,
             liveEventCallbackConfig,
+            rtcCallbackConfig,
             reviewConfig,
             sharedConfig,
             viewMode,
@@ -685,6 +719,7 @@ public class CreateSmartLiveRoomReq {
         sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
         sb.append("    backupModelAssetIds: ").append(toIndentedString(backupModelAssetIds)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    rtcCallbackConfig: ").append(toIndentedString(rtcCallbackConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");

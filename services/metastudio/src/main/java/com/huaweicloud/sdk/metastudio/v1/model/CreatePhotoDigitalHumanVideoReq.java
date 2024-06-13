@@ -53,6 +53,11 @@ public class CreatePhotoDigitalHumanVideoReq {
 
     private ReviewConfig reviewConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "callback_config")
+
+    private CallBackConfig callbackConfig;
+
     public CreatePhotoDigitalHumanVideoReq withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
@@ -251,6 +256,32 @@ public class CreatePhotoDigitalHumanVideoReq {
         this.reviewConfig = reviewConfig;
     }
 
+    public CreatePhotoDigitalHumanVideoReq withCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+        return this;
+    }
+
+    public CreatePhotoDigitalHumanVideoReq withCallbackConfig(Consumer<CallBackConfig> callbackConfigSetter) {
+        if (this.callbackConfig == null) {
+            this.callbackConfig = new CallBackConfig();
+            callbackConfigSetter.accept(this.callbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get callbackConfig
+     * @return callbackConfig
+     */
+    public CallBackConfig getCallbackConfig() {
+        return callbackConfig;
+    }
+
+    public void setCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -265,7 +296,8 @@ public class CreatePhotoDigitalHumanVideoReq {
             && Objects.equals(this.shootScripts, that.shootScripts)
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
             && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
-            && Objects.equals(this.reviewConfig, that.reviewConfig);
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.callbackConfig, that.callbackConfig);
     }
 
     @Override
@@ -277,7 +309,8 @@ public class CreatePhotoDigitalHumanVideoReq {
             shootScripts,
             outputAssetConfig,
             backgroundMusicConfig,
-            reviewConfig);
+            reviewConfig,
+            callbackConfig);
     }
 
     @Override
@@ -292,6 +325,7 @@ public class CreatePhotoDigitalHumanVideoReq {
         sb.append("    outputAssetConfig: ").append(toIndentedString(outputAssetConfig)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

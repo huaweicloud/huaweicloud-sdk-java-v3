@@ -17,6 +17,11 @@ public class ShowReplayDelayStatusResponse extends SdkResponse {
     private Integer curDelayTimeMills;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delay_time_value_range")
+
+    private String delayTimeValueRange;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_delay_time_mills")
 
     private Integer realDelayTimeMills;
@@ -51,6 +56,23 @@ public class ShowReplayDelayStatusResponse extends SdkResponse {
 
     public void setCurDelayTimeMills(Integer curDelayTimeMills) {
         this.curDelayTimeMills = curDelayTimeMills;
+    }
+
+    public ShowReplayDelayStatusResponse withDelayTimeValueRange(String delayTimeValueRange) {
+        this.delayTimeValueRange = delayTimeValueRange;
+        return this;
+    }
+
+    /**
+     * 延迟时间参数取值范围
+     * @return delayTimeValueRange
+     */
+    public String getDelayTimeValueRange() {
+        return delayTimeValueRange;
+    }
+
+    public void setDelayTimeValueRange(String delayTimeValueRange) {
+        this.delayTimeValueRange = delayTimeValueRange;
     }
 
     public ShowReplayDelayStatusResponse withRealDelayTimeMills(Integer realDelayTimeMills) {
@@ -131,6 +153,7 @@ public class ShowReplayDelayStatusResponse extends SdkResponse {
         }
         ShowReplayDelayStatusResponse that = (ShowReplayDelayStatusResponse) obj;
         return Objects.equals(this.curDelayTimeMills, that.curDelayTimeMills)
+            && Objects.equals(this.delayTimeValueRange, that.delayTimeValueRange)
             && Objects.equals(this.realDelayTimeMills, that.realDelayTimeMills)
             && Objects.equals(this.curLogReplayPaused, that.curLogReplayPaused)
             && Objects.equals(this.latestReceiveLog, that.latestReceiveLog)
@@ -139,8 +162,12 @@ public class ShowReplayDelayStatusResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(curDelayTimeMills, realDelayTimeMills, curLogReplayPaused, latestReceiveLog, latestReplayLog);
+        return Objects.hash(curDelayTimeMills,
+            delayTimeValueRange,
+            realDelayTimeMills,
+            curLogReplayPaused,
+            latestReceiveLog,
+            latestReplayLog);
     }
 
     @Override
@@ -148,6 +175,7 @@ public class ShowReplayDelayStatusResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowReplayDelayStatusResponse {\n");
         sb.append("    curDelayTimeMills: ").append(toIndentedString(curDelayTimeMills)).append("\n");
+        sb.append("    delayTimeValueRange: ").append(toIndentedString(delayTimeValueRange)).append("\n");
         sb.append("    realDelayTimeMills: ").append(toIndentedString(realDelayTimeMills)).append("\n");
         sb.append("    curLogReplayPaused: ").append(toIndentedString(curLogReplayPaused)).append("\n");
         sb.append("    latestReceiveLog: ").append(toIndentedString(latestReceiveLog)).append("\n");

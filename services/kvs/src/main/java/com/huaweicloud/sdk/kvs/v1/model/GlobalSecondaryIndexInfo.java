@@ -30,7 +30,7 @@ public class GlobalSecondaryIndexInfo {
     }
 
     /**
-     * 二级索引名称
+     * 二级索引名称。
      * @return indexName
      */
     public String getIndexName() {

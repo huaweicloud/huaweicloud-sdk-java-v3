@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -172,6 +175,11 @@ public class ListAssetsRequest {
     private String renderEngine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_id")
+
+    private List<String> assetId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sex")
 
     private String sex;
@@ -275,6 +283,26 @@ public class ListAssetsRequest {
     @JsonProperty(value = "role")
 
     private RoleEnum role;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_realtime_voice")
+
+    private Boolean isRealtimeVoice;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "human_model_2d_version")
+
+    private String humanModel2dVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_device_name")
+
+    private String includeDeviceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclude_device_name")
+
+    private String excludeDeviceName;
 
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -556,6 +584,39 @@ public class ListAssetsRequest {
         this.renderEngine = renderEngine;
     }
 
+    public ListAssetsRequest withAssetId(List<String> assetId) {
+        this.assetId = assetId;
+        return this;
+    }
+
+    public ListAssetsRequest addAssetIdItem(String assetIdItem) {
+        if (this.assetId == null) {
+            this.assetId = new ArrayList<>();
+        }
+        this.assetId.add(assetIdItem);
+        return this;
+    }
+
+    public ListAssetsRequest withAssetId(Consumer<List<String>> assetIdSetter) {
+        if (this.assetId == null) {
+            this.assetId = new ArrayList<>();
+        }
+        assetIdSetter.accept(this.assetId);
+        return this;
+    }
+
+    /**
+     * 资产id
+     * @return assetId
+     */
+    public List<String> getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(List<String> assetId) {
+        this.assetId = assetId;
+    }
+
     public ListAssetsRequest withSex(String sex) {
         this.sex = sex;
         return this;
@@ -675,6 +736,74 @@ public class ListAssetsRequest {
         this.role = role;
     }
 
+    public ListAssetsRequest withIsRealtimeVoice(Boolean isRealtimeVoice) {
+        this.isRealtimeVoice = isRealtimeVoice;
+        return this;
+    }
+
+    /**
+     * 音色是否支持实时合成。仅在音色查询时有效。 > * 支持实时合成的音色，可以用于直播和智能交互场景。否则只能用于视频制作。
+     * @return isRealtimeVoice
+     */
+    public Boolean getIsRealtimeVoice() {
+        return isRealtimeVoice;
+    }
+
+    public void setIsRealtimeVoice(Boolean isRealtimeVoice) {
+        this.isRealtimeVoice = isRealtimeVoice;
+    }
+
+    public ListAssetsRequest withHumanModel2dVersion(String humanModel2dVersion) {
+        this.humanModel2dVersion = humanModel2dVersion;
+        return this;
+    }
+
+    /**
+     * 模型版本
+     * @return humanModel2dVersion
+     */
+    public String getHumanModel2dVersion() {
+        return humanModel2dVersion;
+    }
+
+    public void setHumanModel2dVersion(String humanModel2dVersion) {
+        this.humanModel2dVersion = humanModel2dVersion;
+    }
+
+    public ListAssetsRequest withIncludeDeviceName(String includeDeviceName) {
+        this.includeDeviceName = includeDeviceName;
+        return this;
+    }
+
+    /**
+     * 资产已执行的任务名称
+     * @return includeDeviceName
+     */
+    public String getIncludeDeviceName() {
+        return includeDeviceName;
+    }
+
+    public void setIncludeDeviceName(String includeDeviceName) {
+        this.includeDeviceName = includeDeviceName;
+    }
+
+    public ListAssetsRequest withExcludeDeviceName(String excludeDeviceName) {
+        this.excludeDeviceName = excludeDeviceName;
+        return this;
+    }
+
+    /**
+     * 资产已执行的任务名称
+     * @return excludeDeviceName
+     */
+    public String getExcludeDeviceName() {
+        return excludeDeviceName;
+    }
+
+    public void setExcludeDeviceName(String excludeDeviceName) {
+        this.excludeDeviceName = excludeDeviceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -692,11 +821,14 @@ public class ListAssetsRequest {
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
             && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
-            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.systemProperty, that.systemProperty)
+            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.systemProperty, that.systemProperty)
             && Objects.equals(this.actionEditable, that.actionEditable)
             && Objects.equals(this.isMovable, that.isMovable) && Objects.equals(this.voiceProvider, that.voiceProvider)
-            && Objects.equals(this.role, that.role);
+            && Objects.equals(this.role, that.role) && Objects.equals(this.isRealtimeVoice, that.isRealtimeVoice)
+            && Objects.equals(this.humanModel2dVersion, that.humanModel2dVersion)
+            && Objects.equals(this.includeDeviceName, that.includeDeviceName)
+            && Objects.equals(this.excludeDeviceName, that.excludeDeviceName);
     }
 
     @Override
@@ -717,13 +849,18 @@ public class ListAssetsRequest {
             assetState,
             styleId,
             renderEngine,
+            assetId,
             sex,
             language,
             systemProperty,
             actionEditable,
             isMovable,
             voiceProvider,
-            role);
+            role,
+            isRealtimeVoice,
+            humanModel2dVersion,
+            includeDeviceName,
+            excludeDeviceName);
     }
 
     @Override
@@ -746,6 +883,7 @@ public class ListAssetsRequest {
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
         sb.append("    renderEngine: ").append(toIndentedString(renderEngine)).append("\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    systemProperty: ").append(toIndentedString(systemProperty)).append("\n");
@@ -753,6 +891,10 @@ public class ListAssetsRequest {
         sb.append("    isMovable: ").append(toIndentedString(isMovable)).append("\n");
         sb.append("    voiceProvider: ").append(toIndentedString(voiceProvider)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    isRealtimeVoice: ").append(toIndentedString(isRealtimeVoice)).append("\n");
+        sb.append("    humanModel2dVersion: ").append(toIndentedString(humanModel2dVersion)).append("\n");
+        sb.append("    includeDeviceName: ").append(toIndentedString(includeDeviceName)).append("\n");
+        sb.append("    excludeDeviceName: ").append(toIndentedString(excludeDeviceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

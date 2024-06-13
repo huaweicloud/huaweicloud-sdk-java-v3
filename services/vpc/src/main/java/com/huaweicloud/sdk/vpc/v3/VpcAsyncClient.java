@@ -17,18 +17,26 @@ import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
@@ -51,6 +59,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteClouddcnSubnetsTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
@@ -81,6 +91,10 @@ import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -113,6 +127,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -1329,6 +1345,100 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 批量添加ACL资源标签
+     *
+     * 为指定的IP地址组资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateFirewallTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateFirewallTagsResponse>
+     */
+    public CompletableFuture<BatchCreateFirewallTagsResponse> batchCreateFirewallTagsAsync(
+        BatchCreateFirewallTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateFirewallTags);
+    }
+
+    /**
+     * 批量添加ACL资源标签
+     *
+     * 为指定的IP地址组资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateFirewallTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateFirewallTagsRequest, BatchCreateFirewallTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateFirewallTagsRequest, BatchCreateFirewallTagsResponse> batchCreateFirewallTagsAsyncInvoker(
+        BatchCreateFirewallTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchCreateFirewallTags, hcClient);
+    }
+
+    /**
+     * 批量删除ACL资源标签
+     *
+     * 为指定的IP地址组资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteFirewallTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteFirewallTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteFirewallTagsResponse> batchDeleteFirewallTagsAsync(
+        BatchDeleteFirewallTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeleteFirewallTags);
+    }
+
+    /**
+     * 批量删除ACL资源标签
+     *
+     * 为指定的IP地址组资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteFirewallTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteFirewallTagsRequest, BatchDeleteFirewallTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteFirewallTagsRequest, BatchDeleteFirewallTagsResponse> batchDeleteFirewallTagsAsyncInvoker(
+        BatchDeleteFirewallTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchDeleteFirewallTags, hcClient);
+    }
+
+    /**
+     * 查询ACL资源实例数量
+     *
+     * 使用标签过滤查询ACL实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountFirewallsByTagsRequest 请求对象
+     * @return CompletableFuture<CountFirewallsByTagsResponse>
+     */
+    public CompletableFuture<CountFirewallsByTagsResponse> countFirewallsByTagsAsync(
+        CountFirewallsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.countFirewallsByTags);
+    }
+
+    /**
+     * 查询ACL资源实例数量
+     *
+     * 使用标签过滤查询ACL实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountFirewallsByTagsRequest 请求对象
+     * @return AsyncInvoker<CountFirewallsByTagsRequest, CountFirewallsByTagsResponse>
+     */
+    public AsyncInvoker<CountFirewallsByTagsRequest, CountFirewallsByTagsResponse> countFirewallsByTagsAsyncInvoker(
+        CountFirewallsByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.countFirewallsByTags, hcClient);
+    }
+
+    /**
      * 创建网络ACL
      *
      * 创建网络ACL
@@ -1358,6 +1468,37 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 添加ACL资源标签
+     *
+     * 给指定IP地址组资源实例增加标签信息
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFirewallTagRequest 请求对象
+     * @return CompletableFuture<CreateFirewallTagResponse>
+     */
+    public CompletableFuture<CreateFirewallTagResponse> createFirewallTagAsync(CreateFirewallTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createFirewallTag);
+    }
+
+    /**
+     * 添加ACL资源标签
+     *
+     * 给指定IP地址组资源实例增加标签信息
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFirewallTagRequest 请求对象
+     * @return AsyncInvoker<CreateFirewallTagRequest, CreateFirewallTagResponse>
+     */
+    public AsyncInvoker<CreateFirewallTagRequest, CreateFirewallTagResponse> createFirewallTagAsyncInvoker(
+        CreateFirewallTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.createFirewallTag, hcClient);
+    }
+
+    /**
      * 删除网络ACL
      *
      * 删除网络ACL
@@ -1384,6 +1525,37 @@ public class VpcAsyncClient {
     public AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallAsyncInvoker(
         DeleteFirewallRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.deleteFirewall, hcClient);
+    }
+
+    /**
+     * 删除ACL资源标签
+     *
+     * 删除指定IP地址组资源实例的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFirewallTagRequest 请求对象
+     * @return CompletableFuture<DeleteFirewallTagResponse>
+     */
+    public CompletableFuture<DeleteFirewallTagResponse> deleteFirewallTagAsync(DeleteFirewallTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteFirewallTag);
+    }
+
+    /**
+     * 删除ACL资源标签
+     *
+     * 删除指定IP地址组资源实例的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFirewallTagRequest 请求对象
+     * @return AsyncInvoker<DeleteFirewallTagRequest, DeleteFirewallTagResponse>
+     */
+    public AsyncInvoker<DeleteFirewallTagRequest, DeleteFirewallTagResponse> deleteFirewallTagAsyncInvoker(
+        DeleteFirewallTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.deleteFirewallTag, hcClient);
     }
 
     /**
@@ -1446,6 +1618,64 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 查询ACL项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallTagsRequest 请求对象
+     * @return CompletableFuture<ListFirewallTagsResponse>
+     */
+    public CompletableFuture<ListFirewallTagsResponse> listFirewallTagsAsync(ListFirewallTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listFirewallTags);
+    }
+
+    /**
+     * 查询ACL项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallTagsRequest 请求对象
+     * @return AsyncInvoker<ListFirewallTagsRequest, ListFirewallTagsResponse>
+     */
+    public AsyncInvoker<ListFirewallTagsRequest, ListFirewallTagsResponse> listFirewallTagsAsyncInvoker(
+        ListFirewallTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listFirewallTags, hcClient);
+    }
+
+    /**
+     * 查询ACL资源实例列表
+     *
+     * 使用标签过滤查询ACL实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallsByTagsRequest 请求对象
+     * @return CompletableFuture<ListFirewallsByTagsResponse>
+     */
+    public CompletableFuture<ListFirewallsByTagsResponse> listFirewallsByTagsAsync(ListFirewallsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listFirewallsByTags);
+    }
+
+    /**
+     * 查询ACL资源实例列表
+     *
+     * 使用标签过滤查询ACL实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListFirewallsByTagsRequest, ListFirewallsByTagsResponse>
+     */
+    public AsyncInvoker<ListFirewallsByTagsRequest, ListFirewallsByTagsResponse> listFirewallsByTagsAsyncInvoker(
+        ListFirewallsByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listFirewallsByTags, hcClient);
+    }
+
+    /**
      * 网络ACL移除规则
      *
      * 网络ACL移除规则
@@ -1501,6 +1731,35 @@ public class VpcAsyncClient {
     public AsyncInvoker<ShowFirewallRequest, ShowFirewallResponse> showFirewallAsyncInvoker(
         ShowFirewallRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.showFirewall, hcClient);
+    }
+
+    /**
+     * 查询ACL资源标签
+     *
+     * 查询指定ACL实例的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFirewallTagsRequest 请求对象
+     * @return CompletableFuture<ShowFirewallTagsResponse>
+     */
+    public CompletableFuture<ShowFirewallTagsResponse> showFirewallTagsAsync(ShowFirewallTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showFirewallTags);
+    }
+
+    /**
+     * 查询ACL资源标签
+     *
+     * 查询指定ACL实例的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFirewallTagsRequest 请求对象
+     * @return AsyncInvoker<ShowFirewallTagsRequest, ShowFirewallTagsResponse>
+     */
+    public AsyncInvoker<ShowFirewallTagsRequest, ShowFirewallTagsResponse> showFirewallTagsAsyncInvoker(
+        ShowFirewallTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.showFirewallTags, hcClient);
     }
 
     /**

@@ -51,7 +51,7 @@ public class AssetFileInfo {
     private String downloadUrl;
 
     /**
-     * 文件状态枚举: * CREATING：文件上传中 * CREATED：文件已上传（自动审核通过） * FAILED：文件上传失败 * CANCELLED：文件上传已取消 * DELETING：文件删除中 * DELETED：文件已删除 * UPLOADED：文件已上传（尚未审核） * REVIEW：人工审核（文件已上传）
+     * 文件状态枚举: * CREATING：文件上传中 * CREATED：文件已上传（自动审核通过） * FAILED：文件上传失败 * CANCELLED：文件上传已取消 * DELETING：文件删除中 * DELETED：文件已删除 * UPLOADED：文件已上传（尚未审核） * REVIEW：人工审核（文件已上传） * BLOCK：冻结
      */
     public static final class StateEnum {
 
@@ -95,6 +95,11 @@ public class AssetFileInfo {
          */
         public static final StateEnum REVIEW = new StateEnum("REVIEW");
 
+        /**
+         * Enum BLOCK for value: "BLOCK"
+         */
+        public static final StateEnum BLOCK = new StateEnum("BLOCK");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -107,6 +112,7 @@ public class AssetFileInfo {
             map.put("DELETED", DELETED);
             map.put("UPLOADED", UPLOADED);
             map.put("REVIEW", REVIEW);
+            map.put("BLOCK", BLOCK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -293,7 +299,7 @@ public class AssetFileInfo {
     }
 
     /**
-     * 文件状态枚举: * CREATING：文件上传中 * CREATED：文件已上传（自动审核通过） * FAILED：文件上传失败 * CANCELLED：文件上传已取消 * DELETING：文件删除中 * DELETED：文件已删除 * UPLOADED：文件已上传（尚未审核） * REVIEW：人工审核（文件已上传）
+     * 文件状态枚举: * CREATING：文件上传中 * CREATED：文件已上传（自动审核通过） * FAILED：文件上传失败 * CANCELLED：文件上传已取消 * DELETING：文件删除中 * DELETED：文件已删除 * UPLOADED：文件已上传（尚未审核） * REVIEW：人工审核（文件已上传） * BLOCK：冻结
      * @return state
      */
     public StateEnum getState() {

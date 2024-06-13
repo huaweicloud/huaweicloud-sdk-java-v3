@@ -1,5 +1,9 @@
 package com.huaweicloud.sdk.config.v1;
 
+import com.huaweicloud.sdk.config.v1.model.BatchCreateRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.BatchCreateRemediationExceptionsResponse;
+import com.huaweicloud.sdk.config.v1.model.BatchDeleteRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.BatchDeleteRemediationExceptionsResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
@@ -18,6 +22,8 @@ import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.CreateOrUpdateRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.CreateOrUpdateRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentRequest;
@@ -42,6 +48,8 @@ import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestReques
 import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestResponse;
 import com.huaweicloud.sdk.config.v1.model.DeletePolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.DeletePolicyAssignmentResponse;
+import com.huaweicloud.sdk.config.v1.model.DeleteRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.DeleteRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteStoredQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteStoredQueryResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteTrackerConfigRequest;
@@ -94,6 +102,10 @@ import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExceptionsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExceptionsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExecutionStatusesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListRemediationExecutionStatusesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagRequest;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.config.v1.model.ListResourcesRequest;
@@ -116,6 +128,8 @@ import com.huaweicloud.sdk.config.v1.model.RunEvaluationByPolicyAssignmentIdRequ
 import com.huaweicloud.sdk.config.v1.model.RunEvaluationByPolicyAssignmentIdResponse;
 import com.huaweicloud.sdk.config.v1.model.RunQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.RunQueryResponse;
+import com.huaweicloud.sdk.config.v1.model.RunRemediationExecutionRequest;
+import com.huaweicloud.sdk.config.v1.model.RunRemediationExecutionResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateComplianceDetailsByPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateComplianceDetailsByPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateDiscoveredResourceCountsRequest;
@@ -150,6 +164,8 @@ import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentStatu
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentStatusesResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowPolicyAssignmentResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowRemediationConfigurationRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowRemediationConfigurationResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceByIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceByIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceDetailRequest;
@@ -1343,6 +1359,96 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 批量创建修正例外
+     *
+     * 批量创建合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateRemediationExceptionsRequest 请求对象
+     * @return CompletableFuture<BatchCreateRemediationExceptionsResponse>
+     */
+    public CompletableFuture<BatchCreateRemediationExceptionsResponse> batchCreateRemediationExceptionsAsync(
+        BatchCreateRemediationExceptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.batchCreateRemediationExceptions);
+    }
+
+    /**
+     * 批量创建修正例外
+     *
+     * 批量创建合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateRemediationExceptionsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateRemediationExceptionsRequest, BatchCreateRemediationExceptionsResponse>
+     */
+    public AsyncInvoker<BatchCreateRemediationExceptionsRequest, BatchCreateRemediationExceptionsResponse> batchCreateRemediationExceptionsAsyncInvoker(
+        BatchCreateRemediationExceptionsRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.batchCreateRemediationExceptions, hcClient);
+    }
+
+    /**
+     * 批量删除修正例外
+     *
+     * 批量删除合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRemediationExceptionsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteRemediationExceptionsResponse>
+     */
+    public CompletableFuture<BatchDeleteRemediationExceptionsResponse> batchDeleteRemediationExceptionsAsync(
+        BatchDeleteRemediationExceptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.batchDeleteRemediationExceptions);
+    }
+
+    /**
+     * 批量删除修正例外
+     *
+     * 批量删除合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRemediationExceptionsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse>
+     */
+    public AsyncInvoker<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse> batchDeleteRemediationExceptionsAsyncInvoker(
+        BatchDeleteRemediationExceptionsRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.batchDeleteRemediationExceptions, hcClient);
+    }
+
+    /**
+     * 创建或更新修正配置
+     *
+     * 创建或更新合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrUpdateRemediationConfigurationRequest 请求对象
+     * @return CompletableFuture<CreateOrUpdateRemediationConfigurationResponse>
+     */
+    public CompletableFuture<CreateOrUpdateRemediationConfigurationResponse> createOrUpdateRemediationConfigurationAsync(
+        CreateOrUpdateRemediationConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.createOrUpdateRemediationConfiguration);
+    }
+
+    /**
+     * 创建或更新修正配置
+     *
+     * 创建或更新合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrUpdateRemediationConfigurationRequest 请求对象
+     * @return AsyncInvoker<CreateOrUpdateRemediationConfigurationRequest, CreateOrUpdateRemediationConfigurationResponse>
+     */
+    public AsyncInvoker<CreateOrUpdateRemediationConfigurationRequest, CreateOrUpdateRemediationConfigurationResponse> createOrUpdateRemediationConfigurationAsyncInvoker(
+        CreateOrUpdateRemediationConfigurationRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.createOrUpdateRemediationConfiguration, hcClient);
+    }
+
+    /**
      * 创建组织合规规则
      *
      * 创建组织合规规则，如果规则名称已存在，则为更新操作。
@@ -1460,6 +1566,36 @@ public class ConfigAsyncClient {
     public AsyncInvoker<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> deletePolicyAssignmentAsyncInvoker(
         DeletePolicyAssignmentRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.deletePolicyAssignment, hcClient);
+    }
+
+    /**
+     * 删除修正配置
+     *
+     * 删除合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRemediationConfigurationRequest 请求对象
+     * @return CompletableFuture<DeleteRemediationConfigurationResponse>
+     */
+    public CompletableFuture<DeleteRemediationConfigurationResponse> deleteRemediationConfigurationAsync(
+        DeleteRemediationConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.deleteRemediationConfiguration);
+    }
+
+    /**
+     * 删除修正配置
+     *
+     * 删除合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRemediationConfigurationRequest 请求对象
+     * @return AsyncInvoker<DeleteRemediationConfigurationRequest, DeleteRemediationConfigurationResponse>
+     */
+    public AsyncInvoker<DeleteRemediationConfigurationRequest, DeleteRemediationConfigurationResponse> deleteRemediationConfigurationAsyncInvoker(
+        DeleteRemediationConfigurationRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.deleteRemediationConfiguration, hcClient);
     }
 
     /**
@@ -1703,6 +1839,66 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 查询修正例外
+     *
+     * 查询合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRemediationExceptionsRequest 请求对象
+     * @return CompletableFuture<ListRemediationExceptionsResponse>
+     */
+    public CompletableFuture<ListRemediationExceptionsResponse> listRemediationExceptionsAsync(
+        ListRemediationExceptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listRemediationExceptions);
+    }
+
+    /**
+     * 查询修正例外
+     *
+     * 查询合规规则修正例外。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRemediationExceptionsRequest 请求对象
+     * @return AsyncInvoker<ListRemediationExceptionsRequest, ListRemediationExceptionsResponse>
+     */
+    public AsyncInvoker<ListRemediationExceptionsRequest, ListRemediationExceptionsResponse> listRemediationExceptionsAsyncInvoker(
+        ListRemediationExceptionsRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listRemediationExceptions, hcClient);
+    }
+
+    /**
+     * 查询修正执行结果
+     *
+     * 查询合规规则修正执行结果详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRemediationExecutionStatusesRequest 请求对象
+     * @return CompletableFuture<ListRemediationExecutionStatusesResponse>
+     */
+    public CompletableFuture<ListRemediationExecutionStatusesResponse> listRemediationExecutionStatusesAsync(
+        ListRemediationExecutionStatusesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listRemediationExecutionStatuses);
+    }
+
+    /**
+     * 查询修正执行结果
+     *
+     * 查询合规规则修正执行结果详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRemediationExecutionStatusesRequest 请求对象
+     * @return AsyncInvoker<ListRemediationExecutionStatusesRequest, ListRemediationExecutionStatusesResponse>
+     */
+    public AsyncInvoker<ListRemediationExecutionStatusesRequest, ListRemediationExecutionStatusesResponse> listRemediationExecutionStatusesAsyncInvoker(
+        ListRemediationExecutionStatusesRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listRemediationExecutionStatuses, hcClient);
+    }
+
+    /**
      * 运行合规评估
      *
      * 根据规则ID评估此规则
@@ -1730,6 +1926,36 @@ public class ConfigAsyncClient {
     public AsyncInvoker<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> runEvaluationByPolicyAssignmentIdAsyncInvoker(
         RunEvaluationByPolicyAssignmentIdRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.runEvaluationByPolicyAssignmentId, hcClient);
+    }
+
+    /**
+     * 运行修正执行
+     *
+     * 手动运行合规规则修正执行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunRemediationExecutionRequest 请求对象
+     * @return CompletableFuture<RunRemediationExecutionResponse>
+     */
+    public CompletableFuture<RunRemediationExecutionResponse> runRemediationExecutionAsync(
+        RunRemediationExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.runRemediationExecution);
+    }
+
+    /**
+     * 运行修正执行
+     *
+     * 手动运行合规规则修正执行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunRemediationExecutionRequest 请求对象
+     * @return AsyncInvoker<RunRemediationExecutionRequest, RunRemediationExecutionResponse>
+     */
+    public AsyncInvoker<RunRemediationExecutionRequest, RunRemediationExecutionResponse> runRemediationExecutionAsyncInvoker(
+        RunRemediationExecutionRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.runRemediationExecution, hcClient);
     }
 
     /**
@@ -1910,6 +2136,36 @@ public class ConfigAsyncClient {
     public AsyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> showPolicyAssignmentAsyncInvoker(
         ShowPolicyAssignmentRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.showPolicyAssignment, hcClient);
+    }
+
+    /**
+     * 查询修正配置
+     *
+     * 查询合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRemediationConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowRemediationConfigurationResponse>
+     */
+    public CompletableFuture<ShowRemediationConfigurationResponse> showRemediationConfigurationAsync(
+        ShowRemediationConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.showRemediationConfiguration);
+    }
+
+    /**
+     * 查询修正配置
+     *
+     * 查询合规规则修正配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRemediationConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowRemediationConfigurationRequest, ShowRemediationConfigurationResponse>
+     */
+    public AsyncInvoker<ShowRemediationConfigurationRequest, ShowRemediationConfigurationResponse> showRemediationConfigurationAsyncInvoker(
+        ShowRemediationConfigurationRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.showRemediationConfiguration, hcClient);
     }
 
     /**

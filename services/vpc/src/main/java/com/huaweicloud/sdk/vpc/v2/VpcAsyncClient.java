@@ -7,10 +7,14 @@ import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringRequest;
 import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringResponse;
 import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteVpcTagsRequest;
@@ -27,6 +31,8 @@ import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupTagResponse;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetResponse;
 import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetTagRequest;
@@ -51,6 +57,8 @@ import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupTagResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetResponse;
 import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetTagRequest;
@@ -77,6 +85,10 @@ import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ListSubnetTagsRequest;
@@ -209,6 +221,8 @@ import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupTagsResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetRequest;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetResponse;
 import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetTagsRequest;
@@ -308,6 +322,38 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 批量创建安全组资源标签
+     *
+     * 为指定的安全组资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityGroupTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateSecurityGroupTagsResponse>
+     */
+    public CompletableFuture<BatchCreateSecurityGroupTagsResponse> batchCreateSecurityGroupTagsAsync(
+        BatchCreateSecurityGroupTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateSecurityGroupTags);
+    }
+
+    /**
+     * 批量创建安全组资源标签
+     *
+     * 为指定的安全组资源实例批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityGroupTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateSecurityGroupTagsRequest, BatchCreateSecurityGroupTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateSecurityGroupTagsRequest, BatchCreateSecurityGroupTagsResponse> batchCreateSecurityGroupTagsAsyncInvoker(
+        BatchCreateSecurityGroupTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchCreateSecurityGroupTags, hcClient);
+    }
+
+    /**
      * 批量创建子网资源标签
      *
      * 为指定的子网资源实例批量添加标签。
@@ -337,6 +383,38 @@ public class VpcAsyncClient {
     public AsyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTagsAsyncInvoker(
         BatchCreateSubnetTagsRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.batchCreateSubnetTags, hcClient);
+    }
+
+    /**
+     * 批量删除安全组资源标签
+     *
+     * 为指定的安全组资源实例批量删除标签
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityGroupTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityGroupTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityGroupTagsResponse> batchDeleteSecurityGroupTagsAsync(
+        BatchDeleteSecurityGroupTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeleteSecurityGroupTags);
+    }
+
+    /**
+     * 批量删除安全组资源标签
+     *
+     * 为指定的安全组资源实例批量删除标签
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityGroupTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityGroupTagsRequest, BatchDeleteSecurityGroupTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityGroupTagsRequest, BatchDeleteSecurityGroupTagsResponse> batchDeleteSecurityGroupTagsAsyncInvoker(
+        BatchDeleteSecurityGroupTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchDeleteSecurityGroupTags, hcClient);
     }
 
     /**
@@ -518,6 +596,38 @@ public class VpcAsyncClient {
     public AsyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRuleAsyncInvoker(
         CreateSecurityGroupRuleRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.createSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 创建安全组资源标签
+     *
+     * 给指定安全组资源实例增加标签信息。
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityGroupTagRequest 请求对象
+     * @return CompletableFuture<CreateSecurityGroupTagResponse>
+     */
+    public CompletableFuture<CreateSecurityGroupTagResponse> createSecurityGroupTagAsync(
+        CreateSecurityGroupTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createSecurityGroupTag);
+    }
+
+    /**
+     * 创建安全组资源标签
+     *
+     * 给指定安全组资源实例增加标签信息。
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityGroupTagRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityGroupTagRequest, CreateSecurityGroupTagResponse>
+     */
+    public AsyncInvoker<CreateSecurityGroupTagRequest, CreateSecurityGroupTagResponse> createSecurityGroupTagAsyncInvoker(
+        CreateSecurityGroupTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.createSecurityGroupTag, hcClient);
     }
 
     /**
@@ -752,6 +862,38 @@ public class VpcAsyncClient {
     public AsyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRuleAsyncInvoker(
         DeleteSecurityGroupRuleRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.deleteSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 删除安全组资源标签
+     *
+     * 删除指定安全组资源实例的标签信息。
+     * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityGroupTagRequest 请求对象
+     * @return CompletableFuture<DeleteSecurityGroupTagResponse>
+     */
+    public CompletableFuture<DeleteSecurityGroupTagResponse> deleteSecurityGroupTagAsync(
+        DeleteSecurityGroupTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSecurityGroupTag);
+    }
+
+    /**
+     * 删除安全组资源标签
+     *
+     * 删除指定安全组资源实例的标签信息。
+     * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityGroupTagRequest 请求对象
+     * @return AsyncInvoker<DeleteSecurityGroupTagRequest, DeleteSecurityGroupTagResponse>
+     */
+    public AsyncInvoker<DeleteSecurityGroupTagRequest, DeleteSecurityGroupTagResponse> deleteSecurityGroupTagAsyncInvoker(
+        DeleteSecurityGroupTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.deleteSecurityGroupTag, hcClient);
     }
 
     /**
@@ -992,6 +1134,36 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 查询安全组项目标签
+     *
+     * 查询租户在指定区域和实例类型的所有标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityGroupTagsRequest 请求对象
+     * @return CompletableFuture<ListSecurityGroupTagsResponse>
+     */
+    public CompletableFuture<ListSecurityGroupTagsResponse> listSecurityGroupTagsAsync(
+        ListSecurityGroupTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSecurityGroupTags);
+    }
+
+    /**
+     * 查询安全组项目标签
+     *
+     * 查询租户在指定区域和实例类型的所有标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityGroupTagsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityGroupTagsRequest, ListSecurityGroupTagsResponse>
+     */
+    public AsyncInvoker<ListSecurityGroupTagsRequest, ListSecurityGroupTagsResponse> listSecurityGroupTagsAsyncInvoker(
+        ListSecurityGroupTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listSecurityGroupTags, hcClient);
+    }
+
+    /**
      * 查询安全组列表
      *
      * 查询安全组列表
@@ -1018,6 +1190,36 @@ public class VpcAsyncClient {
     public AsyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroupsAsyncInvoker(
         ListSecurityGroupsRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.listSecurityGroups, hcClient);
+    }
+
+    /**
+     * 查询安全组资源实例
+     *
+     * 使用标签过滤实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityGroupsByTagsRequest 请求对象
+     * @return CompletableFuture<ListSecurityGroupsByTagsResponse>
+     */
+    public CompletableFuture<ListSecurityGroupsByTagsResponse> listSecurityGroupsByTagsAsync(
+        ListSecurityGroupsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSecurityGroupsByTags);
+    }
+
+    /**
+     * 查询安全组资源实例
+     *
+     * 使用标签过滤实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityGroupsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityGroupsByTagsRequest, ListSecurityGroupsByTagsResponse>
+     */
+    public AsyncInvoker<ListSecurityGroupsByTagsRequest, ListSecurityGroupsByTagsResponse> listSecurityGroupsByTagsAsyncInvoker(
+        ListSecurityGroupsByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listSecurityGroupsByTags, hcClient);
     }
 
     /**
@@ -1334,6 +1536,36 @@ public class VpcAsyncClient {
     public AsyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRuleAsyncInvoker(
         ShowSecurityGroupRuleRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.showSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 查询安全组资源标签
+     *
+     * 查询指定安全组实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityGroupTagsRequest 请求对象
+     * @return CompletableFuture<ShowSecurityGroupTagsResponse>
+     */
+    public CompletableFuture<ShowSecurityGroupTagsResponse> showSecurityGroupTagsAsync(
+        ShowSecurityGroupTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showSecurityGroupTags);
+    }
+
+    /**
+     * 查询安全组资源标签
+     *
+     * 查询指定安全组实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityGroupTagsRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityGroupTagsRequest, ShowSecurityGroupTagsResponse>
+     */
+    public AsyncInvoker<ShowSecurityGroupTagsRequest, ShowSecurityGroupTagsResponse> showSecurityGroupTagsAsyncInvoker(
+        ShowSecurityGroupTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.showSecurityGroupTags, hcClient);
     }
 
     /**

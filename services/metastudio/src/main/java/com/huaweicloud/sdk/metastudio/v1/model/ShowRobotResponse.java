@@ -107,6 +107,16 @@ public class ShowRobotResponse extends SdkResponse {
     private String sisProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_hot_words")
+
+    private Boolean enableHotWords;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_question_audit")
+
+    private Boolean enableQuestionAudit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -444,6 +454,40 @@ public class ShowRobotResponse extends SdkResponse {
         this.sisProjectId = sisProjectId;
     }
 
+    public ShowRobotResponse withEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+        return this;
+    }
+
+    /**
+     * 是否开启热词
+     * @return enableHotWords
+     */
+    public Boolean getEnableHotWords() {
+        return enableHotWords;
+    }
+
+    public void setEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+    }
+
+    public ShowRobotResponse withEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
+        return this;
+    }
+
+    /**
+     * 是否开启提问文本审核开关
+     * @return enableQuestionAudit
+     */
+    public Boolean getEnableQuestionAudit() {
+        return enableQuestionAudit;
+    }
+
+    public void setEnableQuestionAudit(Boolean enableQuestionAudit) {
+        this.enableQuestionAudit = enableQuestionAudit;
+    }
+
     public ShowRobotResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -482,6 +526,8 @@ public class ShowRobotResponse extends SdkResponse {
             && Objects.equals(this.isIflyProduction, that.isIflyProduction)
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime) && Objects.equals(this.roleId, that.roleId)
             && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId)
+            && Objects.equals(this.enableHotWords, that.enableHotWords)
+            && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -506,6 +552,8 @@ public class ShowRobotResponse extends SdkResponse {
             roleId,
             sisRegion,
             sisProjectId,
+            enableHotWords,
+            enableQuestionAudit,
             xRequestId);
     }
 
@@ -532,6 +580,8 @@ public class ShowRobotResponse extends SdkResponse {
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
+        sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
+        sb.append("    enableQuestionAudit: ").append(toIndentedString(enableQuestionAudit)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

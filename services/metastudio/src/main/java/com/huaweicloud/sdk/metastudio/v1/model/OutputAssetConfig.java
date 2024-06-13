@@ -15,11 +15,6 @@ public class OutputAssetConfig {
 
     private String assetName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_preview_video")
-
-    private Boolean isPreviewVideo;
-
     public OutputAssetConfig withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -37,23 +32,6 @@ public class OutputAssetConfig {
         this.assetName = assetName;
     }
 
-    public OutputAssetConfig withIsPreviewVideo(Boolean isPreviewVideo) {
-        this.isPreviewVideo = isPreviewVideo;
-        return this;
-    }
-
-    /**
-     * 是否是预览视频。如果是预览视频不存资产库。 > * 分身数字人视频制作不支持预览。
-     * @return isPreviewVideo
-     */
-    public Boolean getIsPreviewVideo() {
-        return isPreviewVideo;
-    }
-
-    public void setIsPreviewVideo(Boolean isPreviewVideo) {
-        this.isPreviewVideo = isPreviewVideo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,13 +41,12 @@ public class OutputAssetConfig {
             return false;
         }
         OutputAssetConfig that = (OutputAssetConfig) obj;
-        return Objects.equals(this.assetName, that.assetName)
-            && Objects.equals(this.isPreviewVideo, that.isPreviewVideo);
+        return Objects.equals(this.assetName, that.assetName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetName, isPreviewVideo);
+        return Objects.hash(assetName);
     }
 
     @Override
@@ -77,7 +54,6 @@ public class OutputAssetConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class OutputAssetConfig {\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
-        sb.append("    isPreviewVideo: ").append(toIndentedString(isPreviewVideo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

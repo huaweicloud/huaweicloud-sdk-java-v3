@@ -105,80 +105,10 @@ public class CommitJobReq {
 
     private String voiceName;
 
-    /**
-     * 训练语言,当前仅支持中文。 * CN: 中文 * EN: 英文
-     */
-    public static final class LanguageEnum {
-
-        /**
-         * Enum CN for value: "CN"
-         */
-        public static final LanguageEnum CN = new LanguageEnum("CN");
-
-        /**
-         * Enum EN for value: "EN"
-         */
-        public static final LanguageEnum EN = new LanguageEnum("EN");
-
-        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LanguageEnum> createStaticFields() {
-            Map<String, LanguageEnum> map = new HashMap<>();
-            map.put("CN", CN);
-            map.put("EN", EN);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LanguageEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LanguageEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
-        }
-
-        public static LanguageEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof LanguageEnum) {
-                return this.value.equals(((LanguageEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
-    private LanguageEnum language;
+    private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone")
@@ -258,7 +188,7 @@ public class CommitJobReq {
         this.voiceName = voiceName;
     }
 
-    public CommitJobReq withLanguage(LanguageEnum language) {
+    public CommitJobReq withLanguage(String language) {
         this.language = language;
         return this;
     }
@@ -267,11 +197,11 @@ public class CommitJobReq {
      * 训练语言,当前仅支持中文。 * CN: 中文 * EN: 英文
      * @return language
      */
-    public LanguageEnum getLanguage() {
+    public String getLanguage() {
         return language;
     }
 
-    public void setLanguage(LanguageEnum language) {
+    public void setLanguage(String language) {
         this.language = language;
     }
 

@@ -409,11 +409,6 @@ public class PublicipUpdateResp {
          */
         public static final AssociateInstanceTypeEnum VPN = new AssociateInstanceTypeEnum("VPN");
 
-        /**
-         * Enum NULL for value: "null"
-         */
-        public static final AssociateInstanceTypeEnum NULL = new AssociateInstanceTypeEnum("null");
-
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssociateInstanceTypeEnum> createStaticFields() {
@@ -423,7 +418,6 @@ public class PublicipUpdateResp {
             map.put("ELB", ELB);
             map.put("ELBV1", ELBV1);
             map.put("VPN", VPN);
-            map.put("null", NULL);
             return Collections.unmodifiableMap(map);
         }
 

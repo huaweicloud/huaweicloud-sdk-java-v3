@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,90 +18,10 @@ public class Create2DDigitalHumanVideoReq {
 
     private String scriptId;
 
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分身数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
-     */
-    public static final class VideoMakingTypeEnum {
-
-        /**
-         * Enum MODEL for value: "MODEL"
-         */
-        public static final VideoMakingTypeEnum MODEL = new VideoMakingTypeEnum("MODEL");
-
-        /**
-         * Enum PICTURE for value: "PICTURE"
-         */
-        public static final VideoMakingTypeEnum PICTURE = new VideoMakingTypeEnum("PICTURE");
-
-        private static final Map<String, VideoMakingTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VideoMakingTypeEnum> createStaticFields() {
-            Map<String, VideoMakingTypeEnum> map = new HashMap<>();
-            map.put("MODEL", MODEL);
-            map.put("PICTURE", PICTURE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VideoMakingTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VideoMakingTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoMakingTypeEnum(value));
-        }
-
-        public static VideoMakingTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof VideoMakingTypeEnum) {
-                return this.value.equals(((VideoMakingTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "video_making_type")
-
-    private VideoMakingTypeEnum videoMakingType;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_asset_id")
 
     private String modelAssetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "human_image")
-
-    private String humanImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_config")
@@ -160,23 +75,6 @@ public class Create2DDigitalHumanVideoReq {
         this.scriptId = scriptId;
     }
 
-    public Create2DDigitalHumanVideoReq withVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-        return this;
-    }
-
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分身数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
-     * @return videoMakingType
-     */
-    public VideoMakingTypeEnum getVideoMakingType() {
-        return videoMakingType;
-    }
-
-    public void setVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-    }
-
     public Create2DDigitalHumanVideoReq withModelAssetId(String modelAssetId) {
         this.modelAssetId = modelAssetId;
         return this;
@@ -192,23 +90,6 @@ public class Create2DDigitalHumanVideoReq {
 
     public void setModelAssetId(String modelAssetId) {
         this.modelAssetId = modelAssetId;
-    }
-
-    public Create2DDigitalHumanVideoReq withHumanImage(String humanImage) {
-        this.humanImage = humanImage;
-        return this;
-    }
-
-    /**
-     * 人物照片，需要Base64编码。照片分辨率不超过1080P。 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
-     * @return humanImage
-     */
-    public String getHumanImage() {
-        return humanImage;
-    }
-
-    public void setHumanImage(String humanImage) {
-        this.humanImage = humanImage;
     }
 
     public Create2DDigitalHumanVideoReq withVoiceConfig(VoiceConfig voiceConfig) {
@@ -410,9 +291,7 @@ public class Create2DDigitalHumanVideoReq {
             return false;
         }
         Create2DDigitalHumanVideoReq that = (Create2DDigitalHumanVideoReq) obj;
-        return Objects.equals(this.scriptId, that.scriptId)
-            && Objects.equals(this.videoMakingType, that.videoMakingType)
-            && Objects.equals(this.modelAssetId, that.modelAssetId) && Objects.equals(this.humanImage, that.humanImage)
+        return Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.shootScripts, that.shootScripts)
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
@@ -424,9 +303,7 @@ public class Create2DDigitalHumanVideoReq {
     @Override
     public int hashCode() {
         return Objects.hash(scriptId,
-            videoMakingType,
             modelAssetId,
-            humanImage,
             voiceConfig,
             videoConfig,
             shootScripts,
@@ -441,9 +318,7 @@ public class Create2DDigitalHumanVideoReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class Create2DDigitalHumanVideoReq {\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
-        sb.append("    videoMakingType: ").append(toIndentedString(videoMakingType)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
-        sb.append("    humanImage: ").append(toIndentedString(humanImage)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");

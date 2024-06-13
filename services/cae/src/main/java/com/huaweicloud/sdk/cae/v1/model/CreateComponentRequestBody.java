@@ -24,12 +24,12 @@ public class CreateComponentRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private CreateComponentRequestBodyMetadata metadata;
+    private CreateComponentWithConfigurationRequestBodyMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
-    private CreateComponentRequestBodySpec spec;
+    private CreateComponentWithConfigurationRequestBodySpec spec;
 
     public CreateComponentRequestBody withApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
@@ -65,14 +65,15 @@ public class CreateComponentRequestBody {
         this.kind = kind;
     }
 
-    public CreateComponentRequestBody withMetadata(CreateComponentRequestBodyMetadata metadata) {
+    public CreateComponentRequestBody withMetadata(CreateComponentWithConfigurationRequestBodyMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public CreateComponentRequestBody withMetadata(Consumer<CreateComponentRequestBodyMetadata> metadataSetter) {
+    public CreateComponentRequestBody withMetadata(
+        Consumer<CreateComponentWithConfigurationRequestBodyMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new CreateComponentRequestBodyMetadata();
+            this.metadata = new CreateComponentWithConfigurationRequestBodyMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -83,22 +84,22 @@ public class CreateComponentRequestBody {
      * Get metadata
      * @return metadata
      */
-    public CreateComponentRequestBodyMetadata getMetadata() {
+    public CreateComponentWithConfigurationRequestBodyMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(CreateComponentRequestBodyMetadata metadata) {
+    public void setMetadata(CreateComponentWithConfigurationRequestBodyMetadata metadata) {
         this.metadata = metadata;
     }
 
-    public CreateComponentRequestBody withSpec(CreateComponentRequestBodySpec spec) {
+    public CreateComponentRequestBody withSpec(CreateComponentWithConfigurationRequestBodySpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public CreateComponentRequestBody withSpec(Consumer<CreateComponentRequestBodySpec> specSetter) {
+    public CreateComponentRequestBody withSpec(Consumer<CreateComponentWithConfigurationRequestBodySpec> specSetter) {
         if (this.spec == null) {
-            this.spec = new CreateComponentRequestBodySpec();
+            this.spec = new CreateComponentWithConfigurationRequestBodySpec();
             specSetter.accept(this.spec);
         }
 
@@ -109,11 +110,11 @@ public class CreateComponentRequestBody {
      * Get spec
      * @return spec
      */
-    public CreateComponentRequestBodySpec getSpec() {
+    public CreateComponentWithConfigurationRequestBodySpec getSpec() {
         return spec;
     }
 
-    public void setSpec(CreateComponentRequestBodySpec spec) {
+    public void setSpec(CreateComponentWithConfigurationRequestBodySpec spec) {
         this.spec = spec;
     }
 

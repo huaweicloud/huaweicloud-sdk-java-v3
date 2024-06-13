@@ -134,6 +134,9 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
      * @return DerivedT with ak set
      */
     public T withAk(String ak) {
+        if (StringUtils.isEmpty(ak)) {
+            throw new IllegalArgumentException("input ak cannot be null or empty.");
+        }
         this.ak = ak;
         return toDerivedT();
     }
@@ -143,6 +146,9 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
      * @return DerivedT with sk set
      */
     public T withSk(String sk) {
+        if (StringUtils.isEmpty(sk)) {
+            throw new IllegalArgumentException("input sk cannot be null or empty.");
+        }
         this.sk = sk;
         return toDerivedT();
     }

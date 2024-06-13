@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.metastudio.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
@@ -23,8 +25,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetbyReplicationInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequ
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
@@ -157,6 +163,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListProductsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
@@ -187,6 +195,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
@@ -223,6 +233,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
@@ -281,6 +293,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
@@ -684,18 +698,32 @@ public class MetaStudioClient {
     }
 
     /**
-     * 复制资产
+     * 批量资产操作
      *
-     * 该接口用于在Region B复制Region A的指定资产。
+     * 该接口用批量资产操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAssetbyReplicationInfoRequest 请求对象
-     * @return CreateAssetbyReplicationInfoResponse
+     * @param request BatchExecuteAssetActionRequest 请求对象
+     * @return BatchExecuteAssetActionResponse
      */
-    public CreateAssetbyReplicationInfoResponse createAssetbyReplicationInfo(
-        CreateAssetbyReplicationInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createAssetbyReplicationInfo);
+    public BatchExecuteAssetActionResponse batchExecuteAssetAction(BatchExecuteAssetActionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.batchExecuteAssetAction);
+    }
+
+    /**
+     * 批量资产操作
+     *
+     * 该接口用批量资产操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchExecuteAssetActionRequest 请求对象
+     * @return SyncInvoker<BatchExecuteAssetActionRequest, BatchExecuteAssetActionResponse>
+     */
+    public SyncInvoker<BatchExecuteAssetActionRequest, BatchExecuteAssetActionResponse> batchExecuteAssetActionInvoker(
+        BatchExecuteAssetActionRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.batchExecuteAssetAction, hcClient);
     }
 
     /**
@@ -705,12 +733,27 @@ public class MetaStudioClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAssetbyReplicationInfoRequest 请求对象
-     * @return SyncInvoker<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse>
+     * @param request CreateAssetByReplicationInfoRequest 请求对象
+     * @return CreateAssetByReplicationInfoResponse
      */
-    public SyncInvoker<CreateAssetbyReplicationInfoRequest, CreateAssetbyReplicationInfoResponse> createAssetbyReplicationInfoInvoker(
-        CreateAssetbyReplicationInfoRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.createAssetbyReplicationInfo, hcClient);
+    public CreateAssetByReplicationInfoResponse createAssetByReplicationInfo(
+        CreateAssetByReplicationInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createAssetByReplicationInfo);
+    }
+
+    /**
+     * 复制资产
+     *
+     * 该接口用于在Region B复制Region A的指定资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetByReplicationInfoRequest 请求对象
+     * @return SyncInvoker<CreateAssetByReplicationInfoRequest, CreateAssetByReplicationInfoResponse>
+     */
+    public SyncInvoker<CreateAssetByReplicationInfoRequest, CreateAssetByReplicationInfoResponse> createAssetByReplicationInfoInvoker(
+        CreateAssetByReplicationInfoRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createAssetByReplicationInfo, hcClient);
     }
 
     /**
@@ -2519,6 +2562,175 @@ public class MetaStudioClient {
     public SyncInvoker<ShowPictureModelingJobRequest, ShowPictureModelingJobResponse> showPictureModelingJobInvoker(
         ShowPictureModelingJobRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.showPictureModelingJob, hcClient);
+    }
+
+    /**
+     * 创建商品
+     *
+     * Create product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProductRequest 请求对象
+     * @return CreateProductResponse
+     */
+    public CreateProductResponse createProduct(CreateProductRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createProduct);
+    }
+
+    /**
+     * 创建商品
+     *
+     * Create product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProductRequest 请求对象
+     * @return SyncInvoker<CreateProductRequest, CreateProductResponse>
+     */
+    public SyncInvoker<CreateProductRequest, CreateProductResponse> createProductInvoker(CreateProductRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createProduct, hcClient);
+    }
+
+    /**
+     * 删除商品
+     *
+     * 删除商品
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProductRequest 请求对象
+     * @return DeleteProductResponse
+     */
+    public DeleteProductResponse deleteProduct(DeleteProductRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteProduct);
+    }
+
+    /**
+     * 删除商品
+     *
+     * 删除商品
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProductRequest 请求对象
+     * @return SyncInvoker<DeleteProductRequest, DeleteProductResponse>
+     */
+    public SyncInvoker<DeleteProductRequest, DeleteProductResponse> deleteProductInvoker(DeleteProductRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteProduct, hcClient);
+    }
+
+    /**
+     * 查询商品列表
+     *
+     * 查询商品列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProductsRequest 请求对象
+     * @return ListProductsResponse
+     */
+    public ListProductsResponse listProducts(ListProductsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listProducts);
+    }
+
+    /**
+     * 查询商品列表
+     *
+     * 查询商品列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProductsRequest 请求对象
+     * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
+     */
+    public SyncInvoker<ListProductsRequest, ListProductsResponse> listProductsInvoker(ListProductsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listProducts, hcClient);
+    }
+
+    /**
+     * 商品资产组合配置
+     *
+     * 商品资产组合配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetProductAssetRequest 请求对象
+     * @return SetProductAssetResponse
+     */
+    public SetProductAssetResponse setProductAsset(SetProductAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.setProductAsset);
+    }
+
+    /**
+     * 商品资产组合配置
+     *
+     * 商品资产组合配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetProductAssetRequest 请求对象
+     * @return SyncInvoker<SetProductAssetRequest, SetProductAssetResponse>
+     */
+    public SyncInvoker<SetProductAssetRequest, SetProductAssetResponse> setProductAssetInvoker(
+        SetProductAssetRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.setProductAsset, hcClient);
+    }
+
+    /**
+     * 查询商品详情
+     *
+     * Show product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProductRequest 请求对象
+     * @return ShowProductResponse
+     */
+    public ShowProductResponse showProduct(ShowProductRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showProduct);
+    }
+
+    /**
+     * 查询商品详情
+     *
+     * Show product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProductRequest 请求对象
+     * @return SyncInvoker<ShowProductRequest, ShowProductResponse>
+     */
+    public SyncInvoker<ShowProductRequest, ShowProductResponse> showProductInvoker(ShowProductRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showProduct, hcClient);
+    }
+
+    /**
+     * 更新商品
+     *
+     * Update product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProductRequest 请求对象
+     * @return UpdateProductResponse
+     */
+    public UpdateProductResponse updateProduct(UpdateProductRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateProduct);
+    }
+
+    /**
+     * 更新商品
+     *
+     * Update product
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProductRequest 请求对象
+     * @return SyncInvoker<UpdateProductRequest, UpdateProductResponse>
+     */
+    public SyncInvoker<UpdateProductRequest, UpdateProductResponse> updateProductInvoker(UpdateProductRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateProduct, hcClient);
     }
 
     /**

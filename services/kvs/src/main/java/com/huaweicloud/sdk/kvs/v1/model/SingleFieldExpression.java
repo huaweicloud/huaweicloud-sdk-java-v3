@@ -63,7 +63,7 @@ public class SingleFieldExpression {
     }
 
     /**
-     * 条件函数，取值如\"$gt\", $lt\",\"$gte\", $lte\" \"$eq\", \"$ne\", \"$prefix\", \"$in\",\"$nin\", \"$exists\"
+     * 条件函数，取值如\"$gt\", $lt\",\"$gte\", $lte\" \"$eq\", \"$ne\", \"$prefix\", \"$exists\"。
      * @return func
      */
     public String getFunc() {
@@ -80,7 +80,7 @@ public class SingleFieldExpression {
     }
 
     /**
-     * value和value_array二选一。 - value条件值，适用于除\"$in\", \"$nin\"外的func - 字段名无意义，可以传空，也可以传字段名。 - $exists值为true/false > $prefix操作只适用于string和binary类型。
+     * value和value_array二选一。 - value条件值，适用于除\"$in\", \"$nin\"外的func。 - 字段名无意义，可以传空，也可以传字段名。 - $exists值为true/false。 > $prefix操作只适用于string和binary类型。
      * @return value
      */
     public Document getValue() {
@@ -113,7 +113,7 @@ public class SingleFieldExpression {
     }
 
     /**
-     * \"value\"和\"value_array\"二选一。 - \"value_array\" 条件值列表, 值用于\"$in\", \"$nin\"
+     * \"value\"和\"value_array\"二选一。 - \"value_array\" 条件值列表, 值用于\"$in\", \"$nin\"。
      * @return valueArray
      */
     public List<Document> getValueArray() {

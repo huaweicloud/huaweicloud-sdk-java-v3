@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentWithConfigurationResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
@@ -438,6 +440,36 @@ public class CaeAsyncClient {
     public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(
         CreateComponentRequest request) {
         return new AsyncInvoker<>(request, CaeMeta.createComponent, hcClient);
+    }
+
+    /**
+     * 创建、生效配置并部署组件
+     *
+     * 创建、生效配置并部署组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComponentWithConfigurationRequest 请求对象
+     * @return CompletableFuture<CreateComponentWithConfigurationResponse>
+     */
+    public CompletableFuture<CreateComponentWithConfigurationResponse> createComponentWithConfigurationAsync(
+        CreateComponentWithConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.createComponentWithConfiguration);
+    }
+
+    /**
+     * 创建、生效配置并部署组件
+     *
+     * 创建、生效配置并部署组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComponentWithConfigurationRequest 请求对象
+     * @return AsyncInvoker<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse>
+     */
+    public AsyncInvoker<CreateComponentWithConfigurationRequest, CreateComponentWithConfigurationResponse> createComponentWithConfigurationAsyncInvoker(
+        CreateComponentWithConfigurationRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.createComponentWithConfiguration, hcClient);
     }
 
     /**

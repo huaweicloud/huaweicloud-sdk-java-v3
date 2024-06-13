@@ -51,6 +51,14 @@ public class AosRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://aos.myhuaweicloud.eu");
 
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://rfs.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://rfs.cn-north-11.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://rfs.cn-east-5.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://rfs.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AOS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -73,6 +81,10 @@ public class AosRegion {
         map.put("la-north-2", LA_NORTH_2);
         map.put("af-south-1", AF_SOUTH_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

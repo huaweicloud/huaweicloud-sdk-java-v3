@@ -99,19 +99,9 @@ public class ShootScriptDetail {
     private TextConfig textConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "animation_config")
-
-    private List<AnimationConfig> animationConfig = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_config")
 
     private List<BackgroundConfigInfo> backgroundConfig = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "emotion_config")
-
-    private List<EmotionConfig> emotionConfig = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "layer_config")
@@ -166,39 +156,6 @@ public class ShootScriptDetail {
         this.textConfig = textConfig;
     }
 
-    public ShootScriptDetail withAnimationConfig(List<AnimationConfig> animationConfig) {
-        this.animationConfig = animationConfig;
-        return this;
-    }
-
-    public ShootScriptDetail addAnimationConfigItem(AnimationConfig animationConfigItem) {
-        if (this.animationConfig == null) {
-            this.animationConfig = new ArrayList<>();
-        }
-        this.animationConfig.add(animationConfigItem);
-        return this;
-    }
-
-    public ShootScriptDetail withAnimationConfig(Consumer<List<AnimationConfig>> animationConfigSetter) {
-        if (this.animationConfig == null) {
-            this.animationConfig = new ArrayList<>();
-        }
-        animationConfigSetter.accept(this.animationConfig);
-        return this;
-    }
-
-    /**
-     * 动作配置。 > * 推荐使用text_config中插入动作标签，不配置animation_config。 > * 使用animation_config方式配置动作，在整个讲解过程中动作循环播放。 > * 分身数字人视频制作时此参数不生效。
-     * @return animationConfig
-     */
-    public List<AnimationConfig> getAnimationConfig() {
-        return animationConfig;
-    }
-
-    public void setAnimationConfig(List<AnimationConfig> animationConfig) {
-        this.animationConfig = animationConfig;
-    }
-
     public ShootScriptDetail withBackgroundConfig(List<BackgroundConfigInfo> backgroundConfig) {
         this.backgroundConfig = backgroundConfig;
         return this;
@@ -230,39 +187,6 @@ public class ShootScriptDetail {
 
     public void setBackgroundConfig(List<BackgroundConfigInfo> backgroundConfig) {
         this.backgroundConfig = backgroundConfig;
-    }
-
-    public ShootScriptDetail withEmotionConfig(List<EmotionConfig> emotionConfig) {
-        this.emotionConfig = emotionConfig;
-        return this;
-    }
-
-    public ShootScriptDetail addEmotionConfigItem(EmotionConfig emotionConfigItem) {
-        if (this.emotionConfig == null) {
-            this.emotionConfig = new ArrayList<>();
-        }
-        this.emotionConfig.add(emotionConfigItem);
-        return this;
-    }
-
-    public ShootScriptDetail withEmotionConfig(Consumer<List<EmotionConfig>> emotionConfigSetter) {
-        if (this.emotionConfig == null) {
-            this.emotionConfig = new ArrayList<>();
-        }
-        emotionConfigSetter.accept(this.emotionConfig);
-        return this;
-    }
-
-    /**
-     * 情感标签配置。  > * 分身数字人视频制作时此参数不生效。  > * 推荐在text_config中插入情感标签，此参数将被废弃。
-     * @return emotionConfig
-     */
-    public List<EmotionConfig> getEmotionConfig() {
-        return emotionConfig;
-    }
-
-    public void setEmotionConfig(List<EmotionConfig> emotionConfig) {
-        this.emotionConfig = emotionConfig;
     }
 
     public ShootScriptDetail withLayerConfig(List<LayerConfig> layerConfig) {
@@ -325,17 +249,14 @@ public class ShootScriptDetail {
         }
         ShootScriptDetail that = (ShootScriptDetail) obj;
         return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.textConfig, that.textConfig)
-            && Objects.equals(this.animationConfig, that.animationConfig)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
-            && Objects.equals(this.emotionConfig, that.emotionConfig)
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.thumbnailUrl, that.thumbnailUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(scriptType, textConfig, animationConfig, backgroundConfig, emotionConfig, layerConfig, thumbnailUrl);
+        return Objects.hash(scriptType, textConfig, backgroundConfig, layerConfig, thumbnailUrl);
     }
 
     @Override
@@ -344,9 +265,7 @@ public class ShootScriptDetail {
         sb.append("class ShootScriptDetail {\n");
         sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
-        sb.append("    animationConfig: ").append(toIndentedString(animationConfig)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
-        sb.append("    emotionConfig: ").append(toIndentedString(emotionConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("    thumbnailUrl: ").append(toIndentedString(thumbnailUrl)).append("\n");
         sb.append("}");
