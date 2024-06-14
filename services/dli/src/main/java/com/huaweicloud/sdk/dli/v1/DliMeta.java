@@ -104,9 +104,6 @@ import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateStreamJobRequest;
-import com.huaweicloud.sdk.dli.v1.model.CreateStreamJobRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateStreamJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableResponse;
@@ -791,29 +788,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(CreateRouteToEnhancedConnectionRequestBody.class),
             f -> f.withMarshaller(CreateRouteToEnhancedConnectionRequest::getBody,
                 CreateRouteToEnhancedConnectionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateStreamJobRequest, CreateStreamJobResponse> createStreamJob =
-        genForCreateStreamJob();
-
-    private static HttpRequestDef<CreateStreamJobRequest, CreateStreamJobResponse> genForCreateStreamJob() {
-        // basic
-        HttpRequestDef.Builder<CreateStreamJobRequest, CreateStreamJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateStreamJobRequest.class, CreateStreamJobResponse.class)
-                .withName("CreateStreamJob")
-                .withUri("/v2/{project_id}/streams")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateStreamJobRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateStreamJobRequestBody.class),
-            f -> f.withMarshaller(CreateStreamJobRequest::getBody, CreateStreamJobRequest::setBody));
 
         // response
 
