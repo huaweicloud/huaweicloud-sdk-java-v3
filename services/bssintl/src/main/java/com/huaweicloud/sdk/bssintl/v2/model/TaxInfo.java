@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -28,7 +29,7 @@ public class TaxInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taxAmount")
 
-    private Double taxAmount;
+    private BigDecimal taxAmount;
 
     public TaxInfo withTaxClass(String taxClass) {
         this.taxClass = taxClass;
@@ -81,7 +82,7 @@ public class TaxInfo {
         this.subTaxClass = subTaxClass;
     }
 
-    public TaxInfo withTaxAmount(Double taxAmount) {
+    public TaxInfo withTaxAmount(BigDecimal taxAmount) {
         this.taxAmount = taxAmount;
         return this;
     }
@@ -90,11 +91,11 @@ public class TaxInfo {
      * 税金金额。 单位：美元
      * @return taxAmount
      */
-    public Double getTaxAmount() {
+    public BigDecimal getTaxAmount() {
         return taxAmount;
     }
 
-    public void setTaxAmount(Double taxAmount) {
+    public void setTaxAmount(BigDecimal taxAmount) {
         this.taxAmount = taxAmount;
     }
 

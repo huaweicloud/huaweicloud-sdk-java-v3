@@ -26,7 +26,7 @@ public class ShowCloudPhoneServerDetailResponseBodyMetadata {
     }
 
     /**
-     * 订单ID，不超过64个字节。
+     * 产品ID，不超过64个字节。
      * @return productId
      */
     public String getProductId() {
@@ -43,7 +43,7 @@ public class ShowCloudPhoneServerDetailResponseBodyMetadata {
     }
 
     /**
-     * 产品ID，不超过64个字节。
+     * 订单ID，不超过64个字节。
      * @return orderId
      */
     public String getOrderId() {

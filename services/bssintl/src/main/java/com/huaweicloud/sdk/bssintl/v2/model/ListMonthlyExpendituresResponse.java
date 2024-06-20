@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -37,37 +38,37 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_amount")
 
-    private Double totalAmount;
+    private BigDecimal totalAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    private Double couponAmount;
+    private BigDecimal couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cashcoupon_amount")
 
-    private Double cashcouponAmount;
+    private BigDecimal cashcouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storedcard_amount")
 
-    private Double storedcardAmount;
+    private BigDecimal storedcardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debit_amount")
 
-    private Double debitAmount;
+    private BigDecimal debitAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -147,7 +148,7 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListMonthlyExpendituresResponse withTotalAmount(Double totalAmount) {
+    public ListMonthlyExpendituresResponse withTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
         return this;
     }
@@ -156,15 +157,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 总金额（包含退订）。
      * @return totalAmount
      */
-    public Double getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Double totalAmount) {
+    public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
 
-    public ListMonthlyExpendituresResponse withDebtAmount(Double debtAmount) {
+    public ListMonthlyExpendituresResponse withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -173,15 +174,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 总欠费金额。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public ListMonthlyExpendituresResponse withCouponAmount(Double couponAmount) {
+    public ListMonthlyExpendituresResponse withCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -190,15 +191,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 代金券金额。
      * @return couponAmount
      */
-    public Double getCouponAmount() {
+    public BigDecimal getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(Double couponAmount) {
+    public void setCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public ListMonthlyExpendituresResponse withCashcouponAmount(Double cashcouponAmount) {
+    public ListMonthlyExpendituresResponse withCashcouponAmount(BigDecimal cashcouponAmount) {
         this.cashcouponAmount = cashcouponAmount;
         return this;
     }
@@ -207,15 +208,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 现金券金额，预留。
      * @return cashcouponAmount
      */
-    public Double getCashcouponAmount() {
+    public BigDecimal getCashcouponAmount() {
         return cashcouponAmount;
     }
 
-    public void setCashcouponAmount(Double cashcouponAmount) {
+    public void setCashcouponAmount(BigDecimal cashcouponAmount) {
         this.cashcouponAmount = cashcouponAmount;
     }
 
-    public ListMonthlyExpendituresResponse withStoredcardAmount(Double storedcardAmount) {
+    public ListMonthlyExpendituresResponse withStoredcardAmount(BigDecimal storedcardAmount) {
         this.storedcardAmount = storedcardAmount;
         return this;
     }
@@ -224,15 +225,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 储值卡金额，预留。
      * @return storedcardAmount
      */
-    public Double getStoredcardAmount() {
+    public BigDecimal getStoredcardAmount() {
         return storedcardAmount;
     }
 
-    public void setStoredcardAmount(Double storedcardAmount) {
+    public void setStoredcardAmount(BigDecimal storedcardAmount) {
         this.storedcardAmount = storedcardAmount;
     }
 
-    public ListMonthlyExpendituresResponse withDebitAmount(Double debitAmount) {
+    public ListMonthlyExpendituresResponse withDebitAmount(BigDecimal debitAmount) {
         this.debitAmount = debitAmount;
         return this;
     }
@@ -241,15 +242,15 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 现金账户金额。
      * @return debitAmount
      */
-    public Double getDebitAmount() {
+    public BigDecimal getDebitAmount() {
         return debitAmount;
     }
 
-    public void setDebitAmount(Double debitAmount) {
+    public void setDebitAmount(BigDecimal debitAmount) {
         this.debitAmount = debitAmount;
     }
 
-    public ListMonthlyExpendituresResponse withCreditAmount(Double creditAmount) {
+    public ListMonthlyExpendituresResponse withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -258,11 +259,11 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
      * 信用账户金额。
      * @return creditAmount
      */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 

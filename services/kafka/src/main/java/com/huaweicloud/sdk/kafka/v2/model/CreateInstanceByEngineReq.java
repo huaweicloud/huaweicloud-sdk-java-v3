@@ -555,7 +555,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc,dt)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)      [- Kafka实例规格为kafka.2u8g.single时，存储空间取值范围100GB~10000GB。   - Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。   - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs)
+     * 消息存储空间，单位GB。   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)      [- Kafka实例规格为kafka.2u8g.single时，存储空间取值范围100GB~10000GB。   - Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。   - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs)
      * @return storageSpace
      */
     public Integer getStorageSpace() {

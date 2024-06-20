@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
@@ -35,6 +37,10 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
@@ -45,6 +51,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyRequest;
@@ -65,8 +73,12 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
@@ -77,6 +89,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyRequest;
@@ -99,12 +113,16 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
@@ -117,6 +135,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyRequest;
@@ -147,10 +167,14 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
@@ -165,6 +189,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyRequest;
@@ -177,10 +203,14 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.TagDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.TagDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UnbindDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UnbindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceRequest;
@@ -189,8 +219,12 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
@@ -201,6 +235,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyRequest;
@@ -1331,6 +1367,155 @@ public class IoTDAClient {
      */
     public SyncInvoker<CreateCommandRequest, CreateCommandResponse> createCommandInvoker(CreateCommandRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.createCommand, hcClient);
+    }
+
+    /**
+     * 创建自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
+     * - 单个实例最大可配置10个自定义鉴权
+     * - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceAuthorizerRequest 请求对象
+     * @return CreateDeviceAuthorizerResponse
+     */
+    public CreateDeviceAuthorizerResponse createDeviceAuthorizer(CreateDeviceAuthorizerRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createDeviceAuthorizer);
+    }
+
+    /**
+     * 创建自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
+     * - 单个实例最大可配置10个自定义鉴权
+     * - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceAuthorizerRequest 请求对象
+     * @return SyncInvoker<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse>
+     */
+    public SyncInvoker<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse> createDeviceAuthorizerInvoker(
+        CreateDeviceAuthorizerRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createDeviceAuthorizer, hcClient);
+    }
+
+    /**
+     * 删除自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定自定义鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceAuthorizerRequest 请求对象
+     * @return DeleteDeviceAuthorizerResponse
+     */
+    public DeleteDeviceAuthorizerResponse deleteDeviceAuthorizer(DeleteDeviceAuthorizerRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceAuthorizer);
+    }
+
+    /**
+     * 删除自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定自定义鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceAuthorizerRequest 请求对象
+     * @return SyncInvoker<DeleteDeviceAuthorizerRequest, DeleteDeviceAuthorizerResponse>
+     */
+    public SyncInvoker<DeleteDeviceAuthorizerRequest, DeleteDeviceAuthorizerResponse> deleteDeviceAuthorizerInvoker(
+        DeleteDeviceAuthorizerRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceAuthorizer, hcClient);
+    }
+
+    /**
+     * 查询自定义鉴权列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询自定义鉴权列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceAuthorizersRequest 请求对象
+     * @return ListDeviceAuthorizersResponse
+     */
+    public ListDeviceAuthorizersResponse listDeviceAuthorizers(ListDeviceAuthorizersRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceAuthorizers);
+    }
+
+    /**
+     * 查询自定义鉴权列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询自定义鉴权列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceAuthorizersRequest 请求对象
+     * @return SyncInvoker<ListDeviceAuthorizersRequest, ListDeviceAuthorizersResponse>
+     */
+    public SyncInvoker<ListDeviceAuthorizersRequest, ListDeviceAuthorizersResponse> listDeviceAuthorizersInvoker(
+        ListDeviceAuthorizersRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceAuthorizers, hcClient);
+    }
+
+    /**
+     * 查询自定义鉴权详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定自定义鉴权ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceAuthorizerRequest 请求对象
+     * @return ShowDeviceAuthorizerResponse
+     */
+    public ShowDeviceAuthorizerResponse showDeviceAuthorizer(ShowDeviceAuthorizerRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceAuthorizer);
+    }
+
+    /**
+     * 查询自定义鉴权详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定自定义鉴权ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceAuthorizerRequest 请求对象
+     * @return SyncInvoker<ShowDeviceAuthorizerRequest, ShowDeviceAuthorizerResponse>
+     */
+    public SyncInvoker<ShowDeviceAuthorizerRequest, ShowDeviceAuthorizerResponse> showDeviceAuthorizerInvoker(
+        ShowDeviceAuthorizerRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceAuthorizer, hcClient);
+    }
+
+    /**
+     * 更新指定id的自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台更新指定id的自定义鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceAuthorizerRequest 请求对象
+     * @return UpdateDeviceAuthorizerResponse
+     */
+    public UpdateDeviceAuthorizerResponse updateDeviceAuthorizer(UpdateDeviceAuthorizerRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDeviceAuthorizer);
+    }
+
+    /**
+     * 更新指定id的自定义鉴权
+     *
+     * 应用服务器可调用此接口在物联网平台更新指定id的自定义鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceAuthorizerRequest 请求对象
+     * @return SyncInvoker<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse>
+     */
+    public SyncInvoker<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse> updateDeviceAuthorizerInvoker(
+        UpdateDeviceAuthorizerRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateDeviceAuthorizer, hcClient);
     }
 
     /**
@@ -2703,6 +2888,242 @@ public class IoTDAClient {
     }
 
     /**
+     * 绑定设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上为批量设备绑定目标策略，目前支持绑定目标类型为：设备、产品，当目标类型为产品时，该产品下所有设备都会生效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDevicePolicyRequest 请求对象
+     * @return BindDevicePolicyResponse
+     */
+    public BindDevicePolicyResponse bindDevicePolicy(BindDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.bindDevicePolicy);
+    }
+
+    /**
+     * 绑定设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上为批量设备绑定目标策略，目前支持绑定目标类型为：设备、产品，当目标类型为产品时，该产品下所有设备都会生效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDevicePolicyRequest 请求对象
+     * @return SyncInvoker<BindDevicePolicyRequest, BindDevicePolicyResponse>
+     */
+    public SyncInvoker<BindDevicePolicyRequest, BindDevicePolicyResponse> bindDevicePolicyInvoker(
+        BindDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.bindDevicePolicy, hcClient);
+    }
+
+    /**
+     * 创建设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个策略，该策略需要绑定到设备和产品下才能生效。
+     * - 一个实例最多能创建50个设备策略。
+     * - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevicePolicyRequest 请求对象
+     * @return CreateDevicePolicyResponse
+     */
+    public CreateDevicePolicyResponse createDevicePolicy(CreateDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createDevicePolicy);
+    }
+
+    /**
+     * 创建设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个策略，该策略需要绑定到设备和产品下才能生效。
+     * - 一个实例最多能创建50个设备策略。
+     * - 仅**标准版实例、企业版实例**支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDevicePolicyRequest 请求对象
+     * @return SyncInvoker<CreateDevicePolicyRequest, CreateDevicePolicyResponse>
+     */
+    public SyncInvoker<CreateDevicePolicyRequest, CreateDevicePolicyResponse> createDevicePolicyInvoker(
+        CreateDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createDevicePolicy, hcClient);
+    }
+
+    /**
+     * 删除设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定策略，注意：删除策略同时会解绑该策略下所有绑定对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevicePolicyRequest 请求对象
+     * @return DeleteDevicePolicyResponse
+     */
+    public DeleteDevicePolicyResponse deleteDevicePolicy(DeleteDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDevicePolicy);
+    }
+
+    /**
+     * 删除设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定策略，注意：删除策略同时会解绑该策略下所有绑定对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDevicePolicyRequest 请求对象
+     * @return SyncInvoker<DeleteDevicePolicyRequest, DeleteDevicePolicyResponse>
+     */
+    public SyncInvoker<DeleteDevicePolicyRequest, DeleteDevicePolicyResponse> deleteDevicePolicyInvoker(
+        DeleteDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDevicePolicy, hcClient);
+    }
+
+    /**
+     * 查询设备策略列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevicePoliciesRequest 请求对象
+     * @return ListDevicePoliciesResponse
+     */
+    public ListDevicePoliciesResponse listDevicePolicies(ListDevicePoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDevicePolicies);
+    }
+
+    /**
+     * 查询设备策略列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDevicePoliciesRequest 请求对象
+     * @return SyncInvoker<ListDevicePoliciesRequest, ListDevicePoliciesResponse>
+     */
+    public SyncInvoker<ListDevicePoliciesRequest, ListDevicePoliciesResponse> listDevicePoliciesInvoker(
+        ListDevicePoliciesRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listDevicePolicies, hcClient);
+    }
+
+    /**
+     * 查询设备策略详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定策略ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDevicePolicyRequest 请求对象
+     * @return ShowDevicePolicyResponse
+     */
+    public ShowDevicePolicyResponse showDevicePolicy(ShowDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showDevicePolicy);
+    }
+
+    /**
+     * 查询设备策略详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定策略ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDevicePolicyRequest 请求对象
+     * @return SyncInvoker<ShowDevicePolicyRequest, ShowDevicePolicyResponse>
+     */
+    public SyncInvoker<ShowDevicePolicyRequest, ShowDevicePolicyResponse> showDevicePolicyInvoker(
+        ShowDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showDevicePolicy, hcClient);
+    }
+
+    /**
+     * 查询设备策略绑定的目标列表
+     *
+     * 应用服务器可调用此接口在物联网平台上查询指定策略ID下绑定的目标列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTargetsInDevicePolicyRequest 请求对象
+     * @return ShowTargetsInDevicePolicyResponse
+     */
+    public ShowTargetsInDevicePolicyResponse showTargetsInDevicePolicy(ShowTargetsInDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showTargetsInDevicePolicy);
+    }
+
+    /**
+     * 查询设备策略绑定的目标列表
+     *
+     * 应用服务器可调用此接口在物联网平台上查询指定策略ID下绑定的目标列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTargetsInDevicePolicyRequest 请求对象
+     * @return SyncInvoker<ShowTargetsInDevicePolicyRequest, ShowTargetsInDevicePolicyResponse>
+     */
+    public SyncInvoker<ShowTargetsInDevicePolicyRequest, ShowTargetsInDevicePolicyResponse> showTargetsInDevicePolicyInvoker(
+        ShowTargetsInDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showTargetsInDevicePolicy, hcClient);
+    }
+
+    /**
+     * 解绑设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上解除指定策略下绑定的目标对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindDevicePolicyRequest 请求对象
+     * @return UnbindDevicePolicyResponse
+     */
+    public UnbindDevicePolicyResponse unbindDevicePolicy(UnbindDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.unbindDevicePolicy);
+    }
+
+    /**
+     * 解绑设备策略
+     *
+     * 应用服务器可调用此接口在物联网平台上解除指定策略下绑定的目标对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindDevicePolicyRequest 请求对象
+     * @return SyncInvoker<UnbindDevicePolicyRequest, UnbindDevicePolicyResponse>
+     */
+    public SyncInvoker<UnbindDevicePolicyRequest, UnbindDevicePolicyResponse> unbindDevicePolicyInvoker(
+        UnbindDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.unbindDevicePolicy, hcClient);
+    }
+
+    /**
+     * 更新设备策略信息
+     *
+     * 应用服务器可调用此接口在物联网平台更新策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDevicePolicyRequest 请求对象
+     * @return UpdateDevicePolicyResponse
+     */
+    public UpdateDevicePolicyResponse updateDevicePolicy(UpdateDevicePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDevicePolicy);
+    }
+
+    /**
+     * 更新设备策略信息
+     *
+     * 应用服务器可调用此接口在物联网平台更新策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDevicePolicyRequest 请求对象
+     * @return SyncInvoker<UpdateDevicePolicyRequest, UpdateDevicePolicyResponse>
+     */
+    public SyncInvoker<UpdateDevicePolicyRequest, UpdateDevicePolicyResponse> updateDevicePolicyInvoker(
+        UpdateDevicePolicyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateDevicePolicy, hcClient);
+    }
+
+    /**
      * 创建产品
      *
      * 应用服务器可调用此接口创建产品。此接口仅创建了产品，没有创建和安装插件，如果需要对数据进行编解码，还需要在平台开发和安装插件。
@@ -2902,6 +3323,157 @@ public class IoTDAClient {
     public SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse> updatePropertiesInvoker(
         UpdatePropertiesRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateProperties, hcClient);
+    }
+
+    /**
+     * 创建预调配模板
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个预调配模板。用户的设备未在平台注册时，可以通过预调配模板在设备首次接入物联网平台时将设备信息自动注册到物联网平台。
+     * - 该预调配模板至少需要绑定到一个设备CA证书下才能生效。
+     * - 一个实例最多可有10个预调配模板。
+     * - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProvisioningTemplateRequest 请求对象
+     * @return CreateProvisioningTemplateResponse
+     */
+    public CreateProvisioningTemplateResponse createProvisioningTemplate(CreateProvisioningTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createProvisioningTemplate);
+    }
+
+    /**
+     * 创建预调配模板
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个预调配模板。用户的设备未在平台注册时，可以通过预调配模板在设备首次接入物联网平台时将设备信息自动注册到物联网平台。
+     * - 该预调配模板至少需要绑定到一个设备CA证书下才能生效。
+     * - 一个实例最多可有10个预调配模板。
+     * - 仅标准版实例、企业版实例支持该接口调用，基础版不支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProvisioningTemplateRequest 请求对象
+     * @return SyncInvoker<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResponse>
+     */
+    public SyncInvoker<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResponse> createProvisioningTemplateInvoker(
+        CreateProvisioningTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createProvisioningTemplate, hcClient);
+    }
+
+    /**
+     * 删除预调配模板
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定预调配模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProvisioningTemplateRequest 请求对象
+     * @return DeleteProvisioningTemplateResponse
+     */
+    public DeleteProvisioningTemplateResponse deleteProvisioningTemplate(DeleteProvisioningTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteProvisioningTemplate);
+    }
+
+    /**
+     * 删除预调配模板
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定预调配模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteProvisioningTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResponse>
+     */
+    public SyncInvoker<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResponse> deleteProvisioningTemplateInvoker(
+        DeleteProvisioningTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteProvisioningTemplate, hcClient);
+    }
+
+    /**
+     * 查询预调配模板列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询预调配模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProvisioningTemplatesRequest 请求对象
+     * @return ListProvisioningTemplatesResponse
+     */
+    public ListProvisioningTemplatesResponse listProvisioningTemplates(ListProvisioningTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listProvisioningTemplates);
+    }
+
+    /**
+     * 查询预调配模板列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询预调配模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProvisioningTemplatesRequest 请求对象
+     * @return SyncInvoker<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse>
+     */
+    public SyncInvoker<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse> listProvisioningTemplatesInvoker(
+        ListProvisioningTemplatesRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listProvisioningTemplates, hcClient);
+    }
+
+    /**
+     * 查询预调配模板详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定预调配模板ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProvisioningTemplateRequest 请求对象
+     * @return ShowProvisioningTemplateResponse
+     */
+    public ShowProvisioningTemplateResponse showProvisioningTemplate(ShowProvisioningTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showProvisioningTemplate);
+    }
+
+    /**
+     * 查询预调配模板详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定预调配模板ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProvisioningTemplateRequest 请求对象
+     * @return SyncInvoker<ShowProvisioningTemplateRequest, ShowProvisioningTemplateResponse>
+     */
+    public SyncInvoker<ShowProvisioningTemplateRequest, ShowProvisioningTemplateResponse> showProvisioningTemplateInvoker(
+        ShowProvisioningTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showProvisioningTemplate, hcClient);
+    }
+
+    /**
+     * 更新指定id的预调配模板信息
+     *
+     * 应用服务器可调用此接口在物联网平台更新指定id的预调配模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProvisioningTemplateRequest 请求对象
+     * @return UpdateProvisioningTemplateResponse
+     */
+    public UpdateProvisioningTemplateResponse updateProvisioningTemplate(UpdateProvisioningTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateProvisioningTemplate);
+    }
+
+    /**
+     * 更新指定id的预调配模板信息
+     *
+     * 应用服务器可调用此接口在物联网平台更新指定id的预调配模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProvisioningTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResponse>
+     */
+    public SyncInvoker<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResponse> updateProvisioningTemplateInvoker(
+        UpdateProvisioningTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateProvisioningTemplate, hcClient);
     }
 
     /**

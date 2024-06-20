@@ -73,6 +73,11 @@ public class PipelineDTO {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "concurrency_control")
+
+    private PipelineConcurrencyMgmt concurrencyControl;
+
     public PipelineDTO withName(String name) {
         this.name = name;
         return this;
@@ -341,6 +346,32 @@ public class PipelineDTO {
         this.id = id;
     }
 
+    public PipelineDTO withConcurrencyControl(PipelineConcurrencyMgmt concurrencyControl) {
+        this.concurrencyControl = concurrencyControl;
+        return this;
+    }
+
+    public PipelineDTO withConcurrencyControl(Consumer<PipelineConcurrencyMgmt> concurrencyControlSetter) {
+        if (this.concurrencyControl == null) {
+            this.concurrencyControl = new PipelineConcurrencyMgmt();
+            concurrencyControlSetter.accept(this.concurrencyControl);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get concurrencyControl
+     * @return concurrencyControl
+     */
+    public PipelineConcurrencyMgmt getConcurrencyControl() {
+        return concurrencyControl;
+    }
+
+    public void setConcurrencyControl(PipelineConcurrencyMgmt concurrencyControl) {
+        this.concurrencyControl = concurrencyControl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -356,7 +387,8 @@ public class PipelineDTO {
             && Objects.equals(this.triggers, that.triggers)
             && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.definition, that.definition) && Objects.equals(this.projectName, that.projectName)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.concurrencyControl, that.concurrencyControl);
     }
 
     @Override
@@ -372,7 +404,8 @@ public class PipelineDTO {
             definition,
             projectName,
             groupId,
-            id);
+            id,
+            concurrencyControl);
     }
 
     @Override
@@ -391,6 +424,7 @@ public class PipelineDTO {
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    concurrencyControl: ").append(toIndentedString(concurrencyControl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

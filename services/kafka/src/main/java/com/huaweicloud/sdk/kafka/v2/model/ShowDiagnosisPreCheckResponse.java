@@ -41,7 +41,7 @@ public class ShowDiagnosisPreCheckResponse extends SdkResponse {
     }
 
     /**
-     * kafka消息积压诊断预检查返回对象
+     * Kafka消息积压诊断预检查返回对象
      * @return body
      */
     public List<KafkaDiagnosisCheckEntity> getBody() {

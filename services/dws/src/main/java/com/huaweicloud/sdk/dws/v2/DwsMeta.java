@@ -35,6 +35,9 @@ import com.huaweicloud.sdk.dws.v2.model.BatchDeleteResourceTagResponse;
 import com.huaweicloud.sdk.dws.v2.model.BatchDeleteResourceTags;
 import com.huaweicloud.sdk.dws.v2.model.CancelReadonlyClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CancelReadonlyClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.ChangeSecurityGroupRequest;
+import com.huaweicloud.sdk.dws.v2.model.ChangeSecurityGroupRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
@@ -294,6 +297,8 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
@@ -690,6 +695,34 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelReadonlyClusterRequest::getClusterId,
                 CancelReadonlyClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroup =
+        genForChangeSecurityGroup();
+
+    private static HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> genForChangeSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeSecurityGroupRequest.class, ChangeSecurityGroupResponse.class)
+                .withName("ChangeSecurityGroup")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/security-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getClusterId, ChangeSecurityGroupRequest::setClusterId));
+        builder.<ChangeSecurityGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeSecurityGroupRequestBody.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, ChangeSecurityGroupRequest::setBody));
 
         // response
 
@@ -4111,6 +4144,34 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(ClusterDescriptionInfo.class),
             f -> f.withMarshaller(SaveClusterDescriptionInfoRequest::getBody,
                 SaveClusterDescriptionInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterFlavorRequest, ShowClusterFlavorResponse> showClusterFlavor =
+        genForShowClusterFlavor();
+
+    private static HttpRequestDef<ShowClusterFlavorRequest, ShowClusterFlavorResponse> genForShowClusterFlavor() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterFlavorRequest, ShowClusterFlavorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterFlavorRequest.class, ShowClusterFlavorResponse.class)
+                .withName("ShowClusterFlavor")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/flavor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterFlavorRequest::getClusterId, ShowClusterFlavorRequest::setClusterId));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterFlavorRequest::getNamespace, ShowClusterFlavorRequest::setNamespace));
 
         // response
 

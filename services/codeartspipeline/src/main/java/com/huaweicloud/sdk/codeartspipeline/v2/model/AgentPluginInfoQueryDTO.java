@@ -44,7 +44,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * Get pluginName
+     * 可选的查询条件-插件名
      * @return pluginName
      */
     public String getPluginName() {
@@ -61,7 +61,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * Get regexName
+     * 可选的查询条件-匹配名称
      * @return regexName
      */
     public String getRegexName() {
@@ -78,7 +78,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * Get maintainer
+     * 维护者
      * @return maintainer
      */
     public String getMaintainer() {
@@ -111,7 +111,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * Get businessType
+     * 业务类型,[Build,Gate,Deploy,Test,Normal]
      * @return businessType
      */
     public List<String> getBusinessType() {
@@ -128,7 +128,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * Get pluginAttribution
+     * 插件属性，official/custom
      * @return pluginAttribution
      */
     public String getPluginAttribution() {

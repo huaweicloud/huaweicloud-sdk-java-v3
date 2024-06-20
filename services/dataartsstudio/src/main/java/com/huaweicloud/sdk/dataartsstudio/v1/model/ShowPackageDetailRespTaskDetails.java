@@ -41,6 +41,16 @@ public class ShowPackageDetailRespTaskDetails {
     private String scriptId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_id")
+
+    private String taskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_job_status")
+
+    private Integer startJobStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submit_timestamp")
 
     private Long submitTimestamp;
@@ -167,6 +177,40 @@ public class ShowPackageDetailRespTaskDetails {
         this.scriptId = scriptId;
     }
 
+    public ShowPackageDetailRespTaskDetails withTaskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    /**
+     * 作业ID
+     * @return taskId
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public ShowPackageDetailRespTaskDetails withStartJobStatus(Integer startJobStatus) {
+        this.startJobStatus = startJobStatus;
+        return this;
+    }
+
+    /**
+     * 作业启动状态，2：成功，3：失败
+     * @return startJobStatus
+     */
+    public Integer getStartJobStatus() {
+        return startJobStatus;
+    }
+
+    public void setStartJobStatus(Integer startJobStatus) {
+        this.startJobStatus = startJobStatus;
+    }
+
     public ShowPackageDetailRespTaskDetails withSubmitTimestamp(Long submitTimestamp) {
         this.submitTimestamp = submitTimestamp;
         return this;
@@ -265,6 +309,7 @@ public class ShowPackageDetailRespTaskDetails {
             && Objects.equals(this.deployedVersion, that.deployedVersion)
             && Objects.equals(this.itemName, that.itemName) && Objects.equals(this.pendingItemId, that.pendingItemId)
             && Objects.equals(this.pendingVersion, that.pendingVersion) && Objects.equals(this.scriptId, that.scriptId)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.startJobStatus, that.startJobStatus)
             && Objects.equals(this.submitTimestamp, that.submitTimestamp)
             && Objects.equals(this.submitUserId, that.submitUserId)
             && Objects.equals(this.submitUserName, that.submitUserName) && Objects.equals(this.taskType, that.taskType)
@@ -279,6 +324,8 @@ public class ShowPackageDetailRespTaskDetails {
             pendingItemId,
             pendingVersion,
             scriptId,
+            taskId,
+            startJobStatus,
             submitTimestamp,
             submitUserId,
             submitUserName,
@@ -296,6 +343,8 @@ public class ShowPackageDetailRespTaskDetails {
         sb.append("    pendingItemId: ").append(toIndentedString(pendingItemId)).append("\n");
         sb.append("    pendingVersion: ").append(toIndentedString(pendingVersion)).append("\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    startJobStatus: ").append(toIndentedString(startJobStatus)).append("\n");
         sb.append("    submitTimestamp: ").append(toIndentedString(submitTimestamp)).append("\n");
         sb.append("    submitUserId: ").append(toIndentedString(submitUserId)).append("\n");
         sb.append("    submitUserName: ").append(toIndentedString(submitUserName)).append("\n");

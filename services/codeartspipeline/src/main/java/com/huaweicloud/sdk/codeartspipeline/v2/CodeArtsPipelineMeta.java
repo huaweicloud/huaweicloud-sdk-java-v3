@@ -730,9 +730,19 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(DeleteBasicPluginRequest::getDomainId, DeleteBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBasicPluginRequest::getPluginName, DeleteBasicPluginRequest::setPluginName));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBasicPluginRequest::getType, DeleteBasicPluginRequest::setType));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBasicPluginRequest::getVersion, DeleteBasicPluginRequest::setVersion));
 
         // response
         builder.<String>withResponseField("body",
@@ -849,12 +859,12 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(DeletePluginDraftRequest::getDomainId, DeletePluginDraftRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePluginDraftRequest::getPluginName, DeletePluginDraftRequest::setPluginName));
         builder.<String>withRequestField("version",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePluginDraftRequest::getVersion, DeletePluginDraftRequest::setVersion));
 
@@ -887,7 +897,7 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(DeletePublisherRequest::getDomainId, DeletePublisherRequest::setDomainId));
         builder.<String>withRequestField("publisher_unique_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePublisherRequest::getPublisherUniqueId,
                 DeletePublisherRequest::setPublisherUniqueId));
@@ -1006,17 +1016,17 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ListBasePluginsRequest::getDomainId, ListBasePluginsRequest::setDomainId));
         builder.<String>withRequestField("attribution",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBasePluginsRequest::getAttribution, ListBasePluginsRequest::setAttribution));
         builder.<String>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBasePluginsRequest::getOffset, ListBasePluginsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBasePluginsRequest::getLimit, ListBasePluginsRequest::setLimit));
 
@@ -1083,17 +1093,17 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ListPLuginVersionRequest::getDomainId, ListPLuginVersionRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPLuginVersionRequest::getPluginName, ListPLuginVersionRequest::setPluginName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPLuginVersionRequest::getOffset, ListPLuginVersionRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPLuginVersionRequest::getLimit, ListPLuginVersionRequest::setLimit));
 
@@ -1282,19 +1292,19 @@ public class CodeArtsPipelineMeta {
                 ListPluginVersionNumberRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginVersionNumberRequest::getPluginName,
                 ListPluginVersionNumberRequest::setPluginName));
         builder.<String>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginVersionNumberRequest::getOffset,
                 ListPluginVersionNumberRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginVersionNumberRequest::getLimit, ListPluginVersionNumberRequest::setLimit));
 
@@ -1321,12 +1331,12 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ListPluginsRequest::getDomainId, ListPluginsRequest::setDomainId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginsRequest::getOffset, ListPluginsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginsRequest::getLimit, ListPluginsRequest::setLimit));
         builder.<AgentPluginInfoQueryDTO>withRequestField("body",
@@ -1413,12 +1423,12 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ListPublisherRequest::getDomainId, ListPublisherRequest::setDomainId));
         builder.<String>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublisherRequest::getOffset, ListPublisherRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublisherRequest::getLimit, ListPublisherRequest::setLimit));
         builder.<String>withRequestField("name",
@@ -1870,12 +1880,12 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ShowBasicPluginRequest::getDomainId, ShowBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBasicPluginRequest::getPluginName, ShowBasicPluginRequest::setPluginName));
         builder.<String>withRequestField("version",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBasicPluginRequest::getVersion, ShowBasicPluginRequest::setVersion));
 
@@ -2271,7 +2281,7 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(ShowPluginVersionRequest::getDomainId, ShowPluginVersionRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPluginVersionRequest::getPluginName, ShowPluginVersionRequest::setPluginName));
         builder.<String>withRequestField("version",
@@ -2885,12 +2895,12 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(UploadBasicPluginRequest::getDomainId, UploadBasicPluginRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadBasicPluginRequest::getPluginName, UploadBasicPluginRequest::setPluginName));
         builder.<String>withRequestField("business_type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadBasicPluginRequest::getBusinessType,
                 UploadBasicPluginRequest::setBusinessType));
@@ -2929,7 +2939,7 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(UploadPluginIconRequest::getDomainId, UploadPluginIconRequest::setDomainId));
         builder.<String>withRequestField("plugin_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadPluginIconRequest::getPluginName, UploadPluginIconRequest::setPluginName));
         builder.<UploadPluginIconRequestBody>withRequestField("body",
@@ -2967,7 +2977,7 @@ public class CodeArtsPipelineMeta {
             f -> f.withMarshaller(UploadPublisherIconRequest::getDomainId, UploadPublisherIconRequest::setDomainId));
         builder.<String>withRequestField("publisher_en_name",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadPublisherIconRequest::getPublisherEnName,
                 UploadPublisherIconRequest::setPublisherEnName));

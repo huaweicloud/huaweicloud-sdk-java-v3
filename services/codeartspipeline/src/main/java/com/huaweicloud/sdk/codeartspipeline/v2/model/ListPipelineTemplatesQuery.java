@@ -119,7 +119,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 每次查询的条目数量
+     * 每次查询的条目数量，默认为10。
      * @return limit
      */
     public Long getLimit() {

@@ -21,6 +21,8 @@ public class CcmRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ccm.eu-west-101.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://ccm.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CCM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -30,6 +32,7 @@ public class CcmRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -40,7 +40,7 @@ public class BatchDeleteMessageDiagnosisReportsReq {
     }
 
     /**
-     * 待删除report id 列表
+     * 待删除report id列表
      * @return reportIdList
      */
     public List<String> getReportIdList() {

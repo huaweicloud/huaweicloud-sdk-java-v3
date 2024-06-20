@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class DiscountDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private Double discountAmount;
+    private BigDecimal discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promotion_id")
@@ -47,7 +48,7 @@ public class DiscountDetailInfo {
         this.promotionType = promotionType;
     }
 
-    public DiscountDetailInfo withDiscountAmount(Double discountAmount) {
+    public DiscountDetailInfo withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -56,11 +57,11 @@ public class DiscountDetailInfo {
      * 折扣金额。
      * @return discountAmount
      */
-    public Double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 

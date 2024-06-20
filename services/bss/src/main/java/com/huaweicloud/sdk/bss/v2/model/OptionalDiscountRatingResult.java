@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,17 +22,17 @@ public class OptionalDiscountRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private Double officialWebsiteAmount;
+    private BigDecimal officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private Double discountAmount;
+    private BigDecimal discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -95,7 +96,7 @@ public class OptionalDiscountRatingResult {
         this.discountId = discountId;
     }
 
-    public OptionalDiscountRatingResult withAmount(Double amount) {
+    public OptionalDiscountRatingResult withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -104,15 +105,15 @@ public class OptionalDiscountRatingResult {
      * 总额，即最终优惠后的金额。 amount= official_website_amount - discountAmount。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public OptionalDiscountRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public OptionalDiscountRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -121,15 +122,15 @@ public class OptionalDiscountRatingResult {
      * 包年/包月产品的官网价。
      * @return officialWebsiteAmount
      */
-    public Double getOfficialWebsiteAmount() {
+    public BigDecimal getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    public OptionalDiscountRatingResult withDiscountAmount(Double discountAmount) {
+    public OptionalDiscountRatingResult withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -138,11 +139,11 @@ public class OptionalDiscountRatingResult {
      * 可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额。
      * @return discountAmount
      */
-    public Double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 

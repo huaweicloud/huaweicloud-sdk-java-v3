@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
@@ -830,6 +832,35 @@ public class DasAsyncClient {
     public AsyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> listSqlLimitRulesAsyncInvoker(
         ListSqlLimitRulesRequest request) {
         return new AsyncInvoker<>(request, DasMeta.listSqlLimitRules, hcClient);
+    }
+
+    /**
+     * 根据原始SQL生成SQL限流关键字
+     *
+     * 根据原始SQL生成SQL限流关键字，目前支持MySQL、MariaDB、GaussDB(for MySQL)三种引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseSqlLimitRulesRequest 请求对象
+     * @return CompletableFuture<ParseSqlLimitRulesResponse>
+     */
+    public CompletableFuture<ParseSqlLimitRulesResponse> parseSqlLimitRulesAsync(ParseSqlLimitRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.parseSqlLimitRules);
+    }
+
+    /**
+     * 根据原始SQL生成SQL限流关键字
+     *
+     * 根据原始SQL生成SQL限流关键字，目前支持MySQL、MariaDB、GaussDB(for MySQL)三种引擎。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseSqlLimitRulesRequest 请求对象
+     * @return AsyncInvoker<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse>
+     */
+    public AsyncInvoker<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> parseSqlLimitRulesAsyncInvoker(
+        ParseSqlLimitRulesRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.parseSqlLimitRules, hcClient);
     }
 
     /**

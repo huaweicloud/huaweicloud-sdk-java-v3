@@ -78,6 +78,9 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     public void setAk(String ak) {
+        if (StringUtils.isEmpty(ak)) {
+            throw new IllegalArgumentException("input ak cannot be null or empty.");
+        }
         this.ak = ak;
     }
 
@@ -86,6 +89,9 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     public void setSk(String sk) {
+        if (StringUtils.isEmpty(sk)) {
+            throw new IllegalArgumentException("input sk cannot be null or empty.");
+        }
         this.sk = sk;
     }
 
@@ -132,24 +138,20 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     /**
      * @param ak access key
      * @return DerivedT with ak set
+     * @throws IllegalArgumentException the exception is thrown when the ak is null or an empty string.
      */
     public T withAk(String ak) {
-        if (StringUtils.isEmpty(ak)) {
-            throw new IllegalArgumentException("input ak cannot be null or empty.");
-        }
-        this.ak = ak;
+        setAk(ak);
         return toDerivedT();
     }
 
     /**
      * @param sk access secret key
      * @return DerivedT with sk set
+     * @throws IllegalArgumentException the exception is thrown when the sk is null or an empty string.
      */
     public T withSk(String sk) {
-        if (StringUtils.isEmpty(sk)) {
-            throw new IllegalArgumentException("input sk cannot be null or empty.");
-        }
-        this.sk = sk;
+        setSk(sk);
         return toDerivedT();
     }
 

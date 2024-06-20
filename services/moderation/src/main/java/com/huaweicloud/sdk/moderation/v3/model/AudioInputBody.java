@@ -15,6 +15,11 @@ public class AudioInputBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
     public AudioInputBody withUrl(String url) {
         this.url = url;
         return this;
@@ -32,6 +37,23 @@ public class AudioInputBody {
         this.url = url;
     }
 
+    public AudioInputBody withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 支持的语言，默认为zh，zh：中文
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class AudioInputBody {
             return false;
         }
         AudioInputBody that = (AudioInputBody) obj;
-        return Objects.equals(this.url, that.url);
+        return Objects.equals(this.url, that.url) && Objects.equals(this.language, that.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url);
+        return Objects.hash(url, language);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class AudioInputBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class AudioInputBody {\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

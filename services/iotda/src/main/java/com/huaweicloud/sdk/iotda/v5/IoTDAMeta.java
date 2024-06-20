@@ -34,6 +34,9 @@ import com.huaweicloud.sdk.iotda.v5.model.AsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BatchTargets;
+import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicy;
+import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BindTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageResponse;
@@ -54,6 +57,12 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCertificateDTO;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizer;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicy;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
@@ -65,6 +74,9 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplate;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingBacklogPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingFlowControlPolicyRequest;
@@ -85,8 +97,12 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
@@ -97,6 +113,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingBacklogPolicyRequest;
@@ -123,12 +141,16 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
@@ -141,6 +163,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListProvisioningTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRoutingBacklogPolicyRequest;
@@ -179,10 +203,14 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
@@ -197,6 +225,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingBacklogPolicyRequest;
@@ -209,10 +239,16 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequestBody;
+import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.TagDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.TagDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UnBindDevicePolicy;
+import com.huaweicloud.sdk.iotda.v5.model.UnbindDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UnbindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UnbindTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceResponse;
@@ -228,9 +264,15 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDesireds;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizer;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicy;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxy;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceProxyResponse;
@@ -244,6 +286,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplate;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProvisioningTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingBacklogPolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingFlowControlPolicyRequest;
@@ -1560,6 +1605,180 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceCommandRequest.class),
             f -> f.withMarshaller(CreateCommandRequest::getBody, CreateCommandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse> createDeviceAuthorizer =
+        genForCreateDeviceAuthorizer();
+
+    private static HttpRequestDef<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse> genForCreateDeviceAuthorizer() {
+        // basic
+        HttpRequestDef.Builder<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDeviceAuthorizerRequest.class, CreateDeviceAuthorizerResponse.class)
+            .withName("CreateDeviceAuthorizer")
+            .withUri("/v5/iot/{project_id}/device-authorizers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeviceAuthorizerRequest::getInstanceId,
+                CreateDeviceAuthorizerRequest::setInstanceId));
+        builder.<CreateDeviceAuthorizer>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDeviceAuthorizer.class),
+            f -> f.withMarshaller(CreateDeviceAuthorizerRequest::getBody, CreateDeviceAuthorizerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceAuthorizerRequest, DeleteDeviceAuthorizerResponse> deleteDeviceAuthorizer =
+        genForDeleteDeviceAuthorizer();
+
+    private static HttpRequestDef<DeleteDeviceAuthorizerRequest, DeleteDeviceAuthorizerResponse> genForDeleteDeviceAuthorizer() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceAuthorizerRequest, DeleteDeviceAuthorizerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDeviceAuthorizerRequest.class, DeleteDeviceAuthorizerResponse.class)
+            .withName("DeleteDeviceAuthorizer")
+            .withUri("/v5/iot/{project_id}/device-authorizers/{authorizer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceAuthorizerRequest::getAuthorizerId,
+                DeleteDeviceAuthorizerRequest::setAuthorizerId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceAuthorizerRequest::getInstanceId,
+                DeleteDeviceAuthorizerRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceAuthorizerResponse::getBody, DeleteDeviceAuthorizerResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceAuthorizersRequest, ListDeviceAuthorizersResponse> listDeviceAuthorizers =
+        genForListDeviceAuthorizers();
+
+    private static HttpRequestDef<ListDeviceAuthorizersRequest, ListDeviceAuthorizersResponse> genForListDeviceAuthorizers() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceAuthorizersRequest, ListDeviceAuthorizersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDeviceAuthorizersRequest.class, ListDeviceAuthorizersResponse.class)
+            .withName("ListDeviceAuthorizers")
+            .withUri("/v5/iot/{project_id}/device-authorizers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("authorizer_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthorizersRequest::getAuthorizerName,
+                ListDeviceAuthorizersRequest::setAuthorizerName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceAuthorizersRequest::getLimit, ListDeviceAuthorizersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthorizersRequest::getMarker, ListDeviceAuthorizersRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceAuthorizersRequest::getOffset, ListDeviceAuthorizersRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthorizersRequest::getInstanceId,
+                ListDeviceAuthorizersRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeviceAuthorizerRequest, ShowDeviceAuthorizerResponse> showDeviceAuthorizer =
+        genForShowDeviceAuthorizer();
+
+    private static HttpRequestDef<ShowDeviceAuthorizerRequest, ShowDeviceAuthorizerResponse> genForShowDeviceAuthorizer() {
+        // basic
+        HttpRequestDef.Builder<ShowDeviceAuthorizerRequest, ShowDeviceAuthorizerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDeviceAuthorizerRequest.class, ShowDeviceAuthorizerResponse.class)
+            .withName("ShowDeviceAuthorizer")
+            .withUri("/v5/iot/{project_id}/device-authorizers/{authorizer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceAuthorizerRequest::getAuthorizerId,
+                ShowDeviceAuthorizerRequest::setAuthorizerId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceAuthorizerRequest::getInstanceId,
+                ShowDeviceAuthorizerRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse> updateDeviceAuthorizer =
+        genForUpdateDeviceAuthorizer();
+
+    private static HttpRequestDef<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse> genForUpdateDeviceAuthorizer() {
+        // basic
+        HttpRequestDef.Builder<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDeviceAuthorizerRequest.class, UpdateDeviceAuthorizerResponse.class)
+            .withName("UpdateDeviceAuthorizer")
+            .withUri("/v5/iot/{project_id}/device-authorizers/{authorizer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("authorizer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceAuthorizerRequest::getAuthorizerId,
+                UpdateDeviceAuthorizerRequest::setAuthorizerId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceAuthorizerRequest::getInstanceId,
+                UpdateDeviceAuthorizerRequest::setInstanceId));
+        builder.<UpdateDeviceAuthorizer>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDeviceAuthorizer.class),
+            f -> f.withMarshaller(UpdateDeviceAuthorizerRequest::getBody, UpdateDeviceAuthorizerRequest::setBody));
 
         // response
 
@@ -2917,6 +3136,281 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BindDevicePolicyRequest, BindDevicePolicyResponse> bindDevicePolicy =
+        genForBindDevicePolicy();
+
+    private static HttpRequestDef<BindDevicePolicyRequest, BindDevicePolicyResponse> genForBindDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<BindDevicePolicyRequest, BindDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindDevicePolicyRequest.class, BindDevicePolicyResponse.class)
+                .withName("BindDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindDevicePolicyRequest::getPolicyId, BindDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindDevicePolicyRequest::getInstanceId, BindDevicePolicyRequest::setInstanceId));
+        builder.<BindDevicePolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindDevicePolicy.class),
+            f -> f.withMarshaller(BindDevicePolicyRequest::getBody, BindDevicePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDevicePolicyRequest, CreateDevicePolicyResponse> createDevicePolicy =
+        genForCreateDevicePolicy();
+
+    private static HttpRequestDef<CreateDevicePolicyRequest, CreateDevicePolicyResponse> genForCreateDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateDevicePolicyRequest, CreateDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDevicePolicyRequest.class, CreateDevicePolicyResponse.class)
+                .withName("CreateDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDevicePolicyRequest::getInstanceId, CreateDevicePolicyRequest::setInstanceId));
+        builder.<CreateDevicePolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDevicePolicy.class),
+            f -> f.withMarshaller(CreateDevicePolicyRequest::getBody, CreateDevicePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDevicePolicyRequest, DeleteDevicePolicyResponse> deleteDevicePolicy =
+        genForDeleteDevicePolicy();
+
+    private static HttpRequestDef<DeleteDevicePolicyRequest, DeleteDevicePolicyResponse> genForDeleteDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteDevicePolicyRequest, DeleteDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDevicePolicyRequest.class, DeleteDevicePolicyResponse.class)
+                .withName("DeleteDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDevicePolicyRequest::getPolicyId, DeleteDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDevicePolicyRequest::getInstanceId, DeleteDevicePolicyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDevicePolicyResponse::getBody, DeleteDevicePolicyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevicePoliciesRequest, ListDevicePoliciesResponse> listDevicePolicies =
+        genForListDevicePolicies();
+
+    private static HttpRequestDef<ListDevicePoliciesRequest, ListDevicePoliciesResponse> genForListDevicePolicies() {
+        // basic
+        HttpRequestDef.Builder<ListDevicePoliciesRequest, ListDevicePoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDevicePoliciesRequest.class, ListDevicePoliciesResponse.class)
+                .withName("ListDevicePolicies")
+                .withUri("/v5/iot/{project_id}/device-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getAppId, ListDevicePoliciesRequest::setAppId));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getPolicyName, ListDevicePoliciesRequest::setPolicyName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getLimit, ListDevicePoliciesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getMarker, ListDevicePoliciesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getOffset, ListDevicePoliciesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevicePoliciesRequest::getInstanceId, ListDevicePoliciesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDevicePolicyRequest, ShowDevicePolicyResponse> showDevicePolicy =
+        genForShowDevicePolicy();
+
+    private static HttpRequestDef<ShowDevicePolicyRequest, ShowDevicePolicyResponse> genForShowDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDevicePolicyRequest, ShowDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDevicePolicyRequest.class, ShowDevicePolicyResponse.class)
+                .withName("ShowDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDevicePolicyRequest::getPolicyId, ShowDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDevicePolicyRequest::getInstanceId, ShowDevicePolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTargetsInDevicePolicyRequest, ShowTargetsInDevicePolicyResponse> showTargetsInDevicePolicy =
+        genForShowTargetsInDevicePolicy();
+
+    private static HttpRequestDef<ShowTargetsInDevicePolicyRequest, ShowTargetsInDevicePolicyResponse> genForShowTargetsInDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowTargetsInDevicePolicyRequest, ShowTargetsInDevicePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowTargetsInDevicePolicyRequest.class,
+                    ShowTargetsInDevicePolicyResponse.class)
+                .withName("ShowTargetsInDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}/list-targets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTargetsInDevicePolicyRequest::getPolicyId,
+                ShowTargetsInDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTargetsInDevicePolicyRequest::getInstanceId,
+                ShowTargetsInDevicePolicyRequest::setInstanceId));
+        builder.<ShowTargetsInDevicePolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowTargetsInDevicePolicyRequestBody.class),
+            f -> f.withMarshaller(ShowTargetsInDevicePolicyRequest::getBody,
+                ShowTargetsInDevicePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindDevicePolicyRequest, UnbindDevicePolicyResponse> unbindDevicePolicy =
+        genForUnbindDevicePolicy();
+
+    private static HttpRequestDef<UnbindDevicePolicyRequest, UnbindDevicePolicyResponse> genForUnbindDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<UnbindDevicePolicyRequest, UnbindDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnbindDevicePolicyRequest.class, UnbindDevicePolicyResponse.class)
+                .withName("UnbindDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}/unbind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindDevicePolicyRequest::getPolicyId, UnbindDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindDevicePolicyRequest::getInstanceId, UnbindDevicePolicyRequest::setInstanceId));
+        builder.<UnBindDevicePolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnBindDevicePolicy.class),
+            f -> f.withMarshaller(UnbindDevicePolicyRequest::getBody, UnbindDevicePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDevicePolicyRequest, UpdateDevicePolicyResponse> updateDevicePolicy =
+        genForUpdateDevicePolicy();
+
+    private static HttpRequestDef<UpdateDevicePolicyRequest, UpdateDevicePolicyResponse> genForUpdateDevicePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDevicePolicyRequest, UpdateDevicePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDevicePolicyRequest.class, UpdateDevicePolicyResponse.class)
+                .withName("UpdateDevicePolicy")
+                .withUri("/v5/iot/{project_id}/device-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDevicePolicyRequest::getPolicyId, UpdateDevicePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDevicePolicyRequest::getInstanceId, UpdateDevicePolicyRequest::setInstanceId));
+        builder.<UpdateDevicePolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDevicePolicy.class),
+            f -> f.withMarshaller(UpdateDevicePolicyRequest::getBody, UpdateDevicePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
         genForCreateProduct();
 
@@ -3155,6 +3649,199 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DevicePropertiesRequest.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getBody, UpdatePropertiesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResponse> createProvisioningTemplate =
+        genForCreateProvisioningTemplate();
+
+    private static HttpRequestDef<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResponse> genForCreateProvisioningTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateProvisioningTemplateRequest.class,
+                    CreateProvisioningTemplateResponse.class)
+                .withName("CreateProvisioningTemplate")
+                .withUri("/v5/iot/{project_id}/provisioning-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProvisioningTemplateRequest::getInstanceId,
+                CreateProvisioningTemplateRequest::setInstanceId));
+        builder.<CreateProvisioningTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateProvisioningTemplate.class),
+            f -> f.withMarshaller(CreateProvisioningTemplateRequest::getBody,
+                CreateProvisioningTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResponse> deleteProvisioningTemplate =
+        genForDeleteProvisioningTemplate();
+
+    private static HttpRequestDef<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResponse> genForDeleteProvisioningTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteProvisioningTemplateRequest.class,
+                    DeleteProvisioningTemplateResponse.class)
+                .withName("DeleteProvisioningTemplate")
+                .withUri("/v5/iot/{project_id}/provisioning-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProvisioningTemplateRequest::getTemplateId,
+                DeleteProvisioningTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProvisioningTemplateRequest::getInstanceId,
+                DeleteProvisioningTemplateRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteProvisioningTemplateResponse::getBody,
+                DeleteProvisioningTemplateResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse> listProvisioningTemplates =
+        genForListProvisioningTemplates();
+
+    private static HttpRequestDef<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse> genForListProvisioningTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProvisioningTemplatesRequest.class,
+                    ListProvisioningTemplatesResponse.class)
+                .withName("ListProvisioningTemplates")
+                .withUri("/v5/iot/{project_id}/provisioning-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvisioningTemplatesRequest::getTemplateName,
+                ListProvisioningTemplatesRequest::setTemplateName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvisioningTemplatesRequest::getLimit,
+                ListProvisioningTemplatesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvisioningTemplatesRequest::getMarker,
+                ListProvisioningTemplatesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProvisioningTemplatesRequest::getOffset,
+                ListProvisioningTemplatesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvisioningTemplatesRequest::getInstanceId,
+                ListProvisioningTemplatesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProvisioningTemplateRequest, ShowProvisioningTemplateResponse> showProvisioningTemplate =
+        genForShowProvisioningTemplate();
+
+    private static HttpRequestDef<ShowProvisioningTemplateRequest, ShowProvisioningTemplateResponse> genForShowProvisioningTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowProvisioningTemplateRequest, ShowProvisioningTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowProvisioningTemplateRequest.class, ShowProvisioningTemplateResponse.class)
+                .withName("ShowProvisioningTemplate")
+                .withUri("/v5/iot/{project_id}/provisioning-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProvisioningTemplateRequest::getTemplateId,
+                ShowProvisioningTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProvisioningTemplateRequest::getInstanceId,
+                ShowProvisioningTemplateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResponse> updateProvisioningTemplate =
+        genForUpdateProvisioningTemplate();
+
+    private static HttpRequestDef<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResponse> genForUpdateProvisioningTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateProvisioningTemplateRequest.class,
+                    UpdateProvisioningTemplateResponse.class)
+                .withName("UpdateProvisioningTemplate")
+                .withUri("/v5/iot/{project_id}/provisioning-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProvisioningTemplateRequest::getTemplateId,
+                UpdateProvisioningTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProvisioningTemplateRequest::getInstanceId,
+                UpdateProvisioningTemplateRequest::setInstanceId));
+        builder.<UpdateProvisioningTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProvisioningTemplate.class),
+            f -> f.withMarshaller(UpdateProvisioningTemplateRequest::getBody,
+                UpdateProvisioningTemplateRequest::setBody));
 
         // response
 

@@ -53,7 +53,7 @@ public class ListBasePluginsRequest {
     }
 
     /**
-     * 属性
+     * 插件属性,可选official、published
      * @return attribution
      */
     public String getAttribution() {

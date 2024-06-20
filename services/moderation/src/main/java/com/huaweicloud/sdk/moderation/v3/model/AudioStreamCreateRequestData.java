@@ -15,6 +15,11 @@ public class AudioStreamCreateRequestData {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
     public AudioStreamCreateRequestData withUrl(String url) {
         this.url = url;
         return this;
@@ -32,6 +37,23 @@ public class AudioStreamCreateRequestData {
         this.url = url;
     }
 
+    public AudioStreamCreateRequestData withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 指定音频流中语种类型 zh: 中文,默认值为zh
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class AudioStreamCreateRequestData {
             return false;
         }
         AudioStreamCreateRequestData that = (AudioStreamCreateRequestData) obj;
-        return Objects.equals(this.url, that.url);
+        return Objects.equals(this.url, that.url) && Objects.equals(this.language, that.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url);
+        return Objects.hash(url, language);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class AudioStreamCreateRequestData {
         StringBuilder sb = new StringBuilder();
         sb.append("class AudioStreamCreateRequestData {\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

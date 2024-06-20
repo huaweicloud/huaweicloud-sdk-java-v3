@@ -61,6 +61,9 @@ import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesReq;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.QuerySqlPlanBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequestBody;
@@ -1104,6 +1107,39 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSqlLimitRulesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListSqlLimitRulesRequest::getXLanguage, ListSqlLimitRulesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> parseSqlLimitRules =
+        genForParseSqlLimitRules();
+
+    private static HttpRequestDef<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> genForParseSqlLimitRules() {
+        // basic
+        HttpRequestDef.Builder<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ParseSqlLimitRulesRequest.class, ParseSqlLimitRulesResponse.class)
+                .withName("ParseSqlLimitRules")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limit/parse")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ParseSqlLimitRulesRequest::getInstanceId, ParseSqlLimitRulesRequest::setInstanceId));
+        builder.<ParseSqlLimitRulesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ParseSqlLimitRulesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ParseSqlLimitRulesRequest::getXLanguage, ParseSqlLimitRulesRequest::setXLanguage));
+        builder.<ParseSqlLimitRulesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ParseSqlLimitRulesReq.class),
+            f -> f.withMarshaller(ParseSqlLimitRulesRequest::getBody, ParseSqlLimitRulesRequest::setBody));
 
         // response
 

@@ -41,7 +41,7 @@ public class BusinessTypePluginsQueryDTO {
     }
 
     /**
-     * 用于区分插件为流水线可使用/模板可使用
+     * 用于区分插件为流水线可使用/模板可使用, 可选pipeline/template
      * @return useCondition
      */
     public String getUseCondition() {

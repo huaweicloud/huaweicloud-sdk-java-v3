@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -46,7 +47,7 @@ public class InvoiceRequestInfoIntl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceAmount")
 
-    private Double invoiceAmount;
+    private BigDecimal invoiceAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoiceMethod")
@@ -225,7 +226,7 @@ public class InvoiceRequestInfoIntl {
         this.invoiceTitle = invoiceTitle;
     }
 
-    public InvoiceRequestInfoIntl withInvoiceAmount(Double invoiceAmount) {
+    public InvoiceRequestInfoIntl withInvoiceAmount(BigDecimal invoiceAmount) {
         this.invoiceAmount = invoiceAmount;
         return this;
     }
@@ -234,11 +235,11 @@ public class InvoiceRequestInfoIntl {
      * 已开票金额（美元） 。
      * @return invoiceAmount
      */
-    public Double getInvoiceAmount() {
+    public BigDecimal getInvoiceAmount() {
         return invoiceAmount;
     }
 
-    public void setInvoiceAmount(Double invoiceAmount) {
+    public void setInvoiceAmount(BigDecimal invoiceAmount) {
         this.invoiceAmount = invoiceAmount;
     }
 

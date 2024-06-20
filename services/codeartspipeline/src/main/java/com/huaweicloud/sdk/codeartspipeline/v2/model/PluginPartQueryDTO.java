@@ -92,7 +92,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 插件属性
+     * 插件属性,custom/official
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -109,7 +109,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 版本属性
+     * 版本属性,draft/formal
      * @return versionAttribution
      */
     public String getVersionAttribution() {

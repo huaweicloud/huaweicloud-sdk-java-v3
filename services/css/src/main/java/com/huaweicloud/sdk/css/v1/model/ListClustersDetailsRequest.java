@@ -20,6 +20,11 @@ public class ListClustersDetailsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datastoreType")
+
+    private String datastoreType;
+
     public ListClustersDetailsRequest withStart(Integer start) {
         this.start = start;
         return this;
@@ -54,6 +59,23 @@ public class ListClustersDetailsRequest {
         this.limit = limit;
     }
 
+    public ListClustersDetailsRequest withDatastoreType(String datastoreType) {
+        this.datastoreType = datastoreType;
+        return this;
+    }
+
+    /**
+     * 指定查询的集群引擎类型。
+     * @return datastoreType
+     */
+    public String getDatastoreType() {
+        return datastoreType;
+    }
+
+    public void setDatastoreType(String datastoreType) {
+        this.datastoreType = datastoreType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ListClustersDetailsRequest {
             return false;
         }
         ListClustersDetailsRequest that = (ListClustersDetailsRequest) obj;
-        return Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.datastoreType, that.datastoreType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(start, limit);
+        return Objects.hash(start, limit, datastoreType);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ListClustersDetailsRequest {
         sb.append("class ListClustersDetailsRequest {\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

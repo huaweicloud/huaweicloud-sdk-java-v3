@@ -21,7 +21,7 @@ public class KafkaMessageDiagnosisReportInfoEntity {
     private String reportId;
 
     /**
-     * 消息积压诊断任务状态。 - diagnosing：诊断中; - failed：诊断失败; - deleted：手动删除; - finished：诊断完成; - normal：诊断结果正常; - abnormal：诊断结果异常
+     * 消息积压诊断任务状态。 - diagnosing：诊断中 - failed：诊断失败 - deleted：手动删除 - finished：诊断完成 - normal：诊断结果正常 - abnormal：诊断结果异常
      */
     public static final class StatusEnum {
 
@@ -167,7 +167,7 @@ public class KafkaMessageDiagnosisReportInfoEntity {
     }
 
     /**
-     * 消息积压诊断任务状态。 - diagnosing：诊断中; - failed：诊断失败; - deleted：手动删除; - finished：诊断完成; - normal：诊断结果正常; - abnormal：诊断结果异常
+     * 消息积压诊断任务状态。 - diagnosing：诊断中 - failed：诊断失败 - deleted：手动删除 - finished：诊断完成 - normal：诊断结果正常 - abnormal：诊断结果异常
      * @return status
      */
     public StatusEnum getStatus() {

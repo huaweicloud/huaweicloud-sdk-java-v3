@@ -29,6 +29,16 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
 
     private Integer totalCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcServiceName")
+
+    private String vpcServiceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permissions")
+
+    private List<PermissionInfo> permissions = null;
+
     public ShowVpcepConnectionResponse withConnections(List<Connections> connections) {
         this.connections = connections;
         return this;
@@ -96,6 +106,56 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    public ShowVpcepConnectionResponse withVpcServiceName(String vpcServiceName) {
+        this.vpcServiceName = vpcServiceName;
+        return this;
+    }
+
+    /**
+     * 终端节点服务名称。
+     * @return vpcServiceName
+     */
+    public String getVpcServiceName() {
+        return vpcServiceName;
+    }
+
+    public void setVpcServiceName(String vpcServiceName) {
+        this.vpcServiceName = vpcServiceName;
+    }
+
+    public ShowVpcepConnectionResponse withPermissions(List<PermissionInfo> permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public ShowVpcepConnectionResponse addPermissionsItem(PermissionInfo permissionsItem) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        this.permissions.add(permissionsItem);
+        return this;
+    }
+
+    public ShowVpcepConnectionResponse withPermissions(Consumer<List<PermissionInfo>> permissionsSetter) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        permissionsSetter.accept(this.permissions);
+        return this;
+    }
+
+    /**
+     * Get permissions
+     * @return permissions
+     */
+    public List<PermissionInfo> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<PermissionInfo> permissions) {
+        this.permissions = permissions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,12 +167,14 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
         ShowVpcepConnectionResponse that = (ShowVpcepConnectionResponse) obj;
         return Objects.equals(this.connections, that.connections)
             && Objects.equals(this.vpcepUpdateSwitch, that.vpcepUpdateSwitch)
-            && Objects.equals(this.totalCount, that.totalCount);
+            && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.vpcServiceName, that.vpcServiceName)
+            && Objects.equals(this.permissions, that.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(connections, vpcepUpdateSwitch, totalCount);
+        return Objects.hash(connections, vpcepUpdateSwitch, totalCount, vpcServiceName, permissions);
     }
 
     @Override
@@ -122,6 +184,8 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
         sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
         sb.append("    vpcepUpdateSwitch: ").append(toIndentedString(vpcepUpdateSwitch)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    vpcServiceName: ").append(toIndentedString(vpcServiceName)).append("\n");
+        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class BalanceTypePay {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deduct_amount")
 
-    private Double deductAmount;
+    private BigDecimal deductAmount;
 
     public BalanceTypePay withBalanceTypeId(String balanceTypeId) {
         this.balanceTypeId = balanceTypeId;
@@ -37,7 +38,7 @@ public class BalanceTypePay {
         this.balanceTypeId = balanceTypeId;
     }
 
-    public BalanceTypePay withDeductAmount(Double deductAmount) {
+    public BalanceTypePay withDeductAmount(BigDecimal deductAmount) {
         this.deductAmount = deductAmount;
         return this;
     }
@@ -46,11 +47,11 @@ public class BalanceTypePay {
      * 支出金额。 单位：分
      * @return deductAmount
      */
-    public Double getDeductAmount() {
+    public BigDecimal getDeductAmount() {
         return deductAmount;
     }
 
-    public void setDeductAmount(Double deductAmount) {
+    public void setDeductAmount(BigDecimal deductAmount) {
         this.deductAmount = deductAmount;
     }
 

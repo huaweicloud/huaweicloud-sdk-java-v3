@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -46,17 +47,17 @@ public class BillSumRecordInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private Double consumeAmount;
+    private BigDecimal consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt")
 
-    private Double debt;
+    private BigDecimal debt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount")
 
-    private Double discount;
+    private BigDecimal discount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -185,7 +186,7 @@ public class BillSumRecordInfo {
         this.payMethod = payMethod;
     }
 
-    public BillSumRecordInfo withConsumeAmount(Double consumeAmount) {
+    public BillSumRecordInfo withConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -194,15 +195,15 @@ public class BillSumRecordInfo {
      * 消费的金额，即从客户账户实际扣除的金额。包含代金券支付的金额。
      * @return consumeAmount
      */
-    public Double getConsumeAmount() {
+    public BigDecimal getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(Double consumeAmount) {
+    public void setConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public BillSumRecordInfo withDebt(Double debt) {
+    public BillSumRecordInfo withDebt(BigDecimal debt) {
         this.debt = debt;
         return this;
     }
@@ -211,15 +212,15 @@ public class BillSumRecordInfo {
      * 欠费金额，即从客户账户扣费的时候，客户账户金额不足，欠费的金额。
      * @return debt
      */
-    public Double getDebt() {
+    public BigDecimal getDebt() {
         return debt;
     }
 
-    public void setDebt(Double debt) {
+    public void setDebt(BigDecimal debt) {
         this.debt = debt;
     }
 
-    public BillSumRecordInfo withDiscount(Double discount) {
+    public BillSumRecordInfo withDiscount(BigDecimal discount) {
         this.discount = discount;
         return this;
     }
@@ -228,11 +229,11 @@ public class BillSumRecordInfo {
      * 折扣金额。
      * @return discount
      */
-    public Double getDiscount() {
+    public BigDecimal getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Double discount) {
+    public void setDiscount(BigDecimal discount) {
         this.discount = discount;
     }
 

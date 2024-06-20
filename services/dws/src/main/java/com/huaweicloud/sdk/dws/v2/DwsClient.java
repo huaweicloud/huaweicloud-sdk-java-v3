@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.dws.v2.model.BatchDeleteResourceTagRequest;
 import com.huaweicloud.sdk.dws.v2.model.BatchDeleteResourceTagResponse;
 import com.huaweicloud.sdk.dws.v2.model.CancelReadonlyClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CancelReadonlyClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.ChangeSecurityGroupRequest;
+import com.huaweicloud.sdk.dws.v2.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
@@ -247,6 +249,8 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
@@ -659,6 +663,35 @@ public class DwsClient {
     public SyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> cancelReadonlyClusterInvoker(
         CancelReadonlyClusterRequest request) {
         return new SyncInvoker<>(request, DwsMeta.cancelReadonlyCluster, hcClient);
+    }
+
+    /**
+     * 修改集群安全组
+     *
+     * 该接口用于修改集群安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeSecurityGroupRequest 请求对象
+     * @return ChangeSecurityGroupResponse
+     */
+    public ChangeSecurityGroupResponse changeSecurityGroup(ChangeSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.changeSecurityGroup);
+    }
+
+    /**
+     * 修改集群安全组
+     *
+     * 该接口用于修改集群安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeSecurityGroupRequest 请求对象
+     * @return SyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>
+     */
+    public SyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupInvoker(
+        ChangeSecurityGroupRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.changeSecurityGroup, hcClient);
     }
 
     /**
@@ -3904,6 +3937,35 @@ public class DwsClient {
     public SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfoInvoker(
         SaveClusterDescriptionInfoRequest request) {
         return new SyncInvoker<>(request, DwsMeta.saveClusterDescriptionInfo, hcClient);
+    }
+
+    /**
+     * 查询集群规格详情
+     *
+     * 查询集群使用的规格详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterFlavorRequest 请求对象
+     * @return ShowClusterFlavorResponse
+     */
+    public ShowClusterFlavorResponse showClusterFlavor(ShowClusterFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showClusterFlavor);
+    }
+
+    /**
+     * 查询集群规格详情
+     *
+     * 查询集群使用的规格详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterFlavorRequest 请求对象
+     * @return SyncInvoker<ShowClusterFlavorRequest, ShowClusterFlavorResponse>
+     */
+    public SyncInvoker<ShowClusterFlavorRequest, ShowClusterFlavorResponse> showClusterFlavorInvoker(
+        ShowClusterFlavorRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.showClusterFlavor, hcClient);
     }
 
     /**

@@ -27,23 +27,53 @@ import org.junit.Test;
 
 public class TestCredentials {
     @Test(expected = IllegalArgumentException.class)
-    public void testNullAk() {
+    public void testWithNullAk() {
         new BasicCredentials().withAk(null).withSk("sk");
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testNullSk() {
+    public void testWithNullSk() {
         new GlobalCredentials().withAk("ak").withSk(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testNullAkSk() {
+    public void testWithNullAkSk() {
         new GlobalCredentials().withAk(null).withSk(null);
     }
 
     @Test
-    public void testValidAkSk() {
+    public void testWithValidAkSk() {
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk");
+        Assert.assertEquals("ak", credentials.getAk());
+        Assert.assertEquals("sk", credentials.getSk());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetNullAk() {
+        BasicCredentials credentials = new BasicCredentials();
+        credentials.setAk(null);
+        credentials.setSk("sk");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetNullSk() {
+        BasicCredentials credentials = new BasicCredentials();
+        credentials.setAk("ak");
+        credentials.setSk(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetNullAkSk() {
+        BasicCredentials credentials = new BasicCredentials();
+        credentials.setAk(null);
+        credentials.setSk(null);
+    }
+
+    @Test
+    public void testSetValidAkSk() {
+        BasicCredentials credentials = new BasicCredentials();
+        credentials.setAk("ak");
+        credentials.setSk("sk");
         Assert.assertEquals("ak", credentials.getAk());
         Assert.assertEquals("sk", credentials.getSk());
     }

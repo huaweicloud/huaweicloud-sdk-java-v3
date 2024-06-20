@@ -43,7 +43,7 @@ public class BatchDeleteMessageDiagnosisRespResults {
     }
 
     /**
-     * 报告id
+     * 报告ID
      * @return id
      */
     public String getId() {

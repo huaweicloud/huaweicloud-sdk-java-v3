@@ -206,7 +206,7 @@ public class ListAlarmHistoriesRequest {
     /**
      * 分页偏移量
      * minimum: 0
-     * maximum: 999
+     * maximum: 999999
      * @return offset
      */
     public Integer getOffset() {

@@ -22,7 +22,7 @@ public class CreateMessageDiagnosisTaskResponse extends SdkResponse {
     }
 
     /**
-     * 诊断报告id。
+     * 诊断报告ID。
      * @return reportId
      */
     public String getReportId() {

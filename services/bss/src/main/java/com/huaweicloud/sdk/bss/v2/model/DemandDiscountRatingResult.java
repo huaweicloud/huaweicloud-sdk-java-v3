@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -23,7 +24,7 @@ public class DemandDiscountRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -69,7 +70,7 @@ public class DemandDiscountRatingResult {
         this.discountType = discountType;
     }
 
-    public DemandDiscountRatingResult withAmount(Double amount) {
+    public DemandDiscountRatingResult withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -78,11 +79,11 @@ public class DemandDiscountRatingResult {
      * 折扣的金额。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

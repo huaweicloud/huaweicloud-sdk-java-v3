@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -23,7 +24,7 @@ public class PeriodProductOfficialRatingResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_website_amount")
 
-    private Double officialWebsiteAmount;
+    private BigDecimal officialWebsiteAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -64,7 +65,7 @@ public class PeriodProductOfficialRatingResult {
         this.productId = productId;
     }
 
-    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -73,11 +74,11 @@ public class PeriodProductOfficialRatingResult {
      * 包年/包月产品的官网价。
      * @return officialWebsiteAmount
      */
-    public Double getOfficialWebsiteAmount() {
+    public BigDecimal getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 

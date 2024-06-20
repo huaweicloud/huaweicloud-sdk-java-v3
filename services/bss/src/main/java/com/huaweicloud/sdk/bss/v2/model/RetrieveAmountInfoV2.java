@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -13,7 +14,7 @@ public class RetrieveAmountInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avail_retrieve_amount")
 
-    private Double availRetrieveAmount;
+    private BigDecimal availRetrieveAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_id")
@@ -28,19 +29,19 @@ public class RetrieveAmountInfoV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private Double amount;
+    private BigDecimal amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
     private String expireTime;
 
-    public RetrieveAmountInfoV2 withAvailRetrieveAmount(Double availRetrieveAmount) {
+    public RetrieveAmountInfoV2 withAvailRetrieveAmount(BigDecimal availRetrieveAmount) {
         this.availRetrieveAmount = availRetrieveAmount;
         return this;
     }
@@ -49,11 +50,11 @@ public class RetrieveAmountInfoV2 {
      * 可回收的金额。
      * @return availRetrieveAmount
      */
-    public Double getAvailRetrieveAmount() {
+    public BigDecimal getAvailRetrieveAmount() {
         return availRetrieveAmount;
     }
 
-    public void setAvailRetrieveAmount(Double availRetrieveAmount) {
+    public void setAvailRetrieveAmount(BigDecimal availRetrieveAmount) {
         this.availRetrieveAmount = availRetrieveAmount;
     }
 
@@ -91,7 +92,7 @@ public class RetrieveAmountInfoV2 {
         this.currency = currency;
     }
 
-    public RetrieveAmountInfoV2 withAmount(Double amount) {
+    public RetrieveAmountInfoV2 withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
     }
@@ -100,15 +101,15 @@ public class RetrieveAmountInfoV2 {
      * 账户余额（仅balance_type=信用账户时这个字段才有值）。
      * @return amount
      */
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
-    public RetrieveAmountInfoV2 withCreditAmount(Double creditAmount) {
+    public RetrieveAmountInfoV2 withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -117,11 +118,11 @@ public class RetrieveAmountInfoV2 {
      * 信用额度（仅balance_type=信用账户时这个字段才有值）。
      * @return creditAmount
      */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 

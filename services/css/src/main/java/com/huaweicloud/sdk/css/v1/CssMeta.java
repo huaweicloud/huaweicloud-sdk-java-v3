@@ -819,6 +819,12 @@ public class CssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClustersDetailsRequest::getLimit, ListClustersDetailsRequest::setLimit));
+        builder.<String>withRequestField("datastoreType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClustersDetailsRequest::getDatastoreType,
+                ListClustersDetailsRequest::setDatastoreType));
 
         // response
 

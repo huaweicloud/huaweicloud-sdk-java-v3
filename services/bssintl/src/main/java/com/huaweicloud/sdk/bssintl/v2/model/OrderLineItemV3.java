@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,12 +27,12 @@ public class OrderLineItemV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_amount")
 
-    private Double discountAmount;
+    private BigDecimal discountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discount_ratio")
 
-    private Double discountRatio;
+    private BigDecimal discountRatio;
 
     public OrderLineItemV3 withOrderLineItemIds(List<String> orderLineItemIds) {
         this.orderLineItemIds = orderLineItemIds;
@@ -83,7 +84,7 @@ public class OrderLineItemV3 {
         this.discountMode = discountMode;
     }
 
-    public OrderLineItemV3 withDiscountAmount(Double discountAmount) {
+    public OrderLineItemV3 withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -92,15 +93,15 @@ public class OrderLineItemV3 {
      * 订单可用的折扣金额（即减免金额）。
      * @return discountAmount
      */
-    public Double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public OrderLineItemV3 withDiscountRatio(Double discountRatio) {
+    public OrderLineItemV3 withDiscountRatio(BigDecimal discountRatio) {
         this.discountRatio = discountRatio;
         return this;
     }
@@ -109,11 +110,11 @@ public class OrderLineItemV3 {
      * 订单可用的折扣比例。
      * @return discountRatio
      */
-    public Double getDiscountRatio() {
+    public BigDecimal getDiscountRatio() {
         return discountRatio;
     }
 
-    public void setDiscountRatio(Double discountRatio) {
+    public void setDiscountRatio(BigDecimal discountRatio) {
         this.discountRatio = discountRatio;
     }
 

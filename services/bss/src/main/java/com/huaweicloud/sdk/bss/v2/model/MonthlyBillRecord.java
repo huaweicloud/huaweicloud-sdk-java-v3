@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -93,62 +94,62 @@ public class MonthlyBillRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    private Double officialAmount;
+    private BigDecimal officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_discount_amount")
 
-    private Double officialDiscountAmount;
+    private BigDecimal officialDiscountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "erase_amount")
 
-    private Double eraseAmount;
+    private BigDecimal eraseAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consume_amount")
 
-    private Double consumeAmount;
+    private BigDecimal consumeAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
 
-    private Double cashAmount;
+    private BigDecimal cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    private Double couponAmount;
+    private BigDecimal couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
 
-    private Double flexipurchaseCouponAmount;
+    private BigDecimal flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_value_card_amount")
 
-    private Double storedValueCardAmount;
+    private BigDecimal storedValueCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bonus_amount")
 
-    private Double bonusAmount;
+    private BigDecimal bonusAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "writeoff_amount")
 
-    private Double writeoffAmount;
+    private BigDecimal writeoffAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_name")
@@ -427,7 +428,7 @@ public class MonthlyBillRecord {
         this.status = status;
     }
 
-    public MonthlyBillRecord withOfficialAmount(Double officialAmount) {
+    public MonthlyBillRecord withOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -436,15 +437,15 @@ public class MonthlyBillRecord {
      * 官网价。单位：元。  说明： official_amount = official_discount_amount + erase_amount + consume_amount
      * @return officialAmount
      */
-    public Double getOfficialAmount() {
+    public BigDecimal getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(Double officialAmount) {
+    public void setOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public MonthlyBillRecord withOfficialDiscountAmount(Double officialDiscountAmount) {
+    public MonthlyBillRecord withOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
@@ -453,15 +454,15 @@ public class MonthlyBillRecord {
      * 折扣金额。单位：元。
      * @return officialDiscountAmount
      */
-    public Double getOfficialDiscountAmount() {
+    public BigDecimal getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
 
-    public void setOfficialDiscountAmount(Double officialDiscountAmount) {
+    public void setOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    public MonthlyBillRecord withEraseAmount(Double eraseAmount) {
+    public MonthlyBillRecord withEraseAmount(BigDecimal eraseAmount) {
         this.eraseAmount = eraseAmount;
         return this;
     }
@@ -470,15 +471,15 @@ public class MonthlyBillRecord {
      * 抹零金额。单位：元。
      * @return eraseAmount
      */
-    public Double getEraseAmount() {
+    public BigDecimal getEraseAmount() {
         return eraseAmount;
     }
 
-    public void setEraseAmount(Double eraseAmount) {
+    public void setEraseAmount(BigDecimal eraseAmount) {
         this.eraseAmount = eraseAmount;
     }
 
-    public MonthlyBillRecord withConsumeAmount(Double consumeAmount) {
+    public MonthlyBillRecord withConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -487,15 +488,15 @@ public class MonthlyBillRecord {
      * 应付金额，包括现金券和储值卡和代金券金额。单位：元。  说明： consume_amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_value_card_amount，bonus_amount，debt_amount，writeoff_amount的总和。
      * @return consumeAmount
      */
-    public Double getConsumeAmount() {
+    public BigDecimal getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(Double consumeAmount) {
+    public void setConsumeAmount(BigDecimal consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public MonthlyBillRecord withCashAmount(Double cashAmount) {
+    public MonthlyBillRecord withCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -504,15 +505,15 @@ public class MonthlyBillRecord {
      * 现金支付金额。单位：元.
      * @return cashAmount
      */
-    public Double getCashAmount() {
+    public BigDecimal getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(Double cashAmount) {
+    public void setCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public MonthlyBillRecord withCreditAmount(Double creditAmount) {
+    public MonthlyBillRecord withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -521,15 +522,15 @@ public class MonthlyBillRecord {
      * 信用额度支付金额。单位：元。
      * @return creditAmount
      */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public MonthlyBillRecord withCouponAmount(Double couponAmount) {
+    public MonthlyBillRecord withCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -538,15 +539,15 @@ public class MonthlyBillRecord {
      * 代金券支付金额。单位：元。
      * @return couponAmount
      */
-    public Double getCouponAmount() {
+    public BigDecimal getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(Double couponAmount) {
+    public void setCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public MonthlyBillRecord withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public MonthlyBillRecord withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -555,15 +556,15 @@ public class MonthlyBillRecord {
      * 现金券支付金额。单位：元。
      * @return flexipurchaseCouponAmount
      */
-    public Double getFlexipurchaseCouponAmount() {
+    public BigDecimal getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public MonthlyBillRecord withStoredValueCardAmount(Double storedValueCardAmount) {
+    public MonthlyBillRecord withStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
@@ -572,15 +573,15 @@ public class MonthlyBillRecord {
      * 储值卡支付金额。单位：元。
      * @return storedValueCardAmount
      */
-    public Double getStoredValueCardAmount() {
+    public BigDecimal getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
 
-    public void setStoredValueCardAmount(Double storedValueCardAmount) {
+    public void setStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    public MonthlyBillRecord withBonusAmount(Double bonusAmount) {
+    public MonthlyBillRecord withBonusAmount(BigDecimal bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
@@ -589,15 +590,15 @@ public class MonthlyBillRecord {
      * 奖励金支付金额（奖励金已经下线，目前用于现网客户未使用完的奖励金）。单位：元。
      * @return bonusAmount
      */
-    public Double getBonusAmount() {
+    public BigDecimal getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(Double bonusAmount) {
+    public void setBonusAmount(BigDecimal bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public MonthlyBillRecord withDebtAmount(Double debtAmount) {
+    public MonthlyBillRecord withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -606,15 +607,15 @@ public class MonthlyBillRecord {
      * 欠费金额。单位：元。  说明： 对于月结客户，欠费金额即页面上的月度结算金额。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public MonthlyBillRecord withWriteoffAmount(Double writeoffAmount) {
+    public MonthlyBillRecord withWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
@@ -623,11 +624,11 @@ public class MonthlyBillRecord {
      * 欠费核销金额。单位：元。
      * @return writeoffAmount
      */
-    public Double getWriteoffAmount() {
+    public BigDecimal getWriteoffAmount() {
         return writeoffAmount;
     }
 
-    public void setWriteoffAmount(Double writeoffAmount) {
+    public void setWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
 

@@ -16,7 +16,7 @@ public class ListReleasePackagesRespData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_timestamp")
 
-    private String applyTimestamp;
+    private Long applyTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_user_id")
@@ -78,7 +78,7 @@ public class ListReleasePackagesRespData {
 
     private String workspaceId;
 
-    public ListReleasePackagesRespData withApplyTimestamp(String applyTimestamp) {
+    public ListReleasePackagesRespData withApplyTimestamp(Long applyTimestamp) {
         this.applyTimestamp = applyTimestamp;
         return this;
     }
@@ -87,11 +87,11 @@ public class ListReleasePackagesRespData {
      * 申请时间，13位时间戳
      * @return applyTimestamp
      */
-    public String getApplyTimestamp() {
+    public Long getApplyTimestamp() {
         return applyTimestamp;
     }
 
-    public void setApplyTimestamp(String applyTimestamp) {
+    public void setApplyTimestamp(Long applyTimestamp) {
         this.applyTimestamp = applyTimestamp;
     }
 

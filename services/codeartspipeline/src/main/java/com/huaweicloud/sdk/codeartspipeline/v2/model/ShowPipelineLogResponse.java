@@ -64,7 +64,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 查询日志结束偏移
+     * 查询日志结束偏移。填入请求体end_offset字段，用于查询下一页日志。
      * @return endOffset
      */
     public String getEndOffset() {
@@ -81,7 +81,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 查询日志起始偏移
+     * 查询日志起始偏移。填入请求体start_offset字段，用于查询下一页日志。
      * @return startOffset
      */
     public String getStartOffset() {

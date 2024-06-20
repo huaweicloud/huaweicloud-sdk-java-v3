@@ -86,21 +86,6 @@ public class SmartConnectTaskRespSinkConfig {
     private String timezone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connector_class")
-
-    private String connectorClass;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "storage_class")
-
-    private String storageClass;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "format_class")
-
-    private String formatClass;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema_generator_class")
 
     private String schemaGeneratorClass;
@@ -380,57 +365,6 @@ public class SmartConnectTaskRespSinkConfig {
         this.timezone = timezone;
     }
 
-    public SmartConnectTaskRespSinkConfig withConnectorClass(String connectorClass) {
-        this.connectorClass = connectorClass;
-        return this;
-    }
-
-    /**
-     * connector类，默认为\"com.huawei.dms.connector.obs.OBSSinkConnector\"。（仅目标端类型为OBS时会显示）
-     * @return connectorClass
-     */
-    public String getConnectorClass() {
-        return connectorClass;
-    }
-
-    public void setConnectorClass(String connectorClass) {
-        this.connectorClass = connectorClass;
-    }
-
-    public SmartConnectTaskRespSinkConfig withStorageClass(String storageClass) {
-        this.storageClass = storageClass;
-        return this;
-    }
-
-    /**
-     * storage类，默认为com.huawei.dms.connector.obs.storage.OBSStorage\"。（仅目标端类型为OBS时会显示）
-     * @return storageClass
-     */
-    public String getStorageClass() {
-        return storageClass;
-    }
-
-    public void setStorageClass(String storageClass) {
-        this.storageClass = storageClass;
-    }
-
-    public SmartConnectTaskRespSinkConfig withFormatClass(String formatClass) {
-        this.formatClass = formatClass;
-        return this;
-    }
-
-    /**
-     * format类，默认为\"com.huawei.dms.connector.obs.format.bytearray.ByteArrayFormat\"。（仅目标端类型为OBS时会显示）
-     * @return formatClass
-     */
-    public String getFormatClass() {
-        return formatClass;
-    }
-
-    public void setFormatClass(String formatClass) {
-        this.formatClass = formatClass;
-    }
-
     public SmartConnectTaskRespSinkConfig withSchemaGeneratorClass(String schemaGeneratorClass) {
         this.schemaGeneratorClass = schemaGeneratorClass;
         return this;
@@ -535,9 +469,6 @@ public class SmartConnectTaskRespSinkConfig {
             && Objects.equals(this.recordDelimiter, that.recordDelimiter)
             && Objects.equals(this.storeKeys, that.storeKeys) && Objects.equals(this.obsPartSize, that.obsPartSize)
             && Objects.equals(this.flushSize, that.flushSize) && Objects.equals(this.timezone, that.timezone)
-            && Objects.equals(this.connectorClass, that.connectorClass)
-            && Objects.equals(this.storageClass, that.storageClass)
-            && Objects.equals(this.formatClass, that.formatClass)
             && Objects.equals(this.schemaGeneratorClass, that.schemaGeneratorClass)
             && Objects.equals(this.partitionerClass, that.partitionerClass)
             && Objects.equals(this.valueConverter, that.valueConverter)
@@ -562,9 +493,6 @@ public class SmartConnectTaskRespSinkConfig {
             obsPartSize,
             flushSize,
             timezone,
-            connectorClass,
-            storageClass,
-            formatClass,
             schemaGeneratorClass,
             partitionerClass,
             valueConverter,
@@ -591,9 +519,6 @@ public class SmartConnectTaskRespSinkConfig {
         sb.append("    obsPartSize: ").append(toIndentedString(obsPartSize)).append("\n");
         sb.append("    flushSize: ").append(toIndentedString(flushSize)).append("\n");
         sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-        sb.append("    connectorClass: ").append(toIndentedString(connectorClass)).append("\n");
-        sb.append("    storageClass: ").append(toIndentedString(storageClass)).append("\n");
-        sb.append("    formatClass: ").append(toIndentedString(formatClass)).append("\n");
         sb.append("    schemaGeneratorClass: ").append(toIndentedString(schemaGeneratorClass)).append("\n");
         sb.append("    partitionerClass: ").append(toIndentedString(partitionerClass)).append("\n");
         sb.append("    valueConverter: ").append(toIndentedString(valueConverter)).append("\n");

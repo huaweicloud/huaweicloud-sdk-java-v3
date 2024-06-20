@@ -61,6 +61,8 @@ public class VpnRegion {
 
     public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://vpn.af-south-1.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://vpn.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("VPN");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -88,6 +90,7 @@ public class VpnRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("cn-east-5", CN_EAST_5);
         map.put("af-south-1", AF_SOUTH_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 
