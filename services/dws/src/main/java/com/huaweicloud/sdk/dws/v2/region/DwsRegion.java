@@ -61,6 +61,8 @@ public class DwsRegion {
 
     public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dws.af-north-1.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dws.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DWS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -88,6 +90,7 @@ public class DwsRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("cn-east-5", CN_EAST_5);
         map.put("af-north-1", AF_NORTH_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

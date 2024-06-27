@@ -32,12 +32,6 @@ public class PutKvRequestBody {
 
     private Document kvDoc;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kv_blob")
-    @BsonProperty(value = "kv_blob")
-
-    private KvBlob kvBlob;
-
     public PutKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -98,32 +92,6 @@ public class PutKvRequestBody {
         this.kvDoc = kvDoc;
     }
 
-    public PutKvRequestBody withKvBlob(KvBlob kvBlob) {
-        this.kvBlob = kvBlob;
-        return this;
-    }
-
-    public PutKvRequestBody withKvBlob(Consumer<KvBlob> kvBlobSetter) {
-        if (this.kvBlob == null) {
-            this.kvBlob = new KvBlob();
-            kvBlobSetter.accept(this.kvBlob);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get kvBlob
-     * @return kvBlob
-     */
-    public KvBlob getKvBlob() {
-        return kvBlob;
-    }
-
-    public void setKvBlob(KvBlob kvBlob) {
-        this.kvBlob = kvBlob;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +103,12 @@ public class PutKvRequestBody {
         PutKvRequestBody that = (PutKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
-            && Objects.equals(this.kvDoc, that.kvDoc) && Objects.equals(this.kvBlob, that.kvBlob);
+            && Objects.equals(this.kvDoc, that.kvDoc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, conditionExpression, kvDoc, kvBlob);
+        return Objects.hash(tableName, conditionExpression, kvDoc);
     }
 
     @Override
@@ -150,7 +118,6 @@ public class PutKvRequestBody {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
         sb.append("    kvDoc: ").append(toIndentedString(kvDoc)).append("\n");
-        sb.append("    kvBlob: ").append(toIndentedString(kvBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

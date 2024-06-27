@@ -22,7 +22,7 @@ public class ActionReq {
     private String jobId;
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
      */
     public static final class ActionNameEnum {
 
@@ -106,6 +106,11 @@ public class ActionReq {
          */
         public static final ActionNameEnum CLOUD_CONNECTION = new ActionNameEnum("cloud_connection");
 
+        /**
+         * Enum SET_READONLY for value: "set_readonly"
+         */
+        public static final ActionNameEnum SET_READONLY = new ActionNameEnum("set_readonly");
+
         private static final Map<String, ActionNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionNameEnum> createStaticFields() {
@@ -126,6 +131,7 @@ public class ActionReq {
             map.put("unbind_eip", UNBIND_EIP);
             map.put("set_writable", SET_WRITABLE);
             map.put("cloud_connection", CLOUD_CONNECTION);
+            map.put("set_readonly", SET_READONLY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -208,7 +214,7 @@ public class ActionReq {
     }
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
      * @return actionName
      */
     public ActionNameEnum getActionName() {

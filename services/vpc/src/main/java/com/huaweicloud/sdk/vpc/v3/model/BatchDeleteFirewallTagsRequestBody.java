@@ -16,14 +16,14 @@ public class BatchDeleteFirewallTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ResourceTag> tags = null;
+    private List<DeleteResourceTagRequestBody> tags = null;
 
-    public BatchDeleteFirewallTagsRequestBody withTags(List<ResourceTag> tags) {
+    public BatchDeleteFirewallTagsRequestBody withTags(List<DeleteResourceTagRequestBody> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchDeleteFirewallTagsRequestBody addTagsItem(ResourceTag tagsItem) {
+    public BatchDeleteFirewallTagsRequestBody addTagsItem(DeleteResourceTagRequestBody tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class BatchDeleteFirewallTagsRequestBody {
         return this;
     }
 
-    public BatchDeleteFirewallTagsRequestBody withTags(Consumer<List<ResourceTag>> tagsSetter) {
+    public BatchDeleteFirewallTagsRequestBody withTags(Consumer<List<DeleteResourceTagRequestBody>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class BatchDeleteFirewallTagsRequestBody {
      * 标签列表
      * @return tags
      */
-    public List<ResourceTag> getTags() {
+    public List<DeleteResourceTagRequestBody> getTags() {
         return tags;
     }
 
-    public void setTags(List<ResourceTag> tags) {
+    public void setTags(List<DeleteResourceTagRequestBody> tags) {
         this.tags = tags;
     }
 

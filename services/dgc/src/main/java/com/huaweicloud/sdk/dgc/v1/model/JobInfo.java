@@ -653,7 +653,7 @@ public class JobInfo {
     }
 
     /**
-     * 在开启审批开关后，需要填写该字段，表示作业审批人。
+     * 在开启审批开关后，需要填写该字段，表示作业（或脚本）审批人。
      * @return approvers
      */
     public List<JobApprover> getApprovers() {

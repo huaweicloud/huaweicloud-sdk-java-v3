@@ -190,11 +190,6 @@ public class ListEndpointsRequest {
 
     private SortDirEnum sortDir;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_border_group")
-
-    private String publicBorderGroup;
-
     public ListEndpointsRequest withEndpointServiceName(String endpointServiceName) {
         this.endpointServiceName = endpointServiceName;
         return this;
@@ -317,23 +312,6 @@ public class ListEndpointsRequest {
         this.sortDir = sortDir;
     }
 
-    public ListEndpointsRequest withPublicBorderGroup(String publicBorderGroup) {
-        this.publicBorderGroup = publicBorderGroup;
-        return this;
-    }
-
-    /**
-     * 筛选结果中匹配边缘属性的EPS
-     * @return publicBorderGroup
-     */
-    public String getPublicBorderGroup() {
-        return publicBorderGroup;
-    }
-
-    public void setPublicBorderGroup(String publicBorderGroup) {
-        this.publicBorderGroup = publicBorderGroup;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -346,13 +324,12 @@ public class ListEndpointsRequest {
         return Objects.equals(this.endpointServiceName, that.endpointServiceName)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointServiceName, vpcId, id, limit, offset, sortKey, sortDir, publicBorderGroup);
+        return Objects.hash(endpointServiceName, vpcId, id, limit, offset, sortKey, sortDir);
     }
 
     @Override
@@ -366,7 +343,6 @@ public class ListEndpointsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

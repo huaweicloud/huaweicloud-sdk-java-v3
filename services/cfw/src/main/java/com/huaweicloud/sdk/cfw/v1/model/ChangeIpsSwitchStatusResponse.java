@@ -13,31 +13,9 @@ import java.util.function.Consumer;
 public class ChangeIpsSwitchStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "trace_id")
-
-    private String traceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
     private CommonResponseDTOData data;
-
-    public ChangeIpsSwitchStatusResponse withTraceId(String traceId) {
-        this.traceId = traceId;
-        return this;
-    }
-
-    /**
-     * trace_id
-     * @return traceId
-     */
-    public String getTraceId() {
-        return traceId;
-    }
-
-    public void setTraceId(String traceId) {
-        this.traceId = traceId;
-    }
 
     public ChangeIpsSwitchStatusResponse withData(CommonResponseDTOData data) {
         this.data = data;
@@ -74,19 +52,18 @@ public class ChangeIpsSwitchStatusResponse extends SdkResponse {
             return false;
         }
         ChangeIpsSwitchStatusResponse that = (ChangeIpsSwitchStatusResponse) obj;
-        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.data, that.data);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(traceId, data);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeIpsSwitchStatusResponse {\n");
-        sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();

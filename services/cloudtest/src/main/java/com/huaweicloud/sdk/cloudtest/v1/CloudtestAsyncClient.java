@@ -1,19 +1,35 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreatePlanRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreatePlanResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateProjectBranchRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateProjectBranchResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateRelationsByOneCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateReportRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateReportResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
@@ -22,10 +38,20 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateUserDefinedUrlKeyWordRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateUserDefinedUrlKeyWordResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAlarmStatisticsUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAlarmStatisticsUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlertGroupsByConditionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlertGroupsByConditionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlertTemplatesRequest;
@@ -36,16 +62,36 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListAllConfigItemByTypeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAllConfigItemByTypeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAllIteratorsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAllIteratorsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAllTestCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAllTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAttachmentsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAttachmentsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAvailableConfigRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListAvailableConfigResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListBasicAwInfoListSupportsSearchRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListBasicAwInfoListSupportsSearchResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListBasicAwRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListBasicAwResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListBranchesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListBranchesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListCasesStatusRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListCasesStatusResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListDomainVisibleServicesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListDomainVisibleServicesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIssueTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIssueTreeResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorIssueTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorIssueTreeResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListLinesUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListLinesUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListMsgInfosUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListMsgInfosUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListOwnTestCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListOwnTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListProjectFieldConfigsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListProjectFieldConfigsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListProjectTestCaseFieldsRequest;
@@ -56,10 +102,24 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListReportsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListReportsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListResourcePoolsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListResourcePoolsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTasksRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTasksResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseCommentsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseCommentsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseScriptDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseScriptDetailResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesByIssueRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesByIssueResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionRequest;
@@ -76,8 +136,12 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListUserPackageUsageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUserPackageUsageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUserPopupInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUserPopupInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListUsingGetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListUsingGetResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListVariablesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListVariablesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.RemoveIssuesFromIteratorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.RemoveIssuesFromIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingRequest;
@@ -88,12 +152,26 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllFeatureChildrenRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllFeatureChildrenResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowApiTestcaseHistoriesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowApiTestcaseHistoriesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowAssetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFeatureChildrenRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFeatureChildrenResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFreeDeclarationRequest;
@@ -106,10 +184,16 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorByDefectRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorByDefectResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListRequest;
@@ -126,8 +210,16 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRequirementsOverviewRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRequirementsOverviewResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowReviewByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowReviewByPageResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowSceneByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowSceneByPageResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailRequest;
@@ -136,16 +228,34 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseAndScriptRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseAndScriptResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseCommentRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -163,6 +273,35 @@ public class CloudtestAsyncClient {
     public static ClientBuilder<CloudtestAsyncClient> newBuilder() {
         ClientBuilder<CloudtestAsyncClient> clientBuilder = new ClientBuilder<>(CloudtestAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 新增用例评论
+     *
+     * 新增用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTestCaseCommentRequest 请求对象
+     * @return CompletableFuture<AddTestCaseCommentResponse>
+     */
+    public CompletableFuture<AddTestCaseCommentResponse> addTestCaseCommentAsync(AddTestCaseCommentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.addTestCaseComment);
+    }
+
+    /**
+     * 新增用例评论
+     *
+     * 新增用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTestCaseCommentRequest 请求对象
+     * @return AsyncInvoker<AddTestCaseCommentRequest, AddTestCaseCommentResponse>
+     */
+    public AsyncInvoker<AddTestCaseCommentRequest, AddTestCaseCommentResponse> addTestCaseCommentAsyncInvoker(
+        AddTestCaseCommentRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.addTestCaseComment, hcClient);
     }
 
     /**
@@ -196,6 +335,36 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 向迭代中添加资源
+     *
+     * 向迭代中添加资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddResourcesForIteratorRequest 请求对象
+     * @return CompletableFuture<BatchAddResourcesForIteratorResponse>
+     */
+    public CompletableFuture<BatchAddResourcesForIteratorResponse> batchAddResourcesForIteratorAsync(
+        BatchAddResourcesForIteratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchAddResourcesForIterator);
+    }
+
+    /**
+     * 向迭代中添加资源
+     *
+     * 向迭代中添加资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddResourcesForIteratorRequest 请求对象
+     * @return AsyncInvoker<BatchAddResourcesForIteratorRequest, BatchAddResourcesForIteratorResponse>
+     */
+    public AsyncInvoker<BatchAddResourcesForIteratorRequest, BatchAddResourcesForIteratorResponse> batchAddResourcesForIteratorAsyncInvoker(
+        BatchAddResourcesForIteratorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchAddResourcesForIterator, hcClient);
+    }
+
+    /**
      * 批量删除自定义测试服务类型用例
      *
      * 批量删除自定义测试服务类型用例
@@ -222,6 +391,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> batchDeleteTestCaseAsyncInvoker(
         BatchDeleteTestCaseRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.batchDeleteTestCase, hcClient);
+    }
+
+    /**
+     * 批量删除用例
+     *
+     * 批量删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTestCasesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteTestCasesResponse>
+     */
+    public CompletableFuture<BatchDeleteTestCasesResponse> batchDeleteTestCasesAsync(
+        BatchDeleteTestCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchDeleteTestCases);
+    }
+
+    /**
+     * 批量删除用例
+     *
+     * 批量删除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTestCasesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteTestCasesRequest, BatchDeleteTestCasesResponse>
+     */
+    public AsyncInvoker<BatchDeleteTestCasesRequest, BatchDeleteTestCasesResponse> batchDeleteTestCasesAsyncInvoker(
+        BatchDeleteTestCasesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchDeleteTestCases, hcClient);
     }
 
     /**
@@ -255,6 +454,66 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 从迭代中批量移除用例
+     *
+     * 从迭代中批量移除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveTestCasesFromIteratorRequest 请求对象
+     * @return CompletableFuture<BatchRemoveTestCasesFromIteratorResponse>
+     */
+    public CompletableFuture<BatchRemoveTestCasesFromIteratorResponse> batchRemoveTestCasesFromIteratorAsync(
+        BatchRemoveTestCasesFromIteratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchRemoveTestCasesFromIterator);
+    }
+
+    /**
+     * 从迭代中批量移除用例
+     *
+     * 从迭代中批量移除用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveTestCasesFromIteratorRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveTestCasesFromIteratorRequest, BatchRemoveTestCasesFromIteratorResponse>
+     */
+    public AsyncInvoker<BatchRemoveTestCasesFromIteratorRequest, BatchRemoveTestCasesFromIteratorResponse> batchRemoveTestCasesFromIteratorAsyncInvoker(
+        BatchRemoveTestCasesFromIteratorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchRemoveTestCasesFromIterator, hcClient);
+    }
+
+    /**
+     * 批量更新用例属性
+     *
+     * 批量更新用例属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateVersionTestCasesRequest 请求对象
+     * @return CompletableFuture<BatchUpdateVersionTestCasesResponse>
+     */
+    public CompletableFuture<BatchUpdateVersionTestCasesResponse> batchUpdateVersionTestCasesAsync(
+        BatchUpdateVersionTestCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchUpdateVersionTestCases);
+    }
+
+    /**
+     * 批量更新用例属性
+     *
+     * 批量更新用例属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateVersionTestCasesRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateVersionTestCasesRequest, BatchUpdateVersionTestCasesResponse>
+     */
+    public AsyncInvoker<BatchUpdateVersionTestCasesRequest, BatchUpdateVersionTestCasesResponse> batchUpdateVersionTestCasesAsyncInvoker(
+        BatchUpdateVersionTestCasesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchUpdateVersionTestCases, hcClient);
+    }
+
+    /**
      * 检查项目权限
      *
      * 检查项目权限
@@ -281,6 +540,35 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<CheckPermissionRequest, CheckPermissionResponse> checkPermissionAsyncInvoker(
         CheckPermissionRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.checkPermission, hcClient);
+    }
+
+    /**
+     * 新增迭代
+     *
+     * 新增迭代
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIteratorRequest 请求对象
+     * @return CompletableFuture<CreateIteratorResponse>
+     */
+    public CompletableFuture<CreateIteratorResponse> createIteratorAsync(CreateIteratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createIterator);
+    }
+
+    /**
+     * 新增迭代
+     *
+     * 新增迭代
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIteratorRequest 请求对象
+     * @return AsyncInvoker<CreateIteratorRequest, CreateIteratorResponse>
+     */
+    public AsyncInvoker<CreateIteratorRequest, CreateIteratorResponse> createIteratorAsyncInvoker(
+        CreateIteratorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createIterator, hcClient);
     }
 
     /**
@@ -312,6 +600,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 新增分支
+     *
+     * 新增分支
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProjectBranchRequest 请求对象
+     * @return CompletableFuture<CreateProjectBranchResponse>
+     */
+    public CompletableFuture<CreateProjectBranchResponse> createProjectBranchAsync(CreateProjectBranchRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createProjectBranch);
+    }
+
+    /**
+     * 新增分支
+     *
+     * 新增分支
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProjectBranchRequest 请求对象
+     * @return AsyncInvoker<CreateProjectBranchRequest, CreateProjectBranchResponse>
+     */
+    public AsyncInvoker<CreateProjectBranchRequest, CreateProjectBranchResponse> createProjectBranchAsyncInvoker(
+        CreateProjectBranchRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createProjectBranch, hcClient);
+    }
+
+    /**
      * 添加一个用例和多个需求/缺陷关联关系
      *
      * 添加一个用例和多个需求/缺陷关联关系
@@ -339,6 +656,35 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<CreateRelationsByOneCaseRequest, CreateRelationsByOneCaseResponse> createRelationsByOneCaseAsyncInvoker(
         CreateRelationsByOneCaseRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.createRelationsByOneCase, hcClient);
+    }
+
+    /**
+     * 保存单个自定义报表
+     *
+     * 保存单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReportRequest 请求对象
+     * @return CompletableFuture<CreateReportResponse>
+     */
+    public CompletableFuture<CreateReportResponse> createReportAsync(CreateReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createReport);
+    }
+
+    /**
+     * 保存单个自定义报表
+     *
+     * 保存单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReportRequest 请求对象
+     * @return AsyncInvoker<CreateReportRequest, CreateReportResponse>
+     */
+    public AsyncInvoker<CreateReportRequest, CreateReportResponse> createReportAsyncInvoker(
+        CreateReportRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createReport, hcClient);
     }
 
     /**
@@ -459,6 +805,95 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 新增用户自定义URL关键字
+     *
+     * 新增用户自定义URL关键字
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUserDefinedUrlKeyWordRequest 请求对象
+     * @return CompletableFuture<CreateUserDefinedUrlKeyWordResponse>
+     */
+    public CompletableFuture<CreateUserDefinedUrlKeyWordResponse> createUserDefinedUrlKeyWordAsync(
+        CreateUserDefinedUrlKeyWordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createUserDefinedUrlKeyWord);
+    }
+
+    /**
+     * 新增用户自定义URL关键字
+     *
+     * 新增用户自定义URL关键字
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUserDefinedUrlKeyWordRequest 请求对象
+     * @return AsyncInvoker<CreateUserDefinedUrlKeyWordRequest, CreateUserDefinedUrlKeyWordResponse>
+     */
+    public AsyncInvoker<CreateUserDefinedUrlKeyWordRequest, CreateUserDefinedUrlKeyWordResponse> createUserDefinedUrlKeyWordAsyncInvoker(
+        CreateUserDefinedUrlKeyWordRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createUserDefinedUrlKeyWord, hcClient);
+    }
+
+    /**
+     * 在分支或者测试计划下创建用例
+     *
+     * 在分支或者测试计划下创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVersionTestCaseRequest 请求对象
+     * @return CompletableFuture<CreateVersionTestCaseResponse>
+     */
+    public CompletableFuture<CreateVersionTestCaseResponse> createVersionTestCaseAsync(
+        CreateVersionTestCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createVersionTestCase);
+    }
+
+    /**
+     * 在分支或者测试计划下创建用例
+     *
+     * 在分支或者测试计划下创建用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVersionTestCaseRequest 请求对象
+     * @return AsyncInvoker<CreateVersionTestCaseRequest, CreateVersionTestCaseResponse>
+     */
+    public AsyncInvoker<CreateVersionTestCaseRequest, CreateVersionTestCaseResponse> createVersionTestCaseAsyncInvoker(
+        CreateVersionTestCaseRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createVersionTestCase, hcClient);
+    }
+
+    /**
+     * 融合版本删除单个basicAw
+     *
+     * 融合版本删除单个basicAw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBasicAwByIdRequest 请求对象
+     * @return CompletableFuture<DeleteBasicAwByIdResponse>
+     */
+    public CompletableFuture<DeleteBasicAwByIdResponse> deleteBasicAwByIdAsync(DeleteBasicAwByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteBasicAwById);
+    }
+
+    /**
+     * 融合版本删除单个basicAw
+     *
+     * 融合版本删除单个basicAw
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBasicAwByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteBasicAwByIdRequest, DeleteBasicAwByIdResponse>
+     */
+    public AsyncInvoker<DeleteBasicAwByIdRequest, DeleteBasicAwByIdResponse> deleteBasicAwByIdAsyncInvoker(
+        DeleteBasicAwByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteBasicAwById, hcClient);
+    }
+
+    /**
      * 删除一个用例和多个需求/缺陷关联关系
      *
      * 删除一个用例和多个需求/缺陷关联关系
@@ -518,6 +953,125 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 删除用例评论
+     *
+     * 删除用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTestCaseCommentRequest 请求对象
+     * @return CompletableFuture<DeleteTestCaseCommentResponse>
+     */
+    public CompletableFuture<DeleteTestCaseCommentResponse> deleteTestCaseCommentAsync(
+        DeleteTestCaseCommentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteTestCaseComment);
+    }
+
+    /**
+     * 删除用例评论
+     *
+     * 删除用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTestCaseCommentRequest 请求对象
+     * @return AsyncInvoker<DeleteTestCaseCommentRequest, DeleteTestCaseCommentResponse>
+     */
+    public AsyncInvoker<DeleteTestCaseCommentRequest, DeleteTestCaseCommentResponse> deleteTestCaseCommentAsyncInvoker(
+        DeleteTestCaseCommentRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteTestCaseComment, hcClient);
+    }
+
+    /**
+     * 查询告警统计数据
+     *
+     * 查询告警统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmStatisticsUsingRequest 请求对象
+     * @return CompletableFuture<ListAlarmStatisticsUsingResponse>
+     */
+    public CompletableFuture<ListAlarmStatisticsUsingResponse> listAlarmStatisticsUsingAsync(
+        ListAlarmStatisticsUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAlarmStatisticsUsing);
+    }
+
+    /**
+     * 查询告警统计数据
+     *
+     * 查询告警统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmStatisticsUsingRequest 请求对象
+     * @return AsyncInvoker<ListAlarmStatisticsUsingRequest, ListAlarmStatisticsUsingResponse>
+     */
+    public AsyncInvoker<ListAlarmStatisticsUsingRequest, ListAlarmStatisticsUsingResponse> listAlarmStatisticsUsingAsyncInvoker(
+        ListAlarmStatisticsUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAlarmStatisticsUsing, hcClient);
+    }
+
+    /**
+     * 查询告警组列表
+     *
+     * 查询告警组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertGroupsByConditionRequest 请求对象
+     * @return CompletableFuture<ListAlertGroupsByConditionResponse>
+     */
+    public CompletableFuture<ListAlertGroupsByConditionResponse> listAlertGroupsByConditionAsync(
+        ListAlertGroupsByConditionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAlertGroupsByCondition);
+    }
+
+    /**
+     * 查询告警组列表
+     *
+     * 查询告警组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertGroupsByConditionRequest 请求对象
+     * @return AsyncInvoker<ListAlertGroupsByConditionRequest, ListAlertGroupsByConditionResponse>
+     */
+    public AsyncInvoker<ListAlertGroupsByConditionRequest, ListAlertGroupsByConditionResponse> listAlertGroupsByConditionAsyncInvoker(
+        ListAlertGroupsByConditionRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAlertGroupsByCondition, hcClient);
+    }
+
+    /**
+     * 查询告警模板
+     *
+     * 查询告警模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertTemplatesRequest 请求对象
+     * @return CompletableFuture<ListAlertTemplatesResponse>
+     */
+    public CompletableFuture<ListAlertTemplatesResponse> listAlertTemplatesAsync(ListAlertTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAlertTemplates);
+    }
+
+    /**
+     * 查询告警模板
+     *
+     * 查询告警模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListAlertTemplatesRequest, ListAlertTemplatesResponse>
+     */
+    public AsyncInvoker<ListAlertTemplatesRequest, ListAlertTemplatesResponse> listAlertTemplatesAsyncInvoker(
+        ListAlertTemplatesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAlertTemplates, hcClient);
+    }
+
+    /**
      * 获取分支列表
      *
      * 获取分支列表
@@ -544,6 +1098,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListAllBranchesRequest, ListAllBranchesResponse> listAllBranchesAsyncInvoker(
         ListAllBranchesRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listAllBranches, hcClient);
+    }
+
+    /**
+     * 查询任务告警信息
+     *
+     * 查询任务告警信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllConfigItemByTypeRequest 请求对象
+     * @return CompletableFuture<ListAllConfigItemByTypeResponse>
+     */
+    public CompletableFuture<ListAllConfigItemByTypeResponse> listAllConfigItemByTypeAsync(
+        ListAllConfigItemByTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAllConfigItemByType);
+    }
+
+    /**
+     * 查询任务告警信息
+     *
+     * 查询任务告警信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllConfigItemByTypeRequest 请求对象
+     * @return AsyncInvoker<ListAllConfigItemByTypeRequest, ListAllConfigItemByTypeResponse>
+     */
+    public AsyncInvoker<ListAllConfigItemByTypeRequest, ListAllConfigItemByTypeResponse> listAllConfigItemByTypeAsyncInvoker(
+        ListAllConfigItemByTypeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAllConfigItemByType, hcClient);
     }
 
     /**
@@ -576,6 +1160,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询用例列表
+     *
+     * 查询用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllTestCasesRequest 请求对象
+     * @return CompletableFuture<ListAllTestCasesResponse>
+     */
+    public CompletableFuture<ListAllTestCasesResponse> listAllTestCasesAsync(ListAllTestCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAllTestCases);
+    }
+
+    /**
+     * 查询用例列表
+     *
+     * 查询用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllTestCasesRequest 请求对象
+     * @return AsyncInvoker<ListAllTestCasesRequest, ListAllTestCasesResponse>
+     */
+    public AsyncInvoker<ListAllTestCasesRequest, ListAllTestCasesResponse> listAllTestCasesAsyncInvoker(
+        ListAllTestCasesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAllTestCases, hcClient);
+    }
+
+    /**
      * 查询附件列表
      *
      * 查询附件列表
@@ -602,6 +1215,93 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsAsyncInvoker(
         ListAttachmentsRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listAttachments, hcClient);
+    }
+
+    /**
+     * 获取当前局点功能是否开启
+     *
+     * 获取当前局点功能是否开启
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableConfigRequest 请求对象
+     * @return CompletableFuture<ListAvailableConfigResponse>
+     */
+    public CompletableFuture<ListAvailableConfigResponse> listAvailableConfigAsync(ListAvailableConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAvailableConfig);
+    }
+
+    /**
+     * 获取当前局点功能是否开启
+     *
+     * 获取当前局点功能是否开启
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableConfigRequest 请求对象
+     * @return AsyncInvoker<ListAvailableConfigRequest, ListAvailableConfigResponse>
+     */
+    public AsyncInvoker<ListAvailableConfigRequest, ListAvailableConfigResponse> listAvailableConfigAsyncInvoker(
+        ListAvailableConfigRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listAvailableConfig, hcClient);
+    }
+
+    /**
+     * 根据id获取单个basicAW信息
+     *
+     * 根据id获取单个basicAW信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBasicAwRequest 请求对象
+     * @return CompletableFuture<ListBasicAwResponse>
+     */
+    public CompletableFuture<ListBasicAwResponse> listBasicAwAsync(ListBasicAwRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listBasicAw);
+    }
+
+    /**
+     * 根据id获取单个basicAW信息
+     *
+     * 根据id获取单个basicAW信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBasicAwRequest 请求对象
+     * @return AsyncInvoker<ListBasicAwRequest, ListBasicAwResponse>
+     */
+    public AsyncInvoker<ListBasicAwRequest, ListBasicAwResponse> listBasicAwAsyncInvoker(ListBasicAwRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listBasicAw, hcClient);
+    }
+
+    /**
+     * 分页获取工程BasicAW详细信息列表（含目录）
+     *
+     * 分页获取工程BasicAW列表（含目录）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBasicAwInfoListSupportsSearchRequest 请求对象
+     * @return CompletableFuture<ListBasicAwInfoListSupportsSearchResponse>
+     */
+    public CompletableFuture<ListBasicAwInfoListSupportsSearchResponse> listBasicAwInfoListSupportsSearchAsync(
+        ListBasicAwInfoListSupportsSearchRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listBasicAwInfoListSupportsSearch);
+    }
+
+    /**
+     * 分页获取工程BasicAW详细信息列表（含目录）
+     *
+     * 分页获取工程BasicAW列表（含目录）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBasicAwInfoListSupportsSearchRequest 请求对象
+     * @return AsyncInvoker<ListBasicAwInfoListSupportsSearchRequest, ListBasicAwInfoListSupportsSearchResponse>
+     */
+    public AsyncInvoker<ListBasicAwInfoListSupportsSearchRequest, ListBasicAwInfoListSupportsSearchResponse> listBasicAwInfoListSupportsSearchAsyncInvoker(
+        ListBasicAwInfoListSupportsSearchRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listBasicAwInfoListSupportsSearch, hcClient);
     }
 
     /**
@@ -634,6 +1334,65 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 批量获取用例状态
+     *
+     * 批量获取用例状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCasesStatusRequest 请求对象
+     * @return CompletableFuture<ListCasesStatusResponse>
+     */
+    public CompletableFuture<ListCasesStatusResponse> listCasesStatusAsync(ListCasesStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listCasesStatus);
+    }
+
+    /**
+     * 批量获取用例状态
+     *
+     * 批量获取用例状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCasesStatusRequest 请求对象
+     * @return AsyncInvoker<ListCasesStatusRequest, ListCasesStatusResponse>
+     */
+    public AsyncInvoker<ListCasesStatusRequest, ListCasesStatusResponse> listCasesStatusAsyncInvoker(
+        ListCasesStatusRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listCasesStatus, hcClient);
+    }
+
+    /**
+     * 查询当前租户可见的第三方服务列表
+     *
+     * 查询当前租户可见的第三方服务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainVisibleServicesRequest 请求对象
+     * @return CompletableFuture<ListDomainVisibleServicesResponse>
+     */
+    public CompletableFuture<ListDomainVisibleServicesResponse> listDomainVisibleServicesAsync(
+        ListDomainVisibleServicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listDomainVisibleServices);
+    }
+
+    /**
+     * 查询当前租户可见的第三方服务列表
+     *
+     * 查询当前租户可见的第三方服务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainVisibleServicesRequest 请求对象
+     * @return AsyncInvoker<ListDomainVisibleServicesRequest, ListDomainVisibleServicesResponse>
+     */
+    public AsyncInvoker<ListDomainVisibleServicesRequest, ListDomainVisibleServicesResponse> listDomainVisibleServicesAsyncInvoker(
+        ListDomainVisibleServicesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listDomainVisibleServices, hcClient);
+    }
+
+    /**
      * 查询需求树
      *
      * 查询需求树
@@ -660,6 +1419,152 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListIssueTreeRequest, ListIssueTreeResponse> listIssueTreeAsyncInvoker(
         ListIssueTreeRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listIssueTree, hcClient);
+    }
+
+    /**
+     * 查询迭代关联的需求列表或树
+     *
+     * 查询迭代关联的需求列表或树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIteratorIssueTreeRequest 请求对象
+     * @return CompletableFuture<ListIteratorIssueTreeResponse>
+     */
+    public CompletableFuture<ListIteratorIssueTreeResponse> listIteratorIssueTreeAsync(
+        ListIteratorIssueTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listIteratorIssueTree);
+    }
+
+    /**
+     * 查询迭代关联的需求列表或树
+     *
+     * 查询迭代关联的需求列表或树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIteratorIssueTreeRequest 请求对象
+     * @return AsyncInvoker<ListIteratorIssueTreeRequest, ListIteratorIssueTreeResponse>
+     */
+    public AsyncInvoker<ListIteratorIssueTreeRequest, ListIteratorIssueTreeResponse> listIteratorIssueTreeAsyncInvoker(
+        ListIteratorIssueTreeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listIteratorIssueTree, hcClient);
+    }
+
+    /**
+     * 查询迭代计划列表，包含统计信息
+     *
+     * 查询迭代计划列表，包含统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIteratorsRequest 请求对象
+     * @return CompletableFuture<ListIteratorsResponse>
+     */
+    public CompletableFuture<ListIteratorsResponse> listIteratorsAsync(ListIteratorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listIterators);
+    }
+
+    /**
+     * 查询迭代计划列表，包含统计信息
+     *
+     * 查询迭代计划列表，包含统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIteratorsRequest 请求对象
+     * @return AsyncInvoker<ListIteratorsRequest, ListIteratorsResponse>
+     */
+    public AsyncInvoker<ListIteratorsRequest, ListIteratorsResponse> listIteratorsAsyncInvoker(
+        ListIteratorsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listIterators, hcClient);
+    }
+
+    /**
+     * 查询仪表盘折线图数据
+     *
+     * 查询仪表盘折线图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLinesUsingRequest 请求对象
+     * @return CompletableFuture<ListLinesUsingResponse>
+     */
+    public CompletableFuture<ListLinesUsingResponse> listLinesUsingAsync(ListLinesUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listLinesUsing);
+    }
+
+    /**
+     * 查询仪表盘折线图数据
+     *
+     * 查询仪表盘折线图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLinesUsingRequest 请求对象
+     * @return AsyncInvoker<ListLinesUsingRequest, ListLinesUsingResponse>
+     */
+    public AsyncInvoker<ListLinesUsingRequest, ListLinesUsingResponse> listLinesUsingAsyncInvoker(
+        ListLinesUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listLinesUsing, hcClient);
+    }
+
+    /**
+     * 仪表盘根据测试服务ID获取MsgInfo详细信息
+     *
+     * 成功返回MsgInfo的详细信息列表，返回值为Model的List
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMsgInfosUsingRequest 请求对象
+     * @return CompletableFuture<ListMsgInfosUsingResponse>
+     */
+    public CompletableFuture<ListMsgInfosUsingResponse> listMsgInfosUsingAsync(ListMsgInfosUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listMsgInfosUsing);
+    }
+
+    /**
+     * 仪表盘根据测试服务ID获取MsgInfo详细信息
+     *
+     * 成功返回MsgInfo的详细信息列表，返回值为Model的List
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMsgInfosUsingRequest 请求对象
+     * @return AsyncInvoker<ListMsgInfosUsingRequest, ListMsgInfosUsingResponse>
+     */
+    public AsyncInvoker<ListMsgInfosUsingRequest, ListMsgInfosUsingResponse> listMsgInfosUsingAsyncInvoker(
+        ListMsgInfosUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listMsgInfosUsing, hcClient);
+    }
+
+    /**
+     * 获取责任人是自己的测试用例
+     *
+     * 获取责任人是自己的测试用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOwnTestCasesRequest 请求对象
+     * @return CompletableFuture<ListOwnTestCasesResponse>
+     */
+    public CompletableFuture<ListOwnTestCasesResponse> listOwnTestCasesAsync(ListOwnTestCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listOwnTestCases);
+    }
+
+    /**
+     * 获取责任人是自己的测试用例
+     *
+     * 获取责任人是自己的测试用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOwnTestCasesRequest 请求对象
+     * @return AsyncInvoker<ListOwnTestCasesRequest, ListOwnTestCasesResponse>
+     */
+    public AsyncInvoker<ListOwnTestCasesRequest, ListOwnTestCasesResponse> listOwnTestCasesAsyncInvoker(
+        ListOwnTestCasesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listOwnTestCases, hcClient);
     }
 
     /**
@@ -723,6 +1628,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
+     *
+     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicLibAndAwsRequest 请求对象
+     * @return CompletableFuture<ListPublicLibAndAwsResponse>
+     */
+    public CompletableFuture<ListPublicLibAndAwsResponse> listPublicLibAndAwsAsync(ListPublicLibAndAwsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listPublicLibAndAws);
+    }
+
+    /**
+     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
+     *
+     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicLibAndAwsRequest 请求对象
+     * @return AsyncInvoker<ListPublicLibAndAwsRequest, ListPublicLibAndAwsResponse>
+     */
+    public AsyncInvoker<ListPublicLibAndAwsRequest, ListPublicLibAndAwsResponse> listPublicLibAndAwsAsyncInvoker(
+        ListPublicLibAndAwsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listPublicLibAndAws, hcClient);
+    }
+
+    /**
      * 页面报表展示
      *
      * 页面报表展示
@@ -780,6 +1714,94 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询仪表盘散点图数据
+     *
+     * 查询仪表盘散点图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScattersUsingRequest 请求对象
+     * @return CompletableFuture<ListScattersUsingResponse>
+     */
+    public CompletableFuture<ListScattersUsingResponse> listScattersUsingAsync(ListScattersUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listScattersUsing);
+    }
+
+    /**
+     * 查询仪表盘散点图数据
+     *
+     * 查询仪表盘散点图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScattersUsingRequest 请求对象
+     * @return AsyncInvoker<ListScattersUsingRequest, ListScattersUsingResponse>
+     */
+    public AsyncInvoker<ListScattersUsingRequest, ListScattersUsingResponse> listScattersUsingAsyncInvoker(
+        ListScattersUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listScattersUsing, hcClient);
+    }
+
+    /**
+     * 查询subTestCase阻塞任务数据
+     *
+     * 成功返回子任务用例数据积压信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTaskCaseOverstockUsingRequest 请求对象
+     * @return CompletableFuture<ListSubTaskCaseOverstockUsingResponse>
+     */
+    public CompletableFuture<ListSubTaskCaseOverstockUsingResponse> listSubTaskCaseOverstockUsingAsync(
+        ListSubTaskCaseOverstockUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listSubTaskCaseOverstockUsing);
+    }
+
+    /**
+     * 查询subTestCase阻塞任务数据
+     *
+     * 成功返回子任务用例数据积压信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTaskCaseOverstockUsingRequest 请求对象
+     * @return AsyncInvoker<ListSubTaskCaseOverstockUsingRequest, ListSubTaskCaseOverstockUsingResponse>
+     */
+    public AsyncInvoker<ListSubTaskCaseOverstockUsingRequest, ListSubTaskCaseOverstockUsingResponse> listSubTaskCaseOverstockUsingAsyncInvoker(
+        ListSubTaskCaseOverstockUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listSubTaskCaseOverstockUsing, hcClient);
+    }
+
+    /**
+     * 获取测试套关联用例详情
+     *
+     * 获取测试套关联用例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskAssignCasesRequest 请求对象
+     * @return CompletableFuture<ListTaskAssignCasesResponse>
+     */
+    public CompletableFuture<ListTaskAssignCasesResponse> listTaskAssignCasesAsync(ListTaskAssignCasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTaskAssignCases);
+    }
+
+    /**
+     * 获取测试套关联用例详情
+     *
+     * 获取测试套关联用例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskAssignCasesRequest 请求对象
+     * @return AsyncInvoker<ListTaskAssignCasesRequest, ListTaskAssignCasesResponse>
+     */
+    public AsyncInvoker<ListTaskAssignCasesRequest, ListTaskAssignCasesResponse> listTaskAssignCasesAsyncInvoker(
+        ListTaskAssignCasesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTaskAssignCases, hcClient);
+    }
+
+    /**
      * 查询用例关联的测试任务列表
      *
      * 查询用例关联的测试任务列表
@@ -806,6 +1828,64 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListTaskTestCasesRequest, ListTaskTestCasesResponse> listTaskTestCasesAsyncInvoker(
         ListTaskTestCasesRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listTaskTestCases, hcClient);
+    }
+
+    /**
+     * 查询测试任务列表
+     *
+     * 查询测试任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return CompletableFuture<ListTasksResponse>
+     */
+    public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTasks);
+    }
+
+    /**
+     * 查询测试任务列表
+     *
+     * 查询测试任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTasks, hcClient);
+    }
+
+    /**
+     * 查询用例评论
+     *
+     * 查询用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCaseCommentsRequest 请求对象
+     * @return CompletableFuture<ListTestCaseCommentsResponse>
+     */
+    public CompletableFuture<ListTestCaseCommentsResponse> listTestCaseCommentsAsync(
+        ListTestCaseCommentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTestCaseComments);
+    }
+
+    /**
+     * 查询用例评论
+     *
+     * 查询用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCaseCommentsRequest 请求对象
+     * @return AsyncInvoker<ListTestCaseCommentsRequest, ListTestCaseCommentsResponse>
+     */
+    public AsyncInvoker<ListTestCaseCommentsRequest, ListTestCaseCommentsResponse> listTestCaseCommentsAsyncInvoker(
+        ListTestCaseCommentsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestCaseComments, hcClient);
     }
 
     /**
@@ -839,6 +1919,36 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 获取用例脚本详细信息
+     *
+     * 获取用例脚本详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCaseScriptDetailRequest 请求对象
+     * @return CompletableFuture<ListTestCaseScriptDetailResponse>
+     */
+    public CompletableFuture<ListTestCaseScriptDetailResponse> listTestCaseScriptDetailAsync(
+        ListTestCaseScriptDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTestCaseScriptDetail);
+    }
+
+    /**
+     * 获取用例脚本详细信息
+     *
+     * 获取用例脚本详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCaseScriptDetailRequest 请求对象
+     * @return AsyncInvoker<ListTestCaseScriptDetailRequest, ListTestCaseScriptDetailResponse>
+     */
+    public AsyncInvoker<ListTestCaseScriptDetailRequest, ListTestCaseScriptDetailResponse> listTestCaseScriptDetailAsyncInvoker(
+        ListTestCaseScriptDetailRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestCaseScriptDetail, hcClient);
+    }
+
+    /**
      * 查询用例列表
      *
      * 查询用例列表
@@ -865,6 +1975,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListTestCasesRequest, ListTestCasesResponse> listTestCasesAsyncInvoker(
         ListTestCasesRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listTestCases, hcClient);
+    }
+
+    /**
+     * 查询需求下的用例列表
+     *
+     * 查询需求下的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCasesByIssueRequest 请求对象
+     * @return CompletableFuture<ListTestCasesByIssueResponse>
+     */
+    public CompletableFuture<ListTestCasesByIssueResponse> listTestCasesByIssueAsync(
+        ListTestCasesByIssueRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTestCasesByIssue);
+    }
+
+    /**
+     * 查询需求下的用例列表
+     *
+     * 查询需求下的用例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestCasesByIssueRequest 请求对象
+     * @return AsyncInvoker<ListTestCasesByIssueRequest, ListTestCasesByIssueResponse>
+     */
+    public AsyncInvoker<ListTestCasesByIssueRequest, ListTestCasesByIssueResponse> listTestCasesByIssueAsyncInvoker(
+        ListTestCasesByIssueRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestCasesByIssue, hcClient);
     }
 
     /**
@@ -986,6 +2126,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询用户DNS映射
+     *
+     * 查询用户DNS映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserDnsMappingRequest 请求对象
+     * @return CompletableFuture<ListUserDnsMappingResponse>
+     */
+    public CompletableFuture<ListUserDnsMappingResponse> listUserDnsMappingAsync(ListUserDnsMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listUserDnsMapping);
+    }
+
+    /**
+     * 查询用户DNS映射
+     *
+     * 查询用户DNS映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserDnsMappingRequest 请求对象
+     * @return AsyncInvoker<ListUserDnsMappingRequest, ListUserDnsMappingResponse>
+     */
+    public AsyncInvoker<ListUserDnsMappingRequest, ListUserDnsMappingResponse> listUserDnsMappingAsyncInvoker(
+        ListUserDnsMappingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listUserDnsMapping, hcClient);
+    }
+
+    /**
      * ListUserPackageUsage
      *
      * 
@@ -1041,6 +2210,94 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询仪表盘用户的看板
+     *
+     * 查询仪表盘用户的看板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsingGetRequest 请求对象
+     * @return CompletableFuture<ListUsingGetResponse>
+     */
+    public CompletableFuture<ListUsingGetResponse> listUsingGetAsync(ListUsingGetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listUsingGet);
+    }
+
+    /**
+     * 查询仪表盘用户的看板
+     *
+     * 查询仪表盘用户的看板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsingGetRequest 请求对象
+     * @return AsyncInvoker<ListUsingGetRequest, ListUsingGetResponse>
+     */
+    public AsyncInvoker<ListUsingGetRequest, ListUsingGetResponse> listUsingGetAsyncInvoker(
+        ListUsingGetRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listUsingGet, hcClient);
+    }
+
+    /**
+     * 查询全局变量参数列表V4
+     *
+     * 查询全局变量参数列表V4
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVariablesRequest 请求对象
+     * @return CompletableFuture<ListVariablesResponse>
+     */
+    public CompletableFuture<ListVariablesResponse> listVariablesAsync(ListVariablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listVariables);
+    }
+
+    /**
+     * 查询全局变量参数列表V4
+     *
+     * 查询全局变量参数列表V4
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVariablesRequest 请求对象
+     * @return AsyncInvoker<ListVariablesRequest, ListVariablesResponse>
+     */
+    public AsyncInvoker<ListVariablesRequest, ListVariablesResponse> listVariablesAsyncInvoker(
+        ListVariablesRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listVariables, hcClient);
+    }
+
+    /**
+     * 从迭代中移除需求
+     *
+     * 从迭代中移除需求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveIssuesFromIteratorRequest 请求对象
+     * @return CompletableFuture<RemoveIssuesFromIteratorResponse>
+     */
+    public CompletableFuture<RemoveIssuesFromIteratorResponse> removeIssuesFromIteratorAsync(
+        RemoveIssuesFromIteratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.removeIssuesFromIterator);
+    }
+
+    /**
+     * 从迭代中移除需求
+     *
+     * 从迭代中移除需求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveIssuesFromIteratorRequest 请求对象
+     * @return AsyncInvoker<RemoveIssuesFromIteratorRequest, RemoveIssuesFromIteratorResponse>
+     */
+    public AsyncInvoker<RemoveIssuesFromIteratorRequest, RemoveIssuesFromIteratorResponse> removeIssuesFromIteratorAsyncInvoker(
+        RemoveIssuesFromIteratorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.removeIssuesFromIterator, hcClient);
+    }
+
+    /**
      * 批量执行测试用例
      *
      * 批量执行测试用例
@@ -1069,8 +2326,68 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 保存任务配置
+     *
+     * 保存任务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTaskSettingRequest 请求对象
+     * @return CompletableFuture<SaveTaskSettingResponse>
+     */
+    public CompletableFuture<SaveTaskSettingResponse> saveTaskSettingAsync(SaveTaskSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.saveTaskSetting);
+    }
+
+    /**
+     * 保存任务配置
+     *
+     * 保存任务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTaskSettingRequest 请求对象
+     * @return AsyncInvoker<SaveTaskSettingRequest, SaveTaskSettingResponse>
+     */
+    public AsyncInvoker<SaveTaskSettingRequest, SaveTaskSettingResponse> saveTaskSettingAsyncInvoker(
+        SaveTaskSettingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.saveTaskSetting, hcClient);
+    }
+
+    /**
+     * 查询任务配置
+     *
+     * 查询任务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAllConfigValueByTypeAndKeyRequest 请求对象
+     * @return CompletableFuture<ShowAllConfigValueByTypeAndKeyResponse>
+     */
+    public CompletableFuture<ShowAllConfigValueByTypeAndKeyResponse> showAllConfigValueByTypeAndKeyAsync(
+        ShowAllConfigValueByTypeAndKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showAllConfigValueByTypeAndKey);
+    }
+
+    /**
+     * 查询任务配置
+     *
+     * 查询任务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAllConfigValueByTypeAndKeyRequest 请求对象
+     * @return AsyncInvoker<ShowAllConfigValueByTypeAndKeyRequest, ShowAllConfigValueByTypeAndKeyResponse>
+     */
+    public AsyncInvoker<ShowAllConfigValueByTypeAndKeyRequest, ShowAllConfigValueByTypeAndKeyResponse> showAllConfigValueByTypeAndKeyAsyncInvoker(
+        ShowAllConfigValueByTypeAndKeyRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showAllConfigValueByTypeAndKey, hcClient);
+    }
+
+    /**
      * 获取特性树V5
      *
+     * 获取目录\\特性树
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1085,6 +2402,7 @@ public class CloudtestAsyncClient {
     /**
      * 获取特性树V5
      *
+     * 获取目录\\特性树
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1127,6 +2445,63 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 获取资产列表
+     *
+     * 获取资产列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetRequest 请求对象
+     * @return CompletableFuture<ShowAssetResponse>
+     */
+    public CompletableFuture<ShowAssetResponse> showAssetAsync(ShowAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showAsset);
+    }
+
+    /**
+     * 获取资产列表
+     *
+     * 获取资产列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetRequest 请求对象
+     * @return AsyncInvoker<ShowAssetRequest, ShowAssetResponse>
+     */
+    public AsyncInvoker<ShowAssetRequest, ShowAssetResponse> showAssetAsyncInvoker(ShowAssetRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showAsset, hcClient);
+    }
+
+    /**
+     * 获取资产树列表
+     *
+     * 获取资产树列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetTreeRequest 请求对象
+     * @return CompletableFuture<ShowAssetTreeResponse>
+     */
+    public CompletableFuture<ShowAssetTreeResponse> showAssetTreeAsync(ShowAssetTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showAssetTree);
+    }
+
+    /**
+     * 获取资产树列表
+     *
+     * 获取资产树列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssetTreeRequest 请求对象
+     * @return AsyncInvoker<ShowAssetTreeRequest, ShowAssetTreeResponse>
+     */
+    public AsyncInvoker<ShowAssetTreeRequest, ShowAssetTreeResponse> showAssetTreeAsyncInvoker(
+        ShowAssetTreeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showAssetTree, hcClient);
+    }
+
+    /**
      * 获取测试报告的模板设置
      *
      * 获取测试报告的模板设置
@@ -1153,6 +2528,64 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowBackgroundInfoRequest, ShowBackgroundInfoResponse> showBackgroundInfoAsyncInvoker(
         ShowBackgroundInfoRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showBackgroundInfo, hcClient);
+    }
+
+    /**
+     * 获取分支详情
+     *
+     * 获取分支详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBranchRequest 请求对象
+     * @return CompletableFuture<ShowBranchResponse>
+     */
+    public CompletableFuture<ShowBranchResponse> showBranchAsync(ShowBranchRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showBranch);
+    }
+
+    /**
+     * 获取分支详情
+     *
+     * 获取分支详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBranchRequest 请求对象
+     * @return AsyncInvoker<ShowBranchRequest, ShowBranchResponse>
+     */
+    public AsyncInvoker<ShowBranchRequest, ShowBranchResponse> showBranchAsyncInvoker(ShowBranchRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showBranch, hcClient);
+    }
+
+    /**
+     * 查询租户测试并发套餐状态
+     *
+     * 查询租户测试并发套餐状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConcurrencyPackageUsingRequest 请求对象
+     * @return CompletableFuture<ShowConcurrencyPackageUsingResponse>
+     */
+    public CompletableFuture<ShowConcurrencyPackageUsingResponse> showConcurrencyPackageUsingAsync(
+        ShowConcurrencyPackageUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showConcurrencyPackageUsing);
+    }
+
+    /**
+     * 查询租户测试并发套餐状态
+     *
+     * 查询租户测试并发套餐状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConcurrencyPackageUsingRequest 请求对象
+     * @return AsyncInvoker<ShowConcurrencyPackageUsingRequest, ShowConcurrencyPackageUsingResponse>
+     */
+    public AsyncInvoker<ShowConcurrencyPackageUsingRequest, ShowConcurrencyPackageUsingResponse> showConcurrencyPackageUsingAsyncInvoker(
+        ShowConcurrencyPackageUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showConcurrencyPackageUsing, hcClient);
     }
 
     /**
@@ -1215,6 +2648,94 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询租户在线拨测套餐状态
+     *
+     * 查询租户在线拨测套餐状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEchoTestPackageUsingRequest 请求对象
+     * @return CompletableFuture<ShowEchoTestPackageUsingResponse>
+     */
+    public CompletableFuture<ShowEchoTestPackageUsingResponse> showEchoTestPackageUsingAsync(
+        ShowEchoTestPackageUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showEchoTestPackageUsing);
+    }
+
+    /**
+     * 查询租户在线拨测套餐状态
+     *
+     * 查询租户在线拨测套餐状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEchoTestPackageUsingRequest 请求对象
+     * @return AsyncInvoker<ShowEchoTestPackageUsingRequest, ShowEchoTestPackageUsingResponse>
+     */
+    public AsyncInvoker<ShowEchoTestPackageUsingRequest, ShowEchoTestPackageUsingResponse> showEchoTestPackageUsingAsyncInvoker(
+        ShowEchoTestPackageUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showEchoTestPackageUsing, hcClient);
+    }
+
+    /**
+     * 根据目录查询因子
+     *
+     * 根据目录查询因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactorByAssetIdRequest 请求对象
+     * @return CompletableFuture<ShowFactorByAssetIdResponse>
+     */
+    public CompletableFuture<ShowFactorByAssetIdResponse> showFactorByAssetIdAsync(ShowFactorByAssetIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showFactorByAssetId);
+    }
+
+    /**
+     * 根据目录查询因子
+     *
+     * 根据目录查询因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactorByAssetIdRequest 请求对象
+     * @return AsyncInvoker<ShowFactorByAssetIdRequest, ShowFactorByAssetIdResponse>
+     */
+    public AsyncInvoker<ShowFactorByAssetIdRequest, ShowFactorByAssetIdResponse> showFactorByAssetIdAsyncInvoker(
+        ShowFactorByAssetIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showFactorByAssetId, hcClient);
+    }
+
+    /**
+     * 根据id获取因子
+     *
+     * 根据id获取因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactorByIdRequest 请求对象
+     * @return CompletableFuture<ShowFactorByIdResponse>
+     */
+    public CompletableFuture<ShowFactorByIdResponse> showFactorByIdAsync(ShowFactorByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showFactorById);
+    }
+
+    /**
+     * 根据id获取因子
+     *
+     * 根据id获取因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactorByIdRequest 请求对象
+     * @return AsyncInvoker<ShowFactorByIdRequest, ShowFactorByIdResponse>
+     */
+    public AsyncInvoker<ShowFactorByIdRequest, ShowFactorByIdResponse> showFactorByIdAsyncInvoker(
+        ShowFactorByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showFactorById, hcClient);
+    }
+
+    /**
      * 获取目录\\特性树
      *
      * 获取目录\\特性树
@@ -1270,6 +2791,66 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowFreeDeclarationRequest, ShowFreeDeclarationResponse> showFreeDeclarationAsyncInvoker(
         ShowFreeDeclarationRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showFreeDeclaration, hcClient);
+    }
+
+    /**
+     * 查询告警模板名称是否重复
+     *
+     * 查询告警模板名称是否重复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIfTaskNameRepeatRequest 请求对象
+     * @return CompletableFuture<ShowIfTaskNameRepeatResponse>
+     */
+    public CompletableFuture<ShowIfTaskNameRepeatResponse> showIfTaskNameRepeatAsync(
+        ShowIfTaskNameRepeatRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showIfTaskNameRepeat);
+    }
+
+    /**
+     * 查询告警模板名称是否重复
+     *
+     * 查询告警模板名称是否重复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIfTaskNameRepeatRequest 请求对象
+     * @return AsyncInvoker<ShowIfTaskNameRepeatRequest, ShowIfTaskNameRepeatResponse>
+     */
+    public AsyncInvoker<ShowIfTaskNameRepeatRequest, ShowIfTaskNameRepeatResponse> showIfTaskNameRepeatAsyncInvoker(
+        ShowIfTaskNameRepeatRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showIfTaskNameRepeat, hcClient);
+    }
+
+    /**
+     * 查询告警组用户名是否重复
+     *
+     * 查询告警组用户名是否重复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIfUserNameRepeatRequest 请求对象
+     * @return CompletableFuture<ShowIfUserNameRepeatResponse>
+     */
+    public CompletableFuture<ShowIfUserNameRepeatResponse> showIfUserNameRepeatAsync(
+        ShowIfUserNameRepeatRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showIfUserNameRepeat);
+    }
+
+    /**
+     * 查询告警组用户名是否重复
+     *
+     * 查询告警组用户名是否重复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIfUserNameRepeatRequest 请求对象
+     * @return AsyncInvoker<ShowIfUserNameRepeatRequest, ShowIfUserNameRepeatResponse>
+     */
+    public AsyncInvoker<ShowIfUserNameRepeatRequest, ShowIfUserNameRepeatResponse> showIfUserNameRepeatAsyncInvoker(
+        ShowIfUserNameRepeatRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showIfUserNameRepeat, hcClient);
     }
 
     /**
@@ -1332,6 +2913,64 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询迭代计划详情，包含统计信息
+     *
+     * 查询迭代计划详情，包含统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIteratorDetailRequest 请求对象
+     * @return CompletableFuture<ShowIteratorDetailResponse>
+     */
+    public CompletableFuture<ShowIteratorDetailResponse> showIteratorDetailAsync(ShowIteratorDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showIteratorDetail);
+    }
+
+    /**
+     * 查询迭代计划详情，包含统计信息
+     *
+     * 查询迭代计划详情，包含统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIteratorDetailRequest 请求对象
+     * @return AsyncInvoker<ShowIteratorDetailRequest, ShowIteratorDetailResponse>
+     */
+    public AsyncInvoker<ShowIteratorDetailRequest, ShowIteratorDetailResponse> showIteratorDetailAsyncInvoker(
+        ShowIteratorDetailRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showIteratorDetail, hcClient);
+    }
+
+    /**
+     * 根据id获取脑图对象
+     *
+     * 根据id获取脑图对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindMapByIdRequest 请求对象
+     * @return CompletableFuture<ShowMindMapByIdResponse>
+     */
+    public CompletableFuture<ShowMindMapByIdResponse> showMindMapByIdAsync(ShowMindMapByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showMindMapById);
+    }
+
+    /**
+     * 根据id获取脑图对象
+     *
+     * 根据id获取脑图对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindMapByIdRequest 请求对象
+     * @return AsyncInvoker<ShowMindMapByIdRequest, ShowMindMapByIdResponse>
+     */
+    public AsyncInvoker<ShowMindMapByIdRequest, ShowMindMapByIdResponse> showMindMapByIdAsyncInvoker(
+        ShowMindMapByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showMindMapById, hcClient);
+    }
+
+    /**
      * 根据条件分页获取脑图对象V3
      *
      * 根据条件分页获取脑图对象V3
@@ -1388,6 +3027,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowMindmapCreatorNameRequest, ShowMindmapCreatorNameResponse> showMindmapCreatorNameAsyncInvoker(
         ShowMindmapCreatorNameRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showMindmapCreatorName, hcClient);
+    }
+
+    /**
+     * 查询运行面板信息
+     *
+     * 成功返回运行面板信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOperationalDataCurrentMonthUsingRequest 请求对象
+     * @return CompletableFuture<ShowOperationalDataCurrentMonthUsingResponse>
+     */
+    public CompletableFuture<ShowOperationalDataCurrentMonthUsingResponse> showOperationalDataCurrentMonthUsingAsync(
+        ShowOperationalDataCurrentMonthUsingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showOperationalDataCurrentMonthUsing);
+    }
+
+    /**
+     * 查询运行面板信息
+     *
+     * 成功返回运行面板信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOperationalDataCurrentMonthUsingRequest 请求对象
+     * @return AsyncInvoker<ShowOperationalDataCurrentMonthUsingRequest, ShowOperationalDataCurrentMonthUsingResponse>
+     */
+    public AsyncInvoker<ShowOperationalDataCurrentMonthUsingRequest, ShowOperationalDataCurrentMonthUsingResponse> showOperationalDataCurrentMonthUsingAsyncInvoker(
+        ShowOperationalDataCurrentMonthUsingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showOperationalDataCurrentMonthUsing, hcClient);
     }
 
     /**
@@ -1623,6 +3292,93 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 根据条件分页获取评审对象V2
+     *
+     * 根据条件分页获取评审对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReviewByPageRequest 请求对象
+     * @return CompletableFuture<ShowReviewByPageResponse>
+     */
+    public CompletableFuture<ShowReviewByPageResponse> showReviewByPageAsync(ShowReviewByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showReviewByPage);
+    }
+
+    /**
+     * 根据条件分页获取评审对象V2
+     *
+     * 根据条件分页获取评审对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReviewByPageRequest 请求对象
+     * @return AsyncInvoker<ShowReviewByPageRequest, ShowReviewByPageResponse>
+     */
+    public AsyncInvoker<ShowReviewByPageRequest, ShowReviewByPageResponse> showReviewByPageAsyncInvoker(
+        ShowReviewByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showReviewByPage, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取场景对象V2
+     *
+     * 根据条件分页获取场景对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSceneByPageRequest 请求对象
+     * @return CompletableFuture<ShowSceneByPageResponse>
+     */
+    public CompletableFuture<ShowSceneByPageResponse> showSceneByPageAsync(ShowSceneByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showSceneByPage);
+    }
+
+    /**
+     * 根据条件分页获取场景对象V2
+     *
+     * 根据条件分页获取场景对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSceneByPageRequest 请求对象
+     * @return AsyncInvoker<ShowSceneByPageRequest, ShowSceneByPageResponse>
+     */
+    public AsyncInvoker<ShowSceneByPageRequest, ShowSceneByPageResponse> showSceneByPageAsyncInvoker(
+        ShowSceneByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showSceneByPage, hcClient);
+    }
+
+    /**
+     * 根据脑图id查询统计数目
+     *
+     * 根据脑图id查询统计数目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStatisticByIdRequest 请求对象
+     * @return CompletableFuture<ShowStatisticByIdResponse>
+     */
+    public CompletableFuture<ShowStatisticByIdResponse> showStatisticByIdAsync(ShowStatisticByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showStatisticById);
+    }
+
+    /**
+     * 根据脑图id查询统计数目
+     *
+     * 根据脑图id查询统计数目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStatisticByIdRequest 请求对象
+     * @return AsyncInvoker<ShowStatisticByIdRequest, ShowStatisticByIdResponse>
+     */
+    public AsyncInvoker<ShowStatisticByIdRequest, ShowStatisticByIdResponse> showStatisticByIdAsyncInvoker(
+        ShowStatisticByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showStatisticById, hcClient);
+    }
+
+    /**
      * 根据入参动态查询系统配置中的信息
      *
      * 根据入参动态查询系统配置中的信息
@@ -1649,6 +3405,35 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowSystemConfigsRequest, ShowSystemConfigsResponse> showSystemConfigsAsyncInvoker(
         ShowSystemConfigsRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showSystemConfigs, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取模板V3
+     *
+     * 根据条件分页获取模板V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateByPageRequest 请求对象
+     * @return CompletableFuture<ShowTemplateByPageResponse>
+     */
+    public CompletableFuture<ShowTemplateByPageResponse> showTemplateByPageAsync(ShowTemplateByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTemplateByPage);
+    }
+
+    /**
+     * 根据条件分页获取模板V3
+     *
+     * 根据条件分页获取模板V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateByPageRequest 请求对象
+     * @return AsyncInvoker<ShowTemplateByPageRequest, ShowTemplateByPageResponse>
+     */
+    public AsyncInvoker<ShowTemplateByPageRequest, ShowTemplateByPageResponse> showTemplateByPageAsyncInvoker(
+        ShowTemplateByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTemplateByPage, hcClient);
     }
 
     /**
@@ -1770,6 +3555,94 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 版本测试用例变更统计（只统计分支，不统计基线）
+     *
+     * 版本测试用例变更统计（只统计分支，不统计基线）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestCasesChangeStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowTestCasesChangeStatisticsResponse>
+     */
+    public CompletableFuture<ShowTestCasesChangeStatisticsResponse> showTestCasesChangeStatisticsAsync(
+        ShowTestCasesChangeStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestCasesChangeStatistics);
+    }
+
+    /**
+     * 版本测试用例变更统计（只统计分支，不统计基线）
+     *
+     * 版本测试用例变更统计（只统计分支，不统计基线）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestCasesChangeStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowTestCasesChangeStatisticsRequest, ShowTestCasesChangeStatisticsResponse>
+     */
+    public AsyncInvoker<ShowTestCasesChangeStatisticsRequest, ShowTestCasesChangeStatisticsResponse> showTestCasesChangeStatisticsAsyncInvoker(
+        ShowTestCasesChangeStatisticsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestCasesChangeStatistics, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取测试用例对象V2
+     *
+     * 根据条件分页获取测试用例对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestcaseByPageRequest 请求对象
+     * @return CompletableFuture<ShowTestcaseByPageResponse>
+     */
+    public CompletableFuture<ShowTestcaseByPageResponse> showTestcaseByPageAsync(ShowTestcaseByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestcaseByPage);
+    }
+
+    /**
+     * 根据条件分页获取测试用例对象V2
+     *
+     * 根据条件分页获取测试用例对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestcaseByPageRequest 请求对象
+     * @return AsyncInvoker<ShowTestcaseByPageRequest, ShowTestcaseByPageResponse>
+     */
+    public AsyncInvoker<ShowTestcaseByPageRequest, ShowTestcaseByPageResponse> showTestcaseByPageAsyncInvoker(
+        ShowTestcaseByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestcaseByPage, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取测试点对象V2
+     *
+     * 根据条件分页获取测试点对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestpointByPageRequest 请求对象
+     * @return CompletableFuture<ShowTestpointByPageResponse>
+     */
+    public CompletableFuture<ShowTestpointByPageResponse> showTestpointByPageAsync(ShowTestpointByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestpointByPage);
+    }
+
+    /**
+     * 根据条件分页获取测试点对象V2
+     *
+     * 根据条件分页获取测试点对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestpointByPageRequest 请求对象
+     * @return AsyncInvoker<ShowTestpointByPageRequest, ShowTestpointByPageResponse>
+     */
+    public AsyncInvoker<ShowTestpointByPageRequest, ShowTestpointByPageResponse> showTestpointByPageAsyncInvoker(
+        ShowTestpointByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestpointByPage, hcClient);
+    }
+
+    /**
      * 获取租户订单信息
      *
      * 获取租户订单信息
@@ -1826,6 +3699,64 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoAsyncInvoker(
         ShowUserExecuteTestCaseInfoRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
+    }
+
+    /**
+     * 修改关键字信息接口
+     *
+     * 修改关键字信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBasicAwByIdRequest 请求对象
+     * @return CompletableFuture<UpdateBasicAwByIdResponse>
+     */
+    public CompletableFuture<UpdateBasicAwByIdResponse> updateBasicAwByIdAsync(UpdateBasicAwByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateBasicAwById);
+    }
+
+    /**
+     * 修改关键字信息接口
+     *
+     * 修改关键字信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBasicAwByIdRequest 请求对象
+     * @return AsyncInvoker<UpdateBasicAwByIdRequest, UpdateBasicAwByIdResponse>
+     */
+    public AsyncInvoker<UpdateBasicAwByIdRequest, UpdateBasicAwByIdResponse> updateBasicAwByIdAsyncInvoker(
+        UpdateBasicAwByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateBasicAwById, hcClient);
+    }
+
+    /**
+     * 修改测试计划
+     *
+     * 修改测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIteratorRequest 请求对象
+     * @return CompletableFuture<UpdateIteratorResponse>
+     */
+    public CompletableFuture<UpdateIteratorResponse> updateIteratorAsync(UpdateIteratorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateIterator);
+    }
+
+    /**
+     * 修改测试计划
+     *
+     * 修改测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIteratorRequest 请求对象
+     * @return AsyncInvoker<UpdateIteratorRequest, UpdateIteratorResponse>
+     */
+    public AsyncInvoker<UpdateIteratorRequest, UpdateIteratorResponse> updateIteratorAsyncInvoker(
+        UpdateIteratorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateIterator, hcClient);
     }
 
     /**
@@ -1887,6 +3818,66 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 更新tmss用例和用例脚本
+     *
+     * 更新tmss用例和用例脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestCaseAndScriptRequest 请求对象
+     * @return CompletableFuture<UpdateTestCaseAndScriptResponse>
+     */
+    public CompletableFuture<UpdateTestCaseAndScriptResponse> updateTestCaseAndScriptAsync(
+        UpdateTestCaseAndScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateTestCaseAndScript);
+    }
+
+    /**
+     * 更新tmss用例和用例脚本
+     *
+     * 更新tmss用例和用例脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestCaseAndScriptRequest 请求对象
+     * @return AsyncInvoker<UpdateTestCaseAndScriptRequest, UpdateTestCaseAndScriptResponse>
+     */
+    public AsyncInvoker<UpdateTestCaseAndScriptRequest, UpdateTestCaseAndScriptResponse> updateTestCaseAndScriptAsyncInvoker(
+        UpdateTestCaseAndScriptRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateTestCaseAndScript, hcClient);
+    }
+
+    /**
+     * 修改用例评论
+     *
+     * 修改用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestCaseCommentRequest 请求对象
+     * @return CompletableFuture<UpdateTestCaseCommentResponse>
+     */
+    public CompletableFuture<UpdateTestCaseCommentResponse> updateTestCaseCommentAsync(
+        UpdateTestCaseCommentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateTestCaseComment);
+    }
+
+    /**
+     * 修改用例评论
+     *
+     * 修改用例评论
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTestCaseCommentRequest 请求对象
+     * @return AsyncInvoker<UpdateTestCaseCommentRequest, UpdateTestCaseCommentResponse>
+     */
+    public AsyncInvoker<UpdateTestCaseCommentRequest, UpdateTestCaseCommentResponse> updateTestCaseCommentAsyncInvoker(
+        UpdateTestCaseCommentRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateTestCaseComment, hcClient);
+    }
+
+    /**
      * 批量更新测试用例结果
      *
      * 批量更新测试用例结果
@@ -1914,6 +3905,66 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse> updateTestCaseResultAsyncInvoker(
         UpdateTestCaseResultRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.updateTestCaseResult, hcClient);
+    }
+
+    /**
+     * 更新用户DNS映射
+     *
+     * 更新用户DNS映射，执行器自定义映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserDnsMappingRequest 请求对象
+     * @return CompletableFuture<UpdateUserDnsMappingResponse>
+     */
+    public CompletableFuture<UpdateUserDnsMappingResponse> updateUserDnsMappingAsync(
+        UpdateUserDnsMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateUserDnsMapping);
+    }
+
+    /**
+     * 更新用户DNS映射
+     *
+     * 更新用户DNS映射，执行器自定义映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserDnsMappingRequest 请求对象
+     * @return AsyncInvoker<UpdateUserDnsMappingRequest, UpdateUserDnsMappingResponse>
+     */
+    public AsyncInvoker<UpdateUserDnsMappingRequest, UpdateUserDnsMappingResponse> updateUserDnsMappingAsyncInvoker(
+        UpdateUserDnsMappingRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateUserDnsMapping, hcClient);
+    }
+
+    /**
+     * 在分支或者测试计划下修改用例
+     *
+     * 在分支或者测试计划下修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVersionTestCaseRequest 请求对象
+     * @return CompletableFuture<UpdateVersionTestCaseResponse>
+     */
+    public CompletableFuture<UpdateVersionTestCaseResponse> updateVersionTestCaseAsync(
+        UpdateVersionTestCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateVersionTestCase);
+    }
+
+    /**
+     * 在分支或者测试计划下修改用例
+     *
+     * 在分支或者测试计划下修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVersionTestCaseRequest 请求对象
+     * @return AsyncInvoker<UpdateVersionTestCaseRequest, UpdateVersionTestCaseResponse>
+     */
+    public AsyncInvoker<UpdateVersionTestCaseRequest, UpdateVersionTestCaseResponse> updateVersionTestCaseAsyncInvoker(
+        UpdateVersionTestCaseRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateVersionTestCase, hcClient);
     }
 
     /**
@@ -1947,214 +3998,6 @@ public class CloudtestAsyncClient {
     }
 
     /**
-     * 查询告警组列表
-     *
-     * 查询告警组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlertGroupsByConditionRequest 请求对象
-     * @return CompletableFuture<ListAlertGroupsByConditionResponse>
-     */
-    public CompletableFuture<ListAlertGroupsByConditionResponse> listAlertGroupsByConditionAsync(
-        ListAlertGroupsByConditionRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAlertGroupsByCondition);
-    }
-
-    /**
-     * 查询告警组列表
-     *
-     * 查询告警组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlertGroupsByConditionRequest 请求对象
-     * @return AsyncInvoker<ListAlertGroupsByConditionRequest, ListAlertGroupsByConditionResponse>
-     */
-    public AsyncInvoker<ListAlertGroupsByConditionRequest, ListAlertGroupsByConditionResponse> listAlertGroupsByConditionAsyncInvoker(
-        ListAlertGroupsByConditionRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listAlertGroupsByCondition, hcClient);
-    }
-
-    /**
-     * 查询告警模板
-     *
-     * 查询告警模板
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlertTemplatesRequest 请求对象
-     * @return CompletableFuture<ListAlertTemplatesResponse>
-     */
-    public CompletableFuture<ListAlertTemplatesResponse> listAlertTemplatesAsync(ListAlertTemplatesRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAlertTemplates);
-    }
-
-    /**
-     * 查询告警模板
-     *
-     * 查询告警模板
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAlertTemplatesRequest 请求对象
-     * @return AsyncInvoker<ListAlertTemplatesRequest, ListAlertTemplatesResponse>
-     */
-    public AsyncInvoker<ListAlertTemplatesRequest, ListAlertTemplatesResponse> listAlertTemplatesAsyncInvoker(
-        ListAlertTemplatesRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listAlertTemplates, hcClient);
-    }
-
-    /**
-     * 查询任务告警信息
-     *
-     * 查询任务告警信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllConfigItemByTypeRequest 请求对象
-     * @return CompletableFuture<ListAllConfigItemByTypeResponse>
-     */
-    public CompletableFuture<ListAllConfigItemByTypeResponse> listAllConfigItemByTypeAsync(
-        ListAllConfigItemByTypeRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listAllConfigItemByType);
-    }
-
-    /**
-     * 查询任务告警信息
-     *
-     * 查询任务告警信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAllConfigItemByTypeRequest 请求对象
-     * @return AsyncInvoker<ListAllConfigItemByTypeRequest, ListAllConfigItemByTypeResponse>
-     */
-    public AsyncInvoker<ListAllConfigItemByTypeRequest, ListAllConfigItemByTypeResponse> listAllConfigItemByTypeAsyncInvoker(
-        ListAllConfigItemByTypeRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listAllConfigItemByType, hcClient);
-    }
-
-    /**
-     * 保存任务配置
-     *
-     * 保存任务配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SaveTaskSettingRequest 请求对象
-     * @return CompletableFuture<SaveTaskSettingResponse>
-     */
-    public CompletableFuture<SaveTaskSettingResponse> saveTaskSettingAsync(SaveTaskSettingRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.saveTaskSetting);
-    }
-
-    /**
-     * 保存任务配置
-     *
-     * 保存任务配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SaveTaskSettingRequest 请求对象
-     * @return AsyncInvoker<SaveTaskSettingRequest, SaveTaskSettingResponse>
-     */
-    public AsyncInvoker<SaveTaskSettingRequest, SaveTaskSettingResponse> saveTaskSettingAsyncInvoker(
-        SaveTaskSettingRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.saveTaskSetting, hcClient);
-    }
-
-    /**
-     * 查询任务配置
-     *
-     * 查询任务配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAllConfigValueByTypeAndKeyRequest 请求对象
-     * @return CompletableFuture<ShowAllConfigValueByTypeAndKeyResponse>
-     */
-    public CompletableFuture<ShowAllConfigValueByTypeAndKeyResponse> showAllConfigValueByTypeAndKeyAsync(
-        ShowAllConfigValueByTypeAndKeyRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showAllConfigValueByTypeAndKey);
-    }
-
-    /**
-     * 查询任务配置
-     *
-     * 查询任务配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAllConfigValueByTypeAndKeyRequest 请求对象
-     * @return AsyncInvoker<ShowAllConfigValueByTypeAndKeyRequest, ShowAllConfigValueByTypeAndKeyResponse>
-     */
-    public AsyncInvoker<ShowAllConfigValueByTypeAndKeyRequest, ShowAllConfigValueByTypeAndKeyResponse> showAllConfigValueByTypeAndKeyAsyncInvoker(
-        ShowAllConfigValueByTypeAndKeyRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.showAllConfigValueByTypeAndKey, hcClient);
-    }
-
-    /**
-     * 查询告警模板名称是否重复
-     *
-     * 查询告警模板名称是否重复
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIfTaskNameRepeatRequest 请求对象
-     * @return CompletableFuture<ShowIfTaskNameRepeatResponse>
-     */
-    public CompletableFuture<ShowIfTaskNameRepeatResponse> showIfTaskNameRepeatAsync(
-        ShowIfTaskNameRepeatRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showIfTaskNameRepeat);
-    }
-
-    /**
-     * 查询告警模板名称是否重复
-     *
-     * 查询告警模板名称是否重复
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIfTaskNameRepeatRequest 请求对象
-     * @return AsyncInvoker<ShowIfTaskNameRepeatRequest, ShowIfTaskNameRepeatResponse>
-     */
-    public AsyncInvoker<ShowIfTaskNameRepeatRequest, ShowIfTaskNameRepeatResponse> showIfTaskNameRepeatAsyncInvoker(
-        ShowIfTaskNameRepeatRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.showIfTaskNameRepeat, hcClient);
-    }
-
-    /**
-     * 查询告警组用户名是否重复
-     *
-     * 查询告警组用户名是否重复
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIfUserNameRepeatRequest 请求对象
-     * @return CompletableFuture<ShowIfUserNameRepeatResponse>
-     */
-    public CompletableFuture<ShowIfUserNameRepeatResponse> showIfUserNameRepeatAsync(
-        ShowIfUserNameRepeatRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showIfUserNameRepeat);
-    }
-
-    /**
-     * 查询告警组用户名是否重复
-     *
-     * 查询告警组用户名是否重复
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIfUserNameRepeatRequest 请求对象
-     * @return AsyncInvoker<ShowIfUserNameRepeatRequest, ShowIfUserNameRepeatResponse>
-     */
-    public AsyncInvoker<ShowIfUserNameRepeatRequest, ShowIfUserNameRepeatResponse> showIfUserNameRepeatAsyncInvoker(
-        ShowIfUserNameRepeatRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.showIfUserNameRepeat, hcClient);
-    }
-
-    /**
      * 获取环境参数分组列表
      *
      * 获取环境参数分组列表
@@ -2181,121 +4024,6 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsAsyncInvoker(
         ListEnvironmentsRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listEnvironments, hcClient);
-    }
-
-    /**
-     * 根据id获取单个basicAW信息
-     *
-     * 根据id获取单个basicAW信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListBasicAwRequest 请求对象
-     * @return CompletableFuture<ListBasicAwResponse>
-     */
-    public CompletableFuture<ListBasicAwResponse> listBasicAwAsync(ListBasicAwRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listBasicAw);
-    }
-
-    /**
-     * 根据id获取单个basicAW信息
-     *
-     * 根据id获取单个basicAW信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListBasicAwRequest 请求对象
-     * @return AsyncInvoker<ListBasicAwRequest, ListBasicAwResponse>
-     */
-    public AsyncInvoker<ListBasicAwRequest, ListBasicAwResponse> listBasicAwAsyncInvoker(ListBasicAwRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listBasicAw, hcClient);
-    }
-
-    /**
-     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
-     *
-     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPublicLibAndAwsRequest 请求对象
-     * @return CompletableFuture<ListPublicLibAndAwsResponse>
-     */
-    public CompletableFuture<ListPublicLibAndAwsResponse> listPublicLibAndAwsAsync(ListPublicLibAndAwsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listPublicLibAndAws);
-    }
-
-    /**
-     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
-     *
-     * 获取工程关联的公共aw信息和公共aw所属公共aw库信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPublicLibAndAwsRequest 请求对象
-     * @return AsyncInvoker<ListPublicLibAndAwsRequest, ListPublicLibAndAwsResponse>
-     */
-    public AsyncInvoker<ListPublicLibAndAwsRequest, ListPublicLibAndAwsResponse> listPublicLibAndAwsAsyncInvoker(
-        ListPublicLibAndAwsRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listPublicLibAndAws, hcClient);
-    }
-
-    /**
-     * 查询用户DNS映射
-     *
-     * 查询用户DNS映射
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUserDnsMappingRequest 请求对象
-     * @return CompletableFuture<ListUserDnsMappingResponse>
-     */
-    public CompletableFuture<ListUserDnsMappingResponse> listUserDnsMappingAsync(ListUserDnsMappingRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listUserDnsMapping);
-    }
-
-    /**
-     * 查询用户DNS映射
-     *
-     * 查询用户DNS映射
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUserDnsMappingRequest 请求对象
-     * @return AsyncInvoker<ListUserDnsMappingRequest, ListUserDnsMappingResponse>
-     */
-    public AsyncInvoker<ListUserDnsMappingRequest, ListUserDnsMappingResponse> listUserDnsMappingAsyncInvoker(
-        ListUserDnsMappingRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listUserDnsMapping, hcClient);
-    }
-
-    /**
-     * 查询全局变量参数列表V4
-     *
-     * 查询全局变量参数列表V4
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVariablesRequest 请求对象
-     * @return CompletableFuture<ListVariablesResponse>
-     */
-    public CompletableFuture<ListVariablesResponse> listVariablesAsync(ListVariablesRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listVariables);
-    }
-
-    /**
-     * 查询全局变量参数列表V4
-     *
-     * 查询全局变量参数列表V4
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVariablesRequest 请求对象
-     * @return AsyncInvoker<ListVariablesRequest, ListVariablesResponse>
-     */
-    public AsyncInvoker<ListVariablesRequest, ListVariablesResponse> listVariablesAsyncInvoker(
-        ListVariablesRequest request) {
-        return new AsyncInvoker<>(request, CloudtestMeta.listVariables, hcClient);
     }
 
 }

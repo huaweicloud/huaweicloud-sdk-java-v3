@@ -682,6 +682,11 @@ public class CreateJobReq {
 
     private List<PublicIpConfig> publicIpList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_open_fast_clean")
+
+    private Boolean isOpenFastClean;
+
     public CreateJobReq withBindEip(Boolean bindEip) {
         this.bindEip = bindEip;
         return this;
@@ -1029,7 +1034,7 @@ public class CreateJobReq {
     }
 
     /**
-     * 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
+     * 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能填一个企业项目。
      * @return sysTags
      */
     public List<ResourceTag> getSysTags() {
@@ -1156,7 +1161,7 @@ public class CreateJobReq {
     }
 
     /**
-     * 指定公网IP的信息
+     * 指定公网IP的信息。
      * @return publicIpList
      */
     public List<PublicIpConfig> getPublicIpList() {
@@ -1165,6 +1170,23 @@ public class CreateJobReq {
 
     public void setPublicIpList(List<PublicIpConfig> publicIpList) {
         this.publicIpList = publicIpList;
+    }
+
+    public CreateJobReq withIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
+        return this;
+    }
+
+    /**
+     * 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。不传默认为false，不开启快速清理。
+     * @return isOpenFastClean
+     */
+    public Boolean getIsOpenFastClean() {
+        return isOpenFastClean;
+    }
+
+    public void setIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
     }
 
     @Override
@@ -1190,7 +1212,8 @@ public class CreateJobReq {
             && Objects.equals(this.expiredDays, that.expiredDays) && Objects.equals(this.masterAz, that.masterAz)
             && Objects.equals(this.slaveAz, that.slaveAz) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.periodOrder, that.periodOrder)
-            && Objects.equals(this.publicIpList, that.publicIpList);
+            && Objects.equals(this.publicIpList, that.publicIpList)
+            && Objects.equals(this.isOpenFastClean, that.isOpenFastClean);
     }
 
     @Override
@@ -1218,7 +1241,8 @@ public class CreateJobReq {
             slaveAz,
             chargingMode,
             periodOrder,
-            publicIpList);
+            publicIpList,
+            isOpenFastClean);
     }
 
     @Override
@@ -1249,6 +1273,7 @@ public class CreateJobReq {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
+        sb.append("    isOpenFastClean: ").append(toIndentedString(isOpenFastClean)).append("\n");
         sb.append("}");
         return sb.toString();
     }

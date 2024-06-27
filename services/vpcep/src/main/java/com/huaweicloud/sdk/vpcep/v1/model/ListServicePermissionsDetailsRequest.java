@@ -208,7 +208,7 @@ public class ListServicePermissionsDetailsRequest {
     }
 
     /**
-     * 权限帐号ID，格式为“iam:domain::domain_id”。 其中“domain_id”为授权用户的帐号ID， 例如“iam:domain::6e9dfd51d1124e8d8498dce894923a0d”，支持模糊搜索。
+     * 权限账号ID，格式为“iam:domain::domain_id”。 其中“domain_id”为授权用户的账号ID， 例如“iam:domain::6e9dfd51d1124e8d8498dce894923a0d”，支持模糊搜索。
      * @return permission
      */
     public String getPermission() {

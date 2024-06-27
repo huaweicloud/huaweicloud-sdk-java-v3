@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,253 +25,25 @@ public class EnvParam {
 
     private String envName;
 
-    /**
-     * 环境类型，取值：DEV、TEST、PRE、ONLINE，不区分大小写
-     */
-    public static final class EnvTypeEnum {
-
-        /**
-         * Enum DEV for value: "DEV"
-         */
-        public static final EnvTypeEnum DEV = new EnvTypeEnum("DEV");
-
-        /**
-         * Enum TEST for value: "TEST"
-         */
-        public static final EnvTypeEnum TEST = new EnvTypeEnum("TEST");
-
-        /**
-         * Enum PRE for value: "PRE"
-         */
-        public static final EnvTypeEnum PRE = new EnvTypeEnum("PRE");
-
-        /**
-         * Enum ONLINE for value: "ONLINE"
-         */
-        public static final EnvTypeEnum ONLINE = new EnvTypeEnum("ONLINE");
-
-        private static final Map<String, EnvTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EnvTypeEnum> createStaticFields() {
-            Map<String, EnvTypeEnum> map = new HashMap<>();
-            map.put("DEV", DEV);
-            map.put("TEST", TEST);
-            map.put("PRE", PRE);
-            map.put("ONLINE", ONLINE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EnvTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EnvTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EnvTypeEnum(value));
-        }
-
-        public static EnvTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EnvTypeEnum) {
-                return this.value.equals(((EnvTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_type")
 
-    private EnvTypeEnum envType;
-
-    /**
-     * OS类型，取值：LINUX、WINDOWS。创建环境必传，不可修改
-     */
-    public static final class OsTypeEnum {
-
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
-        public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
-        public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-
-        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OsTypeEnum> createStaticFields() {
-            Map<String, OsTypeEnum> map = new HashMap<>();
-            map.put("LINUX", LINUX);
-            map.put("WINDOWS", WINDOWS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OsTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OsTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
-        }
-
-        public static OsTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OsTypeEnum) {
-                return this.value.equals(((OsTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String envType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    private OsTypeEnum osType;
+    private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
 
-    /**
-     * 注册类型，取值：API、SERVICE_DISCOVERY、CONSOLE，默认值：API
-     */
-    public static final class RegisterTypeEnum {
-
-        /**
-         * Enum API for value: "API"
-         */
-        public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
-
-        /**
-         * Enum CONSOLE for value: "CONSOLE"
-         */
-        public static final RegisterTypeEnum CONSOLE = new RegisterTypeEnum("CONSOLE");
-
-        /**
-         * Enum SERVICE_DISCOVERY for value: "SERVICE_DISCOVERY"
-         */
-        public static final RegisterTypeEnum SERVICE_DISCOVERY = new RegisterTypeEnum("SERVICE_DISCOVERY");
-
-        private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RegisterTypeEnum> createStaticFields() {
-            Map<String, RegisterTypeEnum> map = new HashMap<>();
-            map.put("API", API);
-            map.put("CONSOLE", CONSOLE);
-            map.put("SERVICE_DISCOVERY", SERVICE_DISCOVERY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RegisterTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RegisterTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegisterTypeEnum(value));
-        }
-
-        public static RegisterTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RegisterTypeEnum) {
-                return this.value.equals(((RegisterTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "register_type")
 
-    private RegisterTypeEnum registerType;
+    private String registerType;
 
     public EnvParam withComponentId(String componentId) {
         this.componentId = componentId;
@@ -301,7 +68,7 @@ public class EnvParam {
     }
 
     /**
-     * 描述：最大255字符
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -318,7 +85,7 @@ public class EnvParam {
     }
 
     /**
-     * 显示名：字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
+     * 环境名称
      * @return envName
      */
     public String getEnvName() {
@@ -329,7 +96,7 @@ public class EnvParam {
         this.envName = envName;
     }
 
-    public EnvParam withEnvType(EnvTypeEnum envType) {
+    public EnvParam withEnvType(String envType) {
         this.envType = envType;
         return this;
     }
@@ -338,15 +105,15 @@ public class EnvParam {
      * 环境类型，取值：DEV、TEST、PRE、ONLINE，不区分大小写
      * @return envType
      */
-    public EnvTypeEnum getEnvType() {
+    public String getEnvType() {
         return envType;
     }
 
-    public void setEnvType(EnvTypeEnum envType) {
+    public void setEnvType(String envType) {
         this.envType = envType;
     }
 
-    public EnvParam withOsType(OsTypeEnum osType) {
+    public EnvParam withOsType(String osType) {
         this.osType = osType;
         return this;
     }
@@ -355,11 +122,11 @@ public class EnvParam {
      * OS类型，取值：LINUX、WINDOWS。创建环境必传，不可修改
      * @return osType
      */
-    public OsTypeEnum getOsType() {
+    public String getOsType() {
         return osType;
     }
 
-    public void setOsType(OsTypeEnum osType) {
+    public void setOsType(String osType) {
         this.osType = osType;
     }
 
@@ -380,7 +147,7 @@ public class EnvParam {
         this.region = region;
     }
 
-    public EnvParam withRegisterType(RegisterTypeEnum registerType) {
+    public EnvParam withRegisterType(String registerType) {
         this.registerType = registerType;
         return this;
     }
@@ -389,11 +156,11 @@ public class EnvParam {
      * 注册类型，取值：API、SERVICE_DISCOVERY、CONSOLE，默认值：API
      * @return registerType
      */
-    public RegisterTypeEnum getRegisterType() {
+    public String getRegisterType() {
         return registerType;
     }
 
-    public void setRegisterType(RegisterTypeEnum registerType) {
+    public void setRegisterType(String registerType) {
         this.registerType = registerType;
     }
 

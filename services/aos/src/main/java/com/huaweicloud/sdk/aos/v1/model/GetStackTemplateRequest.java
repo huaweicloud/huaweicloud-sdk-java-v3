@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.aos.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +27,16 @@ public class GetStackTemplateRequest {
     @JsonProperty(value = "stack_id")
 
     private String stackId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_source_ips")
+
+    private List<String> accessControlSourceIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_source_vpc_ids")
+
+    private List<String> accessControlSourceVpcIds = null;
 
     public GetStackTemplateRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
@@ -76,6 +89,73 @@ public class GetStackTemplateRequest {
         this.stackId = stackId;
     }
 
+    public GetStackTemplateRequest withAccessControlSourceIps(List<String> accessControlSourceIps) {
+        this.accessControlSourceIps = accessControlSourceIps;
+        return this;
+    }
+
+    public GetStackTemplateRequest addAccessControlSourceIpsItem(String accessControlSourceIpsItem) {
+        if (this.accessControlSourceIps == null) {
+            this.accessControlSourceIps = new ArrayList<>();
+        }
+        this.accessControlSourceIps.add(accessControlSourceIpsItem);
+        return this;
+    }
+
+    public GetStackTemplateRequest withAccessControlSourceIps(Consumer<List<String>> accessControlSourceIpsSetter) {
+        if (this.accessControlSourceIps == null) {
+            this.accessControlSourceIps = new ArrayList<>();
+        }
+        accessControlSourceIpsSetter.accept(this.accessControlSourceIps);
+        return this;
+    }
+
+    /**
+     * 允许访问资源栈模板的source ip列表，source ip应是具有CIDR表示法且带有子网掩码的IPv4地址。
+     * @return accessControlSourceIps
+     */
+    public List<String> getAccessControlSourceIps() {
+        return accessControlSourceIps;
+    }
+
+    public void setAccessControlSourceIps(List<String> accessControlSourceIps) {
+        this.accessControlSourceIps = accessControlSourceIps;
+    }
+
+    public GetStackTemplateRequest withAccessControlSourceVpcIds(List<String> accessControlSourceVpcIds) {
+        this.accessControlSourceVpcIds = accessControlSourceVpcIds;
+        return this;
+    }
+
+    public GetStackTemplateRequest addAccessControlSourceVpcIdsItem(String accessControlSourceVpcIdsItem) {
+        if (this.accessControlSourceVpcIds == null) {
+            this.accessControlSourceVpcIds = new ArrayList<>();
+        }
+        this.accessControlSourceVpcIds.add(accessControlSourceVpcIdsItem);
+        return this;
+    }
+
+    public GetStackTemplateRequest withAccessControlSourceVpcIds(
+        Consumer<List<String>> accessControlSourceVpcIdsSetter) {
+        if (this.accessControlSourceVpcIds == null) {
+            this.accessControlSourceVpcIds = new ArrayList<>();
+        }
+        accessControlSourceVpcIdsSetter.accept(this.accessControlSourceVpcIds);
+        return this;
+    }
+
+    /**
+     * 允许访问资源栈模板的source vpc id列表， source vpc id应仅包含小写字母、数字或中划线。
+     * @return accessControlSourceVpcIds
+     */
+    public List<String> getAccessControlSourceVpcIds() {
+        return accessControlSourceVpcIds;
+    }
+
+    public void setAccessControlSourceVpcIds(List<String> accessControlSourceVpcIds) {
+        this.accessControlSourceVpcIds = accessControlSourceVpcIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +166,14 @@ public class GetStackTemplateRequest {
         }
         GetStackTemplateRequest that = (GetStackTemplateRequest) obj;
         return Objects.equals(this.clientRequestId, that.clientRequestId)
-            && Objects.equals(this.stackName, that.stackName) && Objects.equals(this.stackId, that.stackId);
+            && Objects.equals(this.stackName, that.stackName) && Objects.equals(this.stackId, that.stackId)
+            && Objects.equals(this.accessControlSourceIps, that.accessControlSourceIps)
+            && Objects.equals(this.accessControlSourceVpcIds, that.accessControlSourceVpcIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, stackName, stackId);
+        return Objects.hash(clientRequestId, stackName, stackId, accessControlSourceIps, accessControlSourceVpcIds);
     }
 
     @Override
@@ -101,6 +183,8 @@ public class GetStackTemplateRequest {
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
+        sb.append("    accessControlSourceIps: ").append(toIndentedString(accessControlSourceIps)).append("\n");
+        sb.append("    accessControlSourceVpcIds: ").append(toIndentedString(accessControlSourceVpcIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

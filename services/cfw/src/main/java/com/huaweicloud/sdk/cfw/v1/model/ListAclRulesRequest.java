@@ -101,93 +101,6 @@ public class ListAclRulesRequest {
 
     private TypeEnum type;
 
-    /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1
-     */
-    public static final class ProtocolEnum {
-
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
-        public static final ProtocolEnum NUMBER_6 = new ProtocolEnum(6);
-
-        /**
-         * Enum NUMBER_17 for value: 17
-         */
-        public static final ProtocolEnum NUMBER_17 = new ProtocolEnum(17);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ProtocolEnum NUMBER_1 = new ProtocolEnum(1);
-
-        /**
-         * Enum NUMBER_58 for value: 58
-         */
-        public static final ProtocolEnum NUMBER_58 = new ProtocolEnum(58);
-
-        private static final Map<Integer, ProtocolEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ProtocolEnum> createStaticFields() {
-            Map<Integer, ProtocolEnum> map = new HashMap<>();
-            map.put(6, NUMBER_6);
-            map.put(17, NUMBER_17);
-            map.put(1, NUMBER_1);
-            map.put(58, NUMBER_58);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ProtocolEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtocolEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
-        }
-
-        public static ProtocolEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtocolEnum) {
-                return this.value.equals(((ProtocolEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "protocol")
-
-    private ProtocolEnum protocol;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip")
 
@@ -354,7 +267,7 @@ public class ListAclRulesRequest {
     private ActionTypeEnum actionType;
 
     /**
-     * 地址类型0 ipv4,1 ipv6,2 domain
+     * 地址类型0 ipv4
      */
     public static final class AddressTypeEnum {
 
@@ -485,7 +398,7 @@ public class ListAclRulesRequest {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
      * @return objectId
      */
     public String getObjectId() {
@@ -511,23 +424,6 @@ public class ListAclRulesRequest {
 
     public void setType(TypeEnum type) {
         this.type = type;
-    }
-
-    public ListAclRulesRequest withProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol;
-        return this;
-    }
-
-    /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1
-     * @return protocol
-     */
-    public ProtocolEnum getProtocol() {
-        return protocol;
-    }
-
-    public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol;
     }
 
     public ListAclRulesRequest withIp(String ip) {
@@ -621,7 +517,7 @@ public class ListAclRulesRequest {
     }
 
     /**
-     * 地址类型0 ipv4,1 ipv6,2 domain
+     * 地址类型0 ipv4
      * @return addressType
      */
     public AddressTypeEnum getAddressType() {
@@ -689,7 +585,7 @@ public class ListAclRulesRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -795,11 +691,10 @@ public class ListAclRulesRequest {
         }
         ListAclRulesRequest that = (ListAclRulesRequest) obj;
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.actionType, that.actionType)
-            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.tagsId, that.tagsId)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
@@ -810,7 +705,6 @@ public class ListAclRulesRequest {
     public int hashCode() {
         return Objects.hash(objectId,
             type,
-            protocol,
             ip,
             name,
             direction,
@@ -834,7 +728,6 @@ public class ListAclRulesRequest {
         sb.append("class ListAclRulesRequest {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");

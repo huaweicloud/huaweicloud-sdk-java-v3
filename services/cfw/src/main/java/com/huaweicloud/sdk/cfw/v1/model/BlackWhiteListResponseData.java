@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class BlackWhiteListResponseData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
-
-    private String objectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -37,23 +32,6 @@ public class BlackWhiteListResponseData {
     @JsonProperty(value = "records")
 
     private List<BlackWhiteListResponseDataRecords> records = null;
-
-    public BlackWhiteListResponseData withObjectId(String objectId) {
-        this.objectId = objectId;
-        return this;
-    }
-
-    /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
-     * @return objectId
-     */
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
 
     public BlackWhiteListResponseData withOffset(Integer offset) {
         this.offset = offset;
@@ -148,21 +126,19 @@ public class BlackWhiteListResponseData {
             return false;
         }
         BlackWhiteListResponseData that = (BlackWhiteListResponseData) obj;
-        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total)
-            && Objects.equals(this.records, that.records);
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, offset, limit, total, records);
+        return Objects.hash(offset, limit, total, records);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BlackWhiteListResponseData {\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");

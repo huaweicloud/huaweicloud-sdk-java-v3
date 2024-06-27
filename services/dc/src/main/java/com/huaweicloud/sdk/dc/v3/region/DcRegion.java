@@ -61,6 +61,8 @@ public class DcRegion {
 
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://dcaas.me-east-1.myhuaweicloud.com");
 
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dcaas.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -88,6 +90,7 @@ public class DcRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("me-east-1", ME_EAST_1);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -78,6 +78,11 @@ public class RuleAddressDtoForRequest {
 
     private List<String> predefinedGroup = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_group")
+
+    private List<String> addressGroup = null;
+
     public RuleAddressDtoForRequest withType(Integer type) {
         this.type = type;
         return this;
@@ -347,6 +352,39 @@ public class RuleAddressDtoForRequest {
         this.predefinedGroup = predefinedGroup;
     }
 
+    public RuleAddressDtoForRequest withAddressGroup(List<String> addressGroup) {
+        this.addressGroup = addressGroup;
+        return this;
+    }
+
+    public RuleAddressDtoForRequest addAddressGroupItem(String addressGroupItem) {
+        if (this.addressGroup == null) {
+            this.addressGroup = new ArrayList<>();
+        }
+        this.addressGroup.add(addressGroupItem);
+        return this;
+    }
+
+    public RuleAddressDtoForRequest withAddressGroup(Consumer<List<String>> addressGroupSetter) {
+        if (this.addressGroup == null) {
+            this.addressGroup = new ArrayList<>();
+        }
+        addressGroupSetter.accept(this.addressGroup);
+        return this;
+    }
+
+    /**
+     * 地址组列表
+     * @return addressGroup
+     */
+    public List<String> getAddressGroup() {
+        return addressGroup;
+    }
+
+    public void setAddressGroup(List<String> addressGroup) {
+        this.addressGroup = addressGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -364,7 +402,8 @@ public class RuleAddressDtoForRequest {
             && Objects.equals(this.regionList, that.regionList) && Objects.equals(this.domainSetId, that.domainSetId)
             && Objects.equals(this.domainSetName, that.domainSetName) && Objects.equals(this.ipAddress, that.ipAddress)
             && Objects.equals(this.addressSetType, that.addressSetType)
-            && Objects.equals(this.predefinedGroup, that.predefinedGroup);
+            && Objects.equals(this.predefinedGroup, that.predefinedGroup)
+            && Objects.equals(this.addressGroup, that.addressGroup);
     }
 
     @Override
@@ -381,7 +420,8 @@ public class RuleAddressDtoForRequest {
             domainSetName,
             ipAddress,
             addressSetType,
-            predefinedGroup);
+            predefinedGroup,
+            addressGroup);
     }
 
     @Override
@@ -401,6 +441,7 @@ public class RuleAddressDtoForRequest {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    addressSetType: ").append(toIndentedString(addressSetType)).append("\n");
         sb.append("    predefinedGroup: ").append(toIndentedString(predefinedGroup)).append("\n");
+        sb.append("    addressGroup: ").append(toIndentedString(addressGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

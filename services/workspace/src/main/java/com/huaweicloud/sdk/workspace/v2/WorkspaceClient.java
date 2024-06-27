@@ -127,6 +127,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
@@ -2378,6 +2382,63 @@ public class WorkspaceClient {
     public SyncInvoker<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> listMetricNotifyRuleInvoker(
         ListMetricNotifyRuleRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.listMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 查询指标
+     *
+     * 查询指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return ListMetricsResponse
+     */
+    public ListMetricsResponse listMetrics(ListMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listMetrics);
+    }
+
+    /**
+     * 查询指标
+     *
+     * 查询指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return SyncInvoker<ListMetricsRequest, ListMetricsResponse>
+     */
+    public SyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsInvoker(ListMetricsRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.listMetrics, hcClient);
+    }
+
+    /**
+     * 查询指标趋势
+     *
+     * 查询指标趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsTrendRequest 请求对象
+     * @return ListMetricsTrendResponse
+     */
+    public ListMetricsTrendResponse listMetricsTrend(ListMetricsTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listMetricsTrend);
+    }
+
+    /**
+     * 查询指标趋势
+     *
+     * 查询指标趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsTrendRequest 请求对象
+     * @return SyncInvoker<ListMetricsTrendRequest, ListMetricsTrendResponse>
+     */
+    public SyncInvoker<ListMetricsTrendRequest, ListMetricsTrendResponse> listMetricsTrendInvoker(
+        ListMetricsTrendRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.listMetricsTrend, hcClient);
     }
 
     /**

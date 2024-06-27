@@ -98,7 +98,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
      */
     public static final class FileImportDbLevelEnum {
 
@@ -112,12 +112,18 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
          */
         public static final FileImportDbLevelEnum TABLE = new FileImportDbLevelEnum("table");
 
+        /**
+         * Enum COLUMN for value: "column"
+         */
+        public static final FileImportDbLevelEnum COLUMN = new FileImportDbLevelEnum("column");
+
         private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FileImportDbLevelEnum> createStaticFields() {
             Map<String, FileImportDbLevelEnum> map = new HashMap<>();
             map.put("database", DATABASE);
             map.put("table", TABLE);
+            map.put("column", COLUMN);
             return Collections.unmodifiableMap(map);
         }
 
@@ -238,7 +244,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
     }
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
      * @return fileImportDbLevel
      */
     public FileImportDbLevelEnum getFileImportDbLevel() {

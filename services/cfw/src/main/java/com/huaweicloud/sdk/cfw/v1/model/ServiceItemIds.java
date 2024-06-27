@@ -16,14 +16,14 @@ public class ServiceItemIds {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<IdObject> items = null;
+    private List<ServiceItemIdsItems> items = null;
 
-    public ServiceItemIds withItems(List<IdObject> items) {
+    public ServiceItemIds withItems(List<ServiceItemIdsItems> items) {
         this.items = items;
         return this;
     }
 
-    public ServiceItemIds addItemsItem(IdObject itemsItem) {
+    public ServiceItemIds addItemsItem(ServiceItemIdsItems itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class ServiceItemIds {
         return this;
     }
 
-    public ServiceItemIds withItems(Consumer<List<IdObject>> itemsSetter) {
+    public ServiceItemIds withItems(Consumer<List<ServiceItemIdsItems>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class ServiceItemIds {
      * 服务组成员id列表
      * @return items
      */
-    public List<IdObject> getItems() {
+    public List<ServiceItemIdsItems> getItems() {
         return items;
     }
 
-    public void setItems(List<IdObject> items) {
+    public void setItems(List<ServiceItemIdsItems> items) {
         this.items = items;
     }
 

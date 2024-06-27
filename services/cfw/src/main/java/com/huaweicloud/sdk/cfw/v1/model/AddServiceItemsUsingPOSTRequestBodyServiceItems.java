@@ -11,11 +11,6 @@ import java.util.Objects;
 public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "item_id")
-
-    private String itemId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
     private Integer protocol;
@@ -31,31 +26,9 @@ public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
     private String destPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
-
-    public AddServiceItemsUsingPOSTRequestBodyServiceItems withItemId(String itemId) {
-        this.itemId = itemId;
-        return this;
-    }
-
-    /**
-     * 服务成员id
-     * @return itemId
-     */
-    public String getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
 
     public AddServiceItemsUsingPOSTRequestBodyServiceItems withProtocol(Integer protocol) {
         this.protocol = protocol;
@@ -108,23 +81,6 @@ public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
         this.destPort = destPort;
     }
 
-    public AddServiceItemsUsingPOSTRequestBodyServiceItems withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 服务成员名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public AddServiceItemsUsingPOSTRequestBodyServiceItems withDescription(String description) {
         this.description = description;
         return this;
@@ -151,25 +107,22 @@ public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
             return false;
         }
         AddServiceItemsUsingPOSTRequestBodyServiceItems that = (AddServiceItemsUsingPOSTRequestBodyServiceItems) obj;
-        return Objects.equals(this.itemId, that.itemId) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.sourcePort, that.sourcePort)
+            && Objects.equals(this.destPort, that.destPort) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, protocol, sourcePort, destPort, name, description);
+        return Objects.hash(protocol, sourcePort, destPort, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddServiceItemsUsingPOSTRequestBodyServiceItems {\n");
-        sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    destPort: ").append(toIndentedString(destPort)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

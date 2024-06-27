@@ -40,7 +40,7 @@ public class UpdateEndpointPolicyRequestBody {
     }
 
     /**
-     * 只涉及开启双端固定的网关型终端节点
+     * 终端节点策略信息
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {

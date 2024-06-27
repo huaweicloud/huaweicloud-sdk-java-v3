@@ -94,6 +94,8 @@ import com.huaweicloud.sdk.servicestage.v2.model.ListBranchesRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListBranchesResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListCommitsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListCommitsResponse;
+import com.huaweicloud.sdk.servicestage.v2.model.ListComponentOverviewsRequest;
+import com.huaweicloud.sdk.servicestage.v2.model.ListComponentOverviewsResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListComponentsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListComponentsResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListEnvironmentsRequest;
@@ -753,6 +755,51 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApplicationsRequest.OrderEnum.class),
             f -> f.withMarshaller(ListApplicationsRequest::getOrder, ListApplicationsRequest::setOrder));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListComponentOverviewsRequest, ListComponentOverviewsResponse> listComponentOverviews =
+        genForListComponentOverviews();
+
+    private static HttpRequestDef<ListComponentOverviewsRequest, ListComponentOverviewsResponse> genForListComponentOverviews() {
+        // basic
+        HttpRequestDef.Builder<ListComponentOverviewsRequest, ListComponentOverviewsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListComponentOverviewsRequest.class, ListComponentOverviewsResponse.class)
+            .withName("ListComponentOverviews")
+            .withUri("/v2/{project_id}/cas/applications/{application_id}/components/overviews")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListComponentOverviewsRequest::getApplicationId,
+                ListComponentOverviewsRequest::setApplicationId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComponentOverviewsRequest::getLimit, ListComponentOverviewsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComponentOverviewsRequest::getOffset, ListComponentOverviewsRequest::setOffset));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListComponentOverviewsRequest::getOrderBy,
+                ListComponentOverviewsRequest::setOrderBy));
+        builder.<ListComponentOverviewsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListComponentOverviewsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListComponentOverviewsRequest::getOrder, ListComponentOverviewsRequest::setOrder));
 
         // response
 

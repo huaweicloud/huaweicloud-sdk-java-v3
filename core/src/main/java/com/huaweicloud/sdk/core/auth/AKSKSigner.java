@@ -161,8 +161,8 @@ public class AKSKSigner implements IAKSKSigner {
         // filter out content-type header
         allHeaders.putAll(request.getHeaders()
                 .entrySet().stream()
-                .filter(entry -> !entry.getKey().equalsIgnoreCase(Constants.CONTENT_TYPE))
-                .collect(Collectors.toMap(
+                .filter(entry -> !(entry.getKey().equalsIgnoreCase(Constants.CONTENT_TYPE)
+                        || entry.getKey().contains("_"))).collect(Collectors.toMap(
                         entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
         allHeaders.putAll(authenticationHeaders.entrySet().stream()
                 .collect(Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));

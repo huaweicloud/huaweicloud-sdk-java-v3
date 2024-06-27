@@ -127,6 +127,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
@@ -2414,6 +2418,63 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListMetricNotifyRuleRequest, ListMetricNotifyRuleResponse> listMetricNotifyRuleAsyncInvoker(
         ListMetricNotifyRuleRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 查询指标
+     *
+     * 查询指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return CompletableFuture<ListMetricsResponse>
+     */
+    public CompletableFuture<ListMetricsResponse> listMetricsAsync(ListMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listMetrics);
+    }
+
+    /**
+     * 查询指标
+     *
+     * 查询指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsRequest 请求对象
+     * @return AsyncInvoker<ListMetricsRequest, ListMetricsResponse>
+     */
+    public AsyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsAsyncInvoker(ListMetricsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listMetrics, hcClient);
+    }
+
+    /**
+     * 查询指标趋势
+     *
+     * 查询指标趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsTrendRequest 请求对象
+     * @return CompletableFuture<ListMetricsTrendResponse>
+     */
+    public CompletableFuture<ListMetricsTrendResponse> listMetricsTrendAsync(ListMetricsTrendRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listMetricsTrend);
+    }
+
+    /**
+     * 查询指标趋势
+     *
+     * 查询指标趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricsTrendRequest 请求对象
+     * @return AsyncInvoker<ListMetricsTrendRequest, ListMetricsTrendResponse>
+     */
+    public AsyncInvoker<ListMetricsTrendRequest, ListMetricsTrendResponse> listMetricsTrendAsyncInvoker(
+        ListMetricsTrendRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listMetricsTrend, hcClient);
     }
 
     /**

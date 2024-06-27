@@ -66,7 +66,7 @@ public class RuleServiceDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_group_names")
 
-    private List<AddressGroupVO> serviceGroupNames = null;
+    private List<ServiceGroupVO> serviceGroupNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_set_type")
@@ -307,12 +307,12 @@ public class RuleServiceDto {
         this.serviceGroup = serviceGroup;
     }
 
-    public RuleServiceDto withServiceGroupNames(List<AddressGroupVO> serviceGroupNames) {
+    public RuleServiceDto withServiceGroupNames(List<ServiceGroupVO> serviceGroupNames) {
         this.serviceGroupNames = serviceGroupNames;
         return this;
     }
 
-    public RuleServiceDto addServiceGroupNamesItem(AddressGroupVO serviceGroupNamesItem) {
+    public RuleServiceDto addServiceGroupNamesItem(ServiceGroupVO serviceGroupNamesItem) {
         if (this.serviceGroupNames == null) {
             this.serviceGroupNames = new ArrayList<>();
         }
@@ -320,7 +320,7 @@ public class RuleServiceDto {
         return this;
     }
 
-    public RuleServiceDto withServiceGroupNames(Consumer<List<AddressGroupVO>> serviceGroupNamesSetter) {
+    public RuleServiceDto withServiceGroupNames(Consumer<List<ServiceGroupVO>> serviceGroupNamesSetter) {
         if (this.serviceGroupNames == null) {
             this.serviceGroupNames = new ArrayList<>();
         }
@@ -332,11 +332,11 @@ public class RuleServiceDto {
      * 服务组名称列表
      * @return serviceGroupNames
      */
-    public List<AddressGroupVO> getServiceGroupNames() {
+    public List<ServiceGroupVO> getServiceGroupNames() {
         return serviceGroupNames;
     }
 
-    public void setServiceGroupNames(List<AddressGroupVO> serviceGroupNames) {
+    public void setServiceGroupNames(List<ServiceGroupVO> serviceGroupNames) {
         this.serviceGroupNames = serviceGroupNames;
     }
 

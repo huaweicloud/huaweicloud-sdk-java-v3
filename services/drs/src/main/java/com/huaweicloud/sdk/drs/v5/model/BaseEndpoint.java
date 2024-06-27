@@ -24,7 +24,7 @@ public class BaseEndpoint {
     private String id;
 
     /**
-     * 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
+     * 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。 - postgresql: 云下自建PostgreSQL数据库。 - ecs_postgresql: 华为云ECS自建PostgreSQL数据库。 - cloud_postgresql: 华为云数据库RDS for PostgreSQL。 - mongodb: 云下自建MongoDB数据库。 - ecs_mongodb: 华为云ECS自建MongoDB数据库。 - cloud_mongodb: 华为云文档数据库服务DDS。
      */
     public static final class EndpointNameEnum {
 
@@ -83,6 +83,36 @@ public class BaseEndpoint {
          */
         public static final EndpointNameEnum CLOUD_GAUSSDB_REDIS = new EndpointNameEnum("cloud_gaussdb_redis");
 
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
+        public static final EndpointNameEnum POSTGRESQL = new EndpointNameEnum("postgresql");
+
+        /**
+         * Enum ECS_POSTGRESQL for value: "ecs_postgresql"
+         */
+        public static final EndpointNameEnum ECS_POSTGRESQL = new EndpointNameEnum("ecs_postgresql");
+
+        /**
+         * Enum CLOUD_POSTGRESQL for value: "cloud_postgresql"
+         */
+        public static final EndpointNameEnum CLOUD_POSTGRESQL = new EndpointNameEnum("cloud_postgresql");
+
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
+        public static final EndpointNameEnum MONGODB = new EndpointNameEnum("mongodb");
+
+        /**
+         * Enum ECS_MONGODB for value: "ecs_mongodb"
+         */
+        public static final EndpointNameEnum ECS_MONGODB = new EndpointNameEnum("ecs_mongodb");
+
+        /**
+         * Enum CLOUD_MONGODB for value: "cloud_mongodb"
+         */
+        public static final EndpointNameEnum CLOUD_MONGODB = new EndpointNameEnum("cloud_mongodb");
+
         private static final Map<String, EndpointNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EndpointNameEnum> createStaticFields() {
@@ -98,6 +128,12 @@ public class BaseEndpoint {
             map.put("rediscluster", REDISCLUSTER);
             map.put("ecs_rediscluster", ECS_REDISCLUSTER);
             map.put("cloud_gaussdb_redis", CLOUD_GAUSSDB_REDIS);
+            map.put("postgresql", POSTGRESQL);
+            map.put("ecs_postgresql", ECS_POSTGRESQL);
+            map.put("cloud_postgresql", CLOUD_POSTGRESQL);
+            map.put("mongodb", MONGODB);
+            map.put("ecs_mongodb", ECS_MONGODB);
+            map.put("cloud_mongodb", CLOUD_MONGODB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -215,7 +251,7 @@ public class BaseEndpoint {
     }
 
     /**
-     * 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。
+     * 数据库场景类型。取值： - oracle：云下自建Oracle数据库。 - ecs_oracle：华为云ECS自建Oracle数据库。 - cloud_gaussdbv5：华为云数据库GaussDB分布式。 - mysql：他云/本地自建MySQL数据库。 - ecs_mysql：华为云ECS自建MySQL数据库。 - cloud_mysql：华为云数据库RDS for MySQL。 - redis：云下自建Redis数据。 - ecs_redis：华为云ECS自建Redis数据。 - rediscluster：云下自建Redis集群数据库。 - ecs_rediscluster：华为云ECS自建Redis集群数据库。 - cloud_gaussdb_redis：华为云数据库GeminiDB Redis。 - postgresql: 云下自建PostgreSQL数据库。 - ecs_postgresql: 华为云ECS自建PostgreSQL数据库。 - cloud_postgresql: 华为云数据库RDS for PostgreSQL。 - mongodb: 云下自建MongoDB数据库。 - ecs_mongodb: 华为云ECS自建MongoDB数据库。 - cloud_mongodb: 华为云文档数据库服务DDS。
      * @return endpointName
      */
     public EndpointNameEnum getEndpointName() {

@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.aom.v2.model.AddMetricDataRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMetricDataResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
@@ -26,6 +28,8 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceRequest;
@@ -60,6 +64,8 @@ import com.huaweicloud.sdk.aom.v2.model.ListMetadataAomPromGetRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetadataAomPromGetResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricItemsRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricItemsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
@@ -145,7 +151,7 @@ public class AomAsyncClient {
     /**
      * 添加阈值规则
      *
-     * 该接口用于添加一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于添加一条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -159,7 +165,7 @@ public class AomAsyncClient {
     /**
      * 添加阈值规则
      *
-     * 该接口用于添加一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于添加一条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -203,7 +209,7 @@ public class AomAsyncClient {
     /**
      * 添加监控数据
      *
-     * 该接口用于向服务端添加一条或多条监控数据。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于向服务端添加一条或多条监控数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -217,7 +223,7 @@ public class AomAsyncClient {
     /**
      * 添加监控数据
      *
-     * 该接口用于向服务端添加一条或多条监控数据。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于向服务端添加一条或多条监控数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -259,9 +265,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 添加或修改指标类或事件类告警规则
+     *
+     * 添加或修改AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOrUpdateMetricOrEventAlarmRuleRequest 请求对象
+     * @return CompletableFuture<AddOrUpdateMetricOrEventAlarmRuleResponse>
+     */
+    public CompletableFuture<AddOrUpdateMetricOrEventAlarmRuleResponse> addOrUpdateMetricOrEventAlarmRuleAsync(
+        AddOrUpdateMetricOrEventAlarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.addOrUpdateMetricOrEventAlarmRule);
+    }
+
+    /**
+     * 添加或修改指标类或事件类告警规则
+     *
+     * 添加或修改AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOrUpdateMetricOrEventAlarmRuleRequest 请求对象
+     * @return AsyncInvoker<AddOrUpdateMetricOrEventAlarmRuleRequest, AddOrUpdateMetricOrEventAlarmRuleResponse>
+     */
+    public AsyncInvoker<AddOrUpdateMetricOrEventAlarmRuleRequest, AddOrUpdateMetricOrEventAlarmRuleResponse> addOrUpdateMetricOrEventAlarmRuleAsyncInvoker(
+        AddOrUpdateMetricOrEventAlarmRuleRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.addOrUpdateMetricOrEventAlarmRule, hcClient);
+    }
+
+    /**
      * 添加或修改服务发现规则
      *
-     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -276,7 +312,7 @@ public class AomAsyncClient {
     /**
      * 添加或修改服务发现规则
      *
-     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,7 +384,7 @@ public class AomAsyncClient {
     /**
      * 删除阈值规则
      *
-     * 该接口用于删除阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于删除阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -362,7 +398,7 @@ public class AomAsyncClient {
     /**
      * 删除阈值规则
      *
-     * 该接口用于删除阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于删除阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -377,7 +413,7 @@ public class AomAsyncClient {
     /**
      * 批量删除阈值规则
      *
-     * 批量删除阈值规则[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于批量删除阈值规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -391,7 +427,7 @@ public class AomAsyncClient {
     /**
      * 批量删除阈值规则
      *
-     * 批量删除阈值规则[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于批量删除阈值规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,6 +470,36 @@ public class AomAsyncClient {
     }
 
     /**
+     * 删除指标类或事件类告警规则
+     *
+     * 删除AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMetricOrEventAlarmRuleRequest 请求对象
+     * @return CompletableFuture<DeleteMetricOrEventAlarmRuleResponse>
+     */
+    public CompletableFuture<DeleteMetricOrEventAlarmRuleResponse> deleteMetricOrEventAlarmRuleAsync(
+        DeleteMetricOrEventAlarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteMetricOrEventAlarmRule);
+    }
+
+    /**
+     * 删除指标类或事件类告警规则
+     *
+     * 删除AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMetricOrEventAlarmRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteMetricOrEventAlarmRuleRequest, DeleteMetricOrEventAlarmRuleResponse>
+     */
+    public AsyncInvoker<DeleteMetricOrEventAlarmRuleRequest, DeleteMetricOrEventAlarmRuleResponse> deleteMetricOrEventAlarmRuleAsyncInvoker(
+        DeleteMetricOrEventAlarmRuleRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.deleteMetricOrEventAlarmRule, hcClient);
+    }
+
+    /**
      * 删除静默规则
      *
      * 删除静默规则。
@@ -465,7 +531,7 @@ public class AomAsyncClient {
     /**
      * 删除服务发现规则
      *
-     * 该接口用于删除服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于删除服务发现规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -480,7 +546,7 @@ public class AomAsyncClient {
     /**
      * 删除服务发现规则
      *
-     * 该接口用于删除服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于删除服务发现规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -552,7 +618,7 @@ public class AomAsyncClient {
     /**
      * 查询阈值规则列表
      *
-     * 该接口用于查询阈值规则列表。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询阈值规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -566,7 +632,7 @@ public class AomAsyncClient {
     /**
      * 查询阈值规则列表
      *
-     * 该接口用于查询阈值规则列表。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询阈值规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -667,7 +733,7 @@ public class AomAsyncClient {
     /**
      * 查询指标
      *
-     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -681,7 +747,7 @@ public class AomAsyncClient {
     /**
      * 查询指标
      *
-     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -691,6 +757,36 @@ public class AomAsyncClient {
     public AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsAsyncInvoker(
         ListMetricItemsRequest request) {
         return new AsyncInvoker<>(request, AomMeta.listMetricItems, hcClient);
+    }
+
+    /**
+     * 查询指标类或者事件类告警规则列表
+     *
+     * 查询AOM2.0指标类或者事件类告警规则列表。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricOrEventAlarmRuleRequest 请求对象
+     * @return CompletableFuture<ListMetricOrEventAlarmRuleResponse>
+     */
+    public CompletableFuture<ListMetricOrEventAlarmRuleResponse> listMetricOrEventAlarmRuleAsync(
+        ListMetricOrEventAlarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listMetricOrEventAlarmRule);
+    }
+
+    /**
+     * 查询指标类或者事件类告警规则列表
+     *
+     * 查询AOM2.0指标类或者事件类告警规则列表。(注：接口目前开放的region为：华东-上海一)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricOrEventAlarmRuleRequest 请求对象
+     * @return AsyncInvoker<ListMetricOrEventAlarmRuleRequest, ListMetricOrEventAlarmRuleResponse>
+     */
+    public AsyncInvoker<ListMetricOrEventAlarmRuleRequest, ListMetricOrEventAlarmRuleResponse> listMetricOrEventAlarmRuleAsyncInvoker(
+        ListMetricOrEventAlarmRuleRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listMetricOrEventAlarmRule, hcClient);
     }
 
     /**
@@ -784,7 +880,7 @@ public class AomAsyncClient {
     /**
      * 查询时序数据
      *
-     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -798,7 +894,7 @@ public class AomAsyncClient {
     /**
      * 查询时序数据
      *
-     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -812,7 +908,7 @@ public class AomAsyncClient {
     /**
      * 查询时间序列
      *
-     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -826,7 +922,7 @@ public class AomAsyncClient {
     /**
      * 查询时间序列
      *
-     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -840,7 +936,7 @@ public class AomAsyncClient {
     /**
      * 查询系统中已有服务发现规则
      *
-     * 该接口用于查询系统当前已存在的服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前已存在的服务发现规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -855,7 +951,7 @@ public class AomAsyncClient {
     /**
      * 查询系统中已有服务发现规则
      *
-     * 该接口用于查询系统当前已存在的服务发现规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询系统当前已存在的服务发现规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -927,7 +1023,7 @@ public class AomAsyncClient {
     /**
      * 查询单条阈值规则
      *
-     * 该接口用于查询单条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询单条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -941,7 +1037,7 @@ public class AomAsyncClient {
     /**
      * 查询单条阈值规则
      *
-     * 该接口用于查询单条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询单条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -956,7 +1052,7 @@ public class AomAsyncClient {
     /**
      * 查询监控数据
      *
-     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -970,7 +1066,7 @@ public class AomAsyncClient {
     /**
      * 查询监控数据
      *
-     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1014,7 +1110,7 @@ public class AomAsyncClient {
     /**
      * 修改阈值规则
      *
-     * 该接口用于修改一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于修改一条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1028,7 +1124,7 @@ public class AomAsyncClient {
     /**
      * 修改阈值规则
      *
-     * 该接口用于修改一条阈值规则。[（当前接口未上线墨西哥城二、圣地亚哥、圣保罗一）](tag:hws,hws_hk)
+     * 该接口用于修改一条阈值规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1217,7 +1313,7 @@ public class AomAsyncClient {
     /**
      * GET方法查询瞬时数据
      *
-     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1232,7 +1328,7 @@ public class AomAsyncClient {
     /**
      * GET方法查询瞬时数据
      *
-     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1247,7 +1343,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法查询瞬时数据
      *
-     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1262,7 +1358,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法查询瞬时数据
      *
-     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1277,7 +1373,7 @@ public class AomAsyncClient {
     /**
      * 查询标签值
      *
-     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询带有指定标签的时间序列列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1292,7 +1388,7 @@ public class AomAsyncClient {
     /**
      * 查询标签值
      *
-     * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询带有指定标签的时间序列列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1307,7 +1403,7 @@ public class AomAsyncClient {
     /**
      * GET方法获取标签名列表
      *
-     * 该接口使用GET方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法获取标签名列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1322,7 +1418,7 @@ public class AomAsyncClient {
     /**
      * GET方法获取标签名列表
      *
-     * 该接口使用GET方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法获取标签名列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1337,7 +1433,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法获取标签名列表
      *
-     * 该接口使用POST方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法获取标签名列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1352,7 +1448,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法获取标签名列表
      *
-     * 该接口使用POST方法获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法获取标签名列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1367,7 +1463,7 @@ public class AomAsyncClient {
     /**
      * 元数据查询
      *
-     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询序列及序列标签的元数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1382,7 +1478,7 @@ public class AomAsyncClient {
     /**
      * 元数据查询
      *
-     * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询序列及序列标签的元数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1426,7 +1522,7 @@ public class AomAsyncClient {
     /**
      * GET方法查询区间数据
      *
-     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1441,7 +1537,7 @@ public class AomAsyncClient {
     /**
      * GET方法查询区间数据
      *
-     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用GET方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1456,7 +1552,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法查询区间数据
      *
-     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1471,7 +1567,7 @@ public class AomAsyncClient {
     /**
      * （推荐）POST方法查询区间数据
      *
-     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口使用POST方法查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

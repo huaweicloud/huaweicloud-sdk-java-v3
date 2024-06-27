@@ -28,6 +28,9 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreatePortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreatePortTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreatePortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequestBody;
@@ -40,10 +43,16 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
@@ -56,6 +65,9 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreatePortTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreatePortTagRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreatePortTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
@@ -89,6 +101,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeletePortTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeletePortTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
@@ -123,6 +137,11 @@ import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListResourcesByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
@@ -163,6 +182,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -276,6 +297,34 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse> batchCreatePortTags =
+        genForBatchCreatePortTags();
+
+    private static HttpRequestDef<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse> genForBatchCreatePortTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreatePortTagsRequest.class, BatchCreatePortTagsResponse.class)
+                .withName("BatchCreatePortTags")
+                .withUri("/v3/{project_id}/ports/{port_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreatePortTagsRequest::getPortId, BatchCreatePortTagsRequest::setPortId));
+        builder.<BatchCreatePortTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreatePortTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreatePortTagsRequest::getBody, BatchCreatePortTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> batchCreateSecurityGroupRules =
         genForBatchCreateSecurityGroupRules();
 
@@ -330,6 +379,85 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(BatchCreateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(BatchCreateSubNetworkInterfaceRequest::getBody,
                 BatchCreateSubNetworkInterfaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse> batchDeletePortTags =
+        genForBatchDeletePortTags();
+
+    private static HttpRequestDef<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse> genForBatchDeletePortTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeletePortTagsRequest.class, BatchDeletePortTagsResponse.class)
+                .withName("BatchDeletePortTags")
+                .withUri("/v3/{project_id}/ports/{port_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePortTagsRequest::getPortId, BatchDeletePortTagsRequest::setPortId));
+        builder.<BatchDeletePortTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeletePortTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeletePortTagsRequest::getBody, BatchDeletePortTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountPortsByTagsRequest, CountPortsByTagsResponse> countPortsByTags =
+        genForCountPortsByTags();
+
+    private static HttpRequestDef<CountPortsByTagsRequest, CountPortsByTagsResponse> genForCountPortsByTags() {
+        // basic
+        HttpRequestDef.Builder<CountPortsByTagsRequest, CountPortsByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CountPortsByTagsRequest.class, CountPortsByTagsResponse.class)
+                .withName("CountPortsByTags")
+                .withUri("/v3/{project_id}/ports/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CountPortsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CountPortsByTagsRequestBody.class),
+            f -> f.withMarshaller(CountPortsByTagsRequest::getBody, CountPortsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePortTagRequest, CreatePortTagResponse> createPortTag =
+        genForCreatePortTag();
+
+    private static HttpRequestDef<CreatePortTagRequest, CreatePortTagResponse> genForCreatePortTag() {
+        // basic
+        HttpRequestDef.Builder<CreatePortTagRequest, CreatePortTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePortTagRequest.class, CreatePortTagResponse.class)
+                .withName("CreatePortTag")
+                .withUri("/v3/{project_id}/ports/{port_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePortTagRequest::getPortId, CreatePortTagRequest::setPortId));
+        builder.<CreatePortTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePortTagRequestBody.class),
+            f -> f.withMarshaller(CreatePortTagRequest::getBody, CreatePortTagRequest::setBody));
 
         // response
 
@@ -490,6 +618,34 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePortTagRequest, DeletePortTagResponse> deletePortTag =
+        genForDeletePortTag();
+
+    private static HttpRequestDef<DeletePortTagRequest, DeletePortTagResponse> genForDeletePortTag() {
+        // basic
+        HttpRequestDef.Builder<DeletePortTagRequest, DeletePortTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePortTagRequest.class, DeletePortTagResponse.class)
+                .withName("DeletePortTag")
+                .withUri("/v3/{project_id}/ports/{port_id}/tags/{tag_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePortTagRequest::getPortId, DeletePortTagRequest::setPortId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePortTagRequest::getTagKey, DeletePortTagRequest::setTagKey));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
         genForDeleteSecurityGroup();
 
@@ -640,6 +796,66 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
                 DeleteTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPortTagsRequest, ListPortTagsResponse> listPortTags = genForListPortTags();
+
+    private static HttpRequestDef<ListPortTagsRequest, ListPortTagsResponse> genForListPortTags() {
+        // basic
+        HttpRequestDef.Builder<ListPortTagsRequest, ListPortTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPortTagsRequest.class, ListPortTagsResponse.class)
+                .withName("ListPortTags")
+                .withUri("/v3/{project_id}/ports/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortTagsRequest::getLimit, ListPortTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortTagsRequest::getOffset, ListPortTagsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPortsByTagsRequest, ListPortsByTagsResponse> listPortsByTags =
+        genForListPortsByTags();
+
+    private static HttpRequestDef<ListPortsByTagsRequest, ListPortsByTagsResponse> genForListPortsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListPortsByTagsRequest, ListPortsByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListPortsByTagsRequest.class, ListPortsByTagsResponse.class)
+                .withName("ListPortsByTags")
+                .withUri("/v3/{project_id}/ports/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortsByTagsRequest::getLimit, ListPortsByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortsByTagsRequest::getOffset, ListPortsByTagsRequest::setOffset));
+        builder.<ListPortsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPortsByTagsRequestBody.class),
+            f -> f.withMarshaller(ListPortsByTagsRequest::getBody, ListPortsByTagsRequest::setBody));
 
         // response
 
@@ -1192,6 +1408,28 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(RemoveSourcesFromTrafficMirrorSessionRequestBody.class),
             f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getBody,
                 RemoveSourcesFromTrafficMirrorSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPortTagsRequest, ShowPortTagsResponse> showPortTags = genForShowPortTags();
+
+    private static HttpRequestDef<ShowPortTagsRequest, ShowPortTagsResponse> genForShowPortTags() {
+        // basic
+        HttpRequestDef.Builder<ShowPortTagsRequest, ShowPortTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPortTagsRequest.class, ShowPortTagsResponse.class)
+                .withName("ShowPortTags")
+                .withUri("/v3/{project_id}/ports/{port_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPortTagsRequest::getPortId, ShowPortTagsRequest::setPortId));
 
         // response
 
@@ -1866,6 +2104,16 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirewallTagsRequest::getLimit, ListFirewallTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirewallTagsRequest::getOffset, ListFirewallTagsRequest::setOffset));
 
         // response
 

@@ -25,18 +25,6 @@ public class ConditionExpression {
 
     private MultiFieldExpression multiFieldExpression;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "single_kv_expression")
-    @BsonProperty(value = "single_kv_expression")
-
-    private SingleKvExpression singleKvExpression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "composed_expression")
-    @BsonProperty(value = "composed_expression")
-
-    private ComposedExpression composedExpression;
-
     public ConditionExpression withSingleFieldExpression(SingleFieldExpression singleFieldExpression) {
         this.singleFieldExpression = singleFieldExpression;
         return this;
@@ -89,58 +77,6 @@ public class ConditionExpression {
         this.multiFieldExpression = multiFieldExpression;
     }
 
-    public ConditionExpression withSingleKvExpression(SingleKvExpression singleKvExpression) {
-        this.singleKvExpression = singleKvExpression;
-        return this;
-    }
-
-    public ConditionExpression withSingleKvExpression(Consumer<SingleKvExpression> singleKvExpressionSetter) {
-        if (this.singleKvExpression == null) {
-            this.singleKvExpression = new SingleKvExpression();
-            singleKvExpressionSetter.accept(this.singleKvExpression);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get singleKvExpression
-     * @return singleKvExpression
-     */
-    public SingleKvExpression getSingleKvExpression() {
-        return singleKvExpression;
-    }
-
-    public void setSingleKvExpression(SingleKvExpression singleKvExpression) {
-        this.singleKvExpression = singleKvExpression;
-    }
-
-    public ConditionExpression withComposedExpression(ComposedExpression composedExpression) {
-        this.composedExpression = composedExpression;
-        return this;
-    }
-
-    public ConditionExpression withComposedExpression(Consumer<ComposedExpression> composedExpressionSetter) {
-        if (this.composedExpression == null) {
-            this.composedExpression = new ComposedExpression();
-            composedExpressionSetter.accept(this.composedExpression);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get composedExpression
-     * @return composedExpression
-     */
-    public ComposedExpression getComposedExpression() {
-        return composedExpression;
-    }
-
-    public void setComposedExpression(ComposedExpression composedExpression) {
-        this.composedExpression = composedExpression;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,14 +87,12 @@ public class ConditionExpression {
         }
         ConditionExpression that = (ConditionExpression) obj;
         return Objects.equals(this.singleFieldExpression, that.singleFieldExpression)
-            && Objects.equals(this.multiFieldExpression, that.multiFieldExpression)
-            && Objects.equals(this.singleKvExpression, that.singleKvExpression)
-            && Objects.equals(this.composedExpression, that.composedExpression);
+            && Objects.equals(this.multiFieldExpression, that.multiFieldExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(singleFieldExpression, multiFieldExpression, singleKvExpression, composedExpression);
+        return Objects.hash(singleFieldExpression, multiFieldExpression);
     }
 
     @Override
@@ -167,8 +101,6 @@ public class ConditionExpression {
         sb.append("class ConditionExpression {\n");
         sb.append("    singleFieldExpression: ").append(toIndentedString(singleFieldExpression)).append("\n");
         sb.append("    multiFieldExpression: ").append(toIndentedString(multiFieldExpression)).append("\n");
-        sb.append("    singleKvExpression: ").append(toIndentedString(singleKvExpression)).append("\n");
-        sb.append("    composedExpression: ").append(toIndentedString(composedExpression)).append("\n");
         sb.append("}");
         return sb.toString();
     }

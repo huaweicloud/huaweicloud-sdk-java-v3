@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.aom.v2.model.AddMetricDataRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMetricDataResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateAlarmRuleV4RequestBody;
+import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.AlarmRuleParam;
@@ -25,11 +28,14 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleV4RequestBody;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesBody;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRuleName;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
@@ -69,6 +75,8 @@ import com.huaweicloud.sdk.aom.v2.model.ListMetadataAomPromGetRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetadataAomPromGetResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricItemsRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricItemsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
@@ -243,6 +251,45 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddOrUpdateMetricOrEventAlarmRuleRequest, AddOrUpdateMetricOrEventAlarmRuleResponse> addOrUpdateMetricOrEventAlarmRule =
+        genForAddOrUpdateMetricOrEventAlarmRule();
+
+    private static HttpRequestDef<AddOrUpdateMetricOrEventAlarmRuleRequest, AddOrUpdateMetricOrEventAlarmRuleResponse> genForAddOrUpdateMetricOrEventAlarmRule() {
+        // basic
+        HttpRequestDef.Builder<AddOrUpdateMetricOrEventAlarmRuleRequest, AddOrUpdateMetricOrEventAlarmRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddOrUpdateMetricOrEventAlarmRuleRequest.class,
+                    AddOrUpdateMetricOrEventAlarmRuleResponse.class)
+                .withName("AddOrUpdateMetricOrEventAlarmRule")
+                .withUri("/v4/{project_id}/alarm-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddOrUpdateMetricOrEventAlarmRuleRequest::getActionId,
+                AddOrUpdateMetricOrEventAlarmRuleRequest::setActionId));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddOrUpdateMetricOrEventAlarmRuleRequest::getEnterpriseProjectId,
+                AddOrUpdateMetricOrEventAlarmRuleRequest::setEnterpriseProjectId));
+        builder.<AddOrUpdateAlarmRuleV4RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddOrUpdateAlarmRuleV4RequestBody.class),
+            f -> f.withMarshaller(AddOrUpdateMetricOrEventAlarmRuleRequest::getBody,
+                AddOrUpdateMetricOrEventAlarmRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRules =
         genForAddOrUpdateServiceDiscoveryRules();
 
@@ -395,6 +442,33 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(DeleteEvent2alarmRuleRequest::getBody, DeleteEvent2alarmRuleRequest::setBody)
                 .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMetricOrEventAlarmRuleRequest, DeleteMetricOrEventAlarmRuleResponse> deleteMetricOrEventAlarmRule =
+        genForDeleteMetricOrEventAlarmRule();
+
+    private static HttpRequestDef<DeleteMetricOrEventAlarmRuleRequest, DeleteMetricOrEventAlarmRuleResponse> genForDeleteMetricOrEventAlarmRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteMetricOrEventAlarmRuleRequest, DeleteMetricOrEventAlarmRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteMetricOrEventAlarmRuleRequest.class,
+                    DeleteMetricOrEventAlarmRuleResponse.class)
+                .withName("DeleteMetricOrEventAlarmRule")
+                .withUri("/v4/{project_id}/alarm-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteAlarmRuleV4RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAlarmRuleV4RequestBody.class),
+            f -> f.withMarshaller(DeleteMetricOrEventAlarmRuleRequest::getBody,
+                DeleteMetricOrEventAlarmRuleRequest::setBody));
 
         // response
 
@@ -646,6 +720,99 @@ public class AomMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MetricAPIQueryItemParam.class),
             f -> f.withMarshaller(ListMetricItemsRequest::getBody, ListMetricItemsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricOrEventAlarmRuleRequest, ListMetricOrEventAlarmRuleResponse> listMetricOrEventAlarmRule =
+        genForListMetricOrEventAlarmRule();
+
+    private static HttpRequestDef<ListMetricOrEventAlarmRuleRequest, ListMetricOrEventAlarmRuleResponse> genForListMetricOrEventAlarmRule() {
+        // basic
+        HttpRequestDef.Builder<ListMetricOrEventAlarmRuleRequest, ListMetricOrEventAlarmRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMetricOrEventAlarmRuleRequest.class,
+                    ListMetricOrEventAlarmRuleResponse.class)
+                .withName("ListMetricOrEventAlarmRule")
+                .withUri("/v4/{project_id}/alarm-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getName,
+                ListMetricOrEventAlarmRuleRequest::setName));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getLimit,
+                ListMetricOrEventAlarmRuleRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getOffset,
+                ListMetricOrEventAlarmRuleRequest::setOffset));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getSortBy,
+                ListMetricOrEventAlarmRuleRequest::setSortBy));
+        builder.<String>withRequestField("event_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getEventSource,
+                ListMetricOrEventAlarmRuleRequest::setEventSource));
+        builder.<String>withRequestField("event_severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getEventSeverity,
+                ListMetricOrEventAlarmRuleRequest::setEventSeverity));
+        builder.<ListMetricOrEventAlarmRuleRequest.AlarmRuleStatusEnum>withRequestField("alarm_rule_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMetricOrEventAlarmRuleRequest.AlarmRuleStatusEnum.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getAlarmRuleStatus,
+                ListMetricOrEventAlarmRuleRequest::setAlarmRuleStatus));
+        builder.<ListMetricOrEventAlarmRuleRequest.AlarmRuleTypeEnum>withRequestField("alarm_rule_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMetricOrEventAlarmRuleRequest.AlarmRuleTypeEnum.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getAlarmRuleType,
+                ListMetricOrEventAlarmRuleRequest::setAlarmRuleType));
+        builder.<String>withRequestField("prom_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getPromInstanceId,
+                ListMetricOrEventAlarmRuleRequest::setPromInstanceId));
+        builder.<String>withRequestField("bind_notification_rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getBindNotificationRuleId,
+                ListMetricOrEventAlarmRuleRequest::setBindNotificationRuleId));
+        builder.<String>withRequestField("related_cce_clusters",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getRelatedCceClusters,
+                ListMetricOrEventAlarmRuleRequest::setRelatedCceClusters));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricOrEventAlarmRuleRequest::getEnterpriseProjectId,
+                ListMetricOrEventAlarmRuleRequest::setEnterpriseProjectId));
 
         // response
 

@@ -15,6 +15,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificatio
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseTableConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
@@ -29,6 +33,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CopyInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlBackupRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlBackupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlConfigurationRequest;
@@ -55,6 +65,16 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlBackupRequest;
@@ -95,6 +115,18 @@ import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRe
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseParameterRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseParameterResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceNodeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsInstancesRequest;
@@ -165,12 +197,20 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodePriorityRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodePriorityResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlNodeRequest;
@@ -183,6 +223,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
@@ -199,6 +241,14 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogDetailRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogDetailResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlBackupListRequest;
@@ -273,6 +323,16 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateBackupOffsitePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateBackupOffsitePolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPasswordRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPermissionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPermissionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseSlowLogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseSlowLogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlConfigurationRequest;
@@ -4303,6 +4363,65 @@ public class GaussDBClient {
     }
 
     /**
+     * 数据同步库配置校验
+     *
+     * 数据同步库配置校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckClickHouseDataBaseConfigRequest 请求对象
+     * @return CheckClickHouseDataBaseConfigResponse
+     */
+    public CheckClickHouseDataBaseConfigResponse checkClickHouseDataBaseConfig(
+        CheckClickHouseDataBaseConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.checkClickHouseDataBaseConfig);
+    }
+
+    /**
+     * 数据同步库配置校验
+     *
+     * 数据同步库配置校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckClickHouseDataBaseConfigRequest 请求对象
+     * @return SyncInvoker<CheckClickHouseDataBaseConfigRequest, CheckClickHouseDataBaseConfigResponse>
+     */
+    public SyncInvoker<CheckClickHouseDataBaseConfigRequest, CheckClickHouseDataBaseConfigResponse> checkClickHouseDataBaseConfigInvoker(
+        CheckClickHouseDataBaseConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.checkClickHouseDataBaseConfig, hcClient);
+    }
+
+    /**
+     * 数据同步表配置校验
+     *
+     * 数据同步表配置校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckClickHouseTableConfigRequest 请求对象
+     * @return CheckClickHouseTableConfigResponse
+     */
+    public CheckClickHouseTableConfigResponse checkClickHouseTableConfig(CheckClickHouseTableConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.checkClickHouseTableConfig);
+    }
+
+    /**
+     * 数据同步表配置校验
+     *
+     * 数据同步表配置校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckClickHouseTableConfigRequest 请求对象
+     * @return SyncInvoker<CheckClickHouseTableConfigRequest, CheckClickHouseTableConfigResponse>
+     */
+    public SyncInvoker<CheckClickHouseTableConfigRequest, CheckClickHouseTableConfigResponse> checkClickHouseTableConfigInvoker(
+        CheckClickHouseTableConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.checkClickHouseTableConfig, hcClient);
+    }
+
+    /**
      * HTAP数据同步库配置校验
      *
      * HTAP数据同步库配置校验。
@@ -4387,6 +4506,95 @@ public class GaussDBClient {
     public SyncInvoker<CheckTableConfigRequest, CheckTableConfigResponse> checkTableConfigInvoker(
         CheckTableConfigRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.checkTableConfig, hcClient);
+    }
+
+    /**
+     * 创建数据同步
+     *
+     * 创建数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseDataBaseReplicationRequest 请求对象
+     * @return CreateClickHouseDataBaseReplicationResponse
+     */
+    public CreateClickHouseDataBaseReplicationResponse createClickHouseDataBaseReplication(
+        CreateClickHouseDataBaseReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createClickHouseDataBaseReplication);
+    }
+
+    /**
+     * 创建数据同步
+     *
+     * 创建数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseDataBaseReplicationRequest 请求对象
+     * @return SyncInvoker<CreateClickHouseDataBaseReplicationRequest, CreateClickHouseDataBaseReplicationResponse>
+     */
+    public SyncInvoker<CreateClickHouseDataBaseReplicationRequest, CreateClickHouseDataBaseReplicationResponse> createClickHouseDataBaseReplicationInvoker(
+        CreateClickHouseDataBaseReplicationRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.createClickHouseDataBaseReplication, hcClient);
+    }
+
+    /**
+     * 创建数据库账号
+     *
+     * 创建数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseDatabaseUserRequest 请求对象
+     * @return CreateClickHouseDatabaseUserResponse
+     */
+    public CreateClickHouseDatabaseUserResponse createClickHouseDatabaseUser(
+        CreateClickHouseDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createClickHouseDatabaseUser);
+    }
+
+    /**
+     * 创建数据库账号
+     *
+     * 创建数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseDatabaseUserRequest 请求对象
+     * @return SyncInvoker<CreateClickHouseDatabaseUserRequest, CreateClickHouseDatabaseUserResponse>
+     */
+    public SyncInvoker<CreateClickHouseDatabaseUserRequest, CreateClickHouseDatabaseUserResponse> createClickHouseDatabaseUserInvoker(
+        CreateClickHouseDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.createClickHouseDatabaseUser, hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseInstanceRequest 请求对象
+     * @return CreateClickHouseInstanceResponse
+     */
+    public CreateClickHouseInstanceResponse createClickHouseInstance(CreateClickHouseInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.createClickHouseInstance);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateClickHouseInstanceRequest 请求对象
+     * @return SyncInvoker<CreateClickHouseInstanceRequest, CreateClickHouseInstanceResponse>
+     */
+    public SyncInvoker<CreateClickHouseInstanceRequest, CreateClickHouseInstanceResponse> createClickHouseInstanceInvoker(
+        CreateClickHouseInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.createClickHouseInstance, hcClient);
     }
 
     /**
@@ -4478,6 +4686,154 @@ public class GaussDBClient {
     }
 
     /**
+     * 停止修改数据同步
+     *
+     * 停止修改数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDataBaseConfigRequest 请求对象
+     * @return DeleteClickHouseDataBaseConfigResponse
+     */
+    public DeleteClickHouseDataBaseConfigResponse deleteClickHouseDataBaseConfig(
+        DeleteClickHouseDataBaseConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteClickHouseDataBaseConfig);
+    }
+
+    /**
+     * 停止修改数据同步
+     *
+     * 停止修改数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDataBaseConfigRequest 请求对象
+     * @return SyncInvoker<DeleteClickHouseDataBaseConfigRequest, DeleteClickHouseDataBaseConfigResponse>
+     */
+    public SyncInvoker<DeleteClickHouseDataBaseConfigRequest, DeleteClickHouseDataBaseConfigResponse> deleteClickHouseDataBaseConfigInvoker(
+        DeleteClickHouseDataBaseConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteClickHouseDataBaseConfig, hcClient);
+    }
+
+    /**
+     * 删除数据同步
+     *
+     * 删除数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDataBaseReplicationRequest 请求对象
+     * @return DeleteClickHouseDataBaseReplicationResponse
+     */
+    public DeleteClickHouseDataBaseReplicationResponse deleteClickHouseDataBaseReplication(
+        DeleteClickHouseDataBaseReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteClickHouseDataBaseReplication);
+    }
+
+    /**
+     * 删除数据同步
+     *
+     * 删除数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDataBaseReplicationRequest 请求对象
+     * @return SyncInvoker<DeleteClickHouseDataBaseReplicationRequest, DeleteClickHouseDataBaseReplicationResponse>
+     */
+    public SyncInvoker<DeleteClickHouseDataBaseReplicationRequest, DeleteClickHouseDataBaseReplicationResponse> deleteClickHouseDataBaseReplicationInvoker(
+        DeleteClickHouseDataBaseReplicationRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteClickHouseDataBaseReplication, hcClient);
+    }
+
+    /**
+     * 删除数据库账户
+     *
+     * 删除数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDatabaseUserRequest 请求对象
+     * @return DeleteClickHouseDatabaseUserResponse
+     */
+    public DeleteClickHouseDatabaseUserResponse deleteClickHouseDatabaseUser(
+        DeleteClickHouseDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteClickHouseDatabaseUser);
+    }
+
+    /**
+     * 删除数据库账户
+     *
+     * 删除数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseDatabaseUserRequest 请求对象
+     * @return SyncInvoker<DeleteClickHouseDatabaseUserRequest, DeleteClickHouseDatabaseUserResponse>
+     */
+    public SyncInvoker<DeleteClickHouseDatabaseUserRequest, DeleteClickHouseDatabaseUserResponse> deleteClickHouseDatabaseUserInvoker(
+        DeleteClickHouseDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteClickHouseDatabaseUser, hcClient);
+    }
+
+    /**
+     * 删除实例
+     *
+     * 删除实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseInstanceRequest 请求对象
+     * @return DeleteClickHouseInstanceResponse
+     */
+    public DeleteClickHouseInstanceResponse deleteClickHouseInstance(DeleteClickHouseInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteClickHouseInstance);
+    }
+
+    /**
+     * 删除实例
+     *
+     * 删除实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteClickHouseInstanceRequest, DeleteClickHouseInstanceResponse>
+     */
+    public SyncInvoker<DeleteClickHouseInstanceRequest, DeleteClickHouseInstanceResponse> deleteClickHouseInstanceInvoker(
+        DeleteClickHouseInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteClickHouseInstance, hcClient);
+    }
+
+    /**
+     * 批量解除LTS日志配置
+     *
+     * 批量解除LTS日志配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseLtsConfigRequest 请求对象
+     * @return DeleteClickHouseLtsConfigResponse
+     */
+    public DeleteClickHouseLtsConfigResponse deleteClickHouseLtsConfig(DeleteClickHouseLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteClickHouseLtsConfig);
+    }
+
+    /**
+     * 批量解除LTS日志配置
+     *
+     * 批量解除LTS日志配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClickHouseLtsConfigRequest 请求对象
+     * @return SyncInvoker<DeleteClickHouseLtsConfigRequest, DeleteClickHouseLtsConfigResponse>
+     */
+    public SyncInvoker<DeleteClickHouseLtsConfigRequest, DeleteClickHouseLtsConfigResponse> deleteClickHouseLtsConfigInvoker(
+        DeleteClickHouseLtsConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteClickHouseLtsConfig, hcClient);
+    }
+
+    /**
      * 删除StarRocks数据同步
      *
      * 删除StarRocks数据同步。
@@ -4563,6 +4919,183 @@ public class GaussDBClient {
     public SyncInvoker<DeleteStarrocksInstanceRequest, DeleteStarrocksInstanceResponse> deleteStarrocksInstanceInvoker(
         DeleteStarrocksInstanceRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.deleteStarrocksInstance, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseRequest 请求对象
+     * @return ListClickHouseDataBaseResponse
+     */
+    public ListClickHouseDataBaseResponse listClickHouseDataBase(ListClickHouseDataBaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseDataBase);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseRequest 请求对象
+     * @return SyncInvoker<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse>
+     */
+    public SyncInvoker<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse> listClickHouseDataBaseInvoker(
+        ListClickHouseDataBaseRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseDataBase, hcClient);
+    }
+
+    /**
+     * 查询数据同步的库参数配置
+     *
+     * 查询数据同步的库参数配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseParameterRequest 请求对象
+     * @return ListClickHouseDataBaseParameterResponse
+     */
+    public ListClickHouseDataBaseParameterResponse listClickHouseDataBaseParameter(
+        ListClickHouseDataBaseParameterRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseDataBaseParameter);
+    }
+
+    /**
+     * 查询数据同步的库参数配置
+     *
+     * 查询数据同步的库参数配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseParameterRequest 请求对象
+     * @return SyncInvoker<ListClickHouseDataBaseParameterRequest, ListClickHouseDataBaseParameterResponse>
+     */
+    public SyncInvoker<ListClickHouseDataBaseParameterRequest, ListClickHouseDataBaseParameterResponse> listClickHouseDataBaseParameterInvoker(
+        ListClickHouseDataBaseParameterRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseDataBaseParameter, hcClient);
+    }
+
+    /**
+     * 查询数据同步信息
+     *
+     * 查询数据同步信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseReplicationRequest 请求对象
+     * @return ListClickHouseDataBaseReplicationResponse
+     */
+    public ListClickHouseDataBaseReplicationResponse listClickHouseDataBaseReplication(
+        ListClickHouseDataBaseReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseDataBaseReplication);
+    }
+
+    /**
+     * 查询数据同步信息
+     *
+     * 查询数据同步信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseReplicationRequest 请求对象
+     * @return SyncInvoker<ListClickHouseDataBaseReplicationRequest, ListClickHouseDataBaseReplicationResponse>
+     */
+    public SyncInvoker<ListClickHouseDataBaseReplicationRequest, ListClickHouseDataBaseReplicationResponse> listClickHouseDataBaseReplicationInvoker(
+        ListClickHouseDataBaseReplicationRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseDataBaseReplication, hcClient);
+    }
+
+    /**
+     * 查看数据同步配置
+     *
+     * 查看数据同步配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseReplicationConfigRequest 请求对象
+     * @return ListClickHouseDataBaseReplicationConfigResponse
+     */
+    public ListClickHouseDataBaseReplicationConfigResponse listClickHouseDataBaseReplicationConfig(
+        ListClickHouseDataBaseReplicationConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseDataBaseReplicationConfig);
+    }
+
+    /**
+     * 查看数据同步配置
+     *
+     * 查看数据同步配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseDataBaseReplicationConfigRequest 请求对象
+     * @return SyncInvoker<ListClickHouseDataBaseReplicationConfigRequest, ListClickHouseDataBaseReplicationConfigResponse>
+     */
+    public SyncInvoker<ListClickHouseDataBaseReplicationConfigRequest, ListClickHouseDataBaseReplicationConfigResponse> listClickHouseDataBaseReplicationConfigInvoker(
+        ListClickHouseDataBaseReplicationConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseDataBaseReplicationConfig, hcClient);
+    }
+
+    /**
+     * 查询实例详情
+     *
+     * 查询实例详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseInstanceRequest 请求对象
+     * @return ListClickHouseInstanceResponse
+     */
+    public ListClickHouseInstanceResponse listClickHouseInstance(ListClickHouseInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseInstance);
+    }
+
+    /**
+     * 查询实例详情
+     *
+     * 查询实例详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseInstanceRequest 请求对象
+     * @return SyncInvoker<ListClickHouseInstanceRequest, ListClickHouseInstanceResponse>
+     */
+    public SyncInvoker<ListClickHouseInstanceRequest, ListClickHouseInstanceResponse> listClickHouseInstanceInvoker(
+        ListClickHouseInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseInstance, hcClient);
+    }
+
+    /**
+     * 查询错误日志、慢日志节点信息
+     *
+     * 查询错误日志、慢日志节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseInstanceNodeRequest 请求对象
+     * @return ListClickHouseInstanceNodeResponse
+     */
+    public ListClickHouseInstanceNodeResponse listClickHouseInstanceNode(ListClickHouseInstanceNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listClickHouseInstanceNode);
+    }
+
+    /**
+     * 查询错误日志、慢日志节点信息
+     *
+     * 查询错误日志、慢日志节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClickHouseInstanceNodeRequest 请求对象
+     * @return SyncInvoker<ListClickHouseInstanceNodeRequest, ListClickHouseInstanceNodeResponse>
+     */
+    public SyncInvoker<ListClickHouseInstanceNodeRequest, ListClickHouseInstanceNodeResponse> listClickHouseInstanceNodeInvoker(
+        ListClickHouseInstanceNodeRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listClickHouseInstanceNode, hcClient);
     }
 
     /**
@@ -4829,6 +5362,123 @@ public class GaussDBClient {
     }
 
     /**
+     * 暂停StarRocks数据同步
+     *
+     * 暂停StarRocks数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseStarRocksDataReplicationRequest 请求对象
+     * @return PauseStarRocksDataReplicationResponse
+     */
+    public PauseStarRocksDataReplicationResponse pauseStarRocksDataReplication(
+        PauseStarRocksDataReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.pauseStarRocksDataReplication);
+    }
+
+    /**
+     * 暂停StarRocks数据同步
+     *
+     * 暂停StarRocks数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseStarRocksDataReplicationRequest 请求对象
+     * @return SyncInvoker<PauseStarRocksDataReplicationRequest, PauseStarRocksDataReplicationResponse>
+     */
+    public SyncInvoker<PauseStarRocksDataReplicationRequest, PauseStarRocksDataReplicationResponse> pauseStarRocksDataReplicationInvoker(
+        PauseStarRocksDataReplicationRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.pauseStarRocksDataReplication, hcClient);
+    }
+
+    /**
+     * 重启实例
+     *
+     * 重启实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootClickHouseInstanceRequest 请求对象
+     * @return RebootClickHouseInstanceResponse
+     */
+    public RebootClickHouseInstanceResponse rebootClickHouseInstance(RebootClickHouseInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.rebootClickHouseInstance);
+    }
+
+    /**
+     * 重启实例
+     *
+     * 重启实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootClickHouseInstanceRequest 请求对象
+     * @return SyncInvoker<RebootClickHouseInstanceRequest, RebootClickHouseInstanceResponse>
+     */
+    public SyncInvoker<RebootClickHouseInstanceRequest, RebootClickHouseInstanceResponse> rebootClickHouseInstanceInvoker(
+        RebootClickHouseInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.rebootClickHouseInstance, hcClient);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeClickHouseFlavorRequest 请求对象
+     * @return ResizeClickHouseFlavorResponse
+     */
+    public ResizeClickHouseFlavorResponse resizeClickHouseFlavor(ResizeClickHouseFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.resizeClickHouseFlavor);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeClickHouseFlavorRequest 请求对象
+     * @return SyncInvoker<ResizeClickHouseFlavorRequest, ResizeClickHouseFlavorResponse>
+     */
+    public SyncInvoker<ResizeClickHouseFlavorRequest, ResizeClickHouseFlavorResponse> resizeClickHouseFlavorInvoker(
+        ResizeClickHouseFlavorRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.resizeClickHouseFlavor, hcClient);
+    }
+
+    /**
+     * 实例磁盘扩容
+     *
+     * 实例磁盘扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeClickHouseInstanceRequest 请求对象
+     * @return ResizeClickHouseInstanceResponse
+     */
+    public ResizeClickHouseInstanceResponse resizeClickHouseInstance(ResizeClickHouseInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.resizeClickHouseInstance);
+    }
+
+    /**
+     * 实例磁盘扩容
+     *
+     * 实例磁盘扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeClickHouseInstanceRequest 请求对象
+     * @return SyncInvoker<ResizeClickHouseInstanceRequest, ResizeClickHouseInstanceResponse>
+     */
+    public SyncInvoker<ResizeClickHouseInstanceRequest, ResizeClickHouseInstanceResponse> resizeClickHouseInstanceInvoker(
+        ResizeClickHouseInstanceRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.resizeClickHouseInstance, hcClient);
+    }
+
+    /**
      * 重启StarRocks实例
      *
      * 重启StarRocks实例。
@@ -4887,6 +5537,153 @@ public class GaussDBClient {
     }
 
     /**
+     * 恢复StarRocks数据同步
+     *
+     * 恢复StarRocks数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeStarRocksDataReplicationRequest 请求对象
+     * @return ResumeStarRocksDataReplicationResponse
+     */
+    public ResumeStarRocksDataReplicationResponse resumeStarRocksDataReplication(
+        ResumeStarRocksDataReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.resumeStarRocksDataReplication);
+    }
+
+    /**
+     * 恢复StarRocks数据同步
+     *
+     * 恢复StarRocks数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumeStarRocksDataReplicationRequest 请求对象
+     * @return SyncInvoker<ResumeStarRocksDataReplicationRequest, ResumeStarRocksDataReplicationResponse>
+     */
+    public SyncInvoker<ResumeStarRocksDataReplicationRequest, ResumeStarRocksDataReplicationResponse> resumeStarRocksDataReplicationInvoker(
+        ResumeStarRocksDataReplicationRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.resumeStarRocksDataReplication, hcClient);
+    }
+
+    /**
+     * 查询数据库账户
+     *
+     * 查询数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseDatabaseUserRequest 请求对象
+     * @return ShowClickHouseDatabaseUserResponse
+     */
+    public ShowClickHouseDatabaseUserResponse showClickHouseDatabaseUser(ShowClickHouseDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showClickHouseDatabaseUser);
+    }
+
+    /**
+     * 查询数据库账户
+     *
+     * 查询数据库账户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseDatabaseUserRequest 请求对象
+     * @return SyncInvoker<ShowClickHouseDatabaseUserRequest, ShowClickHouseDatabaseUserResponse>
+     */
+    public SyncInvoker<ShowClickHouseDatabaseUserRequest, ShowClickHouseDatabaseUserResponse> showClickHouseDatabaseUserInvoker(
+        ShowClickHouseDatabaseUserRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showClickHouseDatabaseUser, hcClient);
+    }
+
+    /**
+     * 查询实例LTS日志配置列表
+     *
+     * 查询实例LTS日志配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseLtsConfigRequest 请求对象
+     * @return ShowClickHouseLtsConfigResponse
+     */
+    public ShowClickHouseLtsConfigResponse showClickHouseLtsConfig(ShowClickHouseLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showClickHouseLtsConfig);
+    }
+
+    /**
+     * 查询实例LTS日志配置列表
+     *
+     * 查询实例LTS日志配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseLtsConfigRequest 请求对象
+     * @return SyncInvoker<ShowClickHouseLtsConfigRequest, ShowClickHouseLtsConfigResponse>
+     */
+    public SyncInvoker<ShowClickHouseLtsConfigRequest, ShowClickHouseLtsConfigResponse> showClickHouseLtsConfigInvoker(
+        ShowClickHouseLtsConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showClickHouseLtsConfig, hcClient);
+    }
+
+    /**
+     * 查询慢日志
+     *
+     * 获取内核慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseSlowLogDetailRequest 请求对象
+     * @return ShowClickHouseSlowLogDetailResponse
+     */
+    public ShowClickHouseSlowLogDetailResponse showClickHouseSlowLogDetail(ShowClickHouseSlowLogDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showClickHouseSlowLogDetail);
+    }
+
+    /**
+     * 查询慢日志
+     *
+     * 获取内核慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseSlowLogDetailRequest 请求对象
+     * @return SyncInvoker<ShowClickHouseSlowLogDetailRequest, ShowClickHouseSlowLogDetailResponse>
+     */
+    public SyncInvoker<ShowClickHouseSlowLogDetailRequest, ShowClickHouseSlowLogDetailResponse> showClickHouseSlowLogDetailInvoker(
+        ShowClickHouseSlowLogDetailRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showClickHouseSlowLogDetail, hcClient);
+    }
+
+    /**
+     * 查询慢日志脱敏状态
+     *
+     * 查询慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseSlowLogSensitiveStatusRequest 请求对象
+     * @return ShowClickHouseSlowLogSensitiveStatusResponse
+     */
+    public ShowClickHouseSlowLogSensitiveStatusResponse showClickHouseSlowLogSensitiveStatus(
+        ShowClickHouseSlowLogSensitiveStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showClickHouseSlowLogSensitiveStatus);
+    }
+
+    /**
+     * 查询慢日志脱敏状态
+     *
+     * 查询慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClickHouseSlowLogSensitiveStatusRequest 请求对象
+     * @return SyncInvoker<ShowClickHouseSlowLogSensitiveStatusRequest, ShowClickHouseSlowLogSensitiveStatusResponse>
+     */
+    public SyncInvoker<ShowClickHouseSlowLogSensitiveStatusRequest, ShowClickHouseSlowLogSensitiveStatusResponse> showClickHouseSlowLogSensitiveStatusInvoker(
+        ShowClickHouseSlowLogSensitiveStatusRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showClickHouseSlowLogSensitiveStatus, hcClient);
+    }
+
+    /**
      * 查询数据库账户
      *
      * 查询StarRocks数据库账户。
@@ -4913,6 +5710,155 @@ public class GaussDBClient {
     public SyncInvoker<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUserInvoker(
         ShowStarRocksDatabaseUserRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showStarRocksDatabaseUser, hcClient);
+    }
+
+    /**
+     * 修改数据同步
+     *
+     * 修改数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDataBaseConfigRequest 请求对象
+     * @return UpdateClickHouseDataBaseConfigResponse
+     */
+    public UpdateClickHouseDataBaseConfigResponse updateClickHouseDataBaseConfig(
+        UpdateClickHouseDataBaseConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateClickHouseDataBaseConfig);
+    }
+
+    /**
+     * 修改数据同步
+     *
+     * 修改数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDataBaseConfigRequest 请求对象
+     * @return SyncInvoker<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse>
+     */
+    public SyncInvoker<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse> updateClickHouseDataBaseConfigInvoker(
+        UpdateClickHouseDataBaseConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseDataBaseConfig, hcClient);
+    }
+
+    /**
+     * 修改数据库账号密码
+     *
+     * 修改数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDatabaseUserPasswordRequest 请求对象
+     * @return UpdateClickHouseDatabaseUserPasswordResponse
+     */
+    public UpdateClickHouseDatabaseUserPasswordResponse updateClickHouseDatabaseUserPassword(
+        UpdateClickHouseDatabaseUserPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateClickHouseDatabaseUserPassword);
+    }
+
+    /**
+     * 修改数据库账号密码
+     *
+     * 修改数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDatabaseUserPasswordRequest 请求对象
+     * @return SyncInvoker<UpdateClickHouseDatabaseUserPasswordRequest, UpdateClickHouseDatabaseUserPasswordResponse>
+     */
+    public SyncInvoker<UpdateClickHouseDatabaseUserPasswordRequest, UpdateClickHouseDatabaseUserPasswordResponse> updateClickHouseDatabaseUserPasswordInvoker(
+        UpdateClickHouseDatabaseUserPasswordRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseDatabaseUserPassword, hcClient);
+    }
+
+    /**
+     * 修改数据库账号权限
+     *
+     * 修改数据库账号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDatabaseUserPermissionRequest 请求对象
+     * @return UpdateClickHouseDatabaseUserPermissionResponse
+     */
+    public UpdateClickHouseDatabaseUserPermissionResponse updateClickHouseDatabaseUserPermission(
+        UpdateClickHouseDatabaseUserPermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateClickHouseDatabaseUserPermission);
+    }
+
+    /**
+     * 修改数据库账号权限
+     *
+     * 修改数据库账号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseDatabaseUserPermissionRequest 请求对象
+     * @return SyncInvoker<UpdateClickHouseDatabaseUserPermissionRequest, UpdateClickHouseDatabaseUserPermissionResponse>
+     */
+    public SyncInvoker<UpdateClickHouseDatabaseUserPermissionRequest, UpdateClickHouseDatabaseUserPermissionResponse> updateClickHouseDatabaseUserPermissionInvoker(
+        UpdateClickHouseDatabaseUserPermissionRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseDatabaseUserPermission, hcClient);
+    }
+
+    /**
+     * 批量创建LTS日志配置
+     *
+     * 批量创建LTS日志配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseLtsConfigRequest 请求对象
+     * @return UpdateClickHouseLtsConfigResponse
+     */
+    public UpdateClickHouseLtsConfigResponse updateClickHouseLtsConfig(UpdateClickHouseLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateClickHouseLtsConfig);
+    }
+
+    /**
+     * 批量创建LTS日志配置
+     *
+     * 批量创建LTS日志配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseLtsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateClickHouseLtsConfigRequest, UpdateClickHouseLtsConfigResponse>
+     */
+    public SyncInvoker<UpdateClickHouseLtsConfigRequest, UpdateClickHouseLtsConfigResponse> updateClickHouseLtsConfigInvoker(
+        UpdateClickHouseLtsConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseLtsConfig, hcClient);
+    }
+
+    /**
+     * 修改慢日志脱敏状态
+     *
+     * 修改慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseSlowLogSensitiveStatusRequest 请求对象
+     * @return UpdateClickHouseSlowLogSensitiveStatusResponse
+     */
+    public UpdateClickHouseSlowLogSensitiveStatusResponse updateClickHouseSlowLogSensitiveStatus(
+        UpdateClickHouseSlowLogSensitiveStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateClickHouseSlowLogSensitiveStatus);
+    }
+
+    /**
+     * 修改慢日志脱敏状态
+     *
+     * 修改慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClickHouseSlowLogSensitiveStatusRequest 请求对象
+     * @return SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse>
+     */
+    public SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse> updateClickHouseSlowLogSensitiveStatusInvoker(
+        UpdateClickHouseSlowLogSensitiveStatusRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseSlowLogSensitiveStatus, hcClient);
     }
 
     /**

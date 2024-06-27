@@ -26,7 +26,7 @@ public class Resources {
     private Integer used;
 
     /**
-     * “资源类型”
+     * 资源类型。 fgs_func_scale_down_timeout：v1版本函数的实例闲置释放时间 fgs_func_occurs：v1版本函数为实例数配额, v2版本函数为预留实例配额 fgs_func_pat_idle_time：vpc函数的pat闲置释放时间 fgs_func_num：用户函数数量配额 fgs_func_code_size：用户函数总代码大小配额 fgs_workflow_num：用户函数流数量配额 fgs_on_demand_instance_limit：v2版本函数单函数最大实例数配额 fgs_func_qos_limit 用户函数实例数配额
      */
     public static final class TypeEnum {
 
@@ -60,6 +60,16 @@ public class Resources {
          */
         public static final TypeEnum FGS_WORKFLOW_NUM = new TypeEnum("fgs_workflow_num");
 
+        /**
+         * Enum FGS_ON_DEMAND_INSTANCE_LIMIT for value: "fgs_on_demand_instance_limit"
+         */
+        public static final TypeEnum FGS_ON_DEMAND_INSTANCE_LIMIT = new TypeEnum("fgs_on_demand_instance_limit");
+
+        /**
+         * Enum FGS_FUNC_QOS_LIMIT for value: "fgs_func_qos_limit"
+         */
+        public static final TypeEnum FGS_FUNC_QOS_LIMIT = new TypeEnum("fgs_func_qos_limit");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -70,6 +80,8 @@ public class Resources {
             map.put("fgs_func_num", FGS_FUNC_NUM);
             map.put("fgs_func_code_size", FGS_FUNC_CODE_SIZE);
             map.put("fgs_workflow_num", FGS_WORKFLOW_NUM);
+            map.put("fgs_on_demand_instance_limit", FGS_ON_DEMAND_INSTANCE_LIMIT);
+            map.put("fgs_func_qos_limit", FGS_FUNC_QOS_LIMIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -169,7 +181,7 @@ public class Resources {
     }
 
     /**
-     * “资源类型”
+     * 资源类型。 fgs_func_scale_down_timeout：v1版本函数的实例闲置释放时间 fgs_func_occurs：v1版本函数为实例数配额, v2版本函数为预留实例配额 fgs_func_pat_idle_time：vpc函数的pat闲置释放时间 fgs_func_num：用户函数数量配额 fgs_func_code_size：用户函数总代码大小配额 fgs_workflow_num：用户函数流数量配额 fgs_on_demand_instance_limit：v2版本函数单函数最大实例数配额 fgs_func_qos_limit 用户函数实例数配额
      * @return type
      */
     public TypeEnum getType() {

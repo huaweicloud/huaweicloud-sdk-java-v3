@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class DeleteScriptRequest {
     @JsonProperty(value = "script_name")
 
     private String scriptName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private DeleteReq body;
 
     public DeleteScriptRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -54,6 +60,32 @@ public class DeleteScriptRequest {
         this.scriptName = scriptName;
     }
 
+    public DeleteScriptRequest withBody(DeleteReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public DeleteScriptRequest withBody(Consumer<DeleteReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new DeleteReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public DeleteReq getBody() {
+        return body;
+    }
+
+    public void setBody(DeleteReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +95,13 @@ public class DeleteScriptRequest {
             return false;
         }
         DeleteScriptRequest that = (DeleteScriptRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.scriptName, that.scriptName);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.scriptName, that.scriptName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, scriptName);
+        return Objects.hash(workspace, scriptName, body);
     }
 
     @Override
@@ -77,6 +110,7 @@ public class DeleteScriptRequest {
         sb.append("class DeleteScriptRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

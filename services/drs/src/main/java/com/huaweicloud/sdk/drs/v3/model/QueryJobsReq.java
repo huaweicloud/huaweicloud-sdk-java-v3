@@ -663,7 +663,7 @@ public class QueryJobsReq {
     }
 
     /**
-     * name或id
+     * Name或ID。支持传入多个任务ID，逗号分隔，最多100个。
      * @return name
      */
     public String getName() {

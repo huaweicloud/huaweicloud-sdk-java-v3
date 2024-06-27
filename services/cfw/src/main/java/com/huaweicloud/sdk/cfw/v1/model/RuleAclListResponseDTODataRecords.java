@@ -31,11 +31,6 @@ public class RuleAclListResponseDTODataRecords {
 
     private String name;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sequence")
-
-    private OrderRuleAclDto sequence;
-
     /**
      * 规则方向0：外到内1：内到外
      */
@@ -127,6 +122,16 @@ public class RuleAclListResponseDTODataRecords {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "long_connect_time")
+
+    private Long longConnectTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "long_connect_enable")
+
+    private Integer longConnectEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "long_connect_time_hour")
 
     private Long longConnectTimeHour;
@@ -142,29 +147,19 @@ public class RuleAclListResponseDTODataRecords {
     private Long longConnectTimeSecond;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "long_connect_time")
-
-    private Long longConnectTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "long_connect_enable")
-
-    private Integer longConnectEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private RuleAddressDto source;
+    private RuleAddressDtoForResponse source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
 
-    private RuleAddressDto destination;
+    private RuleAddressDtoForResponse destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service")
 
-    private RuleServiceDto service;
+    private RuleServiceDtoForResponse service;
 
     /**
      * 规则type，0：互联网规则，1：vpc规则，2：nat规则
@@ -313,32 +308,6 @@ public class RuleAclListResponseDTODataRecords {
         this.name = name;
     }
 
-    public RuleAclListResponseDTODataRecords withSequence(OrderRuleAclDto sequence) {
-        this.sequence = sequence;
-        return this;
-    }
-
-    public RuleAclListResponseDTODataRecords withSequence(Consumer<OrderRuleAclDto> sequenceSetter) {
-        if (this.sequence == null) {
-            this.sequence = new OrderRuleAclDto();
-            sequenceSetter.accept(this.sequence);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get sequence
-     * @return sequence
-     */
-    public OrderRuleAclDto getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(OrderRuleAclDto sequence) {
-        this.sequence = sequence;
-    }
-
     public RuleAclListResponseDTODataRecords withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
@@ -407,6 +376,40 @@ public class RuleAclListResponseDTODataRecords {
         this.description = description;
     }
 
+    public RuleAclListResponseDTODataRecords withLongConnectTime(Long longConnectTime) {
+        this.longConnectTime = longConnectTime;
+        return this;
+    }
+
+    /**
+     * 长连接时长
+     * @return longConnectTime
+     */
+    public Long getLongConnectTime() {
+        return longConnectTime;
+    }
+
+    public void setLongConnectTime(Long longConnectTime) {
+        this.longConnectTime = longConnectTime;
+    }
+
+    public RuleAclListResponseDTODataRecords withLongConnectEnable(Integer longConnectEnable) {
+        this.longConnectEnable = longConnectEnable;
+        return this;
+    }
+
+    /**
+     * 长连接支持
+     * @return longConnectEnable
+     */
+    public Integer getLongConnectEnable() {
+        return longConnectEnable;
+    }
+
+    public void setLongConnectEnable(Integer longConnectEnable) {
+        this.longConnectEnable = longConnectEnable;
+    }
+
     public RuleAclListResponseDTODataRecords withLongConnectTimeHour(Long longConnectTimeHour) {
         this.longConnectTimeHour = longConnectTimeHour;
         return this;
@@ -458,48 +461,14 @@ public class RuleAclListResponseDTODataRecords {
         this.longConnectTimeSecond = longConnectTimeSecond;
     }
 
-    public RuleAclListResponseDTODataRecords withLongConnectTime(Long longConnectTime) {
-        this.longConnectTime = longConnectTime;
-        return this;
-    }
-
-    /**
-     * 长连接时长
-     * @return longConnectTime
-     */
-    public Long getLongConnectTime() {
-        return longConnectTime;
-    }
-
-    public void setLongConnectTime(Long longConnectTime) {
-        this.longConnectTime = longConnectTime;
-    }
-
-    public RuleAclListResponseDTODataRecords withLongConnectEnable(Integer longConnectEnable) {
-        this.longConnectEnable = longConnectEnable;
-        return this;
-    }
-
-    /**
-     * 长连接支持
-     * @return longConnectEnable
-     */
-    public Integer getLongConnectEnable() {
-        return longConnectEnable;
-    }
-
-    public void setLongConnectEnable(Integer longConnectEnable) {
-        this.longConnectEnable = longConnectEnable;
-    }
-
-    public RuleAclListResponseDTODataRecords withSource(RuleAddressDto source) {
+    public RuleAclListResponseDTODataRecords withSource(RuleAddressDtoForResponse source) {
         this.source = source;
         return this;
     }
 
-    public RuleAclListResponseDTODataRecords withSource(Consumer<RuleAddressDto> sourceSetter) {
+    public RuleAclListResponseDTODataRecords withSource(Consumer<RuleAddressDtoForResponse> sourceSetter) {
         if (this.source == null) {
-            this.source = new RuleAddressDto();
+            this.source = new RuleAddressDtoForResponse();
             sourceSetter.accept(this.source);
         }
 
@@ -510,22 +479,22 @@ public class RuleAclListResponseDTODataRecords {
      * Get source
      * @return source
      */
-    public RuleAddressDto getSource() {
+    public RuleAddressDtoForResponse getSource() {
         return source;
     }
 
-    public void setSource(RuleAddressDto source) {
+    public void setSource(RuleAddressDtoForResponse source) {
         this.source = source;
     }
 
-    public RuleAclListResponseDTODataRecords withDestination(RuleAddressDto destination) {
+    public RuleAclListResponseDTODataRecords withDestination(RuleAddressDtoForResponse destination) {
         this.destination = destination;
         return this;
     }
 
-    public RuleAclListResponseDTODataRecords withDestination(Consumer<RuleAddressDto> destinationSetter) {
+    public RuleAclListResponseDTODataRecords withDestination(Consumer<RuleAddressDtoForResponse> destinationSetter) {
         if (this.destination == null) {
-            this.destination = new RuleAddressDto();
+            this.destination = new RuleAddressDtoForResponse();
             destinationSetter.accept(this.destination);
         }
 
@@ -536,22 +505,22 @@ public class RuleAclListResponseDTODataRecords {
      * Get destination
      * @return destination
      */
-    public RuleAddressDto getDestination() {
+    public RuleAddressDtoForResponse getDestination() {
         return destination;
     }
 
-    public void setDestination(RuleAddressDto destination) {
+    public void setDestination(RuleAddressDtoForResponse destination) {
         this.destination = destination;
     }
 
-    public RuleAclListResponseDTODataRecords withService(RuleServiceDto service) {
+    public RuleAclListResponseDTODataRecords withService(RuleServiceDtoForResponse service) {
         this.service = service;
         return this;
     }
 
-    public RuleAclListResponseDTODataRecords withService(Consumer<RuleServiceDto> serviceSetter) {
+    public RuleAclListResponseDTODataRecords withService(Consumer<RuleServiceDtoForResponse> serviceSetter) {
         if (this.service == null) {
-            this.service = new RuleServiceDto();
+            this.service = new RuleServiceDtoForResponse();
             serviceSetter.accept(this.service);
         }
 
@@ -562,11 +531,11 @@ public class RuleAclListResponseDTODataRecords {
      * Get service
      * @return service
      */
-    public RuleServiceDto getService() {
+    public RuleServiceDtoForResponse getService() {
         return service;
     }
 
-    public void setService(RuleServiceDto service) {
+    public void setService(RuleServiceDtoForResponse service) {
         this.service = service;
     }
 
@@ -657,14 +626,14 @@ public class RuleAclListResponseDTODataRecords {
         }
         RuleAclListResponseDTODataRecords that = (RuleAclListResponseDTODataRecords) obj;
         return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.addressType, that.addressType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
-            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.longConnectTime, that.longConnectTime)
+            && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
             && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
             && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
-            && Objects.equals(this.longConnectTime, that.longConnectTime)
-            && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
             && Objects.equals(this.createdDate, that.createdDate)
@@ -676,16 +645,15 @@ public class RuleAclListResponseDTODataRecords {
         return Objects.hash(ruleId,
             addressType,
             name,
-            sequence,
             direction,
             actionType,
             status,
             description,
+            longConnectTime,
+            longConnectEnable,
             longConnectTimeHour,
             longConnectTimeMinute,
             longConnectTimeSecond,
-            longConnectTime,
-            longConnectEnable,
             source,
             destination,
             service,
@@ -702,16 +670,15 @@ public class RuleAclListResponseDTODataRecords {
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    longConnectTime: ").append(toIndentedString(longConnectTime)).append("\n");
+        sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
         sb.append("    longConnectTimeHour: ").append(toIndentedString(longConnectTimeHour)).append("\n");
         sb.append("    longConnectTimeMinute: ").append(toIndentedString(longConnectTimeMinute)).append("\n");
         sb.append("    longConnectTimeSecond: ").append(toIndentedString(longConnectTimeSecond)).append("\n");
-        sb.append("    longConnectTime: ").append(toIndentedString(longConnectTime)).append("\n");
-        sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");

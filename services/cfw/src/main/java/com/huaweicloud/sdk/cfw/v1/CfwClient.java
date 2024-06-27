@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEastWestFirewallStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEastWestFirewallStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEipStatusRequest;
@@ -34,10 +36,14 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateTagRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -48,6 +54,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteAddressSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAddressSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteBlackWhiteListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteBlackWhiteListResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsRequest;
@@ -58,6 +66,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountRequest;
@@ -74,6 +84,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListBlackWhiteListsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListBlackWhiteListsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailRequest;
@@ -431,6 +445,35 @@ public class CfwClient {
     }
 
     /**
+     * 取消抓包任务
+     *
+     * 取消抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelCaptureTaskRequest 请求对象
+     * @return CancelCaptureTaskResponse
+     */
+    public CancelCaptureTaskResponse cancelCaptureTask(CancelCaptureTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.cancelCaptureTask);
+    }
+
+    /**
+     * 取消抓包任务
+     *
+     * 取消抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelCaptureTaskRequest 请求对象
+     * @return SyncInvoker<CancelCaptureTaskRequest, CancelCaptureTaskResponse>
+     */
+    public SyncInvoker<CancelCaptureTaskRequest, CancelCaptureTaskResponse> cancelCaptureTaskInvoker(
+        CancelCaptureTaskRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.cancelCaptureTask, hcClient);
+    }
+
+    /**
      * 修改东西向防火墙防护状态
      *
      * 东西向防护资源防护开启/关闭
@@ -458,6 +501,35 @@ public class CfwClient {
     public SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatusInvoker(
         ChangeEastWestFirewallStatusRequest request) {
         return new SyncInvoker<>(request, CfwMeta.changeEastWestFirewallStatus, hcClient);
+    }
+
+    /**
+     * 创建抓包任务
+     *
+     * 创建抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCaptureTaskRequest 请求对象
+     * @return CreateCaptureTaskResponse
+     */
+    public CreateCaptureTaskResponse createCaptureTask(CreateCaptureTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.createCaptureTask);
+    }
+
+    /**
+     * 创建抓包任务
+     *
+     * 创建抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCaptureTaskRequest 请求对象
+     * @return SyncInvoker<CreateCaptureTaskRequest, CreateCaptureTaskResponse>
+     */
+    public SyncInvoker<CreateCaptureTaskRequest, CreateCaptureTaskResponse> createCaptureTaskInvoker(
+        CreateCaptureTaskRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.createCaptureTask, hcClient);
     }
 
     /**
@@ -516,6 +588,34 @@ public class CfwClient {
     public SyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallInvoker(
         CreateFirewallRequest request) {
         return new SyncInvoker<>(request, CfwMeta.createFirewall, hcClient);
+    }
+
+    /**
+     * 标签创建接口
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagRequest 请求对象
+     * @return CreateTagResponse
+     */
+    public CreateTagResponse createTag(CreateTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.createTag);
+    }
+
+    /**
+     * 标签创建接口
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagRequest 请求对象
+     * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
+     */
+    public SyncInvoker<CreateTagRequest, CreateTagResponse> createTagInvoker(CreateTagRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.createTag, hcClient);
     }
 
     /**
@@ -603,6 +703,35 @@ public class CfwClient {
     public SyncInvoker<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> deleteBlackWhiteListInvoker(
         DeleteBlackWhiteListRequest request) {
         return new SyncInvoker<>(request, CfwMeta.deleteBlackWhiteList, hcClient);
+    }
+
+    /**
+     * 删除抓包任务
+     *
+     * 删除抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCaptureTaskRequest 请求对象
+     * @return DeleteCaptureTaskResponse
+     */
+    public DeleteCaptureTaskResponse deleteCaptureTask(DeleteCaptureTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.deleteCaptureTask);
+    }
+
+    /**
+     * 删除抓包任务
+     *
+     * 删除抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCaptureTaskRequest 请求对象
+     * @return SyncInvoker<DeleteCaptureTaskRequest, DeleteCaptureTaskResponse>
+     */
+    public SyncInvoker<DeleteCaptureTaskRequest, DeleteCaptureTaskResponse> deleteCaptureTaskInvoker(
+        DeleteCaptureTaskRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.deleteCaptureTask, hcClient);
     }
 
     /**
@@ -747,6 +876,34 @@ public class CfwClient {
     public SyncInvoker<DeleteServiceSetRequest, DeleteServiceSetResponse> deleteServiceSetInvoker(
         DeleteServiceSetRequest request) {
         return new SyncInvoker<>(request, CfwMeta.deleteServiceSet, hcClient);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTagRequest 请求对象
+     * @return DeleteTagResponse
+     */
+    public DeleteTagResponse deleteTag(DeleteTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.deleteTag);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTagRequest 请求对象
+     * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
+     */
+    public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.deleteTag, hcClient);
     }
 
     /**
@@ -921,6 +1078,64 @@ public class CfwClient {
     public SyncInvoker<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> listBlackWhiteListsInvoker(
         ListBlackWhiteListsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.listBlackWhiteLists, hcClient);
+    }
+
+    /**
+     * 获取抓包任务结果
+     *
+     * 获取抓包任务结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCaptureResultRequest 请求对象
+     * @return ListCaptureResultResponse
+     */
+    public ListCaptureResultResponse listCaptureResult(ListCaptureResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listCaptureResult);
+    }
+
+    /**
+     * 获取抓包任务结果
+     *
+     * 获取抓包任务结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCaptureResultRequest 请求对象
+     * @return SyncInvoker<ListCaptureResultRequest, ListCaptureResultResponse>
+     */
+    public SyncInvoker<ListCaptureResultRequest, ListCaptureResultResponse> listCaptureResultInvoker(
+        ListCaptureResultRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listCaptureResult, hcClient);
+    }
+
+    /**
+     * 查询抓包任务
+     *
+     * 查询抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCaptureTaskRequest 请求对象
+     * @return ListCaptureTaskResponse
+     */
+    public ListCaptureTaskResponse listCaptureTask(ListCaptureTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listCaptureTask);
+    }
+
+    /**
+     * 查询抓包任务
+     *
+     * 查询抓包任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCaptureTaskRequest 请求对象
+     * @return SyncInvoker<ListCaptureTaskRequest, ListCaptureTaskResponse>
+     */
+    public SyncInvoker<ListCaptureTaskRequest, ListCaptureTaskResponse> listCaptureTaskInvoker(
+        ListCaptureTaskRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listCaptureTask, hcClient);
     }
 
     /**

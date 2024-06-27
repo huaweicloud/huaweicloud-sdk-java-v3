@@ -45,92 +45,10 @@ public class ListAttackLogsRequest {
 
     private Integer dstPort;
 
-    /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
-     */
-    public static final class ProtocolEnum {
-
-        /**
-         * Enum _6 for value: "6"
-         */
-        public static final ProtocolEnum _6 = new ProtocolEnum("6");
-
-        /**
-         * Enum _17 for value: "17"
-         */
-        public static final ProtocolEnum _17 = new ProtocolEnum("17");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final ProtocolEnum _1 = new ProtocolEnum("1");
-
-        /**
-         * Enum _58 for value: "58"
-         */
-        public static final ProtocolEnum _58 = new ProtocolEnum("58");
-
-        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtocolEnum> createStaticFields() {
-            Map<String, ProtocolEnum> map = new HashMap<>();
-            map.put("6", _6);
-            map.put("17", _17);
-            map.put("1", _1);
-            map.put("58", _58);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtocolEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtocolEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
-        }
-
-        public static ProtocolEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtocolEnum) {
-                return this.value.equals(((ProtocolEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
-    private ProtocolEnum protocol;
+    private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
@@ -162,155 +80,15 @@ public class ListAttackLogsRequest {
 
     private String fwInstanceId;
 
-    /**
-     * 动作0：permit,1：deny
-     */
-    public static final class ActionEnum {
-
-        /**
-         * Enum _0 for value: "0"
-         */
-        public static final ActionEnum _0 = new ActionEnum("0");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final ActionEnum _1 = new ActionEnum("1");
-
-        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ActionEnum> createStaticFields() {
-            Map<String, ActionEnum> map = new HashMap<>();
-            map.put("0", _0);
-            map.put("1", _1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ActionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ActionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
-        }
-
-        public static ActionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ActionEnum) {
-                return this.value.equals(((ActionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private ActionEnum action;
-
-    /**
-     * 方向0：外到内1：内到外
-     */
-    public static final class DirectionEnum {
-
-        /**
-         * Enum _0 for value: "0"
-         */
-        public static final DirectionEnum _0 = new DirectionEnum("0");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final DirectionEnum _1 = new DirectionEnum("1");
-
-        private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DirectionEnum> createStaticFields() {
-            Map<String, DirectionEnum> map = new HashMap<>();
-            map.put("0", _0);
-            map.put("1", _1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DirectionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DirectionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
-        }
-
-        public static DirectionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DirectionEnum) {
-                return this.value.equals(((DirectionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direction")
 
-    private DirectionEnum direction;
+    private String direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_type")
@@ -328,11 +106,6 @@ public class ListAttackLogsRequest {
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source")
-
-    private String source;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -343,7 +116,7 @@ public class ListAttackLogsRequest {
     private String dstHost;
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      */
     public static final class LogTypeEnum {
 
@@ -438,13 +211,33 @@ public class ListAttackLogsRequest {
 
     private String dstRegionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_name")
+
+    private String srcProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_name")
+
+    private String dstProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_name")
+
+    private String srcCityName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_name")
+
+    private String dstCityName;
+
     public ListAttackLogsRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 开始时间
+     * 开始时间，以毫秒为单位的时间戳，如1718936272648
      * @return startTime
      */
     public Long getStartTime() {
@@ -461,7 +254,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间，以毫秒为单位的时间戳，如1718936272648
      * @return endTime
      */
     public Long getEndTime() {
@@ -544,20 +337,20 @@ public class ListAttackLogsRequest {
         this.dstPort = dstPort;
     }
 
-    public ListAttackLogsRequest withProtocol(ProtocolEnum protocol) {
+    public ListAttackLogsRequest withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
     /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
      * @return protocol
      */
-    public ProtocolEnum getProtocol() {
+    public String getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(ProtocolEnum protocol) {
+    public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
 
@@ -584,7 +377,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 日志ID，当是第一页时为空，不是第一页时不为空
+     * 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
      * @return logId
      */
     public String getLogId() {
@@ -601,7 +394,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 下个日期，当是第一页时为空，不是第一页时不为空
+     * 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的event_time
      * @return nextDate
      */
     public Long getNextDate() {
@@ -618,7 +411,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
      * @return offset
      */
     public Integer getOffset() {
@@ -652,7 +445,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -663,37 +456,37 @@ public class ListAttackLogsRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
-    public ListAttackLogsRequest withAction(ActionEnum action) {
+    public ListAttackLogsRequest withAction(String action) {
         this.action = action;
         return this;
     }
 
     /**
-     * 动作0：permit,1：deny
+     * 动作包含permit，deny
      * @return action
      */
-    public ActionEnum getAction() {
+    public String getAction() {
         return action;
     }
 
-    public void setAction(ActionEnum action) {
+    public void setAction(String action) {
         this.action = action;
     }
 
-    public ListAttackLogsRequest withDirection(DirectionEnum direction) {
+    public ListAttackLogsRequest withDirection(String direction) {
         this.direction = direction;
         return this;
     }
 
     /**
-     * 方向0：外到内1：内到外
+     * 方向，包含in2out，out2in
      * @return direction
      */
-    public DirectionEnum getDirection() {
+    public String getDirection() {
         return direction;
     }
 
-    public void setDirection(DirectionEnum direction) {
+    public void setDirection(String direction) {
         this.direction = direction;
     }
 
@@ -737,7 +530,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 威胁等级
+     * 威胁等级，包括CRITICAL、HIGH、MEDIUM、LOW
      * @return level
      */
     public String getLevel() {
@@ -746,23 +539,6 @@ public class ListAttackLogsRequest {
 
     public void setLevel(String level) {
         this.level = level;
-    }
-
-    public ListAttackLogsRequest withSource(String source) {
-        this.source = source;
-        return this;
-    }
-
-    /**
-     * 判断来源
-     * @return source
-     */
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
     }
 
     public ListAttackLogsRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -805,7 +581,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -867,6 +643,74 @@ public class ListAttackLogsRequest {
         this.dstRegionName = dstRegionName;
     }
 
+    public ListAttackLogsRequest withSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+        return this;
+    }
+
+    /**
+     * 源省份名称
+     * @return srcProvinceName
+     */
+    public String getSrcProvinceName() {
+        return srcProvinceName;
+    }
+
+    public void setSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+    }
+
+    public ListAttackLogsRequest withDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+        return this;
+    }
+
+    /**
+     * 目的省份名称
+     * @return dstProvinceName
+     */
+    public String getDstProvinceName() {
+        return dstProvinceName;
+    }
+
+    public void setDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+    }
+
+    public ListAttackLogsRequest withSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+        return this;
+    }
+
+    /**
+     * 源城市名称
+     * @return srcCityName
+     */
+    public String getSrcCityName() {
+        return srcCityName;
+    }
+
+    public void setSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+    }
+
+    public ListAttackLogsRequest withDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+        return this;
+    }
+
+    /**
+     * 目的城市名称
+     * @return dstCityName
+     */
+    public String getDstCityName() {
+        return dstCityName;
+    }
+
+    public void setDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -885,12 +729,14 @@ public class ListAttackLogsRequest {
             && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.action, that.action)
             && Objects.equals(this.direction, that.direction) && Objects.equals(this.attackType, that.attackType)
             && Objects.equals(this.attackRule, that.attackRule) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.source, that.source)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.logType, that.logType)
             && Objects.equals(this.attackRuleId, that.attackRuleId)
             && Objects.equals(this.srcRegionName, that.srcRegionName)
-            && Objects.equals(this.dstRegionName, that.dstRegionName);
+            && Objects.equals(this.dstRegionName, that.dstRegionName)
+            && Objects.equals(this.srcProvinceName, that.srcProvinceName)
+            && Objects.equals(this.dstProvinceName, that.dstProvinceName)
+            && Objects.equals(this.srcCityName, that.srcCityName) && Objects.equals(this.dstCityName, that.dstCityName);
     }
 
     @Override
@@ -913,13 +759,16 @@ public class ListAttackLogsRequest {
             attackType,
             attackRule,
             level,
-            source,
             enterpriseProjectId,
             dstHost,
             logType,
             attackRuleId,
             srcRegionName,
-            dstRegionName);
+            dstRegionName,
+            srcProvinceName,
+            dstProvinceName,
+            srcCityName,
+            dstCityName);
     }
 
     @Override
@@ -944,13 +793,16 @@ public class ListAttackLogsRequest {
         sb.append("    attackType: ").append(toIndentedString(attackType)).append("\n");
         sb.append("    attackRule: ").append(toIndentedString(attackRule)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
-        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
         sb.append("    attackRuleId: ").append(toIndentedString(attackRuleId)).append("\n");
         sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
         sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
+        sb.append("    srcProvinceName: ").append(toIndentedString(srcProvinceName)).append("\n");
+        sb.append("    dstProvinceName: ").append(toIndentedString(dstProvinceName)).append("\n");
+        sb.append("    srcCityName: ").append(toIndentedString(srcCityName)).append("\n");
+        sb.append("    dstCityName: ").append(toIndentedString(dstCityName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

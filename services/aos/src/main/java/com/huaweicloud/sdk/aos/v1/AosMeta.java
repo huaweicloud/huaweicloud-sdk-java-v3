@@ -739,6 +739,18 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetStackTemplateRequest::getStackId, GetStackTemplateRequest::setStackId));
+        builder.<List<String>>withRequestField("access_control_source_ips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(GetStackTemplateRequest::getAccessControlSourceIps,
+                GetStackTemplateRequest::setAccessControlSourceIps));
+        builder.<List<String>>withRequestField("access_control_source_vpc_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(GetStackTemplateRequest::getAccessControlSourceVpcIds,
+                GetStackTemplateRequest::setAccessControlSourceVpcIds));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1087,6 +1099,11 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStackSetRequest::getStackSetId, DeleteStackSetRequest::setStackSetId));
+        builder.<DeleteStackSetRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteStackSetRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(DeleteStackSetRequest::getCallIdentity, DeleteStackSetRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1171,6 +1188,12 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStackInstancesRequest::getSortDir, ListStackInstancesRequest::setSortDir));
+        builder.<ListStackInstancesRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListStackInstancesRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ListStackInstancesRequest::getCallIdentity,
+                ListStackInstancesRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1224,6 +1247,12 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStackSetOperationsRequest::getSortDir,
                 ListStackSetOperationsRequest::setSortDir));
+        builder.<ListStackSetOperationsRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListStackSetOperationsRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getCallIdentity,
+                ListStackSetOperationsRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1263,6 +1292,11 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStackSetsRequest::getSortDir, ListStackSetsRequest::setSortDir));
+        builder.<ListStackSetsRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListStackSetsRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ListStackSetsRequest::getCallIdentity, ListStackSetsRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1303,6 +1337,12 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetId, ShowStackInstanceRequest::setStackSetId));
+        builder.<ShowStackInstanceRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowStackInstanceRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ShowStackInstanceRequest::getCallIdentity,
+                ShowStackInstanceRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1339,6 +1379,12 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStackSetMetadataRequest::getStackSetId,
                 ShowStackSetMetadataRequest::setStackSetId));
+        builder.<ShowStackSetMetadataRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowStackSetMetadataRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ShowStackSetMetadataRequest::getCallIdentity,
+                ShowStackSetMetadataRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1384,6 +1430,12 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getStackSetId,
                 ShowStackSetOperationMetadataRequest::setStackSetId));
+        builder.<ShowStackSetOperationMetadataRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowStackSetOperationMetadataRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ShowStackSetOperationMetadataRequest::getCallIdentity,
+                ShowStackSetOperationMetadataRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1420,6 +1472,24 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStackSetTemplateRequest::getStackSetId,
                 ShowStackSetTemplateRequest::setStackSetId));
+        builder.<List<String>>withRequestField("access_control_source_ips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getAccessControlSourceIps,
+                ShowStackSetTemplateRequest::setAccessControlSourceIps));
+        builder.<List<String>>withRequestField("access_control_source_vpc_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getAccessControlSourceVpcIds,
+                ShowStackSetTemplateRequest::setAccessControlSourceVpcIds));
+        builder.<ShowStackSetTemplateRequest.CallIdentityEnum>withRequestField("call_identity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowStackSetTemplateRequest.CallIdentityEnum.class),
+            f -> f.withMarshaller(ShowStackSetTemplateRequest::getCallIdentity,
+                ShowStackSetTemplateRequest::setCallIdentity));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1750,6 +1820,18 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateId,
                 ShowTemplateVersionContentRequest::setTemplateId));
+        builder.<List<String>>withRequestField("access_control_source_vpc_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getAccessControlSourceVpcIds,
+                ShowTemplateVersionContentRequest::setAccessControlSourceVpcIds));
+        builder.<List<String>>withRequestField("access_control_source_ips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getAccessControlSourceIps,
+                ShowTemplateVersionContentRequest::setAccessControlSourceIps));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

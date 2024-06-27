@@ -172,6 +172,81 @@ public class ListStackSetsRequest {
 
     private List<SortDirEnum> sortDir = null;
 
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     */
+    public static final class CallIdentityEnum {
+
+        /**
+         * Enum SELF for value: "SELF"
+         */
+        public static final CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+        /**
+         * Enum DELEGATED_ADMIN for value: "DELEGATED_ADMIN"
+         */
+        public static final CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+        private static final Map<String, CallIdentityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CallIdentityEnum> createStaticFields() {
+            Map<String, CallIdentityEnum> map = new HashMap<>();
+            map.put("SELF", SELF);
+            map.put("DELEGATED_ADMIN", DELEGATED_ADMIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CallIdentityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CallIdentityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CallIdentityEnum(value));
+        }
+
+        public static CallIdentityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CallIdentityEnum) {
+                return this.value.equals(((CallIdentityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "call_identity")
+
+    private CallIdentityEnum callIdentity;
+
     public ListStackSetsRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -272,6 +347,23 @@ public class ListStackSetsRequest {
         this.sortDir = sortDir;
     }
 
+    public ListStackSetsRequest withCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+        return this;
+    }
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     * @return callIdentity
+     */
+    public CallIdentityEnum getCallIdentity() {
+        return callIdentity;
+    }
+
+    public void setCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -282,12 +374,13 @@ public class ListStackSetsRequest {
         }
         ListStackSetsRequest that = (ListStackSetsRequest) obj;
         return Objects.equals(this.clientRequestId, that.clientRequestId) && Objects.equals(this.filter, that.filter)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.callIdentity, that.callIdentity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, filter, sortKey, sortDir);
+        return Objects.hash(clientRequestId, filter, sortKey, sortDir, callIdentity);
     }
 
     @Override
@@ -298,6 +391,7 @@ public class ListStackSetsRequest {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    callIdentity: ").append(toIndentedString(callIdentity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

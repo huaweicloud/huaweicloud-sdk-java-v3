@@ -20,16 +20,6 @@ public class UpdateDomainSetInfoDto {
 
     private String description;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "set_id")
-
-    private String setId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_set_type")
-
-    private Integer domainSetType;
-
     public UpdateDomainSetInfoDto withName(String name) {
         this.name = name;
         return this;
@@ -64,40 +54,6 @@ public class UpdateDomainSetInfoDto {
         this.description = description;
     }
 
-    public UpdateDomainSetInfoDto withSetId(String setId) {
-        this.setId = setId;
-        return this;
-    }
-
-    /**
-     * 域名组id
-     * @return setId
-     */
-    public String getSetId() {
-        return setId;
-    }
-
-    public void setSetId(String setId) {
-        this.setId = setId;
-    }
-
-    public UpdateDomainSetInfoDto withDomainSetType(Integer domainSetType) {
-        this.domainSetType = domainSetType;
-        return this;
-    }
-
-    /**
-     * 域名组类型，0表示URL过滤，1表示地址解析
-     * @return domainSetType
-     */
-    public Integer getDomainSetType() {
-        return domainSetType;
-    }
-
-    public void setDomainSetType(Integer domainSetType) {
-        this.domainSetType = domainSetType;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,13 +63,12 @@ public class UpdateDomainSetInfoDto {
             return false;
         }
         UpdateDomainSetInfoDto that = (UpdateDomainSetInfoDto) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.setId, that.setId) && Objects.equals(this.domainSetType, that.domainSetType);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, setId, domainSetType);
+        return Objects.hash(name, description);
     }
 
     @Override
@@ -122,8 +77,6 @@ public class UpdateDomainSetInfoDto {
         sb.append("class UpdateDomainSetInfoDto {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
-        sb.append("    domainSetType: ").append(toIndentedString(domainSetType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

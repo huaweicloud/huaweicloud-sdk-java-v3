@@ -200,7 +200,7 @@ public class CreateEndpointServiceRequestBody {
     private List<PortList> ports = null;
 
     /**
-     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      */
     public static final class TcpProxyEnum {
 
@@ -302,10 +302,80 @@ public class CreateEndpointServiceRequestBody {
 
     private String description;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_policy")
+    /**
+     * 指定终端节点服务的IP版本，仅专业型终端节点服务支持此参数 ● ipv4,  IPv4 ● ipv6,  IPv6
+     */
+    public static final class IpVersionEnum {
 
-    private Boolean enablePolicy;
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
+        public static final IpVersionEnum IPV4 = new IpVersionEnum("ipv4");
+
+        /**
+         * Enum IPV6 for value: "ipv6"
+         */
+        public static final IpVersionEnum IPV6 = new IpVersionEnum("ipv6");
+
+        private static final Map<String, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpVersionEnum> createStaticFields() {
+            Map<String, IpVersionEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("ipv6", IPV6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_version")
+
+    private IpVersionEnum ipVersion;
 
     public CreateEndpointServiceRequestBody withPortId(String portId) {
         this.portId = portId;
@@ -347,7 +417,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 终端节点服务对应后端资源所在的VPC的ID。 详细内容请参考《虚拟私有云API参考》中的“查询VPC”，详见响应消息中的“id”字段。
+     * 终端节点服务对应后端资源所在的VPC的ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -448,7 +518,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。  - proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型：  - TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。  - Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括：  - close：表示关闭代理协议。  - toa_open：表示开启代理协议“tcp_toa”。  - proxy_open：表示开启代理协议“proxy_protocol”。  - open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -509,21 +579,21 @@ public class CreateEndpointServiceRequestBody {
         this.description = description;
     }
 
-    public CreateEndpointServiceRequestBody withEnablePolicy(Boolean enablePolicy) {
-        this.enablePolicy = enablePolicy;
+    public CreateEndpointServiceRequestBody withIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
         return this;
     }
 
     /**
-     * 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
-     * @return enablePolicy
+     * 指定终端节点服务的IP版本，仅专业型终端节点服务支持此参数 ● ipv4,  IPv4 ● ipv6,  IPv6
+     * @return ipVersion
      */
-    public Boolean getEnablePolicy() {
-        return enablePolicy;
+    public IpVersionEnum getIpVersion() {
+        return ipVersion;
     }
 
-    public void setEnablePolicy(Boolean enablePolicy) {
-        this.enablePolicy = enablePolicy;
+    public void setIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
     }
 
     @Override
@@ -540,7 +610,7 @@ public class CreateEndpointServiceRequestBody {
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.serverType, that.serverType)
             && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.enablePolicy, that.enablePolicy);
+            && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override
@@ -555,7 +625,7 @@ public class CreateEndpointServiceRequestBody {
             tcpProxy,
             tags,
             description,
-            enablePolicy);
+            ipVersion);
     }
 
     @Override
@@ -572,7 +642,7 @@ public class CreateEndpointServiceRequestBody {
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    enablePolicy: ").append(toIndentedString(enablePolicy)).append("\n");
+        sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

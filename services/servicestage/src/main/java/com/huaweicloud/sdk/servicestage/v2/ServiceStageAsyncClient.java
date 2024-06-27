@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.servicestage.v2.model.ListBranchesRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListBranchesResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListCommitsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListCommitsResponse;
+import com.huaweicloud.sdk.servicestage.v2.model.ListComponentOverviewsRequest;
+import com.huaweicloud.sdk.servicestage.v2.model.ListComponentOverviewsResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListComponentsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListComponentsResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListEnvironmentsRequest;
@@ -739,6 +741,36 @@ public class ServiceStageAsyncClient {
     public AsyncInvoker<ListApplicationsRequest, ListApplicationsResponse> listApplicationsAsyncInvoker(
         ListApplicationsRequest request) {
         return new AsyncInvoker<>(request, ServiceStageMeta.listApplications, hcClient);
+    }
+
+    /**
+     * 获取应用所有组件部署信息
+     *
+     * 通过此API获取应用下所有应用组件部署信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComponentOverviewsRequest 请求对象
+     * @return CompletableFuture<ListComponentOverviewsResponse>
+     */
+    public CompletableFuture<ListComponentOverviewsResponse> listComponentOverviewsAsync(
+        ListComponentOverviewsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.listComponentOverviews);
+    }
+
+    /**
+     * 获取应用所有组件部署信息
+     *
+     * 通过此API获取应用下所有应用组件部署信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComponentOverviewsRequest 请求对象
+     * @return AsyncInvoker<ListComponentOverviewsRequest, ListComponentOverviewsResponse>
+     */
+    public AsyncInvoker<ListComponentOverviewsRequest, ListComponentOverviewsResponse> listComponentOverviewsAsyncInvoker(
+        ListComponentOverviewsRequest request) {
+        return new AsyncInvoker<>(request, ServiceStageMeta.listComponentOverviews, hcClient);
     }
 
     /**

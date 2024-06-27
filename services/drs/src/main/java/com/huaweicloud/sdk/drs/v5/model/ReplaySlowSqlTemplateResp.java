@@ -16,6 +16,11 @@ public class ReplaySlowSqlTemplateResp {
     private String sqlTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_template_md5")
+
+    private String sqlTemplateMd5;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_name")
 
     private String targetName;
@@ -75,6 +80,23 @@ public class ReplaySlowSqlTemplateResp {
 
     public void setSqlTemplate(String sqlTemplate) {
         this.sqlTemplate = sqlTemplate;
+    }
+
+    public ReplaySlowSqlTemplateResp withSqlTemplateMd5(String sqlTemplateMd5) {
+        this.sqlTemplateMd5 = sqlTemplateMd5;
+        return this;
+    }
+
+    /**
+     * SQL语句模板MD5
+     * @return sqlTemplateMd5
+     */
+    public String getSqlTemplateMd5() {
+        return sqlTemplateMd5;
+    }
+
+    public void setSqlTemplateMd5(String sqlTemplateMd5) {
+        this.sqlTemplateMd5 = sqlTemplateMd5;
     }
 
     public ReplaySlowSqlTemplateResp withTargetName(String targetName) {
@@ -239,16 +261,19 @@ public class ReplaySlowSqlTemplateResp {
             return false;
         }
         ReplaySlowSqlTemplateResp that = (ReplaySlowSqlTemplateResp) obj;
-        return Objects.equals(this.sqlTemplate, that.sqlTemplate) && Objects.equals(this.targetName, that.targetName)
-            && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.queryType, that.queryType)
-            && Objects.equals(this.minLatency, that.minLatency) && Objects.equals(this.maxLatency, that.maxLatency)
-            && Objects.equals(this.avgLatency, that.avgLatency) && Objects.equals(this.totalLatency, that.totalLatency)
-            && Objects.equals(this.targetType, that.targetType) && Objects.equals(this.count, that.count);
+        return Objects.equals(this.sqlTemplate, that.sqlTemplate)
+            && Objects.equals(this.sqlTemplateMd5, that.sqlTemplateMd5)
+            && Objects.equals(this.targetName, that.targetName) && Objects.equals(this.schemaName, that.schemaName)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.minLatency, that.minLatency)
+            && Objects.equals(this.maxLatency, that.maxLatency) && Objects.equals(this.avgLatency, that.avgLatency)
+            && Objects.equals(this.totalLatency, that.totalLatency) && Objects.equals(this.targetType, that.targetType)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(sqlTemplate,
+            sqlTemplateMd5,
             targetName,
             schemaName,
             queryType,
@@ -265,6 +290,7 @@ public class ReplaySlowSqlTemplateResp {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReplaySlowSqlTemplateResp {\n");
         sb.append("    sqlTemplate: ").append(toIndentedString(sqlTemplate)).append("\n");
+        sb.append("    sqlTemplateMd5: ").append(toIndentedString(sqlTemplateMd5)).append("\n");
         sb.append("    targetName: ").append(toIndentedString(targetName)).append("\n");
         sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");

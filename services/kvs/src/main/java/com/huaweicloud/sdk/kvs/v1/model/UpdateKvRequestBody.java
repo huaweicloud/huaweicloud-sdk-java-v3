@@ -33,22 +33,10 @@ public class UpdateKvRequestBody {
     private ConditionExpression conditionExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kv_options")
-    @BsonProperty(value = "kv_options")
-
-    private KvOptions kvOptions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_fields")
     @BsonProperty(value = "update_fields")
 
     private UpdateFields updateFields;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_blob")
-    @BsonProperty(value = "update_blob")
-
-    private UpdateBlob updateBlob;
 
     public UpdateKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
@@ -110,32 +98,6 @@ public class UpdateKvRequestBody {
         this.conditionExpression = conditionExpression;
     }
 
-    public UpdateKvRequestBody withKvOptions(KvOptions kvOptions) {
-        this.kvOptions = kvOptions;
-        return this;
-    }
-
-    public UpdateKvRequestBody withKvOptions(Consumer<KvOptions> kvOptionsSetter) {
-        if (this.kvOptions == null) {
-            this.kvOptions = new KvOptions();
-            kvOptionsSetter.accept(this.kvOptions);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get kvOptions
-     * @return kvOptions
-     */
-    public KvOptions getKvOptions() {
-        return kvOptions;
-    }
-
-    public void setKvOptions(KvOptions kvOptions) {
-        this.kvOptions = kvOptions;
-    }
-
     public UpdateKvRequestBody withUpdateFields(UpdateFields updateFields) {
         this.updateFields = updateFields;
         return this;
@@ -162,32 +124,6 @@ public class UpdateKvRequestBody {
         this.updateFields = updateFields;
     }
 
-    public UpdateKvRequestBody withUpdateBlob(UpdateBlob updateBlob) {
-        this.updateBlob = updateBlob;
-        return this;
-    }
-
-    public UpdateKvRequestBody withUpdateBlob(Consumer<UpdateBlob> updateBlobSetter) {
-        if (this.updateBlob == null) {
-            this.updateBlob = new UpdateBlob();
-            updateBlobSetter.accept(this.updateBlob);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get updateBlob
-     * @return updateBlob
-     */
-    public UpdateBlob getUpdateBlob() {
-        return updateBlob;
-    }
-
-    public void setUpdateBlob(UpdateBlob updateBlob) {
-        this.updateBlob = updateBlob;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,13 +135,12 @@ public class UpdateKvRequestBody {
         UpdateKvRequestBody that = (UpdateKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.primaryKey, that.primaryKey)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
-            && Objects.equals(this.kvOptions, that.kvOptions) && Objects.equals(this.updateFields, that.updateFields)
-            && Objects.equals(this.updateBlob, that.updateBlob);
+            && Objects.equals(this.updateFields, that.updateFields);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, primaryKey, conditionExpression, kvOptions, updateFields, updateBlob);
+        return Objects.hash(tableName, primaryKey, conditionExpression, updateFields);
     }
 
     @Override
@@ -215,9 +150,7 @@ public class UpdateKvRequestBody {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    primaryKey: ").append(toIndentedString(primaryKey)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
-        sb.append("    kvOptions: ").append(toIndentedString(kvOptions)).append("\n");
         sb.append("    updateFields: ").append(toIndentedString(updateFields)).append("\n");
-        sb.append("    updateBlob: ").append(toIndentedString(updateBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

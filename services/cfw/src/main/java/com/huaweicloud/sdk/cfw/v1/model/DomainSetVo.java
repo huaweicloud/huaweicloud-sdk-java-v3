@@ -127,7 +127,7 @@ public class DomainSetVo {
     }
 
     /**
-     * 域名组类型，0表示URL过滤，1表示地址解析
+     * 域名组类型，0表示应用域名组，1表示网络域名组
      * @return domainSetType
      */
     public Integer getDomainSetType() {

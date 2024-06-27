@@ -17,7 +17,7 @@ public class ListTestcasesByProjectIssuesRelationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "testcases")
 
-    private List<TestCaseVo> testcases = null;
+    private List<IssuesRelationTestCaseVo> testcases = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
@@ -34,12 +34,12 @@ public class ListTestcasesByProjectIssuesRelationResponse extends SdkResponse {
 
     private Integer pageSize;
 
-    public ListTestcasesByProjectIssuesRelationResponse withTestcases(List<TestCaseVo> testcases) {
+    public ListTestcasesByProjectIssuesRelationResponse withTestcases(List<IssuesRelationTestCaseVo> testcases) {
         this.testcases = testcases;
         return this;
     }
 
-    public ListTestcasesByProjectIssuesRelationResponse addTestcasesItem(TestCaseVo testcasesItem) {
+    public ListTestcasesByProjectIssuesRelationResponse addTestcasesItem(IssuesRelationTestCaseVo testcasesItem) {
         if (this.testcases == null) {
             this.testcases = new ArrayList<>();
         }
@@ -47,7 +47,8 @@ public class ListTestcasesByProjectIssuesRelationResponse extends SdkResponse {
         return this;
     }
 
-    public ListTestcasesByProjectIssuesRelationResponse withTestcases(Consumer<List<TestCaseVo>> testcasesSetter) {
+    public ListTestcasesByProjectIssuesRelationResponse withTestcases(
+        Consumer<List<IssuesRelationTestCaseVo>> testcasesSetter) {
         if (this.testcases == null) {
             this.testcases = new ArrayList<>();
         }
@@ -59,11 +60,11 @@ public class ListTestcasesByProjectIssuesRelationResponse extends SdkResponse {
      * 用例详情
      * @return testcases
      */
-    public List<TestCaseVo> getTestcases() {
+    public List<IssuesRelationTestCaseVo> getTestcases() {
         return testcases;
     }
 
-    public void setTestcases(List<TestCaseVo> testcases) {
+    public void setTestcases(List<IssuesRelationTestCaseVo> testcases) {
         this.testcases = testcases;
     }
 

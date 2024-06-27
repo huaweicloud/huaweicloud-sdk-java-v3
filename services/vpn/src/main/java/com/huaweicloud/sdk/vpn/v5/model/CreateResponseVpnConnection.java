@@ -175,11 +175,6 @@ public class CreateResponseVpnConnection {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connection_monitor_id")
-
-    private String connectionMonitorId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ha_role")
 
     private String haRole;
@@ -511,23 +506,6 @@ public class CreateResponseVpnConnection {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateResponseVpnConnection withConnectionMonitorId(String connectionMonitorId) {
-        this.connectionMonitorId = connectionMonitorId;
-        return this;
-    }
-
-    /**
-     * 连接监控ID
-     * @return connectionMonitorId
-     */
-    public String getConnectionMonitorId() {
-        return connectionMonitorId;
-    }
-
-    public void setConnectionMonitorId(String connectionMonitorId) {
-        this.connectionMonitorId = connectionMonitorId;
-    }
-
     public CreateResponseVpnConnection withHaRole(String haRole) {
         this.haRole = haRole;
         return this;
@@ -597,7 +575,6 @@ public class CreateResponseVpnConnection {
             && Objects.equals(this.ikepolicy, that.ikepolicy) && Objects.equals(this.ipsecpolicy, that.ipsecpolicy)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.connectionMonitorId, that.connectionMonitorId)
             && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags);
     }
 
@@ -619,7 +596,6 @@ public class CreateResponseVpnConnection {
             createdAt,
             updatedAt,
             enterpriseProjectId,
-            connectionMonitorId,
             haRole,
             tags);
     }
@@ -644,7 +620,6 @@ public class CreateResponseVpnConnection {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    connectionMonitorId: ").append(toIndentedString(connectionMonitorId)).append("\n");
         sb.append("    haRole: ").append(toIndentedString(haRole)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

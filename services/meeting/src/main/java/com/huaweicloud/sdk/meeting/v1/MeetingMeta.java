@@ -141,6 +141,8 @@ import com.huaweicloud.sdk.meeting.v1.model.InviteWithPwdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.InviteWithPwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListHistoryWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListHistoryWebinarsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsRequest;
@@ -209,6 +211,7 @@ import com.huaweicloud.sdk.meeting.v1.model.RestMuteReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestParticipantViewReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestPicLayoutBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestProlongDurReqBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestQosRequestDTO;
 import com.huaweicloud.sdk.meeting.v1.model.RestRenamePartReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestScheduleConfDTO;
 import com.huaweicloud.sdk.meeting.v1.model.RestScheduleCycleConfDTO;
@@ -2702,6 +2705,50 @@ public class MeetingMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHistoryWebinarsRequest::getAcceptLanguage,
                 ListHistoryWebinarsRequest::setAcceptLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNetworkQualityRequest, ListNetworkQualityResponse> listNetworkQuality =
+        genForListNetworkQuality();
+
+    private static HttpRequestDef<ListNetworkQualityRequest, ListNetworkQualityResponse> genForListNetworkQuality() {
+        // basic
+        HttpRequestDef.Builder<ListNetworkQualityRequest, ListNetworkQualityResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListNetworkQualityRequest.class, ListNetworkQualityResponse.class)
+                .withName("ListNetworkQuality")
+                .withUri("/v1/mmc/cqs/media/qos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNetworkQualityRequest::getConferenceid,
+                ListNetworkQualityRequest::setConferenceid));
+        builder.<String>withRequestField("appid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNetworkQualityRequest::getAppid, ListNetworkQualityRequest::setAppid));
+        builder.<String>withRequestField("confuuid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNetworkQualityRequest::getConfuuid, ListNetworkQualityRequest::setConfuuid));
+        builder.<String>withRequestField("confToken",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNetworkQualityRequest::getConfToken, ListNetworkQualityRequest::setConfToken));
+        builder.<RestQosRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestQosRequestDTO.class),
+            f -> f.withMarshaller(ListNetworkQualityRequest::getBody, ListNetworkQualityRequest::setBody));
 
         // response
 

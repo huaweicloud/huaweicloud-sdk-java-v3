@@ -96,7 +96,7 @@ public class ShowReplayResultsRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。
+     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
      */
     public static final class TypeEnum {
 
@@ -130,6 +130,11 @@ public class ShowReplayResultsRequest {
          */
         public static final TypeEnum REPLAYING_SQL = new TypeEnum("replaying_sql");
 
+        /**
+         * Enum ERROR_CLASSIFICATION for value: "error_classification"
+         */
+        public static final TypeEnum ERROR_CLASSIFICATION = new TypeEnum("error_classification");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -140,6 +145,7 @@ public class ShowReplayResultsRequest {
             map.put("slow_sql_template", SLOW_SQL_TEMPLATE);
             map.put("error_sql_template", ERROR_SQL_TEMPLATE);
             map.put("replaying_sql", REPLAYING_SQL);
+            map.put("error_classification", ERROR_CLASSIFICATION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -369,6 +375,21 @@ public class ShowReplayResultsRequest {
 
     private TargetNameEnum targetName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sample")
+
+    private Boolean isSample;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_type")
+
+    private String errorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_template_md5")
+
+    private String sqlTemplateMd5;
+
     public ShowReplayResultsRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -411,7 +432,7 @@ public class ShowReplayResultsRequest {
     }
 
     /**
-     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。
+     * 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
      * @return type
      */
     public TypeEnum getType() {
@@ -541,6 +562,57 @@ public class ShowReplayResultsRequest {
         this.targetName = targetName;
     }
 
+    public ShowReplayResultsRequest withIsSample(Boolean isSample) {
+        this.isSample = isSample;
+        return this;
+    }
+
+    /**
+     * 是否查询样例true/false，type=slow_sql/error_sql时生效，值为true时只查询一条样例数据。
+     * @return isSample
+     */
+    public Boolean getIsSample() {
+        return isSample;
+    }
+
+    public void setIsSample(Boolean isSample) {
+        this.isSample = isSample;
+    }
+
+    public ShowReplayResultsRequest withErrorType(String errorType) {
+        this.errorType = errorType;
+        return this;
+    }
+
+    /**
+     * 错误分类，type=error_sql/error_sql_template时生效，根据错误分类过滤数据。
+     * @return errorType
+     */
+    public String getErrorType() {
+        return errorType;
+    }
+
+    public void setErrorType(String errorType) {
+        this.errorType = errorType;
+    }
+
+    public ShowReplayResultsRequest withSqlTemplateMd5(String sqlTemplateMd5) {
+        this.sqlTemplateMd5 = sqlTemplateMd5;
+        return this;
+    }
+
+    /**
+     * sql模板md5，type=slow_sql/error_sql时生效，根据模板过滤对应的异常SQL和慢SQL，该值为本接口type=slow_sql_template/error_sql_template时的返回字段。
+     * @return sqlTemplateMd5
+     */
+    public String getSqlTemplateMd5() {
+        return sqlTemplateMd5;
+    }
+
+    public void setSqlTemplateMd5(String sqlTemplateMd5) {
+        this.sqlTemplateMd5 = sqlTemplateMd5;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -554,12 +626,26 @@ public class ShowReplayResultsRequest {
             && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.targetName, that.targetName);
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.targetName, that.targetName)
+            && Objects.equals(this.isSample, that.isSample) && Objects.equals(this.errorType, that.errorType)
+            && Objects.equals(this.sqlTemplateMd5, that.sqlTemplateMd5);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, type, startTime, endTime, offset, limit, sortKey, sortDir, targetName);
+        return Objects.hash(jobId,
+            xLanguage,
+            type,
+            startTime,
+            endTime,
+            offset,
+            limit,
+            sortKey,
+            sortDir,
+            targetName,
+            isSample,
+            errorType,
+            sqlTemplateMd5);
     }
 
     @Override
@@ -576,6 +662,9 @@ public class ShowReplayResultsRequest {
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    targetName: ").append(toIndentedString(targetName)).append("\n");
+        sb.append("    isSample: ").append(toIndentedString(isSample)).append("\n");
+        sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
+        sb.append("    sqlTemplateMd5: ").append(toIndentedString(sqlTemplateMd5)).append("\n");
         sb.append("}");
         return sb.toString();
     }

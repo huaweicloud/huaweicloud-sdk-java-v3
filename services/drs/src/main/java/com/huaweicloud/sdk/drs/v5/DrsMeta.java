@@ -1793,6 +1793,12 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getLimit,
                 ShowDbObjectTemplateProgressRequest::setLimit));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDbObjectTemplateProgressRequest::getType,
+                ShowDbObjectTemplateProgressRequest::setType));
         builder.<ShowDbObjectTemplateProgressRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1832,6 +1838,12 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowDbObjectTemplateResultRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getType,
                 ShowDbObjectTemplateResultRequest::setType));
+        builder.<String>withRequestField("file_export_object_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDbObjectTemplateResultRequest::getFileExportObjectLevel,
+                ShowDbObjectTemplateResultRequest::setFileExportObjectLevel));
         builder.<ShowDbObjectTemplateResultRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2468,6 +2480,22 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowReplayResultsRequest.TargetNameEnum.class),
             f -> f.withMarshaller(ShowReplayResultsRequest::getTargetName, ShowReplayResultsRequest::setTargetName));
+        builder.<Boolean>withRequestField("is_sample",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getIsSample, ShowReplayResultsRequest::setIsSample));
+        builder.<String>withRequestField("error_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getErrorType, ShowReplayResultsRequest::setErrorType));
+        builder.<String>withRequestField("sql_template_md5",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayResultsRequest::getSqlTemplateMd5,
+                ShowReplayResultsRequest::setSqlTemplateMd5));
         builder.<ShowReplayResultsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

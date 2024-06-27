@@ -90,6 +90,46 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
 
     private String dstHost;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_id")
+
+    private String srcProvinceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_name")
+
+    private String srcProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_id")
+
+    private String srcCityId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_name")
+
+    private String srcCityName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_id")
+
+    private String dstProvinceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_name")
+
+    private String dstProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_id")
+
+    private String dstCityId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_name")
+
+    private String dstCityName;
+
     public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withAction(String action) {
         this.action = action;
         return this;
@@ -147,7 +187,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 命中时间
+     * 命中时间，以毫秒为单位的时间戳，如1718936272648
      * @return hitTime
      */
     public Long getHitTime() {
@@ -362,6 +402,142 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         this.dstHost = dstHost;
     }
 
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcProvinceId(String srcProvinceId) {
+        this.srcProvinceId = srcProvinceId;
+        return this;
+    }
+
+    /**
+     * 源省份id
+     * @return srcProvinceId
+     */
+    public String getSrcProvinceId() {
+        return srcProvinceId;
+    }
+
+    public void setSrcProvinceId(String srcProvinceId) {
+        this.srcProvinceId = srcProvinceId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+        return this;
+    }
+
+    /**
+     * 源省份名称
+     * @return srcProvinceName
+     */
+    public String getSrcProvinceName() {
+        return srcProvinceName;
+    }
+
+    public void setSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcCityId(String srcCityId) {
+        this.srcCityId = srcCityId;
+        return this;
+    }
+
+    /**
+     * 源城市id
+     * @return srcCityId
+     */
+    public String getSrcCityId() {
+        return srcCityId;
+    }
+
+    public void setSrcCityId(String srcCityId) {
+        this.srcCityId = srcCityId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+        return this;
+    }
+
+    /**
+     * 源城市名称
+     * @return srcCityName
+     */
+    public String getSrcCityName() {
+        return srcCityName;
+    }
+
+    public void setSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstProvinceId(String dstProvinceId) {
+        this.dstProvinceId = dstProvinceId;
+        return this;
+    }
+
+    /**
+     * 目的省份id
+     * @return dstProvinceId
+     */
+    public String getDstProvinceId() {
+        return dstProvinceId;
+    }
+
+    public void setDstProvinceId(String dstProvinceId) {
+        this.dstProvinceId = dstProvinceId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+        return this;
+    }
+
+    /**
+     * 目的省份名称
+     * @return dstProvinceName
+     */
+    public String getDstProvinceName() {
+        return dstProvinceName;
+    }
+
+    public void setDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstCityId(String dstCityId) {
+        this.dstCityId = dstCityId;
+        return this;
+    }
+
+    /**
+     * 目的城市id
+     * @return dstCityId
+     */
+    public String getDstCityId() {
+        return dstCityId;
+    }
+
+    public void setDstCityId(String dstCityId) {
+        this.dstCityId = dstCityId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+        return this;
+    }
+
+    /**
+     * 目的城市名称
+     * @return dstCityName
+     */
+    public String getDstCityName() {
+        return dstCityName;
+    }
+
+    public void setDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -381,7 +557,12 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
             && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
             && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.dstPort, that.dstPort)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.app, that.app)
-            && Objects.equals(this.dstHost, that.dstHost);
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.srcProvinceId, that.srcProvinceId)
+            && Objects.equals(this.srcProvinceName, that.srcProvinceName)
+            && Objects.equals(this.srcCityId, that.srcCityId) && Objects.equals(this.srcCityName, that.srcCityName)
+            && Objects.equals(this.dstProvinceId, that.dstProvinceId)
+            && Objects.equals(this.dstProvinceName, that.dstProvinceName)
+            && Objects.equals(this.dstCityId, that.dstCityId) && Objects.equals(this.dstCityName, that.dstCityName);
     }
 
     @Override
@@ -401,7 +582,15 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
             dstPort,
             protocol,
             app,
-            dstHost);
+            dstHost,
+            srcProvinceId,
+            srcProvinceName,
+            srcCityId,
+            srcCityName,
+            dstProvinceId,
+            dstProvinceName,
+            dstCityId,
+            dstCityName);
     }
 
     @Override
@@ -424,6 +613,14 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    srcProvinceId: ").append(toIndentedString(srcProvinceId)).append("\n");
+        sb.append("    srcProvinceName: ").append(toIndentedString(srcProvinceName)).append("\n");
+        sb.append("    srcCityId: ").append(toIndentedString(srcCityId)).append("\n");
+        sb.append("    srcCityName: ").append(toIndentedString(srcCityName)).append("\n");
+        sb.append("    dstProvinceId: ").append(toIndentedString(dstProvinceId)).append("\n");
+        sb.append("    dstProvinceName: ").append(toIndentedString(dstProvinceName)).append("\n");
+        sb.append("    dstCityId: ").append(toIndentedString(dstCityId)).append("\n");
+        sb.append("    dstCityName: ").append(toIndentedString(dstCityName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

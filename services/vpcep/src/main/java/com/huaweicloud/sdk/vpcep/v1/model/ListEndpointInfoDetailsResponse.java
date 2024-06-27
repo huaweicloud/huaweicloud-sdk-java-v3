@@ -145,6 +145,11 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_address")
+
+    private String ipv6Address;
+
     public ListEndpointInfoDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -218,7 +223,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 帐号状态。  - frozen：冻结  - active：解冻
+     * 账号状态。  - frozen：冻结  - active：解冻
      * @return activeStatus
      */
     public List<String> getActiveStatus() {
@@ -320,7 +325,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -597,7 +602,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -647,7 +652,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+     * 终端节点策略信息
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {
@@ -692,6 +697,23 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public ListEndpointInfoDetailsResponse withIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+        return this;
+    }
+
+    /**
+     * 访问所连接的终端节点服务的IPv6的地址。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。 仅专业型终端节点支持此参数。
+     * @return ipv6Address
+     */
+    public String getIpv6Address() {
+        return ipv6Address;
+    }
+
+    public void setIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -718,7 +740,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             && Objects.equals(this.routetables, that.routetables) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
             && Objects.equals(this.endpointPoolId, that.endpointPoolId)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.ipv6Address, that.ipv6Address);
     }
 
     @Override
@@ -748,7 +771,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             description,
             policyStatement,
             endpointPoolId,
-            publicBorderGroup);
+            publicBorderGroup,
+            ipv6Address);
     }
 
     @Override
@@ -781,6 +805,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
         sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");
         sb.append("}");
         return sb.toString();
     }

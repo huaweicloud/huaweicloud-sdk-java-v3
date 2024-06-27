@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +17,43 @@ public class ShowFirewallTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private ResourceTag tags;
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private ResourceTag sysTags;
-
-    public ShowFirewallTagsResponse withTags(ResourceTag tags) {
+    public ShowFirewallTagsResponse withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowFirewallTagsResponse withTags(Consumer<ResourceTag> tagsSetter) {
+    public ShowFirewallTagsResponse addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
-            this.tags = new ResourceTag();
-            tagsSetter.accept(this.tags);
+            this.tags = new ArrayList<>();
         }
+        this.tags.add(tagsItem);
+        return this;
+    }
 
+    public ShowFirewallTagsResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * Get tags
+     * tag对象列表
      * @return tags
      */
-    public ResourceTag getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(ResourceTag tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 
@@ -70,32 +74,6 @@ public class ShowFirewallTagsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ShowFirewallTagsResponse withSysTags(ResourceTag sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public ShowFirewallTagsResponse withSysTags(Consumer<ResourceTag> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ResourceTag();
-            sysTagsSetter.accept(this.sysTags);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get sysTags
-     * @return sysTags
-     */
-    public ResourceTag getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(ResourceTag sysTags) {
-        this.sysTags = sysTags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,13 +83,12 @@ public class ShowFirewallTagsResponse extends SdkResponse {
             return false;
         }
         ShowFirewallTagsResponse that = (ShowFirewallTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, requestId, sysTags);
+        return Objects.hash(tags, requestId);
     }
 
     @Override
@@ -120,7 +97,6 @@ public class ShowFirewallTagsResponse extends SdkResponse {
         sb.append("class ShowFirewallTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

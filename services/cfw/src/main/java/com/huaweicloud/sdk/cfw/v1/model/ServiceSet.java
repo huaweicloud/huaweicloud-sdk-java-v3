@@ -39,11 +39,6 @@ public class ServiceSet {
     private Integer refCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -138,23 +133,6 @@ public class ServiceSet {
         this.refCount = refCount;
     }
 
-    public ServiceSet withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 状态
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public ServiceSet withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -217,13 +195,12 @@ public class ServiceSet {
         return Objects.equals(this.setId, that.setId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.serviceSetType, that.serviceSetType) && Objects.equals(this.refCount, that.refCount)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.protocols, that.protocols);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.protocols, that.protocols);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, name, description, serviceSetType, refCount, status, projectId, protocols);
+        return Objects.hash(setId, name, description, serviceSetType, refCount, projectId, protocols);
     }
 
     @Override
@@ -235,7 +212,6 @@ public class ServiceSet {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    serviceSetType: ").append(toIndentedString(serviceSetType)).append("\n");
         sb.append("    refCount: ").append(toIndentedString(refCount)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    protocols: ").append(toIndentedString(protocols)).append("\n");
         sb.append("}");

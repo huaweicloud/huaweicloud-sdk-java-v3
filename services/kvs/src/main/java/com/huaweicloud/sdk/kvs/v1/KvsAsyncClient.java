@@ -52,7 +52,7 @@ public class KvsAsyncClient {
     /**
      * 创建表
      *
-     * 在指定仓内创建表，表名在仓内唯一； 创建表时，指定主键模板及本地二级索引模板及全局二级索引模板。
+     * 在指定仓内创建表，表名在仓内唯一；创建表时，指定主键模板及本地二级索引模板及全局二级索引模板。创建表时，如果仓不存在，将会自动创建仓。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -66,7 +66,7 @@ public class KvsAsyncClient {
     /**
      * 创建表
      *
-     * 在指定仓内创建表，表名在仓内唯一； 创建表时，指定主键模板及本地二级索引模板及全局二级索引模板。
+     * 在指定仓内创建表，表名在仓内唯一；创建表时，指定主键模板及本地二级索引模板及全局二级索引模板。创建表时，如果仓不存在，将会自动创建仓。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -109,7 +109,7 @@ public class KvsAsyncClient {
     /**
      * 列举仓
      *
-     * 一个账户下可能存在多个仓，每个账户下的store数量有限制，响应中一次性返回所有仓名称。
+     * 一个账户下可以创建最多25个仓，每个仓可以创建最多100个store，响应中一次性返回所有仓名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -123,7 +123,7 @@ public class KvsAsyncClient {
     /**
      * 列举仓
      *
-     * 一个账户下可能存在多个仓，每个账户下的store数量有限制，响应中一次性返回所有仓名称。
+     * 一个账户下可以创建最多25个仓，每个仓可以创建最多100个store，响应中一次性返回所有仓名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

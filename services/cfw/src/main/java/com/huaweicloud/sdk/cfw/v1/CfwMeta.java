@@ -34,6 +34,10 @@ import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskDto;
+import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CaptureTaskDto;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEastWestFirewallStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEastWestFirewallStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEipStatusRequest;
@@ -44,12 +48,17 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeProtectStatusRequestBody;
 import com.huaweicloud.sdk.cfw.v1.model.ClearAccessLogRuleHitCountsDto;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequestBody;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallReq;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateTagRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateTagResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateTagsDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -61,6 +70,9 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteAddressSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAddressSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteBlackWhiteListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteBlackWhiteListResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteCaptureTaskDto;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetResponse;
@@ -74,6 +86,9 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteTagsDto;
 import com.huaweicloud.sdk.cfw.v1.model.EipOperateProtectReq;
 import com.huaweicloud.sdk.cfw.v1.model.IpsProtectDTO;
 import com.huaweicloud.sdk.cfw.v1.model.IpsSwitchDTO;
@@ -93,6 +108,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListBlackWhiteListsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListBlackWhiteListsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailRequest;
@@ -163,6 +182,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CfwMeta {
@@ -512,6 +533,41 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CancelCaptureTaskRequest, CancelCaptureTaskResponse> cancelCaptureTask =
+        genForCancelCaptureTask();
+
+    private static HttpRequestDef<CancelCaptureTaskRequest, CancelCaptureTaskResponse> genForCancelCaptureTask() {
+        // basic
+        HttpRequestDef.Builder<CancelCaptureTaskRequest, CancelCaptureTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelCaptureTaskRequest.class, CancelCaptureTaskResponse.class)
+                .withName("CancelCaptureTask")
+                .withUri("/v1/{project_id}/capture-task/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelCaptureTaskRequest::getFwInstanceId,
+                CancelCaptureTaskRequest::setFwInstanceId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelCaptureTaskRequest::getEnterpriseProjectId,
+                CancelCaptureTaskRequest::setEnterpriseProjectId));
+        builder.<CancelCaptureTaskDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelCaptureTaskDto.class),
+            f -> f.withMarshaller(CancelCaptureTaskRequest::getBody, CancelCaptureTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus =
         genForChangeEastWestFirewallStatus();
 
@@ -545,6 +601,41 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(ChangeProtectStatusRequestBody.class),
             f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody,
                 ChangeEastWestFirewallStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCaptureTaskRequest, CreateCaptureTaskResponse> createCaptureTask =
+        genForCreateCaptureTask();
+
+    private static HttpRequestDef<CreateCaptureTaskRequest, CreateCaptureTaskResponse> genForCreateCaptureTask() {
+        // basic
+        HttpRequestDef.Builder<CreateCaptureTaskRequest, CreateCaptureTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCaptureTaskRequest.class, CreateCaptureTaskResponse.class)
+                .withName("CreateCaptureTask")
+                .withUri("/v1/{project_id}/capture-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCaptureTaskRequest::getEnterpriseProjectId,
+                CreateCaptureTaskRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCaptureTaskRequest::getFwInstanceId,
+                CreateCaptureTaskRequest::setFwInstanceId));
+        builder.<CaptureTaskDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CaptureTaskDto.class),
+            f -> f.withMarshaller(CreateCaptureTaskRequest::getBody, CreateCaptureTaskRequest::setBody));
 
         // response
 
@@ -603,11 +694,6 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateFirewallRequest::getXClientToken, CreateFirewallRequest::setXClientToken));
-        builder.<String>withRequestField("X-Trace-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateFirewallRequest::getXTraceId, CreateFirewallRequest::setXTraceId));
         builder.<CreateFirewallReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -615,6 +701,38 @@ public class CfwMeta {
             f -> f.withMarshaller(CreateFirewallRequest::getBody, CreateFirewallRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
+
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
+                .withName("CreateTag")
+                .withUri("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagRequest::getFwInstanceId, CreateTagRequest::setFwInstanceId));
+        builder.<CreateTagsDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTagsDto.class),
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTagResponse::getBody, CreateTagResponse::setBody));
 
         return builder.build();
     }
@@ -717,6 +835,41 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBlackWhiteListRequest::getFwInstanceId,
                 DeleteBlackWhiteListRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCaptureTaskRequest, DeleteCaptureTaskResponse> deleteCaptureTask =
+        genForDeleteCaptureTask();
+
+    private static HttpRequestDef<DeleteCaptureTaskRequest, DeleteCaptureTaskResponse> genForDeleteCaptureTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteCaptureTaskRequest, DeleteCaptureTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteCaptureTaskRequest.class, DeleteCaptureTaskResponse.class)
+                .withName("DeleteCaptureTask")
+                .withUri("/v1/{project_id}/capture-task/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCaptureTaskRequest::getFwInstanceId,
+                DeleteCaptureTaskRequest::setFwInstanceId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCaptureTaskRequest::getEnterpriseProjectId,
+                DeleteCaptureTaskRequest::setEnterpriseProjectId));
+        builder.<DeleteCaptureTaskDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteCaptureTaskDto.class),
+            f -> f.withMarshaller(DeleteCaptureTaskRequest::getBody, DeleteCaptureTaskRequest::setBody));
 
         // response
 
@@ -883,6 +1036,38 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
+
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
+                .withUri("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getFwInstanceId, DeleteTagRequest::setFwInstanceId));
+        builder.<DeleteTagsDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteTagsDto.class),
+            f -> f.withMarshaller(DeleteTagRequest::getBody, DeleteTagRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTagResponse::getBody, DeleteTagResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAccessControlLogsRequest, ListAccessControlLogsResponse> listAccessControlLogs =
         genForListAccessControlLogs();
 
@@ -1008,6 +1193,30 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccessControlLogsRequest::getDstRegionName,
                 ListAccessControlLogsRequest::setDstRegionName));
+        builder.<String>withRequestField("src_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcProvinceName,
+                ListAccessControlLogsRequest::setSrcProvinceName));
+        builder.<String>withRequestField("dst_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstProvinceName,
+                ListAccessControlLogsRequest::setDstProvinceName));
+        builder.<String>withRequestField("src_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getSrcCityName,
+                ListAccessControlLogsRequest::setSrcCityName));
+        builder.<String>withRequestField("dst_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getDstCityName,
+                ListAccessControlLogsRequest::setDstCityName));
 
         // response
 
@@ -1228,10 +1437,10 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getDstPort, ListAttackLogsRequest::setDstPort));
-        builder.<ListAttackLogsRequest.ProtocolEnum>withRequestField("protocol",
+        builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAttackLogsRequest.ProtocolEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getProtocol, ListAttackLogsRequest::setProtocol));
         builder.<String>withRequestField("app",
             LocationType.Query,
@@ -1263,15 +1472,15 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getFwInstanceId, ListAttackLogsRequest::setFwInstanceId));
-        builder.<ListAttackLogsRequest.ActionEnum>withRequestField("action",
+        builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAttackLogsRequest.ActionEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getAction, ListAttackLogsRequest::setAction));
-        builder.<ListAttackLogsRequest.DirectionEnum>withRequestField("direction",
+        builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAttackLogsRequest.DirectionEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getDirection, ListAttackLogsRequest::setDirection));
         builder.<String>withRequestField("attack_type",
             LocationType.Query,
@@ -1288,11 +1497,6 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getLevel, ListAttackLogsRequest::setLevel));
-        builder.<String>withRequestField("source",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackLogsRequest::getSource, ListAttackLogsRequest::setSource));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1324,6 +1528,28 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getDstRegionName, ListAttackLogsRequest::setDstRegionName));
+        builder.<String>withRequestField("src_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getSrcProvinceName,
+                ListAttackLogsRequest::setSrcProvinceName));
+        builder.<String>withRequestField("dst_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstProvinceName,
+                ListAttackLogsRequest::setDstProvinceName));
+        builder.<String>withRequestField("src_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getSrcCityName, ListAttackLogsRequest::setSrcCityName));
+        builder.<String>withRequestField("dst_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getDstCityName, ListAttackLogsRequest::setDstCityName));
 
         // response
 
@@ -1352,10 +1578,10 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListBlackWhiteListsRequest.ListTypeEnum.class),
             f -> f.withMarshaller(ListBlackWhiteListsRequest::getListType, ListBlackWhiteListsRequest::setListType));
-        builder.<ListBlackWhiteListsRequest.AddressTypeEnum>withRequestField("address_type",
+        builder.<Integer>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListBlackWhiteListsRequest.AddressTypeEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBlackWhiteListsRequest::getAddressType,
                 ListBlackWhiteListsRequest::setAddressType));
         builder.<String>withRequestField("address",
@@ -1396,6 +1622,90 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCaptureResultRequest, ListCaptureResultResponse> listCaptureResult =
+        genForListCaptureResult();
+
+    private static HttpRequestDef<ListCaptureResultRequest, ListCaptureResultResponse> genForListCaptureResult() {
+        // basic
+        HttpRequestDef.Builder<ListCaptureResultRequest, ListCaptureResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaptureResultRequest.class, ListCaptureResultResponse.class)
+                .withName("ListCaptureResult")
+                .withUri("/v1/{project_id}/capture-task/capture-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaptureResultRequest::getFwInstanceId,
+                ListCaptureResultRequest::setFwInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaptureResultRequest::getTaskId, ListCaptureResultRequest::setTaskId));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCaptureResultRequest::getType, ListCaptureResultRequest::setType));
+        builder.<List<String>>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCaptureResultRequest::getIp, ListCaptureResultRequest::setIp));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaptureResultRequest::getEnterpriseProjectId,
+                ListCaptureResultRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCaptureTaskRequest, ListCaptureTaskResponse> listCaptureTask =
+        genForListCaptureTask();
+
+    private static HttpRequestDef<ListCaptureTaskRequest, ListCaptureTaskResponse> genForListCaptureTask() {
+        // basic
+        HttpRequestDef.Builder<ListCaptureTaskRequest, ListCaptureTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaptureTaskRequest.class, ListCaptureTaskResponse.class)
+                .withName("ListCaptureTask")
+                .withUri("/v1/{project_id}/capture-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaptureTaskRequest::getEnterpriseProjectId,
+                ListCaptureTaskRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCaptureTaskRequest::getFwInstanceId, ListCaptureTaskRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCaptureTaskRequest::getLimit, ListCaptureTaskRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCaptureTaskRequest::getOffset, ListCaptureTaskRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDnsServersRequest, ListDnsServersResponse> listDnsServers =
         genForListDnsServers();
 
@@ -1420,7 +1730,7 @@ public class CfwMeta {
             f -> f.withMarshaller(ListDnsServersRequest::getOffset, ListDnsServersRequest::setOffset));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDnsServersRequest::getFwInstanceId, ListDnsServersRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
@@ -1465,10 +1775,10 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainParseDetailRequest::getFwInstanceId,
                 ListDomainParseDetailRequest::setFwInstanceId));
-        builder.<String>withRequestField("address_type",
+        builder.<Integer>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDomainParseDetailRequest::getAddressType,
                 ListDomainParseDetailRequest::setAddressType));
 
@@ -1578,16 +1888,6 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainsRequest::getDomainName, ListDomainsRequest::setDomainName));
-        builder.<String>withRequestField("description",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getDescription, ListDomainsRequest::setDescription));
-        builder.<String>withRequestField("set_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getSetId, ListDomainsRequest::setSetId));
         builder.<String>withRequestField("object_Id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1629,7 +1929,7 @@ public class CfwMeta {
                 ListEastWestFirewallRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEastWestFirewallRequest::getFwInstanceId,
                 ListEastWestFirewallRequest::setFwInstanceId));
@@ -1775,10 +2075,10 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFlowLogsRequest::getDstPort, ListFlowLogsRequest::setDstPort));
-        builder.<ListFlowLogsRequest.ProtocolEnum>withRequestField("protocol",
+        builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListFlowLogsRequest.ProtocolEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlowLogsRequest::getProtocol, ListFlowLogsRequest::setProtocol));
         builder.<String>withRequestField("app",
             LocationType.Query,
@@ -1826,6 +2126,26 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlowLogsRequest::getDstRegionName, ListFlowLogsRequest::setDstRegionName));
+        builder.<String>withRequestField("src_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getSrcProvinceName, ListFlowLogsRequest::setSrcProvinceName));
+        builder.<String>withRequestField("dst_province_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstProvinceName, ListFlowLogsRequest::setDstProvinceName));
+        builder.<String>withRequestField("src_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getSrcCityName, ListFlowLogsRequest::setSrcCityName));
+        builder.<String>withRequestField("dst_city_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getDstCityName, ListFlowLogsRequest::setDstCityName));
 
         // response
 
@@ -2162,7 +2482,7 @@ public class CfwMeta {
         // requests
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDnsServersRequest::getFwInstanceId, UpdateDnsServersRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
@@ -2207,7 +2527,7 @@ public class CfwMeta {
                 UpdateDomainSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDomainSetRequest::getFwInstanceId, UpdateDomainSetRequest::setFwInstanceId));
         builder.<UpdateDomainSetInfoDto>withRequestField("body",
@@ -2525,11 +2845,6 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAclRulesRequest.TypeEnum.class),
             f -> f.withMarshaller(ListAclRulesRequest::getType, ListAclRulesRequest::setType));
-        builder.<ListAclRulesRequest.ProtocolEnum>withRequestField("protocol",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAclRulesRequest.ProtocolEnum.class),
-            f -> f.withMarshaller(ListAclRulesRequest::getProtocol, ListAclRulesRequest::setProtocol));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

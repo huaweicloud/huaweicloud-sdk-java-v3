@@ -17,11 +17,6 @@ public class CreateFirewallRequest {
     private String xClientToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Trace-Id")
-
-    private String xTraceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateFirewallReq body;
@@ -43,25 +38,6 @@ public class CreateFirewallRequest {
 
     public void setXClientToken(String xClientToken) {
         this.xClientToken = xClientToken;
-    }
-
-    public CreateFirewallRequest withXTraceId(String xTraceId) {
-        this.xTraceId = xTraceId;
-        return this;
-    }
-
-    /**
-     * Get xTraceId
-     * @return xTraceId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Trace-Id")
-    public String getXTraceId() {
-        return xTraceId;
-    }
-
-    public void setXTraceId(String xTraceId) {
-        this.xTraceId = xTraceId;
     }
 
     public CreateFirewallRequest withBody(CreateFirewallReq body) {
@@ -99,13 +75,12 @@ public class CreateFirewallRequest {
             return false;
         }
         CreateFirewallRequest that = (CreateFirewallRequest) obj;
-        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.xTraceId, that.xTraceId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xClientToken, xTraceId, body);
+        return Objects.hash(xClientToken, body);
     }
 
     @Override
@@ -113,7 +88,6 @@ public class CreateFirewallRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateFirewallRequest {\n");
         sb.append("    xClientToken: ").append(toIndentedString(xClientToken)).append("\n");
-        sb.append("    xTraceId: ").append(toIndentedString(xTraceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

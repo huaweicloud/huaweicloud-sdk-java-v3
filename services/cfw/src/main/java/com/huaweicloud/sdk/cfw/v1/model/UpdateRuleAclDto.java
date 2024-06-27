@@ -369,11 +369,6 @@ public class UpdateRuleAclDto {
     private LongConnectEnableEnum longConnectEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "profile")
-
-    private RuleProfileDto profile;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
     private RuleAddressDto source;
@@ -737,32 +732,6 @@ public class UpdateRuleAclDto {
         this.longConnectEnable = longConnectEnable;
     }
 
-    public UpdateRuleAclDto withProfile(RuleProfileDto profile) {
-        this.profile = profile;
-        return this;
-    }
-
-    public UpdateRuleAclDto withProfile(Consumer<RuleProfileDto> profileSetter) {
-        if (this.profile == null) {
-            this.profile = new RuleProfileDto();
-            profileSetter.accept(this.profile);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get profile
-     * @return profile
-     */
-    public RuleProfileDto getProfile() {
-        return profile;
-    }
-
-    public void setProfile(RuleProfileDto profile) {
-        this.profile = profile;
-    }
-
     public UpdateRuleAclDto withSource(RuleAddressDto source) {
         this.source = source;
         return this;
@@ -904,9 +873,9 @@ public class UpdateRuleAclDto {
             && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
-            && Objects.equals(this.profile, that.profile) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.destination, that.destination) && Objects.equals(this.service, that.service)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -925,7 +894,6 @@ public class UpdateRuleAclDto {
             longConnectTimeSecond,
             longConnectTime,
             longConnectEnable,
-            profile,
             source,
             destination,
             service,
@@ -951,7 +919,6 @@ public class UpdateRuleAclDto {
         sb.append("    longConnectTimeSecond: ").append(toIndentedString(longConnectTimeSecond)).append("\n");
         sb.append("    longConnectTime: ").append(toIndentedString(longConnectTime)).append("\n");
         sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
-        sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");

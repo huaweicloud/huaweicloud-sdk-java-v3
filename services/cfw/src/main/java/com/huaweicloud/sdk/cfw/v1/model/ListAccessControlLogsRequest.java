@@ -86,7 +86,7 @@ public class ListAccessControlLogsRequest {
     private Integer limit;
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      */
     public static final class LogTypeEnum {
 
@@ -196,13 +196,33 @@ public class ListAccessControlLogsRequest {
 
     private String dstRegionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_name")
+
+    private String srcProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_name")
+
+    private String dstProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_name")
+
+    private String srcCityName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_name")
+
+    private String dstCityName;
+
     public ListAccessControlLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -236,7 +256,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 开始时间
+     * 开始时间，以毫秒为单位的时间戳，如1718936272648
      * @return startTime
      */
     public Long getStartTime() {
@@ -253,7 +273,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间，以毫秒为单位的时间戳，如1718936272648
      * @return endTime
      */
     public Long getEndTime() {
@@ -338,7 +358,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 协议
+     * 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
      * @return protocol
      */
     public String getProtocol() {
@@ -372,7 +392,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 文档ID,第一页为空，其他页不为空
+     * 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
      * @return logId
      */
     public String getLogId() {
@@ -389,7 +409,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 日期,第一页为空，其他页不为空
+     * 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的start_time
      * @return nextDate
      */
     public Integer getNextDate() {
@@ -406,7 +426,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
      * @return offset
      */
     public Integer getOffset() {
@@ -440,7 +460,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -508,7 +528,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 动作0：permit,1：deny
+     * 动作包含permit，deny
      * @return action
      */
     public String getAction() {
@@ -553,6 +573,74 @@ public class ListAccessControlLogsRequest {
         this.dstRegionName = dstRegionName;
     }
 
+    public ListAccessControlLogsRequest withSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+        return this;
+    }
+
+    /**
+     * 源省份名称
+     * @return srcProvinceName
+     */
+    public String getSrcProvinceName() {
+        return srcProvinceName;
+    }
+
+    public void setSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+    }
+
+    public ListAccessControlLogsRequest withDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+        return this;
+    }
+
+    /**
+     * 目的省份名称
+     * @return dstProvinceName
+     */
+    public String getDstProvinceName() {
+        return dstProvinceName;
+    }
+
+    public void setDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+    }
+
+    public ListAccessControlLogsRequest withSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+        return this;
+    }
+
+    /**
+     * 源城市名称
+     * @return srcCityName
+     */
+    public String getSrcCityName() {
+        return srcCityName;
+    }
+
+    public void setSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+    }
+
+    public ListAccessControlLogsRequest withDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+        return this;
+    }
+
+    /**
+     * 目的城市名称
+     * @return dstCityName
+     */
+    public String getDstCityName() {
+        return dstCityName;
+    }
+
+    public void setDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -573,7 +661,10 @@ public class ListAccessControlLogsRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.ruleName, that.ruleName)
             && Objects.equals(this.action, that.action) && Objects.equals(this.srcRegionName, that.srcRegionName)
-            && Objects.equals(this.dstRegionName, that.dstRegionName);
+            && Objects.equals(this.dstRegionName, that.dstRegionName)
+            && Objects.equals(this.srcProvinceName, that.srcProvinceName)
+            && Objects.equals(this.dstProvinceName, that.dstProvinceName)
+            && Objects.equals(this.srcCityName, that.srcCityName) && Objects.equals(this.dstCityName, that.dstCityName);
     }
 
     @Override
@@ -598,7 +689,11 @@ public class ListAccessControlLogsRequest {
             ruleName,
             action,
             srcRegionName,
-            dstRegionName);
+            dstRegionName,
+            srcProvinceName,
+            dstProvinceName,
+            srcCityName,
+            dstCityName);
     }
 
     @Override
@@ -626,6 +721,10 @@ public class ListAccessControlLogsRequest {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
         sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
+        sb.append("    srcProvinceName: ").append(toIndentedString(srcProvinceName)).append("\n");
+        sb.append("    dstProvinceName: ").append(toIndentedString(dstProvinceName)).append("\n");
+        sb.append("    srcCityName: ").append(toIndentedString(srcCityName)).append("\n");
+        sb.append("    dstCityName: ").append(toIndentedString(dstCityName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

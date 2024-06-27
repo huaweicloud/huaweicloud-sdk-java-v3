@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -14,7 +13,7 @@ public class AlarmTemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createTime")
 
-    private OffsetDateTime createTime;
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createUser")
@@ -39,7 +38,7 @@ public class AlarmTemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateTime")
 
-    private OffsetDateTime updateTime;
+    private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateUser")
@@ -51,7 +50,7 @@ public class AlarmTemplateInfo {
 
     private String name;
 
-    public AlarmTemplateInfo withCreateTime(OffsetDateTime createTime) {
+    public AlarmTemplateInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -60,11 +59,11 @@ public class AlarmTemplateInfo {
      * 创建时间
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -136,7 +135,7 @@ public class AlarmTemplateInfo {
         this.testServiceId = testServiceId;
     }
 
-    public AlarmTemplateInfo withUpdateTime(OffsetDateTime updateTime) {
+    public AlarmTemplateInfo withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -145,11 +144,11 @@ public class AlarmTemplateInfo {
      * 修改时间
      * @return updateTime
      */
-    public OffsetDateTime getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(OffsetDateTime updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

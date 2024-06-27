@@ -105,6 +105,11 @@ public class ShowDbObjectTemplateProgressRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ShowDbObjectTemplateProgressRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -175,6 +180,23 @@ public class ShowDbObjectTemplateProgressRequest {
         this.limit = limit;
     }
 
+    public ShowDbObjectTemplateProgressRequest withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 默认为空。 - column：当进行列加工导入时，查询列加工导入进度。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -185,12 +207,13 @@ public class ShowDbObjectTemplateProgressRequest {
         }
         ShowDbObjectTemplateProgressRequest that = (ShowDbObjectTemplateProgressRequest) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, offset, limit);
+        return Objects.hash(jobId, xLanguage, offset, limit, type);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class ShowDbObjectTemplateProgressRequest {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

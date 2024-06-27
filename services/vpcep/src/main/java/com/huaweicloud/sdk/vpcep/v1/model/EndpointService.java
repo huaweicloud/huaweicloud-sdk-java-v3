@@ -154,7 +154,7 @@ public class EndpointService {
     }
 
     /**
-     * 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false 是否开启终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
+     * 是否允许自定义终端节点策略。  - false：不支持设置终端节点策略  - true：支持设置终端节点策略 默认为false
      * @return enablePolicy
      */
     public Boolean getEnablePolicy() {

@@ -31,11 +31,6 @@ public class ServiceItemListResponseDtoDataRecords {
     private String destPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -108,23 +103,6 @@ public class ServiceItemListResponseDtoDataRecords {
         this.destPort = destPort;
     }
 
-    public ServiceItemListResponseDtoDataRecords withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 服务成员名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ServiceItemListResponseDtoDataRecords withDescription(String description) {
         this.description = description;
         return this;
@@ -153,12 +131,12 @@ public class ServiceItemListResponseDtoDataRecords {
         ServiceItemListResponseDtoDataRecords that = (ServiceItemListResponseDtoDataRecords) obj;
         return Objects.equals(this.itemId, that.itemId) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, protocol, sourcePort, destPort, name, description);
+        return Objects.hash(itemId, protocol, sourcePort, destPort, description);
     }
 
     @Override
@@ -169,7 +147,6 @@ public class ServiceItemListResponseDtoDataRecords {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    destPort: ").append(toIndentedString(destPort)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

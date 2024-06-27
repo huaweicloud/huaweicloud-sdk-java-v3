@@ -178,6 +178,11 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_export_object_level")
+
+    private String fileExportObjectLevel;
+
     private ProgressListener progressListener;
 
     private long progressInterval;
@@ -255,6 +260,23 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
         this.type = type;
     }
 
+    public ShowDbObjectTemplateResultRequest withFileExportObjectLevel(String fileExportObjectLevel) {
+        this.fileExportObjectLevel = fileExportObjectLevel;
+        return this;
+    }
+
+    /**
+     * 默认为空。当进行列加工导入时，查询列加工导入进度，取值column。
+     * @return fileExportObjectLevel
+     */
+    public String getFileExportObjectLevel() {
+        return fileExportObjectLevel;
+    }
+
+    public void setFileExportObjectLevel(String fileExportObjectLevel) {
+        this.fileExportObjectLevel = fileExportObjectLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -265,12 +287,13 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
         }
         ShowDbObjectTemplateResultRequest that = (ShowDbObjectTemplateResultRequest) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.fileExportObjectLevel, that.fileExportObjectLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, type);
+        return Objects.hash(jobId, xLanguage, type, fileExportObjectLevel);
     }
 
     @Override
@@ -280,6 +303,7 @@ public class ShowDbObjectTemplateResultRequest implements ProgressRequest {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    fileExportObjectLevel: ").append(toIndentedString(fileExportObjectLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

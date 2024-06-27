@@ -31,75 +31,6 @@ public class UpdateStackSetRequestBody {
 
     private String initialStackDescription;
 
-    /**
-     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * `SELF_MANAGED` - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
-     */
-    public static final class PermissionModelEnum {
-
-        /**
-         * Enum SELF_MANAGED for value: "SELF_MANAGED"
-         */
-        public static final PermissionModelEnum SELF_MANAGED = new PermissionModelEnum("SELF_MANAGED");
-
-        private static final Map<String, PermissionModelEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PermissionModelEnum> createStaticFields() {
-            Map<String, PermissionModelEnum> map = new HashMap<>();
-            map.put("SELF_MANAGED", SELF_MANAGED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PermissionModelEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PermissionModelEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionModelEnum(value));
-        }
-
-        public static PermissionModelEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PermissionModelEnum) {
-                return this.value.equals(((PermissionModelEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "permission_model")
-
-    private PermissionModelEnum permissionModel;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "administration_agency_name")
 
@@ -119,6 +50,81 @@ public class UpdateStackSetRequestBody {
     @JsonProperty(value = "managed_operation")
 
     private ManagedOperation managedOperation;
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     */
+    public static final class CallIdentityEnum {
+
+        /**
+         * Enum SELF for value: "SELF"
+         */
+        public static final CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+        /**
+         * Enum DELEGATED_ADMIN for value: "DELEGATED_ADMIN"
+         */
+        public static final CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+        private static final Map<String, CallIdentityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CallIdentityEnum> createStaticFields() {
+            Map<String, CallIdentityEnum> map = new HashMap<>();
+            map.put("SELF", SELF);
+            map.put("DELEGATED_ADMIN", DELEGATED_ADMIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CallIdentityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CallIdentityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CallIdentityEnum(value));
+        }
+
+        public static CallIdentityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CallIdentityEnum) {
+                return this.value.equals(((CallIdentityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "call_identity")
+
+    private CallIdentityEnum callIdentity;
 
     public UpdateStackSetRequestBody withStackSetId(String stackSetId) {
         this.stackSetId = stackSetId;
@@ -169,23 +175,6 @@ public class UpdateStackSetRequestBody {
 
     public void setInitialStackDescription(String initialStackDescription) {
         this.initialStackDescription = initialStackDescription;
-    }
-
-    public UpdateStackSetRequestBody withPermissionModel(PermissionModelEnum permissionModel) {
-        this.permissionModel = permissionModel;
-        return this;
-    }
-
-    /**
-     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * `SELF_MANAGED` - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
-     * @return permissionModel
-     */
-    public PermissionModelEnum getPermissionModel() {
-        return permissionModel;
-    }
-
-    public void setPermissionModel(PermissionModelEnum permissionModel) {
-        this.permissionModel = permissionModel;
     }
 
     public UpdateStackSetRequestBody withAdministrationAgencyName(String administrationAgencyName) {
@@ -265,6 +254,23 @@ public class UpdateStackSetRequestBody {
         this.managedOperation = managedOperation;
     }
 
+    public UpdateStackSetRequestBody withCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+        return this;
+    }
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     * @return callIdentity
+     */
+    public CallIdentityEnum getCallIdentity() {
+        return callIdentity;
+    }
+
+    public void setCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -277,11 +283,11 @@ public class UpdateStackSetRequestBody {
         return Objects.equals(this.stackSetId, that.stackSetId)
             && Objects.equals(this.stackSetDescription, that.stackSetDescription)
             && Objects.equals(this.initialStackDescription, that.initialStackDescription)
-            && Objects.equals(this.permissionModel, that.permissionModel)
             && Objects.equals(this.administrationAgencyName, that.administrationAgencyName)
             && Objects.equals(this.managedAgencyName, that.managedAgencyName)
             && Objects.equals(this.administrationAgencyUrn, that.administrationAgencyUrn)
-            && Objects.equals(this.managedOperation, that.managedOperation);
+            && Objects.equals(this.managedOperation, that.managedOperation)
+            && Objects.equals(this.callIdentity, that.callIdentity);
     }
 
     @Override
@@ -289,11 +295,11 @@ public class UpdateStackSetRequestBody {
         return Objects.hash(stackSetId,
             stackSetDescription,
             initialStackDescription,
-            permissionModel,
             administrationAgencyName,
             managedAgencyName,
             administrationAgencyUrn,
-            managedOperation);
+            managedOperation,
+            callIdentity);
     }
 
     @Override
@@ -303,11 +309,11 @@ public class UpdateStackSetRequestBody {
         sb.append("    stackSetId: ").append(toIndentedString(stackSetId)).append("\n");
         sb.append("    stackSetDescription: ").append(toIndentedString(stackSetDescription)).append("\n");
         sb.append("    initialStackDescription: ").append(toIndentedString(initialStackDescription)).append("\n");
-        sb.append("    permissionModel: ").append(toIndentedString(permissionModel)).append("\n");
         sb.append("    administrationAgencyName: ").append(toIndentedString(administrationAgencyName)).append("\n");
         sb.append("    managedAgencyName: ").append(toIndentedString(managedAgencyName)).append("\n");
         sb.append("    administrationAgencyUrn: ").append(toIndentedString(administrationAgencyUrn)).append("\n");
         sb.append("    managedOperation: ").append(toIndentedString(managedOperation)).append("\n");
+        sb.append("    callIdentity: ").append(toIndentedString(callIdentity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

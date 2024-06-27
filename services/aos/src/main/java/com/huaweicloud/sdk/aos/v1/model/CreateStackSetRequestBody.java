@@ -27,7 +27,7 @@ public class CreateStackSetRequestBody {
     private String stackSetDescription;
 
     /**
-     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * `SELF_MANAGED` - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
+     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值，默认为SELF_MANAGED。用户可以使用创建资源栈集（CreateStackSet）API 指定该参数。该参数暂不支持更新。用户如果想要更新权限模型，可以通过先删除再创建同名资源栈集实现。   * `SELF_MANAGED` - 自我管理，基于部署需求，用户需要提前手动创建委托，既包含管理账号授权给RFS的委托，也包含成员账号授权给管理账号的委托。如果委托不存在或权限不足，创建资源栈集不会失败，创建资源栈实例时才会报错。   * `SERVICE_MANAGED` - 服务管理，基于Organization服务，RFS会自动创建部署Organization 成员账号时所需的全部 IAM 委托。用户需要提前在Organization可信服务列表中将”资源编排资源栈集服务“启用，且只有Organization的管理账号或”资源编排资源栈集服务“的委托管理员，才允许指定SERVICE_MANAGED创建资源栈集，否则会报错。
      */
     public static final class PermissionModelEnum {
 
@@ -36,11 +36,17 @@ public class CreateStackSetRequestBody {
          */
         public static final PermissionModelEnum SELF_MANAGED = new PermissionModelEnum("SELF_MANAGED");
 
+        /**
+         * Enum SERVICE_MANAGED for value: "SERVICE_MANAGED"
+         */
+        public static final PermissionModelEnum SERVICE_MANAGED = new PermissionModelEnum("SERVICE_MANAGED");
+
         private static final Map<String, PermissionModelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PermissionModelEnum> createStaticFields() {
             Map<String, PermissionModelEnum> map = new HashMap<>();
             map.put("SELF_MANAGED", SELF_MANAGED);
+            map.put("SERVICE_MANAGED", SERVICE_MANAGED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -140,6 +146,81 @@ public class CreateStackSetRequestBody {
 
     private ManagedOperation managedOperation;
 
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     */
+    public static final class CallIdentityEnum {
+
+        /**
+         * Enum SELF for value: "SELF"
+         */
+        public static final CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+        /**
+         * Enum DELEGATED_ADMIN for value: "DELEGATED_ADMIN"
+         */
+        public static final CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+        private static final Map<String, CallIdentityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CallIdentityEnum> createStaticFields() {
+            Map<String, CallIdentityEnum> map = new HashMap<>();
+            map.put("SELF", SELF);
+            map.put("DELEGATED_ADMIN", DELEGATED_ADMIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CallIdentityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CallIdentityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CallIdentityEnum(value));
+        }
+
+        public static CallIdentityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CallIdentityEnum) {
+                return this.value.equals(((CallIdentityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "call_identity")
+
+    private CallIdentityEnum callIdentity;
+
     public CreateStackSetRequestBody withStackSetName(String stackSetName) {
         this.stackSetName = stackSetName;
         return this;
@@ -180,7 +261,7 @@ public class CreateStackSetRequestBody {
     }
 
     /**
-     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值    * `SELF_MANAGED` - 基于部署需求，用户需要提前手动创建委托，既包含管理账号给RFS的委托，也包含成员账号创建给管理账号的委托。如果委托不存在或错误，创建资源栈集不会失败，部署资源栈集或部署资源栈实例的时候才会报错。
+     * 权限模型，定义了RFS操作资源栈集时所需委托的创建方式，枚举值，默认为SELF_MANAGED。用户可以使用创建资源栈集（CreateStackSet）API 指定该参数。该参数暂不支持更新。用户如果想要更新权限模型，可以通过先删除再创建同名资源栈集实现。   * `SELF_MANAGED` - 自我管理，基于部署需求，用户需要提前手动创建委托，既包含管理账号授权给RFS的委托，也包含成员账号授权给管理账号的委托。如果委托不存在或权限不足，创建资源栈集不会失败，创建资源栈实例时才会报错。   * `SERVICE_MANAGED` - 服务管理，基于Organization服务，RFS会自动创建部署Organization 成员账号时所需的全部 IAM 委托。用户需要提前在Organization可信服务列表中将”资源编排资源栈集服务“启用，且只有Organization的管理账号或”资源编排资源栈集服务“的委托管理员，才允许指定SERVICE_MANAGED创建资源栈集，否则会报错。
      * @return permissionModel
      */
     public PermissionModelEnum getPermissionModel() {
@@ -353,6 +434,23 @@ public class CreateStackSetRequestBody {
         this.managedOperation = managedOperation;
     }
 
+    public CreateStackSetRequestBody withCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+        return this;
+    }
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 当资源栈集权限模式为SELF_MANAGED时，默认为SELF。 * 无论指定何种用户身份，涉及操作的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     * @return callIdentity
+     */
+    public CallIdentityEnum getCallIdentity() {
+        return callIdentity;
+    }
+
+    public void setCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -372,7 +470,8 @@ public class CreateStackSetRequestBody {
             && Objects.equals(this.varsBody, that.varsBody)
             && Objects.equals(this.initialStackDescription, that.initialStackDescription)
             && Objects.equals(this.administrationAgencyUrn, that.administrationAgencyUrn)
-            && Objects.equals(this.managedOperation, that.managedOperation);
+            && Objects.equals(this.managedOperation, that.managedOperation)
+            && Objects.equals(this.callIdentity, that.callIdentity);
     }
 
     @Override
@@ -388,7 +487,8 @@ public class CreateStackSetRequestBody {
             varsBody,
             initialStackDescription,
             administrationAgencyUrn,
-            managedOperation);
+            managedOperation,
+            callIdentity);
     }
 
     @Override
@@ -407,6 +507,7 @@ public class CreateStackSetRequestBody {
         sb.append("    initialStackDescription: ").append(toIndentedString(initialStackDescription)).append("\n");
         sb.append("    administrationAgencyUrn: ").append(toIndentedString(administrationAgencyUrn)).append("\n");
         sb.append("    managedOperation: ").append(toIndentedString(managedOperation)).append("\n");
+        sb.append("    callIdentity: ").append(toIndentedString(callIdentity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

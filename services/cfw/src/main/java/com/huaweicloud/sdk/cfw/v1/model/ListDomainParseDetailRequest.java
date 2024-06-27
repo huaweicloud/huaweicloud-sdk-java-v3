@@ -28,7 +28,7 @@ public class ListDomainParseDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_type")
 
-    private String addressType;
+    private Integer addressType;
 
     public ListDomainParseDetailRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -70,7 +70,7 @@ public class ListDomainParseDetailRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -81,20 +81,20 @@ public class ListDomainParseDetailRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
-    public ListDomainParseDetailRequest withAddressType(String addressType) {
+    public ListDomainParseDetailRequest withAddressType(Integer addressType) {
         this.addressType = addressType;
         return this;
     }
 
     /**
-     * 地址类型，0 ipv4,1 ipv6,2 domain
+     * 地址类型，0 ipv4,1 ipv6
      * @return addressType
      */
-    public String getAddressType() {
+    public Integer getAddressType() {
         return addressType;
     }
 
-    public void setAddressType(String addressType) {
+    public void setAddressType(Integer addressType) {
         this.addressType = addressType;
     }
 

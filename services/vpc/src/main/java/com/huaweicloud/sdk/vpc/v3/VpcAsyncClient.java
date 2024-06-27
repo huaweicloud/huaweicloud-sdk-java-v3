@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreatePortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreatePortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
@@ -27,8 +29,12 @@ import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteClouddcnSubnetsTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchDeleteFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchDeletePortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CountFirewallsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CountPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateClouddcnSubnetRequest;
@@ -37,6 +43,8 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallTagResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreatePortTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreatePortTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
@@ -63,6 +71,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeletePortTagRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeletePortTagResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
@@ -95,6 +105,10 @@ import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListFirewallsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -129,6 +143,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -241,6 +257,37 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 批量添加端口资源标签
+     *
+     * 为指定的端口批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePortTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreatePortTagsResponse>
+     */
+    public CompletableFuture<BatchCreatePortTagsResponse> batchCreatePortTagsAsync(BatchCreatePortTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreatePortTags);
+    }
+
+    /**
+     * 批量添加端口资源标签
+     *
+     * 为指定的端口批量添加标签。
+     * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePortTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse>
+     */
+    public AsyncInvoker<BatchCreatePortTagsRequest, BatchCreatePortTagsResponse> batchCreatePortTagsAsyncInvoker(
+        BatchCreatePortTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchCreatePortTags, hcClient);
+    }
+
+    /**
      * 批量创建安全组规则
      *
      * 在特定安全组下批量创建安全组规则
@@ -298,6 +345,97 @@ public class VpcAsyncClient {
     public AsyncInvoker<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterfaceAsyncInvoker(
         BatchCreateSubNetworkInterfaceRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.batchCreateSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 批量删除端口资源标签
+     *
+     * 为指定的端口资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePortTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeletePortTagsResponse>
+     */
+    public CompletableFuture<BatchDeletePortTagsResponse> batchDeletePortTagsAsync(BatchDeletePortTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeletePortTags);
+    }
+
+    /**
+     * 批量删除端口资源标签
+     *
+     * 为指定的端口资源实例批量删除标签。
+     * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePortTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse>
+     */
+    public AsyncInvoker<BatchDeletePortTagsRequest, BatchDeletePortTagsResponse> batchDeletePortTagsAsyncInvoker(
+        BatchDeletePortTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.batchDeletePortTags, hcClient);
+    }
+
+    /**
+     * 查询端口资源实例数量
+     *
+     * 使用标签过滤查询端口实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountPortsByTagsRequest 请求对象
+     * @return CompletableFuture<CountPortsByTagsResponse>
+     */
+    public CompletableFuture<CountPortsByTagsResponse> countPortsByTagsAsync(CountPortsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.countPortsByTags);
+    }
+
+    /**
+     * 查询端口资源实例数量
+     *
+     * 使用标签过滤查询端口实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountPortsByTagsRequest 请求对象
+     * @return AsyncInvoker<CountPortsByTagsRequest, CountPortsByTagsResponse>
+     */
+    public AsyncInvoker<CountPortsByTagsRequest, CountPortsByTagsResponse> countPortsByTagsAsyncInvoker(
+        CountPortsByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.countPortsByTags, hcClient);
+    }
+
+    /**
+     * 添加端口资源标签
+     *
+     * 给指定端口资源实例增加标签信息
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePortTagRequest 请求对象
+     * @return CompletableFuture<CreatePortTagResponse>
+     */
+    public CompletableFuture<CreatePortTagResponse> createPortTagAsync(CreatePortTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createPortTag);
+    }
+
+    /**
+     * 添加端口资源标签
+     *
+     * 给指定端口资源实例增加标签信息
+     * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePortTagRequest 请求对象
+     * @return AsyncInvoker<CreatePortTagRequest, CreatePortTagResponse>
+     */
+    public AsyncInvoker<CreatePortTagRequest, CreatePortTagResponse> createPortTagAsyncInvoker(
+        CreatePortTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.createPortTag, hcClient);
     }
 
     /**
@@ -480,6 +618,37 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 删除端口资源标签
+     *
+     * 删除指定端口的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePortTagRequest 请求对象
+     * @return CompletableFuture<DeletePortTagResponse>
+     */
+    public CompletableFuture<DeletePortTagResponse> deletePortTagAsync(DeletePortTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deletePortTag);
+    }
+
+    /**
+     * 删除端口资源标签
+     *
+     * 删除指定端口的标签信息
+     * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePortTagRequest 请求对象
+     * @return AsyncInvoker<DeletePortTagRequest, DeletePortTagResponse>
+     */
+    public AsyncInvoker<DeletePortTagRequest, DeletePortTagResponse> deletePortTagAsyncInvoker(
+        DeletePortTagRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.deletePortTag, hcClient);
+    }
+
+    /**
      * 删除安全组
      *
      * 删除安全组
@@ -656,6 +825,64 @@ public class VpcAsyncClient {
     public AsyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSessionAsyncInvoker(
         DeleteTrafficMirrorSessionRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.deleteTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 查询端口项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortTagsRequest 请求对象
+     * @return CompletableFuture<ListPortTagsResponse>
+     */
+    public CompletableFuture<ListPortTagsResponse> listPortTagsAsync(ListPortTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listPortTags);
+    }
+
+    /**
+     * 查询端口项目标签
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortTagsRequest 请求对象
+     * @return AsyncInvoker<ListPortTagsRequest, ListPortTagsResponse>
+     */
+    public AsyncInvoker<ListPortTagsRequest, ListPortTagsResponse> listPortTagsAsyncInvoker(
+        ListPortTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listPortTags, hcClient);
+    }
+
+    /**
+     * 查询端口资源实例列表
+     *
+     * 使用标签过滤查询端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsByTagsRequest 请求对象
+     * @return CompletableFuture<ListPortsByTagsResponse>
+     */
+    public CompletableFuture<ListPortsByTagsResponse> listPortsByTagsAsync(ListPortsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listPortsByTags);
+    }
+
+    /**
+     * 查询端口资源实例列表
+     *
+     * 使用标签过滤查询端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListPortsByTagsRequest, ListPortsByTagsResponse>
+     */
+    public AsyncInvoker<ListPortsByTagsRequest, ListPortsByTagsResponse> listPortsByTagsAsyncInvoker(
+        ListPortsByTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.listPortsByTags, hcClient);
     }
 
     /**
@@ -925,6 +1152,35 @@ public class VpcAsyncClient {
     public AsyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> removeSourcesFromTrafficMirrorSessionAsyncInvoker(
         RemoveSourcesFromTrafficMirrorSessionRequest request) {
         return new AsyncInvoker<>(request, VpcMeta.removeSourcesFromTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 查询端口资源标签
+     *
+     * 查询指定端口的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPortTagsRequest 请求对象
+     * @return CompletableFuture<ShowPortTagsResponse>
+     */
+    public CompletableFuture<ShowPortTagsResponse> showPortTagsAsync(ShowPortTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showPortTags);
+    }
+
+    /**
+     * 查询端口资源标签
+     *
+     * 查询指定端口的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPortTagsRequest 请求对象
+     * @return AsyncInvoker<ShowPortTagsRequest, ShowPortTagsResponse>
+     */
+    public AsyncInvoker<ShowPortTagsRequest, ShowPortTagsResponse> showPortTagsAsyncInvoker(
+        ShowPortTagsRequest request) {
+        return new AsyncInvoker<>(request, VpcMeta.showPortTags, hcClient);
     }
 
     /**
@@ -1347,7 +1603,7 @@ public class VpcAsyncClient {
     /**
      * 批量添加ACL资源标签
      *
-     * 为指定的IP地址组资源实例批量添加标签。
+     * 为指定的网络ACL资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1363,7 +1619,7 @@ public class VpcAsyncClient {
     /**
      * 批量添加ACL资源标签
      *
-     * 为指定的IP地址组资源实例批量添加标签。
+     * 为指定的网络ACL资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1379,7 +1635,7 @@ public class VpcAsyncClient {
     /**
      * 批量删除ACL资源标签
      *
-     * 为指定的IP地址组资源实例批量删除标签。
+     * 为指定的网络ACL资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1395,7 +1651,7 @@ public class VpcAsyncClient {
     /**
      * 批量删除ACL资源标签
      *
-     * 为指定的IP地址组资源实例批量删除标签。
+     * 为指定的网络ACL资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

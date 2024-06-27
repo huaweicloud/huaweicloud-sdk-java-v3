@@ -69,6 +69,11 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
 
     private String importLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_import_cloumn")
+
+    private Boolean isImportCloumn;
+
     public ShowSupportObjectTypeResponse withIsFullTransSupportObject(Boolean isFullTransSupportObject) {
         this.isFullTransSupportObject = isFullTransSupportObject;
         return this;
@@ -273,6 +278,23 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
         this.importLevel = importLevel;
     }
 
+    public ShowSupportObjectTypeResponse withIsImportCloumn(Boolean isImportCloumn) {
+        this.isImportCloumn = isImportCloumn;
+        return this;
+    }
+
+    /**
+     * 取值： - true： 当前任务上次选择列加工方式为导入方式 - false 或者 空：当前任务上次选择列加工方式为手动选择方式
+     * @return isImportCloumn
+     */
+    public Boolean getIsImportCloumn() {
+        return isImportCloumn;
+    }
+
+    public void setIsImportCloumn(Boolean isImportCloumn) {
+        this.isImportCloumn = isImportCloumn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,7 +313,8 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
             && Objects.equals(this.isSchemaSupportSearch, that.isSchemaSupportSearch)
             && Objects.equals(this.isTableSupportSearch, that.isTableSupportSearch)
             && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.previousSelect, that.previousSelect)
-            && Objects.equals(this.importLevel, that.importLevel);
+            && Objects.equals(this.importLevel, that.importLevel)
+            && Objects.equals(this.isImportCloumn, that.isImportCloumn);
     }
 
     @Override
@@ -306,7 +329,8 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
             isTableSupportSearch,
             fileSize,
             previousSelect,
-            importLevel);
+            importLevel,
+            isImportCloumn);
     }
 
     @Override
@@ -326,6 +350,7 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
         sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
         sb.append("    previousSelect: ").append(toIndentedString(previousSelect)).append("\n");
         sb.append("    importLevel: ").append(toIndentedString(importLevel)).append("\n");
+        sb.append("    isImportCloumn: ").append(toIndentedString(isImportCloumn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

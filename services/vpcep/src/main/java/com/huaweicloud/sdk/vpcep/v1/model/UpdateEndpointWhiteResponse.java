@@ -195,7 +195,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 帐号状态。  - frozen：冻结  - active：解冻
+     * 账号状态。  - frozen：冻结  - active：解冻
      * @return activeStatus
      */
     public List<String> getActiveStatus() {
@@ -263,7 +263,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     /**
-     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {

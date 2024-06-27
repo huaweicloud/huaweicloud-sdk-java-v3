@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateRequest;
@@ -81,6 +83,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceTagsRequest;
@@ -127,12 +131,16 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBalanceStatusRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBalanceStatusResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidateVersionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidateVersionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormRequest;
@@ -173,6 +181,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstancesVersionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstancesVersionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ValidateParaGroupNameRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ValidateParaGroupNameResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ValidateWeakPasswordRequest;
@@ -278,6 +288,35 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<AttachEipRequest, AttachEipResponse> attachEipAsyncInvoker(AttachEipRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.attachEip, hcClient);
+    }
+
+    /**
+     * 备份恢复到目标实例数据后执行数据确认
+     *
+     * 确认备份恢复到目标实例的数据正常。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmRestoredDataRequest 请求对象
+     * @return CompletableFuture<ConfirmRestoredDataResponse>
+     */
+    public CompletableFuture<ConfirmRestoredDataResponse> confirmRestoredDataAsync(ConfirmRestoredDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.confirmRestoredData);
+    }
+
+    /**
+     * 备份恢复到目标实例数据后执行数据确认
+     *
+     * 确认备份恢复到目标实例的数据正常。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmRestoredDataRequest 请求对象
+     * @return AsyncInvoker<ConfirmRestoredDataRequest, ConfirmRestoredDataResponse>
+     */
+    public AsyncInvoker<ConfirmRestoredDataRequest, ConfirmRestoredDataResponse> confirmRestoredDataAsyncInvoker(
+        ConfirmRestoredDataRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.confirmRestoredData, hcClient);
     }
 
     /**
@@ -1332,6 +1371,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDetailsRequest 请求对象
+     * @return CompletableFuture<ListInstanceDetailsResponse>
+     */
+    public CompletableFuture<ListInstanceDetailsResponse> listInstanceDetailsAsync(ListInstanceDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listInstanceDetails);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDetailsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse>
+     */
+    public AsyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse> listInstanceDetailsAsyncInvoker(
+        ListInstanceDetailsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceDetails, hcClient);
+    }
+
+    /**
      * 查询错误日志下载链接
      *
      * 查询数据库错误日志下载链接。
@@ -2006,6 +2074,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 设置自动备份策略
+     *
+     * 设置自动备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetNewBackupPolicyRequest 请求对象
+     * @return CompletableFuture<SetNewBackupPolicyResponse>
+     */
+    public CompletableFuture<SetNewBackupPolicyResponse> setNewBackupPolicyAsync(SetNewBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.setNewBackupPolicy);
+    }
+
+    /**
+     * 设置自动备份策略
+     *
+     * 设置自动备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetNewBackupPolicyRequest 请求对象
+     * @return AsyncInvoker<SetNewBackupPolicyRequest, SetNewBackupPolicyResponse>
+     */
+    public AsyncInvoker<SetNewBackupPolicyRequest, SetNewBackupPolicyResponse> setNewBackupPolicyAsyncInvoker(
+        SetNewBackupPolicyRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.setNewBackupPolicy, hcClient);
+    }
+
+    /**
      * 设置回收站策略
      *
      * 设置回收站策略。
@@ -2090,6 +2187,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse> showBalanceStatusAsyncInvoker(
         ShowBalanceStatusRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showBalanceStatus, hcClient);
+    }
+
+    /**
+     * 查询批量实例可升级的版本和升级类型
+     *
+     * 查询批量实例可升级的版本和升级类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
+     * @return CompletableFuture<ShowBatchUpgradeCandidateVersionsResponse>
+     */
+    public CompletableFuture<ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersionsAsync(
+        ShowBatchUpgradeCandidateVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions);
+    }
+
+    /**
+     * 查询批量实例可升级的版本和升级类型
+     *
+     * 查询批量实例可升级的版本和升级类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
+     * @return AsyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse>
+     */
+    public AsyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersionsAsyncInvoker(
+        ShowBatchUpgradeCandidateVersionsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions, hcClient);
     }
 
     /**
@@ -2695,6 +2822,58 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<UpgradeInstanceVersionRequest, UpgradeInstanceVersionResponse> upgradeInstanceVersionAsyncInvoker(
         UpgradeInstanceVersionRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.upgradeInstanceVersion, hcClient);
+    }
+
+    /**
+     * 批量实例内核版本升级
+     *
+     * GaussDB批量实例版本升级。包括灰度升级，就地升级、热补丁升级三种升级方式。 
+     * 就地升级：
+     * 就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+     * 灰度升级： 
+     * 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+     * 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。升级阶段可以根据部署方式细分为按分片或者按az的滚动升级，提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级，或者升级回退。每个主dn或者cn组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。 分布式实例：根据分片数滚动升级，每次滚动升级可以根据选择的分片数进行指定分片数量的节点进行升级。 主备版实例：根据AZ数进行滚动升级，每次滚动升级可以根据选择的AZ进行1个分区或者多个分区进行升级。 
+     * 热补丁升级： 
+     * 升级自动提交：热补丁自动升级并提交，中间无业务中断，仅修复产品bug。 
+     * 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+     * 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+     * 批量实例可升级版本大于当前所有实例的引擎版本，且选择的所有实例，其升级方式和操作方式要保持一致。
+     * 若批量实例升级方式是灰度升级，默认升级所有az和分片。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstancesVersionRequest 请求对象
+     * @return CompletableFuture<UpgradeInstancesVersionResponse>
+     */
+    public CompletableFuture<UpgradeInstancesVersionResponse> upgradeInstancesVersionAsync(
+        UpgradeInstancesVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.upgradeInstancesVersion);
+    }
+
+    /**
+     * 批量实例内核版本升级
+     *
+     * GaussDB批量实例版本升级。包括灰度升级，就地升级、热补丁升级三种升级方式。 
+     * 就地升级：
+     * 就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+     * 灰度升级： 
+     * 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+     * 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。升级阶段可以根据部署方式细分为按分片或者按az的滚动升级，提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级，或者升级回退。每个主dn或者cn组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。 分布式实例：根据分片数滚动升级，每次滚动升级可以根据选择的分片数进行指定分片数量的节点进行升级。 主备版实例：根据AZ数进行滚动升级，每次滚动升级可以根据选择的AZ进行1个分区或者多个分区进行升级。 
+     * 热补丁升级： 
+     * 升级自动提交：热补丁自动升级并提交，中间无业务中断，仅修复产品bug。 
+     * 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+     * 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+     * 批量实例可升级版本大于当前所有实例的引擎版本，且选择的所有实例，其升级方式和操作方式要保持一致。
+     * 若批量实例升级方式是灰度升级，默认升级所有az和分片。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstancesVersionRequest 请求对象
+     * @return AsyncInvoker<UpgradeInstancesVersionRequest, UpgradeInstancesVersionResponse>
+     */
+    public AsyncInvoker<UpgradeInstancesVersionRequest, UpgradeInstancesVersionResponse> upgradeInstancesVersionAsyncInvoker(
+        UpgradeInstancesVersionRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.upgradeInstancesVersion, hcClient);
     }
 
     /**

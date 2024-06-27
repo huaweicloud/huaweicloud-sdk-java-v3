@@ -135,6 +135,11 @@ public class CreateEndpointResponse extends SdkResponse {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_address")
+
+    private String ipv6Address;
+
     public CreateEndpointResponse withId(String id) {
         this.id = id;
         return this;
@@ -158,7 +163,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点连接的终端节点服务类型。  - gateway：由运维人员配置。用户无需创建，可直接使用。  - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。您可以通过查询公共终端节点服务列表， 查看由运维人员配置的所有用户可见且可连接的终端节点服务， 并通过创建终端节点服务创建Interface类型的终端节点服务。
+     * 终端节点连接的终端节点服务类型。   - gateway：由运维人员配置。用户无需创建，可直接使用。   - interface：包括运维人员配置的云服务和用户自己创建的私有服务。 其中，运维人员配置的云服务无需创建，用户可直接使用。 您可以通过\"查询公共终端节点服务列表\"查看由运维人员配置的所有用户可见且可连接的终端节点服务，并通过创建终端节点服务创建Interface类型的终端节点服务。
      * @return serviceType
      */
     public String getServiceType() {
@@ -225,7 +230,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 帐号状态。  - frozen：冻结  - active：解冻
+     * 账号状态。  - frozen：冻结  - active：解冻
      * @return activeStatus
      */
     public List<String> getActiveStatus() {
@@ -293,7 +298,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -494,7 +499,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -561,7 +566,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+     * 终端节点策略信息
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {
@@ -623,6 +628,23 @@ public class CreateEndpointResponse extends SdkResponse {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public CreateEndpointResponse withIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+        return this;
+    }
+
+    /**
+     * 终端节点的IPv6地址,仅专业型终端节点支持此参数
+     * @return ipv6Address
+     */
+    public String getIpv6Address() {
+        return ipv6Address;
+    }
+
+    public void setIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -649,7 +671,8 @@ public class CreateEndpointResponse extends SdkResponse {
             && Objects.equals(this.policyStatement, that.policyStatement)
             && Objects.equals(this.enableStatus, that.enableStatus)
             && Objects.equals(this.endpointPoolId, that.endpointPoolId)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.ipv6Address, that.ipv6Address);
     }
 
     @Override
@@ -677,7 +700,8 @@ public class CreateEndpointResponse extends SdkResponse {
             policyStatement,
             enableStatus,
             endpointPoolId,
-            publicBorderGroup);
+            publicBorderGroup,
+            ipv6Address);
     }
 
     @Override
@@ -708,6 +732,7 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    enableStatus: ").append(toIndentedString(enableStatus)).append("\n");
         sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");
         sb.append("}");
         return sb.toString();
     }

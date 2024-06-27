@@ -461,12 +461,6 @@ public class VpcepMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEndpointsRequest.SortDirEnum.class),
             f -> f.withMarshaller(ListEndpointsRequest::getSortDir, ListEndpointsRequest::setSortDir));
-        builder.<String>withRequestField("public_border_group",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEndpointsRequest::getPublicBorderGroup,
-                ListEndpointsRequest::setPublicBorderGroup));
 
         // response
 

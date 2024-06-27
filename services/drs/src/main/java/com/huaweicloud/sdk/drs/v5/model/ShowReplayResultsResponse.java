@@ -49,6 +49,11 @@ public class ShowReplayResultsResponse extends SdkResponse {
 
     private List<ReplayingSqlResp> replayingSqls = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_classifications")
+
+    private List<ReplayErrorClassification> errorClassifications = null;
+
     public ShowReplayResultsResponse withTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -266,6 +271,40 @@ public class ShowReplayResultsResponse extends SdkResponse {
         this.replayingSqls = replayingSqls;
     }
 
+    public ShowReplayResultsResponse withErrorClassifications(List<ReplayErrorClassification> errorClassifications) {
+        this.errorClassifications = errorClassifications;
+        return this;
+    }
+
+    public ShowReplayResultsResponse addErrorClassificationsItem(ReplayErrorClassification errorClassificationsItem) {
+        if (this.errorClassifications == null) {
+            this.errorClassifications = new ArrayList<>();
+        }
+        this.errorClassifications.add(errorClassificationsItem);
+        return this;
+    }
+
+    public ShowReplayResultsResponse withErrorClassifications(
+        Consumer<List<ReplayErrorClassification>> errorClassificationsSetter) {
+        if (this.errorClassifications == null) {
+            this.errorClassifications = new ArrayList<>();
+        }
+        errorClassificationsSetter.accept(this.errorClassifications);
+        return this;
+    }
+
+    /**
+     * 回放异常SQL分类信息，在type为error_classification时返回
+     * @return errorClassifications
+     */
+    public List<ReplayErrorClassification> getErrorClassifications() {
+        return errorClassifications;
+    }
+
+    public void setErrorClassifications(List<ReplayErrorClassification> errorClassifications) {
+        this.errorClassifications = errorClassifications;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -280,13 +319,20 @@ public class ShowReplayResultsResponse extends SdkResponse {
             && Objects.equals(this.slowSqlTemplates, that.slowSqlTemplates)
             && Objects.equals(this.errorSqls, that.errorSqls)
             && Objects.equals(this.errorSqlTemplates, that.errorSqlTemplates)
-            && Objects.equals(this.replayingSqls, that.replayingSqls);
+            && Objects.equals(this.replayingSqls, that.replayingSqls)
+            && Objects.equals(this.errorClassifications, that.errorClassifications);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(totalCount, shardStatics, slowSqls, slowSqlTemplates, errorSqls, errorSqlTemplates, replayingSqls);
+        return Objects.hash(totalCount,
+            shardStatics,
+            slowSqls,
+            slowSqlTemplates,
+            errorSqls,
+            errorSqlTemplates,
+            replayingSqls,
+            errorClassifications);
     }
 
     @Override
@@ -300,6 +346,7 @@ public class ShowReplayResultsResponse extends SdkResponse {
         sb.append("    errorSqls: ").append(toIndentedString(errorSqls)).append("\n");
         sb.append("    errorSqlTemplates: ").append(toIndentedString(errorSqlTemplates)).append("\n");
         sb.append("    replayingSqls: ").append(toIndentedString(replayingSqls)).append("\n");
+        sb.append("    errorClassifications: ").append(toIndentedString(errorClassifications)).append("\n");
         sb.append("}");
         return sb.toString();
     }

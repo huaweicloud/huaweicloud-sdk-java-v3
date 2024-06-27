@@ -41,16 +41,6 @@ public class ListDomainsRequest {
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "set_id")
-
-    private String setId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_Id")
 
     private String objectId;
@@ -95,7 +85,7 @@ public class ListDomainsRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -157,47 +147,13 @@ public class ListDomainsRequest {
         this.domainName = domainName;
     }
 
-    public ListDomainsRequest withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ListDomainsRequest withSetId(String setId) {
-        this.setId = setId;
-        return this;
-    }
-
-    /**
-     * 域名组id
-     * @return setId
-     */
-    public String getSetId() {
-        return setId;
-    }
-
-    public void setSetId(String setId) {
-        this.setId = setId;
-    }
-
     public ListDomainsRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
     /**
-     * 防护对象id,是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id,可通过调用查询防火墙实例接口获得,注意type为0的为互联网边界防护对象id,type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
      * @return objectId
      */
     public String getObjectId() {
@@ -221,21 +177,12 @@ public class ListDomainsRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.domainName, that.domainName)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.setId, that.setId)
             && Objects.equals(this.objectId, that.objectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainSetId,
-            enterpriseProjectId,
-            fwInstanceId,
-            limit,
-            offset,
-            domainName,
-            description,
-            setId,
-            objectId);
+        return Objects.hash(domainSetId, enterpriseProjectId, fwInstanceId, limit, offset, domainName, objectId);
     }
 
     @Override
@@ -248,8 +195,6 @@ public class ListDomainsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("}");
         return sb.toString();

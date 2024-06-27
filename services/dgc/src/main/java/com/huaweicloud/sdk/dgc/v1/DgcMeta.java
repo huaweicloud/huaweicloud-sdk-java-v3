@@ -22,6 +22,7 @@ import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteReq;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteResourceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptRequest;
@@ -315,7 +316,7 @@ public class DgcMeta {
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
                 .withName("DeleteJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("job_name",
@@ -328,6 +329,11 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteJobRequest::getWorkspace, DeleteJobRequest::setWorkspace));
+        builder.<DeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteReq.class),
+            f -> f.withMarshaller(DeleteJobRequest::getBody, DeleteJobRequest::setBody));
 
         // response
 
@@ -370,7 +376,7 @@ public class DgcMeta {
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScriptRequest.class, DeleteScriptResponse.class)
                 .withName("DeleteScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("script_name",
@@ -383,6 +389,11 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteScriptRequest::getWorkspace, DeleteScriptRequest::setWorkspace));
+        builder.<DeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteReq.class),
+            f -> f.withMarshaller(DeleteScriptRequest::getBody, DeleteScriptRequest::setBody));
 
         // response
 

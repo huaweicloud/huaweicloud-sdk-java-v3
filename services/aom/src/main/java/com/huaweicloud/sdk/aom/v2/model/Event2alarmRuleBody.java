@@ -36,12 +36,12 @@ public class Event2alarmRuleBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Integer updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_provider")
@@ -219,7 +219,7 @@ public class Event2alarmRuleBody {
         this.description = description;
     }
 
-    public Event2alarmRuleBody withCreateTime(Integer createTime) {
+    public Event2alarmRuleBody withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -230,15 +230,15 @@ public class Event2alarmRuleBody {
      * maximum: 9999999999999
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public Event2alarmRuleBody withUpdateTime(Integer updateTime) {
+    public Event2alarmRuleBody withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -249,11 +249,11 @@ public class Event2alarmRuleBody {
      * maximum: 9999999999999
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 

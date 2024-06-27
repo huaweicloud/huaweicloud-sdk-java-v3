@@ -1,9 +1,17 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +32,91 @@ public class ShowStackSetTemplateRequest {
     @JsonProperty(value = "stack_set_id")
 
     private String stackSetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_source_ips")
+
+    private List<String> accessControlSourceIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_source_vpc_ids")
+
+    private List<String> accessControlSourceVpcIds = null;
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     */
+    public static final class CallIdentityEnum {
+
+        /**
+         * Enum SELF for value: "SELF"
+         */
+        public static final CallIdentityEnum SELF = new CallIdentityEnum("SELF");
+
+        /**
+         * Enum DELEGATED_ADMIN for value: "DELEGATED_ADMIN"
+         */
+        public static final CallIdentityEnum DELEGATED_ADMIN = new CallIdentityEnum("DELEGATED_ADMIN");
+
+        private static final Map<String, CallIdentityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CallIdentityEnum> createStaticFields() {
+            Map<String, CallIdentityEnum> map = new HashMap<>();
+            map.put("SELF", SELF);
+            map.put("DELEGATED_ADMIN", DELEGATED_ADMIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CallIdentityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CallIdentityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CallIdentityEnum(value));
+        }
+
+        public static CallIdentityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CallIdentityEnum) {
+                return this.value.equals(((CallIdentityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "call_identity")
+
+    private CallIdentityEnum callIdentity;
 
     public ShowStackSetTemplateRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
@@ -76,6 +169,90 @@ public class ShowStackSetTemplateRequest {
         this.stackSetId = stackSetId;
     }
 
+    public ShowStackSetTemplateRequest withAccessControlSourceIps(List<String> accessControlSourceIps) {
+        this.accessControlSourceIps = accessControlSourceIps;
+        return this;
+    }
+
+    public ShowStackSetTemplateRequest addAccessControlSourceIpsItem(String accessControlSourceIpsItem) {
+        if (this.accessControlSourceIps == null) {
+            this.accessControlSourceIps = new ArrayList<>();
+        }
+        this.accessControlSourceIps.add(accessControlSourceIpsItem);
+        return this;
+    }
+
+    public ShowStackSetTemplateRequest withAccessControlSourceIps(Consumer<List<String>> accessControlSourceIpsSetter) {
+        if (this.accessControlSourceIps == null) {
+            this.accessControlSourceIps = new ArrayList<>();
+        }
+        accessControlSourceIpsSetter.accept(this.accessControlSourceIps);
+        return this;
+    }
+
+    /**
+     * 允许访问资源栈集模板的source ip列表，source ip应是具有CIDR表示法且带有子网掩码的IPv4地址。
+     * @return accessControlSourceIps
+     */
+    public List<String> getAccessControlSourceIps() {
+        return accessControlSourceIps;
+    }
+
+    public void setAccessControlSourceIps(List<String> accessControlSourceIps) {
+        this.accessControlSourceIps = accessControlSourceIps;
+    }
+
+    public ShowStackSetTemplateRequest withAccessControlSourceVpcIds(List<String> accessControlSourceVpcIds) {
+        this.accessControlSourceVpcIds = accessControlSourceVpcIds;
+        return this;
+    }
+
+    public ShowStackSetTemplateRequest addAccessControlSourceVpcIdsItem(String accessControlSourceVpcIdsItem) {
+        if (this.accessControlSourceVpcIds == null) {
+            this.accessControlSourceVpcIds = new ArrayList<>();
+        }
+        this.accessControlSourceVpcIds.add(accessControlSourceVpcIdsItem);
+        return this;
+    }
+
+    public ShowStackSetTemplateRequest withAccessControlSourceVpcIds(
+        Consumer<List<String>> accessControlSourceVpcIdsSetter) {
+        if (this.accessControlSourceVpcIds == null) {
+            this.accessControlSourceVpcIds = new ArrayList<>();
+        }
+        accessControlSourceVpcIdsSetter.accept(this.accessControlSourceVpcIds);
+        return this;
+    }
+
+    /**
+     * 允许访问资源栈集模板的source vpc id列表， source vpc id应仅包含小写字母、数字或中划线。
+     * @return accessControlSourceVpcIds
+     */
+    public List<String> getAccessControlSourceVpcIds() {
+        return accessControlSourceVpcIds;
+    }
+
+    public void setAccessControlSourceVpcIds(List<String> accessControlSourceVpcIds) {
+        this.accessControlSourceVpcIds = accessControlSourceVpcIds;
+    }
+
+    public ShowStackSetTemplateRequest withCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+        return this;
+    }
+
+    /**
+     * 仅支持资源栈集权限模式为SERVICE_MANAGED时指定该参数。用于指定用户是以组织管理账号还是成员帐户中的服务委托管理员身份调用资源栈集。默认为SELF。 * 无论指定何种用户身份，创建或部署的资源栈集始终在组织管理账号名下。*   * `SELF` - 以组织管理账号身份调用。   * `DELEGATED_ADMIN` - 以服务委托管理员身份调用。用户的华为云账号必须在组织中已经被注册为”资源编排资源栈集服务“的委托管理员。
+     * @return callIdentity
+     */
+    public CallIdentityEnum getCallIdentity() {
+        return callIdentity;
+    }
+
+    public void setCallIdentity(CallIdentityEnum callIdentity) {
+        this.callIdentity = callIdentity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +263,20 @@ public class ShowStackSetTemplateRequest {
         }
         ShowStackSetTemplateRequest that = (ShowStackSetTemplateRequest) obj;
         return Objects.equals(this.clientRequestId, that.clientRequestId)
-            && Objects.equals(this.stackSetName, that.stackSetName) && Objects.equals(this.stackSetId, that.stackSetId);
+            && Objects.equals(this.stackSetName, that.stackSetName) && Objects.equals(this.stackSetId, that.stackSetId)
+            && Objects.equals(this.accessControlSourceIps, that.accessControlSourceIps)
+            && Objects.equals(this.accessControlSourceVpcIds, that.accessControlSourceVpcIds)
+            && Objects.equals(this.callIdentity, that.callIdentity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, stackSetName, stackSetId);
+        return Objects.hash(clientRequestId,
+            stackSetName,
+            stackSetId,
+            accessControlSourceIps,
+            accessControlSourceVpcIds,
+            callIdentity);
     }
 
     @Override
@@ -101,6 +286,9 @@ public class ShowStackSetTemplateRequest {
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    stackSetName: ").append(toIndentedString(stackSetName)).append("\n");
         sb.append("    stackSetId: ").append(toIndentedString(stackSetId)).append("\n");
+        sb.append("    accessControlSourceIps: ").append(toIndentedString(accessControlSourceIps)).append("\n");
+        sb.append("    accessControlSourceVpcIds: ").append(toIndentedString(accessControlSourceVpcIds)).append("\n");
+        sb.append("    callIdentity: ").append(toIndentedString(callIdentity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

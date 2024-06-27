@@ -26,7 +26,7 @@ public class ListFlowLogsRequest {
     private String direction;
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      */
     public static final class LogTypeEnum {
 
@@ -136,92 +136,10 @@ public class ListFlowLogsRequest {
 
     private Integer dstPort;
 
-    /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
-     */
-    public static final class ProtocolEnum {
-
-        /**
-         * Enum _6 for value: "6"
-         */
-        public static final ProtocolEnum _6 = new ProtocolEnum("6");
-
-        /**
-         * Enum _17 for value: "17"
-         */
-        public static final ProtocolEnum _17 = new ProtocolEnum("17");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final ProtocolEnum _1 = new ProtocolEnum("1");
-
-        /**
-         * Enum _58 for value: "58"
-         */
-        public static final ProtocolEnum _58 = new ProtocolEnum("58");
-
-        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtocolEnum> createStaticFields() {
-            Map<String, ProtocolEnum> map = new HashMap<>();
-            map.put("6", _6);
-            map.put("17", _17);
-            map.put("1", _1);
-            map.put("58", _58);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtocolEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtocolEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
-        }
-
-        public static ProtocolEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtocolEnum) {
-                return this.value.equals(((ProtocolEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
 
-    private ProtocolEnum protocol;
+    private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
@@ -268,13 +186,33 @@ public class ListFlowLogsRequest {
 
     private String dstRegionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_name")
+
+    private String srcProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_name")
+
+    private String dstProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_name")
+
+    private String srcCityName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_name")
+
+    private String dstCityName;
+
     public ListFlowLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -291,7 +229,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 方向
+     * 方向，包含in2out，out2in
      * @return direction
      */
     public String getDirection() {
@@ -308,7 +246,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 日志类型
+     * 日志类型包括：internet，vpc，nat
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -325,7 +263,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 开始时间
+     * 开始时间，以毫秒为单位的时间戳，如1718936272648
      * @return startTime
      */
     public Long getStartTime() {
@@ -342,7 +280,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间，以毫秒为单位的时间戳，如1718936272648
      * @return endTime
      */
     public Long getEndTime() {
@@ -425,20 +363,20 @@ public class ListFlowLogsRequest {
         this.dstPort = dstPort;
     }
 
-    public ListFlowLogsRequest withProtocol(ProtocolEnum protocol) {
+    public ListFlowLogsRequest withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
     /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
      * @return protocol
      */
-    public ProtocolEnum getProtocol() {
+    public String getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(ProtocolEnum protocol) {
+    public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
 
@@ -465,7 +403,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 文档ID，首页时为null，非首页时不为null
+     * 文档ID,第一页为空，其他页不为空，其他页可取上一次查询最后一条数据的log_id
      * @return logId
      */
     public String getLogId() {
@@ -482,7 +420,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 日期，首页时为null，非首页时不为null
+     * 下个日期，当是第一页时为空，不是第一页时不为空，其他页可取上一次查询最后一条数据的start_time
      * @return nextDate
      */
     public Long getNextDate() {
@@ -499,7 +437,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
      * @return offset
      */
     public Integer getOffset() {
@@ -597,6 +535,74 @@ public class ListFlowLogsRequest {
         this.dstRegionName = dstRegionName;
     }
 
+    public ListFlowLogsRequest withSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+        return this;
+    }
+
+    /**
+     * 源省份名称
+     * @return srcProvinceName
+     */
+    public String getSrcProvinceName() {
+        return srcProvinceName;
+    }
+
+    public void setSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+    }
+
+    public ListFlowLogsRequest withDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+        return this;
+    }
+
+    /**
+     * 目的省份名称
+     * @return dstProvinceName
+     */
+    public String getDstProvinceName() {
+        return dstProvinceName;
+    }
+
+    public void setDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+    }
+
+    public ListFlowLogsRequest withSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+        return this;
+    }
+
+    /**
+     * 源城市名称
+     * @return srcCityName
+     */
+    public String getSrcCityName() {
+        return srcCityName;
+    }
+
+    public void setSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+    }
+
+    public ListFlowLogsRequest withDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+        return this;
+    }
+
+    /**
+     * 目的城市名称
+     * @return dstCityName
+     */
+    public String getDstCityName() {
+        return dstCityName;
+    }
+
+    public void setDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -616,7 +622,10 @@ public class ListFlowLogsRequest {
             && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.srcRegionName, that.srcRegionName)
-            && Objects.equals(this.dstRegionName, that.dstRegionName);
+            && Objects.equals(this.dstRegionName, that.dstRegionName)
+            && Objects.equals(this.srcProvinceName, that.srcProvinceName)
+            && Objects.equals(this.dstProvinceName, that.dstProvinceName)
+            && Objects.equals(this.srcCityName, that.srcCityName) && Objects.equals(this.dstCityName, that.dstCityName);
     }
 
     @Override
@@ -639,7 +648,11 @@ public class ListFlowLogsRequest {
             enterpriseProjectId,
             dstHost,
             srcRegionName,
-            dstRegionName);
+            dstRegionName,
+            srcProvinceName,
+            dstProvinceName,
+            srcCityName,
+            dstCityName);
     }
 
     @Override
@@ -665,6 +678,10 @@ public class ListFlowLogsRequest {
         sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
         sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
+        sb.append("    srcProvinceName: ").append(toIndentedString(srcProvinceName)).append("\n");
+        sb.append("    dstProvinceName: ").append(toIndentedString(dstProvinceName)).append("\n");
+        sb.append("    srcCityName: ").append(toIndentedString(srcCityName)).append("\n");
+        sb.append("    dstCityName: ").append(toIndentedString(dstCityName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

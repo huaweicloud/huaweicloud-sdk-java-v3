@@ -125,6 +125,8 @@ import com.huaweicloud.sdk.meeting.v1.model.InviteWithPwdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.InviteWithPwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListHistoryWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListHistoryWebinarsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsRequest;
@@ -2141,6 +2143,35 @@ public class MeetingClient {
     public SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinarsInvoker(
         ListHistoryWebinarsRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.listHistoryWebinars, hcClient);
+    }
+
+    /**
+     * 查询会场网络质量
+     *
+     * 查询会场网络质量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworkQualityRequest 请求对象
+     * @return ListNetworkQualityResponse
+     */
+    public ListNetworkQualityResponse listNetworkQuality(ListNetworkQualityRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.listNetworkQuality);
+    }
+
+    /**
+     * 查询会场网络质量
+     *
+     * 查询会场网络质量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworkQualityRequest 请求对象
+     * @return SyncInvoker<ListNetworkQualityRequest, ListNetworkQualityResponse>
+     */
+    public SyncInvoker<ListNetworkQualityRequest, ListNetworkQualityResponse> listNetworkQualityInvoker(
+        ListNetworkQualityRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.listNetworkQuality, hcClient);
     }
 
     /**

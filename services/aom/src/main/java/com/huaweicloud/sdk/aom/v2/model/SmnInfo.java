@@ -18,7 +18,7 @@ public class SmnInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_subscription_status")
 
-    private String smnSubscriptionStatus;
+    private Integer smnSubscriptionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smn_subscription_type")
@@ -42,7 +42,7 @@ public class SmnInfo {
         this.smnNotifiedContent = smnNotifiedContent;
     }
 
-    public SmnInfo withSmnSubscriptionStatus(String smnSubscriptionStatus) {
+    public SmnInfo withSmnSubscriptionStatus(Integer smnSubscriptionStatus) {
         this.smnSubscriptionStatus = smnSubscriptionStatus;
         return this;
     }
@@ -51,11 +51,11 @@ public class SmnInfo {
      * smn的订阅的状态
      * @return smnSubscriptionStatus
      */
-    public String getSmnSubscriptionStatus() {
+    public Integer getSmnSubscriptionStatus() {
         return smnSubscriptionStatus;
     }
 
-    public void setSmnSubscriptionStatus(String smnSubscriptionStatus) {
+    public void setSmnSubscriptionStatus(Integer smnSubscriptionStatus) {
         this.smnSubscriptionStatus = smnSubscriptionStatus;
     }
 

@@ -117,14 +117,9 @@ public class OpenGaussInstanceRequest {
     private Integer coordinatorNum;
 
     /**
-     * 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 > 新建工单](https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。
+     * 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。
      */
     public static final class ReplicaNumEnum {
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final ReplicaNumEnum NUMBER_2 = new ReplicaNumEnum(2);
 
         /**
          * Enum NUMBER_3 for value: 3
@@ -135,7 +130,6 @@ public class OpenGaussInstanceRequest {
 
         private static Map<Integer, ReplicaNumEnum> createStaticFields() {
             Map<Integer, ReplicaNumEnum> map = new HashMap<>();
-            map.put(2, NUMBER_2);
             map.put(3, NUMBER_3);
             return Collections.unmodifiableMap(map);
         }
@@ -587,7 +581,7 @@ public class OpenGaussInstanceRequest {
     }
 
     /**
-     * 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 > 新建工单](https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。
+     * 实例副本数，支持取值3。不填默认为3。仅支持1.3.0及以上版本的实例。
      * @return replicaNum
      */
     public ReplicaNumEnum getReplicaNum() {

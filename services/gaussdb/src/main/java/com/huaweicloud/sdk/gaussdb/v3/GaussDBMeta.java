@@ -17,10 +17,19 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CancelGaussMySqlInstanceEipResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CancelScheduleTask;
 import com.huaweicloud.sdk.gaussdb.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CancelScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ChEnlargeVolumeRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.ChSlowLogQueryRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.ChSlowlogSensitiveResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlInstanceSpecificationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckChDatabaseConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckChDatabaseTableConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseTableConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckClickHouseTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
@@ -30,6 +39,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserInfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserPSinfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserPWinfo;
+import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseResizeFlavorRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequestBody;
@@ -40,6 +53,15 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CopyInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateChDatabaseReplicationRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateChInstanceRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateChLtsConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateDnsNameReq;
@@ -74,6 +96,17 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DbConfigCheckRequestV3;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteChLtsConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
@@ -123,6 +156,18 @@ import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRe
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseParameterRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseParameterResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseReplicationResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseDataBaseResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceNodeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesResponse;
@@ -218,10 +263,15 @@ import com.huaweicloud.sdk.gaussdb.v3.model.OpenMysqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateAuditLogRequestV3Body;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterControlReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterRuleReq;
+import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplication;
+import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplicationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyTransactionSplitRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpdateProxyNameRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpgradeProxyVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeResponse;
@@ -230,6 +280,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordReque
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResourceCheck;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceResponse;
@@ -245,6 +299,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.RestartStarrocksNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreOldInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestoreRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplication;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
@@ -263,6 +320,14 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogDetailRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogDetailResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlBackupListRequest;
@@ -353,6 +418,17 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateBackupOffsitePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateBackupOffsitePolicyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateBackupOffsitePolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateChDatabaseConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDataBaseConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDataBaseConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPasswordRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPermissionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseDatabaseUserPermissionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseSlowLogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseSlowLogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateConfigurationParameterRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDatabaseCommentRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDatabaseUserCommentRequest;
@@ -5626,6 +5702,84 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckClickHouseDataBaseConfigRequest, CheckClickHouseDataBaseConfigResponse> checkClickHouseDataBaseConfig =
+        genForCheckClickHouseDataBaseConfig();
+
+    private static HttpRequestDef<CheckClickHouseDataBaseConfigRequest, CheckClickHouseDataBaseConfigResponse> genForCheckClickHouseDataBaseConfig() {
+        // basic
+        HttpRequestDef.Builder<CheckClickHouseDataBaseConfigRequest, CheckClickHouseDataBaseConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckClickHouseDataBaseConfigRequest.class,
+                    CheckClickHouseDataBaseConfigResponse.class)
+                .withName("CheckClickHouseDataBaseConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckClickHouseDataBaseConfigRequest::getInstanceId,
+                CheckClickHouseDataBaseConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckClickHouseDataBaseConfigRequest::getXLanguage,
+                CheckClickHouseDataBaseConfigRequest::setXLanguage));
+        builder.<CheckChDatabaseConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckChDatabaseConfigRequestBody.class),
+            f -> f.withMarshaller(CheckClickHouseDataBaseConfigRequest::getBody,
+                CheckClickHouseDataBaseConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckClickHouseTableConfigRequest, CheckClickHouseTableConfigResponse> checkClickHouseTableConfig =
+        genForCheckClickHouseTableConfig();
+
+    private static HttpRequestDef<CheckClickHouseTableConfigRequest, CheckClickHouseTableConfigResponse> genForCheckClickHouseTableConfig() {
+        // basic
+        HttpRequestDef.Builder<CheckClickHouseTableConfigRequest, CheckClickHouseTableConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckClickHouseTableConfigRequest.class,
+                    CheckClickHouseTableConfigResponse.class)
+                .withName("CheckClickHouseTableConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/table-check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckClickHouseTableConfigRequest::getInstanceId,
+                CheckClickHouseTableConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckClickHouseTableConfigRequest::getXLanguage,
+                CheckClickHouseTableConfigRequest::setXLanguage));
+        builder.<CheckChDatabaseTableConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckChDatabaseTableConfigRequestBody.class),
+            f -> f.withMarshaller(CheckClickHouseTableConfigRequest::getBody,
+                CheckClickHouseTableConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckDataBaseConfigRequest, CheckDataBaseConfigResponse> checkDataBaseConfig =
         genForCheckDataBaseConfig();
 
@@ -5717,6 +5871,120 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TableConfigCheckRequestV3.class),
             f -> f.withMarshaller(CheckTableConfigRequest::getBody, CheckTableConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClickHouseDataBaseReplicationRequest, CreateClickHouseDataBaseReplicationResponse> createClickHouseDataBaseReplication =
+        genForCreateClickHouseDataBaseReplication();
+
+    private static HttpRequestDef<CreateClickHouseDataBaseReplicationRequest, CreateClickHouseDataBaseReplicationResponse> genForCreateClickHouseDataBaseReplication() {
+        // basic
+        HttpRequestDef.Builder<CreateClickHouseDataBaseReplicationRequest, CreateClickHouseDataBaseReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateClickHouseDataBaseReplicationRequest.class,
+                    CreateClickHouseDataBaseReplicationResponse.class)
+                .withName("CreateClickHouseDataBaseReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseDataBaseReplicationRequest::getInstanceId,
+                CreateClickHouseDataBaseReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseDataBaseReplicationRequest::getXLanguage,
+                CreateClickHouseDataBaseReplicationRequest::setXLanguage));
+        builder.<CreateChDatabaseReplicationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateChDatabaseReplicationRequestBody.class),
+            f -> f.withMarshaller(CreateClickHouseDataBaseReplicationRequest::getBody,
+                CreateClickHouseDataBaseReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClickHouseDatabaseUserRequest, CreateClickHouseDatabaseUserResponse> createClickHouseDatabaseUser =
+        genForCreateClickHouseDatabaseUser();
+
+    private static HttpRequestDef<CreateClickHouseDatabaseUserRequest, CreateClickHouseDatabaseUserResponse> genForCreateClickHouseDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<CreateClickHouseDatabaseUserRequest, CreateClickHouseDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateClickHouseDatabaseUserRequest.class,
+                    CreateClickHouseDatabaseUserResponse.class)
+                .withName("CreateClickHouseDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseDatabaseUserRequest::getInstanceId,
+                CreateClickHouseDatabaseUserRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseDatabaseUserRequest::getXLanguage,
+                CreateClickHouseDatabaseUserRequest::setXLanguage));
+        builder.<ClickHouseDatabaseUserInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClickHouseDatabaseUserInfo.class),
+            f -> f.withMarshaller(CreateClickHouseDatabaseUserRequest::getBody,
+                CreateClickHouseDatabaseUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClickHouseInstanceRequest, CreateClickHouseInstanceResponse> createClickHouseInstance =
+        genForCreateClickHouseInstance();
+
+    private static HttpRequestDef<CreateClickHouseInstanceRequest, CreateClickHouseInstanceResponse> genForCreateClickHouseInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateClickHouseInstanceRequest, CreateClickHouseInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateClickHouseInstanceRequest.class, CreateClickHouseInstanceResponse.class)
+                .withName("CreateClickHouseInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseInstanceRequest::getInstanceId,
+                CreateClickHouseInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClickHouseInstanceRequest::getXLanguage,
+                CreateClickHouseInstanceRequest::setXLanguage));
+        builder.<CreateChInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateChInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateClickHouseInstanceRequest::getBody, CreateClickHouseInstanceRequest::setBody));
 
         // response
 
@@ -5836,6 +6104,195 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteClickHouseDataBaseConfigRequest, DeleteClickHouseDataBaseConfigResponse> deleteClickHouseDataBaseConfig =
+        genForDeleteClickHouseDataBaseConfig();
+
+    private static HttpRequestDef<DeleteClickHouseDataBaseConfigRequest, DeleteClickHouseDataBaseConfigResponse> genForDeleteClickHouseDataBaseConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteClickHouseDataBaseConfigRequest, DeleteClickHouseDataBaseConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClickHouseDataBaseConfigRequest.class,
+                    DeleteClickHouseDataBaseConfigResponse.class)
+                .withName("DeleteClickHouseDataBaseConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseConfigRequest::getInstanceId,
+                DeleteClickHouseDataBaseConfigRequest::setInstanceId));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseConfigRequest::getDatabase,
+                DeleteClickHouseDataBaseConfigRequest::setDatabase));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseConfigRequest::getXLanguage,
+                DeleteClickHouseDataBaseConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClickHouseDataBaseReplicationRequest, DeleteClickHouseDataBaseReplicationResponse> deleteClickHouseDataBaseReplication =
+        genForDeleteClickHouseDataBaseReplication();
+
+    private static HttpRequestDef<DeleteClickHouseDataBaseReplicationRequest, DeleteClickHouseDataBaseReplicationResponse> genForDeleteClickHouseDataBaseReplication() {
+        // basic
+        HttpRequestDef.Builder<DeleteClickHouseDataBaseReplicationRequest, DeleteClickHouseDataBaseReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClickHouseDataBaseReplicationRequest.class,
+                    DeleteClickHouseDataBaseReplicationResponse.class)
+                .withName("DeleteClickHouseDataBaseReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/{database_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseReplicationRequest::getInstanceId,
+                DeleteClickHouseDataBaseReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseReplicationRequest::getDatabaseName,
+                DeleteClickHouseDataBaseReplicationRequest::setDatabaseName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDataBaseReplicationRequest::getXLanguage,
+                DeleteClickHouseDataBaseReplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClickHouseDatabaseUserRequest, DeleteClickHouseDatabaseUserResponse> deleteClickHouseDatabaseUser =
+        genForDeleteClickHouseDatabaseUser();
+
+    private static HttpRequestDef<DeleteClickHouseDatabaseUserRequest, DeleteClickHouseDatabaseUserResponse> genForDeleteClickHouseDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteClickHouseDatabaseUserRequest, DeleteClickHouseDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClickHouseDatabaseUserRequest.class,
+                    DeleteClickHouseDatabaseUserResponse.class)
+                .withName("DeleteClickHouseDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDatabaseUserRequest::getInstanceId,
+                DeleteClickHouseDatabaseUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDatabaseUserRequest::getUserName,
+                DeleteClickHouseDatabaseUserRequest::setUserName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseDatabaseUserRequest::getXLanguage,
+                DeleteClickHouseDatabaseUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClickHouseInstanceRequest, DeleteClickHouseInstanceResponse> deleteClickHouseInstance =
+        genForDeleteClickHouseInstance();
+
+    private static HttpRequestDef<DeleteClickHouseInstanceRequest, DeleteClickHouseInstanceResponse> genForDeleteClickHouseInstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteClickHouseInstanceRequest, DeleteClickHouseInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClickHouseInstanceRequest.class,
+                    DeleteClickHouseInstanceResponse.class)
+                .withName("DeleteClickHouseInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseInstanceRequest::getInstanceId,
+                DeleteClickHouseInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("clickhouse_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseInstanceRequest::getClickhouseInstanceId,
+                DeleteClickHouseInstanceRequest::setClickhouseInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseInstanceRequest::getXLanguage,
+                DeleteClickHouseInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClickHouseLtsConfigRequest, DeleteClickHouseLtsConfigResponse> deleteClickHouseLtsConfig =
+        genForDeleteClickHouseLtsConfig();
+
+    private static HttpRequestDef<DeleteClickHouseLtsConfigRequest, DeleteClickHouseLtsConfigResponse> genForDeleteClickHouseLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteClickHouseLtsConfigRequest, DeleteClickHouseLtsConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteClickHouseLtsConfigRequest.class,
+                    DeleteClickHouseLtsConfigResponse.class)
+                .withName("DeleteClickHouseLtsConfig")
+                .withUri("/v3/{project_id}/clickhouse/instances/logs/lts-configs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClickHouseLtsConfigRequest::getXLanguage,
+                DeleteClickHouseLtsConfigRequest::setXLanguage));
+        builder.<DeleteChLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteChLtsConfigRequestBody.class),
+            f -> f.withMarshaller(DeleteClickHouseLtsConfigRequest::getBody,
+                DeleteClickHouseLtsConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication =
         genForDeleteStarRocksDataReplication();
 
@@ -5944,6 +6401,238 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStarrocksInstanceRequest::getXLanguage,
                 DeleteStarrocksInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse> listClickHouseDataBase =
+        genForListClickHouseDataBase();
+
+    private static HttpRequestDef<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse> genForListClickHouseDataBase() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClickHouseDataBaseRequest.class, ListClickHouseDataBaseResponse.class)
+            .withName("ListClickHouseDataBase")
+            .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/databases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseRequest::getInstanceId,
+                ListClickHouseDataBaseRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseRequest::getLimit, ListClickHouseDataBaseRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseRequest::getOffset, ListClickHouseDataBaseRequest::setOffset));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseRequest::getDatabaseName,
+                ListClickHouseDataBaseRequest::setDatabaseName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseRequest::getXLanguage,
+                ListClickHouseDataBaseRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseDataBaseParameterRequest, ListClickHouseDataBaseParameterResponse> listClickHouseDataBaseParameter =
+        genForListClickHouseDataBaseParameter();
+
+    private static HttpRequestDef<ListClickHouseDataBaseParameterRequest, ListClickHouseDataBaseParameterResponse> genForListClickHouseDataBaseParameter() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseDataBaseParameterRequest, ListClickHouseDataBaseParameterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClickHouseDataBaseParameterRequest.class,
+                    ListClickHouseDataBaseParameterResponse.class)
+                .withName("ListClickHouseDataBaseParameter")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-parameter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseParameterRequest::getInstanceId,
+                ListClickHouseDataBaseParameterRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseParameterRequest::getXLanguage,
+                ListClickHouseDataBaseParameterRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseDataBaseReplicationRequest, ListClickHouseDataBaseReplicationResponse> listClickHouseDataBaseReplication =
+        genForListClickHouseDataBaseReplication();
+
+    private static HttpRequestDef<ListClickHouseDataBaseReplicationRequest, ListClickHouseDataBaseReplicationResponse> genForListClickHouseDataBaseReplication() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseDataBaseReplicationRequest, ListClickHouseDataBaseReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClickHouseDataBaseReplicationRequest.class,
+                    ListClickHouseDataBaseReplicationResponse.class)
+                .withName("ListClickHouseDataBaseReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationRequest::getInstanceId,
+                ListClickHouseDataBaseReplicationRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationRequest::getLimit,
+                ListClickHouseDataBaseReplicationRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationRequest::getOffset,
+                ListClickHouseDataBaseReplicationRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationRequest::getXLanguage,
+                ListClickHouseDataBaseReplicationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseDataBaseReplicationConfigRequest, ListClickHouseDataBaseReplicationConfigResponse> listClickHouseDataBaseReplicationConfig =
+        genForListClickHouseDataBaseReplicationConfig();
+
+    private static HttpRequestDef<ListClickHouseDataBaseReplicationConfigRequest, ListClickHouseDataBaseReplicationConfigResponse> genForListClickHouseDataBaseReplicationConfig() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseDataBaseReplicationConfigRequest, ListClickHouseDataBaseReplicationConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClickHouseDataBaseReplicationConfigRequest.class,
+                    ListClickHouseDataBaseReplicationConfigResponse.class)
+                .withName("ListClickHouseDataBaseReplicationConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationConfigRequest::getInstanceId,
+                ListClickHouseDataBaseReplicationConfigRequest::setInstanceId));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationConfigRequest::getDatabaseName,
+                ListClickHouseDataBaseReplicationConfigRequest::setDatabaseName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseDataBaseReplicationConfigRequest::getXLanguage,
+                ListClickHouseDataBaseReplicationConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseInstanceRequest, ListClickHouseInstanceResponse> listClickHouseInstance =
+        genForListClickHouseInstance();
+
+    private static HttpRequestDef<ListClickHouseInstanceRequest, ListClickHouseInstanceResponse> genForListClickHouseInstance() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseInstanceRequest, ListClickHouseInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClickHouseInstanceRequest.class, ListClickHouseInstanceResponse.class)
+            .withName("ListClickHouseInstance")
+            .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseInstanceRequest::getInstanceId,
+                ListClickHouseInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("clickhouse_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseInstanceRequest::getClickhouseInstanceId,
+                ListClickHouseInstanceRequest::setClickhouseInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseInstanceRequest::getXLanguage,
+                ListClickHouseInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClickHouseInstanceNodeRequest, ListClickHouseInstanceNodeResponse> listClickHouseInstanceNode =
+        genForListClickHouseInstanceNode();
+
+    private static HttpRequestDef<ListClickHouseInstanceNodeRequest, ListClickHouseInstanceNodeResponse> genForListClickHouseInstanceNode() {
+        // basic
+        HttpRequestDef.Builder<ListClickHouseInstanceNodeRequest, ListClickHouseInstanceNodeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClickHouseInstanceNodeRequest.class,
+                    ListClickHouseInstanceNodeResponse.class)
+                .withName("ListClickHouseInstanceNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseInstanceNodeRequest::getInstanceId,
+                ListClickHouseInstanceNodeRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClickHouseInstanceNodeRequest::getXLanguage,
+                ListClickHouseInstanceNodeRequest::setXLanguage));
 
         // response
 
@@ -6288,6 +6977,147 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PauseStarRocksDataReplicationRequest, PauseStarRocksDataReplicationResponse> pauseStarRocksDataReplication =
+        genForPauseStarRocksDataReplication();
+
+    private static HttpRequestDef<PauseStarRocksDataReplicationRequest, PauseStarRocksDataReplicationResponse> genForPauseStarRocksDataReplication() {
+        // basic
+        HttpRequestDef.Builder<PauseStarRocksDataReplicationRequest, PauseStarRocksDataReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    PauseStarRocksDataReplicationRequest.class,
+                    PauseStarRocksDataReplicationResponse.class)
+                .withName("PauseStarRocksDataReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/pause")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseStarRocksDataReplicationRequest::getInstanceId,
+                PauseStarRocksDataReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseStarRocksDataReplicationRequest::getXLanguage,
+                PauseStarRocksDataReplicationRequest::setXLanguage));
+        builder.<PauseStarRocksDataReplication>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PauseStarRocksDataReplication.class),
+            f -> f.withMarshaller(PauseStarRocksDataReplicationRequest::getBody,
+                PauseStarRocksDataReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RebootClickHouseInstanceRequest, RebootClickHouseInstanceResponse> rebootClickHouseInstance =
+        genForRebootClickHouseInstance();
+
+    private static HttpRequestDef<RebootClickHouseInstanceRequest, RebootClickHouseInstanceResponse> genForRebootClickHouseInstance() {
+        // basic
+        HttpRequestDef.Builder<RebootClickHouseInstanceRequest, RebootClickHouseInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, RebootClickHouseInstanceRequest.class, RebootClickHouseInstanceResponse.class)
+                .withName("RebootClickHouseInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootClickHouseInstanceRequest::getInstanceId,
+                RebootClickHouseInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootClickHouseInstanceRequest::getXLanguage,
+                RebootClickHouseInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResizeClickHouseFlavorRequest, ResizeClickHouseFlavorResponse> resizeClickHouseFlavor =
+        genForResizeClickHouseFlavor();
+
+    private static HttpRequestDef<ResizeClickHouseFlavorRequest, ResizeClickHouseFlavorResponse> genForResizeClickHouseFlavor() {
+        // basic
+        HttpRequestDef.Builder<ResizeClickHouseFlavorRequest, ResizeClickHouseFlavorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeClickHouseFlavorRequest.class, ResizeClickHouseFlavorResponse.class)
+            .withName("ResizeClickHouseFlavor")
+            .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/resize-flavor")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClickHouseFlavorRequest::getInstanceId,
+                ResizeClickHouseFlavorRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClickHouseFlavorRequest::getXLanguage,
+                ResizeClickHouseFlavorRequest::setXLanguage));
+        builder.<ClickHouseResizeFlavorRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClickHouseResizeFlavorRequestBody.class),
+            f -> f.withMarshaller(ResizeClickHouseFlavorRequest::getBody, ResizeClickHouseFlavorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResizeClickHouseInstanceRequest, ResizeClickHouseInstanceResponse> resizeClickHouseInstance =
+        genForResizeClickHouseInstance();
+
+    private static HttpRequestDef<ResizeClickHouseInstanceRequest, ResizeClickHouseInstanceResponse> genForResizeClickHouseInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeClickHouseInstanceRequest, ResizeClickHouseInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, ResizeClickHouseInstanceRequest.class, ResizeClickHouseInstanceResponse.class)
+                .withName("ResizeClickHouseInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClickHouseInstanceRequest::getInstanceId,
+                ResizeClickHouseInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClickHouseInstanceRequest::getXLanguage,
+                ResizeClickHouseInstanceRequest::setXLanguage));
+        builder.<ChEnlargeVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChEnlargeVolumeRequestBody.class),
+            f -> f.withMarshaller(ResizeClickHouseInstanceRequest::getBody, ResizeClickHouseInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> restartStarrocksInstance =
         genForRestartStarrocksInstance();
 
@@ -6355,6 +7185,221 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResumeStarRocksDataReplicationRequest, ResumeStarRocksDataReplicationResponse> resumeStarRocksDataReplication =
+        genForResumeStarRocksDataReplication();
+
+    private static HttpRequestDef<ResumeStarRocksDataReplicationRequest, ResumeStarRocksDataReplicationResponse> genForResumeStarRocksDataReplication() {
+        // basic
+        HttpRequestDef.Builder<ResumeStarRocksDataReplicationRequest, ResumeStarRocksDataReplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ResumeStarRocksDataReplicationRequest.class,
+                    ResumeStarRocksDataReplicationResponse.class)
+                .withName("ResumeStarRocksDataReplication")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/resume")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeStarRocksDataReplicationRequest::getInstanceId,
+                ResumeStarRocksDataReplicationRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeStarRocksDataReplicationRequest::getXLanguage,
+                ResumeStarRocksDataReplicationRequest::setXLanguage));
+        builder.<ResumeStarRocksDataReplication>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResumeStarRocksDataReplication.class),
+            f -> f.withMarshaller(ResumeStarRocksDataReplicationRequest::getBody,
+                ResumeStarRocksDataReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClickHouseDatabaseUserRequest, ShowClickHouseDatabaseUserResponse> showClickHouseDatabaseUser =
+        genForShowClickHouseDatabaseUser();
+
+    private static HttpRequestDef<ShowClickHouseDatabaseUserRequest, ShowClickHouseDatabaseUserResponse> genForShowClickHouseDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<ShowClickHouseDatabaseUserRequest, ShowClickHouseDatabaseUserResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClickHouseDatabaseUserRequest.class,
+                    ShowClickHouseDatabaseUserResponse.class)
+                .withName("ShowClickHouseDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseDatabaseUserRequest::getInstanceId,
+                ShowClickHouseDatabaseUserRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClickHouseDatabaseUserRequest::getLimit,
+                ShowClickHouseDatabaseUserRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClickHouseDatabaseUserRequest::getOffset,
+                ShowClickHouseDatabaseUserRequest::setOffset));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseDatabaseUserRequest::getUserName,
+                ShowClickHouseDatabaseUserRequest::setUserName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseDatabaseUserRequest::getXLanguage,
+                ShowClickHouseDatabaseUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClickHouseLtsConfigRequest, ShowClickHouseLtsConfigResponse> showClickHouseLtsConfig =
+        genForShowClickHouseLtsConfig();
+
+    private static HttpRequestDef<ShowClickHouseLtsConfigRequest, ShowClickHouseLtsConfigResponse> genForShowClickHouseLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowClickHouseLtsConfigRequest, ShowClickHouseLtsConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClickHouseLtsConfigRequest.class, ShowClickHouseLtsConfigResponse.class)
+            .withName("ShowClickHouseLtsConfig")
+            .withUri("/v3/{project_id}/clickhouse/instances/logs/lts-configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getInstanceId,
+                ShowClickHouseLtsConfigRequest::setInstanceId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getEnterpriseProjectId,
+                ShowClickHouseLtsConfigRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getInstanceName,
+                ShowClickHouseLtsConfigRequest::setInstanceName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getLimit, ShowClickHouseLtsConfigRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getOffset,
+                ShowClickHouseLtsConfigRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseLtsConfigRequest::getXLanguage,
+                ShowClickHouseLtsConfigRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClickHouseSlowLogDetailRequest, ShowClickHouseSlowLogDetailResponse> showClickHouseSlowLogDetail =
+        genForShowClickHouseSlowLogDetail();
+
+    private static HttpRequestDef<ShowClickHouseSlowLogDetailRequest, ShowClickHouseSlowLogDetailResponse> genForShowClickHouseSlowLogDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowClickHouseSlowLogDetailRequest, ShowClickHouseSlowLogDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowClickHouseSlowLogDetailRequest.class,
+                    ShowClickHouseSlowLogDetailResponse.class)
+                .withName("ShowClickHouseSlowLogDetail")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/slow-logs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseSlowLogDetailRequest::getInstanceId,
+                ShowClickHouseSlowLogDetailRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseSlowLogDetailRequest::getXLanguage,
+                ShowClickHouseSlowLogDetailRequest::setXLanguage));
+        builder.<ChSlowLogQueryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChSlowLogQueryRequestBody.class),
+            f -> f.withMarshaller(ShowClickHouseSlowLogDetailRequest::getBody,
+                ShowClickHouseSlowLogDetailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClickHouseSlowLogSensitiveStatusRequest, ShowClickHouseSlowLogSensitiveStatusResponse> showClickHouseSlowLogSensitiveStatus =
+        genForShowClickHouseSlowLogSensitiveStatus();
+
+    private static HttpRequestDef<ShowClickHouseSlowLogSensitiveStatusRequest, ShowClickHouseSlowLogSensitiveStatusResponse> genForShowClickHouseSlowLogSensitiveStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowClickHouseSlowLogSensitiveStatusRequest, ShowClickHouseSlowLogSensitiveStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClickHouseSlowLogSensitiveStatusRequest.class,
+                    ShowClickHouseSlowLogSensitiveStatusResponse.class)
+                .withName("ShowClickHouseSlowLogSensitiveStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseSlowLogSensitiveStatusRequest::getInstanceId,
+                ShowClickHouseSlowLogSensitiveStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClickHouseSlowLogSensitiveStatusRequest::getXLanguage,
+                ShowClickHouseSlowLogSensitiveStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStarRocksDatabaseUserRequest, ShowStarRocksDatabaseUserResponse> showStarRocksDatabaseUser =
         genForShowStarRocksDatabaseUser();
 
@@ -6400,6 +7445,195 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStarRocksDatabaseUserRequest::getXLanguage,
                 ShowStarRocksDatabaseUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse> updateClickHouseDataBaseConfig =
+        genForUpdateClickHouseDataBaseConfig();
+
+    private static HttpRequestDef<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse> genForUpdateClickHouseDataBaseConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClickHouseDataBaseConfigRequest.class,
+                    UpdateClickHouseDataBaseConfigResponse.class)
+                .withName("UpdateClickHouseDataBaseConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDataBaseConfigRequest::getInstanceId,
+                UpdateClickHouseDataBaseConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDataBaseConfigRequest::getXLanguage,
+                UpdateClickHouseDataBaseConfigRequest::setXLanguage));
+        builder.<UpdateChDatabaseConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateChDatabaseConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateClickHouseDataBaseConfigRequest::getBody,
+                UpdateClickHouseDataBaseConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClickHouseDatabaseUserPasswordRequest, UpdateClickHouseDatabaseUserPasswordResponse> updateClickHouseDatabaseUserPassword =
+        genForUpdateClickHouseDatabaseUserPassword();
+
+    private static HttpRequestDef<UpdateClickHouseDatabaseUserPasswordRequest, UpdateClickHouseDatabaseUserPasswordResponse> genForUpdateClickHouseDatabaseUserPassword() {
+        // basic
+        HttpRequestDef.Builder<UpdateClickHouseDatabaseUserPasswordRequest, UpdateClickHouseDatabaseUserPasswordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClickHouseDatabaseUserPasswordRequest.class,
+                    UpdateClickHouseDatabaseUserPasswordResponse.class)
+                .withName("UpdateClickHouseDatabaseUserPassword")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/users/password")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPasswordRequest::getInstanceId,
+                UpdateClickHouseDatabaseUserPasswordRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPasswordRequest::getXLanguage,
+                UpdateClickHouseDatabaseUserPasswordRequest::setXLanguage));
+        builder.<ClickHouseDatabaseUserPWinfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClickHouseDatabaseUserPWinfo.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPasswordRequest::getBody,
+                UpdateClickHouseDatabaseUserPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClickHouseDatabaseUserPermissionRequest, UpdateClickHouseDatabaseUserPermissionResponse> updateClickHouseDatabaseUserPermission =
+        genForUpdateClickHouseDatabaseUserPermission();
+
+    private static HttpRequestDef<UpdateClickHouseDatabaseUserPermissionRequest, UpdateClickHouseDatabaseUserPermissionResponse> genForUpdateClickHouseDatabaseUserPermission() {
+        // basic
+        HttpRequestDef.Builder<UpdateClickHouseDatabaseUserPermissionRequest, UpdateClickHouseDatabaseUserPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClickHouseDatabaseUserPermissionRequest.class,
+                    UpdateClickHouseDatabaseUserPermissionResponse.class)
+                .withName("UpdateClickHouseDatabaseUserPermission")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/users/permission")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPermissionRequest::getInstanceId,
+                UpdateClickHouseDatabaseUserPermissionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPermissionRequest::getXLanguage,
+                UpdateClickHouseDatabaseUserPermissionRequest::setXLanguage));
+        builder.<ClickHouseDatabaseUserPSinfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClickHouseDatabaseUserPSinfo.class),
+            f -> f.withMarshaller(UpdateClickHouseDatabaseUserPermissionRequest::getBody,
+                UpdateClickHouseDatabaseUserPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClickHouseLtsConfigRequest, UpdateClickHouseLtsConfigResponse> updateClickHouseLtsConfig =
+        genForUpdateClickHouseLtsConfig();
+
+    private static HttpRequestDef<UpdateClickHouseLtsConfigRequest, UpdateClickHouseLtsConfigResponse> genForUpdateClickHouseLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateClickHouseLtsConfigRequest, UpdateClickHouseLtsConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateClickHouseLtsConfigRequest.class,
+                    UpdateClickHouseLtsConfigResponse.class)
+                .withName("UpdateClickHouseLtsConfig")
+                .withUri("/v3/{project_id}/clickhouse/instances/logs/lts-configs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseLtsConfigRequest::getXLanguage,
+                UpdateClickHouseLtsConfigRequest::setXLanguage));
+        builder.<CreateChLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateChLtsConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateClickHouseLtsConfigRequest::getBody,
+                UpdateClickHouseLtsConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse> updateClickHouseSlowLogSensitiveStatus =
+        genForUpdateClickHouseSlowLogSensitiveStatus();
+
+    private static HttpRequestDef<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse> genForUpdateClickHouseSlowLogSensitiveStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClickHouseSlowLogSensitiveStatusRequest.class,
+                    UpdateClickHouseSlowLogSensitiveStatusResponse.class)
+                .withName("UpdateClickHouseSlowLogSensitiveStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseSlowLogSensitiveStatusRequest::getInstanceId,
+                UpdateClickHouseSlowLogSensitiveStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClickHouseSlowLogSensitiveStatusRequest::getXLanguage,
+                UpdateClickHouseSlowLogSensitiveStatusRequest::setXLanguage));
+        builder.<ChSlowlogSensitiveResponse>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChSlowlogSensitiveResponse.class),
+            f -> f.withMarshaller(UpdateClickHouseSlowLogSensitiveStatusRequest::getBody,
+                UpdateClickHouseSlowLogSensitiveStatusRequest::setBody));
 
         // response
 

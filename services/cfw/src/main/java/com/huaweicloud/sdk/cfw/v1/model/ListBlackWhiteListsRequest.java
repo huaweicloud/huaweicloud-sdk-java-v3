@@ -95,86 +95,10 @@ public class ListBlackWhiteListsRequest {
 
     private ListTypeEnum listType;
 
-    /**
-     * IP地址类型0：ipv4,1:ipv6,2:domain
-     */
-    public static final class AddressTypeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final AddressTypeEnum NUMBER_0 = new AddressTypeEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final AddressTypeEnum NUMBER_1 = new AddressTypeEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final AddressTypeEnum NUMBER_2 = new AddressTypeEnum(2);
-
-        private static final Map<Integer, AddressTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, AddressTypeEnum> createStaticFields() {
-            Map<Integer, AddressTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        AddressTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AddressTypeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
-        }
-
-        public static AddressTypeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AddressTypeEnum) {
-                return this.value.equals(((AddressTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_type")
 
-    private AddressTypeEnum addressType;
+    private Integer addressType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -212,7 +136,7 @@ public class ListBlackWhiteListsRequest {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * 互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，type为0的为互联网边界防护对象id。
      * @return objectId
      */
     public String getObjectId() {
@@ -240,20 +164,20 @@ public class ListBlackWhiteListsRequest {
         this.listType = listType;
     }
 
-    public ListBlackWhiteListsRequest withAddressType(AddressTypeEnum addressType) {
+    public ListBlackWhiteListsRequest withAddressType(Integer addressType) {
         this.addressType = addressType;
         return this;
     }
 
     /**
-     * IP地址类型0：ipv4,1:ipv6,2:domain
+     * IP地址类型0：ipv4,1:ipv6
      * @return addressType
      */
-    public AddressTypeEnum getAddressType() {
+    public Integer getAddressType() {
         return addressType;
     }
 
-    public void setAddressType(AddressTypeEnum addressType) {
+    public void setAddressType(Integer addressType) {
         this.addressType = addressType;
     }
 
@@ -348,7 +272,7 @@ public class ListBlackWhiteListsRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。默认情况下，fw_instance_Id为空时，返回帐号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {

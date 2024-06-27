@@ -375,11 +375,6 @@ public class AddRuleAclDtoRules {
     private DirectionEnum direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "profile")
-
-    private RuleProfileDto profile;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
     private RuleAddressDtoForRequest source;
@@ -662,32 +657,6 @@ public class AddRuleAclDtoRules {
         this.direction = direction;
     }
 
-    public AddRuleAclDtoRules withProfile(RuleProfileDto profile) {
-        this.profile = profile;
-        return this;
-    }
-
-    public AddRuleAclDtoRules withProfile(Consumer<RuleProfileDto> profileSetter) {
-        if (this.profile == null) {
-            this.profile = new RuleProfileDto();
-            profileSetter.accept(this.profile);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get profile
-     * @return profile
-     */
-    public RuleProfileDto getProfile() {
-        return profile;
-    }
-
-    public void setProfile(RuleProfileDto profile) {
-        this.profile = profile;
-    }
-
     public AddRuleAclDtoRules withSource(RuleAddressDtoForRequest source) {
         this.source = source;
         return this;
@@ -811,9 +780,8 @@ public class AddRuleAclDtoRules {
             && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.profile, that.profile) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.destination, that.destination) && Objects.equals(this.service, that.service)
-            && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -832,7 +800,6 @@ public class AddRuleAclDtoRules {
             longConnectEnable,
             description,
             direction,
-            profile,
             source,
             destination,
             service,
@@ -857,7 +824,6 @@ public class AddRuleAclDtoRules {
         sb.append("    longConnectEnable: ").append(toIndentedString(longConnectEnable)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
-        sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");

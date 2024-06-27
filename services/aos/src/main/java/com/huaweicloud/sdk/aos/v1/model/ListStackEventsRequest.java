@@ -131,7 +131,7 @@ public class ListStackEventsRequest {
     }
 
     /**
-     * 选择的属性名称  * 属性名仅支持包含大小写英文、数字和下划线 * 多个属性名称之间以逗号（，）分隔
+     * 选择的属性名称  * 属性名仅支持包含大小写英文、数字和下划线 * 多个属性名称之间以逗号（,）分隔
      * @return field
      */
     public String getField() {

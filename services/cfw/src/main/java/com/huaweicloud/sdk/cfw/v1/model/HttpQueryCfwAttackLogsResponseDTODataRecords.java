@@ -136,7 +136,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hit_time")
 
-    private Integer hitTime;
+    private Long hitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_id")
@@ -184,11 +184,6 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     private List<PacketMessage> packetMessages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dst_host")
-
-    private String dstHost;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_region_id")
 
     private String srcRegionId;
@@ -207,6 +202,46 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonProperty(value = "dst_region_name")
 
     private String dstRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_id")
+
+    private String srcProvinceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_province_name")
+
+    private String srcProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_id")
+
+    private String srcCityId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_city_name")
+
+    private String srcCityName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_id")
+
+    private String dstProvinceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_province_name")
+
+    private String dstProvinceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_id")
+
+    private String dstCityId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_city_name")
+
+    private String dstCityName;
 
     public HttpQueryCfwAttackLogsResponseDTODataRecords withDirection(DirectionEnum direction) {
         this.direction = direction;
@@ -248,7 +283,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 事件时间
+     * 事件时间，以毫秒为单位的时间戳，如1718936272648
      * @return eventTime
      */
     public Long getEventTime() {
@@ -361,20 +396,20 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.attackRuleId = attackRuleId;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withHitTime(Integer hitTime) {
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withHitTime(Long hitTime) {
         this.hitTime = hitTime;
         return this;
     }
 
     /**
-     * 命中时间
+     * 命中时间，以毫秒为单位的时间戳，如1718936272648
      * @return hitTime
      */
-    public Integer getHitTime() {
+    public Long getHitTime() {
         return hitTime;
     }
 
-    public void setHitTime(Integer hitTime) {
+    public void setHitTime(Long hitTime) {
         this.hitTime = hitTime;
     }
 
@@ -552,23 +587,6 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.packetMessages = packetMessages;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstHost(String dstHost) {
-        this.dstHost = dstHost;
-        return this;
-    }
-
-    /**
-     * 目标主机
-     * @return dstHost
-     */
-    public String getDstHost() {
-        return dstHost;
-    }
-
-    public void setDstHost(String dstHost) {
-        this.dstHost = dstHost;
-    }
-
     public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcRegionId(String srcRegionId) {
         this.srcRegionId = srcRegionId;
         return this;
@@ -637,6 +655,142 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.dstRegionName = dstRegionName;
     }
 
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcProvinceId(String srcProvinceId) {
+        this.srcProvinceId = srcProvinceId;
+        return this;
+    }
+
+    /**
+     * 源省份id
+     * @return srcProvinceId
+     */
+    public String getSrcProvinceId() {
+        return srcProvinceId;
+    }
+
+    public void setSrcProvinceId(String srcProvinceId) {
+        this.srcProvinceId = srcProvinceId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+        return this;
+    }
+
+    /**
+     * 源省份名称
+     * @return srcProvinceName
+     */
+    public String getSrcProvinceName() {
+        return srcProvinceName;
+    }
+
+    public void setSrcProvinceName(String srcProvinceName) {
+        this.srcProvinceName = srcProvinceName;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcCityId(String srcCityId) {
+        this.srcCityId = srcCityId;
+        return this;
+    }
+
+    /**
+     * 源城市id
+     * @return srcCityId
+     */
+    public String getSrcCityId() {
+        return srcCityId;
+    }
+
+    public void setSrcCityId(String srcCityId) {
+        this.srcCityId = srcCityId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+        return this;
+    }
+
+    /**
+     * 源城市名称
+     * @return srcCityName
+     */
+    public String getSrcCityName() {
+        return srcCityName;
+    }
+
+    public void setSrcCityName(String srcCityName) {
+        this.srcCityName = srcCityName;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstProvinceId(String dstProvinceId) {
+        this.dstProvinceId = dstProvinceId;
+        return this;
+    }
+
+    /**
+     * 目的省份id
+     * @return dstProvinceId
+     */
+    public String getDstProvinceId() {
+        return dstProvinceId;
+    }
+
+    public void setDstProvinceId(String dstProvinceId) {
+        this.dstProvinceId = dstProvinceId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+        return this;
+    }
+
+    /**
+     * 目的省份名称
+     * @return dstProvinceName
+     */
+    public String getDstProvinceName() {
+        return dstProvinceName;
+    }
+
+    public void setDstProvinceName(String dstProvinceName) {
+        this.dstProvinceName = dstProvinceName;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstCityId(String dstCityId) {
+        this.dstCityId = dstCityId;
+        return this;
+    }
+
+    /**
+     * 目的城市id
+     * @return dstCityId
+     */
+    public String getDstCityId() {
+        return dstCityId;
+    }
+
+    public void setDstCityId(String dstCityId) {
+        this.dstCityId = dstCityId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+        return this;
+    }
+
+    /**
+     * 目的城市名称
+     * @return dstCityName
+     */
+    public String getDstCityName() {
+        return dstCityName;
+    }
+
+    public void setDstCityName(String dstCityName) {
+        this.dstCityName = dstCityName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -655,11 +809,17 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
             && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.packet, that.packet) && Objects.equals(this.app, that.app)
-            && Objects.equals(this.packetMessages, that.packetMessages) && Objects.equals(this.dstHost, that.dstHost)
+            && Objects.equals(this.packetMessages, that.packetMessages)
             && Objects.equals(this.srcRegionId, that.srcRegionId)
             && Objects.equals(this.srcRegionName, that.srcRegionName)
             && Objects.equals(this.dstRegionId, that.dstRegionId)
-            && Objects.equals(this.dstRegionName, that.dstRegionName);
+            && Objects.equals(this.dstRegionName, that.dstRegionName)
+            && Objects.equals(this.srcProvinceId, that.srcProvinceId)
+            && Objects.equals(this.srcProvinceName, that.srcProvinceName)
+            && Objects.equals(this.srcCityId, that.srcCityId) && Objects.equals(this.srcCityName, that.srcCityName)
+            && Objects.equals(this.dstProvinceId, that.dstProvinceId)
+            && Objects.equals(this.dstProvinceName, that.dstProvinceName)
+            && Objects.equals(this.dstCityId, that.dstCityId) && Objects.equals(this.dstCityName, that.dstCityName);
     }
 
     @Override
@@ -683,11 +843,18 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             packet,
             app,
             packetMessages,
-            dstHost,
             srcRegionId,
             srcRegionName,
             dstRegionId,
-            dstRegionName);
+            dstRegionName,
+            srcProvinceId,
+            srcProvinceName,
+            srcCityId,
+            srcCityName,
+            dstProvinceId,
+            dstProvinceName,
+            dstCityId,
+            dstCityName);
     }
 
     @Override
@@ -713,11 +880,18 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         sb.append("    packet: ").append(toIndentedString(packet)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    packetMessages: ").append(toIndentedString(packetMessages)).append("\n");
-        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("    srcRegionId: ").append(toIndentedString(srcRegionId)).append("\n");
         sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
         sb.append("    dstRegionId: ").append(toIndentedString(dstRegionId)).append("\n");
         sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
+        sb.append("    srcProvinceId: ").append(toIndentedString(srcProvinceId)).append("\n");
+        sb.append("    srcProvinceName: ").append(toIndentedString(srcProvinceName)).append("\n");
+        sb.append("    srcCityId: ").append(toIndentedString(srcCityId)).append("\n");
+        sb.append("    srcCityName: ").append(toIndentedString(srcCityName)).append("\n");
+        sb.append("    dstProvinceId: ").append(toIndentedString(dstProvinceId)).append("\n");
+        sb.append("    dstProvinceName: ").append(toIndentedString(dstProvinceName)).append("\n");
+        sb.append("    dstCityId: ").append(toIndentedString(dstCityId)).append("\n");
+        sb.append("    dstCityName: ").append(toIndentedString(dstCityName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -72,6 +72,7 @@ public class TestAKSKSigner {
                 .withContentType(CONTENT_TYPE)
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .addQueryParam("limit", Collections.singletonList("2"))
                 .addQueryParam("marker", Collections.singletonList("13551d6b-755d-4757-b956-536f674975c0"))
                 .build();
@@ -99,6 +100,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpc/123")
                 .withBodyAsString("{\"key\":\"value\"}")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> header = AKSKSigner.getInstance().sign(httpRequest, credentials);
@@ -122,6 +124,7 @@ public class TestAKSKSigner {
                 .withMethod(HttpMethod.GET)
                 .addHeader("Host", "example.com")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> header = AKSKSigner.getInstance().sign(httpRequest, credentials);
@@ -145,6 +148,7 @@ public class TestAKSKSigner {
                 .withContentType(CONTENT_TYPE)
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> headers = signForDerivedAuth(basicRequest, credentials);
@@ -159,6 +163,7 @@ public class TestAKSKSigner {
                 .withContentType(CONTENT_TYPE)
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
         credentials.processDerivedAuthParams("service", "region-id-1");
 
@@ -183,6 +188,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpc/123")
                 .withBodyAsString("{\"key\":\"value\"}")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> headers = signForDerivedAuth(basicRequest, credentials);
@@ -222,6 +228,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
                 .addHeader("Host", "example.com")
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
         credentials.processDerivedAuthParams("service", "region-id-1");
 
@@ -257,6 +264,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
                 .addHeader("head-name", "head-value")
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .addQueryParam("limit", Collections.singletonList("2"))
                 .addQueryParam("marker", Collections.singletonList("13551d6b-755d-4757-b956-536f674975c0"));
 
@@ -281,7 +289,8 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpc/123")
                 .withBodyAsString("{\"key\":\"value\"}")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
-                .addHeader("head-name", "head-value");
+                .addHeader("head-name", "head-value")
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE");
 
         Map<String, String> headers = SM3AKSKSigner.getInstance().sign(requestBuilder.build(), credentials);
         Assert.assertEquals("SDK-HMAC-SM3 Access=AccessKey, "
@@ -312,6 +321,7 @@ public class TestAKSKSigner {
                 .withContentType(CONTENT_TYPE)
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .addQueryParam("limit", Collections.singletonList("2"))
                 .addQueryParam("marker", Collections.singletonList("13551d6b-755d-4757-b956-536f674975c0"))
                 .build();
@@ -335,6 +345,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpc/123")
                 .withBodyAsString("{\"key\":\"value\"}")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> header = P256SHA256Signer.getInstance().sign(httpRequest, credentials);
@@ -364,6 +375,7 @@ public class TestAKSKSigner {
                 .withContentType(CONTENT_TYPE)
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpcs")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .addQueryParam("limit", Collections.singletonList("2"))
                 .addQueryParam("marker", Collections.singletonList("13551d6b-755d-4757-b956-536f674975c0"))
                 .build();
@@ -387,6 +399,7 @@ public class TestAKSKSigner {
                 .withPath("/v1/77b6a44cba5143ab91d13ab9a8ff44fd/vpc/123")
                 .withBodyAsString("{\"key\":\"value\"}")
                 .addHeader("X-Sdk-Date", X_SDK_DATE)
+                .addHeader("TEST_UNDERSCORE", "TEST_VALUE")
                 .build();
 
         Map<String, String> header = SM2SM3Signer.getInstance().sign(httpRequest, credentials);

@@ -15,16 +15,16 @@ public class UpdateServiceSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private CommonResponseDTOData data;
 
-    public UpdateServiceSetResponse withData(IdObject data) {
+    public UpdateServiceSetResponse withData(CommonResponseDTOData data) {
         this.data = data;
         return this;
     }
 
-    public UpdateServiceSetResponse withData(Consumer<IdObject> dataSetter) {
+    public UpdateServiceSetResponse withData(Consumer<CommonResponseDTOData> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new CommonResponseDTOData();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class UpdateServiceSetResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public CommonResponseDTOData getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(CommonResponseDTOData data) {
         this.data = data;
     }
 

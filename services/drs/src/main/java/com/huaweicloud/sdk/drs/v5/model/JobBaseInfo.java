@@ -534,6 +534,11 @@ public class JobBaseInfo {
 
     private List<ResourceTag> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_open_fast_clean")
+
+    private Boolean isOpenFastClean;
+
     public JobBaseInfo withName(String name) {
         this.name = name;
         return this;
@@ -771,6 +776,23 @@ public class JobBaseInfo {
         this.tags = tags;
     }
 
+    public JobBaseInfo withIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
+        return this;
+    }
+
+    /**
+     * 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+     * @return isOpenFastClean
+     */
+    public Boolean getIsOpenFastClean() {
+        return isOpenFastClean;
+    }
+
+    public void setIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -786,7 +808,8 @@ public class JobBaseInfo {
             && Objects.equals(this.netType, that.netType) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.expiredDays, that.expiredDays) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.expiredDays, that.expiredDays) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.isOpenFastClean, that.isOpenFastClean);
     }
 
     @Override
@@ -803,7 +826,8 @@ public class JobBaseInfo {
             description,
             startTime,
             expiredDays,
-            tags);
+            tags,
+            isOpenFastClean);
     }
 
     @Override
@@ -823,6 +847,7 @@ public class JobBaseInfo {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    expiredDays: ").append(toIndentedString(expiredDays)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    isOpenFastClean: ").append(toIndentedString(isOpenFastClean)).append("\n");
         sb.append("}");
         return sb.toString();
     }

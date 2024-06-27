@@ -164,6 +164,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
@@ -198,6 +202,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.LogoffDesktopsReq;
+import com.huaweicloud.sdk.workspace.v2.model.Metric;
+import com.huaweicloud.sdk.workspace.v2.model.MetricsWithTime;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyWorkspaceAttributesReq;
 import com.huaweicloud.sdk.workspace.v2.model.OperateUserReq;
 import com.huaweicloud.sdk.workspace.v2.model.QueryDesktopByTagReq;
@@ -2609,6 +2615,103 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(ListMetricNotifyRuleRequest::getLimit, ListMetricNotifyRuleRequest::setLimit));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricsRequest, ListMetricsResponse> listMetrics = genForListMetrics();
+
+    private static HttpRequestDef<ListMetricsRequest, ListMetricsResponse> genForListMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListMetricsRequest, ListMetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMetricsRequest.class, ListMetricsResponse.class)
+                .withName("ListMetrics")
+                .withUri("/v2/{project_id}/statistics/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getStartTime, ListMetricsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getEndTime, ListMetricsRequest::setEndTime));
+        builder.<String>withRequestField("dim",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getDim, ListMetricsRequest::setDim));
+        builder.<List<String>>withRequestField("metric_names",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMetricsRequest::getMetricNames, ListMetricsRequest::setMetricNames));
+        builder.<ListMetricsRequest.PeriodEnum>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMetricsRequest.PeriodEnum.class),
+            f -> f.withMarshaller(ListMetricsRequest::getPeriod, ListMetricsRequest::setPeriod));
+
+        // response
+        builder.<List<Metric>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMetricsResponse::getBody, ListMetricsResponse::setBody)
+                .withInnerContainerType(Metric.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMetricsTrendRequest, ListMetricsTrendResponse> listMetricsTrend =
+        genForListMetricsTrend();
+
+    private static HttpRequestDef<ListMetricsTrendRequest, ListMetricsTrendResponse> genForListMetricsTrend() {
+        // basic
+        HttpRequestDef.Builder<ListMetricsTrendRequest, ListMetricsTrendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMetricsTrendRequest.class, ListMetricsTrendResponse.class)
+                .withName("ListMetricsTrend")
+                .withUri("/v2/{project_id}/statistics/metrics/trend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsTrendRequest::getStartTime, ListMetricsTrendRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsTrendRequest::getEndTime, ListMetricsTrendRequest::setEndTime));
+        builder.<String>withRequestField("dim",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsTrendRequest::getDim, ListMetricsTrendRequest::setDim));
+        builder.<List<String>>withRequestField("metric_names",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMetricsTrendRequest::getMetricNames, ListMetricsTrendRequest::setMetricNames));
+        builder.<ListMetricsTrendRequest.PeriodEnum>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMetricsTrendRequest.PeriodEnum.class),
+            f -> f.withMarshaller(ListMetricsTrendRequest::getPeriod, ListMetricsTrendRequest::setPeriod));
+
+        // response
+        builder.<List<MetricsWithTime>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMetricsTrendResponse::getBody, ListMetricsTrendResponse::setBody)
+                .withInnerContainerType(MetricsWithTime.class));
 
         return builder.build();
     }

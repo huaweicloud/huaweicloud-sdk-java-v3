@@ -16,19 +16,19 @@ public class SrCreateInstanceRspInstanceTagsInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<SrCreateInstanceRspInstanceTagsInfoTags> tags = null;
+    private List<CreateChInstanceInfoTagsInfoTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
     private List<SrCreateInstanceRspInstanceTagsInfoSysTags> sysTags = null;
 
-    public SrCreateInstanceRspInstanceTagsInfo withTags(List<SrCreateInstanceRspInstanceTagsInfoTags> tags) {
+    public SrCreateInstanceRspInstanceTagsInfo withTags(List<CreateChInstanceInfoTagsInfoTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public SrCreateInstanceRspInstanceTagsInfo addTagsItem(SrCreateInstanceRspInstanceTagsInfoTags tagsItem) {
+    public SrCreateInstanceRspInstanceTagsInfo addTagsItem(CreateChInstanceInfoTagsInfoTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -36,8 +36,7 @@ public class SrCreateInstanceRspInstanceTagsInfo {
         return this;
     }
 
-    public SrCreateInstanceRspInstanceTagsInfo withTags(
-        Consumer<List<SrCreateInstanceRspInstanceTagsInfoTags>> tagsSetter) {
+    public SrCreateInstanceRspInstanceTagsInfo withTags(Consumer<List<CreateChInstanceInfoTagsInfoTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -49,11 +48,11 @@ public class SrCreateInstanceRspInstanceTagsInfo {
      * 用户标签。默认为空。
      * @return tags
      */
-    public List<SrCreateInstanceRspInstanceTagsInfoTags> getTags() {
+    public List<CreateChInstanceInfoTagsInfoTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<SrCreateInstanceRspInstanceTagsInfoTags> tags) {
+    public void setTags(List<CreateChInstanceInfoTagsInfoTags> tags) {
         this.tags = tags;
     }
 

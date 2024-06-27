@@ -45,22 +45,22 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     private List<AlertTemplateVo> list = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "navigateFirstPage")
+    @JsonProperty(value = "navigate_first_page")
 
     private Integer navigateFirstPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "navigateLastPage")
+    @JsonProperty(value = "navigate_last_page")
 
     private Integer navigateLastPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "navigatePages")
+    @JsonProperty(value = "navigate_pages")
 
     private Integer navigatePages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "navigatepageNums")
+    @JsonProperty(value = "navigatepage_nums")
 
     private List<Integer> navigatepageNums = null;
 
@@ -85,7 +85,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     private Integer pages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "prePage")
+    @JsonProperty(value = "pre_page")
 
     private Integer prePage;
 
@@ -95,7 +95,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "startRow")
+    @JsonProperty(value = "start_row")
 
     private Long startRow;
 
@@ -110,7 +110,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get endRow
+     * 当前页面最后一个元素在数据库中的行号
      * @return endRow
      */
     public Long getEndRow() {
@@ -127,7 +127,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get hasNextPage
+     * 是否有下一页
      * @return hasNextPage
      */
     public Boolean getHasNextPage() {
@@ -144,7 +144,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get hasPreviousPage
+     * 是否有前一页
      * @return hasPreviousPage
      */
     public Boolean getHasPreviousPage() {
@@ -161,7 +161,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get isFirstPage
+     * 是否为第一页
      * @return isFirstPage
      */
     public Boolean getIsFirstPage() {
@@ -178,7 +178,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get isLastPage
+     * 是否为最后一页
      * @return isLastPage
      */
     public Boolean getIsLastPage() {
@@ -211,7 +211,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get list
+     * 返回结果
      * @return list
      */
     public List<AlertTemplateVo> getList() {
@@ -228,7 +228,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get navigateFirstPage
+     * 导航条上的第一页
      * @return navigateFirstPage
      */
     public Integer getNavigateFirstPage() {
@@ -245,7 +245,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get navigateLastPage
+     * 导航条上的最后一页
      * @return navigateLastPage
      */
     public Integer getNavigateLastPage() {
@@ -262,7 +262,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get navigatePages
+     * 导航页码数
      * @return navigatePages
      */
     public Integer getNavigatePages() {
@@ -295,7 +295,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get navigatepageNums
+     * 所有导航页号
      * @return navigatepageNums
      */
     public List<Integer> getNavigatepageNums() {
@@ -312,7 +312,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get nextPage
+     * 下一页
      * @return nextPage
      */
     public Integer getNextPage() {
@@ -329,7 +329,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get pageNum
+     * 当前页
      * @return pageNum
      */
     public Integer getPageNum() {
@@ -346,7 +346,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get pageSize
+     * 每页的数量
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -363,7 +363,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get pages
+     * 总页数
      * @return pages
      */
     public Integer getPages() {
@@ -380,7 +380,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get prePage
+     * 前一页
      * @return prePage
      */
     public Integer getPrePage() {
@@ -397,7 +397,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get size
+     * 当前页的数量
      * @return size
      */
     public Integer getSize() {
@@ -414,7 +414,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get startRow
+     * 当前页面第一个元素在数据库中的行号
      * @return startRow
      */
     public Long getStartRow() {
@@ -431,7 +431,7 @@ public class ListAlertTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * Get total
+     * 总条数
      * @return total
      */
     public Long getTotal() {

@@ -40,6 +40,11 @@ public class ErInstance {
 
     private String enableIpv6;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attachment_id")
+
+    private String attachmentId;
+
     public ErInstance withId(String id) {
         this.id = id;
         return this;
@@ -142,6 +147,23 @@ public class ErInstance {
         this.enableIpv6 = enableIpv6;
     }
 
+    public ErInstance withAttachmentId(String attachmentId) {
+        this.attachmentId = attachmentId;
+        return this;
+    }
+
+    /**
+     * 连接id
+     * @return attachmentId
+     */
+    public String getAttachmentId() {
+        return attachmentId;
+    }
+
+    public void setAttachmentId(String attachmentId) {
+        this.attachmentId = attachmentId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +176,13 @@ public class ErInstance {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.state, that.state)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enableIpv6, that.enableIpv6);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enableIpv6, that.enableIpv6)
+            && Objects.equals(this.attachmentId, that.attachmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, state, enterpriseProjectId, projectId, enableIpv6);
+        return Objects.hash(id, name, state, enterpriseProjectId, projectId, enableIpv6, attachmentId);
     }
 
     @Override
@@ -172,6 +195,7 @@ public class ErInstance {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    enableIpv6: ").append(toIndentedString(enableIpv6)).append("\n");
+        sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

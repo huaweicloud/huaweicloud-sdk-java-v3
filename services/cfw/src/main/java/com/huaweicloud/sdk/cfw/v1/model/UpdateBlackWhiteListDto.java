@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -40,86 +35,6 @@ public class UpdateBlackWhiteListDto {
 
     private String port;
 
-    /**
-     * 黑白名单类型4：黑名单，5：白名单
-     */
-    public static final class ListTypeEnum {
-
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final ListTypeEnum NUMBER_4 = new ListTypeEnum(4);
-
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final ListTypeEnum NUMBER_5 = new ListTypeEnum(5);
-
-        private static final Map<Integer, ListTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ListTypeEnum> createStaticFields() {
-            Map<Integer, ListTypeEnum> map = new HashMap<>();
-            map.put(4, NUMBER_4);
-            map.put(5, NUMBER_5);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ListTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ListTypeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ListTypeEnum(value));
-        }
-
-        public static ListTypeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ListTypeEnum) {
-                return this.value.equals(((ListTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "list_type")
-
-    private ListTypeEnum listType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
-
-    private String objectId;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
@@ -148,7 +63,7 @@ public class UpdateBlackWhiteListDto {
     }
 
     /**
-     * 地址类型0：ipv4,1:ipv6,2:domain
+     * 地址类型0：ipv4,1:ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -210,40 +125,6 @@ public class UpdateBlackWhiteListDto {
         this.port = port;
     }
 
-    public UpdateBlackWhiteListDto withListType(ListTypeEnum listType) {
-        this.listType = listType;
-        return this;
-    }
-
-    /**
-     * 黑白名单类型4：黑名单，5：白名单
-     * @return listType
-     */
-    public ListTypeEnum getListType() {
-        return listType;
-    }
-
-    public void setListType(ListTypeEnum listType) {
-        this.listType = listType;
-    }
-
-    public UpdateBlackWhiteListDto withObjectId(String objectId) {
-        this.objectId = objectId;
-        return this;
-    }
-
-    /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
-     * @return objectId
-     */
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
     public UpdateBlackWhiteListDto withDescription(String description) {
         this.description = description;
         return this;
@@ -272,13 +153,12 @@ public class UpdateBlackWhiteListDto {
         UpdateBlackWhiteListDto that = (UpdateBlackWhiteListDto) obj;
         return Objects.equals(this.direction, that.direction) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.address, that.address) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.port, that.port) && Objects.equals(this.listType, that.listType)
-            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.port, that.port) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direction, addressType, address, protocol, port, listType, objectId, description);
+        return Objects.hash(direction, addressType, address, protocol, port, description);
     }
 
     @Override
@@ -290,8 +170,6 @@ public class UpdateBlackWhiteListDto {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
-        sb.append("    listType: ").append(toIndentedString(listType)).append("\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

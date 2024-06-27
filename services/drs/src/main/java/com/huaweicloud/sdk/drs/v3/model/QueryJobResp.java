@@ -1084,6 +1084,11 @@ public class QueryJobResp {
 
     private List<FailedToBindEipChildInfo> children = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_open_fast_clean")
+
+    private Boolean isOpenFastClean;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -2178,7 +2183,7 @@ public class QueryJobResp {
     }
 
     /**
-     * DRS任务标签
+     * DRS任务标签。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -2211,7 +2216,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 指定公网Ip的信息
+     * 指定公网Ip的信息。
      * @return publicIpList
      */
     public List<PublicIpConfig> getPublicIpList() {
@@ -2228,7 +2233,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 是否成功绑定公网IP
+     * 是否成功绑定公网IP。
      * @return bindPublicIpState
      */
     public String getBindPublicIpState() {
@@ -2261,7 +2266,7 @@ public class QueryJobResp {
     }
 
     /**
-     * 多任务时，存在子任务绑定失败时，返回子任务的信息
+     * 多任务时，存在子任务绑定失败时，返回子任务的信息。
      * @return children
      */
     public List<FailedToBindEipChildInfo> getChildren() {
@@ -2270,6 +2275,23 @@ public class QueryJobResp {
 
     public void setChildren(List<FailedToBindEipChildInfo> children) {
         this.children = children;
+    }
+
+    public QueryJobResp withIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
+        return this;
+    }
+
+    /**
+     * 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+     * @return isOpenFastClean
+     */
+    public Boolean getIsOpenFastClean() {
+        return isOpenFastClean;
+    }
+
+    public void setIsOpenFastClean(Boolean isOpenFastClean) {
+        this.isOpenFastClean = isOpenFastClean;
     }
 
     @Override
@@ -2319,7 +2341,8 @@ public class QueryJobResp {
             && Objects.equals(this.dataTransformation, that.dataTransformation) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.publicIpList, that.publicIpList)
             && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
-            && Objects.equals(this.children, that.children);
+            && Objects.equals(this.children, that.children)
+            && Objects.equals(this.isOpenFastClean, that.isOpenFastClean);
     }
 
     @Override
@@ -2383,7 +2406,8 @@ public class QueryJobResp {
             tags,
             publicIpList,
             bindPublicIpState,
-            children);
+            children,
+            isOpenFastClean);
     }
 
     @Override
@@ -2450,6 +2474,7 @@ public class QueryJobResp {
         sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
         sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
+        sb.append("    isOpenFastClean: ").append(toIndentedString(isOpenFastClean)).append("\n");
         sb.append("}");
         return sb.toString();
     }

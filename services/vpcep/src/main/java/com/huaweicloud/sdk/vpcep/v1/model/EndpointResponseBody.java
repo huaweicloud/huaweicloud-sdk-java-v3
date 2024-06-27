@@ -207,7 +207,7 @@ public class EndpointResponseBody {
     }
 
     /**
-     * 帐号状态。  - frozen：冻结  - active：解冻
+     * 账号状态。  - frozen：冻结  - active：解冻
      * @return activeStatus
      */
     public List<String> getActiveStatus() {
@@ -275,7 +275,7 @@ public class EndpointResponseBody {
     }
 
     /**
-     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建连接gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
+     * 是否创建域名。  - true：创建域名  - false：不创建域名 说明 当创建gateway类型终端节点服务的终端节点时， “enable_dns”设置为true或者false，均不创建域名。
      * @return enableDns
      */
     public Boolean getEnableDns() {
@@ -559,7 +559,7 @@ public class EndpointResponseBody {
     }
 
     /**
-     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建连接Gateway类型终端节点服务的终端节点时，显示此参数。
+     * 路由表ID列表。 若未指定，返回默认VPC下路由表ID。 创建gateway类型终端节点服务的终端节点时，显示此参数。
      * @return routetables
      */
     public List<String> getRoutetables() {
@@ -609,7 +609,7 @@ public class EndpointResponseBody {
     }
 
     /**
-     * 只涉及开启双端固定的网关型终端节点，响应体展示此字段
+     * 终端节点策略信息
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {

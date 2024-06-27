@@ -190,6 +190,16 @@ public class FlavorExtraSpec {
 
     private String ecsInstanceArchitecture;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_interface:traffic_mirroring_supported")
+
+    private String networkInterfaceTrafficMirroringSupported;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security:enclave_supported")
+
+    private String securityEnclaveSupported;
+
     public FlavorExtraSpec withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -802,6 +812,41 @@ public class FlavorExtraSpec {
         this.ecsInstanceArchitecture = ecsInstanceArchitecture;
     }
 
+    public FlavorExtraSpec withNetworkInterfaceTrafficMirroringSupported(
+        String networkInterfaceTrafficMirroringSupported) {
+        this.networkInterfaceTrafficMirroringSupported = networkInterfaceTrafficMirroringSupported;
+        return this;
+    }
+
+    /**
+     * 该规格是否支持流量镜像。
+     * @return networkInterfaceTrafficMirroringSupported
+     */
+    public String getNetworkInterfaceTrafficMirroringSupported() {
+        return networkInterfaceTrafficMirroringSupported;
+    }
+
+    public void setNetworkInterfaceTrafficMirroringSupported(String networkInterfaceTrafficMirroringSupported) {
+        this.networkInterfaceTrafficMirroringSupported = networkInterfaceTrafficMirroringSupported;
+    }
+
+    public FlavorExtraSpec withSecurityEnclaveSupported(String securityEnclaveSupported) {
+        this.securityEnclaveSupported = securityEnclaveSupported;
+        return this;
+    }
+
+    /**
+     * 该规格是否支持QingTian Enclave。
+     * @return securityEnclaveSupported
+     */
+    public String getSecurityEnclaveSupported() {
+        return securityEnclaveSupported;
+    }
+
+    public void setSecurityEnclaveSupported(String securityEnclaveSupported) {
+        this.securityEnclaveSupported = securityEnclaveSupported;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -843,7 +888,10 @@ public class FlavorExtraSpec {
             && Objects.equals(this.infoCpuName, that.infoCpuName) && Objects.equals(this.quotaGpu, that.quotaGpu)
             && Objects.equals(this.quotaVifMaxNum, that.quotaVifMaxNum)
             && Objects.equals(this.quotaSubNetworkInterfaceMaxNum, that.quotaSubNetworkInterfaceMaxNum)
-            && Objects.equals(this.ecsInstanceArchitecture, that.ecsInstanceArchitecture);
+            && Objects.equals(this.ecsInstanceArchitecture, that.ecsInstanceArchitecture)
+            && Objects.equals(this.networkInterfaceTrafficMirroringSupported,
+                that.networkInterfaceTrafficMirroringSupported)
+            && Objects.equals(this.securityEnclaveSupported, that.securityEnclaveSupported);
     }
 
     @Override
@@ -883,7 +931,9 @@ public class FlavorExtraSpec {
             quotaGpu,
             quotaVifMaxNum,
             quotaSubNetworkInterfaceMaxNum,
-            ecsInstanceArchitecture);
+            ecsInstanceArchitecture,
+            networkInterfaceTrafficMirroringSupported,
+            securityEnclaveSupported);
     }
 
     @Override
@@ -930,6 +980,10 @@ public class FlavorExtraSpec {
             .append(toIndentedString(quotaSubNetworkInterfaceMaxNum))
             .append("\n");
         sb.append("    ecsInstanceArchitecture: ").append(toIndentedString(ecsInstanceArchitecture)).append("\n");
+        sb.append("    networkInterfaceTrafficMirroringSupported: ")
+            .append(toIndentedString(networkInterfaceTrafficMirroringSupported))
+            .append("\n");
+        sb.append("    securityEnclaveSupported: ").append(toIndentedString(securityEnclaveSupported)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -15,16 +15,16 @@ public class CreateEastWestFirewallResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private CreateEWFirewallResp data;
 
-    public CreateEastWestFirewallResponse withData(IdObject data) {
+    public CreateEastWestFirewallResponse withData(CreateEWFirewallResp data) {
         this.data = data;
         return this;
     }
 
-    public CreateEastWestFirewallResponse withData(Consumer<IdObject> dataSetter) {
+    public CreateEastWestFirewallResponse withData(Consumer<CreateEWFirewallResp> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new CreateEWFirewallResp();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class CreateEastWestFirewallResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public CreateEWFirewallResp getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(CreateEWFirewallResp data) {
         this.data = data;
     }
 

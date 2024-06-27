@@ -56,7 +56,7 @@ public class AddBlackWhiteListDto {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
      * @return objectId
      */
     public String getObjectId() {
@@ -107,7 +107,7 @@ public class AddBlackWhiteListDto {
     }
 
     /**
-     * Ip地址类型 0：ipv4,1:ipv6,2:domain
+     * Ip地址类型 0：ipv4,1:ipv6
      * @return addressType
      */
     public Integer getAddressType() {

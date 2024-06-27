@@ -7,7 +7,6 @@ import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * kv元素。
@@ -15,42 +14,10 @@ import java.util.function.Consumer;
 public class ReturnedKvItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kv_blob_data")
-    @BsonProperty(value = "kv_blob_data")
-
-    private KvBlobData kvBlobData;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kv_doc")
     @BsonProperty(value = "kv_doc")
 
     private Document kvDoc;
-
-    public ReturnedKvItem withKvBlobData(KvBlobData kvBlobData) {
-        this.kvBlobData = kvBlobData;
-        return this;
-    }
-
-    public ReturnedKvItem withKvBlobData(Consumer<KvBlobData> kvBlobDataSetter) {
-        if (this.kvBlobData == null) {
-            this.kvBlobData = new KvBlobData();
-            kvBlobDataSetter.accept(this.kvBlobData);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get kvBlobData
-     * @return kvBlobData
-     */
-    public KvBlobData getKvBlobData() {
-        return kvBlobData;
-    }
-
-    public void setKvBlobData(KvBlobData kvBlobData) {
-        this.kvBlobData = kvBlobData;
-    }
 
     public ReturnedKvItem withKvDoc(Document kvDoc) {
         this.kvDoc = kvDoc;
@@ -78,19 +45,18 @@ public class ReturnedKvItem {
             return false;
         }
         ReturnedKvItem that = (ReturnedKvItem) obj;
-        return Objects.equals(this.kvBlobData, that.kvBlobData) && Objects.equals(this.kvDoc, that.kvDoc);
+        return Objects.equals(this.kvDoc, that.kvDoc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kvBlobData, kvDoc);
+        return Objects.hash(kvDoc);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReturnedKvItem {\n");
-        sb.append("    kvBlobData: ").append(toIndentedString(kvBlobData)).append("\n");
         sb.append("    kvDoc: ").append(toIndentedString(kvDoc)).append("\n");
         sb.append("}");
         return sb.toString();

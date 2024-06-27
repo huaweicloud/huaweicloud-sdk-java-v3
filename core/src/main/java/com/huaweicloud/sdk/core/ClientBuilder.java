@@ -152,8 +152,18 @@ public class ClientBuilder<T> {
         if (endpoints.isEmpty()) {
             throw new SdkException("Could not find any endpoints, at least one endpoint is required");
         }
-        endpoints.replaceAll(endpoint -> endpoint.startsWith(Constants.HTTP_SCHEME)
-                ? endpoint : Constants.HTTPS_SCHEME + "://" + endpoint);
+        try {
+            endpoints.replaceAll(endpoint -> endpoint.startsWith(Constants.HTTP_SCHEME)
+                    ? endpoint : Constants.HTTPS_SCHEME + "://" + endpoint);
+        } catch (UnsupportedOperationException exception) {
+            // handle unsupported operation list
+            List<String> replacedEndpoints = new ArrayList<>();
+            for (String endpoint : endpoints) {
+                replacedEndpoints.add(endpoint.startsWith(Constants.HTTP_SCHEME) ?
+                        endpoint : Constants.HTTPS_SCHEME + "://" + endpoint);
+            }
+            endpoints = replacedEndpoints;
+        }
 
         hcClient.withEndpoints(endpoints).withCredential(credential);
         if (Objects.nonNull(exceptionHandler)) {

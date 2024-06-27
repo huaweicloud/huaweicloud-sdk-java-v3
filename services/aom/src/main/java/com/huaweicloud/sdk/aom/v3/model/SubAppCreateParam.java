@@ -31,7 +31,7 @@ public class SubAppCreateParam {
     private String modelId;
 
     /**
-     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION，不区分大小写
+     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION
      */
     public static final class ModelTypeEnum {
 
@@ -116,7 +116,7 @@ public class SubAppCreateParam {
     }
 
     /**
-     * 子应用名称：字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
+     * 子应用唯一标识
      * @return name
      */
     public String getName() {
@@ -133,7 +133,7 @@ public class SubAppCreateParam {
     }
 
     /**
-     * 子应用节点显示名：字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
+     * 子应用节点显示名称
      * @return displayName
      */
     public String getDisplayName() {
@@ -150,7 +150,7 @@ public class SubAppCreateParam {
     }
 
     /**
-     * 应用Id、子应用Id,id长度不能超过36位，由大小写字母、数字组成
+     * 应用Id、子应用Id
      * @return modelId
      */
     public String getModelId() {
@@ -167,7 +167,7 @@ public class SubAppCreateParam {
     }
 
     /**
-     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION，不区分大小写
+     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION
      * @return modelType
      */
     public ModelTypeEnum getModelType() {
@@ -184,7 +184,7 @@ public class SubAppCreateParam {
     }
 
     /**
-     * 描述：最大255字符
+     * 子应用描述
      * @return description
      */
     public String getDescription() {
