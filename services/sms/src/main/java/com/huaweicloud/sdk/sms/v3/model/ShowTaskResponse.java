@@ -281,6 +281,11 @@ public class ShowTaskResponse extends SdkResponse {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exist_server")
+
+    private Boolean existServer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migration_ip")
 
     private String migrationIp;
@@ -550,6 +555,23 @@ public class ShowTaskResponse extends SdkResponse {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ShowTaskResponse withExistServer(Boolean existServer) {
+        this.existServer = existServer;
+        return this;
+    }
+
+    /**
+     * 目的端服务器是否存在。true代表已有目的端服务器，false代表需要新建目的端服务器
+     * @return existServer
+     */
+    public Boolean getExistServer() {
+        return existServer;
+    }
+
+    public void setExistServer(Boolean existServer) {
+        this.existServer = existServer;
     }
 
     public ShowTaskResponse withMigrationIp(String migrationIp) {
@@ -1026,9 +1048,9 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.startTargetServer, that.startTargetServer)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.migrationIp, that.migrationIp) && Objects.equals(this.regionName, that.regionName)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.vmTemplateId, that.vmTemplateId)
+            && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.migrationIp, that.migrationIp)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.vmTemplateId, that.vmTemplateId)
             && Objects.equals(this.sourceServer, that.sourceServer)
             && Objects.equals(this.targetServer, that.targetServer) && Objects.equals(this.state, that.state)
             && Objects.equals(this.estimateCompleteTime, that.estimateCompleteTime)
@@ -1054,6 +1076,7 @@ public class ShowTaskResponse extends SdkResponse {
             regionId,
             startTargetServer,
             enterpriseProjectId,
+            existServer,
             migrationIp,
             regionName,
             projectName,
@@ -1092,6 +1115,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");

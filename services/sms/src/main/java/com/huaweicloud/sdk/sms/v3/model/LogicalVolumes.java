@@ -73,7 +73,7 @@ public class LogicalVolumes {
     /**
      * 块数量
      * minimum: 0
-     * maximum: 4294967296
+     * maximum: 2147483647
      * @return blockCount
      */
     public Integer getBlockCount() {
@@ -128,7 +128,7 @@ public class LogicalVolumes {
     /**
      * inode数量
      * minimum: 0
-     * maximum: 4294967296
+     * maximum: 2147483647
      * @return inodeSize
      */
     public Integer getInodeSize() {

@@ -198,7 +198,7 @@ public class PhysicalVolume {
     /**
      * inode数量
      * minimum: 0
-     * maximum: 4294967296
+     * maximum: 2147483647
      * @return inodeSize
      */
     public Integer getInodeSize() {

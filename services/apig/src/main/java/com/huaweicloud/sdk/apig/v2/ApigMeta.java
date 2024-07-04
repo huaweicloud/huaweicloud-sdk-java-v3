@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsRespon
 import com.huaweicloud.sdk.apig.v2.model.AclApiBindingCreate;
 import com.huaweicloud.sdk.apig.v2.model.AclBatchDelete;
 import com.huaweicloud.sdk.apig.v2.model.AclBindingBatchDelete;
+import com.huaweicloud.sdk.apig.v2.model.AddCustomIngressPortRequest;
+import com.huaweicloud.sdk.apig.v2.model.AddCustomIngressPortResponse;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsRequest;
@@ -164,6 +166,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteCustomIngressPortRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteCustomIngressPortResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Request;
@@ -221,6 +225,7 @@ import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2RequestBody;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ImportMicroserviceRequest;
 import com.huaweicloud.sdk.apig.v2.model.ImportMicroserviceResponse;
+import com.huaweicloud.sdk.apig.v2.model.IngressPortCreate;
 import com.huaweicloud.sdk.apig.v2.model.InstanceChangeOrderReq;
 import com.huaweicloud.sdk.apig.v2.model.InstanceCreateReq;
 import com.huaweicloud.sdk.apig.v2.model.InstanceModReq;
@@ -287,6 +292,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortDomainsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortDomainsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsRequest;
@@ -514,6 +523,35 @@ public class ApigMeta {
             String.class,
             f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsResponse::getXRequestId,
                 AcceptOrRejectEndpointConnectionsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddCustomIngressPortRequest, AddCustomIngressPortResponse> addCustomIngressPort =
+        genForAddCustomIngressPort();
+
+    private static HttpRequestDef<AddCustomIngressPortRequest, AddCustomIngressPortResponse> genForAddCustomIngressPort() {
+        // basic
+        HttpRequestDef.Builder<AddCustomIngressPortRequest, AddCustomIngressPortResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddCustomIngressPortRequest.class, AddCustomIngressPortResponse.class)
+            .withName("AddCustomIngressPort")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/custom-ingress-ports")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCustomIngressPortRequest::getInstanceId,
+                AddCustomIngressPortRequest::setInstanceId));
+        builder.<IngressPortCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IngressPortCreate.class),
+            f -> f.withMarshaller(AddCustomIngressPortRequest::getBody, AddCustomIngressPortRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -1547,6 +1585,36 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCustomAuthorizerV2Request::getAuthorizerId,
                 DeleteCustomAuthorizerV2Request::setAuthorizerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomIngressPortRequest, DeleteCustomIngressPortResponse> deleteCustomIngressPort =
+        genForDeleteCustomIngressPort();
+
+    private static HttpRequestDef<DeleteCustomIngressPortRequest, DeleteCustomIngressPortResponse> genForDeleteCustomIngressPort() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomIngressPortRequest, DeleteCustomIngressPortResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCustomIngressPortRequest.class, DeleteCustomIngressPortResponse.class)
+            .withName("DeleteCustomIngressPort")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/custom-ingress-ports/{ingress_port_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomIngressPortRequest::getInstanceId,
+                DeleteCustomIngressPortRequest::setInstanceId));
+        builder.<String>withRequestField("ingress_port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomIngressPortRequest::getIngressPortId,
+                DeleteCustomIngressPortRequest::setIngressPortId));
 
         // response
 
@@ -2851,6 +2919,104 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, ListCustomAuthorizersV2Request::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomIngressPortDomainsRequest, ListCustomIngressPortDomainsResponse> listCustomIngressPortDomains =
+        genForListCustomIngressPortDomains();
+
+    private static HttpRequestDef<ListCustomIngressPortDomainsRequest, ListCustomIngressPortDomainsResponse> genForListCustomIngressPortDomains() {
+        // basic
+        HttpRequestDef.Builder<ListCustomIngressPortDomainsRequest, ListCustomIngressPortDomainsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCustomIngressPortDomainsRequest.class,
+                    ListCustomIngressPortDomainsResponse.class)
+                .withName("ListCustomIngressPortDomains")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/custom-ingress-ports/{ingress_port_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomIngressPortDomainsRequest::getInstanceId,
+                ListCustomIngressPortDomainsRequest::setInstanceId));
+        builder.<String>withRequestField("ingress_port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomIngressPortDomainsRequest::getIngressPortId,
+                ListCustomIngressPortDomainsRequest::setIngressPortId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCustomIngressPortDomainsRequest::getOffset,
+                ListCustomIngressPortDomainsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomIngressPortDomainsRequest::getLimit,
+                ListCustomIngressPortDomainsRequest::setLimit));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomIngressPortDomainsRequest::getDomainName,
+                ListCustomIngressPortDomainsRequest::setDomainName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomIngressPortsRequest, ListCustomIngressPortsResponse> listCustomIngressPorts =
+        genForListCustomIngressPorts();
+
+    private static HttpRequestDef<ListCustomIngressPortsRequest, ListCustomIngressPortsResponse> genForListCustomIngressPorts() {
+        // basic
+        HttpRequestDef.Builder<ListCustomIngressPortsRequest, ListCustomIngressPortsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCustomIngressPortsRequest.class, ListCustomIngressPortsResponse.class)
+            .withName("ListCustomIngressPorts")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/custom-ingress-ports")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomIngressPortsRequest::getInstanceId,
+                ListCustomIngressPortsRequest::setInstanceId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCustomIngressPortsRequest::getOffset, ListCustomIngressPortsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomIngressPortsRequest::getLimit, ListCustomIngressPortsRequest::setLimit));
+        builder.<ListCustomIngressPortsRequest.ProtocolEnum>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCustomIngressPortsRequest.ProtocolEnum.class),
+            f -> f.withMarshaller(ListCustomIngressPortsRequest::getProtocol,
+                ListCustomIngressPortsRequest::setProtocol));
+        builder.<Integer>withRequestField("ingress_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomIngressPortsRequest::getIngressPort,
+                ListCustomIngressPortsRequest::setIngressPort));
 
         // response
 

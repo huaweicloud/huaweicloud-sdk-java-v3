@@ -93,7 +93,12 @@ import com.huaweicloud.sdk.kms.v2.model.ListKmsTagsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsResponse;
 import com.huaweicloud.sdk.kms.v2.model.OperateKeyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.RevokeGrantRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ScheduleKeyDeletionRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
@@ -124,6 +129,9 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
+import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequest;
+import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionResponse;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureRequest;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureResponse;
 import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequest;
@@ -957,6 +965,51 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSupportRegionsRequest, ListSupportRegionsResponse> listSupportRegions =
+        genForListSupportRegions();
+
+    private static HttpRequestDef<ListSupportRegionsRequest, ListSupportRegionsResponse> genForListSupportRegions() {
+        // basic
+        HttpRequestDef.Builder<ListSupportRegionsRequest, ListSupportRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSupportRegionsRequest.class, ListSupportRegionsResponse.class)
+                .withName("ListSupportRegions")
+                .withUri("/v2/{project_id}/kms/regions")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ReplicateKeyRequest, ReplicateKeyResponse> replicateKey = genForReplicateKey();
+
+    private static HttpRequestDef<ReplicateKeyRequest, ReplicateKeyResponse> genForReplicateKey() {
+        // basic
+        HttpRequestDef.Builder<ReplicateKeyRequest, ReplicateKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ReplicateKeyRequest.class, ReplicateKeyResponse.class)
+                .withName("ReplicateKey")
+                .withUri("/v2/{project_id}/kms/keys/{key_id}/replicate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ReplicateKeyRequest::getKeyId, ReplicateKeyRequest::setKeyId));
+        builder.<ReplicateKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReplicateKeyRequestBody.class),
+            f -> f.withMarshaller(ReplicateKeyRequest::getBody, ReplicateKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatus =
         genForShowKeyRotationStatus();
 
@@ -1172,6 +1225,34 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(UpdateKeyRotationIntervalRequestBody.class),
             f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody,
                 UpdateKeyRotationIntervalRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResponse> updatePrimaryRegion =
+        genForUpdatePrimaryRegion();
+
+    private static HttpRequestDef<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResponse> genForUpdatePrimaryRegion() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePrimaryRegionRequest.class, UpdatePrimaryRegionResponse.class)
+                .withName("UpdatePrimaryRegion")
+                .withUri("/v2/{project_id}/kms/keys/{key_id}/update-primary-region")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrimaryRegionRequest::getKeyId, UpdatePrimaryRegionRequest::setKeyId));
+        builder.<UpdatePrimaryRegionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePrimaryRegionRequestBody.class),
+            f -> f.withMarshaller(UpdatePrimaryRegionRequest::getBody, UpdatePrimaryRegionRequest::setBody));
 
         // response
 

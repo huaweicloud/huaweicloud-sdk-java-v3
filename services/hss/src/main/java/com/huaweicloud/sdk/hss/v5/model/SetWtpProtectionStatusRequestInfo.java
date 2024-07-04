@@ -39,7 +39,7 @@ public class SetWtpProtectionStatusRequestInfo {
     }
 
     /**
-     * 开启关闭状态
+     * 开启关闭状态，true表示enable， false表示disable
      * @return status
      */
     public Boolean getStatus() {

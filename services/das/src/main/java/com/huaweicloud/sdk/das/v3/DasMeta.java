@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsRequest;
@@ -620,6 +622,75 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ExportSlowSqlTemplatesDetailsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportSlowSqlTemplatesDetailsRequest::getXLanguage,
                 ExportSlowSqlTemplatesDetailsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSlowSqlTrendDetailsRequest, ExportSlowSqlTrendDetailsResponse> exportSlowSqlTrendDetails =
+        genForExportSlowSqlTrendDetails();
+
+    private static HttpRequestDef<ExportSlowSqlTrendDetailsRequest, ExportSlowSqlTrendDetailsResponse> genForExportSlowSqlTrendDetails() {
+        // basic
+        HttpRequestDef.Builder<ExportSlowSqlTrendDetailsRequest, ExportSlowSqlTrendDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ExportSlowSqlTrendDetailsRequest.class,
+                    ExportSlowSqlTrendDetailsResponse.class)
+                .withName("ExportSlowSqlTrendDetails")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slow-sql-trend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getInstanceId,
+                ExportSlowSqlTrendDetailsRequest::setInstanceId));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getStartAt,
+                ExportSlowSqlTrendDetailsRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getEndAt,
+                ExportSlowSqlTrendDetailsRequest::setEndAt));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getDatastoreType,
+                ExportSlowSqlTrendDetailsRequest::setDatastoreType));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getNodeId,
+                ExportSlowSqlTrendDetailsRequest::setNodeId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getOffset,
+                ExportSlowSqlTrendDetailsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getLimit,
+                ExportSlowSqlTrendDetailsRequest::setLimit));
+        builder.<ExportSlowSqlTrendDetailsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportSlowSqlTrendDetailsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportSlowSqlTrendDetailsRequest::getXLanguage,
+                ExportSlowSqlTrendDetailsRequest::setXLanguage));
 
         // response
 

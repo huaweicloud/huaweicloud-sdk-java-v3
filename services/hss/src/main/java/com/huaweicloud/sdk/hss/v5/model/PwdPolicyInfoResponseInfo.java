@@ -71,7 +71,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 主机id(鼠标在“服务器名称”放置后上浮显示)
+     * 主机id
      * @return hostId
      */
     public String getHostId() {

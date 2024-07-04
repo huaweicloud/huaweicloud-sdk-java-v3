@@ -2,6 +2,8 @@ package com.huaweicloud.sdk.apig.v2;
 
 import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsRequest;
 import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsResponse;
+import com.huaweicloud.sdk.apig.v2.model.AddCustomIngressPortRequest;
+import com.huaweicloud.sdk.apig.v2.model.AddCustomIngressPortResponse;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsRequest;
@@ -136,6 +138,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteCustomIngressPortRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteCustomIngressPortResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Request;
@@ -246,6 +250,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortDomainsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortDomainsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListCustomIngressPortsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsRequest;
@@ -450,6 +458,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 新增实例的自定义入方向端口
+     *
+     * 新增实例的自定义入方向端口，在同个实例中，一个端口仅能支持一种协议。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCustomIngressPortRequest 请求对象
+     * @return CompletableFuture<AddCustomIngressPortResponse>
+     */
+    public CompletableFuture<AddCustomIngressPortResponse> addCustomIngressPortAsync(
+        AddCustomIngressPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.addCustomIngressPort);
+    }
+
+    /**
+     * 新增实例的自定义入方向端口
+     *
+     * 新增实例的自定义入方向端口，在同个实例中，一个端口仅能支持一种协议。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCustomIngressPortRequest 请求对象
+     * @return AsyncInvoker<AddCustomIngressPortRequest, AddCustomIngressPortResponse>
+     */
+    public AsyncInvoker<AddCustomIngressPortRequest, AddCustomIngressPortResponse> addCustomIngressPortAsyncInvoker(
+        AddCustomIngressPortRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.addCustomIngressPort, hcClient);
+    }
+
+    /**
      * 实例更新或绑定EIP
      *
      * 实例更新或绑定EIP
@@ -599,6 +637,7 @@ public class ApigAsyncClient {
      * 绑定域名证书
      *
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
+     * 使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 本章节主要介绍为特定域名绑定证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -615,6 +654,7 @@ public class ApigAsyncClient {
      * 绑定域名证书
      *
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
+     * 使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 本章节主要介绍为特定域名绑定证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1549,6 +1589,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 删除实例指定的自定义入方向端口
+     *
+     * 删除实例指定的自定义入方向端口，不包含默认端口80和443。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomIngressPortRequest 请求对象
+     * @return CompletableFuture<DeleteCustomIngressPortResponse>
+     */
+    public CompletableFuture<DeleteCustomIngressPortResponse> deleteCustomIngressPortAsync(
+        DeleteCustomIngressPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteCustomIngressPort);
+    }
+
+    /**
+     * 删除实例指定的自定义入方向端口
+     *
+     * 删除实例指定的自定义入方向端口，不包含默认端口80和443。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCustomIngressPortRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomIngressPortRequest, DeleteCustomIngressPortResponse>
+     */
+    public AsyncInvoker<DeleteCustomIngressPortRequest, DeleteCustomIngressPortResponse> deleteCustomIngressPortAsyncInvoker(
+        DeleteCustomIngressPortRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.deleteCustomIngressPort, hcClient);
+    }
+
+    /**
      * 批量删除实例终端节点连接白名单
      *
      * 批量删除实例终端节点连接白名单。
@@ -1950,7 +2020,7 @@ public class ApigAsyncClient {
     /**
      * 删除域名证书
      *
-     * 如果域名证书不再需要或者已过期，则可以删除证书内容。
+     * 如果域名证书不再需要或者已过期，则可以删除证书内容。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1965,7 +2035,7 @@ public class ApigAsyncClient {
     /**
      * 删除域名证书
      *
-     * 如果域名证书不再需要或者已过期，则可以删除证书内容。
+     * 如果域名证书不再需要或者已过期，则可以删除证书内容。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2548,6 +2618,66 @@ public class ApigAsyncClient {
     public AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> listCustomAuthorizersV2AsyncInvoker(
         ListCustomAuthorizersV2Request request) {
         return new AsyncInvoker<>(request, ApigMeta.listCustomAuthorizersV2, hcClient);
+    }
+
+    /**
+     * 查询实例指定的自定义入方向端口绑定的域名信息
+     *
+     * 查询实例指定的自定义入方向端口绑定的域名信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomIngressPortDomainsRequest 请求对象
+     * @return CompletableFuture<ListCustomIngressPortDomainsResponse>
+     */
+    public CompletableFuture<ListCustomIngressPortDomainsResponse> listCustomIngressPortDomainsAsync(
+        ListCustomIngressPortDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listCustomIngressPortDomains);
+    }
+
+    /**
+     * 查询实例指定的自定义入方向端口绑定的域名信息
+     *
+     * 查询实例指定的自定义入方向端口绑定的域名信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomIngressPortDomainsRequest 请求对象
+     * @return AsyncInvoker<ListCustomIngressPortDomainsRequest, ListCustomIngressPortDomainsResponse>
+     */
+    public AsyncInvoker<ListCustomIngressPortDomainsRequest, ListCustomIngressPortDomainsResponse> listCustomIngressPortDomainsAsyncInvoker(
+        ListCustomIngressPortDomainsRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listCustomIngressPortDomains, hcClient);
+    }
+
+    /**
+     * 查询实例的自定义入方向端口列表
+     *
+     * 查询实例的自定义入方向端口列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomIngressPortsRequest 请求对象
+     * @return CompletableFuture<ListCustomIngressPortsResponse>
+     */
+    public CompletableFuture<ListCustomIngressPortsResponse> listCustomIngressPortsAsync(
+        ListCustomIngressPortsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listCustomIngressPorts);
+    }
+
+    /**
+     * 查询实例的自定义入方向端口列表
+     *
+     * 查询实例的自定义入方向端口列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomIngressPortsRequest 请求对象
+     * @return AsyncInvoker<ListCustomIngressPortsRequest, ListCustomIngressPortsResponse>
+     */
+    public AsyncInvoker<ListCustomIngressPortsRequest, ListCustomIngressPortsResponse> listCustomIngressPortsAsyncInvoker(
+        ListCustomIngressPortsRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listCustomIngressPorts, hcClient);
     }
 
     /**
@@ -3970,7 +4100,7 @@ public class ApigAsyncClient {
     /**
      * 修改域名
      *
-     * 修改绑定的域名所对应的配置信息。
+     * 修改绑定的域名所对应的配置信息。使用实例自定义入方向端口的特性时，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3984,7 +4114,7 @@ public class ApigAsyncClient {
     /**
      * 修改域名
      *
-     * 修改绑定的域名所对应的配置信息。
+     * 修改绑定的域名所对应的配置信息。使用实例自定义入方向端口的特性时，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5748,7 +5878,7 @@ public class ApigAsyncClient {
     /**
      * 域名绑定SSL证书
      *
-     * 域名绑定SSL证书。目前暂时仅支持单个绑定，请求体当中的certificate_ids里面有且只能有一个证书ID。
+     * 域名绑定SSL证书。目前暂时仅支持单个绑定，请求体当中的certificate_ids里面有且只能有一个证书ID。使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5763,7 +5893,7 @@ public class ApigAsyncClient {
     /**
      * 域名绑定SSL证书
      *
-     * 域名绑定SSL证书。目前暂时仅支持单个绑定，请求体当中的certificate_ids里面有且只能有一个证书ID。
+     * 域名绑定SSL证书。目前暂时仅支持单个绑定，请求体当中的certificate_ids里面有且只能有一个证书ID。使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5778,7 +5908,7 @@ public class ApigAsyncClient {
     /**
      * SSL证书绑定域名
      *
-     * SSL证书绑定域名。
+     * SSL证书绑定域名。使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5793,7 +5923,7 @@ public class ApigAsyncClient {
     /**
      * SSL证书绑定域名
      *
-     * SSL证书绑定域名。
+     * SSL证书绑定域名。使用实例自定义入方向端口的特性时，相同的域名会同时绑定证书，注意开启/关闭客户端校验会对相同域名的不同端口同时生效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5808,7 +5938,7 @@ public class ApigAsyncClient {
     /**
      * 域名解绑SSL证书
      *
-     * 域名解绑SSL证书。目前暂时仅支持单个解绑，请求体当中的certificate_ids里面有且只能有一个证书ID。
+     * 域名解绑SSL证书。目前暂时仅支持单个解绑，请求体当中的certificate_ids里面有且只能有一个证书ID。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5823,7 +5953,7 @@ public class ApigAsyncClient {
     /**
      * 域名解绑SSL证书
      *
-     * 域名解绑SSL证书。目前暂时仅支持单个解绑，请求体当中的certificate_ids里面有且只能有一个证书ID。
+     * 域名解绑SSL证书。目前暂时仅支持单个解绑，请求体当中的certificate_ids里面有且只能有一个证书ID。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5838,7 +5968,7 @@ public class ApigAsyncClient {
     /**
      * SSL证书解绑域名
      *
-     * SSL证书解绑域名。
+     * SSL证书解绑域名。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5853,7 +5983,7 @@ public class ApigAsyncClient {
     /**
      * SSL证书解绑域名
      *
-     * SSL证书解绑域名。
+     * SSL证书解绑域名。在使用自定义入方向端口的特性时，相同的域名会同时解绑证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

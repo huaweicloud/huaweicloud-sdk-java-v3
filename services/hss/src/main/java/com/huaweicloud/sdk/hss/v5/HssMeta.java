@@ -66,6 +66,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListBlockedIpRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListBlockedIpResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListContainersRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListContainersResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostProtectHistoryInfoRequest;
@@ -76,6 +78,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListHostStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostVulsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListImageLocalRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListImageLocalResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigsRequest;
@@ -308,7 +312,7 @@ public class HssMeta {
                 BatchScanSwrImageRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchScanSwrImageRequest::getRegion, BatchScanSwrImageRequest::setRegion));
         builder.<BatchScanPrivateImageRequestInfo>withRequestField("body",
@@ -1285,6 +1289,61 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListContainersRequest, ListContainersResponse> listContainers =
+        genForListContainers();
+
+    private static HttpRequestDef<ListContainersRequest, ListContainersResponse> genForListContainers() {
+        // basic
+        HttpRequestDef.Builder<ListContainersRequest, ListContainersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListContainersRequest.class, ListContainersResponse.class)
+                .withName("ListContainers")
+                .withUri("/v5/{project_id}/container/kubernetes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainersRequest::getEnterpriseProjectId,
+                ListContainersRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("container_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainersRequest::getContainerName, ListContainersRequest::setContainerName));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainersRequest::getPodName, ListContainersRequest::setPodName));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListContainersRequest::getImageName, ListContainersRequest::setImageName));
+        builder.<Boolean>withRequestField("cluster_container",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListContainersRequest::getClusterContainer,
+                ListContainersRequest::setClusterContainer));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListContainersRequest::getLimit, ListContainersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListContainersRequest::getOffset, ListContainersRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroups =
         genForListHostGroups();
 
@@ -1721,6 +1780,134 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListImageLocalRequest, ListImageLocalResponse> listImageLocal =
+        genForListImageLocal();
+
+    private static HttpRequestDef<ListImageLocalRequest, ListImageLocalResponse> genForListImageLocal() {
+        // basic
+        HttpRequestDef.Builder<ListImageLocalRequest, ListImageLocalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageLocalRequest.class, ListImageLocalResponse.class)
+                .withName("ListImageLocal")
+                .withUri("/v5/{project_id}/image/local-repositories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getEnterpriseProjectId,
+                ListImageLocalRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getImageName, ListImageLocalRequest::setImageName));
+        builder.<String>withRequestField("image_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getImageVersion, ListImageLocalRequest::setImageVersion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getOffset, ListImageLocalRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getLimit, ListImageLocalRequest::setLimit));
+        builder.<String>withRequestField("scan_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getScanStatus, ListImageLocalRequest::setScanStatus));
+        builder.<String>withRequestField("local_image_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getLocalImageType, ListImageLocalRequest::setLocalImageType));
+        builder.<Long>withRequestField("image_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getImageSize, ListImageLocalRequest::setImageSize));
+        builder.<Long>withRequestField("start_latest_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getStartLatestUpdateTime,
+                ListImageLocalRequest::setStartLatestUpdateTime));
+        builder.<Long>withRequestField("end_latest_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getEndLatestUpdateTime,
+                ListImageLocalRequest::setEndLatestUpdateTime));
+        builder.<Long>withRequestField("start_latest_scan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getStartLatestScanTime,
+                ListImageLocalRequest::setStartLatestScanTime));
+        builder.<Long>withRequestField("end_latest_scan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getEndLatestScanTime,
+                ListImageLocalRequest::setEndLatestScanTime));
+        builder.<Boolean>withRequestField("has_vul",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getHasVul, ListImageLocalRequest::setHasVul));
+        builder.<String>withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getHostName, ListImageLocalRequest::setHostName));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getHostId, ListImageLocalRequest::setHostId));
+        builder.<String>withRequestField("host_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getHostIp, ListImageLocalRequest::setHostIp));
+        builder.<String>withRequestField("container_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getContainerId, ListImageLocalRequest::setContainerId));
+        builder.<String>withRequestField("container_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getContainerName, ListImageLocalRequest::setContainerName));
+        builder.<String>withRequestField("pod_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getPodId, ListImageLocalRequest::setPodId));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getPodName, ListImageLocalRequest::setPodName));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getAppName, ListImageLocalRequest::setAppName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListImageRiskConfigRulesRequest, ListImageRiskConfigRulesResponse> listImageRiskConfigRules =
         genForListImageRiskConfigRules();
 
@@ -1814,7 +2001,7 @@ public class HssMeta {
                 ListImageRiskConfigRulesRequest::setInstanceId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageRiskConfigRulesRequest::getRegion,
                 ListImageRiskConfigRulesRequest::setRegion));
@@ -1900,7 +2087,7 @@ public class HssMeta {
                 ListImageRiskConfigsRequest::setInstanceId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageRiskConfigsRequest::getRegion, ListImageRiskConfigsRequest::setRegion));
 
@@ -2001,7 +2188,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getType, ListImageVulnerabilitiesRequest::setType));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getRegion,
                 ListImageVulnerabilitiesRequest::setRegion));
@@ -3741,7 +3928,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListVulnerabilityCveRequest::getLimit, ListVulnerabilityCveRequest::setLimit));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVulnerabilityCveRequest::getRegion, ListVulnerabilityCveRequest::setRegion));
 
@@ -3907,7 +4094,7 @@ public class HssMeta {
                 RunImageSynchronizeRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunImageSynchronizeRequest::getRegion, RunImageSynchronizeRequest::setRegion));
         builder.<RunImageSynchronizeRequestInfo>withRequestField("body",
@@ -4182,7 +4369,7 @@ public class HssMeta {
                 ShowImageCheckRuleDetailRequest::setInstanceId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowImageCheckRuleDetailRequest::getRegion,
                 ShowImageCheckRuleDetailRequest::setRegion));

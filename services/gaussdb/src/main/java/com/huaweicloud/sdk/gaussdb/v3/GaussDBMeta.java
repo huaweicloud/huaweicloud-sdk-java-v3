@@ -37,6 +37,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarrocksParamsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarrocksParamsRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckTableConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserInfo;
@@ -284,6 +287,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseFlavorResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResizeClickHouseInstanceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeStarRocksFlavorRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ResizeStarRocksFlavorResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResourceCheck;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RestartGaussMySqlInstanceResponse;
@@ -386,9 +391,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SrFlavorResizeReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksCreateRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksDatabaseUserInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.StarRocksDatabaseUserPSinfo;
@@ -404,6 +412,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchProxySSLRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchSSLRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SyncStarRocksUsersRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SyncStarRocksUsersResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.TableConfigCheckRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyInstanceMonitorRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyProxyWeightRequest;
@@ -464,6 +474,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateParamInfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyNameRequest;
@@ -488,6 +499,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordR
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeDatabaseRequest;
@@ -495,6 +508,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseReq
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UserSyncReq;
 
 @SuppressWarnings("unchecked")
 public class GaussDBMeta {
@@ -5844,6 +5858,35 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckStarrocksParamsRequest, CheckStarrocksParamsResponse> checkStarrocksParams =
+        genForCheckStarrocksParams();
+
+    private static HttpRequestDef<CheckStarrocksParamsRequest, CheckStarrocksParamsResponse> genForCheckStarrocksParams() {
+        // basic
+        HttpRequestDef.Builder<CheckStarrocksParamsRequest, CheckStarrocksParamsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckStarrocksParamsRequest.class, CheckStarrocksParamsResponse.class)
+            .withName("CheckStarrocksParams")
+            .withUri("/v3/{project_id}/configurations/starrocks/comparison")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckStarrocksParamsRequest::getXLanguage,
+                CheckStarrocksParamsRequest::setXLanguage));
+        builder.<CheckStarrocksParamsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CheckStarrocksParamsRequestBody.class),
+            f -> f.withMarshaller(CheckStarrocksParamsRequest::getBody, CheckStarrocksParamsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckTableConfigRequest, CheckTableConfigResponse> checkTableConfig =
         genForCheckTableConfig();
 
@@ -7118,6 +7161,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeStarRocksFlavorRequest, ResizeStarRocksFlavorResponse> resizeStarRocksFlavor =
+        genForResizeStarRocksFlavor();
+
+    private static HttpRequestDef<ResizeStarRocksFlavorRequest, ResizeStarRocksFlavorResponse> genForResizeStarRocksFlavor() {
+        // basic
+        HttpRequestDef.Builder<ResizeStarRocksFlavorRequest, ResizeStarRocksFlavorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeStarRocksFlavorRequest.class, ResizeStarRocksFlavorResponse.class)
+            .withName("ResizeStarRocksFlavor")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/resize-flavor")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeStarRocksFlavorRequest::getInstanceId,
+                ResizeStarRocksFlavorRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeStarRocksFlavorRequest::getXLanguage,
+                ResizeStarRocksFlavorRequest::setXLanguage));
+        builder.<SrFlavorResizeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SrFlavorResizeReq.class),
+            f -> f.withMarshaller(ResizeStarRocksFlavorRequest::getBody, ResizeStarRocksFlavorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartStarrocksInstanceRequest, RestartStarrocksInstanceResponse> restartStarrocksInstance =
         genForRestartStarrocksInstance();
 
@@ -7451,6 +7529,83 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStarrocksParamsRequest, ShowStarrocksParamsResponse> showStarrocksParams =
+        genForShowStarrocksParams();
+
+    private static HttpRequestDef<ShowStarrocksParamsRequest, ShowStarrocksParamsResponse> genForShowStarrocksParams() {
+        // basic
+        HttpRequestDef.Builder<ShowStarrocksParamsRequest, ShowStarrocksParamsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStarrocksParamsRequest.class, ShowStarrocksParamsResponse.class)
+                .withName("ShowStarrocksParams")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarrocksParamsRequest::getInstanceId,
+                ShowStarrocksParamsRequest::setInstanceId));
+        builder.<String>withRequestField("node_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarrocksParamsRequest::getNodeType, ShowStarrocksParamsRequest::setNodeType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStarrocksParamsRequest::getOffset, ShowStarrocksParamsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStarrocksParamsRequest::getLimit, ShowStarrocksParamsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarrocksParamsRequest::getXLanguage, ShowStarrocksParamsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncStarRocksUsersRequest, SyncStarRocksUsersResponse> syncStarRocksUsers =
+        genForSyncStarRocksUsers();
+
+    private static HttpRequestDef<SyncStarRocksUsersRequest, SyncStarRocksUsersResponse> genForSyncStarRocksUsers() {
+        // basic
+        HttpRequestDef.Builder<SyncStarRocksUsersRequest, SyncStarRocksUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncStarRocksUsersRequest.class, SyncStarRocksUsersResponse.class)
+                .withName("SyncStarRocksUsers")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/users/sync")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncStarRocksUsersRequest::getInstanceId, SyncStarRocksUsersRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncStarRocksUsersRequest::getXLanguage, SyncStarRocksUsersRequest::setXLanguage));
+        builder.<UserSyncReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UserSyncReq.class),
+            f -> f.withMarshaller(SyncStarRocksUsersRequest::getBody, SyncStarRocksUsersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateClickHouseDataBaseConfigRequest, UpdateClickHouseDataBaseConfigResponse> updateClickHouseDataBaseConfig =
         genForUpdateClickHouseDataBaseConfig();
 
@@ -7712,6 +7867,41 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(StarRocksDatabaseUserPSinfo.class),
             f -> f.withMarshaller(UpdateStarRocksDatabaseUserPermissionRequest::getBody,
                 UpdateStarRocksDatabaseUserPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStarrocksParamsRequest, UpdateStarrocksParamsResponse> updateStarrocksParams =
+        genForUpdateStarrocksParams();
+
+    private static HttpRequestDef<UpdateStarrocksParamsRequest, UpdateStarrocksParamsResponse> genForUpdateStarrocksParams() {
+        // basic
+        HttpRequestDef.Builder<UpdateStarrocksParamsRequest, UpdateStarrocksParamsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateStarrocksParamsRequest.class, UpdateStarrocksParamsResponse.class)
+            .withName("UpdateStarrocksParams")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/configurations")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarrocksParamsRequest::getInstanceId,
+                UpdateStarrocksParamsRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStarrocksParamsRequest::getXLanguage,
+                UpdateStarrocksParamsRequest::setXLanguage));
+        builder.<UpdateParamInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateParamInfo.class),
+            f -> f.withMarshaller(UpdateStarrocksParamsRequest::getBody, UpdateStarrocksParamsRequest::setBody));
 
         // response
 

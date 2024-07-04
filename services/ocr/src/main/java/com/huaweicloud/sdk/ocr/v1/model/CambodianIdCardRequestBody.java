@@ -35,6 +35,36 @@ public class CambodianIdCardRequestBody {
 
     private Boolean returnIdcardType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_border_integrity")
+
+    private Boolean detectBorderIntegrity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blocking_within_border")
+
+    private Boolean detectBlockingWithinBorder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blur")
+
+    private Boolean detectBlur;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_glare")
+
+    private Boolean detectGlare;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_adjusted_image")
+
+    private Boolean returnAdjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_tampering")
+
+    private Boolean detectTampering;
+
     public CambodianIdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -120,6 +150,108 @@ public class CambodianIdCardRequestBody {
         this.returnIdcardType = returnIdcardType;
     }
 
+    public CambodianIdCardRequestBody withDetectBorderIntegrity(Boolean detectBorderIntegrity) {
+        this.detectBorderIntegrity = detectBorderIntegrity;
+        return this;
+    }
+
+    /**
+     * 返回身份证边框完整性的告警结果的开关，可选值如下所示 - true：打开身份证图像边框完整性告警功能  - false：关闭身份证图像边框完整性告警功能 
+     * @return detectBorderIntegrity
+     */
+    public Boolean getDetectBorderIntegrity() {
+        return detectBorderIntegrity;
+    }
+
+    public void setDetectBorderIntegrity(Boolean detectBorderIntegrity) {
+        this.detectBorderIntegrity = detectBorderIntegrity;
+    }
+
+    public CambodianIdCardRequestBody withDetectBlockingWithinBorder(Boolean detectBlockingWithinBorder) {
+        this.detectBlockingWithinBorder = detectBlockingWithinBorder;
+        return this;
+    }
+
+    /**
+     * 返回身份证内部是否有被遮挡的告警结果的开关，可选值如下所示 - true：打开身份证内部是否有被遮挡的告警功能  - false：关闭身份证内部是否有被遮挡的告警功能 
+     * @return detectBlockingWithinBorder
+     */
+    public Boolean getDetectBlockingWithinBorder() {
+        return detectBlockingWithinBorder;
+    }
+
+    public void setDetectBlockingWithinBorder(Boolean detectBlockingWithinBorder) {
+        this.detectBlockingWithinBorder = detectBlockingWithinBorder;
+    }
+
+    public CambodianIdCardRequestBody withDetectBlur(Boolean detectBlur) {
+        this.detectBlur = detectBlur;
+        return this;
+    }
+
+    /**
+     * 返回身份证模糊告警结果的开关，可选值如下所示 - true:打开身份证是否模糊的告警功能 - false：关闭身份证是否模糊的告警功能 
+     * @return detectBlur
+     */
+    public Boolean getDetectBlur() {
+        return detectBlur;
+    }
+
+    public void setDetectBlur(Boolean detectBlur) {
+        this.detectBlur = detectBlur;
+    }
+
+    public CambodianIdCardRequestBody withDetectGlare(Boolean detectGlare) {
+        this.detectGlare = detectGlare;
+        return this;
+    }
+
+    /**
+     * 返回身份证是否反光的告警结果的开关，可选值如下所示 - true：打开身份证是否反光的告警功能  - false：关闭身份证是否反光的告警功能 
+     * @return detectGlare
+     */
+    public Boolean getDetectGlare() {
+        return detectGlare;
+    }
+
+    public void setDetectGlare(Boolean detectGlare) {
+        this.detectGlare = detectGlare;
+    }
+
+    public CambodianIdCardRequestBody withReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+        return this;
+    }
+
+    /**
+     * 返回身份证四点原图的base64编码 - true: 返回身份证原图的base64编码  - false：不返回身份证原图的base64编码 
+     * @return returnAdjustedImage
+     */
+    public Boolean getReturnAdjustedImage() {
+        return returnAdjustedImage;
+    }
+
+    public void setReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+    }
+
+    public CambodianIdCardRequestBody withDetectTampering(Boolean detectTampering) {
+        this.detectTampering = detectTampering;
+        return this;
+    }
+
+    /**
+     * 返回身份证人像是否被篡改的告警结果的开关，可选值如下所示 - true:  打开身份证人像是否被篡改的告警功能  - false：关闭身份证人像被篡改的告警功能 不支持精细化的P图 
+     * @return detectTampering
+     */
+    public Boolean getDetectTampering() {
+        return detectTampering;
+    }
+
+    public void setDetectTampering(Boolean detectTampering) {
+        this.detectTampering = detectTampering;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +264,27 @@ public class CambodianIdCardRequestBody {
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
             && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
             && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation)
-            && Objects.equals(this.returnIdcardType, that.returnIdcardType);
+            && Objects.equals(this.returnIdcardType, that.returnIdcardType)
+            && Objects.equals(this.detectBorderIntegrity, that.detectBorderIntegrity)
+            && Objects.equals(this.detectBlockingWithinBorder, that.detectBlockingWithinBorder)
+            && Objects.equals(this.detectBlur, that.detectBlur) && Objects.equals(this.detectGlare, that.detectGlare)
+            && Objects.equals(this.returnAdjustedImage, that.returnAdjustedImage)
+            && Objects.equals(this.detectTampering, that.detectTampering);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, returnPortraitImage, returnPortraitLocation, returnIdcardType);
+        return Objects.hash(image,
+            url,
+            returnPortraitImage,
+            returnPortraitLocation,
+            returnIdcardType,
+            detectBorderIntegrity,
+            detectBlockingWithinBorder,
+            detectBlur,
+            detectGlare,
+            returnAdjustedImage,
+            detectTampering);
     }
 
     @Override
@@ -149,6 +296,12 @@ public class CambodianIdCardRequestBody {
         sb.append("    returnPortraitImage: ").append(toIndentedString(returnPortraitImage)).append("\n");
         sb.append("    returnPortraitLocation: ").append(toIndentedString(returnPortraitLocation)).append("\n");
         sb.append("    returnIdcardType: ").append(toIndentedString(returnIdcardType)).append("\n");
+        sb.append("    detectBorderIntegrity: ").append(toIndentedString(detectBorderIntegrity)).append("\n");
+        sb.append("    detectBlockingWithinBorder: ").append(toIndentedString(detectBlockingWithinBorder)).append("\n");
+        sb.append("    detectBlur: ").append(toIndentedString(detectBlur)).append("\n");
+        sb.append("    detectGlare: ").append(toIndentedString(detectGlare)).append("\n");
+        sb.append("    returnAdjustedImage: ").append(toIndentedString(returnAdjustedImage)).append("\n");
+        sb.append("    detectTampering: ").append(toIndentedString(detectTampering)).append("\n");
         sb.append("}");
         return sb.toString();
     }

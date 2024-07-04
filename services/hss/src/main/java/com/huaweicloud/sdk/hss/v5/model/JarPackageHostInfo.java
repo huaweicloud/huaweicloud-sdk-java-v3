@@ -126,7 +126,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * agent_id
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {

@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -36,11 +35,6 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonProperty(value = "isdefault")
 
     private Boolean isdefault;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template")
-
-    private TemplateResponseBody template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
@@ -225,32 +219,6 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.isdefault = isdefault;
     }
 
-    public ShowMigprojectResponse withTemplate(TemplateResponseBody template) {
-        this.template = template;
-        return this;
-    }
-
-    public ShowMigprojectResponse withTemplate(Consumer<TemplateResponseBody> templateSetter) {
-        if (this.template == null) {
-            this.template = new TemplateResponseBody();
-            templateSetter.accept(this.template);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get template
-     * @return template
-     */
-    public TemplateResponseBody getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(TemplateResponseBody template) {
-        this.template = template;
-    }
-
     public ShowMigprojectResponse withRegion(String region) {
         this.region = region;
         return this;
@@ -417,7 +385,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         ShowMigprojectResponse that = (ShowMigprojectResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.isdefault, that.isdefault)
-            && Objects.equals(this.template, that.template) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.region, that.region)
             && Objects.equals(this.startTargetServer, that.startTargetServer)
             && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.usePublicIp, that.usePublicIp)
             && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.type, that.type)
@@ -432,7 +400,6 @@ public class ShowMigprojectResponse extends SdkResponse {
             name,
             description,
             isdefault,
-            template,
             region,
             startTargetServer,
             speedLimit,
@@ -452,7 +419,6 @@ public class ShowMigprojectResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
-        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");

@@ -73,6 +73,10 @@ import com.huaweicloud.sdk.kms.v2.model.ListKmsTagsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListKmsTagsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsResponse;
+import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyStoreRequest;
@@ -97,6 +101,8 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
+import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequest;
+import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionResponse;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureRequest;
 import com.huaweicloud.sdk.kms.v2.model.ValidateSignatureResponse;
 import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequest;
@@ -1155,6 +1161,63 @@ public class KmsClient {
     }
 
     /**
+     * 查询跨区域密钥所支持的区域
+     *
+     * - 功能介绍：查询跨区域密钥所支持的区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportRegionsRequest 请求对象
+     * @return ListSupportRegionsResponse
+     */
+    public ListSupportRegionsResponse listSupportRegions(ListSupportRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.listSupportRegions);
+    }
+
+    /**
+     * 查询跨区域密钥所支持的区域
+     *
+     * - 功能介绍：查询跨区域密钥所支持的区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportRegionsRequest 请求对象
+     * @return SyncInvoker<ListSupportRegionsRequest, ListSupportRegionsResponse>
+     */
+    public SyncInvoker<ListSupportRegionsRequest, ListSupportRegionsResponse> listSupportRegionsInvoker(
+        ListSupportRegionsRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.listSupportRegions, hcClient);
+    }
+
+    /**
+     * 复制密钥到指定区域
+     *
+     * 将本区域的密钥复制到指定区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReplicateKeyRequest 请求对象
+     * @return ReplicateKeyResponse
+     */
+    public ReplicateKeyResponse replicateKey(ReplicateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.replicateKey);
+    }
+
+    /**
+     * 复制密钥到指定区域
+     *
+     * 将本区域的密钥复制到指定区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReplicateKeyRequest 请求对象
+     * @return SyncInvoker<ReplicateKeyRequest, ReplicateKeyResponse>
+     */
+    public SyncInvoker<ReplicateKeyRequest, ReplicateKeyResponse> replicateKeyInvoker(ReplicateKeyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.replicateKey, hcClient);
+    }
+
+    /**
      * 查询密钥轮换状态
      *
      * - 功能介绍：查询用户主密钥轮换状态。
@@ -1450,6 +1513,35 @@ public class KmsClient {
     public SyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalInvoker(
         UpdateKeyRotationIntervalRequest request) {
         return new SyncInvoker<>(request, KmsMeta.updateKeyRotationInterval, hcClient);
+    }
+
+    /**
+     * 修改密钥所属的主区域
+     *
+     * 修改密钥所属的主区域。修改后当前区域会变为副本区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrimaryRegionRequest 请求对象
+     * @return UpdatePrimaryRegionResponse
+     */
+    public UpdatePrimaryRegionResponse updatePrimaryRegion(UpdatePrimaryRegionRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.updatePrimaryRegion);
+    }
+
+    /**
+     * 修改密钥所属的主区域
+     *
+     * 修改密钥所属的主区域。修改后当前区域会变为副本区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrimaryRegionRequest 请求对象
+     * @return SyncInvoker<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResponse>
+     */
+    public SyncInvoker<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResponse> updatePrimaryRegionInvoker(
+        UpdatePrimaryRegionRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.updatePrimaryRegion, hcClient);
     }
 
     /**

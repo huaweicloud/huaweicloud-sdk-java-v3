@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
@@ -79,6 +81,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
@@ -152,6 +156,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
@@ -379,6 +385,8 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpRequest;
@@ -915,6 +923,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+     *
+     * 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceIam5Request 请求对象
+     * @return CompletableFuture<CreateInstanceIam5Response>
+     */
+    public CompletableFuture<CreateInstanceIam5Response> createInstanceIam5Async(CreateInstanceIam5Request request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createInstanceIam5);
+    }
+
+    /**
+     * 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+     *
+     * 创建数据库实例V5接口，仅支持IAM5的新平面认证方式（AK/SK认证方式）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceIam5Request 请求对象
+     * @return AsyncInvoker<CreateInstanceIam5Request, CreateInstanceIam5Response>
+     */
+    public AsyncInvoker<CreateInstanceIam5Request, CreateInstanceIam5Response> createInstanceIam5AsyncInvoker(
+        CreateInstanceIam5Request request) {
+        return new AsyncInvoker<>(request, RdsMeta.createInstanceIam5, hcClient);
+    }
+
+    /**
      * 创建手动备份
      *
      * 创建手动备份。
@@ -1089,6 +1126,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationAsyncInvoker(
         DeleteConfigurationRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.deleteConfiguration, hcClient);
+    }
+
+    /**
+     * 解除实例容灾关系接口
+     *
+     * 解除实例容灾关系接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<DeleteDisasterRecoveryResponse>
+     */
+    public CompletableFuture<DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsync(
+        DeleteDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteDisasterRecovery);
+    }
+
+    /**
+     * 解除实例容灾关系接口
+     *
+     * 解除实例容灾关系接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsyncInvoker(
+        DeleteDisasterRecoveryRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deleteDisasterRecovery, hcClient);
     }
 
     /**
@@ -1695,6 +1762,35 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询数据库可变更规格接口
+     *
+     * 查询数据库可变更规格接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlavorsResizeRequest 请求对象
+     * @return CompletableFuture<ListFlavorsResizeResponse>
+     */
+    public CompletableFuture<ListFlavorsResizeResponse> listFlavorsResizeAsync(ListFlavorsResizeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listFlavorsResize);
+    }
+
+    /**
+     * 查询数据库可变更规格接口
+     *
+     * 查询数据库可变更规格接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlavorsResizeRequest 请求对象
+     * @return AsyncInvoker<ListFlavorsResizeRequest, ListFlavorsResizeResponse>
+     */
+    public AsyncInvoker<ListFlavorsResizeRequest, ListFlavorsResizeResponse> listFlavorsResizeAsyncInvoker(
+        ListFlavorsResizeRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listFlavorsResize, hcClient);
     }
 
     /**
@@ -4248,6 +4344,36 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslAsyncInvoker(SwitchSslRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.switchSsl, hcClient);
+    }
+
+    /**
+     * 解除节点只读状态接口
+     *
+     * 解除节点只读状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockNodeReadonlyStatusRequest 请求对象
+     * @return CompletableFuture<UnlockNodeReadonlyStatusResponse>
+     */
+    public CompletableFuture<UnlockNodeReadonlyStatusResponse> unlockNodeReadonlyStatusAsync(
+        UnlockNodeReadonlyStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.unlockNodeReadonlyStatus);
+    }
+
+    /**
+     * 解除节点只读状态接口
+     *
+     * 解除节点只读状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockNodeReadonlyStatusRequest 请求对象
+     * @return AsyncInvoker<UnlockNodeReadonlyStatusRequest, UnlockNodeReadonlyStatusResponse>
+     */
+    public AsyncInvoker<UnlockNodeReadonlyStatusRequest, UnlockNodeReadonlyStatusResponse> unlockNodeReadonlyStatusAsyncInvoker(
+        UnlockNodeReadonlyStatusRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.unlockNodeReadonlyStatus, hcClient);
     }
 
     /**

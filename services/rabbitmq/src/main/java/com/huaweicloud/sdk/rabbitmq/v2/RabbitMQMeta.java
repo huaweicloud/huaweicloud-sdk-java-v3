@@ -5,33 +5,71 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.rabbitmq.v2.model.AMQPUser;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteTagReq;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteBody;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteExchangesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteExchangesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteQueuesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteQueuesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteVhostsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteVhostsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingBody;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeBody;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueBody;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateUserRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateVhostBody;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateVhostRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreateVhostResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBackgroundTaskResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBindingRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBindingResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListExchangesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListExchangesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListInstancesDetailsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListInstancesDetailsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListPluginsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListPluginsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
@@ -53,6 +91,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -63,6 +103,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserResponse;
 
 @SuppressWarnings("unchecked")
 public class RabbitMQMeta {
@@ -183,6 +225,33 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForCreateUser();
+
+    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForCreateUser() {
+        // basic
+        HttpRequestDef.Builder<CreateUserRequest, CreateUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUserRequest.class, CreateUserResponse.class)
+                .withName("CreateUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUserRequest::getInstanceId, CreateUserRequest::setInstanceId));
+        builder.<AMQPUser>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AMQPUser.class),
+            f -> f.withMarshaller(CreateUserRequest::getBody, CreateUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
         genForDeleteBackgroundTask();
 
@@ -229,6 +298,33 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
+
+    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteUserRequest, DeleteUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteUserRequest.class, DeleteUserResponse.class)
+                .withName("DeleteUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, DeleteUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
 
         // response
 
@@ -430,6 +526,38 @@ public class RabbitMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, ListProductsRequest::setEngine));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserRequest, ListUserResponse> listUser = genForListUser();
+
+    private static HttpRequestDef<ListUserRequest, ListUserResponse> genForListUser() {
+        // basic
+        HttpRequestDef.Builder<ListUserRequest, ListUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserRequest.class, ListUserResponse.class)
+                .withName("ListUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRequest::getInstanceId, ListUserRequest::setInstanceId));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRequest::getOffset, ListUserRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRequest::getLimit, ListUserRequest::setLimit));
 
         // response
 
@@ -786,6 +914,519 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePluginsReq.class),
             f -> f.withMarshaller(UpdatePluginsRequest::getBody, UpdatePluginsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
+
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
+        // basic
+        HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
+                .withName("UpdateUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateUserRequest::getInstanceId, UpdateUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateUserRequest::getUserName, UpdateUserRequest::setUserName));
+        builder.<AMQPUser>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AMQPUser.class),
+            f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBindingRequest, CreateBindingResponse> createBinding =
+        genForCreateBinding();
+
+    private static HttpRequestDef<CreateBindingRequest, CreateBindingResponse> genForCreateBinding() {
+        // basic
+        HttpRequestDef.Builder<CreateBindingRequest, CreateBindingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBindingRequest.class, CreateBindingResponse.class)
+                .withName("CreateBinding")
+                .withUri(
+                    "/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBindingRequest::getInstanceId, CreateBindingRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBindingRequest::getVhost, CreateBindingRequest::setVhost));
+        builder.<String>withRequestField("exchange",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBindingRequest::getExchange, CreateBindingRequest::setExchange));
+        builder.<CreateBindingBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBindingBody.class),
+            f -> f.withMarshaller(CreateBindingRequest::getBody, CreateBindingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBindingRequest, DeleteBindingResponse> deleteBinding =
+        genForDeleteBinding();
+
+    private static HttpRequestDef<DeleteBindingRequest, DeleteBindingResponse> genForDeleteBinding() {
+        // basic
+        HttpRequestDef.Builder<DeleteBindingRequest, DeleteBindingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBindingRequest.class, DeleteBindingResponse.class)
+            .withName("DeleteBinding")
+            .withUri(
+                "/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/destination-type/{destination_type}/destination/{destination}/properties-key/{properties_key}/unbinding")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getInstanceId, DeleteBindingRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getVhost, DeleteBindingRequest::setVhost));
+        builder.<String>withRequestField("exchange",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getExchange, DeleteBindingRequest::setExchange));
+        builder.<String>withRequestField("destination_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getDestinationType, DeleteBindingRequest::setDestinationType));
+        builder.<String>withRequestField("destination",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getDestination, DeleteBindingRequest::setDestination));
+        builder.<String>withRequestField("properties_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBindingRequest::getPropertiesKey, DeleteBindingRequest::setPropertiesKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBindingsRequest, ListBindingsResponse> listBindings = genForListBindings();
+
+    private static HttpRequestDef<ListBindingsRequest, ListBindingsResponse> genForListBindings() {
+        // basic
+        HttpRequestDef.Builder<ListBindingsRequest, ListBindingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBindingsRequest.class, ListBindingsResponse.class)
+                .withName("ListBindings")
+                .withUri(
+                    "/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBindingsRequest::getInstanceId, ListBindingsRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBindingsRequest::getVhost, ListBindingsRequest::setVhost));
+        builder.<String>withRequestField("exchange",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBindingsRequest::getExchange, ListBindingsRequest::setExchange));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteExchangesRequest, BatchDeleteExchangesResponse> batchDeleteExchanges =
+        genForBatchDeleteExchanges();
+
+    private static HttpRequestDef<BatchDeleteExchangesRequest, BatchDeleteExchangesResponse> genForBatchDeleteExchanges() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteExchangesRequest, BatchDeleteExchangesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteExchangesRequest.class, BatchDeleteExchangesResponse.class)
+            .withName("BatchDeleteExchanges")
+            .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteExchangesRequest::getInstanceId,
+                BatchDeleteExchangesRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteExchangesRequest::getVhost, BatchDeleteExchangesRequest::setVhost));
+        builder.<BatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteExchangesRequest::getBody, BatchDeleteExchangesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateExchangeRequest, CreateExchangeResponse> createExchange =
+        genForCreateExchange();
+
+    private static HttpRequestDef<CreateExchangeRequest, CreateExchangeResponse> genForCreateExchange() {
+        // basic
+        HttpRequestDef.Builder<CreateExchangeRequest, CreateExchangeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateExchangeRequest.class, CreateExchangeResponse.class)
+                .withName("CreateExchange")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateExchangeRequest::getInstanceId, CreateExchangeRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateExchangeRequest::getVhost, CreateExchangeRequest::setVhost));
+        builder.<CreateExchangeBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateExchangeBody.class),
+            f -> f.withMarshaller(CreateExchangeRequest::getBody, CreateExchangeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExchangesRequest, ListExchangesResponse> listExchanges =
+        genForListExchanges();
+
+    private static HttpRequestDef<ListExchangesRequest, ListExchangesResponse> genForListExchanges() {
+        // basic
+        HttpRequestDef.Builder<ListExchangesRequest, ListExchangesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExchangesRequest.class, ListExchangesResponse.class)
+                .withName("ListExchanges")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExchangesRequest::getInstanceId, ListExchangesRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExchangesRequest::getVhost, ListExchangesRequest::setVhost));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExchangesRequest::getOffset, ListExchangesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExchangesRequest::getLimit, ListExchangesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteQueuesRequest, BatchDeleteQueuesResponse> batchDeleteQueues =
+        genForBatchDeleteQueues();
+
+    private static HttpRequestDef<BatchDeleteQueuesRequest, BatchDeleteQueuesResponse> genForBatchDeleteQueues() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteQueuesRequest, BatchDeleteQueuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteQueuesRequest.class, BatchDeleteQueuesResponse.class)
+                .withName("BatchDeleteQueues")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteQueuesRequest::getInstanceId, BatchDeleteQueuesRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteQueuesRequest::getVhost, BatchDeleteQueuesRequest::setVhost));
+        builder.<BatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteQueuesRequest::getBody, BatchDeleteQueuesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateQueueRequest, CreateQueueResponse> createQueue = genForCreateQueue();
+
+    private static HttpRequestDef<CreateQueueRequest, CreateQueueResponse> genForCreateQueue() {
+        // basic
+        HttpRequestDef.Builder<CreateQueueRequest, CreateQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateQueueRequest.class, CreateQueueResponse.class)
+                .withName("CreateQueue")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQueueRequest::getInstanceId, CreateQueueRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQueueRequest::getVhost, CreateQueueRequest::setVhost));
+        builder.<CreateQueueBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateQueueBody.class),
+            f -> f.withMarshaller(CreateQueueRequest::getBody, CreateQueueRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteQueueInfoRequest, DeleteQueueInfoResponse> deleteQueueInfo =
+        genForDeleteQueueInfo();
+
+    private static HttpRequestDef<DeleteQueueInfoRequest, DeleteQueueInfoResponse> genForDeleteQueueInfo() {
+        // basic
+        HttpRequestDef.Builder<DeleteQueueInfoRequest, DeleteQueueInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteQueueInfoRequest.class, DeleteQueueInfoResponse.class)
+                .withName("DeleteQueueInfo")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}/contents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQueueInfoRequest::getInstanceId, DeleteQueueInfoRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQueueInfoRequest::getVhost, DeleteQueueInfoRequest::setVhost));
+        builder.<String>withRequestField("queue",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQueueInfoRequest::getQueue, DeleteQueueInfoRequest::setQueue));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueuesRequest, ListQueuesResponse> listQueues = genForListQueues();
+
+    private static HttpRequestDef<ListQueuesRequest, ListQueuesResponse> genForListQueues() {
+        // basic
+        HttpRequestDef.Builder<ListQueuesRequest, ListQueuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQueuesRequest.class, ListQueuesResponse.class)
+                .withName("ListQueues")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueuesRequest::getInstanceId, ListQueuesRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueuesRequest::getVhost, ListQueuesRequest::setVhost));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuesRequest::getOffset, ListQueuesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuesRequest::getLimit, ListQueuesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQueueDetailsRequest, ShowQueueDetailsResponse> showQueueDetails =
+        genForShowQueueDetails();
+
+    private static HttpRequestDef<ShowQueueDetailsRequest, ShowQueueDetailsResponse> genForShowQueueDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowQueueDetailsRequest, ShowQueueDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueueDetailsRequest.class, ShowQueueDetailsResponse.class)
+                .withName("ShowQueueDetails")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueueDetailsRequest::getInstanceId, ShowQueueDetailsRequest::setInstanceId));
+        builder.<String>withRequestField("vhost",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueueDetailsRequest::getVhost, ShowQueueDetailsRequest::setVhost));
+        builder.<String>withRequestField("queue",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueueDetailsRequest::getQueue, ShowQueueDetailsRequest::setQueue));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteVhostsRequest, BatchDeleteVhostsResponse> batchDeleteVhosts =
+        genForBatchDeleteVhosts();
+
+    private static HttpRequestDef<BatchDeleteVhostsRequest, BatchDeleteVhostsResponse> genForBatchDeleteVhosts() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteVhostsRequest, BatchDeleteVhostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteVhostsRequest.class, BatchDeleteVhostsResponse.class)
+                .withName("BatchDeleteVhosts")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteVhostsRequest::getInstanceId, BatchDeleteVhostsRequest::setInstanceId));
+        builder.<BatchDeleteBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBody.class),
+            f -> f.withMarshaller(BatchDeleteVhostsRequest::getBody, BatchDeleteVhostsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVhostRequest, CreateVhostResponse> createVhost = genForCreateVhost();
+
+    private static HttpRequestDef<CreateVhostRequest, CreateVhostResponse> genForCreateVhost() {
+        // basic
+        HttpRequestDef.Builder<CreateVhostRequest, CreateVhostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateVhostRequest.class, CreateVhostResponse.class)
+                .withName("CreateVhost")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVhostRequest::getInstanceId, CreateVhostRequest::setInstanceId));
+        builder.<CreateVhostBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVhostBody.class),
+            f -> f.withMarshaller(CreateVhostRequest::getBody, CreateVhostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVhostsRequest, ListVhostsResponse> listVhosts = genForListVhosts();
+
+    private static HttpRequestDef<ListVhostsRequest, ListVhostsResponse> genForListVhosts() {
+        // basic
+        HttpRequestDef.Builder<ListVhostsRequest, ListVhostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVhostsRequest.class, ListVhostsResponse.class)
+                .withName("ListVhosts")
+                .withUri("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVhostsRequest::getInstanceId, ListVhostsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVhostsRequest::getOffset, ListVhostsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVhostsRequest::getLimit, ListVhostsRequest::setLimit));
 
         // response
 

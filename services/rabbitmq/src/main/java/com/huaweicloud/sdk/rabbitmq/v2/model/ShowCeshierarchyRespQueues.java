@@ -26,7 +26,7 @@ public class ShowCeshierarchyRespQueues {
     }
 
     /**
-     * 队列名称。
+     * Queue名称。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class ShowCeshierarchyRespQueues {
     }
 
     /**
-     * 对应的vhost。
+     * 对应的Vhost。
      * @return vhost
      */
     public String getVhost() {

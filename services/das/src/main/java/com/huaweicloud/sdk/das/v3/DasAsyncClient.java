@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsRequest;
@@ -535,7 +537,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出慢SQL模板列表。
+     * 导出慢SQL模板列表
      *
      * 慢SQL开关打开后，导出慢SQL模板列表。免费实例仅支持查看最近一小时数据。查询时间间隔最长一天。
      * 
@@ -550,7 +552,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出慢SQL模板列表。
+     * 导出慢SQL模板列表
      *
      * 慢SQL开关打开后，导出慢SQL模板列表。免费实例仅支持查看最近一小时数据。查询时间间隔最长一天。
      * 
@@ -562,6 +564,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse> exportSlowSqlTemplatesDetailsAsyncInvoker(
         ExportSlowSqlTemplatesDetailsRequest request) {
         return new AsyncInvoker<>(request, DasMeta.exportSlowSqlTemplatesDetails, hcClient);
+    }
+
+    /**
+     * 导出慢SQL数量趋势
+     *
+     * 慢SQL开关打开后，导出慢SQL数量趋势。免费实例仅支持查看最近一小时数据。查询时间间隔最长一天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlTrendDetailsRequest 请求对象
+     * @return CompletableFuture<ExportSlowSqlTrendDetailsResponse>
+     */
+    public CompletableFuture<ExportSlowSqlTrendDetailsResponse> exportSlowSqlTrendDetailsAsync(
+        ExportSlowSqlTrendDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.exportSlowSqlTrendDetails);
+    }
+
+    /**
+     * 导出慢SQL数量趋势
+     *
+     * 慢SQL开关打开后，导出慢SQL数量趋势。免费实例仅支持查看最近一小时数据。查询时间间隔最长一天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlTrendDetailsRequest 请求对象
+     * @return AsyncInvoker<ExportSlowSqlTrendDetailsRequest, ExportSlowSqlTrendDetailsResponse>
+     */
+    public AsyncInvoker<ExportSlowSqlTrendDetailsRequest, ExportSlowSqlTrendDetailsResponse> exportSlowSqlTrendDetailsAsyncInvoker(
+        ExportSlowSqlTrendDetailsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.exportSlowSqlTrendDetails, hcClient);
     }
 
     /**
@@ -594,7 +626,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出TopSQL模板列表。
+     * 导出TopSQL模板列表
      *
      * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
      * 
@@ -609,7 +641,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出TopSQL模板列表。
+     * 导出TopSQL模板列表
      *
      * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
      * 
@@ -624,7 +656,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出SQL执行耗时区间数据。
+     * 导出SQL执行耗时区间数据
      *
      * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
      * 
@@ -639,7 +671,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 导出SQL执行耗时区间数据。
+     * 导出SQL执行耗时区间数据
      *
      * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
      * 
@@ -1077,7 +1109,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 查询全量SQL和慢SQL的开关状态。
+     * 查询全量SQL和慢SQL的开关状态
      *
      * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
      * 
@@ -1091,7 +1123,7 @@ public class DasAsyncClient {
     }
 
     /**
-     * 查询全量SQL和慢SQL的开关状态。
+     * 查询全量SQL和慢SQL的开关状态
      *
      * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
      * 

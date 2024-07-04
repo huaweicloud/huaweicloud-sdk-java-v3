@@ -100,6 +100,16 @@ public class UrlDomainModify {
 
     private Boolean verifiedClientCertificateEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_http_port")
+
+    private Integer ingressHttpPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_https_port")
+
+    private Integer ingressHttpsPort;
+
     public UrlDomainModify withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -151,6 +161,44 @@ public class UrlDomainModify {
         this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
     }
 
+    public UrlDomainModify withIngressHttpPort(Integer ingressHttpPort) {
+        this.ingressHttpPort = ingressHttpPort;
+        return this;
+    }
+
+    /**
+     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用80默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTP协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认80端口；若填写该参数，则必须同时填写https_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * minimum: -1
+     * maximum: 49151
+     * @return ingressHttpPort
+     */
+    public Integer getIngressHttpPort() {
+        return ingressHttpPort;
+    }
+
+    public void setIngressHttpPort(Integer ingressHttpPort) {
+        this.ingressHttpPort = ingressHttpPort;
+    }
+
+    public UrlDomainModify withIngressHttpsPort(Integer ingressHttpsPort) {
+        this.ingressHttpsPort = ingressHttpsPort;
+        return this;
+    }
+
+    /**
+     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用443默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTPS协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认443端口；若填写该参数，则必须同时填写http_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * minimum: -1
+     * maximum: 49151
+     * @return ingressHttpsPort
+     */
+    public Integer getIngressHttpsPort() {
+        return ingressHttpsPort;
+    }
+
+    public void setIngressHttpsPort(Integer ingressHttpsPort) {
+        this.ingressHttpsPort = ingressHttpsPort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,12 +210,18 @@ public class UrlDomainModify {
         UrlDomainModify that = (UrlDomainModify) obj;
         return Objects.equals(this.minSslVersion, that.minSslVersion)
             && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps)
-            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled);
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
+            && Objects.equals(this.ingressHttpPort, that.ingressHttpPort)
+            && Objects.equals(this.ingressHttpsPort, that.ingressHttpsPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minSslVersion, isHttpRedirectToHttps, verifiedClientCertificateEnabled);
+        return Objects.hash(minSslVersion,
+            isHttpRedirectToHttps,
+            verifiedClientCertificateEnabled,
+            ingressHttpPort,
+            ingressHttpsPort);
     }
 
     @Override
@@ -179,6 +233,8 @@ public class UrlDomainModify {
         sb.append("    verifiedClientCertificateEnabled: ")
             .append(toIndentedString(verifiedClientCertificateEnabled))
             .append("\n");
+        sb.append("    ingressHttpPort: ").append(toIndentedString(ingressHttpPort)).append("\n");
+        sb.append("    ingressHttpsPort: ").append(toIndentedString(ingressHttpsPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

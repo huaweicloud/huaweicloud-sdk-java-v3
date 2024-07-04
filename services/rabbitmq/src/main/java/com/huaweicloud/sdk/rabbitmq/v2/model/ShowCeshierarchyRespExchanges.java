@@ -26,7 +26,7 @@ public class ShowCeshierarchyRespExchanges {
     }
 
     /**
-     * exchange名称。
+     * Exchange名称。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class ShowCeshierarchyRespExchanges {
     }
 
     /**
-     * 对应的vhost。
+     * 对应的Vhost。
      * @return vhost
      */
     public String getVhost() {

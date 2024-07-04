@@ -140,7 +140,7 @@ public class PolicyOption {
     }
 
     /**
-     * 预留参数，改参数值一直为true，用户可忽略该参数值
+     * 预留参数，该参数值一直为true，用户可忽略该参数值
      * @return crawler
      */
     public Boolean getCrawler() {

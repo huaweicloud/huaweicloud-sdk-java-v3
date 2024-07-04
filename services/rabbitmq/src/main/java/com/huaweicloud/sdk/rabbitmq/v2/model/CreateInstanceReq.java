@@ -97,74 +97,10 @@ public class CreateInstanceReq {
 
     private EngineEnum engine;
 
-    /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
-     */
-    public static final class EngineVersionEnum {
-
-        /**
-         * Enum _3_8_35 for value: "3.8.35"
-         */
-        public static final EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
-
-        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineVersionEnum> createStaticFields() {
-            Map<String, EngineVersionEnum> map = new HashMap<>();
-            map.put("3.8.35", _3_8_35);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineVersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineVersionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
-        }
-
-        public static EngineVersionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineVersionEnum) {
-                return this.value.equals(((EngineVersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    private EngineVersionEnum engineVersion;
+    private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
@@ -475,20 +411,20 @@ public class CreateInstanceReq {
         this.engine = engine;
     }
 
-    public CreateInstanceReq withEngineVersion(EngineVersionEnum engineVersion) {
+    public CreateInstanceReq withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[、AMQP-0-9-1](tag:hws,hws_hk)[和3.7.17](tag:tm,hk_tm,hk_sbc,sbc)。 
      * @return engineVersion
      */
-    public EngineVersionEnum getEngineVersion() {
+    public String getEngineVersion() {
         return engineVersion;
     }
 
-    public void setEngineVersion(EngineVersionEnum engineVersion) {
+    public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
 
@@ -498,7 +434,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)      [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
+     * 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
      * @return storageSpace
      */
     public Integer getStorageSpace() {

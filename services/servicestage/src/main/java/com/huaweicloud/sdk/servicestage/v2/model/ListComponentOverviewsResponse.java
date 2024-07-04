@@ -22,7 +22,7 @@ public class ListComponentOverviewsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "components")
 
-    private List<ComponentView> components = null;
+    private List<ComponentOverview> components = null;
 
     public ListComponentOverviewsResponse withCount(Integer count) {
         this.count = count;
@@ -41,12 +41,12 @@ public class ListComponentOverviewsResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListComponentOverviewsResponse withComponents(List<ComponentView> components) {
+    public ListComponentOverviewsResponse withComponents(List<ComponentOverview> components) {
         this.components = components;
         return this;
     }
 
-    public ListComponentOverviewsResponse addComponentsItem(ComponentView componentsItem) {
+    public ListComponentOverviewsResponse addComponentsItem(ComponentOverview componentsItem) {
         if (this.components == null) {
             this.components = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListComponentOverviewsResponse extends SdkResponse {
         return this;
     }
 
-    public ListComponentOverviewsResponse withComponents(Consumer<List<ComponentView>> componentsSetter) {
+    public ListComponentOverviewsResponse withComponents(Consumer<List<ComponentOverview>> componentsSetter) {
         if (this.components == null) {
             this.components = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListComponentOverviewsResponse extends SdkResponse {
      * 组件部署信息列表。
      * @return components
      */
-    public List<ComponentView> getComponents() {
+    public List<ComponentOverview> getComponents() {
         return components;
     }
 
-    public void setComponents(List<ComponentView> components) {
+    public void setComponents(List<ComponentOverview> components) {
         this.components = components;
     }
 

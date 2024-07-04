@@ -253,7 +253,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 该检查项的修复&忽略&验证按钮是否可点击,true:按钮可点击,false:按钮不可点击
+     * 该检查项的修复&忽略&验证按钮是否可单击,true:按钮可单击,false:按钮不可单击
      * @return enableClick
      */
     public Boolean getEnableClick() {

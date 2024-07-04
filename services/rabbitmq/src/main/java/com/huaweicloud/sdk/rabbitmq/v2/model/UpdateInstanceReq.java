@@ -50,6 +50,11 @@ public class UpdateInstanceReq {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
+
     public UpdateInstanceReq withName(String name) {
         this.name = name;
         return this;
@@ -186,6 +191,23 @@ public class UpdateInstanceReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public UpdateInstanceReq withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * ACL访问控制（仅AMQP版本支持此参数）。
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -201,7 +223,8 @@ public class UpdateInstanceReq {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
             && Objects.equals(this.publicipId, that.publicipId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableAcl, that.enableAcl);
     }
 
     @Override
@@ -213,7 +236,8 @@ public class UpdateInstanceReq {
             securityGroupId,
             enablePublicip,
             publicipId,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            enableAcl);
     }
 
     @Override
@@ -228,6 +252,7 @@ public class UpdateInstanceReq {
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

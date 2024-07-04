@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * This is a auto create Body Object
@@ -17,7 +16,7 @@ import java.util.function.Consumer;
 public class UpdateTaskStatusReq {
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 network_check:网络质量检测 
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 
      */
     public static final class OperationEnum {
 
@@ -30,11 +29,6 @@ public class UpdateTaskStatusReq {
          * Enum STOP for value: "stop"
          */
         public static final OperationEnum STOP = new OperationEnum("stop");
-
-        /**
-         * Enum COLLECT_LOG for value: "collect_log"
-         */
-        public static final OperationEnum COLLECT_LOG = new OperationEnum("collect_log");
 
         /**
          * Enum TEST for value: "test"
@@ -52,11 +46,6 @@ public class UpdateTaskStatusReq {
         public static final OperationEnum RESTART = new OperationEnum("restart");
 
         /**
-         * Enum SYNC_FAILED_ROLLBACK for value: "sync_failed_rollback"
-         */
-        public static final OperationEnum SYNC_FAILED_ROLLBACK = new OperationEnum("sync_failed_rollback");
-
-        /**
          * Enum NETWORK_CHECK for value: "network_check"
          */
         public static final OperationEnum NETWORK_CHECK = new OperationEnum("network_check");
@@ -67,11 +56,9 @@ public class UpdateTaskStatusReq {
             Map<String, OperationEnum> map = new HashMap<>();
             map.put("start", START);
             map.put("stop", STOP);
-            map.put("collect_log", COLLECT_LOG);
             map.put("test", TEST);
             map.put("clone_test", CLONE_TEST);
             map.put("restart", RESTART);
-            map.put("sync_failed_rollback", SYNC_FAILED_ROLLBACK);
             map.put("network_check", NETWORK_CHECK);
             return Collections.unmodifiableMap(map);
         }
@@ -128,9 +115,9 @@ public class UpdateTaskStatusReq {
     private OperationEnum operation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "param")
+    @JsonProperty(value = "template_id")
 
-    private Map<String, String> param = null;
+    private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch_hce")
@@ -148,7 +135,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 collect_log:收集日志 test:测试 clone_test:克隆测试 restart:重新开始 sync_failed_rollback:同步失败回滚 network_check:网络质量检测 
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 
      * @return operation
      */
     public OperationEnum getOperation() {
@@ -159,37 +146,21 @@ public class UpdateTaskStatusReq {
         this.operation = operation;
     }
 
-    public UpdateTaskStatusReq withParam(Map<String, String> param) {
-        this.param = param;
-        return this;
-    }
-
-    public UpdateTaskStatusReq putParamItem(String key, String paramItem) {
-        if (this.param == null) {
-            this.param = new HashMap<>();
-        }
-        this.param.put(key, paramItem);
-        return this;
-    }
-
-    public UpdateTaskStatusReq withParam(Consumer<Map<String, String>> paramSetter) {
-        if (this.param == null) {
-            this.param = new HashMap<>();
-        }
-        paramSetter.accept(this.param);
+    public UpdateTaskStatusReq withTemplateId(String templateId) {
+        this.templateId = templateId;
         return this;
     }
 
     /**
-     * 操作参数
-     * @return param
+     * 模板id
+     * @return templateId
      */
-    public Map<String, String> getParam() {
-        return param;
+    public String getTemplateId() {
+        return templateId;
     }
 
-    public void setParam(Map<String, String> param) {
-        this.param = param;
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
     }
 
     public UpdateTaskStatusReq withSwitchHce(Boolean switchHce) {
@@ -235,14 +206,14 @@ public class UpdateTaskStatusReq {
             return false;
         }
         UpdateTaskStatusReq that = (UpdateTaskStatusReq) obj;
-        return Objects.equals(this.operation, that.operation) && Objects.equals(this.param, that.param)
+        return Objects.equals(this.operation, that.operation) && Objects.equals(this.templateId, that.templateId)
             && Objects.equals(this.switchHce, that.switchHce)
             && Objects.equals(this.isNeedConsistencyCheck, that.isNeedConsistencyCheck);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operation, param, switchHce, isNeedConsistencyCheck);
+        return Objects.hash(operation, templateId, switchHce, isNeedConsistencyCheck);
     }
 
     @Override
@@ -250,7 +221,7 @@ public class UpdateTaskStatusReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTaskStatusReq {\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
-        sb.append("    param: ").append(toIndentedString(param)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    switchHce: ").append(toIndentedString(switchHce)).append("\n");
         sb.append("    isNeedConsistencyCheck: ").append(toIndentedString(isNeedConsistencyCheck)).append("\n");
         sb.append("}");

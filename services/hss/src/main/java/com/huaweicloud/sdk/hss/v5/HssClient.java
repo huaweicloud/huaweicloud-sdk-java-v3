@@ -51,6 +51,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListBlockedIpRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListBlockedIpResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListContainersRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListContainersResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostProtectHistoryInfoRequest;
@@ -61,6 +63,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListHostStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostVulsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListImageLocalRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListImageLocalResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigsRequest;
@@ -865,6 +869,35 @@ public class HssClient {
     }
 
     /**
+     * 查询容器基本信息列表
+     *
+     * 查询容器基本信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListContainersRequest 请求对象
+     * @return ListContainersResponse
+     */
+    public ListContainersResponse listContainers(ListContainersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listContainers);
+    }
+
+    /**
+     * 查询容器基本信息列表
+     *
+     * 查询容器基本信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListContainersRequest 请求对象
+     * @return SyncInvoker<ListContainersRequest, ListContainersResponse>
+     */
+    public SyncInvoker<ListContainersRequest, ListContainersResponse> listContainersInvoker(
+        ListContainersRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listContainers, hcClient);
+    }
+
+    /**
      * 查询服务器组列表
      *
      * 查询服务器组列表
@@ -1007,6 +1040,35 @@ public class HssClient {
      */
     public SyncInvoker<ListHostVulsRequest, ListHostVulsResponse> listHostVulsInvoker(ListHostVulsRequest request) {
         return new SyncInvoker<>(request, HssMeta.listHostVuls, hcClient);
+    }
+
+    /**
+     * 本地镜像列表查询
+     *
+     * 本地镜像列表查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageLocalRequest 请求对象
+     * @return ListImageLocalResponse
+     */
+    public ListImageLocalResponse listImageLocal(ListImageLocalRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listImageLocal);
+    }
+
+    /**
+     * 本地镜像列表查询
+     *
+     * 本地镜像列表查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageLocalRequest 请求对象
+     * @return SyncInvoker<ListImageLocalRequest, ListImageLocalResponse>
+     */
+    public SyncInvoker<ListImageLocalRequest, ListImageLocalResponse> listImageLocalInvoker(
+        ListImageLocalRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listImageLocal, hcClient);
     }
 
     /**

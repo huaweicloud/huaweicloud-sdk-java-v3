@@ -90,7 +90,7 @@ public class ShowApiVersionResponse extends SdkResponse {
     }
 
     /**
-     * 版本状态。 取值“CURRENT”，表示该版本为主推版本。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
+     * 版本状态。 SUPPORTED表示支持的版本
      * @return status
      */
     public String getStatus() {

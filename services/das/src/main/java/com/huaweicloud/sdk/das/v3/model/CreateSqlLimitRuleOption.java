@@ -36,6 +36,11 @@ public class CreateSqlLimitRuleOption {
         public static final SqlTypeEnum DELETE = new SqlTypeEnum("DELETE");
 
         /**
+         * Enum INSERT for value: "INSERT"
+         */
+        public static final SqlTypeEnum INSERT = new SqlTypeEnum("INSERT");
+
+        /**
          * Enum QUERY_ID for value: "QUERY_ID"
          */
         public static final SqlTypeEnum QUERY_ID = new SqlTypeEnum("QUERY_ID");
@@ -52,6 +57,7 @@ public class CreateSqlLimitRuleOption {
             map.put("SELECT", SELECT);
             map.put("UPDATE", UPDATE);
             map.put("DELETE", DELETE);
+            map.put("INSERT", INSERT);
             map.put("QUERY_ID", QUERY_ID);
             map.put("QUERY_STR", QUERY_STR);
             return Collections.unmodifiableMap(map);
@@ -123,6 +129,11 @@ public class CreateSqlLimitRuleOption {
 
     private String pattern;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "his_sql_limit_switch")
+
+    private Boolean hisSqlLimitSwitch;
+
     public CreateSqlLimitRuleOption withSqlType(SqlTypeEnum sqlType) {
         this.sqlType = sqlType;
         return this;
@@ -191,6 +202,23 @@ public class CreateSqlLimitRuleOption {
         this.pattern = pattern;
     }
 
+    public CreateSqlLimitRuleOption withHisSqlLimitSwitch(Boolean hisSqlLimitSwitch) {
+        this.hisSqlLimitSwitch = hisSqlLimitSwitch;
+        return this;
+    }
+
+    /**
+     * 历史SQL限流开关。 本开关仅对本条SQL限流规则生效。 开启时，将kill掉命中此条SQL限流规则的已有会话。
+     * @return hisSqlLimitSwitch
+     */
+    public Boolean getHisSqlLimitSwitch() {
+        return hisSqlLimitSwitch;
+    }
+
+    public void setHisSqlLimitSwitch(Boolean hisSqlLimitSwitch) {
+        this.hisSqlLimitSwitch = hisSqlLimitSwitch;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -201,12 +229,13 @@ public class CreateSqlLimitRuleOption {
         }
         CreateSqlLimitRuleOption that = (CreateSqlLimitRuleOption) obj;
         return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.maxConcurrency, that.maxConcurrency)
-            && Objects.equals(this.maxWaiting, that.maxWaiting) && Objects.equals(this.pattern, that.pattern);
+            && Objects.equals(this.maxWaiting, that.maxWaiting) && Objects.equals(this.pattern, that.pattern)
+            && Objects.equals(this.hisSqlLimitSwitch, that.hisSqlLimitSwitch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlType, maxConcurrency, maxWaiting, pattern);
+        return Objects.hash(sqlType, maxConcurrency, maxWaiting, pattern, hisSqlLimitSwitch);
     }
 
     @Override
@@ -217,6 +246,7 @@ public class CreateSqlLimitRuleOption {
         sb.append("    maxConcurrency: ").append(toIndentedString(maxConcurrency)).append("\n");
         sb.append("    maxWaiting: ").append(toIndentedString(maxWaiting)).append("\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
+        sb.append("    hisSqlLimitSwitch: ").append(toIndentedString(hisSqlLimitSwitch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

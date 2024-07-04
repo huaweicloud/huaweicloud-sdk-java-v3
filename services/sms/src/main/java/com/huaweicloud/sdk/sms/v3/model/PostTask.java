@@ -102,6 +102,11 @@ public class PostTask {
     private Boolean startTargetServer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_start")
+
+    private Boolean autoStart;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
@@ -142,6 +147,11 @@ public class PostTask {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_template_id")
 
     private String vmTemplateId;
@@ -150,6 +160,11 @@ public class PostTask {
     @JsonProperty(value = "use_public_ip")
 
     private Boolean usePublicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "use_ipv6")
+
+    private Boolean useIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "syncing")
@@ -215,6 +230,23 @@ public class PostTask {
 
     public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
+    }
+
+    public PostTask withAutoStart(Boolean autoStart) {
+        this.autoStart = autoStart;
+        return this;
+    }
+
+    /**
+     * 是否自动启动
+     * @return autoStart
+     */
+    public Boolean getAutoStart() {
+        return autoStart;
+    }
+
+    public void setAutoStart(Boolean autoStart) {
+        this.autoStart = autoStart;
     }
 
     public PostTask withOsType(String osType) {
@@ -371,6 +403,23 @@ public class PostTask {
         this.projectId = projectId;
     }
 
+    public PostTask withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 优先级。默认为1
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public PostTask withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
         return this;
@@ -403,6 +452,23 @@ public class PostTask {
 
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
+    }
+
+    public PostTask withUseIpv6(Boolean useIpv6) {
+        this.useIpv6 = useIpv6;
+        return this;
+    }
+
+    /**
+     * 是否使用ipv6
+     * @return useIpv6
+     */
+    public Boolean getUseIpv6() {
+        return useIpv6;
+    }
+
+    public void setUseIpv6(Boolean useIpv6) {
+        this.useIpv6 = useIpv6;
     }
 
     public PostTask withSyncing(Boolean syncing) {
@@ -467,13 +533,15 @@ public class PostTask {
         PostTask that = (PostTask) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.startTargetServer, that.startTargetServer)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.sourceServer, that.sourceServer)
+            && Objects.equals(this.autoStart, that.autoStart) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.sourceServer, that.sourceServer)
             && Objects.equals(this.targetServer, that.targetServer)
             && Objects.equals(this.migrationIp, that.migrationIp) && Objects.equals(this.regionName, that.regionName)
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectName, that.projectName)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.vmTemplateId, that.vmTemplateId)
-            && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.syncing, that.syncing)
-            && Objects.equals(this.existServer, that.existServer)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.vmTemplateId, that.vmTemplateId)
+            && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.useIpv6, that.useIpv6)
+            && Objects.equals(this.syncing, that.syncing) && Objects.equals(this.existServer, that.existServer)
             && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
     }
 
@@ -482,6 +550,7 @@ public class PostTask {
         return Objects.hash(name,
             type,
             startTargetServer,
+            autoStart,
             osType,
             sourceServer,
             targetServer,
@@ -490,8 +559,10 @@ public class PostTask {
             regionId,
             projectName,
             projectId,
+            priority,
             vmTemplateId,
             usePublicIp,
+            useIpv6,
             syncing,
             existServer,
             startNetworkCheck);
@@ -504,6 +575,7 @@ public class PostTask {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
+        sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    sourceServer: ").append(toIndentedString(sourceServer)).append("\n");
         sb.append("    targetServer: ").append(toIndentedString(targetServer)).append("\n");
@@ -512,8 +584,10 @@ public class PostTask {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
+        sb.append("    useIpv6: ").append(toIndentedString(useIpv6)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");

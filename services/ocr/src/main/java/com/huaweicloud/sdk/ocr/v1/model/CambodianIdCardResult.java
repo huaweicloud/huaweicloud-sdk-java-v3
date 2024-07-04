@@ -99,6 +99,41 @@ public class CambodianIdCardResult {
     private String idcardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adjusted_image")
+
+    private String adjustedImage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_border_integrity_result")
+
+    private Boolean detectBorderIntegrityResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blocking_within_border_result")
+
+    private Boolean detectBlockingWithinBorderResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_blur_result")
+
+    private Boolean detectBlurResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_glare_result")
+
+    private Boolean detectGlareResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_tampering_result")
+
+    private Boolean detectTamperingResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "score_info")
+
+    private CambodianIdCardScoreInformationResult scoreInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -397,7 +432,7 @@ public class CambodianIdCardResult {
     }
 
     /**
-     * 身份证的类型。当输入参数“ idcard_type ”为“true”时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
+     * 身份证的类型。当输入参数\"idcard_type \"为\"true\"时，才返回该参数。取值如下所示： - normal：身份证原件 - copy：复印的身份证 
      * @return idcardType
      */
     public String getIdcardType() {
@@ -406,6 +441,134 @@ public class CambodianIdCardResult {
 
     public void setIdcardType(String idcardType) {
         this.idcardType = idcardType;
+    }
+
+    public CambodianIdCardResult withAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+        return this;
+    }
+
+    /**
+     * 身份证原图的base64编码。 当输入参数\"return_adjusted_image\"为\"true\"时，才返回该参数。 
+     * @return adjustedImage
+     */
+    public String getAdjustedImage() {
+        return adjustedImage;
+    }
+
+    public void setAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+    }
+
+    public CambodianIdCardResult withDetectBorderIntegrityResult(Boolean detectBorderIntegrityResult) {
+        this.detectBorderIntegrityResult = detectBorderIntegrityResult;
+        return this;
+    }
+
+    /**
+     * 身份证图片边框完整性告警结果，\"true\"表示边框不完整，\"false\"表示边框完整。仅在输入参数detect_border_integrity为true时，返回该字段。 
+     * @return detectBorderIntegrityResult
+     */
+    public Boolean getDetectBorderIntegrityResult() {
+        return detectBorderIntegrityResult;
+    }
+
+    public void setDetectBorderIntegrityResult(Boolean detectBorderIntegrityResult) {
+        this.detectBorderIntegrityResult = detectBorderIntegrityResult;
+    }
+
+    public CambodianIdCardResult withDetectBlockingWithinBorderResult(Boolean detectBlockingWithinBorderResult) {
+        this.detectBlockingWithinBorderResult = detectBlockingWithinBorderResult;
+        return this;
+    }
+
+    /**
+     * 身份证图像框内是否存在遮挡的告警结果，\"true\"表示边框内部存在遮挡，\"false\"表示边框内部完整。仅在输入参数detect_blocking_within_border为true时，返回该字段。 
+     * @return detectBlockingWithinBorderResult
+     */
+    public Boolean getDetectBlockingWithinBorderResult() {
+        return detectBlockingWithinBorderResult;
+    }
+
+    public void setDetectBlockingWithinBorderResult(Boolean detectBlockingWithinBorderResult) {
+        this.detectBlockingWithinBorderResult = detectBlockingWithinBorderResult;
+    }
+
+    public CambodianIdCardResult withDetectBlurResult(Boolean detectBlurResult) {
+        this.detectBlurResult = detectBlurResult;
+        return this;
+    }
+
+    /**
+     * 身份证模糊告警结果，\"true\"表示图片模糊，\"false\"表示身份证清晰。仅在输入参数detect_blur为true时，返回该字段。 
+     * @return detectBlurResult
+     */
+    public Boolean getDetectBlurResult() {
+        return detectBlurResult;
+    }
+
+    public void setDetectBlurResult(Boolean detectBlurResult) {
+        this.detectBlurResult = detectBlurResult;
+    }
+
+    public CambodianIdCardResult withDetectGlareResult(Boolean detectGlareResult) {
+        this.detectGlareResult = detectGlareResult;
+        return this;
+    }
+
+    /**
+     * 身份证反光告警结果，\"true\"表示身份证反光，\"false\"表示是身份证无反光。仅在输入参数detect_glare为true时，返回该字段。 
+     * @return detectGlareResult
+     */
+    public Boolean getDetectGlareResult() {
+        return detectGlareResult;
+    }
+
+    public void setDetectGlareResult(Boolean detectGlareResult) {
+        this.detectGlareResult = detectGlareResult;
+    }
+
+    public CambodianIdCardResult withDetectTamperingResult(Boolean detectTamperingResult) {
+        this.detectTamperingResult = detectTamperingResult;
+        return this;
+    }
+
+    /**
+     * 身份证人像被篡改的告警结果，\"true\"表示身份证人像被篡改，\"false\"表示是身份证人像未被篡改。仅在输入参数detect_tampering为true时，返回该字段。 
+     * @return detectTamperingResult
+     */
+    public Boolean getDetectTamperingResult() {
+        return detectTamperingResult;
+    }
+
+    public void setDetectTamperingResult(Boolean detectTamperingResult) {
+        this.detectTamperingResult = detectTamperingResult;
+    }
+
+    public CambodianIdCardResult withScoreInfo(CambodianIdCardScoreInformationResult scoreInfo) {
+        this.scoreInfo = scoreInfo;
+        return this;
+    }
+
+    public CambodianIdCardResult withScoreInfo(Consumer<CambodianIdCardScoreInformationResult> scoreInfoSetter) {
+        if (this.scoreInfo == null) {
+            this.scoreInfo = new CambodianIdCardScoreInformationResult();
+            scoreInfoSetter.accept(this.scoreInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get scoreInfo
+     * @return scoreInfo
+     */
+    public CambodianIdCardScoreInformationResult getScoreInfo() {
+        return scoreInfo;
+    }
+
+    public void setScoreInfo(CambodianIdCardScoreInformationResult scoreInfo) {
+        this.scoreInfo = scoreInfo;
     }
 
     public CambodianIdCardResult withConfidence(Object confidence) {
@@ -445,7 +608,14 @@ public class CambodianIdCardResult {
             && Objects.equals(this.machineCode3, that.machineCode3)
             && Objects.equals(this.portraitImage, that.portraitImage)
             && Objects.equals(this.portraitLocation, that.portraitLocation)
-            && Objects.equals(this.idcardType, that.idcardType) && Objects.equals(this.confidence, that.confidence);
+            && Objects.equals(this.idcardType, that.idcardType)
+            && Objects.equals(this.adjustedImage, that.adjustedImage)
+            && Objects.equals(this.detectBorderIntegrityResult, that.detectBorderIntegrityResult)
+            && Objects.equals(this.detectBlockingWithinBorderResult, that.detectBlockingWithinBorderResult)
+            && Objects.equals(this.detectBlurResult, that.detectBlurResult)
+            && Objects.equals(this.detectGlareResult, that.detectGlareResult)
+            && Objects.equals(this.detectTamperingResult, that.detectTamperingResult)
+            && Objects.equals(this.scoreInfo, that.scoreInfo) && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override
@@ -467,6 +637,13 @@ public class CambodianIdCardResult {
             portraitImage,
             portraitLocation,
             idcardType,
+            adjustedImage,
+            detectBorderIntegrityResult,
+            detectBlockingWithinBorderResult,
+            detectBlurResult,
+            detectGlareResult,
+            detectTamperingResult,
+            scoreInfo,
             confidence);
     }
 
@@ -491,6 +668,17 @@ public class CambodianIdCardResult {
         sb.append("    portraitImage: ").append(toIndentedString(portraitImage)).append("\n");
         sb.append("    portraitLocation: ").append(toIndentedString(portraitLocation)).append("\n");
         sb.append("    idcardType: ").append(toIndentedString(idcardType)).append("\n");
+        sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
+        sb.append("    detectBorderIntegrityResult: ")
+            .append(toIndentedString(detectBorderIntegrityResult))
+            .append("\n");
+        sb.append("    detectBlockingWithinBorderResult: ")
+            .append(toIndentedString(detectBlockingWithinBorderResult))
+            .append("\n");
+        sb.append("    detectBlurResult: ").append(toIndentedString(detectBlurResult)).append("\n");
+        sb.append("    detectGlareResult: ").append(toIndentedString(detectGlareResult)).append("\n");
+        sb.append("    detectTamperingResult: ").append(toIndentedString(detectTamperingResult)).append("\n");
+        sb.append("    scoreInfo: ").append(toIndentedString(scoreInfo)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();

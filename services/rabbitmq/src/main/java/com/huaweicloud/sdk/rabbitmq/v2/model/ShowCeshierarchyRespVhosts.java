@@ -21,7 +21,7 @@ public class ShowCeshierarchyRespVhosts {
     }
 
     /**
-     * vhost名称。
+     * Vhost名称。
      * @return name
      */
     public String getName() {

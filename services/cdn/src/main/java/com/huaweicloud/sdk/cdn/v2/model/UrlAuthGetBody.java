@@ -61,6 +61,11 @@ public class UrlAuthGetBody {
 
     private String timeFormat;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_arg")
+
+    private String timeArg;
+
     public UrlAuthGetBody withStatus(String status) {
         this.status = status;
         return this;
@@ -240,6 +245,23 @@ public class UrlAuthGetBody {
         this.timeFormat = timeFormat;
     }
 
+    public UrlAuthGetBody withTimeArg(String timeArg) {
+        this.timeArg = timeArg;
+        return this;
+    }
+
+    /**
+     * 时间参数。
+     * @return timeArg
+     */
+    public String getTimeArg() {
+        return timeArg;
+    }
+
+    public void setTimeArg(String timeArg) {
+        this.timeArg = timeArg;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,13 +275,23 @@ public class UrlAuthGetBody {
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.signMethod, that.signMethod)
             && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.inheritConfig, that.inheritConfig)
             && Objects.equals(this.key, that.key) && Objects.equals(this.backupKey, that.backupKey)
-            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat);
+            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat)
+            && Objects.equals(this.timeArg, that.timeArg);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(status, type, expireTime, signMethod, matchType, inheritConfig, key, backupKey, signArg, timeFormat);
+        return Objects.hash(status,
+            type,
+            expireTime,
+            signMethod,
+            matchType,
+            inheritConfig,
+            key,
+            backupKey,
+            signArg,
+            timeFormat,
+            timeArg);
     }
 
     @Override
@@ -276,6 +308,7 @@ public class UrlAuthGetBody {
         sb.append("    backupKey: ").append(toIndentedString(backupKey)).append("\n");
         sb.append("    signArg: ").append(toIndentedString(signArg)).append("\n");
         sb.append("    timeFormat: ").append(toIndentedString(timeFormat)).append("\n");
+        sb.append("    timeArg: ").append(toIndentedString(timeArg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

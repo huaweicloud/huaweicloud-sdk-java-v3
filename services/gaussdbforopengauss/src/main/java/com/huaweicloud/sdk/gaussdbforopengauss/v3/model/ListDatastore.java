@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库信息。
@@ -29,6 +32,16 @@ public class ListDatastore {
     @JsonProperty(value = "hotfix_versions")
 
     private String hotfixVersions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_version")
+
+    private String targetVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hotfix_finished_times")
+
+    private List<String> hotfixFinishedTimes = null;
 
     public ListDatastore withType(String type) {
         this.type = type;
@@ -98,6 +111,56 @@ public class ListDatastore {
         this.hotfixVersions = hotfixVersions;
     }
 
+    public ListDatastore withTargetVersion(String targetVersion) {
+        this.targetVersion = targetVersion;
+        return this;
+    }
+
+    /**
+     * 数据库正在升级的目标版本。
+     * @return targetVersion
+     */
+    public String getTargetVersion() {
+        return targetVersion;
+    }
+
+    public void setTargetVersion(String targetVersion) {
+        this.targetVersion = targetVersion;
+    }
+
+    public ListDatastore withHotfixFinishedTimes(List<String> hotfixFinishedTimes) {
+        this.hotfixFinishedTimes = hotfixFinishedTimes;
+        return this;
+    }
+
+    public ListDatastore addHotfixFinishedTimesItem(String hotfixFinishedTimesItem) {
+        if (this.hotfixFinishedTimes == null) {
+            this.hotfixFinishedTimes = new ArrayList<>();
+        }
+        this.hotfixFinishedTimes.add(hotfixFinishedTimesItem);
+        return this;
+    }
+
+    public ListDatastore withHotfixFinishedTimes(Consumer<List<String>> hotfixFinishedTimesSetter) {
+        if (this.hotfixFinishedTimes == null) {
+            this.hotfixFinishedTimes = new ArrayList<>();
+        }
+        hotfixFinishedTimesSetter.accept(this.hotfixFinishedTimes);
+        return this;
+    }
+
+    /**
+     * 热补丁升级完成时间列表。  热补丁升级完成时间，格式为“yyyy-mm-dd hh:mm:ss timezone”。  其中timezone是指时区。 
+     * @return hotfixFinishedTimes
+     */
+    public List<String> getHotfixFinishedTimes() {
+        return hotfixFinishedTimes;
+    }
+
+    public void setHotfixFinishedTimes(List<String> hotfixFinishedTimes) {
+        this.hotfixFinishedTimes = hotfixFinishedTimes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +172,14 @@ public class ListDatastore {
         ListDatastore that = (ListDatastore) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
             && Objects.equals(this.completeVersion, that.completeVersion)
-            && Objects.equals(this.hotfixVersions, that.hotfixVersions);
+            && Objects.equals(this.hotfixVersions, that.hotfixVersions)
+            && Objects.equals(this.targetVersion, that.targetVersion)
+            && Objects.equals(this.hotfixFinishedTimes, that.hotfixFinishedTimes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version, completeVersion, hotfixVersions);
+        return Objects.hash(type, version, completeVersion, hotfixVersions, targetVersion, hotfixFinishedTimes);
     }
 
     @Override
@@ -125,6 +190,8 @@ public class ListDatastore {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    completeVersion: ").append(toIndentedString(completeVersion)).append("\n");
         sb.append("    hotfixVersions: ").append(toIndentedString(hotfixVersions)).append("\n");
+        sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
+        sb.append("    hotfixFinishedTimes: ").append(toIndentedString(hotfixFinishedTimes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

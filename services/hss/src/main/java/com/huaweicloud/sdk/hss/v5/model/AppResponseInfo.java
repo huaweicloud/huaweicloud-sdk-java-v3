@@ -66,7 +66,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * HSS的Agent ID
+     * Agent ID
      * @return agentId
      */
     public String getAgentId() {

@@ -170,7 +170,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 队列信息。
+     * Queue信息。
      * @return queues
      */
     public List<ShowCeshierarchyRespQueues> getQueues() {
@@ -203,7 +203,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * vhost信息
+     * Vhost信息
      * @return vhosts
      */
     public List<ShowCeshierarchyRespVhosts> getVhosts() {

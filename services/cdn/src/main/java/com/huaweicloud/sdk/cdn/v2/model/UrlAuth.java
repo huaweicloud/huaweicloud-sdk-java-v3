@@ -61,6 +61,11 @@ public class UrlAuth {
 
     private String timeFormat;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_arg")
+
+    private String timeArg;
+
     public UrlAuth withStatus(String status) {
         this.status = status;
         return this;
@@ -240,6 +245,23 @@ public class UrlAuth {
         this.timeFormat = timeFormat;
     }
 
+    public UrlAuth withTimeArg(String timeArg) {
+        this.timeArg = timeArg;
+        return this;
+    }
+
+    /**
+     * 时间参数名称：当type为“type_c2”时，该字段可选。由1-100个字符组成。必须以字母开头，后面可以衔接任意数字、字母和下划线，不允许出现其他特殊符号。鉴权方式为C2时，不传或传空默认设置为“timestamp”。
+     * @return timeArg
+     */
+    public String getTimeArg() {
+        return timeArg;
+    }
+
+    public void setTimeArg(String timeArg) {
+        this.timeArg = timeArg;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,13 +275,23 @@ public class UrlAuth {
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.signMethod, that.signMethod)
             && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.inheritConfig, that.inheritConfig)
             && Objects.equals(this.key, that.key) && Objects.equals(this.backupKey, that.backupKey)
-            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat);
+            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat)
+            && Objects.equals(this.timeArg, that.timeArg);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(status, type, expireTime, signMethod, matchType, inheritConfig, key, backupKey, signArg, timeFormat);
+        return Objects.hash(status,
+            type,
+            expireTime,
+            signMethod,
+            matchType,
+            inheritConfig,
+            key,
+            backupKey,
+            signArg,
+            timeFormat,
+            timeArg);
     }
 
     @Override
@@ -276,6 +308,7 @@ public class UrlAuth {
         sb.append("    backupKey: ").append(toIndentedString(backupKey)).append("\n");
         sb.append("    signArg: ").append(toIndentedString(signArg)).append("\n");
         sb.append("    timeFormat: ").append(toIndentedString(timeFormat)).append("\n");
+        sb.append("    timeArg: ").append(toIndentedString(timeArg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,18 +26,6 @@ public class BcsRegion {
     public static final Region CN_EAST_2 =
         new Region("cn-east-2", "https://bcs.cn-east-2.myhuaweicloud.com", "https://bcs.cn-east-2.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
-        "https://bcs.ap-southeast-1.myhuaweicloud.com", "https://bcs.ap-southeast-1.myhuaweicloud.cn");
-
-    public static final Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
-        "https://bcs.ap-southeast-2.myhuaweicloud.com", "https://bcs.ap-southeast-2.myhuaweicloud.cn");
-
-    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
-        "https://bcs.ap-southeast-3.myhuaweicloud.com", "https://bcs.ap-southeast-3.myhuaweicloud.cn");
-
-    public static final Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
-        "https://bcs.ap-southeast-4.myhuaweicloud.com", "https://bcs.ap-southeast-4.myhuaweicloud.cn");
-
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("BCS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -48,10 +36,6 @@ public class BcsRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-2", CN_EAST_2);
-        map.put("ap-southeast-1", AP_SOUTHEAST_1);
-        map.put("ap-southeast-2", AP_SOUTHEAST_2);
-        map.put("ap-southeast-3", AP_SOUTHEAST_3);
-        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         return Collections.unmodifiableMap(map);
     }
 

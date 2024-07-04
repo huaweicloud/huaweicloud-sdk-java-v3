@@ -178,7 +178,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 排序的key值，目前只支持按照recent_scan_time排序
+     * 排序的key值，目前只支持按照recent_scan_time排序，按照recent_scan_time排序时，根据sort_dir的值决定升序还是降序
      * @return sortKey
      */
     public String getSortKey() {
@@ -195,7 +195,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 排序方式，默认为降序:   - asc ：升序   - desc ：降序
+     * 排序方式，默认为降序，当sort_key为按照recent_scan_time排序时，根据当前值决定升序还是降序，当sort_key为其他值时均为降序   - asc ：升序   - desc ：降序
      * @return sortDir
      */
     public String getSortDir() {
@@ -212,7 +212,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 每页显示数量，默认10
+     * 每页显示数量
      * minimum: 10
      * maximum: 100
      * @return limit
@@ -231,7 +231,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * 偏移量：指定返回记录的开始位置
      * minimum: 0
      * maximum: 10000
      * @return offset

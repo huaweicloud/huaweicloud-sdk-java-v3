@@ -243,7 +243,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字
+     * 偏移量：指定返回记录的开始位置
      * minimum: 0
      * maximum: 2000000
      * @return offset

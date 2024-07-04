@@ -54,6 +54,8 @@ public class DasRegion {
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://das.ap-southeast-1.myhuaweicloud.com");
 
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://das.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DAS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -78,6 +80,7 @@ public class DasRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

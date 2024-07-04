@@ -65,6 +65,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
@@ -94,6 +96,7 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
+import com.huaweicloud.sdk.rds.v3.model.CustomerCreateInstanceReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoEnlargePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReqNew;
@@ -108,6 +111,9 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
@@ -195,6 +201,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
@@ -473,6 +481,9 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDBShrinkRequestBody;
@@ -1035,6 +1046,40 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateInstanceIam5Request, CreateInstanceIam5Response> createInstanceIam5 =
+        genForCreateInstanceIam5();
+
+    private static HttpRequestDef<CreateInstanceIam5Request, CreateInstanceIam5Response> genForCreateInstanceIam5() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceIam5Request, CreateInstanceIam5Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceIam5Request.class, CreateInstanceIam5Response.class)
+                .withName("CreateInstanceIam5")
+                .withUri("/v5/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceIam5Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateInstanceIam5Request.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateInstanceIam5Request::getXLanguage, CreateInstanceIam5Request::setXLanguage));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstanceIam5Request::getXClientToken,
+                CreateInstanceIam5Request::setXClientToken));
+        builder.<CustomerCreateInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomerCreateInstanceReq.class),
+            f -> f.withMarshaller(CreateInstanceIam5Request::getBody, CreateInstanceIam5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup =
         genForCreateManualBackup();
 
@@ -1212,6 +1257,41 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConfigurationRequest::getXLanguage, DeleteConfigurationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecovery =
+        genForDeleteDisasterRecovery();
+
+    private static HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> genForDeleteDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDisasterRecoveryRequest.class, DeleteDisasterRecoveryResponse.class)
+            .withName("DeleteDisasterRecovery")
+            .withUri("/v3/{project_id}/instances/{instance_id}/delete-disaster-recovery")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getInstanceId,
+                DeleteDisasterRecoveryRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getXLanguage,
+                DeleteDisasterRecoveryRequest::setXLanguage));
+        builder.<DeleteDisasterRecoveryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDisasterRecoveryRequestBody.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getBody, DeleteDisasterRecoveryRequest::setBody));
 
         // response
 
@@ -1965,6 +2045,34 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getXLanguage, ListFlavorsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlavorsResizeRequest, ListFlavorsResizeResponse> listFlavorsResize =
+        genForListFlavorsResize();
+
+    private static HttpRequestDef<ListFlavorsResizeRequest, ListFlavorsResizeResponse> genForListFlavorsResize() {
+        // basic
+        HttpRequestDef.Builder<ListFlavorsResizeRequest, ListFlavorsResizeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlavorsResizeRequest.class, ListFlavorsResizeResponse.class)
+                .withName("ListFlavorsResize")
+                .withUri("/v3/{project_id}/instances/{instance_id}/flavors-resize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsResizeRequest::getInstanceId, ListFlavorsResizeRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsResizeRequest::getXLanguage, ListFlavorsResizeRequest::setXLanguage));
 
         // response
 
@@ -5023,6 +5131,42 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SslOptionRequest.class),
             f -> f.withMarshaller(SwitchSslRequest::getBody, SwitchSslRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnlockNodeReadonlyStatusRequest, UnlockNodeReadonlyStatusResponse> unlockNodeReadonlyStatus =
+        genForUnlockNodeReadonlyStatus();
+
+    private static HttpRequestDef<UnlockNodeReadonlyStatusRequest, UnlockNodeReadonlyStatusResponse> genForUnlockNodeReadonlyStatus() {
+        // basic
+        HttpRequestDef.Builder<UnlockNodeReadonlyStatusRequest, UnlockNodeReadonlyStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UnlockNodeReadonlyStatusRequest.class, UnlockNodeReadonlyStatusResponse.class)
+                .withName("UnlockNodeReadonlyStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/unlock-node-readonly-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnlockNodeReadonlyStatusRequest::getInstanceId,
+                UnlockNodeReadonlyStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnlockNodeReadonlyStatusRequest::getXLanguage,
+                UnlockNodeReadonlyStatusRequest::setXLanguage));
+        builder.<UnlockNodeReadonlyStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnlockNodeReadonlyStatusRequestBody.class),
+            f -> f.withMarshaller(UnlockNodeReadonlyStatusRequest::getBody, UnlockNodeReadonlyStatusRequest::setBody));
 
         // response
 
