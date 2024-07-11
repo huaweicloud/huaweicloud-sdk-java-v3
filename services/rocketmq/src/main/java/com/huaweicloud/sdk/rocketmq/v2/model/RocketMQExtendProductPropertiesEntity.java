@@ -158,7 +158,7 @@ public class RocketMQExtendProductPropertiesEntity {
     }
 
     /**
-     * 每个节点的最小存储。单位为GB
+     * 每个节点的最小存储。单位为GB。
      * @return minStoragePerNode
      */
     public String getMinStoragePerNode() {
@@ -175,7 +175,7 @@ public class RocketMQExtendProductPropertiesEntity {
     }
 
     /**
-     * product_id的别名
+     * product_id的别名。
      * @return productAlias
      */
     public String getProductAlias() {

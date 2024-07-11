@@ -35,7 +35,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 消息引擎类型
+     * 消息引擎类型。
      * @return engine
      */
     public String getEngine() {
@@ -68,7 +68,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 消息引擎支持的版本
+     * 消息引擎支持的版本。
      * @return versions
      */
     public List<String> getVersions() {
@@ -102,7 +102,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 规格变更的产品信息
+     * 规格变更的产品信息。
      * @return products
      */
     public List<RocketMQExtendProductInfoEntity> getProducts() {

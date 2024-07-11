@@ -26,7 +26,7 @@ public class ListRocketMqMigrationTaskRequest {
     private String id;
 
     /**
-     * 查询类型
+     * 查询类型。
      */
     public static final class TypeEnum {
 
@@ -150,7 +150,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return id
      */
     public String getId() {
@@ -167,7 +167,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 查询类型
+     * 查询类型。
      * @return type
      */
     public TypeEnum getType() {
@@ -184,7 +184,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 当前页，从1开始
+     * 当前页，从1开始。
      * @return offset
      */
     public String getOffset() {
@@ -201,7 +201,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 当前页大小
+     * 当前页大小。
      * @return limit
      */
     public String getLimit() {

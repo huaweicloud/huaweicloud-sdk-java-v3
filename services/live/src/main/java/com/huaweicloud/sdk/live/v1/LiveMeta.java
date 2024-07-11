@@ -46,6 +46,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
@@ -62,6 +64,8 @@ import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListHlsConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
@@ -86,6 +90,7 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyHlsConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEncoderSettings;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEndPointsReq;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelGeneral;
@@ -112,6 +117,9 @@ import com.huaweicloud.sdk.live.v1.model.RecordIndexRequestBody;
 import com.huaweicloud.sdk.live.v1.model.RecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
+import com.huaweicloud.sdk.live.v1.model.SetRefererChainInfo;
+import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
@@ -124,6 +132,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.StreamForbiddenSetting;
@@ -140,6 +150,8 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicRequest;
@@ -554,6 +566,29 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRefererChainRequest, DeleteRefererChainResponse> deleteRefererChain =
+        genForDeleteRefererChain();
+
+    private static HttpRequestDef<DeleteRefererChainRequest, DeleteRefererChainResponse> genForDeleteRefererChain() {
+        // basic
+        HttpRequestDef.Builder<DeleteRefererChainRequest, DeleteRefererChainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRefererChainRequest.class, DeleteRefererChainResponse.class)
+                .withName("DeleteRefererChain")
+                .withUri("/v1/{project_id}/guard/referer-chain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRefererChainRequest::getDomain, DeleteRefererChainRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> deleteSnapshotConfig =
         genForDeleteSnapshotConfig();
 
@@ -699,6 +734,29 @@ public class LiveMeta {
             String.class,
             f -> f.withMarshaller(ListGeoBlockingConfigResponse::getXRequestId,
                 ListGeoBlockingConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHlsConfigRequest, ListHlsConfigResponse> listHlsConfig =
+        genForListHlsConfig();
+
+    private static HttpRequestDef<ListHlsConfigRequest, ListHlsConfigResponse> genForListHlsConfig() {
+        // basic
+        HttpRequestDef.Builder<ListHlsConfigRequest, ListHlsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHlsConfigRequest.class, ListHlsConfigResponse.class)
+                .withName("ListHlsConfig")
+                .withUri("/v1/{project_id}/domain/hls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("push_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHlsConfigRequest::getPushDomain, ListHlsConfigRequest::setPushDomain));
+
+        // response
+
         return builder.build();
     }
 
@@ -1101,6 +1159,29 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetRefererChainRequest, SetRefererChainResponse> setRefererChain =
+        genForSetRefererChain();
+
+    private static HttpRequestDef<SetRefererChainRequest, SetRefererChainResponse> genForSetRefererChain() {
+        // basic
+        HttpRequestDef.Builder<SetRefererChainRequest, SetRefererChainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetRefererChainRequest.class, SetRefererChainResponse.class)
+                .withName("SetRefererChain")
+                .withUri("/v1/{project_id}/guard/referer-chain")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<SetRefererChainInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetRefererChainInfo.class),
+            f -> f.withMarshaller(SetRefererChainRequest::getBody, SetRefererChainRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForShowDomain();
 
     private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForShowDomain() {
@@ -1217,6 +1298,29 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRecordRuleRequest::getId, ShowRecordRuleRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRefererChainRequest, ShowRefererChainResponse> showRefererChain =
+        genForShowRefererChain();
+
+    private static HttpRequestDef<ShowRefererChainRequest, ShowRefererChainResponse> genForShowRefererChain() {
+        // basic
+        HttpRequestDef.Builder<ShowRefererChainRequest, ShowRefererChainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRefererChainRequest.class, ShowRefererChainResponse.class)
+                .withName("ShowRefererChain")
+                .withUri("/v1/{project_id}/guard/referer-chain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefererChainRequest::getDomain, ShowRefererChainRequest::setDomain));
 
         // response
 
@@ -1392,6 +1496,29 @@ public class LiveMeta {
             String.class,
             f -> f.withMarshaller(UpdateGeoBlockingConfigResponse::getXRequestId,
                 UpdateGeoBlockingConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHlsConfigRequest, UpdateHlsConfigResponse> updateHlsConfig =
+        genForUpdateHlsConfig();
+
+    private static HttpRequestDef<UpdateHlsConfigRequest, UpdateHlsConfigResponse> genForUpdateHlsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateHlsConfigRequest, UpdateHlsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHlsConfigRequest.class, UpdateHlsConfigResponse.class)
+                .withName("UpdateHlsConfig")
+                .withUri("/v1/{project_id}/domain/hls")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ModifyHlsConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyHlsConfig.class),
+            f -> f.withMarshaller(UpdateHlsConfigRequest::getBody, UpdateHlsConfigRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

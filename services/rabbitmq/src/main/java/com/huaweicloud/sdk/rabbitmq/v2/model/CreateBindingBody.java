@@ -65,7 +65,7 @@ public class CreateBindingBody {
     }
 
     /**
-     * 绑定目标端类型，Exchange或Queue（AMQP版本只支持绑定Queue）
+     * 绑定目标端类型，Exchange或Queue。[（AMQP版本只支持绑定Queue）](tag:hws,hws_hk)
      * @return destinationType
      */
     public String getDestinationType() {

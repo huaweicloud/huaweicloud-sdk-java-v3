@@ -44,7 +44,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端语言
+     * 客户端语言。
      * @return language
      */
     public String getLanguage() {
@@ -61,7 +61,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端版本
+     * 客户端版本。
      * @return version
      */
     public String getVersion() {
@@ -78,7 +78,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端ID
+     * 客户端ID。
      * @return clientId
      */
     public String getClientId() {
@@ -95,7 +95,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端地址
+     * 客户端地址。
      * @return clientAddr
      */
     public String getClientAddr() {
@@ -128,7 +128,7 @@ public class ClientData {
     }
 
     /**
-     * 订阅关系列表
+     * 订阅关系列表。
      * @return subscriptions
      */
     public List<Subscription> getSubscriptions() {

@@ -97,7 +97,7 @@ public class DeleteBindingRequest {
     }
 
     /**
-     * 绑定目标端类型，Exchange或Queue（AMQP版本只支持Queue绑定类型）
+     * 绑定目标端类型，Exchange或Queue。[（AMQP版本只支持Queue绑定类型）](tag:hws,hws_hk)
      * @return destinationType
      */
     public String getDestinationType() {

@@ -45,7 +45,7 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

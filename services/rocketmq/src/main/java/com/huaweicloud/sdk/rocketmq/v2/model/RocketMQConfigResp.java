@@ -46,7 +46,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置名称
+     * RocketMQ配置名称。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置当前值
+     * RocketMQ配置当前值。
      * @return value
      */
     public String getValue() {
@@ -80,7 +80,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置的类型
+     * RocketMQ配置的类型。
      * @return configType
      */
     public String getConfigType() {
@@ -97,7 +97,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置的默认值
+     * RocketMQ配置的默认值。
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -114,7 +114,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置取值的范围
+     * RocketMQ配置取值的范围。
      * @return validValues
      */
     public String getValidValues() {
@@ -131,7 +131,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置值的类型
+     * RocketMQ配置值的类型。
      * @return valueType
      */
     public String getValueType() {

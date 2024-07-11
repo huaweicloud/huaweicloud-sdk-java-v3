@@ -43,6 +43,11 @@ public class NodeMetadata {
 
     private String updateTimestamp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ownerReference")
+
+    private NodeOwnerReference ownerReference;
+
     public NodeMetadata withName(String name) {
         this.name = name;
         return this;
@@ -177,6 +182,32 @@ public class NodeMetadata {
         this.updateTimestamp = updateTimestamp;
     }
 
+    public NodeMetadata withOwnerReference(NodeOwnerReference ownerReference) {
+        this.ownerReference = ownerReference;
+        return this;
+    }
+
+    public NodeMetadata withOwnerReference(Consumer<NodeOwnerReference> ownerReferenceSetter) {
+        if (this.ownerReference == null) {
+            this.ownerReference = new NodeOwnerReference();
+            ownerReferenceSetter.accept(this.ownerReference);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ownerReference
+     * @return ownerReference
+     */
+    public NodeOwnerReference getOwnerReference() {
+        return ownerReference;
+    }
+
+    public void setOwnerReference(NodeOwnerReference ownerReference) {
+        this.ownerReference = ownerReference;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -189,12 +220,13 @@ public class NodeMetadata {
         return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.creationTimestamp, that.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp)
+            && Objects.equals(this.ownerReference, that.ownerReference);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, labels, annotations, creationTimestamp, updateTimestamp);
+        return Objects.hash(name, uid, labels, annotations, creationTimestamp, updateTimestamp, ownerReference);
     }
 
     @Override
@@ -207,6 +239,7 @@ public class NodeMetadata {
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
+        sb.append("    ownerReference: ").append(toIndentedString(ownerReference)).append("\n");
         sb.append("}");
         return sb.toString();
     }

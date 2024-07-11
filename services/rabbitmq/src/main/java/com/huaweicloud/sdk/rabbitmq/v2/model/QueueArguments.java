@@ -93,7 +93,7 @@ public class QueueArguments {
     }
 
     /**
-     * 惰性队列（AMQP版本默认持久化所有消息，不涉及此参数）
+     * 惰性队列[（AMQP版本默认持久化所有消息，不涉及此参数）](tag:hws,hws_hk)
      * @return xQueueMode
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

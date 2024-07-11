@@ -131,7 +131,7 @@ public class ListNewHostsRequest {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return groupId
      */
     public String getGroupId() {

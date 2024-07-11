@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class BatchCreateOrDeleteTagReq {
 
     /**
-     * 操作标识（仅支持小写）: - create（创建） - delete（删除）
+     * 操作标识（仅支持小写）： - create（创建） - delete（删除）
      */
     public static final class ActionEnum {
 
@@ -104,7 +104,7 @@ public class BatchCreateOrDeleteTagReq {
     }
 
     /**
-     * 操作标识（仅支持小写）: - create（创建） - delete（删除）
+     * 操作标识（仅支持小写）： - create（创建） - delete（删除）
      * @return action
      */
     public ActionEnum getAction() {

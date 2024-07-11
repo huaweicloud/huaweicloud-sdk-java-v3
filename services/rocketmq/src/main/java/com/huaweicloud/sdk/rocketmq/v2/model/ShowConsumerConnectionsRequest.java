@@ -41,7 +41,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 实例ID
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -58,7 +58,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 消费组名称
+     * 消费组名称。
      * @return group
      */
     public String getGroup() {

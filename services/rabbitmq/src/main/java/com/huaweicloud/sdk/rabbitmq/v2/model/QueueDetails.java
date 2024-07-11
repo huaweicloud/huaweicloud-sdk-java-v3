@@ -159,7 +159,7 @@ public class QueueDetails {
     }
 
     /**
-     * 策略（AMQP版本不支持policy，不涉及此参数）
+     * 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk)
      * @return policy
      */
     public String getPolicy() {

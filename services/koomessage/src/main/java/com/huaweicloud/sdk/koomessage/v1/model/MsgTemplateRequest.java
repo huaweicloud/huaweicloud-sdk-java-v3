@@ -44,26 +44,26 @@ public class MsgTemplateRequest {
     private String templateName;
 
     /**
-     * 模板类型。默认取所属签名的签名类型。
+     * 模板类型。默认取所属签名的签名类型。PROMOTION_TYPE：营销类，NOTIFY_TYPE：通知类。
      */
     public static final class TemplateTypeEnum {
 
         /**
-         * Enum PROMOTION_TYPE_ for value: "PROMOTION_TYPE：营销类"
+         * Enum PROMOTION_TYPE for value: "PROMOTION_TYPE"
          */
-        public static final TemplateTypeEnum PROMOTION_TYPE_ = new TemplateTypeEnum("PROMOTION_TYPE：营销类");
+        public static final TemplateTypeEnum PROMOTION_TYPE = new TemplateTypeEnum("PROMOTION_TYPE");
 
         /**
-         * Enum NOTIFY_TYPE_ for value: "NOTIFY_TYPE：通知类"
+         * Enum NOTIFY_TYPE for value: "NOTIFY_TYPE"
          */
-        public static final TemplateTypeEnum NOTIFY_TYPE_ = new TemplateTypeEnum("NOTIFY_TYPE：通知类");
+        public static final TemplateTypeEnum NOTIFY_TYPE = new TemplateTypeEnum("NOTIFY_TYPE");
 
         private static final Map<String, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TemplateTypeEnum> createStaticFields() {
             Map<String, TemplateTypeEnum> map = new HashMap<>();
-            map.put("PROMOTION_TYPE：营销类", PROMOTION_TYPE_);
-            map.put("NOTIFY_TYPE：通知类", NOTIFY_TYPE_);
+            map.put("PROMOTION_TYPE", PROMOTION_TYPE);
+            map.put("NOTIFY_TYPE", NOTIFY_TYPE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -119,26 +119,26 @@ public class MsgTemplateRequest {
     private TemplateTypeEnum templateType;
 
     /**
-     * 是否为通用模板(暂不支持通用模板)。
+     * 是否为通用模板(暂不支持通用模板)。0：非通用模板，1：通用模板。
      */
     public static final class UniversalTemplateEnum {
 
         /**
-         * Enum _0_ for value: "0：非通用模板"
+         * Enum _0 for value: "0"
          */
-        public static final UniversalTemplateEnum _0_ = new UniversalTemplateEnum("0：非通用模板");
+        public static final UniversalTemplateEnum _0 = new UniversalTemplateEnum("0");
 
         /**
-         * Enum _1_ for value: "1：通用模板"
+         * Enum _1 for value: "1"
          */
-        public static final UniversalTemplateEnum _1_ = new UniversalTemplateEnum("1：通用模板");
+        public static final UniversalTemplateEnum _1 = new UniversalTemplateEnum("1");
 
         private static final Map<String, UniversalTemplateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, UniversalTemplateEnum> createStaticFields() {
             Map<String, UniversalTemplateEnum> map = new HashMap<>();
-            map.put("0：非通用模板", _0_);
-            map.put("1：通用模板", _1_);
+            map.put("0", _0);
+            map.put("1", _1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -289,7 +289,7 @@ public class MsgTemplateRequest {
     }
 
     /**
-     * 模板类型。默认取所属签名的签名类型。
+     * 模板类型。默认取所属签名的签名类型。PROMOTION_TYPE：营销类，NOTIFY_TYPE：通知类。
      * @return templateType
      */
     public TemplateTypeEnum getTemplateType() {
@@ -306,7 +306,7 @@ public class MsgTemplateRequest {
     }
 
     /**
-     * 是否为通用模板(暂不支持通用模板)。
+     * 是否为通用模板(暂不支持通用模板)。0：非通用模板，1：通用模板。
      * @return universalTemplate
      */
     public UniversalTemplateEnum getUniversalTemplate() {

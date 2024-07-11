@@ -113,6 +113,7 @@ public class CdnAsyncClient {
      * @param request BatchDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.batchDeleteTags);
     }
@@ -127,6 +128,7 @@ public class CdnAsyncClient {
      * @param request BatchDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
         BatchDeleteTagsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.batchDeleteTags, hcClient);
@@ -142,6 +144,7 @@ public class CdnAsyncClient {
      * @param request CreateDomainRequest 请求对象
      * @return CompletableFuture<CreateDomainResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateDomainResponse> createDomainAsync(CreateDomainRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.createDomain);
     }
@@ -156,6 +159,7 @@ public class CdnAsyncClient {
      * @param request CreateDomainRequest 请求对象
      * @return AsyncInvoker<CreateDomainRequest, CreateDomainResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(
         CreateDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createDomain, hcClient);
@@ -171,6 +175,7 @@ public class CdnAsyncClient {
      * @param request CreatePreheatingTasksRequest 请求对象
      * @return CompletableFuture<CreatePreheatingTasksResponse>
      */
+    @Deprecated
     public CompletableFuture<CreatePreheatingTasksResponse> createPreheatingTasksAsync(
         CreatePreheatingTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.createPreheatingTasks);
@@ -186,6 +191,7 @@ public class CdnAsyncClient {
      * @param request CreatePreheatingTasksRequest 请求对象
      * @return AsyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasksAsyncInvoker(
         CreatePreheatingTasksRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createPreheatingTasks, hcClient);
@@ -201,6 +207,7 @@ public class CdnAsyncClient {
      * @param request CreateRefreshTasksRequest 请求对象
      * @return CompletableFuture<CreateRefreshTasksResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateRefreshTasksResponse> createRefreshTasksAsync(CreateRefreshTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.createRefreshTasks);
     }
@@ -215,6 +222,7 @@ public class CdnAsyncClient {
      * @param request CreateRefreshTasksRequest 请求对象
      * @return AsyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasksAsyncInvoker(
         CreateRefreshTasksRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createRefreshTasks, hcClient);
@@ -230,6 +238,7 @@ public class CdnAsyncClient {
      * @param request CreateTagsRequest 请求对象
      * @return CompletableFuture<CreateTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateTagsResponse> createTagsAsync(CreateTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.createTags);
     }
@@ -244,6 +253,7 @@ public class CdnAsyncClient {
      * @param request CreateTagsRequest 请求对象
      * @return AsyncInvoker<CreateTagsRequest, CreateTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsAsyncInvoker(CreateTagsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createTags, hcClient);
     }
@@ -258,6 +268,7 @@ public class CdnAsyncClient {
      * @param request DeleteDomainRequest 请求对象
      * @return CompletableFuture<DeleteDomainResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteDomainResponse> deleteDomainAsync(DeleteDomainRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.deleteDomain);
     }
@@ -272,6 +283,7 @@ public class CdnAsyncClient {
      * @param request DeleteDomainRequest 请求对象
      * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
         DeleteDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.deleteDomain, hcClient);
@@ -287,6 +299,7 @@ public class CdnAsyncClient {
      * @param request DisableDomainRequest 请求对象
      * @return CompletableFuture<DisableDomainResponse>
      */
+    @Deprecated
     public CompletableFuture<DisableDomainResponse> disableDomainAsync(DisableDomainRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.disableDomain);
     }
@@ -301,6 +314,7 @@ public class CdnAsyncClient {
      * @param request DisableDomainRequest 请求对象
      * @return AsyncInvoker<DisableDomainRequest, DisableDomainResponse>
      */
+    @Deprecated
     public AsyncInvoker<DisableDomainRequest, DisableDomainResponse> disableDomainAsyncInvoker(
         DisableDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.disableDomain, hcClient);
@@ -316,6 +330,7 @@ public class CdnAsyncClient {
      * @param request EnableDomainRequest 请求对象
      * @return CompletableFuture<EnableDomainResponse>
      */
+    @Deprecated
     public CompletableFuture<EnableDomainResponse> enableDomainAsync(EnableDomainRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.enableDomain);
     }
@@ -330,6 +345,7 @@ public class CdnAsyncClient {
      * @param request EnableDomainRequest 请求对象
      * @return AsyncInvoker<EnableDomainRequest, EnableDomainResponse>
      */
+    @Deprecated
     public AsyncInvoker<EnableDomainRequest, EnableDomainResponse> enableDomainAsyncInvoker(
         EnableDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.enableDomain, hcClient);
@@ -375,6 +391,7 @@ public class CdnAsyncClient {
      * @param request ShowBlackWhiteListRequest 请求对象
      * @return CompletableFuture<ShowBlackWhiteListResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowBlackWhiteListResponse> showBlackWhiteListAsync(ShowBlackWhiteListRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showBlackWhiteList);
     }
@@ -389,6 +406,7 @@ public class CdnAsyncClient {
      * @param request ShowBlackWhiteListRequest 请求对象
      * @return AsyncInvoker<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> showBlackWhiteListAsyncInvoker(
         ShowBlackWhiteListRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showBlackWhiteList, hcClient);
@@ -404,6 +422,7 @@ public class CdnAsyncClient {
      * @param request ShowCacheRulesRequest 请求对象
      * @return CompletableFuture<ShowCacheRulesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowCacheRulesResponse> showCacheRulesAsync(ShowCacheRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showCacheRules);
     }
@@ -418,6 +437,7 @@ public class CdnAsyncClient {
      * @param request ShowCacheRulesRequest 请求对象
      * @return AsyncInvoker<ShowCacheRulesRequest, ShowCacheRulesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowCacheRulesRequest, ShowCacheRulesResponse> showCacheRulesAsyncInvoker(
         ShowCacheRulesRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showCacheRules, hcClient);
@@ -433,6 +453,7 @@ public class CdnAsyncClient {
      * @param request ShowCertificatesHttpsInfoRequest 请求对象
      * @return CompletableFuture<ShowCertificatesHttpsInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfoAsync(
         ShowCertificatesHttpsInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showCertificatesHttpsInfo);
@@ -448,6 +469,7 @@ public class CdnAsyncClient {
      * @param request ShowCertificatesHttpsInfoRequest 请求对象
      * @return AsyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfoAsyncInvoker(
         ShowCertificatesHttpsInfoRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showCertificatesHttpsInfo, hcClient);
@@ -463,6 +485,7 @@ public class CdnAsyncClient {
      * @param request ShowDomainDetailRequest 请求对象
      * @return CompletableFuture<ShowDomainDetailResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainDetailResponse> showDomainDetailAsync(ShowDomainDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainDetail);
     }
@@ -477,6 +500,7 @@ public class CdnAsyncClient {
      * @param request ShowDomainDetailRequest 请求对象
      * @return AsyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse> showDomainDetailAsyncInvoker(
         ShowDomainDetailRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showDomainDetail, hcClient);
@@ -739,6 +763,7 @@ public class CdnAsyncClient {
      * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return CompletableFuture<ShowHistoryTaskDetailsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowHistoryTaskDetailsResponse> showHistoryTaskDetailsAsync(
         ShowHistoryTaskDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showHistoryTaskDetails);
@@ -754,6 +779,7 @@ public class CdnAsyncClient {
      * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return AsyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetailsAsyncInvoker(
         ShowHistoryTaskDetailsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showHistoryTaskDetails, hcClient);
@@ -769,6 +795,7 @@ public class CdnAsyncClient {
      * @param request ShowHistoryTasksRequest 请求对象
      * @return CompletableFuture<ShowHistoryTasksResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowHistoryTasksResponse> showHistoryTasksAsync(ShowHistoryTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showHistoryTasks);
     }
@@ -783,6 +810,7 @@ public class CdnAsyncClient {
      * @param request ShowHistoryTasksRequest 请求对象
      * @return AsyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasksAsyncInvoker(
         ShowHistoryTasksRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showHistoryTasks, hcClient);
@@ -798,6 +826,7 @@ public class CdnAsyncClient {
      * @param request ShowHttpInfoRequest 请求对象
      * @return CompletableFuture<ShowHttpInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowHttpInfoResponse> showHttpInfoAsync(ShowHttpInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showHttpInfo);
     }
@@ -812,6 +841,7 @@ public class CdnAsyncClient {
      * @param request ShowHttpInfoRequest 请求对象
      * @return AsyncInvoker<ShowHttpInfoRequest, ShowHttpInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowHttpInfoRequest, ShowHttpInfoResponse> showHttpInfoAsyncInvoker(
         ShowHttpInfoRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showHttpInfo, hcClient);
@@ -827,6 +857,7 @@ public class CdnAsyncClient {
      * @param request ShowIpInfoRequest 请求对象
      * @return CompletableFuture<ShowIpInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowIpInfoResponse> showIpInfoAsync(ShowIpInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showIpInfo);
     }
@@ -841,6 +872,7 @@ public class CdnAsyncClient {
      * @param request ShowIpInfoRequest 请求对象
      * @return AsyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfoAsyncInvoker(ShowIpInfoRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showIpInfo, hcClient);
     }
@@ -883,6 +915,7 @@ public class CdnAsyncClient {
      * @param request ShowOriginHostRequest 请求对象
      * @return CompletableFuture<ShowOriginHostResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowOriginHostResponse> showOriginHostAsync(ShowOriginHostRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showOriginHost);
     }
@@ -897,6 +930,7 @@ public class CdnAsyncClient {
      * @param request ShowOriginHostRequest 请求对象
      * @return AsyncInvoker<ShowOriginHostRequest, ShowOriginHostResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowOriginHostRequest, ShowOriginHostResponse> showOriginHostAsyncInvoker(
         ShowOriginHostRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showOriginHost, hcClient);
@@ -912,6 +946,7 @@ public class CdnAsyncClient {
      * @param request ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showQuota);
     }
@@ -926,6 +961,7 @@ public class CdnAsyncClient {
      * @param request ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showQuota, hcClient);
     }
@@ -940,6 +976,7 @@ public class CdnAsyncClient {
      * @param request ShowReferRequest 请求对象
      * @return CompletableFuture<ShowReferResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowReferResponse> showReferAsync(ShowReferRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showRefer);
     }
@@ -954,6 +991,7 @@ public class CdnAsyncClient {
      * @param request ShowReferRequest 请求对象
      * @return AsyncInvoker<ShowReferRequest, ShowReferResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowReferRequest, ShowReferResponse> showReferAsyncInvoker(ShowReferRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showRefer, hcClient);
     }
@@ -968,6 +1006,7 @@ public class CdnAsyncClient {
      * @param request ShowResponseHeaderRequest 请求对象
      * @return CompletableFuture<ShowResponseHeaderResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowResponseHeaderResponse> showResponseHeaderAsync(ShowResponseHeaderRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showResponseHeader);
     }
@@ -982,6 +1021,7 @@ public class CdnAsyncClient {
      * @param request ShowResponseHeaderRequest 请求对象
      * @return AsyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse> showResponseHeaderAsyncInvoker(
         ShowResponseHeaderRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showResponseHeader, hcClient);
@@ -997,6 +1037,7 @@ public class CdnAsyncClient {
      * @param request ShowTagsRequest 请求对象
      * @return CompletableFuture<ShowTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowTagsResponse> showTagsAsync(ShowTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showTags);
     }
@@ -1011,6 +1052,7 @@ public class CdnAsyncClient {
      * @param request ShowTagsRequest 请求对象
      * @return AsyncInvoker<ShowTagsRequest, ShowTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsAsyncInvoker(ShowTagsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showTags, hcClient);
     }
@@ -1081,6 +1123,7 @@ public class CdnAsyncClient {
      * @param request ShowUrlTaskInfoRequest 请求对象
      * @return CompletableFuture<ShowUrlTaskInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowUrlTaskInfoResponse> showUrlTaskInfoAsync(ShowUrlTaskInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showUrlTaskInfo);
     }
@@ -1095,6 +1138,7 @@ public class CdnAsyncClient {
      * @param request ShowUrlTaskInfoRequest 请求对象
      * @return AsyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfoAsyncInvoker(
         ShowUrlTaskInfoRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showUrlTaskInfo, hcClient);
@@ -1110,6 +1154,7 @@ public class CdnAsyncClient {
      * @param request UpdateBlackWhiteListRequest 请求对象
      * @return CompletableFuture<UpdateBlackWhiteListResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateBlackWhiteListResponse> updateBlackWhiteListAsync(
         UpdateBlackWhiteListRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateBlackWhiteList);
@@ -1125,6 +1170,7 @@ public class CdnAsyncClient {
      * @param request UpdateBlackWhiteListRequest 请求对象
      * @return AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteListAsyncInvoker(
         UpdateBlackWhiteListRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateBlackWhiteList, hcClient);
@@ -1140,6 +1186,7 @@ public class CdnAsyncClient {
      * @param request UpdateCacheRulesRequest 请求对象
      * @return CompletableFuture<UpdateCacheRulesResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateCacheRulesResponse> updateCacheRulesAsync(UpdateCacheRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateCacheRules);
     }
@@ -1154,6 +1201,7 @@ public class CdnAsyncClient {
      * @param request UpdateCacheRulesRequest 请求对象
      * @return AsyncInvoker<UpdateCacheRulesRequest, UpdateCacheRulesResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateCacheRulesRequest, UpdateCacheRulesResponse> updateCacheRulesAsyncInvoker(
         UpdateCacheRulesRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateCacheRules, hcClient);
@@ -1203,6 +1251,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainMultiCertificatesRequest 请求对象
      * @return CompletableFuture<UpdateDomainMultiCertificatesResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificatesAsync(
         UpdateDomainMultiCertificatesRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainMultiCertificates);
@@ -1218,6 +1267,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainMultiCertificatesRequest 请求对象
      * @return AsyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificatesAsyncInvoker(
         UpdateDomainMultiCertificatesRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateDomainMultiCertificates, hcClient);
@@ -1233,6 +1283,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainOriginRequest 请求对象
      * @return CompletableFuture<UpdateDomainOriginResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateDomainOriginResponse> updateDomainOriginAsync(UpdateDomainOriginRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainOrigin);
     }
@@ -1247,6 +1298,7 @@ public class CdnAsyncClient {
      * @param request UpdateDomainOriginRequest 请求对象
      * @return AsyncInvoker<UpdateDomainOriginRequest, UpdateDomainOriginResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateDomainOriginRequest, UpdateDomainOriginResponse> updateDomainOriginAsyncInvoker(
         UpdateDomainOriginRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateDomainOrigin, hcClient);
@@ -1262,6 +1314,7 @@ public class CdnAsyncClient {
      * @param request UpdateFollow302SwitchRequest 请求对象
      * @return CompletableFuture<UpdateFollow302SwitchResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateFollow302SwitchResponse> updateFollow302SwitchAsync(
         UpdateFollow302SwitchRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateFollow302Switch);
@@ -1277,6 +1330,7 @@ public class CdnAsyncClient {
      * @param request UpdateFollow302SwitchRequest 请求对象
      * @return AsyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> updateFollow302SwitchAsyncInvoker(
         UpdateFollow302SwitchRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateFollow302Switch, hcClient);
@@ -1292,6 +1346,7 @@ public class CdnAsyncClient {
      * @param request UpdateHttpsInfoRequest 请求对象
      * @return CompletableFuture<UpdateHttpsInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateHttpsInfoResponse> updateHttpsInfoAsync(UpdateHttpsInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateHttpsInfo);
     }
@@ -1306,6 +1361,7 @@ public class CdnAsyncClient {
      * @param request UpdateHttpsInfoRequest 请求对象
      * @return AsyncInvoker<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> updateHttpsInfoAsyncInvoker(
         UpdateHttpsInfoRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateHttpsInfo, hcClient);
@@ -1321,6 +1377,7 @@ public class CdnAsyncClient {
      * @param request UpdateOriginHostRequest 请求对象
      * @return CompletableFuture<UpdateOriginHostResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateOriginHostResponse> updateOriginHostAsync(UpdateOriginHostRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateOriginHost);
     }
@@ -1335,6 +1392,7 @@ public class CdnAsyncClient {
      * @param request UpdateOriginHostRequest 请求对象
      * @return AsyncInvoker<UpdateOriginHostRequest, UpdateOriginHostResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateOriginHostRequest, UpdateOriginHostResponse> updateOriginHostAsyncInvoker(
         UpdateOriginHostRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateOriginHost, hcClient);
@@ -1350,6 +1408,7 @@ public class CdnAsyncClient {
      * @param request UpdatePrivateBucketAccessRequest 请求对象
      * @return CompletableFuture<UpdatePrivateBucketAccessResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdatePrivateBucketAccessResponse> updatePrivateBucketAccessAsync(
         UpdatePrivateBucketAccessRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updatePrivateBucketAccess);
@@ -1365,6 +1424,7 @@ public class CdnAsyncClient {
      * @param request UpdatePrivateBucketAccessRequest 请求对象
      * @return AsyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccessAsyncInvoker(
         UpdatePrivateBucketAccessRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updatePrivateBucketAccess, hcClient);
@@ -1382,6 +1442,7 @@ public class CdnAsyncClient {
      * @param request UpdateRangeSwitchRequest 请求对象
      * @return CompletableFuture<UpdateRangeSwitchResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateRangeSwitchResponse> updateRangeSwitchAsync(UpdateRangeSwitchRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateRangeSwitch);
     }
@@ -1398,6 +1459,7 @@ public class CdnAsyncClient {
      * @param request UpdateRangeSwitchRequest 请求对象
      * @return AsyncInvoker<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> updateRangeSwitchAsyncInvoker(
         UpdateRangeSwitchRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateRangeSwitch, hcClient);
@@ -1413,6 +1475,7 @@ public class CdnAsyncClient {
      * @param request UpdateReferRequest 请求对象
      * @return CompletableFuture<UpdateReferResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateReferResponse> updateReferAsync(UpdateReferRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateRefer);
     }
@@ -1427,6 +1490,7 @@ public class CdnAsyncClient {
      * @param request UpdateReferRequest 请求对象
      * @return AsyncInvoker<UpdateReferRequest, UpdateReferResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateReferRequest, UpdateReferResponse> updateReferAsyncInvoker(UpdateReferRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateRefer, hcClient);
     }
@@ -1441,6 +1505,7 @@ public class CdnAsyncClient {
      * @param request UpdateResponseHeaderRequest 请求对象
      * @return CompletableFuture<UpdateResponseHeaderResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateResponseHeaderResponse> updateResponseHeaderAsync(
         UpdateResponseHeaderRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.updateResponseHeader);
@@ -1456,6 +1521,7 @@ public class CdnAsyncClient {
      * @param request UpdateResponseHeaderRequest 请求对象
      * @return AsyncInvoker<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> updateResponseHeaderAsyncInvoker(
         UpdateResponseHeaderRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateResponseHeader, hcClient);

@@ -111,6 +111,7 @@ public class CdnClient {
      * @param request BatchDeleteTagsRequest 请求对象
      * @return BatchDeleteTagsResponse
      */
+    @Deprecated
     public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.batchDeleteTags);
     }
@@ -125,6 +126,7 @@ public class CdnClient {
      * @param request BatchDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
         BatchDeleteTagsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.batchDeleteTags, hcClient);
@@ -140,6 +142,7 @@ public class CdnClient {
      * @param request CreateDomainRequest 请求对象
      * @return CreateDomainResponse
      */
+    @Deprecated
     public CreateDomainResponse createDomain(CreateDomainRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.createDomain);
     }
@@ -154,6 +157,7 @@ public class CdnClient {
      * @param request CreateDomainRequest 请求对象
      * @return SyncInvoker<CreateDomainRequest, CreateDomainResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainInvoker(CreateDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.createDomain, hcClient);
     }
@@ -168,6 +172,7 @@ public class CdnClient {
      * @param request CreatePreheatingTasksRequest 请求对象
      * @return CreatePreheatingTasksResponse
      */
+    @Deprecated
     public CreatePreheatingTasksResponse createPreheatingTasks(CreatePreheatingTasksRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.createPreheatingTasks);
     }
@@ -182,6 +187,7 @@ public class CdnClient {
      * @param request CreatePreheatingTasksRequest 请求对象
      * @return SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>
      */
+    @Deprecated
     public SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasksInvoker(
         CreatePreheatingTasksRequest request) {
         return new SyncInvoker<>(request, CdnMeta.createPreheatingTasks, hcClient);
@@ -197,6 +203,7 @@ public class CdnClient {
      * @param request CreateRefreshTasksRequest 请求对象
      * @return CreateRefreshTasksResponse
      */
+    @Deprecated
     public CreateRefreshTasksResponse createRefreshTasks(CreateRefreshTasksRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.createRefreshTasks);
     }
@@ -211,6 +218,7 @@ public class CdnClient {
      * @param request CreateRefreshTasksRequest 请求对象
      * @return SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasksInvoker(
         CreateRefreshTasksRequest request) {
         return new SyncInvoker<>(request, CdnMeta.createRefreshTasks, hcClient);
@@ -226,6 +234,7 @@ public class CdnClient {
      * @param request CreateTagsRequest 请求对象
      * @return CreateTagsResponse
      */
+    @Deprecated
     public CreateTagsResponse createTags(CreateTagsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.createTags);
     }
@@ -240,6 +249,7 @@ public class CdnClient {
      * @param request CreateTagsRequest 请求对象
      * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.createTags, hcClient);
     }
@@ -254,6 +264,7 @@ public class CdnClient {
      * @param request DeleteDomainRequest 请求对象
      * @return DeleteDomainResponse
      */
+    @Deprecated
     public DeleteDomainResponse deleteDomain(DeleteDomainRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.deleteDomain);
     }
@@ -268,6 +279,7 @@ public class CdnClient {
      * @param request DeleteDomainRequest 请求对象
      * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.deleteDomain, hcClient);
     }
@@ -282,6 +294,7 @@ public class CdnClient {
      * @param request DisableDomainRequest 请求对象
      * @return DisableDomainResponse
      */
+    @Deprecated
     public DisableDomainResponse disableDomain(DisableDomainRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.disableDomain);
     }
@@ -296,6 +309,7 @@ public class CdnClient {
      * @param request DisableDomainRequest 请求对象
      * @return SyncInvoker<DisableDomainRequest, DisableDomainResponse>
      */
+    @Deprecated
     public SyncInvoker<DisableDomainRequest, DisableDomainResponse> disableDomainInvoker(DisableDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.disableDomain, hcClient);
     }
@@ -310,6 +324,7 @@ public class CdnClient {
      * @param request EnableDomainRequest 请求对象
      * @return EnableDomainResponse
      */
+    @Deprecated
     public EnableDomainResponse enableDomain(EnableDomainRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.enableDomain);
     }
@@ -324,6 +339,7 @@ public class CdnClient {
      * @param request EnableDomainRequest 请求对象
      * @return SyncInvoker<EnableDomainRequest, EnableDomainResponse>
      */
+    @Deprecated
     public SyncInvoker<EnableDomainRequest, EnableDomainResponse> enableDomainInvoker(EnableDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.enableDomain, hcClient);
     }
@@ -368,6 +384,7 @@ public class CdnClient {
      * @param request ShowBlackWhiteListRequest 请求对象
      * @return ShowBlackWhiteListResponse
      */
+    @Deprecated
     public ShowBlackWhiteListResponse showBlackWhiteList(ShowBlackWhiteListRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showBlackWhiteList);
     }
@@ -382,6 +399,7 @@ public class CdnClient {
      * @param request ShowBlackWhiteListRequest 请求对象
      * @return SyncInvoker<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse> showBlackWhiteListInvoker(
         ShowBlackWhiteListRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showBlackWhiteList, hcClient);
@@ -397,6 +415,7 @@ public class CdnClient {
      * @param request ShowCacheRulesRequest 请求对象
      * @return ShowCacheRulesResponse
      */
+    @Deprecated
     public ShowCacheRulesResponse showCacheRules(ShowCacheRulesRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showCacheRules);
     }
@@ -411,6 +430,7 @@ public class CdnClient {
      * @param request ShowCacheRulesRequest 请求对象
      * @return SyncInvoker<ShowCacheRulesRequest, ShowCacheRulesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowCacheRulesRequest, ShowCacheRulesResponse> showCacheRulesInvoker(
         ShowCacheRulesRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showCacheRules, hcClient);
@@ -426,6 +446,7 @@ public class CdnClient {
      * @param request ShowCertificatesHttpsInfoRequest 请求对象
      * @return ShowCertificatesHttpsInfoResponse
      */
+    @Deprecated
     public ShowCertificatesHttpsInfoResponse showCertificatesHttpsInfo(ShowCertificatesHttpsInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showCertificatesHttpsInfo);
     }
@@ -440,6 +461,7 @@ public class CdnClient {
      * @param request ShowCertificatesHttpsInfoRequest 请求对象
      * @return SyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse> showCertificatesHttpsInfoInvoker(
         ShowCertificatesHttpsInfoRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showCertificatesHttpsInfo, hcClient);
@@ -455,6 +477,7 @@ public class CdnClient {
      * @param request ShowDomainDetailRequest 请求对象
      * @return ShowDomainDetailResponse
      */
+    @Deprecated
     public ShowDomainDetailResponse showDomainDetail(ShowDomainDetailRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainDetail);
     }
@@ -469,6 +492,7 @@ public class CdnClient {
      * @param request ShowDomainDetailRequest 请求对象
      * @return SyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse> showDomainDetailInvoker(
         ShowDomainDetailRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showDomainDetail, hcClient);
@@ -728,6 +752,7 @@ public class CdnClient {
      * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return ShowHistoryTaskDetailsResponse
      */
+    @Deprecated
     public ShowHistoryTaskDetailsResponse showHistoryTaskDetails(ShowHistoryTaskDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showHistoryTaskDetails);
     }
@@ -742,6 +767,7 @@ public class CdnClient {
      * @param request ShowHistoryTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetailsInvoker(
         ShowHistoryTaskDetailsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showHistoryTaskDetails, hcClient);
@@ -757,6 +783,7 @@ public class CdnClient {
      * @param request ShowHistoryTasksRequest 请求对象
      * @return ShowHistoryTasksResponse
      */
+    @Deprecated
     public ShowHistoryTasksResponse showHistoryTasks(ShowHistoryTasksRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showHistoryTasks);
     }
@@ -771,6 +798,7 @@ public class CdnClient {
      * @param request ShowHistoryTasksRequest 请求对象
      * @return SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasksInvoker(
         ShowHistoryTasksRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showHistoryTasks, hcClient);
@@ -786,6 +814,7 @@ public class CdnClient {
      * @param request ShowHttpInfoRequest 请求对象
      * @return ShowHttpInfoResponse
      */
+    @Deprecated
     public ShowHttpInfoResponse showHttpInfo(ShowHttpInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showHttpInfo);
     }
@@ -800,6 +829,7 @@ public class CdnClient {
      * @param request ShowHttpInfoRequest 请求对象
      * @return SyncInvoker<ShowHttpInfoRequest, ShowHttpInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowHttpInfoRequest, ShowHttpInfoResponse> showHttpInfoInvoker(ShowHttpInfoRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showHttpInfo, hcClient);
     }
@@ -814,6 +844,7 @@ public class CdnClient {
      * @param request ShowIpInfoRequest 请求对象
      * @return ShowIpInfoResponse
      */
+    @Deprecated
     public ShowIpInfoResponse showIpInfo(ShowIpInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showIpInfo);
     }
@@ -828,6 +859,7 @@ public class CdnClient {
      * @param request ShowIpInfoRequest 请求对象
      * @return SyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse> showIpInfoInvoker(ShowIpInfoRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showIpInfo, hcClient);
     }
@@ -870,6 +902,7 @@ public class CdnClient {
      * @param request ShowOriginHostRequest 请求对象
      * @return ShowOriginHostResponse
      */
+    @Deprecated
     public ShowOriginHostResponse showOriginHost(ShowOriginHostRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showOriginHost);
     }
@@ -884,6 +917,7 @@ public class CdnClient {
      * @param request ShowOriginHostRequest 请求对象
      * @return SyncInvoker<ShowOriginHostRequest, ShowOriginHostResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowOriginHostRequest, ShowOriginHostResponse> showOriginHostInvoker(
         ShowOriginHostRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showOriginHost, hcClient);
@@ -899,6 +933,7 @@ public class CdnClient {
      * @param request ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
      */
+    @Deprecated
     public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showQuota);
     }
@@ -913,6 +948,7 @@ public class CdnClient {
      * @param request ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showQuota, hcClient);
     }
@@ -927,6 +963,7 @@ public class CdnClient {
      * @param request ShowReferRequest 请求对象
      * @return ShowReferResponse
      */
+    @Deprecated
     public ShowReferResponse showRefer(ShowReferRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showRefer);
     }
@@ -941,6 +978,7 @@ public class CdnClient {
      * @param request ShowReferRequest 请求对象
      * @return SyncInvoker<ShowReferRequest, ShowReferResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowReferRequest, ShowReferResponse> showReferInvoker(ShowReferRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showRefer, hcClient);
     }
@@ -955,6 +993,7 @@ public class CdnClient {
      * @param request ShowResponseHeaderRequest 请求对象
      * @return ShowResponseHeaderResponse
      */
+    @Deprecated
     public ShowResponseHeaderResponse showResponseHeader(ShowResponseHeaderRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showResponseHeader);
     }
@@ -969,6 +1008,7 @@ public class CdnClient {
      * @param request ShowResponseHeaderRequest 请求对象
      * @return SyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse> showResponseHeaderInvoker(
         ShowResponseHeaderRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showResponseHeader, hcClient);
@@ -984,6 +1024,7 @@ public class CdnClient {
      * @param request ShowTagsRequest 请求对象
      * @return ShowTagsResponse
      */
+    @Deprecated
     public ShowTagsResponse showTags(ShowTagsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showTags);
     }
@@ -998,6 +1039,7 @@ public class CdnClient {
      * @param request ShowTagsRequest 请求对象
      * @return SyncInvoker<ShowTagsRequest, ShowTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsInvoker(ShowTagsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showTags, hcClient);
     }
@@ -1068,6 +1110,7 @@ public class CdnClient {
      * @param request ShowUrlTaskInfoRequest 请求对象
      * @return ShowUrlTaskInfoResponse
      */
+    @Deprecated
     public ShowUrlTaskInfoResponse showUrlTaskInfo(ShowUrlTaskInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showUrlTaskInfo);
     }
@@ -1082,6 +1125,7 @@ public class CdnClient {
      * @param request ShowUrlTaskInfoRequest 请求对象
      * @return SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfoInvoker(
         ShowUrlTaskInfoRequest request) {
         return new SyncInvoker<>(request, CdnMeta.showUrlTaskInfo, hcClient);
@@ -1097,6 +1141,7 @@ public class CdnClient {
      * @param request UpdateBlackWhiteListRequest 请求对象
      * @return UpdateBlackWhiteListResponse
      */
+    @Deprecated
     public UpdateBlackWhiteListResponse updateBlackWhiteList(UpdateBlackWhiteListRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateBlackWhiteList);
     }
@@ -1111,6 +1156,7 @@ public class CdnClient {
      * @param request UpdateBlackWhiteListRequest 请求对象
      * @return SyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteListInvoker(
         UpdateBlackWhiteListRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateBlackWhiteList, hcClient);
@@ -1126,6 +1172,7 @@ public class CdnClient {
      * @param request UpdateCacheRulesRequest 请求对象
      * @return UpdateCacheRulesResponse
      */
+    @Deprecated
     public UpdateCacheRulesResponse updateCacheRules(UpdateCacheRulesRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateCacheRules);
     }
@@ -1140,6 +1187,7 @@ public class CdnClient {
      * @param request UpdateCacheRulesRequest 请求对象
      * @return SyncInvoker<UpdateCacheRulesRequest, UpdateCacheRulesResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateCacheRulesRequest, UpdateCacheRulesResponse> updateCacheRulesInvoker(
         UpdateCacheRulesRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateCacheRules, hcClient);
@@ -1188,6 +1236,7 @@ public class CdnClient {
      * @param request UpdateDomainMultiCertificatesRequest 请求对象
      * @return UpdateDomainMultiCertificatesResponse
      */
+    @Deprecated
     public UpdateDomainMultiCertificatesResponse updateDomainMultiCertificates(
         UpdateDomainMultiCertificatesRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateDomainMultiCertificates);
@@ -1203,6 +1252,7 @@ public class CdnClient {
      * @param request UpdateDomainMultiCertificatesRequest 请求对象
      * @return SyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificatesInvoker(
         UpdateDomainMultiCertificatesRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateDomainMultiCertificates, hcClient);
@@ -1218,6 +1268,7 @@ public class CdnClient {
      * @param request UpdateDomainOriginRequest 请求对象
      * @return UpdateDomainOriginResponse
      */
+    @Deprecated
     public UpdateDomainOriginResponse updateDomainOrigin(UpdateDomainOriginRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateDomainOrigin);
     }
@@ -1232,6 +1283,7 @@ public class CdnClient {
      * @param request UpdateDomainOriginRequest 请求对象
      * @return SyncInvoker<UpdateDomainOriginRequest, UpdateDomainOriginResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateDomainOriginRequest, UpdateDomainOriginResponse> updateDomainOriginInvoker(
         UpdateDomainOriginRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateDomainOrigin, hcClient);
@@ -1247,6 +1299,7 @@ public class CdnClient {
      * @param request UpdateFollow302SwitchRequest 请求对象
      * @return UpdateFollow302SwitchResponse
      */
+    @Deprecated
     public UpdateFollow302SwitchResponse updateFollow302Switch(UpdateFollow302SwitchRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateFollow302Switch);
     }
@@ -1261,6 +1314,7 @@ public class CdnClient {
      * @param request UpdateFollow302SwitchRequest 请求对象
      * @return SyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse> updateFollow302SwitchInvoker(
         UpdateFollow302SwitchRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateFollow302Switch, hcClient);
@@ -1276,6 +1330,7 @@ public class CdnClient {
      * @param request UpdateHttpsInfoRequest 请求对象
      * @return UpdateHttpsInfoResponse
      */
+    @Deprecated
     public UpdateHttpsInfoResponse updateHttpsInfo(UpdateHttpsInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateHttpsInfo);
     }
@@ -1290,6 +1345,7 @@ public class CdnClient {
      * @param request UpdateHttpsInfoRequest 请求对象
      * @return SyncInvoker<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse> updateHttpsInfoInvoker(
         UpdateHttpsInfoRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateHttpsInfo, hcClient);
@@ -1305,6 +1361,7 @@ public class CdnClient {
      * @param request UpdateOriginHostRequest 请求对象
      * @return UpdateOriginHostResponse
      */
+    @Deprecated
     public UpdateOriginHostResponse updateOriginHost(UpdateOriginHostRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateOriginHost);
     }
@@ -1319,6 +1376,7 @@ public class CdnClient {
      * @param request UpdateOriginHostRequest 请求对象
      * @return SyncInvoker<UpdateOriginHostRequest, UpdateOriginHostResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateOriginHostRequest, UpdateOriginHostResponse> updateOriginHostInvoker(
         UpdateOriginHostRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateOriginHost, hcClient);
@@ -1334,6 +1392,7 @@ public class CdnClient {
      * @param request UpdatePrivateBucketAccessRequest 请求对象
      * @return UpdatePrivateBucketAccessResponse
      */
+    @Deprecated
     public UpdatePrivateBucketAccessResponse updatePrivateBucketAccess(UpdatePrivateBucketAccessRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updatePrivateBucketAccess);
     }
@@ -1348,6 +1407,7 @@ public class CdnClient {
      * @param request UpdatePrivateBucketAccessRequest 请求对象
      * @return SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccessInvoker(
         UpdatePrivateBucketAccessRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updatePrivateBucketAccess, hcClient);
@@ -1365,6 +1425,7 @@ public class CdnClient {
      * @param request UpdateRangeSwitchRequest 请求对象
      * @return UpdateRangeSwitchResponse
      */
+    @Deprecated
     public UpdateRangeSwitchResponse updateRangeSwitch(UpdateRangeSwitchRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateRangeSwitch);
     }
@@ -1381,6 +1442,7 @@ public class CdnClient {
      * @param request UpdateRangeSwitchRequest 请求对象
      * @return SyncInvoker<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse> updateRangeSwitchInvoker(
         UpdateRangeSwitchRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateRangeSwitch, hcClient);
@@ -1396,6 +1458,7 @@ public class CdnClient {
      * @param request UpdateReferRequest 请求对象
      * @return UpdateReferResponse
      */
+    @Deprecated
     public UpdateReferResponse updateRefer(UpdateReferRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateRefer);
     }
@@ -1410,6 +1473,7 @@ public class CdnClient {
      * @param request UpdateReferRequest 请求对象
      * @return SyncInvoker<UpdateReferRequest, UpdateReferResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateReferRequest, UpdateReferResponse> updateReferInvoker(UpdateReferRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateRefer, hcClient);
     }
@@ -1424,6 +1488,7 @@ public class CdnClient {
      * @param request UpdateResponseHeaderRequest 请求对象
      * @return UpdateResponseHeaderResponse
      */
+    @Deprecated
     public UpdateResponseHeaderResponse updateResponseHeader(UpdateResponseHeaderRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.updateResponseHeader);
     }
@@ -1438,6 +1503,7 @@ public class CdnClient {
      * @param request UpdateResponseHeaderRequest 请求对象
      * @return SyncInvoker<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse> updateResponseHeaderInvoker(
         UpdateResponseHeaderRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateResponseHeader, hcClient);

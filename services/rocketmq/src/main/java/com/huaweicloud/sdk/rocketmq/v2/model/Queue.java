@@ -41,7 +41,7 @@ public class Queue {
     }
 
     /**
-     * 队列ID
+     * 队列ID。
      * @return id
      */
     public Integer getId() {
@@ -58,7 +58,7 @@ public class Queue {
     }
 
     /**
-     * 队列消费堆积总数
+     * 队列消费堆积总数。
      * @return lag
      */
     public Long getLag() {
@@ -75,7 +75,7 @@ public class Queue {
     }
 
     /**
-     * 队列消息总数
+     * 队列消息总数。
      * @return brokerOffset
      */
     public Long getBrokerOffset() {
@@ -92,7 +92,7 @@ public class Queue {
     }
 
     /**
-     * 已消费消息数
+     * 已消费消息数。
      * @return consumerOffset
      */
     public Long getConsumerOffset() {
@@ -109,7 +109,7 @@ public class Queue {
     }
 
     /**
-     * 最新消费消息的存储时间，unix毫秒时间戳格式
+     * 最新消费消息的存储时间，unix毫秒时间戳格式。
      * @return lastMessageTime
      */
     public Long getLastMessageTime() {

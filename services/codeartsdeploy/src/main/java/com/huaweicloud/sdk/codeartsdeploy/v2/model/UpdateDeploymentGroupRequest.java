@@ -27,7 +27,7 @@ public class UpdateDeploymentGroupRequest {
     }
 
     /**
-     * 主机集群ID
+     * 主机集群id
      * @return groupId
      */
     public String getGroupId() {

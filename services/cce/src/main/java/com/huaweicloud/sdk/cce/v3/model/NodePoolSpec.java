@@ -125,6 +125,11 @@ public class NodePoolSpec {
     private List<SecurityID> podSecurityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extensionScaleGroups")
+
+    private ExtensionScaleGroup extensionScaleGroups;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customSecurityGroups")
 
     private List<String> customSecurityGroups = null;
@@ -274,6 +279,32 @@ public class NodePoolSpec {
         this.podSecurityGroups = podSecurityGroups;
     }
 
+    public NodePoolSpec withExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+        this.extensionScaleGroups = extensionScaleGroups;
+        return this;
+    }
+
+    public NodePoolSpec withExtensionScaleGroups(Consumer<ExtensionScaleGroup> extensionScaleGroupsSetter) {
+        if (this.extensionScaleGroups == null) {
+            this.extensionScaleGroups = new ExtensionScaleGroup();
+            extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extensionScaleGroups
+     * @return extensionScaleGroups
+     */
+    public ExtensionScaleGroup getExtensionScaleGroups() {
+        return extensionScaleGroups;
+    }
+
+    public void setExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+        this.extensionScaleGroups = extensionScaleGroups;
+    }
+
     public NodePoolSpec withCustomSecurityGroups(List<String> customSecurityGroups) {
         this.customSecurityGroups = customSecurityGroups;
         return this;
@@ -321,6 +352,7 @@ public class NodePoolSpec {
             && Objects.equals(this.autoscaling, that.autoscaling)
             && Objects.equals(this.nodeManagement, that.nodeManagement)
             && Objects.equals(this.podSecurityGroups, that.podSecurityGroups)
+            && Objects.equals(this.extensionScaleGroups, that.extensionScaleGroups)
             && Objects.equals(this.customSecurityGroups, that.customSecurityGroups);
     }
 
@@ -332,6 +364,7 @@ public class NodePoolSpec {
             autoscaling,
             nodeManagement,
             podSecurityGroups,
+            extensionScaleGroups,
             customSecurityGroups);
     }
 
@@ -345,6 +378,7 @@ public class NodePoolSpec {
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
         sb.append("    podSecurityGroups: ").append(toIndentedString(podSecurityGroups)).append("\n");
+        sb.append("    extensionScaleGroups: ").append(toIndentedString(extensionScaleGroups)).append("\n");
         sb.append("    customSecurityGroups: ").append(toIndentedString(customSecurityGroups)).append("\n");
         sb.append("}");
         return sb.toString();

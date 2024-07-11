@@ -11,6 +11,11 @@ import java.util.Objects;
 public class DeployV2OperationsDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -44,6 +49,23 @@ public class DeployV2OperationsDO {
     @JsonProperty(value = "module_id")
 
     private String moduleId;
+
+    public DeployV2OperationsDO withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 步骤id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public DeployV2OperationsDO withName(String name) {
         this.name = name;
@@ -102,7 +124,7 @@ public class DeployV2OperationsDO {
     }
 
     /**
-     * 参数
+     * 步骤详细定义
      * @return params
      */
     public String getParams() {
@@ -173,21 +195,22 @@ public class DeployV2OperationsDO {
             return false;
         }
         DeployV2OperationsDO that = (DeployV2OperationsDO) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.code, that.code) && Objects.equals(this.params, that.params)
-            && Objects.equals(this.entrance, that.entrance) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.moduleId, that.moduleId);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.entrance, that.entrance)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.moduleId, that.moduleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, code, params, entrance, version, moduleId);
+        return Objects.hash(id, name, description, code, params, entrance, version, moduleId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeployV2OperationsDO {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");

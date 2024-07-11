@@ -29,7 +29,7 @@ public class DeadletterResendReq {
     }
 
     /**
-     * topic。
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {

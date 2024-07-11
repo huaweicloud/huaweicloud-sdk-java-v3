@@ -27,7 +27,7 @@ public class CreateHostClusterResponse extends SdkResponse {
     }
 
     /**
-     * 主机集群ID
+     * 主机集群id
      * @return id
      */
     public String getId() {
@@ -44,7 +44,7 @@ public class CreateHostClusterResponse extends SdkResponse {
     }
 
     /**
-     * 请求状态
+     * 请求成功失败状态
      * @return status
      */
     public String getStatus() {

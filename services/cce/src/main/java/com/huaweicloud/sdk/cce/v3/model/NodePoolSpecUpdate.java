@@ -26,6 +26,11 @@ public class NodePoolSpecUpdate {
 
     private NodePoolNodeAutoscaling autoscaling;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extensionScaleGroups")
+
+    private ExtensionScaleGroup extensionScaleGroups;
+
     public NodePoolSpecUpdate withNodeTemplate(NodeSpecUpdate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
@@ -95,6 +100,32 @@ public class NodePoolSpecUpdate {
         this.autoscaling = autoscaling;
     }
 
+    public NodePoolSpecUpdate withExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+        this.extensionScaleGroups = extensionScaleGroups;
+        return this;
+    }
+
+    public NodePoolSpecUpdate withExtensionScaleGroups(Consumer<ExtensionScaleGroup> extensionScaleGroupsSetter) {
+        if (this.extensionScaleGroups == null) {
+            this.extensionScaleGroups = new ExtensionScaleGroup();
+            extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extensionScaleGroups
+     * @return extensionScaleGroups
+     */
+    public ExtensionScaleGroup getExtensionScaleGroups() {
+        return extensionScaleGroups;
+    }
+
+    public void setExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+        this.extensionScaleGroups = extensionScaleGroups;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +137,13 @@ public class NodePoolSpecUpdate {
         NodePoolSpecUpdate that = (NodePoolSpecUpdate) obj;
         return Objects.equals(this.nodeTemplate, that.nodeTemplate)
             && Objects.equals(this.initialNodeCount, that.initialNodeCount)
-            && Objects.equals(this.autoscaling, that.autoscaling);
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.extensionScaleGroups, that.extensionScaleGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeTemplate, initialNodeCount, autoscaling);
+        return Objects.hash(nodeTemplate, initialNodeCount, autoscaling, extensionScaleGroups);
     }
 
     @Override
@@ -121,6 +153,7 @@ public class NodePoolSpecUpdate {
         sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
         sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    extensionScaleGroups: ").append(toIndentedString(extensionScaleGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

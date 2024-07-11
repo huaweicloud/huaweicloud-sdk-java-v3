@@ -75,7 +75,7 @@ public class CreateExchangeBody {
     }
 
     /**
-     * 是否持久化（AMQP版本默认持久化，不涉及此参数）。
+     * 是否持久化[（AMQP版本默认持久化，不涉及此参数）](tag:hws,hws_hk)。
      * @return durable
      */
     public Boolean getDurable() {
@@ -109,7 +109,7 @@ public class CreateExchangeBody {
     }
 
     /**
-     * 内部Exchange（AMQP版本不支持内部Exchange，不涉及此参数）。
+     * 内部Exchange[（AMQP版本不支持内部Exchange，不涉及此参数）](tag:hws,hws_hk)。
      * @return internal
      */
     public Boolean getInternal() {

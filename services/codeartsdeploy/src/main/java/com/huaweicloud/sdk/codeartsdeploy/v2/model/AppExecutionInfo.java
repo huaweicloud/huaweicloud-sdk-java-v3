@@ -222,7 +222,7 @@ public class AppExecutionInfo {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -426,7 +426,7 @@ public class AppExecutionInfo {
     }
 
     /**
-     * 应用创建者用户ID
+     * 应用创建者用户id
      * @return createUserId
      */
     public String getCreateUserId() {
@@ -443,7 +443,7 @@ public class AppExecutionInfo {
     }
 
     /**
-     * 应用创建者租户ID
+     * 应用创建者租户id
      * @return createTenantId
      */
     public String getCreateTenantId() {

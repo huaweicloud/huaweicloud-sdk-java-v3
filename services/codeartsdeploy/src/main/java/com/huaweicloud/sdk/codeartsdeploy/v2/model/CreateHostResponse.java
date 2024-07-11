@@ -27,7 +27,7 @@ public class CreateHostResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * 请求成功失败状态
      * @return status
      */
     public String getStatus() {

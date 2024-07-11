@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListEdgeNodesRequest;
@@ -1582,6 +1584,35 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<DeleteModuleRequest, DeleteModuleResponse> deleteModuleInvoker(DeleteModuleRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.deleteModule, hcClient);
+    }
+
+    /**
+     * 代理边缘模块消息
+     *
+     * iotedge通过该接口透明代理用户到模块的请求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeModuleMsgRequest 请求对象
+     * @return InvokeModuleMsgResponse
+     */
+    public InvokeModuleMsgResponse invokeModuleMsg(InvokeModuleMsgRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.invokeModuleMsg);
+    }
+
+    /**
+     * 代理边缘模块消息
+     *
+     * iotedge通过该接口透明代理用户到模块的请求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeModuleMsgRequest 请求对象
+     * @return SyncInvoker<InvokeModuleMsgRequest, InvokeModuleMsgResponse>
+     */
+    public SyncInvoker<InvokeModuleMsgRequest, InvokeModuleMsgResponse> invokeModuleMsgInvoker(
+        InvokeModuleMsgRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.invokeModuleMsg, hcClient);
     }
 
     /**

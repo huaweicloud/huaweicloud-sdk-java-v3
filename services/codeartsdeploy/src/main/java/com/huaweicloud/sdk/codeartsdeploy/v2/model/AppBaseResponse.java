@@ -106,7 +106,7 @@ public class AppBaseResponse {
     }
 
     /**
-     * 部署任务列表
+     * 部署任务列表信息
      * @return arrangeInfos
      */
     public List<TaskBaseBody> getArrangeInfos() {

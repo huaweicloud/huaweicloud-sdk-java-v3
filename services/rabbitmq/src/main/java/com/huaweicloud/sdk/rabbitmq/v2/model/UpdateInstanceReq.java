@@ -197,7 +197,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * ACL访问控制（仅AMQP版本支持此参数）。
+     * ACL访问控制[（仅AMQP版本支持此参数）](tag:hws,hws_hk)。
      * @return enableAcl
      */
     public Boolean getEnableAcl() {

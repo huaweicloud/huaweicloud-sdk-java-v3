@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -213,6 +216,11 @@ public class EventItemDetail {
 
     private String eventType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimensions")
+
+    private List<MetricsDimension> dimensions = null;
+
     public EventItemDetail withContent(String content) {
         this.content = content;
         return this;
@@ -349,6 +357,39 @@ public class EventItemDetail {
         this.eventType = eventType;
     }
 
+    public EventItemDetail withDimensions(List<MetricsDimension> dimensions) {
+        this.dimensions = dimensions;
+        return this;
+    }
+
+    public EventItemDetail addDimensionsItem(MetricsDimension dimensionsItem) {
+        if (this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
+        this.dimensions.add(dimensionsItem);
+        return this;
+    }
+
+    public EventItemDetail withDimensions(Consumer<List<MetricsDimension>> dimensionsSetter) {
+        if (this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
+        dimensionsSetter.accept(this.dimensions);
+        return this;
+    }
+
+    /**
+     * 一个或者多个资源维度。
+     * @return dimensions
+     */
+    public List<MetricsDimension> getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(List<MetricsDimension> dimensions) {
+        this.dimensions = dimensions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -361,12 +402,14 @@ public class EventItemDetail {
         return Objects.equals(this.content, that.content) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.eventState, that.eventState) && Objects.equals(this.eventLevel, that.eventLevel)
-            && Objects.equals(this.eventUser, that.eventUser) && Objects.equals(this.eventType, that.eventType);
+            && Objects.equals(this.eventUser, that.eventUser) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, groupId, resourceId, resourceName, eventState, eventLevel, eventUser, eventType);
+        return Objects
+            .hash(content, groupId, resourceId, resourceName, eventState, eventLevel, eventUser, eventType, dimensions);
     }
 
     @Override
@@ -381,6 +424,7 @@ public class EventItemDetail {
         sb.append("    eventLevel: ").append(toIndentedString(eventLevel)).append("\n");
         sb.append("    eventUser: ").append(toIndentedString(eventUser)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -200,6 +200,16 @@ public class FlavorExtraSpec {
 
     private String securityEnclaveSupported;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "info:gpus")
+
+    private String infoGpus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "info:asic_accelerators")
+
+    private String infoAsicAccelerators;
+
     public FlavorExtraSpec withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -847,6 +857,40 @@ public class FlavorExtraSpec {
         this.securityEnclaveSupported = securityEnclaveSupported;
     }
 
+    public FlavorExtraSpec withInfoGpus(String infoGpus) {
+        this.infoGpus = infoGpus;
+        return this;
+    }
+
+    /**
+     * 该规格的GPU卡信息。  name：GPU名称 memory_mb：GPU显存大小 count：GPU显卡数量 alias_prefix：GPU显卡内部别名
+     * @return infoGpus
+     */
+    public String getInfoGpus() {
+        return infoGpus;
+    }
+
+    public void setInfoGpus(String infoGpus) {
+        this.infoGpus = infoGpus;
+    }
+
+    public FlavorExtraSpec withInfoAsicAccelerators(String infoAsicAccelerators) {
+        this.infoAsicAccelerators = infoAsicAccelerators;
+        return this;
+    }
+
+    /**
+     * 该规格的加速器信息。  name：加速器名称 memory_mb：加速器显存大小 count：加速器显卡数量 alias_prefix：加速器显卡内部别名
+     * @return infoAsicAccelerators
+     */
+    public String getInfoAsicAccelerators() {
+        return infoAsicAccelerators;
+    }
+
+    public void setInfoAsicAccelerators(String infoAsicAccelerators) {
+        this.infoAsicAccelerators = infoAsicAccelerators;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -891,7 +935,9 @@ public class FlavorExtraSpec {
             && Objects.equals(this.ecsInstanceArchitecture, that.ecsInstanceArchitecture)
             && Objects.equals(this.networkInterfaceTrafficMirroringSupported,
                 that.networkInterfaceTrafficMirroringSupported)
-            && Objects.equals(this.securityEnclaveSupported, that.securityEnclaveSupported);
+            && Objects.equals(this.securityEnclaveSupported, that.securityEnclaveSupported)
+            && Objects.equals(this.infoGpus, that.infoGpus)
+            && Objects.equals(this.infoAsicAccelerators, that.infoAsicAccelerators);
     }
 
     @Override
@@ -933,7 +979,9 @@ public class FlavorExtraSpec {
             quotaSubNetworkInterfaceMaxNum,
             ecsInstanceArchitecture,
             networkInterfaceTrafficMirroringSupported,
-            securityEnclaveSupported);
+            securityEnclaveSupported,
+            infoGpus,
+            infoAsicAccelerators);
     }
 
     @Override
@@ -984,6 +1032,8 @@ public class FlavorExtraSpec {
             .append(toIndentedString(networkInterfaceTrafficMirroringSupported))
             .append("\n");
         sb.append("    securityEnclaveSupported: ").append(toIndentedString(securityEnclaveSupported)).append("\n");
+        sb.append("    infoGpus: ").append(toIndentedString(infoGpus)).append("\n");
+        sb.append("    infoAsicAccelerators: ").append(toIndentedString(infoAsicAccelerators)).append("\n");
         sb.append("}");
         return sb.toString();
     }

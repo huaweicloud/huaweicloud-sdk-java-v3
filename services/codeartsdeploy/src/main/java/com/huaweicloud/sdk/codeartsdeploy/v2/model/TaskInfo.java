@@ -308,7 +308,7 @@ public class TaskInfo {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -512,7 +512,7 @@ public class TaskInfo {
     }
 
     /**
-     * 应用创建者用户ID
+     * 应用创建者用户id
      * @return ownerId
      */
     public String getOwnerId() {
@@ -529,7 +529,7 @@ public class TaskInfo {
     }
 
     /**
-     * 应用创建者租户ID
+     * 应用创建者租户id
      * @return tenantId
      */
     public String getTenantId() {
@@ -749,7 +749,7 @@ public class TaskInfo {
     }
 
     /**
-     * 角色ID,0：应用创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
+     * 角色id,0：应用创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
      * @return roleId
      */
     public Integer getRoleId() {

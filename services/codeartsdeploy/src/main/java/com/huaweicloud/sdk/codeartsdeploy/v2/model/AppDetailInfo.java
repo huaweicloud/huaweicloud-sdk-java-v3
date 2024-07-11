@@ -246,7 +246,7 @@ public class AppDetailInfo {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -450,7 +450,7 @@ public class AppDetailInfo {
     }
 
     /**
-     * 应用所属人租户ID
+     * 应用所属人租户id
      * @return ownerTenantId
      */
     public String getOwnerTenantId() {
@@ -484,7 +484,7 @@ public class AppDetailInfo {
     }
 
     /**
-     * 应用创建人租户ID
+     * 应用创建人租户id
      * @return createTenantId
      */
     public String getCreateTenantId() {

@@ -112,7 +112,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic分区数，设置消费的并发数。 取值范围：[1-200](tag:hws,hws_hk,dt,hcs,sbc,hk_sbc,g42,hk_g42,ctc,tm,hk_tm)[1-100](tag:cmcc,hws_ocb,ocb)。
+     * topic分区数，设置消费的并发数。 取值范围：[1-200](tag:hws,hws_hk,dt,hcs,fcs,sbc,hk_sbc,g42,hk_g42,ctc,tm,hk_tm)[1-100](tag:cmcc,hws_ocb,ocb)。
      * @return partition
      */
     public Integer getPartition() {
@@ -146,7 +146,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * 消息老化时间。默认值为72。 取值范围[1~168](tag:cmcc)[1-720](tag:ocb,dt,hws_ocb,hws,hws_hk,ctc,sbc,hk_sbc,hws_eu,g42,tm,hk_g42,hk_tm,hcs)，单位小时。
+     * 消息老化时间。默认值为72。 取值范围[1~168](tag:cmcc)[1-720](tag:ocb,dt,hws_ocb,hws,hws_hk,ctc,sbc,hk_sbc,hws_eu,g42,tm,hk_g42,hk_tm,hcs,fcs)，单位小时。
      * @return retentionTime
      */
     public Integer getRetentionTime() {

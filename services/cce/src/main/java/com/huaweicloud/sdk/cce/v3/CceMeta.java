@@ -121,6 +121,9 @@ import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowChartRequest;
@@ -1572,6 +1575,39 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddonInstanceRollbackRequest.class),
             f -> f.withMarshaller(RollbackAddonInstanceRequest::getBody, RollbackAddonInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ScaleNodePoolRequest, ScaleNodePoolResponse> scaleNodePool =
+        genForScaleNodePool();
+
+    private static HttpRequestDef<ScaleNodePoolRequest, ScaleNodePoolResponse> genForScaleNodePool() {
+        // basic
+        HttpRequestDef.Builder<ScaleNodePoolRequest, ScaleNodePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ScaleNodePoolRequest.class, ScaleNodePoolResponse.class)
+                .withName("ScaleNodePool")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/scale")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ScaleNodePoolRequest::getClusterId, ScaleNodePoolRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ScaleNodePoolRequest::getNodepoolId, ScaleNodePoolRequest::setNodepoolId));
+        builder.<ScaleNodePoolRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScaleNodePoolRequestBody.class),
+            f -> f.withMarshaller(ScaleNodePoolRequest::getBody, ScaleNodePoolRequest::setBody));
 
         // response
 

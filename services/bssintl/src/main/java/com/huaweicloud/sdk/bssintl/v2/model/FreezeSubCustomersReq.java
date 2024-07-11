@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -27,6 +32,81 @@ public class FreezeSubCustomersReq {
     @JsonProperty(value = "indirect_partner_id")
 
     private String indirectPartnerId;
+
+    /**
+     * |参数名称：冻结类型| |参数的约束及描述：该参数非必填，冻结类型，支持枚举| |ACCOUNT：冻结账户，ACCOUNT_AND_RESOURCE：冻结账户与资源|
+     */
+    public static final class FreezeTypeEnum {
+
+        /**
+         * Enum ACCOUNT for value: "ACCOUNT"
+         */
+        public static final FreezeTypeEnum ACCOUNT = new FreezeTypeEnum("ACCOUNT");
+
+        /**
+         * Enum ACCOUNT_AND_RESOURCE for value: "ACCOUNT_AND_RESOURCE"
+         */
+        public static final FreezeTypeEnum ACCOUNT_AND_RESOURCE = new FreezeTypeEnum("ACCOUNT_AND_RESOURCE");
+
+        private static final Map<String, FreezeTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FreezeTypeEnum> createStaticFields() {
+            Map<String, FreezeTypeEnum> map = new HashMap<>();
+            map.put("ACCOUNT", ACCOUNT);
+            map.put("ACCOUNT_AND_RESOURCE", ACCOUNT_AND_RESOURCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FreezeTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FreezeTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FreezeTypeEnum(value));
+        }
+
+        public static FreezeTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FreezeTypeEnum) {
+                return this.value.equals(((FreezeTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "freeze_type")
+
+    private FreezeTypeEnum freezeType;
 
     public FreezeSubCustomersReq withCustomerIds(List<String> customerIds) {
         this.customerIds = customerIds;
@@ -95,6 +175,23 @@ public class FreezeSubCustomersReq {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    public FreezeSubCustomersReq withFreezeType(FreezeTypeEnum freezeType) {
+        this.freezeType = freezeType;
+        return this;
+    }
+
+    /**
+     * |参数名称：冻结类型| |参数的约束及描述：该参数非必填，冻结类型，支持枚举| |ACCOUNT：冻结账户，ACCOUNT_AND_RESOURCE：冻结账户与资源|
+     * @return freezeType
+     */
+    public FreezeTypeEnum getFreezeType() {
+        return freezeType;
+    }
+
+    public void setFreezeType(FreezeTypeEnum freezeType) {
+        this.freezeType = freezeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +202,13 @@ public class FreezeSubCustomersReq {
         }
         FreezeSubCustomersReq that = (FreezeSubCustomersReq) obj;
         return Objects.equals(this.customerIds, that.customerIds) && Objects.equals(this.reason, that.reason)
-            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.freezeType, that.freezeType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerIds, reason, indirectPartnerId);
+        return Objects.hash(customerIds, reason, indirectPartnerId, freezeType);
     }
 
     @Override
@@ -120,6 +218,7 @@ public class FreezeSubCustomersReq {
         sb.append("    customerIds: ").append(toIndentedString(customerIds)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    freezeType: ").append(toIndentedString(freezeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

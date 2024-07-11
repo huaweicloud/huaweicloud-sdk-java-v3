@@ -141,7 +141,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 租户ID
+     * 租户id
      * @return domainId
      */
     public String getDomainId() {

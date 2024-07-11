@@ -62,7 +62,7 @@ public class ImportHostToEnvironmentRequestBody {
     }
 
     /**
-     * 要导入的主机ids
+     * 要导入的主机id列表
      * @return hostIds
      */
     public List<String> getHostIds() {

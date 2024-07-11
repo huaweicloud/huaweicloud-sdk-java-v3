@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.InvokeModuleMsgResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListEdgeNodesRequest;
@@ -1876,6 +1878,44 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteModuleResponse::getBody, DeleteModuleResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokeModuleMsgRequest, InvokeModuleMsgResponse> invokeModuleMsg =
+        genForInvokeModuleMsg();
+
+    private static HttpRequestDef<InvokeModuleMsgRequest, InvokeModuleMsgResponse> genForInvokeModuleMsg() {
+        // basic
+        HttpRequestDef.Builder<InvokeModuleMsgRequest, InvokeModuleMsgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InvokeModuleMsgRequest.class, InvokeModuleMsgResponse.class)
+                .withName("InvokeModuleMsg")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/modules/{module_id}/proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeModuleMsgRequest::getEdgeNodeId, InvokeModuleMsgRequest::setEdgeNodeId));
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeModuleMsgRequest::getModuleId, InvokeModuleMsgRequest::setModuleId));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(InvokeModuleMsgRequest::getBody, InvokeModuleMsgRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(InvokeModuleMsgResponse::getBody, InvokeModuleMsgResponse::setBody));
 
         return builder.build();
     }

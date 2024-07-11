@@ -381,7 +381,7 @@ public class ShowDeploymentHostDetailResponse extends SdkResponse {
     }
 
     /**
-     * 主机ID
+     * 主机id
      * @return hostId
      */
     public String getHostId() {
@@ -441,7 +441,7 @@ public class ShowDeploymentHostDetailResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

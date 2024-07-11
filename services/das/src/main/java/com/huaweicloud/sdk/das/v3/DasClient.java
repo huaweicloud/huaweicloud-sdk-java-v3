@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
@@ -51,6 +53,8 @@ import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
@@ -71,6 +75,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
@@ -238,6 +244,36 @@ public class DasClient {
     public SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitchInvoker(
         ChangeSqlSwitchRequest request) {
         return new SyncInvoker<>(request, DasMeta.changeSqlSwitch, hcClient);
+    }
+
+    /**
+     * 开启/关闭历史事务开关
+     *
+     * 开启/关闭历史事务开关，仅支持MySQL引擎，并且依赖开启全量SQL或者慢SQL功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTransactionSwitchStatusRequest 请求对象
+     * @return ChangeTransactionSwitchStatusResponse
+     */
+    public ChangeTransactionSwitchStatusResponse changeTransactionSwitchStatus(
+        ChangeTransactionSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changeTransactionSwitchStatus);
+    }
+
+    /**
+     * 开启/关闭历史事务开关
+     *
+     * 开启/关闭历史事务开关，仅支持MySQL引擎，并且依赖开启全量SQL或者慢SQL功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTransactionSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse>
+     */
+    public SyncInvoker<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> changeTransactionSwitchStatusInvoker(
+        ChangeTransactionSwitchStatusRequest request) {
+        return new SyncInvoker<>(request, DasMeta.changeTransactionSwitchStatus, hcClient);
     }
 
     /**
@@ -854,6 +890,37 @@ public class DasClient {
     }
 
     /**
+     * 查询历史事务列表
+     *
+     * 查询历史事务列表。
+     * 目前仅支持MySQL实例，仅支持查看最近7天的历史事务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransactionsRequest 请求对象
+     * @return ListTransactionsResponse
+     */
+    public ListTransactionsResponse listTransactions(ListTransactionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listTransactions);
+    }
+
+    /**
+     * 查询历史事务列表
+     *
+     * 查询历史事务列表。
+     * 目前仅支持MySQL实例，仅支持查看最近7天的历史事务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransactionsRequest 请求对象
+     * @return SyncInvoker<ListTransactionsRequest, ListTransactionsResponse>
+     */
+    public SyncInvoker<ListTransactionsRequest, ListTransactionsResponse> listTransactionsInvoker(
+        ListTransactionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listTransactions, hcClient);
+    }
+
+    /**
      * 根据原始SQL生成SQL限流关键字
      *
      * 根据原始SQL生成SQL限流关键字，目前支持MySQL、MariaDB、GaussDB(for MySQL)三种引擎。
@@ -1120,6 +1187,37 @@ public class DasClient {
     public SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatusInvoker(
         ShowSqlSwitchStatusRequest request) {
         return new SyncInvoker<>(request, DasMeta.showSqlSwitchStatus, hcClient);
+    }
+
+    /**
+     * 查询历史事务开关
+     *
+     * 查询历史事务开关。
+     * 目前仅支持MySQL实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransactionSwitchStatusRequest 请求对象
+     * @return ShowTransactionSwitchStatusResponse
+     */
+    public ShowTransactionSwitchStatusResponse showTransactionSwitchStatus(ShowTransactionSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showTransactionSwitchStatus);
+    }
+
+    /**
+     * 查询历史事务开关
+     *
+     * 查询历史事务开关。
+     * 目前仅支持MySQL实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransactionSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ShowTransactionSwitchStatusRequest, ShowTransactionSwitchStatusResponse>
+     */
+    public SyncInvoker<ShowTransactionSwitchStatusRequest, ShowTransactionSwitchStatusResponse> showTransactionSwitchStatusInvoker(
+        ShowTransactionSwitchStatusRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showTransactionSwitchStatus, hcClient);
     }
 
     /**

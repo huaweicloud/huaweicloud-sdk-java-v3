@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
@@ -93,8 +95,12 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesDetailsRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsRequest;
@@ -107,6 +113,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsRequest;
@@ -123,6 +131,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SearchAutoEnlargePolicyRequest;
@@ -131,6 +141,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetKernelPluginLicenseRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetKernelPluginLicenseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetRecyclePolicyRequest;
@@ -813,6 +825,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<DownloadBackupRequest, DownloadBackupResponse> downloadBackupAsyncInvoker(
         DownloadBackupRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.downloadBackup, hcClient);
+    }
+
+    /**
+     * 安装插件
+     *
+     * 安装插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallKernelPluginRequest 请求对象
+     * @return CompletableFuture<InstallKernelPluginResponse>
+     */
+    public CompletableFuture<InstallKernelPluginResponse> installKernelPluginAsync(InstallKernelPluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.installKernelPlugin);
+    }
+
+    /**
+     * 安装插件
+     *
+     * 安装插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallKernelPluginRequest 请求对象
+     * @return AsyncInvoker<InstallKernelPluginRequest, InstallKernelPluginResponse>
+     */
+    public AsyncInvoker<InstallKernelPluginRequest, InstallKernelPluginResponse> installKernelPluginAsyncInvoker(
+        InstallKernelPluginRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.installKernelPlugin, hcClient);
     }
 
     /**
@@ -1518,6 +1559,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询实例已安装的插件列表
+     *
+     * 查询实例已安装的插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKernelPluginsRequest 请求对象
+     * @return CompletableFuture<ListKernelPluginsResponse>
+     */
+    public CompletableFuture<ListKernelPluginsResponse> listKernelPluginsAsync(ListKernelPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listKernelPlugins);
+    }
+
+    /**
+     * 查询实例已安装的插件列表
+     *
+     * 查询实例已安装的插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKernelPluginsRequest 请求对象
+     * @return AsyncInvoker<ListKernelPluginsRequest, ListKernelPluginsResponse>
+     */
+    public AsyncInvoker<ListKernelPluginsRequest, ListKernelPluginsResponse> listKernelPluginsAsyncInvoker(
+        ListKernelPluginsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listKernelPlugins, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -1545,6 +1615,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplatesAsyncInvoker(
         ListParamGroupTemplatesRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listParamGroupTemplates, hcClient);
+    }
+
+    /**
+     * 查询实例插件拓展信息
+     *
+     * 查询实例插件拓展信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginExtensionsRequest 请求对象
+     * @return CompletableFuture<ListPluginExtensionsResponse>
+     */
+    public CompletableFuture<ListPluginExtensionsResponse> listPluginExtensionsAsync(
+        ListPluginExtensionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listPluginExtensions);
+    }
+
+    /**
+     * 查询实例插件拓展信息
+     *
+     * 查询实例插件拓展信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginExtensionsRequest 请求对象
+     * @return AsyncInvoker<ListPluginExtensionsRequest, ListPluginExtensionsResponse>
+     */
+    public AsyncInvoker<ListPluginExtensionsRequest, ListPluginExtensionsResponse> listPluginExtensionsAsyncInvoker(
+        ListPluginExtensionsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listPluginExtensions, hcClient);
     }
 
     /**
@@ -1723,6 +1823,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesAsyncInvoker(
         ListStorageTypesRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listStorageTypes, hcClient);
+    }
+
+    /**
+     * 查询支持的插件列表
+     *
+     * 查询支持的插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportKernelPluginsRequest 请求对象
+     * @return CompletableFuture<ListSupportKernelPluginsResponse>
+     */
+    public CompletableFuture<ListSupportKernelPluginsResponse> listSupportKernelPluginsAsync(
+        ListSupportKernelPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSupportKernelPlugins);
+    }
+
+    /**
+     * 查询支持的插件列表
+     *
+     * 查询支持的插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSupportKernelPluginsRequest 请求对象
+     * @return AsyncInvoker<ListSupportKernelPluginsRequest, ListSupportKernelPluginsResponse>
+     */
+    public AsyncInvoker<ListSupportKernelPluginsRequest, ListSupportKernelPluginsResponse> listSupportKernelPluginsAsyncInvoker(
+        ListSupportKernelPluginsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSupportKernelPlugins, hcClient);
     }
 
     /**
@@ -1957,6 +2087,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 配置插件拓展能力
+     *
+     * 配置插件拓展能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePluginExtensionsRequest 请求对象
+     * @return CompletableFuture<ResumePluginExtensionsResponse>
+     */
+    public CompletableFuture<ResumePluginExtensionsResponse> resumePluginExtensionsAsync(
+        ResumePluginExtensionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.resumePluginExtensions);
+    }
+
+    /**
+     * 配置插件拓展能力
+     *
+     * 配置插件拓展能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePluginExtensionsRequest 请求对象
+     * @return AsyncInvoker<ResumePluginExtensionsRequest, ResumePluginExtensionsResponse>
+     */
+    public AsyncInvoker<ResumePluginExtensionsRequest, ResumePluginExtensionsResponse> resumePluginExtensionsAsyncInvoker(
+        ResumePluginExtensionsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.resumePluginExtensions, hcClient);
+    }
+
+    /**
      * CN横向扩容/DN分片扩容/磁盘扩容
      *
      * CN横向扩容/DN分片扩容/磁盘扩容
@@ -2071,6 +2231,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdAsyncInvoker(
         SetDbUserPwdRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.setDbUserPwd, hcClient);
+    }
+
+    /**
+     * 配置插件license
+     *
+     * 配置插件license
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetKernelPluginLicenseRequest 请求对象
+     * @return CompletableFuture<SetKernelPluginLicenseResponse>
+     */
+    public CompletableFuture<SetKernelPluginLicenseResponse> setKernelPluginLicenseAsync(
+        SetKernelPluginLicenseRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.setKernelPluginLicense);
+    }
+
+    /**
+     * 配置插件license
+     *
+     * 配置插件license
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetKernelPluginLicenseRequest 请求对象
+     * @return AsyncInvoker<SetKernelPluginLicenseRequest, SetKernelPluginLicenseResponse>
+     */
+    public AsyncInvoker<SetKernelPluginLicenseRequest, SetKernelPluginLicenseResponse> setKernelPluginLicenseAsyncInvoker(
+        SetKernelPluginLicenseRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.setKernelPluginLicense, hcClient);
     }
 
     /**

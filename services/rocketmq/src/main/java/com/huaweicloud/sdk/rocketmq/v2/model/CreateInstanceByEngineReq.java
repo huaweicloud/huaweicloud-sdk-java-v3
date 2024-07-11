@@ -98,7 +98,7 @@ public class CreateInstanceByEngineReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[5.x](tag:hcs)。
+     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[5.x](tag:hcs,fcs)。
      */
     public static final class EngineVersionEnum {
 
@@ -195,7 +195,7 @@ public class CreateInstanceByEngineReq {
     private List<String> availableZones = null;
 
     /**
-     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境后缀为.arm。](tag:hcs)   - [c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86或c6.2u8g.single.arm：单个代理最大Topic数50，单个代理最大消费组数100](tag:hcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大Topic数100，单个代理最大消费组数200](tag:hcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs)
+     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境后缀为.arm。](tag:hcs,fcs)   - [c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86或c6.2u8g.single.arm：单个代理最大Topic数50，单个代理最大消费组数100](tag:hcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大Topic数100，单个代理最大消费组数200](tag:hcs,fcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs)
      */
     public static final class ProductIdEnum {
 
@@ -207,32 +207,32 @@ public class CreateInstanceByEngineReq {
                 "[c6.4u8g.cluster.small](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86](tag:hcs)");
 
         /**
-         * Enum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_ for value: "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs)"
+         * Enum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_ =
+        public static final ProductIdEnum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_ =
             new ProductIdEnum(
-                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs)");
+                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_ for value: "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs)"
+         * Enum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_ =
+        public static final ProductIdEnum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_ =
             new ProductIdEnum(
-                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs)");
+                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_ for value: "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs)"
+         * Enum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_ =
+        public static final ProductIdEnum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_ =
             new ProductIdEnum(
-                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs)");
+                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_ for value: "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs)"
+         * Enum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_ =
+        public static final ProductIdEnum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_ =
             new ProductIdEnum(
-                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs)");
+                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs,fcs)");
 
         /**
          * Enum _C6_2U8G_SINGLE_ARM_TAG_HCS_ for value: "[c6.2u8g.single.arm](tag:hcs)"
@@ -241,28 +241,28 @@ public class CreateInstanceByEngineReq {
             new ProductIdEnum("[c6.2u8g.single.arm](tag:hcs)");
 
         /**
-         * Enum _C6_4U16G_CLUSTER_ARM_TAG_HCS_ for value: "[c6.4u16g.cluster.arm](tag:hcs)"
+         * Enum _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.4u16g.cluster.arm](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_4U16G_CLUSTER_ARM_TAG_HCS_ =
-            new ProductIdEnum("[c6.4u16g.cluster.arm](tag:hcs)");
+        public static final ProductIdEnum _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_ =
+            new ProductIdEnum("[c6.4u16g.cluster.arm](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_8U32G_CLUSTER_ARM_TAG_HCS_ for value: "[c6.8u32g.cluster.arm](tag:hcs)"
+         * Enum _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.8u32g.cluster.arm](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_8U32G_CLUSTER_ARM_TAG_HCS_ =
-            new ProductIdEnum("[c6.8u32g.cluster.arm](tag:hcs)");
+        public static final ProductIdEnum _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_ =
+            new ProductIdEnum("[c6.8u32g.cluster.arm](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_16U64G_CLUSTER_ARM_TAG_HCS_ for value: "[c6.16u64g.cluster.arm](tag:hcs)"
+         * Enum _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.16u64g.cluster.arm](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_16U64G_CLUSTER_ARM_TAG_HCS_ =
-            new ProductIdEnum("[c6.16u64g.cluster.arm](tag:hcs)");
+        public static final ProductIdEnum _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_ =
+            new ProductIdEnum("[c6.16u64g.cluster.arm](tag:hcs,fcs)");
 
         /**
-         * Enum _C6_32U128G_CLUSTER_ARM_TAG_HCS_ for value: "[c6.32u128g.cluster.arm](tag:hcs)"
+         * Enum _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.32u128g.cluster.arm](tag:hcs,fcs)"
          */
-        public static final ProductIdEnum _C6_32U128G_CLUSTER_ARM_TAG_HCS_ =
-            new ProductIdEnum("[c6.32u128g.cluster.arm](tag:hcs)");
+        public static final ProductIdEnum _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_ =
+            new ProductIdEnum("[c6.32u128g.cluster.arm](tag:hcs,fcs)");
 
         private static final Map<String, ProductIdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -272,22 +272,22 @@ public class CreateInstanceByEngineReq {
                 "[c6.4u8g.cluster.small](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86](tag:hcs)",
                 _C6_4U8G_CLUSTER_SMALL_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_2U8G_SINGLE_X86_TAG_HCS_);
             map.put(
-                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs)",
-                _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_);
+                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86](tag:hcs,fcs)",
+                _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_);
             map.put(
-                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs)",
-                _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_);
+                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86](tag:hcs,fcs)",
+                _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_);
             map.put(
-                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs)",
-                _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_);
+                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86](tag:hcs,fcs)",
+                _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_);
             map.put(
-                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs)",
-                _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_);
+                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86](tag:hcs,fcs)",
+                _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_);
             map.put("[c6.2u8g.single.arm](tag:hcs)", _C6_2U8G_SINGLE_ARM_TAG_HCS_);
-            map.put("[c6.4u16g.cluster.arm](tag:hcs)", _C6_4U16G_CLUSTER_ARM_TAG_HCS_);
-            map.put("[c6.8u32g.cluster.arm](tag:hcs)", _C6_8U32G_CLUSTER_ARM_TAG_HCS_);
-            map.put("[c6.16u64g.cluster.arm](tag:hcs)", _C6_16U64G_CLUSTER_ARM_TAG_HCS_);
-            map.put("[c6.32u128g.cluster.arm](tag:hcs)", _C6_32U128G_CLUSTER_ARM_TAG_HCS_);
+            map.put("[c6.4u16g.cluster.arm](tag:hcs,fcs)", _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_);
+            map.put("[c6.8u32g.cluster.arm](tag:hcs,fcs)", _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_);
+            map.put("[c6.16u64g.cluster.arm](tag:hcs,fcs)", _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_);
+            map.put("[c6.32u128g.cluster.arm](tag:hcs,fcs)", _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -516,7 +516,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[5.x](tag:hcs)。
+     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[5.x](tag:hcs,fcs)。
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -634,7 +634,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境后缀为.arm。](tag:hcs)   - [c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86或c6.2u8g.single.arm：单个代理最大Topic数50，单个代理最大消费组数100](tag:hcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大Topic数100，单个代理最大消费组数200](tag:hcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs)
+     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境后缀为.arm。](tag:hcs,fcs)   - [c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.2u8g.single.x86或c6.2u8g.single.arm：单个代理最大Topic数50，单个代理最大消费组数100](tag:hcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大Topic数100，单个代理最大消费组数200](tag:hcs,fcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs)
      * @return productId
      */
     public ProductIdEnum getProductId() {
@@ -719,7 +719,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 是否支持IPv6。   - true: 支持   - false：不支持
+     * 是否支持IPv6。   - true：支持   - false：不支持
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -770,7 +770,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 代理个数
+     * 代理个数。
      * @return brokerNum
      */
     public Integer getBrokerNum() {

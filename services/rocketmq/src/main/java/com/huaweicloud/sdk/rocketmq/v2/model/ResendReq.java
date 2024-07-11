@@ -56,7 +56,7 @@ public class ResendReq {
     }
 
     /**
-     * 消息所属topic。
+     * 消息所属Topic。
      * @return topic
      */
     public String getTopic() {

@@ -24,7 +24,7 @@ public class BatchDeleteInstanceReq {
     private List<String> instances = null;
 
     /**
-     * 对实例的操作：delete
+     * 对实例的操作：delete。
      */
     public static final class ActionEnum {
 
@@ -200,7 +200,7 @@ public class BatchDeleteInstanceReq {
     }
 
     /**
-     * 对实例的操作：delete
+     * 对实例的操作：delete。
      * @return action
      */
     public ActionEnum getAction() {

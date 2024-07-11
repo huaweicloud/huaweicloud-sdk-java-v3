@@ -1317,7 +1317,7 @@ public class KooMessageMeta {
         HttpRequestDef.Builder<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteAimMsgSignatureRequest.class, DeleteAimMsgSignatureResponse.class)
             .withName("DeleteAimMsgSignature")
-            .withUri("/v1/aim/sms/signatures/{signature_id}")
+            .withUri("/v1/sms/signatures/{signature_id}")
             .withContentType("application/json");
 
         // requests

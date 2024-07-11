@@ -58,6 +58,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenDatabaseFo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussDatabaseSchemaReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussGrantRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussUserForCreation;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
@@ -106,8 +109,13 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesDetailsRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsRequest;
@@ -120,6 +128,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsRequest;
@@ -136,6 +146,7 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussUpgradeRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpengaussRestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParamGroupCopyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParamGroupDiffRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.PluginExtensions;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
@@ -149,6 +160,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SearchAutoEnlargePolicyRequest;
@@ -158,6 +172,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyRequestBo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetKernelPluginLicenseRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetKernelPluginLicenseRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetKernelPluginLicenseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyResponse;
@@ -866,6 +883,40 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadBackupRequest::getXLanguage, DownloadBackupRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InstallKernelPluginRequest, InstallKernelPluginResponse> installKernelPlugin =
+        genForInstallKernelPlugin();
+
+    private static HttpRequestDef<InstallKernelPluginRequest, InstallKernelPluginResponse> genForInstallKernelPlugin() {
+        // basic
+        HttpRequestDef.Builder<InstallKernelPluginRequest, InstallKernelPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallKernelPluginRequest.class, InstallKernelPluginResponse.class)
+                .withName("InstallKernelPlugin")
+                .withUri("/v3/{project_id}/instances/{instance_id}/kernel-plugin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InstallKernelPluginRequest::getInstanceId,
+                InstallKernelPluginRequest::setInstanceId));
+        builder.<InstallKernelPluginRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstallKernelPluginRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(InstallKernelPluginRequest::getXLanguage, InstallKernelPluginRequest::setXLanguage));
+        builder.<InstallKernelPluginRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstallKernelPluginRequestBody.class),
+            f -> f.withMarshaller(InstallKernelPluginRequest::getBody, InstallKernelPluginRequest::setBody));
 
         // response
 
@@ -1930,6 +1981,40 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListKernelPluginsRequest, ListKernelPluginsResponse> listKernelPlugins =
+        genForListKernelPlugins();
+
+    private static HttpRequestDef<ListKernelPluginsRequest, ListKernelPluginsResponse> genForListKernelPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListKernelPluginsRequest, ListKernelPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListKernelPluginsRequest.class, ListKernelPluginsResponse.class)
+                .withName("ListKernelPlugins")
+                .withUri("/v3/{project_id}/instances/{instance_id}/kernel-plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKernelPluginsRequest::getInstanceId, ListKernelPluginsRequest::setInstanceId));
+        builder.<ListKernelPluginsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListKernelPluginsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListKernelPluginsRequest::getXLanguage, ListKernelPluginsRequest::setXLanguage));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListKernelPluginsResponse::getBody, ListKernelPluginsResponse::setBody)
+                .withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplates =
         genForListParamGroupTemplates();
 
@@ -1961,6 +2046,47 @@ public class GaussDBforopenGaussMeta {
                 ListParamGroupTemplatesRequest::setXLanguage));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginExtensionsRequest, ListPluginExtensionsResponse> listPluginExtensions =
+        genForListPluginExtensions();
+
+    private static HttpRequestDef<ListPluginExtensionsRequest, ListPluginExtensionsResponse> genForListPluginExtensions() {
+        // basic
+        HttpRequestDef.Builder<ListPluginExtensionsRequest, ListPluginExtensionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPluginExtensionsRequest.class, ListPluginExtensionsResponse.class)
+            .withName("ListPluginExtensions")
+            .withUri("/v3/{project_id}/instances/{instance_id}/plugin-extensions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginExtensionsRequest::getInstanceId,
+                ListPluginExtensionsRequest::setInstanceId));
+        builder.<ListPluginExtensionsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPluginExtensionsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListPluginExtensionsRequest::getXLanguage,
+                ListPluginExtensionsRequest::setXLanguage));
+        builder.<ListPluginExtensionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListPluginExtensionsRequestBody.class),
+            f -> f.withMarshaller(ListPluginExtensionsRequest::getBody, ListPluginExtensionsRequest::setBody));
+
+        // response
+        builder.<List<PluginExtensions>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPluginExtensionsResponse::getBody, ListPluginExtensionsResponse::setBody)
+                .withInnerContainerType(PluginExtensions.class));
 
         return builder.build();
     }
@@ -2166,6 +2292,37 @@ public class GaussDBforopenGaussMeta {
             f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, ListStorageTypesRequest::setXLanguage));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSupportKernelPluginsRequest, ListSupportKernelPluginsResponse> listSupportKernelPlugins =
+        genForListSupportKernelPlugins();
+
+    private static HttpRequestDef<ListSupportKernelPluginsRequest, ListSupportKernelPluginsResponse> genForListSupportKernelPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListSupportKernelPluginsRequest, ListSupportKernelPluginsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListSupportKernelPluginsRequest.class, ListSupportKernelPluginsResponse.class)
+                .withName("ListSupportKernelPlugins")
+                .withUri("/v3/{project_id}/instances/kernel-plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListSupportKernelPluginsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSupportKernelPluginsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSupportKernelPluginsRequest::getXLanguage,
+                ListSupportKernelPluginsRequest::setXLanguage));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSupportKernelPluginsResponse::getBody, ListSupportKernelPluginsResponse::setBody)
+                .withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -2455,6 +2612,46 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResumePluginExtensionsRequest, ResumePluginExtensionsResponse> resumePluginExtensions =
+        genForResumePluginExtensions();
+
+    private static HttpRequestDef<ResumePluginExtensionsRequest, ResumePluginExtensionsResponse> genForResumePluginExtensions() {
+        // basic
+        HttpRequestDef.Builder<ResumePluginExtensionsRequest, ResumePluginExtensionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResumePluginExtensionsRequest.class, ResumePluginExtensionsResponse.class)
+            .withName("ResumePluginExtensions")
+            .withUri("/v3/{project_id}/instances/{instance_id}/config-plugin-extensions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumePluginExtensionsRequest::getInstanceId,
+                ResumePluginExtensionsRequest::setInstanceId));
+        builder.<ResumePluginExtensionsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResumePluginExtensionsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ResumePluginExtensionsRequest::getXLanguage,
+                ResumePluginExtensionsRequest::setXLanguage));
+        builder.<ResumePluginExtensionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResumePluginExtensionsRequestBody.class),
+            f -> f.withMarshaller(ResumePluginExtensionsRequest::getBody, ResumePluginExtensionsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResumePluginExtensionsResponse::getBody, ResumePluginExtensionsResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunInstanceActionRequest, RunInstanceActionResponse> runInstanceAction =
         genForRunInstanceAction();
 
@@ -2579,6 +2776,46 @@ public class GaussDBforopenGaussMeta {
             f -> f.withMarshaller(SetDbUserPwdRequest::getBody, SetDbUserPwdRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetKernelPluginLicenseRequest, SetKernelPluginLicenseResponse> setKernelPluginLicense =
+        genForSetKernelPluginLicense();
+
+    private static HttpRequestDef<SetKernelPluginLicenseRequest, SetKernelPluginLicenseResponse> genForSetKernelPluginLicense() {
+        // basic
+        HttpRequestDef.Builder<SetKernelPluginLicenseRequest, SetKernelPluginLicenseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetKernelPluginLicenseRequest.class, SetKernelPluginLicenseResponse.class)
+            .withName("SetKernelPluginLicense")
+            .withUri("/v3/{project_id}/instances/{instance_id}/kernel-plugin-license")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetKernelPluginLicenseRequest::getInstanceId,
+                SetKernelPluginLicenseRequest::setInstanceId));
+        builder.<SetKernelPluginLicenseRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetKernelPluginLicenseRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SetKernelPluginLicenseRequest::getXLanguage,
+                SetKernelPluginLicenseRequest::setXLanguage));
+        builder.<SetKernelPluginLicenseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetKernelPluginLicenseRequestBody.class),
+            f -> f.withMarshaller(SetKernelPluginLicenseRequest::getBody, SetKernelPluginLicenseRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetKernelPluginLicenseResponse::getBody, SetKernelPluginLicenseResponse::setBody));
 
         return builder.build();
     }

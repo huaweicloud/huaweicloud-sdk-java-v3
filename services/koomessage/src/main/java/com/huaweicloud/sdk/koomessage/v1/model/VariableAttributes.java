@@ -21,50 +21,50 @@ public class VariableAttributes {
     private Integer variableIndex;
 
     /**
-     * 参数类型。
+     * 参数类型。PHONE：电话号码，NEWTEXT：解析标识，CHARDIGIT：其他号码(如验证码、订单号、密码等)，DATETIME：日期时间，MONEY：金额，TEXT：其他。
      */
     public static final class VariableTypeEnum {
 
         /**
-         * Enum PHONE_ for value: "PHONE：电话号码"
+         * Enum PHONE for value: "PHONE"
          */
-        public static final VariableTypeEnum PHONE_ = new VariableTypeEnum("PHONE：电话号码");
+        public static final VariableTypeEnum PHONE = new VariableTypeEnum("PHONE");
 
         /**
-         * Enum NEWTEXT_ for value: "NEWTEXT：解析标识"
+         * Enum NEWTEXT for value: "NEWTEXT"
          */
-        public static final VariableTypeEnum NEWTEXT_ = new VariableTypeEnum("NEWTEXT：解析标识");
+        public static final VariableTypeEnum NEWTEXT = new VariableTypeEnum("NEWTEXT");
 
         /**
-         * Enum CHARDIGIT_ for value: "CHARDIGIT：其他号码(如验证码、订单号、密码等)"
+         * Enum CHARDIGIT for value: "CHARDIGIT"
          */
-        public static final VariableTypeEnum CHARDIGIT_ = new VariableTypeEnum("CHARDIGIT：其他号码(如验证码、订单号、密码等)");
+        public static final VariableTypeEnum CHARDIGIT = new VariableTypeEnum("CHARDIGIT");
 
         /**
-         * Enum DATETIME_ for value: "DATETIME：日期时间"
+         * Enum DATETIME for value: "DATETIME"
          */
-        public static final VariableTypeEnum DATETIME_ = new VariableTypeEnum("DATETIME：日期时间");
+        public static final VariableTypeEnum DATETIME = new VariableTypeEnum("DATETIME");
 
         /**
-         * Enum MONEY_ for value: "MONEY：金额"
+         * Enum MONEY for value: "MONEY"
          */
-        public static final VariableTypeEnum MONEY_ = new VariableTypeEnum("MONEY：金额");
+        public static final VariableTypeEnum MONEY = new VariableTypeEnum("MONEY");
 
         /**
-         * Enum TEXT_ for value: "TEXT：其他"
+         * Enum TEXT for value: "TEXT"
          */
-        public static final VariableTypeEnum TEXT_ = new VariableTypeEnum("TEXT：其他");
+        public static final VariableTypeEnum TEXT = new VariableTypeEnum("TEXT");
 
         private static final Map<String, VariableTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VariableTypeEnum> createStaticFields() {
             Map<String, VariableTypeEnum> map = new HashMap<>();
-            map.put("PHONE：电话号码", PHONE_);
-            map.put("NEWTEXT：解析标识", NEWTEXT_);
-            map.put("CHARDIGIT：其他号码(如验证码、订单号、密码等)", CHARDIGIT_);
-            map.put("DATETIME：日期时间", DATETIME_);
-            map.put("MONEY：金额", MONEY_);
-            map.put("TEXT：其他", TEXT_);
+            map.put("PHONE", PHONE);
+            map.put("NEWTEXT", NEWTEXT);
+            map.put("CHARDIGIT", CHARDIGIT);
+            map.put("DATETIME", DATETIME);
+            map.put("MONEY", MONEY);
+            map.put("TEXT", TEXT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,7 +147,7 @@ public class VariableAttributes {
     }
 
     /**
-     * 参数类型。
+     * 参数类型。PHONE：电话号码，NEWTEXT：解析标识，CHARDIGIT：其他号码(如验证码、订单号、密码等)，DATETIME：日期时间，MONEY：金额，TEXT：其他。
      * @return variableType
      */
     public VariableTypeEnum getVariableType() {

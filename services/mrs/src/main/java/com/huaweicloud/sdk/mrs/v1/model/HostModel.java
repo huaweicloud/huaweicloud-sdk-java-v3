@@ -88,6 +88,11 @@ public class HostModel {
 
     private Integer dataVolumeCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_group_name")
+
+    private String nodeGroupName;
+
     public HostModel withId(String id) {
         this.id = id;
         return this;
@@ -359,6 +364,23 @@ public class HostModel {
         this.dataVolumeCount = dataVolumeCount;
     }
 
+    public HostModel withNodeGroupName(String nodeGroupName) {
+        this.nodeGroupName = nodeGroupName;
+        return this;
+    }
+
+    /**
+     * 节点组名称
+     * @return nodeGroupName
+     */
+    public String getNodeGroupName() {
+        return nodeGroupName;
+    }
+
+    public void setNodeGroupName(String nodeGroupName) {
+        this.nodeGroupName = nodeGroupName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -376,7 +398,8 @@ public class HostModel {
             && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.rootVolumeSize, that.rootVolumeSize)
             && Objects.equals(this.dataVolumeType, that.dataVolumeType)
             && Objects.equals(this.dataVolumeSize, that.dataVolumeSize)
-            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount);
+            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount)
+            && Objects.equals(this.nodeGroupName, that.nodeGroupName);
     }
 
     @Override
@@ -395,7 +418,8 @@ public class HostModel {
             rootVolumeSize,
             dataVolumeType,
             dataVolumeSize,
-            dataVolumeCount);
+            dataVolumeCount,
+            nodeGroupName);
     }
 
     @Override
@@ -417,6 +441,7 @@ public class HostModel {
         sb.append("    dataVolumeType: ").append(toIndentedString(dataVolumeType)).append("\n");
         sb.append("    dataVolumeSize: ").append(toIndentedString(dataVolumeSize)).append("\n");
         sb.append("    dataVolumeCount: ").append(toIndentedString(dataVolumeCount)).append("\n");
+        sb.append("    nodeGroupName: ").append(toIndentedString(nodeGroupName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

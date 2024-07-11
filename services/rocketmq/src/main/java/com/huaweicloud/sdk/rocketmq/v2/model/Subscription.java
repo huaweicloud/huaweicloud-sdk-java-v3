@@ -31,7 +31,7 @@ public class Subscription {
     }
 
     /**
-     * 订阅的topic名称
+     * 订阅的Topic名称。
      * @return topic
      */
     public String getTopic() {
@@ -48,7 +48,7 @@ public class Subscription {
     }
 
     /**
-     * 订阅类型，取值如下：TAG和SQL92
+     * 订阅类型，取值如下：TAG和SQL92。
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class Subscription {
     }
 
     /**
-     * 订阅tag字符
+     * 订阅tag字符。
      * @return expression
      */
     public String getExpression() {

@@ -155,7 +155,7 @@ public class CreateOrUpdateConsumerGroup {
     }
 
     /**
-     * 是否按序消费（仅RocketMQ实例5.x版本需要填写此参数）。
+     * 是否按顺序消费（仅RocketMQ实例5.x版本需要填写此参数）。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {

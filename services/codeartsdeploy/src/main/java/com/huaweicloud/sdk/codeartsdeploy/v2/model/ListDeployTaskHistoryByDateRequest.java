@@ -46,7 +46,7 @@ public class ListDeployTaskHistoryByDateRequest {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -63,7 +63,7 @@ public class ListDeployTaskHistoryByDateRequest {
     }
 
     /**
-     * 任务ID
+     * 任务id
      * @return id
      */
     public String getId() {

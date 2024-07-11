@@ -22,7 +22,7 @@ public class CreateRocketMqMigrationTaskRequest {
     private String instanceId;
 
     /**
-     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当topic或group已存在则会报错。
+     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
      */
     public static final class OverwriteEnum {
 
@@ -204,7 +204,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当topic或group已存在则会报错。
+     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
      * @return overwrite
      */
     public OverwriteEnum getOverwrite() {
@@ -221,7 +221,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 迁移任务名称，名称规则参考创建实例
+     * 迁移任务名称，名称规则参考创建实例。
      * @return name
      */
     public String getName() {

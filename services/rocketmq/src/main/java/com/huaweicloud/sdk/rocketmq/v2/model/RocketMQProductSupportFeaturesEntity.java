@@ -29,7 +29,7 @@ public class RocketMQProductSupportFeaturesEntity {
     }
 
     /**
-     * 特性名称
+     * 特性名称。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class RocketMQProductSupportFeaturesEntity {
     }
 
     /**
-     * 功能特性的键值对
+     * 功能特性的键值对。
      * @return properties
      */
     public Map<String, String> getProperties() {

@@ -94,6 +94,8 @@ import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowChartRequest;
@@ -1635,6 +1637,37 @@ public class CceAsyncClient {
     public AsyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstanceAsyncInvoker(
         RollbackAddonInstanceRequest request) {
         return new AsyncInvoker<>(request, CceMeta.rollbackAddonInstance, hcClient);
+    }
+
+    /**
+     * 伸缩节点池
+     *
+     * 该API用于伸缩指定的节点池
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleNodePoolRequest 请求对象
+     * @return CompletableFuture<ScaleNodePoolResponse>
+     */
+    public CompletableFuture<ScaleNodePoolResponse> scaleNodePoolAsync(ScaleNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.scaleNodePool);
+    }
+
+    /**
+     * 伸缩节点池
+     *
+     * 该API用于伸缩指定的节点池
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ScaleNodePoolRequest 请求对象
+     * @return AsyncInvoker<ScaleNodePoolRequest, ScaleNodePoolResponse>
+     */
+    public AsyncInvoker<ScaleNodePoolRequest, ScaleNodePoolResponse> scaleNodePoolAsyncInvoker(
+        ScaleNodePoolRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.scaleNodePool, hcClient);
     }
 
     /**

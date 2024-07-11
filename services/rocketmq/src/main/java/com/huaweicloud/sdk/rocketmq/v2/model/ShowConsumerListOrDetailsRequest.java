@@ -75,7 +75,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 待查询的topic，不指定时查询topic列表，指定时查询详情。
+     * 待查询的Topic，不指定时查询Topic列表，指定时查询详情。
      * @return topic
      */
     public String getTopic() {

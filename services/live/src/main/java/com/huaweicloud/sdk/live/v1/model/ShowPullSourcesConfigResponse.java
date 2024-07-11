@@ -115,6 +115,11 @@ public class ShowPullSourcesConfigResponse extends SdkResponse {
 
     private List<String> sourcesIp = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_port")
+
+    private Integer sourcePort;
+
     /**
      * 回源协议，回源方式非“huawei”时必选。
      */
@@ -295,6 +300,25 @@ public class ShowPullSourcesConfigResponse extends SdkResponse {
         this.sourcesIp = sourcesIp;
     }
 
+    public ShowPullSourcesConfigResponse withSourcePort(Integer sourcePort) {
+        this.sourcePort = sourcePort;
+        return this;
+    }
+
+    /**
+     * 回源端口。 
+     * minimum: 1
+     * maximum: 65535
+     * @return sourcePort
+     */
+    public Integer getSourcePort() {
+        return sourcePort;
+    }
+
+    public void setSourcePort(Integer sourcePort) {
+        this.sourcePort = sourcePort;
+    }
+
     public ShowPullSourcesConfigResponse withScheme(SchemeEnum scheme) {
         this.scheme = scheme;
         return this;
@@ -356,12 +380,13 @@ public class ShowPullSourcesConfigResponse extends SdkResponse {
         ShowPullSourcesConfigResponse that = (ShowPullSourcesConfigResponse) obj;
         return Objects.equals(this.playDomain, that.playDomain) && Objects.equals(this.sourceType, that.sourceType)
             && Objects.equals(this.sources, that.sources) && Objects.equals(this.sourcesIp, that.sourcesIp)
-            && Objects.equals(this.scheme, that.scheme) && Objects.equals(this.additionalArgs, that.additionalArgs);
+            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.scheme, that.scheme)
+            && Objects.equals(this.additionalArgs, that.additionalArgs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playDomain, sourceType, sources, sourcesIp, scheme, additionalArgs);
+        return Objects.hash(playDomain, sourceType, sources, sourcesIp, sourcePort, scheme, additionalArgs);
     }
 
     @Override
@@ -372,6 +397,7 @@ public class ShowPullSourcesConfigResponse extends SdkResponse {
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    sourcesIp: ").append(toIndentedString(sourcesIp)).append("\n");
+        sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
         sb.append("    additionalArgs: ").append(toIndentedString(additionalArgs)).append("\n");
         sb.append("}");

@@ -141,9 +141,9 @@ public class ListSubCustomerCouponsRequest {
     }
 
     /**
-     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期。此参数不携带或携带值为空时，不作为筛选条件。 说明： 已过期优惠券，只返回12个月以内的数据。
+     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期5：已回收。此参数不携带或携带值为空时，不作为筛选条件。 说明： 已使用、已过期和已回收优惠券，只返回12个月以内的数据。
      * minimum: 1
-     * maximum: 4
+     * maximum: 5
      * @return status
      */
     public Integer getStatus() {

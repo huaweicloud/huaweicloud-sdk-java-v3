@@ -33,6 +33,11 @@ public class UpdatePremiumHostRequestBody {
 
     private String certificatename;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server")
+
+    private List<PremiumWafServer> server = null;
+
     /**
      * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
      */
@@ -328,6 +333,39 @@ public class UpdatePremiumHostRequestBody {
 
     public void setCertificatename(String certificatename) {
         this.certificatename = certificatename;
+    }
+
+    public UpdatePremiumHostRequestBody withServer(List<PremiumWafServer> server) {
+        this.server = server;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody addServerItem(PremiumWafServer serverItem) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        this.server.add(serverItem);
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withServer(Consumer<List<PremiumWafServer>> serverSetter) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        serverSetter.accept(this.server);
+        return this;
+    }
+
+    /**
+     * 防护域名的源站服务器配置信息
+     * @return server
+     */
+    public List<PremiumWafServer> getServer() {
+        return server;
+    }
+
+    public void setServer(List<PremiumWafServer> server) {
+        this.server = server;
     }
 
     public UpdatePremiumHostRequestBody withTls(TlsEnum tls) {
@@ -655,9 +693,10 @@ public class UpdatePremiumHostRequestBody {
         }
         UpdatePremiumHostRequestBody that = (UpdatePremiumHostRequestBody) obj;
         return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.certificateid, that.certificateid)
-            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.tls, that.tls)
-            && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.locked, that.locked) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.tls, that.tls) && Objects.equals(this.cipher, that.cipher)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.timestamp, that.timestamp)
             && Objects.equals(this.poolIds, that.poolIds) && Objects.equals(this.blockPage, that.blockPage)
             && Objects.equals(this.trafficMark, that.trafficMark)
@@ -671,6 +710,7 @@ public class UpdatePremiumHostRequestBody {
         return Objects.hash(proxy,
             certificateid,
             certificatename,
+            server,
             tls,
             cipher,
             mode,
@@ -694,6 +734,7 @@ public class UpdatePremiumHostRequestBody {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
         sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
         sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

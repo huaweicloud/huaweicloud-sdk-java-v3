@@ -20,6 +20,11 @@ public class BankReceiptRequestBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_num")
+
+    private Integer pageNum;
+
     public BankReceiptRequestBody withData(String data) {
         this.data = data;
         return this;
@@ -54,6 +59,23 @@ public class BankReceiptRequestBody {
         this.url = url;
     }
 
+    public BankReceiptRequestBody withPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+        return this;
+    }
+
+    /**
+     * 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页，该参数仅在文件为PDF格式时有效。 
+     * @return pageNum
+     */
+    public Integer getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class BankReceiptRequestBody {
             return false;
         }
         BankReceiptRequestBody that = (BankReceiptRequestBody) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.pageNum, that.pageNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url);
+        return Objects.hash(data, url, pageNum);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class BankReceiptRequestBody {
         sb.append("class BankReceiptRequestBody {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

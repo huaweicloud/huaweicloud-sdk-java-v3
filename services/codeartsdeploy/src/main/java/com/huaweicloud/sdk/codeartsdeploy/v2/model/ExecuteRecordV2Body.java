@@ -112,7 +112,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 部署记录ID
+     * 部署记录id
      * @return executionId
      */
     public String getExecutionId() {

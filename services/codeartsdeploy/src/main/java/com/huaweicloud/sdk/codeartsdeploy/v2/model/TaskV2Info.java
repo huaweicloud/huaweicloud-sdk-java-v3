@@ -299,7 +299,7 @@ public class TaskV2Info {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -384,7 +384,7 @@ public class TaskV2Info {
     }
 
     /**
-     * 角色ID
+     * 角色id
      * @return roleId
      */
     public Integer getRoleId() {
@@ -452,7 +452,7 @@ public class TaskV2Info {
     }
 
     /**
-     * 应用创建者用户ID
+     * 应用创建者用户id
      * @return ownerId
      */
     public String getOwnerId() {
@@ -469,7 +469,7 @@ public class TaskV2Info {
     }
 
     /**
-     * 应用创建者租户ID
+     * 应用创建者租户id
      * @return tenantId
      */
     public String getTenantId() {

@@ -55,7 +55,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 消费组名称
+     * 消费组名称。
      * @return groupName
      */
     public String getGroupName() {
@@ -72,7 +72,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 消费组是否在线
+     * 消费组是否在线。
      * @return online
      */
     public Boolean getOnline() {
@@ -89,7 +89,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 订阅关系是否一致
+     * 订阅关系是否一致。
      * @return subscriptionConsistency
      */
     public Boolean getSubscriptionConsistency() {
@@ -106,7 +106,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 消费者总数
+     * 消费者总数。
      * @return total
      */
     public Integer getTotal() {
@@ -123,7 +123,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 下个分页的offset
+     * 下个分页的offset。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -140,7 +140,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 上个分页的offset
+     * 上个分页的offset。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {
@@ -173,7 +173,7 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * 消费者订阅详情列表
+     * 消费者订阅详情列表。
      * @return clients
      */
     public List<ClientData> getClients() {

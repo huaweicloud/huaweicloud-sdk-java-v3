@@ -276,6 +276,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
@@ -3853,6 +3855,52 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTestCaseDetailV2Request::getTestcaseNumber,
                 ShowTestCaseDetailV2Request::setTestcaseNumber));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTestCaseReviewsRequest, ShowTestCaseReviewsResponse> showTestCaseReviews =
+        genForShowTestCaseReviews();
+
+    private static HttpRequestDef<ShowTestCaseReviewsRequest, ShowTestCaseReviewsResponse> genForShowTestCaseReviews() {
+        // basic
+        HttpRequestDef.Builder<ShowTestCaseReviewsRequest, ShowTestCaseReviewsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTestCaseReviewsRequest.class, ShowTestCaseReviewsResponse.class)
+                .withName("ShowTestCaseReviews")
+                .withUri("/GT3KServer/v4/testcases/{testcase_uri}/review")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("testcase_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestCaseReviewsRequest::getTestcaseUri,
+                ShowTestCaseReviewsRequest::setTestcaseUri));
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestCaseReviewsRequest::getProjectUuid,
+                ShowTestCaseReviewsRequest::setProjectUuid));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestCaseReviewsRequest::getVersionUri,
+                ShowTestCaseReviewsRequest::setVersionUri));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTestCaseReviewsRequest::getPageNo, ShowTestCaseReviewsRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTestCaseReviewsRequest::getPageSize, ShowTestCaseReviewsRequest::setPageSize));
 
         // response
 

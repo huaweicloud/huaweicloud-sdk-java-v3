@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RocketMQ元数据迁移，RocketMQ topic元数据。
+ * RocketMQ元数据迁移，RocketMQ Topic元数据。
  */
 public class MigrationRocketMqTopicConfig {
 
@@ -51,7 +51,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * topic名称。
+     * Topic名称。
      * @return topicName
      */
     public String getTopicName() {
@@ -85,7 +85,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * topic权限。
+     * Topic权限。
      * @return perm
      */
     public Integer getPerm() {
@@ -136,7 +136,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
+     * Topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
      * @return topicFilterType
      */
     public String getTopicFilterType() {
@@ -153,7 +153,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * topic系统标志位。
+     * Topic系统标志位。
      * @return topicSysFlag
      */
     public Integer getTopicSysFlag() {

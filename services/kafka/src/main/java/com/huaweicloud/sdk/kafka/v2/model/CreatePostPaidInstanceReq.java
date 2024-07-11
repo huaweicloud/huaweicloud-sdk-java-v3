@@ -376,16 +376,6 @@ public class CreatePostPaidInstanceReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_user")
-
-    private String kafkaManagerUser;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_password")
-
-    private String kafkaManagerPassword;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
     private String maintainBegin;
@@ -721,7 +711,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs,fcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
      * @return description
      */
     public String getDescription() {
@@ -755,7 +745,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,dt,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
+     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,dt,ctc,g42,hk_g42,tm,hk_tm)   - 2.7   - 3.x
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -967,40 +957,6 @@ public class CreatePostPaidInstanceReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
-    }
-
-    public CreatePostPaidInstanceReq withKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
-        return this;
-    }
-
-    /**
-     * 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。
-     * @return kafkaManagerUser
-     */
-    public String getKafkaManagerUser() {
-        return kafkaManagerUser;
-    }
-
-    public void setKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
-    }
-
-    public CreatePostPaidInstanceReq withKafkaManagerPassword(String kafkaManagerPassword) {
-        this.kafkaManagerPassword = kafkaManagerPassword;
-        return this;
-    }
-
-    /**
-     * 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的三种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）和空格，并且不能以-开头
-     * @return kafkaManagerPassword
-     */
-    public String getKafkaManagerPassword() {
-        return kafkaManagerPassword;
-    }
-
-    public void setKafkaManagerPassword(String kafkaManagerPassword) {
-        this.kafkaManagerPassword = kafkaManagerPassword;
     }
 
     public CreatePostPaidInstanceReq withMaintainBegin(String maintainBegin) {
@@ -1325,10 +1281,7 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.password, that.password) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
-            && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
-            && Objects.equals(this.kafkaManagerPassword, that.kafkaManagerPassword)
-            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.maintainBegin, that.maintainBegin)
             && Objects.equals(this.maintainEnd, that.maintainEnd)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
             && Objects.equals(this.publicBandwidth, that.publicBandwidth)
@@ -1362,8 +1315,6 @@ public class CreatePostPaidInstanceReq {
             subnetId,
             availableZones,
             productId,
-            kafkaManagerUser,
-            kafkaManagerPassword,
             maintainBegin,
             maintainEnd,
             enablePublicip,
@@ -1401,8 +1352,6 @@ public class CreatePostPaidInstanceReq {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    kafkaManagerUser: ").append(toIndentedString(kafkaManagerUser)).append("\n");
-        sb.append("    kafkaManagerPassword: ").append(toIndentedString(kafkaManagerPassword)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");

@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
@@ -51,6 +53,8 @@ import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListHlsConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
@@ -85,6 +89,8 @@ import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsResponse;
 import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
+import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
@@ -97,6 +103,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowRefererChainRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigRequest;
@@ -111,6 +119,8 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicRequest;
@@ -606,6 +616,35 @@ public class LiveClient {
     }
 
     /**
+     * 删除Referer防盗链黑白名单
+     *
+     * 删除Referer防盗链黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRefererChainRequest 请求对象
+     * @return DeleteRefererChainResponse
+     */
+    public DeleteRefererChainResponse deleteRefererChain(DeleteRefererChainRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deleteRefererChain);
+    }
+
+    /**
+     * 删除Referer防盗链黑白名单
+     *
+     * 删除Referer防盗链黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRefererChainRequest 请求对象
+     * @return SyncInvoker<DeleteRefererChainRequest, DeleteRefererChainResponse>
+     */
+    public SyncInvoker<DeleteRefererChainRequest, DeleteRefererChainResponse> deleteRefererChainInvoker(
+        DeleteRefererChainRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.deleteRefererChain, hcClient);
+    }
+
+    /**
      * 删除直播截图配置
      *
      * 删除直播截图配置接口
@@ -748,6 +787,34 @@ public class LiveClient {
     public SyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> listGeoBlockingConfigInvoker(
         ListGeoBlockingConfigRequest request) {
         return new SyncInvoker<>(request, LiveMeta.listGeoBlockingConfig, hcClient);
+    }
+
+    /**
+     * 查询域名HLS配置
+     *
+     * 查询域名HLS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHlsConfigRequest 请求对象
+     * @return ListHlsConfigResponse
+     */
+    public ListHlsConfigResponse listHlsConfig(ListHlsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listHlsConfig);
+    }
+
+    /**
+     * 查询域名HLS配置
+     *
+     * 查询域名HLS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHlsConfigRequest 请求对象
+     * @return SyncInvoker<ListHlsConfigRequest, ListHlsConfigResponse>
+     */
+    public SyncInvoker<ListHlsConfigRequest, ListHlsConfigResponse> listHlsConfigInvoker(ListHlsConfigRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listHlsConfig, hcClient);
     }
 
     /**
@@ -1046,6 +1113,35 @@ public class LiveClient {
     }
 
     /**
+     * 设置Referer防盗链黑白名单
+     *
+     * 设置Referer黑白名单，直播服务会根据配置的referer黑白名单，对访问者的身份进行识别和过滤，符合规则的可以顺利访问到该内容。如果不符合规则，该访问请求将会被禁止。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRefererChainRequest 请求对象
+     * @return SetRefererChainResponse
+     */
+    public SetRefererChainResponse setRefererChain(SetRefererChainRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.setRefererChain);
+    }
+
+    /**
+     * 设置Referer防盗链黑白名单
+     *
+     * 设置Referer黑白名单，直播服务会根据配置的referer黑白名单，对访问者的身份进行识别和过滤，符合规则的可以顺利访问到该内容。如果不符合规则，该访问请求将会被禁止。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRefererChainRequest 请求对象
+     * @return SyncInvoker<SetRefererChainRequest, SetRefererChainResponse>
+     */
+    public SyncInvoker<SetRefererChainRequest, SetRefererChainResponse> setRefererChainInvoker(
+        SetRefererChainRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.setRefererChain, hcClient);
+    }
+
+    /**
      * 查询直播域名
      *
      * 查询直播域名
@@ -1187,6 +1283,35 @@ public class LiveClient {
     public SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRuleInvoker(
         ShowRecordRuleRequest request) {
         return new SyncInvoker<>(request, LiveMeta.showRecordRule, hcClient);
+    }
+
+    /**
+     * 查询Referer防盗链黑白名单
+     *
+     * 查询Referer防盗链黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRefererChainRequest 请求对象
+     * @return ShowRefererChainResponse
+     */
+    public ShowRefererChainResponse showRefererChain(ShowRefererChainRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showRefererChain);
+    }
+
+    /**
+     * 查询Referer防盗链黑白名单
+     *
+     * 查询Referer防盗链黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRefererChainRequest 请求对象
+     * @return SyncInvoker<ShowRefererChainRequest, ShowRefererChainResponse>
+     */
+    public SyncInvoker<ShowRefererChainRequest, ShowRefererChainResponse> showRefererChainInvoker(
+        ShowRefererChainRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.showRefererChain, hcClient);
     }
 
     /**
@@ -1360,6 +1485,35 @@ public class LiveClient {
     public SyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> updateGeoBlockingConfigInvoker(
         UpdateGeoBlockingConfigRequest request) {
         return new SyncInvoker<>(request, LiveMeta.updateGeoBlockingConfig, hcClient);
+    }
+
+    /**
+     * 修改域名HLS配置
+     *
+     * 修改域名HLS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHlsConfigRequest 请求对象
+     * @return UpdateHlsConfigResponse
+     */
+    public UpdateHlsConfigResponse updateHlsConfig(UpdateHlsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateHlsConfig);
+    }
+
+    /**
+     * 修改域名HLS配置
+     *
+     * 修改域名HLS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHlsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateHlsConfigRequest, UpdateHlsConfigResponse>
+     */
+    public SyncInvoker<UpdateHlsConfigRequest, UpdateHlsConfigResponse> updateHlsConfigInvoker(
+        UpdateHlsConfigRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.updateHlsConfig, hcClient);
     }
 
     /**

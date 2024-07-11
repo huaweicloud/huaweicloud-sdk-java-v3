@@ -71,6 +71,11 @@ public class PoliciesInListResp {
 
     private Integer alarmLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "selected_unit")
+
+    private String selectedUnit;
+
     public PoliciesInListResp withAlarmPolicyId(String alarmPolicyId) {
         this.alarmPolicyId = alarmPolicyId;
         return this;
@@ -290,6 +295,23 @@ public class PoliciesInListResp {
         this.alarmLevel = alarmLevel;
     }
 
+    public PoliciesInListResp withSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+        return this;
+    }
+
+    /**
+     * 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+     * @return selectedUnit
+     */
+    public String getSelectedUnit() {
+        return selectedUnit;
+    }
+
+    public void setSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -306,7 +328,7 @@ public class PoliciesInListResp {
             && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
             && Objects.equals(this.count, that.count) && Objects.equals(this.type, that.type)
             && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.alarmLevel, that.alarmLevel);
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.selectedUnit, that.selectedUnit);
     }
 
     @Override
@@ -322,7 +344,8 @@ public class PoliciesInListResp {
             count,
             type,
             suppressDuration,
-            alarmLevel);
+            alarmLevel,
+            selectedUnit);
     }
 
     @Override
@@ -341,6 +364,7 @@ public class PoliciesInListResp {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
+        sb.append("    selectedUnit: ").append(toIndentedString(selectedUnit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

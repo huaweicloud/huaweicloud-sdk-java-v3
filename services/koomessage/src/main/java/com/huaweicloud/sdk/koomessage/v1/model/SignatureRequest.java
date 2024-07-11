@@ -21,26 +21,26 @@ public class SignatureRequest {
     private String signatureName;
 
     /**
-     * 签名类型。
+     * 签名类型。PROMOTION_TYPE：营销类，NOTIFY_TYPE：通知类。
      */
     public static final class SignatureTypeEnum {
 
         /**
-         * Enum PROMOTION_TYPE_ for value: "PROMOTION_TYPE：营销类"
+         * Enum PROMOTION_TYPE for value: "PROMOTION_TYPE"
          */
-        public static final SignatureTypeEnum PROMOTION_TYPE_ = new SignatureTypeEnum("PROMOTION_TYPE：营销类");
+        public static final SignatureTypeEnum PROMOTION_TYPE = new SignatureTypeEnum("PROMOTION_TYPE");
 
         /**
-         * Enum NOTIFY_TYPE_ for value: "NOTIFY_TYPE：通知类"
+         * Enum NOTIFY_TYPE for value: "NOTIFY_TYPE"
          */
-        public static final SignatureTypeEnum NOTIFY_TYPE_ = new SignatureTypeEnum("NOTIFY_TYPE：通知类");
+        public static final SignatureTypeEnum NOTIFY_TYPE = new SignatureTypeEnum("NOTIFY_TYPE");
 
         private static final Map<String, SignatureTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SignatureTypeEnum> createStaticFields() {
             Map<String, SignatureTypeEnum> map = new HashMap<>();
-            map.put("PROMOTION_TYPE：营销类", PROMOTION_TYPE_);
-            map.put("NOTIFY_TYPE：通知类", NOTIFY_TYPE_);
+            map.put("PROMOTION_TYPE", PROMOTION_TYPE);
+            map.put("NOTIFY_TYPE", NOTIFY_TYPE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,26 +116,26 @@ public class SignatureRequest {
     private Integer signatureSource;
 
     /**
-     * 是否涉及第三方权益。若为yes，则还需要传入授权委托书。
+     * 是否涉及第三方权益。若为yes，则还需要传入授权委托书。yes：涉及，no：不涉及。
      */
     public static final class IsInvolvedThirdEnum {
 
         /**
-         * Enum YES_ for value: "yes：涉及"
+         * Enum YES for value: "yes"
          */
-        public static final IsInvolvedThirdEnum YES_ = new IsInvolvedThirdEnum("yes：涉及");
+        public static final IsInvolvedThirdEnum YES = new IsInvolvedThirdEnum("yes");
 
         /**
-         * Enum NO_ for value: "no：不涉及"
+         * Enum NO for value: "no"
          */
-        public static final IsInvolvedThirdEnum NO_ = new IsInvolvedThirdEnum("no：不涉及");
+        public static final IsInvolvedThirdEnum NO = new IsInvolvedThirdEnum("no");
 
         private static final Map<String, IsInvolvedThirdEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, IsInvolvedThirdEnum> createStaticFields() {
             Map<String, IsInvolvedThirdEnum> map = new HashMap<>();
-            map.put("yes：涉及", YES_);
-            map.put("no：不涉及", NO_);
+            map.put("yes", YES);
+            map.put("no", NO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -223,7 +223,7 @@ public class SignatureRequest {
     }
 
     /**
-     * 签名类型。
+     * 签名类型。PROMOTION_TYPE：营销类，NOTIFY_TYPE：通知类。
      * @return signatureType
      */
     public SignatureTypeEnum getSignatureType() {
@@ -291,7 +291,7 @@ public class SignatureRequest {
     }
 
     /**
-     * 签名来源。
+     * 签名来源。0：企事业单位的全称或简称，1：工信部备案网站的全称或简称，2：APP应用的全称或简称，3：公众号或小程序的全称或简称，4：电商平台店铺名的全称或简称，5：商标名的全称或简称。
      * @return signatureSource
      */
     public Integer getSignatureSource() {
@@ -308,7 +308,7 @@ public class SignatureRequest {
     }
 
     /**
-     * 是否涉及第三方权益。若为yes，则还需要传入授权委托书。
+     * 是否涉及第三方权益。若为yes，则还需要传入授权委托书。yes：涉及，no：不涉及。
      * @return isInvolvedThird
      */
     public IsInvolvedThirdEnum getIsInvolvedThird() {

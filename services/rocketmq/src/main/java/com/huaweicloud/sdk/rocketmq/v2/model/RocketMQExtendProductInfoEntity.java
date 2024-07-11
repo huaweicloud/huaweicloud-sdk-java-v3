@@ -79,7 +79,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 实例类型
+     * 实例类型。
      * @return type
      */
     public String getType() {
@@ -96,7 +96,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 产品ID
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -113,7 +113,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 该产品使用的ECS规格
+     * 该产品使用的ECS规格。
      * @return ecsFlavorId
      */
     public String getEcsFlavorId() {
@@ -163,7 +163,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 支持的CPU架构类型
+     * 支持的CPU架构类型。
      * @return archTypes
      */
     public List<String> getArchTypes() {
@@ -196,7 +196,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 支持的计费模式类型
+     * 支持的计费模式类型。
      * @return chargingMode
      */
     public List<String> getChargingMode() {
@@ -229,7 +229,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 磁盘IO信息
+     * 磁盘IO信息。
      * @return ios
      */
     public List<RocketMQExtendProductIosEntity> getIos() {
@@ -289,7 +289,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 有可用资源的可用区列表
+     * 有可用资源的可用区列表。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -322,7 +322,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 资源售罄的可用区列表
+     * 资源售罄的可用区列表。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {
@@ -358,7 +358,7 @@ public class RocketMQExtendProductInfoEntity {
     }
 
     /**
-     * 支持的特性功能
+     * 支持的特性功能。
      * @return supportFeatures
      */
     public List<RocketMQProductSupportFeaturesEntity> getSupportFeatures() {

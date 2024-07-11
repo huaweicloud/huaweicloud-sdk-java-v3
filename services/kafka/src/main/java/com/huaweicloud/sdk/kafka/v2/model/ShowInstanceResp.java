@@ -875,7 +875,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,sbc,hk_sbc,hws_eu)
+     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc,hws_eu)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -2028,7 +2028,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 区分实例什么时候开启的公网访问：true,actived,closed,false。
+     *  区分实例什么时候开启的公网访问  取值范围：   - true：已开启公网访问   - actived：已开启公网访问   - closed：已关闭公网访问   - false：已关闭公网访问 
      * @return publicAccessEnabled
      */
     public String getPublicAccessEnabled() {

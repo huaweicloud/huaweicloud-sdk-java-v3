@@ -1,6 +1,30 @@
 package com.huaweicloud.sdk.codeartsdeploy.v2;
 
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.AppBatchDeleteRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchDeleteAppRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchDeleteAppResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchDeleteHostsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchDeleteHostsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdateApplicationPermissionsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdateApplicationPermissionsRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdateApplicationPermissionsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckWhetherHostGroupCanBeCreatedRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckWhetherHostGroupCanBeCreatedResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ConfigInfo;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CopyApplicationRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CopyApplicationResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CopyHostsToTargetRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CopyHostsToTargetResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppGroupsRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppGroupsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppResponse;
@@ -18,6 +42,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateHostClusterResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateHostRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateHostRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateHostResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteAppGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteAppGroupsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeployTaskRequest;
@@ -28,28 +54,54 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentHostRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentHostResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteEnvironmentRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteEnvironmentResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostClusterRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostClusterResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostFromEnvironmentRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostFromEnvironmentResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteHostResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentGroup;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentGroupUpdateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentHost;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentHostListEntity;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentHostRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentHostRequestExternal;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeploymentHostsCopyRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DevUcClusterPermission;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DevUcEnvironmentPermission;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.EnvExecutionBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.EnvironmentPermissionV2Body;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.EnvironmentRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.EnvironmentRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.HostClusterRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ImportHostToEnvironmentRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ImportHostToEnvironmentRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ImportHostToEnvironmentResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAllAppRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAllAppRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAllAppResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAppGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAppGroupsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListApplicationPermissionsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListApplicationPermissionsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAssociateEnvironmentsInfosRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListAssociateEnvironmentsInfosResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTaskHistoryByDateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTaskHistoryByDateResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTasksRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTasksResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentHostsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentHostsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentPermissionsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentPermissionsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostClustersRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostClustersResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupBaseInfosRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupBaseInfosResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupPermissionsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupPermissionsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupsRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostsRequest;
@@ -58,6 +110,13 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListNewHostsRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListNewHostsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListTaskSuccessRateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListTaskSuccessRateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppGroupsRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppGroupsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppToGroupRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppToGroupRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.MoveAppToGroupResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.PermissionUpdateV2Body;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowAppDetailByIdRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowAppDetailByIdResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeployTaskDetailRequest;
@@ -80,10 +139,29 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.TasksSuccessRateQuery;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.TemplateTaskRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppGroupsRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppGroupsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppInfoRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppInfoRequestBody;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppInfoResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentGroupRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentGroupResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentHostRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentHostResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateEnvironmentPermissionRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateEnvironmentPermissionResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateEnvironmentRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateEnvironmentResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostClusterRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostClusterResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostGroupPermissionsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostGroupPermissionsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostInfoRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateHostInfoResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -94,6 +172,359 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsDeployMeta {
+
+    public static final HttpRequestDef<CreateAppGroupsRequest, CreateAppGroupsResponse> createAppGroups =
+        genForCreateAppGroups();
+
+    private static HttpRequestDef<CreateAppGroupsRequest, CreateAppGroupsResponse> genForCreateAppGroups() {
+        // basic
+        HttpRequestDef.Builder<CreateAppGroupsRequest, CreateAppGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAppGroupsRequest.class, CreateAppGroupsResponse.class)
+                .withName("CreateAppGroups")
+                .withUri("/v1/projects/{project_id}/applications/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppGroupsRequest::getProjectId, CreateAppGroupsRequest::setProjectId));
+        builder.<CreateAppGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAppGroupsRequestBody.class),
+            f -> f.withMarshaller(CreateAppGroupsRequest::getBody, CreateAppGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppGroupsRequest, DeleteAppGroupsResponse> deleteAppGroups =
+        genForDeleteAppGroups();
+
+    private static HttpRequestDef<DeleteAppGroupsRequest, DeleteAppGroupsResponse> genForDeleteAppGroups() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppGroupsRequest, DeleteAppGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppGroupsRequest.class, DeleteAppGroupsResponse.class)
+                .withName("DeleteAppGroups")
+                .withUri("/v1/projects/{project_id}/applications/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppGroupsRequest::getProjectId, DeleteAppGroupsRequest::setProjectId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppGroupsRequest::getGroupId, DeleteAppGroupsRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppGroupsRequest, ListAppGroupsResponse> listAppGroups =
+        genForListAppGroups();
+
+    private static HttpRequestDef<ListAppGroupsRequest, ListAppGroupsResponse> genForListAppGroups() {
+        // basic
+        HttpRequestDef.Builder<ListAppGroupsRequest, ListAppGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppGroupsRequest.class, ListAppGroupsResponse.class)
+                .withName("ListAppGroups")
+                .withUri("/v1/projects/{project_id}/applications/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppGroupsRequest::getProjectId, ListAppGroupsRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MoveAppGroupsRequest, MoveAppGroupsResponse> moveAppGroups =
+        genForMoveAppGroups();
+
+    private static HttpRequestDef<MoveAppGroupsRequest, MoveAppGroupsResponse> genForMoveAppGroups() {
+        // basic
+        HttpRequestDef.Builder<MoveAppGroupsRequest, MoveAppGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, MoveAppGroupsRequest.class, MoveAppGroupsResponse.class)
+                .withName("MoveAppGroups")
+                .withUri("/v1/projects/{project_id}/applications/groups/swap")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MoveAppGroupsRequest::getProjectId, MoveAppGroupsRequest::setProjectId));
+        builder.<MoveAppGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MoveAppGroupsRequestBody.class),
+            f -> f.withMarshaller(MoveAppGroupsRequest::getBody, MoveAppGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MoveAppToGroupRequest, MoveAppToGroupResponse> moveAppToGroup =
+        genForMoveAppToGroup();
+
+    private static HttpRequestDef<MoveAppToGroupRequest, MoveAppToGroupResponse> genForMoveAppToGroup() {
+        // basic
+        HttpRequestDef.Builder<MoveAppToGroupRequest, MoveAppToGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, MoveAppToGroupRequest.class, MoveAppToGroupResponse.class)
+                .withName("MoveAppToGroup")
+                .withUri("/v1/projects/{project_id}/applications/groups/move")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MoveAppToGroupRequest::getProjectId, MoveAppToGroupRequest::setProjectId));
+        builder.<MoveAppToGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MoveAppToGroupRequestBody.class),
+            f -> f.withMarshaller(MoveAppToGroupRequest::getBody, MoveAppToGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppGroupsRequest, UpdateAppGroupsResponse> updateAppGroups =
+        genForUpdateAppGroups();
+
+    private static HttpRequestDef<UpdateAppGroupsRequest, UpdateAppGroupsResponse> genForUpdateAppGroups() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppGroupsRequest, UpdateAppGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppGroupsRequest.class, UpdateAppGroupsResponse.class)
+                .withName("UpdateAppGroups")
+                .withUri("/v1/projects/{project_id}/applications/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppGroupsRequest::getProjectId, UpdateAppGroupsRequest::setProjectId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppGroupsRequest::getGroupId, UpdateAppGroupsRequest::setGroupId));
+        builder.<UpdateAppGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAppGroupsRequestBody.class),
+            f -> f.withMarshaller(UpdateAppGroupsRequest::getBody, UpdateAppGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateApplicationPermissionsRequest, BatchUpdateApplicationPermissionsResponse> batchUpdateApplicationPermissions =
+        genForBatchUpdateApplicationPermissions();
+
+    private static HttpRequestDef<BatchUpdateApplicationPermissionsRequest, BatchUpdateApplicationPermissionsResponse> genForBatchUpdateApplicationPermissions() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateApplicationPermissionsRequest, BatchUpdateApplicationPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateApplicationPermissionsRequest.class,
+                    BatchUpdateApplicationPermissionsResponse.class)
+                .withName("BatchUpdateApplicationPermissions")
+                .withUri("/v3/applications/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdateApplicationPermissionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateApplicationPermissionsRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateApplicationPermissionsRequest::getBody,
+                BatchUpdateApplicationPermissionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdatePermissionLevelRequest, BatchUpdatePermissionLevelResponse> batchUpdatePermissionLevel =
+        genForBatchUpdatePermissionLevel();
+
+    private static HttpRequestDef<BatchUpdatePermissionLevelRequest, BatchUpdatePermissionLevelResponse> genForBatchUpdatePermissionLevel() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdatePermissionLevelRequest, BatchUpdatePermissionLevelResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdatePermissionLevelRequest.class,
+                    BatchUpdatePermissionLevelResponse.class)
+                .withName("BatchUpdatePermissionLevel")
+                .withUri("/v3/applications/permission-level")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdatePermissionLevelRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdatePermissionLevelRequestBody.class),
+            f -> f.withMarshaller(BatchUpdatePermissionLevelRequest::getBody,
+                BatchUpdatePermissionLevelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckCanCreateRequest, CheckCanCreateResponse> checkCanCreate =
+        genForCheckCanCreate();
+
+    private static HttpRequestDef<CheckCanCreateRequest, CheckCanCreateResponse> genForCheckCanCreate() {
+        // basic
+        HttpRequestDef.Builder<CheckCanCreateRequest, CheckCanCreateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckCanCreateRequest.class, CheckCanCreateResponse.class)
+                .withName("CheckCanCreate")
+                .withUri("/v1/applications/creatable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckCanCreateRequest::getProjectId, CheckCanCreateRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApplicationPermissionsRequest, ListApplicationPermissionsResponse> listApplicationPermissions =
+        genForListApplicationPermissions();
+
+    private static HttpRequestDef<ListApplicationPermissionsRequest, ListApplicationPermissionsResponse> genForListApplicationPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListApplicationPermissionsRequest, ListApplicationPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApplicationPermissionsRequest.class,
+                    ListApplicationPermissionsResponse.class)
+                .withName("ListApplicationPermissions")
+                .withUri("/v3/applications/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationPermissionsRequest::getAppId,
+                ListApplicationPermissionsRequest::setAppId));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationPermissionsRequest::getProjectId,
+                ListApplicationPermissionsRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAppRequest, BatchDeleteAppResponse> batchDeleteApp =
+        genForBatchDeleteApp();
+
+    private static HttpRequestDef<BatchDeleteAppRequest, BatchDeleteAppResponse> genForBatchDeleteApp() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAppRequest, BatchDeleteAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteAppRequest.class, BatchDeleteAppResponse.class)
+                .withName("BatchDeleteApp")
+                .withUri("/v2/applications/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AppBatchDeleteRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppBatchDeleteRequest.class),
+            f -> f.withMarshaller(BatchDeleteAppRequest::getBody, BatchDeleteAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckIsDuplicateAppNameRequest, CheckIsDuplicateAppNameResponse> checkIsDuplicateAppName =
+        genForCheckIsDuplicateAppName();
+
+    private static HttpRequestDef<CheckIsDuplicateAppNameRequest, CheckIsDuplicateAppNameResponse> genForCheckIsDuplicateAppName() {
+        // basic
+        HttpRequestDef.Builder<CheckIsDuplicateAppNameRequest, CheckIsDuplicateAppNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckIsDuplicateAppNameRequest.class, CheckIsDuplicateAppNameResponse.class)
+            .withName("CheckIsDuplicateAppName")
+            .withUri("/v1/applications/exist")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckIsDuplicateAppNameRequest::getName, CheckIsDuplicateAppNameRequest::setName));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckIsDuplicateAppNameRequest::getProjectId,
+                CheckIsDuplicateAppNameRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyApplicationRequest, CopyApplicationResponse> copyApplication =
+        genForCopyApplication();
+
+    private static HttpRequestDef<CopyApplicationRequest, CopyApplicationResponse> genForCopyApplication() {
+        // basic
+        HttpRequestDef.Builder<CopyApplicationRequest, CopyApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyApplicationRequest.class, CopyApplicationResponse.class)
+                .withName("CopyApplication")
+                .withUri("/v1/applications/{app_id}/duplicate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyApplicationRequest::getAppId, CopyApplicationRequest::setAppId));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateAppRequest, CreateAppResponse> createApp = genForCreateApp();
 
@@ -410,6 +841,57 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAppDisableStatusRequest, UpdateAppDisableStatusResponse> updateAppDisableStatus =
+        genForUpdateAppDisableStatus();
+
+    private static HttpRequestDef<UpdateAppDisableStatusRequest, UpdateAppDisableStatusResponse> genForUpdateAppDisableStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppDisableStatusRequest, UpdateAppDisableStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAppDisableStatusRequest.class, UpdateAppDisableStatusResponse.class)
+            .withName("UpdateAppDisableStatus")
+            .withUri("/v1/applications/{app_id}/disable")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppDisableStatusRequest::getAppId, UpdateAppDisableStatusRequest::setAppId));
+        builder.<UpdateAppDisableStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAppDisableStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateAppDisableStatusRequest::getBody, UpdateAppDisableStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppInfoRequest, UpdateAppInfoResponse> updateAppInfo =
+        genForUpdateAppInfo();
+
+    private static HttpRequestDef<UpdateAppInfoRequest, UpdateAppInfoResponse> genForUpdateAppInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppInfoRequest, UpdateAppInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppInfoRequest.class, UpdateAppInfoResponse.class)
+                .withName("UpdateAppInfo")
+                .withUri("/v1/applications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateAppInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAppInfoRequestBody.class),
+            f -> f.withMarshaller(UpdateAppInfoRequest::getBody, UpdateAppInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
         genForCreateEnvironment();
 
@@ -543,6 +1025,57 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEnvironmentHostsRequest, ListEnvironmentHostsResponse> listEnvironmentHosts =
+        genForListEnvironmentHosts();
+
+    private static HttpRequestDef<ListEnvironmentHostsRequest, ListEnvironmentHostsResponse> genForListEnvironmentHosts() {
+        // basic
+        HttpRequestDef.Builder<ListEnvironmentHostsRequest, ListEnvironmentHostsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEnvironmentHostsRequest.class, ListEnvironmentHostsResponse.class)
+            .withName("ListEnvironmentHosts")
+            .withUri("/v1/applications/{application_id}/environments/{environment_id}/hosts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getApplicationId,
+                ListEnvironmentHostsRequest::setApplicationId));
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getEnvironmentId,
+                ListEnvironmentHostsRequest::setEnvironmentId));
+        builder.<String>withRequestField("key_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getKeyField, ListEnvironmentHostsRequest::setKeyField));
+        builder.<Boolean>withRequestField("as_proxy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getAsProxy, ListEnvironmentHostsRequest::setAsProxy));
+        builder.<Integer>withRequestField("page_index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getPageIndex,
+                ListEnvironmentHostsRequest::setPageIndex));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnvironmentHostsRequest::getPageSize, ListEnvironmentHostsRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironments =
         genForListEnvironments();
 
@@ -627,6 +1160,177 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateEnvironmentRequest, UpdateEnvironmentResponse> updateEnvironment =
+        genForUpdateEnvironment();
+
+    private static HttpRequestDef<UpdateEnvironmentRequest, UpdateEnvironmentResponse> genForUpdateEnvironment() {
+        // basic
+        HttpRequestDef.Builder<UpdateEnvironmentRequest, UpdateEnvironmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvironmentRequest.class, UpdateEnvironmentResponse.class)
+                .withName("UpdateEnvironment")
+                .withUri("/v1/applications/{application_id}/environments/{environment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentRequest::getApplicationId,
+                UpdateEnvironmentRequest::setApplicationId));
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentRequest::getEnvironmentId,
+                UpdateEnvironmentRequest::setEnvironmentId));
+        builder.<EnvironmentRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnvironmentRequest.class),
+            f -> f.withMarshaller(UpdateEnvironmentRequest::getBody, UpdateEnvironmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnvironmentPermissionsRequest, ListEnvironmentPermissionsResponse> listEnvironmentPermissions =
+        genForListEnvironmentPermissions();
+
+    private static HttpRequestDef<ListEnvironmentPermissionsRequest, ListEnvironmentPermissionsResponse> genForListEnvironmentPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListEnvironmentPermissionsRequest, ListEnvironmentPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListEnvironmentPermissionsRequest.class,
+                    ListEnvironmentPermissionsResponse.class)
+                .withName("ListEnvironmentPermissions")
+                .withUri("/v2/applications/{application_id}/environments/{environment_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentPermissionsRequest::getApplicationId,
+                ListEnvironmentPermissionsRequest::setApplicationId));
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvironmentPermissionsRequest::getEnvironmentId,
+                ListEnvironmentPermissionsRequest::setEnvironmentId));
+
+        // response
+        builder.<List<DevUcEnvironmentPermission>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListEnvironmentPermissionsResponse::getBody,
+                    ListEnvironmentPermissionsResponse::setBody)
+                .withInnerContainerType(DevUcEnvironmentPermission.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEnvironmentPermissionRequest, UpdateEnvironmentPermissionResponse> updateEnvironmentPermission =
+        genForUpdateEnvironmentPermission();
+
+    private static HttpRequestDef<UpdateEnvironmentPermissionRequest, UpdateEnvironmentPermissionResponse> genForUpdateEnvironmentPermission() {
+        // basic
+        HttpRequestDef.Builder<UpdateEnvironmentPermissionRequest, UpdateEnvironmentPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEnvironmentPermissionRequest.class,
+                    UpdateEnvironmentPermissionResponse.class)
+                .withName("UpdateEnvironmentPermission")
+                .withUri("/v2/applications/{application_id}/environments/{environment_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentPermissionRequest::getApplicationId,
+                UpdateEnvironmentPermissionRequest::setApplicationId));
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentPermissionRequest::getEnvironmentId,
+                UpdateEnvironmentPermissionRequest::setEnvironmentId));
+        builder.<EnvironmentPermissionV2Body>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnvironmentPermissionV2Body.class),
+            f -> f.withMarshaller(UpdateEnvironmentPermissionRequest::getBody,
+                UpdateEnvironmentPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteHostsRequest, BatchDeleteHostsResponse> batchDeleteHosts =
+        genForBatchDeleteHosts();
+
+    private static HttpRequestDef<BatchDeleteHostsRequest, BatchDeleteHostsResponse> genForBatchDeleteHosts() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteHostsRequest, BatchDeleteHostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteHostsRequest.class, BatchDeleteHostsResponse.class)
+                .withName("BatchDeleteHosts")
+                .withUri("/v1/resources/host-groups/{group_id}/hosts/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteHostsRequest::getGroupId, BatchDeleteHostsRequest::setGroupId));
+        builder.<DeploymentHostListEntity>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentHostListEntity.class),
+            f -> f.withMarshaller(BatchDeleteHostsRequest::getBody, BatchDeleteHostsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyHostsToTargetRequest, CopyHostsToTargetResponse> copyHostsToTarget =
+        genForCopyHostsToTarget();
+
+    private static HttpRequestDef<CopyHostsToTargetRequest, CopyHostsToTargetResponse> genForCopyHostsToTarget() {
+        // basic
+        HttpRequestDef.Builder<CopyHostsToTargetRequest, CopyHostsToTargetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyHostsToTargetRequest.class, CopyHostsToTargetResponse.class)
+                .withName("CopyHostsToTarget")
+                .withUri("/v1/resources/host-groups/{group_id}/hosts/replication")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyHostsToTargetRequest::getGroupId, CopyHostsToTargetRequest::setGroupId));
+        builder.<DeploymentHostsCopyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentHostsCopyRequest.class),
+            f -> f.withMarshaller(CopyHostsToTargetRequest::getBody, CopyHostsToTargetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDeploymentHostRequest, CreateDeploymentHostResponse> createDeploymentHost =
         genForCreateDeploymentHost();
 
@@ -704,6 +1408,33 @@ public class CodeArtsDeployMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeploymentHostRequest::getHostId, DeleteDeploymentHostRequest::setHostId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHostRequest, DeleteHostResponse> deleteHost = genForDeleteHost();
+
+    private static HttpRequestDef<DeleteHostRequest, DeleteHostResponse> genForDeleteHost() {
+        // basic
+        HttpRequestDef.Builder<DeleteHostRequest, DeleteHostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHostRequest.class, DeleteHostResponse.class)
+                .withName("DeleteHost")
+                .withUri("/v1/resources/host-groups/{group_id}/hosts/{host_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHostRequest::getGroupId, DeleteHostRequest::setGroupId));
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHostRequest::getHostId, DeleteHostRequest::setHostId));
 
         // response
 
@@ -916,6 +1647,39 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateHostInfoRequest, UpdateHostInfoResponse> updateHostInfo =
+        genForUpdateHostInfo();
+
+    private static HttpRequestDef<UpdateHostInfoRequest, UpdateHostInfoResponse> genForUpdateHostInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostInfoRequest, UpdateHostInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHostInfoRequest.class, UpdateHostInfoResponse.class)
+                .withName("UpdateHostInfo")
+                .withUri("/v1/resources/host-groups/{group_id}/hosts/{host_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostInfoRequest::getGroupId, UpdateHostInfoRequest::setGroupId));
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostInfoRequest::getHostId, UpdateHostInfoRequest::setHostId));
+        builder.<DeploymentHostRequestExternal>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentHostRequestExternal.class),
+            f -> f.withMarshaller(UpdateHostInfoRequest::getBody, UpdateHostInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDeploymentGroupRequest, CreateDeploymentGroupResponse> createDeploymentGroup =
         genForCreateDeploymentGroup();
 
@@ -985,6 +1749,68 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteHostClusterRequest, DeleteHostClusterResponse> deleteHostCluster =
+        genForDeleteHostCluster();
+
+    private static HttpRequestDef<DeleteHostClusterRequest, DeleteHostClusterResponse> genForDeleteHostCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteHostClusterRequest, DeleteHostClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHostClusterRequest.class, DeleteHostClusterResponse.class)
+                .withName("DeleteHostCluster")
+                .withUri("/v1/resources/host-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHostClusterRequest::getGroupId, DeleteHostClusterRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssociateEnvironmentsInfosRequest, ListAssociateEnvironmentsInfosResponse> listAssociateEnvironmentsInfos =
+        genForListAssociateEnvironmentsInfos();
+
+    private static HttpRequestDef<ListAssociateEnvironmentsInfosRequest, ListAssociateEnvironmentsInfosResponse> genForListAssociateEnvironmentsInfos() {
+        // basic
+        HttpRequestDef.Builder<ListAssociateEnvironmentsInfosRequest, ListAssociateEnvironmentsInfosResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAssociateEnvironmentsInfosRequest.class,
+                    ListAssociateEnvironmentsInfosResponse.class)
+                .withName("ListAssociateEnvironmentsInfos")
+                .withUri("/v1/resources/host-groups/{group_id}/environments/infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociateEnvironmentsInfosRequest::getGroupId,
+                ListAssociateEnvironmentsInfosRequest::setGroupId));
+        builder.<Integer>withRequestField("page_index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociateEnvironmentsInfosRequest::getPageIndex,
+                ListAssociateEnvironmentsInfosRequest::setPageIndex));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociateEnvironmentsInfosRequest::getPageSize,
+                ListAssociateEnvironmentsInfosRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHostClustersRequest, ListHostClustersResponse> listHostClusters =
         genForListHostClusters();
 
@@ -1043,6 +1869,58 @@ public class CodeArtsDeployMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostClustersRequest::getSlaveClusterId,
                 ListHostClustersRequest::setSlaveClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostGroupBaseInfosRequest, ListHostGroupBaseInfosResponse> listHostGroupBaseInfos =
+        genForListHostGroupBaseInfos();
+
+    private static HttpRequestDef<ListHostGroupBaseInfosRequest, ListHostGroupBaseInfosResponse> genForListHostGroupBaseInfos() {
+        // basic
+        HttpRequestDef.Builder<ListHostGroupBaseInfosRequest, ListHostGroupBaseInfosResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListHostGroupBaseInfosRequest.class, ListHostGroupBaseInfosResponse.class)
+            .withName("ListHostGroupBaseInfos")
+            .withUri("/v1/applications/{application_id}/host-groups/base/infos")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getApplicationId,
+                ListHostGroupBaseInfosRequest::setApplicationId));
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getProjectUuid,
+                ListHostGroupBaseInfosRequest::setProjectUuid));
+        builder.<ListHostGroupBaseInfosRequest.OsEnum>withRequestField("os",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHostGroupBaseInfosRequest.OsEnum.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getOs, ListHostGroupBaseInfosRequest::setOs));
+        builder.<Integer>withRequestField("page_index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getPageIndex,
+                ListHostGroupBaseInfosRequest::setPageIndex));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getPageSize,
+                ListHostGroupBaseInfosRequest::setPageSize));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostGroupBaseInfosRequest::getName, ListHostGroupBaseInfosRequest::setName));
 
         // response
 
@@ -1179,6 +2057,125 @@ public class CodeArtsDeployMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeploymentGroupUpdateRequest.class),
             f -> f.withMarshaller(UpdateDeploymentGroupRequest::getBody, UpdateDeploymentGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHostClusterRequest, UpdateHostClusterResponse> updateHostCluster =
+        genForUpdateHostCluster();
+
+    private static HttpRequestDef<UpdateHostClusterRequest, UpdateHostClusterResponse> genForUpdateHostCluster() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostClusterRequest, UpdateHostClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHostClusterRequest.class, UpdateHostClusterResponse.class)
+                .withName("UpdateHostCluster")
+                .withUri("/v1/resources/host-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostClusterRequest::getGroupId, UpdateHostClusterRequest::setGroupId));
+        builder.<HostClusterRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HostClusterRequest.class),
+            f -> f.withMarshaller(UpdateHostClusterRequest::getBody, UpdateHostClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckWhetherHostGroupCanBeCreatedRequest, CheckWhetherHostGroupCanBeCreatedResponse> checkWhetherHostGroupCanBeCreated =
+        genForCheckWhetherHostGroupCanBeCreated();
+
+    private static HttpRequestDef<CheckWhetherHostGroupCanBeCreatedRequest, CheckWhetherHostGroupCanBeCreatedResponse> genForCheckWhetherHostGroupCanBeCreated() {
+        // basic
+        HttpRequestDef.Builder<CheckWhetherHostGroupCanBeCreatedRequest, CheckWhetherHostGroupCanBeCreatedResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CheckWhetherHostGroupCanBeCreatedRequest.class,
+                    CheckWhetherHostGroupCanBeCreatedResponse.class)
+                .withName("CheckWhetherHostGroupCanBeCreated")
+                .withUri("/v1/host-groups/creatable/{project_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckWhetherHostGroupCanBeCreatedRequest::getProjectId,
+                CheckWhetherHostGroupCanBeCreatedRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostGroupPermissionsRequest, ListHostGroupPermissionsResponse> listHostGroupPermissions =
+        genForListHostGroupPermissions();
+
+    private static HttpRequestDef<ListHostGroupPermissionsRequest, ListHostGroupPermissionsResponse> genForListHostGroupPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListHostGroupPermissionsRequest, ListHostGroupPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListHostGroupPermissionsRequest.class, ListHostGroupPermissionsResponse.class)
+                .withName("ListHostGroupPermissions")
+                .withUri("/v2/host-groups/{group_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostGroupPermissionsRequest::getGroupId,
+                ListHostGroupPermissionsRequest::setGroupId));
+
+        // response
+        builder.<List<DevUcClusterPermission>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListHostGroupPermissionsResponse::getBody, ListHostGroupPermissionsResponse::setBody)
+                .withInnerContainerType(DevUcClusterPermission.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHostGroupPermissionsRequest, UpdateHostGroupPermissionsResponse> updateHostGroupPermissions =
+        genForUpdateHostGroupPermissions();
+
+    private static HttpRequestDef<UpdateHostGroupPermissionsRequest, UpdateHostGroupPermissionsResponse> genForUpdateHostGroupPermissions() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostGroupPermissionsRequest, UpdateHostGroupPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateHostGroupPermissionsRequest.class,
+                    UpdateHostGroupPermissionsResponse.class)
+                .withName("UpdateHostGroupPermissions")
+                .withUri("/v2/host-groups/{group_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostGroupPermissionsRequest::getGroupId,
+                UpdateHostGroupPermissionsRequest::setGroupId));
+        builder.<PermissionUpdateV2Body>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionUpdateV2Body.class),
+            f -> f.withMarshaller(UpdateHostGroupPermissionsRequest::getBody,
+                UpdateHostGroupPermissionsRequest::setBody));
 
         // response
 

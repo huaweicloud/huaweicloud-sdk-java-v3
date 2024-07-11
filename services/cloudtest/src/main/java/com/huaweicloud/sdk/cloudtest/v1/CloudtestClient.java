@@ -228,6 +228,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
@@ -3499,6 +3501,35 @@ public class CloudtestClient {
     public SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> showTestCaseDetailV2Invoker(
         ShowTestCaseDetailV2Request request) {
         return new SyncInvoker<>(request, CloudtestMeta.showTestCaseDetailV2, hcClient);
+    }
+
+    /**
+     * 根据用例查询评审记录
+     *
+     * 根据用例查询评审记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestCaseReviewsRequest 请求对象
+     * @return ShowTestCaseReviewsResponse
+     */
+    public ShowTestCaseReviewsResponse showTestCaseReviews(ShowTestCaseReviewsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestCaseReviews);
+    }
+
+    /**
+     * 根据用例查询评审记录
+     *
+     * 根据用例查询评审记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestCaseReviewsRequest 请求对象
+     * @return SyncInvoker<ShowTestCaseReviewsRequest, ShowTestCaseReviewsResponse>
+     */
+    public SyncInvoker<ShowTestCaseReviewsRequest, ShowTestCaseReviewsResponse> showTestCaseReviewsInvoker(
+        ShowTestCaseReviewsRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.showTestCaseReviews, hcClient);
     }
 
     /**

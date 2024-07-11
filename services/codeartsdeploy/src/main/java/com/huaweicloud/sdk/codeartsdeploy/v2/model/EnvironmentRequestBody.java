@@ -116,7 +116,7 @@ public class EnvironmentRequestBody {
     }
 
     /**
-     * 项目ID
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

@@ -183,7 +183,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 应用id。
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {

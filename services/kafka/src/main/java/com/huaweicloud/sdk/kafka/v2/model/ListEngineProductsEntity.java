@@ -181,7 +181,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * [计费模式。monthly：包年/包月类型。hourly：按需类型。](tag:hws,hws_hk,ctc,cmcc)[暂未使用。](tag:hws_ocb,ocb,hcs)[计费模式。hourly：按需类型。](tag:dt,g42,tm,hk_g42,hk_tm,sbc,hk_sbc,hws_eu)
+     * [计费模式。monthly：包年/包月类型。hourly：按需类型。](tag:hws,hws_hk,ctc,cmcc)[暂未使用。](tag:hws_ocb,ocb,hcs,fcs)[计费模式。hourly：按需类型。](tag:dt,g42,tm,hk_g42,hk_tm,sbc,hk_sbc,hws_eu)
      * @return chargingMode
      */
     public List<String> getChargingMode() {

@@ -232,7 +232,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 是否按序消费。
+     * 是否按顺序消费。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {

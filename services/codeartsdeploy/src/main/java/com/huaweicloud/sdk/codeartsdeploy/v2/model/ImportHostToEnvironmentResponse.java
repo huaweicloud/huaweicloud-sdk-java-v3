@@ -30,7 +30,7 @@ public class ImportHostToEnvironmentResponse extends SdkResponse {
     }
 
     /**
-     * 响应状态
+     * 请求成功失败状态
      * @return status
      */
     public String getStatus() {
@@ -63,7 +63,7 @@ public class ImportHostToEnvironmentResponse extends SdkResponse {
     }
 
     /**
-     * 被导入的主机ids
+     * 被导入的主机id列表
      * @return result
      */
     public List<String> getResult() {

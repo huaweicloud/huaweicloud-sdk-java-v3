@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesReq;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
@@ -86,8 +90,11 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.TransactionSwitchReq;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
@@ -234,6 +241,45 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSqlSwitchBody.class),
             f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, ChangeSqlSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> changeTransactionSwitchStatus =
+        genForChangeTransactionSwitchStatus();
+
+    private static HttpRequestDef<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> genForChangeTransactionSwitchStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeTransactionSwitchStatusRequest.class,
+                    ChangeTransactionSwitchStatusResponse.class)
+                .withName("ChangeTransactionSwitchStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/transaction/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeTransactionSwitchStatusRequest::getInstanceId,
+                ChangeTransactionSwitchStatusRequest::setInstanceId));
+        builder.<ChangeTransactionSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeTransactionSwitchStatusRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ChangeTransactionSwitchStatusRequest::getXLanguage,
+                ChangeTransactionSwitchStatusRequest::setXLanguage));
+        builder.<TransactionSwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransactionSwitchReq.class),
+            f -> f.withMarshaller(ChangeTransactionSwitchStatusRequest::getBody,
+                ChangeTransactionSwitchStatusRequest::setBody));
 
         // response
 
@@ -1184,6 +1230,80 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTransactionsRequest, ListTransactionsResponse> listTransactions =
+        genForListTransactions();
+
+    private static HttpRequestDef<ListTransactionsRequest, ListTransactionsResponse> genForListTransactions() {
+        // basic
+        HttpRequestDef.Builder<ListTransactionsRequest, ListTransactionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTransactionsRequest.class, ListTransactionsResponse.class)
+                .withName("ListTransactions")
+                .withUri("/v3/{project_id}/instances/{instance_id}/transaction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getInstanceId, ListTransactionsRequest::setInstanceId));
+        builder.<ListTransactionsRequest.DatastoreTypeEnum>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTransactionsRequest.DatastoreTypeEnum.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getDatastoreType,
+                ListTransactionsRequest::setDatastoreType));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getStartAt, ListTransactionsRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getEndAt, ListTransactionsRequest::setEndAt));
+        builder.<Integer>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getPageNum, ListTransactionsRequest::setPageNum));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getPageSize, ListTransactionsRequest::setPageSize));
+        builder.<ListTransactionsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTransactionsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getOrder, ListTransactionsRequest::setOrder));
+        builder.<ListTransactionsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTransactionsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getOrderBy, ListTransactionsRequest::setOrderBy));
+        builder.<Long>withRequestField("last_sec_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getLastSecMin, ListTransactionsRequest::setLastSecMin));
+        builder.<Long>withRequestField("last_sec_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getLastSecMax, ListTransactionsRequest::setLastSecMax));
+        builder.<ListTransactionsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTransactionsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTransactionsRequest::getXLanguage, ListTransactionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> parseSqlLimitRules =
         genForParseSqlLimitRules();
 
@@ -1487,6 +1607,45 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlSwitchStatusRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, ShowSqlSwitchStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTransactionSwitchStatusRequest, ShowTransactionSwitchStatusResponse> showTransactionSwitchStatus =
+        genForShowTransactionSwitchStatus();
+
+    private static HttpRequestDef<ShowTransactionSwitchStatusRequest, ShowTransactionSwitchStatusResponse> genForShowTransactionSwitchStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowTransactionSwitchStatusRequest, ShowTransactionSwitchStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTransactionSwitchStatusRequest.class,
+                    ShowTransactionSwitchStatusResponse.class)
+                .withName("ShowTransactionSwitchStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/transaction/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTransactionSwitchStatusRequest::getInstanceId,
+                ShowTransactionSwitchStatusRequest::setInstanceId));
+        builder.<ShowTransactionSwitchStatusRequest.DatastoreTypeEnum>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowTransactionSwitchStatusRequest.DatastoreTypeEnum.class),
+            f -> f.withMarshaller(ShowTransactionSwitchStatusRequest::getDatastoreType,
+                ShowTransactionSwitchStatusRequest::setDatastoreType));
+        builder.<ShowTransactionSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowTransactionSwitchStatusRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowTransactionSwitchStatusRequest::getXLanguage,
+                ShowTransactionSwitchStatusRequest::setXLanguage));
 
         // response
 

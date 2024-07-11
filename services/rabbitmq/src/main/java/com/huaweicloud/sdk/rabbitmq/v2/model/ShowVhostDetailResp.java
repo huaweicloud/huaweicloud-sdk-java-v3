@@ -43,7 +43,7 @@ public class ShowVhostDetailResp {
     }
 
     /**
-     * 是否开启消息轨迹（AMQP版本不涉及此字段）
+     * 是否开启消息轨迹[（AMQP版本不涉及此字段）](tag:hws,hws_hk)。
      * @return tracing
      */
     public Boolean getTracing() {

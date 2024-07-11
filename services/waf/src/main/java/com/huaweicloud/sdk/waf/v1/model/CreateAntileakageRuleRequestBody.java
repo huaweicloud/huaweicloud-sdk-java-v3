@@ -104,6 +104,11 @@ public class CreateAntileakageRuleRequestBody {
     private List<String> contents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private CreateAntileakageRuleRequestBodyAction action;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -175,6 +180,32 @@ public class CreateAntileakageRuleRequestBody {
         this.contents = contents;
     }
 
+    public CreateAntileakageRuleRequestBody withAction(CreateAntileakageRuleRequestBodyAction action) {
+        this.action = action;
+        return this;
+    }
+
+    public CreateAntileakageRuleRequestBody withAction(Consumer<CreateAntileakageRuleRequestBodyAction> actionSetter) {
+        if (this.action == null) {
+            this.action = new CreateAntileakageRuleRequestBodyAction();
+            actionSetter.accept(this.action);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get action
+     * @return action
+     */
+    public CreateAntileakageRuleRequestBodyAction getAction() {
+        return action;
+    }
+
+    public void setAction(CreateAntileakageRuleRequestBodyAction action) {
+        this.action = action;
+    }
+
     public CreateAntileakageRuleRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -202,12 +233,13 @@ public class CreateAntileakageRuleRequestBody {
         }
         CreateAntileakageRuleRequestBody that = (CreateAntileakageRuleRequestBody) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.contents, that.contents) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.contents, that.contents) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, category, contents, description);
+        return Objects.hash(url, category, contents, action, description);
     }
 
     @Override
@@ -217,6 +249,7 @@ public class CreateAntileakageRuleRequestBody {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

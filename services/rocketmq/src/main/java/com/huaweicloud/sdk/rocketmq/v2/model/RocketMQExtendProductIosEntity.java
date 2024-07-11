@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 磁盘IO信息
+ * 磁盘IO信息。
  */
 public class RocketMQExtendProductIosEntity {
 
@@ -39,7 +39,7 @@ public class RocketMQExtendProductIosEntity {
     }
 
     /**
-     * 存储IO规格
+     * 存储IO规格。
      * @return ioSpec
      */
     public String getIoSpec() {
@@ -72,7 +72,7 @@ public class RocketMQExtendProductIosEntity {
     }
 
     /**
-     * 有可用资源的可用区列表
+     * 有可用资源的可用区列表。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -89,7 +89,7 @@ public class RocketMQExtendProductIosEntity {
     }
 
     /**
-     * IO类型
+     * IO类型。
      * @return type
      */
     public String getType() {
@@ -122,7 +122,7 @@ public class RocketMQExtendProductIosEntity {
     }
 
     /**
-     * 资源售罄的可用区列表
+     * 资源售罄的可用区列表。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {

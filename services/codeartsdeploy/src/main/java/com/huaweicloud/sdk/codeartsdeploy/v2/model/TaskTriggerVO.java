@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * TaskTriggerVO
+ * 部署任务触发场景配置
  */
 public class TaskTriggerVO {
 

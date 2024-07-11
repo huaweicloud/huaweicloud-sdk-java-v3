@@ -215,7 +215,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 消息的key
+     * 消息的key。
      * @return key
      */
     public String getKey() {

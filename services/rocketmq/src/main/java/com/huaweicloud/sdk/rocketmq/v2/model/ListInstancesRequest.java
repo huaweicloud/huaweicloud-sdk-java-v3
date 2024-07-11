@@ -95,7 +95,7 @@ public class ListInstancesRequest {
     private String instanceId;
 
     /**
-     * 实例状态，[详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs)
+     * 实例状态，[详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs,fcs)
      */
     public static final class StatusEnum {
 
@@ -469,7 +469,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 实例状态，[详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs)
+     * 实例状态，[详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs,fcs)
      * @return status
      */
     public StatusEnum getStatus() {
@@ -554,7 +554,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0。
      * @return offset
      */
     public Integer getOffset() {

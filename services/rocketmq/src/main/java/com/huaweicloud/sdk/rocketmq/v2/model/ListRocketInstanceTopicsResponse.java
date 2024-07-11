@@ -50,7 +50,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * topic总数。
+     * Topic总数。
      * @return total
      */
     public Integer getTotal() {
@@ -67,7 +67,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 最大可创建topic数量。
+     * 最大可创建Topic数量。
      * @return max
      */
     public Integer getMax() {
@@ -84,7 +84,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 剩余可创建topic数量。
+     * 剩余可创建Topic数量。
      * @return remaining
      */
     public Integer getRemaining() {
@@ -151,7 +151,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * topic列表。
+     * Topic列表。
      * @return topics
      */
     public List<Topic> getTopics() {

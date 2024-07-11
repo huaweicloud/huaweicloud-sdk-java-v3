@@ -117,7 +117,7 @@ public class HostInfo {
     }
 
     /**
-     * 主机ID
+     * 主机id
      * @return uuid
      */
     public String getUuid() {
@@ -288,7 +288,7 @@ public class HostInfo {
     }
 
     /**
-     * 代理机ID
+     * 代理机id
      * @return proxyHostId
      */
     public String getProxyHostId() {

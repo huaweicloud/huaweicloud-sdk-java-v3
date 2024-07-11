@@ -45,7 +45,7 @@ public class ConsumerList {
     }
 
     /**
-     * Topic列表（当查询topic消费“列表”时才显示此参数）。
+     * Topic列表（当查询Topic消费“列表”时才显示此参数）。
      * @return topics
      */
     public List<String> getTopics() {
@@ -62,7 +62,7 @@ public class ConsumerList {
     }
 
     /**
-     * Topic总数（当查询topic消费“列表”时才显示此参数）。
+     * Topic总数（当查询Topic消费“列表”时才显示此参数）。
      * @return total
      */
     public Integer getTotal() {
