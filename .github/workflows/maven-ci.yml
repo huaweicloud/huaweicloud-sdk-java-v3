@@ -4,14 +4,17 @@ on:
   schedule:
   - cron: '0 0 * * *'
 jobs:
-  test:
+  build:  
     runs-on: ubuntu-22.04
+    strategy:  
+      matrix:  
+        java-version: [8.0.352, 11.0.4]
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Java
-        uses: actions/setup-java@v3
+      - uses: actions/checkout@v4
+      - name: Set up Java ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
         with:
-          java-version: '8.0.352'
+          java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
           cache: 'maven'
       - name: Maven CI
