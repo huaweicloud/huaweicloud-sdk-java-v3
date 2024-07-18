@@ -26,7 +26,7 @@ public class IpInfo {
     }
 
     /**
-     * IP地址组中的IP地址。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * 参数解释：IP地址组中的IP地址。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return ip
      */
     public String getIp() {
@@ -43,7 +43,7 @@ public class IpInfo {
     }
 
     /**
-     * IP地址组中ip的备注信息
+     * 参数解释：IP地址组中ip的备注信息。
      * @return description
      */
     public String getDescription() {

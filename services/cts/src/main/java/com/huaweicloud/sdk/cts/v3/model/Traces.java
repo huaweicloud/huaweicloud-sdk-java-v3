@@ -197,6 +197,16 @@ public class Traces {
 
     private String resourceUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_account_id")
+
+    private String resourceAccountId;
+
     public Traces withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -567,6 +577,40 @@ public class Traces {
         this.resourceUrl = resourceUrl;
     }
 
+    public Traces withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 标识资源所在的企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public Traces withResourceAccountId(String resourceAccountId) {
+        this.resourceAccountId = resourceAccountId;
+        return this;
+    }
+
+    /**
+     * 标识资源所在的账号ID。仅在跨租户操作资源时有值。
+     * @return resourceAccountId
+     */
+    public String getResourceAccountId() {
+        return resourceAccountId;
+    }
+
+    public void setResourceAccountId(String resourceAccountId) {
+        this.resourceAccountId = resourceAccountId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -586,7 +630,9 @@ public class Traces {
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sourceIp, that.sourceIp)
             && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.requestId, that.requestId)
             && Objects.equals(this.locationInfo, that.locationInfo) && Objects.equals(this.endpoint, that.endpoint)
-            && Objects.equals(this.resourceUrl, that.resourceUrl);
+            && Objects.equals(this.resourceUrl, that.resourceUrl)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.resourceAccountId, that.resourceAccountId);
     }
 
     @Override
@@ -611,7 +657,9 @@ public class Traces {
             requestId,
             locationInfo,
             endpoint,
-            resourceUrl);
+            resourceUrl,
+            enterpriseProjectId,
+            resourceAccountId);
     }
 
     @Override
@@ -639,6 +687,8 @@ public class Traces {
         sb.append("    locationInfo: ").append(toIndentedString(locationInfo)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    resourceUrl: ").append(toIndentedString(resourceUrl)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    resourceAccountId: ").append(toIndentedString(resourceAccountId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

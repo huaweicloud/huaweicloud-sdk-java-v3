@@ -346,11 +346,6 @@ public class KeyDetails {
 
     private String keystoreId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key_label")
-
-    private String keyLabel;
-
     public KeyDetails withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -640,23 +635,6 @@ public class KeyDetails {
         this.keystoreId = keystoreId;
     }
 
-    public KeyDetails withKeyLabel(String keyLabel) {
-        this.keyLabel = keyLabel;
-        return this;
-    }
-
-    /**
-     * 密钥在加密机中的标签
-     * @return keyLabel
-     */
-    public String getKeyLabel() {
-        return keyLabel;
-    }
-
-    public void setKeyLabel(String keyLabel) {
-        this.keyLabel = keyLabel;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -677,7 +655,7 @@ public class KeyDetails {
             && Objects.equals(this.origin, that.origin)
             && Objects.equals(this.keyRotationEnabled, that.keyRotationEnabled)
             && Objects.equals(this.sysEnterpriseProjectId, that.sysEnterpriseProjectId)
-            && Objects.equals(this.keystoreId, that.keystoreId) && Objects.equals(this.keyLabel, that.keyLabel);
+            && Objects.equals(this.keystoreId, that.keystoreId);
     }
 
     @Override
@@ -698,8 +676,7 @@ public class KeyDetails {
             origin,
             keyRotationEnabled,
             sysEnterpriseProjectId,
-            keystoreId,
-            keyLabel);
+            keystoreId);
     }
 
     @Override
@@ -723,7 +700,6 @@ public class KeyDetails {
         sb.append("    keyRotationEnabled: ").append(toIndentedString(keyRotationEnabled)).append("\n");
         sb.append("    sysEnterpriseProjectId: ").append(toIndentedString(sysEnterpriseProjectId)).append("\n");
         sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
-        sb.append("    keyLabel: ").append(toIndentedString(keyLabel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

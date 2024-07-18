@@ -55,6 +55,9 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductReq;
+import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateRequest;
@@ -746,6 +749,29 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse> deleteTranscodeProduct =
+        genForDeleteTranscodeProduct();
+
+    private static HttpRequestDef<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse> genForDeleteTranscodeProduct() {
+        // basic
+        HttpRequestDef.Builder<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTranscodeProductRequest.class, DeleteTranscodeProductResponse.class)
+            .withName("DeleteTranscodeProduct")
+            .withUri("/v1/{project_id}/asset/transcode-product")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTranscodeProductReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTranscodeProductReq.class),
+            f -> f.withMarshaller(DeleteTranscodeProductRequest::getBody, DeleteTranscodeProductRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTranscodeTemplateRequest, DeleteTranscodeTemplateResponse> deleteTranscodeTemplate =
         genForDeleteTranscodeTemplate();
 
@@ -1220,6 +1246,29 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitle =
+        genForModifySubtitle();
+
+    private static HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> genForModifySubtitle() {
+        // basic
+        HttpRequestDef.Builder<ModifySubtitleRequest, ModifySubtitleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifySubtitleRequest.class, ModifySubtitleResponse.class)
+                .withName("ModifySubtitle")
+                .withUri("/v1/{project_id}/asset/subtitles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SubtitleModifyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubtitleModifyReq.class),
+            f -> f.withMarshaller(ModifySubtitleRequest::getBody, ModifySubtitleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> publishAssetFromObs =
         genForPublishAssetFromObs();
 
@@ -1556,6 +1605,39 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrieval =
+        genForShowVodRetrieval();
+
+    private static HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> genForShowVodRetrieval() {
+        // basic
+        HttpRequestDef.Builder<ShowVodRetrievalRequest, ShowVodRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVodRetrievalRequest.class, ShowVodRetrievalResponse.class)
+                .withName("ShowVodRetrieval")
+                .withUri("/v1/{project_id}/asset/vod-retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getStartTime, ShowVodRetrievalRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getEndTime, ShowVodRetrievalRequest::setEndTime));
+        builder.<Integer>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getInterval, ShowVodRetrievalRequest::setInterval));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> showVodStatistics =
         genForShowVodStatistics();
 
@@ -1757,6 +1839,29 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCoverByThumbnailReq.class),
             f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getBody, UpdateCoverByThumbnailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageMode =
+        genForUpdateStorageMode();
+
+    private static HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> genForUpdateStorageMode() {
+        // basic
+        HttpRequestDef.Builder<UpdateStorageModeRequest, UpdateStorageModeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStorageModeRequest.class, UpdateStorageModeResponse.class)
+                .withName("UpdateStorageMode")
+                .withUri("/v1/{project_id}/asset/storage-mode")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateStorageModeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStorageModeReq.class),
+            f -> f.withMarshaller(UpdateStorageModeRequest::getBody, UpdateStorageModeRequest::setBody));
 
         // response
 
@@ -2024,85 +2129,6 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getXSdkDate,
                 ShowTakeOverTaskDetailsRequest::setXSdkDate));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrieval =
-        genForShowVodRetrieval();
-
-    private static HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> genForShowVodRetrieval() {
-        // basic
-        HttpRequestDef.Builder<ShowVodRetrievalRequest, ShowVodRetrievalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowVodRetrievalRequest.class, ShowVodRetrievalResponse.class)
-                .withName("ShowVodRetrieval")
-                .withUri("/v1/{project_id}/asset/vod-retrieval")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getStartTime, ShowVodRetrievalRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getEndTime, ShowVodRetrievalRequest::setEndTime));
-        builder.<Integer>withRequestField("interval",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVodRetrievalRequest::getInterval, ShowVodRetrievalRequest::setInterval));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitle =
-        genForModifySubtitle();
-
-    private static HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> genForModifySubtitle() {
-        // basic
-        HttpRequestDef.Builder<ModifySubtitleRequest, ModifySubtitleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifySubtitleRequest.class, ModifySubtitleResponse.class)
-                .withName("ModifySubtitle")
-                .withUri("/v1/{project_id}/asset/subtitles")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SubtitleModifyReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SubtitleModifyReq.class),
-            f -> f.withMarshaller(ModifySubtitleRequest::getBody, ModifySubtitleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageMode =
-        genForUpdateStorageMode();
-
-    private static HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> genForUpdateStorageMode() {
-        // basic
-        HttpRequestDef.Builder<UpdateStorageModeRequest, UpdateStorageModeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateStorageModeRequest.class, UpdateStorageModeResponse.class)
-                .withName("UpdateStorageMode")
-                .withUri("/v1/{project_id}/asset/storage-mode")
-                .withContentType("application/json");
-
-        // requests
-        builder.<UpdateStorageModeReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateStorageModeReq.class),
-            f -> f.withMarshaller(UpdateStorageModeRequest::getBody, UpdateStorageModeRequest::setBody));
 
         // response
 

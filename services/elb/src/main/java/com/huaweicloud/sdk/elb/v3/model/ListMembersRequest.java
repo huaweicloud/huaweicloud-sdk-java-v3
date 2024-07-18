@@ -133,7 +133,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit

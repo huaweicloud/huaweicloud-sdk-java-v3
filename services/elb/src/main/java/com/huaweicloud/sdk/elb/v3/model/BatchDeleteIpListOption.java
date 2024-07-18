@@ -40,7 +40,7 @@ public class BatchDeleteIpListOption {
     }
 
     /**
-     * IP列表。
+     * 参数解释：IP列表。
      * @return ipList
      */
     public List<IpGroupIp> getIpList() {

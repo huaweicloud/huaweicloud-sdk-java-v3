@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeRequest;
+import com.huaweicloud.sdk.evs.v2.model.ChangeVolumeChargeModeResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderCreateVolumeTransferRequest;
@@ -57,6 +59,8 @@ import com.huaweicloud.sdk.evs.v2.model.ShowVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
@@ -141,6 +145,36 @@ public class EvsAsyncClient {
     public AsyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTagsAsyncInvoker(
         BatchDeleteVolumeTagsRequest request) {
         return new AsyncInvoker<>(request, EvsMeta.batchDeleteVolumeTags, hcClient);
+    }
+
+    /**
+     * 修改云硬盘计费模式
+     *
+     * 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVolumeChargeModeRequest 请求对象
+     * @return CompletableFuture<ChangeVolumeChargeModeResponse>
+     */
+    public CompletableFuture<ChangeVolumeChargeModeResponse> changeVolumeChargeModeAsync(
+        ChangeVolumeChargeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.changeVolumeChargeMode);
+    }
+
+    /**
+     * 修改云硬盘计费模式
+     *
+     * 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVolumeChargeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse>
+     */
+    public AsyncInvoker<ChangeVolumeChargeModeRequest, ChangeVolumeChargeModeResponse> changeVolumeChargeModeAsyncInvoker(
+        ChangeVolumeChargeModeRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.changeVolumeChargeMode, hcClient);
     }
 
     /**
@@ -836,6 +870,40 @@ public class EvsAsyncClient {
     public AsyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse> showVolumeTagsAsyncInvoker(
         ShowVolumeTagsRequest request) {
         return new AsyncInvoker<>(request, EvsMeta.showVolumeTags, hcClient);
+    }
+
+    /**
+     * 退订包周期计费模式的云硬盘
+     *
+     * 退订包周期计费模式的云硬盘，有如下约束：
+     * -  系统盘、启动盘不可使用当前接口退订，必须和弹性云服务器一起退订
+     * -  接口的请求body体最多可以传60个云硬盘id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribePostpaidVolumeRequest 请求对象
+     * @return CompletableFuture<UnsubscribePostpaidVolumeResponse>
+     */
+    public CompletableFuture<UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolumeAsync(
+        UnsubscribePostpaidVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.unsubscribePostpaidVolume);
+    }
+
+    /**
+     * 退订包周期计费模式的云硬盘
+     *
+     * 退订包周期计费模式的云硬盘，有如下约束：
+     * -  系统盘、启动盘不可使用当前接口退订，必须和弹性云服务器一起退订
+     * -  接口的请求body体最多可以传60个云硬盘id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribePostpaidVolumeRequest 请求对象
+     * @return AsyncInvoker<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse>
+     */
+    public AsyncInvoker<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolumeAsyncInvoker(
+        UnsubscribePostpaidVolumeRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.unsubscribePostpaidVolume, hcClient);
     }
 
     /**

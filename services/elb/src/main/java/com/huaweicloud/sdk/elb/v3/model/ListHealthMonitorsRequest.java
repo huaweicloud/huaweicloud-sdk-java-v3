@@ -121,7 +121,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -438,7 +438,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
+     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
      * @return type
      */
     public List<String> getType() {
@@ -471,7 +471,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
      * @return expectedCodes
      */
     public List<String> getExpectedCodes() {
@@ -537,7 +537,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。  不支持该字段，请勿使用。
+     * HTTP请求方法。  取值：GET、HEAD、POST。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。
      * @return httpMethod
      */
     public List<String> getHttpMethod() {

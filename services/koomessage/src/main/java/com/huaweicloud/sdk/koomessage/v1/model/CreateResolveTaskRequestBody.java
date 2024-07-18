@@ -109,7 +109,7 @@ public class CreateResolveTaskRequestBody {
     }
 
     /**
-     * 短链最大解析次数。  >个性化短链只支持最大解析数为1，设置其他值无效。 
+     * 短链最大解析次数。  >个性化短链只支持最大解析数为1，设置其他值无效。 >群发短链设置解析次数需要大于等于2。 
      * minimum: 1
      * maximum: 10000000
      * @return resolvingTimes

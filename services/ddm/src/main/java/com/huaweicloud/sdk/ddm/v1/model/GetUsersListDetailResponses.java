@@ -29,6 +29,11 @@ public class GetUsersListDetailResponses {
     private List<String> baseAuthority = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "password_last_changed")
+
+    private Long passwordLastChanged;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_authority")
 
     private List<String> extendAuthority = null;
@@ -115,6 +120,23 @@ public class GetUsersListDetailResponses {
         this.baseAuthority = baseAuthority;
     }
 
+    public GetUsersListDetailResponses withPasswordLastChanged(Long passwordLastChanged) {
+        this.passwordLastChanged = passwordLastChanged;
+        return this;
+    }
+
+    /**
+     * DDM实例账号的密码修改时间，UNIX时间戳格式。
+     * @return passwordLastChanged
+     */
+    public Long getPasswordLastChanged() {
+        return passwordLastChanged;
+    }
+
+    public void setPasswordLastChanged(Long passwordLastChanged) {
+        this.passwordLastChanged = passwordLastChanged;
+    }
+
     public GetUsersListDetailResponses withExtendAuthority(List<String> extendAuthority) {
         this.extendAuthority = extendAuthority;
         return this;
@@ -171,7 +193,7 @@ public class GetUsersListDetailResponses {
     }
 
     /**
-     * DDM实例帐号的创建时间。
+     * DDM实例帐号的创建时间，UNIX时间戳格式。
      * @return created
      */
     public Long getCreated() {
@@ -226,6 +248,7 @@ public class GetUsersListDetailResponses {
         GetUsersListDetailResponses that = (GetUsersListDetailResponses) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.baseAuthority, that.baseAuthority)
+            && Objects.equals(this.passwordLastChanged, that.passwordLastChanged)
             && Objects.equals(this.extendAuthority, that.extendAuthority)
             && Objects.equals(this.description, that.description) && Objects.equals(this.created, that.created)
             && Objects.equals(this.databases, that.databases);
@@ -233,7 +256,8 @@ public class GetUsersListDetailResponses {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, baseAuthority, extendAuthority, description, created, databases);
+        return Objects
+            .hash(name, status, baseAuthority, passwordLastChanged, extendAuthority, description, created, databases);
     }
 
     @Override
@@ -243,6 +267,7 @@ public class GetUsersListDetailResponses {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    baseAuthority: ").append(toIndentedString(baseAuthority)).append("\n");
+        sb.append("    passwordLastChanged: ").append(toIndentedString(passwordLastChanged)).append("\n");
         sb.append("    extendAuthority: ").append(toIndentedString(extendAuthority)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");

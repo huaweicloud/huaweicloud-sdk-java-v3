@@ -43,14 +43,14 @@ public class CdmRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://cdm.cn-north-9.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://cdm.cn-north-2.myhuaweicloud.cn");
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://cdm.cn-north-2.myhuaweicloud.com");
 
-    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cdm.na-mexico-1.myhuaweicloud.cn");
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cdm.na-mexico-1.myhuaweicloud.com");
 
-    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://cdm.la-north-2.myhuaweicloud.cn");
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://cdm.la-north-2.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
-        new Region("ap-southeast-3", "https://cdm.ap-southeast-3.myhuaweicloud.cn");
+        new Region("ap-southeast-3", "https://cdm.ap-southeast-3.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://cdm.ap-southeast-4.myhuaweicloud.com");

@@ -4,11 +4,17 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodeList;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.AddonInstanceRollbackRequest;
+import com.huaweicloud.sdk.cce.v3.model.AutopilotCluster;
+import com.huaweicloud.sdk.cce.v3.model.AutopilotClusterInformation;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
@@ -22,6 +28,22 @@ import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterMasterSnapshotRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterMasterSnapshotResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPreCheckResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateClusterMasterSnapshotRequest;
@@ -48,6 +70,14 @@ import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsRequest;
@@ -60,6 +90,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
@@ -69,6 +101,28 @@ import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonInstancesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonTemplatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonTemplatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotChartsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotChartsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterMasterSnapshotTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterMasterSnapshotTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradeFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradeFeatureGatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClusterMasterSnapshotTasksRequest;
@@ -117,15 +171,47 @@ import com.huaweicloud.sdk.cce.v3.model.ResetNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ResizeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ResizeClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ResizeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotQuotasRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotQuotasResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotReleaseHistoryRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotReleaseHistoryResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUpgradeWorkFlowRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUpgradeWorkFlowResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUserChartsQuotasRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowChartValuesRequest;
@@ -170,6 +256,15 @@ import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartResponse;
@@ -191,12 +286,19 @@ import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseReqBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotWorkFlowUpdateRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateResponse;
+import com.huaweicloud.sdk.cce.v3.model.UploadAutopilotChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UploadAutopilotChartRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UploadAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
@@ -2608,6 +2710,1492 @@ public class CceMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateAutopilotClusterTagsRequest, BatchCreateAutopilotClusterTagsResponse> batchCreateAutopilotClusterTags =
+        genForBatchCreateAutopilotClusterTags();
+
+    private static HttpRequestDef<BatchCreateAutopilotClusterTagsRequest, BatchCreateAutopilotClusterTagsResponse> genForBatchCreateAutopilotClusterTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateAutopilotClusterTagsRequest, BatchCreateAutopilotClusterTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateAutopilotClusterTagsRequest.class,
+                    BatchCreateAutopilotClusterTagsResponse.class)
+                .withName("BatchCreateAutopilotClusterTags")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateAutopilotClusterTagsRequest::getClusterId,
+                BatchCreateAutopilotClusterTagsRequest::setClusterId));
+        builder.<BatchCreateClusterTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateClusterTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateAutopilotClusterTagsRequest::getBody,
+                BatchCreateAutopilotClusterTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAutopilotClusterTagsRequest, BatchDeleteAutopilotClusterTagsResponse> batchDeleteAutopilotClusterTags =
+        genForBatchDeleteAutopilotClusterTags();
+
+    private static HttpRequestDef<BatchDeleteAutopilotClusterTagsRequest, BatchDeleteAutopilotClusterTagsResponse> genForBatchDeleteAutopilotClusterTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAutopilotClusterTagsRequest, BatchDeleteAutopilotClusterTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteAutopilotClusterTagsRequest.class,
+                    BatchDeleteAutopilotClusterTagsResponse.class)
+                .withName("BatchDeleteAutopilotClusterTags")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteAutopilotClusterTagsRequest::getClusterId,
+                BatchDeleteAutopilotClusterTagsRequest::setClusterId));
+        builder.<BatchDeleteClusterTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteClusterTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteAutopilotClusterTagsRequest::getBody,
+                BatchDeleteAutopilotClusterTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotAddonInstanceRequest, CreateAutopilotAddonInstanceResponse> createAutopilotAddonInstance =
+        genForCreateAutopilotAddonInstance();
+
+    private static HttpRequestDef<CreateAutopilotAddonInstanceRequest, CreateAutopilotAddonInstanceResponse> genForCreateAutopilotAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotAddonInstanceRequest, CreateAutopilotAddonInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAutopilotAddonInstanceRequest.class,
+                    CreateAutopilotAddonInstanceResponse.class)
+                .withName("CreateAutopilotAddonInstance")
+                .withUri("/autopilot/v3/addons")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceRequest.class),
+            f -> f.withMarshaller(CreateAutopilotAddonInstanceRequest::getBody,
+                CreateAutopilotAddonInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotClusterRequest, CreateAutopilotClusterResponse> createAutopilotCluster =
+        genForCreateAutopilotCluster();
+
+    private static HttpRequestDef<CreateAutopilotClusterRequest, CreateAutopilotClusterResponse> genForCreateAutopilotCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotClusterRequest, CreateAutopilotClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAutopilotClusterRequest.class, CreateAutopilotClusterResponse.class)
+            .withName("CreateAutopilotCluster")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AutopilotCluster>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AutopilotCluster.class),
+            f -> f.withMarshaller(CreateAutopilotClusterRequest::getBody, CreateAutopilotClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotClusterMasterSnapshotRequest, CreateAutopilotClusterMasterSnapshotResponse> createAutopilotClusterMasterSnapshot =
+        genForCreateAutopilotClusterMasterSnapshot();
+
+    private static HttpRequestDef<CreateAutopilotClusterMasterSnapshotRequest, CreateAutopilotClusterMasterSnapshotResponse> genForCreateAutopilotClusterMasterSnapshot() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotClusterMasterSnapshotRequest, CreateAutopilotClusterMasterSnapshotResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAutopilotClusterMasterSnapshotRequest.class,
+                    CreateAutopilotClusterMasterSnapshotResponse.class)
+                .withName("CreateAutopilotClusterMasterSnapshot")
+                .withUri("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotClusterMasterSnapshotRequest::getClusterId,
+                CreateAutopilotClusterMasterSnapshotRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotKubernetesClusterCertRequest, CreateAutopilotKubernetesClusterCertResponse> createAutopilotKubernetesClusterCert =
+        genForCreateAutopilotKubernetesClusterCert();
+
+    private static HttpRequestDef<CreateAutopilotKubernetesClusterCertRequest, CreateAutopilotKubernetesClusterCertResponse> genForCreateAutopilotKubernetesClusterCert() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotKubernetesClusterCertRequest, CreateAutopilotKubernetesClusterCertResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAutopilotKubernetesClusterCertRequest.class,
+                    CreateAutopilotKubernetesClusterCertResponse.class)
+                .withName("CreateAutopilotKubernetesClusterCert")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/clustercert")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotKubernetesClusterCertRequest::getClusterId,
+                CreateAutopilotKubernetesClusterCertRequest::setClusterId));
+        builder.<CertDuration>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertDuration.class),
+            f -> f.withMarshaller(CreateAutopilotKubernetesClusterCertRequest::getBody,
+                CreateAutopilotKubernetesClusterCertRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("Port-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAutopilotKubernetesClusterCertResponse::getPortID,
+                CreateAutopilotKubernetesClusterCertResponse::setPortID));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotPostCheckRequest, CreateAutopilotPostCheckResponse> createAutopilotPostCheck =
+        genForCreateAutopilotPostCheck();
+
+    private static HttpRequestDef<CreateAutopilotPostCheckRequest, CreateAutopilotPostCheckResponse> genForCreateAutopilotPostCheck() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotPostCheckRequest, CreateAutopilotPostCheckResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateAutopilotPostCheckRequest.class, CreateAutopilotPostCheckResponse.class)
+                .withName("CreateAutopilotPostCheck")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/postcheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotPostCheckRequest::getClusterId,
+                CreateAutopilotPostCheckRequest::setClusterId));
+        builder.<PostcheckClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostcheckClusterRequestBody.class),
+            f -> f.withMarshaller(CreateAutopilotPostCheckRequest::getBody, CreateAutopilotPostCheckRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotPreCheckRequest, CreateAutopilotPreCheckResponse> createAutopilotPreCheck =
+        genForCreateAutopilotPreCheck();
+
+    private static HttpRequestDef<CreateAutopilotPreCheckRequest, CreateAutopilotPreCheckResponse> genForCreateAutopilotPreCheck() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotPreCheckRequest, CreateAutopilotPreCheckResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAutopilotPreCheckRequest.class, CreateAutopilotPreCheckResponse.class)
+            .withName("CreateAutopilotPreCheck")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotPreCheckRequest::getClusterId,
+                CreateAutopilotPreCheckRequest::setClusterId));
+        builder.<PrecheckClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PrecheckClusterRequestBody.class),
+            f -> f.withMarshaller(CreateAutopilotPreCheckRequest::getBody, CreateAutopilotPreCheckRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotReleaseRequest, CreateAutopilotReleaseResponse> createAutopilotRelease =
+        genForCreateAutopilotRelease();
+
+    private static HttpRequestDef<CreateAutopilotReleaseRequest, CreateAutopilotReleaseResponse> genForCreateAutopilotRelease() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotReleaseRequest, CreateAutopilotReleaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAutopilotReleaseRequest.class, CreateAutopilotReleaseResponse.class)
+            .withName("CreateAutopilotRelease")
+            .withUri("/autopilot/cam/v3/clusters/{cluster_id}/releases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotReleaseRequest::getClusterId,
+                CreateAutopilotReleaseRequest::setClusterId));
+        builder.<CreateReleaseReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateReleaseReqBody.class),
+            f -> f.withMarshaller(CreateAutopilotReleaseRequest::getBody, CreateAutopilotReleaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutopilotUpgradeWorkFlowRequest, CreateAutopilotUpgradeWorkFlowResponse> createAutopilotUpgradeWorkFlow =
+        genForCreateAutopilotUpgradeWorkFlow();
+
+    private static HttpRequestDef<CreateAutopilotUpgradeWorkFlowRequest, CreateAutopilotUpgradeWorkFlowResponse> genForCreateAutopilotUpgradeWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotUpgradeWorkFlowRequest, CreateAutopilotUpgradeWorkFlowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAutopilotUpgradeWorkFlowRequest.class,
+                    CreateAutopilotUpgradeWorkFlowResponse.class)
+                .withName("CreateAutopilotUpgradeWorkFlow")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotUpgradeWorkFlowRequest::getClusterId,
+                CreateAutopilotUpgradeWorkFlowRequest::setClusterId));
+        builder.<CreateUpgradeWorkFlowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUpgradeWorkFlowRequestBody.class),
+            f -> f.withMarshaller(CreateAutopilotUpgradeWorkFlowRequest::getBody,
+                CreateAutopilotUpgradeWorkFlowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotAddonInstanceRequest, DeleteAutopilotAddonInstanceResponse> deleteAutopilotAddonInstance =
+        genForDeleteAutopilotAddonInstance();
+
+    private static HttpRequestDef<DeleteAutopilotAddonInstanceRequest, DeleteAutopilotAddonInstanceResponse> genForDeleteAutopilotAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotAddonInstanceRequest, DeleteAutopilotAddonInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAutopilotAddonInstanceRequest.class,
+                    DeleteAutopilotAddonInstanceResponse.class)
+                .withName("DeleteAutopilotAddonInstance")
+                .withUri("/autopilot/v3/addons/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotAddonInstanceRequest::getId,
+                DeleteAutopilotAddonInstanceRequest::setId));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotAddonInstanceRequest::getClusterId,
+                DeleteAutopilotAddonInstanceRequest::setClusterId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAutopilotAddonInstanceResponse::getBody,
+                DeleteAutopilotAddonInstanceResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotChartRequest, DeleteAutopilotChartResponse> deleteAutopilotChart =
+        genForDeleteAutopilotChart();
+
+    private static HttpRequestDef<DeleteAutopilotChartRequest, DeleteAutopilotChartResponse> genForDeleteAutopilotChart() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotChartRequest, DeleteAutopilotChartResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAutopilotChartRequest.class, DeleteAutopilotChartResponse.class)
+            .withName("DeleteAutopilotChart")
+            .withUri("/autopilot/v2/charts/{chart_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotChartRequest::getChartId, DeleteAutopilotChartRequest::setChartId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAutopilotChartResponse::getBody, DeleteAutopilotChartResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotClusterRequest, DeleteAutopilotClusterResponse> deleteAutopilotCluster =
+        genForDeleteAutopilotCluster();
+
+    private static HttpRequestDef<DeleteAutopilotClusterRequest, DeleteAutopilotClusterResponse> genForDeleteAutopilotCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotClusterRequest, DeleteAutopilotClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAutopilotClusterRequest.class, DeleteAutopilotClusterResponse.class)
+            .withName("DeleteAutopilotCluster")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getClusterId,
+                DeleteAutopilotClusterRequest::setClusterId));
+        builder.<DeleteAutopilotClusterRequest.DeleteEfsEnum>withRequestField("delete_efs",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.DeleteEfsEnum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getDeleteEfs,
+                DeleteAutopilotClusterRequest::setDeleteEfs));
+        builder.<DeleteAutopilotClusterRequest.DeleteEniEnum>withRequestField("delete_eni",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.DeleteEniEnum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getDeleteEni,
+                DeleteAutopilotClusterRequest::setDeleteEni));
+        builder.<DeleteAutopilotClusterRequest.DeleteNetEnum>withRequestField("delete_net",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.DeleteNetEnum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getDeleteNet,
+                DeleteAutopilotClusterRequest::setDeleteNet));
+        builder.<DeleteAutopilotClusterRequest.DeleteObsEnum>withRequestField("delete_obs",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.DeleteObsEnum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getDeleteObs,
+                DeleteAutopilotClusterRequest::setDeleteObs));
+        builder.<DeleteAutopilotClusterRequest.DeleteSfs30Enum>withRequestField("delete_sfs30",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.DeleteSfs30Enum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getDeleteSfs30,
+                DeleteAutopilotClusterRequest::setDeleteSfs30));
+        builder.<DeleteAutopilotClusterRequest.LtsReclaimPolicyEnum>withRequestField("lts_reclaim_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.LtsReclaimPolicyEnum.class),
+            f -> f.withMarshaller(DeleteAutopilotClusterRequest::getLtsReclaimPolicy,
+                DeleteAutopilotClusterRequest::setLtsReclaimPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotReleaseRequest, DeleteAutopilotReleaseResponse> deleteAutopilotRelease =
+        genForDeleteAutopilotRelease();
+
+    private static HttpRequestDef<DeleteAutopilotReleaseRequest, DeleteAutopilotReleaseResponse> genForDeleteAutopilotRelease() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotReleaseRequest, DeleteAutopilotReleaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAutopilotReleaseRequest.class, DeleteAutopilotReleaseResponse.class)
+            .withName("DeleteAutopilotRelease")
+            .withUri("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotReleaseRequest::getName, DeleteAutopilotReleaseRequest::setName));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotReleaseRequest::getNamespace,
+                DeleteAutopilotReleaseRequest::setNamespace));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotReleaseRequest::getClusterId,
+                DeleteAutopilotReleaseRequest::setClusterId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAutopilotReleaseResponse::getBody, DeleteAutopilotReleaseResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAutopilotChartRequest, DownloadAutopilotChartResponse> downloadAutopilotChart =
+        genForDownloadAutopilotChart();
+
+    private static HttpRequestDef<DownloadAutopilotChartRequest, DownloadAutopilotChartResponse> genForDownloadAutopilotChart() {
+        // basic
+        HttpRequestDef.Builder<DownloadAutopilotChartRequest, DownloadAutopilotChartResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadAutopilotChartRequest.class, DownloadAutopilotChartResponse.class)
+            .withName("DownloadAutopilotChart")
+            .withUri("/autopilot/v2/charts/{chart_id}/archive")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAutopilotChartRequest::getChartId,
+                DownloadAutopilotChartRequest::setChartId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotAddonInstancesRequest, ListAutopilotAddonInstancesResponse> listAutopilotAddonInstances =
+        genForListAutopilotAddonInstances();
+
+    private static HttpRequestDef<ListAutopilotAddonInstancesRequest, ListAutopilotAddonInstancesResponse> genForListAutopilotAddonInstances() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotAddonInstancesRequest, ListAutopilotAddonInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotAddonInstancesRequest.class,
+                    ListAutopilotAddonInstancesResponse.class)
+                .withName("ListAutopilotAddonInstances")
+                .withUri("/autopilot/v3/addons")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotAddonInstancesRequest::getClusterId,
+                ListAutopilotAddonInstancesRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotAddonTemplatesRequest, ListAutopilotAddonTemplatesResponse> listAutopilotAddonTemplates =
+        genForListAutopilotAddonTemplates();
+
+    private static HttpRequestDef<ListAutopilotAddonTemplatesRequest, ListAutopilotAddonTemplatesResponse> genForListAutopilotAddonTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotAddonTemplatesRequest, ListAutopilotAddonTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotAddonTemplatesRequest.class,
+                    ListAutopilotAddonTemplatesResponse.class)
+                .withName("ListAutopilotAddonTemplates")
+                .withUri("/autopilot/v3/addontemplates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("addon_template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotAddonTemplatesRequest::getAddonTemplateName,
+                ListAutopilotAddonTemplatesRequest::setAddonTemplateName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotChartsRequest, ListAutopilotChartsResponse> listAutopilotCharts =
+        genForListAutopilotCharts();
+
+    private static HttpRequestDef<ListAutopilotChartsRequest, ListAutopilotChartsResponse> genForListAutopilotCharts() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotChartsRequest, ListAutopilotChartsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAutopilotChartsRequest.class, ListAutopilotChartsResponse.class)
+                .withName("ListAutopilotCharts")
+                .withUri("/autopilot/v2/charts")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<ChartResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAutopilotChartsResponse::getBody, ListAutopilotChartsResponse::setBody)
+                .withInnerContainerType(ChartResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotClusterMasterSnapshotTasksRequest, ListAutopilotClusterMasterSnapshotTasksResponse> listAutopilotClusterMasterSnapshotTasks =
+        genForListAutopilotClusterMasterSnapshotTasks();
+
+    private static HttpRequestDef<ListAutopilotClusterMasterSnapshotTasksRequest, ListAutopilotClusterMasterSnapshotTasksResponse> genForListAutopilotClusterMasterSnapshotTasks() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotClusterMasterSnapshotTasksRequest, ListAutopilotClusterMasterSnapshotTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotClusterMasterSnapshotTasksRequest.class,
+                    ListAutopilotClusterMasterSnapshotTasksResponse.class)
+                .withName("ListAutopilotClusterMasterSnapshotTasks")
+                .withUri("/autopilot/v3.1/projects/{project_id}/clusters/{cluster_id}/operation/snapshot/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotClusterMasterSnapshotTasksRequest::getClusterId,
+                ListAutopilotClusterMasterSnapshotTasksRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotClusterUpgradeFeatureGatesRequest, ListAutopilotClusterUpgradeFeatureGatesResponse> listAutopilotClusterUpgradeFeatureGates =
+        genForListAutopilotClusterUpgradeFeatureGates();
+
+    private static HttpRequestDef<ListAutopilotClusterUpgradeFeatureGatesRequest, ListAutopilotClusterUpgradeFeatureGatesResponse> genForListAutopilotClusterUpgradeFeatureGates() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotClusterUpgradeFeatureGatesRequest, ListAutopilotClusterUpgradeFeatureGatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotClusterUpgradeFeatureGatesRequest.class,
+                    ListAutopilotClusterUpgradeFeatureGatesResponse.class)
+                .withName("ListAutopilotClusterUpgradeFeatureGates")
+                .withUri("/autopilot/v3/clusterupgradefeaturegates")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotClusterUpgradePathsRequest, ListAutopilotClusterUpgradePathsResponse> listAutopilotClusterUpgradePaths =
+        genForListAutopilotClusterUpgradePaths();
+
+    private static HttpRequestDef<ListAutopilotClusterUpgradePathsRequest, ListAutopilotClusterUpgradePathsResponse> genForListAutopilotClusterUpgradePaths() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotClusterUpgradePathsRequest, ListAutopilotClusterUpgradePathsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotClusterUpgradePathsRequest.class,
+                    ListAutopilotClusterUpgradePathsResponse.class)
+                .withName("ListAutopilotClusterUpgradePaths")
+                .withUri("/autopilot/v3/clusterupgradepaths")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotClustersRequest, ListAutopilotClustersResponse> listAutopilotClusters =
+        genForListAutopilotClusters();
+
+    private static HttpRequestDef<ListAutopilotClustersRequest, ListAutopilotClustersResponse> genForListAutopilotClusters() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotClustersRequest, ListAutopilotClustersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutopilotClustersRequest.class, ListAutopilotClustersResponse.class)
+            .withName("ListAutopilotClusters")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotClustersRequest::getDetail, ListAutopilotClustersRequest::setDetail));
+        builder.<ListAutopilotClustersRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAutopilotClustersRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListAutopilotClustersRequest::getStatus, ListAutopilotClustersRequest::setStatus));
+        builder.<ListAutopilotClustersRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAutopilotClustersRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListAutopilotClustersRequest::getType, ListAutopilotClustersRequest::setType));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotClustersRequest::getVersion, ListAutopilotClustersRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotPreCheckTasksRequest, ListAutopilotPreCheckTasksResponse> listAutopilotPreCheckTasks =
+        genForListAutopilotPreCheckTasks();
+
+    private static HttpRequestDef<ListAutopilotPreCheckTasksRequest, ListAutopilotPreCheckTasksResponse> genForListAutopilotPreCheckTasks() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotPreCheckTasksRequest, ListAutopilotPreCheckTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotPreCheckTasksRequest.class,
+                    ListAutopilotPreCheckTasksResponse.class)
+                .withName("ListAutopilotPreCheckTasks")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotPreCheckTasksRequest::getClusterId,
+                ListAutopilotPreCheckTasksRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotReleasesRequest, ListAutopilotReleasesResponse> listAutopilotReleases =
+        genForListAutopilotReleases();
+
+    private static HttpRequestDef<ListAutopilotReleasesRequest, ListAutopilotReleasesResponse> genForListAutopilotReleases() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotReleasesRequest, ListAutopilotReleasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutopilotReleasesRequest.class, ListAutopilotReleasesResponse.class)
+            .withName("ListAutopilotReleases")
+            .withUri("/autopilot/cam/v3/clusters/{cluster_id}/releases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotReleasesRequest::getClusterId,
+                ListAutopilotReleasesRequest::setClusterId));
+        builder.<String>withRequestField("chart_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotReleasesRequest::getChartId, ListAutopilotReleasesRequest::setChartId));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotReleasesRequest::getNamespace,
+                ListAutopilotReleasesRequest::setNamespace));
+
+        // response
+        builder.<List<ReleaseResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAutopilotReleasesResponse::getBody, ListAutopilotReleasesResponse::setBody)
+                .withInnerContainerType(ReleaseResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotUpgradeClusterTasksRequest, ListAutopilotUpgradeClusterTasksResponse> listAutopilotUpgradeClusterTasks =
+        genForListAutopilotUpgradeClusterTasks();
+
+    private static HttpRequestDef<ListAutopilotUpgradeClusterTasksRequest, ListAutopilotUpgradeClusterTasksResponse> genForListAutopilotUpgradeClusterTasks() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotUpgradeClusterTasksRequest, ListAutopilotUpgradeClusterTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotUpgradeClusterTasksRequest.class,
+                    ListAutopilotUpgradeClusterTasksResponse.class)
+                .withName("ListAutopilotUpgradeClusterTasks")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotUpgradeClusterTasksRequest::getClusterId,
+                ListAutopilotUpgradeClusterTasksRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotUpgradeWorkFlowsRequest, ListAutopilotUpgradeWorkFlowsResponse> listAutopilotUpgradeWorkFlows =
+        genForListAutopilotUpgradeWorkFlows();
+
+    private static HttpRequestDef<ListAutopilotUpgradeWorkFlowsRequest, ListAutopilotUpgradeWorkFlowsResponse> genForListAutopilotUpgradeWorkFlows() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotUpgradeWorkFlowsRequest, ListAutopilotUpgradeWorkFlowsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotUpgradeWorkFlowsRequest.class,
+                    ListAutopilotUpgradeWorkFlowsResponse.class)
+                .withName("ListAutopilotUpgradeWorkFlows")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotUpgradeWorkFlowsRequest::getClusterId,
+                ListAutopilotUpgradeWorkFlowsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryAutopilotUpgradeClusterTaskRequest, RetryAutopilotUpgradeClusterTaskResponse> retryAutopilotUpgradeClusterTask =
+        genForRetryAutopilotUpgradeClusterTask();
+
+    private static HttpRequestDef<RetryAutopilotUpgradeClusterTaskRequest, RetryAutopilotUpgradeClusterTaskResponse> genForRetryAutopilotUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<RetryAutopilotUpgradeClusterTaskRequest, RetryAutopilotUpgradeClusterTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RetryAutopilotUpgradeClusterTaskRequest.class,
+                    RetryAutopilotUpgradeClusterTaskResponse.class)
+                .withName("RetryAutopilotUpgradeClusterTask")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryAutopilotUpgradeClusterTaskRequest::getClusterId,
+                RetryAutopilotUpgradeClusterTaskRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RollbackAutopilotAddonInstanceRequest, RollbackAutopilotAddonInstanceResponse> rollbackAutopilotAddonInstance =
+        genForRollbackAutopilotAddonInstance();
+
+    private static HttpRequestDef<RollbackAutopilotAddonInstanceRequest, RollbackAutopilotAddonInstanceResponse> genForRollbackAutopilotAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<RollbackAutopilotAddonInstanceRequest, RollbackAutopilotAddonInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RollbackAutopilotAddonInstanceRequest.class,
+                    RollbackAutopilotAddonInstanceResponse.class)
+                .withName("RollbackAutopilotAddonInstance")
+                .withUri("/autopilot/v3/addons/{id}/operation/rollback")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackAutopilotAddonInstanceRequest::getId,
+                RollbackAutopilotAddonInstanceRequest::setId));
+        builder.<AddonInstanceRollbackRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddonInstanceRollbackRequest.class),
+            f -> f.withMarshaller(RollbackAutopilotAddonInstanceRequest::getBody,
+                RollbackAutopilotAddonInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotAddonInstanceRequest, ShowAutopilotAddonInstanceResponse> showAutopilotAddonInstance =
+        genForShowAutopilotAddonInstance();
+
+    private static HttpRequestDef<ShowAutopilotAddonInstanceRequest, ShowAutopilotAddonInstanceResponse> genForShowAutopilotAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotAddonInstanceRequest, ShowAutopilotAddonInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotAddonInstanceRequest.class,
+                    ShowAutopilotAddonInstanceResponse.class)
+                .withName("ShowAutopilotAddonInstance")
+                .withUri("/autopilot/v3/addons/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotAddonInstanceRequest::getId, ShowAutopilotAddonInstanceRequest::setId));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotAddonInstanceRequest::getClusterId,
+                ShowAutopilotAddonInstanceRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotChartRequest, ShowAutopilotChartResponse> showAutopilotChart =
+        genForShowAutopilotChart();
+
+    private static HttpRequestDef<ShowAutopilotChartRequest, ShowAutopilotChartResponse> genForShowAutopilotChart() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotChartRequest, ShowAutopilotChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAutopilotChartRequest.class, ShowAutopilotChartResponse.class)
+                .withName("ShowAutopilotChart")
+                .withUri("/autopilot/v2/charts/{chart_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotChartRequest::getChartId, ShowAutopilotChartRequest::setChartId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotChartValuesRequest, ShowAutopilotChartValuesResponse> showAutopilotChartValues =
+        genForShowAutopilotChartValues();
+
+    private static HttpRequestDef<ShowAutopilotChartValuesRequest, ShowAutopilotChartValuesResponse> genForShowAutopilotChartValues() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotChartValuesRequest, ShowAutopilotChartValuesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowAutopilotChartValuesRequest.class, ShowAutopilotChartValuesResponse.class)
+                .withName("ShowAutopilotChartValues")
+                .withUri("/autopilot/v2/charts/{chart_id}/values")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotChartValuesRequest::getChartId,
+                ShowAutopilotChartValuesRequest::setChartId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotClusterRequest, ShowAutopilotClusterResponse> showAutopilotCluster =
+        genForShowAutopilotCluster();
+
+    private static HttpRequestDef<ShowAutopilotClusterRequest, ShowAutopilotClusterResponse> genForShowAutopilotCluster() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotClusterRequest, ShowAutopilotClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutopilotClusterRequest.class, ShowAutopilotClusterResponse.class)
+            .withName("ShowAutopilotCluster")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotClusterRequest::getClusterId,
+                ShowAutopilotClusterRequest::setClusterId));
+        builder.<String>withRequestField("detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotClusterRequest::getDetail, ShowAutopilotClusterRequest::setDetail));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotClusterEndpointsRequest, ShowAutopilotClusterEndpointsResponse> showAutopilotClusterEndpoints =
+        genForShowAutopilotClusterEndpoints();
+
+    private static HttpRequestDef<ShowAutopilotClusterEndpointsRequest, ShowAutopilotClusterEndpointsResponse> genForShowAutopilotClusterEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotClusterEndpointsRequest, ShowAutopilotClusterEndpointsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotClusterEndpointsRequest.class,
+                    ShowAutopilotClusterEndpointsResponse.class)
+                .withName("ShowAutopilotClusterEndpoints")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/openapi")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotClusterEndpointsRequest::getClusterId,
+                ShowAutopilotClusterEndpointsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotClusterUpgradeInfoRequest, ShowAutopilotClusterUpgradeInfoResponse> showAutopilotClusterUpgradeInfo =
+        genForShowAutopilotClusterUpgradeInfo();
+
+    private static HttpRequestDef<ShowAutopilotClusterUpgradeInfoRequest, ShowAutopilotClusterUpgradeInfoResponse> genForShowAutopilotClusterUpgradeInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotClusterUpgradeInfoRequest, ShowAutopilotClusterUpgradeInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotClusterUpgradeInfoRequest.class,
+                    ShowAutopilotClusterUpgradeInfoResponse.class)
+                .withName("ShowAutopilotClusterUpgradeInfo")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotClusterUpgradeInfoRequest::getClusterId,
+                ShowAutopilotClusterUpgradeInfoRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotJobRequest, ShowAutopilotJobResponse> showAutopilotJob =
+        genForShowAutopilotJob();
+
+    private static HttpRequestDef<ShowAutopilotJobRequest, ShowAutopilotJobResponse> genForShowAutopilotJob() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotJobRequest, ShowAutopilotJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAutopilotJobRequest.class, ShowAutopilotJobResponse.class)
+                .withName("ShowAutopilotJob")
+                .withUri("/autopilot/v3/projects/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotJobRequest::getJobId, ShowAutopilotJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotPreCheckRequest, ShowAutopilotPreCheckResponse> showAutopilotPreCheck =
+        genForShowAutopilotPreCheck();
+
+    private static HttpRequestDef<ShowAutopilotPreCheckRequest, ShowAutopilotPreCheckResponse> genForShowAutopilotPreCheck() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotPreCheckRequest, ShowAutopilotPreCheckResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutopilotPreCheckRequest.class, ShowAutopilotPreCheckResponse.class)
+            .withName("ShowAutopilotPreCheck")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/precheck/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotPreCheckRequest::getClusterId,
+                ShowAutopilotPreCheckRequest::setClusterId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotPreCheckRequest::getTaskId, ShowAutopilotPreCheckRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotQuotasRequest, ShowAutopilotQuotasResponse> showAutopilotQuotas =
+        genForShowAutopilotQuotas();
+
+    private static HttpRequestDef<ShowAutopilotQuotasRequest, ShowAutopilotQuotasResponse> genForShowAutopilotQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotQuotasRequest, ShowAutopilotQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAutopilotQuotasRequest.class, ShowAutopilotQuotasResponse.class)
+                .withName("ShowAutopilotQuotas")
+                .withUri("/autopilot/v3/projects/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotReleaseRequest, ShowAutopilotReleaseResponse> showAutopilotRelease =
+        genForShowAutopilotRelease();
+
+    private static HttpRequestDef<ShowAutopilotReleaseRequest, ShowAutopilotReleaseResponse> genForShowAutopilotRelease() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotReleaseRequest, ShowAutopilotReleaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutopilotReleaseRequest.class, ShowAutopilotReleaseResponse.class)
+            .withName("ShowAutopilotRelease")
+            .withUri("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseRequest::getName, ShowAutopilotReleaseRequest::setName));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseRequest::getNamespace,
+                ShowAutopilotReleaseRequest::setNamespace));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseRequest::getClusterId,
+                ShowAutopilotReleaseRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotReleaseHistoryRequest, ShowAutopilotReleaseHistoryResponse> showAutopilotReleaseHistory =
+        genForShowAutopilotReleaseHistory();
+
+    private static HttpRequestDef<ShowAutopilotReleaseHistoryRequest, ShowAutopilotReleaseHistoryResponse> genForShowAutopilotReleaseHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotReleaseHistoryRequest, ShowAutopilotReleaseHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotReleaseHistoryRequest.class,
+                    ShowAutopilotReleaseHistoryResponse.class)
+                .withName("ShowAutopilotReleaseHistory")
+                .withUri("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseHistoryRequest::getName,
+                ShowAutopilotReleaseHistoryRequest::setName));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseHistoryRequest::getNamespace,
+                ShowAutopilotReleaseHistoryRequest::setNamespace));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseHistoryRequest::getClusterId,
+                ShowAutopilotReleaseHistoryRequest::setClusterId));
+
+        // response
+        builder.<List<ReleaseResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowAutopilotReleaseHistoryResponse::getBody,
+                    ShowAutopilotReleaseHistoryResponse::setBody)
+                .withInnerContainerType(ReleaseResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotUpgradeClusterTaskRequest, ShowAutopilotUpgradeClusterTaskResponse> showAutopilotUpgradeClusterTask =
+        genForShowAutopilotUpgradeClusterTask();
+
+    private static HttpRequestDef<ShowAutopilotUpgradeClusterTaskRequest, ShowAutopilotUpgradeClusterTaskResponse> genForShowAutopilotUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotUpgradeClusterTaskRequest, ShowAutopilotUpgradeClusterTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotUpgradeClusterTaskRequest.class,
+                    ShowAutopilotUpgradeClusterTaskResponse.class)
+                .withName("ShowAutopilotUpgradeClusterTask")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotUpgradeClusterTaskRequest::getClusterId,
+                ShowAutopilotUpgradeClusterTaskRequest::setClusterId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotUpgradeClusterTaskRequest::getTaskId,
+                ShowAutopilotUpgradeClusterTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotUpgradeWorkFlowRequest, ShowAutopilotUpgradeWorkFlowResponse> showAutopilotUpgradeWorkFlow =
+        genForShowAutopilotUpgradeWorkFlow();
+
+    private static HttpRequestDef<ShowAutopilotUpgradeWorkFlowRequest, ShowAutopilotUpgradeWorkFlowResponse> genForShowAutopilotUpgradeWorkFlow() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotUpgradeWorkFlowRequest, ShowAutopilotUpgradeWorkFlowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotUpgradeWorkFlowRequest.class,
+                    ShowAutopilotUpgradeWorkFlowResponse.class)
+                .withName("ShowAutopilotUpgradeWorkFlow")
+                .withUri(
+                    "/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotUpgradeWorkFlowRequest::getClusterId,
+                ShowAutopilotUpgradeWorkFlowRequest::setClusterId));
+        builder.<String>withRequestField("upgrade_workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotUpgradeWorkFlowRequest::getUpgradeWorkflowId,
+                ShowAutopilotUpgradeWorkFlowRequest::setUpgradeWorkflowId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotUserChartsQuotasRequest, ShowAutopilotUserChartsQuotasResponse> showAutopilotUserChartsQuotas =
+        genForShowAutopilotUserChartsQuotas();
+
+    private static HttpRequestDef<ShowAutopilotUserChartsQuotasRequest, ShowAutopilotUserChartsQuotasResponse> genForShowAutopilotUserChartsQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotUserChartsQuotasRequest, ShowAutopilotUserChartsQuotasResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotUserChartsQuotasRequest.class,
+                    ShowAutopilotUserChartsQuotasResponse.class)
+                .withName("ShowAutopilotUserChartsQuotas")
+                .withUri("/autopilot/v2/charts/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotAddonInstanceRequest, UpdateAutopilotAddonInstanceResponse> updateAutopilotAddonInstance =
+        genForUpdateAutopilotAddonInstance();
+
+    private static HttpRequestDef<UpdateAutopilotAddonInstanceRequest, UpdateAutopilotAddonInstanceResponse> genForUpdateAutopilotAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotAddonInstanceRequest, UpdateAutopilotAddonInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAutopilotAddonInstanceRequest.class,
+                    UpdateAutopilotAddonInstanceResponse.class)
+                .withName("UpdateAutopilotAddonInstance")
+                .withUri("/autopilot/v3/addons/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotAddonInstanceRequest::getId,
+                UpdateAutopilotAddonInstanceRequest::setId));
+        builder.<InstanceRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceRequest.class),
+            f -> f.withMarshaller(UpdateAutopilotAddonInstanceRequest::getBody,
+                UpdateAutopilotAddonInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotChartRequest, UpdateAutopilotChartResponse> updateAutopilotChart =
+        genForUpdateAutopilotChart();
+
+    private static HttpRequestDef<UpdateAutopilotChartRequest, UpdateAutopilotChartResponse> genForUpdateAutopilotChart() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotChartRequest, UpdateAutopilotChartResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAutopilotChartRequest.class, UpdateAutopilotChartResponse.class)
+            .withName("UpdateAutopilotChart")
+            .withUri("/autopilot/v2/charts/{chart_id}")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotChartRequest::getChartId, UpdateAutopilotChartRequest::setChartId));
+        builder.<UpdateAutopilotChartRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAutopilotChartRequestBody.class),
+            f -> f.withMarshaller(UpdateAutopilotChartRequest::getBody, UpdateAutopilotChartRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotClusterRequest, UpdateAutopilotClusterResponse> updateAutopilotCluster =
+        genForUpdateAutopilotCluster();
+
+    private static HttpRequestDef<UpdateAutopilotClusterRequest, UpdateAutopilotClusterResponse> genForUpdateAutopilotCluster() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotClusterRequest, UpdateAutopilotClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAutopilotClusterRequest.class, UpdateAutopilotClusterResponse.class)
+            .withName("UpdateAutopilotCluster")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotClusterRequest::getClusterId,
+                UpdateAutopilotClusterRequest::setClusterId));
+        builder.<AutopilotClusterInformation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AutopilotClusterInformation.class),
+            f -> f.withMarshaller(UpdateAutopilotClusterRequest::getBody, UpdateAutopilotClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotReleaseRequest, UpdateAutopilotReleaseResponse> updateAutopilotRelease =
+        genForUpdateAutopilotRelease();
+
+    private static HttpRequestDef<UpdateAutopilotReleaseRequest, UpdateAutopilotReleaseResponse> genForUpdateAutopilotRelease() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotReleaseRequest, UpdateAutopilotReleaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAutopilotReleaseRequest.class, UpdateAutopilotReleaseResponse.class)
+            .withName("UpdateAutopilotRelease")
+            .withUri("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getName, UpdateAutopilotReleaseRequest::setName));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getNamespace,
+                UpdateAutopilotReleaseRequest::setNamespace));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getClusterId,
+                UpdateAutopilotReleaseRequest::setClusterId));
+        builder.<UpdateReleaseReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateReleaseReqBody.class),
+            f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getBody, UpdateAutopilotReleaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeAutopilotClusterRequest, UpgradeAutopilotClusterResponse> upgradeAutopilotCluster =
+        genForUpgradeAutopilotCluster();
+
+    private static HttpRequestDef<UpgradeAutopilotClusterRequest, UpgradeAutopilotClusterResponse> genForUpgradeAutopilotCluster() {
+        // basic
+        HttpRequestDef.Builder<UpgradeAutopilotClusterRequest, UpgradeAutopilotClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeAutopilotClusterRequest.class, UpgradeAutopilotClusterResponse.class)
+            .withName("UpgradeAutopilotCluster")
+            .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeAutopilotClusterRequest::getClusterId,
+                UpgradeAutopilotClusterRequest::setClusterId));
+        builder.<UpgradeClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
+            f -> f.withMarshaller(UpgradeAutopilotClusterRequest::getBody, UpgradeAutopilotClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeAutopilotWorkFlowUpdateRequest, UpgradeAutopilotWorkFlowUpdateResponse> upgradeAutopilotWorkFlowUpdate =
+        genForUpgradeAutopilotWorkFlowUpdate();
+
+    private static HttpRequestDef<UpgradeAutopilotWorkFlowUpdateRequest, UpgradeAutopilotWorkFlowUpdateResponse> genForUpgradeAutopilotWorkFlowUpdate() {
+        // basic
+        HttpRequestDef.Builder<UpgradeAutopilotWorkFlowUpdateRequest, UpgradeAutopilotWorkFlowUpdateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpgradeAutopilotWorkFlowUpdateRequest.class,
+                    UpgradeAutopilotWorkFlowUpdateResponse.class)
+                .withName("UpgradeAutopilotWorkFlowUpdate")
+                .withUri(
+                    "/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgradeworkflows/{upgrade_workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeAutopilotWorkFlowUpdateRequest::getClusterId,
+                UpgradeAutopilotWorkFlowUpdateRequest::setClusterId));
+        builder.<String>withRequestField("upgrade_workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeAutopilotWorkFlowUpdateRequest::getUpgradeWorkflowId,
+                UpgradeAutopilotWorkFlowUpdateRequest::setUpgradeWorkflowId));
+        builder.<UpgradeWorkFlowUpdateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeWorkFlowUpdateRequestBody.class),
+            f -> f.withMarshaller(UpgradeAutopilotWorkFlowUpdateRequest::getBody,
+                UpgradeAutopilotWorkFlowUpdateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadAutopilotChartRequest, UploadAutopilotChartResponse> uploadAutopilotChart =
+        genForUploadAutopilotChart();
+
+    private static HttpRequestDef<UploadAutopilotChartRequest, UploadAutopilotChartResponse> genForUploadAutopilotChart() {
+        // basic
+        HttpRequestDef.Builder<UploadAutopilotChartRequest, UploadAutopilotChartResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UploadAutopilotChartRequest.class, UploadAutopilotChartResponse.class)
+            .withName("UploadAutopilotChart")
+            .withUri("/autopilot/v2/charts")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<UploadAutopilotChartRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadAutopilotChartRequestBody.class),
+            f -> f.withMarshaller(UploadAutopilotChartRequest::getBody, UploadAutopilotChartRequest::setBody));
 
         // response
 

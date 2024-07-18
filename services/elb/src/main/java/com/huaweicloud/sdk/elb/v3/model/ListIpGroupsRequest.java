@@ -48,13 +48,18 @@ public class ListIpGroupsRequest {
 
     private List<String> ipList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
     public ListIpGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 参数解释：上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -71,7 +76,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -90,7 +95,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 参数解释：是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -123,7 +128,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * IP地址组的ID。
+     * 参数解释：IP地址组的ID。
      * @return id
      */
     public List<String> getId() {
@@ -156,7 +161,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * IP地址组的名称。
+     * 参数解释：IP地址组的名称。
      * @return name
      */
     public List<String> getName() {
@@ -189,7 +194,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * IP地址组的描述信息。
+     * 参数解释：IP地址组的描述信息。
      * @return description
      */
     public List<String> getDescription() {
@@ -222,7 +227,7 @@ public class ListIpGroupsRequest {
     }
 
     /**
-     * IP地址，多个用逗号分隔。
+     * 参数解释：IP地址，多个用逗号分隔。
      * @return ipList
      */
     public List<String> getIpList() {
@@ -231,6 +236,39 @@ public class ListIpGroupsRequest {
 
     public void setIpList(List<String> ipList) {
         this.ipList = ipList;
+    }
+
+    public ListIpGroupsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ListIpGroupsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ListIpGroupsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 参数解释：企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -245,12 +283,13 @@ public class ListIpGroupsRequest {
         return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.ipList, that.ipList);
+            && Objects.equals(this.ipList, that.ipList)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, description, ipList);
+        return Objects.hash(marker, limit, pageReverse, id, name, description, ipList, enterpriseProjectId);
     }
 
     @Override
@@ -264,6 +303,7 @@ public class ListIpGroupsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

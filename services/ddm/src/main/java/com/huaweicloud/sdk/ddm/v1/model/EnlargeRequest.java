@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ddm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * This is a auto request Object
@@ -29,6 +32,11 @@ public class EnlargeRequest {
     @JsonProperty(value = "is_auto_pay")
 
     private Boolean isAutoPay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zones")
+
+    private List<String> availableZones = null;
 
     public EnlargeRequest withFlavorId(String flavorId) {
         this.flavorId = flavorId;
@@ -98,6 +106,39 @@ public class EnlargeRequest {
         this.isAutoPay = isAutoPay;
     }
 
+    public EnlargeRequest withAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
+        return this;
+    }
+
+    public EnlargeRequest addAvailableZonesItem(String availableZonesItem) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        this.availableZones.add(availableZonesItem);
+        return this;
+    }
+
+    public EnlargeRequest withAvailableZones(Consumer<List<String>> availableZonesSetter) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        availableZonesSetter.accept(this.availableZones);
+        return this;
+    }
+
+    /**
+     * 可用区Code，仅包年包月实例传递该参数，个数需与node_number一致。请参见地区和终端节点(https://developer.huaweicloud.com/endpoint?DDM)。
+     * @return availableZones
+     */
+    public List<String> getAvailableZones() {
+        return availableZones;
+    }
+
+    public void setAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +149,13 @@ public class EnlargeRequest {
         }
         EnlargeRequest that = (EnlargeRequest) obj;
         return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.nodeNumber, that.nodeNumber)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.isAutoPay, that.isAutoPay);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.availableZones, that.availableZones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorId, nodeNumber, groupId, isAutoPay);
+        return Objects.hash(flavorId, nodeNumber, groupId, isAutoPay, availableZones);
     }
 
     @Override
@@ -124,6 +166,7 @@ public class EnlargeRequest {
         sb.append("    nodeNumber: ").append(toIndentedString(nodeNumber)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class ListenerRef {
     }
 
     /**
-     * 监听器ID。
+     * 参数解释：监听器ID。
      * @return id
      */
     public String getId() {

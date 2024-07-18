@@ -54,7 +54,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 参数解释：上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -71,7 +71,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -90,7 +90,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * 参数解释：是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -123,7 +123,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 规格ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * 参数解释：规格ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
      * @return id
      */
     public List<String> getId() {
@@ -156,7 +156,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 规格名称。   支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * 参数解释：规格名称。   支持多值查询，查询条件格式：*name=xxx&name=xxx*。
      * @return name
      */
     public List<String> getName() {
@@ -189,7 +189,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 规格类别。  取值： - L4和L7 表示四层网络型和七层应用型flavor。 - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max和L7_elastic_max 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
+     * 参数解释：规格类别。  取值： - L4和L7 表示四层网络型和七层应用型flavor。 [- gateway 表示网关型LB的flavor，目前只支持弹性计费类型。当前仅支持欧洲局点。](tag:hws_eu) - L4_elastic和L7_elastic 表示弹性扩缩容实例的下限规格。 - L4_elastic_max、L7_elastic_max[和gateway_elastic_max](tag:hws_eu) 表示弹性扩缩容实例的上限规格。  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
      * @return type
      */
     public List<String> getType() {
@@ -206,7 +206,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * 是否查询公共规格。true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
+     * 参数解释：是否查询公共规格。  取值范围：true表示公共规格，所有租户可见。false表示私有规格，为当前租户所有。
      * @return shared
      */
     public Boolean getShared() {

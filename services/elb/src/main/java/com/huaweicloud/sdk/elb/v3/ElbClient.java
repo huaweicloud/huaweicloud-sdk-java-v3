@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeRequest;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeResponse;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumRequest;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificateRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateHealthMonitorRequest;
@@ -109,6 +111,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowFlavorRequest;
@@ -419,6 +423,36 @@ public class ElbClient {
     }
 
     /**
+     * 修改证书私钥字段回显开关
+     *
+     * 开启或关闭证书私钥字段回显开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCertificatePrivateKeyEchoRequest 请求对象
+     * @return CreateCertificatePrivateKeyEchoResponse
+     */
+    public CreateCertificatePrivateKeyEchoResponse createCertificatePrivateKeyEcho(
+        CreateCertificatePrivateKeyEchoRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.createCertificatePrivateKeyEcho);
+    }
+
+    /**
+     * 修改证书私钥字段回显开关
+     *
+     * 开启或关闭证书私钥字段回显开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCertificatePrivateKeyEchoRequest 请求对象
+     * @return SyncInvoker<CreateCertificatePrivateKeyEchoRequest, CreateCertificatePrivateKeyEchoResponse>
+     */
+    public SyncInvoker<CreateCertificatePrivateKeyEchoRequest, CreateCertificatePrivateKeyEchoResponse> createCertificatePrivateKeyEchoInvoker(
+        CreateCertificatePrivateKeyEchoRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.createCertificatePrivateKeyEcho, hcClient);
+    }
+
+    /**
      * 创建健康检查
      *
      * 创建健康检查。
@@ -536,22 +570,16 @@ public class ElbClient {
     /**
      * 创建负载均衡器
      *
-     * 创建负载均衡器。
-     * 1. 若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
-     * 2. 若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
-     * 3. 若要绑定有已有公网IPv4地址，
-     * 则需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
-     * 4. 若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。
-     * 5. 若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
-     * 6. 不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
-     * 7. l4_flavor_id需要传入网络型规格id，l7_flavor_id需要传入应用型规格id。
-     * 
-     * [&gt; 关于计费：
-     * - 若billing_info非空时，包周期。
-     * - 若billing_info为空，autoscaling.enable&#x3D;true时，弹性计费。
-     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;lcu，按量计费。
-     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;flavor，固定规格按需计费。](tag:hws)
-     * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
+     * 创建独享型负载均衡器，包括按需及包周期计费负载均衡器。
+     * 1. 若要创建内网IPv4负载均衡器，则需要传入vip_subnet_cidr_id。
+     * 2. 若要创建公网IPv4负载均衡器，则需要传入publicip，以及传入vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3. 若要绑定有已有公网IPv4地址，则需要传入publicip_ids，以及传入vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4. 若要创建内网双栈负载均衡器，则需要传入ipv6_vip_virsubnet_id。
+     * 5. 若要创建公网双栈负载均衡器，则需要传入ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6. 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
+     * 7. 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。
+     * 8. 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
+     * [9.若要创建gateway类型的负载均衡器，指定loadbalancer_type&#x3D;“gateway”，不支持指定vip_address，ipv6_vip_address, 不支持公网类型。如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -565,22 +593,16 @@ public class ElbClient {
     /**
      * 创建负载均衡器
      *
-     * 创建负载均衡器。
-     * 1. 若要创建内网IPv4负载均衡器，则需要设置vip_subnet_cidr_id。
-     * 2. 若要创建公网IPv4负载均衡器，则需要设置publicip，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
-     * 3. 若要绑定有已有公网IPv4地址，
-     * 则需要设置publicip_ids，以及设置vpc_id和vip_subnet_cidr_id这两个参数中的一个。
-     * 4. 若要创建内网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id。
-     * 5. 若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
-     * 6. 不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
-     * 7. l4_flavor_id需要传入网络型规格id，l7_flavor_id需要传入应用型规格id。
-     * 
-     * [&gt; 关于计费：
-     * - 若billing_info非空时，包周期。
-     * - 若billing_info为空，autoscaling.enable&#x3D;true时，弹性计费。
-     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;lcu，按量计费。
-     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;flavor，固定规格按需计费。](tag:hws)
-     * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
+     * 创建独享型负载均衡器，包括按需及包周期计费负载均衡器。
+     * 1. 若要创建内网IPv4负载均衡器，则需要传入vip_subnet_cidr_id。
+     * 2. 若要创建公网IPv4负载均衡器，则需要传入publicip，以及传入vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 3. 若要绑定有已有公网IPv4地址，则需要传入publicip_ids，以及传入vpc_id和vip_subnet_cidr_id这两个参数中的一个。
+     * 4. 若要创建内网双栈负载均衡器，则需要传入ipv6_vip_virsubnet_id。
+     * 5. 若要创建公网双栈负载均衡器，则需要传入ipv6_vip_virsubnet_id和ipv6_bandwidth。
+     * 6. 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
+     * 7. 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。
+     * 8. 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
+     * [9.若要创建gateway类型的负载均衡器，指定loadbalancer_type&#x3D;“gateway”，不支持指定vip_address，ipv6_vip_address, 不支持公网类型。如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -595,7 +617,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -609,7 +631,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -710,7 +732,7 @@ public class ElbClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
-     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -726,7 +748,7 @@ public class ElbClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
-     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -972,7 +994,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -986,7 +1008,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1085,7 +1107,7 @@ public class ElbClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1099,7 +1121,7 @@ public class ElbClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1114,7 +1136,7 @@ public class ElbClient {
     /**
      * 后端服务器全局列表
      *
-     * 查询当前租户下的后端服务器列表。
+     * 查询当前项目下的后端服务器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1128,7 +1150,7 @@ public class ElbClient {
     /**
      * 后端服务器全局列表
      *
-     * 查询当前租户下的后端服务器列表。
+     * 查询当前项目下的后端服务器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1217,7 +1239,7 @@ public class ElbClient {
     /**
      * 查询规格列表
      *
-     * 查询租户在当前region下可用的负载均衡规格列表。
+     * 查询当前region下可用的负载均衡规格列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1231,7 +1253,7 @@ public class ElbClient {
     /**
      * 查询规格列表
      *
-     * 查询租户在当前region下可用的负载均衡规格列表。
+     * 查询当前region下可用的负载均衡规格列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1388,7 +1410,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1402,7 +1424,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1530,7 +1552,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1544,7 +1566,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1616,6 +1638,36 @@ public class ElbClient {
     public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
         ShowCertificateRequest request) {
         return new SyncInvoker<>(request, ElbMeta.showCertificate, hcClient);
+    }
+
+    /**
+     * 查询证书私钥字段回显开关
+     *
+     * 查询证书私钥回显开关当前的状态，开启或关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificatePrivateKeyEchoRequest 请求对象
+     * @return ShowCertificatePrivateKeyEchoResponse
+     */
+    public ShowCertificatePrivateKeyEchoResponse showCertificatePrivateKeyEcho(
+        ShowCertificatePrivateKeyEchoRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showCertificatePrivateKeyEcho);
+    }
+
+    /**
+     * 查询证书私钥字段回显开关
+     *
+     * 查询证书私钥回显开关当前的状态，开启或关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificatePrivateKeyEchoRequest 请求对象
+     * @return SyncInvoker<ShowCertificatePrivateKeyEchoRequest, ShowCertificatePrivateKeyEchoResponse>
+     */
+    public SyncInvoker<ShowCertificatePrivateKeyEchoRequest, ShowCertificatePrivateKeyEchoResponse> showCertificatePrivateKeyEchoInvoker(
+        ShowCertificatePrivateKeyEchoRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.showCertificatePrivateKeyEcho, hcClient);
     }
 
     /**
@@ -1826,7 +1878,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1840,7 +1892,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1967,7 +2019,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1981,7 +2033,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2169,7 +2221,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2183,7 +2235,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2253,7 +2305,7 @@ public class ElbClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2267,7 +2319,7 @@ public class ElbClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2355,7 +2407,7 @@ public class ElbClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
-     * [不支持传入l7_flavor_id](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * [不支持传入l7_flavor_id](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2384,7 +2436,7 @@ public class ElbClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
-     * [不支持传入l7_flavor_id](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * [不支持传入l7_flavor_id](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2403,7 +2455,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2421,7 +2473,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2435,7 +2487,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2449,7 +2501,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2463,7 +2515,7 @@ public class ElbClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2477,7 +2529,7 @@ public class ElbClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2491,7 +2543,7 @@ public class ElbClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2505,7 +2557,7 @@ public class ElbClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2524,7 +2576,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2543,7 +2595,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

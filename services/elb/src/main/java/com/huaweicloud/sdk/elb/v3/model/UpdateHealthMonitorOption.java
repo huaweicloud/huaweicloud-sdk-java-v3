@@ -36,7 +36,7 @@ public class UpdateHealthMonitorOption {
     private String expectedCodes;
 
     /**
-     * HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
+     * HTTP请求方法。  取值：GET、HEAD、POST，默认GET。  使用说明：当type为HTTP/HTTPS时生效。
      */
     public static final class HttpMethodEnum {
 
@@ -55,36 +55,6 @@ public class UpdateHealthMonitorOption {
          */
         public static final HttpMethodEnum POST = new HttpMethodEnum("POST");
 
-        /**
-         * Enum PUT for value: "PUT"
-         */
-        public static final HttpMethodEnum PUT = new HttpMethodEnum("PUT");
-
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
-        public static final HttpMethodEnum DELETE = new HttpMethodEnum("DELETE");
-
-        /**
-         * Enum TRACE for value: "TRACE"
-         */
-        public static final HttpMethodEnum TRACE = new HttpMethodEnum("TRACE");
-
-        /**
-         * Enum OPTIONS for value: "OPTIONS"
-         */
-        public static final HttpMethodEnum OPTIONS = new HttpMethodEnum("OPTIONS");
-
-        /**
-         * Enum CONNECT for value: "CONNECT"
-         */
-        public static final HttpMethodEnum CONNECT = new HttpMethodEnum("CONNECT");
-
-        /**
-         * Enum PATCH for value: "PATCH"
-         */
-        public static final HttpMethodEnum PATCH = new HttpMethodEnum("PATCH");
-
         private static final Map<String, HttpMethodEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, HttpMethodEnum> createStaticFields() {
@@ -92,12 +62,6 @@ public class UpdateHealthMonitorOption {
             map.put("GET", GET);
             map.put("HEAD", HEAD);
             map.put("POST", POST);
-            map.put("PUT", PUT);
-            map.put("DELETE", DELETE);
-            map.put("TRACE", TRACE);
-            map.put("OPTIONS", OPTIONS);
-            map.put("CONNECT", CONNECT);
-            map.put("PATCH", PATCH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -246,7 +210,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS设置该字段，其他协议设置不会生效。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。
      * @return expectedCodes
      */
     public String getExpectedCodes() {
@@ -263,7 +227,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * HTTP请求方法。  取值：GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH，默认GET。  使用说明：当type为HTTP/HTTPS时生效。  不支持该字段，请勿使用。
+     * HTTP请求方法。  取值：GET、HEAD、POST，默认GET。  使用说明：当type为HTTP/HTTPS时生效。
      * @return httpMethod
      */
     public HttpMethodEnum getHttpMethod() {
@@ -390,7 +354,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为GRPC，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return type
      */
     public String getType() {

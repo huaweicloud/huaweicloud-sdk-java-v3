@@ -130,20 +130,50 @@ public class ModifyJobReq {
     private Endpoint targetEndpoint;
 
     /**
-     * node规格类型，测试连接之后修改调用时必填。
+     * node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
      */
     public static final class NodeTypeEnum {
+
+        /**
+         * Enum MICRO for value: "micro"
+         */
+        public static final NodeTypeEnum MICRO = new NodeTypeEnum("micro");
+
+        /**
+         * Enum SMALL for value: "small"
+         */
+        public static final NodeTypeEnum SMALL = new NodeTypeEnum("small");
+
+        /**
+         * Enum MEDIUM for value: "medium"
+         */
+        public static final NodeTypeEnum MEDIUM = new NodeTypeEnum("medium");
 
         /**
          * Enum HIGH for value: "high"
          */
         public static final NodeTypeEnum HIGH = new NodeTypeEnum("high");
 
+        /**
+         * Enum XLARGE for value: "xlarge"
+         */
+        public static final NodeTypeEnum XLARGE = new NodeTypeEnum("xlarge");
+
+        /**
+         * Enum _2XLARGE for value: "2xlarge"
+         */
+        public static final NodeTypeEnum _2XLARGE = new NodeTypeEnum("2xlarge");
+
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NodeTypeEnum> createStaticFields() {
             Map<String, NodeTypeEnum> map = new HashMap<>();
+            map.put("micro", MICRO);
+            map.put("small", SMALL);
+            map.put("medium", MEDIUM);
             map.put("high", HIGH);
+            map.put("xlarge", XLARGE);
+            map.put("2xlarge", _2XLARGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -734,7 +764,7 @@ public class ModifyJobReq {
     }
 
     /**
-     * node规格类型，测试连接之后修改调用时必填。
+     * node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
      * @return nodeType
      */
     public NodeTypeEnum getNodeType() {

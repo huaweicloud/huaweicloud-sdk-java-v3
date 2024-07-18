@@ -231,6 +231,16 @@ public class ListTracesRequest {
 
     private TraceRatingEnum traceRating;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_key_id")
+
+    private String accessKeyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListTracesRequest withTraceType(TraceTypeEnum traceType) {
         this.traceType = traceType;
         return this;
@@ -475,6 +485,40 @@ public class ListTracesRequest {
         this.traceRating = traceRating;
     }
 
+    public ListTracesRequest withAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+        return this;
+    }
+
+    /**
+     * 标示查询事件列表对应的访问密钥ID。包含临时访问凭证和永久访问密钥。
+     * @return accessKeyId
+     */
+    public String getAccessKeyId() {
+        return accessKeyId;
+    }
+
+    public void setAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+
+    public ListTracesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 标示查询事件列表对应的企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -490,7 +534,9 @@ public class ListTracesRequest {
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.user, that.user)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.traceId, that.traceId)
-            && Objects.equals(this.traceName, that.traceName) && Objects.equals(this.traceRating, that.traceRating);
+            && Objects.equals(this.traceName, that.traceName) && Objects.equals(this.traceRating, that.traceRating)
+            && Objects.equals(this.accessKeyId, that.accessKeyId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -508,7 +554,9 @@ public class ListTracesRequest {
             resourceType,
             traceId,
             traceName,
-            traceRating);
+            traceRating,
+            accessKeyId,
+            enterpriseProjectId);
     }
 
     @Override
@@ -529,6 +577,8 @@ public class ListTracesRequest {
         sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
         sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
         sb.append("    traceRating: ").append(toIndentedString(traceRating)).append("\n");
+        sb.append("    accessKeyId: ").append(toIndentedString(accessKeyId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -34,7 +34,7 @@ public class UpdateIpGroupOption {
     }
 
     /**
-     * IP地址组的描述信息
+     * 参数解释：IP地址组的描述信息
      * @return description
      */
     public String getDescription() {
@@ -51,7 +51,7 @@ public class UpdateIpGroupOption {
     }
 
     /**
-     * IP地址组的名称
+     * 参数解释：IP地址组的名称
      * @return name
      */
     public String getName() {
@@ -84,7 +84,7 @@ public class UpdateIpGroupOption {
     }
 
     /**
-     * IP地址组中包含的IP列表。
+     * 参数解释：IP地址组中包含的IP列表。
      * @return ipList
      */
     public List<UpadateIpGroupIpOption> getIpList() {

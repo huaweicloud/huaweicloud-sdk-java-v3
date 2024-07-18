@@ -51,7 +51,7 @@ public class ListIpGroupsResponse extends SdkResponse {
     }
 
     /**
-     * IP地址组列表返回对象。
+     * 参数解释：IP地址组列表返回对象。
      * @return ipgroups
      */
     public List<IpGroup> getIpgroups() {
@@ -68,7 +68,7 @@ public class ListIpGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * 参数解释：请求ID。  注：自动生成 。
      * @return requestId
      */
     public String getRequestId() {

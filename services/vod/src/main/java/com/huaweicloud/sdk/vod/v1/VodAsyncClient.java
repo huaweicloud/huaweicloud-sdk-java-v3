@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateRequest;
@@ -737,6 +739,36 @@ public class VodAsyncClient {
     }
 
     /**
+     * 删除转码产物
+     *
+     * 删除转码产物。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTranscodeProductRequest 请求对象
+     * @return CompletableFuture<DeleteTranscodeProductResponse>
+     */
+    public CompletableFuture<DeleteTranscodeProductResponse> deleteTranscodeProductAsync(
+        DeleteTranscodeProductRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.deleteTranscodeProduct);
+    }
+
+    /**
+     * 删除转码产物
+     *
+     * 删除转码产物。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTranscodeProductRequest 请求对象
+     * @return AsyncInvoker<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse>
+     */
+    public AsyncInvoker<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse> deleteTranscodeProductAsyncInvoker(
+        DeleteTranscodeProductRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.deleteTranscodeProduct, hcClient);
+    }
+
+    /**
      * 删除自定义模板
      *
      * 删除自定义模板
@@ -1070,6 +1102,35 @@ public class VodAsyncClient {
     }
 
     /**
+     * 多字幕封装
+     *
+     * 多字幕封装，仅支持 HLS VTT格式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySubtitleRequest 请求对象
+     * @return CompletableFuture<ModifySubtitleResponse>
+     */
+    public CompletableFuture<ModifySubtitleResponse> modifySubtitleAsync(ModifySubtitleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.modifySubtitle);
+    }
+
+    /**
+     * 多字幕封装
+     *
+     * 多字幕封装，仅支持 HLS VTT格式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySubtitleRequest 请求对象
+     * @return AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>
+     */
+    public AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleAsyncInvoker(
+        ModifySubtitleRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.modifySubtitle, hcClient);
+    }
+
+    /**
      * 创建媒资：OBS转存方式
      *
      * 若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。
@@ -1315,6 +1376,43 @@ public class VodAsyncClient {
     }
 
     /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVodRetrievalRequest 请求对象
+     * @return CompletableFuture<ShowVodRetrievalResponse>
+     */
+    public CompletableFuture<ShowVodRetrievalResponse> showVodRetrievalAsync(ShowVodRetrievalRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.showVodRetrieval);
+    }
+
+    /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVodRetrievalRequest 请求对象
+     * @return AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>
+     */
+    public AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrievalAsyncInvoker(
+        ShowVodRetrievalRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.showVodRetrieval, hcClient);
+    }
+
+    /**
      * 查询源站统计信息
      *
      * 查询点播源站的统计数据，包括流量、存储空间、转码时长。
@@ -1528,6 +1626,37 @@ public class VodAsyncClient {
     public AsyncInvoker<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> updateCoverByThumbnailAsyncInvoker(
         UpdateCoverByThumbnailRequest request) {
         return new AsyncInvoker<>(request, VodMeta.updateCoverByThumbnail, hcClient);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStorageModeRequest 请求对象
+     * @return CompletableFuture<UpdateStorageModeResponse>
+     */
+    public CompletableFuture<UpdateStorageModeResponse> updateStorageModeAsync(UpdateStorageModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateStorageMode);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStorageModeRequest 请求对象
+     * @return AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>
+     */
+    public AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeAsyncInvoker(
+        UpdateStorageModeRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.updateStorageMode, hcClient);
     }
 
     /**
@@ -1765,103 +1894,6 @@ public class VodAsyncClient {
     public AsyncInvoker<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetailsAsyncInvoker(
         ShowTakeOverTaskDetailsRequest request) {
         return new AsyncInvoker<>(request, VodMeta.showTakeOverTaskDetails, hcClient);
-    }
-
-    /**
-     * 查询取回数据信息
-     *
-     * ## 典型场景 ##
-     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-     * 
-     * ## 接口功能 ##
-     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVodRetrievalRequest 请求对象
-     * @return CompletableFuture<ShowVodRetrievalResponse>
-     */
-    public CompletableFuture<ShowVodRetrievalResponse> showVodRetrievalAsync(ShowVodRetrievalRequest request) {
-        return hcClient.asyncInvokeHttp(request, VodMeta.showVodRetrieval);
-    }
-
-    /**
-     * 查询取回数据信息
-     *
-     * ## 典型场景 ##
-     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-     * 
-     * ## 接口功能 ##
-     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVodRetrievalRequest 请求对象
-     * @return AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>
-     */
-    public AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrievalAsyncInvoker(
-        ShowVodRetrievalRequest request) {
-        return new AsyncInvoker<>(request, VodMeta.showVodRetrieval, hcClient);
-    }
-
-    /**
-     * 多字幕封装
-     *
-     * 多字幕封装，仅支持 HLS VTT格式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ModifySubtitleRequest 请求对象
-     * @return CompletableFuture<ModifySubtitleResponse>
-     */
-    public CompletableFuture<ModifySubtitleResponse> modifySubtitleAsync(ModifySubtitleRequest request) {
-        return hcClient.asyncInvokeHttp(request, VodMeta.modifySubtitle);
-    }
-
-    /**
-     * 多字幕封装
-     *
-     * 多字幕封装，仅支持 HLS VTT格式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ModifySubtitleRequest 请求对象
-     * @return AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>
-     */
-    public AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleAsyncInvoker(
-        ModifySubtitleRequest request) {
-        return new AsyncInvoker<>(request, VodMeta.modifySubtitle, hcClient);
-    }
-
-    /**
-     * 修改媒资文件在obs的存储模式
-     *
-     * ## 接口功能 ##
-     *   修改媒资文件在obs的存储模式&lt;br/&gt;
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateStorageModeRequest 请求对象
-     * @return CompletableFuture<UpdateStorageModeResponse>
-     */
-    public CompletableFuture<UpdateStorageModeResponse> updateStorageModeAsync(UpdateStorageModeRequest request) {
-        return hcClient.asyncInvokeHttp(request, VodMeta.updateStorageMode);
-    }
-
-    /**
-     * 修改媒资文件在obs的存储模式
-     *
-     * ## 接口功能 ##
-     *   修改媒资文件在obs的存储模式&lt;br/&gt;
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateStorageModeRequest 请求对象
-     * @return AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>
-     */
-    public AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeAsyncInvoker(
-        UpdateStorageModeRequest request) {
-        return new AsyncInvoker<>(request, VodMeta.updateStorageMode, hcClient);
     }
 
 }

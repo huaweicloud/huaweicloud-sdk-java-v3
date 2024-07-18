@@ -9,9 +9,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * 转发到的url配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。  格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx} （${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。 protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。   [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+ * 转发到的url配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。  格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx} （${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。 protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。   [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
  */
 public class CreateRedirectUrlConfig {
 
@@ -209,6 +210,16 @@ public class CreateRedirectUrlConfig {
 
     private StatusCodeEnum statusCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "insert_headers_config")
+
+    private CreateInsertHeadersConfig insertHeadersConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remove_headers_config")
+
+    private CreateRemoveHeadersConfig removeHeadersConfig;
+
     public CreateRedirectUrlConfig withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -311,6 +322,60 @@ public class CreateRedirectUrlConfig {
         this.statusCode = statusCode;
     }
 
+    public CreateRedirectUrlConfig withInsertHeadersConfig(CreateInsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+        return this;
+    }
+
+    public CreateRedirectUrlConfig withInsertHeadersConfig(
+        Consumer<CreateInsertHeadersConfig> insertHeadersConfigSetter) {
+        if (this.insertHeadersConfig == null) {
+            this.insertHeadersConfig = new CreateInsertHeadersConfig();
+            insertHeadersConfigSetter.accept(this.insertHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get insertHeadersConfig
+     * @return insertHeadersConfig
+     */
+    public CreateInsertHeadersConfig getInsertHeadersConfig() {
+        return insertHeadersConfig;
+    }
+
+    public void setInsertHeadersConfig(CreateInsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+    }
+
+    public CreateRedirectUrlConfig withRemoveHeadersConfig(CreateRemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+        return this;
+    }
+
+    public CreateRedirectUrlConfig withRemoveHeadersConfig(
+        Consumer<CreateRemoveHeadersConfig> removeHeadersConfigSetter) {
+        if (this.removeHeadersConfig == null) {
+            this.removeHeadersConfig = new CreateRemoveHeadersConfig();
+            removeHeadersConfigSetter.accept(this.removeHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get removeHeadersConfig
+     * @return removeHeadersConfig
+     */
+    public CreateRemoveHeadersConfig getRemoveHeadersConfig() {
+        return removeHeadersConfig;
+    }
+
+    public void setRemoveHeadersConfig(CreateRemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -322,12 +387,14 @@ public class CreateRedirectUrlConfig {
         CreateRedirectUrlConfig that = (CreateRedirectUrlConfig) obj;
         return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.host, that.host)
             && Objects.equals(this.port, that.port) && Objects.equals(this.path, that.path)
-            && Objects.equals(this.query, that.query) && Objects.equals(this.statusCode, that.statusCode);
+            && Objects.equals(this.query, that.query) && Objects.equals(this.statusCode, that.statusCode)
+            && Objects.equals(this.insertHeadersConfig, that.insertHeadersConfig)
+            && Objects.equals(this.removeHeadersConfig, that.removeHeadersConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, host, port, path, query, statusCode);
+        return Objects.hash(protocol, host, port, path, query, statusCode, insertHeadersConfig, removeHeadersConfig);
     }
 
     @Override
@@ -340,6 +407,8 @@ public class CreateRedirectUrlConfig {
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+        sb.append("    insertHeadersConfig: ").append(toIndentedString(insertHeadersConfig)).append("\n");
+        sb.append("    removeHeadersConfig: ").append(toIndentedString(removeHeadersConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

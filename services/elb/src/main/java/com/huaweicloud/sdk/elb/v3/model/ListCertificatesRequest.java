@@ -58,6 +58,16 @@ public class ListCertificatesRequest {
 
     private List<String> type = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "common_name")
+
+    private List<String> commonName = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fingerprint")
+
+    private List<String> fingerprint = null;
+
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -81,7 +91,7 @@ public class ListCertificatesRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -293,6 +303,72 @@ public class ListCertificatesRequest {
         this.type = type;
     }
 
+    public ListCertificatesRequest withCommonName(List<String> commonName) {
+        this.commonName = commonName;
+        return this;
+    }
+
+    public ListCertificatesRequest addCommonNameItem(String commonNameItem) {
+        if (this.commonName == null) {
+            this.commonName = new ArrayList<>();
+        }
+        this.commonName.add(commonNameItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withCommonName(Consumer<List<String>> commonNameSetter) {
+        if (this.commonName == null) {
+            this.commonName = new ArrayList<>();
+        }
+        commonNameSetter.accept(this.commonName);
+        return this;
+    }
+
+    /**
+     * 证书的主域名。  支持多值查询，查询条件格式：common_name=xxx&common_name=xxx。
+     * @return commonName
+     */
+    public List<String> getCommonName() {
+        return commonName;
+    }
+
+    public void setCommonName(List<String> commonName) {
+        this.commonName = commonName;
+    }
+
+    public ListCertificatesRequest withFingerprint(List<String> fingerprint) {
+        this.fingerprint = fingerprint;
+        return this;
+    }
+
+    public ListCertificatesRequest addFingerprintItem(String fingerprintItem) {
+        if (this.fingerprint == null) {
+            this.fingerprint = new ArrayList<>();
+        }
+        this.fingerprint.add(fingerprintItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withFingerprint(Consumer<List<String>> fingerprintSetter) {
+        if (this.fingerprint == null) {
+            this.fingerprint = new ArrayList<>();
+        }
+        fingerprintSetter.accept(this.fingerprint);
+        return this;
+    }
+
+    /**
+     * 证书的指纹。  支持多值查询，查询条件格式：fingerprint=xxx&fingerprint=xxx。
+     * @return fingerprint
+     */
+    public List<String> getFingerprint() {
+        return fingerprint;
+    }
+
+    public void setFingerprint(List<String> fingerprint) {
+        this.fingerprint = fingerprint;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -306,12 +382,23 @@ public class ListCertificatesRequest {
             && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.domain, that.domain)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.commonName, that.commonName)
+            && Objects.equals(this.fingerprint, that.fingerprint);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, domain, type);
+        return Objects.hash(marker,
+            limit,
+            pageReverse,
+            id,
+            name,
+            description,
+            adminStateUp,
+            domain,
+            type,
+            commonName,
+            fingerprint);
     }
 
     @Override
@@ -327,6 +414,8 @@ public class ListCertificatesRequest {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
+        sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

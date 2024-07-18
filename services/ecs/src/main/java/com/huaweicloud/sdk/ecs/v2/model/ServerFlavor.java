@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ecs.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 弹性云服务器规格信息。
@@ -34,6 +37,16 @@ public class ServerFlavor {
     @JsonProperty(value = "ram")
 
     private String ram;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpus")
+
+    private List<GpuInfo> gpus = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asic_accelerators")
+
+    private List<ASICAcceleratorInfo> asicAccelerators = null;
 
     public ServerFlavor withId(String id) {
         this.id = id;
@@ -120,6 +133,72 @@ public class ServerFlavor {
         this.ram = ram;
     }
 
+    public ServerFlavor withGpus(List<GpuInfo> gpus) {
+        this.gpus = gpus;
+        return this;
+    }
+
+    public ServerFlavor addGpusItem(GpuInfo gpusItem) {
+        if (this.gpus == null) {
+            this.gpus = new ArrayList<>();
+        }
+        this.gpus.add(gpusItem);
+        return this;
+    }
+
+    public ServerFlavor withGpus(Consumer<List<GpuInfo>> gpusSetter) {
+        if (this.gpus == null) {
+            this.gpus = new ArrayList<>();
+        }
+        gpusSetter.accept(this.gpus);
+        return this;
+    }
+
+    /**
+     * 该云服务器规格对应的GPU设备。
+     * @return gpus
+     */
+    public List<GpuInfo> getGpus() {
+        return gpus;
+    }
+
+    public void setGpus(List<GpuInfo> gpus) {
+        this.gpus = gpus;
+    }
+
+    public ServerFlavor withAsicAccelerators(List<ASICAcceleratorInfo> asicAccelerators) {
+        this.asicAccelerators = asicAccelerators;
+        return this;
+    }
+
+    public ServerFlavor addAsicAcceleratorsItem(ASICAcceleratorInfo asicAcceleratorsItem) {
+        if (this.asicAccelerators == null) {
+            this.asicAccelerators = new ArrayList<>();
+        }
+        this.asicAccelerators.add(asicAcceleratorsItem);
+        return this;
+    }
+
+    public ServerFlavor withAsicAccelerators(Consumer<List<ASICAcceleratorInfo>> asicAcceleratorsSetter) {
+        if (this.asicAccelerators == null) {
+            this.asicAccelerators = new ArrayList<>();
+        }
+        asicAcceleratorsSetter.accept(this.asicAccelerators);
+        return this;
+    }
+
+    /**
+     * 该云服务器规格对应的ASIC设备。
+     * @return asicAccelerators
+     */
+    public List<ASICAcceleratorInfo> getAsicAccelerators() {
+        return asicAccelerators;
+    }
+
+    public void setAsicAccelerators(List<ASICAcceleratorInfo> asicAccelerators) {
+        this.asicAccelerators = asicAccelerators;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +210,13 @@ public class ServerFlavor {
         ServerFlavor that = (ServerFlavor) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.disk, that.disk) && Objects.equals(this.vcpus, that.vcpus)
-            && Objects.equals(this.ram, that.ram);
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.gpus, that.gpus)
+            && Objects.equals(this.asicAccelerators, that.asicAccelerators);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, disk, vcpus, ram);
+        return Objects.hash(id, name, disk, vcpus, ram, gpus, asicAccelerators);
     }
 
     @Override
@@ -148,6 +228,8 @@ public class ServerFlavor {
         sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
+        sb.append("    gpus: ").append(toIndentedString(gpus)).append("\n");
+        sb.append("    asicAccelerators: ").append(toIndentedString(asicAccelerators)).append("\n");
         sb.append("}");
         return sb.toString();
     }

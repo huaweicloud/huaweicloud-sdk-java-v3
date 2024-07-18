@@ -44,7 +44,7 @@ public class CreateIpGroupOption {
     }
 
     /**
-     * IP地址组所在的项目ID。
+     * 参数解释：IP地址组所在的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -61,7 +61,7 @@ public class CreateIpGroupOption {
     }
 
     /**
-     * IP地址组的描述。
+     * 参数解释：IP地址组的描述。
      * @return description
      */
     public String getDescription() {
@@ -78,7 +78,7 @@ public class CreateIpGroupOption {
     }
 
     /**
-     * IP地址组的名称。
+     * 参数解释：IP地址组的名称。
      * @return name
      */
     public String getName() {
@@ -111,7 +111,7 @@ public class CreateIpGroupOption {
     }
 
     /**
-     * IP地址组中包含的IP或网段列表。[]表示任意IP。
+     * 参数解释：IP地址组中包含的IP或网段列表。[]表示任意IP。
      * @return ipList
      */
     public List<CreateIpGroupIpOption> getIpList() {
@@ -128,7 +128,7 @@ public class CreateIpGroupOption {
     }
 
     /**
-     * IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

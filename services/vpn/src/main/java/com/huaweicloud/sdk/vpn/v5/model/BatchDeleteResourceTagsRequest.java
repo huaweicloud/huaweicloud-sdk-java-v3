@@ -36,6 +36,11 @@ public class BatchDeleteResourceTagsRequest {
          */
         public static final ResourceTypeEnum CUSTOMER_GATEWAY = new ResourceTypeEnum("customer-gateway");
 
+        /**
+         * Enum P2C_VPN_GATEWAYS for value: "p2c-vpn-gateways"
+         */
+        public static final ResourceTypeEnum P2C_VPN_GATEWAYS = new ResourceTypeEnum("p2c-vpn-gateways");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
@@ -43,6 +48,7 @@ public class BatchDeleteResourceTagsRequest {
             map.put("vpn-gateway", VPN_GATEWAY);
             map.put("vpn-connection", VPN_CONNECTION);
             map.put("customer-gateway", CUSTOMER_GATEWAY);
+            map.put("p2c-vpn-gateways", P2C_VPN_GATEWAYS);
             return Collections.unmodifiableMap(map);
         }
 

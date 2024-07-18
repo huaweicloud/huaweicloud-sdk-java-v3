@@ -398,6 +398,11 @@ public class ListImagesRequest {
          */
         public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
 
+        /**
+         * Enum HUAWEI_CLOUD_EULEROS for value: "Huawei Cloud EulerOS"
+         */
+        public static final PlatformEnum HUAWEI_CLOUD_EULEROS = new PlatformEnum("Huawei Cloud EulerOS");
+
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PlatformEnum> createStaticFields() {
@@ -414,6 +419,7 @@ public class ListImagesRequest {
             map.put("Other", OTHER);
             map.put("CoreOS", COREOS);
             map.put("EulerOS", EULEROS);
+            map.put("Huawei Cloud EulerOS", HUAWEI_CLOUD_EULEROS);
             return Collections.unmodifiableMap(map);
         }
 

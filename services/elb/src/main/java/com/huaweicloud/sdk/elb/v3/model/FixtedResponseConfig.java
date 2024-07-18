@@ -9,9 +9,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * 固定返回页面的配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。  [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+ * 固定返回页面的配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为FIXED_RESPONSE时生效，且为必选字段，其他action不可指定，否则报错。  [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
  */
 public class FixtedResponseConfig {
 
@@ -118,6 +119,21 @@ public class FixtedResponseConfig {
 
     private String messageBody;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "insert_headers_config")
+
+    private InsertHeadersConfig insertHeadersConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remove_headers_config")
+
+    private RemoveHeadersConfig removeHeadersConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_limit_config")
+
+    private TrafficLimitConfig trafficLimitConfig;
+
     public FixtedResponseConfig withStatusCode(String statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -169,6 +185,84 @@ public class FixtedResponseConfig {
         this.messageBody = messageBody;
     }
 
+    public FixtedResponseConfig withInsertHeadersConfig(InsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+        return this;
+    }
+
+    public FixtedResponseConfig withInsertHeadersConfig(Consumer<InsertHeadersConfig> insertHeadersConfigSetter) {
+        if (this.insertHeadersConfig == null) {
+            this.insertHeadersConfig = new InsertHeadersConfig();
+            insertHeadersConfigSetter.accept(this.insertHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get insertHeadersConfig
+     * @return insertHeadersConfig
+     */
+    public InsertHeadersConfig getInsertHeadersConfig() {
+        return insertHeadersConfig;
+    }
+
+    public void setInsertHeadersConfig(InsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+    }
+
+    public FixtedResponseConfig withRemoveHeadersConfig(RemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+        return this;
+    }
+
+    public FixtedResponseConfig withRemoveHeadersConfig(Consumer<RemoveHeadersConfig> removeHeadersConfigSetter) {
+        if (this.removeHeadersConfig == null) {
+            this.removeHeadersConfig = new RemoveHeadersConfig();
+            removeHeadersConfigSetter.accept(this.removeHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get removeHeadersConfig
+     * @return removeHeadersConfig
+     */
+    public RemoveHeadersConfig getRemoveHeadersConfig() {
+        return removeHeadersConfig;
+    }
+
+    public void setRemoveHeadersConfig(RemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+    }
+
+    public FixtedResponseConfig withTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+        this.trafficLimitConfig = trafficLimitConfig;
+        return this;
+    }
+
+    public FixtedResponseConfig withTrafficLimitConfig(Consumer<TrafficLimitConfig> trafficLimitConfigSetter) {
+        if (this.trafficLimitConfig == null) {
+            this.trafficLimitConfig = new TrafficLimitConfig();
+            trafficLimitConfigSetter.accept(this.trafficLimitConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get trafficLimitConfig
+     * @return trafficLimitConfig
+     */
+    public TrafficLimitConfig getTrafficLimitConfig() {
+        return trafficLimitConfig;
+    }
+
+    public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+        this.trafficLimitConfig = trafficLimitConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,12 +273,16 @@ public class FixtedResponseConfig {
         }
         FixtedResponseConfig that = (FixtedResponseConfig) obj;
         return Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.contentType, that.contentType)
-            && Objects.equals(this.messageBody, that.messageBody);
+            && Objects.equals(this.messageBody, that.messageBody)
+            && Objects.equals(this.insertHeadersConfig, that.insertHeadersConfig)
+            && Objects.equals(this.removeHeadersConfig, that.removeHeadersConfig)
+            && Objects.equals(this.trafficLimitConfig, that.trafficLimitConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(statusCode, contentType, messageBody);
+        return Objects
+            .hash(statusCode, contentType, messageBody, insertHeadersConfig, removeHeadersConfig, trafficLimitConfig);
     }
 
     @Override
@@ -194,6 +292,9 @@ public class FixtedResponseConfig {
         sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    messageBody: ").append(toIndentedString(messageBody)).append("\n");
+        sb.append("    insertHeadersConfig: ").append(toIndentedString(insertHeadersConfig)).append("\n");
+        sb.append("    removeHeadersConfig: ").append(toIndentedString(removeHeadersConfig)).append("\n");
+        sb.append("    trafficLimitConfig: ").append(toIndentedString(trafficLimitConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

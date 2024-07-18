@@ -26,6 +26,11 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public ShrinkInstanceNodesResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -49,7 +54,7 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
     }
 
     /**
-     * DDM实例名称。
+     * DDM实例名称,仅按需实例时会返回该参数。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -66,7 +71,7 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID。
+     * 任务ID,仅按需实例时会返回该参数。
      * @return jobId
      */
     public String getJobId() {
@@ -75,6 +80,23 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public ShrinkInstanceNodesResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单号,仅包年包月实例时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -87,12 +109,12 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         }
         ShrinkInstanceNodesResponse that = (ShrinkInstanceNodesResponse) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, instanceName, jobId);
+        return Objects.hash(instanceId, instanceName, jobId, orderId);
     }
 
     @Override
@@ -102,6 +124,7 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

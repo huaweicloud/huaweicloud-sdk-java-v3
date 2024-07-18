@@ -25,6 +25,11 @@ public class ListWorkflowExecutionsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     /**
      * 需要过滤的流程实例状态
      */
@@ -164,6 +169,24 @@ public class ListWorkflowExecutionsRequest {
         this.limit = limit;
     }
 
+    public ListWorkflowExecutionsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页查询，分页的偏移量，默认值为0 offset小于0时，按照0处理
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     public ListWorkflowExecutionsRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -225,13 +248,13 @@ public class ListWorkflowExecutionsRequest {
         }
         ListWorkflowExecutionsRequest that = (ListWorkflowExecutionsRequest) obj;
         return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, limit, status, startTime, endTime);
+        return Objects.hash(workflowId, limit, offset, status, startTime, endTime);
     }
 
     @Override
@@ -240,6 +263,7 @@ public class ListWorkflowExecutionsRequest {
         sb.append("class ListWorkflowExecutionsRequest {\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

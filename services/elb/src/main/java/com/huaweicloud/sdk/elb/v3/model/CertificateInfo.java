@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.elb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 证书信息。
@@ -80,6 +83,21 @@ public class CertificateInfo {
 
     private String encPrivateKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "common_name")
+
+    private String commonName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fingerprint")
+
+    private String fingerprint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subject_alternative_names")
+
+    private List<String> subjectAlternativeNames = null;
+
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -137,7 +155,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
+     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
      * @return domain
      */
     public String getDomain() {
@@ -318,6 +336,73 @@ public class CertificateInfo {
         this.encPrivateKey = encPrivateKey;
     }
 
+    public CertificateInfo withCommonName(String commonName) {
+        this.commonName = commonName;
+        return this;
+    }
+
+    /**
+     * 证书主域名
+     * @return commonName
+     */
+    public String getCommonName() {
+        return commonName;
+    }
+
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
+    }
+
+    public CertificateInfo withFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
+        return this;
+    }
+
+    /**
+     * 证书指纹
+     * @return fingerprint
+     */
+    public String getFingerprint() {
+        return fingerprint;
+    }
+
+    public void setFingerprint(String fingerprint) {
+        this.fingerprint = fingerprint;
+    }
+
+    public CertificateInfo withSubjectAlternativeNames(List<String> subjectAlternativeNames) {
+        this.subjectAlternativeNames = subjectAlternativeNames;
+        return this;
+    }
+
+    public CertificateInfo addSubjectAlternativeNamesItem(String subjectAlternativeNamesItem) {
+        if (this.subjectAlternativeNames == null) {
+            this.subjectAlternativeNames = new ArrayList<>();
+        }
+        this.subjectAlternativeNames.add(subjectAlternativeNamesItem);
+        return this;
+    }
+
+    public CertificateInfo withSubjectAlternativeNames(Consumer<List<String>> subjectAlternativeNamesSetter) {
+        if (this.subjectAlternativeNames == null) {
+            this.subjectAlternativeNames = new ArrayList<>();
+        }
+        subjectAlternativeNamesSetter.accept(this.subjectAlternativeNames);
+        return this;
+    }
+
+    /**
+     * 证书全部域名
+     * @return subjectAlternativeNames
+     */
+    public List<String> getSubjectAlternativeNames() {
+        return subjectAlternativeNames;
+    }
+
+    public void setSubjectAlternativeNames(List<String> subjectAlternativeNames) {
+        this.subjectAlternativeNames = subjectAlternativeNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -335,7 +420,9 @@ public class CertificateInfo {
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.encCertificate, that.encCertificate)
-            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey)
+            && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames);
     }
 
     @Override
@@ -353,7 +440,10 @@ public class CertificateInfo {
             expireTime,
             projectId,
             encCertificate,
-            encPrivateKey);
+            encPrivateKey,
+            commonName,
+            fingerprint,
+            subjectAlternativeNames);
     }
 
     @Override
@@ -374,6 +464,9 @@ public class CertificateInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
+        sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
+        sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
+        sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

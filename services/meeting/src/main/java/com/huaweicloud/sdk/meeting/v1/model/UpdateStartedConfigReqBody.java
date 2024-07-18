@@ -51,9 +51,9 @@ public class UpdateStartedConfigReqBody {
     private Integer allowRename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "labelPermission")
+    @JsonProperty(value = "isLock")
 
-    private Integer labelPermission;
+    private Integer isLock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freeShare")
@@ -212,23 +212,23 @@ public class UpdateStartedConfigReqBody {
         this.allowRename = allowRename;
     }
 
-    public UpdateStartedConfigReqBody withLabelPermission(Integer labelPermission) {
-        this.labelPermission = labelPermission;
+    public UpdateStartedConfigReqBody withIsLock(Integer isLock) {
+        this.isLock = isLock;
         return this;
     }
 
     /**
-     * 标注权限 0:所有人可标注 1:仅共享人可标注
+     * 锁定会议 0：解锁 1：锁定
      * minimum: 0
      * maximum: 1
-     * @return labelPermission
+     * @return isLock
      */
-    public Integer getLabelPermission() {
-        return labelPermission;
+    public Integer getIsLock() {
+        return isLock;
     }
 
-    public void setLabelPermission(Integer labelPermission) {
-        this.labelPermission = labelPermission;
+    public void setIsLock(Integer isLock) {
+        this.isLock = isLock;
     }
 
     public UpdateStartedConfigReqBody withFreeShare(Integer freeShare) {
@@ -266,8 +266,7 @@ public class UpdateStartedConfigReqBody {
             && Objects.equals(this.audienceCallInRestriction, that.audienceCallInRestriction)
             && Objects.equals(this.clientRecMode, that.clientRecMode)
             && Objects.equals(this.allowOpenCamera, that.allowOpenCamera)
-            && Objects.equals(this.allowRename, that.allowRename)
-            && Objects.equals(this.labelPermission, that.labelPermission)
+            && Objects.equals(this.allowRename, that.allowRename) && Objects.equals(this.isLock, that.isLock)
             && Objects.equals(this.freeShare, that.freeShare);
     }
 
@@ -281,7 +280,7 @@ public class UpdateStartedConfigReqBody {
             clientRecMode,
             allowOpenCamera,
             allowRename,
-            labelPermission,
+            isLock,
             freeShare);
     }
 
@@ -297,7 +296,7 @@ public class UpdateStartedConfigReqBody {
         sb.append("    clientRecMode: ").append(toIndentedString(clientRecMode)).append("\n");
         sb.append("    allowOpenCamera: ").append(toIndentedString(allowOpenCamera)).append("\n");
         sb.append("    allowRename: ").append(toIndentedString(allowRename)).append("\n");
-        sb.append("    labelPermission: ").append(toIndentedString(labelPermission)).append("\n");
+        sb.append("    isLock: ").append(toIndentedString(isLock)).append("\n");
         sb.append("    freeShare: ").append(toIndentedString(freeShare)).append("\n");
         sb.append("}");
         return sb.toString();

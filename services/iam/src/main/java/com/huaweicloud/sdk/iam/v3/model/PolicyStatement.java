@@ -106,7 +106,7 @@ public class PolicyStatement {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Resource")
 
-    private List<String> resource = null;
+    private Object resource;
 
     public PolicyStatement withAction(List<String> action) {
         this.action = action;
@@ -175,24 +175,8 @@ public class PolicyStatement {
         this.condition = condition;
     }
 
-    public PolicyStatement withResource(List<String> resource) {
+    public PolicyStatement withResource(Object resource) {
         this.resource = resource;
-        return this;
-    }
-
-    public PolicyStatement addResourceItem(String resourceItem) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
-        this.resource.add(resourceItem);
-        return this;
-    }
-
-    public PolicyStatement withResource(Consumer<List<String>> resourceSetter) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
-        resourceSetter.accept(this.resource);
         return this;
     }
 
@@ -200,11 +184,11 @@ public class PolicyStatement {
      * 资源。数组长度不超过10，每个字符串长度不超过128，规则如下： > - 可填 * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > - region字段为*或用户可访问的region。service必须存在且resource属于对应service。 > - 当该自定义策略为委托自定义策略时，该字段类型为Object，值为：```\"Resource\": {\"uri\": [\"/iam/agencies/07805acaba800fdd4fbdc00b8f888c7c\"]}```。
      * @return resource
      */
-    public List<String> getResource() {
+    public Object getResource() {
         return resource;
     }
 
-    public void setResource(List<String> resource) {
+    public void setResource(Object resource) {
         this.resource = resource;
     }
 

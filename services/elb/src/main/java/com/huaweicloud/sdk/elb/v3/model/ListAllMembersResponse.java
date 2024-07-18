@@ -27,7 +27,7 @@ public class ListAllMembersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
-    private List<Member> members = null;
+    private List<MemberInfo> members = null;
 
     public ListAllMembersResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -72,12 +72,12 @@ public class ListAllMembersResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    public ListAllMembersResponse withMembers(List<Member> members) {
+    public ListAllMembersResponse withMembers(List<MemberInfo> members) {
         this.members = members;
         return this;
     }
 
-    public ListAllMembersResponse addMembersItem(Member membersItem) {
+    public ListAllMembersResponse addMembersItem(MemberInfo membersItem) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -85,7 +85,7 @@ public class ListAllMembersResponse extends SdkResponse {
         return this;
     }
 
-    public ListAllMembersResponse withMembers(Consumer<List<Member>> membersSetter) {
+    public ListAllMembersResponse withMembers(Consumer<List<MemberInfo>> membersSetter) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -97,11 +97,11 @@ public class ListAllMembersResponse extends SdkResponse {
      * 后端服务器对象列表。
      * @return members
      */
-    public List<Member> getMembers() {
+    public List<MemberInfo> getMembers() {
         return members;
     }
 
-    public void setMembers(List<Member> members) {
+    public void setMembers(List<MemberInfo> members) {
         this.members = members;
     }
 

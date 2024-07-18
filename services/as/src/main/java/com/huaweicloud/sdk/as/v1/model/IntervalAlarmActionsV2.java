@@ -28,12 +28,17 @@ public class IntervalAlarmActionsV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lower_bound")
 
-    private Integer lowerBound;
+    private Double lowerBound;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upper_bound")
 
-    private Integer upperBound;
+    private Double upperBound;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "percentage")
+
+    private Integer percentage;
 
     public IntervalAlarmActionsV2 withOperation(String operation) {
         this.operation = operation;
@@ -86,7 +91,7 @@ public class IntervalAlarmActionsV2 {
         this.size = size;
     }
 
-    public IntervalAlarmActionsV2 withLowerBound(Integer lowerBound) {
+    public IntervalAlarmActionsV2 withLowerBound(Double lowerBound) {
         this.lowerBound = lowerBound;
         return this;
     }
@@ -95,15 +100,15 @@ public class IntervalAlarmActionsV2 {
      * Get lowerBound
      * @return lowerBound
      */
-    public Integer getLowerBound() {
+    public Double getLowerBound() {
         return lowerBound;
     }
 
-    public void setLowerBound(Integer lowerBound) {
+    public void setLowerBound(Double lowerBound) {
         this.lowerBound = lowerBound;
     }
 
-    public IntervalAlarmActionsV2 withUpperBound(Integer upperBound) {
+    public IntervalAlarmActionsV2 withUpperBound(Double upperBound) {
         this.upperBound = upperBound;
         return this;
     }
@@ -112,12 +117,29 @@ public class IntervalAlarmActionsV2 {
      * Get upperBound
      * @return upperBound
      */
-    public Integer getUpperBound() {
+    public Double getUpperBound() {
         return upperBound;
     }
 
-    public void setUpperBound(Integer upperBound) {
+    public void setUpperBound(Double upperBound) {
         this.upperBound = upperBound;
+    }
+
+    public IntervalAlarmActionsV2 withPercentage(Integer percentage) {
+        this.percentage = percentage;
+        return this;
+    }
+
+    /**
+     * 操作百分比，取值为0到20000的整数。当scaling_resource_type为SCALING_GROUP时，size和instance_percentage参数均无配置，则size默认为1。当scaling_resource_type为BANDWIDTH时，不支持配置instance_percentage参数。
+     * @return percentage
+     */
+    public Integer getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(Integer percentage) {
+        this.percentage = percentage;
     }
 
     @Override
@@ -131,12 +153,12 @@ public class IntervalAlarmActionsV2 {
         IntervalAlarmActionsV2 that = (IntervalAlarmActionsV2) obj;
         return Objects.equals(this.operation, that.operation) && Objects.equals(this.limits, that.limits)
             && Objects.equals(this.size, that.size) && Objects.equals(this.lowerBound, that.lowerBound)
-            && Objects.equals(this.upperBound, that.upperBound);
+            && Objects.equals(this.upperBound, that.upperBound) && Objects.equals(this.percentage, that.percentage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operation, limits, size, lowerBound, upperBound);
+        return Objects.hash(operation, limits, size, lowerBound, upperBound, percentage);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class IntervalAlarmActionsV2 {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    lowerBound: ").append(toIndentedString(lowerBound)).append("\n");
         sb.append("    upperBound: ").append(toIndentedString(upperBound)).append("\n");
+        sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

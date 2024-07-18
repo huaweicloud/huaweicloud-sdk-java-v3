@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 
+ * 转发到主机组配置
  */
 public class UpdateRuleCondition {
 

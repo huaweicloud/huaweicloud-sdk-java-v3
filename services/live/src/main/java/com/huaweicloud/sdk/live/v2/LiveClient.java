@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficSummaryRequest;
 import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficSummaryResponse;
 import com.huaweicloud.sdk.live.v2.model.ListHistoryStreamsRequest;
 import com.huaweicloud.sdk.live.v2.model.ListHistoryStreamsResponse;
+import com.huaweicloud.sdk.live.v2.model.ListPlayDomainStreamInfoRequest;
+import com.huaweicloud.sdk.live.v2.model.ListPlayDomainStreamInfoResponse;
 import com.huaweicloud.sdk.live.v2.model.ListQueryHttpCodeRequest;
 import com.huaweicloud.sdk.live.v2.model.ListQueryHttpCodeResponse;
 import com.huaweicloud.sdk.live.v2.model.ListRecordDataRequest;
@@ -531,6 +533,43 @@ public class LiveClient {
     public SyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidthInvoker(
         ShowUpBandwidthRequest request) {
         return new SyncInvoker<>(request, LiveMeta.showUpBandwidth, hcClient);
+    }
+
+    /**
+     * 查询播放域名下的流数据
+     *
+     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+     * 
+     * 返回的数据粒度为1分钟。
+     * 
+     * 最大查询周期7天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPlayDomainStreamInfoRequest 请求对象
+     * @return ListPlayDomainStreamInfoResponse
+     */
+    public ListPlayDomainStreamInfoResponse listPlayDomainStreamInfo(ListPlayDomainStreamInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listPlayDomainStreamInfo);
+    }
+
+    /**
+     * 查询播放域名下的流数据
+     *
+     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+     * 
+     * 返回的数据粒度为1分钟。
+     * 
+     * 最大查询周期7天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPlayDomainStreamInfoRequest 请求对象
+     * @return SyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse>
+     */
+    public SyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfoInvoker(
+        ListPlayDomainStreamInfoRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listPlayDomainStreamInfo, hcClient);
     }
 
     /**

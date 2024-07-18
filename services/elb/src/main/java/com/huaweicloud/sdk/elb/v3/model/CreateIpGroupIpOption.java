@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * IP地址组中的包含的IP信息。
+ * 参数解释：IP地址组中的包含的IP信息。
  */
 public class CreateIpGroupIpOption {
 
@@ -26,7 +26,7 @@ public class CreateIpGroupIpOption {
     }
 
     /**
-     * IP地址。支持IPv4、IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * 参数解释：IP地址。支持IPv4、IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return ip
      */
     public String getIp() {
@@ -43,7 +43,7 @@ public class CreateIpGroupIpOption {
     }
 
     /**
-     * 备注信息。
+     * 参数解释：备注信息。
      * @return description
      */
     public String getDescription() {

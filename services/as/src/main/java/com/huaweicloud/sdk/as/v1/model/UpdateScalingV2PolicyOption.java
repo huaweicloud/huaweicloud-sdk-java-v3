@@ -123,6 +123,11 @@ public class UpdateScalingV2PolicyOption {
          */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
 
+        /**
+         * Enum INTERVAL_ALARM for value: "INTERVAL_ALARM"
+         */
+        public static final ScalingPolicyTypeEnum INTERVAL_ALARM = new ScalingPolicyTypeEnum("INTERVAL_ALARM");
+
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ScalingPolicyTypeEnum> createStaticFields() {
@@ -130,6 +135,7 @@ public class UpdateScalingV2PolicyOption {
             map.put("ALARM", ALARM);
             map.put("SCHEDULED", SCHEDULED);
             map.put("RECURRENCE", RECURRENCE);
+            map.put("INTERVAL_ALARM", INTERVAL_ALARM);
             return Collections.unmodifiableMap(map);
         }
 

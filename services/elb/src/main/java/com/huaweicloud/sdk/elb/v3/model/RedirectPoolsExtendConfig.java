@@ -21,13 +21,28 @@ public class RedirectPoolsExtendConfig {
 
     private RewriteUrlConfig rewriteUrlConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "insert_headers_config")
+
+    private InsertHeadersConfig insertHeadersConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remove_headers_config")
+
+    private RemoveHeadersConfig removeHeadersConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_limit_config")
+
+    private TrafficLimitConfig trafficLimitConfig;
+
     public RedirectPoolsExtendConfig withRewriteUrlEnable(Boolean rewriteUrlEnable) {
         this.rewriteUrlEnable = rewriteUrlEnable;
         return this;
     }
 
     /**
-     * 是否开启url重定向
+     * 是否开启url重定向。
      * @return rewriteUrlEnable
      */
     public Boolean getRewriteUrlEnable() {
@@ -64,6 +79,84 @@ public class RedirectPoolsExtendConfig {
         this.rewriteUrlConfig = rewriteUrlConfig;
     }
 
+    public RedirectPoolsExtendConfig withInsertHeadersConfig(InsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+        return this;
+    }
+
+    public RedirectPoolsExtendConfig withInsertHeadersConfig(Consumer<InsertHeadersConfig> insertHeadersConfigSetter) {
+        if (this.insertHeadersConfig == null) {
+            this.insertHeadersConfig = new InsertHeadersConfig();
+            insertHeadersConfigSetter.accept(this.insertHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get insertHeadersConfig
+     * @return insertHeadersConfig
+     */
+    public InsertHeadersConfig getInsertHeadersConfig() {
+        return insertHeadersConfig;
+    }
+
+    public void setInsertHeadersConfig(InsertHeadersConfig insertHeadersConfig) {
+        this.insertHeadersConfig = insertHeadersConfig;
+    }
+
+    public RedirectPoolsExtendConfig withRemoveHeadersConfig(RemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+        return this;
+    }
+
+    public RedirectPoolsExtendConfig withRemoveHeadersConfig(Consumer<RemoveHeadersConfig> removeHeadersConfigSetter) {
+        if (this.removeHeadersConfig == null) {
+            this.removeHeadersConfig = new RemoveHeadersConfig();
+            removeHeadersConfigSetter.accept(this.removeHeadersConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get removeHeadersConfig
+     * @return removeHeadersConfig
+     */
+    public RemoveHeadersConfig getRemoveHeadersConfig() {
+        return removeHeadersConfig;
+    }
+
+    public void setRemoveHeadersConfig(RemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+    }
+
+    public RedirectPoolsExtendConfig withTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+        this.trafficLimitConfig = trafficLimitConfig;
+        return this;
+    }
+
+    public RedirectPoolsExtendConfig withTrafficLimitConfig(Consumer<TrafficLimitConfig> trafficLimitConfigSetter) {
+        if (this.trafficLimitConfig == null) {
+            this.trafficLimitConfig = new TrafficLimitConfig();
+            trafficLimitConfigSetter.accept(this.trafficLimitConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get trafficLimitConfig
+     * @return trafficLimitConfig
+     */
+    public TrafficLimitConfig getTrafficLimitConfig() {
+        return trafficLimitConfig;
+    }
+
+    public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+        this.trafficLimitConfig = trafficLimitConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +167,16 @@ public class RedirectPoolsExtendConfig {
         }
         RedirectPoolsExtendConfig that = (RedirectPoolsExtendConfig) obj;
         return Objects.equals(this.rewriteUrlEnable, that.rewriteUrlEnable)
-            && Objects.equals(this.rewriteUrlConfig, that.rewriteUrlConfig);
+            && Objects.equals(this.rewriteUrlConfig, that.rewriteUrlConfig)
+            && Objects.equals(this.insertHeadersConfig, that.insertHeadersConfig)
+            && Objects.equals(this.removeHeadersConfig, that.removeHeadersConfig)
+            && Objects.equals(this.trafficLimitConfig, that.trafficLimitConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rewriteUrlEnable, rewriteUrlConfig);
+        return Objects
+            .hash(rewriteUrlEnable, rewriteUrlConfig, insertHeadersConfig, removeHeadersConfig, trafficLimitConfig);
     }
 
     @Override
@@ -88,6 +185,9 @@ public class RedirectPoolsExtendConfig {
         sb.append("class RedirectPoolsExtendConfig {\n");
         sb.append("    rewriteUrlEnable: ").append(toIndentedString(rewriteUrlEnable)).append("\n");
         sb.append("    rewriteUrlConfig: ").append(toIndentedString(rewriteUrlConfig)).append("\n");
+        sb.append("    insertHeadersConfig: ").append(toIndentedString(insertHeadersConfig)).append("\n");
+        sb.append("    removeHeadersConfig: ").append(toIndentedString(removeHeadersConfig)).append("\n");
+        sb.append("    trafficLimitConfig: ").append(toIndentedString(trafficLimitConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

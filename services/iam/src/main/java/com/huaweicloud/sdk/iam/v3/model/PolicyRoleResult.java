@@ -74,7 +74,7 @@ public class PolicyRoleResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy")
 
-    private ServicePolicy policy;
+    private CustomPolicy policy;
 
     public PolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -289,14 +289,14 @@ public class PolicyRoleResult {
         this.type = type;
     }
 
-    public PolicyRoleResult withPolicy(ServicePolicy policy) {
+    public PolicyRoleResult withPolicy(CustomPolicy policy) {
         this.policy = policy;
         return this;
     }
 
-    public PolicyRoleResult withPolicy(Consumer<ServicePolicy> policySetter) {
+    public PolicyRoleResult withPolicy(Consumer<CustomPolicy> policySetter) {
         if (this.policy == null) {
-            this.policy = new ServicePolicy();
+            this.policy = new CustomPolicy();
             policySetter.accept(this.policy);
         }
 
@@ -307,11 +307,11 @@ public class PolicyRoleResult {
      * Get policy
      * @return policy
      */
-    public ServicePolicy getPolicy() {
+    public CustomPolicy getPolicy() {
         return policy;
     }
 
-    public void setPolicy(ServicePolicy policy) {
+    public void setPolicy(CustomPolicy policy) {
         this.policy = policy;
     }
 

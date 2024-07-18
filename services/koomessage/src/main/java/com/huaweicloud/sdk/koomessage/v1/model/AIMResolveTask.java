@@ -90,7 +90,7 @@ public class AIMResolveTask {
     }
 
     /**
-     * 智能信息编码类型。 - group：群发 - individual：个性化  > 智能信息编码类型选择群发时，所有发送使用同一个短链，无法获取到单个手机号码的解析情况。 
+     * 智能信息编码类型。 - individual：个性化 
      * @return aimCodeType
      */
     public String getAimCodeType() {
@@ -141,7 +141,7 @@ public class AIMResolveTask {
     }
 
     /**
-     * 失效时间（天）。aim_code_type为group时，取值范围为1~180；aim_code_type为individual个性化时，取值范围为1~7。  > 失效时间精确到秒，例如参数设置为1，创建时间为2022-07-22 21:10:12，过期时间为2022-07-23 21:10:12。 
+     * 失效时间（天）。aim_code_type为individual个性化时，取值范围为1~7。  > 失效时间精确到秒，例如参数设置为1，创建时间为2022-07-22 21:10:12，过期时间为2022-07-23 21:10:12。 
      * @return expirationTime
      */
     public Integer getExpirationTime() {
@@ -174,7 +174,7 @@ public class AIMResolveTask {
     }
 
     /**
-     * 短链解析详情列表。一次请求最多100个短链。  > OPPO模板一次最多申请10个短链。 
+     * 短链解析详情列表。一次请求最多100个短链。 
      * @return params
      */
     public List<CreateResolveTaskParam> getParams() {

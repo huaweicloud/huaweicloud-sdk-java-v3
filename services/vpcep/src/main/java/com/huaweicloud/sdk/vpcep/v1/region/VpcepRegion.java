@@ -64,6 +64,21 @@ public class VpcepRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://vpcep.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://vpcep.ae-ad-1.myhuaweicloud.com");
+
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://vpcep.ru-moscow-1.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://vpcep.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://vpcep.cn-south-4.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://vpcep.me-east-1.myhuaweicloud.com");
+
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://vpcep.ru-northwest-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://vpcep.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("VPCEP");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -92,6 +107,13 @@ public class VpcepRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("eu-west-0", EU_WEST_0);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("ae-ad-1", AE_AD_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

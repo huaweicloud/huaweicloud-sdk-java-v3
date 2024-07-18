@@ -74,6 +74,16 @@ public class CreateL7PolicyOption {
     private CreateRedirectUrlConfig redirectUrlConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_pools_config")
+
+    private List<CreateRedirectPoolsConfig> redirectPoolsConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_pools_sticky_session_config")
+
+    private CreateRedirectPoolsStickySessionConfig redirectPoolsStickySessionConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_response_config")
 
     private CreateFixtedResponseConfig fixedResponseConfig;
@@ -198,7 +208,7 @@ public class CreateL7PolicyOption {
     }
 
     /**
-     * 转发策略的优先级。数字越小表示优先级越高，同一监听器下不允许重复。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。  当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。 各域名之间优先级独立，相同域名下，按path的compare_type排序， 精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。 若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段， 则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。 因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。 此时可通过传入指定priority，或调整原有policy的优先级来避免错误。 若监听器下没有转发策略，则新建的转发策略的优先级为1。  [共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 转发策略的优先级。数字越小表示优先级越高，同一监听器下不允许重复。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_LISTENER时，仅支持指定为0，优先级最高。  当关联的listener没有开启enhance_l7policy_enable，按原有policy的排序逻辑，自动排序。 各域名之间优先级独立，相同域名下，按path的compare_type排序， 精确>前缀>正则，匹配类型相同时，path的长度越长优先级越高。 若policy下只有域名rule，没有路径rule，默认path为前缀匹配/。  当关联的listener开启了enhance_l7policy_enable，且不传该字段， 则新创建的转发策略的优先级的值为：同一监听器下已有转发策略的优先级的最大值+1。 因此，若当前已有转发策略的优先级的最大值是10000，新创建会因超出取值范围10000而失败。 此时可通过传入指定priority，或调整原有policy的优先级来避免错误。 若监听器下没有转发策略，则新建的转发策略的优先级为1。  [共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
      * minimum: 0
      * maximum: 10000
      * @return priority
@@ -234,7 +244,7 @@ public class CreateL7PolicyOption {
     }
 
     /**
-     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时必选。  使用说明： - 只支持protocol为HTTPS/TERMINATED_HTTPS的listener。 - 不能指定为其他loadbalancer下的listener。 - 当action为REDIRECT_TO_POOL时，创建或更新时不能传入该参数。 [- 共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,hk_tm)
+     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时必选。  使用说明： - 只支持protocol为HTTPS/TERMINATED_HTTPS的listener。 - 不能指定为其他loadbalancer下的listener。 - 当action为REDIRECT_TO_POOL时，创建或更新时不能传入该参数。 [- 共享型负载均衡器下的转发策略不支持该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
      * @return redirectListenerId
      */
     public String getRedirectListenerId() {
@@ -303,6 +313,69 @@ public class CreateL7PolicyOption {
 
     public void setRedirectUrlConfig(CreateRedirectUrlConfig redirectUrlConfig) {
         this.redirectUrlConfig = redirectUrlConfig;
+    }
+
+    public CreateL7PolicyOption withRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
+        return this;
+    }
+
+    public CreateL7PolicyOption addRedirectPoolsConfigItem(CreateRedirectPoolsConfig redirectPoolsConfigItem) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        this.redirectPoolsConfig.add(redirectPoolsConfigItem);
+        return this;
+    }
+
+    public CreateL7PolicyOption withRedirectPoolsConfig(
+        Consumer<List<CreateRedirectPoolsConfig>> redirectPoolsConfigSetter) {
+        if (this.redirectPoolsConfig == null) {
+            this.redirectPoolsConfig = new ArrayList<>();
+        }
+        redirectPoolsConfigSetter.accept(this.redirectPoolsConfig);
+        return this;
+    }
+
+    /**
+     * 转发到多个主机组列表。一个policy最多配置5个pool。
+     * @return redirectPoolsConfig
+     */
+    public List<CreateRedirectPoolsConfig> getRedirectPoolsConfig() {
+        return redirectPoolsConfig;
+    }
+
+    public void setRedirectPoolsConfig(List<CreateRedirectPoolsConfig> redirectPoolsConfig) {
+        this.redirectPoolsConfig = redirectPoolsConfig;
+    }
+
+    public CreateL7PolicyOption withRedirectPoolsStickySessionConfig(
+        CreateRedirectPoolsStickySessionConfig redirectPoolsStickySessionConfig) {
+        this.redirectPoolsStickySessionConfig = redirectPoolsStickySessionConfig;
+        return this;
+    }
+
+    public CreateL7PolicyOption withRedirectPoolsStickySessionConfig(
+        Consumer<CreateRedirectPoolsStickySessionConfig> redirectPoolsStickySessionConfigSetter) {
+        if (this.redirectPoolsStickySessionConfig == null) {
+            this.redirectPoolsStickySessionConfig = new CreateRedirectPoolsStickySessionConfig();
+            redirectPoolsStickySessionConfigSetter.accept(this.redirectPoolsStickySessionConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get redirectPoolsStickySessionConfig
+     * @return redirectPoolsStickySessionConfig
+     */
+    public CreateRedirectPoolsStickySessionConfig getRedirectPoolsStickySessionConfig() {
+        return redirectPoolsStickySessionConfig;
+    }
+
+    public void setRedirectPoolsStickySessionConfig(
+        CreateRedirectPoolsStickySessionConfig redirectPoolsStickySessionConfig) {
+        this.redirectPoolsStickySessionConfig = redirectPoolsStickySessionConfig;
     }
 
     public CreateL7PolicyOption withFixedResponseConfig(CreateFixtedResponseConfig fixedResponseConfig) {
@@ -410,6 +483,8 @@ public class CreateL7PolicyOption {
             && Objects.equals(this.redirectPoolId, that.redirectPoolId)
             && Objects.equals(this.redirectUrl, that.redirectUrl)
             && Objects.equals(this.redirectUrlConfig, that.redirectUrlConfig)
+            && Objects.equals(this.redirectPoolsConfig, that.redirectPoolsConfig)
+            && Objects.equals(this.redirectPoolsStickySessionConfig, that.redirectPoolsStickySessionConfig)
             && Objects.equals(this.fixedResponseConfig, that.fixedResponseConfig)
             && Objects.equals(this.redirectPoolsExtendConfig, that.redirectPoolsExtendConfig)
             && Objects.equals(this.rules, that.rules);
@@ -429,6 +504,8 @@ public class CreateL7PolicyOption {
             redirectPoolId,
             redirectUrl,
             redirectUrlConfig,
+            redirectPoolsConfig,
+            redirectPoolsStickySessionConfig,
             fixedResponseConfig,
             redirectPoolsExtendConfig,
             rules);
@@ -450,6 +527,10 @@ public class CreateL7PolicyOption {
         sb.append("    redirectPoolId: ").append(toIndentedString(redirectPoolId)).append("\n");
         sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
         sb.append("    redirectUrlConfig: ").append(toIndentedString(redirectUrlConfig)).append("\n");
+        sb.append("    redirectPoolsConfig: ").append(toIndentedString(redirectPoolsConfig)).append("\n");
+        sb.append("    redirectPoolsStickySessionConfig: ")
+            .append(toIndentedString(redirectPoolsStickySessionConfig))
+            .append("\n");
         sb.append("    fixedResponseConfig: ").append(toIndentedString(fixedResponseConfig)).append("\n");
         sb.append("    redirectPoolsExtendConfig: ").append(toIndentedString(redirectPoolsExtendConfig)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");

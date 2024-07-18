@@ -64,7 +64,7 @@ public class UpdateLoadBalancerResponse extends SdkResponse {
     }
 
     /**
-     * 负载均衡器的id[（包周期场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+     * 负载均衡器的id[（包周期场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hk_vdf,fcs,ctc,cmcc)
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -81,7 +81,7 @@ public class UpdateLoadBalancerResponse extends SdkResponse {
     }
 
     /**
-     * 订单号[（包周期规格变更场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+     * 订单号[（包周期规格变更场景返回该字段）  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hk_vdf,fcs,ctc,cmcc)
      * @return orderId
      */
     public String getOrderId() {

@@ -21,7 +21,7 @@ public class IpGroupIp {
     }
 
     /**
-     * IP地址，可以是具体的IP地址或者IP地址段。
+     * 参数解释：IP地址，可以是具体的IP地址或者IP地址段。
      * @return ip
      */
     public String getIp() {

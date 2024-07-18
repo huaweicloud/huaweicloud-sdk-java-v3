@@ -423,6 +423,17 @@ public class CtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListTracesRequest.TraceRatingEnum.class),
             f -> f.withMarshaller(ListTracesRequest::getTraceRating, ListTracesRequest::setTraceRating));
+        builder.<String>withRequestField("access_key_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTracesRequest::getAccessKeyId, ListTracesRequest::setAccessKeyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTracesRequest::getEnterpriseProjectId,
+                ListTracesRequest::setEnterpriseProjectId));
 
         // response
 

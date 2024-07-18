@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * This is a auto create Body Object
+ * 创建负载均衡器实例的参数对象。
  */
 public class CreateLoadBalancerRequestBody {
 

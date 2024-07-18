@@ -151,6 +151,11 @@ public class UpdatePoolOption {
 
     private ConnectionDrain connectionDrain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_health")
+
+    private PoolHealth poolHealth;
+
     public UpdatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -191,7 +196,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 4_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。](tag:hws_eu  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -278,7 +283,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 是否开启删除保护。  取值：false不开启，true开启。  > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启删除保护。  取值：false不开启，true开启。  > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return memberDeletionProtectionEnable
      */
     public Boolean getMemberDeletionProtectionEnable() {
@@ -363,7 +368,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。取值：false不开启，true开启，默认false。 > 关闭端口透传后，请求会转发给后端服务器protocol_port字段指定端口。
+     * 后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。关闭后，请求会转发给后端服务器protocol_port字段指定端口。取值：false不开启，true开启。  使用说明： - 仅QUIC,TCP,UDP的pool支持。
      * @return anyPortEnable
      */
     public Boolean getAnyPortEnable() {
@@ -400,6 +405,32 @@ public class UpdatePoolOption {
         this.connectionDrain = connectionDrain;
     }
 
+    public UpdatePoolOption withPoolHealth(PoolHealth poolHealth) {
+        this.poolHealth = poolHealth;
+        return this;
+    }
+
+    public UpdatePoolOption withPoolHealth(Consumer<PoolHealth> poolHealthSetter) {
+        if (this.poolHealth == null) {
+            this.poolHealth = new PoolHealth();
+            poolHealthSetter.accept(this.poolHealth);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get poolHealth
+     * @return poolHealth
+     */
+    public PoolHealth getPoolHealth() {
+        return poolHealth;
+    }
+
+    public void setPoolHealth(PoolHealth poolHealth) {
+        this.poolHealth = poolHealth;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -418,7 +449,8 @@ public class UpdatePoolOption {
             && Objects.equals(this.protectionStatus, that.protectionStatus)
             && Objects.equals(this.protectionReason, that.protectionReason)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
-            && Objects.equals(this.connectionDrain, that.connectionDrain);
+            && Objects.equals(this.connectionDrain, that.connectionDrain)
+            && Objects.equals(this.poolHealth, that.poolHealth);
     }
 
     @Override
@@ -435,7 +467,8 @@ public class UpdatePoolOption {
             protectionStatus,
             protectionReason,
             anyPortEnable,
-            connectionDrain);
+            connectionDrain,
+            poolHealth);
     }
 
     @Override
@@ -457,6 +490,7 @@ public class UpdatePoolOption {
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
+        sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

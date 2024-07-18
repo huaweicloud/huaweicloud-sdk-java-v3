@@ -51,7 +51,7 @@ public class ListFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * 规格列表。
+     * 参数解释：规格列表。
      * @return flavors
      */
     public List<Flavor> getFlavors() {
@@ -94,7 +94,7 @@ public class ListFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * 参数解释：请求ID。  注：自动生成 。
      * @return requestId
      */
     public String getRequestId() {

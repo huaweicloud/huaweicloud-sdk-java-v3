@@ -21,7 +21,7 @@ public class ShowFlavorRequest {
     }
 
     /**
-     * 规格ID。
+     * 参数解释：规格ID。
      * @return flavorId
      */
     public String getFlavorId() {

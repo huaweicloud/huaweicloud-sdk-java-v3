@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeResponse;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumRequest;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificateRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificateRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificateResponse;
@@ -131,6 +134,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowFlavorRequest;
@@ -420,6 +425,33 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
             f -> f.withMarshaller(CreateCertificateRequest::getBody, CreateCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificatePrivateKeyEchoRequest, CreateCertificatePrivateKeyEchoResponse> createCertificatePrivateKeyEcho =
+        genForCreateCertificatePrivateKeyEcho();
+
+    private static HttpRequestDef<CreateCertificatePrivateKeyEchoRequest, CreateCertificatePrivateKeyEchoResponse> genForCreateCertificatePrivateKeyEcho() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificatePrivateKeyEchoRequest, CreateCertificatePrivateKeyEchoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCertificatePrivateKeyEchoRequest.class,
+                    CreateCertificatePrivateKeyEchoResponse.class)
+                .withName("CreateCertificatePrivateKeyEcho")
+                .withUri("/v3/{project_id}/elb/certificates/settings/private-key-echo")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateCertificatePrivateKeyEchoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCertificatePrivateKeyEchoRequestBody.class),
+            f -> f.withMarshaller(CreateCertificatePrivateKeyEchoRequest::getBody,
+                CreateCertificatePrivateKeyEchoRequest::setBody));
 
         // response
 
@@ -1151,6 +1183,16 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getType, ListCertificatesRequest::setType));
+        builder.<List<String>>withRequestField("common_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getCommonName, ListCertificatesRequest::setCommonName));
+        builder.<List<String>>withRequestField("fingerprint",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getFingerprint, ListCertificatesRequest::setFingerprint));
 
         // response
 
@@ -2295,6 +2337,21 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPoolsRequest::getConnectionDrain, ListPoolsRequest::setConnectionDrain));
+        builder.<String>withRequestField("pool_health",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoolsRequest::getPoolHealth, ListPoolsRequest::setPoolHealth));
+        builder.<Boolean>withRequestField("any_port_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPoolsRequest::getAnyPortEnable, ListPoolsRequest::setAnyPortEnable));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoolsRequest::getPublicBorderGroup, ListPoolsRequest::setPublicBorderGroup));
 
         // response
 
@@ -2423,6 +2480,27 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertificatePrivateKeyEchoRequest, ShowCertificatePrivateKeyEchoResponse> showCertificatePrivateKeyEcho =
+        genForShowCertificatePrivateKeyEcho();
+
+    private static HttpRequestDef<ShowCertificatePrivateKeyEchoRequest, ShowCertificatePrivateKeyEchoResponse> genForShowCertificatePrivateKeyEcho() {
+        // basic
+        HttpRequestDef.Builder<ShowCertificatePrivateKeyEchoRequest, ShowCertificatePrivateKeyEchoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCertificatePrivateKeyEchoRequest.class,
+                    ShowCertificatePrivateKeyEchoResponse.class)
+                .withName("ShowCertificatePrivateKeyEcho")
+                .withUri("/v3/{project_id}/elb/certificates/settings/private-key-echo")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -3205,6 +3283,12 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getIpList, ListIpGroupsRequest::setIpList));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListIpGroupsRequest::getEnterpriseProjectId,
+                ListIpGroupsRequest::setEnterpriseProjectId));
 
         // response
 

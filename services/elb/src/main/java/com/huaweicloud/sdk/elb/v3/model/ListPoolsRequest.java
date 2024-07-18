@@ -123,6 +123,21 @@ public class ListPoolsRequest {
 
     private Boolean connectionDrain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_health")
+
+    private String poolHealth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "any_port_enable")
+
+    private Boolean anyPortEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -146,7 +161,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 每页返回的个数。
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -215,7 +230,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的管理状态。  不支持该字段，请勿使用。
+     * 后端云服务器组的管理状态。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -380,7 +395,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS、QUIC和TCPSSL。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、HTTP、HTTPS、QUIC和GRPC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -413,7 +428,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 4_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。](tag:hws_eu)  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public List<String> getLbAlgorithm() {
@@ -562,7 +577,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启，不传查询全部。 [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启删除保护，false不开启，true开启，不传查询全部。 [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return memberDeletionProtectionEnable
      */
     public Boolean getMemberDeletionProtectionEnable() {
@@ -755,6 +770,57 @@ public class ListPoolsRequest {
         this.connectionDrain = connectionDrain;
     }
 
+    public ListPoolsRequest withPoolHealth(String poolHealth) {
+        this.poolHealth = poolHealth;
+        return this;
+    }
+
+    /**
+     * 查询是否开启后端全下线转发功能，查询条件格式：*pool_health=minimum_healthy_member_count=0或者*pool_health=minimum_healthy_member_count=1
+     * @return poolHealth
+     */
+    public String getPoolHealth() {
+        return poolHealth;
+    }
+
+    public void setPoolHealth(String poolHealth) {
+        this.poolHealth = poolHealth;
+    }
+
+    public ListPoolsRequest withAnyPortEnable(Boolean anyPortEnable) {
+        this.anyPortEnable = anyPortEnable;
+        return this;
+    }
+
+    /**
+     * 后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。取值：false不开启，true开启。
+     * @return anyPortEnable
+     */
+    public Boolean getAnyPortEnable() {
+        return anyPortEnable;
+    }
+
+    public void setAnyPortEnable(Boolean anyPortEnable) {
+        this.anyPortEnable = anyPortEnable;
+    }
+
+    public ListPoolsRequest withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 可用区组
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -777,7 +843,10 @@ public class ListPoolsRequest {
             && Objects.equals(this.listenerId, that.listenerId)
             && Objects.equals(this.memberInstanceId, that.memberInstanceId) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.connectionDrain, that.connectionDrain);
+            && Objects.equals(this.connectionDrain, that.connectionDrain)
+            && Objects.equals(this.poolHealth, that.poolHealth)
+            && Objects.equals(this.anyPortEnable, that.anyPortEnable)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override
@@ -803,7 +872,10 @@ public class ListPoolsRequest {
             vpcId,
             type,
             protectionStatus,
-            connectionDrain);
+            connectionDrain,
+            poolHealth,
+            anyPortEnable,
+            publicBorderGroup);
     }
 
     @Override
@@ -834,6 +906,9 @@ public class ListPoolsRequest {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
+        sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
+        sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }
