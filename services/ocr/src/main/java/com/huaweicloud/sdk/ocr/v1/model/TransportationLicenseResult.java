@@ -200,7 +200,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 签发日期（非必有，依赖对应运输证板式）。 
+     * 发证日期（非必有，依赖对应运输证板式）。 
      * @return issueDate
      */
     public String getIssueDate() {
@@ -268,7 +268,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 道路普通货物运输（非必有，依赖对应运输证板式）。 
+     * 经营范围（非必有，依赖对应运输证板式）。 
      * @return businessScope
      */
     public String getBusinessScope() {

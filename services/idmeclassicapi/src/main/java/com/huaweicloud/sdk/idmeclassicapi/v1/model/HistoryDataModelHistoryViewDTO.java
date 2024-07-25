@@ -72,7 +72,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -89,7 +89,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 创建人。
+     * **参数解释：**  请求数据。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -106,7 +106,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -123,7 +123,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -140,7 +140,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 修改时间。
+     * **参数解释：**  修改时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -157,7 +157,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 系统版本。
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -174,7 +174,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 操作类型。 - CREATE：创建操作。 - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。
+     * **参数解释：**  操作类型。  **取值范围：**  - CREATE：创建操作。 - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。  **默认取值：**  不涉及。 
      * @return rdmOperationType
      */
     public String getRdmOperationType() {
@@ -191,7 +191,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -208,7 +208,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 删除标志。
+     * **参数解释：**  删除标志。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -251,7 +251,7 @@ public class HistoryDataModelHistoryViewDTO {
     }
 
     /**
-     * 类名称。
+     * **参数解释：**  类名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {

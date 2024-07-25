@@ -338,7 +338,7 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 健康检查的目标端口，缺少或port = 0时为VPC中主机的端口号。  若此端口存在非0值，则使用此端口进行健康检查。
+     * 健康检查的目标端口，缺少或port = 0时为VPC中主机的端口号。  如果此端口存在非0值，则使用此端口进行健康检查。
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -431,7 +431,7 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 是否开启双向认证。若开启，则使用实例配置中的backend_client_certificate配置项的证书
+     * 是否开启双向认证。如果开启，则使用实例配置中的backend_client_certificate配置项的证书
      * @return enableClientSsl
      */
     public Boolean getEnableClientSsl() {

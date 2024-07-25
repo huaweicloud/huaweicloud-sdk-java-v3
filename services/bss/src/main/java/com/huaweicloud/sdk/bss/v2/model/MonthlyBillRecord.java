@@ -82,6 +82,11 @@ public class MonthlyBillRecord {
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_type")
 
     private Integer billType;
@@ -394,6 +399,23 @@ public class MonthlyBillRecord {
         this.tradeId = tradeId;
     }
 
+    public MonthlyBillRecord withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 唯一标识。 该字段为预留字段。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public MonthlyBillRecord withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -669,8 +691,8 @@ public class MonthlyBillRecord {
             && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.consumeTime, that.consumeTime) && Objects.equals(this.tradeTime, that.tradeTime)
             && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.tradeId, that.tradeId)
-            && Objects.equals(this.billType, that.billType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.billType, that.billType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.officialAmount, that.officialAmount)
             && Objects.equals(this.officialDiscountAmount, that.officialDiscountAmount)
             && Objects.equals(this.eraseAmount, that.eraseAmount)
             && Objects.equals(this.consumeAmount, that.consumeAmount)
@@ -699,6 +721,7 @@ public class MonthlyBillRecord {
             tradeTime,
             providerType,
             tradeId,
+            id,
             billType,
             status,
             officialAmount,
@@ -734,6 +757,7 @@ public class MonthlyBillRecord {
         sb.append("    tradeTime: ").append(toIndentedString(tradeTime)).append("\n");
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");

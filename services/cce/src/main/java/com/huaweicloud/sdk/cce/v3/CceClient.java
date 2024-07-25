@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
@@ -194,8 +196,12 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
@@ -216,6 +222,10 @@ import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowRequest;
@@ -224,12 +234,16 @@ import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseRequest;
@@ -258,6 +272,8 @@ import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotWorkFlowUpdateRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UploadAutopilotChartRequest;
@@ -370,6 +386,36 @@ public class CceClient {
     public SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsInvoker(
         BatchCreateClusterTagsRequest request) {
         return new SyncInvoker<>(request, CceMeta.batchCreateClusterTags, hcClient);
+    }
+
+    /**
+     * 绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
+     *
+     * 该API用于绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDeleteResourceTagsRequest 请求对象
+     * @return BatchCreateDeleteResourceTagsResponse
+     */
+    public BatchCreateDeleteResourceTagsResponse batchCreateDeleteResourceTags(
+        BatchCreateDeleteResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.batchCreateDeleteResourceTags);
+    }
+
+    /**
+     * 绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
+     *
+     * 该API用于绑定、删除资源标签，创建集群时供EPS调用；EPS页面迁移集群企业项目时调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDeleteResourceTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse>
+     */
+    public SyncInvoker<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> batchCreateDeleteResourceTagsInvoker(
+        BatchCreateDeleteResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CceMeta.batchCreateDeleteResourceTags, hcClient);
     }
 
     /**
@@ -1950,6 +1996,36 @@ public class CceClient {
     }
 
     /**
+     * 根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return ShowClusterSupportConfigurationResponse
+     */
+    public ShowClusterSupportConfigurationResponse showClusterSupportConfiguration(
+        ShowClusterSupportConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showClusterSupportConfiguration);
+    }
+
+    /**
+     * 根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse>
+     */
+    public SyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfigurationInvoker(
+        ShowClusterSupportConfigurationRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showClusterSupportConfiguration, hcClient);
+    }
+
+    /**
      * 获取集群升级相关信息
      *
      * 获取集群升级相关信息
@@ -1976,6 +2052,36 @@ public class CceClient {
     public SyncInvoker<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfoInvoker(
         ShowClusterUpgradeInfoRequest request) {
         return new SyncInvoker<>(request, CceMeta.showClusterUpgradeInfo, hcClient);
+    }
+
+    /**
+     * 查询集群的标签
+     *
+     * 该API用于查询集群的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomizeClusterTagsByProjectIdRequest 请求对象
+     * @return ShowCustomizeClusterTagsByProjectIdResponse
+     */
+    public ShowCustomizeClusterTagsByProjectIdResponse showCustomizeClusterTagsByProjectId(
+        ShowCustomizeClusterTagsByProjectIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showCustomizeClusterTagsByProjectId);
+    }
+
+    /**
+     * 查询集群的标签
+     *
+     * 该API用于查询集群的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomizeClusterTagsByProjectIdRequest 请求对象
+     * @return SyncInvoker<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse>
+     */
+    public SyncInvoker<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> showCustomizeClusterTagsByProjectIdInvoker(
+        ShowCustomizeClusterTagsByProjectIdRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showCustomizeClusterTagsByProjectId, hcClient);
     }
 
     /**
@@ -2275,6 +2381,64 @@ public class CceClient {
     }
 
     /**
+     * 查询资源实例，EPS页面查询CCE集群资源时调用
+     *
+     * 该API用于查询资源实例，EPS页面查询CCE集群资源时调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceInstancesRequest 请求对象
+     * @return ShowResourceInstancesResponse
+     */
+    public ShowResourceInstancesResponse showResourceInstances(ShowResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showResourceInstances);
+    }
+
+    /**
+     * 查询资源实例，EPS页面查询CCE集群资源时调用
+     *
+     * 该API用于查询资源实例，EPS页面查询CCE集群资源时调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceInstancesRequest 请求对象
+     * @return SyncInvoker<ShowResourceInstancesRequest, ShowResourceInstancesResponse>
+     */
+    public SyncInvoker<ShowResourceInstancesRequest, ShowResourceInstancesResponse> showResourceInstancesInvoker(
+        ShowResourceInstancesRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showResourceInstances, hcClient);
+    }
+
+    /**
+     * 查询资源标签（用于企业项目场景，企业项目是一种系统标签）
+     *
+     * 该API用于查询资源标签（用于企业项目场景，企业项目是一种系统标签）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return ShowResourceTagsResponse
+     */
+    public ShowResourceTagsResponse showResourceTags(ShowResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showResourceTags);
+    }
+
+    /**
+     * 查询资源标签（用于企业项目场景，企业项目是一种系统标签）
+     *
+     * 该API用于查询资源标签（用于企业项目场景，企业项目是一种系统标签）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
+     */
+    public SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsInvoker(
+        ShowResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showResourceTags, hcClient);
+    }
+
+    /**
      * 获取集群升级任务详情
      *
      * 获取集群升级任务详情，任务ID由调用集群升级API后从响应体中uid字段获取。
@@ -2363,6 +2527,34 @@ public class CceClient {
     public SyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotasInvoker(
         ShowUserChartsQuotasRequest request) {
         return new SyncInvoker<>(request, CceMeta.showUserChartsQuotas, hcClient);
+    }
+
+    /**
+     * 同步nodePool配置到存量节点
+     *
+     * 该API用于同步nodePool配置到存量节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncNodePoolRequest 请求对象
+     * @return SyncNodePoolResponse
+     */
+    public SyncNodePoolResponse syncNodePool(SyncNodePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.syncNodePool);
+    }
+
+    /**
+     * 同步nodePool配置到存量节点
+     *
+     * 该API用于同步nodePool配置到存量节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncNodePoolRequest 请求对象
+     * @return SyncInvoker<SyncNodePoolRequest, SyncNodePoolResponse>
+     */
+    public SyncInvoker<SyncNodePoolRequest, SyncNodePoolResponse> syncNodePoolInvoker(SyncNodePoolRequest request) {
+        return new SyncInvoker<>(request, CceMeta.syncNodePool, hcClient);
     }
 
     /**
@@ -2700,6 +2892,35 @@ public class CceClient {
     public SyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse> upgradeClusterInvoker(
         UpgradeClusterRequest request) {
         return new SyncInvoker<>(request, CceMeta.upgradeCluster, hcClient);
+    }
+
+    /**
+     * 节点池升级
+     *
+     * 该API用于节点池升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeNodePoolRequest 请求对象
+     * @return UpgradeNodePoolResponse
+     */
+    public UpgradeNodePoolResponse upgradeNodePool(UpgradeNodePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.upgradeNodePool);
+    }
+
+    /**
+     * 节点池升级
+     *
+     * 该API用于节点池升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeNodePoolRequest 请求对象
+     * @return SyncInvoker<UpgradeNodePoolRequest, UpgradeNodePoolResponse>
+     */
+    public SyncInvoker<UpgradeNodePoolRequest, UpgradeNodePoolResponse> upgradeNodePoolInvoker(
+        UpgradeNodePoolRequest request) {
+        return new SyncInvoker<>(request, CceMeta.upgradeNodePool, hcClient);
     }
 
     /**
@@ -4152,6 +4373,37 @@ public class CceClient {
     public SyncInvoker<UpdateAutopilotClusterRequest, UpdateAutopilotClusterResponse> updateAutopilotClusterInvoker(
         UpdateAutopilotClusterRequest request) {
         return new SyncInvoker<>(request, CceMeta.updateAutopilotCluster, hcClient);
+    }
+
+    /**
+     * 绑定、解绑集群公网apiserver地址
+     *
+     * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotClusterEipRequest 请求对象
+     * @return UpdateAutopilotClusterEipResponse
+     */
+    public UpdateAutopilotClusterEipResponse updateAutopilotClusterEip(UpdateAutopilotClusterEipRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.updateAutopilotClusterEip);
+    }
+
+    /**
+     * 绑定、解绑集群公网apiserver地址
+     *
+     * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotClusterEipRequest 请求对象
+     * @return SyncInvoker<UpdateAutopilotClusterEipRequest, UpdateAutopilotClusterEipResponse>
+     */
+    public SyncInvoker<UpdateAutopilotClusterEipRequest, UpdateAutopilotClusterEipResponse> updateAutopilotClusterEipInvoker(
+        UpdateAutopilotClusterEipRequest request) {
+        return new SyncInvoker<>(request, CceMeta.updateAutopilotClusterEip, hcClient);
     }
 
     /**

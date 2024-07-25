@@ -307,6 +307,40 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询播放域名下的流数据
+     *
+     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+     * 返回的数据粒度为1分钟。
+     * 最大查询周期7天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPlayDomainStreamInfoRequest 请求对象
+     * @return CompletableFuture<ListPlayDomainStreamInfoResponse>
+     */
+    public CompletableFuture<ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfoAsync(
+        ListPlayDomainStreamInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listPlayDomainStreamInfo);
+    }
+
+    /**
+     * 查询播放域名下的流数据
+     *
+     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
+     * 返回的数据粒度为1分钟。
+     * 最大查询周期7天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPlayDomainStreamInfoRequest 请求对象
+     * @return AsyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse>
+     */
+    public AsyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfoAsyncInvoker(
+        ListPlayDomainStreamInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listPlayDomainStreamInfo, hcClient);
+    }
+
+    /**
      * 查询直播拉流HTTP状态码接口
      *
      * 查询直播拉流HTTP状态码接口。  获取加速域名1分钟粒度的HTTP返回码  最大查询跨度不能超过24小时，最大查询周期7天。
@@ -538,44 +572,6 @@ public class LiveAsyncClient {
     public AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidthAsyncInvoker(
         ShowUpBandwidthRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.showUpBandwidth, hcClient);
-    }
-
-    /**
-     * 查询播放域名下的流数据
-     *
-     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
-     * 
-     * 返回的数据粒度为1分钟。
-     * 
-     * 最大查询周期7天，数据延迟5分钟。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPlayDomainStreamInfoRequest 请求对象
-     * @return CompletableFuture<ListPlayDomainStreamInfoResponse>
-     */
-    public CompletableFuture<ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfoAsync(
-        ListPlayDomainStreamInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, LiveMeta.listPlayDomainStreamInfo);
-    }
-
-    /**
-     * 查询播放域名下的流数据
-     *
-     * 查询播放域名下的监控数据，根据输入时间点，返回查询该时间点所有流的带宽、在线人数、协议。
-     * 
-     * 返回的数据粒度为1分钟。
-     * 
-     * 最大查询周期7天，数据延迟5分钟。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPlayDomainStreamInfoRequest 请求对象
-     * @return AsyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse>
-     */
-    public AsyncInvoker<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfoAsyncInvoker(
-        ListPlayDomainStreamInfoRequest request) {
-        return new AsyncInvoker<>(request, LiveMeta.listPlayDomainStreamInfo, hcClient);
     }
 
     /**

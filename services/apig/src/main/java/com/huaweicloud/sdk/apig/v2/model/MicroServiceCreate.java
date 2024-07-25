@@ -107,11 +107,6 @@ public class MicroServiceCreate {
 
     private MicroServiceInfoCCEBase cceInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cce_service_info")
-
-    private MicroServiceInfoCCEServiceBase cceServiceInfo;
-
     public MicroServiceCreate withServiceType(ServiceTypeEnum serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -181,32 +176,6 @@ public class MicroServiceCreate {
         this.cceInfo = cceInfo;
     }
 
-    public MicroServiceCreate withCceServiceInfo(MicroServiceInfoCCEServiceBase cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-        return this;
-    }
-
-    public MicroServiceCreate withCceServiceInfo(Consumer<MicroServiceInfoCCEServiceBase> cceServiceInfoSetter) {
-        if (this.cceServiceInfo == null) {
-            this.cceServiceInfo = new MicroServiceInfoCCEServiceBase();
-            cceServiceInfoSetter.accept(this.cceServiceInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get cceServiceInfo
-     * @return cceServiceInfo
-     */
-    public MicroServiceInfoCCEServiceBase getCceServiceInfo() {
-        return cceServiceInfo;
-    }
-
-    public void setCceServiceInfo(MicroServiceInfoCCEServiceBase cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,12 +186,12 @@ public class MicroServiceCreate {
         }
         MicroServiceCreate that = (MicroServiceCreate) obj;
         return Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo);
+            && Objects.equals(this.cceInfo, that.cceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceType, cseInfo, cceInfo, cceServiceInfo);
+        return Objects.hash(serviceType, cseInfo, cceInfo);
     }
 
     @Override
@@ -232,7 +201,6 @@ public class MicroServiceCreate {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
-        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

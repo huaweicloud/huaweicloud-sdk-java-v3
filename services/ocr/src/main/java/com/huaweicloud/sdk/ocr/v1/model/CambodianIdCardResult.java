@@ -129,6 +129,11 @@ public class CambodianIdCardResult {
     private Boolean detectTamperingResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_reproduce_result")
+
+    private Boolean detectReproduceResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "score_info")
 
     private CambodianIdCardScoreInformationResult scoreInfo;
@@ -545,6 +550,23 @@ public class CambodianIdCardResult {
         this.detectTamperingResult = detectTamperingResult;
     }
 
+    public CambodianIdCardResult withDetectReproduceResult(Boolean detectReproduceResult) {
+        this.detectReproduceResult = detectReproduceResult;
+        return this;
+    }
+
+    /**
+     * 身份证是否经过翻拍的告警结果，“true”表示身份证经过翻拍，“false”表示身份证未经过翻拍。仅在输入参数detect_reproduce为true时，返回该字段。 
+     * @return detectReproduceResult
+     */
+    public Boolean getDetectReproduceResult() {
+        return detectReproduceResult;
+    }
+
+    public void setDetectReproduceResult(Boolean detectReproduceResult) {
+        this.detectReproduceResult = detectReproduceResult;
+    }
+
     public CambodianIdCardResult withScoreInfo(CambodianIdCardScoreInformationResult scoreInfo) {
         this.scoreInfo = scoreInfo;
         return this;
@@ -615,6 +637,7 @@ public class CambodianIdCardResult {
             && Objects.equals(this.detectBlurResult, that.detectBlurResult)
             && Objects.equals(this.detectGlareResult, that.detectGlareResult)
             && Objects.equals(this.detectTamperingResult, that.detectTamperingResult)
+            && Objects.equals(this.detectReproduceResult, that.detectReproduceResult)
             && Objects.equals(this.scoreInfo, that.scoreInfo) && Objects.equals(this.confidence, that.confidence);
     }
 
@@ -643,6 +666,7 @@ public class CambodianIdCardResult {
             detectBlurResult,
             detectGlareResult,
             detectTamperingResult,
+            detectReproduceResult,
             scoreInfo,
             confidence);
     }
@@ -678,6 +702,7 @@ public class CambodianIdCardResult {
         sb.append("    detectBlurResult: ").append(toIndentedString(detectBlurResult)).append("\n");
         sb.append("    detectGlareResult: ").append(toIndentedString(detectGlareResult)).append("\n");
         sb.append("    detectTamperingResult: ").append(toIndentedString(detectTamperingResult)).append("\n");
+        sb.append("    detectReproduceResult: ").append(toIndentedString(detectReproduceResult)).append("\n");
         sb.append("    scoreInfo: ").append(toIndentedString(scoreInfo)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");

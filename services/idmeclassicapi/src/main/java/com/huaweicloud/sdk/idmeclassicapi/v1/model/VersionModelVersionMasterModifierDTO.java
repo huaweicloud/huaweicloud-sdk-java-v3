@@ -31,7 +31,7 @@ public class VersionModelVersionMasterModifierDTO {
     }
 
     /**
-     * 父模型ID。
+     * **参数解释：**  父模型ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return masterId
      */
     public String getMasterId() {
@@ -48,7 +48,7 @@ public class VersionModelVersionMasterModifierDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -65,7 +65,7 @@ public class VersionModelVersionMasterModifierDTO {
     }
 
     /**
-     * 版本对象。
+     * **参数解释：**  版本对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return version
      */
     public String getVersion() {

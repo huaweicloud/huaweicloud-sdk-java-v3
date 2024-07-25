@@ -33,6 +33,34 @@ public class SecMasterRegion {
 
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://secmaster.cn-north-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://secmaster.cn-east-4.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://secmaster.me-east-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 =
+        new Region("cn-north-11", "https://secmaster.cn-north-11.myhuaweicloud.com");
+
+    public static final Region SA_BRAZIL_1 =
+        new Region("sa-brazil-1", "https://secmaster.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://secmaster.la-north-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://secmaster.ap-southeast-3.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://secmaster.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://secmaster.ap-southeast-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://secmaster.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://secmaster.tr-west-1.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://secmaster.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SECMASTER");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -48,6 +76,17 @@ public class SecMasterRegion {
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-north-1", CN_NORTH_1);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

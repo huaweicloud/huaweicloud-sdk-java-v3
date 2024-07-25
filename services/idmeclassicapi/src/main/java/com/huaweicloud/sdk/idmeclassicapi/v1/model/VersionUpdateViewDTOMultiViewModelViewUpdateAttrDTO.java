@@ -34,7 +34,7 @@ public class VersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO {
     }
 
     /**
-     * 版本对象ID
+     * **参数解释：**  版本对象ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return versionId
      */
     public String getVersionId() {
@@ -96,7 +96,7 @@ public class VersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO {
     }
 
     /**
-     * 指定不复制的视图属性，其值将被设置为null。
+     * **参数解释：**  指定不复制的视图属性，其值将被设置为null。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNull
      */
     public List<String> getNeedSetNull() {

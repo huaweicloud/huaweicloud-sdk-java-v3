@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.secmaster.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -19,12 +18,12 @@ public class ListDataclassRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private BigDecimal offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private BigDecimal limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -63,7 +62,7 @@ public class ListDataclassRequest {
         this.workspaceId = workspaceId;
     }
 
-    public ListDataclassRequest withOffset(BigDecimal offset) {
+    public ListDataclassRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -74,15 +73,15 @@ public class ListDataclassRequest {
      * maximum: 999999999
      * @return offset
      */
-    public BigDecimal getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(BigDecimal offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListDataclassRequest withLimit(BigDecimal limit) {
+    public ListDataclassRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -93,11 +92,11 @@ public class ListDataclassRequest {
      * maximum: 100
      * @return limit
      */
-    public BigDecimal getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(BigDecimal limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 

@@ -93,7 +93,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -110,7 +110,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -127,7 +127,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -144,7 +144,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 描述。
+     * **参数解释：**  描述。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -161,7 +161,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 成绩。
+     * **参数解释：**  成绩。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return grade
      */
     public BigDecimal getGrade() {
@@ -178,7 +178,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -195,7 +195,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 关键信息资产ID。
+     * **参数解释：**  关键信息资产ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return kiaguid
      */
     public String getKiaguid() {
@@ -212,7 +212,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 最新更新时间。
+     * **参数解释：**  最新更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -229,7 +229,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -246,7 +246,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 名称。
+     * **参数解释：**  名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -263,7 +263,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 软删除标识，参数值为0或1。  - 0：表示未删除。  - 1：表示已删除。
+     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。  - 1：表示已删除。  **默认取值：**  不涉及。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -280,7 +280,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -297,7 +297,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 系统版本。
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -314,7 +314,7 @@ public class StudentViewDTO {
     }
 
     /**
-     * 安全密级。  - INTERNAL：内部公开。  - SECRET：秘密。  - CONFIDENTIAL：机密。  - TOP_SECRET：绝密。
+     * **参数解释：**  安全密级。  **取值范围：**  - INTERNAL：内部公开。  - SECRET：秘密。  - CONFIDENTIAL：机密。  - TOP_SECRET：绝密。  **默认取值：**  不涉及。 
      * @return securityLevel
      */
     public String getSecurityLevel() {

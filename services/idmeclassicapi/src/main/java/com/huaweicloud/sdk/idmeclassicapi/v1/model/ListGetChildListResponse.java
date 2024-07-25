@@ -40,7 +40,7 @@ public class ListGetChildListResponse extends SdkResponse {
     }
 
     /**
-     * 请求结果。
+     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。  **默认取值：**  不涉及。 
      * @return result
      */
     public String getResult() {
@@ -73,7 +73,7 @@ public class ListGetChildListResponse extends SdkResponse {
     }
 
     /**
-     * 请求数据。
+     * **参数解释：**  请求数据。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return data
      */
     public List<BasicObjectQueryViewDTO> getData() {
@@ -106,7 +106,7 @@ public class ListGetChildListResponse extends SdkResponse {
     }
 
     /**
-     * 异常信息。
+     * **参数解释：**  异常信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return errors
      */
     public List<String> getErrors() {

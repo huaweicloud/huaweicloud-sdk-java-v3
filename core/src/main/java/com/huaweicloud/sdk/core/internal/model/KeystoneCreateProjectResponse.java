@@ -23,11 +23,10 @@ package com.huaweicloud.sdk.core.internal.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.function.Consumer;
 
-public class KeystoneCreateProjectResponse extends SdkResponse {
+public class KeystoneCreateProjectResponse extends IamResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project")
     private Project project = null;

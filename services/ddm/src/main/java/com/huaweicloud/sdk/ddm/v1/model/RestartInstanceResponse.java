@@ -26,11 +26,6 @@ public class RestartInstanceResponse extends SdkResponse {
 
     private String jobId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
     public RestartInstanceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -54,7 +49,7 @@ public class RestartInstanceResponse extends SdkResponse {
     }
 
     /**
-     * DDM实例名称,仅按需实例时会返回该参数。
+     * DDM实例名称。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -71,7 +66,7 @@ public class RestartInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID,仅按需实例时会返回该参数。
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -80,23 +75,6 @@ public class RestartInstanceResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
-    }
-
-    public RestartInstanceResponse withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单号,仅包年包月实例时返回该参数。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     @Override
@@ -109,12 +87,12 @@ public class RestartInstanceResponse extends SdkResponse {
         }
         RestartInstanceResponse that = (RestartInstanceResponse) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, instanceName, jobId, orderId);
+        return Objects.hash(instanceId, instanceName, jobId);
     }
 
     @Override
@@ -124,7 +102,6 @@ public class RestartInstanceResponse extends SdkResponse {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

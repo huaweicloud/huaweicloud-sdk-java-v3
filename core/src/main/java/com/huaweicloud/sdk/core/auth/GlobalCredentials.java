@@ -110,7 +110,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
             Logger logger = LoggerFactory.getLogger(hcClient.getClass());
             logger.info("domain id not found in BasicCredentials," +
-                    " trying to obtain domain id from IAM service: " + iamEndpoint);
+                    " trying to get domain id from IAM service automatically: " + iamEndpoint);
             KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
             KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
                     InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
@@ -120,7 +120,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
             }
             domainId = response.getDomains().get(0).getId();
-            logger.info("success to obtain domain id: " + domainId);
+            logger.info("Success to get domain id: " + domainId);
             AuthCache.putAuth(akWithName, domainId);
 
             setDerivedPredicate(derivedPredicate);

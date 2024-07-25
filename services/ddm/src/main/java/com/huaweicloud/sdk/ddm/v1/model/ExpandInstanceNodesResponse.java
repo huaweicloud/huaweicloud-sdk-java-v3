@@ -27,7 +27,7 @@ public class ExpandInstanceNodesResponse extends SdkResponse {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
+    @JsonProperty(value = "orderId")
 
     private String orderId;
 

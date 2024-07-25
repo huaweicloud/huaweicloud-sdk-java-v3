@@ -23,13 +23,12 @@ package com.huaweicloud.sdk.core.internal.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class KeystoneListRegionsResponse extends SdkResponse {
+public class KeystoneListRegionsResponse extends IamResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
     private List<Region> regions = null;

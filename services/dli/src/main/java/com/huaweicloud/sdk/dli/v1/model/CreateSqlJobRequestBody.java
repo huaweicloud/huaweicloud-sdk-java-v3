@@ -29,9 +29,9 @@ public class CreateSqlJobRequestBody {
     public static final class EngineTypeEnum {
 
         /**
-         * Enum TRINO for value: "trino"
+         * Enum HETUENGINE for value: "hetuEngine"
          */
-        public static final EngineTypeEnum TRINO = new EngineTypeEnum("trino");
+        public static final EngineTypeEnum HETUENGINE = new EngineTypeEnum("hetuEngine");
 
         /**
          * Enum SPARK for value: "spark"
@@ -42,7 +42,7 @@ public class CreateSqlJobRequestBody {
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
             Map<String, EngineTypeEnum> map = new HashMap<>();
-            map.put("trino", TRINO);
+            map.put("hetuEngine", HETUENGINE);
             map.put("spark", SPARK);
             return Collections.unmodifiableMap(map);
         }

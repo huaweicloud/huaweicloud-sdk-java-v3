@@ -87,11 +87,6 @@ public class CreateIndicatorDetail {
     private String dataclassId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_object")
-
-    private IndicatorDataObjectDetail dataObject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
 
     private String workspaceId;
@@ -100,11 +95,6 @@ public class CreateIndicatorDetail {
     @JsonProperty(value = "project_id")
 
     private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_id")
-
-    private String layoutId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataclass")
@@ -334,7 +324,7 @@ public class CreateIndicatorDetail {
     }
 
     /**
-     * 指标ID
+     * 威胁情报ID
      * @return id
      */
     public String getId() {
@@ -377,7 +367,7 @@ public class CreateIndicatorDetail {
     }
 
     /**
-     * 指标名称
+     * 威胁情报名称
      * @return name
      */
     public String getName() {
@@ -403,32 +393,6 @@ public class CreateIndicatorDetail {
 
     public void setDataclassId(String dataclassId) {
         this.dataclassId = dataclassId;
-    }
-
-    public CreateIndicatorDetail withDataObject(IndicatorDataObjectDetail dataObject) {
-        this.dataObject = dataObject;
-        return this;
-    }
-
-    public CreateIndicatorDetail withDataObject(Consumer<IndicatorDataObjectDetail> dataObjectSetter) {
-        if (this.dataObject == null) {
-            this.dataObject = new IndicatorDataObjectDetail();
-            dataObjectSetter.accept(this.dataObject);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dataObject
-     * @return dataObject
-     */
-    public IndicatorDataObjectDetail getDataObject() {
-        return dataObject;
-    }
-
-    public void setDataObject(IndicatorDataObjectDetail dataObject) {
-        this.dataObject = dataObject;
     }
 
     public CreateIndicatorDetail withWorkspaceId(String workspaceId) {
@@ -463,23 +427,6 @@ public class CreateIndicatorDetail {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public CreateIndicatorDetail withLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-        return this;
-    }
-
-    /**
-     * 布局ID
-     * @return layoutId
-     */
-    public String getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(String layoutId) {
-        this.layoutId = layoutId;
     }
 
     public CreateIndicatorDetail withDataclass(DataClassRefPojo dataclass) {
@@ -559,9 +506,8 @@ public class CreateIndicatorDetail {
             && Objects.equals(this.firstReportTime, that.firstReportTime)
             && Objects.equals(this.lastReportTime, that.lastReportTime) && Objects.equals(this.id, that.id)
             && Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.dataObject, that.dataObject)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.layoutId, that.layoutId) && Objects.equals(this.dataclass, that.dataclass)
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.dataclass, that.dataclass)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -582,10 +528,8 @@ public class CreateIndicatorDetail {
             indicatorType,
             name,
             dataclassId,
-            dataObject,
             workspaceId,
             projectId,
-            layoutId,
             dataclass,
             createTime,
             updateTime);
@@ -610,10 +554,8 @@ public class CreateIndicatorDetail {
         sb.append("    indicatorType: ").append(toIndentedString(indicatorType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
-        sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    layoutId: ").append(toIndentedString(layoutId)).append("\n");
         sb.append("    dataclass: ").append(toIndentedString(dataclass)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

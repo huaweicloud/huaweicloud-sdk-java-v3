@@ -49,7 +49,7 @@ public class UpdateIndicatorRequest {
     }
 
     /**
-     * 情报ID
+     * 威胁情报ID
      * @return indicatorId
      */
     public String getIndicatorId() {

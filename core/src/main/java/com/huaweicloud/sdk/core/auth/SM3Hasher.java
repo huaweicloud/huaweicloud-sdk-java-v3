@@ -23,18 +23,19 @@ package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
 import org.bouncycastle.crypto.digests.SM3Digest;
-import org.openeuler.BGMProvider;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.Provider;
 
 class SM3Hasher extends AbstractHasher {
 
     private static final String HMAC_SM3 = "HmacSM3";
 
-    private static final BGMProvider BGM_PROVIDER = new BGMProvider();
+    private static final Provider PROVIDER = new BouncyCastleProvider();
 
     @Override
     protected byte[] hash(byte[] data) {
@@ -48,7 +49,7 @@ class SM3Hasher extends AbstractHasher {
     @Override
     protected byte[] hmac(byte[] data, byte[] key) {
         try {
-            Mac mac = Mac.getInstance(HMAC_SM3, BGM_PROVIDER);
+            Mac mac = Mac.getInstance(HMAC_SM3, PROVIDER);
             mac.init(new SecretKeySpec(key, HMAC_SM3));
             return mac.doFinal(data);
         } catch (InvalidKeyException | NoSuchAlgorithmException e) {

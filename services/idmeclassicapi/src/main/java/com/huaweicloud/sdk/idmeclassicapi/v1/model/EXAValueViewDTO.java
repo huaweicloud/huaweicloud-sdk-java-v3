@@ -82,7 +82,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -99,7 +99,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -116,7 +116,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -133,7 +133,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -150,7 +150,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 最后更新时间。
+     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -167,7 +167,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -184,7 +184,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 中文名称。
+     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -201,7 +201,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 软删除标识，参数值为0或1。 - 0：表示未删除。 - 1：表示已删除。
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -218,7 +218,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -235,7 +235,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 系统版本。
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -278,7 +278,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 类型。
+     * **参数解释：**  类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return type
      */
     public String getType() {
@@ -295,7 +295,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * 值。
+     * **参数解释：**  值。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return value
      */
     public Object getValue() {

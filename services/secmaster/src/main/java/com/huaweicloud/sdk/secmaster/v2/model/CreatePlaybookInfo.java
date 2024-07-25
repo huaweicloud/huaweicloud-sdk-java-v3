@@ -25,11 +25,6 @@ public class CreatePlaybookInfo {
 
     private String workspaceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabled")
-
-    private Boolean enabled;
-
     public CreatePlaybookInfo withName(String name) {
         this.name = name;
         return this;
@@ -81,23 +76,6 @@ public class CreatePlaybookInfo {
         this.workspaceId = workspaceId;
     }
 
-    public CreatePlaybookInfo withEnabled(Boolean enabled) {
-        this.enabled = enabled;
-        return this;
-    }
-
-    /**
-     * 是否启用，默认传false
-     * @return enabled
-     */
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +86,12 @@ public class CreatePlaybookInfo {
         }
         CreatePlaybookInfo that = (CreatePlaybookInfo) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.enabled, that.enabled);
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, workspaceId, enabled);
+        return Objects.hash(name, description, workspaceId);
     }
 
     @Override
@@ -123,7 +101,6 @@ public class CreatePlaybookInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

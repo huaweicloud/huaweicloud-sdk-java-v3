@@ -75,7 +75,7 @@ public class AlertEnvironment {
     }
 
     /**
-     * 区域od，全局服务global
+     * 区域id，全局服务global
      * @return regionId
      */
     public String getRegionId() {

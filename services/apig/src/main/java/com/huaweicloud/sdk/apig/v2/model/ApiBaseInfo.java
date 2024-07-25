@@ -621,7 +621,7 @@ public class ApiBaseInfo {
     private String tag;
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      */
     public static final class ContentTypeEnum {
 
@@ -706,6 +706,11 @@ public class ApiBaseInfo {
     @JsonProperty(value = "content_type")
 
     private ContentTypeEnum contentType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_send_fg_body_base64")
+
+    private Boolean isSendFgBodyBase64;
 
     public ApiBaseInfo withName(String name) {
         this.name = name;
@@ -994,7 +999,7 @@ public class ApiBaseInfo {
     }
 
     /**
-     * 前端自定义认证对象的ID，API请求协议为GRPC类型时不支持前端自定义认证
+     * 前端自定义认证对象的ID
      * @return authorizerId
      */
     public String getAuthorizerId() {
@@ -1112,7 +1117,7 @@ public class ApiBaseInfo {
     }
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      * @return contentType
      */
     public ContentTypeEnum getContentType() {
@@ -1121,6 +1126,23 @@ public class ApiBaseInfo {
 
     public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
+    }
+
+    public ApiBaseInfo withIsSendFgBodyBase64(Boolean isSendFgBodyBase64) {
+        this.isSendFgBodyBase64 = isSendFgBodyBase64;
+        return this;
+    }
+
+    /**
+     * 是否对与FunctionGraph交互场景的body进行Base64编码。仅当content_type为application/json时，可以不对body进行Base64编码。 应用场景： - 自定义认证 - 绑定断路器插件，且断路器后端降级策略为函数后端 - API后端类型为函数工作流
+     * @return isSendFgBodyBase64
+     */
+    public Boolean getIsSendFgBodyBase64() {
+        return isSendFgBodyBase64;
+    }
+
+    public void setIsSendFgBodyBase64(Boolean isSendFgBodyBase64) {
+        this.isSendFgBodyBase64 = isSendFgBodyBase64;
     }
 
     @Override
@@ -1144,7 +1166,8 @@ public class ApiBaseInfo {
             && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.romaAppId, that.romaAppId)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.contentType, that.contentType);
+            && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.isSendFgBodyBase64, that.isSendFgBodyBase64);
     }
 
     @Override
@@ -1171,7 +1194,8 @@ public class ApiBaseInfo {
             romaAppId,
             domainName,
             tag,
-            contentType);
+            contentType,
+            isSendFgBodyBase64);
     }
 
     @Override
@@ -1201,6 +1225,7 @@ public class ApiBaseInfo {
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    isSendFgBodyBase64: ").append(toIndentedString(isSendFgBodyBase64)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,7 +36,7 @@ public class StatisticsRVO {
     }
 
     /**
-     * 新增统计记录数。
+     * **参数解释：**  新增统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createCount
      */
     public Integer getCreateCount() {
@@ -53,7 +53,7 @@ public class StatisticsRVO {
     }
 
     /**
-     * 删除统计记录数。
+     * **参数解释：**  删除统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return deleteCount
      */
     public Integer getDeleteCount() {
@@ -70,7 +70,7 @@ public class StatisticsRVO {
     }
 
     /**
-     * 软删除统计记录数。
+     * **参数解释：**  软删除统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return logicalDeleteCount
      */
     public Integer getLogicalDeleteCount() {
@@ -87,7 +87,7 @@ public class StatisticsRVO {
     }
 
     /**
-     * 更新统计记录数。
+     * **参数解释：**  更新统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return updateCount
      */
     public Integer getUpdateCount() {

@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelTo
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsRequest;
@@ -101,6 +103,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionRequest;
@@ -339,6 +343,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
@@ -531,6 +537,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificatio
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
@@ -589,6 +597,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
@@ -895,6 +905,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> batchDeleteSecurityDataClassificationRuleAsyncInvoker(
         BatchDeleteSecurityDataClassificationRuleRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.batchDeleteSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 批量删除动态脱敏策略
+     *
+     * 批量删除动态脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityDynamicMaskingPoliciesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityDynamicMaskingPoliciesResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityDynamicMaskingPoliciesResponse> batchDeleteSecurityDynamicMaskingPoliciesAsync(
+        BatchDeleteSecurityDynamicMaskingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchDeleteSecurityDynamicMaskingPolicies);
+    }
+
+    /**
+     * 批量删除动态脱敏策略
+     *
+     * 批量删除动态脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityDynamicMaskingPoliciesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityDynamicMaskingPoliciesRequest, BatchDeleteSecurityDynamicMaskingPoliciesResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityDynamicMaskingPoliciesRequest, BatchDeleteSecurityDynamicMaskingPoliciesResponse> batchDeleteSecurityDynamicMaskingPoliciesAsyncInvoker(
+        BatchDeleteSecurityDynamicMaskingPoliciesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchDeleteSecurityDynamicMaskingPolicies, hcClient);
     }
 
     /**
@@ -1984,6 +2024,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRuleAsyncInvoker(
         CreateSecurityDataClassificationRuleRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.createSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 创建数据脱敏策略
+     *
+     * 创建动态数据脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return CompletableFuture<CreateSecurityDynamicMaskingPolicyResponse>
+     */
+    public CompletableFuture<CreateSecurityDynamicMaskingPolicyResponse> createSecurityDynamicMaskingPolicyAsync(
+        CreateSecurityDynamicMaskingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityDynamicMaskingPolicy);
+    }
+
+    /**
+     * 创建数据脱敏策略
+     *
+     * 创建动态数据脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityDynamicMaskingPolicyRequest, CreateSecurityDynamicMaskingPolicyResponse>
+     */
+    public AsyncInvoker<CreateSecurityDynamicMaskingPolicyRequest, CreateSecurityDynamicMaskingPolicyResponse> createSecurityDynamicMaskingPolicyAsyncInvoker(
+        CreateSecurityDynamicMaskingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createSecurityDynamicMaskingPolicy, hcClient);
     }
 
     /**
@@ -5212,6 +5282,36 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询动态数据脱敏策略列表
+     *
+     * 查询动态数据脱敏策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityDynamicMaskingPoliciesRequest 请求对象
+     * @return CompletableFuture<ListSecurityDynamicMaskingPoliciesResponse>
+     */
+    public CompletableFuture<ListSecurityDynamicMaskingPoliciesResponse> listSecurityDynamicMaskingPoliciesAsync(
+        ListSecurityDynamicMaskingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityDynamicMaskingPolicies);
+    }
+
+    /**
+     * 查询动态数据脱敏策略列表
+     *
+     * 查询动态数据脱敏策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityDynamicMaskingPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListSecurityDynamicMaskingPoliciesRequest, ListSecurityDynamicMaskingPoliciesResponse>
+     */
+    public AsyncInvoker<ListSecurityDynamicMaskingPoliciesRequest, ListSecurityDynamicMaskingPoliciesResponse> listSecurityDynamicMaskingPoliciesAsyncInvoker(
+        ListSecurityDynamicMaskingPoliciesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listSecurityDynamicMaskingPolicies, hcClient);
+    }
+
+    /**
      * 查询用户同步列表
      *
      * 查询用户同步列表。
@@ -7913,6 +8013,36 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询某个脱敏策略的详细信息
+     *
+     * 查询某个脱敏策略的详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return CompletableFuture<ShowSecurityDynamicMaskingPolicyResponse>
+     */
+    public CompletableFuture<ShowSecurityDynamicMaskingPolicyResponse> showSecurityDynamicMaskingPolicyAsync(
+        ShowSecurityDynamicMaskingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showSecurityDynamicMaskingPolicy);
+    }
+
+    /**
+     * 查询某个脱敏策略的详细信息
+     *
+     * 查询某个脱敏策略的详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityDynamicMaskingPolicyRequest, ShowSecurityDynamicMaskingPolicyResponse>
+     */
+    public AsyncInvoker<ShowSecurityDynamicMaskingPolicyRequest, ShowSecurityDynamicMaskingPolicyResponse> showSecurityDynamicMaskingPolicyAsyncInvoker(
+        ShowSecurityDynamicMaskingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showSecurityDynamicMaskingPolicy, hcClient);
+    }
+
+    /**
      * 查询单个用户同步任务
      *
      * 查询单个用户同步任务。
@@ -8735,6 +8865,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRuleAsyncInvoker(
         UpdateSecurityDataClassificationRuleRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.updateSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 更新动态数据脱敏策略
+     *
+     * 更新动态数据脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityDynamicMaskingPolicyResponse>
+     */
+    public CompletableFuture<UpdateSecurityDynamicMaskingPolicyResponse> updateSecurityDynamicMaskingPolicyAsync(
+        UpdateSecurityDynamicMaskingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityDynamicMaskingPolicy);
+    }
+
+    /**
+     * 更新动态数据脱敏策略
+     *
+     * 更新动态数据脱敏策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityDynamicMaskingPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityDynamicMaskingPolicyRequest, UpdateSecurityDynamicMaskingPolicyResponse>
+     */
+    public AsyncInvoker<UpdateSecurityDynamicMaskingPolicyRequest, UpdateSecurityDynamicMaskingPolicyResponse> updateSecurityDynamicMaskingPolicyAsyncInvoker(
+        UpdateSecurityDynamicMaskingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateSecurityDynamicMaskingPolicy, hcClient);
     }
 
     /**

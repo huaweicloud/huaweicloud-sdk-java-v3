@@ -26,7 +26,7 @@ public class FuncInfo {
     }
 
     /**
-     * 指定简单函数名称。 - AVG：求平均值。 - COUNT：求总数。 - MAX：求最大值。 - MIX：求最小值。
+     * **参数解释：**  指定简单函数名称。  **约束限制：**  不涉及。  **取值范围：**  - AVG：求平均值。 - COUNT：求总数。 - MAX：求最大值。 - MIX：求最小值。  **默认取值：**  不涉及。 
      * @return func
      */
     public String getFunc() {
@@ -43,7 +43,7 @@ public class FuncInfo {
     }
 
     /**
-     * 指定简单函数以哪个属性为维度操作。
+     * **参数解释：**  指定简单函数以哪个属性为维度操作。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return funcBy
      */
     public String getFuncBy() {

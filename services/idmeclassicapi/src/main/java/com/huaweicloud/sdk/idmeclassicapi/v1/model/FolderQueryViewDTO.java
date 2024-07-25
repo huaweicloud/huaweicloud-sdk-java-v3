@@ -104,7 +104,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 编码。
+     * **参数解释：**  编码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return businessCode
      */
     public String getBusinessCode() {
@@ -121,7 +121,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -138,7 +138,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -155,7 +155,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -172,7 +172,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 中文描述。
+     * **参数解释：**  中文描述。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -189,7 +189,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 英文描述。
+     * **参数解释：**  英文描述。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return descriptionEn
      */
     public String getDescriptionEn() {
@@ -206,7 +206,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 失效标识。  - true：失效。  - false：未失效。
+     * **参数解释：**  失效标识。  **取值范围：**  - true：失效。  - false：未失效。  **默认取值：**  false。 
      * @return disableFlag
      */
     public Boolean getDisableFlag() {
@@ -223,7 +223,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 扩展属性映射集。
+     * **参数解释：**  扩展属性映射集。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return extAttrMap
      */
     public Object getExtAttrMap() {
@@ -256,7 +256,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 扩展属性列表。
+     * **参数解释：**  扩展属性列表。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return extAttrs
      */
     public List<EXAValueViewDTO> getExtAttrs() {
@@ -273,7 +273,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -290,7 +290,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 最后更新时间。
+     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -307,7 +307,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -324,7 +324,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 中文名称。
+     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -341,7 +341,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 英文名称。
+     * **参数解释：**  英文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return nameEn
      */
     public String getNameEn() {
@@ -358,7 +358,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -401,7 +401,7 @@ public class FolderQueryViewDTO {
     }
 
     /**
-     * 类别。
+     * **参数解释：**  类别。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return type
      */
     public String getType() {

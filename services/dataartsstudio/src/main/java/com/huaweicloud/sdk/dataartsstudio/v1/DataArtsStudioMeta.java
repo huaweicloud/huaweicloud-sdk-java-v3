@@ -49,10 +49,13 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteBaseDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeletePolicySetsDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRulesBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsRequest;
@@ -145,6 +148,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionRequest;
@@ -241,6 +246,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EntityWithExtInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EnvRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
@@ -405,6 +412,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDatasourceUrlsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
@@ -619,6 +628,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificatio
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
@@ -690,6 +701,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
@@ -1033,6 +1046,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(BatchDeleteRulesBaseDTO.class),
             f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getBody,
                 BatchDeleteSecurityDataClassificationRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityDynamicMaskingPoliciesRequest, BatchDeleteSecurityDynamicMaskingPoliciesResponse> batchDeleteSecurityDynamicMaskingPolicies =
+        genForBatchDeleteSecurityDynamicMaskingPolicies();
+
+    private static HttpRequestDef<BatchDeleteSecurityDynamicMaskingPoliciesRequest, BatchDeleteSecurityDynamicMaskingPoliciesResponse> genForBatchDeleteSecurityDynamicMaskingPolicies() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityDynamicMaskingPoliciesRequest, BatchDeleteSecurityDynamicMaskingPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityDynamicMaskingPoliciesRequest.class,
+                    BatchDeleteSecurityDynamicMaskingPoliciesResponse.class)
+                .withName("BatchDeleteSecurityDynamicMaskingPolicies")
+                .withUri("/v1/{project_id}/security/masking/dynamic/policies/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDynamicMaskingPoliciesRequest::getWorkspace,
+                BatchDeleteSecurityDynamicMaskingPoliciesRequest::setWorkspace));
+        builder.<BatchDeletePolicySetsDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePolicySetsDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDynamicMaskingPoliciesRequest::getBody,
+                BatchDeleteSecurityDynamicMaskingPoliciesRequest::setBody));
 
         // response
 
@@ -2236,6 +2282,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
             f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getBody,
                 CreateSecurityDataClassificationRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityDynamicMaskingPolicyRequest, CreateSecurityDynamicMaskingPolicyResponse> createSecurityDynamicMaskingPolicy =
+        genForCreateSecurityDynamicMaskingPolicy();
+
+    private static HttpRequestDef<CreateSecurityDynamicMaskingPolicyRequest, CreateSecurityDynamicMaskingPolicyResponse> genForCreateSecurityDynamicMaskingPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityDynamicMaskingPolicyRequest, CreateSecurityDynamicMaskingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityDynamicMaskingPolicyRequest.class,
+                    CreateSecurityDynamicMaskingPolicyResponse.class)
+                .withName("CreateSecurityDynamicMaskingPolicy")
+                .withUri("/v1/{project_id}/security/masking/dynamic/policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityDynamicMaskingPolicyRequest::getWorkspace,
+                CreateSecurityDynamicMaskingPolicyRequest::setWorkspace));
+        builder.<DynamicMaskingPolicyCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DynamicMaskingPolicyCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityDynamicMaskingPolicyRequest::getBody,
+                CreateSecurityDynamicMaskingPolicyRequest::setBody));
 
         // response
 
@@ -7289,6 +7368,81 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityDynamicMaskingPoliciesRequest, ListSecurityDynamicMaskingPoliciesResponse> listSecurityDynamicMaskingPolicies =
+        genForListSecurityDynamicMaskingPolicies();
+
+    private static HttpRequestDef<ListSecurityDynamicMaskingPoliciesRequest, ListSecurityDynamicMaskingPoliciesResponse> genForListSecurityDynamicMaskingPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityDynamicMaskingPoliciesRequest, ListSecurityDynamicMaskingPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityDynamicMaskingPoliciesRequest.class,
+                    ListSecurityDynamicMaskingPoliciesResponse.class)
+                .withName("ListSecurityDynamicMaskingPolicies")
+                .withUri("/v1/{project_id}/security/masking/dynamic/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getLimit,
+                ListSecurityDynamicMaskingPoliciesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getOffset,
+                ListSecurityDynamicMaskingPoliciesRequest::setOffset));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getName,
+                ListSecurityDynamicMaskingPoliciesRequest::setName));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getClusterName,
+                ListSecurityDynamicMaskingPoliciesRequest::setClusterName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getDatabaseName,
+                ListSecurityDynamicMaskingPoliciesRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getTableName,
+                ListSecurityDynamicMaskingPoliciesRequest::setTableName));
+        builder.<ListSecurityDynamicMaskingPoliciesRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityDynamicMaskingPoliciesRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getOrderBy,
+                ListSecurityDynamicMaskingPoliciesRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getOrderByAsc,
+                ListSecurityDynamicMaskingPoliciesRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDynamicMaskingPoliciesRequest::getWorkspace,
+                ListSecurityDynamicMaskingPoliciesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> listSecurityMemberSyncTasks =
         genForListSecurityMemberSyncTasks();
 
@@ -11466,6 +11620,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityDynamicMaskingPolicyRequest, ShowSecurityDynamicMaskingPolicyResponse> showSecurityDynamicMaskingPolicy =
+        genForShowSecurityDynamicMaskingPolicy();
+
+    private static HttpRequestDef<ShowSecurityDynamicMaskingPolicyRequest, ShowSecurityDynamicMaskingPolicyResponse> genForShowSecurityDynamicMaskingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityDynamicMaskingPolicyRequest, ShowSecurityDynamicMaskingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityDynamicMaskingPolicyRequest.class,
+                    ShowSecurityDynamicMaskingPolicyResponse.class)
+                .withName("ShowSecurityDynamicMaskingPolicy")
+                .withUri("/v1/{project_id}/security/masking/dynamic/policies/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDynamicMaskingPolicyRequest::getId,
+                ShowSecurityDynamicMaskingPolicyRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDynamicMaskingPolicyRequest::getWorkspace,
+                ShowSecurityDynamicMaskingPolicyRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityMemberSyncTaskRequest, ShowSecurityMemberSyncTaskResponse> showSecurityMemberSyncTask =
         genForShowSecurityMemberSyncTask();
 
@@ -12445,6 +12632,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
             f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getBody,
                 UpdateSecurityDataClassificationRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityDynamicMaskingPolicyRequest, UpdateSecurityDynamicMaskingPolicyResponse> updateSecurityDynamicMaskingPolicy =
+        genForUpdateSecurityDynamicMaskingPolicy();
+
+    private static HttpRequestDef<UpdateSecurityDynamicMaskingPolicyRequest, UpdateSecurityDynamicMaskingPolicyResponse> genForUpdateSecurityDynamicMaskingPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityDynamicMaskingPolicyRequest, UpdateSecurityDynamicMaskingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityDynamicMaskingPolicyRequest.class,
+                    UpdateSecurityDynamicMaskingPolicyResponse.class)
+                .withName("UpdateSecurityDynamicMaskingPolicy")
+                .withUri("/v1/{project_id}/security/masking/dynamic/policies/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDynamicMaskingPolicyRequest::getId,
+                UpdateSecurityDynamicMaskingPolicyRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDynamicMaskingPolicyRequest::getWorkspace,
+                UpdateSecurityDynamicMaskingPolicyRequest::setWorkspace));
+        builder.<DynamicMaskingPolicyUpdateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DynamicMaskingPolicyUpdateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityDynamicMaskingPolicyRequest::getBody,
+                UpdateSecurityDynamicMaskingPolicyRequest::setBody));
 
         // response
 

@@ -47,6 +47,16 @@ public class ListAllVersionsRequest {
     private Integer totalRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pageSizePath")
+
+    private Integer pageSizePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "curPagePath")
+
+    private Integer curPagePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identifier")
 
     private String identifier;
@@ -55,16 +65,6 @@ public class ListAllVersionsRequest {
     @JsonProperty(value = "modelName")
 
     private String modelName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "curPagePath")
-
-    private Integer curPagePath;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pageSizePath")
-
-    private Integer pageSizePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -77,7 +77,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 当前页。
+     * **参数解释：**  当前页。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
      * @return curPage
      */
     public Integer getCurPage() {
@@ -94,7 +94,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 结束索引。
+     * **参数解释：**  结束索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return endIndex
      */
     public Integer getEndIndex() {
@@ -111,7 +111,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 最大分页数。
+     * **参数解释：**  最大分页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
      * @return maxPageSize
      */
     public Integer getMaxPageSize() {
@@ -128,7 +128,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 每页大小。
+     * **参数解释：**  每页大小。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -145,7 +145,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 起始索引。
+     * **参数解释：**  起始索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return startIndex
      */
     public Integer getStartIndex() {
@@ -162,7 +162,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 总页数。
+     * **参数解释：**  总页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return totalPages
      */
     public Integer getTotalPages() {
@@ -179,7 +179,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 总行数。
+     * **参数解释：**  总行数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return totalRows
      */
     public Integer getTotalRows() {
@@ -190,13 +190,47 @@ public class ListAllVersionsRequest {
         this.totalRows = totalRows;
     }
 
+    public ListAllVersionsRequest withPageSizePath(Integer pageSizePath) {
+        this.pageSizePath = pageSizePath;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  分页大小（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  1-1000。  **默认取值：**  不涉及。 
+     * @return pageSizePath
+     */
+    public Integer getPageSizePath() {
+        return pageSizePath;
+    }
+
+    public void setPageSizePath(Integer pageSizePath) {
+        this.pageSizePath = pageSizePath;
+    }
+
+    public ListAllVersionsRequest withCurPagePath(Integer curPagePath) {
+        this.curPagePath = curPagePath;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  当前页数（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
+     * @return curPagePath
+     */
+    public Integer getCurPagePath() {
+        return curPagePath;
+    }
+
+    public void setCurPagePath(Integer curPagePath) {
+        this.curPagePath = curPagePath;
+    }
+
     public ListAllVersionsRequest withIdentifier(String identifier) {
         this.identifier = identifier;
         return this;
     }
 
     /**
-     * 应用ID。
+     * **参数解释：**  应用唯一标识。  **约束限制：**  不涉及。  **取值范围：**  由英文字母和数字组成，且长度为32个字符。  **默认取值：**  不涉及。 
      * @return identifier
      */
     public String getIdentifier() {
@@ -213,7 +247,7 @@ public class ListAllVersionsRequest {
     }
 
     /**
-     * 数据模型的英文名称。
+     * **参数解释：**  数据模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  大写字母开头，只能包含字母、数字、\"_\"，且长度为[1-60]个字符。  **默认取值：**  不涉及。 
      * @return modelName
      */
     public String getModelName() {
@@ -222,40 +256,6 @@ public class ListAllVersionsRequest {
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
-    }
-
-    public ListAllVersionsRequest withCurPagePath(Integer curPagePath) {
-        this.curPagePath = curPagePath;
-        return this;
-    }
-
-    /**
-     * 当前页数（路径参数）。
-     * @return curPagePath
-     */
-    public Integer getCurPagePath() {
-        return curPagePath;
-    }
-
-    public void setCurPagePath(Integer curPagePath) {
-        this.curPagePath = curPagePath;
-    }
-
-    public ListAllVersionsRequest withPageSizePath(Integer pageSizePath) {
-        this.pageSizePath = pageSizePath;
-        return this;
-    }
-
-    /**
-     * 当前页数（路径参数）。
-     * @return pageSizePath
-     */
-    public Integer getPageSizePath() {
-        return pageSizePath;
-    }
-
-    public void setPageSizePath(Integer pageSizePath) {
-        this.pageSizePath = pageSizePath;
     }
 
     public ListAllVersionsRequest withBody(RDMParamVOVersionModelVersionMasterDTO body) {
@@ -296,9 +296,9 @@ public class ListAllVersionsRequest {
         return Objects.equals(this.curPage, that.curPage) && Objects.equals(this.endIndex, that.endIndex)
             && Objects.equals(this.maxPageSize, that.maxPageSize) && Objects.equals(this.pageSize, that.pageSize)
             && Objects.equals(this.startIndex, that.startIndex) && Objects.equals(this.totalPages, that.totalPages)
-            && Objects.equals(this.totalRows, that.totalRows) && Objects.equals(this.identifier, that.identifier)
-            && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.curPagePath, that.curPagePath)
-            && Objects.equals(this.pageSizePath, that.pageSizePath) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.totalRows, that.totalRows) && Objects.equals(this.pageSizePath, that.pageSizePath)
+            && Objects.equals(this.curPagePath, that.curPagePath) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.body, that.body);
     }
 
     @Override
@@ -310,10 +310,10 @@ public class ListAllVersionsRequest {
             startIndex,
             totalPages,
             totalRows,
+            pageSizePath,
+            curPagePath,
             identifier,
             modelName,
-            curPagePath,
-            pageSizePath,
             body);
     }
 
@@ -328,10 +328,10 @@ public class ListAllVersionsRequest {
         sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
         sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
         sb.append("    totalRows: ").append(toIndentedString(totalRows)).append("\n");
+        sb.append("    pageSizePath: ").append(toIndentedString(pageSizePath)).append("\n");
+        sb.append("    curPagePath: ").append(toIndentedString(curPagePath)).append("\n");
         sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
         sb.append("    modelName: ").append(toIndentedString(modelName)).append("\n");
-        sb.append("    curPagePath: ").append(toIndentedString(curPagePath)).append("\n");
-        sb.append("    pageSizePath: ").append(toIndentedString(pageSizePath)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

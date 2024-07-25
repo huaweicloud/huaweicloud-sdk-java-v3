@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import org.junit.Assert;
 import org.slf4j.Logger;
@@ -39,7 +40,7 @@ public class TestUtils {
                 WireMockConfiguration.options().dynamicPort().dynamicHttpsPort().disableRequestJournal());
     }
 
-    public static HcClient createHcClient(Logger logger, String endpoint) {
+    public static HcClient createHcClient(Logger logger, String endpoint, ICredential credentials) {
         return new HcClient(new HttpConfig().withIgnoreSSLVerification(true)
                 .withConnectionTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(
@@ -52,9 +53,12 @@ public class TestUtils {
                 .addHttpListener(HttpListener.forRequestListener(
                         requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
                                 requestListener.uri(), requestListener.body().orElse("")))))
-                .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
+                .withCredential(credentials)
                 .withEndpoints(Collections.singletonList(endpoint));
+    }
 
+    public static HcClient createHcClient(Logger logger, String endpoint) {
+        return createHcClient(logger, endpoint, new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"));
     }
 
     public static Consumer<InputStream> getDownloadConsumer(Logger logger) {

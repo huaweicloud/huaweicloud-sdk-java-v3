@@ -19,11 +19,6 @@ public class IndicatorListSearchRequest {
     private List<String> ids = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataclass_id")
 
     private String dataclassId;
@@ -80,7 +75,7 @@ public class IndicatorListSearchRequest {
     }
 
     /**
-     * 指标ID列表
+     * 威胁情报ID列表
      * @return ids
      */
     public List<String> getIds() {
@@ -89,23 +84,6 @@ public class IndicatorListSearchRequest {
 
     public void setIds(List<String> ids) {
         this.ids = ids;
-    }
-
-    public IndicatorListSearchRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 指标名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public IndicatorListSearchRequest withDataclassId(String dataclassId) {
@@ -249,16 +227,15 @@ public class IndicatorListSearchRequest {
             return false;
         }
         IndicatorListSearchRequest that = (IndicatorListSearchRequest) obj;
-        return Objects.equals(this.ids, that.ids) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.condition, that.condition)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.fromDate, that.fromDate)
-            && Objects.equals(this.toDate, that.toDate);
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortBy, that.sortBy)
+            && Objects.equals(this.fromDate, that.fromDate) && Objects.equals(this.toDate, that.toDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ids, name, dataclassId, condition, offset, limit, sortBy, fromDate, toDate);
+        return Objects.hash(ids, dataclassId, condition, offset, limit, sortBy, fromDate, toDate);
     }
 
     @Override
@@ -266,7 +243,6 @@ public class IndicatorListSearchRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class IndicatorListSearchRequest {\n");
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

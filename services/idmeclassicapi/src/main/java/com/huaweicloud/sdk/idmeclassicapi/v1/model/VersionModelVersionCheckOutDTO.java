@@ -44,7 +44,7 @@ public class VersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 创建人。
+     * **参数解释：**  创建人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -77,7 +77,7 @@ public class VersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 关系实体名称集合，与workCopyType的值CUSTOM配合使用。
+     * **参数解释：**  关系实体名称集合，与workCopyType的值CUSTOM配合使用。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return customLinkSet
      */
     public List<String> getCustomLinkSet() {
@@ -94,7 +94,7 @@ public class VersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 主对象ID。
+     * **参数解释：**  主对象ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return masterId
      */
     public String getMasterId() {
@@ -111,7 +111,7 @@ public class VersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 更新者。
+     * **参数解释：**  更新者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -128,7 +128,7 @@ public class VersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 关系的复制类型。 - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，检出后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，检出后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，检出后的数据实例将继承这些关系实例。 - NONE：检出后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，检出后的数据实例将继承这些关系实例。
+     * **参数解释：**  关系的复制类型。  **取值范围：**  - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，检出后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，检出后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，检出后的数据实例将继承这些关系实例。 - NONE：检出后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，检出后的数据实例将继承这些关系实例。  **默认取值：**  不涉及。 
      * @return workCopyType
      */
     public String getWorkCopyType() {

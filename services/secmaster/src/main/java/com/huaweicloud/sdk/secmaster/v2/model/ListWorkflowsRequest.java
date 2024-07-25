@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,12 +23,12 @@ public class ListWorkflowsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private BigDecimal offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private BigDecimal limit;
+    private Integer limit;
 
     /**
      * 排序顺序，asc：升序，desc：降序
@@ -233,7 +232,7 @@ public class ListWorkflowsRequest {
         this.workspaceId = workspaceId;
     }
 
-    public ListWorkflowsRequest withOffset(BigDecimal offset) {
+    public ListWorkflowsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -244,15 +243,15 @@ public class ListWorkflowsRequest {
      * maximum: 999999999
      * @return offset
      */
-    public BigDecimal getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(BigDecimal offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListWorkflowsRequest withLimit(BigDecimal limit) {
+    public ListWorkflowsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -263,11 +262,11 @@ public class ListWorkflowsRequest {
      * maximum: 100
      * @return limit
      */
-    public BigDecimal getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(BigDecimal limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 

@@ -310,6 +310,31 @@ public class CreateAlertRuleRequestBody {
 
     private List<AlertRuleTrigger> triggers = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipe_name")
+
+    private String pipeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_name")
+
+    private String alertName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_description")
+
+    private String alertDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_remediation")
+
+    private String alertRemediation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "accumulated_times")
+
+    private Integer accumulatedTimes;
+
     public CreateAlertRuleRequestBody withPipeId(String pipeId) {
         this.pipeId = pipeId;
         return this;
@@ -605,6 +630,91 @@ public class CreateAlertRuleRequestBody {
         this.triggers = triggers;
     }
 
+    public CreateAlertRuleRequestBody withPipeName(String pipeName) {
+        this.pipeName = pipeName;
+        return this;
+    }
+
+    /**
+     * 管道名称
+     * @return pipeName
+     */
+    public String getPipeName() {
+        return pipeName;
+    }
+
+    public void setPipeName(String pipeName) {
+        this.pipeName = pipeName;
+    }
+
+    public CreateAlertRuleRequestBody withAlertName(String alertName) {
+        this.alertName = alertName;
+        return this;
+    }
+
+    /**
+     * 告警名称
+     * @return alertName
+     */
+    public String getAlertName() {
+        return alertName;
+    }
+
+    public void setAlertName(String alertName) {
+        this.alertName = alertName;
+    }
+
+    public CreateAlertRuleRequestBody withAlertDescription(String alertDescription) {
+        this.alertDescription = alertDescription;
+        return this;
+    }
+
+    /**
+     * 告警描述
+     * @return alertDescription
+     */
+    public String getAlertDescription() {
+        return alertDescription;
+    }
+
+    public void setAlertDescription(String alertDescription) {
+        this.alertDescription = alertDescription;
+    }
+
+    public CreateAlertRuleRequestBody withAlertRemediation(String alertRemediation) {
+        this.alertRemediation = alertRemediation;
+        return this;
+    }
+
+    /**
+     * 修复建议
+     * @return alertRemediation
+     */
+    public String getAlertRemediation() {
+        return alertRemediation;
+    }
+
+    public void setAlertRemediation(String alertRemediation) {
+        this.alertRemediation = alertRemediation;
+    }
+
+    public CreateAlertRuleRequestBody withAccumulatedTimes(Integer accumulatedTimes) {
+        this.accumulatedTimes = accumulatedTimes;
+        return this;
+    }
+
+    /**
+     * 执行次数
+     * @return accumulatedTimes
+     */
+    public Integer getAccumulatedTimes() {
+        return accumulatedTimes;
+    }
+
+    public void setAccumulatedTimes(Integer accumulatedTimes) {
+        this.accumulatedTimes = accumulatedTimes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -621,7 +731,11 @@ public class CreateAlertRuleRequestBody {
             && Objects.equals(this.customProperties, that.customProperties)
             && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.eventGrouping, that.eventGrouping)
             && Objects.equals(this.suspression, that.suspression) && Objects.equals(this.simulation, that.simulation)
-            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.triggers, that.triggers);
+            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.triggers, that.triggers)
+            && Objects.equals(this.pipeName, that.pipeName) && Objects.equals(this.alertName, that.alertName)
+            && Objects.equals(this.alertDescription, that.alertDescription)
+            && Objects.equals(this.alertRemediation, that.alertRemediation)
+            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes);
     }
 
     @Override
@@ -639,7 +753,12 @@ public class CreateAlertRuleRequestBody {
             suspression,
             simulation,
             schedule,
-            triggers);
+            triggers,
+            pipeName,
+            alertName,
+            alertDescription,
+            alertRemediation,
+            accumulatedTimes);
     }
 
     @Override
@@ -660,6 +779,11 @@ public class CreateAlertRuleRequestBody {
         sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");
+        sb.append("    pipeName: ").append(toIndentedString(pipeName)).append("\n");
+        sb.append("    alertName: ").append(toIndentedString(alertName)).append("\n");
+        sb.append("    alertDescription: ").append(toIndentedString(alertDescription)).append("\n");
+        sb.append("    alertRemediation: ").append(toIndentedString(alertRemediation)).append("\n");
+        sb.append("    accumulatedTimes: ").append(toIndentedString(accumulatedTimes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

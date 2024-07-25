@@ -143,10 +143,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         }
         String domainId = getDomainId(client);
         if (StringUtils.isEmpty(domainId)) {
-            throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                    + "3. Use AK/SK of the domain account.");
+            throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
         }
         return getCreateProjectId(client, regionId, domainId);
     }
@@ -171,10 +168,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
                 InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response)) {
-            throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                    + "3. Use AK/SK of the domain account.");
+            throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
         }
         return response.getDomains().get(0).getId();
     }

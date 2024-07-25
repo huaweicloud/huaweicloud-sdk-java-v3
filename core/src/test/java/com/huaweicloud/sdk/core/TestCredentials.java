@@ -20,12 +20,43 @@
  */
 package com.huaweicloud.sdk.core;
 
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import junit.framework.AssertionFailedError;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 public class TestCredentials {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestCredentials.class);
+
+    @Rule
+    public WireMockRule wireMockRule;
+
+    @Before
+    public void init() {
+        System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
+        System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
+
+        wireMockRule = TestUtils.createWireMockRule();
+    }
+
+    @After
+    public void stop() {
+        wireMockRule.stop();
+    }
+
+
     @Test(expected = IllegalArgumentException.class)
     public void testWithNullAk() {
         new BasicCredentials().withAk(null).withSk("sk");
@@ -76,5 +107,114 @@ public class TestCredentials {
         credentials.setSk("sk");
         Assert.assertEquals("ak", credentials.getAk());
         Assert.assertEquals("sk", credentials.getSk());
+    }
+
+    @Test
+    public void testAutoGetProjectId() throws ExecutionException, InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/projects?name=region-id-1")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"projects\":[{\"id\":\"project_id\"}]}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        credentials.processAuthParams(hcClient, "region-id-1").get();
+        Assert.assertEquals("project_id", credentials.getProjectId());
+    }
+
+    @Test
+    public void testEmptyProjectId() throws InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/projects?name=region-id-2")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"projects\":[]}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        try {
+            credentials.processAuthParams(hcClient, "region-id-2").get();
+            throw new AssertionFailedError("expected exception: Failed to get project id");
+        } catch (ExecutionException exception) {
+            Assert.assertEquals("Failed to get project id of region 'region-id-2' automatically," +
+                            " X-IAM-Trace-Id=trace-id." +
+                            " Confirm that the project exists in your account, or set project id manually:" +
+                            " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);",
+                    exception.getCause().getMessage());
+        }
+    }
+
+    @Test
+    public void testMultiProjectIds() throws InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/projects?name=region-id-3")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"projects\":[{\"id\":\"project_id1\"},{\"id\":\"project_id2\"}]}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        try {
+            credentials.processAuthParams(hcClient, "region-id-3").get();
+            throw new AssertionFailedError("expected exception: Failed to get project id");
+        } catch (ExecutionException exception) {
+            Assert.assertEquals("Multiple project ids found: [project_id1,project_id2]," +
+                            " X-IAM-Trace-Id=trace-id." +
+                            " Please select one when initializing the credentials:" +
+                            " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);",
+                    exception.getCause().getMessage());
+        }
+    }
+
+    @Test
+    public void testAutoGetDomainId() throws ExecutionException, InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"domains\":[{\"id\":\"domain_id\"}]}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        GlobalCredentials credentials = new GlobalCredentials().withAk("ak1").withSk("sk1").withIamEndpoint(iamEndpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        credentials.processAuthParams(hcClient, "region-id").get();
+        Assert.assertEquals("domain_id", credentials.getDomainId());
+    }
+
+    @Test
+    public void testEmptyDomainId() throws InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"domains\":[]}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        GlobalCredentials credentials = new GlobalCredentials().withAk("ak2").withSk("sk2").withIamEndpoint(iamEndpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        try {
+            credentials.processAuthParams(hcClient, "region-id").get();
+            throw new AssertionFailedError("expected exception: Failed to get domain id");
+        } catch (ExecutionException exception) {
+            Assert.assertEquals("Failed to get domain id automatically, " +
+                            "please confirm that you have 'iam:users:getUser' permission, " +
+                            "or set domain id manually: " +
+                            "new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId);",
+                    exception.getCause().getMessage());
+        }
     }
 }

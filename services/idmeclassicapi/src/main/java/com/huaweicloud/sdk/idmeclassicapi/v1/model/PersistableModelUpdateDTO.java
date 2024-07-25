@@ -59,7 +59,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -76,7 +76,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -93,7 +93,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -110,7 +110,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 最后更新时间。
+     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -127,7 +127,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 更新者。
+     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -160,7 +160,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 设置空值。
+     * **参数解释：**  设置空值，长度约束为1000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {
@@ -177,7 +177,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -194,7 +194,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * 示例模型的唯一键属性。
+     * **参数解释：**  示例模型的唯一键属性。  **约束限制：**  实例值不能重复。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

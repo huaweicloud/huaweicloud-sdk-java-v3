@@ -34,7 +34,7 @@ public class RelatedObjectViewDTO {
     }
 
     /**
-     * 数据实例ID。
+     * **参数解释：**  数据实例ID。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return objectId
      */
     public String getObjectId() {
@@ -67,7 +67,7 @@ public class RelatedObjectViewDTO {
     }
 
     /**
-     * 关联的数据传输对象列表。
+     * **参数解释：**  关联的数据传输对象列表。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return relatedList
      */
     public List<BasicObjectQueryViewDTO> getRelatedList() {
@@ -100,7 +100,7 @@ public class RelatedObjectViewDTO {
     }
 
     /**
-     * 关联的数据实体列表。
+     * **参数解释：**  关联的数据实体列表。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return relatedEntityList
      */
     public List<BasicObjectQueryViewDTO> getRelatedEntityList() {

@@ -26,7 +26,7 @@ public class StatisticsPVO {
     }
 
     /**
-     * 结束时间。
+     * **参数解释：**  结束时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return endTime
      */
     public String getEndTime() {
@@ -43,7 +43,7 @@ public class StatisticsPVO {
     }
 
     /**
-     * 开始时间。
+     * **参数解释：**  开始时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return startTime
      */
     public String getStartTime() {

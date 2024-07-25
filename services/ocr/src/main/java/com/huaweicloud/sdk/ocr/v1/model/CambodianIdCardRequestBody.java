@@ -65,6 +65,11 @@ public class CambodianIdCardRequestBody {
 
     private Boolean detectTampering;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_reproduce")
+
+    private Boolean detectReproduce;
+
     public CambodianIdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -252,6 +257,23 @@ public class CambodianIdCardRequestBody {
         this.detectTampering = detectTampering;
     }
 
+    public CambodianIdCardRequestBody withDetectReproduce(Boolean detectReproduce) {
+        this.detectReproduce = detectReproduce;
+        return this;
+    }
+
+    /**
+     * 返回判断身份证图像是否经过翻拍告警的开关，可选值如下所示 - true:打开判断身份证图像是否经过翻拍告警的功能  - false:关闭判断身份证图像是否经过翻拍告警的功能 
+     * @return detectReproduce
+     */
+    public Boolean getDetectReproduce() {
+        return detectReproduce;
+    }
+
+    public void setDetectReproduce(Boolean detectReproduce) {
+        this.detectReproduce = detectReproduce;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -269,7 +291,8 @@ public class CambodianIdCardRequestBody {
             && Objects.equals(this.detectBlockingWithinBorder, that.detectBlockingWithinBorder)
             && Objects.equals(this.detectBlur, that.detectBlur) && Objects.equals(this.detectGlare, that.detectGlare)
             && Objects.equals(this.returnAdjustedImage, that.returnAdjustedImage)
-            && Objects.equals(this.detectTampering, that.detectTampering);
+            && Objects.equals(this.detectTampering, that.detectTampering)
+            && Objects.equals(this.detectReproduce, that.detectReproduce);
     }
 
     @Override
@@ -284,7 +307,8 @@ public class CambodianIdCardRequestBody {
             detectBlur,
             detectGlare,
             returnAdjustedImage,
-            detectTampering);
+            detectTampering,
+            detectReproduce);
     }
 
     @Override
@@ -302,6 +326,7 @@ public class CambodianIdCardRequestBody {
         sb.append("    detectGlare: ").append(toIndentedString(detectGlare)).append("\n");
         sb.append("    returnAdjustedImage: ").append(toIndentedString(returnAdjustedImage)).append("\n");
         sb.append("    detectTampering: ").append(toIndentedString(detectTampering)).append("\n");
+        sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
         sb.append("}");
         return sb.toString();
     }

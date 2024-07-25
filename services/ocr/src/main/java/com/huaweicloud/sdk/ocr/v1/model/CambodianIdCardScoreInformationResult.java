@@ -40,6 +40,11 @@ public class CambodianIdCardScoreInformationResult {
 
     private Integer tamperingScore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reproduce_score")
+
+    private Integer reproduceScore;
+
     public CambodianIdCardScoreInformationResult withIdcardTypeScore(Integer idcardTypeScore) {
         this.idcardTypeScore = idcardTypeScore;
         return this;
@@ -142,6 +147,23 @@ public class CambodianIdCardScoreInformationResult {
         this.tamperingScore = tamperingScore;
     }
 
+    public CambodianIdCardScoreInformationResult withReproduceScore(Integer reproduceScore) {
+        this.reproduceScore = reproduceScore;
+        return this;
+    }
+
+    /**
+     * 告警分数，字段取值范围[0, 99]值大于50表示身份证经过翻拍，小于50表示身份证未经过翻拍，值越靠近99，表示身份证图像被翻拍过的可能性越大，值越靠近0，表示身份证图像未被翻拍的可能性越大。 仅在传入参数detect_reproduce为true时，返回该字段。 
+     * @return reproduceScore
+     */
+    public Integer getReproduceScore() {
+        return reproduceScore;
+    }
+
+    public void setReproduceScore(Integer reproduceScore) {
+        this.reproduceScore = reproduceScore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,7 +177,8 @@ public class CambodianIdCardScoreInformationResult {
             && Objects.equals(this.borderIntegrityScore, that.borderIntegrityScore)
             && Objects.equals(this.blockingWithinBorderScore, that.blockingWithinBorderScore)
             && Objects.equals(this.blurScore, that.blurScore) && Objects.equals(this.glareScore, that.glareScore)
-            && Objects.equals(this.tamperingScore, that.tamperingScore);
+            && Objects.equals(this.tamperingScore, that.tamperingScore)
+            && Objects.equals(this.reproduceScore, that.reproduceScore);
     }
 
     @Override
@@ -165,7 +188,8 @@ public class CambodianIdCardScoreInformationResult {
             blockingWithinBorderScore,
             blurScore,
             glareScore,
-            tamperingScore);
+            tamperingScore,
+            reproduceScore);
     }
 
     @Override
@@ -178,6 +202,7 @@ public class CambodianIdCardScoreInformationResult {
         sb.append("    blurScore: ").append(toIndentedString(blurScore)).append("\n");
         sb.append("    glareScore: ").append(toIndentedString(glareScore)).append("\n");
         sb.append("    tamperingScore: ").append(toIndentedString(tamperingScore)).append("\n");
+        sb.append("    reproduceScore: ").append(toIndentedString(reproduceScore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

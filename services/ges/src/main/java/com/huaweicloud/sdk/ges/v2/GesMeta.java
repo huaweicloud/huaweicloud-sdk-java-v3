@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ges.v2.model.AttachEip2Request;
 import com.huaweicloud.sdk.ges.v2.model.AttachEip2Response;
 import com.huaweicloud.sdk.ges.v2.model.AttachEipReq;
+import com.huaweicloud.sdk.ges.v2.model.ChangeSecurityGroupReq;
+import com.huaweicloud.sdk.ges.v2.model.ChangeSecurityGroupRequest;
+import com.huaweicloud.sdk.ges.v2.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.CreateBackup2Request;
@@ -67,6 +70,8 @@ import com.huaweicloud.sdk.ges.v2.model.ResizeGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ResizeGraphReq;
 import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ShowBackupDownloadLinkRequest;
+import com.huaweicloud.sdk.ges.v2.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ShowJob2Request;
@@ -118,6 +123,40 @@ public class GesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
             f -> f.withMarshaller(AttachEip2Response::getBody, AttachEip2Response::setBody)
+                .withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroup =
+        genForChangeSecurityGroup();
+
+    private static HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> genForChangeSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeSecurityGroupRequest.class, ChangeSecurityGroupResponse.class)
+                .withName("ChangeSecurityGroup")
+                .withUri("/v2/{project_id}/graphs/{graph_id}/sg/change")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getGraphId, ChangeSecurityGroupRequest::setGraphId));
+        builder.<ChangeSecurityGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeSecurityGroupReq.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, ChangeSecurityGroupRequest::setBody));
+
+        // response
+        builder.<Map<String, String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ChangeSecurityGroupResponse::getBody, ChangeSecurityGroupResponse::setBody)
                 .withInnerContainerType(String.class));
 
         return builder.build();
@@ -706,6 +745,36 @@ public class GesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartGraph2Request::getGraphId, RestartGraph2Request::setGraphId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink =
+        genForShowBackupDownloadLink();
+
+    private static HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> genForShowBackupDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
+            .withName("ShowBackupDownloadLink")
+            .withUri("/v2/{project_id}/graphs/{graph_id}/backup-files")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("graph_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getGraphId,
+                ShowBackupDownloadLinkRequest::setGraphId));
+        builder.<String>withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getBackupId,
+                ShowBackupDownloadLinkRequest::setBackupId));
 
         // response
 

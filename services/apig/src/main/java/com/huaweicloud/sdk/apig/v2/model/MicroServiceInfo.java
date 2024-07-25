@@ -119,11 +119,6 @@ public class MicroServiceInfo {
     private MicroServiceInfoCCE cceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cce_service_info")
-
-    private MicroServiceInfoCCEService cceServiceInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
@@ -236,32 +231,6 @@ public class MicroServiceInfo {
         this.cceInfo = cceInfo;
     }
 
-    public MicroServiceInfo withCceServiceInfo(MicroServiceInfoCCEService cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-        return this;
-    }
-
-    public MicroServiceInfo withCceServiceInfo(Consumer<MicroServiceInfoCCEService> cceServiceInfoSetter) {
-        if (this.cceServiceInfo == null) {
-            this.cceServiceInfo = new MicroServiceInfoCCEService();
-            cceServiceInfoSetter.accept(this.cceServiceInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get cceServiceInfo
-     * @return cceServiceInfo
-     */
-    public MicroServiceInfoCCEService getCceServiceInfo() {
-        return cceServiceInfo;
-    }
-
-    public void setCceServiceInfo(MicroServiceInfoCCEService cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-    }
-
     public MicroServiceInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -307,13 +276,13 @@ public class MicroServiceInfo {
         MicroServiceInfo that = (MicroServiceInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, cceServiceInfo, updateTime, createTime);
+        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, updateTime, createTime);
     }
 
     @Override
@@ -325,7 +294,6 @@ public class MicroServiceInfo {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
-        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");

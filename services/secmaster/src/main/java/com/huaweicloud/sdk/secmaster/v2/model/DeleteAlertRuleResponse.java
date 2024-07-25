@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,54 +15,106 @@ import java.util.Objects;
 public class DeleteAlertRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_id")
+    @JsonProperty(value = "deleted")
 
-    private String ruleId;
+    private Boolean deleted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "delete_time")
+    @JsonProperty(value = "fail_list")
 
-    private Long deleteTime;
+    private List<AlertRule> failList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success_list")
+
+    private List<AlertRule> successList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
 
-    public DeleteAlertRuleResponse withRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public DeleteAlertRuleResponse withDeleted(Boolean deleted) {
+        this.deleted = deleted;
         return this;
     }
 
     /**
-     * 告警规则 ID。Alert rule ID.
-     * @return ruleId
+     * 是否删除.
+     * @return deleted
      */
-    public String getRuleId() {
-        return ruleId;
+    public Boolean getDeleted() {
+        return deleted;
     }
 
-    public void setRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
-    public DeleteAlertRuleResponse withDeleteTime(Long deleteTime) {
-        this.deleteTime = deleteTime;
+    public DeleteAlertRuleResponse withFailList(List<AlertRule> failList) {
+        this.failList = failList;
+        return this;
+    }
+
+    public DeleteAlertRuleResponse addFailListItem(AlertRule failListItem) {
+        if (this.failList == null) {
+            this.failList = new ArrayList<>();
+        }
+        this.failList.add(failListItem);
+        return this;
+    }
+
+    public DeleteAlertRuleResponse withFailList(Consumer<List<AlertRule>> failListSetter) {
+        if (this.failList == null) {
+            this.failList = new ArrayList<>();
+        }
+        failListSetter.accept(this.failList);
         return this;
     }
 
     /**
-     * 删除时间。Delete time.
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return deleteTime
+     * Alert rule ID.
+     * @return failList
      */
-    public Long getDeleteTime() {
-        return deleteTime;
+    public List<AlertRule> getFailList() {
+        return failList;
     }
 
-    public void setDeleteTime(Long deleteTime) {
-        this.deleteTime = deleteTime;
+    public void setFailList(List<AlertRule> failList) {
+        this.failList = failList;
+    }
+
+    public DeleteAlertRuleResponse withSuccessList(List<AlertRule> successList) {
+        this.successList = successList;
+        return this;
+    }
+
+    public DeleteAlertRuleResponse addSuccessListItem(AlertRule successListItem) {
+        if (this.successList == null) {
+            this.successList = new ArrayList<>();
+        }
+        this.successList.add(successListItem);
+        return this;
+    }
+
+    public DeleteAlertRuleResponse withSuccessList(Consumer<List<AlertRule>> successListSetter) {
+        if (this.successList == null) {
+            this.successList = new ArrayList<>();
+        }
+        successListSetter.accept(this.successList);
+        return this;
+    }
+
+    /**
+     * Alert rule ID.
+     * @return successList
+     */
+    public List<AlertRule> getSuccessList() {
+        return successList;
+    }
+
+    public void setSuccessList(List<AlertRule> successList) {
+        this.successList = successList;
     }
 
     public DeleteAlertRuleResponse withXRequestId(String xRequestId) {
@@ -90,21 +145,22 @@ public class DeleteAlertRuleResponse extends SdkResponse {
             return false;
         }
         DeleteAlertRuleResponse that = (DeleteAlertRuleResponse) obj;
-        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.deleteTime, that.deleteTime)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.deleted, that.deleted) && Objects.equals(this.failList, that.failList)
+            && Objects.equals(this.successList, that.successList) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, deleteTime, xRequestId);
+        return Objects.hash(deleted, failList, successList, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteAlertRuleResponse {\n");
-        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
-        sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+        sb.append("    failList: ").append(toIndentedString(failList)).append("\n");
+        sb.append("    successList: ").append(toIndentedString(successList)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

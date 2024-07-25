@@ -146,19 +146,15 @@ public final class Constants {
     public static final String DEFAULT_PROFILE_DIR_NAME = ".huaweicloud";
 
     public static class ErrorMessage {
-        public static final String NO_DOMAIN_ID_FOUND = "no domain id found," +
-                " please select one of the following solutions:\n" +
-                "  1. Manually specify domainId when initializing the credentials," +
-                " GlobalCredentials cred = new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId)\n" +
-                "  2. Use the domain account to grant IAM read permission to the current account\n" +
-                "  3. Replace the ak/sk of the IAM account with the ak/sk of the domain account";
+        public static final String NO_DOMAIN_ID_FOUND = "Failed to get domain id automatically," +
+                " please confirm that you have 'iam:users:getUser' permission," +
+                " or set domain id manually:" +
+                " new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId);";
 
-        public static final String NO_PROJECT_ID_FOUND = "no project id found," +
-                " please select one of the following solutions:\n" +
-                "  1. Manually specify projectId when initializing the credentials," +
-                " BasicCredentials cred = new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId)\n" +
-                "  2. Use the domain account to grant IAM read permission to the current account\n" +
-                "  3. Replace the ak/sk of the IAM account with the ak/sk of the domain account";
+        public static final String NO_PROJECT_ID_FOUND = "Failed to get project id automatically," +
+                " please confirm that the project exists in your account," +
+                " or set project id manually:" +
+                " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);";
     }
 
     /**

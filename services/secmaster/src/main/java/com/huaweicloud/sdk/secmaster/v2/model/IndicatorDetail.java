@@ -57,7 +57,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * 指标ID
+     * 威胁情报ID
      * @return id
      */
     public String getId() {
@@ -74,7 +74,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * 指标名称
+     * 威胁情报名称
      * @return name
      */
     public String getName() {

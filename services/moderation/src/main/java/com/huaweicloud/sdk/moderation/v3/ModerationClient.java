@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.moderation.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncRequest;
+import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncResponse;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
@@ -39,6 +41,35 @@ public class ModerationClient {
     public static ClientBuilder<ModerationClient> newBuilder() {
         ClientBuilder<ModerationClient> clientBuilder = new ClientBuilder<>(ModerationClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 图像审核批量同步接口
+     *
+     * 图像审核批量同步接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCheckImageSyncRequest 请求对象
+     * @return BatchCheckImageSyncResponse
+     */
+    public BatchCheckImageSyncResponse batchCheckImageSync(BatchCheckImageSyncRequest request) {
+        return hcClient.syncInvokeHttp(request, ModerationMeta.batchCheckImageSync);
+    }
+
+    /**
+     * 图像审核批量同步接口
+     *
+     * 图像审核批量同步接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCheckImageSyncRequest 请求对象
+     * @return SyncInvoker<BatchCheckImageSyncRequest, BatchCheckImageSyncResponse>
+     */
+    public SyncInvoker<BatchCheckImageSyncRequest, BatchCheckImageSyncResponse> batchCheckImageSyncInvoker(
+        BatchCheckImageSyncRequest request) {
+        return new SyncInvoker<>(request, ModerationMeta.batchCheckImageSync, hcClient);
     }
 
     /**

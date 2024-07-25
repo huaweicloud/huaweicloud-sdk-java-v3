@@ -114,7 +114,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
             Logger logger = LoggerFactory.getLogger(hcClient.getClass());
             logger.info("project id of region '{}' not found in BasicCredentials, " +
-                    "trying to obtain project id from IAM service: {}", regionId, iamEndpoint);
+                    "trying to get project id from IAM service automatically: {}", regionId, iamEndpoint);
             KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
             KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
             if (Objects.isNull(response)) {
@@ -125,17 +125,23 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             if (projects.size() == 1) {
                 projectId = projects.get(0).getId();
             } else if (projects.size() < 1) {
-                throw new SdkException("no project id found, please specify one when initializing the credentials: " +
-                        "BasicCredentials cred = " +
-                        "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId)");
+
+                throw new SdkException(String.format(Locale.ROOT,
+                        "Failed to get project id of region '%s' automatically, X-IAM-Trace-Id=%s."
+                        , regionId, response.getTraceId()) +
+                        " Confirm that the project exists in your account," +
+                        " or set project id manually:" +
+                        " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             } else {
                 String projectIds = projects.stream().map(Project::getId).collect(Collectors.joining(","));
-                throw new SdkException(String.format(Locale.ROOT, "multiple project ids found: [%s], " +
-                        "please specify one when initializing the credentials, " +
-                        "BasicCredentials cred = " +
-                        "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId)", projectIds));
+
+                throw new SdkException(String.format(Locale.ROOT,
+                        "Multiple project ids found: [%s], X-IAM-Trace-Id=%s. ",
+                        projectIds, response.getTraceId()) +
+                        "Please select one when initializing the credentials: " +
+                        "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             }
-            logger.info("success to obtain project id of region '{}': {}", regionId, projectId);
+            logger.info("Success to get project id of region '{}': {}", regionId, projectId);
             AuthCache.putAuth(akWithName, projectId);
 
             setDerivedPredicate(derivedPredicate);

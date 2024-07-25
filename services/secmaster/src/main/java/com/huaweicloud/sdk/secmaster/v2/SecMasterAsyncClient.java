@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.secmaster.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentRequest;
@@ -39,6 +41,10 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleRequest;
@@ -93,6 +99,10 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleRequest;
@@ -143,6 +153,36 @@ public class SecMasterAsyncClient {
     public static ClientBuilder<SecMasterAsyncClient> newBuilder() {
         ClientBuilder<SecMasterAsyncClient> clientBuilder = new ClientBuilder<>(SecMasterAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 批量查询指标结果
+     *
+     * 批量查询指标结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSearchMetricHitsRequest 请求对象
+     * @return CompletableFuture<BatchSearchMetricHitsResponse>
+     */
+    public CompletableFuture<BatchSearchMetricHitsResponse> batchSearchMetricHitsAsync(
+        BatchSearchMetricHitsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.batchSearchMetricHits);
+    }
+
+    /**
+     * 批量查询指标结果
+     *
+     * 批量查询指标结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSearchMetricHitsRequest 请求对象
+     * @return AsyncInvoker<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse>
+     */
+    public AsyncInvoker<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> batchSearchMetricHitsAsyncInvoker(
+        BatchSearchMetricHitsRequest request) {
+        return new AsyncInvoker<>(request, SecMasterMeta.batchSearchMetricHits, hcClient);
     }
 
     /**
@@ -409,9 +449,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * create dataspace (创建数据空间)
+     * 创建数据空间
      *
-     * create dataspace
+     * 创建数据空间
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -423,9 +463,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * create dataspace (创建数据空间)
+     * 创建数据空间
      *
-     * create dataspace
+     * 创建数据空间
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -467,9 +507,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 创建指标
+     * 创建威胁情报
      *
-     * 创建指标
+     * 创建威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -481,9 +521,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 创建指标
+     * 创建威胁情报
      *
-     * 创建指标
+     * 创建威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -496,9 +536,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * create pipe (创建数据管道)
+     * 创建数据管道
      *
-     * create pipe
+     * 创建数据管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -510,9 +550,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * create pipe (创建数据管道)
+     * 创建数据管道
      *
-     * create pipe
+     * 创建数据管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -672,6 +712,64 @@ public class SecMasterAsyncClient {
     }
 
     /**
+     * 安全云脑按需订购
+     *
+     * 开通安全云脑按需服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidOrderRequest 请求对象
+     * @return CompletableFuture<CreatePostPaidOrderResponse>
+     */
+    public CompletableFuture<CreatePostPaidOrderResponse> createPostPaidOrderAsync(CreatePostPaidOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.createPostPaidOrder);
+    }
+
+    /**
+     * 安全云脑按需订购
+     *
+     * 开通安全云脑按需服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidOrderRequest 请求对象
+     * @return AsyncInvoker<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse>
+     */
+    public AsyncInvoker<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> createPostPaidOrderAsyncInvoker(
+        CreatePostPaidOrderRequest request) {
+        return new AsyncInvoker<>(request, SecMasterMeta.createPostPaidOrder, hcClient);
+    }
+
+    /**
+     * 新建工作空间
+     *
+     * 在使用安全云脑的基线检查、告警管理、安全分析、安全编排等功能前，需要创建工作空间，它可以将资源划分为各个不同的工作场景，避免资源冗余查找不便，影响日常使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkspaceRequest 请求对象
+     * @return CompletableFuture<CreateWorkspaceResponse>
+     */
+    public CompletableFuture<CreateWorkspaceResponse> createWorkspaceAsync(CreateWorkspaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.createWorkspace);
+    }
+
+    /**
+     * 新建工作空间
+     *
+     * 在使用安全云脑的基线检查、告警管理、安全分析、安全编排等功能前，需要创建工作空间，它可以将资源划分为各个不同的工作场景，避免资源冗余查找不便，影响日常使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkspaceRequest 请求对象
+     * @return AsyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse>
+     */
+    public AsyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspaceAsyncInvoker(
+        CreateWorkspaceRequest request) {
+        return new AsyncInvoker<>(request, SecMasterMeta.createWorkspace, hcClient);
+    }
+
+    /**
      * 删除告警
      *
      * 删除告警
@@ -788,9 +886,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 删除指标
+     * 删除威胁情报
      *
-     * 删除指标
+     * 删除威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -802,9 +900,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 删除指标
+     * 删除威胁情报
      *
-     * 删除指标
+     * 删除威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1227,9 +1325,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 查询指标列表
+     * 查询威胁情报列表
      *
-     * 查询指标列表
+     * 查询威胁情报列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1241,9 +1339,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 查询指标列表
+     * 查询威胁情报列表
      *
-     * 查询指标列表
+     * 查询威胁情报列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1463,6 +1561,64 @@ public class SecMasterAsyncClient {
     }
 
     /**
+     * 工作空间列表查询
+     *
+     * 工作空间列表查询:可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesRequest 请求对象
+     * @return CompletableFuture<ListWorkspacesResponse>
+     */
+    public CompletableFuture<ListWorkspacesResponse> listWorkspacesAsync(ListWorkspacesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.listWorkspaces);
+    }
+
+    /**
+     * 工作空间列表查询
+     *
+     * 工作空间列表查询:可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesRequest 请求对象
+     * @return AsyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>
+     */
+    public AsyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesAsyncInvoker(
+        ListWorkspacesRequest request) {
+        return new AsyncInvoker<>(request, SecMasterMeta.listWorkspaces, hcClient);
+    }
+
+    /**
+     * 搜索基线检查结果列表
+     *
+     * 搜索基线检查结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchBaselineRequest 请求对象
+     * @return CompletableFuture<SearchBaselineResponse>
+     */
+    public CompletableFuture<SearchBaselineResponse> searchBaselineAsync(SearchBaselineRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.searchBaseline);
+    }
+
+    /**
+     * 搜索基线检查结果列表
+     *
+     * 搜索基线检查结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchBaselineRequest 请求对象
+     * @return AsyncInvoker<SearchBaselineRequest, SearchBaselineResponse>
+     */
+    public AsyncInvoker<SearchBaselineRequest, SearchBaselineResponse> searchBaselineAsyncInvoker(
+        SearchBaselineRequest request) {
+        return new AsyncInvoker<>(request, SecMasterMeta.searchBaseline, hcClient);
+    }
+
+    /**
      * 获取告警详情
      *
      * 获取告警详情
@@ -1579,9 +1735,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 查询指标详情
+     * 查询威胁情报详情
      *
-     * 查询指标详情
+     * 查询威胁情报详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1593,9 +1749,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 查询指标详情
+     * 查询威胁情报详情
      *
-     * 查询指标详情
+     * 查询威胁情报详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1844,9 +2000,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 更新指标
+     * 更新威胁情报
      *
-     * 更新指标
+     * 更新威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1858,9 +2014,9 @@ public class SecMasterAsyncClient {
     }
 
     /**
-     * 更新指标
+     * 更新威胁情报
      *
-     * 更新指标
+     * 更新威胁情报
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

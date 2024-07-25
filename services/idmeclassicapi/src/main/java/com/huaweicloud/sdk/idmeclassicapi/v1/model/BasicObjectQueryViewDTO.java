@@ -57,7 +57,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 唯一编码。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -74,7 +74,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -91,7 +91,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -108,7 +108,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -125,7 +125,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 最后的修改时间。
+     * **参数解释：**  最后的修改时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -142,7 +142,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -185,7 +185,7 @@ public class BasicObjectQueryViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {

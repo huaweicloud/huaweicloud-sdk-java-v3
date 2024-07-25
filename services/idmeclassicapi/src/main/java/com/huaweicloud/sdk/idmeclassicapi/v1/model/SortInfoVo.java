@@ -68,7 +68,7 @@ public class SortInfoVo {
     }
 
     /**
-     * 按某个字段进行排序。
+     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return orderBy
      */
     public String getOrderBy() {
@@ -85,7 +85,7 @@ public class SortInfoVo {
     }
 
     /**
-     * 排序方向。 - ASC：表示升序。 - DESC：表示降序。
+     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  ASC。 
      * @return sort
      */
     public String getSort() {
@@ -102,7 +102,7 @@ public class SortInfoVo {
     }
 
     /**
-     * 排序信息。
+     * **参数解释：**  排序信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sortInfo
      */
     public String getSortInfo() {
@@ -119,7 +119,7 @@ public class SortInfoVo {
     }
 
     /**
-     * 排序信息字段。
+     * **参数解释：**  排序信息字段。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sortInfoOrderBy
      */
     public String getSortInfoOrderBy() {

@@ -155,7 +155,7 @@ public class ListEnvironmentVariablesV2Request {
     }
 
     /**
-     * 指定需要精确匹配查找的参数名称，目前仅支持name
+     * 指定需要精确匹配查找的参数名称，目前仅支持variable_name
      * @return preciseSearch
      */
     public String getPreciseSearch() {

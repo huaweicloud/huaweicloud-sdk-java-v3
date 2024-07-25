@@ -26,7 +26,7 @@ public class CompareVersionRespVo {
     }
 
     /**
-     * 基础版本对象。
+     * **参数解释：**  基础版本对象。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return basicVersion
      */
     public Object getBasicVersion() {
@@ -43,7 +43,7 @@ public class CompareVersionRespVo {
     }
 
     /**
-     * 当前版本对象。
+     * **参数解释：**  当前版本对象。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return correlationVersion
      */
     public Object getCorrelationVersion() {

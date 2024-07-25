@@ -40,7 +40,7 @@ public class DeleteIndicatorRequestBody {
     }
 
     /**
-     * 指标ID列表
+     * 威胁情报ID列表
      * @return batchIds
      */
     public List<String> getBatchIds() {

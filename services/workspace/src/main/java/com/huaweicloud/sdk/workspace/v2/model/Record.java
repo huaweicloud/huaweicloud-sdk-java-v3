@@ -11,6 +11,16 @@ import java.util.Objects;
 public class Record {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sid")
+
+    private String sid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transaction_id")
+
+    private String transactionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computer_name")
 
     private String computerName;
@@ -79,6 +89,50 @@ public class Record {
     @JsonProperty(value = "connection_failure_reason")
 
     private String connectionFailureReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_rtt")
+
+    private Integer networkRtt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "e2e_rtt")
+
+    private Integer e2eRtt;
+
+    public Record withSid(String sid) {
+        this.sid = sid;
+        return this;
+    }
+
+    /**
+     * 桌面sid
+     * @return sid
+     */
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public Record withTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    /**
+     * 事务id
+     * @return transactionId
+     */
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
 
     public Record withComputerName(String computerName) {
         this.computerName = computerName;
@@ -318,6 +372,40 @@ public class Record {
         this.connectionFailureReason = connectionFailureReason;
     }
 
+    public Record withNetworkRtt(Integer networkRtt) {
+        this.networkRtt = networkRtt;
+        return this;
+    }
+
+    /**
+     * 网络时延ms
+     * @return networkRtt
+     */
+    public Integer getNetworkRtt() {
+        return networkRtt;
+    }
+
+    public void setNetworkRtt(Integer networkRtt) {
+        this.networkRtt = networkRtt;
+    }
+
+    public Record withE2eRtt(Integer e2eRtt) {
+        this.e2eRtt = e2eRtt;
+        return this;
+    }
+
+    /**
+     * 端到端时延 ms
+     * @return e2eRtt
+     */
+    public Integer getE2eRtt() {
+        return e2eRtt;
+    }
+
+    public void setE2eRtt(Integer e2eRtt) {
+        this.e2eRtt = e2eRtt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -327,7 +415,8 @@ public class Record {
             return false;
         }
         Record that = (Record) obj;
-        return Objects.equals(this.computerName, that.computerName) && Objects.equals(this.userName, that.userName)
+        return Objects.equals(this.sid, that.sid) && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.computerName, that.computerName) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.terminalMac, that.terminalMac)
             && Objects.equals(this.terminalName, that.terminalName) && Objects.equals(this.terminalIp, that.terminalIp)
             && Objects.equals(this.clientVersion, that.clientVersion)
@@ -337,12 +426,15 @@ public class Record {
             && Objects.equals(this.connectionSetupTime, that.connectionSetupTime)
             && Objects.equals(this.connectionEndTime, that.connectionEndTime)
             && Objects.equals(this.isReconnect, that.isReconnect)
-            && Objects.equals(this.connectionFailureReason, that.connectionFailureReason);
+            && Objects.equals(this.connectionFailureReason, that.connectionFailureReason)
+            && Objects.equals(this.networkRtt, that.networkRtt) && Objects.equals(this.e2eRtt, that.e2eRtt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(computerName,
+        return Objects.hash(sid,
+            transactionId,
+            computerName,
             userName,
             terminalMac,
             terminalName,
@@ -355,13 +447,17 @@ public class Record {
             connectionSetupTime,
             connectionEndTime,
             isReconnect,
-            connectionFailureReason);
+            connectionFailureReason,
+            networkRtt,
+            e2eRtt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Record {\n");
+        sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
+        sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    terminalMac: ").append(toIndentedString(terminalMac)).append("\n");
@@ -376,6 +472,8 @@ public class Record {
         sb.append("    connectionEndTime: ").append(toIndentedString(connectionEndTime)).append("\n");
         sb.append("    isReconnect: ").append(toIndentedString(isReconnect)).append("\n");
         sb.append("    connectionFailureReason: ").append(toIndentedString(connectionFailureReason)).append("\n");
+        sb.append("    networkRtt: ").append(toIndentedString(networkRtt)).append("\n");
+        sb.append("    e2eRtt: ").append(toIndentedString(e2eRtt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

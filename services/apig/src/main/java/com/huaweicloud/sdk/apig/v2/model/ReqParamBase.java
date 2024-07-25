@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ReqParamBase
@@ -115,6 +118,11 @@ public class ReqParamBase {
          */
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
 
+        /**
+         * Enum COOKIE for value: "COOKIE"
+         */
+        public static final LocationEnum COOKIE = new LocationEnum("COOKIE");
+
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LocationEnum> createStaticFields() {
@@ -122,6 +130,7 @@ public class ReqParamBase {
             map.put("PATH", PATH);
             map.put("QUERY", QUERY);
             map.put("HEADER", HEADER);
+            map.put("COOKIE", COOKIE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -451,6 +460,11 @@ public class ReqParamBase {
 
     private PassThroughEnum passThrough;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "orchestrations")
+
+    private List<String> orchestrations = null;
+
     public ReqParamBase withName(String name) {
         this.name = name;
         return this;
@@ -723,6 +737,39 @@ public class ReqParamBase {
         this.passThrough = passThrough;
     }
 
+    public ReqParamBase withOrchestrations(List<String> orchestrations) {
+        this.orchestrations = orchestrations;
+        return this;
+    }
+
+    public ReqParamBase addOrchestrationsItem(String orchestrationsItem) {
+        if (this.orchestrations == null) {
+            this.orchestrations = new ArrayList<>();
+        }
+        this.orchestrations.add(orchestrationsItem);
+        return this;
+    }
+
+    public ReqParamBase withOrchestrations(Consumer<List<String>> orchestrationsSetter) {
+        if (this.orchestrations == null) {
+            this.orchestrations = new ArrayList<>();
+        }
+        orchestrationsSetter.accept(this.orchestrations);
+        return this;
+    }
+
+    /**
+     * 请求参数匹配编排规则的生效优先级与列表顺序保持一致，列表中靠前的配置匹配优先级较高； 如果编配规则列表中包含none_value类型的规则，则none_value类型的规则优先级最高，至多绑定一个none_value类型的规则； 如果编排规则列表中包含default类型的规则，则default类型的规则优先级最低，至多绑定一个default类型的规则； 当编排规则为预处理策略时，该规则不能作为除default以外的最后一个编排规则； 每个API仅允许选择一个参数绑定编排规则，且编排规则不能重复，支持绑定的编排规则数量有配额限制，具体请参见产品介绍的“配额说明”章节。
+     * @return orchestrations
+     */
+    public List<String> getOrchestrations() {
+        return orchestrations;
+    }
+
+    public void setOrchestrations(List<String> orchestrations) {
+        this.orchestrations = orchestrations;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -739,7 +786,8 @@ public class ReqParamBase {
             && Objects.equals(this.enumerations, that.enumerations) && Objects.equals(this.minNum, that.minNum)
             && Objects.equals(this.maxNum, that.maxNum) && Objects.equals(this.minSize, that.minSize)
             && Objects.equals(this.maxSize, that.maxSize) && Objects.equals(this.regular, that.regular)
-            && Objects.equals(this.jsonSchema, that.jsonSchema) && Objects.equals(this.passThrough, that.passThrough);
+            && Objects.equals(this.jsonSchema, that.jsonSchema) && Objects.equals(this.passThrough, that.passThrough)
+            && Objects.equals(this.orchestrations, that.orchestrations);
     }
 
     @Override
@@ -759,7 +807,8 @@ public class ReqParamBase {
             maxSize,
             regular,
             jsonSchema,
-            passThrough);
+            passThrough,
+            orchestrations);
     }
 
     @Override
@@ -782,6 +831,7 @@ public class ReqParamBase {
         sb.append("    regular: ").append(toIndentedString(regular)).append("\n");
         sb.append("    jsonSchema: ").append(toIndentedString(jsonSchema)).append("\n");
         sb.append("    passThrough: ").append(toIndentedString(passThrough)).append("\n");
+        sb.append("    orchestrations: ").append(toIndentedString(orchestrations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

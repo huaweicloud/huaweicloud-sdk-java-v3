@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.core.internal.model.IamResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequestBody;
 import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectResponse;
@@ -87,6 +88,10 @@ public final class InnerIamMeta {
         builder.withRequestField("is_domain", LocationType.Query, FieldExistence.NULL_IGNORE, Boolean.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getIsDomain, KeystoneListProjectsRequest::setIsDomain));
 
+        // response
+        builder.withResponseField("X-IAM-Trace-Id", LocationType.Header, FieldExistence.NULL_IGNORE, String.class,
+                f -> f.withMarshaller(IamResponse::getTraceId, IamResponse::setTraceId));
+
         return builder.build();
     }
 
@@ -104,6 +109,10 @@ public final class InnerIamMeta {
             KeystoneCreateProjectRequestBody.class,
             f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, KeystoneCreateProjectRequest::setBody));
 
+        // response
+        builder.withResponseField("X-IAM-Trace-Id", LocationType.Header, FieldExistence.NULL_IGNORE, String.class,
+                f -> f.withMarshaller(IamResponse::getTraceId, IamResponse::setTraceId));
+
         return builder.build();
     }
 
@@ -112,6 +121,10 @@ public final class InnerIamMeta {
         HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder
             = HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class,
             KeystoneListRegionsResponse.class).withUri("/v3/regions").withContentType("application/json");
+
+        // response
+        builder.withResponseField("X-IAM-Trace-Id", LocationType.Header, FieldExistence.NULL_IGNORE, String.class,
+                f -> f.withMarshaller(IamResponse::getTraceId, IamResponse::setTraceId));
 
         return builder.build();
     }
@@ -123,6 +136,10 @@ public final class InnerIamMeta {
             .builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)
             .withUri("/v3/auth/domains")
             .withContentType("application/json");
+
+        // response
+        builder.withResponseField("X-IAM-Trace-Id", LocationType.Header, FieldExistence.NULL_IGNORE, String.class,
+                f -> f.withMarshaller(IamResponse::getTraceId, IamResponse::setTraceId));
 
         return builder.build();
     }

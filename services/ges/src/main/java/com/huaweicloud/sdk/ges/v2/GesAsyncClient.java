@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.ges.v2.model.AttachEip2Request;
 import com.huaweicloud.sdk.ges.v2.model.AttachEip2Response;
+import com.huaweicloud.sdk.ges.v2.model.ChangeSecurityGroupRequest;
+import com.huaweicloud.sdk.ges.v2.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.CreateBackup2Request;
@@ -53,6 +55,8 @@ import com.huaweicloud.sdk.ges.v2.model.ResizeGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ResizeGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ShowBackupDownloadLinkRequest;
+import com.huaweicloud.sdk.ges.v2.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Request;
 import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Response;
 import com.huaweicloud.sdk.ges.v2.model.ShowJob2Request;
@@ -109,6 +113,35 @@ public class GesAsyncClient {
      */
     public AsyncInvoker<AttachEip2Request, AttachEip2Response> attachEip2AsyncInvoker(AttachEip2Request request) {
         return new AsyncInvoker<>(request, GesMeta.attachEip2, hcClient);
+    }
+
+    /**
+     * 切换安全组
+     *
+     * 该接口可以在图创建成功后，修改图的安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeSecurityGroupRequest 请求对象
+     * @return CompletableFuture<ChangeSecurityGroupResponse>
+     */
+    public CompletableFuture<ChangeSecurityGroupResponse> changeSecurityGroupAsync(ChangeSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.changeSecurityGroup);
+    }
+
+    /**
+     * 切换安全组
+     *
+     * 该接口可以在图创建成功后，修改图的安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>
+     */
+    public AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupAsyncInvoker(
+        ChangeSecurityGroupRequest request) {
+        return new AsyncInvoker<>(request, GesMeta.changeSecurityGroup, hcClient);
     }
 
     /**
@@ -723,6 +756,36 @@ public class GesAsyncClient {
     public AsyncInvoker<RestartGraph2Request, RestartGraph2Response> restartGraph2AsyncInvoker(
         RestartGraph2Request request) {
         return new AsyncInvoker<>(request, GesMeta.restartGraph2, hcClient);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupDownloadLinkRequest 请求对象
+     * @return CompletableFuture<ShowBackupDownloadLinkResponse>
+     */
+    public CompletableFuture<ShowBackupDownloadLinkResponse> showBackupDownloadLinkAsync(
+        ShowBackupDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, GesMeta.showBackupDownloadLink);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupDownloadLinkRequest 请求对象
+     * @return AsyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>
+     */
+    public AsyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLinkAsyncInvoker(
+        ShowBackupDownloadLinkRequest request) {
+        return new AsyncInvoker<>(request, GesMeta.showBackupDownloadLink, hcClient);
     }
 
     /**

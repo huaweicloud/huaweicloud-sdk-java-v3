@@ -622,7 +622,7 @@ public class ApiCommon {
     private String tag;
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      */
     public static final class ContentTypeEnum {
 
@@ -707,6 +707,11 @@ public class ApiCommon {
     @JsonProperty(value = "content_type")
 
     private ContentTypeEnum contentType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_send_fg_body_base64")
+
+    private Boolean isSendFgBodyBase64;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -1100,7 +1105,7 @@ public class ApiCommon {
     }
 
     /**
-     * 前端自定义认证对象的ID，API请求协议为GRPC类型时不支持前端自定义认证
+     * 前端自定义认证对象的ID
      * @return authorizerId
      */
     public String getAuthorizerId() {
@@ -1218,7 +1223,7 @@ public class ApiCommon {
     }
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      * @return contentType
      */
     public ContentTypeEnum getContentType() {
@@ -1227,6 +1232,23 @@ public class ApiCommon {
 
     public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
+    }
+
+    public ApiCommon withIsSendFgBodyBase64(Boolean isSendFgBodyBase64) {
+        this.isSendFgBodyBase64 = isSendFgBodyBase64;
+        return this;
+    }
+
+    /**
+     * 是否对与FunctionGraph交互场景的body进行Base64编码。仅当content_type为application/json时，可以不对body进行Base64编码。 应用场景： - 自定义认证 - 绑定断路器插件，且断路器后端降级策略为函数后端 - API后端类型为函数工作流
+     * @return isSendFgBodyBase64
+     */
+    public Boolean getIsSendFgBodyBase64() {
+        return isSendFgBodyBase64;
+    }
+
+    public void setIsSendFgBodyBase64(Boolean isSendFgBodyBase64) {
+        this.isSendFgBodyBase64 = isSendFgBodyBase64;
     }
 
     public ApiCommon withId(String id) {
@@ -1707,7 +1729,8 @@ public class ApiCommon {
             && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.romaAppId, that.romaAppId)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.isSendFgBodyBase64, that.isSendFgBodyBase64) && Objects.equals(this.id, that.id)
             && Objects.equals(this.status, that.status) && Objects.equals(this.arrangeNecessary, that.arrangeNecessary)
             && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupVersion, that.groupVersion)
@@ -1746,6 +1769,7 @@ public class ApiCommon {
             domainName,
             tag,
             contentType,
+            isSendFgBodyBase64,
             id,
             status,
             arrangeNecessary,
@@ -1796,6 +1820,7 @@ public class ApiCommon {
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    isSendFgBodyBase64: ").append(toIndentedString(isSendFgBodyBase64)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");

@@ -20,16 +20,6 @@ public class IndicatorDataObjectDetailIndicatorType {
 
     private String id;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
-
-    private String category;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_id")
-
-    private String layoutId;
-
     public IndicatorDataObjectDetailIndicatorType withIndicatorType(String indicatorType) {
         this.indicatorType = indicatorType;
         return this;
@@ -64,40 +54,6 @@ public class IndicatorDataObjectDetailIndicatorType {
         this.id = id;
     }
 
-    public IndicatorDataObjectDetailIndicatorType withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * 目录
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public IndicatorDataObjectDetailIndicatorType withLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-        return this;
-    }
-
-    /**
-     * 布局ID
-     * @return layoutId
-     */
-    public String getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,13 +63,12 @@ public class IndicatorDataObjectDetailIndicatorType {
             return false;
         }
         IndicatorDataObjectDetailIndicatorType that = (IndicatorDataObjectDetailIndicatorType) obj;
-        return Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.category, that.category) && Objects.equals(this.layoutId, that.layoutId);
+        return Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indicatorType, id, category, layoutId);
+        return Objects.hash(indicatorType, id);
     }
 
     @Override
@@ -122,8 +77,6 @@ public class IndicatorDataObjectDetailIndicatorType {
         sb.append("class IndicatorDataObjectDetailIndicatorType {\n");
         sb.append("    indicatorType: ").append(toIndentedString(indicatorType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
-        sb.append("    layoutId: ").append(toIndentedString(layoutId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

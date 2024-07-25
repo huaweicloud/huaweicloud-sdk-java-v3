@@ -7,6 +7,10 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.secmaster.v2.model.ApprovePlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.AuditLogInfo;
+import com.huaweicloud.sdk.secmaster.v2.model.BaselineSearchRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertResponse;
@@ -56,7 +60,12 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRuleInfo;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DataobjectSearch;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequestBody;
@@ -117,12 +126,17 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyActionInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookVersionInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyRuleInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.OperationPlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.OrderAlert;
+import com.huaweicloud.sdk.secmaster.v2.model.PostPaidParam;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleRequest;
@@ -133,6 +147,7 @@ import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowMetricResultResponseBody;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookMonitorsRequest;
@@ -167,6 +182,52 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class SecMasterMeta {
+
+    public static final HttpRequestDef<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> batchSearchMetricHits =
+        genForBatchSearchMetricHits();
+
+    private static HttpRequestDef<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> genForBatchSearchMetricHits() {
+        // basic
+        HttpRequestDef.Builder<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchSearchMetricHitsRequest.class, BatchSearchMetricHitsResponse.class)
+            .withName("BatchSearchMetricHits")
+            .withUri("/v1/{project_id}/workspaces/{workspace_id}/sa/metrics/hits")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getWorkspaceId,
+                BatchSearchMetricHitsRequest::setWorkspaceId));
+        builder.<String>withRequestField("timespan",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getTimespan,
+                BatchSearchMetricHitsRequest::setTimespan));
+        builder.<Boolean>withRequestField("cache",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getCache, BatchSearchMetricHitsRequest::setCache));
+        builder.<BatchSearchMetricHitsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSearchMetricHitsRequestBody.class),
+            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getBody, BatchSearchMetricHitsRequest::setBody));
+
+        // response
+        builder.<List<ShowMetricResultResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchSearchMetricHitsResponse::getBody, BatchSearchMetricHitsResponse::setBody)
+                .withInnerContainerType(ShowMetricResultResponseBody.class));
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ChangeAlertRequest, ChangeAlertResponse> changeAlert = genForChangeAlert();
 
@@ -844,6 +905,57 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> createPostPaidOrder =
+        genForCreatePostPaidOrder();
+
+    private static HttpRequestDef<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> genForCreatePostPaidOrder() {
+        // basic
+        HttpRequestDef.Builder<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidOrderRequest.class, CreatePostPaidOrderResponse.class)
+                .withName("CreatePostPaidOrder")
+                .withUri("/v1/{project_id}/subscriptions/orders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePostPaidOrderRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePostPaidOrderRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreatePostPaidOrderRequest::getXLanguage, CreatePostPaidOrderRequest::setXLanguage));
+        builder.<PostPaidParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostPaidParam.class),
+            f -> f.withMarshaller(CreatePostPaidOrderRequest::getBody, CreatePostPaidOrderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspace =
+        genForCreateWorkspace();
+
+    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForCreateWorkspace() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkspaceRequest, CreateWorkspaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWorkspaceRequest.class, CreateWorkspaceResponse.class)
+                .withName("CreateWorkspace")
+                .withUri("/v1/{project_id}/workspaces")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateWorkspaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateWorkspaceRequestBody.class),
+            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, CreateWorkspaceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAlertRequest, DeleteAlertResponse> deleteAlert = genForDeleteAlert();
 
     private static HttpRequestDef<DeleteAlertRequest, DeleteAlertResponse> genForDeleteAlert() {
@@ -1464,15 +1576,15 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDataclassRequest::getWorkspaceId, ListDataclassRequest::setWorkspaceId));
-        builder.<BigDecimal>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDataclassRequest::getOffset, ListDataclassRequest::setOffset));
-        builder.<BigDecimal>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDataclassRequest::getLimit, ListDataclassRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
@@ -1529,15 +1641,15 @@ public class SecMasterMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDataclassFieldsRequest::getDataclassId,
                 ListDataclassFieldsRequest::setDataclassId));
-        builder.<BigDecimal>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDataclassFieldsRequest::getOffset, ListDataclassFieldsRequest::setOffset));
-        builder.<BigDecimal>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDataclassFieldsRequest::getLimit, ListDataclassFieldsRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
@@ -2061,15 +2173,15 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkflowsRequest::getWorkspaceId, ListWorkflowsRequest::setWorkspaceId));
-        builder.<BigDecimal>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWorkflowsRequest::getOffset, ListWorkflowsRequest::setOffset));
-        builder.<BigDecimal>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWorkflowsRequest::getLimit, ListWorkflowsRequest::setLimit));
         builder.<ListWorkflowsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
@@ -2124,6 +2236,125 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListWorkflowsResponse::getXRequestId, ListWorkflowsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspaces =
+        genForListWorkspaces();
+
+    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForListWorkspaces() {
+        // basic
+        HttpRequestDef.Builder<ListWorkspacesRequest, ListWorkspacesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkspacesRequest.class, ListWorkspacesResponse.class)
+                .withName("ListWorkspaces")
+                .withUri("/v1/{project_id}/workspaces")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BigDecimal>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, ListWorkspacesRequest::setOffset));
+        builder.<BigDecimal>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, ListWorkspacesRequest::setLimit));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getRegionId, ListWorkspacesRequest::setRegionId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getName, ListWorkspacesRequest::setName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getDescription, ListWorkspacesRequest::setDescription));
+        builder.<String>withRequestField("view_bind_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getViewBindId, ListWorkspacesRequest::setViewBindId));
+        builder.<String>withRequestField("view_bind_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getViewBindName, ListWorkspacesRequest::setViewBindName));
+        builder.<String>withRequestField("create_time_start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getCreateTimeStart,
+                ListWorkspacesRequest::setCreateTimeStart));
+        builder.<String>withRequestField("create_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getCreateTimeEnd, ListWorkspacesRequest::setCreateTimeEnd));
+        builder.<Boolean>withRequestField("is_view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getIsView, ListWorkspacesRequest::setIsView));
+        builder.<String>withRequestField("ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getIds, ListWorkspacesRequest::setIds));
+        builder.<String>withRequestField("normal_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getNormalProjectId,
+                ListWorkspacesRequest::setNormalProjectId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesRequest::getEnterpriseProjectId,
+                ListWorkspacesRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchBaselineRequest, SearchBaselineResponse> searchBaseline =
+        genForSearchBaseline();
+
+    private static HttpRequestDef<SearchBaselineRequest, SearchBaselineResponse> genForSearchBaseline() {
+        // basic
+        HttpRequestDef.Builder<SearchBaselineRequest, SearchBaselineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchBaselineRequest.class, SearchBaselineResponse.class)
+                .withName("SearchBaseline")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchBaselineRequest::getWorkspaceId, SearchBaselineRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchBaselineRequest::getXLanguage, SearchBaselineRequest::setXLanguage));
+        builder.<BaselineSearchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BaselineSearchRequestBody.class),
+            f -> f.withMarshaller(SearchBaselineRequest::getBody, SearchBaselineRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

@@ -96,6 +96,8 @@ import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrderRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrderResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginRequest;
@@ -154,6 +156,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteInstancesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeleteMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.DeleteOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeletePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeletePluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteRequestThrottlingPolicyV2Request;
@@ -272,6 +276,8 @@ import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListInstancesByTagsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListLatelyApiStatisticsV2Request;
@@ -282,6 +288,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListMemberGroupsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListMemberGroupsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListMetricDataRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListMetricDataResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationAttachedApisRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationAttachedApisResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachableApisRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachableApisResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachedApisRequest;
@@ -350,10 +360,14 @@ import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfInstanceV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowInstancesNumByTagsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowInstancesNumByTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Request;
@@ -396,6 +410,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateInstanceV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.UpdateMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.UpdateOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdatePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.UpdatePluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Request;
@@ -490,7 +506,7 @@ public class ApigAsyncClient {
     /**
      * 实例更新或绑定EIP
      *
-     * 实例更新或绑定EIP
+     * 实例更新或绑定EIP(仅当实例为LVS类型时支持)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -504,7 +520,7 @@ public class ApigAsyncClient {
     /**
      * 实例更新或绑定EIP
      *
-     * 实例更新或绑定EIP
+     * 实例更新或绑定EIP(仅当实例为LVS类型时支持)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1210,6 +1226,35 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 创建编排规则
+     *
+     * 创建编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrchestrationRequest 请求对象
+     * @return CompletableFuture<CreateOrchestrationResponse>
+     */
+    public CompletableFuture<CreateOrchestrationResponse> createOrchestrationAsync(CreateOrchestrationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createOrchestration);
+    }
+
+    /**
+     * 创建编排规则
+     *
+     * 创建编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrchestrationRequest 请求对象
+     * @return AsyncInvoker<CreateOrchestrationRequest, CreateOrchestrationResponse>
+     */
+    public AsyncInvoker<CreateOrchestrationRequest, CreateOrchestrationResponse> createOrchestrationAsyncInvoker(
+        CreateOrchestrationRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.createOrchestration, hcClient);
+    }
+
+    /**
      * 创建专享版实例（包周期）
      *
      * 创建包周期专享版实例。
@@ -1805,6 +1850,35 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 删除编排规则
+     *
+     * 删除编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOrchestrationRequest 请求对象
+     * @return CompletableFuture<DeleteOrchestrationResponse>
+     */
+    public CompletableFuture<DeleteOrchestrationResponse> deleteOrchestrationAsync(DeleteOrchestrationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteOrchestration);
+    }
+
+    /**
+     * 删除编排规则
+     *
+     * 删除编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOrchestrationRequest 请求对象
+     * @return AsyncInvoker<DeleteOrchestrationRequest, DeleteOrchestrationResponse>
+     */
+    public AsyncInvoker<DeleteOrchestrationRequest, DeleteOrchestrationResponse> deleteOrchestrationAsyncInvoker(
+        DeleteOrchestrationRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.deleteOrchestration, hcClient);
+    }
+
+    /**
      * 删除插件
      *
      * 删除插件。
@@ -2110,7 +2184,7 @@ public class ApigAsyncClient {
     /**
      * 异步导出API
      *
-     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2125,7 +2199,7 @@ public class ApigAsyncClient {
     /**
      * 异步导出API
      *
-     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2140,7 +2214,7 @@ public class ApigAsyncClient {
     /**
      * 异步导入API
      *
-     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2155,7 +2229,7 @@ public class ApigAsyncClient {
     /**
      * 异步导入API
      *
-     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2952,6 +3026,35 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 通过标签查询实例列表
+     *
+     * 通过标签查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesByTagsRequest 请求对象
+     * @return CompletableFuture<ListInstancesByTagsResponse>
+     */
+    public CompletableFuture<ListInstancesByTagsResponse> listInstancesByTagsAsync(ListInstancesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listInstancesByTags);
+    }
+
+    /**
+     * 通过标签查询实例列表
+     *
+     * 通过标签查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesByTagsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
+     */
+    public AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTagsAsyncInvoker(
+        ListInstancesByTagsRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listInstancesByTags, hcClient);
+    }
+
+    /**
      * 查询专享版实例列表
      *
      * 查询专享版实例列表
@@ -3071,6 +3174,71 @@ public class ApigAsyncClient {
     public AsyncInvoker<ListMetricDataRequest, ListMetricDataResponse> listMetricDataAsyncInvoker(
         ListMetricDataRequest request) {
         return new AsyncInvoker<>(request, ApigMeta.listMetricData, hcClient);
+    }
+
+    /**
+     * 查询编排规则绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrchestrationAttachedApisRequest 请求对象
+     * @return CompletableFuture<ListOrchestrationAttachedApisResponse>
+     */
+    public CompletableFuture<ListOrchestrationAttachedApisResponse> listOrchestrationAttachedApisAsync(
+        ListOrchestrationAttachedApisRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listOrchestrationAttachedApis);
+    }
+
+    /**
+     * 查询编排规则绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrchestrationAttachedApisRequest 请求对象
+     * @return AsyncInvoker<ListOrchestrationAttachedApisRequest, ListOrchestrationAttachedApisResponse>
+     */
+    public AsyncInvoker<ListOrchestrationAttachedApisRequest, ListOrchestrationAttachedApisResponse> listOrchestrationAttachedApisAsyncInvoker(
+        ListOrchestrationAttachedApisRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listOrchestrationAttachedApis, hcClient);
+    }
+
+    /**
+     * 查看编排规则列表
+     *
+     * 查看编排规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrchestrationsRequest 请求对象
+     * @return CompletableFuture<ListOrchestrationsResponse>
+     */
+    public CompletableFuture<ListOrchestrationsResponse> listOrchestrationsAsync(ListOrchestrationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listOrchestrations);
+    }
+
+    /**
+     * 查看编排规则列表
+     *
+     * 查看编排规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrchestrationsRequest 请求对象
+     * @return AsyncInvoker<ListOrchestrationsRequest, ListOrchestrationsResponse>
+     */
+    public AsyncInvoker<ListOrchestrationsRequest, ListOrchestrationsResponse> listOrchestrationsAsyncInvoker(
+        ListOrchestrationsRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.listOrchestrations, hcClient);
     }
 
     /**
@@ -3894,6 +4062,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 查询编排规则详情
+     *
+     * 查询编排规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDetailsOfOrchestrationRequest 请求对象
+     * @return CompletableFuture<ShowDetailsOfOrchestrationResponse>
+     */
+    public CompletableFuture<ShowDetailsOfOrchestrationResponse> showDetailsOfOrchestrationAsync(
+        ShowDetailsOfOrchestrationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfOrchestration);
+    }
+
+    /**
+     * 查询编排规则详情
+     *
+     * 查询编排规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDetailsOfOrchestrationRequest 请求对象
+     * @return AsyncInvoker<ShowDetailsOfOrchestrationRequest, ShowDetailsOfOrchestrationResponse>
+     */
+    public AsyncInvoker<ShowDetailsOfOrchestrationRequest, ShowDetailsOfOrchestrationResponse> showDetailsOfOrchestrationAsyncInvoker(
+        ShowDetailsOfOrchestrationRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.showDetailsOfOrchestration, hcClient);
+    }
+
+    /**
      * 查看流控策略详情
      *
      * 查看指定流控策略的详细信息。
@@ -3921,6 +4119,36 @@ public class ApigAsyncClient {
     public AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2AsyncInvoker(
         ShowDetailsOfRequestThrottlingPolicyV2Request request) {
         return new AsyncInvoker<>(request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
+    }
+
+    /**
+     * 查询包含指定标签的实例数量
+     *
+     * 查询包含指定标签的实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstancesNumByTagsRequest 请求对象
+     * @return CompletableFuture<ShowInstancesNumByTagsResponse>
+     */
+    public CompletableFuture<ShowInstancesNumByTagsResponse> showInstancesNumByTagsAsync(
+        ShowInstancesNumByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showInstancesNumByTags);
+    }
+
+    /**
+     * 查询包含指定标签的实例数量
+     *
+     * 查询包含指定标签的实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstancesNumByTagsRequest 请求对象
+     * @return AsyncInvoker<ShowInstancesNumByTagsRequest, ShowInstancesNumByTagsResponse>
+     */
+    public AsyncInvoker<ShowInstancesNumByTagsRequest, ShowInstancesNumByTagsResponse> showInstancesNumByTagsAsyncInvoker(
+        ShowInstancesNumByTagsRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.showInstancesNumByTags, hcClient);
     }
 
     /**
@@ -4330,6 +4558,35 @@ public class ApigAsyncClient {
     public AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response> updateInstanceV2AsyncInvoker(
         UpdateInstanceV2Request request) {
         return new AsyncInvoker<>(request, ApigMeta.updateInstanceV2, hcClient);
+    }
+
+    /**
+     * 更新编排规则
+     *
+     * 更新编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrchestrationRequest 请求对象
+     * @return CompletableFuture<UpdateOrchestrationResponse>
+     */
+    public CompletableFuture<UpdateOrchestrationResponse> updateOrchestrationAsync(UpdateOrchestrationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateOrchestration);
+    }
+
+    /**
+     * 更新编排规则
+     *
+     * 更新编排规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOrchestrationRequest 请求对象
+     * @return AsyncInvoker<UpdateOrchestrationRequest, UpdateOrchestrationResponse>
+     */
+    public AsyncInvoker<UpdateOrchestrationRequest, UpdateOrchestrationResponse> updateOrchestrationAsyncInvoker(
+        UpdateOrchestrationRequest request) {
+        return new AsyncInvoker<>(request, ApigMeta.updateOrchestration, hcClient);
     }
 
     /**
@@ -5818,7 +6075,7 @@ public class ApigAsyncClient {
     /**
      * 导出API
      *
-     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5833,7 +6090,7 @@ public class ApigAsyncClient {
     /**
      * 导出API
      *
-     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5848,7 +6105,7 @@ public class ApigAsyncClient {
     /**
      * 导入API
      *
-     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5863,7 +6120,7 @@ public class ApigAsyncClient {
     /**
      * 导入API
      *
-     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关用户指南》的“导入导出API：扩展定义”章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6176,7 +6433,7 @@ public class ApigAsyncClient {
      *
      * 为指定的VPC通道添加后端实例
      * 
-     * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
+     * 如果指定地址的后端实例已存在，则更新对应后端实例信息。如果请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6193,7 +6450,7 @@ public class ApigAsyncClient {
      *
      * 为指定的VPC通道添加后端实例
      * 
-     * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
+     * 如果指定地址的后端实例已存在，则更新对应后端实例信息。如果请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6268,7 +6525,7 @@ public class ApigAsyncClient {
      *
      * 在APIG中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
-     * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
+     * 如果指定名称的后端服务器组已存在，则更新对应后端服务器组信息。如果请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6284,7 +6541,7 @@ public class ApigAsyncClient {
      *
      * 在APIG中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
-     * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
+     * 如果指定名称的后端服务器组已存在，则更新对应后端服务器组信息。如果请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6566,7 +6823,7 @@ public class ApigAsyncClient {
     /**
      * 更新后端实例
      *
-     * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
+     * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。如果未指定修改的云服务器组，则进行全量覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6581,7 +6838,7 @@ public class ApigAsyncClient {
     /**
      * 更新后端实例
      *
-     * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
+     * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。如果未指定修改的云服务器组，则进行全量覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6656,9 +6913,9 @@ public class ApigAsyncClient {
      *
      * 更新指定VPC通道的参数
      * 
-     * 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
+     * 使用传入的后端实例列表对VPC通道进行全量覆盖，如果后端实例列表为空，则会全量删除已有的后端实例；
      * 
-     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
+     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，如果后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6674,9 +6931,9 @@ public class ApigAsyncClient {
      *
      * 更新指定VPC通道的参数
      * 
-     * 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
+     * 使用传入的后端实例列表对VPC通道进行全量覆盖，如果后端实例列表为空，则会全量删除已有的后端实例；
      * 
-     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
+     * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，如果后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

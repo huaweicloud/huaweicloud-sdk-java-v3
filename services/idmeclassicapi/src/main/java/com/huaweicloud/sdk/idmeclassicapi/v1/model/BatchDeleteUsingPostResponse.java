@@ -35,7 +35,7 @@ public class BatchDeleteUsingPostResponse extends SdkResponse {
     }
 
     /**
-     * 请求结果。
+     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。  **默认取值：**  不涉及。 
      * @return result
      */
     public String getResult() {
@@ -68,7 +68,7 @@ public class BatchDeleteUsingPostResponse extends SdkResponse {
     }
 
     /**
-     * 请求数据。
+     * **参数解释：**  请求操作数据数量。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return data
      */
     public List<Long> getData() {
@@ -101,7 +101,7 @@ public class BatchDeleteUsingPostResponse extends SdkResponse {
     }
 
     /**
-     * 异常信息。
+     * **参数解释：**  异常信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return errors
      */
     public List<String> getErrors() {

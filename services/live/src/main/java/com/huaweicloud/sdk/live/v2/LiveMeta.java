@@ -497,6 +497,42 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfo =
+        genForListPlayDomainStreamInfo();
+
+    private static HttpRequestDef<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> genForListPlayDomainStreamInfo() {
+        // basic
+        HttpRequestDef.Builder<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListPlayDomainStreamInfoRequest.class, ListPlayDomainStreamInfoResponse.class)
+                .withName("ListPlayDomainStreamInfo")
+                .withUri("/v2/{project_id}/stats/stream/play-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("play_domains",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPlayDomainStreamInfoRequest::getPlayDomains,
+                ListPlayDomainStreamInfoRequest::setPlayDomains));
+        builder.<String>withRequestField("time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPlayDomainStreamInfoRequest::getTime, ListPlayDomainStreamInfoRequest::setTime));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPlayDomainStreamInfoResponse::getXRequestId,
+                ListPlayDomainStreamInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> listQueryHttpCode =
         genForListQueryHttpCode();
 
@@ -893,42 +929,6 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowUpBandwidthResponse::getXRequestId, ShowUpBandwidthResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> listPlayDomainStreamInfo =
-        genForListPlayDomainStreamInfo();
-
-    private static HttpRequestDef<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> genForListPlayDomainStreamInfo() {
-        // basic
-        HttpRequestDef.Builder<ListPlayDomainStreamInfoRequest, ListPlayDomainStreamInfoResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ListPlayDomainStreamInfoRequest.class, ListPlayDomainStreamInfoResponse.class)
-                .withName("ListPlayDomainStreamInfo")
-                .withUri("/v2/{project_id}/stats/stream/play-info")
-                .withContentType("application/json");
-
-        // requests
-        builder.<List<String>>withRequestField("play_domains",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPlayDomainStreamInfoRequest::getPlayDomains,
-                ListPlayDomainStreamInfoRequest::setPlayDomains));
-        builder.<String>withRequestField("time",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlayDomainStreamInfoRequest::getTime, ListPlayDomainStreamInfoRequest::setTime));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlayDomainStreamInfoResponse::getXRequestId,
-                ListPlayDomainStreamInfoResponse::setXRequestId));
         return builder.build();
     }
 

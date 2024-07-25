@@ -26,7 +26,7 @@ public class SelectedField {
     }
 
     /**
-     * 字段名称，如果是子参考对象的属性，则为“参考对象.属性名称”，例如：“master.name”
+     * **参数解释：**  字段名称，如果是子参考对象的属性，则为“参考对象.属性名称”，例如：“master.name”。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class SelectedField {
     }
 
     /**
-     * 字段别名。如果不填，默认使用name参数的值。
+     * **参数解释：**  字段别名。如果不填，默认使用name参数的值。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return nameAs
      */
     public String getNameAs() {

@@ -67,7 +67,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -84,7 +84,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -101,7 +101,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -118,7 +118,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -135,7 +135,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 软删除标识，参数值为0或1。 - 0：表示未删除。 - 1：表示已删除。
+     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  不涉及。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -152,7 +152,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -169,7 +169,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 系统版本。
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -186,7 +186,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -203,7 +203,7 @@ public class MultiViewItemViewDTO {
     }
 
     /**
-     * 最后更新时间。
+     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public Object getLastUpdateTime() {

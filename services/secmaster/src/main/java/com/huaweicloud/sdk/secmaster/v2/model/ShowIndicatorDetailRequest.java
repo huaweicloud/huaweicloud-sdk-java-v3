@@ -43,7 +43,7 @@ public class ShowIndicatorDetailRequest {
     }
 
     /**
-     * 情报指标ID
+     * 威胁情报ID
      * @return indicatorId
      */
     public String getIndicatorId() {

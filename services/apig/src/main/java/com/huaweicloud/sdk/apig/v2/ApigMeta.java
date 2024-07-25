@@ -124,6 +124,8 @@ import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrderRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrderResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginRequest;
@@ -182,6 +184,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteInstancesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeleteMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.DeleteOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeletePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.DeletePluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteRequestThrottlingPolicyV2Request;
@@ -314,6 +318,8 @@ import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceFeaturesResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListInstancesByTagsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListInstancesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListLatelyApiStatisticsV2Request;
@@ -324,6 +330,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListMemberGroupsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListMemberGroupsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListMetricDataRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListMetricDataResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationAttachedApisRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationAttachedApisResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListOrchestrationsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachableApisRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachableApisResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListPluginAttachedApisRequest;
@@ -354,6 +364,7 @@ import com.huaweicloud.sdk.apig.v2.model.MembersBatchEnableOrDisable;
 import com.huaweicloud.sdk.apig.v2.model.MicroserviceImportReq;
 import com.huaweicloud.sdk.apig.v2.model.OpenEngressEipReq;
 import com.huaweicloud.sdk.apig.v2.model.OpenIngressEipReq;
+import com.huaweicloud.sdk.apig.v2.model.OrchestrationCreate;
 import com.huaweicloud.sdk.apig.v2.model.PluginCreate;
 import com.huaweicloud.sdk.apig.v2.model.PluginOperApiInfo;
 import com.huaweicloud.sdk.apig.v2.model.RemoveEipV2Request;
@@ -404,10 +415,14 @@ import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfInstanceV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowInstancesNumByTagsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowInstancesNumByTagsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Request;
@@ -419,6 +434,7 @@ import com.huaweicloud.sdk.apig.v2.model.ThrottleBaseInfo;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleBindingBatchDelete;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleSpecialCreate;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleSpecialUpdate;
+import com.huaweicloud.sdk.apig.v2.model.TmsQueryReq;
 import com.huaweicloud.sdk.apig.v2.model.TmsUpdatePublicReq;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAclStrategyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAclStrategyV2Response;
@@ -458,6 +474,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateInstanceV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.UpdateMemberGroupResponse;
+import com.huaweicloud.sdk.apig.v2.model.UpdateOrchestrationRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateOrchestrationResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdatePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.UpdatePluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdateRequestThrottlingPolicyV2Request;
@@ -1235,6 +1253,35 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOrchestrationRequest, CreateOrchestrationResponse> createOrchestration =
+        genForCreateOrchestration();
+
+    private static HttpRequestDef<CreateOrchestrationRequest, CreateOrchestrationResponse> genForCreateOrchestration() {
+        // basic
+        HttpRequestDef.Builder<CreateOrchestrationRequest, CreateOrchestrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOrchestrationRequest.class, CreateOrchestrationResponse.class)
+                .withName("CreateOrchestration")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/orchestrations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrchestrationRequest::getInstanceId,
+                CreateOrchestrationRequest::setInstanceId));
+        builder.<OrchestrationCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OrchestrationCreate.class),
+            f -> f.withMarshaller(CreateOrchestrationRequest::getBody, CreateOrchestrationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateOrderRequest, CreateOrderResponse> createOrder = genForCreateOrder();
 
     private static HttpRequestDef<CreateOrderRequest, CreateOrderResponse> genForCreateOrder() {
@@ -1822,6 +1869,36 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstancesV2Request::getInstanceId, DeleteInstancesV2Request::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOrchestrationRequest, DeleteOrchestrationResponse> deleteOrchestration =
+        genForDeleteOrchestration();
+
+    private static HttpRequestDef<DeleteOrchestrationRequest, DeleteOrchestrationResponse> genForDeleteOrchestration() {
+        // basic
+        HttpRequestDef.Builder<DeleteOrchestrationRequest, DeleteOrchestrationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteOrchestrationRequest.class, DeleteOrchestrationResponse.class)
+            .withName("DeleteOrchestration")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/orchestrations/{orchestration_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrchestrationRequest::getInstanceId,
+                DeleteOrchestrationRequest::setInstanceId));
+        builder.<String>withRequestField("orchestration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrchestrationRequest::getOrchestrationId,
+                DeleteOrchestrationRequest::setOrchestrationId));
 
         // response
 
@@ -3387,6 +3464,39 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTags =
+        genForListInstancesByTags();
+
+    private static HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> genForListInstancesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesByTagsRequest, ListInstancesByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListInstancesByTagsRequest.class, ListInstancesByTagsResponse.class)
+                .withName("ListInstancesByTags")
+                .withUri("/v2/{project_id}/apigw/resource-instances/filter")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstancesByTagsRequest::getOffset, ListInstancesByTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesByTagsRequest::getLimit, ListInstancesByTagsRequest::setLimit));
+        builder.<TmsQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TmsQueryReq.class),
+            f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, ListInstancesByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2 =
         genForListInstancesV2();
 
@@ -3549,6 +3659,115 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListMetricDataRequest.FilterEnum.class),
             f -> f.withMarshaller(ListMetricDataRequest::getFilter, ListMetricDataRequest::setFilter));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrchestrationAttachedApisRequest, ListOrchestrationAttachedApisResponse> listOrchestrationAttachedApis =
+        genForListOrchestrationAttachedApis();
+
+    private static HttpRequestDef<ListOrchestrationAttachedApisRequest, ListOrchestrationAttachedApisResponse> genForListOrchestrationAttachedApis() {
+        // basic
+        HttpRequestDef.Builder<ListOrchestrationAttachedApisRequest, ListOrchestrationAttachedApisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOrchestrationAttachedApisRequest.class,
+                    ListOrchestrationAttachedApisResponse.class)
+                .withName("ListOrchestrationAttachedApis")
+                .withUri(
+                    "/v2/{project_id}/apigw/instances/{instance_id}/orchestrations/{orchestration_id}/attached-apis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getInstanceId,
+                ListOrchestrationAttachedApisRequest::setInstanceId));
+        builder.<String>withRequestField("orchestration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getOrchestrationId,
+                ListOrchestrationAttachedApisRequest::setOrchestrationId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getOffset,
+                ListOrchestrationAttachedApisRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getLimit,
+                ListOrchestrationAttachedApisRequest::setLimit));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getApiName,
+                ListOrchestrationAttachedApisRequest::setApiName));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationAttachedApisRequest::getApiId,
+                ListOrchestrationAttachedApisRequest::setApiId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrchestrationsRequest, ListOrchestrationsResponse> listOrchestrations =
+        genForListOrchestrations();
+
+    private static HttpRequestDef<ListOrchestrationsRequest, ListOrchestrationsResponse> genForListOrchestrations() {
+        // basic
+        HttpRequestDef.Builder<ListOrchestrationsRequest, ListOrchestrationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOrchestrationsRequest.class, ListOrchestrationsResponse.class)
+                .withName("ListOrchestrations")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/orchestrations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getInstanceId, ListOrchestrationsRequest::setInstanceId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getOffset, ListOrchestrationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getLimit, ListOrchestrationsRequest::setLimit));
+        builder.<String>withRequestField("orchestration_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getOrchestrationName,
+                ListOrchestrationsRequest::setOrchestrationName));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getPreciseSearch,
+                ListOrchestrationsRequest::setPreciseSearch));
+        builder.<String>withRequestField("orchestration_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrchestrationsRequest::getOrchestrationId,
+                ListOrchestrationsRequest::setOrchestrationId));
 
         // response
 
@@ -4617,6 +4836,39 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDetailsOfOrchestrationRequest, ShowDetailsOfOrchestrationResponse> showDetailsOfOrchestration =
+        genForShowDetailsOfOrchestration();
+
+    private static HttpRequestDef<ShowDetailsOfOrchestrationRequest, ShowDetailsOfOrchestrationResponse> genForShowDetailsOfOrchestration() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfOrchestrationRequest, ShowDetailsOfOrchestrationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfOrchestrationRequest.class,
+                    ShowDetailsOfOrchestrationResponse.class)
+                .withName("ShowDetailsOfOrchestration")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/orchestrations/{orchestration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfOrchestrationRequest::getInstanceId,
+                ShowDetailsOfOrchestrationRequest::setInstanceId));
+        builder.<String>withRequestField("orchestration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfOrchestrationRequest::getOrchestrationId,
+                ShowDetailsOfOrchestrationRequest::setOrchestrationId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2 =
         genForShowDetailsOfRequestThrottlingPolicyV2();
 
@@ -4644,6 +4896,29 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId,
                 ShowDetailsOfRequestThrottlingPolicyV2Request::setThrottleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstancesNumByTagsRequest, ShowInstancesNumByTagsResponse> showInstancesNumByTags =
+        genForShowInstancesNumByTags();
+
+    private static HttpRequestDef<ShowInstancesNumByTagsRequest, ShowInstancesNumByTagsResponse> genForShowInstancesNumByTags() {
+        // basic
+        HttpRequestDef.Builder<ShowInstancesNumByTagsRequest, ShowInstancesNumByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowInstancesNumByTagsRequest.class, ShowInstancesNumByTagsResponse.class)
+            .withName("ShowInstancesNumByTags")
+            .withUri("/v2/{project_id}/apigw/resource-instances/count")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<TmsQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TmsQueryReq.class),
+            f -> f.withMarshaller(ShowInstancesNumByTagsRequest::getBody, ShowInstancesNumByTagsRequest::setBody));
 
         // response
 
@@ -5128,6 +5403,41 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceModReq.class),
             f -> f.withMarshaller(UpdateInstanceV2Request::getBody, UpdateInstanceV2Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOrchestrationRequest, UpdateOrchestrationResponse> updateOrchestration =
+        genForUpdateOrchestration();
+
+    private static HttpRequestDef<UpdateOrchestrationRequest, UpdateOrchestrationResponse> genForUpdateOrchestration() {
+        // basic
+        HttpRequestDef.Builder<UpdateOrchestrationRequest, UpdateOrchestrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateOrchestrationRequest.class, UpdateOrchestrationResponse.class)
+                .withName("UpdateOrchestration")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/orchestrations/{orchestration_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrchestrationRequest::getInstanceId,
+                UpdateOrchestrationRequest::setInstanceId));
+        builder.<String>withRequestField("orchestration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrchestrationRequest::getOrchestrationId,
+                UpdateOrchestrationRequest::setOrchestrationId));
+        builder.<OrchestrationCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OrchestrationCreate.class),
+            f -> f.withMarshaller(UpdateOrchestrationRequest::getBody, UpdateOrchestrationRequest::setBody));
 
         // response
 

@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -17,122 +15,84 @@ import java.util.Objects;
 public class EnableAlertRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_id")
+    @JsonProperty(value = "fail_list")
 
-    private String ruleId;
-
-    /**
-     * 启用状态，启用、停用。Status, enabled, disabled.
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum ENABLED for value: "ENABLED"
-         */
-        public static final StatusEnum ENABLED = new StatusEnum("ENABLED");
-
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
-        public static final StatusEnum DISABLED = new StatusEnum("DISABLED");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("ENABLED", ENABLED);
-            map.put("DISABLED", DISABLED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private List<AlertRule> failList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "success_list")
 
-    private StatusEnum status;
+    private List<AlertRule> successList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
 
-    public EnableAlertRuleResponse withRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public EnableAlertRuleResponse withFailList(List<AlertRule> failList) {
+        this.failList = failList;
+        return this;
+    }
+
+    public EnableAlertRuleResponse addFailListItem(AlertRule failListItem) {
+        if (this.failList == null) {
+            this.failList = new ArrayList<>();
+        }
+        this.failList.add(failListItem);
+        return this;
+    }
+
+    public EnableAlertRuleResponse withFailList(Consumer<List<AlertRule>> failListSetter) {
+        if (this.failList == null) {
+            this.failList = new ArrayList<>();
+        }
+        failListSetter.accept(this.failList);
         return this;
     }
 
     /**
-     * 告警规则 ID。Alert rule ID.
-     * @return ruleId
+     * Alert rule ID.
+     * @return failList
      */
-    public String getRuleId() {
-        return ruleId;
+    public List<AlertRule> getFailList() {
+        return failList;
     }
 
-    public void setRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public void setFailList(List<AlertRule> failList) {
+        this.failList = failList;
     }
 
-    public EnableAlertRuleResponse withStatus(StatusEnum status) {
-        this.status = status;
+    public EnableAlertRuleResponse withSuccessList(List<AlertRule> successList) {
+        this.successList = successList;
+        return this;
+    }
+
+    public EnableAlertRuleResponse addSuccessListItem(AlertRule successListItem) {
+        if (this.successList == null) {
+            this.successList = new ArrayList<>();
+        }
+        this.successList.add(successListItem);
+        return this;
+    }
+
+    public EnableAlertRuleResponse withSuccessList(Consumer<List<AlertRule>> successListSetter) {
+        if (this.successList == null) {
+            this.successList = new ArrayList<>();
+        }
+        successListSetter.accept(this.successList);
         return this;
     }
 
     /**
-     * 启用状态，启用、停用。Status, enabled, disabled.
-     * @return status
+     * Alert rule ID.
+     * @return successList
      */
-    public StatusEnum getStatus() {
-        return status;
+    public List<AlertRule> getSuccessList() {
+        return successList;
     }
 
-    public void setStatus(StatusEnum status) {
-        this.status = status;
+    public void setSuccessList(List<AlertRule> successList) {
+        this.successList = successList;
     }
 
     public EnableAlertRuleResponse withXRequestId(String xRequestId) {
@@ -163,21 +123,21 @@ public class EnableAlertRuleResponse extends SdkResponse {
             return false;
         }
         EnableAlertRuleResponse that = (EnableAlertRuleResponse) obj;
-        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.status, that.status)
+        return Objects.equals(this.failList, that.failList) && Objects.equals(this.successList, that.successList)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, status, xRequestId);
+        return Objects.hash(failList, successList, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnableAlertRuleResponse {\n");
-        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    failList: ").append(toIndentedString(failList)).append("\n");
+        sb.append("    successList: ").append(toIndentedString(successList)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

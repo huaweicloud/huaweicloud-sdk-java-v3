@@ -37,6 +37,11 @@ public class AlertDetail {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -161,6 +166,23 @@ public class AlertDetail {
         this.id = id;
     }
 
+    public AlertDetail withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 数据类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public AlertDetail withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -243,14 +265,23 @@ public class AlertDetail {
         return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dataObject, that.dataObject)
             && Objects.equals(this.dataclassRef, that.dataclassRef)
             && Objects.equals(this.formatVersion, that.formatVersion) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.workspaceId, that.workspaceId);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(createTime, dataObject, dataclassRef, formatVersion, id, projectId, updateTime, version, workspaceId);
+        return Objects.hash(createTime,
+            dataObject,
+            dataclassRef,
+            formatVersion,
+            id,
+            type,
+            projectId,
+            updateTime,
+            version,
+            workspaceId);
     }
 
     @Override
@@ -262,6 +293,7 @@ public class AlertDetail {
         sb.append("    dataclassRef: ").append(toIndentedString(dataclassRef)).append("\n");
         sb.append("    formatVersion: ").append(toIndentedString(formatVersion)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

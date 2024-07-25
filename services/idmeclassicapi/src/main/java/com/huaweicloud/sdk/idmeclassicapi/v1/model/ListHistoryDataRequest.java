@@ -17,14 +17,24 @@ public class ListHistoryDataRequest {
     private Integer curPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endIndex")
+
+    private Integer endIndex;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxPageSize")
+
+    private Integer maxPageSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pageSize")
 
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "totalRows")
+    @JsonProperty(value = "startIndex")
 
-    private Integer totalRows;
+    private Integer startIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "totalPages")
@@ -32,24 +42,9 @@ public class ListHistoryDataRequest {
     private Integer totalPages;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
+    @JsonProperty(value = "totalRows")
 
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "identifier")
-
-    private String identifier;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "modelName")
-
-    private String modelName;
+    private Integer totalRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pageSizePath")
@@ -62,6 +57,16 @@ public class ListHistoryDataRequest {
     private Integer curPagePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "identifier")
+
+    private String identifier;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modelName")
+
+    private String modelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private RDMParamVOMongPageRequest body;
@@ -72,7 +77,7 @@ public class ListHistoryDataRequest {
     }
 
     /**
-     * 当前页。
+     * **参数解释：**  当前页。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
      * @return curPage
      */
     public Integer getCurPage() {
@@ -83,13 +88,47 @@ public class ListHistoryDataRequest {
         this.curPage = curPage;
     }
 
+    public ListHistoryDataRequest withEndIndex(Integer endIndex) {
+        this.endIndex = endIndex;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  结束索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * @return endIndex
+     */
+    public Integer getEndIndex() {
+        return endIndex;
+    }
+
+    public void setEndIndex(Integer endIndex) {
+        this.endIndex = endIndex;
+    }
+
+    public ListHistoryDataRequest withMaxPageSize(Integer maxPageSize) {
+        this.maxPageSize = maxPageSize;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  最大分页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
+     * @return maxPageSize
+     */
+    public Integer getMaxPageSize() {
+        return maxPageSize;
+    }
+
+    public void setMaxPageSize(Integer maxPageSize) {
+        this.maxPageSize = maxPageSize;
+    }
+
     public ListHistoryDataRequest withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
     /**
-     * 每页大小。
+     * **参数解释：**  每页大小。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -100,21 +139,21 @@ public class ListHistoryDataRequest {
         this.pageSize = pageSize;
     }
 
-    public ListHistoryDataRequest withTotalRows(Integer totalRows) {
-        this.totalRows = totalRows;
+    public ListHistoryDataRequest withStartIndex(Integer startIndex) {
+        this.startIndex = startIndex;
         return this;
     }
 
     /**
-     * 总行数。
-     * @return totalRows
+     * **参数解释：**  起始索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * @return startIndex
      */
-    public Integer getTotalRows() {
-        return totalRows;
+    public Integer getStartIndex() {
+        return startIndex;
     }
 
-    public void setTotalRows(Integer totalRows) {
-        this.totalRows = totalRows;
+    public void setStartIndex(Integer startIndex) {
+        this.startIndex = startIndex;
     }
 
     public ListHistoryDataRequest withTotalPages(Integer totalPages) {
@@ -123,7 +162,7 @@ public class ListHistoryDataRequest {
     }
 
     /**
-     * 总页数。
+     * **参数解释：**  总页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return totalPages
      */
     public Integer getTotalPages() {
@@ -134,72 +173,21 @@ public class ListHistoryDataRequest {
         this.totalPages = totalPages;
     }
 
-    public ListHistoryDataRequest withLimit(Integer limit) {
-        this.limit = limit;
+    public ListHistoryDataRequest withTotalRows(Integer totalRows) {
+        this.totalRows = totalRows;
         return this;
     }
 
     /**
-     * 每页显示条目数量，limit和offset均传正确的数值时才起作用，且优先级高于pageSize和curPage。
-     * @return limit
+     * **参数解释：**  总行数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * @return totalRows
      */
-    public Integer getLimit() {
-        return limit;
+    public Integer getTotalRows() {
+        return totalRows;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListHistoryDataRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 偏移量，limit和offset均传正确的数值时才起作用，且优先级高于pageSize和curPage。
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public ListHistoryDataRequest withIdentifier(String identifier) {
-        this.identifier = identifier;
-        return this;
-    }
-
-    /**
-     * 应用ID。
-     * @return identifier
-     */
-    public String getIdentifier() {
-        return identifier;
-    }
-
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
-    }
-
-    public ListHistoryDataRequest withModelName(String modelName) {
-        this.modelName = modelName;
-        return this;
-    }
-
-    /**
-     * 数据模型的英文名称。
-     * @return modelName
-     */
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setTotalRows(Integer totalRows) {
+        this.totalRows = totalRows;
     }
 
     public ListHistoryDataRequest withPageSizePath(Integer pageSizePath) {
@@ -208,7 +196,7 @@ public class ListHistoryDataRequest {
     }
 
     /**
-     * 分页大小（路径参数）。
+     * **参数解释：**  分页大小（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  1-1000。  **默认取值：**  不涉及。 
      * @return pageSizePath
      */
     public Integer getPageSizePath() {
@@ -225,7 +213,7 @@ public class ListHistoryDataRequest {
     }
 
     /**
-     * 当前页数（路径参数）。
+     * **参数解释：**  当前页数（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
      * @return curPagePath
      */
     public Integer getCurPagePath() {
@@ -234,6 +222,40 @@ public class ListHistoryDataRequest {
 
     public void setCurPagePath(Integer curPagePath) {
         this.curPagePath = curPagePath;
+    }
+
+    public ListHistoryDataRequest withIdentifier(String identifier) {
+        this.identifier = identifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  应用唯一标识。  **约束限制：**  不涉及。  **取值范围：**  由英文字母和数字组成，且长度为32个字符。  **默认取值：**  不涉及。 
+     * @return identifier
+     */
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public ListHistoryDataRequest withModelName(String modelName) {
+        this.modelName = modelName;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  数据模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  大写字母开头，只能包含字母、数字、\"_\"，且长度为[1-60]个字符。  **默认取值：**  不涉及。 
+     * @return modelName
+     */
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
 
     public ListHistoryDataRequest withBody(RDMParamVOMongPageRequest body) {
@@ -271,26 +293,27 @@ public class ListHistoryDataRequest {
             return false;
         }
         ListHistoryDataRequest that = (ListHistoryDataRequest) obj;
-        return Objects.equals(this.curPage, that.curPage) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.totalRows, that.totalRows) && Objects.equals(this.totalPages, that.totalPages)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.identifier, that.identifier) && Objects.equals(this.modelName, that.modelName)
-            && Objects.equals(this.pageSizePath, that.pageSizePath)
-            && Objects.equals(this.curPagePath, that.curPagePath) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.curPage, that.curPage) && Objects.equals(this.endIndex, that.endIndex)
+            && Objects.equals(this.maxPageSize, that.maxPageSize) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.startIndex, that.startIndex) && Objects.equals(this.totalPages, that.totalPages)
+            && Objects.equals(this.totalRows, that.totalRows) && Objects.equals(this.pageSizePath, that.pageSizePath)
+            && Objects.equals(this.curPagePath, that.curPagePath) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(curPage,
+            endIndex,
+            maxPageSize,
             pageSize,
-            totalRows,
+            startIndex,
             totalPages,
-            limit,
-            offset,
-            identifier,
-            modelName,
+            totalRows,
             pageSizePath,
             curPagePath,
+            identifier,
+            modelName,
             body);
     }
 
@@ -299,15 +322,16 @@ public class ListHistoryDataRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHistoryDataRequest {\n");
         sb.append("    curPage: ").append(toIndentedString(curPage)).append("\n");
+        sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
+        sb.append("    maxPageSize: ").append(toIndentedString(maxPageSize)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    totalRows: ").append(toIndentedString(totalRows)).append("\n");
+        sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
         sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
-        sb.append("    modelName: ").append(toIndentedString(modelName)).append("\n");
+        sb.append("    totalRows: ").append(toIndentedString(totalRows)).append("\n");
         sb.append("    pageSizePath: ").append(toIndentedString(pageSizePath)).append("\n");
         sb.append("    curPagePath: ").append(toIndentedString(curPagePath)).append("\n");
+        sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+        sb.append("    modelName: ").append(toIndentedString(modelName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

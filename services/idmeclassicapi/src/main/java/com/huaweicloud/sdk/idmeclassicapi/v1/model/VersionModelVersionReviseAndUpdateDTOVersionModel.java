@@ -54,7 +54,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 创建人。
+     * **参数解释：**  创建人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -88,7 +88,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 关系实体名称集合，与workCopyType的值CUSTOM配合使用。
+     * **参数解释：**  关系实体名称集合，与workCopyType的值CUSTOM配合使用。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return customLinkSet
      */
     public List<String> getCustomLinkSet() {
@@ -131,7 +131,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 主对象ID。
+     * **参数解释：**  主对象ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return masterId
      */
     public String getMasterId() {
@@ -148,7 +148,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 更新者。
+     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -165,7 +165,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 关系的复制类型。 - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，修订且更新后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，修订且更新后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，修订且更新后的数据实例将继承这些关系实例。 - NONE：修订且更新后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，修订且更新后的数据实例将继承这些关系实例。
+     * **参数解释：**  关系的复制类型。  **约束限制：**  不涉及。  **取值范围：**  - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，修订且更新后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，修订且更新后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，修订且更新后的数据实例将继承这些关系实例。 - NONE：修订且更新后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，修订且更新后的数据实例将继承这些关系实例。  **默认取值：**  不涉及。 
      * @return workCopyType
      */
     public String getWorkCopyType() {
@@ -182,7 +182,7 @@ public class VersionModelVersionReviseAndUpdateDTOVersionModel {
     }
 
     /**
-     * 是否已检出。 - true：已检出。 - false：未检出。
+     * **参数解释：**  是否已检出。  **约束限制：**  不涉及。  **取值范围：**  - true：已检出。 - false：未检出。  **默认取值：**  false。 
      * @return workingCopy
      */
     public Boolean getWorkingCopy() {

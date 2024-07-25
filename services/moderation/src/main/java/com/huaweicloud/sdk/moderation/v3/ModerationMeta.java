@@ -7,9 +7,12 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.moderation.v3.model.AudioCreateRequest;
 import com.huaweicloud.sdk.moderation.v3.model.AudioStreamCreateRequest;
+import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncRequest;
+import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncResponse;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
 import com.huaweicloud.sdk.moderation.v3.model.DocumentCreateRequest;
+import com.huaweicloud.sdk.moderation.v3.model.ImageBatchSyncReq;
 import com.huaweicloud.sdk.moderation.v3.model.ImageDetectionReq;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobResponse;
@@ -40,6 +43,29 @@ import com.huaweicloud.sdk.moderation.v3.model.VideoStreamCreateRequest;
 @SuppressWarnings("unchecked")
 public class ModerationMeta {
 
+    public static final HttpRequestDef<BatchCheckImageSyncRequest, BatchCheckImageSyncResponse> batchCheckImageSync =
+        genForBatchCheckImageSync();
+
+    private static HttpRequestDef<BatchCheckImageSyncRequest, BatchCheckImageSyncResponse> genForBatchCheckImageSync() {
+        // basic
+        HttpRequestDef.Builder<BatchCheckImageSyncRequest, BatchCheckImageSyncResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCheckImageSyncRequest.class, BatchCheckImageSyncResponse.class)
+                .withName("BatchCheckImageSync")
+                .withUri("/v3/{project_id}/moderation/image/batch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ImageBatchSyncReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageBatchSyncReq.class),
+            f -> f.withMarshaller(BatchCheckImageSyncRequest::getBody, BatchCheckImageSyncRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckImageModerationRequest, CheckImageModerationResponse> checkImageModeration =
         genForCheckImageModeration();
 
@@ -52,6 +78,12 @@ public class ModerationMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckImageModerationRequest::getEnterpriseProjectId,
+                CheckImageModerationRequest::setEnterpriseProjectId));
         builder.<ImageDetectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -345,6 +377,12 @@ public class ModerationMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunTextModerationRequest::getEnterpriseProjectId,
+                RunTextModerationRequest::setEnterpriseProjectId));
         builder.<TextDetectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

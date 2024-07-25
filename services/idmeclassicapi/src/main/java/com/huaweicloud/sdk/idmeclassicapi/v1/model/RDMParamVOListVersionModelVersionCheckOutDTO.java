@@ -29,7 +29,7 @@ public class RDMParamVOListVersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 应用ID。
+     * **参数解释**：  应用ID。  **约束限制**：  不涉及。  **取值范围**：  由英文字母和数字组成，且长度为32个字符。  **默认取值**：  不涉及。 
      * @return applicationId
      */
     public String getApplicationId() {
@@ -63,7 +63,7 @@ public class RDMParamVOListVersionModelVersionCheckOutDTO {
     }
 
     /**
-     * 参数对象。
+     * **参数解释：**  请求参数对象。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return params
      */
     public List<VersionModelVersionCheckOutDTO> getParams() {

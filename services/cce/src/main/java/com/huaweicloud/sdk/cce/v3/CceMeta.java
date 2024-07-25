@@ -13,6 +13,9 @@ import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTags;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
@@ -224,8 +227,12 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
@@ -246,6 +253,11 @@ import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstances;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowRequest;
@@ -254,6 +266,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -261,6 +275,8 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseRequest;
@@ -293,6 +309,9 @@ import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotWorkFlowUpdateResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeNodePool;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeWorkFlowUpdateResponse;
@@ -386,6 +405,45 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateClusterTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, BatchCreateClusterTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> batchCreateDeleteResourceTags =
+        genForBatchCreateDeleteResourceTags();
+
+    private static HttpRequestDef<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> genForBatchCreateDeleteResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateDeleteResourceTagsRequest.class,
+                    BatchCreateDeleteResourceTagsResponse.class)
+                .withName("BatchCreateDeleteResourceTags")
+                .withUri("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getResourceType,
+                BatchCreateDeleteResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getResourceId,
+                BatchCreateDeleteResourceTagsRequest::setResourceId));
+        builder.<BatchCreateDeleteResourceTags>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateDeleteResourceTags.class),
+            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getBody,
+                BatchCreateDeleteResourceTagsRequest::setBody));
 
         // response
 
@@ -1903,6 +1961,59 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfiguration =
+        genForShowClusterSupportConfiguration();
+
+    private static HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> genForShowClusterSupportConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClusterSupportConfigurationRequest.class,
+                    ShowClusterSupportConfigurationResponse.class)
+                .withName("ShowClusterSupportConfiguration")
+                .withUri("/api/v3/clusters/configuration/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterId,
+                ShowClusterSupportConfigurationRequest::setClusterId));
+        builder.<String>withRequestField("cluster_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterType,
+                ShowClusterSupportConfigurationRequest::setClusterType));
+        builder.<String>withRequestField("cluster_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterVersion,
+                ShowClusterSupportConfigurationRequest::setClusterVersion));
+        builder.<String>withRequestField("network_mode",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getNetworkMode,
+                ShowClusterSupportConfigurationRequest::setNetworkMode));
+
+        // response
+        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ShowClusterSupportConfigurationResponse::getBody,
+                    ShowClusterSupportConfigurationResponse::setBody)
+                .withInnerContainerType(List.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfo =
         genForShowClusterUpgradeInfo();
 
@@ -1921,6 +2032,33 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterUpgradeInfoRequest::getClusterId,
                 ShowClusterUpgradeInfoRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> showCustomizeClusterTagsByProjectId =
+        genForShowCustomizeClusterTagsByProjectId();
+
+    private static HttpRequestDef<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> genForShowCustomizeClusterTagsByProjectId() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCustomizeClusterTagsByProjectIdRequest.class,
+                    ShowCustomizeClusterTagsByProjectIdResponse.class)
+                .withName("ShowCustomizeClusterTagsByProjectId")
+                .withUri("/cce/v1/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomizeClusterTagsByProjectIdRequest::getResourceType,
+                ShowCustomizeClusterTagsByProjectIdRequest::setResourceType));
 
         // response
 
@@ -2221,6 +2359,63 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowResourceInstancesRequest, ShowResourceInstancesResponse> showResourceInstances =
+        genForShowResourceInstances();
+
+    private static HttpRequestDef<ShowResourceInstancesRequest, ShowResourceInstancesResponse> genForShowResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceInstancesRequest, ShowResourceInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowResourceInstancesRequest.class, ShowResourceInstancesResponse.class)
+            .withName("ShowResourceInstances")
+            .withUri("/cce/v1/{project_id}/{resource_type}/resource_instances/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceInstancesRequest::getResourceType,
+                ShowResourceInstancesRequest::setResourceType));
+        builder.<ShowResourceInstances>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowResourceInstances.class),
+            f -> f.withMarshaller(ShowResourceInstancesRequest::getBody, ShowResourceInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
+        genForShowResourceTags();
+
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
+                .withName("ShowResourceTags")
+                .withUri("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> showUpgradeClusterTask =
         genForShowUpgradeClusterTask();
 
@@ -2294,6 +2489,38 @@ public class CceMeta {
         // requests
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncNodePoolRequest, SyncNodePoolResponse> syncNodePool = genForSyncNodePool();
+
+    private static HttpRequestDef<SyncNodePoolRequest, SyncNodePoolResponse> genForSyncNodePool() {
+        // basic
+        HttpRequestDef.Builder<SyncNodePoolRequest, SyncNodePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SyncNodePoolRequest.class, SyncNodePoolResponse.class)
+                .withName("SyncNodePool")
+                .withUri("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/nodepool/{nodepool_id}/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncNodePoolRequest::getClusterId, SyncNodePoolRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncNodePoolRequest::getNodepoolId, SyncNodePoolRequest::setNodepoolId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SyncNodePoolResponse::getBody, SyncNodePoolResponse::setBody));
 
         return builder.build();
     }
@@ -2635,6 +2862,40 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
             f -> f.withMarshaller(UpgradeClusterRequest::getBody, UpgradeClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeNodePoolRequest, UpgradeNodePoolResponse> upgradeNodePool =
+        genForUpgradeNodePool();
+
+    private static HttpRequestDef<UpgradeNodePoolRequest, UpgradeNodePoolResponse> genForUpgradeNodePool() {
+        // basic
+        HttpRequestDef.Builder<UpgradeNodePoolRequest, UpgradeNodePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeNodePoolRequest.class, UpgradeNodePoolResponse.class)
+                .withName("UpgradeNodePool")
+                .withUri(
+                    "/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeNodePoolRequest::getClusterId, UpgradeNodePoolRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeNodePoolRequest::getNodepoolId, UpgradeNodePoolRequest::setNodepoolId));
+        builder.<UpgradeNodePool>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeNodePool.class),
+            f -> f.withMarshaller(UpgradeNodePoolRequest::getBody, UpgradeNodePoolRequest::setBody));
 
         // response
 
@@ -4064,6 +4325,39 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutopilotClusterInformation.class),
             f -> f.withMarshaller(UpdateAutopilotClusterRequest::getBody, UpdateAutopilotClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotClusterEipRequest, UpdateAutopilotClusterEipResponse> updateAutopilotClusterEip =
+        genForUpdateAutopilotClusterEip();
+
+    private static HttpRequestDef<UpdateAutopilotClusterEipRequest, UpdateAutopilotClusterEipResponse> genForUpdateAutopilotClusterEip() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotClusterEipRequest, UpdateAutopilotClusterEipResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAutopilotClusterEipRequest.class,
+                    UpdateAutopilotClusterEipResponse.class)
+                .withName("UpdateAutopilotClusterEip")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/mastereip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotClusterEipRequest::getClusterId,
+                UpdateAutopilotClusterEipRequest::setClusterId));
+        builder.<MasterEIPRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MasterEIPRequest.class),
+            f -> f.withMarshaller(UpdateAutopilotClusterEipRequest::getBody,
+                UpdateAutopilotClusterEipRequest::setBody));
 
         // response
 

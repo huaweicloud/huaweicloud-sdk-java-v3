@@ -31,7 +31,7 @@ public class CharacterSetEnum {
     }
 
     /**
-     * 中文名。
+     * **参数解释：**  中文名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return cnName
      */
     public String getCnName() {
@@ -48,7 +48,7 @@ public class CharacterSetEnum {
     }
 
     /**
-     * 编码。
+     * **参数解释：**  编码。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return code
      */
     public String getCode() {
@@ -65,7 +65,7 @@ public class CharacterSetEnum {
     }
 
     /**
-     * 英文名。
+     * **参数解释：**  英文名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return enName
      */
     public String getEnName() {

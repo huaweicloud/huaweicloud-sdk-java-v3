@@ -26,7 +26,7 @@ public class PersistableModelUniqueKeyDTO {
     }
 
     /**
-     * 是否加密。 - true：加密。 - false：不加密。
+     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。 
      * @return decrypt
      */
     public Boolean getDecrypt() {
@@ -43,7 +43,7 @@ public class PersistableModelUniqueKeyDTO {
     }
 
     /**
-     * 示例模型的唯一键属性值。
+     * **参数解释：**  示例模型的唯一键约束属性值。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

@@ -1754,6 +1754,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllVersionsRequest::getPageSizePath, ListAllVersionsRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllVersionsRequest::getCurPagePath, ListAllVersionsRequest::setCurPagePath));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1764,16 +1774,6 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllVersionsRequest::getModelName, ListAllVersionsRequest::setModelName));
-        builder.<Integer>withRequestField("curPagePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllVersionsRequest::getCurPagePath, ListAllVersionsRequest::setCurPagePath));
-        builder.<Integer>withRequestField("pageSizePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAllVersionsRequest::getPageSizePath, ListAllVersionsRequest::setPageSizePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1836,18 +1836,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getIdentifier,
-                ListBatchQueryRelatedObjectsRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getModelName,
-                ListBatchQueryRelatedObjectsRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1860,6 +1848,18 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getCurPagePath,
                 ListBatchQueryRelatedObjectsRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getIdentifier,
+                ListBatchQueryRelatedObjectsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchQueryRelatedObjectsRequest::getModelName,
+                ListBatchQueryRelatedObjectsRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1962,16 +1962,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGetChildListRequest::getIdentifier, ListGetChildListRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGetChildListRequest::getModelName, ListGetChildListRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1982,6 +1972,16 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGetChildListRequest::getCurPagePath, ListGetChildListRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getIdentifier, ListGetChildListRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getModelName, ListGetChildListRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2041,16 +2041,6 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryDataRequest::getIdentifier, ListHistoryDataRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryDataRequest::getModelName, ListHistoryDataRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2061,36 +2051,51 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getCurPagePath, ListHistoryDataRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getIdentifier, ListHistoryDataRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getModelName, ListHistoryDataRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getCurPage, ListHistoryDataRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getEndIndex, ListHistoryDataRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryDataRequest::getMaxPageSize, ListHistoryDataRequest::setMaxPageSize));
         builder.<Integer>withRequestField("pageSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getPageSize, ListHistoryDataRequest::setPageSize));
-        builder.<Integer>withRequestField("totalRows",
+        builder.<Integer>withRequestField("startIndex",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryDataRequest::getTotalRows, ListHistoryDataRequest::setTotalRows));
+            f -> f.withMarshaller(ListHistoryDataRequest::getStartIndex, ListHistoryDataRequest::setStartIndex));
         builder.<Integer>withRequestField("totalPages",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getTotalPages, ListHistoryDataRequest::setTotalPages));
-        builder.<Integer>withRequestField("limit",
+        builder.<Integer>withRequestField("totalRows",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryDataRequest::getLimit, ListHistoryDataRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryDataRequest::getOffset, ListHistoryDataRequest::setOffset));
+            f -> f.withMarshaller(ListHistoryDataRequest::getTotalRows, ListHistoryDataRequest::setTotalRows));
         builder.<RDMParamVOMongPageRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2115,18 +2120,6 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getIdentifier,
-                ListQueryRelatedObjectsRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getModelName,
-                ListQueryRelatedObjectsRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2139,6 +2132,18 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getCurPagePath,
                 ListQueryRelatedObjectsRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getIdentifier,
+                ListQueryRelatedObjectsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelatedObjectsRequest::getModelName,
+                ListQueryRelatedObjectsRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2205,18 +2210,6 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryRelationshipRequest::getIdentifier,
-                ListQueryRelationshipRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryRelationshipRequest::getModelName,
-                ListQueryRelationshipRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2229,6 +2222,18 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListQueryRelationshipRequest::getCurPagePath,
                 ListQueryRelationshipRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getIdentifier,
+                ListQueryRelationshipRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getModelName,
+                ListQueryRelationshipRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2294,16 +2299,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryTargetRequest::getIdentifier, ListQueryTargetRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryTargetRequest::getModelName, ListQueryTargetRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2314,6 +2309,16 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListQueryTargetRequest::getCurPagePath, ListQueryTargetRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getIdentifier, ListQueryTargetRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryTargetRequest::getModelName, ListQueryTargetRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2372,16 +2377,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getIdentifier, ListQueryUsingPostRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryUsingPostRequest::getModelName, ListQueryUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2394,6 +2389,16 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListQueryUsingPostRequest::getCurPagePath,
                 ListQueryUsingPostRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getIdentifier, ListQueryUsingPostRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryUsingPostRequest::getModelName, ListQueryUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2453,17 +2458,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getIdentifier,
-                ListSelectUsingPostRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelectUsingPostRequest::getModelName, ListSelectUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2476,6 +2470,17 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSelectUsingPostRequest::getCurPagePath,
                 ListSelectUsingPostRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getIdentifier,
+                ListSelectUsingPostRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSelectUsingPostRequest::getModelName, ListSelectUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2537,16 +2542,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getIdentifier, ListUsingPostRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsingPostRequest::getModelName, ListUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2557,6 +2552,16 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsingPostRequest::getCurPagePath, ListUsingPostRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsingPostRequest::getIdentifier, ListUsingPostRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsingPostRequest::getModelName, ListUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2778,16 +2783,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("identifier",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getIdentifier, ShowFindUsingPostRequest::setIdentifier));
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFindUsingPostRequest::getModelName, ShowFindUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("pageSizePath",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2799,6 +2794,16 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowFindUsingPostRequest::getCurPagePath, ShowFindUsingPostRequest::setCurPagePath));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getIdentifier, ShowFindUsingPostRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFindUsingPostRequest::getModelName, ShowFindUsingPostRequest::setModelName));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

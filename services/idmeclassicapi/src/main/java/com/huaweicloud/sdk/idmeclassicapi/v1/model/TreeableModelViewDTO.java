@@ -92,7 +92,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -109,7 +109,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 创建人。
+     * **参数解释：**  创建人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -126,7 +126,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 修改人。
+     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -143,7 +143,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -160,7 +160,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 最新更新时间。
+     * **参数解释：**  最新更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -177,7 +177,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 系统版本。
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -194,7 +194,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 软删除标识，参数值为0或1。 - 0：表示未删除。 - 1：表示已删除。
+     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -211,7 +211,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -254,7 +254,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 类名。
+     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -323,7 +323,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 是否为叶子节点。 - true：是叶子节点。 - false：不是叶子节点。
+     * **参数解释：**  是否为叶子节点。  **取值范围：**  - true：是叶子节点。 - false：不是叶子节点。  **默认取值：**  不涉及。 
      * @return leafFlag
      */
     public Boolean getLeafFlag() {
@@ -340,7 +340,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 用于存储当前节点全路径。
+     * **参数解释：**  用于存储当前节点全路径。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return fullPath
      */
     public String getFullPath() {
@@ -357,7 +357,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * 用于存储当前节点原始全路径。
+     * **参数解释：**  用于存储当前节点原始全路径。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rawFullPath
      */
     public String getRawFullPath() {

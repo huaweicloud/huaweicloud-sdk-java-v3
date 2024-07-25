@@ -28,11 +28,6 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success")
-
-    private Boolean success;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
@@ -48,9 +43,14 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private Boolean success;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private DataResponse data;
+    private BatchOperateDataobjectResult data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -63,7 +63,7 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -80,7 +80,7 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -97,7 +97,7 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 请求ID
      * @return requestId
      */
     public String getRequestId() {
@@ -108,32 +108,15 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public CreateDataobjectRelationsResponse withSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-
-    /**
-     * Error message
-     * @return success
-     */
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
     public CreateDataobjectRelationsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
-     * maximum: 99999
+     * maximum: 10000
      * @return total
      */
     public Integer getTotal() {
@@ -150,9 +133,9 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     }
 
     /**
-     * current page count
+     * 分页大小
      * minimum: 0
-     * maximum: 9999
+     * maximum: 10000
      * @return limit
      */
     public Integer getLimit() {
@@ -169,9 +152,9 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
     }
 
     /**
-     * current page size
+     * 偏移量
      * minimum: 0
-     * maximum: 100
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -182,14 +165,31 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
         this.offset = offset;
     }
 
-    public CreateDataobjectRelationsResponse withData(DataResponse data) {
+    public CreateDataobjectRelationsResponse withSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+
+    /**
+     * 是否成功
+     * @return success
+     */
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public CreateDataobjectRelationsResponse withData(BatchOperateDataobjectResult data) {
         this.data = data;
         return this;
     }
 
-    public CreateDataobjectRelationsResponse withData(Consumer<DataResponse> dataSetter) {
+    public CreateDataobjectRelationsResponse withData(Consumer<BatchOperateDataobjectResult> dataSetter) {
         if (this.data == null) {
-            this.data = new DataResponse();
+            this.data = new BatchOperateDataobjectResult();
             dataSetter.accept(this.data);
         }
 
@@ -200,11 +200,11 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public DataResponse getData() {
+    public BatchOperateDataobjectResult getData() {
         return data;
     }
 
-    public void setData(DataResponse data) {
+    public void setData(BatchOperateDataobjectResult data) {
         this.data = data;
     }
 
@@ -237,15 +237,15 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
         }
         CreateDataobjectRelationsResponse that = (CreateDataobjectRelationsResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.success, that.success)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.data, that.data)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, requestId, success, total, limit, offset, data, xRequestId);
+        return Objects.hash(code, message, requestId, total, limit, offset, success, data, xRequestId);
     }
 
     @Override
@@ -255,10 +255,10 @@ public class CreateDataobjectRelationsResponse extends SdkResponse {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

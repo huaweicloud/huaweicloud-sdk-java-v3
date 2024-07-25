@@ -190,7 +190,7 @@ public class MicroserviceImportReq {
     private Integer backendTimeout;
 
     /**
-     * API的认证方式，默认无认证[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证
+     * API的认证方式，默认无认证。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证
      */
     public static final class AuthTypeEnum {
 
@@ -284,11 +284,6 @@ public class MicroserviceImportReq {
     @JsonProperty(value = "cce_info")
 
     private MicroServiceInfoCCECreate cceInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cce_service_info")
-
-    private MicroServiceInfoCCEServiceCreate cceServiceInfo;
 
     public MicroserviceImportReq withGroupInfo(MicroserviceGroup groupInfo) {
         this.groupInfo = groupInfo;
@@ -407,7 +402,7 @@ public class MicroserviceImportReq {
     }
 
     /**
-     * API的认证方式，默认无认证[，site暂不支持IAM认证。](tag:Site) - NONE：无认证 - APP：APP认证 - IAM：IAM认证
+     * API的认证方式，默认无认证。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -487,32 +482,6 @@ public class MicroserviceImportReq {
         this.cceInfo = cceInfo;
     }
 
-    public MicroserviceImportReq withCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-        return this;
-    }
-
-    public MicroserviceImportReq withCceServiceInfo(Consumer<MicroServiceInfoCCEServiceCreate> cceServiceInfoSetter) {
-        if (this.cceServiceInfo == null) {
-            this.cceServiceInfo = new MicroServiceInfoCCEServiceCreate();
-            cceServiceInfoSetter.accept(this.cceServiceInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get cceServiceInfo
-     * @return cceServiceInfo
-     */
-    public MicroServiceInfoCCEServiceCreate getCceServiceInfo() {
-        return cceServiceInfo;
-    }
-
-    public void setCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
-        this.cceServiceInfo = cceServiceInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -526,21 +495,12 @@ public class MicroserviceImportReq {
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.apis, that.apis)
             && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.cors, that.cors) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo);
+            && Objects.equals(this.cceInfo, that.cceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupInfo,
-            serviceType,
-            protocol,
-            apis,
-            backendTimeout,
-            authType,
-            cors,
-            cseInfo,
-            cceInfo,
-            cceServiceInfo);
+        return Objects.hash(groupInfo, serviceType, protocol, apis, backendTimeout, authType, cors, cseInfo, cceInfo);
     }
 
     @Override
@@ -556,7 +516,6 @@ public class MicroserviceImportReq {
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
-        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

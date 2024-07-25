@@ -84,7 +84,6 @@ public class TestHcClient {
 
     @Before
     public void init() {
-
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 

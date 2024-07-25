@@ -36,7 +36,7 @@ public class PageInfoViewDTO {
     }
 
     /**
-     * 当前页。
+     * **参数解释：**  当前页。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return curPage
      */
     public Integer getCurPage() {
@@ -53,7 +53,7 @@ public class PageInfoViewDTO {
     }
 
     /**
-     * 每页大小。
+     * **参数解释：**  每页大小。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -70,7 +70,7 @@ public class PageInfoViewDTO {
     }
 
     /**
-     * 总行数。
+     * **参数解释：**  总行数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return totalRows
      */
     public Integer getTotalRows() {
@@ -87,7 +87,7 @@ public class PageInfoViewDTO {
     }
 
     /**
-     * 总页数。
+     * **参数解释：**  总页数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return totalPages
      */
     public Integer getTotalPages() {

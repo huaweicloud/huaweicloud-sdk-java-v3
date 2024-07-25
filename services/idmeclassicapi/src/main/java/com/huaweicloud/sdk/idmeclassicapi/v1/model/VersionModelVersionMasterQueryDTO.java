@@ -36,7 +36,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * 是否加密。 - true：加密。 - false：不加密。
+     * **参数解释：**  是否加密。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。 
      * @return decrypt
      */
     public Boolean getDecrypt() {
@@ -53,7 +53,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * 迭代版本。如果此参数为空，则返回M-V模型实例的最新版本信息。
+     * **参数解释：**  迭代版本。如果此参数为空，则返回M-V模型实例的最新版本信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return iteration
      */
     public Integer getIteration() {
@@ -70,7 +70,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * 主对象ID。
+     * **参数解释：**  主对象ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return masterId
      */
     public String getMasterId() {
@@ -87,7 +87,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * 版本号。
+     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return version
      */
     public String getVersion() {

@@ -31,7 +31,7 @@ public class VersionModelVersionUpdateDTO {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class VersionModelVersionUpdateDTO {
     }
 
     /**
-     * 迭代版本。
+     * **参数解释：**  迭代版本。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return iteration
      */
     public Integer getIteration() {
@@ -65,7 +65,7 @@ public class VersionModelVersionUpdateDTO {
     }
 
     /**
-     * 版本号。
+     * **参数解释：**  版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return version
      */
     public String getVersion() {

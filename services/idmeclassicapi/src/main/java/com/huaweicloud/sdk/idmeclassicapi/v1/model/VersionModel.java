@@ -120,7 +120,7 @@ public class VersionModel {
     }
 
     /**
-     * 检出时间。
+     * **参数解释：**  检出时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return checkOutTime
      */
     public String getCheckOutTime() {
@@ -137,7 +137,7 @@ public class VersionModel {
     }
 
     /**
-     * 检出用户名称。
+     * **参数解释：**  检出用户名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return checkOutUserName
      */
     public String getCheckOutUserName() {
@@ -154,7 +154,7 @@ public class VersionModel {
     }
 
     /**
-     * 创建时间。
+     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -171,7 +171,7 @@ public class VersionModel {
     }
 
     /**
-     * 创建者。
+     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -188,7 +188,7 @@ public class VersionModel {
     }
 
     /**
-     * 描述信息。
+     * **参数解释：**  描述信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -205,7 +205,7 @@ public class VersionModel {
     }
 
     /**
-     * 唯一标识。
+     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -222,7 +222,7 @@ public class VersionModel {
     }
 
     /**
-     * 关键信息资产ID。
+     * **参数解释：**  关键信息资产ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return kiaguid
      */
     public String getKiaguid() {
@@ -239,7 +239,7 @@ public class VersionModel {
     }
 
     /**
-     * 最后更新时间。
+     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -282,7 +282,7 @@ public class VersionModel {
     }
 
     /**
-     * 更新者。
+     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -299,7 +299,7 @@ public class VersionModel {
     }
 
     /**
-     * 中文名称。
+     * **参数解释：**  中文名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -332,7 +332,7 @@ public class VersionModel {
     }
 
     /**
-     * 设置NULL值的属性名称。
+     * **参数解释：**  设置NULL值的属性名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {
@@ -349,7 +349,7 @@ public class VersionModel {
     }
 
     /**
-     * 扩展类型。
+     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -366,7 +366,7 @@ public class VersionModel {
     }
 
     /**
-     * 安全密级。 - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。
+     * **参数解释：**  安全密级。  **约束限制：**  不涉及。  **取值范围：**  - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。  **默认取值：**  不涉及。 
      * @return securityLevel
      */
     public String getSecurityLevel() {

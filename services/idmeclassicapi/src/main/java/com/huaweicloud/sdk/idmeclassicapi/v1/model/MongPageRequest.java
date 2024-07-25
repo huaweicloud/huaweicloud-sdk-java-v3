@@ -61,7 +61,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 结束时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。
+     * **参数解释：**  结束时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return endLastModifiedTime
      */
     public String getEndLastModifiedTime() {
@@ -78,7 +78,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 数据实例ID。
+     * **参数解释：**  数据实例ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -95,7 +95,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 版本号。
+     * **参数解释：**  版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -112,7 +112,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 关系实体源端ID。
+     * **参数解释：**  关系实体源端ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sourceId
      */
     public String getSourceId() {
@@ -129,7 +129,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 关系实体源端系统版本。
+     * **参数解释：**  关系实体源端系统版本。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sourceRdmVersion
      */
     public Integer getSourceRdmVersion() {
@@ -146,7 +146,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 开始时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。
+     * **参数解释：**  开始时间。系统以数据实例的最后修改时间作为查询条件，您定义的开始时间和结束时间作为时间范围进行查询。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return startLastModifiedTime
      */
     public String getStartLastModifiedTime() {
@@ -163,7 +163,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 关系实体目标端ID。
+     * **参数解释：**  关系实体目标端ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return targetId
      */
     public String getTargetId() {
@@ -180,7 +180,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 关系实体目标端系统版本。
+     * **参数解释：**  关系实体目标端系统版本。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return targetRdmVersion
      */
     public Integer getTargetRdmVersion() {
@@ -197,7 +197,7 @@ public class MongPageRequest {
     }
 
     /**
-     * 单边不确定关系的目标端类型。
+     * **参数解释：**  单边不确定关系的目标端类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return targetType
      */
     public String getTargetType() {

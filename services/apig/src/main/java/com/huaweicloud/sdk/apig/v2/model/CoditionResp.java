@@ -285,6 +285,86 @@ public class CoditionResp {
     private String conditionValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mapped_param_name")
+
+    private String mappedParamName;
+
+    /**
+     * 参数编排规则编排后生成的参数所在的位置，当condition_origin为orchestration的时候必填，并且生成的参数所在的位置必须在api绑定的编排规则中存在
+     */
+    public static final class MappedParamLocationEnum {
+
+        /**
+         * Enum HEADER for value: "header"
+         */
+        public static final MappedParamLocationEnum HEADER = new MappedParamLocationEnum("header");
+
+        /**
+         * Enum QUERY for value: "query"
+         */
+        public static final MappedParamLocationEnum QUERY = new MappedParamLocationEnum("query");
+
+        private static final Map<String, MappedParamLocationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MappedParamLocationEnum> createStaticFields() {
+            Map<String, MappedParamLocationEnum> map = new HashMap<>();
+            map.put("header", HEADER);
+            map.put("query", QUERY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MappedParamLocationEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MappedParamLocationEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MappedParamLocationEnum(value));
+        }
+
+        public static MappedParamLocationEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MappedParamLocationEnum) {
+                return this.value.equals(((MappedParamLocationEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mapped_param_location")
+
+    private MappedParamLocationEnum mappedParamLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -407,7 +487,7 @@ public class CoditionResp {
     }
 
     /**
-     * 策略值。策略类型为param，source，cookie，frontend_authorizer时必填
+     * 策略值。
      * @return conditionValue
      */
     public String getConditionValue() {
@@ -416,6 +496,40 @@ public class CoditionResp {
 
     public void setConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
+    }
+
+    public CoditionResp withMappedParamName(String mappedParamName) {
+        this.mappedParamName = mappedParamName;
+        return this;
+    }
+
+    /**
+     * 参数编排规则编排后生成的参数名称，当condition_origin为orchestration的时候必填，并且生成的参数名称必须在api绑定的编排规则中存在
+     * @return mappedParamName
+     */
+    public String getMappedParamName() {
+        return mappedParamName;
+    }
+
+    public void setMappedParamName(String mappedParamName) {
+        this.mappedParamName = mappedParamName;
+    }
+
+    public CoditionResp withMappedParamLocation(MappedParamLocationEnum mappedParamLocation) {
+        this.mappedParamLocation = mappedParamLocation;
+        return this;
+    }
+
+    /**
+     * 参数编排规则编排后生成的参数所在的位置，当condition_origin为orchestration的时候必填，并且生成的参数所在的位置必须在api绑定的编排规则中存在
+     * @return mappedParamLocation
+     */
+    public MappedParamLocationEnum getMappedParamLocation() {
+        return mappedParamLocation;
+    }
+
+    public void setMappedParamLocation(MappedParamLocationEnum mappedParamLocation) {
+        this.mappedParamLocation = mappedParamLocation;
     }
 
     public CoditionResp withId(String id) {
@@ -484,7 +598,9 @@ public class CoditionResp {
             && Objects.equals(this.frontendAuthorizerParamName, that.frontendAuthorizerParamName)
             && Objects.equals(this.conditionType, that.conditionType)
             && Objects.equals(this.conditionOrigin, that.conditionOrigin)
-            && Objects.equals(this.conditionValue, that.conditionValue) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.conditionValue, that.conditionValue)
+            && Objects.equals(this.mappedParamName, that.mappedParamName)
+            && Objects.equals(this.mappedParamLocation, that.mappedParamLocation) && Objects.equals(this.id, that.id)
             && Objects.equals(this.reqParamId, that.reqParamId)
             && Objects.equals(this.reqParamLocation, that.reqParamLocation);
     }
@@ -498,6 +614,8 @@ public class CoditionResp {
             conditionType,
             conditionOrigin,
             conditionValue,
+            mappedParamName,
+            mappedParamLocation,
             id,
             reqParamId,
             reqParamLocation);
@@ -516,6 +634,8 @@ public class CoditionResp {
         sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
         sb.append("    conditionOrigin: ").append(toIndentedString(conditionOrigin)).append("\n");
         sb.append("    conditionValue: ").append(toIndentedString(conditionValue)).append("\n");
+        sb.append("    mappedParamName: ").append(toIndentedString(mappedParamName)).append("\n");
+        sb.append("    mappedParamLocation: ").append(toIndentedString(mappedParamLocation)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    reqParamId: ").append(toIndentedString(reqParamId)).append("\n");
         sb.append("    reqParamLocation: ").append(toIndentedString(reqParamLocation)).append("\n");

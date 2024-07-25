@@ -324,7 +324,7 @@ public class IndicatorDataObjectDetail {
     }
 
     /**
-     * 情报ID
+     * 威胁情报ID
      * @return id
      */
     public String getId() {

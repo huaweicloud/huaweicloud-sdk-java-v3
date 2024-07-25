@@ -146,6 +146,87 @@ public class VpcMemberInfo {
 
     private String memberGroupId;
 
+    /**
+     * 负载通道后端实例健康状态，unknown、healthy、unhealthy分别标识未做健康检查、健康、不健康。
+     */
+    public static final class HealthStatusEnum {
+
+        /**
+         * Enum HEALTHY for value: "healthy"
+         */
+        public static final HealthStatusEnum HEALTHY = new HealthStatusEnum("healthy");
+
+        /**
+         * Enum UNHEALTHY for value: "unhealthy"
+         */
+        public static final HealthStatusEnum UNHEALTHY = new HealthStatusEnum("unhealthy");
+
+        /**
+         * Enum UNKNOWN for value: "unknown"
+         */
+        public static final HealthStatusEnum UNKNOWN = new HealthStatusEnum("unknown");
+
+        private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthStatusEnum> createStaticFields() {
+            Map<String, HealthStatusEnum> map = new HashMap<>();
+            map.put("healthy", HEALTHY);
+            map.put("unhealthy", UNHEALTHY);
+            map.put("unknown", UNKNOWN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HealthStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HealthStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HealthStatusEnum(value));
+        }
+
+        public static HealthStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HealthStatusEnum) {
+                return this.value.equals(((HealthStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "health_status")
+
+    private HealthStatusEnum healthStatus;
+
     public VpcMemberInfo withHost(String host) {
         this.host = host;
         return this;
@@ -188,7 +269,7 @@ public class VpcMemberInfo {
     }
 
     /**
-     * 是否备用节点。  开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。  实例需要升级到对应版本才支持此功能，若不支持请联系技术支持。
+     * 是否备用节点。  开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。  实例需要升级到对应版本才支持此功能，如果不支持请联系技术支持。
      * @return isBackup
      */
     public Boolean getIsBackup() {
@@ -354,6 +435,23 @@ public class VpcMemberInfo {
         this.memberGroupId = memberGroupId;
     }
 
+    public VpcMemberInfo withHealthStatus(HealthStatusEnum healthStatus) {
+        this.healthStatus = healthStatus;
+        return this;
+    }
+
+    /**
+     * 负载通道后端实例健康状态，unknown、healthy、unhealthy分别标识未做健康检查、健康、不健康。
+     * @return healthStatus
+     */
+    public HealthStatusEnum getHealthStatus() {
+        return healthStatus;
+    }
+
+    public void setHealthStatus(HealthStatusEnum healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -369,7 +467,8 @@ public class VpcMemberInfo {
             && Objects.equals(this.port, that.port) && Objects.equals(this.ecsId, that.ecsId)
             && Objects.equals(this.ecsName, that.ecsName) && Objects.equals(this.id, that.id)
             && Objects.equals(this.vpcChannelId, that.vpcChannelId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.memberGroupId, that.memberGroupId);
+            && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.healthStatus, that.healthStatus);
     }
 
     @Override
@@ -385,7 +484,8 @@ public class VpcMemberInfo {
             id,
             vpcChannelId,
             createTime,
-            memberGroupId);
+            memberGroupId,
+            healthStatus);
     }
 
     @Override
@@ -404,6 +504,7 @@ public class VpcMemberInfo {
         sb.append("    vpcChannelId: ").append(toIndentedString(vpcChannelId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
+        sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

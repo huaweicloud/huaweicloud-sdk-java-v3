@@ -26,7 +26,7 @@ public class VersionModelVersionMasterDTO {
     }
 
     /**
-     * 主对象ID。
+     * **参数解释：**  主对象ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return masterId
      */
     public String getMasterId() {
@@ -43,7 +43,7 @@ public class VersionModelVersionMasterDTO {
     }
 
     /**
-     * 版本对象版本号。
+     * **参数解释：**  版本对象版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return version
      */
     public String getVersion() {
